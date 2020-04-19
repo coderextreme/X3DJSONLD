@@ -1,29 +1,91 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addComponent(new component().setName("Geospatial").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("geobubbles.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
-        .addMeta(new meta().setName("description").setContent("geo bubbles")))
-      .setScene(new Scene()
-        .addComments(new CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
-        .addComments(new CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
-        .addChild(new GeoViewpoint().setDEF("Tour").setPosition(java.newArray("double", [0,0,4])).setOrientation(java.newArray("float", [1,0,0,0])).setDescription("Tour Views"))
-        .addChild(new Background().setBackUrl(java.newArray("java.lang.String", ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])))
-        .addChild(new Transform()
-          .addChild(new Shape()
-            .setGeometry(new Sphere())
-            .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0.7,0.7,0.7])).setSpecularColor(java.newArray("float", [0.5,0.5,0.5]))))))
-        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5).setLoop(true))
-        .addChild(new GeoPositionInterpolator().setDEF("TourPosition").setKey(java.newArray("float", [0,1])).setKeyValue(java.newArray("double", [0.0015708,0,4,0,0.0015708,4])))
-        .addChild(new Script().setDEF("RandomTourTime")
-          .addField(new field().setType(field.TYPE_SFTIME).setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("val").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-          .addField(new field().setType(field.TYPE_MFVEC3D).setName("positions").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
-          .addField(new field().setType(field.TYPE_MFVEC3D).setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
-          .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+//Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/
+//PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/
+GeoViewpoint2 = browser.currentScene.createNode("GeoViewpoint");
+GeoViewpoint2.DEF = "Tour";
+GeoViewpoint2.position = [0,0,4];
+GeoViewpoint2.orientation = [1,0,0,0];
+GeoViewpoint2.description = "Tour Views";
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = GeoViewpoint2;
+
+Background3 = browser.currentScene.createNode("Background");
+Background3.backUrl = ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"];
+Background3.bottomUrl = ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"];
+Background3.frontUrl = ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"];
+Background3.leftUrl = ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"];
+Background3.rightUrl = ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"];
+Background3.topUrl = ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"];
+browser.currentScene.children[1] = Background3;
+
+Transform4 = browser.currentScene.createNode("Transform");
+Shape5 = browser.currentScene.createNode("Shape");
+Sphere6 = browser.currentScene.createNode("Sphere");
+Shape5.geometry = Sphere6;
+
+Appearance7 = browser.currentScene.createNode("Appearance");
+Material8 = browser.currentScene.createNode("Material");
+Material8.diffuseColor = [0.7,0.7,0.7];
+Material8.specularColor = [0.5,0.5,0.5];
+Appearance7.material = Material8;
+
+Shape5.appearance = Appearance7;
+
+Transform4.children = [];
+
+Transform4.children[0] = Shape5;
+
+browser.currentScene.children[2] = Transform4;
+
+TimeSensor9 = browser.currentScene.createNode("TimeSensor");
+TimeSensor9.DEF = "TourTime";
+TimeSensor9.cycleInterval = 5;
+TimeSensor9.loop = True;
+browser.currentScene.children[3] = TimeSensor9;
+
+GeoPositionInterpolator10 = browser.currentScene.createNode("GeoPositionInterpolator");
+GeoPositionInterpolator10.DEF = "TourPosition";
+GeoPositionInterpolator10.key = [0,1];
+GeoPositionInterpolator10.keyValue = [0.0015708,0,4,0,0.0015708,4];
+browser.currentScene.children[4] = GeoPositionInterpolator10;
+
+Script11 = browser.currentScene.createNode("Script");
+Script11.DEF = "RandomTourTime";
+field12 = browser.currentScene.createNode("field");
+field12.name = "set_cycle";
+field12.accessType = "inputOnly";
+field12.type = "SFTime";
+Script11.field = [];
+
+Script11.field[0] = field12;
+
+field13 = browser.currentScene.createNode("field");
+field13.name = "val";
+field13.accessType = "inputOutput";
+field13.type = "SFFloat";
+field13.value = "0";
+Script11.field[1] = field13;
+
+field14 = browser.currentScene.createNode("field");
+field14.name = "positions";
+field14.accessType = "inputOutput";
+field14.type = "MFVec3d";
+field14.value = "0.0015708 0 4 0 0.0015708 4";
+Script11.field[2] = field14;
+
+field15 = browser.currentScene.createNode("field");
+field15.name = "position";
+field15.accessType = "inputOutput";
+field15.type = "MFVec3d";
+field15.value = "0.0015708 0 4 0 0.0015708 4";
+Script11.field[3] = field15;
+
+
+Script11.setSourceCode(`ecmascript:\n"+
 "\n"+
 "               function set_cycle(value) {\n"+
 "                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo\n"+
@@ -39,9 +101,34 @@
 "                        position = new MFVec3d();\n"+
 "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);\n"+
 "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\n"+
-"               }"))
-        .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
-        .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
-        .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
-        .addChild(new ROUTE().setFromNode("TourPosition").setFromField("geovalue_changed").setToNode("Tour").setToField("set_position")))      ;
-    X3D0.toFileX3D("../data/geobubbles.new.x3d");
+"               }`)
+browser.currentScene.children[5] = Script11;
+
+ROUTE16 = browser.currentScene.createNode("ROUTE");
+ROUTE16.fromNode = "TourTime";
+ROUTE16.fromField = "cycleTime";
+ROUTE16.toNode = "RandomTourTime";
+ROUTE16.toField = "set_cycle";
+browser.currentScene.children[6] = ROUTE16;
+
+ROUTE17 = browser.currentScene.createNode("ROUTE");
+ROUTE17.fromNode = "RandomTourTime";
+ROUTE17.fromField = "position";
+ROUTE17.toNode = "TourPosition";
+ROUTE17.toField = "keyValue";
+browser.currentScene.children[7] = ROUTE17;
+
+ROUTE18 = browser.currentScene.createNode("ROUTE");
+ROUTE18.fromNode = "TourTime";
+ROUTE18.fromField = "fraction_changed";
+ROUTE18.toNode = "TourPosition";
+ROUTE18.toField = "set_fraction";
+browser.currentScene.children[8] = ROUTE18;
+
+ROUTE19 = browser.currentScene.createNode("ROUTE");
+ROUTE19.fromNode = "TourPosition";
+ROUTE19.fromField = "geovalue_changed";
+ROUTE19.toNode = "Tour";
+ROUTE19.toField = "set_position";
+browser.currentScene.children[9] = ROUTE19;
+

@@ -51,7 +51,7 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="created"     content="15 April 2002" />
    <meta name="revised"     content="6 May 2006" />
    <meta name="description" content="XSL stylesheet to build the X3D Tooltips (originally used for SIGGRAPH Online pages).  Additional HTML improvements by Juan Gril and Jeff Weekley." />
-   <meta name="url"         content="http://www.web3d.org/x3d/content/X3dToolTipConversions.xslt" />
+   <meta name="url"         content="https://www.web3d.org/x3d/content/X3dToolTipConversions.xslt" />
   </head>
 
 Recommended tools:
@@ -433,13 +433,13 @@ Invocation:
 					<xsl:text>URL for this file: </xsl:text>
 					<xsl:element name="a">
 						<xsl:attribute name="href">
-							<xsl:text>http://www.web3d.org/x3d/content/X3dTooltips</xsl:text>
+							<xsl:text>https://www.web3d.org/x3d/content/X3dTooltips</xsl:text>
 							<xsl:if test="$tooltipLanguage">
 								<xsl:value-of select="$tooltipLanguage"/>
 							</xsl:if>
 							<xsl:text>.html</xsl:text>
 						</xsl:attribute>
-							<xsl:text>http://www.web3d.org/x3d/content/X3dTooltips</xsl:text>
+							<xsl:text>https://www.web3d.org/x3d/content/X3dTooltips</xsl:text>
 							<xsl:if test="$tooltipLanguage">
 								<xsl:value-of select="$tooltipLanguage"/>
 							</xsl:if>

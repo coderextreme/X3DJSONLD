@@ -7,8 +7,8 @@
    <meta name="created"     content="22 March 2017" />
    <meta name="modified"    content="5 April 2017" />
    <meta name="description" content="XSLT stylesheet to create X3DJSAIL ES5 program from X3D source." />
-   <meta name="reference"   content="X3DJSAIL, http://www.web3d.org/specifications/java/X3DJSAIL.html" />
-   <meta name="url"         content="http://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" />
+   <meta name="reference"   content="X3DJSAIL, https://www.web3d.org/specifications/java/X3DJSAIL.html" />
+   <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" />
   </head>
 
 Recommended tools:
@@ -19,7 +19,7 @@ Recommended tools:
 
 <!-- TODO: 
 	 - integrate with X3D Examples Archives
-	   http://www.web3d.org/x3d/content/examples/X3dResources.html
+	   https://www.web3d.org/x3d/content/examples/X3dResources.html
   -->
 
 <!--	xmlns:fo="http://www.w3.org/1999/XSL/Format"	-->
@@ -98,7 +98,7 @@ are met:
       notice, this list of conditions and the following disclaimer
       in the documentation and/or other materials provided with the
       distribution.
-    * Neither the name of the Web3D Consortium (http://www.web3D.org)
+    * Neither the name of the Web3D Consortium (https://www.web3d.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -470,11 +470,11 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:text>, </xsl:text>
 			</xsl:if>
 		</xsl:if>
-<xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>]]></xsl:text>
+<xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>]]></xsl:text>
 			<xsl:text>, </xsl:text>
-<xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>]]></xsl:text>
+<xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>]]></xsl:text>
 			<xsl:text> and </xsl:text>
-<xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>]]></xsl:text>
+<xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>]]></xsl:text>
 			<xsl:text>.</xsl:text>
 			<xsl:text><![CDATA[ </p>]]></xsl:text>
 		
@@ -652,9 +652,9 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text><![CDATA[
 	<p>
 		This program uses the
-		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
+		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
-		<a href="http://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
+		<a href="https://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
 		stylesheet to create ES5 source code from an <code>.x3d</code> scene.
 	</p>
 ]]></xsl:text>
@@ -1085,6 +1085,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
+                      not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
                       (local-name()='pitch' and (.='1' or .='1.0')) or
@@ -2633,7 +2634,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	  <!-- SFBool -->
 	  <xsl:when test="
 				($localFieldType='SFBool')  or 
-                ($attributeName='activate') or
+                		($attributeName='activate') or
 				($attributeName='ccw')      or
 				($attributeName='closed')   or
 				($attributeName='convex')   or
@@ -2647,6 +2648,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				($attributeName='rtpHeaderExpected') or
 				($attributeName='solid') or
 				($attributeName='uClosed') or ($attributeName='vClosed') or
+				($attributeName='visible') or
 				($parentElementName='AudioClip' and $attributeName='loop') or
 				($parentElementName='BooleanToggle' and $attributeName='toggle') or
 				($parentElementName='Collision' and $attributeName='enabled') or
@@ -2694,7 +2696,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	  <xsl:when test="
 				($localFieldType='MFBool')  or 
                 (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
-				($parentElementName='CADLayer'                   and $attributeName='visible') or
+				($parentElementName='CADLayer'                   and ($attributeName='visible') and starts-with(//X3D/@version,'3')) or
 				($parentElementName='HAnimHumanoid'              and $attributeName='motionsEnabled') or
 				($parentElementName='MetadataBoolean'            and $attributeName='value') or
 				($parentElementName='SegmentedVolumeData'        and $attributeName='segmentEnabled') or

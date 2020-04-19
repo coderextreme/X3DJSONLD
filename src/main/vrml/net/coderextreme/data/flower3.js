@@ -1,27 +1,78 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("flower3.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"))
-        .addMeta(new meta().setName("description").setContent("a flower")))
-      .setScene(new Scene()
-        .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(java.newArray("float", [0,-0.8,-0.2])).setIntensity(0.5))
-        .addChild(new Background().setSkyColor(java.newArray("float", [1,1,1])))
-        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(java.newArray("float", [0,0,50])))
-        .addChild(new Transform().setDEF("OrbitTransform").setTranslation(java.newArray("float", [8,0,0]))
-          .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0,0.5,1])).setSpecularColor(java.newArray("float", [0,0.5,1]))))
-            .setGeometry(new IndexedFaceSet().setConvex(false).setDEF("Orbit")
-              .setCoord(new Coordinate().setDEF("OrbitCoordinates")))))
-        .addChild(new Script().setDEF("OrbitScript")
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field().setType(field.TYPE_MFVEC3F).setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addField(new field().setType(field.TYPE_MFINT32).setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"))
-          .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = NavigationInfo2;
+
+DirectionalLight3 = browser.currentScene.createNode("DirectionalLight");
+DirectionalLight3.direction = [0,-0.8,-0.2];
+DirectionalLight3.intensity = 0.5;
+browser.currentScene.children[1] = DirectionalLight3;
+
+Background4 = browser.currentScene.createNode("Background");
+Background4.skyColor = [1,1,1];
+browser.currentScene.children[2] = Background4;
+
+Viewpoint5 = browser.currentScene.createNode("Viewpoint");
+Viewpoint5.description = "One mathematical orbital";
+Viewpoint5.position = [0,0,50];
+browser.currentScene.children[3] = Viewpoint5;
+
+Transform6 = browser.currentScene.createNode("Transform");
+Transform6.DEF = "OrbitTransform";
+Transform6.translation = [8,0,0];
+Shape7 = browser.currentScene.createNode("Shape");
+Appearance8 = browser.currentScene.createNode("Appearance");
+Material9 = browser.currentScene.createNode("Material");
+Material9.diffuseColor = [0,0.5,1];
+Material9.specularColor = [0,0.5,1];
+Appearance8.material = Material9;
+
+Shape7.appearance = Appearance8;
+
+IndexedFaceSet10 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet10.convex = False;
+IndexedFaceSet10.DEF = "Orbit";
+Coordinate11 = browser.currentScene.createNode("Coordinate");
+Coordinate11.DEF = "OrbitCoordinates";
+IndexedFaceSet10.coord = Coordinate11;
+
+Shape7.geometry = IndexedFaceSet10;
+
+Transform6.children = [];
+
+Transform6.children[0] = Shape7;
+
+browser.currentScene.children[4] = Transform6;
+
+Script12 = browser.currentScene.createNode("Script");
+Script12.DEF = "OrbitScript";
+field13 = browser.currentScene.createNode("field");
+field13.name = "set_fraction";
+field13.accessType = "inputOnly";
+field13.type = "SFFloat";
+Script12.field = [];
+
+Script12.field[0] = field13;
+
+field14 = browser.currentScene.createNode("field");
+field14.name = "coordinates";
+field14.accessType = "outputOnly";
+field14.type = "MFVec3f";
+Script12.field[1] = field14;
+
+field15 = browser.currentScene.createNode("field");
+field15.name = "coordIndexes";
+field15.accessType = "outputOnly";
+field15.type = "MFInt32";
+Script12.field[2] = field15;
+
+//<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>
+
+Script12.setSourceCode(`ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -94,9 +145,33 @@
 "		h = 4;\n"+
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
-"}"))
-        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
-        .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
-        .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-        .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
-    X3D0.toFileX3D("../data/flower3.new.x3d");
+"}`)
+browser.currentScene.children[5] = Script12;
+
+TimeSensor16 = browser.currentScene.createNode("TimeSensor");
+TimeSensor16.DEF = "Clock";
+TimeSensor16.cycleInterval = 16;
+TimeSensor16.loop = True;
+browser.currentScene.children[6] = TimeSensor16;
+
+ROUTE17 = browser.currentScene.createNode("ROUTE");
+ROUTE17.fromNode = "OrbitScript";
+ROUTE17.fromField = "coordIndexes";
+ROUTE17.toNode = "Orbit";
+ROUTE17.toField = "coordIndex";
+browser.currentScene.children[7] = ROUTE17;
+
+ROUTE18 = browser.currentScene.createNode("ROUTE");
+ROUTE18.fromNode = "OrbitScript";
+ROUTE18.fromField = "coordinates";
+ROUTE18.toNode = "OrbitCoordinates";
+ROUTE18.toField = "point";
+browser.currentScene.children[8] = ROUTE18;
+
+ROUTE19 = browser.currentScene.createNode("ROUTE");
+ROUTE19.fromNode = "Clock";
+ROUTE19.fromField = "fraction_changed";
+ROUTE19.toNode = "OrbitScript";
+ROUTE19.toField = "set_fraction";
+browser.currentScene.children[9] = ROUTE19;
+

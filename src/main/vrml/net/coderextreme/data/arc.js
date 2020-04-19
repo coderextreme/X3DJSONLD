@@ -1,84 +1,291 @@
-var ProtoInstance0 = null;
-var ProtoInstance1 = null;
-var ProtoInstance2 = null;
-var ProtoInstance3 = null;
-var ProtoInstance4 = null;
-var ProtoInstance5 = null;
-var ProtoInstance6 = null;
-var ProtoInstance7 = null;
-var ProtoInstance8 = null;
-var ProtoInstance9 = null;
-var ProtoInstance10 = null;
-var ProtoInstance11 = null;
-var ProtoInstance12 = null;
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("arc"))
-        .addMeta(new meta().setName("creator").setContent("Lost, Doug Sanden I think"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-        .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
-      .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(java.newArray("float", [0,0,5])).setDescription("Only Viewpoint"))
-        .addChild(new Background().setSkyColor(java.newArray("float", [0.4,0.4,0.4])))
-        .addChild(new ProtoDeclare().setName("point")
-          .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
-          .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setDEF("node")
-              .setIS(new IS()
-                .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
-              .addChild(new Shape()
-                .setGeometry(new Sphere().setRadius(0.1))
-                .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(java.newArray("float", [1,0,0])))))
-              .addChild(new PositionInterpolator().setDEF("PI1").setKey(java.newArray("float", [0,1])).setKeyValue(java.newArray("float", [0,0,0,0,5,0])))
-              .addChild(new Script().setDEF("MB1")
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType(field.TYPE_SFTIME).setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType(field.TYPE_MFVEC3F).setName("keyValue").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
-                .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+Viewpoint2 = browser.currentScene.createNode("Viewpoint");
+Viewpoint2.position = [0,0,5];
+Viewpoint2.description = "Only Viewpoint";
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = Viewpoint2;
+
+Background3 = browser.currentScene.createNode("Background");
+Background3.skyColor = [0.4,0.4,0.4];
+browser.currentScene.children[1] = Background3;
+
+ProtoDeclare4 = browser.currentScene.createNode("ProtoDeclare");
+ProtoDeclare4.name = "point";
+ProtoInterface5 = browser.currentScene.createNode("ProtoInterface");
+field6 = browser.currentScene.createNode("field");
+field6.name = "translation";
+field6.accessType = "inputOutput";
+field6.type = "SFVec3f";
+field6.value = "0 0 0";
+ProtoInterface5.field = [];
+
+ProtoInterface5.field[0] = field6;
+
+ProtoDeclare4.protoInterface = ProtoInterface5;
+
+ProtoBody7 = browser.currentScene.createNode("ProtoBody");
+Transform8 = browser.currentScene.createNode("Transform");
+Transform8.DEF = "node";
+IS9 = browser.currentScene.createNode("IS");
+connect10 = browser.currentScene.createNode("connect");
+connect10.nodeField = "translation";
+connect10.protoField = "translation";
+IS9.connect = [];
+
+IS9.connect[0] = connect10;
+
+Transform8.iS = IS9;
+
+Shape11 = browser.currentScene.createNode("Shape");
+Sphere12 = browser.currentScene.createNode("Sphere");
+Sphere12.radius = 0.1;
+Shape11.geometry = Sphere12;
+
+Appearance13 = browser.currentScene.createNode("Appearance");
+Material14 = browser.currentScene.createNode("Material");
+Material14.diffuseColor = [1,0,0];
+Appearance13.material = Material14;
+
+Shape11.appearance = Appearance13;
+
+Transform8.children = [];
+
+Transform8.children[0] = Shape11;
+
+PositionInterpolator15 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator15.DEF = "PI1";
+PositionInterpolator15.key = [0,1];
+PositionInterpolator15.keyValue = [0,0,0,0,5,0];
+Transform8.children[1] = PositionInterpolator15;
+
+Script16 = browser.currentScene.createNode("Script");
+Script16.DEF = "MB1";
+field17 = browser.currentScene.createNode("field");
+field17.name = "translation";
+field17.accessType = "inputOutput";
+field17.type = "SFVec3f";
+field17.value = "50 50 0";
+Script16.field = [];
+
+Script16.field[0] = field17;
+
+field18 = browser.currentScene.createNode("field");
+field18.name = "old";
+field18.accessType = "inputOutput";
+field18.type = "SFVec3f";
+field18.value = "0 0 0";
+Script16.field[1] = field18;
+
+field19 = browser.currentScene.createNode("field");
+field19.name = "set_location";
+field19.accessType = "inputOnly";
+field19.type = "SFTime";
+Script16.field[2] = field19;
+
+field20 = browser.currentScene.createNode("field");
+field20.name = "keyValue";
+field20.accessType = "inputOutput";
+field20.type = "MFVec3f";
+field20.value = "0 0 0 0 5 0";
+Script16.field[3] = field20;
+
+
+Script16.setSourceCode(`ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
-"		}"))
-              .addChild(new TimeSensor().setDEF("CL1").setCycleInterval(3).setLoop(true))
-              .addChild(new ROUTE().setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
-              .addChild(new ROUTE().setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
-              .addChild(new ROUTE().setFromNode("MB1").setFromField("keyValue").setToNode("PI1").setToField("keyValue"))
-              .addChild(new ROUTE().setFromNode("PI1").setFromField("value_changed").setToNode("node").setToField("set_translation")))))
-        .addChild(new ProtoDeclare().setName("x3dconnector")
-          .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType(field.TYPE_SFNODE).setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-            .addField(new field().setType(field.TYPE_SFNODE).setName("endnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-            .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(field.ACCESSTYPE_INPUTONLY)))
-          .setProtoBody(new ProtoBody()
-            .addChild(new Group()
-              .addChild(new Transform().setDEF("trans")
-                .addChild(new Transform().setDEF("rotscale")
-                  .addChild(new Shape()
-                    .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0.2,0.7,0.7])).setTransparency(0.5)))
-                    .setGeometry(new Cylinder().setRadius(0.05)))))
-              .addChild(new Script().setDEF("S1")
-                .addField(new field().setType(field.TYPE_SFNODE).setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-                .addField(new field().setType(field.TYPE_SFNODE).setName("endnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-                .addField(new field().setType(field.TYPE_SFNODE).setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-                  .addChild(new Transform().setUSE("trans")))
-                .addField(new field().setType(field.TYPE_SFNODE).setName("rotscale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-                  .addChild(new Transform().setUSE("rotscale")))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .setIS(new IS()
-                  .addConnect(new connect().setNodeField("startnode").setProtoField("startnode"))
-                  .addConnect(new connect().setNodeField("endnode").setProtoField("endnode"))
-                  .addConnect(new connect().setNodeField("set_startpoint").setProtoField("set_startpoint"))
-                  .addConnect(new connect().setNodeField("set_endpoint").setProtoField("set_endpoint")))
-                .setSourceCode("ecmascript:\n"+
+"		}`)
+Transform8.children[2] = Script16;
+
+TimeSensor21 = browser.currentScene.createNode("TimeSensor");
+TimeSensor21.DEF = "CL1";
+TimeSensor21.cycleInterval = 3;
+TimeSensor21.loop = True;
+Transform8.children[3] = TimeSensor21;
+
+ROUTE22 = browser.currentScene.createNode("ROUTE");
+ROUTE22.fromNode = "CL1";
+ROUTE22.fromField = "cycleTime";
+ROUTE22.toNode = "MB1";
+ROUTE22.toField = "set_location";
+Transform8.children[4] = ROUTE22;
+
+ROUTE23 = browser.currentScene.createNode("ROUTE");
+ROUTE23.fromNode = "CL1";
+ROUTE23.fromField = "fraction_changed";
+ROUTE23.toNode = "PI1";
+ROUTE23.toField = "set_fraction";
+Transform8.children[5] = ROUTE23;
+
+ROUTE24 = browser.currentScene.createNode("ROUTE");
+ROUTE24.fromNode = "MB1";
+ROUTE24.fromField = "keyValue";
+ROUTE24.toNode = "PI1";
+ROUTE24.toField = "keyValue";
+Transform8.children[6] = ROUTE24;
+
+ROUTE25 = browser.currentScene.createNode("ROUTE");
+ROUTE25.fromNode = "PI1";
+ROUTE25.fromField = "value_changed";
+ROUTE25.toNode = "node";
+ROUTE25.toField = "set_translation";
+Transform8.children[7] = ROUTE25;
+
+ProtoBody7.children = [];
+
+ProtoBody7.children[0] = Transform8;
+
+ProtoDeclare4.protoBody = ProtoBody7;
+
+browser.currentScene.children[2] = ProtoDeclare4;
+
+ProtoDeclare26 = browser.currentScene.createNode("ProtoDeclare");
+ProtoDeclare26.name = "x3dconnector";
+ProtoInterface27 = browser.currentScene.createNode("ProtoInterface");
+field28 = browser.currentScene.createNode("field");
+field28.name = "startnode";
+field28.accessType = "initializeOnly";
+field28.type = "SFNode";
+ProtoInterface27.field = [];
+
+ProtoInterface27.field[0] = field28;
+
+field29 = browser.currentScene.createNode("field");
+field29.name = "endnode";
+field29.accessType = "initializeOnly";
+field29.type = "SFNode";
+ProtoInterface27.field[1] = field29;
+
+field30 = browser.currentScene.createNode("field");
+field30.name = "set_startpoint";
+field30.accessType = "inputOnly";
+field30.type = "SFVec3f";
+ProtoInterface27.field[2] = field30;
+
+field31 = browser.currentScene.createNode("field");
+field31.name = "set_endpoint";
+field31.accessType = "inputOnly";
+field31.type = "SFVec3f";
+ProtoInterface27.field[3] = field31;
+
+ProtoDeclare26.protoInterface = ProtoInterface27;
+
+ProtoBody32 = browser.currentScene.createNode("ProtoBody");
+Group33 = browser.currentScene.createNode("Group");
+Transform34 = browser.currentScene.createNode("Transform");
+Transform34.DEF = "trans";
+Transform35 = browser.currentScene.createNode("Transform");
+Transform35.DEF = "rotscale";
+Shape36 = browser.currentScene.createNode("Shape");
+Appearance37 = browser.currentScene.createNode("Appearance");
+Material38 = browser.currentScene.createNode("Material");
+Material38.diffuseColor = [0.2,0.7,0.7];
+Material38.transparency = 0.5;
+Appearance37.material = Material38;
+
+Shape36.appearance = Appearance37;
+
+Cylinder39 = browser.currentScene.createNode("Cylinder");
+Cylinder39.radius = 0.05;
+Shape36.geometry = Cylinder39;
+
+Transform35.children = [];
+
+Transform35.children[0] = Shape36;
+
+Transform34.children = [];
+
+Transform34.children[0] = Transform35;
+
+Group33.children = [];
+
+Group33.children[0] = Transform34;
+
+Script40 = browser.currentScene.createNode("Script");
+Script40.DEF = "S1";
+field41 = browser.currentScene.createNode("field");
+field41.name = "startnode";
+field41.accessType = "initializeOnly";
+field41.type = "SFNode";
+Script40.field = [];
+
+Script40.field[0] = field41;
+
+field42 = browser.currentScene.createNode("field");
+field42.name = "endnode";
+field42.accessType = "initializeOnly";
+field42.type = "SFNode";
+Script40.field[1] = field42;
+
+field43 = browser.currentScene.createNode("field");
+field43.name = "position";
+field43.accessType = "inputOutput";
+field43.type = "SFNode";
+Transform44 = browser.currentScene.createNode("Transform");
+Transform44.USE = "trans";
+field43.children = [];
+
+field43.children[0] = Transform44;
+
+Script40.field[2] = field43;
+
+field45 = browser.currentScene.createNode("field");
+field45.name = "rotscale";
+field45.accessType = "inputOutput";
+field45.type = "SFNode";
+Transform46 = browser.currentScene.createNode("Transform");
+Transform46.USE = "rotscale";
+field45.children = [];
+
+field45.children[0] = Transform46;
+
+Script40.field[3] = field45;
+
+field47 = browser.currentScene.createNode("field");
+field47.name = "set_startpoint";
+field47.accessType = "inputOnly";
+field47.type = "SFVec3f";
+Script40.field[4] = field47;
+
+field48 = browser.currentScene.createNode("field");
+field48.name = "set_endpoint";
+field48.accessType = "inputOnly";
+field48.type = "SFVec3f";
+Script40.field[5] = field48;
+
+IS49 = browser.currentScene.createNode("IS");
+connect50 = browser.currentScene.createNode("connect");
+connect50.nodeField = "startnode";
+connect50.protoField = "startnode";
+IS49.connect = [];
+
+IS49.connect[0] = connect50;
+
+connect51 = browser.currentScene.createNode("connect");
+connect51.nodeField = "endnode";
+connect51.protoField = "endnode";
+IS49.connect[1] = connect51;
+
+connect52 = browser.currentScene.createNode("connect");
+connect52.nodeField = "set_startpoint";
+connect52.protoField = "set_startpoint";
+IS49.connect[2] = connect52;
+
+connect53 = browser.currentScene.createNode("connect");
+connect53.nodeField = "set_endpoint";
+connect53.protoField = "set_endpoint";
+IS49.connect[3] = connect53;
+
+Script40.iS = IS49;
+
+
+Script40.setSourceCode(`ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -121,48 +328,181 @@ var ProtoInstance12 = null;
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
-"        }")))))
-        .addChild(ProtoInstance0 = new ProtoInstance().setName("point").setDEF("G1"))
-        .addChild(ProtoInstance1 = new ProtoInstance().setName("point").setDEF("G2"))
-        .addChild(ProtoInstance2 = new ProtoInstance().setName("point").setDEF("G3"))
-        .addChild(ProtoInstance3 = new ProtoInstance().setName("point").setDEF("G4"))
-        .addChild(ProtoInstance4 = new ProtoInstance().setName("x3dconnector").setDEF("connector1"))
-        .addChild(ProtoInstance7 = new ProtoInstance().setName("x3dconnector").setDEF("connector2"))
-        .addChild(ProtoInstance10 = new ProtoInstance().setName("x3dconnector").setDEF("connector3"))
-        .addChild(new ROUTE().setFromNode("G1").setFromField("translation").setToNode("connector1").setToField("set_startpoint"))
-        .addChild(new ROUTE().setFromNode("G2").setFromField("translation").setToNode("connector1").setToField("set_endpoint"))
-        .addChild(new ROUTE().setFromNode("G1").setFromField("translation").setToNode("connector2").setToField("set_startpoint"))
-        .addChild(new ROUTE().setFromNode("G3").setFromField("translation").setToNode("connector2").setToField("set_endpoint"))
-        .addChild(new ROUTE().setFromNode("G1").setFromField("translation").setToNode("connector3").setToField("set_startpoint"))
-        .addChild(new ROUTE().setFromNode("G4").setFromField("translation").setToNode("connector3").setToField("set_endpoint")))      ;
-ProtoInstance4
-          .addFieldValue(new fieldValue().setName("startnode")
-            .addChild(ProtoInstance5 = new ProtoInstance().setUSE("G1")));
-ProtoInstance4
-          .addFieldValue(new fieldValue().setName("endnode")
-            .addChild(ProtoInstance6 = new ProtoInstance().setUSE("G2")));
-ProtoInstance4
-          .addFieldValue(new fieldValue().setName("set_startpoint"));
-ProtoInstance4
-          .addFieldValue(new fieldValue().setName("set_endpoint"));
-ProtoInstance7
-          .addFieldValue(new fieldValue().setName("startnode")
-            .addChild(ProtoInstance8 = new ProtoInstance().setUSE("G1")));
-ProtoInstance7
-          .addFieldValue(new fieldValue().setName("endnode")
-            .addChild(ProtoInstance9 = new ProtoInstance().setUSE("G3")));
-ProtoInstance7
-          .addFieldValue(new fieldValue().setName("set_startpoint"));
-ProtoInstance7
-          .addFieldValue(new fieldValue().setName("set_endpoint"));
-ProtoInstance10
-          .addFieldValue(new fieldValue().setName("startnode")
-            .addChild(ProtoInstance11 = new ProtoInstance().setUSE("G1")));
-ProtoInstance10
-          .addFieldValue(new fieldValue().setName("endnode")
-            .addChild(ProtoInstance12 = new ProtoInstance().setUSE("G4")));
-ProtoInstance10
-          .addFieldValue(new fieldValue().setName("set_startpoint"));
-ProtoInstance10
-          .addFieldValue(new fieldValue().setName("set_endpoint"));
-    X3D0.toFileX3D("../data/arc.new.x3d");
+"        }`)
+Group33.children[1] = Script40;
+
+ProtoBody32.children = [];
+
+ProtoBody32.children[0] = Group33;
+
+ProtoDeclare26.protoBody = ProtoBody32;
+
+browser.currentScene.children[3] = ProtoDeclare26;
+
+ProtoInstance54 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance54.name = "point";
+ProtoInstance54.DEF = "G1";
+browser.currentScene.children[4] = ProtoInstance54;
+
+ProtoInstance55 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance55.name = "point";
+ProtoInstance55.DEF = "G2";
+browser.currentScene.children[5] = ProtoInstance55;
+
+ProtoInstance56 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance56.name = "point";
+ProtoInstance56.DEF = "G3";
+browser.currentScene.children[6] = ProtoInstance56;
+
+ProtoInstance57 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance57.name = "point";
+ProtoInstance57.DEF = "G4";
+browser.currentScene.children[7] = ProtoInstance57;
+
+ProtoInstance58 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance58.name = "x3dconnector";
+ProtoInstance58.DEF = "connector1";
+fieldValue59 = browser.currentScene.createNode("fieldValue");
+fieldValue59.name = "startnode";
+ProtoInstance60 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance60.USE = "G1";
+fieldValue59.children = [];
+
+fieldValue59.children[0] = ProtoInstance60;
+
+ProtoInstance58.fieldValue = [];
+
+ProtoInstance58.fieldValue[0] = fieldValue59;
+
+fieldValue61 = browser.currentScene.createNode("fieldValue");
+fieldValue61.name = "endnode";
+ProtoInstance62 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance62.USE = "G2";
+fieldValue61.children = [];
+
+fieldValue61.children[0] = ProtoInstance62;
+
+ProtoInstance58.fieldValue[1] = fieldValue61;
+
+fieldValue63 = browser.currentScene.createNode("fieldValue");
+fieldValue63.name = "set_startpoint";
+ProtoInstance58.fieldValue[2] = fieldValue63;
+
+fieldValue64 = browser.currentScene.createNode("fieldValue");
+fieldValue64.name = "set_endpoint";
+ProtoInstance58.fieldValue[3] = fieldValue64;
+
+browser.currentScene.children[8] = ProtoInstance58;
+
+ProtoInstance65 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance65.name = "x3dconnector";
+ProtoInstance65.DEF = "connector2";
+fieldValue66 = browser.currentScene.createNode("fieldValue");
+fieldValue66.name = "startnode";
+ProtoInstance67 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance67.USE = "G1";
+fieldValue66.children = [];
+
+fieldValue66.children[0] = ProtoInstance67;
+
+ProtoInstance65.fieldValue = [];
+
+ProtoInstance65.fieldValue[0] = fieldValue66;
+
+fieldValue68 = browser.currentScene.createNode("fieldValue");
+fieldValue68.name = "endnode";
+ProtoInstance69 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance69.USE = "G3";
+fieldValue68.children = [];
+
+fieldValue68.children[0] = ProtoInstance69;
+
+ProtoInstance65.fieldValue[1] = fieldValue68;
+
+fieldValue70 = browser.currentScene.createNode("fieldValue");
+fieldValue70.name = "set_startpoint";
+ProtoInstance65.fieldValue[2] = fieldValue70;
+
+fieldValue71 = browser.currentScene.createNode("fieldValue");
+fieldValue71.name = "set_endpoint";
+ProtoInstance65.fieldValue[3] = fieldValue71;
+
+browser.currentScene.children[9] = ProtoInstance65;
+
+ProtoInstance72 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance72.name = "x3dconnector";
+ProtoInstance72.DEF = "connector3";
+fieldValue73 = browser.currentScene.createNode("fieldValue");
+fieldValue73.name = "startnode";
+ProtoInstance74 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance74.USE = "G1";
+fieldValue73.children = [];
+
+fieldValue73.children[0] = ProtoInstance74;
+
+ProtoInstance72.fieldValue = [];
+
+ProtoInstance72.fieldValue[0] = fieldValue73;
+
+fieldValue75 = browser.currentScene.createNode("fieldValue");
+fieldValue75.name = "endnode";
+ProtoInstance76 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance76.USE = "G4";
+fieldValue75.children = [];
+
+fieldValue75.children[0] = ProtoInstance76;
+
+ProtoInstance72.fieldValue[1] = fieldValue75;
+
+fieldValue77 = browser.currentScene.createNode("fieldValue");
+fieldValue77.name = "set_startpoint";
+ProtoInstance72.fieldValue[2] = fieldValue77;
+
+fieldValue78 = browser.currentScene.createNode("fieldValue");
+fieldValue78.name = "set_endpoint";
+ProtoInstance72.fieldValue[3] = fieldValue78;
+
+browser.currentScene.children[10] = ProtoInstance72;
+
+ROUTE79 = browser.currentScene.createNode("ROUTE");
+ROUTE79.fromNode = "G1";
+ROUTE79.fromField = "translation";
+ROUTE79.toNode = "connector1";
+ROUTE79.toField = "set_startpoint";
+browser.currentScene.children[11] = ROUTE79;
+
+ROUTE80 = browser.currentScene.createNode("ROUTE");
+ROUTE80.fromNode = "G2";
+ROUTE80.fromField = "translation";
+ROUTE80.toNode = "connector1";
+ROUTE80.toField = "set_endpoint";
+browser.currentScene.children[12] = ROUTE80;
+
+ROUTE81 = browser.currentScene.createNode("ROUTE");
+ROUTE81.fromNode = "G1";
+ROUTE81.fromField = "translation";
+ROUTE81.toNode = "connector2";
+ROUTE81.toField = "set_startpoint";
+browser.currentScene.children[13] = ROUTE81;
+
+ROUTE82 = browser.currentScene.createNode("ROUTE");
+ROUTE82.fromNode = "G3";
+ROUTE82.fromField = "translation";
+ROUTE82.toNode = "connector2";
+ROUTE82.toField = "set_endpoint";
+browser.currentScene.children[14] = ROUTE82;
+
+ROUTE83 = browser.currentScene.createNode("ROUTE");
+ROUTE83.fromNode = "G1";
+ROUTE83.fromField = "translation";
+ROUTE83.toNode = "connector3";
+ROUTE83.toField = "set_startpoint";
+browser.currentScene.children[15] = ROUTE83;
+
+ROUTE84 = browser.currentScene.createNode("ROUTE");
+ROUTE84.fromNode = "G4";
+ROUTE84.fromField = "translation";
+ROUTE84.toNode = "connector3";
+ROUTE84.toField = "set_endpoint";
+browser.currentScene.children[16] = ROUTE84;
+

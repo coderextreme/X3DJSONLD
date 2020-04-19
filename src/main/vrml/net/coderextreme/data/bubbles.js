@@ -1,59 +1,255 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addComponent(new component().setName("EnvironmentalEffects").setLevel(1))
-        .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
-        .addComponent(new component().setName("Shaders").setLevel(1))
-        .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("bubbles.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubbles.x3d"))
-        .addMeta(new meta().setName("description").setContent("not sure what this is")))
-      .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(java.newArray("java.lang.String", ["EXAMINE"])))
-        .addChild(new Viewpoint().setDEF("Tour").setDescription("Tour Views"))
-        .addChild(new Viewpoint().setPosition(java.newArray("float", [0,0,4])).setDescription("sphere in road"))
-        .addChild(new Background().setBackUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"])))
-        .addChild(new Transform().setDEF("Rose01")
-          .addChild(new Shape()
-            .setGeometry(new Sphere())
-            .setAppearance(new Appearance().setDEF("_01_-_Default")
-              .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0.7,0.7,0.7])).setSpecularColor(java.newArray("float", [0.5,0.5,0.5])))
-              .setTexture(new ComposedCubeMapTexture()
-                .setBack(new ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"])))
-                .setBottom(new ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"])))
-                .setFront(new ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"])))
-                .setLeft(new ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"])))
-                .setRight(new ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"])))
-                .setTop(new ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]))))
-              .addShaders(new ComposedShader().setDEF("x_ite").setLanguage("GLSL")
-                .addField(new field().setType(field.TYPE_SFINT32).setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("bias").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                .addParts(new ShaderPart().setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"])))
-                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(java.newArray("java.lang.String", ["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]))))
-              .addShaders(new ComposedShader().setDEF("x3dom").setLanguage("GLSL")
-                .addField(new field().setType(field.TYPE_SFINT32).setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("bias").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                .addParts(new ShaderPart().setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])))
-                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(java.newArray("java.lang.String", ["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])))))))
-        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5).setLoop(true))
-        .addChild(new PositionInterpolator().setDEF("TourPosition").setKey(java.newArray("float", [0,1])).setKeyValue(java.newArray("float", [0,0,10,0,0,-10])))
-        .addChild(new OrientationInterpolator().setDEF("TourOrientation").setKey(java.newArray("float", [0,1])).setKeyValue(java.newArray("float", [0,1,0,0,0,1,0,3.1416])))
-        .addChild(new Script().setDEF("RandomTourTime")
-          .addField(new field().setType(field.TYPE_SFTIME).setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("lastKey").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-          .addField(new field().setType(field.TYPE_MFROTATION).setName("orientations").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0"))
-          .addField(new field().setType(field.TYPE_MFVEC3F).setName("positions").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10"))
-          .addField(new field().setType(field.TYPE_MFVEC3F).setName("position_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addField(new field().setType(field.TYPE_MFROTATION).setName("set_orientation").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field().setType(field.TYPE_MFROTATION).setName("orientation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo2.type = ["EXAMINE"];
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = NavigationInfo2;
+
+Viewpoint3 = browser.currentScene.createNode("Viewpoint");
+Viewpoint3.DEF = "Tour";
+Viewpoint3.description = "Tour Views";
+browser.currentScene.children[1] = Viewpoint3;
+
+Viewpoint4 = browser.currentScene.createNode("Viewpoint");
+Viewpoint4.position = [0,0,4];
+Viewpoint4.description = "sphere in road";
+browser.currentScene.children[2] = Viewpoint4;
+
+Background5 = browser.currentScene.createNode("Background");
+Background5.backUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"];
+Background5.bottomUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"];
+Background5.frontUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"];
+Background5.leftUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"];
+Background5.rightUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"];
+Background5.topUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"];
+browser.currentScene.children[3] = Background5;
+
+Transform6 = browser.currentScene.createNode("Transform");
+Transform6.DEF = "Rose01";
+Shape7 = browser.currentScene.createNode("Shape");
+Sphere8 = browser.currentScene.createNode("Sphere");
+Shape7.geometry = Sphere8;
+
+Appearance9 = browser.currentScene.createNode("Appearance");
+Appearance9.DEF = "_01_-_Default";
+Material10 = browser.currentScene.createNode("Material");
+Material10.diffuseColor = [0.7,0.7,0.7];
+Material10.specularColor = [0.5,0.5,0.5];
+Appearance9.material = Material10;
+
+ComposedCubeMapTexture11 = browser.currentScene.createNode("ComposedCubeMapTexture");
+ImageTexture12 = browser.currentScene.createNode("ImageTexture");
+ImageTexture12.url = ["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"];
+ComposedCubeMapTexture11.top = ImageTexture12;
+
+ImageTexture13 = browser.currentScene.createNode("ImageTexture");
+ImageTexture13.url = ["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"];
+ComposedCubeMapTexture11.top = ImageTexture13;
+
+ImageTexture14 = browser.currentScene.createNode("ImageTexture");
+ImageTexture14.url = ["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"];
+ComposedCubeMapTexture11.top = ImageTexture14;
+
+ImageTexture15 = browser.currentScene.createNode("ImageTexture");
+ImageTexture15.url = ["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"];
+ComposedCubeMapTexture11.top = ImageTexture15;
+
+ImageTexture16 = browser.currentScene.createNode("ImageTexture");
+ImageTexture16.url = ["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"];
+ComposedCubeMapTexture11.top = ImageTexture16;
+
+ImageTexture17 = browser.currentScene.createNode("ImageTexture");
+ImageTexture17.url = ["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"];
+ComposedCubeMapTexture11.top = ImageTexture17;
+
+Appearance9.texture = ComposedCubeMapTexture11;
+
+ComposedShader18 = browser.currentScene.createNode("ComposedShader");
+ComposedShader18.DEF = "x_ite";
+ComposedShader18.language = "GLSL";
+field19 = browser.currentScene.createNode("field");
+field19.name = "cube";
+field19.accessType = "inputOutput";
+field19.type = "SFInt32";
+field19.value = "0";
+ComposedShader18.field = [];
+
+ComposedShader18.field[0] = field19;
+
+field20 = browser.currentScene.createNode("field");
+field20.name = "chromaticDispertion";
+field20.accessType = "inputOutput";
+field20.type = "SFVec3f";
+field20.value = "0.98 1 1.033";
+ComposedShader18.field[1] = field20;
+
+field21 = browser.currentScene.createNode("field");
+field21.name = "bias";
+field21.accessType = "inputOutput";
+field21.type = "SFFloat";
+field21.value = "0.5";
+ComposedShader18.field[2] = field21;
+
+field22 = browser.currentScene.createNode("field");
+field22.name = "scale";
+field22.accessType = "inputOutput";
+field22.type = "SFFloat";
+field22.value = "0.5";
+ComposedShader18.field[3] = field22;
+
+field23 = browser.currentScene.createNode("field");
+field23.name = "power";
+field23.accessType = "inputOutput";
+field23.type = "SFFloat";
+field23.value = "2";
+ComposedShader18.field[4] = field23;
+
+ShaderPart24 = browser.currentScene.createNode("ShaderPart");
+ShaderPart24.url = ["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"];
+ShaderPart24.type = "VERTEX";
+ComposedShader18.parts[5] = ShaderPart24;
+
+ShaderPart25 = browser.currentScene.createNode("ShaderPart");
+ShaderPart25.url = ["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"];
+ShaderPart25.type = "FRAGMENT";
+ComposedShader18.parts[6] = ShaderPart25;
+
+Appearance9.shaders = [];
+
+Appearance9.shaders[0] = ComposedShader18;
+
+ComposedShader26 = browser.currentScene.createNode("ComposedShader");
+ComposedShader26.DEF = "x3dom";
+ComposedShader26.language = "GLSL";
+field27 = browser.currentScene.createNode("field");
+field27.name = "cube";
+field27.accessType = "inputOutput";
+field27.type = "SFInt32";
+field27.value = "0";
+ComposedShader26.field = [];
+
+ComposedShader26.field[0] = field27;
+
+field28 = browser.currentScene.createNode("field");
+field28.name = "chromaticDispertion";
+field28.accessType = "inputOutput";
+field28.type = "SFVec3f";
+field28.value = "0.98 1 1.033";
+ComposedShader26.field[1] = field28;
+
+field29 = browser.currentScene.createNode("field");
+field29.name = "bias";
+field29.accessType = "inputOutput";
+field29.type = "SFFloat";
+field29.value = "0.5";
+ComposedShader26.field[2] = field29;
+
+field30 = browser.currentScene.createNode("field");
+field30.name = "scale";
+field30.accessType = "inputOutput";
+field30.type = "SFFloat";
+field30.value = "0.5";
+ComposedShader26.field[3] = field30;
+
+field31 = browser.currentScene.createNode("field");
+field31.name = "power";
+field31.accessType = "inputOutput";
+field31.type = "SFFloat";
+field31.value = "2";
+ComposedShader26.field[4] = field31;
+
+ShaderPart32 = browser.currentScene.createNode("ShaderPart");
+ShaderPart32.url = ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"];
+ShaderPart32.type = "VERTEX";
+ComposedShader26.parts[5] = ShaderPart32;
+
+ShaderPart33 = browser.currentScene.createNode("ShaderPart");
+ShaderPart33.url = ["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"];
+ShaderPart33.type = "FRAGMENT";
+ComposedShader26.parts[6] = ShaderPart33;
+
+Appearance9.shaders[1] = ComposedShader26;
+
+Shape7.appearance = Appearance9;
+
+Transform6.children = [];
+
+Transform6.children[0] = Shape7;
+
+browser.currentScene.children[4] = Transform6;
+
+TimeSensor34 = browser.currentScene.createNode("TimeSensor");
+TimeSensor34.DEF = "TourTime";
+TimeSensor34.cycleInterval = 5;
+TimeSensor34.loop = True;
+browser.currentScene.children[5] = TimeSensor34;
+
+PositionInterpolator35 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator35.DEF = "TourPosition";
+PositionInterpolator35.key = [0,1];
+PositionInterpolator35.keyValue = [0,0,10,0,0,-10];
+browser.currentScene.children[6] = PositionInterpolator35;
+
+OrientationInterpolator36 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator36.DEF = "TourOrientation";
+OrientationInterpolator36.key = [0,1];
+OrientationInterpolator36.keyValue = [0,1,0,0,0,1,0,3.1416];
+browser.currentScene.children[7] = OrientationInterpolator36;
+
+Script37 = browser.currentScene.createNode("Script");
+Script37.DEF = "RandomTourTime";
+field38 = browser.currentScene.createNode("field");
+field38.name = "set_cycle";
+field38.accessType = "inputOnly";
+field38.type = "SFTime";
+Script37.field = [];
+
+Script37.field[0] = field38;
+
+field39 = browser.currentScene.createNode("field");
+field39.name = "lastKey";
+field39.accessType = "inputOutput";
+field39.type = "SFFloat";
+field39.value = "0";
+Script37.field[1] = field39;
+
+field40 = browser.currentScene.createNode("field");
+field40.name = "orientations";
+field40.accessType = "inputOutput";
+field40.type = "MFRotation";
+field40.value = "0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0";
+Script37.field[2] = field40;
+
+field41 = browser.currentScene.createNode("field");
+field41.name = "positions";
+field41.accessType = "inputOutput";
+field41.type = "MFVec3f";
+field41.value = "0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10";
+Script37.field[3] = field41;
+
+field42 = browser.currentScene.createNode("field");
+field42.name = "position_changed";
+field42.accessType = "outputOnly";
+field42.type = "MFVec3f";
+Script37.field[4] = field42;
+
+field43 = browser.currentScene.createNode("field");
+field43.name = "set_orientation";
+field43.accessType = "inputOnly";
+field43.type = "MFRotation";
+Script37.field[5] = field43;
+
+field44 = browser.currentScene.createNode("field");
+field44.name = "orientation_changed";
+field44.accessType = "outputOnly";
+field44.type = "MFRotation";
+Script37.field[6] = field44;
+
+
+Script37.setSourceCode(`ecmascript:\n"+
 "               function set_cycle(value) {\n"+
 "	       	   try {\n"+
 "                        var ov = lastKey;\n"+
@@ -74,12 +270,55 @@
 "				alert(e);\n"+
 "			}\n"+
 "		   }\n"+
-"               }"))
-        .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime_changed").setToNode("RandomTourTime").setToField("set_cycle"))
-        .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("orientation_changed").setToNode("TourOrientation").setToField("set_keyValue"))
-        .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("position_changed").setToNode("TourPosition").setToField("set_keyValue"))
-        .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))
-        .addChild(new ROUTE().setFromNode("TourOrientation").setFromField("value_changed").setToNode("Tour").setToField("set_orientation"))
-        .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
-        .addChild(new ROUTE().setFromNode("TourPosition").setFromField("value_changed").setToNode("Tour").setToField("set_position")))      ;
-    X3D0.toFileX3D("../data/bubbles.new.x3d");
+"               }`)
+browser.currentScene.children[8] = Script37;
+
+ROUTE45 = browser.currentScene.createNode("ROUTE");
+ROUTE45.fromNode = "TourTime";
+ROUTE45.fromField = "cycleTime_changed";
+ROUTE45.toNode = "RandomTourTime";
+ROUTE45.toField = "set_cycle";
+browser.currentScene.children[9] = ROUTE45;
+
+ROUTE46 = browser.currentScene.createNode("ROUTE");
+ROUTE46.fromNode = "RandomTourTime";
+ROUTE46.fromField = "orientation_changed";
+ROUTE46.toNode = "TourOrientation";
+ROUTE46.toField = "set_keyValue";
+browser.currentScene.children[10] = ROUTE46;
+
+ROUTE47 = browser.currentScene.createNode("ROUTE");
+ROUTE47.fromNode = "RandomTourTime";
+ROUTE47.fromField = "position_changed";
+ROUTE47.toNode = "TourPosition";
+ROUTE47.toField = "set_keyValue";
+browser.currentScene.children[11] = ROUTE47;
+
+ROUTE48 = browser.currentScene.createNode("ROUTE");
+ROUTE48.fromNode = "TourTime";
+ROUTE48.fromField = "fraction_changed";
+ROUTE48.toNode = "TourOrientation";
+ROUTE48.toField = "set_fraction";
+browser.currentScene.children[12] = ROUTE48;
+
+ROUTE49 = browser.currentScene.createNode("ROUTE");
+ROUTE49.fromNode = "TourOrientation";
+ROUTE49.fromField = "value_changed";
+ROUTE49.toNode = "Tour";
+ROUTE49.toField = "set_orientation";
+browser.currentScene.children[13] = ROUTE49;
+
+ROUTE50 = browser.currentScene.createNode("ROUTE");
+ROUTE50.fromNode = "TourTime";
+ROUTE50.fromField = "fraction_changed";
+ROUTE50.toNode = "TourPosition";
+ROUTE50.toField = "set_fraction";
+browser.currentScene.children[14] = ROUTE50;
+
+ROUTE51 = browser.currentScene.createNode("ROUTE");
+ROUTE51.fromNode = "TourPosition";
+ROUTE51.fromField = "value_changed";
+ROUTE51.toNode = "Tour";
+ROUTE51.toField = "set_position";
+browser.currentScene.children[15] = ROUTE51;
+

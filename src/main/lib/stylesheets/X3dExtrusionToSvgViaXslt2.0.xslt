@@ -7,7 +7,7 @@
 	<meta name="authors" content="Oliver Tan, Murat Onder, Don Brutzman"/>
 	<meta name="created" content="17 March 2005"/>
 	<meta name="revised" content="27 March 2005"/>
-	<meta name="license" content="http://www.web3d.org/x3d/content/examples/license.html"/>
+	<meta name="license" content="https://www.web3d.org/x3d/content/examples/license.html"/>
 	<meta name="version" content="Version 1.0"/>
 	<meta name="reference" content="XSLT Cookbook by Sal Mangano"/>
 	<meta name="reference" content="XSLT 2.0 Programmer's Reference (Programmer to Programmer) by Michael Kay"/>

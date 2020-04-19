@@ -2,65 +2,65 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <meta content='BindingOperations.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
-    <meta content='Illustrate Viewpoint binding operations (in gory detail!) as described in Chapter 4 concepts. Scene design: a TimeSensor clock drives and IntegerSequencer for each t0/t1/etc. event, and a customized Script node sends bind/unbind events to the correct Viewpoint. Display the browser console to see occurrence of each event.' dir='' http_equiv='' lang='' name='description' scheme=''/>
-    <meta content='Don Brutzman' dir='' http_equiv='' lang='' name='creator' scheme=''/>
-    <meta content='5 January 2008' dir='' http_equiv='' lang='' name='created' scheme=''/>
-    <meta content='22 July 2013' dir='' http_equiv='' lang='' name='modified' scheme=''/>
-    <meta content='BindingOperations.console.txt' dir='' http_equiv='' lang='' name='reference' scheme=''/>
-    <meta content='BindingStackOperations.png' dir='' http_equiv='' lang='' name='reference' scheme=''/>
-    <meta content='X3D for Web Authors, Section 2.5.1, Figure 4.1' dir='' http_equiv='' lang='' name='reference' scheme=''/>
-    <meta content='http://X3dGraphics.com' dir='' http_equiv='' lang='' name='reference' scheme=''/>
-    <meta content='http://www.web3d.org/x3d/content/examples/X3dResources.html' dir='' http_equiv='' lang='' name='reference' scheme=''/>
-    <meta content='Copyright Don Brutzman and Leonard Daly 2007' dir='' http_equiv='' lang='' name='rights' scheme=''/>
-    <meta content='X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com' dir='' http_equiv='' lang='' name='subject' scheme=''/>
-    <meta content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter04ViewingNavigation/BindingOperations.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' name='generator' scheme=''/>
-    <meta content='../license.html' dir='' http_equiv='' lang='' name='license' scheme=''/>
+    <meta content='BindingOperations.x3d' name='title'/>
+    <meta content='Illustrate Viewpoint binding operations (in gory detail!) as described in Chapter 4 concepts. Scene design: a TimeSensor clock drives and IntegerSequencer for each t0/t1/etc. event, and a customized Script node sends bind/unbind events to the correct Viewpoint. Display the browser console to see occurrence of each event.' name='description'/>
+    <meta content='Don Brutzman' name='creator'/>
+    <meta content='5 January 2008' name='created'/>
+    <meta content='22 July 2013' name='modified'/>
+    <meta content='BindingOperations.console.txt' name='reference'/>
+    <meta content='BindingStackOperations.png' name='reference'/>
+    <meta content='X3D for Web Authors, Section 2.5.1, Figure 4.1' name='reference'/>
+    <meta content='http://X3dGraphics.com' name='reference'/>
+    <meta content='http://www.web3d.org/x3d/content/examples/X3dResources.html' name='reference'/>
+    <meta content='Copyright Don Brutzman and Leonard Daly 2007' name='rights'/>
+    <meta content='X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com' name='subject'/>
+    <meta content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter04ViewingNavigation/BindingOperations.x3d' name='identifier'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-    <Viewpoint DEF='View1' centerOfRotation='-6 0 0' class='' description='Viewpoint 1' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='-6 0 5' retainUserOffsets='false'/>
-    <Viewpoint DEF='View2' centerOfRotation='-2 0 0' class='' description='Viewpoint 2' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='-2 0 5' retainUserOffsets='false'/>
-    <Viewpoint DEF='View3' centerOfRotation='2 0 0' class='' description='Viewpoint 3' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='2 0 5' retainUserOffsets='false'/>
-    <Viewpoint DEF='View4' centerOfRotation='6 0 0' class='' description='Viewpoint 4' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='6 0 5' retainUserOffsets='false'/>
+    <Viewpoint DEF='View1' centerOfRotation='-6 0 0' description='Viewpoint 1' position='-6 0 5'/>
+    <Viewpoint DEF='View2' centerOfRotation='-2 0 0' description='Viewpoint 2' position='-2 0 5'/>
+    <Viewpoint DEF='View3' centerOfRotation='2 0 0' description='Viewpoint 3' position='2 0 5'/>
+    <Viewpoint DEF='View4' centerOfRotation='6 0 0' description='Viewpoint 4' position='6 0 5'/>
     <!-- Script initialization ought to first bind view5 below. -->
-    <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-      <Transform DEF='Text1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-6 0 0'>
-        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-          <Appearance class=''>
-            <Material ambientIntensity='0.2' class='' diffuseColor='1 0 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+    <Group>
+      <Transform DEF='Text1' translation='-6 0 0'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='1 0 0'/>
           </Appearance>
-          <Text class='' length='' maxExtent='0.0' solid='false' string='"View" "# 1"'>
-            <FontStyle DEF='CenterJustify' class='' family='"SERIF"' horizontal='true' justify='"MIDDLE" "BEGIN"' language='' leftToRight='true' size='1.0' spacing='1.0' style='PLAIN' topToBottom='true'/>
+          <Text string='"View" "# 1"'>
+            <FontStyle DEF='CenterJustify' family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
           </Text>
         </Shape>
       </Transform>
-      <Transform DEF='Text2' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='-2 0 0'>
-        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-          <Appearance class=''>
-            <Material ambientIntensity='0.2' class='' diffuseColor='0 1 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+      <Transform DEF='Text2' translation='-2 0 0'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='0 1 0'/>
           </Appearance>
-          <Text class='' length='' maxExtent='0.0' solid='false' string='"View" "# 2"'>
+          <Text string='"View" "# 2"'>
             <FontStyle USE='CenterJustify'/>
           </Text>
         </Shape>
       </Transform>
-      <Transform DEF='Text3' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='2 0 0'>
-        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-          <Appearance class=''>
-            <Material ambientIntensity='0.2' class='' diffuseColor='0 0 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+      <Transform DEF='Text3' translation='2 0 0'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='0 0 1'/>
           </Appearance>
-          <Text class='' length='' maxExtent='0.0' solid='false' string='"View" "# 3"'>
+          <Text string='"View" "# 3"'>
             <FontStyle USE='CenterJustify'/>
           </Text>
         </Shape>
       </Transform>
-      <Transform DEF='Text4' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='6 0 0'>
-        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-          <Appearance class=''>
-            <Material ambientIntensity='0.2' class='' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+      <Transform DEF='Text4' translation='6 0 0'>
+        <Shape>
+          <Appearance>
+            <Material/>
           </Appearance>
-          <Text class='' length='' maxExtent='0.0' solid='false' string='"View" "# 4"'>
+          <Text string='"View" "# 4"'>
             <FontStyle USE='CenterJustify'/>
           </Text>
         </Shape>
@@ -68,40 +68,40 @@
     </Group>
     <!-- The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9. -->
     <!-- It does not need to be studied in this chapter. -->
-    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 -3 8'>
+    <Transform translation='0 -3 8'>
       <!-- notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script. -->
-      <Viewpoint DEF='ClickToAnimateView' centerOfRotation='0 0 0' class='' description='Select animation sequence' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 7' retainUserOffsets='false'/>
-      <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-        <Appearance class=''>
-          <Material ambientIntensity='0.2' class='' diffuseColor='0.8 0.4 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+      <Viewpoint DEF='ClickToAnimateView' description='Select animation sequence' position='0 0 7'/>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='0.8 0.4 0'/>
         </Appearance>
-        <Text class='' length='' maxExtent='0.0' solid='false' string='"Click here to animate"'>
-          <FontStyle class='' family='"SERIF"' horizontal='true' justify='"MIDDLE" "BEGIN"' language='' leftToRight='true' size='1.0' spacing='1.0' style='PLAIN' topToBottom='true'/>
+        <Text string='"Click here to animate"'>
+          <FontStyle family='"SERIF"' justify='"MIDDLE" "BEGIN"'/>
         </Text>
       </Shape>
-      <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-        <Appearance class=''>
-          <Material ambientIntensity='0.2' class='' diffuseColor='0.8 0.8 0.8' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='1.0'/>
+      <Shape>
+        <Appearance>
+          <Material transparency='1.0'/>
         </Appearance>
-        <Box class='' size='7 1 0.02' solid='true'/>
+        <Box size='7 1 0.02'/>
       </Shape>
-      <TouchSensor DEF='TextTouchSensor' class='' description='Click to begin animating viewpoint selections' enabled='true'/>
-      <TimeSensor DEF='Clock' class='' cycleInterval='10.0' enabled='true' loop='false' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0'/>
+      <TouchSensor DEF='TextTouchSensor' description='Click to begin animating viewpoint selections'/>
+      <TimeSensor DEF='Clock' cycleInterval='10.0'/>
       <ROUTE fromField='touchTime' fromNode='TextTouchSensor' toField='set_startTime' toNode='Clock'/>
-      <IntegerSequencer DEF='TimingSequencer' class='' key='0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 1' keyValue='0 1 2 3 4 5 6 7 8 10'/>
+      <IntegerSequencer DEF='TimingSequencer' key='0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 1' keyValue='0 1 2 3 4 5 6 7 8 10'/>
       <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='TimingSequencer'/>
-      <Script DEF='BindingSequencerEngine' class='' directOutput='false' mustEvaluate='false' url=''>
-        <field name='set_timeEvent' accessType='inputOnly' appinfo='' documentation='' type='SFInt32' value=''/>
-        <field name='bindView1' accessType='outputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-        <field name='bindView2' accessType='outputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-        <field name='bindView3' accessType='outputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-        <field name='bindView4' accessType='outputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-        <field name='bindView5' accessType='outputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-        <field name='view1Bound' accessType='inputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-        <field name='view2Bound' accessType='inputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-        <field name='view3Bound' accessType='inputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-        <field name='view4Bound' accessType='inputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-        <field name='priorInputvalue' accessType='initializeOnly' appinfo='' documentation='' type='SFInt32' value='-1'/>
+      <Script DEF='BindingSequencerEngine'>
+        <field name='set_timeEvent' accessType='inputOnly' type='SFInt32'/>
+        <field name='bindView1' accessType='outputOnly' type='SFBool'/>
+        <field name='bindView2' accessType='outputOnly' type='SFBool'/>
+        <field name='bindView3' accessType='outputOnly' type='SFBool'/>
+        <field name='bindView4' accessType='outputOnly' type='SFBool'/>
+        <field name='bindView5' accessType='outputOnly' type='SFBool'/>
+        <field name='view1Bound' accessType='inputOnly' type='SFBool'/>
+        <field name='view2Bound' accessType='inputOnly' type='SFBool'/>
+        <field name='view3Bound' accessType='inputOnly' type='SFBool'/>
+        <field name='view4Bound' accessType='inputOnly' type='SFBool'/>
+        <field name='priorInputvalue' accessType='initializeOnly' type='SFInt32' value='-1'/>
 <![CDATA[
 ecmascript:
 

@@ -1,43 +1,150 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.2")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("CloudsProcedural4.x3d"))
-        .addMeta(new meta().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
-        .addMeta(new meta().setName("creator").setContent("Capt Darren W. Murphy"))
-        .addMeta(new meta().setName("created").setContent("1 November 2007"))
-        .addMeta(new meta().setName("modified").setContent("14 January 2014"))
-        .addMeta(new meta().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
-        .addMeta(new meta().setName("license").setContent("../../license.html"))
-        .addMeta(new meta().setName("TODO").setContent("fix links")))
-      .setScene(new Scene()
-        .addComments(new CommentsBlock("A png image file for the cloud texture must be designated in the ecmascript node."))
-        .addChild(new Viewpoint().setDescription("Main").setJump(false).setOrientation(java.newArray("float", [0,1,0,1.57])).setPosition(java.newArray("float", [50000,1000,42000])))
-        .addChild(new Viewpoint().setDescription("Light House Tower").setJump(false).setOrientation(java.newArray("float", [0,1,0,1.3])).setPosition(java.newArray("float", [45000,1290,44000])))
-        .addChild(new Viewpoint().setDescription("centerWest").setJump(false).setOrientation(java.newArray("float", [0,1,0,2.5])).setPosition(java.newArray("float", [48000,1000,20000])))
-        .addChild(new Background().setGroundColor(java.newArray("float", [0,0,1])).setSkyColor(java.newArray("float", [0,0,1])))
-        .addChild(new DirectionalLight().setAmbientIntensity(1).setDirection(java.newArray("float", [-1,0,0])).setGlobal(true))
-        .addChild(new Group().setDEF("Terrain")
-          .addChild(new Transform().setScale(java.newArray("float", [50,50,50])).setTranslation(java.newArray("float", [25000,0,25000]))
-            .addChild(new Inline().setUrl(java.newArray("java.lang.String", ["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"]))))
-          .addChild(new Transform().setRotation(java.newArray("float", [1,0,0,1.57])).setTranslation(java.newArray("float", [25000,0,25000]))
-            .addChild(new Shape()
-              .setGeometry(new Rectangle2D().setSize(java.newArray("float", [77000,55000])))
-              .setAppearance(new Appearance()
-                .setTexture(new ImageTexture().setUrl(java.newArray("java.lang.String", ["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"])))))))
-        .addChild(new Group().setDEF("Placemarks")
-          .addChild(new Transform().setScale(java.newArray("float", [50,50,50])).setTranslation(java.newArray("float", [45000,30,44000]))
-            .addChild(new Inline().setUrl(java.newArray("java.lang.String", ["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"])))))
-        .addChild(new Group().setDEF("Clouds")
-          .addChild(new Transform().setDEF("Cumulus"))
-          .addChild(new Transform().setDEF("Cirrus"))
-          .addChild(new Transform().setDEF("Fog"))
-          .addChild(new Script().setDEF("PixelScript").setDirectOutput(true)
-            .addField(new field().setType(field.TYPE_SFNODE).setName("Cumulus").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-              .addChild(new Transform().setUSE("Cumulus")))
-            .addField(new field().setType(field.TYPE_SFNODE).setName("Cirrus").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-              .addChild(new Transform().setUSE("Cirrus")))
-            .addField(new field().setType(field.TYPE_SFNODE).setName("Fog").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-            .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.2";
+//A png image file for the cloud texture must be designated in the ecmascript node.
+Viewpoint2 = browser.currentScene.createNode("Viewpoint");
+Viewpoint2.description = "Main";
+Viewpoint2.jump = False;
+Viewpoint2.orientation = [0,1,0,1.57];
+Viewpoint2.position = [50000,1000,42000];
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = Viewpoint2;
+
+Viewpoint3 = browser.currentScene.createNode("Viewpoint");
+Viewpoint3.description = "Light House Tower";
+Viewpoint3.jump = False;
+Viewpoint3.orientation = [0,1,0,1.3];
+Viewpoint3.position = [45000,1290,44000];
+browser.currentScene.children[1] = Viewpoint3;
+
+Viewpoint4 = browser.currentScene.createNode("Viewpoint");
+Viewpoint4.description = "centerWest";
+Viewpoint4.jump = False;
+Viewpoint4.orientation = [0,1,0,2.5];
+Viewpoint4.position = [48000,1000,20000];
+browser.currentScene.children[2] = Viewpoint4;
+
+Background5 = browser.currentScene.createNode("Background");
+Background5.groundColor = [0,0,1];
+Background5.skyColor = [0,0,1];
+browser.currentScene.children[3] = Background5;
+
+DirectionalLight6 = browser.currentScene.createNode("DirectionalLight");
+DirectionalLight6.ambientIntensity = 1;
+DirectionalLight6.direction = [-1,0,0];
+DirectionalLight6.global = True;
+browser.currentScene.children[4] = DirectionalLight6;
+
+Group7 = browser.currentScene.createNode("Group");
+Group7.DEF = "Terrain";
+Transform8 = browser.currentScene.createNode("Transform");
+Transform8.scale = [50,50,50];
+Transform8.translation = [25000,0,25000];
+Inline9 = browser.currentScene.createNode("Inline");
+Inline9.url = ["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"];
+Transform8.children = [];
+
+Transform8.children[0] = Inline9;
+
+Group7.children = [];
+
+Group7.children[0] = Transform8;
+
+Transform10 = browser.currentScene.createNode("Transform");
+Transform10.rotation = [1,0,0,1.57];
+Transform10.translation = [25000,0,25000];
+Shape11 = browser.currentScene.createNode("Shape");
+Rectangle2D12 = browser.currentScene.createNode("Rectangle2D");
+Rectangle2D12.size = [77000,55000];
+Shape11.geometry = Rectangle2D12;
+
+Appearance13 = browser.currentScene.createNode("Appearance");
+ImageTexture14 = browser.currentScene.createNode("ImageTexture");
+ImageTexture14.url = ["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"];
+Appearance13.texture = ImageTexture14;
+
+Shape11.appearance = Appearance13;
+
+Transform10.children = [];
+
+Transform10.children[0] = Shape11;
+
+Group7.children[1] = Transform10;
+
+browser.currentScene.children[5] = Group7;
+
+Group15 = browser.currentScene.createNode("Group");
+Group15.DEF = "Placemarks";
+Transform16 = browser.currentScene.createNode("Transform");
+Transform16.scale = [50,50,50];
+Transform16.translation = [45000,30,44000];
+Inline17 = browser.currentScene.createNode("Inline");
+Inline17.url = ["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"];
+Transform16.children = [];
+
+Transform16.children[0] = Inline17;
+
+Group15.children = [];
+
+Group15.children[0] = Transform16;
+
+browser.currentScene.children[6] = Group15;
+
+Group18 = browser.currentScene.createNode("Group");
+Group18.DEF = "Clouds";
+Transform19 = browser.currentScene.createNode("Transform");
+Transform19.DEF = "Cumulus";
+Group18.children = [];
+
+Group18.children[0] = Transform19;
+
+Transform20 = browser.currentScene.createNode("Transform");
+Transform20.DEF = "Cirrus";
+Group18.children[1] = Transform20;
+
+Transform21 = browser.currentScene.createNode("Transform");
+Transform21.DEF = "Fog";
+Group18.children[2] = Transform21;
+
+Script22 = browser.currentScene.createNode("Script");
+Script22.DEF = "PixelScript";
+Script22.directOutput = True;
+field23 = browser.currentScene.createNode("field");
+field23.name = "Cumulus";
+field23.accessType = "initializeOnly";
+field23.type = "SFNode";
+Transform24 = browser.currentScene.createNode("Transform");
+Transform24.USE = "Cumulus";
+field23.children = [];
+
+field23.children[0] = Transform24;
+
+Script22.field = [];
+
+Script22.field[0] = field23;
+
+field25 = browser.currentScene.createNode("field");
+field25.name = "Cirrus";
+field25.accessType = "initializeOnly";
+field25.type = "SFNode";
+Transform26 = browser.currentScene.createNode("Transform");
+Transform26.USE = "Cirrus";
+field25.children = [];
+
+field25.children[0] = Transform26;
+
+Script22.field[1] = field25;
+
+field27 = browser.currentScene.createNode("field");
+field27.name = "Fog";
+field27.accessType = "initializeOnly";
+field27.type = "SFNode";
+Script22.field[2] = field27;
+
+
+Script22.setSourceCode(`ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+
@@ -417,6 +524,15 @@
 "cumulus();\n"+
 "\n"+
 "cirrus();\n"+
-"}"))
-          .addChild(new DirectionalLight().setAmbientIntensity(1).setColor(java.newArray("float", [1,0,0])).setDirection(java.newArray("float", [-1,-1,0])).setGlobal(true))))      ;
-    X3D0.toFileX3D("../data/CloudsProcedural4.new.x3d");
+"}`)
+Group18.children[3] = Script22;
+
+DirectionalLight28 = browser.currentScene.createNode("DirectionalLight");
+DirectionalLight28.ambientIntensity = 1;
+DirectionalLight28.color = [1,0,0];
+DirectionalLight28.direction = [-1,-1,0];
+DirectionalLight28.global = True;
+Group18.children[4] = DirectionalLight28;
+
+browser.currentScene.children[7] = Group18;
+

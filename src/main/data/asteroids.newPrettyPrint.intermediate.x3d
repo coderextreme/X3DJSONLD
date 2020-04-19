@@ -2,29 +2,29 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <meta content='asteroids.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
-    <meta content='John Carlson' dir='' http_equiv='' lang='' name='creator' scheme=''/>
-    <meta content='manual' dir='' http_equiv='' lang='' name='generator' scheme=''/>
-    <meta content='https://coderextreme.net/X3DJSONLD/asteroids.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
-    <meta content='asteroids' dir='' http_equiv='' lang='' name='description' scheme=''/>
+    <meta content='asteroids.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='manual' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/asteroids.x3d' name='identifier'/>
+    <meta content='asteroids' name='description'/>
   </head>
   <Scene>
-    <ProtoDeclare name='anyShape' appinfo='' documentation=''>
+    <ProtoDeclare name='anyShape'>
       <ProtoInterface>
-        <field name='myShape' accessType='inputOutput' appinfo='' documentation='' type='MFNode' value=''>
-          <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-            <Sphere class='' radius='1.0' solid='true'/>
+        <field name='myShape' accessType='inputOutput' type='MFNode'>
+          <Shape>
+            <Sphere/>
           </Shape>
         </field>
       </ProtoInterface>
       <ProtoBody>
-        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+        <Transform>
           <IS>
             <connect nodeField='children' protoField='myShape'/>
           </IS>
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoInstance name='anyShape' class=''/>
+    <ProtoInstance name='anyShape'/>
   </Scene>
 </X3D>

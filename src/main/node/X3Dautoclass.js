@@ -9,6 +9,7 @@ java.classpath.push("../pythonSAI/X3DJSAIL.3.3.full.jar");
 java.classpath.push("../../pythonSAI/X3DJSAIL.3.3.full.jar");
 java.classpath.push("../../../pythonSAI/X3DJSAIL.3.3.full.jar");
 java.classpath.push("../../../../pythonSAI/X3DJSAIL.3.3.full.jar");
+java.classpath.push("../../../../../../../pythonSAI/X3DJSAIL.3.3.full.jar");
 module.exports = {
 Anchor : java.import('org.web3d.x3d.jsail.Networking.AnchorObject'),
 Appearance : java.import('org.web3d.x3d.jsail.Shape.AppearanceObject'),

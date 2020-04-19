@@ -1,76 +1,304 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("arc4.x3d"))
-        .addMeta(new meta().setName("creator").setContent("Lost, Doug Sanden I think"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-        .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
-      .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(java.newArray("float", [0,0,5])).setDescription("Only Viewpoint"))
-        .addChild(new Background().setSkyColor(java.newArray("float", [0.4,0.4,0.4])))
-        .addChild(new Transform().setDEF("DECLpoint_G1_node")
-          .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(0.1))
-            .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(java.newArray("float", [1,0,0])))))
-          .addChild(new PositionInterpolator().setDEF("DECLpoint_G1_PI1").setKey(java.newArray("float", [0,1])).setKeyValue(java.newArray("float", [0,0,0,0,5,0])))
-          .addChild(new Script().setDEF("DECLpoint_G1_MB1")
-            .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType(field.TYPE_SFVEC3F).setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType(field.TYPE_SFTIME).setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType(field.TYPE_MFVEC3F).setName("keyValue").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
-            .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+Viewpoint2 = browser.currentScene.createNode("Viewpoint");
+Viewpoint2.position = [0,0,5];
+Viewpoint2.description = "Only Viewpoint";
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = Viewpoint2;
+
+Background3 = browser.currentScene.createNode("Background");
+Background3.skyColor = [0.4,0.4,0.4];
+browser.currentScene.children[1] = Background3;
+
+Transform4 = browser.currentScene.createNode("Transform");
+Transform4.DEF = "DECLpoint_G1_node";
+Shape5 = browser.currentScene.createNode("Shape");
+Sphere6 = browser.currentScene.createNode("Sphere");
+Sphere6.radius = 0.1;
+Shape5.geometry = Sphere6;
+
+Appearance7 = browser.currentScene.createNode("Appearance");
+Material8 = browser.currentScene.createNode("Material");
+Material8.diffuseColor = [1,0,0];
+Appearance7.material = Material8;
+
+Shape5.appearance = Appearance7;
+
+Transform4.children = [];
+
+Transform4.children[0] = Shape5;
+
+PositionInterpolator9 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator9.DEF = "DECLpoint_G1_PI1";
+PositionInterpolator9.key = [0,1];
+PositionInterpolator9.keyValue = [0,0,0,0,5,0];
+Transform4.children[1] = PositionInterpolator9;
+
+Script10 = browser.currentScene.createNode("Script");
+Script10.DEF = "DECLpoint_G1_MB1";
+field11 = browser.currentScene.createNode("field");
+field11.name = "translation";
+field11.accessType = "inputOutput";
+field11.type = "SFVec3f";
+field11.value = "0 0 0";
+Script10.field = [];
+
+Script10.field[0] = field11;
+
+field12 = browser.currentScene.createNode("field");
+field12.name = "old";
+field12.accessType = "inputOutput";
+field12.type = "SFVec3f";
+field12.value = "0 0 0";
+Script10.field[1] = field12;
+
+field13 = browser.currentScene.createNode("field");
+field13.name = "set_location";
+field13.accessType = "inputOnly";
+field13.type = "SFTime";
+Script10.field[2] = field13;
+
+field14 = browser.currentScene.createNode("field");
+field14.name = "keyValue";
+field14.accessType = "inputOutput";
+field14.type = "MFVec3f";
+field14.value = "0 0 0 0 5 0";
+Script10.field[3] = field14;
+
+
+Script10.setSourceCode(`ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
-"		}"))
-          .addChild(new TimeSensor().setDEF("DECLpoint_G1_CL1").setCycleInterval(3).setLoop(true))
-          .addChild(new ROUTE().setFromNode("DECLpoint_G1_CL1").setFromField("cycleTime").setToNode("DECLpoint_G1_MB1").setToField("set_location"))
-          .addChild(new ROUTE().setFromNode("DECLpoint_G1_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G1_PI1").setToField("set_fraction"))
-          .addChild(new ROUTE().setFromNode("DECLpoint_G1_MB1").setFromField("keyValue").setToNode("DECLpoint_G1_PI1").setToField("keyValue"))
-          .addChild(new ROUTE().setFromNode("DECLpoint_G1_PI1").setFromField("value_changed").setToNode("DECLpoint_G1_node").setToField("set_translation")))
-        .addChild(new Transform().setDEF("DECLpoint_G2_node")
-          .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(0.1))
-            .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(java.newArray("float", [1,0,0])))))
-          .addChild(new PositionInterpolator().setDEF("DECLpoint_G2_PI1").setKey(java.newArray("float", [0,1])).setKeyValue(java.newArray("float", [0,0,0,0,5,0])))
-          .addChild(new Script().setDEF("DECLpoint_G2_MB1")
-            .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType(field.TYPE_SFVEC3F).setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType(field.TYPE_SFTIME).setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType(field.TYPE_MFVEC3F).setName("keyValue").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
-            .setSourceCode("ecmascript:\n"+
+"		}`)
+Transform4.children[2] = Script10;
+
+TimeSensor15 = browser.currentScene.createNode("TimeSensor");
+TimeSensor15.DEF = "DECLpoint_G1_CL1";
+TimeSensor15.cycleInterval = 3;
+TimeSensor15.loop = True;
+Transform4.children[3] = TimeSensor15;
+
+ROUTE16 = browser.currentScene.createNode("ROUTE");
+ROUTE16.fromNode = "DECLpoint_G1_CL1";
+ROUTE16.fromField = "cycleTime";
+ROUTE16.toNode = "DECLpoint_G1_MB1";
+ROUTE16.toField = "set_location";
+Transform4.children[4] = ROUTE16;
+
+ROUTE17 = browser.currentScene.createNode("ROUTE");
+ROUTE17.fromNode = "DECLpoint_G1_CL1";
+ROUTE17.fromField = "fraction_changed";
+ROUTE17.toNode = "DECLpoint_G1_PI1";
+ROUTE17.toField = "set_fraction";
+Transform4.children[5] = ROUTE17;
+
+ROUTE18 = browser.currentScene.createNode("ROUTE");
+ROUTE18.fromNode = "DECLpoint_G1_MB1";
+ROUTE18.fromField = "keyValue";
+ROUTE18.toNode = "DECLpoint_G1_PI1";
+ROUTE18.toField = "keyValue";
+Transform4.children[6] = ROUTE18;
+
+ROUTE19 = browser.currentScene.createNode("ROUTE");
+ROUTE19.fromNode = "DECLpoint_G1_PI1";
+ROUTE19.fromField = "value_changed";
+ROUTE19.toNode = "DECLpoint_G1_node";
+ROUTE19.toField = "set_translation";
+Transform4.children[7] = ROUTE19;
+
+browser.currentScene.children[2] = Transform4;
+
+Transform20 = browser.currentScene.createNode("Transform");
+Transform20.DEF = "DECLpoint_G2_node";
+Shape21 = browser.currentScene.createNode("Shape");
+Sphere22 = browser.currentScene.createNode("Sphere");
+Sphere22.radius = 0.1;
+Shape21.geometry = Sphere22;
+
+Appearance23 = browser.currentScene.createNode("Appearance");
+Material24 = browser.currentScene.createNode("Material");
+Material24.diffuseColor = [1,0,0];
+Appearance23.material = Material24;
+
+Shape21.appearance = Appearance23;
+
+Transform20.children = [];
+
+Transform20.children[0] = Shape21;
+
+PositionInterpolator25 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator25.DEF = "DECLpoint_G2_PI1";
+PositionInterpolator25.key = [0,1];
+PositionInterpolator25.keyValue = [0,0,0,0,5,0];
+Transform20.children[1] = PositionInterpolator25;
+
+Script26 = browser.currentScene.createNode("Script");
+Script26.DEF = "DECLpoint_G2_MB1";
+field27 = browser.currentScene.createNode("field");
+field27.name = "translation";
+field27.accessType = "inputOutput";
+field27.type = "SFVec3f";
+field27.value = "0 0 0";
+Script26.field = [];
+
+Script26.field[0] = field27;
+
+field28 = browser.currentScene.createNode("field");
+field28.name = "old";
+field28.accessType = "inputOutput";
+field28.type = "SFVec3f";
+field28.value = "0 0 0";
+Script26.field[1] = field28;
+
+field29 = browser.currentScene.createNode("field");
+field29.name = "set_location";
+field29.accessType = "inputOnly";
+field29.type = "SFTime";
+Script26.field[2] = field29;
+
+field30 = browser.currentScene.createNode("field");
+field30.name = "keyValue";
+field30.accessType = "inputOutput";
+field30.type = "MFVec3f";
+field30.value = "0 0 0 0 5 0";
+Script26.field[3] = field30;
+
+
+Script26.setSourceCode(`ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
-"		}"))
-          .addChild(new TimeSensor().setDEF("DECLpoint_G2_CL1").setCycleInterval(3).setLoop(true))
-          .addChild(new ROUTE().setFromNode("DECLpoint_G2_CL1").setFromField("cycleTime").setToNode("DECLpoint_G2_MB1").setToField("set_location"))
-          .addChild(new ROUTE().setFromNode("DECLpoint_G2_CL1").setFromField("fraction_changed").setToNode("DECLpoint_G2_PI1").setToField("set_fraction"))
-          .addChild(new ROUTE().setFromNode("DECLpoint_G2_MB1").setFromField("keyValue").setToNode("DECLpoint_G2_PI1").setToField("keyValue"))
-          .addChild(new ROUTE().setFromNode("DECLpoint_G2_PI1").setFromField("value_changed").setToNode("DECLpoint_G2_node").setToField("set_translation")))
-        .addChild(new Group()
-          .addChild(new Transform().setDEF("DECLx3dconnector_connector1_trans")
-            .addChild(new Transform().setDEF("DECLx3dconnector_connector1_rotscale")
-              .addChild(new Shape()
-                .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0.2,0.7,0.7])).setTransparency(0.5)))
-                .setGeometry(new Cylinder().setRadius(0.05)))))
-          .addChild(new Script().setDEF("DECLx3dconnector_connector1_S1")
-            .addField(new field().setType(field.TYPE_SFNODE).setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-            .addField(new field().setType(field.TYPE_SFNODE).setName("endnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-            .addField(new field().setType(field.TYPE_SFNODE).setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Transform().setUSE("DECLx3dconnector_connector1_trans")))
-            .addField(new field().setType(field.TYPE_SFNODE).setName("rotscale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Transform().setUSE("DECLx3dconnector_connector1_rotscale")))
-            .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .setSourceCode("ecmascript:\n"+
+"		}`)
+Transform20.children[2] = Script26;
+
+TimeSensor31 = browser.currentScene.createNode("TimeSensor");
+TimeSensor31.DEF = "DECLpoint_G2_CL1";
+TimeSensor31.cycleInterval = 3;
+TimeSensor31.loop = True;
+Transform20.children[3] = TimeSensor31;
+
+ROUTE32 = browser.currentScene.createNode("ROUTE");
+ROUTE32.fromNode = "DECLpoint_G2_CL1";
+ROUTE32.fromField = "cycleTime";
+ROUTE32.toNode = "DECLpoint_G2_MB1";
+ROUTE32.toField = "set_location";
+Transform20.children[4] = ROUTE32;
+
+ROUTE33 = browser.currentScene.createNode("ROUTE");
+ROUTE33.fromNode = "DECLpoint_G2_CL1";
+ROUTE33.fromField = "fraction_changed";
+ROUTE33.toNode = "DECLpoint_G2_PI1";
+ROUTE33.toField = "set_fraction";
+Transform20.children[5] = ROUTE33;
+
+ROUTE34 = browser.currentScene.createNode("ROUTE");
+ROUTE34.fromNode = "DECLpoint_G2_MB1";
+ROUTE34.fromField = "keyValue";
+ROUTE34.toNode = "DECLpoint_G2_PI1";
+ROUTE34.toField = "keyValue";
+Transform20.children[6] = ROUTE34;
+
+ROUTE35 = browser.currentScene.createNode("ROUTE");
+ROUTE35.fromNode = "DECLpoint_G2_PI1";
+ROUTE35.fromField = "value_changed";
+ROUTE35.toNode = "DECLpoint_G2_node";
+ROUTE35.toField = "set_translation";
+Transform20.children[7] = ROUTE35;
+
+browser.currentScene.children[3] = Transform20;
+
+Group36 = browser.currentScene.createNode("Group");
+Transform37 = browser.currentScene.createNode("Transform");
+Transform37.DEF = "DECLx3dconnector_connector1_trans";
+Transform38 = browser.currentScene.createNode("Transform");
+Transform38.DEF = "DECLx3dconnector_connector1_rotscale";
+Shape39 = browser.currentScene.createNode("Shape");
+Appearance40 = browser.currentScene.createNode("Appearance");
+Material41 = browser.currentScene.createNode("Material");
+Material41.diffuseColor = [0.2,0.7,0.7];
+Material41.transparency = 0.5;
+Appearance40.material = Material41;
+
+Shape39.appearance = Appearance40;
+
+Cylinder42 = browser.currentScene.createNode("Cylinder");
+Cylinder42.radius = 0.05;
+Shape39.geometry = Cylinder42;
+
+Transform38.children = [];
+
+Transform38.children[0] = Shape39;
+
+Transform37.children = [];
+
+Transform37.children[0] = Transform38;
+
+Group36.children = [];
+
+Group36.children[0] = Transform37;
+
+Script43 = browser.currentScene.createNode("Script");
+Script43.DEF = "DECLx3dconnector_connector1_S1";
+field44 = browser.currentScene.createNode("field");
+field44.name = "startnode";
+field44.accessType = "initializeOnly";
+field44.type = "SFNode";
+Script43.field = [];
+
+Script43.field[0] = field44;
+
+field45 = browser.currentScene.createNode("field");
+field45.name = "endnode";
+field45.accessType = "initializeOnly";
+field45.type = "SFNode";
+Script43.field[1] = field45;
+
+field46 = browser.currentScene.createNode("field");
+field46.name = "position";
+field46.accessType = "inputOutput";
+field46.type = "SFNode";
+Transform47 = browser.currentScene.createNode("Transform");
+Transform47.USE = "DECLx3dconnector_connector1_trans";
+field46.children = [];
+
+field46.children[0] = Transform47;
+
+Script43.field[2] = field46;
+
+field48 = browser.currentScene.createNode("field");
+field48.name = "rotscale";
+field48.accessType = "inputOutput";
+field48.type = "SFNode";
+Transform49 = browser.currentScene.createNode("Transform");
+Transform49.USE = "DECLx3dconnector_connector1_rotscale";
+field48.children = [];
+
+field48.children[0] = Transform49;
+
+Script43.field[3] = field48;
+
+field50 = browser.currentScene.createNode("field");
+field50.name = "set_startpoint";
+field50.accessType = "inputOnly";
+field50.type = "SFVec3f";
+Script43.field[4] = field50;
+
+field51 = browser.currentScene.createNode("field");
+field51.name = "set_endpoint";
+field51.accessType = "inputOnly";
+field51.type = "SFVec3f";
+Script43.field[5] = field51;
+
+
+Script43.setSourceCode(`ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		    if (typeof Quaternion !== 'undefined') {\n"+
@@ -130,7 +358,22 @@
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
-"        }")))
-        .addChild(new ROUTE().setFromNode("DECLpoint_G1_node").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
-        .addChild(new ROUTE().setFromNode("DECLpoint_G2_node").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")))      ;
-    X3D0.toFileX3D("../data/arc4.new.x3d");
+"        }`)
+Group36.children[1] = Script43;
+
+browser.currentScene.children[4] = Group36;
+
+ROUTE52 = browser.currentScene.createNode("ROUTE");
+ROUTE52.fromNode = "DECLpoint_G1_node";
+ROUTE52.fromField = "translation_changed";
+ROUTE52.toNode = "DECLx3dconnector_connector1_S1";
+ROUTE52.toField = "set_startpoint";
+browser.currentScene.children[5] = ROUTE52;
+
+ROUTE53 = browser.currentScene.createNode("ROUTE");
+ROUTE53.fromNode = "DECLpoint_G2_node";
+ROUTE53.fromField = "translation_changed";
+ROUTE53.toNode = "DECLx3dconnector_connector1_S1";
+ROUTE53.toField = "set_endpoint";
+browser.currentScene.children[6] = ROUTE53;
+

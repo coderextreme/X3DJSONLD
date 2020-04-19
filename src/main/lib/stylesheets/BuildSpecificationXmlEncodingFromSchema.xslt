@@ -29,7 +29,7 @@
    <meta name="author"      content="Don Brutzman" />
    <meta name="created"     content="14 July 2002" />
    <meta name="description" content="XSL stylesheet to convert X3D Schema to XHTML files for X3D specification." />
-   <meta name="identifier"  content="http://www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt" />
+   <meta name="identifier"  content="https://www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt" />
    <meta name="reference"   content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt?revision=9169&view=markup" />
    <meta name="reference"   content="BuildX3dSceneAccessInterfacesJava.xslt" />
   </head>
@@ -429,7 +429,7 @@ Invocation:
     </xsl:element> <!-- meta -->
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://www.web3d.org/x3d/stylesheets/EncodingOfNodes.html</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/EncodingOfNodes.html</xsl:text></xsl:attribute>
     </xsl:element> <!-- meta -->
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>version</xsl:text></xsl:attribute>
@@ -438,18 +438,18 @@ Invocation:
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>identifier</xsl:text></xsl:attribute>
       <xsl:attribute name="content">
-        <xsl:text>http://www.web3d.org/files/specifications/19776-1/V</xsl:text>
+        <xsl:text>https://www.web3d.org/files/specifications/19776-1/V</xsl:text>
         <xsl:value-of select="$schemaVersionNumber"/>
         <xsl:text>/Part01/EncodingOfNodes.html</xsl:text>
       </xsl:attribute>
     </xsl:element> <!-- meta -->
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://www.web3d.org/standards/active</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://www.web3d.org/standards/active</xsl:text></xsl:attribute>
     </xsl:element> <!-- meta -->
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://www.web3d.org/specifications</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://www.web3d.org/specifications</xsl:text></xsl:attribute>
     </xsl:element> <!-- meta -->
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
@@ -461,7 +461,7 @@ Invocation:
     </xsl:element> <!-- meta -->
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://www.web3d.org/specifications/x3d-schema-changelog.txt</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://www.web3d.org/specifications/x3d-schema-changelog.txt</xsl:text></xsl:attribute>
     </xsl:element> <!-- meta -->
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
@@ -473,7 +473,7 @@ Invocation:
     </xsl:element> <!-- meta -->
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>generator</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://www.web3D.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt</xsl:text></xsl:attribute>
     </xsl:element> <!-- meta -->
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>generator</xsl:text></xsl:attribute>
@@ -1708,7 +1708,7 @@ Invocation:
     </xsl:element>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://www.web3d.org/x3d/stylesheets/EncodingOfStatements.html</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/EncodingOfStatements.html</xsl:text></xsl:attribute>
     </xsl:element>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>version</xsl:text></xsl:attribute>
@@ -1717,18 +1717,18 @@ Invocation:
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>identifier</xsl:text></xsl:attribute>
       <xsl:attribute name="content">
-        <xsl:text>http://www.web3d.org/files/specifications/19776-1/V</xsl:text>
+        <xsl:text>https://www.web3d.org/files/specifications/19776-1/V</xsl:text>
         <xsl:value-of select="$schemaVersionNumber"/>
         <xsl:text>/Part01/EncodingOfStatements.html</xsl:text>
       </xsl:attribute>
     </xsl:element>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://www.web3d.org/standards/active</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://www.web3d.org/standards/active</xsl:text></xsl:attribute>
     </xsl:element>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://www.web3d.org/specifications</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://www.web3d.org/specifications</xsl:text></xsl:attribute>
     </xsl:element>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
@@ -1740,7 +1740,7 @@ Invocation:
     </xsl:element>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://www.web3d.org/specifications/x3d-schema-changelog.txt</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://www.web3d.org/specifications/x3d-schema-changelog.txt</xsl:text></xsl:attribute>
     </xsl:element>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
@@ -1752,7 +1752,7 @@ Invocation:
     </xsl:element>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>generator</xsl:text></xsl:attribute>
-      <xsl:attribute name="content"><xsl:text>http://www.web3D.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt</xsl:text></xsl:attribute>
+      <xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt</xsl:text></xsl:attribute>
     </xsl:element>
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>generator</xsl:text></xsl:attribute>

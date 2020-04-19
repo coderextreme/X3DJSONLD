@@ -2,97 +2,97 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <meta content='rubik.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
-    <meta content='John Carlson' dir='' http_equiv='' lang='' name='creator' scheme=''/>
-    <meta content='manual' dir='' http_equiv='' lang='' name='generator' scheme=''/>
-    <meta content='https://coderextreme.net/X3DJSONLD/rubik.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
-    <meta content='a kind of rubik cube with spheres' dir='' http_equiv='' lang='' name='description' scheme=''/>
+    <meta content='rubik.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='manual' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/rubik.x3d' name='identifier'/>
+    <meta content='a kind of rubik cube with spheres' name='description'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' class='' headlight='true' speed='1.0' transitionTime='1.0' transitionType='"LINEAR"' type='"EXAMINE"' visibilityLimit='0.0'/>
-    <Viewpoint centerOfRotation='0 0 0' class='' description='Rubiks Cube' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 12' retainUserOffsets='false'/>
-    <ProtoDeclare name='sphere' appinfo='' documentation=''>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
+    <Viewpoint description='Rubiks Cube' position='0 0 12'/>
+    <ProtoDeclare name='sphere'>
       <ProtoInterface>
-        <field name='xtranslation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+        <field name='xtranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
       </ProtoInterface>
       <ProtoBody>
-        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+        <Transform>
           <IS>
             <connect nodeField='translation' protoField='xtranslation'/>
           </IS>
-          <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-            <Appearance class=''>
-              <Material ambientIntensity='0.2' class='' diffuseColor='1 1 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor='1 1 1'/>
             </Appearance>
-            <Sphere class='' radius='1.0' solid='true'/>
+            <Sphere/>
           </Shape>
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='three' appinfo='' documentation=''>
+    <ProtoDeclare name='three'>
       <ProtoInterface>
-        <field name='ytranslation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+        <field name='ytranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
       </ProtoInterface>
       <ProtoBody>
-        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+        <Transform>
           <IS>
             <connect nodeField='translation' protoField='ytranslation'/>
           </IS>
-          <ProtoInstance name='sphere' class=''>
+          <ProtoInstance name='sphere'>
             <fieldValue name='xtranslation' value='0 0 0'/>
           </ProtoInstance>
-          <ProtoInstance name='sphere' class=''>
+          <ProtoInstance name='sphere'>
             <fieldValue name='xtranslation' value='2 0 0'/>
           </ProtoInstance>
-          <ProtoInstance name='sphere' class=''>
+          <ProtoInstance name='sphere'>
             <fieldValue name='xtranslation' value='-2 0 0'/>
           </ProtoInstance>
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='nine' appinfo='' documentation=''>
+    <ProtoDeclare name='nine'>
       <ProtoInterface>
-        <field name='ztranslation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+        <field name='ztranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
       </ProtoInterface>
       <ProtoBody>
-        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+        <Transform>
           <IS>
             <connect nodeField='translation' protoField='ztranslation'/>
           </IS>
-          <ProtoInstance name='three' class=''>
+          <ProtoInstance name='three'>
             <fieldValue name='ytranslation' value='0 0 0'/>
           </ProtoInstance>
-          <ProtoInstance name='three' class=''>
+          <ProtoInstance name='three'>
             <fieldValue name='ytranslation' value='0 2 0'/>
           </ProtoInstance>
-          <ProtoInstance name='three' class=''>
+          <ProtoInstance name='three'>
             <fieldValue name='ytranslation' value='0 -2 0'/>
           </ProtoInstance>
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='twentyseven' appinfo='' documentation=''>
+    <ProtoDeclare name='twentyseven'>
       <ProtoInterface>
-        <field name='ttranslation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+        <field name='ttranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
       </ProtoInterface>
       <ProtoBody>
-        <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+        <Transform>
           <IS>
             <connect nodeField='translation' protoField='ttranslation'/>
           </IS>
-          <ProtoInstance name='nine' class=''>
+          <ProtoInstance name='nine'>
             <fieldValue name='ztranslation' value='0 0 0'/>
           </ProtoInstance>
-          <ProtoInstance name='nine' class=''>
+          <ProtoInstance name='nine'>
             <fieldValue name='ztranslation' value='0 0 2'/>
           </ProtoInstance>
-          <ProtoInstance name='nine' class=''>
+          <ProtoInstance name='nine'>
             <fieldValue name='ztranslation' value='0 0 -2'/>
           </ProtoInstance>
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoInstance name='twentyseven' class=''>
+    <ProtoInstance name='twentyseven'>
       <fieldValue name='ttranslation' value='0 0 0'/>
     </ProtoInstance>
   </Scene>

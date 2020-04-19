@@ -74,7 +74,6 @@ import org.web3d.x3d.sai.Time.*;
 import org.web3d.x3d.sai.VolumeRendering.*;
 public class arc4 {
   public static void main(String[] args) {
-    ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new arc4().initialize().toFileJSON("../data/arc4.new.json");

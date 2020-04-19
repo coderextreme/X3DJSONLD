@@ -1,30 +1,37 @@
 var java = require('java');
-var autoclass = require('../../../X3Dautoclass.js');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
+var autoclass = require('../../../X3Dautoclass');
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
-ConfigurationProperties.setStripTrailingZeroesSync(true);
-      var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
-      .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("SFVec3f.x3d"))
-        .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
-        .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("3 prismatic spheres"))
-        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
-      .setSceneSync(new autoclass.Scene()
-        .addChildSync(new autoclass.NavigationInfo())
-        .addChildSync(new autoclass.Transform().setDEFSync("transform")
-          .addChildSync(new autoclass.Shape()
-            .setAppearanceSync(new autoclass.Appearance()
-              .setMaterialSync(new autoclass.Material().setDiffuseColorSync(java.newArray("float", [java.newFloat(0.7), java.newFloat(0.7), java.newFloat(0.7)])).setSpecularColorSync(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.5)]))))
-            .setGeometrySync(new autoclass.Sphere())))
-        .addChildSync(new autoclass.Script().setDEFSync("Bounce")
-          .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("set_translation").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTONLY).setValueSync("0 0 0"))
-          .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("translation_changed").setAccessTypeSync(autoclass.field.ACCESSTYPE_OUTPUTONLY).setValueSync("0 0 0"))
-          .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("translation").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0 0 0"))
-          .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("velocity").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0 0 0"))
-          .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFTIME).setNameSync("set_fraction").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTONLY))
-          .setSourceCodeSync("ecmascript:\n"+
+ConfigurationProperties.setStripTrailingZeroes(true);
+      var X3D0 =  new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new autoclass.head()
+        .addMeta(new autoclass.meta().setName("title").setContent("SFVec3f.x3d"))
+        .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new autoclass.meta().setName("description").setContent("3 prismatic spheres"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
+      .setScene(new autoclass.Scene()
+        .addChild(new autoclass.NavigationInfo())
+        .addChild(new autoclass.Transform().setDEF("transform")
+          .addChild(new autoclass.Shape()
+            .setAppearance(new autoclass.Appearance()
+              .setMaterial(new autoclass.Material().setDiffuseColor(java.newArray("float", [java.newFloat(0.7), java.newFloat(0.7), java.newFloat(0.7)])).setSpecularColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.5)]))))
+            .setGeometry(new autoclass.Sphere())))
+        .addChild(new autoclass.Script().setDEF("Bounce")
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("translation_changed").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("velocity").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFTIME).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+          .setSourceCode("ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -55,7 +62,7 @@ ConfigurationProperties.setStripTrailingZeroesSync(true);
 "			function initialize() {\n"+
 "			     newBubble();\n"+
 "			}"))
-        .addChildSync(new autoclass.TimeSensor().setDEFSync("TourTime").setCycleIntervalSync(0.15).setLoopSync(true))
-        .addChildSync(new autoclass.ROUTE().setFromNodeSync("TourTime").setFromFieldSync("cycleTime").setToNodeSync("Bounce").setToFieldSync("set_fraction"))
-        .addChildSync(new autoclass.ROUTE().setFromNodeSync("Bounce").setFromFieldSync("translation_changed").setToNodeSync("transform").setToFieldSync("set_translation")))      ;
+        .addChild(new autoclass.TimeSensor().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
+        .addChild(new autoclass.ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
+        .addChild(new autoclass.ROUTE().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
     X3D0.toFileX3D("../data/SFVec3f.new.x3d");

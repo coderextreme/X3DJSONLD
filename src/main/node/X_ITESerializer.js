@@ -3,7 +3,7 @@
 var DOUBLE_SUFFIX = '';
 var FLOAT_SUFFIX = '';
 
-function JavaScriptSerializer () {
+function X_ITESerializer () {
 this.code = [];
 this.codeno = 0;
 this.precode = [];
@@ -12,7 +12,7 @@ this.postcode = [];
 }
 
 
-JavaScriptSerializer.prototype = {
+X_ITESerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		this.code = [];
 		this.codeno = 0;
@@ -222,7 +222,7 @@ JavaScriptSerializer.prototype = {
 								       // replace(/&/g, "&amp;").
 								       replace(/\\n/g, '\\n');
 								if (y !== x) {
-									// console.error("JavaScript Replacing "+x+" with "+y);
+									// console.error("X_ITE Replacing "+x+" with "+y);
 								}
 								return y;
 							}), this.codeno, '","', '"', '"');
@@ -342,7 +342,7 @@ JavaScriptSerializer.prototype = {
 					replace(/"/g, '\\"');
 				str += "\n"+("  ".repeat(n))+'.addComments(new CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'"))';
 				if (y !== node.nodeValue) {
-					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
+					// console.error("X_ITE Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
@@ -362,5 +362,5 @@ JavaScriptSerializer.prototype = {
 
 
 if (typeof module === 'object')  {
-	module.exports = JavaScriptSerializer;
+	module.exports = X_ITESerializer;
 }

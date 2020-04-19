@@ -8,7 +8,7 @@
    <meta name="created"     content="5 July 2004" />
    <meta name="description" content="XSLT stylesheet to convert X3D files to ClassicVRML encoding,
    				     simply by using X3dToVrml97.xslt" />
-   <meta name="url"         content="http://www.web3d.org/x3d/content/X3dToX3dvClassicVrmlEncoding.xslt" />
+   <meta name="url"         content="https://www.web3d.org/x3d/content/X3dToX3dvClassicVrmlEncoding.xslt" />
   </head>
 -->
 

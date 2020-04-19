@@ -41,7 +41,7 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="created"     content="17 July 2001" />
    <meta name="revised"     content="6 March 2004" />
    <meta name="description" content="XSL stylesheet to remove field wrapper tags to match specialty x3d-compact.dtd, remove attributes with default values, pretty-print X3D source, etc." />
-   <meta name="url"         content="http://www.web3D.org/TaskGroups/x3d/content/X3dWrap.xslt" />
+   <meta name="url"         content="https://www.web3d.org/TaskGroups/x3d/content/X3dWrap.xslt" />
   </head>
 
 Recommended tool:
@@ -72,7 +72,7 @@ Problems:
 <xsl:strip-space elements="*" />
 
 <!-- xsl:output attributes for DOCTYPE (handled via text output by root tag)
-	doctype-public="http://www.web3D.org/TaskGroups/x3d/content/x3d-compromise.dtd"
+	doctype-public="https://www.web3d.org/TaskGroups/x3d/content/x3d-compromise.dtd"
 	doctype-system="file:///C:/www.web3D.org/TaskGroups/x3d/content/x3d-compromise.dtd"
 	cdata-section-elements="@string"
 -->
@@ -81,7 +81,7 @@ Problems:
 <xsl:template match="/">
   <xsl:apply-templates select="processing-instruction()"/>
   <xsl:text disable-output-escaping="yes">&#10;&lt;!DOCTYPE X3D PUBLIC&#10;</xsl:text>
-  <xsl:text disable-output-escaping="yes">	"http://www.web3D.org/TaskGroups/x3d/content/x3d-compromise.dtd"&#10;</xsl:text>
+  <xsl:text disable-output-escaping="yes">	"https://www.web3d.org/TaskGroups/x3d/content/x3d-compromise.dtd"&#10;</xsl:text>
   <xsl:text disable-output-escaping="yes">	"file:///C:/www.web3D.org/TaskGroups/x3d/content/x3d-compromise.dtd"&#10;[&#10;</xsl:text>
   <xsl:text disable-output-escaping="yes"> &lt;!ENTITY % BaseLineProfile    "INCLUDE"&gt;&#10;</xsl:text>
   <xsl:text disable-output-escaping="yes"> &lt;!ENTITY % CoreProfile        "IGNORE"&gt;&#10;</xsl:text>
@@ -134,6 +134,7 @@ Problems:
 <xsl:variable name="notDefaultFieldValue1"
 	select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
 		not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
+                not( local-name()='visible'     and      .='true') or
 		not( local-name(..)='AudioClip'	and
 						((local-name()='loop' and .='false') or
 						 (local-name()='pitch' and (.='1' or .='1.0')) or

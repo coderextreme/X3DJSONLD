@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2001-2019 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2020 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -39,7 +39,7 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="created"     content=" 1 January 2001" />
    <meta name="description" content="XSLT stylesheet to convert X3D source into an easily readable XHTML documentation page.
                             This version applies color and style using Cascading Style Sheet (CSS) markup via HTML span, div tags." />
-   <meta name="url"         content="http://www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt" />
+   <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt" />
   </head>
 
 Recommended tools:
@@ -526,10 +526,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <span style="color:white">&lt;!--</span>
                     <xsl:text>&#10;</xsl:text>
                     Additional help information about X3D scenes:  
-                    <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" title="Numerous resources that support X3D graphics">X3D Resources</a>,
-                    <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" title="Style guidelines, authoring tips and best practices">X3D Scene Authoring Hints</a>
+                    <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" title="Numerous resources that support X3D graphics">X3D Resources</a>,
+                    <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" title="Style guidelines, authoring tips and best practices">X3D Scene Authoring Hints</a>
                     and
-                    <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" title="Summary descriptions and authoring hints for each X3D node (element) and field (attribute)">X3D Tooltips</a>
+                    <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" title="Summary descriptions and authoring hints for each X3D node (element) and field (attribute)">X3D Tooltips</a>
                     <xsl:text>&#10;</xsl:text>
                     <span style="color:white">--&gt;</span>
                     <xsl:text>&#10;</xsl:text>
@@ -2090,6 +2090,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
+                      not( local-name()='visible'     and .='true') or
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
                       (local-name()='pitch' and (.='1' or .='1.0')) or

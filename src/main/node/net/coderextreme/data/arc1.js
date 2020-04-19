@@ -6,7 +6,7 @@ java.asyncOptions = {
   promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
-var autoclass = require('../X3Dautoclass');
+var autoclass = require('../../../X3Dautoclass');
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
@@ -42,12 +42,12 @@ var ProtoInstance2 = null;
                 .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("old").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField(new autoclass.field().setType(autoclass.field.TYPE_SFTIME).setName("set_location").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
                 .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setName("keyValue").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
-                .setSourceCode(```ecmascript:\n"+
+                .setSourceCode("ecmascript:\n"+
 "               function set_location(value) {\n"+
 "                    old = translation;\n"+
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
-"               }```))
+"               }"))
               .addChild(new autoclass.TimeSensor().setDEF("CL1").setCycleInterval(3).setLoop(true))
               .addChild(new autoclass.ROUTE().setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
               .addChild(new autoclass.ROUTE().setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
@@ -87,7 +87,7 @@ var ProtoInstance2 = null;
                 .addConnect(new autoclass.connect().setNodeField("rotscalenode").setProtoField("rotscalenode"))
                 .addConnect(new autoclass.connect().setNodeField("set_startpoint").setProtoField("set_startpoint"))
                 .addConnect(new autoclass.connect().setNodeField("set_endpoint").setProtoField("set_endpoint")))
-              .setSourceCode(```ecmascript:\n"+
+              .setSourceCode("ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -125,7 +125,7 @@ var ProtoInstance2 = null;
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
-"        }```))))
+"        }"))))
         .addChild(ProtoInstance2 = new autoclass.ProtoInstance().setName("x3dconnector").setDEF("connector1"))
         .addChild(new autoclass.ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
         .addChild(new autoclass.ROUTE().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint")))      ;

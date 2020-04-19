@@ -1,49 +1,56 @@
 var java = require('java');
-var autoclass = require('../../../X3Dautoclass.js');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
+var autoclass = require('../../../X3Dautoclass');
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
-ConfigurationProperties.setStripTrailingZeroesSync(true);
-      var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
-      .setHeadSync(new autoclass.head()
-        .addComponentSync(new autoclass.component().setNameSync("Shaders").setLevelSync(1))
-        .addComponentSync(new autoclass.component().setNameSync("CubeMapTexturing").setLevelSync(1))
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("flowers4.x3d"))
-        .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
-        .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manual"))
-        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/flowers4.x3d"))
-        .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("an animated flower")))
-      .setSceneSync(new autoclass.Scene()
-        .addChildSync(new autoclass.NavigationInfo())
-        .addChildSync(new autoclass.Background().setBackUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])).setBottomUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])).setFrontUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])).setLeftUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])).setRightUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])).setTopUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])))
-        .addChildSync(new autoclass.Transform().setDEFSync("transform")
-          .addChildSync(new autoclass.Shape()
-            .setAppearanceSync(new autoclass.Appearance()
-              .setMaterialSync(new autoclass.Material().setDiffuseColorSync(java.newArray("float", [java.newFloat(0.7), java.newFloat(0.7), java.newFloat(0.7)])).setSpecularColorSync(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.5)])))
-              .setTextureSync(new autoclass.ComposedCubeMapTexture()
-                .setBackSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])))
-                .setBottomSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])))
-                .setFrontSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])))
-                .setLeftSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])))
-                .setRightSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])))
-                .setTopSync(new autoclass.ImageTexture().setUrlSync(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]))))
-              .addShadersSync(new autoclass.ComposedShader().setDEFSync("shader").setLanguageSync("GLSL")
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFINT32).setNameSync("cube").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0"))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("chromaticDispertion").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0.98 1 1.033"))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("bias").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0.5"))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("scale").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0.5"))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("power").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("2"))
-                .addPartsSync(new autoclass.ShaderPart().setTypeSync("VERTEX").setUrlSync(java.newArray("java.lang.String", ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])))
-                .addPartsSync(new autoclass.ShaderPart().setTypeSync("FRAGMENT").setUrlSync(java.newArray("java.lang.String", ["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])))))
-            .addCommentsSync(new autoclass.CommentsBlock("<Sphere>"))
-            .setGeometrySync(new autoclass.IndexedFaceSet().setConvexSync(false).setDEFSync("Orbit")
-              .setCoordSync(new autoclass.Coordinate().setDEFSync("OrbitCoordinates")))))
-        .addChildSync(new autoclass.Script().setDEFSync("OrbitScript")
-          .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("set_fraction").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTONLY))
-          .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_MFVEC3F).setNameSync("coordinates").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-          .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_MFINT32).setNameSync("coordIndexes").setAccessTypeSync(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-          .setSourceCodeSync("ecmascript:\n"+
+ConfigurationProperties.setStripTrailingZeroes(true);
+      var X3D0 =  new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new autoclass.head()
+        .addComponent(new autoclass.component().setName("Shaders").setLevel(1))
+        .addComponent(new autoclass.component().setName("CubeMapTexturing").setLevel(1))
+        .addMeta(new autoclass.meta().setName("title").setContent("flowers4.x3d"))
+        .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowers4.x3d"))
+        .addMeta(new autoclass.meta().setName("description").setContent("an animated flower")))
+      .setScene(new autoclass.Scene()
+        .addChild(new autoclass.NavigationInfo())
+        .addChild(new autoclass.Background().setBackUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])))
+        .addChild(new autoclass.Transform().setDEF("transform")
+          .addChild(new autoclass.Shape()
+            .setAppearance(new autoclass.Appearance()
+              .setMaterial(new autoclass.Material().setDiffuseColor(java.newArray("float", [java.newFloat(0.7), java.newFloat(0.7), java.newFloat(0.7)])).setSpecularColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.5)])))
+              .setTexture(new autoclass.ComposedCubeMapTexture()
+                .setBack(new autoclass.ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])))
+                .setBottom(new autoclass.ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])))
+                .setFront(new autoclass.ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])))
+                .setLeft(new autoclass.ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])))
+                .setRight(new autoclass.ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])))
+                .setTop(new autoclass.ImageTexture().setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]))))
+              .addShaders(new autoclass.ComposedShader().setDEF("shader").setLanguage("GLSL")
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setName("cube").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.98 1 1.033"))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("bias").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("scale").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("power").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
+                .addParts(new autoclass.ShaderPart().setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])))
+                .addParts(new autoclass.ShaderPart().setType("FRAGMENT").setUrl(java.newArray("java.lang.String", ["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])))))
+            .addComments(new autoclass.CommentsBlock("<Sphere>"))
+            .setGeometry(new autoclass.IndexedFaceSet().setConvex(false).setDEF("Orbit")
+              .setCoord(new autoclass.Coordinate().setDEF("OrbitCoordinates")))))
+        .addChild(new autoclass.Script().setDEF("OrbitScript")
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setName("coordinates").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
+          .addField(new autoclass.field().setType(autoclass.field.TYPE_MFINT32).setName("coordIndexes").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+          .setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
@@ -114,8 +121,8 @@ ConfigurationProperties.setStripTrailingZeroesSync(true);
 "	var resolution = 100;\n"+
 "	updateCoordinates(resolution);\n"+
 "}"))
-        .addChildSync(new autoclass.TimeSensor().setDEFSync("Clock").setCycleIntervalSync(16).setLoopSync(true))
-        .addChildSync(new autoclass.ROUTE().setFromFieldSync("coordIndexes").setFromNodeSync("OrbitScript").setToFieldSync("set_coordIndex").setToNodeSync("Orbit"))
-        .addChildSync(new autoclass.ROUTE().setFromFieldSync("coordinates").setFromNodeSync("OrbitScript").setToFieldSync("set_point").setToNodeSync("OrbitCoordinates"))
-        .addChildSync(new autoclass.ROUTE().setFromFieldSync("fraction_changed").setFromNodeSync("Clock").setToFieldSync("set_fraction").setToNodeSync("OrbitScript")))      ;
+        .addChild(new autoclass.TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
+        .addChild(new autoclass.ROUTE().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))
+        .addChild(new autoclass.ROUTE().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates"))
+        .addChild(new autoclass.ROUTE().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("OrbitScript")))      ;
     X3D0.toFileX3D("../data/flowers4.new.x3d");

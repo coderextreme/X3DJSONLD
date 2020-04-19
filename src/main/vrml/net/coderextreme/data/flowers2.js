@@ -1,55 +1,192 @@
-var ProtoInstance0 = null;
-var ProtoInstance1 = null;
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
-      .setHead(new head()
-        .addComponent(new component().setName("Scripting").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("flowers2.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("transcriber").setContent("John Carlson"))
-        .addMeta(new meta().setName("created").setContent("23 January 2005"))
-        .addMeta(new meta().setName("modified").setContent("21 March 2018"))
-        .addMeta(new meta().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
-        .addMeta(new meta().setName("generator").setContent("manually written"))
-        .addMeta(new meta().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
-      .setScene(new Scene()
-        .addChild(new NavigationInfo())
-        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(java.newArray("float", [0,0,50])))
-        .addChild(new Group()
-          .addChild(new DirectionalLight().setDirection(java.newArray("float", [1,1,1])))
-          .addChild(new ProtoDeclare().setName("orbit")
-            .setProtoInterface(new ProtoInterface()
-              .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
-              .addField(new field().setType(field.TYPE_SFCOLOR).setName("diffuseColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
-              .addField(new field().setType(field.TYPE_SFCOLOR).setName("specularColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
-              .addField(new field().setType(field.TYPE_SFFLOAT).setName("transparency").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.75")))
-            .setProtoBody(new ProtoBody()
-              .addChild(new Group()
-                .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
-                .addChild(new OrientationInterpolator().setDEF("OrbitPath").setKey(java.newArray("float", [0,0.5,1])).setKeyValue(java.newArray("float", [1,0,0,0,1,0,0,3.14,1,0,0,6.28])))
-                .addChild(new Transform().setDEF("OrbitTransform")
-                  .setIS(new IS()
-                    .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
-                  .addChild(new Shape()
-                    .setAppearance(new Appearance()
-                      .setMaterial(new Material()
-                        .setIS(new IS()
-                          .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))
-                          .addConnect(new connect().setNodeField("specularColor").setProtoField("specularColor"))
-                          .addConnect(new connect().setNodeField("transparency").setProtoField("transparency")))))
-                    .addComments(new CommentsBlock("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
-                    .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(java.newArray("int", [0,1,2,-1])).setDEF("Orbit")
-                      .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(java.newArray("float", [0,0,1,0,1,0,1,0,0]))))))
-                .addChild(new Script().setDEF("OrbitScript")
-                  .addField(new field().setType(field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                  .addField(new field().setType(field.TYPE_MFVEC3F).setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-                  .addField(new field().setType(field.TYPE_MFINT32).setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-                  .addField(new field().setType(field.TYPE_SFFLOAT).setName("e").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new field().setType(field.TYPE_SFFLOAT).setName("f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new field().setType(field.TYPE_SFFLOAT).setName("g").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new field().setType(field.TYPE_SFFLOAT).setName("h").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new field().setType(field.TYPE_SFINT32).setName("resolution").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
-                  .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.0";
+NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = NavigationInfo2;
+
+Viewpoint3 = browser.currentScene.createNode("Viewpoint");
+Viewpoint3.description = "Two mathematical orbitals";
+Viewpoint3.position = [0,0,50];
+browser.currentScene.children[1] = Viewpoint3;
+
+Group4 = browser.currentScene.createNode("Group");
+DirectionalLight5 = browser.currentScene.createNode("DirectionalLight");
+DirectionalLight5.direction = [1,1,1];
+Group4.children = [];
+
+Group4.children[0] = DirectionalLight5;
+
+ProtoDeclare6 = browser.currentScene.createNode("ProtoDeclare");
+ProtoDeclare6.name = "orbit";
+ProtoInterface7 = browser.currentScene.createNode("ProtoInterface");
+field8 = browser.currentScene.createNode("field");
+field8.name = "translation";
+field8.accessType = "inputOutput";
+field8.type = "SFVec3f";
+field8.value = "-8 0 0";
+ProtoInterface7.field = [];
+
+ProtoInterface7.field[0] = field8;
+
+field9 = browser.currentScene.createNode("field");
+field9.name = "diffuseColor";
+field9.accessType = "inputOutput";
+field9.type = "SFColor";
+field9.value = "1 0.5 0";
+ProtoInterface7.field[1] = field9;
+
+field10 = browser.currentScene.createNode("field");
+field10.name = "specularColor";
+field10.accessType = "inputOutput";
+field10.type = "SFColor";
+field10.value = "1 0.5 0";
+ProtoInterface7.field[2] = field10;
+
+field11 = browser.currentScene.createNode("field");
+field11.name = "transparency";
+field11.accessType = "inputOutput";
+field11.type = "SFFloat";
+field11.value = "0.75";
+ProtoInterface7.field[3] = field11;
+
+ProtoDeclare6.protoInterface = ProtoInterface7;
+
+ProtoBody12 = browser.currentScene.createNode("ProtoBody");
+Group13 = browser.currentScene.createNode("Group");
+TimeSensor14 = browser.currentScene.createNode("TimeSensor");
+TimeSensor14.DEF = "Clock";
+TimeSensor14.cycleInterval = 16;
+TimeSensor14.loop = True;
+Group13.children = [];
+
+Group13.children[0] = TimeSensor14;
+
+OrientationInterpolator15 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator15.DEF = "OrbitPath";
+OrientationInterpolator15.key = [0,0.5,1];
+OrientationInterpolator15.keyValue = [1,0,0,0,1,0,0,3.14,1,0,0,6.28];
+Group13.children[1] = OrientationInterpolator15;
+
+Transform16 = browser.currentScene.createNode("Transform");
+Transform16.DEF = "OrbitTransform";
+IS17 = browser.currentScene.createNode("IS");
+connect18 = browser.currentScene.createNode("connect");
+connect18.nodeField = "translation";
+connect18.protoField = "translation";
+IS17.connect = [];
+
+IS17.connect[0] = connect18;
+
+Transform16.iS = IS17;
+
+Shape19 = browser.currentScene.createNode("Shape");
+Appearance20 = browser.currentScene.createNode("Appearance");
+Material21 = browser.currentScene.createNode("Material");
+IS22 = browser.currentScene.createNode("IS");
+connect23 = browser.currentScene.createNode("connect");
+connect23.nodeField = "diffuseColor";
+connect23.protoField = "diffuseColor";
+IS22.connect = [];
+
+IS22.connect[0] = connect23;
+
+connect24 = browser.currentScene.createNode("connect");
+connect24.nodeField = "specularColor";
+connect24.protoField = "specularColor";
+IS22.connect[1] = connect24;
+
+connect25 = browser.currentScene.createNode("connect");
+connect25.nodeField = "transparency";
+connect25.protoField = "transparency";
+IS22.connect[2] = connect25;
+
+Material21.iS = IS22;
+
+Appearance20.material = Material21;
+
+Shape19.appearance = Appearance20;
+
+//<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+IndexedFaceSet26 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet26.ccw = False;
+IndexedFaceSet26.convex = False;
+IndexedFaceSet26.coordIndex = [0,1,2,-1];
+IndexedFaceSet26.DEF = "Orbit";
+Coordinate27 = browser.currentScene.createNode("Coordinate");
+Coordinate27.DEF = "OrbitCoordinates";
+Coordinate27.point = [0,0,1,0,1,0,1,0,0];
+IndexedFaceSet26.coord = Coordinate27;
+
+Shape19.geometry = IndexedFaceSet26;
+
+Transform16.children = [];
+
+Transform16.children[0] = Shape19;
+
+Group13.children[2] = Transform16;
+
+Script28 = browser.currentScene.createNode("Script");
+Script28.DEF = "OrbitScript";
+field29 = browser.currentScene.createNode("field");
+field29.name = "set_fraction";
+field29.accessType = "inputOnly";
+field29.type = "SFFloat";
+Script28.field = [];
+
+Script28.field[0] = field29;
+
+field30 = browser.currentScene.createNode("field");
+field30.name = "coordinates";
+field30.accessType = "outputOnly";
+field30.type = "MFVec3f";
+Script28.field[1] = field30;
+
+field31 = browser.currentScene.createNode("field");
+field31.name = "coordIndexes";
+field31.accessType = "outputOnly";
+field31.type = "MFInt32";
+Script28.field[2] = field31;
+
+field32 = browser.currentScene.createNode("field");
+field32.name = "e";
+field32.accessType = "inputOutput";
+field32.type = "SFFloat";
+field32.value = "5";
+Script28.field[3] = field32;
+
+field33 = browser.currentScene.createNode("field");
+field33.name = "f";
+field33.accessType = "inputOutput";
+field33.type = "SFFloat";
+field33.value = "5";
+Script28.field[4] = field33;
+
+field34 = browser.currentScene.createNode("field");
+field34.name = "g";
+field34.accessType = "inputOutput";
+field34.type = "SFFloat";
+field34.value = "5";
+Script28.field[5] = field34;
+
+field35 = browser.currentScene.createNode("field");
+field35.name = "h";
+field35.accessType = "inputOutput";
+field35.type = "SFFloat";
+field35.value = "5";
+Script28.field[6] = field35;
+
+field36 = browser.currentScene.createNode("field");
+field36.name = "resolution";
+field36.accessType = "inputOutput";
+field36.type = "SFInt32";
+field36.value = "50";
+Script28.field[7] = field36;
+
+
+Script28.setSourceCode(`ecmascript:\n"+
 "\n"+
 "			var e = 5;\n"+
 "			var f = 5;\n"+
@@ -122,28 +259,103 @@ var ProtoInstance1 = null;
 "					h = 4;\n"+
 "				}\n"+
 "				generateCoordinates();\n"+
-"			}"))
-                .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
-                .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-                .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
-                .addChild(new ROUTE().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
-                .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
-          .addChild(ProtoInstance0 = new ProtoInstance().setName("orbit"))
-          .addChild(ProtoInstance1 = new ProtoInstance().setName("orbit"))))      ;
-ProtoInstance0
-            .addFieldValue(new fieldValue().setName("translation").setValue("-8 0 0"));
-ProtoInstance0
-            .addFieldValue(new fieldValue().setName("diffuseColor").setValue("1 0.5 0"));
-ProtoInstance0
-            .addFieldValue(new fieldValue().setName("specularColor").setValue("1 0.5 0"));
-ProtoInstance0
-            .addFieldValue(new fieldValue().setName("transparency").setValue("0.75"));
-ProtoInstance1
-            .addFieldValue(new fieldValue().setName("translation").setValue("8 0 0"));
-ProtoInstance1
-            .addFieldValue(new fieldValue().setName("diffuseColor").setValue("0 0.5 1"));
-ProtoInstance1
-            .addFieldValue(new fieldValue().setName("specularColor").setValue("0 0.5 1"));
-ProtoInstance1
-            .addFieldValue(new fieldValue().setName("transparency").setValue("0.5"));
-    X3D0.toFileX3D("../data/flowers2.new.x3d");
+"			}`)
+Group13.children[3] = Script28;
+
+ROUTE37 = browser.currentScene.createNode("ROUTE");
+ROUTE37.fromNode = "OrbitScript";
+ROUTE37.fromField = "coordIndexes";
+ROUTE37.toNode = "Orbit";
+ROUTE37.toField = "coordIndex";
+Group13.children[4] = ROUTE37;
+
+ROUTE38 = browser.currentScene.createNode("ROUTE");
+ROUTE38.fromNode = "OrbitScript";
+ROUTE38.fromField = "coordinates";
+ROUTE38.toNode = "OrbitCoordinates";
+ROUTE38.toField = "point";
+Group13.children[5] = ROUTE38;
+
+ROUTE39 = browser.currentScene.createNode("ROUTE");
+ROUTE39.fromNode = "Clock";
+ROUTE39.fromField = "fraction_changed";
+ROUTE39.toNode = "OrbitScript";
+ROUTE39.toField = "set_fraction";
+Group13.children[6] = ROUTE39;
+
+ROUTE40 = browser.currentScene.createNode("ROUTE");
+ROUTE40.fromNode = "OrbitPath";
+ROUTE40.fromField = "value_changed";
+ROUTE40.toNode = "OrbitTransform";
+ROUTE40.toField = "rotation";
+Group13.children[7] = ROUTE40;
+
+ROUTE41 = browser.currentScene.createNode("ROUTE");
+ROUTE41.fromNode = "Clock";
+ROUTE41.fromField = "fraction_changed";
+ROUTE41.toNode = "OrbitPath";
+ROUTE41.toField = "set_fraction";
+Group13.children[8] = ROUTE41;
+
+ProtoBody12.children = [];
+
+ProtoBody12.children[0] = Group13;
+
+ProtoDeclare6.protoBody = ProtoBody12;
+
+Group4.children[1] = ProtoDeclare6;
+
+ProtoInstance42 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance42.name = "orbit";
+fieldValue43 = browser.currentScene.createNode("fieldValue");
+fieldValue43.name = "translation";
+fieldValue43.value = "-8 0 0";
+ProtoInstance42.fieldValue = [];
+
+ProtoInstance42.fieldValue[0] = fieldValue43;
+
+fieldValue44 = browser.currentScene.createNode("fieldValue");
+fieldValue44.name = "diffuseColor";
+fieldValue44.value = "1 0.5 0";
+ProtoInstance42.fieldValue[1] = fieldValue44;
+
+fieldValue45 = browser.currentScene.createNode("fieldValue");
+fieldValue45.name = "specularColor";
+fieldValue45.value = "1 0.5 0";
+ProtoInstance42.fieldValue[2] = fieldValue45;
+
+fieldValue46 = browser.currentScene.createNode("fieldValue");
+fieldValue46.name = "transparency";
+fieldValue46.value = "0.75";
+ProtoInstance42.fieldValue[3] = fieldValue46;
+
+Group4.children[2] = ProtoInstance42;
+
+ProtoInstance47 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance47.name = "orbit";
+fieldValue48 = browser.currentScene.createNode("fieldValue");
+fieldValue48.name = "translation";
+fieldValue48.value = "8 0 0";
+ProtoInstance47.fieldValue = [];
+
+ProtoInstance47.fieldValue[0] = fieldValue48;
+
+fieldValue49 = browser.currentScene.createNode("fieldValue");
+fieldValue49.name = "diffuseColor";
+fieldValue49.value = "0 0.5 1";
+ProtoInstance47.fieldValue[1] = fieldValue49;
+
+fieldValue50 = browser.currentScene.createNode("fieldValue");
+fieldValue50.name = "specularColor";
+fieldValue50.value = "0 0.5 1";
+ProtoInstance47.fieldValue[2] = fieldValue50;
+
+fieldValue51 = browser.currentScene.createNode("fieldValue");
+fieldValue51.name = "transparency";
+fieldValue51.value = "0.5";
+ProtoInstance47.fieldValue[3] = fieldValue51;
+
+Group4.children[3] = ProtoInstance47;
+
+browser.currentScene.children[2] = Group4;
+

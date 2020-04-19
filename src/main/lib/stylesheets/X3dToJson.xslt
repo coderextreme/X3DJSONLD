@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2001-2019 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2020 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -40,8 +40,8 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="contributor" content="Roy Walmsley fixed recursive array overflows through tokenization and also helped with encoding development"/>
    <meta name="created"     content="8 October 2014"/>
    <meta name="description" content="XSLT stylesheet to convert X3D source into JSON syntax."/>
-   <meta name="reference"   content="http://www.web3d.org/x3d/stylesheets/X3dToJson.html"/>
-   <meta name="reference"   content="http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"/>
+   <meta name="reference"   content="https://www.web3d.org/x3d/stylesheets/X3dToJson.html"/>
+   <meta name="reference"   content="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"/>
    <meta name="reference"   content="http://www.freeformatter.com/xml-to-json-converter.html"/>
    <meta name="reference"   content="http://json.org"/>
    <meta name="reference"   content="http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf"/>
@@ -49,7 +49,7 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="reference"   content="XML Spy, http://www.xmlspy.com"/>
    <meta name="reference"   content="SAXON XML Toolkit, http://saxon.sourceforge.net"/>
    <meta name="generator"   content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"/>
-   <meta name="identifier"  content="http://www.web3d.org/x3d/stylesheets/X3dToJson.xslt"/>
+   <meta name="identifier"  content="https://www.web3d.org/x3d/stylesheets/X3dToJson.xslt"/>
    <meta name="reference"   content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJson.xslt"/>
    <meta name="license"     content="license.html"/>
   </head>
@@ -58,7 +58,7 @@ POSSIBILITY OF SUCH DAMAGE.
 =======================================================================
   X3D JSON Design Considerations and X3dToJson.xslt Converter Status
 
-  http://www.web3d.org/x3d/stylesheets/X3dToJson.html
+  https://www.web3d.org/x3d/stylesheets/X3dToJson.html
 =======================================================================
 -->
 
@@ -66,10 +66,10 @@ POSSIBILITY OF SUCH DAMAGE.
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
 				xmlns:saxon="http://saxon.sf.net/">
-    <!--        
+    <!--
                 xmlns="http://www.w3.org/TR/xhtml1/strict"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
-                
+
     <xsl:param name="stripComments"><xsl:text>false</xsl:text></xsl:param>
     <xsl:param name="stripDefaultAttributes"><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="indentEnabled"><xsl:text>true</xsl:text></xsl:param>
@@ -387,7 +387,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                 <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
                                 <xsl:text>"@name":"generator",</xsl:text><xsl:text>&#10;</xsl:text>
                                 <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
-                                <xsl:text>"@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"</xsl:text><xsl:text>&#10;</xsl:text>
+                                <xsl:text>"@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"</xsl:text><xsl:text>&#10;</xsl:text>
                                 <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
                                 <!-- TODO omit warning when encoding is finished and stable -->
                                 <xsl:text>},</xsl:text><xsl:text>&#10;</xsl:text>
@@ -396,7 +396,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                 <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
                                 <xsl:text>"@name":"reference",</xsl:text><xsl:text>&#10;</xsl:text>
                                 <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
-                                <xsl:text>"@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"</xsl:text><xsl:text>&#10;</xsl:text>
+                                <xsl:text>"@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"</xsl:text><xsl:text>&#10;</xsl:text>
                                 <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+2"/></xsl:call-template>
                                 <xsl:text>}</xsl:text>
                             </xsl:if>
@@ -525,6 +525,35 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
+                
+            <!-- check some special cases that are unambiguously fixable -->
+                <xsl:variable name="expectedContainerField">
+                    <xsl:choose>
+                        <xsl:when test="(local-name(..) = 'GeoLOD') and not(local-name() = 'GeoOrigin') and not(starts-with(local-name(), 'Metadata'))">
+                            <xsl:text>rootNode</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
+                            <xsl:text>segments</xsl:text>
+                        </xsl:when>
+                        <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
+                        <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
+                        <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
+                        <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:if test="(string-length($expectedContainerField) > 0) and not(@containerField = $expectedContainerField)">
+                    <xsl:message>
+                        <xsl:text>... containerField mismatch for </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text> DEF='</xsl:text>
+                        <xsl:value-of select="@DEF"/>
+                        <xsl:text>', found containerField='</xsl:text>
+                        <xsl:value-of select="@containerField"/>
+                        <xsl:text>' but expected containerField='</xsl:text>
+                        <xsl:value-of select="$expectedContainerField"/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                </xsl:if>
 
                 <!-- Metadata nodes are allowed at top level of scene, but have different default containerField and thus require special attention -->
                 <xsl:variable name="isSceneMetadata"
@@ -847,7 +876,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:if test="((local-name()='DEF') or (local-name()='USE') or (local-name()='name') or
                        ((string-length($notDefaultAttributeValue) > 0) and not(local-name() = 'containerField'))
                       and not(/AllX3dElementsAttributes))">
-        
+
             <xsl:variable name="attributeName"     select="local-name()"/>
             <xsl:variable name="fieldValueName"    select="../@name"/>
             <xsl:variable name="protoInstanceName" select="(../../@name)"/>
@@ -952,7 +981,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                     ((local-name()='value') and ((../@type='MFBool') or (contains(local-name(../..),'Proto') and ($fieldValueType='MFBool')))) or
                                     ((local-name(..)='BooleanSequencer')    and (local-name()='keyValue')) or
                                     ((local-name(..)='MetadataBoolean')     and (local-name()='value')) or
-                                    ((local-name(..)='CADLayer')            and (local-name()='visible')) or
+                                    ((local-name(..)='CADLayer')            and ($attributeName='visible') and starts-with(//X3D/@version,'3')) or
                                     ((local-name(..)='SegmentedVolumeData') and (local-name()='segmentEnabled'))">
                         <xsl:text>[</xsl:text>
                         <!--  array values require comma between values in JSON encoding -->
@@ -1950,7 +1979,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:message><xsl:text>[e-b-c-r parse][$nextCharAfterBackslashAfterBackslash]</xsl:text><xsl:value-of select="$nextCharAfterBackslash"/></xsl:message>
                 <xsl:message><xsl:text>[e-b-c-r parse][$nextCharAfterBackslash$remainder]</xsl:text><xsl:value-of select="$nextCharAfterBackslash"/><xsl:value-of select="$remainder"/></xsl:message>
         </xsl:if> -->
-        <!-- pass through escaped characters   http://www.web3d.org/x3d/stylesheets/X3dToJson.html#strings -->
+        <!-- pass through escaped characters   https://www.web3d.org/x3d/stylesheets/X3dToJson.html#strings -->
         <xsl:choose>
             <xsl:when test="not(contains($inputString,'\')) and not(contains($inputString,'&quot;'))">
                     <!-- all done -->
@@ -1992,7 +2021,7 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:when>
             <!-- handled previously: ($nextCharAfterBackslash = '&quot;') or ($nextCharAfterBackslash = '\') -->
 <!-- special characters backspace, formfeed, newline, carriage return, horizontal tab are presumably character entities already -->
-<!-- page links for character entities http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#HTML -->
+<!-- page links for character entities https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#HTML -->
 <!-- http://www.w3schools.com/js/js_strings.asp -->
 <xsl:when test="($nextCharAfterBackslash = '/') or
                 ($nextCharAfterBackslash = 'n') or
@@ -2044,7 +2073,6 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-
 
     <xsl:template name="escape-less-than-characters-recurse">
       <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param> <!-- already normalized white space -->
@@ -2126,6 +2154,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <xsl:template name="insert-commas-recurse">
       <!-- insert commas before space characters between array values -->
+      <!-- TODO tokenize() long strings and insert line break after every 100 values, simplifies file scrutiny and might help with EOF exceptions -->
       <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param> <!-- already normalized white space -->
       <xsl:param name="inputType"><xsl:text></xsl:text></xsl:param><!-- data type for this field -->
       <xsl:choose>
@@ -2449,6 +2478,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
+                      not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
                       (local-name()='pitch' and (.='1' or .='1.0')) or
@@ -3341,6 +3371,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='rtpHeaderExpected') or
 					($attributeName='solid') or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
+					($attributeName='visible') or
 					($parentElementName='AudioClip' and $attributeName='loop') or
 					($parentElementName='BooleanToggle' and $attributeName='toggle') or
 					($parentElementName='Collision' and $attributeName='enabled') or
@@ -3388,7 +3419,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
 					($localFieldType='MFBool')  or 
                     (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
-					($parentElementName='CADLayer'                   and $attributeName='visible') or
+					($parentElementName='CADLayer'                   and ($attributeName='visible') and starts-with(//X3D/@version,'3')) or
 					($parentElementName='HAnimHumanoid'              and $attributeName='motionsEnabled') or
 					($parentElementName='MetadataBoolean'            and $attributeName='value') or
 					($parentElementName='SegmentedVolumeData'        and $attributeName='segmentEnabled') or

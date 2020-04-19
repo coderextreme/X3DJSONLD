@@ -2,19 +2,19 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <meta content='sphere.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
-    <meta content='John Carlson' dir='' http_equiv='' lang='' name='creator' scheme=''/>
-    <meta content='manual' dir='' http_equiv='' lang='' name='generator' scheme=''/>
-    <meta content='https://coderextreme.net/X3DJSONLD/sphere.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
-    <meta content='a sphere' dir='' http_equiv='' lang='' name='description' scheme=''/>
+    <meta content='sphere.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='manual' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/sphere.x3d' name='identifier'/>
+    <meta content='a sphere' name='description'/>
   </head>
   <Scene>
-    <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-      <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-        <Appearance class=''>
-          <Material ambientIntensity='0.2' class='' diffuseColor='1 1 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+    <Group>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='1 1 1'/>
         </Appearance>
-        <Sphere class='' radius='1.0' solid='true'/>
+        <Sphere/>
       </Shape>
     </Group>
   </Scene>

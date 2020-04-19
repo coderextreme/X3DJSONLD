@@ -7,8 +7,8 @@
     description : Extract Script field names to create sceneGlobalVariables.properties for ant/jslint processing.
                   See examples/buildExamplesTemplate.xml for example invocation and usage.
     reference   : https://www.w3.org/TR/xslt
-    reference   : http://www.web3d.org/x3d/content/examples/newStylesheet.xslt
-    identifier  : http://www.web3d.org/x3d/content/examples/filename.xslt
+    reference   : https://www.web3d.org/x3d/content/examples/newStylesheet.xslt
+    identifier  : https://www.web3d.org/x3d/content/examples/filename.xslt
     license     : license.html
 -->
 
