@@ -1,85 +1,206 @@
-@prefix : <.ttl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix :       <https://www.web3d.org/semantics/scenes/UnnamedX3dModel.ttl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:    <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:   <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-:Scene rdf:type owl:NamedIndividual, x3d:Scene .
-:Background_2 rdf:type owl:NamedIndividual, x3d:Background ;
-  x3d:skyColor "0 0 1" .
-:Checkerboard rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:translation "0 0 -10" .
-:Checkerboard x3d:hasShape :Shape_2_2 .
-:Shape_2_2 rdf:type owl:NamedIndividual, x3d:Shape .
-:Appearance_2_2_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:TextureTransform_2_2_1_1 rdf:type owl:NamedIndividual, x3d:TextureTransform ;
-  x3d:scale "500 500" .
-:PixelTexture_2_2_1_1 rdf:type owl:NamedIndividual, x3d:PixelTexture ;
-  x3d:image "2 2 3 0xE6B5FD 0xFFDBB7 0xFFDBB7 0xE6B5FD" .
-:Box_2_2_1 rdf:type owl:NamedIndividual, x3d:Box ;
-  x3d:size "1000 1000 .01" .
-:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:description "View All" ;
-  x3d:position "0 0 20" .
-:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:description "Empty Image" ;
-  x3d:position "0 5 5" .
-:EmptyImage rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:rotation "1 1 0 1" ;
-  x3d:translation "0 5 0" .
-:EmptyImage x3d:hasShape :Shape_2_5 .
-:Shape_2_5 rdf:type owl:NamedIndividual, x3d:Shape .
-:Appearance_2_5_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:PixelTexture_2_5_1_1 rdf:type owl:NamedIndividual, x3d:PixelTexture .
-:StandardBox rdf:type owl:NamedIndividual, x3d:Box .
-:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:description "Black and white PixelTexture" ;
-  x3d:position "-5 0 5" .
-:BW rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:rotation "1 1 0 1" ;
-  x3d:translation "-5 0 0" .
-:BW x3d:hasShape :Shape_2_7 .
-:Shape_2_7 rdf:type owl:NamedIndividual, x3d:Shape .
-:Appearance_2_7_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:PixelTexture_2_7_1_1 rdf:type owl:NamedIndividual, x3d:PixelTexture ;
-  x3d:image "1 2 1 0xFF 0x00" .
-:StandardBox-USE-1 rdf:type owl:NamedIndividual, x3d:Box .
-:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:description "Black and white with Alpha PixelTexture" ;
-  x3d:position "5 0 5" .
-:AlphaBW rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:rotation "1 1 0 1" ;
-  x3d:translation "5 0 0" .
-:AlphaBW x3d:hasShape :Shape_2_9 .
-:Shape_2_9 rdf:type owl:NamedIndividual, x3d:Shape .
-:Appearance_2_9_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:PixelTexture_2_9_1_1 rdf:type owl:NamedIndividual, x3d:PixelTexture ;
-  x3d:image "2 1 2 0xCCFF 0x2277" .
-:StandardBox-USE-2 rdf:type owl:NamedIndividual, x3d:Box .
-:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:description "RGB PixelTexture" ;
-  x3d:position "-5 -5 5" .
-:RGB rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:rotation "1 1 0 1" ;
-  x3d:translation "-5 -5 0" .
-:RGB x3d:hasShape :Shape_2_11 .
-:Shape_2_11 rdf:type owl:NamedIndividual, x3d:Shape .
-:Appearance_2_11_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:PixelTexture_2_11_1_1 rdf:type owl:NamedIndividual, x3d:PixelTexture ;
-  x3d:image "2 4 3 0xFF0000 0x00FF00 0 0 0 0 0xFFFFFF 0xFFFF00" .
-:StandardBox-USE-3 rdf:type owl:NamedIndividual, x3d:Box .
-:Viewpoint_2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:description "RGB with Alpha PixelTexture" ;
-  x3d:position "5 -5 5" .
-:AlphaRGB rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:rotation "1 1 0 1" ;
-  x3d:translation "5 -5 0" .
-:AlphaRGB x3d:hasShape :Shape_2_13 .
-:Shape_2_13 rdf:type owl:NamedIndividual, x3d:Shape .
-:Appearance_2_13_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:PixelTexture_2_13_1_1 rdf:type owl:NamedIndividual, x3d:PixelTexture ;
-  x3d:image "3 2 4 0xFF0000FF 0x00FF00FF 0x0000FFFF 0xFF00007F 0x00FF007F 0x0000FF7F" .
-:StandardBox-USE-4 rdf:type owl:NamedIndividual, x3d:Box .
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Interchange' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'http://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Table5_18PixelTexture' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'PixelTexture example for Table 5.18' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Leonard Daly and Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '18 December 2006' ;
+  x3do:name 'created' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '2 April 2017' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://X3dGraphics.com' ;
+  x3do:name 'reference' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.web3d.org/x3d/content/examples/X3dResources.html' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Copyright 2006, Daly Realism and Don Brutzman' ;
+  x3do:name 'rights' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D, PixelTexture' ;
+  x3do:name 'subject' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture' ;
+  x3do:name 'identifier' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :Background_2_1, :Checkerboard, :Viewpoint_2_3, :Viewpoint_2_4, :EmptyImage, :Viewpoint_2_6, :BW, :Viewpoint_2_8, :AlphaBW, :Viewpoint_2_10, :RGB, :Viewpoint_2_12, :AlphaRGB .
+:Background_2_1 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:skyColor ( 0 0 1 ) .
+:Checkerboard a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_2_1 ;
+  x3do:translation ( 0 0 -10 ) .
+:Shape_2_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Checkerboard ;
+  x3do:hasAppearance :Appearance_2_2_1_1 ;
+  x3do:hasGeometry :Box_2_2_1_2 .
+:Appearance_2_2_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_1 ;
+  x3do:hasTextureTransform :TextureTransform_2_2_1_1_1 ;
+  x3do:hasTexture :PixelTexture_2_2_1_1_2 .
+:TextureTransform_2_2_1_1_1 a owl:NamedIndividual, x3do:TextureTransform ;
+  x3do:hasParent :Appearance_2_2_1_1 ;
+  x3do:scale ( 500 500 ) .
+:PixelTexture_2_2_1_1_2 a owl:NamedIndividual, x3do:PixelTexture ;
+  x3do:hasParent :Appearance_2_2_1_1 ;
+  x3do:image '2 2 3 0xE6B5FD 0xFFDBB7 0xFFDBB7 0xE6B5FD' .
+:Box_2_2_1_2 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_2_1 ;
+  x3do:size ( 1000 1000 .01 ) .
+:Viewpoint_2_3 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'View All' ;
+  x3do:position ( 0 0 20 ) .
+:Viewpoint_2_4 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'Empty Image' ;
+  x3do:position ( 0 5 5 ) .
+:EmptyImage a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_5_1 ;
+  x3do:rotation ( 1 1 0 1 ) ;
+  x3do:translation ( 0 5 0 ) .
+:Shape_2_5_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :EmptyImage ;
+  x3do:hasAppearance :Appearance_2_5_1_1 ;
+  x3do:hasGeometry :StandardBox .
+:Appearance_2_5_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_1 ;
+  x3do:hasTexture :PixelTexture_2_5_1_1_1 .
+:PixelTexture_2_5_1_1_1 a owl:NamedIndividual, x3do:PixelTexture ;
+  x3do:hasParent :Appearance_2_5_1_1 .
+:StandardBox a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_5_1 .
+:Viewpoint_2_6 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'Black and white PixelTexture' ;
+  x3do:position ( -5 0 5 ) .
+:BW a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_7_1 ;
+  x3do:rotation ( 1 1 0 1 ) ;
+  x3do:translation ( -5 0 0 ) .
+:Shape_2_7_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :BW ;
+  x3do:hasAppearance :Appearance_2_7_1_1 ;
+  x3do:hasGeometry :StandardBox-USE-1 .
+:Appearance_2_7_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_7_1 ;
+  x3do:hasTexture :PixelTexture_2_7_1_1_1 .
+:PixelTexture_2_7_1_1_1 a owl:NamedIndividual, x3do:PixelTexture ;
+  x3do:hasParent :Appearance_2_7_1_1 ;
+  x3do:image '1 2 1 0xFF 0x00' .
+:StandardBox-USE-1 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_7_1 ;
+  owl:sameAs :StandardBox . # DEF matching this USE
+:Viewpoint_2_8 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'Black and white with Alpha PixelTexture' ;
+  x3do:position ( 5 0 5 ) .
+:AlphaBW a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_9_1 ;
+  x3do:rotation ( 1 1 0 1 ) ;
+  x3do:translation ( 5 0 0 ) .
+:Shape_2_9_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :AlphaBW ;
+  x3do:hasAppearance :Appearance_2_9_1_1 ;
+  x3do:hasGeometry :StandardBox-USE-2 .
+:Appearance_2_9_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_9_1 ;
+  x3do:hasTexture :PixelTexture_2_9_1_1_1 .
+:PixelTexture_2_9_1_1_1 a owl:NamedIndividual, x3do:PixelTexture ;
+  x3do:hasParent :Appearance_2_9_1_1 ;
+  x3do:image '2 1 2 0xCCFF 0x2277' .
+:StandardBox-USE-2 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_9_1 ;
+  owl:sameAs :StandardBox . # DEF matching this USE
+:Viewpoint_2_10 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'RGB PixelTexture' ;
+  x3do:position ( -5 -5 5 ) .
+:RGB a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_11_1 ;
+  x3do:rotation ( 1 1 0 1 ) ;
+  x3do:translation ( -5 -5 0 ) .
+:Shape_2_11_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :RGB ;
+  x3do:hasAppearance :Appearance_2_11_1_1 ;
+  x3do:hasGeometry :StandardBox-USE-3 .
+:Appearance_2_11_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_11_1 ;
+  x3do:hasTexture :PixelTexture_2_11_1_1_1 .
+:PixelTexture_2_11_1_1_1 a owl:NamedIndividual, x3do:PixelTexture ;
+  x3do:hasParent :Appearance_2_11_1_1 ;
+  x3do:image '2 4 3 0xFF0000 0x00FF00 0 0 0 0 0xFFFFFF 0xFFFF00' .
+:StandardBox-USE-3 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_11_1 ;
+  owl:sameAs :StandardBox . # DEF matching this USE
+:Viewpoint_2_12 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'RGB with Alpha PixelTexture' ;
+  x3do:position ( 5 -5 5 ) .
+:AlphaRGB a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_13_1 ;
+  x3do:rotation ( 1 1 0 1 ) ;
+  x3do:translation ( 5 -5 0 ) .
+:Shape_2_13_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :AlphaRGB ;
+  x3do:hasAppearance :Appearance_2_13_1_1 ;
+  x3do:hasGeometry :StandardBox-USE-4 .
+:Appearance_2_13_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_13_1 ;
+  x3do:hasTexture :PixelTexture_2_13_1_1_1 .
+:PixelTexture_2_13_1_1_1 a owl:NamedIndividual, x3do:PixelTexture ;
+  x3do:hasParent :Appearance_2_13_1_1 ;
+  x3do:image '3 2 4 0xFF0000FF 0x00FF00FF 0x0000FFFF 0xFF00007F 0x00FF007F 0x0000FF7F' .
+:StandardBox-USE-4 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_13_1 ;
+  owl:sameAs :StandardBox . # DEF matching this USE

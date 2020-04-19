@@ -1,144 +1,93 @@
-@prefix : <https://www.web3d.org/semantics/scenes/UnnamedX3dModel#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix :       <https://www.web3d.org/semantics/scenes/UnnamedX3dModel.ttl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:    <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:   <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-:Scene rdf:type owl:NamedIndividual, x3d:Scene .
-:NavigationInfo_1 rdf:type owl:NamedIndividual, x3d:NavigationInfo .
-:DirectionalLight_1 rdf:type owl:NamedIndividual, x3d:DirectionalLight ;
-  x3d:direction "0 -0.8 -0.2" ;
-  x3d:intensity "0.5" .
-:Background_1 rdf:type owl:NamedIndividual, x3d:Background ;
-  x3d:skyColor "1.000 1.000 1.000" .
-:Viewpoint_1 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:description "One mathematical orbital" ;
-  x3d:position "0 0 50" .
-:OrbitTransform rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:translation "8 0 0" .
-:OrbitTransform x3d:hasShape :Shape_1_5 .
-:Shape_1_5 rdf:type owl:NamedIndividual, x3d:Shape .
-:Appearance_1_5_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_1_5_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "0 0.5 1" ;
-  x3d:specularColor "0 0.5 1" .
-:Orbit rdf:type owl:NamedIndividual, x3d:IndexedFaceSet ;
-  x3d:convex "false" .
-:Orbit x3d:hasCoordinate :OrbitCoordinates .
-:OrbitCoordinates rdf:type owl:NamedIndividual, x3d:Coordinate .
-:OrbitScript rdf:type owl:NamedIndividual, x3d:Script .
-
-        :OrbitScript x3d:hasfield :field_1_6 .
-:field_1_6 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "set_fraction" ;
-  x3d:type "SFFloat" .
-
-        :OrbitScript x3d:hasfield :field_1_6 .
-:field_1_6 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:name "coordinates" ;
-  x3d:type "MFVec3f" .
-
-	:OrbitScript x3d:hasfield :field_1_6 .
-:field_1_6 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:name "coordIndexes" ;
-  x3d:type "MFInt32" .
-
-	
-ecmascript:
-    
-var e = 5;
-var f = 5;
-var g = 5;
-var h = 5;
-var resolution = 100;
-var t = 0;
-var p = 0;
-
-function initialize() {
-     generateCoordinates(resolution);
-     var localci = [];
-     for ( i = 0; i < resolution-1; i++) {
-     	for ( j = 0; j < resolution-1; j++) {
-	     localci.push(i*resolution+j);
-	     localci.push(i*resolution+j+1);
-	     localci.push((i+1)*resolution+j+1);
-	     localci.push((i+1)*resolution+j);
-	     localci.push(-1);
-	}
-    }
-    coordIndexes = new MFInt32(localci);
-}
-
-function generateCoordinates(resolution) {
-     var theta = 0.0;
-     var phi = 0.0;
-     var delta = (2 * 3.141592653) / (resolution-1);
-     var localc = [];
-     for (var  i = 0; i < resolution; i++) {
-     	for (var  j = 0; j < resolution; j++) {
-		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-		localc.push(new SFVec3f(
-			rho * Math.cos(phi) * Math.cos(theta),
-			rho * Math.cos(phi) * Math.sin(theta),
-			rho * Math.sin(phi)
-		));
-		theta += delta;
-	}
-	phi += delta;
-     }
-     coordinates = new MFVec3f(localc);
-}
-
-function set_fraction(fraction, eventTime) {
-	t += 0.5;
-	p += 0.5;
-	var choice = Math.floor(Math.random() * 4);
-	switch (choice) {
-	case 0:
-		e += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	case 1:
-		f += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	case 2:
-		g += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	case 3:
-		h += Math.floor(Math.random() * 2) * 2 - 1;
-		break;
-	}
-	if (f < 1) {
-		f = 10;
-	}
-	if (g < 1) {
-		g = 4;
-	}
-	if (h < 1) {
-		h = 4;
-	}
-	generateCoordinates(resolution);
-}
-:Clock rdf:type owl:NamedIndividual, x3d:TimeSensor ;
-  x3d:cycleInterval "16" ;
-  x3d:loop "true" .
-:ROUTE_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "OrbitScript" ;
-  x3d:fromField "coordIndexes" ;
-  x3d:toNode "Orbit" ;
-  x3d:toField "coordIndex" .
-:ROUTE_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "OrbitScript" ;
-  x3d:fromField "coordinates" ;
-  x3d:toNode "OrbitCoordinates" ;
-  x3d:toField "point" .
-:ROUTE_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "Clock" ;
-  x3d:fromField "fraction_changed" ;
-  x3d:toNode "OrbitScript" ;
-  x3d:toField "set_fraction" .
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'http://www.web3d.org/specifications/x3d-3.3.xsd' .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_1_1, :DirectionalLight_1_2, :Background_1_3, :Viewpoint_1_4, :OrbitTransform, :OrbitScript, :Clock ;
+  x3do:hasROUTE :ROUTE_1_8, :ROUTE_1_9, :ROUTE_1_10 .
+:NavigationInfo_1_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene .
+:DirectionalLight_1_2 a owl:NamedIndividual, x3do:DirectionalLight ;
+  x3do:hasParent :Scene ;
+  x3do:direction ( 0 -0.8 -0.2 ) ;
+  x3do:intensity '0.5' .
+:Background_1_3 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:skyColor ( 1.000 1.000 1.000 ) .
+:Viewpoint_1_4 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:description 'One mathematical orbital' ;
+  x3do:position ( 0 0 50 ) .
+:OrbitTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_1_5_1 ;
+  x3do:translation ( 8 0 0 ) .
+:Shape_1_5_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :OrbitTransform ;
+  x3do:hasAppearance :Appearance_1_5_1_1 ;
+  x3do:hasGeometry :Orbit .
+:Appearance_1_5_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_1_5_1 ;
+  x3do:hasMaterial :Material_1_5_1_1_1 .
+:Material_1_5_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_1_5_1_1 ;
+  x3do:diffuseColor ( 0 0.5 1 ) ;
+  x3do:specularColor ( 0 0.5 1 ) .
+:Orbit a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :Shape_1_5_1 ;
+  x3do:hasCoord :OrbitCoordinates ;
+  x3do:convex 'false' .
+:OrbitCoordinates a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :Orbit .
+:OrbitScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Scene ;
+  x3do:hasField :field_1_6_1, :field_1_6_2, :field_1_6_3 .
+:field_1_6_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'set_fraction' ;
+  x3do:type 'SFFloat' .
+:field_1_6_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'coordinates' ;
+  x3do:type 'MFVec3f' .
+:field_1_6_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :OrbitScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'coordIndexes' ;
+  x3do:type 'MFInt32' .
+:Clock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Scene ;
+  x3do:cycleInterval '16' ;
+  x3do:loop 'true' .
+:ROUTE_1_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'OrbitScript' ;
+  x3do:fromField 'coordIndexes' ;
+  x3do:toNode 'Orbit' ;
+  x3do:toField 'coordIndex' .
+:ROUTE_1_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'OrbitScript' ;
+  x3do:fromField 'coordinates' ;
+  x3do:toNode 'OrbitCoordinates' ;
+  x3do:toField 'point' .
+:ROUTE_1_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'Clock' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'OrbitScript' ;
+  x3do:toField 'set_fraction' .

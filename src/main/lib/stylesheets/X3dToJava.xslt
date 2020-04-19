@@ -5,8 +5,8 @@
    <meta name="creator"     content="Don Brutzman" />
    <meta name="created"     content="22 March 2017" />
    <meta name="description" content="XSLT stylesheet to create X3DJSAIL Java program from X3D source." />
-   <meta name="reference"   content="X3DJSAIL, http://www.web3d.org/specifications/java/X3DJSAIL.html" />
-   <meta name="url"         content="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" />
+   <meta name="reference"   content="X3DJSAIL, https://www.web3d.org/specifications/java/X3DJSAIL.html" />
+   <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" />
   </head>
 
 Recommended tools:
@@ -17,14 +17,14 @@ Recommended tools:
 
 <!-- TODO: 
 	 - integrate with X3D Examples Archives
-	   http://www.web3d.org/x3d/content/examples/X3dResources.html
+	   https://www.web3d.org/x3d/content/examples/X3dResources.html
   -->
 
 <!--	xmlns:fo="http://www.w3.org/1999/XSL/Format"	-->
 <!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
 
 <!--
-Copyright (c) 1995-2019 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2020 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -57,8 +57,6 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<!-- TODO XSLT version="2.0" -->
-
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
@@ -69,7 +67,7 @@ POSSIBILITY OF SUCH DAMAGE.
     
     <!-- Default parameter values can be overridden when invoking this stylesheet -->
     <xsl:param name="packageName"			      ><xsl:text></xsl:text></xsl:param>
-    <xsl:param name="className"				      ><xsl:text><!-- necessary input --></xsl:text></xsl:param>
+    <xsl:param name="className"				      ><xsl:text><!-- necessary input, otherwise will use meta title if available --></xsl:text></xsl:param>
     <xsl:param name="tupleSplitSize"			  ><xsl:text>100</xsl:text></xsl:param> <!-- tuples -->
     <xsl:param name="attributeSplitSize"		  ><xsl:text>1000</xsl:text></xsl:param><!-- characters -->
     <xsl:param name="includeLicense"		      ><xsl:text>false</xsl:text></xsl:param>
@@ -87,7 +85,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                           
     <xsl:variable name="licenseText">
 		<xsl:text>
-Copyright (c) 1995-2019 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2020 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -99,7 +97,7 @@ are met:
       notice, this list of conditions and the following disclaimer
       in the documentation and/or other materials provided with the
       distribution.
-    * Neither the name of the Web3D Consortium (http://www.web3D.org)
+    * Neither the name of the Web3D Consortium (https://www.web3d.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -159,10 +157,10 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:variable name="shortTitle">
                         <xsl:choose>
                             <xsl:when test="contains($title,'.x3d')">
-                                <xsl:value-of select="translate(normalize-space(substring-before($title,'.x3d')),' -.,;', '_____')"/>
+                                <xsl:value-of select="translate(normalize-space(substring-before($title,'.x3d')),' -.,;*', '______')"/>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:value-of select="translate(normalize-space($title),' -.,;', '_____')"/>
+                                <xsl:value-of select="translate(normalize-space($title),' -.,;*', '______')"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:variable>
@@ -182,10 +180,10 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:text>className='</xsl:text>
 						<xsl:value-of select="$className"/>
 						<xsl:text>' has illegal character(s) ( -.,;) replaced with '_' underscore character. newClassName='</xsl:text>
-						<xsl:value-of select="translate(normalize-space($className),' -.,;', '_____')"/>
+						<xsl:value-of select="translate(normalize-space($className),' -.,;*', '______')"/>
 						<xsl:text>'</xsl:text>
 					</xsl:message>
-					<xsl:value-of     select="translate(normalize-space($className),' -.,;', '_____')"/>
+					<xsl:value-of     select="translate(normalize-space($className),' -.,;*', '______')"/>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:value-of select="$className"/>
@@ -284,7 +282,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
 	 * @return ]]></xsl:text><xsl:value-of select="$newClassName"/>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[ model
 	 */
@@ -295,11 +293,11 @@ POSSIBILITY OF SUCH DAMAGE.
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
-     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
-     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
-     * @see <a href="http://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
@@ -508,18 +506,19 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:text>, </xsl:text>
 			</xsl:if>
 		</xsl:if>
-<xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>]]></xsl:text>
+<xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>]]></xsl:text>
 			<xsl:text>, </xsl:text>
-<xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>]]></xsl:text>
+<xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>]]></xsl:text>
 			<xsl:text>, and </xsl:text>
-<xsl:text><![CDATA[<a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>]]></xsl:text>
+<xsl:text><![CDATA[<a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>]]></xsl:text>
 			<xsl:text>.</xsl:text>
 			<xsl:text><![CDATA[ </p>]]></xsl:text>
 		
 		<xsl:if test="//meta">
-			<!-- TODO unrecognized by javadoc: title="meta tags provide document information"-->
+			<!-- TODO unrecognized by javadoc: title="meta tags provide document information" summary="Scene Metadata" summary="Scene Metadata"> -->
 			<xsl:text><![CDATA[
-	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
+	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
+        <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
 			<td style="text-align:left;   padding:10px 0px;">]]></xsl:text>
@@ -690,9 +689,9 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text><![CDATA[
 	<p>
 		This program uses the
-		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
+		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
-		<a href="http://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
+		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
 		stylesheet to create Java source code from an <code>.x3d</code> model.
 	</p>
 ]]></xsl:text>
@@ -800,7 +799,10 @@ POSSIBILITY OF SUCH DAMAGE.
 		
 		<xsl:text>new </xsl:text>
 		<xsl:value-of select="local-name()"/>
-		<xsl:text>Object(</xsl:text>
+        <xsl:if test="not(starts-with(local-name(),'XvlShell'))">
+            <xsl:text>Object</xsl:text>
+        </xsl:if>
+        <xsl:text>(</xsl:text>
         <xsl:choose>
             <xsl:when test="(local-name() = 'ProtoInstance')">
                 <!-- prototypeName is always first, DEFlabel is second -->
@@ -991,6 +993,36 @@ POSSIBILITY OF SUCH DAMAGE.
                     </xsl:when>
                </xsl:choose>
             </xsl:variable>
+            
+            <!-- check some special cases that are unambiguously fixable -->
+            <xsl:variable name="expectedContainerField">
+                <xsl:choose>
+                    <xsl:when test="(local-name(..) = 'GeoLOD') and not(local-name() = 'GeoOrigin') and not(starts-with(local-name(), 'Metadata'))">
+                        <xsl:text>rootNode</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
+                        <xsl:text>segments</xsl:text>
+                    </xsl:when>
+                    <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
+                    <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
+                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
+                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:if test="(string-length($expectedContainerField) > 0) and not($containerField = $expectedContainerField)">
+                <xsl:message>
+                    <xsl:text>... containerField mismatch for </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> DEF='</xsl:text>
+                    <xsl:value-of select="@DEF"/>
+                    <xsl:text>', found containerField='</xsl:text>
+                    <xsl:value-of select="$containerField"/>
+                    <xsl:text>' but expected containerField='</xsl:text>
+                    <xsl:value-of select="$expectedContainerField"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:message>
+            </xsl:if>
+        
             <xsl:if test="($nodeName = 'ProtoInstance')">
                 <!-- debug
                 <xsl:message>
@@ -1183,7 +1215,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:when>
 				<xsl:when test="(local-name(..) = 'DISEntityManager') and (local-name() = 'DISEntityTypeMapping')">
 					<!-- addChild() method didn't work because of Java disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
-					<!-- http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField -->
+					<!-- https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField -->
                     <xsl:text>.addMapping(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
@@ -1458,6 +1490,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
+                      not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and string(.)='false') or
                       (local-name()='pitch' and (string(.)='1' or string(.)='1.0')) or
@@ -2172,6 +2205,35 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="notFieldSpace"
                       select="not(local-name(..)='field'  and	(local-name()='space' or local-name()='xml:space')) and
                       not(local-name(..)='Script' and	(local-name()='space' or local-name()='xml:space'))" />
+        
+        <!-- debug
+        <xsl:if test="starts-with(local-name(), 'bbox')">
+            <xsl:message>
+                <xsl:text>### @* attribute of interest found: [</xsl:text>
+                <xsl:value-of select="local-name(..)"/>
+                <xsl:if test="(local-name(.) = 'value')">
+                    <xsl:text> </xsl:text>
+                    <xsl:text>name='</xsl:text>
+                    <xsl:value-of select="../@name"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:if>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="local-name(.)"/>
+                <xsl:text>='</xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text>'</xsl:text>
+                <xsl:text>]</xsl:text>
+            </xsl:message>
+            <xsl:message>
+                <xsl:text>notDefaultFieldValue1='</xsl:text>
+                <xsl:value-of select="$notDefaultFieldValue1"/>
+                <xsl:text>', notDefaultFieldValue1a='</xsl:text>
+                <xsl:value-of select="$notDefaultFieldValue1a"/>
+                <xsl:text>'</xsl:text>
+            </xsl:message>
+        </xsl:if>
+        -->
+                    
         <!-- provide attribute output only if it is not a default value, or if scene has a digital signature -->
         <!-- note that if digital signature is present, all attributes are included (including default values) and
                        order of attributes may change, but that should be OK according to Post Schema Validation Infoset (PSVI) -->
@@ -2349,50 +2411,51 @@ POSSIBILITY OF SUCH DAMAGE.
                     <!-- attribute of interest found, show it -->
 
                     <!-- debug
-                    <xsl:message>
-                        <xsl:text>### @* attribute of interest found: [</xsl:text>
-                        <xsl:value-of select="local-name(..)"/>
-                        <xsl:if test="(local-name(.) = 'value')">
+                    <xsl:if test="starts-with(local-name(), 'bbox')">
+                        <xsl:message>
+                            <xsl:text>### @* attribute of interest found: [</xsl:text>
+                            <xsl:value-of select="local-name(..)"/>"/>
+                            <xsl:if test="(local-name(.) = 'value')">
+                                <xsl:text> </xsl:text>
+                                <xsl:text>name='</xsl:text>
+                                <xsl:value-of select="../@name"/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:if>
                             <xsl:text> </xsl:text>
-                            <xsl:text>name='</xsl:text>
-                            <xsl:value-of select="../@name"/>
-                            <xsl:text>'</xsl:text>
-                        </xsl:if>
-                        <xsl:text> </xsl:text>
-                        <xsl:value-of select="local-name(.)"/>
-                        <xsl:if test="(local-name(.) = 'name')">
+                            <xsl:value-of select="local-name(.)"/>
                             <xsl:text>='</xsl:text>
                             <xsl:value-of select="."/>
                             <xsl:text>'</xsl:text>
-                        </xsl:if>
-                        <xsl:text>: $isNumeric=</xsl:text>
-                        <xsl:value-of select="$isNumeric"/>
-                        <xsl:text>, $attributeType=</xsl:text>
-                        <xsl:value-of select="$attributeType"/>
-                        <xsl:text>, $numberCount=</xsl:text>
-                        <xsl:value-of select="$numberCount"/>
-                        <xsl:text>, $tupleSize=</xsl:text>
-                        <xsl:value-of select="$tupleSize"/>
-                        <xsl:text>, $tupleCount=</xsl:text>
-                        <xsl:value-of select="$tupleCount"/>
-                        <xsl:text>, $tupleSplitSize=</xsl:text>
-                        <xsl:value-of select="$tupleSplitSize"/>
-                        <xsl:text>, $attributeSplitSize=</xsl:text>
-                        <xsl:value-of select="$attributeSplitSize"/>
-                        <xsl:text>, $numbersPerGroup=</xsl:text>
-                        <xsl:value-of select="$numbersPerGroup"/>
-                        <xsl:text>, count($attributeArray)=</xsl:text>
-                        <xsl:value-of select="count($attributeArray)"/>
-                        <xsl:text>, value='</xsl:text>
-                        <xsl:value-of select="substring(.,1,20)"/>
-                        <xsl:if test="(string-length(.) > 20)">
-                            <xsl:text> (etc.)</xsl:text>
-                        </xsl:if>
-                        <xsl:text>'</xsl:text>
-                        <xsl:text>]</xsl:text>
-                    </xsl:message>
+                            
+                            <xsl:text>: $isNumeric=</xsl:text>
+                            <xsl:value-of select="$isNumeric"/>
+                            <xsl:text>, $attributeType=</xsl:text>
+                            <xsl:value-of select="$attributeType"/>
+                            <xsl:text>, $numberCount=</xsl:text>
+                            <xsl:value-of select="$numberCount"/>
+                            <xsl:text>, $tupleSize=</xsl:text>
+                            <xsl:value-of select="$tupleSize"/>
+                            <xsl:text>, $tupleCount=</xsl:text>
+                            <xsl:value-of select="$tupleCount"/>
+                            <xsl:text>, $tupleSplitSize=</xsl:text>
+                            <xsl:value-of select="$tupleSplitSize"/>
+                            <xsl:text>, $attributeSplitSize=</xsl:text>
+                            <xsl:value-of select="$attributeSplitSize"/>
+                            <xsl:text>, $numbersPerGroup=</xsl:text>
+                            <xsl:value-of select="$numbersPerGroup"/>
+                            <xsl:text>, count($attributeArray)=</xsl:text>
+                            <xsl:value-of select="count($attributeArray)"/>
+                            <xsl:text>, value='</xsl:text>
+                            <xsl:value-of select="substring(.,1,20)"/>
+                            <xsl:if test="(string-length(.) > 20)">
+                                <xsl:text> (etc.)</xsl:text>
+                            </xsl:if>
+                            <xsl:text>'</xsl:text>
+                            <xsl:text>]</xsl:text>
+                        </xsl:message>
+                    </xsl:if>
                     -->
-
+                
                     <xsl:text>.set</xsl:text>
                     <xsl:if test="(local-name() = 'class')">
                         <xsl:text>Css</xsl:text><!-- method prefix -->
@@ -2405,7 +2468,10 @@ POSSIBILITY OF SUCH DAMAGE.
                         <!-- use type object to create typed object holding value -->
                         <xsl:text>new </xsl:text>
                         <xsl:value-of select="$attributeType"/>
-                        <xsl:text>Object(</xsl:text>
+                        <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
+                            <xsl:text>Object</xsl:text>
+                        </xsl:if>
+                        <xsl:text>(</xsl:text>
                     </xsl:if>
 
                     <xsl:variable name="nodeNumber"    select="count(../preceding::*) + 1"/><!-- unique value -->
@@ -2726,9 +2792,11 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:param name="inputType"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  
-		<xsl:message>
-			<xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text>
-		</xsl:message>
+        <xsl:if test="($inputType = 'MFString')">
+            <xsl:message>
+                <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text>
+            </xsl:message>
+        </xsl:if>
 		-->
         
 		<!-- change space characters to commas to support the recursion algorithm -->
@@ -3262,6 +3330,10 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>import org.web3d.x3d.jsail.VolumeRendering.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
+		<xsl:if test="//*[contains(local-name(),'Xvl')]">
+			<xsl:text>// import Basic.LatticeXvl.XvlShell; // TODO fix visibility</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+		</xsl:if>
     </xsl:template>
 	
     <xsl:template name="tuple-size">
@@ -3461,6 +3533,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='rtpHeaderExpected') or
 					($attributeName='solid') or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
+					($attributeName='visible') or
 					($parentElementName='AudioClip' and $attributeName='loop') or
 					($parentElementName='BooleanToggle' and $attributeName='toggle') or
 					($parentElementName='Collision' and $attributeName='enabled') or
@@ -3508,7 +3581,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
 					($localFieldType='MFBool')  or 
                     (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
-					($parentElementName='CADLayer'                   and $attributeName='visible') or
+					($parentElementName='CADLayer'                   and ($attributeName='visible') and starts-with(//X3D/@version,'3')) or
 					($parentElementName='HAnimHumanoid'              and $attributeName='motionsEnabled') or
 					($parentElementName='MetadataBoolean'            and $attributeName='value') or
 					($parentElementName='SegmentedVolumeData'        and $attributeName='segmentEnabled') or
@@ -4021,7 +4094,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:text>int[]</xsl:text>
 				</xsl:when>
 				<xsl:when test="contains($attributeType,'Bool')">
-					<xsl:text>bool[]</xsl:text>
+					<xsl:text>boolean[]</xsl:text>
 				</xsl:when>
 				<xsl:when test="($attributeType = 'SFString')">
 					<xsl:text>String</xsl:text><!-- false() - safety net if testing shows it is needed -->
@@ -4065,7 +4138,10 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:if test="($processingPass = '0.invocation')">
 					<xsl:text>new </xsl:text>
 					<xsl:value-of select="$attributeType"/>
-					<xsl:text>Object(</xsl:text>
+                    <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
+                        <xsl:text>Object</xsl:text>
+                    </xsl:if>
+                    <xsl:text>(</xsl:text>
 				</xsl:if>
 				<xsl:choose>
 					<!-- large tupleCount found: -->
@@ -4259,7 +4335,10 @@ POSSIBILITY OF SUCH DAMAGE.
 									<xsl:text>.append(</xsl:text>
 									<xsl:text>new </xsl:text>
 									<xsl:value-of select="$attributeType"/>
-									<xsl:text>Object(</xsl:text>
+                                    <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
+                                        <xsl:text>Object</xsl:text>
+                                    </xsl:if>
+                                    <xsl:text>(</xsl:text>
 									<xsl:choose>
 										<xsl:when test="($attributeJavaType = 'String')">
 											<xsl:text>).setValueByString(</xsl:text>
@@ -4284,7 +4363,10 @@ POSSIBILITY OF SUCH DAMAGE.
 									<!--
 									<xsl:text>new </xsl:text>
 									<xsl:value-of select="$attributeType"/>
-									<xsl:text>Object(</xsl:text>
+                                    <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
+                                        <xsl:text>Object</xsl:text>
+                                    </xsl:if>
+                                    <xsl:text>(</xsl:text>
 									<xsl:text>new float[] {</xsl:text>
 									<xsl:call-template name="java-array-values">
 										<xsl:with-param name="inputString">
@@ -4413,6 +4495,8 @@ POSSIBILITY OF SUCH DAMAGE.
 				<!-- debug
 				<xsl:message>
 					<xsl:text>### output-attribute-value found ($attributeType = 'MFString')</xsl:text>
+					<xsl:text>, value=</xsl:text>
+                    <xsl:value-of select="."/>
 				</xsl:message>
 				-->
 				<!-- special handling to avoid unintended errors -->
@@ -4524,7 +4608,10 @@ POSSIBILITY OF SUCH DAMAGE.
 							contains($attributeType,'Matrix3d') or contains($attributeType,'Matrix4d')">
 				<xsl:text>new </xsl:text>
 				<xsl:value-of select="$attributeType"/>
-				<xsl:text>Object(</xsl:text>
+                <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
+                    <xsl:text>Object</xsl:text>
+                </xsl:if>
+                <xsl:text>(</xsl:text>
 				<xsl:text>new double[] {</xsl:text>
 				<xsl:call-template name="java-double-numbers">
 					<xsl:with-param name="inputString">
@@ -4820,7 +4907,10 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:if test="true() or not($includesFieldTypeObject)">
 							<xsl:text>new </xsl:text>
 							<xsl:value-of select="$attributeType"/>
-							<xsl:text>Object(</xsl:text>
+                            <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
+                                <xsl:text>Object</xsl:text>
+                            </xsl:if>
+                            <xsl:text>(</xsl:text>
 						</xsl:if>
 						<!-- output data structure for this attribute -->
 						<xsl:call-template name="output-attribute-value">

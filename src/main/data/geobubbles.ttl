@@ -1,99 +1,135 @@
-@prefix : <https://coderextreme.net/X3DJSONLD/geobubbles.ttl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix :       <https://coderextreme.net/X3DJSONLD/geobubbles.ttl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:    <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:   <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-:Scene rdf:type owl:NamedIndividual, x3d:Scene .
-:Tour rdf:type owl:NamedIndividual, x3d:GeoViewpoint ;
-  x3d:position "0 0 4" ;
-  x3d:orientation "1 0 0 0" ;
-  x3d:description "Tour Views" ;
-  x3d:containerField "children" .
-:Background_2 rdf:type owl:NamedIndividual, x3d:Background ;
-  x3d:backUrl "../resources/images/BK.png https://coderextreme.net/X3DJSONLD/images/BK.png" ;
-  x3d:bottomUrl "../resources/images/BT.png https://coderextreme.net/X3DJSONLD/images/BT.png" ;
-  x3d:frontUrl "../resources/images/FR.png https://coderextreme.net/X3DJSONLD/images/FR.png" ;
-  x3d:leftUrl "../resources/images/LF.png https://coderextreme.net/X3DJSONLD/images/LF.png" ;
-  x3d:rightUrl "../resources/images/RT.png https://coderextreme.net/X3DJSONLD/images/RT.png" ;
-  x3d:topUrl "../resources/images/TP.png https://coderextreme.net/X3DJSONLD/images/TP.png" .
-:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform .
-:Shape_2_3 rdf:type owl:NamedIndividual, x3d:Shape .
-:Sphere_2_3_1 rdf:type owl:NamedIndividual, x3d:Sphere .
-:Appearance_2_3_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_3_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "0.7 0.7 0.7" ;
-  x3d:specularColor "0.5 0.5 0.5" .
-:TourTime rdf:type owl:NamedIndividual, x3d:TimeSensor ;
-  x3d:cycleInterval "5" ;
-  x3d:loop "true" .
-:TourPosition rdf:type owl:NamedIndividual, x3d:GeoPositionInterpolator ;
-  x3d:key "0 1" ;
-  x3d:keyValue "0.0015708 0 4 0 0.0015708 4" .
-:RandomTourTime rdf:type owl:NamedIndividual, x3d:Script .
-
-            :RandomTourTime x3d:hasfield :field_2_6 .
-:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "set_cycle" ;
-  x3d:accessType "inputOnly" ;
-  x3d:type "SFTime" .
-
-            :RandomTourTime x3d:hasfield :field_2_6 .
-:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "val" ;
-  x3d:accessType "inputOutput" ;
-  x3d:type "SFFloat" ;
-  x3d:value "0" .
-
-            :RandomTourTime x3d:hasfield :field_2_6 .
-:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "positions" ;
-  x3d:accessType "inputOutput" ;
-  x3d:type "MFVec3d" ;
-  x3d:value "0.0015708 0 4 0 0.0015708 4" .
-
-            :RandomTourTime x3d:hasfield :field_2_6 .
-:field_2_6 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "position" ;
-  x3d:accessType "inputOutput" ;
-  x3d:type "MFVec3d" ;
-  x3d:value "0.0015708 0 4 0 0.0015708 4" .
-ecmascript:
-
-               function set_cycle(value) {
-                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo
-                        var ov = val;
-			// Browser.print('old '+ov);
-                        do {
-                                val = Math.floor(Math.random()*2);
-                                var vc = val;
-                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);
-                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
-			// Browser.println(positions[ov]);
-			// Browser.println(positions[vc]);
-                        position = new MFVec3d();
-                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
-                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
-               }:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "TourTime" ;
-  x3d:fromField "cycleTime" ;
-  x3d:toNode "RandomTourTime" ;
-  x3d:toField "set_cycle" .
-:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "RandomTourTime" ;
-  x3d:fromField "position" ;
-  x3d:toNode "TourPosition" ;
-  x3d:toField "keyValue" .
-:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "TourTime" ;
-  x3d:fromField "fraction_changed" ;
-  x3d:toNode "TourPosition" ;
-  x3d:toField "set_fraction" .
-:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "TourPosition" ;
-  x3d:fromField "geovalue_changed" ;
-  x3d:toNode "Tour" ;
-  x3d:toField "set_position" .
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'http://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1 ;
+  x3do:hasMeta :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level '1' ;
+  x3do:name 'Geospatial' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'geobubbles.x3d' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John Carlson' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'manual' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/geobubbles.x3d' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'geo bubbles' .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :Tour, :Background_2_2, :Transform_2_3, :TourTime, :TourPosition, :RandomTourTime ;
+  x3do:hasROUTE :ROUTE_2_7, :ROUTE_2_8, :ROUTE_2_9, :ROUTE_2_10 .
+:Tour a owl:NamedIndividual, x3do:GeoViewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:position ( 0 0 4 ) ;
+  x3do:orientation ( 1 0 0 0 ) ;
+  x3do:description 'Tour Views' .
+:Background_2_2 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:backUrl '"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/images/BK.png"' ;
+  x3do:bottomUrl '"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/images/BT.png"' ;
+  x3do:frontUrl '"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/images/FR.png"' ;
+  x3do:leftUrl '"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/images/LF.png"' ;
+  x3do:rightUrl '"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/images/RT.png"' ;
+  x3do:topUrl '"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/images/TP.png"' .
+:Transform_2_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_3_1 .
+:Shape_2_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3 ;
+  x3do:hasGeometry :Sphere_2_3_1_1 ;
+  x3do:hasAppearance :Appearance_2_3_1_2 .
+:Sphere_2_3_1_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_3_1 .
+:Appearance_2_3_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_1 ;
+  x3do:hasMaterial :Material_2_3_1_2_1 .
+:Material_2_3_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_1_2 ;
+  x3do:diffuseColor ( 0.7 0.7 0.7 ) ;
+  x3do:specularColor ( 0.5 0.5 0.5 ) .
+:TourTime a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Scene ;
+  x3do:cycleInterval '5' ;
+  x3do:loop 'true' .
+:TourPosition a owl:NamedIndividual, x3do:GeoPositionInterpolator ;
+  x3do:hasParent :Scene ;
+  x3do:key ( 0 1 ) ;
+  x3do:keyValue ( 0.0015708 0 4 0 0.0015708 4 ) .
+:RandomTourTime a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Scene ;
+  x3do:hasField :field_2_6_1, :field_2_6_2, :field_2_6_3, :field_2_6_4 .
+:field_2_6_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :RandomTourTime ;
+  x3do:name 'set_cycle' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFTime' .
+:field_2_6_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :RandomTourTime ;
+  x3do:name 'val' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFFloat' ;
+  x3do:value '0' .
+:field_2_6_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :RandomTourTime ;
+  x3do:name 'positions' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'MFVec3d' ;
+  x3do:value ( 0.0015708 0 4 0 0.0015708 4 ) .
+:field_2_6_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :RandomTourTime ;
+  x3do:name 'position' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'MFVec3d' ;
+  x3do:value ( 0.0015708 0 4 0 0.0015708 4 ) .
+:ROUTE_2_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'TourTime' ;
+  x3do:fromField 'cycleTime' ;
+  x3do:toNode 'RandomTourTime' ;
+  x3do:toField 'set_cycle' .
+:ROUTE_2_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'RandomTourTime' ;
+  x3do:fromField 'position' ;
+  x3do:toNode 'TourPosition' ;
+  x3do:toField 'keyValue' .
+:ROUTE_2_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'TourTime' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'TourPosition' ;
+  x3do:toField 'set_fraction' .
+:ROUTE_2_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'TourPosition' ;
+  x3do:fromField 'geovalue_changed' ;
+  x3do:toNode 'Tour' ;
+  x3do:toField 'set_position' .

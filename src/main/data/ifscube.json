@@ -8,11 +8,11 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"ifscube.json"
+            "@content":"ifscube.x3d"
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/template.json"
+            "@content":"http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"
           },
           {
             "@name":"description",
@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 August 2019"
+            "@content":"18 April 2020"
           },
           {
             "@name":"generator",

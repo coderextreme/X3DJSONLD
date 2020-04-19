@@ -11,7 +11,7 @@
     <meta content='1 March 2001' name='created'/>
     <meta content='12 January 2017' name='revision'/>
     <meta content='14 January 2017' name='translated'/>
-    <meta content='9 April 2019' name='modified'/>
+    <meta content='20 October 2019' name='modified'/>
     <meta content='BoxManAnimationPanelInclined.png' name='Image'/>
     <meta content='BoxManAnimationPanel.mp4' name='MovingImage'/>
     <meta content='https://www.youtube.com/watch?v=8tI83Rtg_DU' name='MovingImage'/>
@@ -27,11 +27,11 @@
     <meta content='http://h-anim.org/Specifications/H-Anim2001' name='reference'/>
     <meta content='http://h-anim.org/Models' name='reference'/>
     <meta content='http://h-anim.org/Nodes' name='reference'/>
-    <meta content='http://www.web3d.org/x3d/content/X3dToVrml97.xslt' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/content/X3dToVrml97.xslt' name='reference'/>
     <meta content='(C) 2000 James Smith - james@vapourtech.com' name='rights'/>
     <meta content='http://www.vapourtech.com' name='reference'/>
     <meta content='BoxMan H-Anim 2.0' name='subject'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManAnimationPanel.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManAnimationPanel.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
   </head>

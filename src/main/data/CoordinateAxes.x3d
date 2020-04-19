@@ -2,10 +2,10 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
       <head>
-        <meta name='title' content='CoordinateAxis.x3d'/>
+        <meta name='title' content='CoordinateAxes.x3d'/>
         <meta name='creator' content='Unknown, see X3D Resources Archives'/>
         <meta name='generator' content='manual'/>
-        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/CoordinateAxis.x3d'/>
+        <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d'/>
         <meta name='description' content='a box'/>      
       </head>
   <Scene>
