@@ -103,7 +103,7 @@
                           },
                           { "Script":
                             {
-                              "@DEF":"bounce",
+                              "@DEF":"bounce1",
                               "field": [
                                 {
                                   "@name":"scale",
@@ -192,7 +192,7 @@
                           { "ROUTE":
                             {
                               "@fromField":"translation_changed",
-                              "@fromNode":"bounce",
+                              "@fromNode":"bounce1",
                               "@toField":"set_translation",
                               "@toNode":"transform"
                             }
@@ -200,7 +200,7 @@
                           { "ROUTE":
                             {
                               "@fromField":"scale_changed",
-                              "@fromNode":"bounce",
+                              "@fromNode":"bounce1",
                               "@toField":"set_scale",
                               "@toNode":"transform"
                             }
@@ -210,7 +210,7 @@
                               "@fromField":"fraction_changed",
                               "@fromNode":"bubbleClock",
                               "@toField":"set_fraction",
-                              "@toNode":"bounce"
+                              "@toNode":"bounce1"
                             }
                           }
                         ]

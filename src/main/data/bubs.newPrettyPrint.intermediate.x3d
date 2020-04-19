@@ -22,7 +22,7 @@
             </Appearance>
             <Sphere radius='0.25'/>
           </Shape>
-          <Script DEF='bounce'>
+          <Script DEF='bounce1'>
             <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
             <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
             <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
@@ -71,9 +71,9 @@ function set_fraction(value) {
 ]]>
           </Script>
           <TimeSensor DEF='bubbleClock' cycleInterval='10.0' loop='true'/>
-          <ROUTE fromField='translation_changed' fromNode='bounce' toField='set_translation' toNode='transform'/>
-          <ROUTE fromField='scale_changed' fromNode='bounce' toField='set_scale' toNode='transform'/>
-          <ROUTE fromField='fraction_changed' fromNode='bubbleClock' toField='set_fraction' toNode='bounce'/>
+          <ROUTE fromField='translation_changed' fromNode='bounce1' toField='set_translation' toNode='transform'/>
+          <ROUTE fromField='scale_changed' fromNode='bounce1' toField='set_scale' toNode='transform'/>
+          <ROUTE fromField='fraction_changed' fromNode='bubbleClock' toField='set_fraction' toNode='bounce1'/>
         </Transform>
       </ProtoBody>
     </ProtoDeclare>

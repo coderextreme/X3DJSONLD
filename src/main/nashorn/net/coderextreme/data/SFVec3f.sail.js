@@ -18,7 +18,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("float[]"))).setSpecularColor(Java.to([0.5,0.5,0.5], Java.type("float[]")))))
             .setGeometry(new SphereObject())))
-        .addChild(new ScriptObject().setDEF("Bounce")
+        .addChild(new ScriptObject().setDEF("Bounce2")
           .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_translation").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
           .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -56,6 +56,6 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "			     newBubble();\n"+
 "			}"))
         .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
-        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
-        .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
+        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
+        .addChild(new ROUTEObject().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
     X3D0.toFileX3D("../data/SFVec3f.new.x3d");

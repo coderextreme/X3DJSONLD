@@ -93,7 +93,7 @@ public class SFVec3f {
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f})))
             .setGeometry(new SphereObject())))
-        .addChild(new ScriptObject().setDEF("Bounce")
+        .addChild(new ScriptObject().setDEF("Bounce2")
           .addField(new fieldObject().setType("SFVec3f").setName("set_translation").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
           .addField(new fieldObject().setType("SFVec3f").setName("translation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
           .addField(new fieldObject().setType("SFVec3f").setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -131,8 +131,8 @@ public class SFVec3f {
 "			     newBubble();\n"+
 "			}"))
         .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
-        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
-        .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
+        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
+        .addChild(new ROUTEObject().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
     return X3D0;
     }
 }
