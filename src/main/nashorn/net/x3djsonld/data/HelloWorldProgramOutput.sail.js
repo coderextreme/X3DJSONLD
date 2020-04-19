@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL). </p>
- <p> Related links: HelloWorldProgramOutput_sail.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: HelloWorldProgramOutput_sail.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -12,7 +12,7 @@ load('X3Dautoclass.js');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d">HelloWorldProgramOutput.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d">HelloWorldProgramOutput.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
@@ -24,7 +24,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">http://www.web3d.org/specifications/java/X3DJSAIL.html</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">https://www.web3d.org/specifications/java/X3DJSAIL.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -36,7 +36,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 19 June 2019 </td>
+			<td> 4 April 2020 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -44,7 +44,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java" target="_blank">http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java" target="_blank">https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -68,7 +68,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -76,19 +76,19 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" target="_blank">https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a> </td>
+			<td> <a href="https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" target="_blank">https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" target="_blank">http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" target="_blank">https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/specifications/java/examples/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -97,9 +97,9 @@ load('X3Dautoclass.js');
 
 	<p>
 		This program uses the
-		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
+		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
-		<a href="http://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
+		<a href="https://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
 		stylesheet to create ES5 source code from an <code>.x3d</code> scene.
 	</p>
 
@@ -127,23 +127,24 @@ HelloWorldProgramOutput_sail.prototype = {
     .addComments(" comment #3 ")
     .addComments(" comment #4 ")
     .addComponent(new componentObject().setName("Navigation").setLevel(3))
-    .addComponent(new componentObject().setName("Layering").setLevel(1))
     .addComponent(new componentObject().setName("Shaders").setLevel(1))
     .addComponent(new componentObject().setName("CADGeometry").setLevel(2))
     .addComponent(new componentObject().setName("DIS").setLevel(2))
     .addComponent(new componentObject().setName("H-Anim").setLevel(1))
+    .addComponent(new componentObject().setName("Grouping").setLevel(1))
+    .addComponent(new componentObject().setName("Layering").setLevel(1))
     .addUnit(new unitObject().setName("AngleUnitConversion").setConversionFactor(1.0).setCategory("angle"))
     .addUnit(new unitObject().setName("LengthUnitConversion").setConversionFactor(1.0).setCategory("length"))
     .addUnit(new unitObject().setName("ForceFromPoundsToNewtons").setConversionFactor(4.4482).setCategory("force"))
     .addMeta(new metaObject().setName("title").setContent("HelloWorldProgramOutput.x3d"))
     .addMeta(new metaObject().setName("info").setContent("continued development and testing in progress"))
     .addMeta(new metaObject().setName("description").setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
+    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
     .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-    .addMeta(new metaObject().setName("modified").setContent("19 June 2019"))
+    .addMeta(new metaObject().setName("modified").setContent("4 April 2020"))
     .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
-    .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
+    .addMeta(new metaObject().setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
     .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
     .addMeta(new metaObject().setName("reference").setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"))
@@ -152,8 +153,8 @@ HelloWorldProgramOutput_sail.prototype = {
     .addMeta(new metaObject().setName("reference").setContent("HelloWorldProgramOutput.x3dv"))
     .addMeta(new metaObject().setName("reference").setContent("HelloWorldProgramOutput.wrl"))
     .addMeta(new metaObject().setName("reference").setContent("HelloWorldProgramOutput.html"))
-    .addMeta(new metaObject().setName("reference").setContent("https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
+    .addMeta(new metaObject().setName("reference").setContent("https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new ViewpointGroupObject().setDescription("Available viewpoints")
@@ -166,11 +167,11 @@ HelloWorldProgramOutput_sail.prototype = {
     .addMetadata(new MetadataStringObject("scene.addChildMetadata").setName("test").setValue(new MFStringObject("\"Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding\"")))
     .addChild(new LayerSetObject("scene.addChildLayerSetTest"))
     .addChild(new TransformObject("LogoGeometryTransform").setTranslation(0.0,1.5,0.0)
-      .addChild(new AnchorObject().setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new MFStringObject("\"../X3DJSAIL.html\" \"http://www.web3d.org/specifications/java/X3DJSAIL.html\""))
+      .addChild(new AnchorObject().setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new MFStringObject("\"../X3DJSAIL.html\" \"https://www.web3d.org/specifications/java/X3DJSAIL.html\""))
         .addChild(new ShapeObject("BoxShape")
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject("GreenMaterial").setDiffuseColor(0.0,1.0,1.0).setTransparency(0.1).setEmissiveColor(0.8,0.0,0.0))
-            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/X3dJavaSceneAccessInterfaceSaiLibrary.png\" \"http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png\""))))
+            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/X3dJavaSceneAccessInterfaceSaiLibrary.png\" \"https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png\""))))
           .setGeometry(new BoxObject("test-NMTOKEN_regex.0123456789").setCssClass("untextured")))))
     .addChild(new ShapeObject("LineShape")
       .setAppearance(new AppearanceObject()
@@ -199,7 +200,7 @@ HelloWorldProgramOutput_sail.prototype = {
           .addComments(" alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
           .addComments(" alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"' ")
           .addComments(" alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"Immel did it!\\\"\"}) ")
-          .addComments(" reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html ")
+          .addComments(" reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html ")
           .setGeometry(new TextObject().setString(new MFStringObject("\"One, Two, Text\" \"\" \"He said, \\\"Immel did it!\\\" \\\"\\\"\"")))))
       .addComments(" It's a beautiful world ")
       .addComments(" ... for you! ")
@@ -264,7 +265,7 @@ HelloWorldProgramOutput_sail.prototype = {
         .addComments(" ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. ")
         .setMaterial(new ProtoInstanceObject().setUSE("ArtDeco02MaterialDEF")))
       .setGeometry(new CylinderObject().setHeight(0.001).setRadius(0.001)))
-    .addChild(new InlineObject("inlineSceneDef").setUrl(new MFStringObject("\"someOtherScene.x3d\" \"http://www.web3d.org/specifications/java/examples/someOtherScene.x3d\"")))
+    .addChild(new InlineObject("inlineSceneDef").setUrl(new MFStringObject("\"someOtherScene.x3d\" \"https://www.web3d.org/specifications/java/examples/someOtherScene.x3d\"")))
     .addChild(new IMPORTObject().setImportedDEF("WorldInfoDEF").setInlineDEF("inlineSceneDef").setAS("WorldInfoDEF2"))
     .addChild(new EXPORTObject().setLocalDEF("WorldInfoDEF").setAS("WorldInfoDEF3"))
     .addChild(new ProtoDeclareObject().setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
@@ -344,12 +345,12 @@ HelloWorldProgramOutput_sail.prototype = {
       .addComments(" regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value "))
     .addChild(new SoundObject().setLocation(0.0,1.6,0.0)
       .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
-      .setSource(new AudioClipObject().setDescription("chimes").setUrl(new MFStringObject("\"chimes.wav\" \"http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav\""))
-        .addComments(" Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d ")))
+      .setSource(new AudioClipObject().setDescription("chimes").setUrl(new MFStringObject("\"chimes.wav\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav\""))
+        .addComments(" Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d ")))
     .addChild(new SoundObject().setLocation(0.0,1.6,0.0)
       .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
-      .setSource(new MovieTextureObject().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new MFStringObject("\"mpgsys.mpg\" \"http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg\""))
-        .addComments(" Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
+      .setSource(new MovieTextureObject().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new MFStringObject("\"mpgsys.mpg\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg\""))
+        .addComments(" Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
         .addComments(" Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\" ")))
     .addComments(" Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true ")
     .addComments(" Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false ")
@@ -400,8 +401,7 @@ HelloWorldProgramOutput_sail.prototype = {
       .addChild(new SignalPduObject())
       .addChild(new TransmitterPduObject().setRelativeAntennaLocation(0.0,0.0,0.0).setTransmitFrequencyBandwidth(0.0))
       .addChild(new DISEntityManagerObject()
-        .setMapping(new DISEntityTypeMappingObject()))
-      .addChild(new HAnimHumanoidObject("TestHumanoidDEF").setName("TestHumanoid").setVersion("2.0"))));
+        .setMapping(new DISEntityTypeMappingObject()))));
   },
   // end of initialize() method
 

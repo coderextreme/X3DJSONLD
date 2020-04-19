@@ -222,7 +222,9 @@ ProtoInstance47.fieldValue = [];
 
 ProtoInstance47.fieldValue[0] = fieldValue48;
 
-Appearance46.material = ProtoInstance47;
+Appearance46.ers = [];
+
+Appearance46.ers[0] = ProtoInstance47;
 
 Shape45.appearance = Appearance46;
 

@@ -55,7 +55,7 @@ Transform11.DEF = "LogoGeometryTransform";
 Transform11.translation = [0,1.5,0];
 Anchor12 = browser.currentScene.createNode("Anchor");
 Anchor12.description = "select for X3D Java SAI Library (X3DJSAIL) description";
-Anchor12.url = ["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"];
+Anchor12.url = ["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"];
 Shape13 = browser.currentScene.createNode("Shape");
 Shape13.DEF = "BoxShape";
 Appearance14 = browser.currentScene.createNode("Appearance");
@@ -67,7 +67,7 @@ Material15.transparency = 0.1;
 Appearance14.material = Material15;
 
 ImageTexture16 = browser.currentScene.createNode("ImageTexture");
-ImageTexture16.url = ["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"];
+ImageTexture16.url = ["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"];
 Appearance14.texture = ImageTexture16;
 
 Shape13.appearance = Appearance14;
@@ -181,7 +181,7 @@ Shape37.DEF = "ProxyShape";
 //alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
 //alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'
 //alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
-//reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
+//reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
 Text38 = browser.currentScene.createNode("Text");
 Text38.string = ["One, Two, Text","","He said, \"Immel did it!\" \"\""];
 Shape37.geometry = Text38;
@@ -383,7 +383,9 @@ ProtoInstance67.fieldValue = [];
 
 ProtoInstance67.fieldValue[0] = fieldValue68;
 
-Appearance66.material = ProtoInstance67;
+Appearance66.ers = [];
+
+Appearance66.ers[0] = ProtoInstance67;
 
 Shape65.appearance = Appearance66;
 
@@ -409,7 +411,9 @@ ProtoInstance72.fieldValue = [];
 
 ProtoInstance72.fieldValue[0] = fieldValue73;
 
-Appearance71.material = ProtoInstance72;
+Appearance71.ers = [];
+
+Appearance71.ers[0] = ProtoInstance72;
 
 Shape70.appearance = Appearance71;
 
@@ -427,7 +431,9 @@ Appearance76.DEF = "TestAppearance3";
 //ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE.
 ProtoInstance77 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance77.USE = "ArtDeco02MaterialDEF";
-Appearance76.material = ProtoInstance77;
+Appearance76.ers = [];
+
+Appearance76.ers[0] = ProtoInstance77;
 
 Shape75.appearance = Appearance76;
 
@@ -440,7 +446,7 @@ browser.currentScene.children[23] = Shape75;
 
 Inline79 = browser.currentScene.createNode("Inline");
 Inline79.DEF = "inlineSceneDef";
-Inline79.url = ["someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"];
+Inline79.url = ["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"];
 browser.currentScene.children[24] = Inline79;
 
 IMPORT80 = browser.currentScene.createNode("IMPORT");
@@ -644,7 +650,9 @@ Appearance111.DEF = "DeclarativeAppearanceExample";
 ProtoInstance112 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance112.name = "MaterialModulator";
 ProtoInstance112.DEF = "MyMaterialModulator";
-Appearance111.material = ProtoInstance112;
+Appearance111.ers = [];
+
+Appearance111.ers[0] = ProtoInstance112;
 
 Shape109.appearance = Appearance111;
 
@@ -684,8 +692,8 @@ Sound115.location = [0,1.6,0];
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
 AudioClip116 = browser.currentScene.createNode("AudioClip");
 AudioClip116.description = "chimes";
-AudioClip116.url = ["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"];
-//Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
+AudioClip116.url = ["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"];
+//Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
 Sound115.source = AudioClip116;
 
 browser.currentScene.children[30] = Sound115;
@@ -695,8 +703,8 @@ Sound117.location = [0,1.6,0];
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
 MovieTexture118 = browser.currentScene.createNode("MovieTexture");
 MovieTexture118.description = "mpgsys.mpg from ConformanceNist suite";
-MovieTexture118.url = ["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"];
-//Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
+MovieTexture118.url = ["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"];
+//Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
 //Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\"
 Sound117.source = MovieTexture118;
 
@@ -815,7 +823,7 @@ Appearance138.shaders[0] = ProgramShader139;
 ProtoInstance141 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance141.name = "ShaderProto";
 ProtoInstance141.DEF = "TestShader3";
-Appearance138.material = ProtoInstance141;
+Appearance138.shaders[1] = ProtoInstance141;
 
 ComposedShader142 = browser.currentScene.createNode("ComposedShader");
 ComposedShader142.DEF = "TestShader4";
@@ -826,7 +834,7 @@ ComposedShader142.parts = [];
 
 ComposedShader142.parts[0] = ShaderPart143;
 
-Appearance138.shaders[1] = ComposedShader142;
+Appearance138.shaders[2] = ComposedShader142;
 
 Shape137.appearance = Appearance138;
 
@@ -873,12 +881,6 @@ DISEntityManager153.mapping = [];
 DISEntityManager153.mapping[0] = DISEntityTypeMapping154;
 
 Transform144.children[5] = DISEntityManager153;
-
-HAnimHumanoid155 = browser.currentScene.createNode("HAnimHumanoid");
-HAnimHumanoid155.name = "TestHumanoid";
-HAnimHumanoid155.DEF = "TestHumanoidDEF";
-HAnimHumanoid155.version = "2.0";
-Transform144.children[6] = HAnimHumanoid155;
 
 browser.currentScene.children[36] = Transform144;
 

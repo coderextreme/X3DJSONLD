@@ -74,7 +74,7 @@ for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$
 do
 	pushd ../node
 	echo $i
-	node $i
+	${NODE} $i
 	popd
 done
 

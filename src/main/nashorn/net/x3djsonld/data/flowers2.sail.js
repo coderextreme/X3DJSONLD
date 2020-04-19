@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> 2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi). </p>
- <p> Related links: flowers2_sail.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: flowers2_sail.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -53,9 +53,9 @@ load('X3Dautoclass.js');
 
 	<p>
 		This program uses the
-		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
+		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
-		<a href="http://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
+		<a href="https://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
 		stylesheet to create ES5 source code from an <code>.x3d</code> scene.
 	</p>
 
@@ -77,6 +77,7 @@ flowers2_sail.prototype = {
   {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.0")
   .setHead(new headObject()
+    .addComponent(new componentObject().setName("Scripting").setLevel(1))
     .addMeta(new metaObject().setName("title").setContent("flowers2.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("transcriber").setContent("John Carlson"))
@@ -196,10 +197,10 @@ flowers2_sail.prototype = {
               .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
               .addField(new fieldObject().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
               .addField(new fieldObject().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))
-              .addField(new fieldObject().setAccessType("outputOnly").setName("e").setType("SFFloat").setValue("5"))
-              .addField(new fieldObject().setAccessType("outputOnly").setName("f").setType("SFFloat").setValue("5"))
-              .addField(new fieldObject().setAccessType("outputOnly").setName("g").setType("SFFloat").setValue("5"))
-              .addField(new fieldObject().setAccessType("outputOnly").setName("h").setType("SFFloat").setValue("5"))
+              .addField(new fieldObject().setAccessType("inputOutput").setName("e").setType("SFFloat").setValue("5"))
+              .addField(new fieldObject().setAccessType("inputOutput").setName("f").setType("SFFloat").setValue("5"))
+              .addField(new fieldObject().setAccessType("inputOutput").setName("g").setType("SFFloat").setValue("5"))
+              .addField(new fieldObject().setAccessType("inputOutput").setName("h").setType("SFFloat").setValue("5"))
               .addField(new fieldObject().setAccessType("inputOutput").setName("resolution").setType("SFInt32").setValue("50")))
             .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
             .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))

@@ -328,10 +328,10 @@ function clockTrigger (timeValue)
       <Appearance>
         <!-- Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes -->
         <!-- Test satisfactorily creates MFNode shaders array as an ordered list with mixed content -->
+        <ProtoInstance DEF='TestShader3' name='ShaderProto' containerField='material'/>
         <ProgramShader DEF='TestShader1'>
           <ShaderProgram DEF='TestShader2'/>
         </ProgramShader>
-        <ProtoInstance DEF='TestShader3' name='ShaderProto' containerField='shaders'/>
         <ComposedShader DEF='TestShader4'>
           <ShaderPart DEF='TestShader5'/>
         </ComposedShader>
