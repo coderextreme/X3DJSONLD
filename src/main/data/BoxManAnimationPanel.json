@@ -46,7 +46,7 @@
           },
           {
             "@name":"modified",
-            "@content":"6 January 2018"
+            "@content":"20 October 2019"
           },
           {
             "@name":"Image",
@@ -77,8 +77,8 @@
             "@content":"boxman.original.wrl"
           },
           {
-            "@name":"TODO instantReality Forum Issue",
-            "@content":"InstantReality is ignoring the Viewpoint nodes in the topmost HAnimSite. http://forum.instantreality.org"
+            "@name":"TODO",
+            "@content":"InstantReality Forum Issue: InstantReality is ignoring the Viewpoint nodes in the topmost HAnimSite. http://forum.instantreality.org"
           },
           {
             "@name":"reference",
@@ -110,7 +110,7 @@
           },
           {
             "@name":"reference",
-            "@content":"http://www.web3d.org/x3d/content/X3dToVrml97.xslt"
+            "@content":"https://www.web3d.org/x3d/content/X3dToVrml97.xslt"
           },
           {
             "@name":"rights",
@@ -126,7 +126,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManAnimationPanel.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManAnimationPanel.x3d"
           },
           {
             "@name":"generator",
@@ -138,7 +138,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 April 2018"
+            "@content":"18 April 2020"
           },
           {
             "@name":"generator",
@@ -169,11 +169,11 @@
               "@name":"Humanoid",
               "@DEF":"boxman_Humanoid",
               "@info":["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"],
-              "@version":"2.2",
+              "@version":"2.0",
               "-skeleton":[
                 { "HAnimJoint":
                   {
-                    "@name":"HumanoidRoot",
+                    "@name":"humanoid_root",
                     "@DEF":"boxman_HumanoidRoot",
                     "@center":[0,0.9723,-0.0728],
                     "@skinCoordIndex":[0,1,2,3,4,5,6,7,8,9,10,11],

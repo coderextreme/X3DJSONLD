@@ -1,146 +1,209 @@
-@prefix : <http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.ttl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix :       <http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.ttl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:    <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:   <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-:Scene rdf:type owl:NamedIndividual, x3d:Scene .
-:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
-  x3d:name "myPrototype" .
-:ProtoInterface_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
-:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "initializeOnly" ;
-  x3d:name "myInputRange" ;
-  x3d:type "SFVec3f" ;
-  x3d:value "0.95 0.44 0.22" .
-:ProtoBody_2_1 rdf:type owl:NamedIndividual, x3d:ProtoBody .
-:TR rdf:type owl:NamedIndividual, x3d:Transform .
-:TR x3d:hasShape :Shape_2_1_2_1 .
-:Shape_2_1_2_1 rdf:type owl:NamedIndividual, x3d:Shape .
-:Appearance_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_1_2_1_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "0.5 0.5 0.9" .
-:Cobweb rdf:type owl:NamedIndividual, x3d:ComposedShader ;
-  x3d:language "GLSL" ;
-  x3d:containerField "shaders" .
-:Cobweb x3d:hasfield :field_2_1_2_1_1_1_2 .
-:field_2_1_2_1_1_1_2 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "initializeOnly" ;
-  x3d:name "decis" ;
-  x3d:type "SFVec3f" ;
-  x3d:value "0.95 0.77 0.44" .
-:Cobweb x3d:hasShaderPart :ShaderPart_2_1_2_1_1_1_2 .
-:ShaderPart_2_1_2_1_1_1_2 rdf:type owl:NamedIndividual, x3d:ShaderPart ;
-  x3d:containerField "parts" .
-
-                  data:text/plain;charset=utf-8,
-
-precision mediump float;
-
-uniform mat4 x3d_ProjectionMatrix;
-uniform mat4 x3d_ModelViewMatrix;
-uniform mat3 x3d_NormalMatrix;
-
-attribute vec4 x3d_Vertex;
-attribute vec3 x3d_Normal;
-
-varying vec3 normal;
-
-void main()
-{
-	normal = x3d_NormalMatrix * x3d_Normal;
-	
-	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;
-}
-
-                :Cobweb x3d:hasShaderPart :_1 .
-:_1 rdf:type owl:NamedIndividual, x3d:ShaderPart ;
-  x3d:type "FRAGMENT" ;
-  x3d:containerField "parts" .
-
-                  data:text/plain;charset=utf-8,
-
-precision mediump float;
-
-uniform vec3 x3d_LightDirection [x3d_MaxLights];
-
-varying vec3 normal;
-uniform vec3 decis;
-
-void main()
-{
-	float intensity;
-	vec4 color;
-	vec3 n = normalize (normal);
-
-	intensity = abs (dot (x3d_LightDirection [0], n));
-
-	if (intensity > decis[0])
-		color = vec4(0.0,0.5,0.5,1.0);
-	else if (intensity > decis[1])
-		color = vec4(0.6,0.3,0.3,1.0);
-	else if (intensity > decis[2])
-		color = vec4(1.0,0.2,0.2,1.0);
-	else
-		color = vec4(0.0,0.4,0.0,1.0);
-
-	gl_FragColor = color;
-} 
-
-                :Sphere_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:Sphere ;
-  x3d:radius "1.75" .
-:WorldInfo_2 rdf:type owl:NamedIndividual, x3d:WorldInfo ;
-  x3d:title "SimpleShader" .
-:Titania rdf:type owl:NamedIndividual, x3d:MetadataSet ;
-  x3d:name "Titania" ;
-  x3d:reference "http://titania.create3000.de" ;
-  x3d:containerField "metadata" .
-:Titania x3d:hasMetadataSet :Selection .
-:Selection rdf:type owl:NamedIndividual, x3d:MetadataSet ;
-  x3d:containerField "value" ;
-  x3d:name "Selection" ;
-  x3d:reference "http://titania.create3000.de" .
-:Selection x3d:hasMetadataSet :nodes .
-:nodes rdf:type owl:NamedIndividual, x3d:MetadataSet ;
-  x3d:containerField "value" ;
-  x3d:name "nodes" ;
-  x3d:reference "http://titania.create3000.de" .
-:Titania x3d:hasMetadataSet :NavigationInfo .
-:NavigationInfo rdf:type owl:NamedIndividual, x3d:MetadataSet ;
-  x3d:containerField "value" ;
-  x3d:name "NavigationInfo" ;
-  x3d:reference "http://titania.create3000.de" .
-:NavigationInfo x3d:hasMetadataString :type .
-:type rdf:type owl:NamedIndividual, x3d:MetadataString ;
-  x3d:containerField "value" ;
-  x3d:name "type" ;
-  x3d:reference "http://titania.create3000.de" ;
-  x3d:value "EXAMINE" .
-:Titania x3d:hasMetadataSet :Viewpoint .
-:Viewpoint rdf:type owl:NamedIndividual, x3d:MetadataSet ;
-  x3d:containerField "value" ;
-  x3d:name "Viewpoint" ;
-  x3d:reference "http://titania.create3000.de" .
-:Viewpoint x3d:hasMetadataDouble :position .
-:position rdf:type owl:NamedIndividual, x3d:MetadataDouble ;
-  x3d:containerField "value" ;
-  x3d:name "position" ;
-  x3d:reference "http://titania.create3000.de" ;
-  x3d:value "6.24067728185014 0.00250837343276661 2.92117542307615" .
-:Viewpoint x3d:hasMetadataDouble :orientation .
-:orientation rdf:type owl:NamedIndividual, x3d:MetadataDouble ;
-  x3d:containerField "value" ;
-  x3d:name "orientation" ;
-  x3d:reference "http://titania.create3000.de" ;
-  x3d:value "-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191" .
-:Viewpoint x3d:hasMetadataDouble :centerOfRotation .
-:centerOfRotation rdf:type owl:NamedIndividual, x3d:MetadataDouble ;
-  x3d:containerField "value" ;
-  x3d:name "centerOfRotation" ;
-  x3d:reference "http://titania.create3000.de" ;
-  x3d:value "-0.808320198626341 -0.358072370409949 0.22817191560906" .
-:ProtoInstance_2 rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
-  x3d:name "myPrototype" .
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.2' ;
+  x3do:noNamespaceSchemaLocation 'http://www.web3d.org/specifications/x3d-3.2.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1 ;
+  x3do:hasMeta :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15, :meta_1_16, :meta_1_17, :meta_1_18, :meta_1_19, :meta_1_20, :meta_1_21 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level '1' ;
+  x3do:name 'Shaders' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'SimpleShader.x3d' ;
+  x3do:name 'title' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Simple shader example' ;
+  x3do:name 'description' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'John Stewart' ;
+  x3do:name 'creator' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick' ;
+  x3do:name 'translator' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '26 May 2009' ;
+  x3do:name 'created' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '15 October 2009' ;
+  x3do:name 'translated' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '24 April 2017' ;
+  x3do:name 'modified' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.opengl.org/wiki/Fragment_Shader' ;
+  x3do:name 'reference' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader' ;
+  x3do:name 'reference' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest' ;
+  x3do:name 'reference' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D shader example' ;
+  x3do:name 'subject' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'originals/simpleShader.x3dv' ;
+  x3do:name 'reference' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ShaderTutorialInstantReality.pdf' ;
+  x3do:name 'reference' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Titania V3.0.3, http://titania.create3000.de' ;
+  x3do:name 'generator' .
+:meta_1_16 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'World of Titania' ;
+  x3do:name 'comment' .
+:meta_1_17 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'nicest' ;
+  x3do:name 'outputStyle' .
+:meta_1_18 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'under development' ;
+  x3do:name 'warning' .
+:meta_1_19 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_20 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_21 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../../license.html' ;
+  x3do:name 'license' .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_1 ;
+  x3do:hasChildren :WorldInfo_2_2, :ProtoInstance_2_3 .
+:ProtoDeclare_2_1 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_1_1 ;
+  x3do:hasProtoBody :ProtoBody_2_1_2 ;
+  x3do:name 'myPrototype' .
+:ProtoInterface_2_1_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasField :field_2_1_1_1 .
+:field_2_1_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'myInputRange' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.95 0.44 0.22 ) .
+:ProtoBody_2_1_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasChildren :TR .
+:TR a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasChildren :Shape_2_1_2_1_1 .
+:Shape_2_1_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :TR ;
+  x3do:hasAppearance :Appearance_2_1_2_1_1_1 ;
+  x3do:hasGeometry :Sphere_2_1_2_1_1_2 .
+:Appearance_2_1_2_1_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_1_1 ;
+  x3do:hasMaterial :Material_2_1_2_1_1_1_1 ;
+  x3do:hasShaders :Cobweb .
+:Material_2_1_2_1_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_1_1_1 ;
+  x3do:diffuseColor ( 0.5 0.5 0.9 ) .
+:Cobweb a owl:NamedIndividual, x3do:ComposedShader ;
+  x3do:hasParent :Appearance_2_1_2_1_1_1 ;
+  x3do:hasField :field_2_1_2_1_1_1_2_1 ;
+  x3do:hasParts :ShaderPart_2_1_2_1_1_1_2_2, :_1 ;
+  x3do:language 'GLSL' .
+:field_2_1_2_1_1_1_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :Cobweb ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'decis' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0.95 0.77 0.44 ) .
+:ShaderPart_2_1_2_1_1_1_2_2 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :Cobweb .
+:_1 a owl:NamedIndividual, x3do:ShaderPart ;
+  x3do:hasParent :Cobweb ;
+  x3do:type 'FRAGMENT' .
+:Sphere_2_1_2_1_1_2 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_2_1_1 ;
+  x3do:radius '1.75' .
+:WorldInfo_2_2 a owl:NamedIndividual, x3do:WorldInfo ;
+  x3do:hasParent :Scene ;
+  x3do:hasMetadata :Titania ;
+  x3do:title 'SimpleShader' .
+:Titania a owl:NamedIndividual, x3do:MetadataSet ;
+  x3do:hasParent :WorldInfo_2_2 ;
+  x3do:hasValue :Selection, :NavigationInfo, :Viewpoint ;
+  x3do:name 'Titania' ;
+  x3do:reference 'http://titania.create3000.de' .
+:Selection a owl:NamedIndividual, x3do:MetadataSet ;
+  x3do:hasParent :Titania ;
+  x3do:hasValue :nodes ;
+  x3do:name 'Selection' ;
+  x3do:reference 'http://titania.create3000.de' .
+:nodes a owl:NamedIndividual, x3do:MetadataSet ;
+  x3do:hasParent :Selection ;
+  x3do:name 'nodes' ;
+  x3do:reference 'http://titania.create3000.de' .
+:NavigationInfo a owl:NamedIndividual, x3do:MetadataSet ;
+  x3do:hasParent :Titania ;
+  x3do:hasValue :type ;
+  x3do:name 'NavigationInfo' ;
+  x3do:reference 'http://titania.create3000.de' .
+:type a owl:NamedIndividual, x3do:MetadataString ;
+  x3do:hasParent :NavigationInfo ;
+  x3do:name 'type' ;
+  x3do:reference 'http://titania.create3000.de' ;
+  x3do:value '"EXAMINE"' .
+:Viewpoint a owl:NamedIndividual, x3do:MetadataSet ;
+  x3do:hasParent :Titania ;
+  x3do:hasValue :position, :orientation, :centerOfRotation ;
+  x3do:name 'Viewpoint' ;
+  x3do:reference 'http://titania.create3000.de' .
+:position a owl:NamedIndividual, x3do:MetadataDouble ;
+  x3do:hasParent :Viewpoint ;
+  x3do:name 'position' ;
+  x3do:reference 'http://titania.create3000.de' ;
+  x3do:value ( 6.24067728185014 0.00250837343276661 2.92117542307615 ) .
+:orientation a owl:NamedIndividual, x3do:MetadataDouble ;
+  x3do:hasParent :Viewpoint ;
+  x3do:name 'orientation' ;
+  x3do:reference 'http://titania.create3000.de' ;
+  x3do:value ( -0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191 ) .
+:centerOfRotation a owl:NamedIndividual, x3do:MetadataDouble ;
+  x3do:hasParent :Viewpoint ;
+  x3do:name 'centerOfRotation' ;
+  x3do:reference 'http://titania.create3000.de' ;
+  x3do:value ( -0.808320198626341 -0.358072370409949 0.22817191560906 ) .
+:ProtoInstance_2_3 a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :Scene ;
+  x3do:name 'myPrototype' .

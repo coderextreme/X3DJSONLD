@@ -1,240 +1,301 @@
-@prefix : <https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.ttl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix :       <https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.ttl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:    <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:   <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-:Scene rdf:type owl:NamedIndividual, x3d:Scene .
-:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
-  x3d:appinfo "HeadsUpDisplay positions child geometry in screen space, movable by the user" ;
-  x3d:name "HeadsUpDisplay" .
-:ProtoInterface_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
-:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOutput" ;
-  x3d:appinfo "Displayed subscene positioned as a HUD." ;
-  x3d:name "children" ;
-  x3d:type "MFNode" .
-:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOutput" ;
-  x3d:appinfo "Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position." ;
-  x3d:name "dragChildren" ;
-  x3d:type "MFNode" .
-:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "initializeOnly" ;
-  x3d:appinfo "Modified screen location and distance (for size)." ;
-  x3d:name "locationOffset" ;
-  x3d:type "SFVec3f" ;
-  x3d:value "-2 -2 0" .
-:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "initializeOnly" ;
-  x3d:appinfo "Enable/disable console output for troubleshooting." ;
-  x3d:name "traceEnabled" ;
-  x3d:type "SFBool" ;
-  x3d:value "false" .
-:ProtoBody_2_1 rdf:type owl:NamedIndividual, x3d:ProtoBody .
-:Group_2_1_2 rdf:type owl:NamedIndividual, x3d:Group .
-:WhereSensor rdf:type owl:NamedIndividual, x3d:ProximitySensor ;
-  x3d:size "1000000000 1000000000 1000000000" .
-:WhereSensor x3d:hasIS :IS_2_1_2_1_1 .
-:IS_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:IS .
-:connect_2_1_2_1_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
-  x3d:nodeField "center" ;
-  x3d:protoField "locationOffset" .
-:FixedLocation rdf:type owl:NamedIndividual, x3d:Transform .
-:FixedLocation x3d:hasTransform :MovableLocation .
-:MovableLocation rdf:type owl:NamedIndividual, x3d:Transform .
-:MovableLocation x3d:hasTransform :LocationOffset .
-:LocationOffset rdf:type owl:NamedIndividual, x3d:Transform .
-:LocationOffset x3d:hasIS :IS_2_1_2_1_2_1_1 .
-:IS_2_1_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:IS .
-:connect_2_1_2_1_2_1_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
-  x3d:nodeField "translation" ;
-  x3d:protoField "locationOffset" .
-:LocationOffset x3d:hasTransform :Transform_2_1_2_1_2_1_1 .
-:Transform_2_1_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:translation "0 0 -10" .
-:Group_2_1_2_1_2_1_1_2 rdf:type owl:NamedIndividual, x3d:Group .
-:IS_2_1_2_1_2_1_1_2_1 rdf:type owl:NamedIndividual, x3d:IS .
-:connect_2_1_2_1_2_1_1_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
-  x3d:nodeField "children" ;
-  x3d:protoField "children" .
-:PlaneMovementSensorGroup rdf:type owl:NamedIndividual, x3d:Group .
-:PlaneMovementSensorGroup x3d:hasGroup :DragGeometry .
-:DragGeometry rdf:type owl:NamedIndividual, x3d:Group .
-:DragGeometry x3d:hasIS :IS_2_1_2_1_2_1_1_2_2_1 .
-:IS_2_1_2_1_2_1_1_2_2_1 rdf:type owl:NamedIndividual, x3d:IS .
-:connect_2_1_2_1_2_1_1_2_2_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
-  x3d:nodeField "children" ;
-  x3d:protoField "dragChildren" .
-:PlaneMovementSensorGroup x3d:hasPlaneSensor :PlaneMovementSensor .
-:PlaneMovementSensor rdf:type owl:NamedIndividual, x3d:PlaneSensor ;
-  x3d:description "click and drag to move interface" .
-:PlaneMovementSensor x3d:hasIS :IS_2_1_2_1_2_1_1_2_2_2 .
-:IS_2_1_2_1_2_1_1_2_2_2 rdf:type owl:NamedIndividual, x3d:IS .
-:connect_2_1_2_1_2_1_1_2_2_2_1 rdf:type owl:NamedIndividual, x3d:connect ;
-  x3d:nodeField "offset" ;
-  x3d:protoField "locationOffset" .
-:PlaneMovementSensorGroup x3d:hasVisibilitySensor :MovementVisibilitySensor .
-:MovementVisibilitySensor rdf:type owl:NamedIndividual, x3d:VisibilitySensor .
-:PlaneMovementSensorGroup x3d:hasScript :VisibilityControlScript .
-:VisibilityControlScript rdf:type owl:NamedIndividual, x3d:Script .
-
-                      :VisibilityControlScript x3d:hasfield :field_2_1_2_1_2_1_1_2_2_4 .
-:field_2_1_2_1_2_1_1_2_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "initializeOnly" ;
-  x3d:name "traceEnabled" ;
-  x3d:type "SFBool" .
-
-                      :VisibilityControlScript x3d:hasfield :field_2_1_2_1_2_1_1_2_2_4 .
-:field_2_1_2_1_2_1_1_2_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "initializeOnly" ;
-  x3d:name "isVisible" ;
-  x3d:type "SFBool" ;
-  x3d:value "true" .
-
-                      :VisibilityControlScript x3d:hasfield :field_2_1_2_1_2_1_1_2_2_4 .
-:field_2_1_2_1_2_1_1_2_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "initializeOnly" ;
-  x3d:name "planeSensorTranslation" ;
-  x3d:type "SFVec3f" ;
-  x3d:value "0 0 0" .
-
-                      :VisibilityControlScript x3d:hasfield :field_2_1_2_1_2_1_1_2_2_4 .
-:field_2_1_2_1_2_1_1_2_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "setIsVisible" ;
-  x3d:type "SFBool" .
-
-                      :VisibilityControlScript x3d:hasfield :field_2_1_2_1_2_1_1_2_2_4 .
-:field_2_1_2_1_2_1_1_2_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "setPlaneSensorIsActive" ;
-  x3d:type "SFBool" .
-
-                      :VisibilityControlScript x3d:hasfield :field_2_1_2_1_2_1_1_2_2_4 .
-:field_2_1_2_1_2_1_1_2_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "setPlaneSensorTranslation" ;
-  x3d:type "SFVec3f" .
-
-                      :VisibilityControlScript x3d:hasfield :field_2_1_2_1_2_1_1_2_2_4 .
-:field_2_1_2_1_2_1_1_2_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:name "translationChanged" ;
-  x3d:type "SFVec3f" .
-
-                      :VisibilityControlScript x3d:hasfield :field_2_1_2_1_2_1_1_2_2_4 .
-:field_2_1_2_1_2_1_1_2_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:name "translationOffsetChanged" ;
-  x3d:type "SFVec3f" .
-
-                      :VisibilityControlScript x3d:hasIS :IS_2_1_2_1_2_1_1_2_2_4 .
-:IS_2_1_2_1_2_1_1_2_2_4 rdf:type owl:NamedIndividual, x3d:IS .
-:connect_2_1_2_1_2_1_1_2_2_4_9 rdf:type owl:NamedIndividual, x3d:connect ;
-  x3d:nodeField "traceEnabled" ;
-  x3d:protoField "traceEnabled" .
-
-                      
-ecmascript:
-
-function tracePrint (text)
-{
-	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);
-}
-function setIsVisible (value, timeStamp)
-{
-	isVisible = value;
-	tracePrint('isVisible=' + value);
-}
-function setPlaneSensorIsActive (value, timeStamp)
-{
-	tracePrint('PlaneSensor isActive=' + value);
-
-	if (value == false)
-	{
-		tracePrint('planeSensorTranslation=' + planeSensorTranslation);
-		if (isVisible)
-		{
-			translationChanged = planeSensorTranslation;
-		}
-		else
-		{
-			// fell off screen, reset to center
-			translationChanged = new SFVec3f(0, 0, 0);
-			translationOffsetChanged  = new SFVec3f(0, 0, 0);
-		}
-	}
-}
-function setPlaneSensorTranslation (value, timeStamp)
-{
-	planeSensorTranslation = value;
-	tracePrint('planeSensorTranslation=' + value);
-}
-
-                    :PlaneMovementSensorGroup x3d:hasROUTE :ROUTE_2_1_2_1_2_1_1_2_2 .
-:ROUTE_2_1_2_1_2_1_1_2_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "isActive" ;
-  x3d:fromNode "PlaneMovementSensor" ;
-  x3d:toField "setPlaneSensorIsActive" ;
-  x3d:toNode "VisibilityControlScript" .
-:PlaneMovementSensorGroup x3d:hasROUTE :ROUTE_2_1_2_1_2_1_1_2_2 .
-:ROUTE_2_1_2_1_2_1_1_2_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "translation_changed" ;
-  x3d:fromNode "PlaneMovementSensor" ;
-  x3d:toField "setPlaneSensorTranslation" ;
-  x3d:toNode "VisibilityControlScript" .
-:PlaneMovementSensorGroup x3d:hasROUTE :ROUTE_2_1_2_1_2_1_1_2_2 .
-:ROUTE_2_1_2_1_2_1_1_2_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "isActive" ;
-  x3d:fromNode "MovementVisibilitySensor" ;
-  x3d:toField "setIsVisible" ;
-  x3d:toNode "VisibilityControlScript" .
-:MovableLocation x3d:hasROUTE :ROUTE_2_1_2_1_2_1 .
-:ROUTE_2_1_2_1_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "translation_changed" ;
-  x3d:fromNode "PlaneMovementSensor" ;
-  x3d:toField "set_translation" ;
-  x3d:toNode "MovableLocation" .
-:MovableLocation x3d:hasROUTE :ROUTE_2_1_2_1_2_1 .
-:ROUTE_2_1_2_1_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "translationChanged" ;
-  x3d:fromNode "VisibilityControlScript" ;
-  x3d:toField "set_translation" ;
-  x3d:toNode "MovableLocation" .
-:MovableLocation x3d:hasROUTE :ROUTE_2_1_2_1_2_1 .
-:ROUTE_2_1_2_1_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "translationOffsetChanged" ;
-  x3d:fromNode "VisibilityControlScript" ;
-  x3d:toField "set_offset" ;
-  x3d:toNode "PlaneMovementSensor" .
-:ROUTE_2_1_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "position_changed" ;
-  x3d:fromNode "WhereSensor" ;
-  x3d:toField "set_translation" ;
-  x3d:toNode "FixedLocation" .
-:ROUTE_2_1_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "orientation_changed" ;
-  x3d:fromNode "WhereSensor" ;
-  x3d:toField "set_rotation" ;
-  x3d:toNode "FixedLocation" .
-:Background_2 rdf:type owl:NamedIndividual, x3d:Background ;
-  x3d:groundColor "0.1 0.1 0.3" ;
-  x3d:skyColor "0.5 0.5 0.1" .
-:Anchor_2 rdf:type owl:NamedIndividual, x3d:Anchor ;
-  x3d:description "HeadsUpDisplayExample" ;
-  x3d:parameter "target=_blank" ;
-  x3d:url "HeadsUpDisplayExample.x3d https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d HeadsUpDisplayExample.wrl https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl" .
-:Shape_2_3 rdf:type owl:NamedIndividual, x3d:Shape .
-:Appearance_2_3_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_3_1_1 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "0 1 1" ;
-  x3d:emissiveColor "0 1 1" .
-:Text_2_3_1 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "HeadsUpDisplayPrototype.x3d is a Prototype definition file.  To see an example scene using this node click this text to view HeadsUpDisplayExample.x3d" .
-:FontStyle_2_3_1_2 rdf:type owl:NamedIndividual, x3d:FontStyle ;
-  x3d:justify "MIDDLE MIDDLE" ;
-  x3d:size "0.8" .
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.0' ;
+  x3do:noNamespaceSchemaLocation 'http://www.web3d.org/specifications/x3d-3.0.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HeadsUpDisplayPrototype.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Generic Heads Up Display (HUD) prototype to keep children on screen.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '9 November 2003' ;
+  x3do:name 'created' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '14 January 2014' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'HUD Heads Up Display' ;
+  x3do:name 'subject' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../../license.html' ;
+  x3do:name 'license' .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_1 ;
+  x3do:hasChildren :Background_2_2, :Anchor_2_3 .
+:ProtoDeclare_2_1 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_1_1 ;
+  x3do:hasProtoBody :ProtoBody_2_1_2 ;
+  x3do:appinfo 'HeadsUpDisplay positions child geometry in screen space movable by the user' ;
+  x3do:name 'HeadsUpDisplay' .
+:ProtoInterface_2_1_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasField :field_2_1_1_1, :field_2_1_1_2, :field_2_1_1_3, :field_2_1_1_4 .
+:field_2_1_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Displayed subscene positioned as a HUD.' ;
+  x3do:name 'children' ;
+  x3do:type 'MFNode' .
+:field_2_1_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'inputOutput' ;
+  x3do:appinfo 'Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.' ;
+  x3do:name 'dragChildren' ;
+  x3do:type 'MFNode' .
+:field_2_1_1_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'Modified screen location and distance (for size).' ;
+  x3do:name 'locationOffset' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( -2 -2 0 ) .
+:field_2_1_1_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'Enable/disable console output for troubleshooting.' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' ;
+  x3do:value 'false' .
+:ProtoBody_2_1_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasChildren :Group_2_1_2_1 .
+:Group_2_1_2_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasChildren :WhereSensor, :FixedLocation ;
+  x3do:hasROUTE :ROUTE_2_1_2_1_3, :ROUTE_2_1_2_1_4 .
+:WhereSensor a owl:NamedIndividual, x3do:ProximitySensor ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:hasIS :IS_2_1_2_1_1_1 ;
+  x3do:size ( 1000000000 1000000000 1000000000 ) .
+:IS_2_1_2_1_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :WhereSensor ;
+  x3do:hasConnect :connect_2_1_2_1_1_1_1 .
+:connect_2_1_2_1_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1_1 ;
+  x3do:nodeField 'center' ;
+  x3do:protoField 'locationOffset' .
+:FixedLocation a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:hasChildren :MovableLocation .
+:MovableLocation a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :FixedLocation ;
+  x3do:hasChildren :LocationOffset ;
+  x3do:hasROUTE :ROUTE_2_1_2_1_2_1_2, :ROUTE_2_1_2_1_2_1_3, :ROUTE_2_1_2_1_2_1_4 .
+:LocationOffset a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :MovableLocation ;
+  x3do:hasIS :IS_2_1_2_1_2_1_1_1 ;
+  x3do:hasChildren :Transform_2_1_2_1_2_1_1_2 .
+:IS_2_1_2_1_2_1_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :LocationOffset ;
+  x3do:hasConnect :connect_2_1_2_1_2_1_1_1_1 .
+:connect_2_1_2_1_2_1_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_2_1_1_1 ;
+  x3do:nodeField 'translation' ;
+  x3do:protoField 'locationOffset' .
+:Transform_2_1_2_1_2_1_1_2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :LocationOffset ;
+  x3do:hasChildren :Group_2_1_2_1_2_1_1_2_1, :PlaneMovementSensorGroup ;
+  x3do:translation ( 0 0 -10 ) .
+:Group_2_1_2_1_2_1_1_2_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Transform_2_1_2_1_2_1_1_2 ;
+  x3do:hasIS :IS_2_1_2_1_2_1_1_2_1_1 .
+:IS_2_1_2_1_2_1_1_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :Group_2_1_2_1_2_1_1_2_1 ;
+  x3do:hasConnect :connect_2_1_2_1_2_1_1_2_1_1_1 .
+:connect_2_1_2_1_2_1_1_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_2_1_1_2_1_1 ;
+  x3do:nodeField 'children' ;
+  x3do:protoField 'children' .
+:PlaneMovementSensorGroup a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Transform_2_1_2_1_2_1_1_2 ;
+  x3do:hasChildren :DragGeometry, :PlaneMovementSensor, :MovementVisibilitySensor, :VisibilityControlScript ;
+  x3do:hasROUTE :ROUTE_2_1_2_1_2_1_1_2_2_5, :ROUTE_2_1_2_1_2_1_1_2_2_6, :ROUTE_2_1_2_1_2_1_1_2_2_7 .
+:DragGeometry a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :PlaneMovementSensorGroup ;
+  x3do:hasIS :IS_2_1_2_1_2_1_1_2_2_1_1 .
+:IS_2_1_2_1_2_1_1_2_2_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :DragGeometry ;
+  x3do:hasConnect :connect_2_1_2_1_2_1_1_2_2_1_1_1 .
+:connect_2_1_2_1_2_1_1_2_2_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_2_1_1_2_2_1_1 ;
+  x3do:nodeField 'children' ;
+  x3do:protoField 'dragChildren' .
+:PlaneMovementSensor a owl:NamedIndividual, x3do:PlaneSensor ;
+  x3do:hasParent :PlaneMovementSensorGroup ;
+  x3do:hasIS :IS_2_1_2_1_2_1_1_2_2_2_1 ;
+  x3do:description 'click and drag to move interface' .
+:IS_2_1_2_1_2_1_1_2_2_2_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :PlaneMovementSensor ;
+  x3do:hasConnect :connect_2_1_2_1_2_1_1_2_2_2_1_1 .
+:connect_2_1_2_1_2_1_1_2_2_2_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_2_1_1_2_2_2_1 ;
+  x3do:nodeField 'offset' ;
+  x3do:protoField 'locationOffset' .
+:MovementVisibilitySensor a owl:NamedIndividual, x3do:VisibilitySensor ;
+  x3do:hasParent :PlaneMovementSensorGroup .
+:VisibilityControlScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :PlaneMovementSensorGroup ;
+  x3do:hasField :field_2_1_2_1_2_1_1_2_2_4_1, :field_2_1_2_1_2_1_1_2_2_4_2, :field_2_1_2_1_2_1_1_2_2_4_3, :field_2_1_2_1_2_1_1_2_2_4_4, :field_2_1_2_1_2_1_1_2_2_4_5, :field_2_1_2_1_2_1_1_2_2_4_6, :field_2_1_2_1_2_1_1_2_2_4_7, :field_2_1_2_1_2_1_1_2_2_4_8 ;
+  x3do:hasIS :IS_2_1_2_1_2_1_1_2_2_4_9 .
+:field_2_1_2_1_2_1_1_2_2_4_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :VisibilityControlScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' .
+:field_2_1_2_1_2_1_1_2_2_4_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :VisibilityControlScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'isVisible' ;
+  x3do:type 'SFBool' ;
+  x3do:value 'true' .
+:field_2_1_2_1_2_1_1_2_2_4_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :VisibilityControlScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'planeSensorTranslation' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_1_2_1_2_1_1_2_2_4_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :VisibilityControlScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'setIsVisible' ;
+  x3do:type 'SFBool' .
+:field_2_1_2_1_2_1_1_2_2_4_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :VisibilityControlScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'setPlaneSensorIsActive' ;
+  x3do:type 'SFBool' .
+:field_2_1_2_1_2_1_1_2_2_4_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :VisibilityControlScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'setPlaneSensorTranslation' ;
+  x3do:type 'SFVec3f' .
+:field_2_1_2_1_2_1_1_2_2_4_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :VisibilityControlScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'translationChanged' ;
+  x3do:type 'SFVec3f' .
+:field_2_1_2_1_2_1_1_2_2_4_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :VisibilityControlScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'translationOffsetChanged' ;
+  x3do:type 'SFVec3f' .
+:IS_2_1_2_1_2_1_1_2_2_4_9 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :VisibilityControlScript ;
+  x3do:hasConnect :connect_2_1_2_1_2_1_1_2_2_4_9_1 .
+:connect_2_1_2_1_2_1_1_2_2_4_9_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_2_1_1_2_2_4_9 ;
+  x3do:nodeField 'traceEnabled' ;
+  x3do:protoField 'traceEnabled' .
+:ROUTE_2_1_2_1_2_1_1_2_2_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :PlaneMovementSensorGroup ;
+  x3do:fromField 'isActive' ;
+  x3do:fromNode 'PlaneMovementSensor' ;
+  x3do:toField 'setPlaneSensorIsActive' ;
+  x3do:toNode 'VisibilityControlScript' .
+:ROUTE_2_1_2_1_2_1_1_2_2_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :PlaneMovementSensorGroup ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'PlaneMovementSensor' ;
+  x3do:toField 'setPlaneSensorTranslation' ;
+  x3do:toNode 'VisibilityControlScript' .
+:ROUTE_2_1_2_1_2_1_1_2_2_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :PlaneMovementSensorGroup ;
+  x3do:fromField 'isActive' ;
+  x3do:fromNode 'MovementVisibilitySensor' ;
+  x3do:toField 'setIsVisible' ;
+  x3do:toNode 'VisibilityControlScript' .
+:ROUTE_2_1_2_1_2_1_2 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :MovableLocation ;
+  x3do:fromField 'translation_changed' ;
+  x3do:fromNode 'PlaneMovementSensor' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'MovableLocation' .
+:ROUTE_2_1_2_1_2_1_3 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :MovableLocation ;
+  x3do:fromField 'translationChanged' ;
+  x3do:fromNode 'VisibilityControlScript' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'MovableLocation' .
+:ROUTE_2_1_2_1_2_1_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :MovableLocation ;
+  x3do:fromField 'translationOffsetChanged' ;
+  x3do:fromNode 'VisibilityControlScript' ;
+  x3do:toField 'set_offset' ;
+  x3do:toNode 'PlaneMovementSensor' .
+:ROUTE_2_1_2_1_3 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:fromField 'position_changed' ;
+  x3do:fromNode 'WhereSensor' ;
+  x3do:toField 'set_translation' ;
+  x3do:toNode 'FixedLocation' .
+:ROUTE_2_1_2_1_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:fromField 'orientation_changed' ;
+  x3do:fromNode 'WhereSensor' ;
+  x3do:toField 'set_rotation' ;
+  x3do:toNode 'FixedLocation' .
+:Background_2_2 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:groundColor ( 0.1 0.1 0.3 ) ;
+  x3do:skyColor ( 0.5 0.5 0.1 ) .
+:Anchor_2_3 a owl:NamedIndividual, x3do:Anchor ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_3_1 ;
+  x3do:description 'HeadsUpDisplayExample' ;
+  x3do:parameter '"target=_blank"' ;
+  x3do:url '"HeadsUpDisplayExample.x3d" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d" "HeadsUpDisplayExample.wrl" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"' .
+:Shape_2_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Anchor_2_3 ;
+  x3do:hasAppearance :Appearance_2_3_1_1 ;
+  x3do:hasGeometry :Text_2_3_1_2 .
+:Appearance_2_3_1_1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_1 ;
+  x3do:hasMaterial :Material_2_3_1_1_1 .
+:Material_2_3_1_1_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_1_1 ;
+  x3do:diffuseColor ( 0 1 1 ) ;
+  x3do:emissiveColor ( 0 1 1 ) .
+:Text_2_3_1_2 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_3_1 ;
+  x3do:hasFontStyle :FontStyle_2_3_1_2_1 ;
+  x3do:string '"HeadsUpDisplayPrototype.x3d" "is a Prototype definition file." "" "To see an example scene using this node" "click this text to view" "HeadsUpDisplayExample.x3d"' .
+:FontStyle_2_3_1_2_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_3_1_2 ;
+  x3do:justify '"MIDDLE" "MIDDLE"' ;
+  x3do:size '0.8' .

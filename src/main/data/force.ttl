@@ -1,332 +1,392 @@
-@prefix : <https://coderextreme.net/X3DJSONLD/force.ttl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix :       <https://coderextreme.net/X3DJSONLD/force.ttl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:    <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:   <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-:Scene rdf:type owl:NamedIndividual, x3d:Scene .
-:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
-  x3d:name "node" .
-:ProtoInterface_2_1 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
-:field_2_1_1 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "position" ;
-  x3d:accessType "inputOutput" ;
-  x3d:type "SFVec3f" ;
-  x3d:value "0 0 0" .
-:ProtoBody_2_1 rdf:type owl:NamedIndividual, x3d:ProtoBody .
-:Group_2_1_2 rdf:type owl:NamedIndividual, x3d:Group .
-:transform rdf:type owl:NamedIndividual, x3d:Transform .
-:transform x3d:hasIS :IS_2_1_2_1_1 .
-:IS_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:IS .
-:connect_2_1_2_1_1_1 rdf:type owl:NamedIndividual, x3d:connect ;
-  x3d:nodeField "translation" ;
-  x3d:protoField "position" .
-:transform x3d:hasShape :Shape_2_1_2_1_1 .
-:Shape_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:Shape .
-:Sphere_2_1_2_1_1_2 rdf:type owl:NamedIndividual, x3d:Sphere .
-:Appearance_2_1_2_1_1_2 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_1_2_1_1_2_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "1 0 0" .
-:transform x3d:hasTransform :Transform_2_1_2_1_1 .
-:Transform_2_1_2_1_1 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:translation "1 0 0" .
-:Shape_2_1_2_1_1_3 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_1_2_1_1_3_1 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "Node" .
-:FontStyle_2_1_2_1_1_3_1_1 rdf:type owl:NamedIndividual, x3d:FontStyle ;
-  x3d:justify "MIDDLE MIDDLE" ;
-  x3d:size "5" .
-:Appearance_2_1_2_1_1_3_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_1_2_1_1_3_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "0 0 1" .
-:NodePosition rdf:type owl:NamedIndividual, x3d:PositionInterpolator ;
-  x3d:key "0 1" ;
-  x3d:keyValue "0 0 0 0 5 0" .
-:MoveBall rdf:type owl:NamedIndividual, x3d:Script .
-
-                    :MoveBall x3d:hasfield :field_2_1_2_1_3 .
-:field_2_1_2_1_3 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "translation" ;
-  x3d:accessType "inputOutput" ;
-  x3d:type "SFVec3f" ;
-  x3d:value "50 50 0" .
-
-                    :MoveBall x3d:hasfield :field_2_1_2_1_3 .
-:field_2_1_2_1_3 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "old" ;
-  x3d:accessType "inputOutput" ;
-  x3d:type "SFVec3f" ;
-  x3d:value "0 0 0" .
-
-                    :MoveBall x3d:hasfield :field_2_1_2_1_3 .
-:field_2_1_2_1_3 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "set_cycle" ;
-  x3d:accessType "inputOnly" ;
-  x3d:type "SFTime" .
-
-                    :MoveBall x3d:hasfield :field_2_1_2_1_3 .
-:field_2_1_2_1_3 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "keyValue" ;
-  x3d:accessType "outputOnly" ;
-  x3d:type "MFVec3f" .
-
-
-ecmascript:
-					function set_cycle(value) {
-                                                old = translation;
-						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-                                                keyValue = new MFVec3f([old, translation]);
-						// Browser.println(translation);
-					}
-
-                :nodeClock rdf:type owl:NamedIndividual, x3d:TimeSensor ;
-  x3d:cycleInterval "3" ;
-  x3d:loop "true" .
-:ROUTE_2_1_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "nodeClock" ;
-  x3d:fromField "cycleTime" ;
-  x3d:toNode "MoveBall" ;
-  x3d:toField "set_cycle" .
-:ROUTE_2_1_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "nodeClock" ;
-  x3d:fromField "fraction_changed" ;
-  x3d:toNode "NodePosition" ;
-  x3d:toField "set_fraction" .
-:ROUTE_2_1_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "MoveBall" ;
-  x3d:fromField "keyValue" ;
-  x3d:toNode "NodePosition" ;
-  x3d:toField "keyValue" .
-:ROUTE_2_1_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "NodePosition" ;
-  x3d:fromField "value_changed" ;
-  x3d:toNode "transform" ;
-  x3d:toField "set_translation" .
-:ProtoDeclare_2 rdf:type owl:NamedIndividual, x3d:ProtoDeclare ;
-  x3d:name "cylinder" .
-:ProtoInterface_2_2 rdf:type owl:NamedIndividual, x3d:ProtoInterface .
-:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "set_positionA" ;
-  x3d:accessType "inputOnly" ;
-  x3d:type "SFVec3f" .
-:field_2_2_1 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "set_positionB" ;
-  x3d:accessType "inputOnly" ;
-  x3d:type "SFVec3f" .
-:ProtoBody_2_2 rdf:type owl:NamedIndividual, x3d:ProtoBody .
-:Group_2_2_2 rdf:type owl:NamedIndividual, x3d:Group .
-:Shape_2_2_2_1 rdf:type owl:NamedIndividual, x3d:Shape .
-:extrusion rdf:type owl:NamedIndividual, x3d:Extrusion ;
-  x3d:creaseAngle "0.785" ;
-  x3d:crossSection "1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00" ;
-  x3d:spine "0 -50 0 0 50 0" .
-:Appearance_2_2_2_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_2_2_1_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "0 1 0" .
-:MoveCylinder rdf:type owl:NamedIndividual, x3d:Script .
-
-                    :MoveCylinder x3d:hasfield :field_2_2_2_1_2 .
-:field_2_2_2_1_2 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "spine" ;
-  x3d:accessType "inputOutput" ;
-  x3d:type "MFVec3f" ;
-  x3d:value "0 -50 0 0 50 0" .
-
-                    :MoveCylinder x3d:hasfield :field_2_2_2_1_2 .
-:field_2_2_2_1_2 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "set_endA" ;
-  x3d:accessType "inputOnly" ;
-  x3d:type "SFVec3f" .
-
-                    :MoveCylinder x3d:hasfield :field_2_2_2_1_2 .
-:field_2_2_2_1_2 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:name "set_endB" ;
-  x3d:accessType "inputOnly" ;
-  x3d:type "SFVec3f" .
-
-                    :MoveCylinder x3d:hasIS :IS_2_2_2_1_2 .
-:IS_2_2_2_1_2 rdf:type owl:NamedIndividual, x3d:IS .
-:connect_2_2_2_1_2_4 rdf:type owl:NamedIndividual, x3d:connect ;
-  x3d:nodeField "set_endA" ;
-  x3d:protoField "set_positionA" .
-:connect_2_2_2_1_2_4 rdf:type owl:NamedIndividual, x3d:connect ;
-  x3d:nodeField "set_endB" ;
-  x3d:protoField "set_positionB" .
-
-
-ecmascript:
-
-                function set_endA(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
-		    } else {
-		        spine = new MFVec3f([value, spine[1]]);
-		    }
-                }
-                
-                function set_endB(value) {
-		    if (typeof spine === 'undefined') {
-		        spine = new MFVec3f([value, value]);
-		    } else {
-		        spine = new MFVec3f([spine[0], value]);
-		    }
-                }
-                
-                function set_spine(value) {
-                    spine = value;
-                }
-
-                :ROUTE_2_2_2_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "MoveCylinder" ;
-  x3d:fromField "spine" ;
-  x3d:toNode "extrusion" ;
-  x3d:toField "set_spine" .
-:HoldsContent rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "0.1 0.1 0.1" .
-:HoldsContent x3d:hasPlaneSensor :clickGenerator .
-:clickGenerator rdf:type owl:NamedIndividual, x3d:PlaneSensor ;
-  x3d:minPosition "-50 -50" ;
-  x3d:maxPosition "50 50" ;
-  x3d:description "click on background to add nodes, click on nodes to add links" .
-:HoldsContent x3d:hasProtoInstance :nodeA .
-:nodeA rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
-  x3d:name "node" .
-:nodeA x3d:hasfieldValue :fieldValue_2_3_2 .
-:fieldValue_2_3_2 rdf:type owl:NamedIndividual, x3d:fieldValue ;
-  x3d:name "position" ;
-  x3d:value "0.0 0.0 0.0" .
-:HoldsContent x3d:hasProtoInstance :nodeB .
-:nodeB rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
-  x3d:name "node" .
-:nodeB x3d:hasfieldValue :fieldValue_2_3_3 .
-:fieldValue_2_3_3 rdf:type owl:NamedIndividual, x3d:fieldValue ;
-  x3d:name "position" ;
-  x3d:value "50.0 50.0 50.0" .
-:HoldsContent x3d:hasProtoInstance :nodeC .
-:nodeC rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
-  x3d:name "node" .
-:nodeC x3d:hasfieldValue :fieldValue_2_3_4 .
-:fieldValue_2_3_4 rdf:type owl:NamedIndividual, x3d:fieldValue ;
-  x3d:name "position" ;
-  x3d:value "-50.0 -50.0 -50.0" .
-:HoldsContent x3d:hasProtoInstance :nodeD .
-:nodeD rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
-  x3d:name "node" .
-:nodeD x3d:hasfieldValue :fieldValue_2_3_5 .
-:fieldValue_2_3_5 rdf:type owl:NamedIndividual, x3d:fieldValue ;
-  x3d:name "position" ;
-  x3d:value "50.0 50.0 -50.0" .
-:HoldsContent x3d:hasProtoInstance :linkA .
-:linkA rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
-  x3d:name "cylinder" .
-:linkA x3d:hasfieldValue :fieldValue_2_3_6 .
-:fieldValue_2_3_6 rdf:type owl:NamedIndividual, x3d:fieldValue ;
-  x3d:name "set_positionA" ;
-  x3d:value "0 0 0" .
-:linkA x3d:hasfieldValue :fieldValue_2_3_6 .
-:fieldValue_2_3_6 rdf:type owl:NamedIndividual, x3d:fieldValue ;
-  x3d:name "set_positionB" ;
-  x3d:value "50 50 50" .
-:HoldsContent x3d:hasProtoInstance :linkB .
-:linkB rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
-  x3d:name "cylinder" .
-:linkB x3d:hasfieldValue :fieldValue_2_3_7 .
-:fieldValue_2_3_7 rdf:type owl:NamedIndividual, x3d:fieldValue ;
-  x3d:name "set_positionA" ;
-  x3d:value "0 0 0" .
-:linkB x3d:hasfieldValue :fieldValue_2_3_7 .
-:fieldValue_2_3_7 rdf:type owl:NamedIndividual, x3d:fieldValue ;
-  x3d:name "set_positionB" ;
-  x3d:value "-50 -50 -50" .
-:HoldsContent x3d:hasProtoInstance :linkC .
-:linkC rdf:type owl:NamedIndividual, x3d:ProtoInstance ;
-  x3d:name "cylinder" .
-:linkC x3d:hasfieldValue :fieldValue_2_3_8 .
-:fieldValue_2_3_8 rdf:type owl:NamedIndividual, x3d:fieldValue ;
-  x3d:name "set_positionA" ;
-  x3d:value "50 50 50" .
-:linkC x3d:hasfieldValue :fieldValue_2_3_8 .
-:fieldValue_2_3_8 rdf:type owl:NamedIndividual, x3d:fieldValue ;
-  x3d:name "set_positionB" ;
-  x3d:value "50 50 -50" .
-:clickHandler rdf:type owl:NamedIndividual, x3d:Script .
-
-            :clickHandler x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOutput" ;
-  x3d:name "counter" ;
-  x3d:value "0" ;
-  x3d:type "SFInt32" .
-
-            :clickHandler x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:name "node_changed" ;
-  x3d:type "SFNode" .
-
-            :clickHandler x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "add_node" ;
-  x3d:value "false" ;
-  x3d:type "SFBool" .
-
-	    
-	
-ecmascript:
-	function add_node(value) {
-                // Browser.print('hey ', counter);
-                counter = counter++;
-		Browser.appendTo(Browser.getDocument().querySelector("field [name=ModifiableNode]"),
-			{ "ProtoInstance":
-				{ "@name":"node",
-				  "@DEF":"node'+counter+'",
-				  "fieldValue": [
-					{
-						 "@name":"position",
-						 "@value":[0.0,0.0,0.0]
-					}
-				  ]
-				}
-			});
-                
-        }
-	
-        :ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "clickGenerator" ;
-  x3d:fromField "isActive" ;
-  x3d:toNode "clickHandler" ;
-  x3d:toField "add_node" .
-:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "nodeA" ;
-  x3d:fromField "position" ;
-  x3d:toNode "linkA" ;
-  x3d:toField "set_positionA" .
-:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "nodeB" ;
-  x3d:fromField "position" ;
-  x3d:toNode "linkA" ;
-  x3d:toField "set_positionB" .
-:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "nodeA" ;
-  x3d:fromField "position" ;
-  x3d:toNode "linkB" ;
-  x3d:toField "set_positionA" .
-:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "nodeC" ;
-  x3d:fromField "position" ;
-  x3d:toNode "linkB" ;
-  x3d:toField "set_positionB" .
-:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "nodeA" ;
-  x3d:fromField "position" ;
-  x3d:toNode "linkC" ;
-  x3d:toField "set_positionA" .
-:ROUTE_2 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromNode "nodeD" ;
-  x3d:fromField "position" ;
-  x3d:toNode "linkC" ;
-  x3d:toField "set_positionB" .
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'http://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasComponent :component_1_1 ;
+  x3do:hasMeta :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7 .
+:component_1_1 a owl:NamedIndividual, x3do:component ;
+  x3do:hasParent :head ;
+  x3do:level '1' ;
+  x3do:name 'Scripting' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'creator' ;
+  x3do:content 'John W Carlson' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'created' ;
+  x3do:content 'December 13 2015' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'title' ;
+  x3do:content 'force.x3d' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'identifier' ;
+  x3do:content 'https://coderextreme.net/X3DJSONLD/force.x3d' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'description' ;
+  x3do:content 'beginnings of a force directed graph in 3D' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:name 'generator' ;
+  x3do:content 'Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasProtoDeclare :ProtoDeclare_2_1, :ProtoDeclare_2_2 ;
+  x3do:hasChildren :HoldsContent, :clickHandler ;
+  x3do:hasROUTE :ROUTE_2_5, :ROUTE_2_6, :ROUTE_2_7, :ROUTE_2_8, :ROUTE_2_9, :ROUTE_2_10, :ROUTE_2_11 .
+:ProtoDeclare_2_1 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_1_1 ;
+  x3do:hasProtoBody :ProtoBody_2_1_2 ;
+  x3do:name 'node' .
+:ProtoInterface_2_1_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasField :field_2_1_1_1 .
+:field_2_1_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_1_1 ;
+  x3do:name 'position' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:ProtoBody_2_1_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_1 ;
+  x3do:hasChildren :Group_2_1_2_1 .
+:Group_2_1_2_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :ProtoBody_2_1_2 ;
+  x3do:hasChildren :transform, :NodePosition, :MoveBall, :nodeClock ;
+  x3do:hasROUTE :ROUTE_2_1_2_1_5, :ROUTE_2_1_2_1_6, :ROUTE_2_1_2_1_7, :ROUTE_2_1_2_1_8 .
+:transform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:hasIS :IS_2_1_2_1_1_1 ;
+  x3do:hasChildren :Shape_2_1_2_1_1_2, :Transform_2_1_2_1_1_3 .
+:IS_2_1_2_1_1_1 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :transform ;
+  x3do:hasConnect :connect_2_1_2_1_1_1_1 .
+:connect_2_1_2_1_1_1_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_1_2_1_1_1 ;
+  x3do:nodeField 'translation' ;
+  x3do:protoField 'position' .
+:Shape_2_1_2_1_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :transform ;
+  x3do:hasGeometry :Sphere_2_1_2_1_1_2_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_1_1_2_2 .
+:Sphere_2_1_2_1_1_2_1 a owl:NamedIndividual, x3do:Sphere ;
+  x3do:hasParent :Shape_2_1_2_1_1_2 .
+:Appearance_2_1_2_1_1_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_1_1_2 ;
+  x3do:hasMaterial :Material_2_1_2_1_1_2_2_1 .
+:Material_2_1_2_1_1_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_1_1_2_2 ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:Transform_2_1_2_1_1_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :transform ;
+  x3do:hasChildren :Shape_2_1_2_1_1_3_1 ;
+  x3do:translation ( 1 0 0 ) .
+:Shape_2_1_2_1_1_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_1_2_1_1_3 ;
+  x3do:hasGeometry :Text_2_1_2_1_1_3_1_1 ;
+  x3do:hasAppearance :Appearance_2_1_2_1_1_3_1_2 .
+:Text_2_1_2_1_1_3_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_1_2_1_1_3_1 ;
+  x3do:hasFontStyle :FontStyle_2_1_2_1_1_3_1_1_1 ;
+  x3do:string '"Node"' .
+:FontStyle_2_1_2_1_1_3_1_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_1_2_1_1_3_1_1 ;
+  x3do:justify '"MIDDLE" "MIDDLE"' ;
+  x3do:size '5' .
+:Appearance_2_1_2_1_1_3_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_1_2_1_1_3_1 ;
+  x3do:hasMaterial :Material_2_1_2_1_1_3_1_2_1 .
+:Material_2_1_2_1_1_3_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_1_2_1_1_3_1_2 ;
+  x3do:diffuseColor ( 0 0 1 ) .
+:NodePosition a owl:NamedIndividual, x3do:PositionInterpolator ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:key ( 0 1 ) ;
+  x3do:keyValue ( 0 0 0 0 5 0 ) .
+:MoveBall a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:hasField :field_2_1_2_1_3_1, :field_2_1_2_1_3_2, :field_2_1_2_1_3_3, :field_2_1_2_1_3_4 .
+:field_2_1_2_1_3_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MoveBall ;
+  x3do:name 'translation' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 50 50 0 ) .
+:field_2_1_2_1_3_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MoveBall ;
+  x3do:name 'old' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'SFVec3f' ;
+  x3do:value ( 0 0 0 ) .
+:field_2_1_2_1_3_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MoveBall ;
+  x3do:name 'set_cycle' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFTime' .
+:field_2_1_2_1_3_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MoveBall ;
+  x3do:name 'keyValue' ;
+  x3do:accessType 'outputOnly' ;
+  x3do:type 'MFVec3f' .
+:nodeClock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:cycleInterval '3' ;
+  x3do:loop 'true' .
+:ROUTE_2_1_2_1_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:fromNode 'nodeClock' ;
+  x3do:fromField 'cycleTime' ;
+  x3do:toNode 'MoveBall' ;
+  x3do:toField 'set_cycle' .
+:ROUTE_2_1_2_1_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:fromNode 'nodeClock' ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:toNode 'NodePosition' ;
+  x3do:toField 'set_fraction' .
+:ROUTE_2_1_2_1_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:fromNode 'MoveBall' ;
+  x3do:fromField 'keyValue' ;
+  x3do:toNode 'NodePosition' ;
+  x3do:toField 'keyValue' .
+:ROUTE_2_1_2_1_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_1_2_1 ;
+  x3do:fromNode 'NodePosition' ;
+  x3do:fromField 'value_changed' ;
+  x3do:toNode 'transform' ;
+  x3do:toField 'set_translation' .
+:ProtoDeclare_2_2 a owl:NamedIndividual, x3do:ProtoDeclare ;
+  x3do:hasParent :Scene ;
+  x3do:hasProtoInterface :ProtoInterface_2_2_1 ;
+  x3do:hasProtoBody :ProtoBody_2_2_2 ;
+  x3do:name 'cylinder' .
+:ProtoInterface_2_2_1 a owl:NamedIndividual, x3do:ProtoInterface ;
+  x3do:hasParent :ProtoDeclare_2_2 ;
+  x3do:hasField :field_2_2_1_1, :field_2_2_1_2 .
+:field_2_2_1_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:name 'set_positionA' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFVec3f' .
+:field_2_2_1_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :ProtoInterface_2_2_1 ;
+  x3do:name 'set_positionB' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFVec3f' .
+:ProtoBody_2_2_2 a owl:NamedIndividual, x3do:ProtoBody ;
+  x3do:hasParent :ProtoDeclare_2_2 ;
+  x3do:hasChildren :Group_2_2_2_1 .
+:Group_2_2_2_1 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :ProtoBody_2_2_2 ;
+  x3do:hasChildren :Shape_2_2_2_1_1, :MoveCylinder ;
+  x3do:hasROUTE :ROUTE_2_2_2_1_3 .
+:Shape_2_2_2_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasGeometry :extrusion ;
+  x3do:hasAppearance :Appearance_2_2_2_1_1_2 .
+:extrusion a owl:NamedIndividual, x3do:Extrusion ;
+  x3do:hasParent :Shape_2_2_2_1_1 ;
+  x3do:creaseAngle '0.785' ;
+  x3do:crossSection ( 1.00 0.00 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.00 -1.00 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.00 -0.00 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.00 1.00 0.38 0.92 0.71 0.71 0.92 0.38 1.00 0.00 ) ;
+  x3do:spine ( 0 -50 0 0 50 0 ) .
+:Appearance_2_2_2_1_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_2_2_1_1 ;
+  x3do:hasMaterial :Material_2_2_2_1_1_2_1 .
+:Material_2_2_2_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_2_2_1_1_2 ;
+  x3do:diffuseColor ( 0 1 0 ) .
+:MoveCylinder a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:hasField :field_2_2_2_1_2_1, :field_2_2_2_1_2_2, :field_2_2_2_1_2_3 ;
+  x3do:hasIS :IS_2_2_2_1_2_4 .
+:field_2_2_2_1_2_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MoveCylinder ;
+  x3do:name 'spine' ;
+  x3do:accessType 'inputOutput' ;
+  x3do:type 'MFVec3f' ;
+  x3do:value ( 0 -50 0 0 50 0 ) .
+:field_2_2_2_1_2_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MoveCylinder ;
+  x3do:name 'set_endA' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFVec3f' .
+:field_2_2_2_1_2_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :MoveCylinder ;
+  x3do:name 'set_endB' ;
+  x3do:accessType 'inputOnly' ;
+  x3do:type 'SFVec3f' .
+:IS_2_2_2_1_2_4 a owl:NamedIndividual, x3do:IS ;
+  x3do:hasParent :MoveCylinder ;
+  x3do:hasConnect :connect_2_2_2_1_2_4_1, :connect_2_2_2_1_2_4_2 .
+:connect_2_2_2_1_2_4_1 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_2_4 ;
+  x3do:nodeField 'set_endA' ;
+  x3do:protoField 'set_positionA' .
+:connect_2_2_2_1_2_4_2 a owl:NamedIndividual, x3do:connect ;
+  x3do:hasParent :IS_2_2_2_1_2_4 ;
+  x3do:nodeField 'set_endB' ;
+  x3do:protoField 'set_positionB' .
+:ROUTE_2_2_2_1_3 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Group_2_2_2_1 ;
+  x3do:fromNode 'MoveCylinder' ;
+  x3do:fromField 'spine' ;
+  x3do:toNode 'extrusion' ;
+  x3do:toField 'set_spine' .
+:HoldsContent a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :clickGenerator, :nodeA, :nodeB, :nodeC, :nodeD, :linkA, :linkB, :linkC ;
+  x3do:scale ( 0.1 0.1 0.1 ) .
+:clickGenerator a owl:NamedIndividual, x3do:PlaneSensor ;
+  x3do:hasParent :HoldsContent ;
+  x3do:minPosition ( -50 -50 ) ;
+  x3do:maxPosition ( 50 50 ) ;
+  x3do:description 'click on background to add nodes, click on nodes to add links' .
+:nodeA a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :HoldsContent ;
+  x3do:hasFieldValue :fieldValue_2_3_2_1 ;
+  x3do:name 'node' .
+:fieldValue_2_3_2_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :nodeA ;
+  x3do:name 'position' ;
+  x3do:value '0.0 0.0 0.0' .
+:nodeB a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :HoldsContent ;
+  x3do:hasFieldValue :fieldValue_2_3_3_1 ;
+  x3do:name 'node' .
+:fieldValue_2_3_3_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :nodeB ;
+  x3do:name 'position' ;
+  x3do:value '50.0 50.0 50.0' .
+:nodeC a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :HoldsContent ;
+  x3do:hasFieldValue :fieldValue_2_3_4_1 ;
+  x3do:name 'node' .
+:fieldValue_2_3_4_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :nodeC ;
+  x3do:name 'position' ;
+  x3do:value '-50.0 -50.0 -50.0' .
+:nodeD a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :HoldsContent ;
+  x3do:hasFieldValue :fieldValue_2_3_5_1 ;
+  x3do:name 'node' .
+:fieldValue_2_3_5_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :nodeD ;
+  x3do:name 'position' ;
+  x3do:value '50.0 50.0 -50.0' .
+:linkA a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :HoldsContent ;
+  x3do:hasFieldValue :fieldValue_2_3_6_1, :fieldValue_2_3_6_2 ;
+  x3do:name 'cylinder' .
+:fieldValue_2_3_6_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :linkA ;
+  x3do:name 'set_positionA' ;
+  x3do:value '0 0 0' .
+:fieldValue_2_3_6_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :linkA ;
+  x3do:name 'set_positionB' ;
+  x3do:value '50 50 50' .
+:linkB a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :HoldsContent ;
+  x3do:hasFieldValue :fieldValue_2_3_7_1, :fieldValue_2_3_7_2 ;
+  x3do:name 'cylinder' .
+:fieldValue_2_3_7_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :linkB ;
+  x3do:name 'set_positionA' ;
+  x3do:value '0 0 0' .
+:fieldValue_2_3_7_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :linkB ;
+  x3do:name 'set_positionB' ;
+  x3do:value '-50 -50 -50' .
+:linkC a owl:NamedIndividual, x3do:ProtoInstance ;
+  x3do:hasParent :HoldsContent ;
+  x3do:hasFieldValue :fieldValue_2_3_8_1, :fieldValue_2_3_8_2 ;
+  x3do:name 'cylinder' .
+:fieldValue_2_3_8_1 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :linkC ;
+  x3do:name 'set_positionA' ;
+  x3do:value '50 50 50' .
+:fieldValue_2_3_8_2 a owl:NamedIndividual, x3do:fieldValue ;
+  x3do:hasParent :linkC ;
+  x3do:name 'set_positionB' ;
+  x3do:value '50 50 -50' .
+:clickHandler a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Scene ;
+  x3do:hasField :field_2_4_1, :field_2_4_2, :field_2_4_3 .
+:field_2_4_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :clickHandler ;
+  x3do:accessType 'inputOutput' ;
+  x3do:name 'counter' ;
+  x3do:value '0' ;
+  x3do:type 'SFInt32' .
+:field_2_4_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :clickHandler ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'node_changed' ;
+  x3do:type 'SFNode' .
+:field_2_4_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :clickHandler ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'add_node' ;
+  x3do:value 'false' ;
+  x3do:type 'SFBool' .
+:ROUTE_2_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'clickGenerator' ;
+  x3do:fromField 'isActive' ;
+  x3do:toNode 'clickHandler' ;
+  x3do:toField 'add_node' .
+:ROUTE_2_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'nodeA' ;
+  x3do:fromField 'position' ;
+  x3do:toNode 'linkA' ;
+  x3do:toField 'set_positionA' .
+:ROUTE_2_7 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'nodeB' ;
+  x3do:fromField 'position' ;
+  x3do:toNode 'linkA' ;
+  x3do:toField 'set_positionB' .
+:ROUTE_2_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'nodeA' ;
+  x3do:fromField 'position' ;
+  x3do:toNode 'linkB' ;
+  x3do:toField 'set_positionA' .
+:ROUTE_2_9 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'nodeC' ;
+  x3do:fromField 'position' ;
+  x3do:toNode 'linkB' ;
+  x3do:toField 'set_positionB' .
+:ROUTE_2_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'nodeA' ;
+  x3do:fromField 'position' ;
+  x3do:toNode 'linkC' ;
+  x3do:toField 'set_positionA' .
+:ROUTE_2_11 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Scene ;
+  x3do:fromNode 'nodeD' ;
+  x3do:fromField 'position' ;
+  x3do:toNode 'linkC' ;
+  x3do:toField 'set_positionB' .

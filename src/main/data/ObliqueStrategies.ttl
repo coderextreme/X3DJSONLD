@@ -1,236 +1,453 @@
-@prefix : <http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.ttl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix :       <http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.ttl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:    <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:   <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-:Scene rdf:type owl:NamedIndividual, x3d:Scene .
-:NavigationInfo_2 rdf:type owl:NamedIndividual, x3d:NavigationInfo .
-:Background_2 rdf:type owl:NamedIndividual, x3d:Background ;
-  x3d:skyColor "0.419608 0.427451 1" .
-:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "0.4 0.4 0.4" ;
-  x3d:translation "0 1 0" .
-:RandomTextClickedSensor rdf:type owl:NamedIndividual, x3d:TouchSensor ;
-  x3d:description "Select to see a new strategy" .
-:Shape_2_3 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_3_2 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "Oblique Strategies  (Over One Hundred Worthwhile Dilemmas)  by Brian Eno and Peter Schmidt" .
-:MessageFont rdf:type owl:NamedIndividual, x3d:FontStyle ;
-  x3d:family "SANS" ;
-  x3d:justify "MIDDLE MIDDLE" ;
-  x3d:style "BOLD" .
-:Appearance_2_3_2 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_3_2_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "1 1 1" .
-:Transform_2_3 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "10 3 1" .
-:HeadlineClickSurface rdf:type owl:NamedIndividual, x3d:Shape .
-:HeadlineClickSurface x3d:hasIndexedFaceSet :IndexedFaceSet_2_3_3_1 .
-:IndexedFaceSet_2_3_3_1 rdf:type owl:NamedIndividual, x3d:IndexedFaceSet ;
-  x3d:coordIndex "0 1 2 3 -1" ;
-  x3d:solid "false" .
-:Coordinate_2_3_3_1_1 rdf:type owl:NamedIndividual, x3d:Coordinate ;
-  x3d:point "1 1 0 1 -1 0 -1 -1 0 -1 1 0" .
-:HeadlineClickSurface x3d:hasAppearance :Appearance_2_3_3_1 .
-:Appearance_2_3_3_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_3_3_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:ambientIntensity "0.245763" ;
-  x3d:diffuseColor "0.34773 0.090909 0.005289" ;
-  x3d:shininess "0.07" ;
-  x3d:specularColor "0.336735 0.051091 0.051091" ;
-  x3d:transparency "0.8" .
-:TextScript rdf:type owl:NamedIndividual, x3d:Script ;
-  x3d:url "../node/ObliqueStrategiesScript.js" .
-
-      
-      
-      :TextScript x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "initializeOnly" ;
-  x3d:appinfo "index for active strategy card, -1 means no selection" ;
-  x3d:name "index" ;
-  x3d:type "SFInt32" ;
-  x3d:value "0" .
-
-      :TextScript x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:appinfo "latest strategy card value" ;
-  x3d:name "string_changed" ;
-  x3d:type "MFString" .
-
-      :TextScript x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:appinfo "url to invoke Google Translate" ;
-  x3d:name "textToSpeechUrl" ;
-  x3d:type "MFString" .
-
-      :TextScript x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:appinfo "activate Sound node" ;
-  x3d:name "newCardTime" ;
-  x3d:type "SFTime" .
-
-      :TextScript x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "selectPreviousCard" ;
-  x3d:type "SFBool" .
-
-      :TextScript x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "selectNextCard" ;
-  x3d:type "SFBool" .
-
-      :TextScript x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "selectRandomCard" ;
-  x3d:type "SFBool" .
-
-      :TextScript x3d:hasfield :field_2_4 .
-:field_2_4 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "initializeOnly" ;
-  x3d:appinfo "controls console tracing" ;
-  x3d:name "traceEnabled" ;
-  x3d:type "SFBool" ;
-  x3d:value "true" .
-
-    :CardTransform rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "0.4 0.4 0.4" ;
-  x3d:translation "0 -1.5 0" .
-:CardTransform x3d:hasShape :Shape_2_5 .
-:Shape_2_5 rdf:type owl:NamedIndividual, x3d:Shape .
-:CardText rdf:type owl:NamedIndividual, x3d:Text .
-:CardText x3d:hasFontStyle :FontStyle_2_5_1_1 .
-:FontStyle_2_5_1_1 rdf:type owl:NamedIndividual, x3d:FontStyle ;
-  x3d:family "SANS" ;
-  x3d:justify "MIDDLE MIDDLE" ;
-  x3d:style "BOLD" .
-:Appearance_2_5_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_5_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "1 1 1" .
-:CardTransform x3d:hasROUTE :ROUTE_2_5 .
-:ROUTE_2_5 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "string_changed" ;
-  x3d:fromNode "TextScript" ;
-  x3d:toField "string" ;
-  x3d:toNode "CardText" .
-:CardTransform x3d:hasSound :CardSoundSpatialization .
-:CardSoundSpatialization rdf:type owl:NamedIndividual, x3d:Sound ;
-  x3d:maxBack "100" ;
-  x3d:maxFront "100" ;
-  x3d:minBack "20" ;
-  x3d:minFront "20" .
-:CardSoundSpatialization x3d:hasAudioClip :TextToSpeechAudioClip .
-:TextToSpeechAudioClip rdf:type owl:NamedIndividual, x3d:AudioClip ;
-  x3d:description "sends strategy text google translate" ;
-  x3d:url "http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium translate_tts_mp3FileFormatNotSupported.wav" .
-:CardTransform x3d:hasROUTE :ROUTE_2_5 .
-:ROUTE_2_5 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "textToSpeechUrl" ;
-  x3d:fromNode "TextScript" ;
-  x3d:toField "url" ;
-  x3d:toNode "TextToSpeechAudioClip" .
-:CardTransform x3d:hasROUTE :ROUTE_2_5 .
-:ROUTE_2_5 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "newCardTime" ;
-  x3d:fromNode "TextScript" ;
-  x3d:toField "startTime" ;
-  x3d:toNode "TextToSpeechAudioClip" .
-:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "0.4 0.4 0.4" ;
-  x3d:translation "-3.2 2.5 0" .
-:PreviousTextClickedSensor rdf:type owl:NamedIndividual, x3d:TouchSensor ;
-  x3d:description "Select to see previous strategy" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "isActive" ;
-  x3d:fromNode "PreviousTextClickedSensor" ;
-  x3d:toField "selectPreviousCard" ;
-  x3d:toNode "TextScript" .
-:Shape_2_6 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_6_3 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "previous" .
-:MessageFont-USE-1 rdf:type owl:NamedIndividual, x3d:FontStyle .
-:InterfaceAppearance rdf:type owl:NamedIndividual, x3d:Appearance .
-:InterfaceAppearance x3d:hasMaterial :Material_2_6_3_2 .
-:Material_2_6_3_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "1 0 0.6" .
-:Transform_2_6 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "2 0.6 1" .
-:TransparentClickSurface rdf:type owl:NamedIndividual, x3d:Shape .
-:TransparentClickSurface x3d:hasIndexedFaceSet :IndexedFaceSet_2_6_4_1 .
-:IndexedFaceSet_2_6_4_1 rdf:type owl:NamedIndividual, x3d:IndexedFaceSet ;
-  x3d:coordIndex "0 1 2 3 -1" ;
-  x3d:solid "false" .
-:Coordinate_2_6_4_1_1 rdf:type owl:NamedIndividual, x3d:Coordinate ;
-  x3d:point "1 1 0 1 -1 0 -1 -1 0 -1 1 0" .
-:TransparentClickSurface x3d:hasAppearance :Appearance_2_6_4_1 .
-:Appearance_2_6_4_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_6_4_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:transparency "1" .
-:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "0.4 0.4 0.4" ;
-  x3d:translation "3.5 2.5 0" .
-:NextTextClickedSensor rdf:type owl:NamedIndividual, x3d:TouchSensor ;
-  x3d:description "Select to see next strategy" .
-:ROUTE_2_7 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "isActive" ;
-  x3d:fromNode "NextTextClickedSensor" ;
-  x3d:toField "selectNextCard" ;
-  x3d:toNode "TextScript" .
-:Shape_2_7 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_7_3 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "next" .
-:MessageFont-USE-2 rdf:type owl:NamedIndividual, x3d:FontStyle .
-:InterfaceAppearance-USE-1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Transform_2_7 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "1.2 0.6 1" .
-:TransparentClickSurface-USE-1 rdf:type owl:NamedIndividual, x3d:Shape .
-:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "0.4 0.4 0.4" ;
-  x3d:translation "-3.3 -0.5 0" .
-:RandomTextClickedSensor-USE-1 rdf:type owl:NamedIndividual, x3d:TouchSensor .
-:ROUTE_2_8 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "isActive" ;
-  x3d:fromNode "RandomTextClickedSensor" ;
-  x3d:toField "selectRandomCard" ;
-  x3d:toNode "TextScript" .
-:Shape_2_8 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_8_3 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "random" .
-:MessageFont-USE-3 rdf:type owl:NamedIndividual, x3d:FontStyle .
-:InterfaceAppearance-USE-2 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Transform_2_8 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "1.8 0.6 1" .
-:TransparentClickSurface-USE-2 rdf:type owl:NamedIndividual, x3d:Shape .
-:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "0.4 0.4 0.4" ;
-  x3d:translation "3.3 -0.5 0" .
-:TextToSpeechAnchor rdf:type owl:NamedIndividual, x3d:Anchor ;
-  x3d:description "text to speech in browser" ;
-  x3d:parameter "target=_blank" ;
-  x3d:url "http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change" .
-:TextToSpeechAnchor x3d:hasROUTE :ROUTE_2_9_1 .
-:ROUTE_2_9_1 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "textToSpeechUrl" ;
-  x3d:fromNode "TextScript" ;
-  x3d:toField "url" ;
-  x3d:toNode "TextToSpeechAnchor" .
-:TextToSpeechAnchor x3d:hasShape :Shape_2_9_1 .
-:Shape_2_9_1 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_9_1_2 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "speech" .
-:MessageFont-USE-4 rdf:type owl:NamedIndividual, x3d:FontStyle .
-:InterfaceAppearance-USE-3 rdf:type owl:NamedIndividual, x3d:Appearance .
-:TextToSpeechAnchor x3d:hasTransform :Transform_2_9_1 .
-:Transform_2_9_1 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:scale "1.8 0.6 1" .
-:TransparentClickSurface-USE-3 rdf:type owl:NamedIndividual, x3d:Shape .
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'http://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15, :meta_1_16, :meta_1_17, :meta_1_18, :meta_1_19, :meta_1_20, :meta_1_21, :meta_1_22, :meta_1_23, :meta_1_24, :meta_1_25, :meta_1_26 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ObliqueStrategies.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Text scripting and animation example using Oblique Strategies card set by Brian Eno.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Don Brutzman, John Kelly, Ben Cheng' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '3 November 2013' ;
+  x3do:name 'created' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '18 October 2015' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'oblique.html' ;
+  x3do:name 'reference' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ObliqueStrategies.txt' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'ObliqueStrategiesScript.js' ;
+  x3do:name 'reference' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://music.hyperreal.org/artists/brian_eno/oblique/oblique.html' ;
+  x3do:name 'reference' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.eno-web.co.uk/obliques.html' ;
+  x3do:name 'reference' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://gothpunk.com/haiku-intro.html' ;
+  x3do:name 'reference' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.rtqe.net/ObliqueStrategies/OSintro.html' ;
+  x3do:name 'reference' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'https://en.wikipedia.org/wiki/Oblique_Strategies' ;
+  x3do:name 'reference' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Brian Eno, Oblique Strategies' ;
+  x3do:name 'subject' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'images/ObliqueStrategiesEntryScreen.png' ;
+  x3do:name 'Image' .
+:meta_1_16 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://translate.google.com/translate_tts?tl=en&q=hello%20X3D' ;
+  x3do:name 'audio' .
+:meta_1_17 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'translate_tts_HelloX3D.mp3' ;
+  x3do:name 'audio' .
+:meta_1_18 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'translate_tts_HelloX3D.wav' ;
+  x3do:name 'audio' .
+:meta_1_19 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'multiliingual translation parameter' ;
+  x3do:name 'TODO' .
+:meta_1_20 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech' ;
+  x3do:name 'reference' .
+:meta_1_21 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html' ;
+  x3do:name 'reference' .
+:meta_1_22 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'under development, scene Sound/AudioClip triggering (or retrieved file format) not working' ;
+  x3do:name 'warning' .
+:meta_1_23 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'BSContact error: Script node TextScript: parse error: line 15 " var strategy = [];' ;
+  x3do:name 'warning' .
+:meta_1_24 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_25 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_26 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :NavigationInfo_2_1, :Background_2_2, :Transform_2_3, :TextScript, :CardTransform, :Transform_2_6, :Transform_2_7, :Transform_2_8, :Transform_2_9 .
+:NavigationInfo_2_1 a owl:NamedIndividual, x3do:NavigationInfo ;
+  x3do:hasParent :Scene .
+:Background_2_2 a owl:NamedIndividual, x3do:Background ;
+  x3do:hasParent :Scene ;
+  x3do:skyColor ( 0.419608 0.427451 1 ) .
+:Transform_2_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :RandomTextClickedSensor, :Shape_2_3_2, :Transform_2_3_3 ;
+  x3do:scale ( 0.4 0.4 0.4 ) ;
+  x3do:translation ( 0 1 0 ) .
+:RandomTextClickedSensor a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_3 ;
+  x3do:description 'Select to see a new strategy' .
+:Shape_2_3_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3 ;
+  x3do:hasGeometry :Text_2_3_2_1 ;
+  x3do:hasAppearance :Appearance_2_3_2_2 .
+:Text_2_3_2_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_3_2 ;
+  x3do:hasFontStyle :MessageFont ;
+  x3do:string '"Oblique Strategies" "" "(Over One Hundred Worthwhile Dilemmas)" "" "by Brian Eno and Peter Schmidt"' .
+:MessageFont a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_3_2_1 ;
+  x3do:family '"SANS"' ;
+  x3do:justify '"MIDDLE" "MIDDLE"' ;
+  x3do:style 'BOLD' .
+:Appearance_2_3_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_3_2 ;
+  x3do:hasMaterial :Material_2_3_2_2_1 .
+:Material_2_3_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_2_2 ;
+  x3do:diffuseColor ( 1 1 1 ) .
+:Transform_2_3_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_3 ;
+  x3do:hasChildren :HeadlineClickSurface ;
+  x3do:scale ( 10 3 1 ) .
+:HeadlineClickSurface a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_3_3 ;
+  x3do:hasGeometry :IndexedFaceSet_2_3_3_1_1 ;
+  x3do:hasAppearance :Appearance_2_3_3_1_2 .
+:IndexedFaceSet_2_3_3_1_1 a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :HeadlineClickSurface ;
+  x3do:hasCoord :Coordinate_2_3_3_1_1_1 ;
+  x3do:coordIndex ( 0 1 2 3 -1 ) ;
+  x3do:solid 'false' .
+:Coordinate_2_3_3_1_1_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedFaceSet_2_3_3_1_1 ;
+  x3do:point ( 1 1 0 1 -1 0 -1 -1 0 -1 1 0 ) .
+:Appearance_2_3_3_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :HeadlineClickSurface ;
+  x3do:hasMaterial :Material_2_3_3_1_2_1 .
+:Material_2_3_3_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_3_3_1_2 ;
+  x3do:ambientIntensity '0.245763' ;
+  x3do:diffuseColor ( 0.34773 0.090909 0.005289 ) ;
+  x3do:shininess '0.07' ;
+  x3do:specularColor ( 0.336735 0.051091 0.051091 ) ;
+  x3do:transparency '0.8' .
+:TextScript a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Scene ;
+  x3do:hasField :field_2_4_1, :field_2_4_2, :field_2_4_3, :field_2_4_4, :field_2_4_5, :field_2_4_6, :field_2_4_7, :field_2_4_8 ;
+  x3do:url '"../node/ObliqueStrategiesScript.js"' .
+:field_2_4_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :TextScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'index for active strategy card, -1 means no selection' ;
+  x3do:name 'index' ;
+  x3do:type 'SFInt32' ;
+  x3do:value '0' .
+:field_2_4_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :TextScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'latest strategy card value' ;
+  x3do:name 'string_changed' ;
+  x3do:type 'MFString' .
+:field_2_4_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :TextScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'url to invoke Google Translate' ;
+  x3do:name 'textToSpeechUrl' ;
+  x3do:type 'MFString' .
+:field_2_4_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :TextScript ;
+  x3do:accessType 'outputOnly' ;
+  x3do:appinfo 'activate Sound node' ;
+  x3do:name 'newCardTime' ;
+  x3do:type 'SFTime' .
+:field_2_4_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :TextScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'selectPreviousCard' ;
+  x3do:type 'SFBool' .
+:field_2_4_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :TextScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'selectNextCard' ;
+  x3do:type 'SFBool' .
+:field_2_4_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :TextScript ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'selectRandomCard' ;
+  x3do:type 'SFBool' .
+:field_2_4_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :TextScript ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:appinfo 'controls console tracing' ;
+  x3do:name 'traceEnabled' ;
+  x3do:type 'SFBool' ;
+  x3do:value 'true' .
+:CardTransform a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Shape_2_5_1, :CardSoundSpatialization ;
+  x3do:hasROUTE :ROUTE_2_5_2, :ROUTE_2_5_4, :ROUTE_2_5_5 ;
+  x3do:scale ( 0.4 0.4 0.4 ) ;
+  x3do:translation ( 0 -1.5 0 ) .
+:Shape_2_5_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :CardTransform ;
+  x3do:hasGeometry :CardText ;
+  x3do:hasAppearance :Appearance_2_5_1_2 .
+:CardText a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_5_1 ;
+  x3do:hasFontStyle :FontStyle_2_5_1_1_1 .
+:FontStyle_2_5_1_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :CardText ;
+  x3do:family '"SANS"' ;
+  x3do:justify '"MIDDLE" "MIDDLE"' ;
+  x3do:style 'BOLD' .
+:Appearance_2_5_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_1 ;
+  x3do:hasMaterial :Material_2_5_1_2_1 .
+:Material_2_5_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_1_2 ;
+  x3do:diffuseColor ( 1 1 1 ) .
+:ROUTE_2_5_2 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :CardTransform ;
+  x3do:fromField 'string_changed' ;
+  x3do:fromNode 'TextScript' ;
+  x3do:toField 'string' ;
+  x3do:toNode 'CardText' .
+:CardSoundSpatialization a owl:NamedIndividual, x3do:Sound ;
+  x3do:hasParent :CardTransform ;
+  x3do:hasSource :TextToSpeechAudioClip ;
+  x3do:maxBack '100' ;
+  x3do:maxFront '100' ;
+  x3do:minBack '20' ;
+  x3do:minFront '20' .
+:TextToSpeechAudioClip a owl:NamedIndividual, x3do:AudioClip ;
+  x3do:hasParent :CardSoundSpatialization ;
+  x3do:description 'sends strategy text google translate' ;
+  x3do:url '"http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium" "translate_tts_mp3FileFormatNotSupported.wav"' .
+:ROUTE_2_5_4 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :CardTransform ;
+  x3do:fromField 'textToSpeechUrl' ;
+  x3do:fromNode 'TextScript' ;
+  x3do:toField 'url' ;
+  x3do:toNode 'TextToSpeechAudioClip' .
+:ROUTE_2_5_5 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :CardTransform ;
+  x3do:fromField 'newCardTime' ;
+  x3do:fromNode 'TextScript' ;
+  x3do:toField 'startTime' ;
+  x3do:toNode 'TextToSpeechAudioClip' .
+:Transform_2_6 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :PreviousTextClickedSensor, :Shape_2_6_3, :Transform_2_6_4 ;
+  x3do:hasROUTE :ROUTE_2_6_2 ;
+  x3do:scale ( 0.4 0.4 0.4 ) ;
+  x3do:translation ( -3.2 2.5 0 ) .
+:PreviousTextClickedSensor a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:description 'Select to see previous strategy' .
+:ROUTE_2_6_2 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'isActive' ;
+  x3do:fromNode 'PreviousTextClickedSensor' ;
+  x3do:toField 'selectPreviousCard' ;
+  x3do:toNode 'TextScript' .
+:Shape_2_6_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:hasGeometry :Text_2_6_3_1 ;
+  x3do:hasAppearance :InterfaceAppearance .
+:Text_2_6_3_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_6_3 ;
+  x3do:hasFontStyle :MessageFont-USE-1 ;
+  x3do:string '"previous"' .
+:MessageFont-USE-1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_6_3_1 ;
+  owl:sameAs :MessageFont . # DEF matching this USE
+:InterfaceAppearance a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_6_3 ;
+  x3do:hasMaterial :Material_2_6_3_2_1 .
+:Material_2_6_3_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :InterfaceAppearance ;
+  x3do:diffuseColor ( 1 0 0.6 ) .
+:Transform_2_6_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:hasChildren :TransparentClickSurface ;
+  x3do:scale ( 2 0.6 1 ) .
+:TransparentClickSurface a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_6_4 ;
+  x3do:hasGeometry :IndexedFaceSet_2_6_4_1_1 ;
+  x3do:hasAppearance :Appearance_2_6_4_1_2 .
+:IndexedFaceSet_2_6_4_1_1 a owl:NamedIndividual, x3do:IndexedFaceSet ;
+  x3do:hasParent :TransparentClickSurface ;
+  x3do:hasCoord :Coordinate_2_6_4_1_1_1 ;
+  x3do:coordIndex ( 0 1 2 3 -1 ) ;
+  x3do:solid 'false' .
+:Coordinate_2_6_4_1_1_1 a owl:NamedIndividual, x3do:Coordinate ;
+  x3do:hasParent :IndexedFaceSet_2_6_4_1_1 ;
+  x3do:point ( 1 1 0 1 -1 0 -1 -1 0 -1 1 0 ) .
+:Appearance_2_6_4_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :TransparentClickSurface ;
+  x3do:hasMaterial :Material_2_6_4_1_2_1 .
+:Material_2_6_4_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_6_4_1_2 ;
+  x3do:transparency '1' .
+:Transform_2_7 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :NextTextClickedSensor, :Shape_2_7_3, :Transform_2_7_4 ;
+  x3do:hasROUTE :ROUTE_2_7_2 ;
+  x3do:scale ( 0.4 0.4 0.4 ) ;
+  x3do:translation ( 3.5 2.5 0 ) .
+:NextTextClickedSensor a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_7 ;
+  x3do:description 'Select to see next strategy' .
+:ROUTE_2_7_2 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_7 ;
+  x3do:fromField 'isActive' ;
+  x3do:fromNode 'NextTextClickedSensor' ;
+  x3do:toField 'selectNextCard' ;
+  x3do:toNode 'TextScript' .
+:Shape_2_7_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_7 ;
+  x3do:hasGeometry :Text_2_7_3_1 ;
+  x3do:hasAppearance :InterfaceAppearance-USE-1 .
+:Text_2_7_3_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_7_3 ;
+  x3do:hasFontStyle :MessageFont-USE-2 ;
+  x3do:string '"next"' .
+:MessageFont-USE-2 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_7_3_1 ;
+  owl:sameAs :MessageFont . # DEF matching this USE
+:InterfaceAppearance-USE-1 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_7_3 ;
+  owl:sameAs :InterfaceAppearance . # DEF matching this USE
+:Transform_2_7_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_7 ;
+  x3do:hasChildren :TransparentClickSurface-USE-1 ;
+  x3do:scale ( 1.2 0.6 1 ) .
+:TransparentClickSurface-USE-1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_7_4 ;
+  owl:sameAs :TransparentClickSurface . # DEF matching this USE
+:Transform_2_8 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :RandomTextClickedSensor-USE-1, :Shape_2_8_3, :Transform_2_8_4 ;
+  x3do:hasROUTE :ROUTE_2_8_2 ;
+  x3do:scale ( 0.4 0.4 0.4 ) ;
+  x3do:translation ( -3.3 -0.5 0 ) .
+:RandomTextClickedSensor-USE-1 a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_8 ;
+  owl:sameAs :RandomTextClickedSensor . # DEF matching this USE
+:ROUTE_2_8_2 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_8 ;
+  x3do:fromField 'isActive' ;
+  x3do:fromNode 'RandomTextClickedSensor' ;
+  x3do:toField 'selectRandomCard' ;
+  x3do:toNode 'TextScript' .
+:Shape_2_8_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_8 ;
+  x3do:hasGeometry :Text_2_8_3_1 ;
+  x3do:hasAppearance :InterfaceAppearance-USE-2 .
+:Text_2_8_3_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_8_3 ;
+  x3do:hasFontStyle :MessageFont-USE-3 ;
+  x3do:string '"random"' .
+:MessageFont-USE-3 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_8_3_1 ;
+  owl:sameAs :MessageFont . # DEF matching this USE
+:InterfaceAppearance-USE-2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_8_3 ;
+  owl:sameAs :InterfaceAppearance . # DEF matching this USE
+:Transform_2_8_4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Transform_2_8 ;
+  x3do:hasChildren :TransparentClickSurface-USE-2 ;
+  x3do:scale ( 1.8 0.6 1 ) .
+:TransparentClickSurface-USE-2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_8_4 ;
+  owl:sameAs :TransparentClickSurface . # DEF matching this USE
+:Transform_2_9 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :TextToSpeechAnchor ;
+  x3do:scale ( 0.4 0.4 0.4 ) ;
+  x3do:translation ( 3.3 -0.5 0 ) .
+:TextToSpeechAnchor a owl:NamedIndividual, x3do:Anchor ;
+  x3do:hasParent :Transform_2_9 ;
+  x3do:hasROUTE :ROUTE_2_9_1_1 ;
+  x3do:hasChildren :Shape_2_9_1_2, :Transform_2_9_1_3 ;
+  x3do:description 'text to speech in browser' ;
+  x3do:parameter '"target=_blank"' ;
+  x3do:url '"http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change"' .
+:ROUTE_2_9_1_1 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :TextToSpeechAnchor ;
+  x3do:fromField 'textToSpeechUrl' ;
+  x3do:fromNode 'TextScript' ;
+  x3do:toField 'url' ;
+  x3do:toNode 'TextToSpeechAnchor' .
+:Shape_2_9_1_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :TextToSpeechAnchor ;
+  x3do:hasGeometry :Text_2_9_1_2_1 ;
+  x3do:hasAppearance :InterfaceAppearance-USE-3 .
+:Text_2_9_1_2_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_9_1_2 ;
+  x3do:hasFontStyle :MessageFont-USE-4 ;
+  x3do:string '"speech"' .
+:MessageFont-USE-4 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_9_1_2_1 ;
+  owl:sameAs :MessageFont . # DEF matching this USE
+:InterfaceAppearance-USE-3 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_9_1_2 ;
+  owl:sameAs :InterfaceAppearance . # DEF matching this USE
+:Transform_2_9_1_3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :TextToSpeechAnchor ;
+  x3do:hasChildren :TransparentClickSurface-USE-3 ;
+  x3do:scale ( 1.8 0.6 1 ) .
+:TransparentClickSurface-USE-3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_9_1_3 ;
+  owl:sameAs :TransparentClickSurface . # DEF matching this USE

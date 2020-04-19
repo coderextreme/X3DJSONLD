@@ -1,312 +1,368 @@
-@prefix : <http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter04ViewingNavigation/BindingOperations.ttl#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix :       <http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter04ViewingNavigation/BindingOperations.ttl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix x3d: <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix x3d:    <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3do:   <https://www.web3d.org/semantics/ontologies/X3dOntology4.0#> .
 
-:Scene rdf:type owl:NamedIndividual, x3d:Scene .
-:View1 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:centerOfRotation "-6 0 0" ;
-  x3d:description "Viewpoint 1" ;
-  x3d:position "-6 0 5" .
-:View2 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:centerOfRotation "-2 0 0" ;
-  x3d:description "Viewpoint 2" ;
-  x3d:position "-2 0 5" .
-:View3 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:centerOfRotation "2 0 0" ;
-  x3d:description "Viewpoint 3" ;
-  x3d:position "2 0 5" .
-:View4 rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:centerOfRotation "6 0 0" ;
-  x3d:description "Viewpoint 4" ;
-  x3d:position "6 0 5" .
-:Group_2 rdf:type owl:NamedIndividual, x3d:Group .
-:Text1 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:translation "-6 0 0" .
-:Text1 x3d:hasShape :Shape_2_5_1 .
-:Shape_2_5_1 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_5_1_1 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "View # 1" .
-:CenterJustify rdf:type owl:NamedIndividual, x3d:FontStyle ;
-  x3d:justify "MIDDLE MIDDLE" .
-:Appearance_2_5_1_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_5_1_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "1 0 0" .
-:Text2 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:translation "-2 0 0" .
-:Text2 x3d:hasShape :Shape_2_5_2 .
-:Shape_2_5_2 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_5_2_1 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "View # 2" .
-:CenterJustify-USE-1 rdf:type owl:NamedIndividual, x3d:FontStyle .
-:Appearance_2_5_2_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_5_2_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "0 1 0" .
-:Text3 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:translation "2 0 0" .
-:Text3 x3d:hasShape :Shape_2_5_3 .
-:Shape_2_5_3 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_5_3_1 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "View # 3" .
-:CenterJustify-USE-2 rdf:type owl:NamedIndividual, x3d:FontStyle .
-:Appearance_2_5_3_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_5_3_1_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "0 0 1" .
-:Text4 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:translation "6 0 0" .
-:Text4 x3d:hasShape :Shape_2_5_4 .
-:Shape_2_5_4 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_5_4_1 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "View # 4" .
-:CenterJustify-USE-3 rdf:type owl:NamedIndividual, x3d:FontStyle .
-:Appearance_2_5_4_1 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_5_4_1_2 rdf:type owl:NamedIndividual, x3d:Material .
-:Transform_2 rdf:type owl:NamedIndividual, x3d:Transform ;
-  x3d:translation "0 -3 8" .
-:ClickToAnimateView rdf:type owl:NamedIndividual, x3d:Viewpoint ;
-  x3d:description "Select animation sequence" ;
-  x3d:position "0 0 7" .
-:Shape_2_6 rdf:type owl:NamedIndividual, x3d:Shape .
-:Text_2_6_2 rdf:type owl:NamedIndividual, x3d:Text ;
-  x3d:string "Click here to animate" .
-:FontStyle_2_6_2_1 rdf:type owl:NamedIndividual, x3d:FontStyle ;
-  x3d:justify "MIDDLE BEGIN" .
-:Appearance_2_6_2 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_6_2_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:diffuseColor "0.8 0.4 0" .
-:Shape_2_6 rdf:type owl:NamedIndividual, x3d:Shape .
-:Box_2_6_3 rdf:type owl:NamedIndividual, x3d:Box ;
-  x3d:size "7 1 0.02" .
-:Appearance_2_6_3 rdf:type owl:NamedIndividual, x3d:Appearance .
-:Material_2_6_3_2 rdf:type owl:NamedIndividual, x3d:Material ;
-  x3d:transparency "1" .
-:TextTouchSensor rdf:type owl:NamedIndividual, x3d:TouchSensor ;
-  x3d:description "Click to begin animating viewpoint selections" .
-:Clock rdf:type owl:NamedIndividual, x3d:TimeSensor ;
-  x3d:cycleInterval "10" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "touchTime" ;
-  x3d:fromNode "TextTouchSensor" ;
-  x3d:toField "set_startTime" ;
-  x3d:toNode "Clock" .
-:TimingSequencer rdf:type owl:NamedIndividual, x3d:IntegerSequencer ;
-  x3d:key "0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 1.0" ;
-  x3d:keyValue "0 1 2 3 4 5 6 7 8 10" ;
-  x3d:containerField "children" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "fraction_changed" ;
-  x3d:fromNode "Clock" ;
-  x3d:toField "set_fraction" ;
-  x3d:toNode "TimingSequencer" .
-:BindingSequencerEngine rdf:type owl:NamedIndividual, x3d:Script .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "set_timeEvent" ;
-  x3d:type "SFInt32" .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:name "bindView1" ;
-  x3d:type "SFBool" .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:name "bindView2" ;
-  x3d:type "SFBool" .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:name "bindView3" ;
-  x3d:type "SFBool" .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:name "bindView4" ;
-  x3d:type "SFBool" .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "outputOnly" ;
-  x3d:name "bindView5" ;
-  x3d:type "SFBool" .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "view1Bound" ;
-  x3d:type "SFBool" .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "view2Bound" ;
-  x3d:type "SFBool" .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "view3Bound" ;
-  x3d:type "SFBool" .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "inputOnly" ;
-  x3d:name "view4Bound" ;
-  x3d:type "SFBool" .
-
-        :BindingSequencerEngine x3d:hasfield :field_2_6_9 .
-:field_2_6_9 rdf:type owl:NamedIndividual, x3d:field ;
-  x3d:accessType "initializeOnly" ;
-  x3d:name "priorInputvalue" ;
-  x3d:type "SFInt32" ;
-  x3d:value "-1" .
-
-        ecmascript:
-
-function initialize ()
-{
-    bindView5 = true;
-    Browser.print ('Timing script initialized and ready for activation');
-}
-function set_timeEvent (inputValue)
-{
-    if (inputValue == priorInputvalue)
-    {
-        return; // ignore repeated inputs
-    }
-    // new value provided
-    priorInputvalue = inputValue;
-    // Browser.print ('\ntimeEvent inputValue=' + inputValue);
-        
-    // mimics user execution of Figure 4.1 steps t_0 through t_8
-    if (inputValue == 0)
-    {
-        Browser.print ('\n===========\n time t0');
-        bindView1 = true;
-    }
-    else if (inputValue == 1)
-    {
-        Browser.print ('\n===========\n time t1');
-        bindView2 = true;
-    }
-    else if (inputValue == 2)
-    {
-        Browser.print ('\n===========\n time t2');
-        bindView3 = true;
-    }
-    else if (inputValue == 3)
-    {
-        Browser.print ('\n===========\n time t3');
-        bindView3 = false;
-    }
-    else if (inputValue == 4)
-    {
-        Browser.print ('\n===========\n time t4');
-        bindView1 = true;
-    }
-    else if (inputValue == 5)
-    {
-        Browser.print ('\n===========\n time t5');
-        bindView2 = false;
-    }
-    else if (inputValue == 6)
-    {
-        Browser.print ('\n===========\n time t6');
-        bindView1 = false;
-    }
-    else if (inputValue == 7)
-    {
-        Browser.print ('\n===========\n time t7');
-        bindView4 = true;
-
-    }
-    else if (inputValue == 8)
-    {
-        Browser.print ('\n===========\n time t8');
-        Browser.print (', no action, all done');
-        Browser.print ('\n\n');
-    }
-}
-
-function view1Bound (inputValue)
-{
-    Browser.print (', view1Bound ' + (inputValue));
-    if (priorInputvalue == -1) Browser.print ('\n');
-}
-function view2Bound (inputValue)
-{
-    Browser.print (', view2Bound ' + (inputValue));
-}
-function view3Bound (inputValue)
-{
-    Browser.print (', view3Bound ' + (inputValue));
-}
-function view4Bound (inputValue)
-{
-    Browser.print (', view4Bound ' + (inputValue));
-}
-function view5Bound (inputValue)
-{
-    Browser.print (', view5Bound ' + (inputValue));
-}
-
-      :ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "value_changed" ;
-  x3d:fromNode "TimingSequencer" ;
-  x3d:toField "set_timeEvent" ;
-  x3d:toNode "BindingSequencerEngine" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "bindView1" ;
-  x3d:fromNode "BindingSequencerEngine" ;
-  x3d:toField "set_bind" ;
-  x3d:toNode "View1" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "bindView2" ;
-  x3d:fromNode "BindingSequencerEngine" ;
-  x3d:toField "set_bind" ;
-  x3d:toNode "View2" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "bindView3" ;
-  x3d:fromNode "BindingSequencerEngine" ;
-  x3d:toField "set_bind" ;
-  x3d:toNode "View3" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "bindView4" ;
-  x3d:fromNode "BindingSequencerEngine" ;
-  x3d:toField "set_bind" ;
-  x3d:toNode "View4" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "bindView5" ;
-  x3d:fromNode "BindingSequencerEngine" ;
-  x3d:toField "set_bind" ;
-  x3d:toNode "ClickToAnimateView" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "isBound" ;
-  x3d:fromNode "View1" ;
-  x3d:toField "view1Bound" ;
-  x3d:toNode "BindingSequencerEngine" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "isBound" ;
-  x3d:fromNode "View2" ;
-  x3d:toField "view2Bound" ;
-  x3d:toNode "BindingSequencerEngine" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "isBound" ;
-  x3d:fromNode "View3" ;
-  x3d:toField "view3Bound" ;
-  x3d:toNode "BindingSequencerEngine" .
-:ROUTE_2_6 rdf:type owl:NamedIndividual, x3d:ROUTE ;
-  x3d:fromField "isBound" ;
-  x3d:fromNode "View4" ;
-  x3d:toField "view4Bound" ;
-  x3d:toNode "BindingSequencerEngine" .
+:X3D a owl:NamedIndividual, x3do:X3D ;
+  x3do:hasHead :head ;
+  x3do:hasScene :Scene ;
+  x3do:profile 'Immersive' ;
+  x3do:version '3.3' ;
+  x3do:noNamespaceSchemaLocation 'http://www.web3d.org/specifications/x3d-3.3.xsd' .
+:head a owl:NamedIndividual, x3do:head ;
+  x3do:hasParent :X3D ;
+  x3do:hasMeta :meta_1_1, :meta_1_2, :meta_1_3, :meta_1_4, :meta_1_5, :meta_1_6, :meta_1_7, :meta_1_8, :meta_1_9, :meta_1_10, :meta_1_11, :meta_1_12, :meta_1_13, :meta_1_14, :meta_1_15 .
+:meta_1_1 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'BindingOperations.x3d' ;
+  x3do:name 'title' .
+:meta_1_2 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Illustrate Viewpoint binding operations (in gory detail!) as described in Chapter 4 concepts. Scene design: a TimeSensor clock drives and IntegerSequencer for each t0/t1/etc. event, and a customized Script node sends bind/unbind events to the correct Viewpoint. Display the browser console to see occurrence of each event.' ;
+  x3do:name 'description' .
+:meta_1_3 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Don Brutzman' ;
+  x3do:name 'creator' .
+:meta_1_4 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '5 January 2008' ;
+  x3do:name 'created' .
+:meta_1_5 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '22 July 2013' ;
+  x3do:name 'modified' .
+:meta_1_6 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'BindingOperations.console.txt' ;
+  x3do:name 'reference' .
+:meta_1_7 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'BindingStackOperations.png' ;
+  x3do:name 'reference' .
+:meta_1_8 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D for Web Authors, Section 2.5.1, Figure 4.1' ;
+  x3do:name 'reference' .
+:meta_1_9 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://X3dGraphics.com' ;
+  x3do:name 'reference' .
+:meta_1_10 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://www.web3d.org/x3d/content/examples/X3dResources.html' ;
+  x3do:name 'reference' .
+:meta_1_11 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'Copyright Don Brutzman and Leonard Daly 2007' ;
+  x3do:name 'rights' .
+:meta_1_12 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com' ;
+  x3do:name 'subject' .
+:meta_1_13 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter04ViewingNavigation/BindingOperations.x3d' ;
+  x3do:name 'identifier' .
+:meta_1_14 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' ;
+  x3do:name 'generator' .
+:meta_1_15 a owl:NamedIndividual, x3do:meta ;
+  x3do:hasParent :head ;
+  x3do:content '../license.html' ;
+  x3do:name 'license' .
+:Scene a owl:NamedIndividual, x3do:Scene ;
+  x3do:hasParent :X3D ;
+  x3do:hasChildren :View1, :View2, :View3, :View4, :Group_2_5, :Transform_2_6 .
+:View1 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:centerOfRotation ( -6 0 0 ) ;
+  x3do:description 'Viewpoint 1' ;
+  x3do:position ( -6 0 5 ) .
+:View2 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:centerOfRotation ( -2 0 0 ) ;
+  x3do:description 'Viewpoint 2' ;
+  x3do:position ( -2 0 5 ) .
+:View3 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:centerOfRotation ( 2 0 0 ) ;
+  x3do:description 'Viewpoint 3' ;
+  x3do:position ( 2 0 5 ) .
+:View4 a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Scene ;
+  x3do:centerOfRotation ( 6 0 0 ) ;
+  x3do:description 'Viewpoint 4' ;
+  x3do:position ( 6 0 5 ) .
+:Group_2_5 a owl:NamedIndividual, x3do:Group ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :Text1, :Text2, :Text3, :Text4 .
+:Text1 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:hasChildren :Shape_2_5_1_1 ;
+  x3do:translation ( -6 0 0 ) .
+:Shape_2_5_1_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Text1 ;
+  x3do:hasGeometry :Text_2_5_1_1_1 ;
+  x3do:hasAppearance :Appearance_2_5_1_1_2 .
+:Text_2_5_1_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_5_1_1 ;
+  x3do:hasFontStyle :CenterJustify ;
+  x3do:string '"View" "# 1"' .
+:CenterJustify a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_5_1_1_1 ;
+  x3do:justify '"MIDDLE" "MIDDLE"' .
+:Appearance_2_5_1_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_1_1 ;
+  x3do:hasMaterial :Material_2_5_1_1_2_1 .
+:Material_2_5_1_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_1_1_2 ;
+  x3do:diffuseColor ( 1 0 0 ) .
+:Text2 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:hasChildren :Shape_2_5_2_1 ;
+  x3do:translation ( -2 0 0 ) .
+:Shape_2_5_2_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Text2 ;
+  x3do:hasGeometry :Text_2_5_2_1_1 ;
+  x3do:hasAppearance :Appearance_2_5_2_1_2 .
+:Text_2_5_2_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_5_2_1 ;
+  x3do:hasFontStyle :CenterJustify-USE-1 ;
+  x3do:string '"View" "# 2"' .
+:CenterJustify-USE-1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_5_2_1_1 ;
+  owl:sameAs :CenterJustify . # DEF matching this USE
+:Appearance_2_5_2_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_2_1 ;
+  x3do:hasMaterial :Material_2_5_2_1_2_1 .
+:Material_2_5_2_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_2_1_2 ;
+  x3do:diffuseColor ( 0 1 0 ) .
+:Text3 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:hasChildren :Shape_2_5_3_1 ;
+  x3do:translation ( 2 0 0 ) .
+:Shape_2_5_3_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Text3 ;
+  x3do:hasGeometry :Text_2_5_3_1_1 ;
+  x3do:hasAppearance :Appearance_2_5_3_1_2 .
+:Text_2_5_3_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_5_3_1 ;
+  x3do:hasFontStyle :CenterJustify-USE-2 ;
+  x3do:string '"View" "# 3"' .
+:CenterJustify-USE-2 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_5_3_1_1 ;
+  owl:sameAs :CenterJustify . # DEF matching this USE
+:Appearance_2_5_3_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_3_1 ;
+  x3do:hasMaterial :Material_2_5_3_1_2_1 .
+:Material_2_5_3_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_3_1_2 ;
+  x3do:diffuseColor ( 0 0 1 ) .
+:Text4 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Group_2_5 ;
+  x3do:hasChildren :Shape_2_5_4_1 ;
+  x3do:translation ( 6 0 0 ) .
+:Shape_2_5_4_1 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Text4 ;
+  x3do:hasGeometry :Text_2_5_4_1_1 ;
+  x3do:hasAppearance :Appearance_2_5_4_1_2 .
+:Text_2_5_4_1_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_5_4_1 ;
+  x3do:hasFontStyle :CenterJustify-USE-3 ;
+  x3do:string '"View" "# 4"' .
+:CenterJustify-USE-3 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_5_4_1_1 ;
+  owl:sameAs :CenterJustify . # DEF matching this USE
+:Appearance_2_5_4_1_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_5_4_1 ;
+  x3do:hasMaterial :Material_2_5_4_1_2_1 .
+:Material_2_5_4_1_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_5_4_1_2 .
+:Transform_2_6 a owl:NamedIndividual, x3do:Transform ;
+  x3do:hasParent :Scene ;
+  x3do:hasChildren :ClickToAnimateView, :Shape_2_6_2, :Shape_2_6_3, :TextTouchSensor, :Clock, :TimingSequencer, :BindingSequencerEngine ;
+  x3do:hasROUTE :ROUTE_2_6_6, :ROUTE_2_6_8, :ROUTE_2_6_10, :ROUTE_2_6_11, :ROUTE_2_6_12, :ROUTE_2_6_13, :ROUTE_2_6_14, :ROUTE_2_6_15, :ROUTE_2_6_16, :ROUTE_2_6_17, :ROUTE_2_6_18, :ROUTE_2_6_19 ;
+  x3do:translation ( 0 -3 8 ) .
+:ClickToAnimateView a owl:NamedIndividual, x3do:Viewpoint ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:description 'Select animation sequence' ;
+  x3do:position ( 0 0 7 ) .
+:Shape_2_6_2 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:hasGeometry :Text_2_6_2_1 ;
+  x3do:hasAppearance :Appearance_2_6_2_2 .
+:Text_2_6_2_1 a owl:NamedIndividual, x3do:Text ;
+  x3do:hasParent :Shape_2_6_2 ;
+  x3do:hasFontStyle :FontStyle_2_6_2_1_1 ;
+  x3do:string '"Click here to animate"' .
+:FontStyle_2_6_2_1_1 a owl:NamedIndividual, x3do:FontStyle ;
+  x3do:hasParent :Text_2_6_2_1 ;
+  x3do:justify '"MIDDLE" "BEGIN"' .
+:Appearance_2_6_2_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_6_2 ;
+  x3do:hasMaterial :Material_2_6_2_2_1 .
+:Material_2_6_2_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_6_2_2 ;
+  x3do:diffuseColor ( 0.8 0.4 0 ) .
+:Shape_2_6_3 a owl:NamedIndividual, x3do:Shape ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:hasGeometry :Box_2_6_3_1 ;
+  x3do:hasAppearance :Appearance_2_6_3_2 .
+:Box_2_6_3_1 a owl:NamedIndividual, x3do:Box ;
+  x3do:hasParent :Shape_2_6_3 ;
+  x3do:size ( 7 1 0.02 ) .
+:Appearance_2_6_3_2 a owl:NamedIndividual, x3do:Appearance ;
+  x3do:hasParent :Shape_2_6_3 ;
+  x3do:hasMaterial :Material_2_6_3_2_1 .
+:Material_2_6_3_2_1 a owl:NamedIndividual, x3do:Material ;
+  x3do:hasParent :Appearance_2_6_3_2 ;
+  x3do:transparency '1' .
+:TextTouchSensor a owl:NamedIndividual, x3do:TouchSensor ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:description 'Click to begin animating viewpoint selections' .
+:Clock a owl:NamedIndividual, x3do:TimeSensor ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:cycleInterval '10' .
+:ROUTE_2_6_6 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'touchTime' ;
+  x3do:fromNode 'TextTouchSensor' ;
+  x3do:toField 'set_startTime' ;
+  x3do:toNode 'Clock' .
+:TimingSequencer a owl:NamedIndividual, x3do:IntegerSequencer ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:key ( 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 1.0 ) ;
+  x3do:keyValue ( 0 1 2 3 4 5 6 7 8 10 ) .
+:ROUTE_2_6_8 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'fraction_changed' ;
+  x3do:fromNode 'Clock' ;
+  x3do:toField 'set_fraction' ;
+  x3do:toNode 'TimingSequencer' .
+:BindingSequencerEngine a owl:NamedIndividual, x3do:Script ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:hasField :field_2_6_9_1, :field_2_6_9_2, :field_2_6_9_3, :field_2_6_9_4, :field_2_6_9_5, :field_2_6_9_6, :field_2_6_9_7, :field_2_6_9_8, :field_2_6_9_9, :field_2_6_9_10, :field_2_6_9_11 .
+:field_2_6_9_1 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'set_timeEvent' ;
+  x3do:type 'SFInt32' .
+:field_2_6_9_2 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'bindView1' ;
+  x3do:type 'SFBool' .
+:field_2_6_9_3 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'bindView2' ;
+  x3do:type 'SFBool' .
+:field_2_6_9_4 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'bindView3' ;
+  x3do:type 'SFBool' .
+:field_2_6_9_5 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'bindView4' ;
+  x3do:type 'SFBool' .
+:field_2_6_9_6 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'outputOnly' ;
+  x3do:name 'bindView5' ;
+  x3do:type 'SFBool' .
+:field_2_6_9_7 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'view1Bound' ;
+  x3do:type 'SFBool' .
+:field_2_6_9_8 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'view2Bound' ;
+  x3do:type 'SFBool' .
+:field_2_6_9_9 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'view3Bound' ;
+  x3do:type 'SFBool' .
+:field_2_6_9_10 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'inputOnly' ;
+  x3do:name 'view4Bound' ;
+  x3do:type 'SFBool' .
+:field_2_6_9_11 a owl:NamedIndividual, x3do:field ;
+  x3do:hasParent :BindingSequencerEngine ;
+  x3do:accessType 'initializeOnly' ;
+  x3do:name 'priorInputvalue' ;
+  x3do:type 'SFInt32' ;
+  x3do:value '-1' .
+:ROUTE_2_6_10 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'value_changed' ;
+  x3do:fromNode 'TimingSequencer' ;
+  x3do:toField 'set_timeEvent' ;
+  x3do:toNode 'BindingSequencerEngine' .
+:ROUTE_2_6_11 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'bindView1' ;
+  x3do:fromNode 'BindingSequencerEngine' ;
+  x3do:toField 'set_bind' ;
+  x3do:toNode 'View1' .
+:ROUTE_2_6_12 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'bindView2' ;
+  x3do:fromNode 'BindingSequencerEngine' ;
+  x3do:toField 'set_bind' ;
+  x3do:toNode 'View2' .
+:ROUTE_2_6_13 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'bindView3' ;
+  x3do:fromNode 'BindingSequencerEngine' ;
+  x3do:toField 'set_bind' ;
+  x3do:toNode 'View3' .
+:ROUTE_2_6_14 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'bindView4' ;
+  x3do:fromNode 'BindingSequencerEngine' ;
+  x3do:toField 'set_bind' ;
+  x3do:toNode 'View4' .
+:ROUTE_2_6_15 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'bindView5' ;
+  x3do:fromNode 'BindingSequencerEngine' ;
+  x3do:toField 'set_bind' ;
+  x3do:toNode 'ClickToAnimateView' .
+:ROUTE_2_6_16 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'isBound' ;
+  x3do:fromNode 'View1' ;
+  x3do:toField 'view1Bound' ;
+  x3do:toNode 'BindingSequencerEngine' .
+:ROUTE_2_6_17 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'isBound' ;
+  x3do:fromNode 'View2' ;
+  x3do:toField 'view2Bound' ;
+  x3do:toNode 'BindingSequencerEngine' .
+:ROUTE_2_6_18 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'isBound' ;
+  x3do:fromNode 'View3' ;
+  x3do:toField 'view3Bound' ;
+  x3do:toNode 'BindingSequencerEngine' .
+:ROUTE_2_6_19 a owl:NamedIndividual, x3do:ROUTE ;
+  x3do:hasParent :Transform_2_6 ;
+  x3do:fromField 'isBound' ;
+  x3do:fromNode 'View4' ;
+  x3do:toField 'view4Bound' ;
+  x3do:toNode 'BindingSequencerEngine' .
