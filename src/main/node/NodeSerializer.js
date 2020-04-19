@@ -183,7 +183,7 @@ NodeSerializer.prototype = {
 				parseInt(a);
 				if (attrs.hasOwnProperty(a) && attrs[a].nodeType == 2) {
 					var attr = attrs[a].nodeName;
-					if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === 'containerField' || attr === 'type') {
+					if (attr === "xmlns:xsd" || attr === "xsd:noNamespaceSchemaLocation" || attr === "containerField" || attr === 'type') {
 						continue;
 					}
 					var method = attr;
