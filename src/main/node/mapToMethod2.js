@@ -60,4 +60,6 @@ var mapToMethod2 = {
 	}
 };
 
-module.exports = mapToMethod2;
+if (typeof module === 'object')  {
+	module.exports = mapToMethod2;
+}
