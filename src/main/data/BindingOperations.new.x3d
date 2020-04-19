@@ -31,7 +31,7 @@
             <Material diffuseColor='1 0 0'/>
           </Appearance>
           <Text string='"View" "# 1"'>
-            <FontStyle DEF='CenterJustify' family='"SERIF"' justify='"MIDDLE" "BEGIN"'/>
+            <FontStyle DEF='CenterJustify' family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
           </Text>
         </Shape>
       </Transform>

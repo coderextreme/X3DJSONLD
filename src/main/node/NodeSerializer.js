@@ -31,12 +31,19 @@ NodeSerializer.prototype = {
 		var pkg = pc.substr(0, c).replace(/[\/\\]/g, ".").trim();
 
 		str += "var java = require('java');\n";
-		str += "var autoclass = require('../../../X3Dautoclass.js');\n";
+		str += "java.asyncOptions = {\n";
+		str += "  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks\n";
+		str += '  syncSuffix: "",              // Sync methods use the base name(!!)\n';
+		str += '  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.\n';
+		str += "  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below\n";
+		str += '  ifReadOnlySuffix: "_alt"\n';
+		str += '};\n';
+		str += "var autoclass = require('../X3Dautoclass');\n";
 		str += "var ConfigurationProperties = autoclass.ConfigurationProperties;\n";
 		str += "ConfigurationProperties.showDefaultAttributes = false;\n";
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;\n";
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
-		str += "ConfigurationProperties.setStripTrailingZeroesSync(true);\n";
+		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
 		// we figure out body first and print it out later
 		var body = "      var "+element.nodeName+0+" =  new autoclass."+element.nodeName+"()";
 		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
@@ -115,7 +122,7 @@ NodeSerializer.prototype = {
 			method = "setIS";
 			addpre = "";
 		}
-		return prepre+addpre+method+"Sync";
+		return prepre+addpre+method+"";
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
 		var str = "";
@@ -156,7 +163,7 @@ NodeSerializer.prototype = {
 								+'"';
 						}
 						method = "set"+method.charAt(0).toUpperCase() + method.slice(1);
-						str += '.'+method+"Sync("+strval+")";
+						str += '.'+method+"("+strval+")";
 					}
 				}
 			} catch (e) {
@@ -297,7 +304,7 @@ NodeSerializer.prototype = {
 						method = "setCssClass";
 					}
 					
-					str += '.'+method+"Sync("+strval+")";
+					str += '.'+method+"("+strval+")";
 				}
 			} catch (e) {
 				console.error(e);
@@ -347,12 +354,12 @@ NodeSerializer.prototype = {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				str += "\n"+("  ".repeat(n))+'.addCommentsSync(new autoclass.CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'"))';
+				str += "\n"+("  ".repeat(n))+'.addComments(new autoclass.CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'"))';
 				if (y !== node.nodeValue) {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += "\n"+("  ".repeat(n))+".setSourceCodeSync(\""+node.nodeValue.split("\r\n").map(function(x) {
+				str += "\n"+("  ".repeat(n))+".setSourceCode(```"+node.nodeValue.split("\r\n").map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"');
@@ -360,7 +367,7 @@ NodeSerializer.prototype = {
 						replace(/\\n/g, "\\\\n")
 						*/
 					;
-					}).join('\\n\"+\n\"')+'")';
+					}).join('\\n\"+\n\"')+'```)';
 			}
 		}
 		return str;

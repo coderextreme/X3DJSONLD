@@ -1,10 +1,17 @@
 var java = require('java');
-var autoclass = require('../../../X3Dautoclass.js');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
+var autoclass = require('../X3Dautoclass');
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
-ConfigurationProperties.setStripTrailingZeroesSync(true);
+ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
 var ProtoInstance2 = null;
@@ -18,74 +25,74 @@ var ProtoInstance9 = null;
 var ProtoInstance10 = null;
 var ProtoInstance11 = null;
 var ProtoInstance12 = null;
-      var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
-      .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("arc"))
-        .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("Lost, Doug Sanden I think"))
-        .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manual"))
-        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
-        .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("a generic proto to connect two objects")))
-      .setSceneSync(new autoclass.Scene()
-        .addChildSync(new autoclass.Viewpoint().setPositionSync(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(5)])).setDescriptionSync("Only Viewpoint"))
-        .addChildSync(new autoclass.Background().setSkyColorSync(java.newArray("float", [java.newFloat(0.4), java.newFloat(0.4), java.newFloat(0.4)])))
-        .addChildSync(new autoclass.ProtoDeclare().setNameSync("point")
-          .setProtoInterfaceSync(new autoclass.ProtoInterface()
-            .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("translation").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0 0 0")))
-          .setProtoBodySync(new autoclass.ProtoBody()
-            .addChildSync(new autoclass.Transform().setDEFSync("node")
-              .setISSync(new autoclass.IS()
-                .addConnectSync(new autoclass.connect().setNodeFieldSync("translation").setProtoFieldSync("translation")))
-              .addChildSync(new autoclass.Shape()
-                .setGeometrySync(new autoclass.Sphere().setRadiusSync(java.newFloat(0.1)))
-                .setAppearanceSync(new autoclass.Appearance()
-                  .setMaterialSync(new autoclass.Material().setDiffuseColorSync(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)])))))
-              .addChildSync(new autoclass.PositionInterpolator().setDEFSync("PI1").setKeySync(java.newArray("float", [java.newFloat(0), java.newFloat(1)])).setKeyValueSync(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(5), java.newFloat(0)])))
-              .addChildSync(new autoclass.Script().setDEFSync("MB1")
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("translation").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("50 50 0"))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("old").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0 0 0"))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFTIME).setNameSync("set_location").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTONLY))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_MFVEC3F).setNameSync("keyValue").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0 0 0 0 5 0"))
-                .setSourceCodeSync("ecmascript:\n"+
+      var X3D0 =  new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new autoclass.head()
+        .addMeta(new autoclass.meta().setName("title").setContent("arc"))
+        .addMeta(new autoclass.meta().setName("creator").setContent("Lost, Doug Sanden I think"))
+        .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
+        .addMeta(new autoclass.meta().setName("description").setContent("a generic proto to connect two objects")))
+      .setScene(new autoclass.Scene()
+        .addChild(new autoclass.Viewpoint().setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(5)])).setDescription("Only Viewpoint"))
+        .addChild(new autoclass.Background().setSkyColor(java.newArray("float", [java.newFloat(0.4), java.newFloat(0.4), java.newFloat(0.4)])))
+        .addChild(new autoclass.ProtoDeclare().setName("point")
+          .setProtoInterface(new autoclass.ProtoInterface()
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
+          .setProtoBody(new autoclass.ProtoBody()
+            .addChild(new autoclass.Transform().setDEF("node")
+              .setIS(new autoclass.IS()
+                .addConnect(new autoclass.connect().setNodeField("translation").setProtoField("translation")))
+              .addChild(new autoclass.Shape()
+                .setGeometry(new autoclass.Sphere().setRadius(java.newFloat(0.1)))
+                .setAppearance(new autoclass.Appearance()
+                  .setMaterial(new autoclass.Material().setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)])))))
+              .addChild(new autoclass.PositionInterpolator().setDEF("PI1").setKey(java.newArray("float", [java.newFloat(0), java.newFloat(1)])).setKeyValue(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(5), java.newFloat(0)])))
+              .addChild(new autoclass.Script().setDEF("MB1")
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("old").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFTIME).setName("set_location").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setName("keyValue").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
+                .setSourceCode(```ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
 "                    keyValue = new MFVec3f([old, translation]);\n"+
 "		    // Browser.println(keyValue);\n"+
-"		}"))
-              .addChildSync(new autoclass.TimeSensor().setDEFSync("CL1").setCycleIntervalSync(3).setLoopSync(true))
-              .addChildSync(new autoclass.ROUTE().setFromNodeSync("CL1").setFromFieldSync("cycleTime").setToNodeSync("MB1").setToFieldSync("set_location"))
-              .addChildSync(new autoclass.ROUTE().setFromNodeSync("CL1").setFromFieldSync("fraction_changed").setToNodeSync("PI1").setToFieldSync("set_fraction"))
-              .addChildSync(new autoclass.ROUTE().setFromNodeSync("MB1").setFromFieldSync("keyValue").setToNodeSync("PI1").setToFieldSync("keyValue"))
-              .addChildSync(new autoclass.ROUTE().setFromNodeSync("PI1").setFromFieldSync("value_changed").setToNodeSync("node").setToFieldSync("set_translation")))))
-        .addChildSync(new autoclass.ProtoDeclare().setNameSync("x3dconnector")
-          .setProtoInterfaceSync(new autoclass.ProtoInterface()
-            .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFNODE).setNameSync("startnode").setAccessTypeSync(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
-            .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFNODE).setNameSync("endnode").setAccessTypeSync(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
-            .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("set_startpoint").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("set_endpoint").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTONLY)))
-          .setProtoBodySync(new autoclass.ProtoBody()
-            .addChildSync(new autoclass.Group()
-              .addChildSync(new autoclass.Transform().setDEFSync("trans")
-                .addChildSync(new autoclass.Transform().setDEFSync("rotscale")
-                  .addChildSync(new autoclass.Shape()
-                    .setAppearanceSync(new autoclass.Appearance()
-                      .setMaterialSync(new autoclass.Material().setDiffuseColorSync(java.newArray("float", [java.newFloat(0.2), java.newFloat(0.7), java.newFloat(0.7)])).setTransparencySync(java.newFloat(0.5))))
-                    .setGeometrySync(new autoclass.Cylinder().setRadiusSync(java.newFloat(0.05))))))
-              .addChildSync(new autoclass.Script().setDEFSync("S1")
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFNODE).setNameSync("startnode").setAccessTypeSync(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFNODE).setNameSync("endnode").setAccessTypeSync(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFNODE).setNameSync("position").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
-                  .addChildSync(new autoclass.Transform().setUSESync("trans")))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFNODE).setNameSync("rotscale").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
-                  .addChildSync(new autoclass.Transform().setUSESync("rotscale")))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("set_startpoint").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTONLY))
-                .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("set_endpoint").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTONLY))
-                .setISSync(new autoclass.IS()
-                  .addConnectSync(new autoclass.connect().setNodeFieldSync("startnode").setProtoFieldSync("startnode"))
-                  .addConnectSync(new autoclass.connect().setNodeFieldSync("endnode").setProtoFieldSync("endnode"))
-                  .addConnectSync(new autoclass.connect().setNodeFieldSync("set_startpoint").setProtoFieldSync("set_startpoint"))
-                  .addConnectSync(new autoclass.connect().setNodeFieldSync("set_endpoint").setProtoFieldSync("set_endpoint")))
-                .setSourceCodeSync("ecmascript:\n"+
+"		}```))
+              .addChild(new autoclass.TimeSensor().setDEF("CL1").setCycleInterval(3).setLoop(true))
+              .addChild(new autoclass.ROUTE().setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
+              .addChild(new autoclass.ROUTE().setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
+              .addChild(new autoclass.ROUTE().setFromNode("MB1").setFromField("keyValue").setToNode("PI1").setToField("keyValue"))
+              .addChild(new autoclass.ROUTE().setFromNode("PI1").setFromField("value_changed").setToNode("node").setToField("set_translation")))))
+        .addChild(new autoclass.ProtoDeclare().setName("x3dconnector")
+          .setProtoInterface(new autoclass.ProtoInterface()
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFNODE).setName("startnode").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFNODE).setName("endnode").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
+          .setProtoBody(new autoclass.ProtoBody()
+            .addChild(new autoclass.Group()
+              .addChild(new autoclass.Transform().setDEF("trans")
+                .addChild(new autoclass.Transform().setDEF("rotscale")
+                  .addChild(new autoclass.Shape()
+                    .setAppearance(new autoclass.Appearance()
+                      .setMaterial(new autoclass.Material().setDiffuseColor(java.newArray("float", [java.newFloat(0.2), java.newFloat(0.7), java.newFloat(0.7)])).setTransparency(java.newFloat(0.5))))
+                    .setGeometry(new autoclass.Cylinder().setRadius(java.newFloat(0.05))))))
+              .addChild(new autoclass.Script().setDEF("S1")
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFNODE).setName("startnode").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFNODE).setName("endnode").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFNODE).setName("position").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
+                  .addChild(new autoclass.Transform().setUSE("trans")))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFNODE).setName("rotscale").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
+                  .addChild(new autoclass.Transform().setUSE("rotscale")))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+                .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+                .setIS(new autoclass.IS()
+                  .addConnect(new autoclass.connect().setNodeField("startnode").setProtoField("startnode"))
+                  .addConnect(new autoclass.connect().setNodeField("endnode").setProtoField("endnode"))
+                  .addConnect(new autoclass.connect().setNodeField("set_startpoint").setProtoField("set_startpoint"))
+                  .addConnect(new autoclass.connect().setNodeField("set_endpoint").setProtoField("set_endpoint")))
+                .setSourceCode(```ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		return;\n"+
@@ -128,48 +135,48 @@ var ProtoInstance12 = null;
 "        }\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
-"        }")))))
-        .addChildSync(ProtoInstance0 = new autoclass.ProtoInstance().setNameSync("point").setDEFSync("G1"))
-        .addChildSync(ProtoInstance1 = new autoclass.ProtoInstance().setNameSync("point").setDEFSync("G2"))
-        .addChildSync(ProtoInstance2 = new autoclass.ProtoInstance().setNameSync("point").setDEFSync("G3"))
-        .addChildSync(ProtoInstance3 = new autoclass.ProtoInstance().setNameSync("point").setDEFSync("G4"))
-        .addChildSync(ProtoInstance4 = new autoclass.ProtoInstance().setNameSync("x3dconnector").setDEFSync("connector1"))
-        .addChildSync(ProtoInstance7 = new autoclass.ProtoInstance().setNameSync("x3dconnector").setDEFSync("connector2"))
-        .addChildSync(ProtoInstance10 = new autoclass.ProtoInstance().setNameSync("x3dconnector").setDEFSync("connector3"))
-        .addChildSync(new autoclass.ROUTE().setFromNodeSync("G1").setFromFieldSync("translation").setToNodeSync("connector1").setToFieldSync("set_startpoint"))
-        .addChildSync(new autoclass.ROUTE().setFromNodeSync("G2").setFromFieldSync("translation").setToNodeSync("connector1").setToFieldSync("set_endpoint"))
-        .addChildSync(new autoclass.ROUTE().setFromNodeSync("G1").setFromFieldSync("translation").setToNodeSync("connector2").setToFieldSync("set_startpoint"))
-        .addChildSync(new autoclass.ROUTE().setFromNodeSync("G3").setFromFieldSync("translation").setToNodeSync("connector2").setToFieldSync("set_endpoint"))
-        .addChildSync(new autoclass.ROUTE().setFromNodeSync("G1").setFromFieldSync("translation").setToNodeSync("connector3").setToFieldSync("set_startpoint"))
-        .addChildSync(new autoclass.ROUTE().setFromNodeSync("G4").setFromFieldSync("translation").setToNodeSync("connector3").setToFieldSync("set_endpoint")))      ;
+"        }```)))))
+        .addChild(ProtoInstance0 = new autoclass.ProtoInstance().setName("point").setDEF("G1"))
+        .addChild(ProtoInstance1 = new autoclass.ProtoInstance().setName("point").setDEF("G2"))
+        .addChild(ProtoInstance2 = new autoclass.ProtoInstance().setName("point").setDEF("G3"))
+        .addChild(ProtoInstance3 = new autoclass.ProtoInstance().setName("point").setDEF("G4"))
+        .addChild(ProtoInstance4 = new autoclass.ProtoInstance().setName("x3dconnector").setDEF("connector1"))
+        .addChild(ProtoInstance7 = new autoclass.ProtoInstance().setName("x3dconnector").setDEF("connector2"))
+        .addChild(ProtoInstance10 = new autoclass.ProtoInstance().setName("x3dconnector").setDEF("connector3"))
+        .addChild(new autoclass.ROUTE().setFromNode("G1").setFromField("translation").setToNode("connector1").setToField("set_startpoint"))
+        .addChild(new autoclass.ROUTE().setFromNode("G2").setFromField("translation").setToNode("connector1").setToField("set_endpoint"))
+        .addChild(new autoclass.ROUTE().setFromNode("G1").setFromField("translation").setToNode("connector2").setToField("set_startpoint"))
+        .addChild(new autoclass.ROUTE().setFromNode("G3").setFromField("translation").setToNode("connector2").setToField("set_endpoint"))
+        .addChild(new autoclass.ROUTE().setFromNode("G1").setFromField("translation").setToNode("connector3").setToField("set_startpoint"))
+        .addChild(new autoclass.ROUTE().setFromNode("G4").setFromField("translation").setToNode("connector3").setToField("set_endpoint")))      ;
 ProtoInstance4
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("startnode")
-            .addChildSync(ProtoInstance5 = new autoclass.ProtoInstance().setUSESync("G1")));
+          .addFieldValue(new autoclass.fieldValue().setName("startnode")
+            .addChild(ProtoInstance5 = new autoclass.ProtoInstance().setUSE("G1")));
 ProtoInstance4
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("endnode")
-            .addChildSync(ProtoInstance6 = new autoclass.ProtoInstance().setUSESync("G2")));
+          .addFieldValue(new autoclass.fieldValue().setName("endnode")
+            .addChild(ProtoInstance6 = new autoclass.ProtoInstance().setUSE("G2")));
 ProtoInstance4
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("set_startpoint"));
+          .addFieldValue(new autoclass.fieldValue().setName("set_startpoint"));
 ProtoInstance4
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("set_endpoint"));
+          .addFieldValue(new autoclass.fieldValue().setName("set_endpoint"));
 ProtoInstance7
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("startnode")
-            .addChildSync(ProtoInstance8 = new autoclass.ProtoInstance().setUSESync("G1")));
+          .addFieldValue(new autoclass.fieldValue().setName("startnode")
+            .addChild(ProtoInstance8 = new autoclass.ProtoInstance().setUSE("G1")));
 ProtoInstance7
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("endnode")
-            .addChildSync(ProtoInstance9 = new autoclass.ProtoInstance().setUSESync("G3")));
+          .addFieldValue(new autoclass.fieldValue().setName("endnode")
+            .addChild(ProtoInstance9 = new autoclass.ProtoInstance().setUSE("G3")));
 ProtoInstance7
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("set_startpoint"));
+          .addFieldValue(new autoclass.fieldValue().setName("set_startpoint"));
 ProtoInstance7
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("set_endpoint"));
+          .addFieldValue(new autoclass.fieldValue().setName("set_endpoint"));
 ProtoInstance10
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("startnode")
-            .addChildSync(ProtoInstance11 = new autoclass.ProtoInstance().setUSESync("G1")));
+          .addFieldValue(new autoclass.fieldValue().setName("startnode")
+            .addChild(ProtoInstance11 = new autoclass.ProtoInstance().setUSE("G1")));
 ProtoInstance10
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("endnode")
-            .addChildSync(ProtoInstance12 = new autoclass.ProtoInstance().setUSESync("G4")));
+          .addFieldValue(new autoclass.fieldValue().setName("endnode")
+            .addChild(ProtoInstance12 = new autoclass.ProtoInstance().setUSE("G4")));
 ProtoInstance10
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("set_startpoint"));
+          .addFieldValue(new autoclass.fieldValue().setName("set_startpoint"));
 ProtoInstance10
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("set_endpoint"));
+          .addFieldValue(new autoclass.fieldValue().setName("set_endpoint"));
     X3D0.toFileX3D("../data/arc.new.x3d");

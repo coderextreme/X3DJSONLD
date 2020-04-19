@@ -35,6 +35,7 @@
             <Appearance>
               <Material diffuseColor='0.5 0.5 0.9'/>
               <ComposedShader DEF='Cobweb' language='GLSL'>
+                <field name='decis' accessType='initializeOnly' type='SFVec3f' value='0.95 0.77 0.44'/>
                 <ShaderPart>
 <![CDATA[
 data:text/plain;charset=utf-8,
@@ -90,7 +91,6 @@ void main()
 }
 ]]>
                 </ShaderPart>
-                <field name='decis' accessType='initializeOnly' type='SFVec3f' value='0.95 0.77 0.44'/>
               </ComposedShader>
             </Appearance>
             <Sphere radius='1.75'/>

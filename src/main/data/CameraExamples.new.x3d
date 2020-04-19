@@ -100,7 +100,7 @@
     </ExternProtoDeclare>
     <!-- =============== Lights, camera, action! ============== -->
     <DirectionalLight direction='0 -1 0' global='true' intensity='0.8'/>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"ANIMATE"' type='"EXAMINE" "FLY" "ANY"'/>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "ANY"'/>
     <Viewpoint description='Camera test scene entry view' position='0 2 12'/>
     <Viewpoint description='Camera test scene from above' orientation='1 0 0 -1.57079' position='0 150 0'/>
     <!-- Keep prototype instances in same file while developing, then move later -->
@@ -501,7 +501,7 @@
           <Viewpoint DEF='FrustumViewpoint' description='viewpoint for ViewFrustum' position='0 0 0'/>
         </fieldValue>
         <fieldValue name='NavigationInfoNode'>
-          <NavigationInfo DEF='TestNavigationInfo' avatarSize='0.25 1.6 0.75' transitionType='"ANIMATE"' type='"EXAMINE" "FLY" "ANY"' visibilityLimit='100.0'/>
+          <NavigationInfo DEF='TestNavigationInfo' avatarSize='0.25 1.6 0.75' transitionType='"ANIMATE"' type='"EXAMINE" "ANY"' visibilityLimit='100.0'/>
         </fieldValue>
         <fieldValue name='visible' value='false'/>
         <fieldValue name='lineColor' value='0.9 0.9 0.9'/>

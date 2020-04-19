@@ -5,6 +5,12 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
+      .setHead(new headObject()
+        .addMeta(new metaObject().setName("title").setContent("flower.x3d"))
+        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
+        .addMeta(new metaObject().setName("generator").setContent("manual"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"))
+        .addMeta(new metaObject().setName("description").setContent("a flower")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
         .addChild(new DirectionalLightObject().setDirection(Java.to([0,-0.8,-0.2], Java.type("float[]"))).setIntensity(0.5))

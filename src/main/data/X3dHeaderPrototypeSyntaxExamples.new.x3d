@@ -40,10 +40,10 @@
       <ProtoBody>
         <!-- Override default diffuseColor value 0.8 0.8 0.8 -->
         <Material diffuseColor='0 0 0'>
+          <!-- Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. -->
           <IS>
             <connect nodeField='emissiveColor' protoField='onlyColor'/>
           </IS>
-          <!-- Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. -->
         </Material>
       </ProtoBody>
     </ProtoDeclare>

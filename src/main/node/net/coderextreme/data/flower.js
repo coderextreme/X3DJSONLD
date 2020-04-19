@@ -6,6 +6,12 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroesSync(true);
       var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
+      .setHeadSync(new autoclass.head()
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("flower.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
+        .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manual"))
+        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("a flower")))
       .setSceneSync(new autoclass.Scene()
         .addChildSync(new autoclass.NavigationInfo())
         .addChildSync(new autoclass.DirectionalLight().setDirectionSync(java.newArray("float", [java.newFloat(0), java.newFloat(-0.8), java.newFloat(-0.2)])).setIntensitySync(java.newFloat(0.5)))

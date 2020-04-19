@@ -73,12 +73,12 @@
         </NavigationInfo>
         <!-- this DirectionalLight replaces NavigationInfo headlight in order to add color capability -->
         <DirectionalLight DEF='CameraDirectionalLight' global='true'>
+          <!-- TODO confirm other default field values match NavigationInfo spec -->
           <IS>
             <connect nodeField='on' protoField='headlight'/>
             <connect nodeField='color' protoField='headlightColor'/>
             <connect nodeField='intensity' protoField='headlightIntensity'/>
           </IS>
-          <!-- TODO confirm other default field values match NavigationInfo spec -->
         </DirectionalLight>
         <PositionInterpolator DEF='CameraPositionInterpolator' key='0 1' keyValue='0 0 0 0 0 0'>
           <IS>
