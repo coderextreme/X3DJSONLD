@@ -6,7 +6,7 @@ java.asyncOptions = {
   promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
-var autoclass = require('../X3Dautoclass');
+var autoclass = require('../../../X3Dautoclass');
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
@@ -91,7 +91,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("view3Bound").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
             .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("view4Bound").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
             .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setName("priorInputvalue").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("-1"))
-            .setSourceCode(```ecmascript:\n"+
+            .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -178,7 +178,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "function view5Bound (inputValue)\n"+
 "{\n"+
 "    Browser.print (', view5Bound ' + (inputValue));\n"+
-"}```))
+"}"))
           .addComments(new autoclass.CommentsBlock("drive Script with TimeSensor clock"))
           .addChild(new autoclass.ROUTE().setFromField("value_changed").setFromNode("TimingSequencer").setToField("set_timeEvent").setToNode("BindingSequencerEngine"))
           .addComments(new autoclass.CommentsBlock("Script will bind and unbind Viewpoint nodes"))

@@ -2,36 +2,36 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <meta content='arc1.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
-    <meta content='Lost, Doug Sanden I think' dir='' http_equiv='' lang='' name='creator' scheme=''/>
-    <meta content='manual' dir='' http_equiv='' lang='' name='generator' scheme=''/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
-    <meta content='a generic proto to connect two objects' dir='' http_equiv='' lang='' name='description' scheme=''/>
+    <meta content='arc1.x3d' name='title'/>
+    <meta content='Lost, Doug Sanden I think' name='creator'/>
+    <meta content='manual' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d' name='identifier'/>
+    <meta content='a generic proto to connect two objects' name='description'/>
   </head>
   <Scene>
-    <Viewpoint centerOfRotation='0 0 0' class='' description='Only Viewpoint' fieldOfView='0.7854' jump='true' orientation='0 0 1 0' position='0 0 5' retainUserOffsets='false'/>
-    <Background backUrl='' bottomUrl='' class='' frontUrl='' groundAngle='' leftUrl='' rightUrl='' skyAngle='' skyColor='0.4 0.4 0.4' topUrl='' transparency='0.0'/>
-    <ProtoDeclare name='point' appinfo='' documentation=''>
+    <Viewpoint description='Only Viewpoint' position='0 0 5'/>
+    <Background skyColor='0.4 0.4 0.4'/>
+    <ProtoDeclare name='point'>
       <ProtoInterface>
-        <field name='translation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
+        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
       </ProtoInterface>
       <ProtoBody>
-        <Transform DEF='node' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+        <Transform DEF='node'>
           <IS>
             <connect nodeField='translation' protoField='translation'/>
           </IS>
-          <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-            <Appearance class=''>
-              <Material ambientIntensity='0.2' class='' diffuseColor='1 0 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor='1 0 0'/>
             </Appearance>
-            <Sphere class='' radius='0.1' solid='true'/>
+            <Sphere radius='0.1'/>
           </Shape>
-          <PositionInterpolator DEF='PI1' class='' key='0 1' keyValue='0 0 0 0 5 0'/>
-          <Script DEF='MB1' class='' directOutput='false' mustEvaluate='false' url=''>
-            <field name='translation' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='50 50 0'/>
-            <field name='old' accessType='inputOutput' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
-            <field name='set_location' accessType='inputOnly' appinfo='' documentation='' type='SFTime' value=''/>
-            <field name='keyValue' accessType='inputOutput' appinfo='' documentation='' type='MFVec3f' value='0 0 0 0 5 0'/>
+          <PositionInterpolator DEF='PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
+          <Script DEF='MB1'>
+            <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
+            <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+            <field name='set_location' accessType='inputOnly' type='SFTime'/>
+            <field name='keyValue' accessType='inputOutput' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
 ecmascript:
                function set_location(value) {
@@ -41,7 +41,7 @@ ecmascript:
                }
 ]]>
           </Script>
-          <TimeSensor DEF='CL1' class='' cycleInterval='3.0' enabled='true' loop='true' pauseTime='0.0' resumeTime='0.0' startTime='0.0' stopTime='0.0'/>
+          <TimeSensor DEF='CL1' cycleInterval='3.0' loop='true'/>
           <ROUTE fromField='cycleTime' fromNode='CL1' toField='set_location' toNode='MB1'/>
           <ROUTE fromField='fraction_changed' fromNode='CL1' toField='set_fraction' toNode='PI1'/>
           <ROUTE fromField='keyValue' fromNode='MB1' toField='keyValue' toNode='PI1'/>
@@ -50,39 +50,39 @@ ecmascript:
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <Transform DEF='G1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
-      <ProtoInstance name='point' class=''/>
+    <Transform DEF='G1'>
+      <ProtoInstance name='point'/>
     </Transform>
-    <Transform DEF='G2' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
-      <ProtoInstance name='point' class=''/>
+    <Transform DEF='G2'>
+      <ProtoInstance name='point'/>
     </Transform>
-    <Transform DEF='transC1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
-      <Transform DEF='rotscaleC1' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
-        <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-          <Appearance class=''>
-            <Material ambientIntensity='0.2' class='' diffuseColor='0.2 0.7 0.7' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.5'/>
+    <Transform DEF='transC1'>
+      <Transform DEF='rotscaleC1'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='0.2 0.7 0.7' transparency='0.5'/>
           </Appearance>
-          <Cylinder bottom='true' class='' height='2.0' radius='0.05' side='true' solid='true' top='true'/>
+          <Cylinder radius='0.05'/>
         </Shape>
       </Transform>
     </Transform>
-    <ProtoDeclare name='x3dconnector' appinfo='' documentation=''>
+    <ProtoDeclare name='x3dconnector'>
       <ProtoInterface>
-        <field name='startnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
-        <field name='endnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
-        <field name='transnode' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''/>
-        <field name='rotscalenode' accessType='inputOutput' appinfo='' documentation='' type='SFNode' value=''/>
-        <field name='set_startpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
-        <field name='set_endpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+        <field name='startnode' accessType='initializeOnly' type='SFNode'/>
+        <field name='endnode' accessType='initializeOnly' type='SFNode'/>
+        <field name='transnode' accessType='inputOutput' type='SFNode'/>
+        <field name='rotscalenode' accessType='inputOutput' type='SFNode'/>
+        <field name='set_startpoint' accessType='inputOnly' type='SFVec3f'/>
+        <field name='set_endpoint' accessType='inputOnly' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
-        <Script DEF='S1' class='' directOutput='false' mustEvaluate='false' url=''>
-          <field name='startnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
-          <field name='endnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
-          <field name='transnode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
-          <field name='rotscalenode' accessType='initializeOnly' appinfo='' documentation='' type='SFNode' value=''/>
-          <field name='set_startpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
-          <field name='set_endpoint' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+        <Script DEF='S1'>
+          <field name='startnode' accessType='initializeOnly' type='SFNode'/>
+          <field name='endnode' accessType='initializeOnly' type='SFNode'/>
+          <field name='transnode' accessType='initializeOnly' type='SFNode'/>
+          <field name='rotscalenode' accessType='initializeOnly' type='SFNode'/>
+          <field name='set_startpoint' accessType='inputOnly' type='SFVec3f'/>
+          <field name='set_endpoint' accessType='inputOnly' type='SFVec3f'/>
           <IS>
             <connect nodeField='startnode' protoField='startnode'/>
             <connect nodeField='endnode' protoField='endnode'/>
@@ -135,21 +135,21 @@ ecmascript:
         </Script>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoInstance DEF='connector1' name='x3dconnector' class=''>
-      <fieldValue name='startnode' value=''>
+    <ProtoInstance DEF='connector1' name='x3dconnector'>
+      <fieldValue name='startnode'>
         <Transform USE='G1'/>
       </fieldValue>
-      <fieldValue name='endnode' value=''>
+      <fieldValue name='endnode'>
         <Transform USE='G2'/>
       </fieldValue>
-      <fieldValue name='transnode' value=''>
+      <fieldValue name='transnode'>
         <Transform USE='transC1'/>
       </fieldValue>
-      <fieldValue name='rotscalenode' value=''>
+      <fieldValue name='rotscalenode'>
         <Transform USE='rotscaleC1'/>
       </fieldValue>
-      <fieldValue name='set_startpoint' value=''/>
-      <fieldValue name='set_endpoint' value=''/>
+      <fieldValue name='set_startpoint'/>
+      <fieldValue name='set_endpoint'/>
     </ProtoInstance>
     <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
     <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='connector1'/>

@@ -1,20 +1,51 @@
-var ProtoInstance0 = null;
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("asteroids.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/asteroids.x3d"))
-        .addMeta(new meta().setName("description").setContent("asteroids")))
-      .setScene(new Scene()
-        .addChild(new ProtoDeclare().setName("anyShape")
-          .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType(field.TYPE_MFNODE).setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape()
-                .setGeometry(new Sphere()))))
-          .setProtoBody(new ProtoBody()
-            .addChild(new Transform()
-              .setIS(new IS()
-                .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
-        .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")))      ;
-    X3D0.toFileX3D("../data/asteroids.new.x3d");
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+ProtoDeclare2 = browser.currentScene.createNode("ProtoDeclare");
+ProtoDeclare2.name = "anyShape";
+ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
+field4 = browser.currentScene.createNode("field");
+field4.name = "myShape";
+field4.accessType = "inputOutput";
+field4.type = "MFNode";
+Shape5 = browser.currentScene.createNode("Shape");
+Sphere6 = browser.currentScene.createNode("Sphere");
+Shape5.geometry = Sphere6;
+
+field4.children = [];
+
+field4.children[0] = Shape5;
+
+ProtoInterface3.field = [];
+
+ProtoInterface3.field[0] = field4;
+
+ProtoDeclare2.protoInterface = ProtoInterface3;
+
+ProtoBody7 = browser.currentScene.createNode("ProtoBody");
+Transform8 = browser.currentScene.createNode("Transform");
+IS9 = browser.currentScene.createNode("IS");
+connect10 = browser.currentScene.createNode("connect");
+connect10.nodeField = "children";
+connect10.protoField = "myShape";
+IS9.connect = [];
+
+IS9.connect[0] = connect10;
+
+Transform8.iS = IS9;
+
+ProtoBody7.children = [];
+
+ProtoBody7.children[0] = Transform8;
+
+ProtoDeclare2.protoBody = ProtoBody7;
+
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = ProtoDeclare2;
+
+ProtoInstance11 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance11.name = "anyShape";
+browser.currentScene.children[1] = ProtoInstance11;
+

@@ -1,21 +1,28 @@
 var java = require('java');
-var autoclass = require('../../../X3Dautoclass.js');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
+var autoclass = require('../../../X3Dautoclass');
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
-ConfigurationProperties.setStripTrailingZeroesSync(true);
-      var X3D0 =  new autoclass.X3D().setProfileSync("Interchange").setVersionSync("3.3")
-      .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("sphere.x3d"))
-        .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
-        .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manual"))
-        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
-        .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("a sphere")))
-      .setSceneSync(new autoclass.Scene()
-        .addChildSync(new autoclass.Group()
-          .addChildSync(new autoclass.Shape()
-            .setAppearanceSync(new autoclass.Appearance()
-              .setMaterialSync(new autoclass.Material().setDiffuseColorSync(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
-            .setGeometrySync(new autoclass.Sphere()))))      ;
+ConfigurationProperties.setStripTrailingZeroes(true);
+      var X3D0 =  new autoclass.X3D().setProfile("Interchange").setVersion("3.3")
+      .setHead(new autoclass.head()
+        .addMeta(new autoclass.meta().setName("title").setContent("sphere.x3d"))
+        .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
+        .addMeta(new autoclass.meta().setName("description").setContent("a sphere")))
+      .setScene(new autoclass.Scene()
+        .addChild(new autoclass.Group()
+          .addChild(new autoclass.Shape()
+            .setAppearance(new autoclass.Appearance()
+              .setMaterial(new autoclass.Material().setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
+            .setGeometry(new autoclass.Sphere()))))      ;
     X3D0.toFileX3D("../data/sphere.new.x3d");

@@ -74,7 +74,6 @@ import org.web3d.x3d.sai.Time.*;
 import org.web3d.x3d.sai.VolumeRendering.*;
 public class CameraExamples {
   public static void main(String[] args) {
-    ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new CameraExamples().initialize().toFileJSON("../data/CameraExamples.new.json");

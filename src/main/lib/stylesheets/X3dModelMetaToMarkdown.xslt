@@ -5,12 +5,12 @@
    <meta name="author"      content="Don Brutzman" />
    <meta name="created"     content="7 April 2018" />
    <meta name="description" content="Read head/meta elements and produce simple markdown of form `attribute` = `value`." />
-   <meta name="url"         content="http://www.web3d.org/x3d/stylesheets/X3dDocumentMetaToMarkdown.xslt" />
+   <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dDocumentMetaToMarkdown.xslt" />
   </head>
 
 Recommended tools:
 - X3D-Edit, https://savage.nps.edu/X3D-Edit
-- X3DJSAIL, http://www.web3d.org/specifications/java/X3DJSAIL.html
+- X3DJSAIL, https://www.web3d.org/specifications/java/X3DJSAIL.html
 - SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
 - XML Spy http://www.xmlspy.com
 -->

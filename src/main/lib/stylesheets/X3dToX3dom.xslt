@@ -5,7 +5,7 @@
    <meta name="author"      content="Don Brutzman" />
    <meta name="created"     content="25 March 2012" />
    <meta name="description" content="XSLT stylesheet to convert X3D source into an HTML5 XHTML page containing the embedded X3D scene using X3DOM syntax." />
-   <meta name="identififer" content="http://www.web3d.org/x3d/stylesheets/X3dToX3dom.xslt" />
+   <meta name="identififer" content="https://www.web3d.org/x3d/stylesheets/X3dToX3dom.xslt" />
    <meta name="reference"   content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToX3dom.xslt" />
   </head>
 
@@ -24,7 +24,7 @@ X3DOM references
 
 --> 
 <!--
-Copyright (c) 2001-2019 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2020 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -216,7 +216,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
                 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
             <!-- TD <meta charset="utf-8"/> -->
-                <meta name="generator" content="http://www.web3d.org/x3d/stylesheets/X3dToX3dom.xslt" />
+                <meta name="generator" content="https://www.web3d.org/x3d/stylesheets/X3dToX3dom.xslt" />
 
               <!--               Getting started with X3DOM: https://doc.x3dom.org/gettingStarted -->
               <!--                     alternate stylesheet: https://doc.x3dom.org/x3dom/example/x3dom.css -->
@@ -369,7 +369,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                     <!-- development testing example: CAD component by CAD Working Group, successfully completed and integrated into X3DOM -->
                     <!--
                     <xsl:if test="//*[starts-with(local-name(),'CAD')] or //QuadSet or //IndexedQuadSet">
-                        <script         type="text/javascript"  src="http://www.web3d.org/x3d/content/examples/Basic/CAD/x3dom/CADGeometry.js"/>
+                        <script         type="text/javascript"  src="https://www.web3d.org/x3d/content/examples/Basic/CAD/x3dom/CADGeometry.js"/>
                     </xsl:if>
                     -->
 
@@ -378,7 +378,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                         < ! - - development version, local - - >
                         <script         type="text/javascript"  src="../../content/examples/Basic/HumanoidAnimation/x3dom/HAnimComponent.js"/>
                         < ! - - development version, online - - >
-                        <script         type="text/javascript"  src="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/x3dom/HAnimComponent.js"/>
+                        <script         type="text/javascript"  src="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/x3dom/HAnimComponent.js"/>
                     </xsl:if>
                     -->
                     <!-- TODO under development: https://github.com/mcgredonps/x3dom/tree/master/src/nodes/DIS -->
@@ -509,10 +509,10 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                        </tr>
                    </table>
                    <xsl:text disable-output-escaping="yes">
-&lt;</xsl:text><xsl:value-of select="$cobwebRootElement"/><xsl:text> url='</xsl:text><xsl:value-of select="$urlSceneQuoted"/><xsl:text disable-output-escaping="yes">'&gt;
+&lt;</xsl:text><xsl:value-of select="$cobwebRootElement"/><xsl:text> src='</xsl:text><xsl:value-of select="$urlSceneUnquoted"/><xsl:text disable-output-escaping="yes">'&gt;
 	&lt;p&gt;&lt;b&gt;Display error: X3D model not shown.&lt;/b&gt;&lt;/p&gt;
 	&lt;p&gt;Your HTML browser does not appear to support all features required by the
-	&lt;a href="{$urlWebsiteX_ITE}" target="_blank"&gt;X_ITE&lt;/a&gt; X3D player!&lt;/p&gt;
+	&lt;a href="</xsl:text><xsl:value-of select="$urlWebsiteX_ITE"/><xsl:text disable-output-escaping="yes">" target="_blank"&gt;X_ITE&lt;/a&gt; X3D player!&lt;/p&gt;
 &lt;/</xsl:text><xsl:value-of select="$cobwebRootElement"/><xsl:text disable-output-escaping="yes">&gt;
 </xsl:text>
                     <div class="references">
@@ -709,7 +709,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                         </xsl:variable>
                         <xsl:variable name="lower-case-address" select="translate($base-address,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/>
                         <xsl:if test="(string-length($metaIdentifierContent) > 0) and
-                                                     (starts-with($lower-case-address,'http://www.web3d.org/x3d/content/examples/') or
+                                                     (starts-with($lower-case-address,'https://www.web3d.org/x3d/content/examples/') or
                                                       starts-with($lower-case-address,'http://x3dgraphics.com/examples/') or
                                                       starts-with($lower-case-address,'https://savage.nps.edu/savage/') or
                                                       starts-with($lower-case-address,'https://savagedefense.nps.navy.mil/savagedefense/'))">
@@ -900,7 +900,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 																		and not( ancestor::node()[local-name()=$nodeName])">
 										<xsl:element name="a">
 											<xsl:attribute name="href">
-												<xsl:text>http://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
+												<xsl:text>https://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
 												<xsl:value-of select="$nodeName"/>
 											</xsl:attribute>
 											<xsl:attribute name="target">
@@ -931,7 +931,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 																		 and not( ancestor::node()[local-name()=$nodeName])">
 										<xsl:element name="a">
 											<xsl:attribute name="href">
-												<xsl:text>http://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
+												<xsl:text>https://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
 												<xsl:value-of select="$nodeName"/>
 											</xsl:attribute>
 											<xsl:attribute name="target">
@@ -951,7 +951,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <xsl:if test="//X3D//Scene//Text">
                                     <xsl:element name="a">
 										<xsl:attribute name="href">
-											<xsl:text>http://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
+											<xsl:text>https://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
 											<xsl:text>Text</xsl:text>
 										</xsl:attribute>
 										<xsl:attribute name="target">
@@ -978,7 +978,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <a href="https://doc.x3dom.org"                                         onclick="target='_blank';">X3DOM documentation</a>,
                                 <a href="https://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,
                                 and
-                                <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html"  onclick="target='_blank';">X3D Resources</a>
+                                <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html"  onclick="target='_blank';">X3D Resources</a>
                                 <!-- apparently old but thorough: https://examples.x3dom.org/simpleExamples.html -->
                                 <xsl:text disable-output-escaping="yes"> &amp;nbsp;&amp;nbsp;&amp;nbsp; </xsl:text>
                             </td>
@@ -1039,6 +1039,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
+                      not( local-name()='visible'     and .='true') or
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
                       (local-name()='pitch' and (.='1' or .='1.0')) or
@@ -1435,7 +1436,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-					   (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
+		       (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0'))))" />
@@ -2062,7 +2063,7 @@ function toggleShowDebugLogs()
     </xsl:template>
     
     <!-- X3DOM nightly list of supported nodes https://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html -->
-    <!-- X3DOM spreadsheet inventory           http://www.web3d.org/specifications/X3dNodeInventoryComparison.pdf -->
+    <!-- X3DOM spreadsheet inventory           https://www.web3d.org/specifications/X3dNodeInventoryComparison.pdf -->
     <xsl:template name="x3dom-supported-node">
         <xsl:param name="name"/>
         <xsl:variable name="nodename" select="(normalize-space($name))"/><!--Conversion TODO lower-case -->
@@ -2079,6 +2080,10 @@ function toggleShowDebugLogs()
  ($nodename='BlendedVolumeStyle') or
  ($nodename='BoundaryEnhancementVolumeStyle') or
  ($nodename='Box') or
+ ($nodename='BooleanFilter') or
+ ($nodename='BooleanSequencer') or
+ ($nodename='BooleanToggle') or
+ ($nodename='BooleanTrigger') or
  ($nodename='CADAssembly') or 
  ($nodename='CADFace') or
  ($nodename='CADLayer') or
@@ -2140,6 +2145,8 @@ function toggleShowDebugLogs()
  ($nodename='IndexedQuadSet ') or
  ($nodename='IndexedTriangleSet') or
  ($nodename='IndexedTriangleStripSet') or
+ ($nodename='IntegerSequencer') or
+ ($nodename='IntegerTrigger') or
  ($nodename='Inline') or
  ($nodename='IsoSurfaceVolumeData') or
  ($nodename='LineProperties') or
@@ -2211,6 +2218,7 @@ function toggleShowDebugLogs()
  ($nodename='TextureTransform3D') or
  ($nodename='TextureTransformMatrix3D') or
  ($nodename='TimeSensor') or
+ ($nodename='Timerigger') or
  ($nodename='ToneMappedVolumeStyle') or
  ($nodename='TouchSensor') or
  ($nodename='Transform') or

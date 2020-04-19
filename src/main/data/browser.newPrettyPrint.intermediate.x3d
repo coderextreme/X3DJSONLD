@@ -2,14 +2,14 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <meta content='browser.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
-    <meta content='John Carlson' dir='' http_equiv='' lang='' name='creator' scheme=''/>
-    <meta content='manual' dir='' http_equiv='' lang='' name='generator' scheme=''/>
-    <meta content='https://coderextreme.net/X3DJSONLD/browser.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
-    <meta content='a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote "' dir='' http_equiv='' lang='' name='description' scheme=''/>
+    <meta content='browser.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='manual' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/browser.x3d' name='identifier'/>
+    <meta content='a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote "' name='description'/>
   </head>
   <Scene>
-    <Script DEF='Browser' class='' directOutput='false' mustEvaluate='false' url=''>
+    <Script DEF='Browser'>
 <![CDATA[
 ecmascript:
                 function initialize() {
@@ -17,7 +17,7 @@ ecmascript:
                 }
 ]]>
     </Script>
-    <Script DEF='Clouds' class='' directOutput='false' mustEvaluate='false' url=''>
+    <Script DEF='Clouds'>
 <![CDATA[
 ecmascript:
 

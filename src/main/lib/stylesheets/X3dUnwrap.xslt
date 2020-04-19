@@ -41,7 +41,7 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="created"     content="1 June 2000" />
    <meta name="revised"     content="6 March 2004" />
    <meta name="description" content="XSL stylesheet to add x3d-compromise.dtd wrapper tags where needed, remove attributes with default values, pretty-print X3D source, etc." />
-   <meta name="url"         content="http://www.web3D.org/TaskGroups/x3d/content/X3dUnwrap.xslt" />
+   <meta name="url"         content="https://www.web3d.org/TaskGroups/x3d/content/X3dUnwrap.xslt" />
   </head>
 
 Recommended tool:
@@ -71,10 +71,10 @@ Problems:
 <xsl:strip-space elements="*" />
 <xsl:output method="xml" encoding="utf-8" indent="yes" media-type="text/xml" omit-xml-declaration="no" />
 <!-- xsl:output attributes for DOCTYPE (handled via text output by root tag)
-	doctype-public="http://www.web3D.org/TaskGroups/x3d/content/x3d-compromise.dtd"
+	doctype-public="https://www.web3d.org/TaskGroups/x3d/content/x3d-compromise.dtd"
 	doctype-system="file:///C:/www.web3D.org/TaskGroups/x3d/content/x3d-compromise.dtd"
 or
-	doctype-public="http://www.web3D.org/TaskGroups/x3d/content/x3d-compact.dtd"
+	doctype-public="https://www.web3d.org/TaskGroups/x3d/content/x3d-compact.dtd"
 	doctype-system="file:///C:/www.web3D.org/TaskGroups/x3d/content/x3d-compact.dtd"
 
 	cdata-section-elements="@string"
@@ -83,7 +83,7 @@ or
 <!-- ****** root:  start of file ****** -->
 <xsl:template match="/">
   <xsl:text disable-output-escaping="yes">&#10;&lt;!DOCTYPE X3D PUBLIC&#10;</xsl:text>
-  <xsl:text disable-output-escaping="yes">	"http://www.web3D.org/TaskGroups/x3d/content/x3d-compact.dtd"&#10;</xsl:text>
+  <xsl:text disable-output-escaping="yes">	"https://www.web3d.org/TaskGroups/x3d/content/x3d-compact.dtd"&#10;</xsl:text>
   <xsl:text disable-output-escaping="yes">	"/www.web3D.org/TaskGroups/x3d/content/x3d-compact.dtd"</xsl:text>
 <!--
   <xsl:text disable-output-escaping="yes">[&#10;</xsl:text>
@@ -190,6 +190,7 @@ or
   <xsl:variable name="notDefaultFieldValue1"
 	select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
 		not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
+                not( local-name()='visible'     and      .='true') or
 		not( local-name(..)='AudioClip'	and
 						((local-name()='loop' and .='false') or
 						 (local-name()='pitch' and (.='1' or .='1.0')) or

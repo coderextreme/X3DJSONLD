@@ -7,7 +7,7 @@
    <meta name="revised"     content="28 December 2005" />
    <meta name="description" content="XSL stylesheet to convert X3D source into an easily readable XHTML page.
    				This version walks the tree and plays around with character entities." />
-   <meta name="url"         content="http://www.web3d.org/x3d/stylesheets/X3dToXhtml-2.xslt" />
+   <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml-2.xslt" />
   </head>
 
 Recommended tools:
@@ -34,7 +34,7 @@ Recommended tools:
 						</xsl:otherwise>
 					</xsl:choose>
 				</title>
-				<meta name="generator" content="http://www.web3d.org/x3d/stylesheets/X3dToXhtml-2.xslt"></meta>
+				<meta name="generator" content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml-2.xslt"></meta>
 			</head>
 			<body>
 				<!-- n.b. if the following rule is missing, then nothing else gets processed!! -->

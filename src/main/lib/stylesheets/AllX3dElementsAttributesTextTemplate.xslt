@@ -7,7 +7,7 @@
     description : Example template stylesheet to process AllX3dElementsAttributes.xml and convert it to text
     reference   : AllX3dElementsAttributes.xml
     reference   : https://www.w3.org/TR/xslt
-    identifier  : http://www.web3d.org/x3d/stylesheets/AllX3dElementsAttributesTextTemplate.xslt
+    identifier  : https://www.web3d.org/x3d/stylesheets/AllX3dElementsAttributesTextTemplate.xslt
     license     : license.html
 -->
 

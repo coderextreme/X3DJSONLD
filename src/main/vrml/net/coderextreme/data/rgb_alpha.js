@@ -1,48 +1,104 @@
-      var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("rgb_alpha.x3d"))
-        .addMeta(new meta().setName("Image").setContent("rgb_alpha-front.jpg"))
-        .addMeta(new meta().setName("Image").setContent("rgb_alpha-rear.jpg"))
-        .addMeta(new meta().setName("Image").setContent("rgb_alpha-top.jpg"))
-        .addMeta(new meta().setName("Image").setContent("rgb_alpha-bottom.jpg"))
-        .addMeta(new meta().setName("reference").setContent("http://www.nist.gov/vrml.html"))
-        .addMeta(new meta().setName("reference").setContent("http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"))
-        .addMeta(new meta().setName("creator").setContent("http://www.itl.nist.gov/div897/ctg/vrml/members.html"))
-        .addMeta(new meta().setName("disclaimer").setContent("This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."))
-        .addMeta(new meta().setName("info").setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"))
-        .addMeta(new meta().setName("translator").setContent("Michael Kass NIST, Don Brutzman NPS"))
-        .addMeta(new meta().setName("translated").setContent("21 January 2001"))
-        .addMeta(new meta().setName("modified").setContent("16 January 2011"))
-        .addMeta(new meta().setName("description").setContent("Test browser ability to map a RGB plus alpha opacity to geometry. A checkerboard of four colored squares: lower left (red), lower right (transparent), uppser left (transparent) and upper right (red) map onto the faces of all geometry. For the sphere, the texture should cover the entire surface, and wrap counterclockwise from the back of the sphere. For the cone, the texture should wrap counterclockwise (from above) starting at the back of the cone. A circle cutout of the texture is applied right side up to the base of the cone when the cone is tilted toward the -z axis. For the cylinder, the texture should wrap counterclockwise (from above) starting at the back of the cylinder. A circle cutout of the texture is applied right side up to the top and bottom caps of the cylinder. For the box, the texture should be applied right side up in its entirety to each face of the box."))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d"))
-        .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../../license.html")))
-      .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(java.newArray("java.lang.String", ["EXAMINE","WALK","FLY","ANY"])))
-        .addChild(new Group()
-          .addChild(new Transform().setTranslation(java.newArray("float", [6.14221,0.0694613,-0.000999451]))
-            .addChild(new Shape()
-              .setAppearance(new Appearance()
-                .setMaterial(new Material())
-                .setTexture(new PixelTexture().setDEF("RgbOpacityCheckerboard").setImage(java.newArray("int", [2,2,4,4278190335,4294901760,4294901760,4278190335]))))
-              .setGeometry(new Box())))
-          .addChild(new Transform().setTranslation(java.newArray("float", [-4.85443,0.0694381,-0.00149918]))
-            .addChild(new Shape()
-              .setAppearance(new Appearance()
-                .setMaterial(new Material())
-                .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
-              .setGeometry(new Sphere())))
-          .addChild(new Transform().setTranslation(java.newArray("float", [-1.47341,0.036672,-0.00175095]))
-            .addChild(new Shape()
-              .setAppearance(new Appearance()
-                .setMaterial(new Material())
-                .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
-              .setGeometry(new Cone())))
-          .addChild(new Transform().setTranslation(java.newArray("float", [2.31094,0.0694206,-0.00187683]))
-            .addChild(new Shape()
-              .setAppearance(new Appearance()
-                .setMaterial(new Material())
-                .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
-              .setGeometry(new Cylinder())))))      ;
-    X3D0.toFileX3D("../data/rgb_alpha.new.x3d");
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Interchange";
+X3D0.version = "3.0";
+NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo2.type = ["EXAMINE","WALK","FLY","ANY"];
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = NavigationInfo2;
+
+Group3 = browser.currentScene.createNode("Group");
+Transform4 = browser.currentScene.createNode("Transform");
+Transform4.translation = [6.14221,0.0694613,-0.000999451];
+Shape5 = browser.currentScene.createNode("Shape");
+Appearance6 = browser.currentScene.createNode("Appearance");
+Material7 = browser.currentScene.createNode("Material");
+Appearance6.material = Material7;
+
+PixelTexture8 = browser.currentScene.createNode("PixelTexture");
+PixelTexture8.DEF = "RgbOpacityCheckerboard";
+PixelTexture8.image = [2,2,4,-16776961,-65536,-65536,-16776961];
+Appearance6.texture = PixelTexture8;
+
+Shape5.appearance = Appearance6;
+
+Box9 = browser.currentScene.createNode("Box");
+Shape5.geometry = Box9;
+
+Transform4.children = [];
+
+Transform4.children[0] = Shape5;
+
+Group3.children = [];
+
+Group3.children[0] = Transform4;
+
+Transform10 = browser.currentScene.createNode("Transform");
+Transform10.translation = [-4.85443,0.0694381,-0.00149918];
+Shape11 = browser.currentScene.createNode("Shape");
+Appearance12 = browser.currentScene.createNode("Appearance");
+Material13 = browser.currentScene.createNode("Material");
+Appearance12.material = Material13;
+
+PixelTexture14 = browser.currentScene.createNode("PixelTexture");
+PixelTexture14.USE = "RgbOpacityCheckerboard";
+Appearance12.texture = PixelTexture14;
+
+Shape11.appearance = Appearance12;
+
+Sphere15 = browser.currentScene.createNode("Sphere");
+Shape11.geometry = Sphere15;
+
+Transform10.children = [];
+
+Transform10.children[0] = Shape11;
+
+Group3.children[1] = Transform10;
+
+Transform16 = browser.currentScene.createNode("Transform");
+Transform16.translation = [-1.47341,0.036672,-0.00175095];
+Shape17 = browser.currentScene.createNode("Shape");
+Appearance18 = browser.currentScene.createNode("Appearance");
+Material19 = browser.currentScene.createNode("Material");
+Appearance18.material = Material19;
+
+PixelTexture20 = browser.currentScene.createNode("PixelTexture");
+PixelTexture20.USE = "RgbOpacityCheckerboard";
+Appearance18.texture = PixelTexture20;
+
+Shape17.appearance = Appearance18;
+
+Cone21 = browser.currentScene.createNode("Cone");
+Shape17.geometry = Cone21;
+
+Transform16.children = [];
+
+Transform16.children[0] = Shape17;
+
+Group3.children[2] = Transform16;
+
+Transform22 = browser.currentScene.createNode("Transform");
+Transform22.translation = [2.31094,0.0694206,-0.00187683];
+Shape23 = browser.currentScene.createNode("Shape");
+Appearance24 = browser.currentScene.createNode("Appearance");
+Material25 = browser.currentScene.createNode("Material");
+Appearance24.material = Material25;
+
+PixelTexture26 = browser.currentScene.createNode("PixelTexture");
+PixelTexture26.USE = "RgbOpacityCheckerboard";
+Appearance24.texture = PixelTexture26;
+
+Shape23.appearance = Appearance24;
+
+Cylinder27 = browser.currentScene.createNode("Cylinder");
+Shape23.geometry = Cylinder27;
+
+Transform22.children = [];
+
+Transform22.children[0] = Shape23;
+
+Group3.children[3] = Transform22;
+
+browser.currentScene.children[1] = Group3;
+

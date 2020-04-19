@@ -38,15 +38,15 @@
           },
           {
             "@name":"translated",
-            "@content":"18 April 2020"
+            "@content":"19 April 2020"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -99,20 +99,6 @@
                                 "-children":[
                                   {
                                     "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
-                                  }
-                                ],
-                                "-parts":[
-                                  { "ShaderPart":
-                                    {
-                                      "@type":"VERTEX",
-                                      "@url":["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]
-                                    }
-                                  },
-                                  { "ShaderPart":
-                                    {
-                                      "@type":"FRAGMENT",
-                                      "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
-                                    }
                                   }
                                 ],
                                 "field": [
@@ -182,18 +168,12 @@
                                     "@type":"SFFloat",
                                     "@value":0.0
                                   }
-                                ]
-                              }
-                            },
-                            { "ComposedShader":
-                              {
-                                "@DEF":"x_ite",
-                                "@language":"GLSL",
+                                ],
                                 "-parts":[
                                   { "ShaderPart":
                                     {
                                       "@type":"VERTEX",
-                                      "@url":["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]
+                                      "@url":["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]
                                     }
                                   },
                                   { "ShaderPart":
@@ -202,7 +182,13 @@
                                       "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
                                     }
                                   }
-                                ],
+                                ]
+                              }
+                            },
+                            { "ComposedShader":
+                              {
+                                "@DEF":"x_ite",
+                                "@language":"GLSL",
                                 "field": [
                                   {
                                     "@name":"cube",
@@ -275,6 +261,20 @@
                                     "@accessType":"inputOnly",
                                     "@type":"SFFloat",
                                     "@value":0.0
+                                  }
+                                ],
+                                "-parts":[
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"VERTEX",
+                                      "@url":["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]
+                                    }
+                                  },
+                                  { "ShaderPart":
+                                    {
+                                      "@type":"FRAGMENT",
+                                      "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
+                                    }
                                   }
                                 ]
                               }

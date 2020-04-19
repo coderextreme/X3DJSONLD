@@ -1,18 +1,22 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("browser.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
-        .addMeta(new meta().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
-      .setScene(new Scene()
-        .addChild(new Script().setDEF("Browser")
-          .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+Script2 = browser.currentScene.createNode("Script");
+Script2.DEF = "Browser";
+
+Script2.setSourceCode(`ecmascript:\n"+
 "                function initialize() {\n"+
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
-"                }"))
-        .addChild(new Script().setDEF("Clouds")
-          .setSourceCode("ecmascript:\n"+
+"                }`)
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = Script2;
+
+Script3 = browser.currentScene.createNode("Script");
+Script3.DEF = "Clouds";
+
+Script3.setSourceCode(`ecmascript:\n"+
 "\n"+
 "\n"+
 "function cumulustranslation() // These values designate the boundary location of the cloud\n"+
@@ -21,5 +25,6 @@
 "'	Transform		\\n'+\n"+
 "'    ' + '               	\\n';\n"+
 "\n"+
-"}")))      ;
-    X3D0.toFileX3D("../data/browser.new.x3d");
+"}`)
+browser.currentScene.children[1] = Script3;
+

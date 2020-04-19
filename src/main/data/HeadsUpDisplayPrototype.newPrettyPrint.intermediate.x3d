@@ -2,68 +2,68 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
 <X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
   <head>
-    <meta content='HeadsUpDisplayPrototype.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
-    <meta content='Generic Heads Up Display (HUD) prototype to keep children on screen.' dir='' http_equiv='' lang='' name='description' scheme=''/>
-    <meta content='Don Brutzman' dir='' http_equiv='' lang='' name='creator' scheme=''/>
-    <meta content='9 November 2003' dir='' http_equiv='' lang='' name='created' scheme=''/>
-    <meta content='14 January 2014' dir='' http_equiv='' lang='' name='modified' scheme=''/>
-    <meta content='HUD Heads Up Display' dir='' http_equiv='' lang='' name='subject' scheme=''/>
-    <meta content='https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
-    <meta content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit' dir='' http_equiv='' lang='' name='generator' scheme=''/>
-    <meta content='../../license.html' dir='' http_equiv='' lang='' name='license' scheme=''/>
+    <meta content='HeadsUpDisplayPrototype.x3d' name='title'/>
+    <meta content='Generic Heads Up Display (HUD) prototype to keep children on screen.' name='description'/>
+    <meta content='Don Brutzman' name='creator'/>
+    <meta content='9 November 2003' name='created'/>
+    <meta content='14 January 2014' name='modified'/>
+    <meta content='HUD Heads Up Display' name='subject'/>
+    <meta content='https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d' name='identifier'/>
+    <meta content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../../license.html' name='license'/>
   </head>
   <Scene>
-    <ProtoDeclare name='HeadsUpDisplay' appinfo='HeadsUpDisplay positions child geometry in screen space, movable by the user' documentation=''>
+    <ProtoDeclare name='HeadsUpDisplay' appinfo='HeadsUpDisplay positions child geometry in screen space, movable by the user'>
       <ProtoInterface>
-        <field name='children' accessType='inputOutput' appinfo='Displayed subscene positioned as a HUD.' documentation='' type='MFNode' value=''>
+        <field name='children' accessType='inputOutput' appinfo='Displayed subscene positioned as a HUD.' type='MFNode'>
           <!-- default is null array of nodes -->
         </field>
-        <field name='dragChildren' accessType='inputOutput' appinfo='Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.' documentation='' type='MFNode' value=''>
+        <field name='dragChildren' accessType='inputOutput' appinfo='Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.' type='MFNode'>
           <!-- default is null array of nodes -->
         </field>
-        <field name='locationOffset' accessType='initializeOnly' appinfo='Modified screen location and distance (for size).' documentation='' type='SFVec3f' value='-2 -2 0'/>
-        <field name='traceEnabled' accessType='initializeOnly' appinfo='Enable/disable console output for troubleshooting.' documentation='' type='SFBool' value='false'/>
+        <field name='locationOffset' accessType='initializeOnly' appinfo='Modified screen location and distance (for size).' type='SFVec3f' value='-2 -2 0'/>
+        <field name='traceEnabled' accessType='initializeOnly' appinfo='Enable/disable console output for troubleshooting.' type='SFBool' value='false'/>
       </ProtoInterface>
       <ProtoBody>
-        <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-          <ProximitySensor DEF='WhereSensor' center='0 0 0' class='' enabled='true' size='1.0E9 1.0E9 1.0E9'>
+        <Group>
+          <ProximitySensor DEF='WhereSensor' size='1.0E9 1.0E9 1.0E9'>
             <IS>
               <connect nodeField='center' protoField='locationOffset'/>
             </IS>
           </ProximitySensor>
-          <Transform DEF='FixedLocation' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
-            <Transform DEF='MovableLocation' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
-              <Transform DEF='LocationOffset' bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
+          <Transform DEF='FixedLocation'>
+            <Transform DEF='MovableLocation'>
+              <Transform DEF='LocationOffset'>
                 <IS>
                   <connect nodeField='translation' protoField='locationOffset'/>
                 </IS>
-                <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 -10'>
-                  <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                <Transform translation='0 0 -10'>
+                  <Group>
                     <IS>
                       <connect nodeField='children' protoField='children'/>
                     </IS>
                   </Group>
-                  <Group DEF='PlaneMovementSensorGroup' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-                    <Group DEF='DragGeometry' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+                  <Group DEF='PlaneMovementSensorGroup'>
+                    <Group DEF='DragGeometry'>
                       <IS>
                         <connect nodeField='children' protoField='dragChildren'/>
                       </IS>
                     </Group>
-                    <PlaneSensor DEF='PlaneMovementSensor' autoOffset='true' axisRotation='0 1 0 0' class='' description='click and drag to move interface' enabled='true' maxPosition='-1 -1' minPosition='0 0' offset='0 0 0'>
+                    <PlaneSensor DEF='PlaneMovementSensor' description='click and drag to move interface'>
                       <IS>
                         <connect nodeField='offset' protoField='locationOffset'/>
                       </IS>
                     </PlaneSensor>
-                    <VisibilitySensor DEF='MovementVisibilitySensor' center='0 0 0' class='' enabled='true' size='0 0 0'/>
-                    <Script DEF='VisibilityControlScript' class='' directOutput='false' mustEvaluate='false' url=''>
-                      <field name='traceEnabled' accessType='initializeOnly' appinfo='' documentation='' type='SFBool' value=''/>
-                      <field name='isVisible' accessType='initializeOnly' appinfo='' documentation='' type='SFBool' value='true'/>
-                      <field name='planeSensorTranslation' accessType='initializeOnly' appinfo='' documentation='' type='SFVec3f' value='0 0 0'/>
-                      <field name='setIsVisible' accessType='inputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-                      <field name='setPlaneSensorIsActive' accessType='inputOnly' appinfo='' documentation='' type='SFBool' value=''/>
-                      <field name='setPlaneSensorTranslation' accessType='inputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
-                      <field name='translationChanged' accessType='outputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
-                      <field name='translationOffsetChanged' accessType='outputOnly' appinfo='' documentation='' type='SFVec3f' value=''/>
+                    <VisibilitySensor DEF='MovementVisibilitySensor'/>
+                    <Script DEF='VisibilityControlScript'>
+                      <field name='traceEnabled' accessType='initializeOnly' type='SFBool'/>
+                      <field name='isVisible' accessType='initializeOnly' type='SFBool' value='true'/>
+                      <field name='planeSensorTranslation' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
+                      <field name='setIsVisible' accessType='inputOnly' type='SFBool'/>
+                      <field name='setPlaneSensorIsActive' accessType='inputOnly' type='SFBool'/>
+                      <field name='setPlaneSensorTranslation' accessType='inputOnly' type='SFVec3f'/>
+                      <field name='translationChanged' accessType='outputOnly' type='SFVec3f'/>
+                      <field name='translationOffsetChanged' accessType='outputOnly' type='SFVec3f'/>
                       <IS>
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                       </IS>
@@ -122,14 +122,14 @@ function setPlaneSensorTranslation (value, timeStamp)
       </ProtoBody>
     </ProtoDeclare>
     <!-- ==================== -->
-    <Background backUrl='' bottomUrl='' class='' frontUrl='' groundAngle='' groundColor='0.1 0.1 0.3' leftUrl='' rightUrl='' skyAngle='' skyColor='0.5 0.5 0.1' topUrl='' transparency='0.0'/>
-    <Anchor bboxCenter='0 0 0' bboxSize='-1 -1 -1' class='' description='HeadsUpDisplayExample' parameter='"target=_blank"' url='"HeadsUpDisplayExample.x3d" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d" "HeadsUpDisplayExample.wrl" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"'>
-      <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-        <Appearance class=''>
-          <Material ambientIntensity='0.2' class='' diffuseColor='0 1 1' emissiveColor='0 1 1' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+    <Background groundColor='0.1 0.1 0.3' skyColor='0.5 0.5 0.1'/>
+    <Anchor description='HeadsUpDisplayExample' parameter='"target=_blank"' url='"HeadsUpDisplayExample.x3d" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d" "HeadsUpDisplayExample.wrl" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='0 1 1' emissiveColor='0 1 1'/>
         </Appearance>
-        <Text class='' length='' maxExtent='0.0' solid='false' string='"HeadsUpDisplayPrototype.x3d" "is a Prototype definition file." "" "To see an example scene using this node" "click this text to view" "HeadsUpDisplayExample.x3d"'>
-          <FontStyle class='' family='"SERIF"' horizontal='true' justify='"MIDDLE" "MIDDLE"' language='' leftToRight='true' size='0.8' spacing='1.0' style='PLAIN' topToBottom='true'/>
+        <Text string='"HeadsUpDisplayPrototype.x3d" "is a Prototype definition file." "" "To see an example scene using this node" "click this text to view" "HeadsUpDisplayExample.x3d"'>
+          <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size='0.8'/>
         </Text>
       </Shape>
     </Anchor>

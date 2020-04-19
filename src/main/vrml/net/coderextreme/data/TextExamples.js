@@ -1,30 +1,75 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("TextExamples.x3d"))
-        .addMeta(new meta().setName("description").setContent("Show different escape-character text examples for embedded quotation marks."))
-        .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
-        .addMeta(new meta().setName("created").setContent("7 April 2001"))
-        .addMeta(new meta().setName("modified").setContent("26 April 2016"))
-        .addMeta(new meta().setName("warning").setContent("Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."))
-        .addMeta(new meta().setName("warning").setContent("Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
-      .setScene(new Scene()
-        .addChild(new Transform().setTranslation(java.newArray("float", [0,2,0]))
-          .addChild(new Shape()
-            .setGeometry(new Text().setString(java.newArray("java.lang.String", ["Compare special character escaping"]))
-              .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(0.8)))
-            .setAppearance(new Appearance().setDEF("LightBlueAppearance")
-              .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0.1,0.7,0.7]))))))
-        .addChild(new Transform().setTranslation(java.newArray("float", [-3,0,0]))
-          .addChild(new Shape()
-            .setGeometry(new Text().setString(java.newArray("java.lang.String", ["I don't think so","","he said \"Hi\""]))
-              .setFontStyle(new FontStyle().setUSE("testFontStyle")))
-            .setAppearance(new Appearance().setUSE("LightBlueAppearance"))))
-        .addChild(new Transform().setTranslation(java.newArray("float", [3,0,0]))
-          .addChild(new Shape()
-            .setGeometry(new Text().setString(java.newArray("java.lang.String", ["I don't think so","","he said \"Hi\""]))
-              .setFontStyle(new FontStyle().setUSE("testFontStyle")))
-            .setAppearance(new Appearance().setUSE("LightBlueAppearance")))))      ;
-    X3D0.toFileX3D("../data/TextExamples.new.x3d");
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.0";
+Transform2 = browser.currentScene.createNode("Transform");
+Transform2.translation = [0,2,0];
+Shape3 = browser.currentScene.createNode("Shape");
+Text4 = browser.currentScene.createNode("Text");
+Text4.string = ["Compare special character escaping"];
+FontStyle5 = browser.currentScene.createNode("FontStyle");
+FontStyle5.DEF = "testFontStyle";
+FontStyle5.justify = ["MIDDLE","MIDDLE"];
+FontStyle5.size = 0.8;
+Text4.fontStyle = FontStyle5;
+
+Shape3.geometry = Text4;
+
+Appearance6 = browser.currentScene.createNode("Appearance");
+Appearance6.DEF = "LightBlueAppearance";
+Material7 = browser.currentScene.createNode("Material");
+Material7.diffuseColor = [0.1,0.7,0.7];
+Appearance6.material = Material7;
+
+Shape3.appearance = Appearance6;
+
+Transform2.children = [];
+
+Transform2.children[0] = Shape3;
+
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = Transform2;
+
+Transform8 = browser.currentScene.createNode("Transform");
+Transform8.translation = [-3,0,0];
+Shape9 = browser.currentScene.createNode("Shape");
+Text10 = browser.currentScene.createNode("Text");
+Text10.string = ["I don't think so","","he said \"Hi\""];
+FontStyle11 = browser.currentScene.createNode("FontStyle");
+FontStyle11.USE = "testFontStyle";
+Text10.fontStyle = FontStyle11;
+
+Shape9.geometry = Text10;
+
+Appearance12 = browser.currentScene.createNode("Appearance");
+Appearance12.USE = "LightBlueAppearance";
+Shape9.appearance = Appearance12;
+
+Transform8.children = [];
+
+Transform8.children[0] = Shape9;
+
+browser.currentScene.children[1] = Transform8;
+
+Transform13 = browser.currentScene.createNode("Transform");
+Transform13.translation = [3,0,0];
+Shape14 = browser.currentScene.createNode("Shape");
+Text15 = browser.currentScene.createNode("Text");
+Text15.string = ["I don't think so","","he said \"Hi\""];
+FontStyle16 = browser.currentScene.createNode("FontStyle");
+FontStyle16.USE = "testFontStyle";
+Text15.fontStyle = FontStyle16;
+
+Shape14.geometry = Text15;
+
+Appearance17 = browser.currentScene.createNode("Appearance");
+Appearance17.USE = "LightBlueAppearance";
+Shape14.appearance = Appearance17;
+
+Transform13.children = [];
+
+Transform13.children[0] = Shape14;
+
+browser.currentScene.children[2] = Transform13;
+

@@ -1,62 +1,69 @@
 var java = require('java');
-var autoclass = require('../../../X3Dautoclass.js');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
+var autoclass = require('../../../X3Dautoclass');
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
-ConfigurationProperties.setStripTrailingZeroesSync(true);
+ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
-      var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.0")
-      .setHeadSync(new autoclass.head()
-        .addComponentSync(new autoclass.component().setNameSync("Scripting").setLevelSync(1))
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("flowers2.x3d"))
-        .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
-        .addMetaSync(new autoclass.meta().setNameSync("transcriber").setContentSync("John Carlson"))
-        .addMetaSync(new autoclass.meta().setNameSync("created").setContentSync("23 January 2005"))
-        .addMetaSync(new autoclass.meta().setNameSync("modified").setContentSync("21 March 2018"))
-        .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
-        .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manually written"))
-        .addMetaSync(new autoclass.meta().setNameSync("license").setContentSync("http://www.web3d.org/x3d/content/examples/license.html")))
-      .setSceneSync(new autoclass.Scene()
-        .addChildSync(new autoclass.NavigationInfo())
-        .addChildSync(new autoclass.Viewpoint().setDescriptionSync("Two mathematical orbitals").setPositionSync(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(50)])))
-        .addChildSync(new autoclass.Group()
-          .addChildSync(new autoclass.DirectionalLight().setDirectionSync(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))
-          .addChildSync(new autoclass.ProtoDeclare().setNameSync("orbit")
-            .setProtoInterfaceSync(new autoclass.ProtoInterface()
-              .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFVEC3F).setNameSync("translation").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("-8 0 0"))
-              .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFCOLOR).setNameSync("diffuseColor").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("1 0.5 0"))
-              .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFCOLOR).setNameSync("specularColor").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("1 0.5 0"))
-              .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("transparency").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("0.75")))
-            .setProtoBodySync(new autoclass.ProtoBody()
-              .addChildSync(new autoclass.Group()
-                .addChildSync(new autoclass.TimeSensor().setDEFSync("Clock").setCycleIntervalSync(16).setLoopSync(true))
-                .addChildSync(new autoclass.OrientationInterpolator().setDEFSync("OrbitPath").setKeySync(java.newArray("float", [java.newFloat(0), java.newFloat(0.5), java.newFloat(1)])).setKeyValueSync(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(3.14), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(6.28)])))
-                .addChildSync(new autoclass.Transform().setDEFSync("OrbitTransform")
-                  .setISSync(new autoclass.IS()
-                    .addConnectSync(new autoclass.connect().setNodeFieldSync("translation").setProtoFieldSync("translation")))
-                  .addChildSync(new autoclass.Shape()
-                    .setAppearanceSync(new autoclass.Appearance()
-                      .setMaterialSync(new autoclass.Material()
-                        .setISSync(new autoclass.IS()
-                          .addConnectSync(new autoclass.connect().setNodeFieldSync("diffuseColor").setProtoFieldSync("diffuseColor"))
-                          .addConnectSync(new autoclass.connect().setNodeFieldSync("specularColor").setProtoFieldSync("specularColor"))
-                          .addConnectSync(new autoclass.connect().setNodeFieldSync("transparency").setProtoFieldSync("transparency")))))
-                    .addCommentsSync(new autoclass.CommentsBlock("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
-                    .setGeometrySync(new autoclass.IndexedFaceSet().setCcwSync(false).setConvexSync(false).setCoordIndexSync(java.newArray("int", [0,1,2,-1])).setDEFSync("Orbit")
-                      .setCoordSync(new autoclass.Coordinate().setDEFSync("OrbitCoordinates").setPointSync(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0)]))))))
-                .addChildSync(new autoclass.Script().setDEFSync("OrbitScript")
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("set_fraction").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTONLY))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_MFVEC3F).setNameSync("coordinates").setAccessTypeSync(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_MFINT32).setNameSync("coordIndexes").setAccessTypeSync(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("e").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("5"))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("f").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("5"))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("g").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("5"))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFFLOAT).setNameSync("h").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("5"))
-                  .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_SFINT32).setNameSync("resolution").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValueSync("50"))
-                  .setSourceCodeSync("ecmascript:\n"+
+      var X3D0 =  new autoclass.X3D().setProfile("Immersive").setVersion("3.0")
+      .setHead(new autoclass.head()
+        .addComponent(new autoclass.component().setName("Scripting").setLevel(1))
+        .addMeta(new autoclass.meta().setName("title").setContent("flowers2.x3d"))
+        .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new autoclass.meta().setName("transcriber").setContent("John Carlson"))
+        .addMeta(new autoclass.meta().setName("created").setContent("23 January 2005"))
+        .addMeta(new autoclass.meta().setName("modified").setContent("21 March 2018"))
+        .addMeta(new autoclass.meta().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
+        .addMeta(new autoclass.meta().setName("generator").setContent("manually written"))
+        .addMeta(new autoclass.meta().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
+      .setScene(new autoclass.Scene()
+        .addChild(new autoclass.NavigationInfo())
+        .addChild(new autoclass.Viewpoint().setDescription("Two mathematical orbitals").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(50)])))
+        .addChild(new autoclass.Group()
+          .addChild(new autoclass.DirectionalLight().setDirection(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))
+          .addChild(new autoclass.ProtoDeclare().setName("orbit")
+            .setProtoInterface(new autoclass.ProtoInterface()
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFCOLOR).setName("diffuseColor").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFCOLOR).setName("specularColor").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("transparency").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.75")))
+            .setProtoBody(new autoclass.ProtoBody()
+              .addChild(new autoclass.Group()
+                .addChild(new autoclass.TimeSensor().setDEF("Clock").setCycleInterval(16).setLoop(true))
+                .addChild(new autoclass.OrientationInterpolator().setDEF("OrbitPath").setKey(java.newArray("float", [java.newFloat(0), java.newFloat(0.5), java.newFloat(1)])).setKeyValue(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(3.14), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(6.28)])))
+                .addChild(new autoclass.Transform().setDEF("OrbitTransform")
+                  .setIS(new autoclass.IS()
+                    .addConnect(new autoclass.connect().setNodeField("translation").setProtoField("translation")))
+                  .addChild(new autoclass.Shape()
+                    .setAppearance(new autoclass.Appearance()
+                      .setMaterial(new autoclass.Material()
+                        .setIS(new autoclass.IS()
+                          .addConnect(new autoclass.connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))
+                          .addConnect(new autoclass.connect().setNodeField("specularColor").setProtoField("specularColor"))
+                          .addConnect(new autoclass.connect().setNodeField("transparency").setProtoField("transparency")))))
+                    .addComments(new autoclass.CommentsBlock("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
+                    .setGeometry(new autoclass.IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(java.newArray("int", [0,1,2,-1])).setDEF("Orbit")
+                      .setCoord(new autoclass.Coordinate().setDEF("OrbitCoordinates").setPoint(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0)]))))))
+                .addChild(new autoclass.Script().setDEF("OrbitScript")
+                  .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+                  .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setName("coordinates").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+                  .addField(new autoclass.field().setType(autoclass.field.TYPE_MFINT32).setName("coordIndexes").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+                  .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("e").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("f").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("g").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("h").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setName("resolution").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
+                  .setSourceCode("ecmascript:\n"+
 "\n"+
 "			var e = 5;\n"+
 "			var f = 5;\n"+
@@ -130,27 +137,27 @@ var ProtoInstance1 = null;
 "				}\n"+
 "				generateCoordinates();\n"+
 "			}"))
-                .addChildSync(new autoclass.ROUTE().setFromNodeSync("OrbitScript").setFromFieldSync("coordIndexes").setToNodeSync("Orbit").setToFieldSync("coordIndex"))
-                .addChildSync(new autoclass.ROUTE().setFromNodeSync("OrbitScript").setFromFieldSync("coordinates").setToNodeSync("OrbitCoordinates").setToFieldSync("point"))
-                .addChildSync(new autoclass.ROUTE().setFromNodeSync("Clock").setFromFieldSync("fraction_changed").setToNodeSync("OrbitScript").setToFieldSync("set_fraction"))
-                .addChildSync(new autoclass.ROUTE().setFromNodeSync("OrbitPath").setFromFieldSync("value_changed").setToNodeSync("OrbitTransform").setToFieldSync("rotation"))
-                .addChildSync(new autoclass.ROUTE().setFromNodeSync("Clock").setFromFieldSync("fraction_changed").setToNodeSync("OrbitPath").setToFieldSync("set_fraction")))))
-          .addChildSync(ProtoInstance0 = new autoclass.ProtoInstance().setNameSync("orbit"))
-          .addChildSync(ProtoInstance1 = new autoclass.ProtoInstance().setNameSync("orbit"))))      ;
+                .addChild(new autoclass.ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
+                .addChild(new autoclass.ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
+                .addChild(new autoclass.ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
+                .addChild(new autoclass.ROUTE().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
+                .addChild(new autoclass.ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
+          .addChild(ProtoInstance0 = new autoclass.ProtoInstance().setName("orbit"))
+          .addChild(ProtoInstance1 = new autoclass.ProtoInstance().setName("orbit"))))      ;
 ProtoInstance0
-            .addFieldValueSync(new autoclass.fieldValue().setNameSync("translation").setValueSync("-8 0 0"));
+            .addFieldValue(new autoclass.fieldValue().setName("translation").setValue("-8 0 0"));
 ProtoInstance0
-            .addFieldValueSync(new autoclass.fieldValue().setNameSync("diffuseColor").setValueSync("1 0.5 0"));
+            .addFieldValue(new autoclass.fieldValue().setName("diffuseColor").setValue("1 0.5 0"));
 ProtoInstance0
-            .addFieldValueSync(new autoclass.fieldValue().setNameSync("specularColor").setValueSync("1 0.5 0"));
+            .addFieldValue(new autoclass.fieldValue().setName("specularColor").setValue("1 0.5 0"));
 ProtoInstance0
-            .addFieldValueSync(new autoclass.fieldValue().setNameSync("transparency").setValueSync("0.75"));
+            .addFieldValue(new autoclass.fieldValue().setName("transparency").setValue("0.75"));
 ProtoInstance1
-            .addFieldValueSync(new autoclass.fieldValue().setNameSync("translation").setValueSync("8 0 0"));
+            .addFieldValue(new autoclass.fieldValue().setName("translation").setValue("8 0 0"));
 ProtoInstance1
-            .addFieldValueSync(new autoclass.fieldValue().setNameSync("diffuseColor").setValueSync("0 0.5 1"));
+            .addFieldValue(new autoclass.fieldValue().setName("diffuseColor").setValue("0 0.5 1"));
 ProtoInstance1
-            .addFieldValueSync(new autoclass.fieldValue().setNameSync("specularColor").setValueSync("0 0.5 1"));
+            .addFieldValue(new autoclass.fieldValue().setName("specularColor").setValue("0 0.5 1"));
 ProtoInstance1
-            .addFieldValueSync(new autoclass.fieldValue().setNameSync("transparency").setValueSync("0.5"));
+            .addFieldValue(new autoclass.fieldValue().setName("transparency").setValue("0.5"));
     X3D0.toFileX3D("../data/flowers2.new.x3d");

@@ -2,57 +2,57 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <meta content='qq3.x3d' dir='' http_equiv='' lang='' name='title' scheme=''/>
-    <meta content='John Carlson' dir='' http_equiv='' lang='' name='creator' scheme=''/>
-    <meta content='John Carlson' dir='' http_equiv='' lang='' name='translator' scheme=''/>
-    <meta content='11 Jan 2015' dir='' http_equiv='' lang='' name='created' scheme=''/>
-    <meta content='05 May 2017' dir='' http_equiv='' lang='' name='modified' scheme=''/>
-    <meta content='12 extrusions to test prototype expander' dir='' http_equiv='' lang='' name='description' scheme=''/>
-    <meta content='https://coderextreme.net/x3d/qq3.x3d' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
-    <meta content='manual' dir='' http_equiv='' lang='' name='generator' scheme=''/>
+    <meta content='qq3.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='John Carlson' name='translator'/>
+    <meta content='11 Jan 2015' name='created'/>
+    <meta content='05 May 2017' name='modified'/>
+    <meta content='12 extrusions to test prototype expander' name='description'/>
+    <meta content='https://coderextreme.net/x3d/qq3.x3d' name='identifier'/>
+    <meta content='manual' name='generator'/>
   </head>
   <Scene>
-    <ProtoDeclare name='Process' appinfo='' documentation=''>
+    <ProtoDeclare name='Process'>
       <ProtoBody>
-        <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
+        <Group>
           <!-- left -->
-          <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0'>
-            <Shape DEF='ShapeLeftDown' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-              <Appearance class=''>
-                <Material ambientIntensity='0.2' class='' diffuseColor='0.7 1 0' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+          <Transform scale='0.5 0.5 0.5'>
+            <Shape DEF='ShapeLeftDown'>
+              <Appearance>
+                <Material diffuseColor='0.7 1 0'/>
               </Appearance>
-              <Extrusion beginCap='true' ccw='true' class='' convex='true' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' endCap='true' orientation='0 0 1 0' scale='1 1' solid='true' spine='-2.5 0 0 -1.5 0 0'/>
+              <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='-2.5 0 0 -1.5 0 0'/>
             </Shape>
           </Transform>
           <!-- right -->
-          <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0'>
-            <Shape DEF='ShapeUpRight' bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-              <Appearance class=''>
-                <Material ambientIntensity='0.2' class='' diffuseColor='0 0.7 1' emissiveColor='0 0 0' shininess='0.2' specularColor='0 0 0' transparency='0.0'/>
+          <Transform scale='0.5 0.5 0.5'>
+            <Shape DEF='ShapeUpRight'>
+              <Appearance>
+                <Material diffuseColor='0 0.7 1'/>
               </Appearance>
-              <Extrusion beginCap='true' ccw='true' class='' convex='true' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' endCap='true' orientation='0 0 1 0' scale='1 1' solid='true' spine='1.5 0 0 2.5 0 0'/>
+              <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='1.5 0 0 2.5 0 0'/>
             </Shape>
           </Transform>
           <!-- up -->
-          <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0'>
+          <Transform scale='0.5 0.5 0.5'>
             <Shape USE='ShapeUpRight'/>
           </Transform>
           <!-- down -->
-          <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='0.5 0.5 0.5' scaleOrientation='0 0 1 0' translation='0 0 0'>
+          <Transform scale='0.5 0.5 0.5'>
             <Shape USE='ShapeLeftDown'/>
           </Transform>
         </Group>
       </ProtoBody>
     </ProtoDeclare>
-    <Viewpoint centerOfRotation='0 0 0' class='' description='Process pipes' fieldOfView='0.7854' jump='true' orientation='1 0 0 -0.4' position='0 5 12' retainUserOffsets='false'/>
-    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 -2.5 0'>
-      <ProtoInstance name='Process' class=''/>
+    <Viewpoint description='Process pipes' orientation='1 0 0 -0.4' position='0 5 12'/>
+    <Transform translation='0 -2.5 0'>
+      <ProtoInstance name='Process'/>
     </Transform>
-    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 0 0'>
-      <ProtoInstance name='Process' class=''/>
+    <Transform>
+      <ProtoInstance name='Process'/>
     </Transform>
-    <Transform bboxCenter='0 0 0' bboxSize='-1 -1 -1' center='0 0 0' class='' rotation='0 0 1 0' scale='1 1 1' scaleOrientation='0 0 1 0' translation='0 2.5 0'>
-      <ProtoInstance name='Process' class=''/>
+    <Transform translation='0 2.5 0'>
+      <ProtoInstance name='Process'/>
     </Transform>
   </Scene>
 </X3D>

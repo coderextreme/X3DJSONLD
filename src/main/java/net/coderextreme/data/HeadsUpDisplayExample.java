@@ -74,7 +74,6 @@ import org.web3d.x3d.sai.Time.*;
 import org.web3d.x3d.sai.VolumeRendering.*;
 public class HeadsUpDisplayExample {
   public static void main(String[] args) {
-    ConfigurationProperties.setShowDefaultAttributes(true);
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new HeadsUpDisplayExample().initialize().toFileJSON("../data/HeadsUpDisplayExample.new.json");

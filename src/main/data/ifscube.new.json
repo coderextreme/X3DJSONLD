@@ -8,11 +8,11 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"ifscube.json"
+            "@content":"ifscube.x3d"
           },
           {
             "@name":"identifier",
-            "@content":"http://coderextreme.net/X3DJSONLD/template.json"
+            "@content":"http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"
           },
           {
             "@name":"description",
@@ -28,15 +28,15 @@
           },
           {
             "@name":"translated",
-            "@content":"18 April 2020"
+            "@content":"19 April 2020"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },

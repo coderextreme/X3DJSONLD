@@ -1,15 +1,35 @@
-      var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("ifscube.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))
-        .addMeta(new meta().setName("description").setContent("Template for an Indexed Face Set"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("created").setContent("4 April 2017")))
-      .setScene(new Scene()
-        .addChild(new Group()
-          .addChild(new Shape()
-            .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57).setDEF("IndexedFaceSet").setCoordIndex(java.newArray("int", [0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1])).setNormalIndex(java.newArray("int", [0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1])).setNormalPerVertex(false).setColorIndex(java.newArray("int", [0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1]))
-              .setCoord(new Coordinate().setPoint(java.newArray("float", [0,0,1,0,1,1,1,1,1,1,0,1])))
-              .setNormal(new Normal().setVector(java.newArray("float", [1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1])))
-              .setColor(new Color().setColor(java.newArray("float", [0,1,0])))))))      ;
-    X3D0.toFileX3D("../data/ifscube.new.x3d");
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Interchange";
+X3D0.version = "3.3";
+Group2 = browser.currentScene.createNode("Group");
+Shape3 = browser.currentScene.createNode("Shape");
+IndexedFaceSet4 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet4.creaseAngle = 1.57;
+IndexedFaceSet4.DEF = "IndexedFaceSet";
+IndexedFaceSet4.coordIndex = [0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1];
+IndexedFaceSet4.normalIndex = [0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1];
+IndexedFaceSet4.normalPerVertex = False;
+IndexedFaceSet4.colorIndex = [0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1];
+Coordinate5 = browser.currentScene.createNode("Coordinate");
+Coordinate5.point = [0,0,1,0,1,1,1,1,1,1,0,1];
+IndexedFaceSet4.coord = Coordinate5;
+
+Normal6 = browser.currentScene.createNode("Normal");
+Normal6.vector = [1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1];
+IndexedFaceSet4.normal = Normal6;
+
+Color7 = browser.currentScene.createNode("Color");
+Color7.color = [0,1,0];
+IndexedFaceSet4.color = Color7;
+
+Shape3.geometry = IndexedFaceSet4;
+
+Group2.children = [];
+
+Group2.children[0] = Shape3;
+
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = Group2;
+

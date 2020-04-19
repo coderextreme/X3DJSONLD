@@ -1,30 +1,74 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("creator").setContent("John W Carlson"))
-        .addMeta(new meta().setName("created").setContent("December 13 2015"))
-        .addMeta(new meta().setName("title").setContent("text.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
-        .addMeta(new meta().setName("description").setContent("test \\n text"))
-        .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
-      .setScene(new Scene()
-        .addChild(new Transform()
-          .addChild(new Shape()
-            .setGeometry(new Text().setString(java.newArray("java.lang.String", ["Node\"\"\""]))
-              .setFontStyle(new FontStyle()))
-            .setAppearance(new Appearance()
-              .setMaterial(new Material())))
-          .addChild(new Shape()
-            .setGeometry(new Text().setString(java.newArray("java.lang.String", ["Node2","\\\\","\\\\\\\\","Node2"]))
-              .setFontStyle(new FontStyle()))
-            .setAppearance(new Appearance()
-              .setMaterial(new Material())))
-          .addChild(new Shape()
-            .setGeometry(new Text().setString(java.newArray("java.lang.String", ["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""]))
-              .setFontStyle(new FontStyle()))
-            .setAppearance(new Appearance()
-              .setMaterial(new Material())))
-          .addChild(new Script()
-            .addField(new field().setType(field.TYPE_MFSTRING).setName("frontUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
-            .setSourceCode("ecmascript:\n"+
-"			    var me = '\"1\" \"\"2\" \"\\n3\"';"))))      ;
-    X3D0.toFileX3D("../data/text.new.x3d");
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+Transform2 = browser.currentScene.createNode("Transform");
+Shape3 = browser.currentScene.createNode("Shape");
+Text4 = browser.currentScene.createNode("Text");
+Text4.string = ["Node\"\"\""];
+FontStyle5 = browser.currentScene.createNode("FontStyle");
+Text4.fontStyle = FontStyle5;
+
+Shape3.geometry = Text4;
+
+Appearance6 = browser.currentScene.createNode("Appearance");
+Material7 = browser.currentScene.createNode("Material");
+Appearance6.material = Material7;
+
+Shape3.appearance = Appearance6;
+
+Transform2.children = [];
+
+Transform2.children[0] = Shape3;
+
+Shape8 = browser.currentScene.createNode("Shape");
+Text9 = browser.currentScene.createNode("Text");
+Text9.string = ["Node2","\\\\","\\\\\\\\","Node2"];
+FontStyle10 = browser.currentScene.createNode("FontStyle");
+Text9.fontStyle = FontStyle10;
+
+Shape8.geometry = Text9;
+
+Appearance11 = browser.currentScene.createNode("Appearance");
+Material12 = browser.currentScene.createNode("Material");
+Appearance11.material = Material12;
+
+Shape8.appearance = Appearance11;
+
+Transform2.children[1] = Shape8;
+
+Shape13 = browser.currentScene.createNode("Shape");
+Text14 = browser.currentScene.createNode("Text");
+Text14.string = ["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""];
+FontStyle15 = browser.currentScene.createNode("FontStyle");
+Text14.fontStyle = FontStyle15;
+
+Shape13.geometry = Text14;
+
+Appearance16 = browser.currentScene.createNode("Appearance");
+Material17 = browser.currentScene.createNode("Material");
+Appearance16.material = Material17;
+
+Shape13.appearance = Appearance16;
+
+Transform2.children[2] = Shape13;
+
+Script18 = browser.currentScene.createNode("Script");
+field19 = browser.currentScene.createNode("field");
+field19.name = "frontUrls";
+field19.type = "MFString";
+field19.accessType = "initializeOnly";
+field19.value = "\"rnl_front.png\" \"uffizi_front.png\"";
+Script18.field = [];
+
+Script18.field[0] = field19;
+
+
+Script18.setSourceCode(`ecmascript:\n"+
+"			    var me = '\"1\" \"\"2\" \"\\n3\"';`)
+Transform2.children[3] = Script18;
+
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = Transform2;
+

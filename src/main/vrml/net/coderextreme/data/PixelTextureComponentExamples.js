@@ -1,78 +1,246 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("PixelTextureComponentExamples.x3d"))
-        .addMeta(new meta().setName("description").setContent("This example shows the five PixelTexture components, with 0 to 4 components each, shown in Table 5-18."))
-        .addMeta(new meta().setName("creator").setContent("Leonard Daly and Don Brutzman"))
-        .addMeta(new meta().setName("created").setContent("25 August 2008"))
-        .addMeta(new meta().setName("modified").setContent("7 January 2014"))
-        .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com"))
-        .addMeta(new meta().setName("reference").setContent("X3D for Web Authors, Table 5.18"))
-        .addMeta(new meta().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
-        .addMeta(new meta().setName("rights").setContent("Copyright (c) 2006, Daly Realism and Don Brutzman"))
-        .addMeta(new meta().setName("subject").setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"))
-        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
-      .setScene(new Scene()
-        .addChild(new Background().setSkyColor(java.newArray("float", [0.1,0.1,0.4])))
-        .addChild(new Viewpoint().setDescription("Table 5.18 SFImage component examples").setPosition(java.newArray("float", [0,0,14])))
-        .addChild(new Transform().setTranslation(java.newArray("float", [-6,0,0]))
-          .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .setTexture(new PixelTexture().setDEF("ZeroComponents")))
-            .setGeometry(new Box()))
-          .addChild(new Transform().setTranslation(java.newArray("float", [0,-2,0]))
-            .addChild(new Shape()
-              .setGeometry(new Text().setString(java.newArray("java.lang.String", ["0"]))
-                .setFontStyle(new FontStyle().setDEF("CenterJustify").setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"]))))
-              .setAppearance(new Appearance().setDEF("TextMaterial")
-                .setMaterial(new Material().setDiffuseColor(java.newArray("float", [1,1,1])))))))
-        .addChild(new Transform().setTranslation(java.newArray("float", [-3,0,0]))
-          .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .setTexture(new PixelTexture().setDEF("OneComponent").setImage(java.newArray("int", [1,2,1,255,0]))))
-            .setGeometry(new Box()))
-          .addChild(new Transform().setTranslation(java.newArray("float", [0,-2,0]))
-            .addChild(new Shape()
-              .setGeometry(new Text().setString(java.newArray("java.lang.String", ["1"]))
-                .setFontStyle(new FontStyle().setUSE("CenterJustify")))
-              .setAppearance(new Appearance().setUSE("TextMaterial")))))
-        .addChild(new Transform()
-          .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .setTexture(new PixelTexture().setDEF("TwoComponents").setImage(java.newArray("int", [2,1,2,52479,8823]))))
-            .setGeometry(new Box()))
-          .addChild(new Transform().setTranslation(java.newArray("float", [0,-2,0]))
-            .addChild(new Shape()
-              .setGeometry(new Text().setString(java.newArray("java.lang.String", ["2"]))
-                .setFontStyle(new FontStyle().setUSE("CenterJustify")))
-              .setAppearance(new Appearance().setUSE("TextMaterial")))))
-        .addChild(new Transform().setTranslation(java.newArray("float", [3,0,0]))
-          .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .addComments(new CommentsBlock("note 0x000000 = 0"))
-              .setTexture(new PixelTexture().setDEF("ThreeComponents").setImage(java.newArray("int", [2,4,3,16711680,65280,0,0,0,0,16777215,16776960]))))
-            .setGeometry(new Box()))
-          .addChild(new Transform().setTranslation(java.newArray("float", [0,-2,0]))
-            .addChild(new Shape()
-              .setGeometry(new Text().setString(java.newArray("java.lang.String", ["3"]))
-                .setFontStyle(new FontStyle().setUSE("CenterJustify")))
-              .setAppearance(new Appearance().setUSE("TextMaterial")))))
-        .addChild(new Transform().setTranslation(java.newArray("float", [6,0,0]))
-          .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .addComments(new CommentsBlock("Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127"))
-              .setTexture(new PixelTexture().setDEF("FourComponents").setImage(java.newArray("int", [3,2,4,4278190335,16711935,65535,4278190207,16711807,65407]))))
-            .setGeometry(new Box()))
-          .addChild(new Transform().setTranslation(java.newArray("float", [0,-2,0]))
-            .addChild(new Shape()
-              .setGeometry(new Text().setString(java.newArray("java.lang.String", ["4"]))
-                .setFontStyle(new FontStyle().setUSE("CenterJustify")))
-              .setAppearance(new Appearance().setUSE("TextMaterial")))))
-        .addComments(new CommentsBlock("Background from PixelTextureBW.x3d"))
-        .addChild(new Transform().setTranslation(java.newArray("float", [0,6,-2]))
-          .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .setTexture(new PixelTexture().setImage(java.newArray("int", [8,8,1,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204]))))
-            .setGeometry(new Box().setSize(java.newArray("float", [16,16,0.1]))))))      ;
-    X3D0.toFileX3D("../data/PixelTextureComponentExamples.new.x3d");
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+Background2 = browser.currentScene.createNode("Background");
+Background2.skyColor = [0.1,0.1,0.4];
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = Background2;
+
+Viewpoint3 = browser.currentScene.createNode("Viewpoint");
+Viewpoint3.description = "Table 5.18 SFImage component examples";
+Viewpoint3.position = [0,0,14];
+browser.currentScene.children[1] = Viewpoint3;
+
+Transform4 = browser.currentScene.createNode("Transform");
+Transform4.translation = [-6,0,0];
+Shape5 = browser.currentScene.createNode("Shape");
+Appearance6 = browser.currentScene.createNode("Appearance");
+PixelTexture7 = browser.currentScene.createNode("PixelTexture");
+PixelTexture7.DEF = "ZeroComponents";
+Appearance6.texture = PixelTexture7;
+
+Shape5.appearance = Appearance6;
+
+Box8 = browser.currentScene.createNode("Box");
+Shape5.geometry = Box8;
+
+Transform4.children = [];
+
+Transform4.children[0] = Shape5;
+
+Transform9 = browser.currentScene.createNode("Transform");
+Transform9.translation = [0,-2,0];
+Shape10 = browser.currentScene.createNode("Shape");
+Text11 = browser.currentScene.createNode("Text");
+Text11.string = ["0"];
+FontStyle12 = browser.currentScene.createNode("FontStyle");
+FontStyle12.DEF = "CenterJustify";
+FontStyle12.justify = ["MIDDLE","MIDDLE"];
+Text11.fontStyle = FontStyle12;
+
+Shape10.geometry = Text11;
+
+Appearance13 = browser.currentScene.createNode("Appearance");
+Appearance13.DEF = "TextMaterial";
+Material14 = browser.currentScene.createNode("Material");
+Material14.diffuseColor = [1,1,1];
+Appearance13.material = Material14;
+
+Shape10.appearance = Appearance13;
+
+Transform9.children = [];
+
+Transform9.children[0] = Shape10;
+
+Transform4.children[1] = Transform9;
+
+browser.currentScene.children[2] = Transform4;
+
+Transform15 = browser.currentScene.createNode("Transform");
+Transform15.translation = [-3,0,0];
+Shape16 = browser.currentScene.createNode("Shape");
+Appearance17 = browser.currentScene.createNode("Appearance");
+PixelTexture18 = browser.currentScene.createNode("PixelTexture");
+PixelTexture18.DEF = "OneComponent";
+PixelTexture18.image = [1,2,1,255,0];
+Appearance17.texture = PixelTexture18;
+
+Shape16.appearance = Appearance17;
+
+Box19 = browser.currentScene.createNode("Box");
+Shape16.geometry = Box19;
+
+Transform15.children = [];
+
+Transform15.children[0] = Shape16;
+
+Transform20 = browser.currentScene.createNode("Transform");
+Transform20.translation = [0,-2,0];
+Shape21 = browser.currentScene.createNode("Shape");
+Text22 = browser.currentScene.createNode("Text");
+Text22.string = ["1"];
+FontStyle23 = browser.currentScene.createNode("FontStyle");
+FontStyle23.USE = "CenterJustify";
+Text22.fontStyle = FontStyle23;
+
+Shape21.geometry = Text22;
+
+Appearance24 = browser.currentScene.createNode("Appearance");
+Appearance24.USE = "TextMaterial";
+Shape21.appearance = Appearance24;
+
+Transform20.children = [];
+
+Transform20.children[0] = Shape21;
+
+Transform15.children[1] = Transform20;
+
+browser.currentScene.children[3] = Transform15;
+
+Transform25 = browser.currentScene.createNode("Transform");
+Shape26 = browser.currentScene.createNode("Shape");
+Appearance27 = browser.currentScene.createNode("Appearance");
+PixelTexture28 = browser.currentScene.createNode("PixelTexture");
+PixelTexture28.DEF = "TwoComponents";
+PixelTexture28.image = [2,1,2,52479,8823];
+Appearance27.texture = PixelTexture28;
+
+Shape26.appearance = Appearance27;
+
+Box29 = browser.currentScene.createNode("Box");
+Shape26.geometry = Box29;
+
+Transform25.children = [];
+
+Transform25.children[0] = Shape26;
+
+Transform30 = browser.currentScene.createNode("Transform");
+Transform30.translation = [0,-2,0];
+Shape31 = browser.currentScene.createNode("Shape");
+Text32 = browser.currentScene.createNode("Text");
+Text32.string = ["2"];
+FontStyle33 = browser.currentScene.createNode("FontStyle");
+FontStyle33.USE = "CenterJustify";
+Text32.fontStyle = FontStyle33;
+
+Shape31.geometry = Text32;
+
+Appearance34 = browser.currentScene.createNode("Appearance");
+Appearance34.USE = "TextMaterial";
+Shape31.appearance = Appearance34;
+
+Transform30.children = [];
+
+Transform30.children[0] = Shape31;
+
+Transform25.children[1] = Transform30;
+
+browser.currentScene.children[4] = Transform25;
+
+Transform35 = browser.currentScene.createNode("Transform");
+Transform35.translation = [3,0,0];
+Shape36 = browser.currentScene.createNode("Shape");
+Appearance37 = browser.currentScene.createNode("Appearance");
+//note 0x000000 = 0
+PixelTexture38 = browser.currentScene.createNode("PixelTexture");
+PixelTexture38.DEF = "ThreeComponents";
+PixelTexture38.image = [2,4,3,16711680,65280,0,0,0,0,16777215,16776960];
+Appearance37.texture = PixelTexture38;
+
+Shape36.appearance = Appearance37;
+
+Box39 = browser.currentScene.createNode("Box");
+Shape36.geometry = Box39;
+
+Transform35.children = [];
+
+Transform35.children[0] = Shape36;
+
+Transform40 = browser.currentScene.createNode("Transform");
+Transform40.translation = [0,-2,0];
+Shape41 = browser.currentScene.createNode("Shape");
+Text42 = browser.currentScene.createNode("Text");
+Text42.string = ["3"];
+FontStyle43 = browser.currentScene.createNode("FontStyle");
+FontStyle43.USE = "CenterJustify";
+Text42.fontStyle = FontStyle43;
+
+Shape41.geometry = Text42;
+
+Appearance44 = browser.currentScene.createNode("Appearance");
+Appearance44.USE = "TextMaterial";
+Shape41.appearance = Appearance44;
+
+Transform40.children = [];
+
+Transform40.children[0] = Shape41;
+
+Transform35.children[1] = Transform40;
+
+browser.currentScene.children[5] = Transform35;
+
+Transform45 = browser.currentScene.createNode("Transform");
+Transform45.translation = [6,0,0];
+Shape46 = browser.currentScene.createNode("Shape");
+Appearance47 = browser.currentScene.createNode("Appearance");
+//Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127
+PixelTexture48 = browser.currentScene.createNode("PixelTexture");
+PixelTexture48.DEF = "FourComponents";
+PixelTexture48.image = [3,2,4,-16776961,16711935,65535,-16777089,16711807,65407];
+Appearance47.texture = PixelTexture48;
+
+Shape46.appearance = Appearance47;
+
+Box49 = browser.currentScene.createNode("Box");
+Shape46.geometry = Box49;
+
+Transform45.children = [];
+
+Transform45.children[0] = Shape46;
+
+Transform50 = browser.currentScene.createNode("Transform");
+Transform50.translation = [0,-2,0];
+Shape51 = browser.currentScene.createNode("Shape");
+Text52 = browser.currentScene.createNode("Text");
+Text52.string = ["4"];
+FontStyle53 = browser.currentScene.createNode("FontStyle");
+FontStyle53.USE = "CenterJustify";
+Text52.fontStyle = FontStyle53;
+
+Shape51.geometry = Text52;
+
+Appearance54 = browser.currentScene.createNode("Appearance");
+Appearance54.USE = "TextMaterial";
+Shape51.appearance = Appearance54;
+
+Transform50.children = [];
+
+Transform50.children[0] = Shape51;
+
+Transform45.children[1] = Transform50;
+
+browser.currentScene.children[6] = Transform45;
+
+//Background from PixelTextureBW.x3d
+Transform55 = browser.currentScene.createNode("Transform");
+Transform55.translation = [0,6,-2];
+Shape56 = browser.currentScene.createNode("Shape");
+Appearance57 = browser.currentScene.createNode("Appearance");
+PixelTexture58 = browser.currentScene.createNode("PixelTexture");
+PixelTexture58.image = [8,8,1,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204];
+Appearance57.texture = PixelTexture58;
+
+Shape56.appearance = Appearance57;
+
+Box59 = browser.currentScene.createNode("Box");
+Box59.size = [16,16,0.1];
+Shape56.geometry = Box59;
+
+Transform55.children = [];
+
+Transform55.children[0] = Shape56;
+
+browser.currentScene.children[7] = Transform55;
+

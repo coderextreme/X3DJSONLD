@@ -1,75 +1,375 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addComponent(new component().setName("Shaders").setLevel(1))
-        .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("flowers7.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowers7.x3d"))
-        .addMeta(new meta().setName("description").setContent("a flower")))
-      .setScene(new Scene()
-        .addChild(new NavigationInfo())
-        .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
-        .addChild(new Background().setDEF("background").setBackUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])))
-        .addChild(new Viewpoint().setPosition(java.newArray("float", [0,0,40])).setDescription("Transparent rose"))
-        .addChild(new Transform()
-          .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0.7,0.7,0.7])).setSpecularColor(java.newArray("float", [0.5,0.5,0.5])))
-              .setTexture(new ComposedCubeMapTexture().setDEF("texture")
-                .setBack(new ImageTexture().setDEF("backShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"])))
-                .setBottom(new ImageTexture().setDEF("bottomShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"])))
-                .setFront(new ImageTexture().setDEF("frontShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"])))
-                .setLeft(new ImageTexture().setDEF("leftShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"])))
-                .setRight(new ImageTexture().setDEF("rightShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"])))
-                .setTop(new ImageTexture().setDEF("topShader").setUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"]))))
-              .addShaders(new ComposedShader().setDEF("x3dom").setLanguage("GLSL")
-                .addField(new field().setType(field.TYPE_SFINT32).setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("bias").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("a").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("b").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("c").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("d").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                .addComments(new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"))
-                .addParts(new ShaderPart().setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"])))
-                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(java.newArray("java.lang.String", ["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]))))
-              .addShaders(new ComposedShader().setDEF("x_ite").setLanguage("GLSL")
-                .addField(new field().setType(field.TYPE_SFNODE).setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-                  .addChild(new ComposedCubeMapTexture().setUSE("texture")))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("bias").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0.5"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("scale").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0.5"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("power").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("2"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("a").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("10"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("b").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("1"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("c").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("20"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("d").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("20"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0"))
-                .addParts(new ShaderPart().setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"])))
-                .addParts(new ShaderPart().setType("FRAGMENT").setUrl(java.newArray("java.lang.String", ["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])))))
-            .setGeometry(new Sphere())))
-        .addChild(new Script().setDEF("UrlSelector").setDirectOutput(true)
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("frontUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\""))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("backUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\""))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("leftUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\""))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("rightUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\""))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("topUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\""))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("bottomUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\""))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("front").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("back").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("left").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("right").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("top").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-          .addField(new field().setType(field.TYPE_MFSTRING).setName("bottom").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field().setType(field.TYPE_SFINT32).setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-1"))
-          .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = NavigationInfo2;
+
+//Images courtesy of Paul Debevec's Light Probe Image Gallery
+Background3 = browser.currentScene.createNode("Background");
+Background3.DEF = "background";
+Background3.backUrl = ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"];
+Background3.bottomUrl = ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"];
+Background3.frontUrl = ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"];
+Background3.leftUrl = ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"];
+Background3.rightUrl = ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"];
+Background3.topUrl = ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"];
+browser.currentScene.children[1] = Background3;
+
+Viewpoint4 = browser.currentScene.createNode("Viewpoint");
+Viewpoint4.position = [0,0,40];
+Viewpoint4.description = "Transparent rose";
+browser.currentScene.children[2] = Viewpoint4;
+
+Transform5 = browser.currentScene.createNode("Transform");
+Shape6 = browser.currentScene.createNode("Shape");
+Appearance7 = browser.currentScene.createNode("Appearance");
+Material8 = browser.currentScene.createNode("Material");
+Material8.diffuseColor = [0.7,0.7,0.7];
+Material8.specularColor = [0.5,0.5,0.5];
+Appearance7.material = Material8;
+
+ComposedCubeMapTexture9 = browser.currentScene.createNode("ComposedCubeMapTexture");
+ComposedCubeMapTexture9.DEF = "texture";
+ImageTexture10 = browser.currentScene.createNode("ImageTexture");
+ImageTexture10.DEF = "backShader";
+ImageTexture10.url = ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"];
+ComposedCubeMapTexture9.top = ImageTexture10;
+
+ImageTexture11 = browser.currentScene.createNode("ImageTexture");
+ImageTexture11.DEF = "bottomShader";
+ImageTexture11.url = ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_bottom.png"];
+ComposedCubeMapTexture9.top = ImageTexture11;
+
+ImageTexture12 = browser.currentScene.createNode("ImageTexture");
+ImageTexture12.DEF = "frontShader";
+ImageTexture12.url = ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_front.png"];
+ComposedCubeMapTexture9.top = ImageTexture12;
+
+ImageTexture13 = browser.currentScene.createNode("ImageTexture");
+ImageTexture13.DEF = "leftShader";
+ImageTexture13.url = ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"];
+ComposedCubeMapTexture9.top = ImageTexture13;
+
+ImageTexture14 = browser.currentScene.createNode("ImageTexture");
+ImageTexture14.DEF = "rightShader";
+ImageTexture14.url = ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"];
+ComposedCubeMapTexture9.top = ImageTexture14;
+
+ImageTexture15 = browser.currentScene.createNode("ImageTexture");
+ImageTexture15.DEF = "topShader";
+ImageTexture15.url = ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"];
+ComposedCubeMapTexture9.top = ImageTexture15;
+
+Appearance7.texture = ComposedCubeMapTexture9;
+
+ComposedShader16 = browser.currentScene.createNode("ComposedShader");
+ComposedShader16.DEF = "x3dom";
+ComposedShader16.language = "GLSL";
+field17 = browser.currentScene.createNode("field");
+field17.name = "cube";
+field17.type = "SFInt32";
+field17.accessType = "inputOutput";
+field17.value = "0";
+ComposedShader16.field = [];
+
+ComposedShader16.field[0] = field17;
+
+field18 = browser.currentScene.createNode("field");
+field18.name = "chromaticDispertion";
+field18.accessType = "initializeOnly";
+field18.type = "SFVec3f";
+field18.value = "0.98 1 1.033";
+ComposedShader16.field[1] = field18;
+
+field19 = browser.currentScene.createNode("field");
+field19.name = "bias";
+field19.type = "SFFloat";
+field19.accessType = "inputOutput";
+field19.value = "0.5";
+ComposedShader16.field[2] = field19;
+
+field20 = browser.currentScene.createNode("field");
+field20.name = "scale";
+field20.type = "SFFloat";
+field20.accessType = "inputOutput";
+field20.value = "0.5";
+ComposedShader16.field[3] = field20;
+
+field21 = browser.currentScene.createNode("field");
+field21.name = "power";
+field21.type = "SFFloat";
+field21.accessType = "inputOutput";
+field21.value = "2";
+ComposedShader16.field[4] = field21;
+
+field22 = browser.currentScene.createNode("field");
+field22.name = "a";
+field22.type = "SFFloat";
+field22.accessType = "inputOutput";
+field22.value = "10";
+ComposedShader16.field[5] = field22;
+
+field23 = browser.currentScene.createNode("field");
+field23.name = "b";
+field23.type = "SFFloat";
+field23.accessType = "inputOutput";
+field23.value = "1";
+ComposedShader16.field[6] = field23;
+
+field24 = browser.currentScene.createNode("field");
+field24.name = "c";
+field24.type = "SFFloat";
+field24.accessType = "inputOutput";
+field24.value = "20";
+ComposedShader16.field[7] = field24;
+
+field25 = browser.currentScene.createNode("field");
+field25.name = "d";
+field25.type = "SFFloat";
+field25.accessType = "inputOutput";
+field25.value = "20";
+ComposedShader16.field[8] = field25;
+
+field26 = browser.currentScene.createNode("field");
+field26.name = "tdelta";
+field26.type = "SFFloat";
+field26.accessType = "inputOutput";
+field26.value = "0";
+ComposedShader16.field[9] = field26;
+
+field27 = browser.currentScene.createNode("field");
+field27.name = "pdelta";
+field27.type = "SFFloat";
+field27.accessType = "inputOutput";
+field27.value = "0";
+ComposedShader16.field[10] = field27;
+
+//<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
+ShaderPart28 = browser.currentScene.createNode("ShaderPart");
+ShaderPart28.url = ["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"];
+ShaderPart28.type = "VERTEX";
+ComposedShader16.parts[11] = ShaderPart28;
+
+ShaderPart29 = browser.currentScene.createNode("ShaderPart");
+ShaderPart29.url = ["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"];
+ShaderPart29.type = "FRAGMENT";
+ComposedShader16.parts[12] = ShaderPart29;
+
+Appearance7.shaders = [];
+
+Appearance7.shaders[0] = ComposedShader16;
+
+ComposedShader30 = browser.currentScene.createNode("ComposedShader");
+ComposedShader30.DEF = "x_ite";
+ComposedShader30.language = "GLSL";
+field31 = browser.currentScene.createNode("field");
+field31.name = "cube";
+field31.type = "SFNode";
+field31.accessType = "inputOutput";
+ComposedCubeMapTexture32 = browser.currentScene.createNode("ComposedCubeMapTexture");
+ComposedCubeMapTexture32.USE = "texture";
+field31.children = [];
+
+field31.children[0] = ComposedCubeMapTexture32;
+
+ComposedShader30.field = [];
+
+ComposedShader30.field[0] = field31;
+
+field33 = browser.currentScene.createNode("field");
+field33.name = "chromaticDispertion";
+field33.accessType = "initializeOnly";
+field33.type = "SFVec3f";
+field33.value = "0.98 1 1.033";
+ComposedShader30.field[1] = field33;
+
+field34 = browser.currentScene.createNode("field");
+field34.name = "bias";
+field34.type = "SFFloat";
+field34.accessType = "inputOnly";
+field34.value = "0.5";
+ComposedShader30.field[2] = field34;
+
+field35 = browser.currentScene.createNode("field");
+field35.name = "scale";
+field35.type = "SFFloat";
+field35.accessType = "inputOnly";
+field35.value = "0.5";
+ComposedShader30.field[3] = field35;
+
+field36 = browser.currentScene.createNode("field");
+field36.name = "power";
+field36.type = "SFFloat";
+field36.accessType = "inputOnly";
+field36.value = "2";
+ComposedShader30.field[4] = field36;
+
+field37 = browser.currentScene.createNode("field");
+field37.name = "a";
+field37.type = "SFFloat";
+field37.accessType = "inputOnly";
+field37.value = "10";
+ComposedShader30.field[5] = field37;
+
+field38 = browser.currentScene.createNode("field");
+field38.name = "b";
+field38.type = "SFFloat";
+field38.accessType = "inputOnly";
+field38.value = "1";
+ComposedShader30.field[6] = field38;
+
+field39 = browser.currentScene.createNode("field");
+field39.name = "c";
+field39.type = "SFFloat";
+field39.accessType = "inputOnly";
+field39.value = "20";
+ComposedShader30.field[7] = field39;
+
+field40 = browser.currentScene.createNode("field");
+field40.name = "d";
+field40.type = "SFFloat";
+field40.accessType = "inputOnly";
+field40.value = "20";
+ComposedShader30.field[8] = field40;
+
+field41 = browser.currentScene.createNode("field");
+field41.name = "tdelta";
+field41.type = "SFFloat";
+field41.accessType = "inputOnly";
+field41.value = "0";
+ComposedShader30.field[9] = field41;
+
+field42 = browser.currentScene.createNode("field");
+field42.name = "pdelta";
+field42.type = "SFFloat";
+field42.accessType = "inputOnly";
+field42.value = "0";
+ComposedShader30.field[10] = field42;
+
+ShaderPart43 = browser.currentScene.createNode("ShaderPart");
+ShaderPart43.url = ["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"];
+ShaderPart43.type = "VERTEX";
+ComposedShader30.parts[11] = ShaderPart43;
+
+ShaderPart44 = browser.currentScene.createNode("ShaderPart");
+ShaderPart44.url = ["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"];
+ShaderPart44.type = "FRAGMENT";
+ComposedShader30.parts[12] = ShaderPart44;
+
+Appearance7.shaders[1] = ComposedShader30;
+
+Shape6.appearance = Appearance7;
+
+Sphere45 = browser.currentScene.createNode("Sphere");
+Shape6.geometry = Sphere45;
+
+Transform5.children = [];
+
+Transform5.children[0] = Shape6;
+
+browser.currentScene.children[3] = Transform5;
+
+Script46 = browser.currentScene.createNode("Script");
+Script46.DEF = "UrlSelector";
+Script46.directOutput = True;
+field47 = browser.currentScene.createNode("field");
+field47.name = "frontUrls";
+field47.type = "MFString";
+field47.accessType = "initializeOnly";
+field47.value = "\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"";
+Script46.field = [];
+
+Script46.field[0] = field47;
+
+field48 = browser.currentScene.createNode("field");
+field48.name = "backUrls";
+field48.type = "MFString";
+field48.accessType = "initializeOnly";
+field48.value = "\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"";
+Script46.field[1] = field48;
+
+field49 = browser.currentScene.createNode("field");
+field49.name = "leftUrls";
+field49.type = "MFString";
+field49.accessType = "initializeOnly";
+field49.value = "\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"";
+Script46.field[2] = field49;
+
+field50 = browser.currentScene.createNode("field");
+field50.name = "rightUrls";
+field50.type = "MFString";
+field50.accessType = "initializeOnly";
+field50.value = "\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"";
+Script46.field[3] = field50;
+
+field51 = browser.currentScene.createNode("field");
+field51.name = "topUrls";
+field51.type = "MFString";
+field51.accessType = "initializeOnly";
+field51.value = "\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"";
+Script46.field[4] = field51;
+
+field52 = browser.currentScene.createNode("field");
+field52.name = "bottomUrls";
+field52.type = "MFString";
+field52.accessType = "initializeOnly";
+field52.value = "\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"";
+Script46.field[5] = field52;
+
+field53 = browser.currentScene.createNode("field");
+field53.name = "front";
+field53.type = "MFString";
+field53.accessType = "inputOutput";
+Script46.field[6] = field53;
+
+field54 = browser.currentScene.createNode("field");
+field54.name = "back";
+field54.type = "MFString";
+field54.accessType = "inputOutput";
+Script46.field[7] = field54;
+
+field55 = browser.currentScene.createNode("field");
+field55.name = "left";
+field55.type = "MFString";
+field55.accessType = "inputOutput";
+Script46.field[8] = field55;
+
+field56 = browser.currentScene.createNode("field");
+field56.name = "right";
+field56.type = "MFString";
+field56.accessType = "inputOutput";
+Script46.field[9] = field56;
+
+field57 = browser.currentScene.createNode("field");
+field57.name = "top";
+field57.type = "MFString";
+field57.accessType = "inputOutput";
+Script46.field[10] = field57;
+
+field58 = browser.currentScene.createNode("field");
+field58.name = "bottom";
+field58.type = "MFString";
+field58.accessType = "inputOutput";
+Script46.field[11] = field58;
+
+field59 = browser.currentScene.createNode("field");
+field59.name = "set_fraction";
+field59.type = "SFFloat";
+field59.accessType = "inputOnly";
+Script46.field[12] = field59;
+
+field60 = browser.currentScene.createNode("field");
+field60.name = "old";
+field60.type = "SFInt32";
+field60.accessType = "inputOutput";
+field60.value = "-1";
+Script46.field[13] = field60;
+
+
+Script46.setSourceCode(`ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "            var side = Math.floor(f*frontUrls.length);\n"+
 "            if (side > frontUrls.length-1) {\n"+
@@ -84,17 +384,65 @@
 "                    top[0] = topUrls[side];\n"+
 "                    bottom[0] = bottomUrls[side];\n"+
 "            }\n"+
-"        }"))
-        .addComments(new CommentsBlock("<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"))
-        .addChild(new Script().setDEF("Animate").setDirectOutput(true)
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("a").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("b").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("c").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("d").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-          .addField(new field().setType(field.TYPE_SFFLOAT).setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-          .setSourceCode("ecmascript:\n"+
+"        }`)
+browser.currentScene.children[4] = Script46;
+
+//<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
+Script61 = browser.currentScene.createNode("Script");
+Script61.DEF = "Animate";
+Script61.directOutput = True;
+field62 = browser.currentScene.createNode("field");
+field62.name = "set_fraction";
+field62.type = "SFFloat";
+field62.accessType = "inputOnly";
+Script61.field = [];
+
+Script61.field[0] = field62;
+
+field63 = browser.currentScene.createNode("field");
+field63.name = "a";
+field63.type = "SFFloat";
+field63.accessType = "inputOutput";
+field63.value = "10";
+Script61.field[1] = field63;
+
+field64 = browser.currentScene.createNode("field");
+field64.name = "b";
+field64.type = "SFFloat";
+field64.accessType = "inputOutput";
+field64.value = "1";
+Script61.field[2] = field64;
+
+field65 = browser.currentScene.createNode("field");
+field65.name = "c";
+field65.type = "SFFloat";
+field65.accessType = "inputOutput";
+field65.value = "20";
+Script61.field[3] = field65;
+
+field66 = browser.currentScene.createNode("field");
+field66.name = "d";
+field66.type = "SFFloat";
+field66.accessType = "inputOutput";
+field66.value = "20";
+Script61.field[4] = field66;
+
+field67 = browser.currentScene.createNode("field");
+field67.name = "tdelta";
+field67.type = "SFFloat";
+field67.accessType = "inputOutput";
+field67.value = "0";
+Script61.field[5] = field67;
+
+field68 = browser.currentScene.createNode("field");
+field68.name = "pdelta";
+field68.type = "SFFloat";
+field68.accessType = "inputOutput";
+field68.value = "0";
+Script61.field[6] = field68;
+
+
+Script61.setSourceCode(`ecmascript:\n"+
 "\n"+
 "function set_fraction() {\n"+
 "	var choice = Math.floor(Math.random() * 4);\n"+
@@ -132,19 +480,103 @@
 "	if (d > 20) {\n"+
 "		d = 4;\n"+
 "	}\n"+
-"}"))
-        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5).setLoop(true))
-        .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("a").setToNode("x_ite").setToField("a"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("b").setToNode("x_ite").setToField("b"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("c").setToNode("x_ite").setToField("c"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("d").setToNode("x_ite").setToField("d"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("pdelta").setToNode("x_ite").setToField("pdelta"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("tdelta").setToNode("x_ite").setToField("tdelta"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("a").setToNode("x3dom").setToField("a"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("b").setToNode("x3dom").setToField("b"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("c").setToNode("x3dom").setToField("c"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("d").setToNode("x3dom").setToField("d"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("pdelta").setToNode("x3dom").setToField("pdelta"))
-        .addChild(new ROUTE().setFromNode("Animate").setFromField("tdelta").setToNode("x3dom").setToField("tdelta")))      ;
-    X3D0.toFileX3D("../data/flowers7.new.x3d");
+"}`)
+browser.currentScene.children[5] = Script61;
+
+TimeSensor69 = browser.currentScene.createNode("TimeSensor");
+TimeSensor69.DEF = "TourTime";
+TimeSensor69.cycleInterval = 5;
+TimeSensor69.loop = True;
+browser.currentScene.children[6] = TimeSensor69;
+
+ROUTE70 = browser.currentScene.createNode("ROUTE");
+ROUTE70.fromNode = "TourTime";
+ROUTE70.fromField = "fraction_changed";
+ROUTE70.toNode = "Animate";
+ROUTE70.toField = "set_fraction";
+browser.currentScene.children[7] = ROUTE70;
+
+ROUTE71 = browser.currentScene.createNode("ROUTE");
+ROUTE71.fromNode = "Animate";
+ROUTE71.fromField = "a";
+ROUTE71.toNode = "x_ite";
+ROUTE71.toField = "a";
+browser.currentScene.children[8] = ROUTE71;
+
+ROUTE72 = browser.currentScene.createNode("ROUTE");
+ROUTE72.fromNode = "Animate";
+ROUTE72.fromField = "b";
+ROUTE72.toNode = "x_ite";
+ROUTE72.toField = "b";
+browser.currentScene.children[9] = ROUTE72;
+
+ROUTE73 = browser.currentScene.createNode("ROUTE");
+ROUTE73.fromNode = "Animate";
+ROUTE73.fromField = "c";
+ROUTE73.toNode = "x_ite";
+ROUTE73.toField = "c";
+browser.currentScene.children[10] = ROUTE73;
+
+ROUTE74 = browser.currentScene.createNode("ROUTE");
+ROUTE74.fromNode = "Animate";
+ROUTE74.fromField = "d";
+ROUTE74.toNode = "x_ite";
+ROUTE74.toField = "d";
+browser.currentScene.children[11] = ROUTE74;
+
+ROUTE75 = browser.currentScene.createNode("ROUTE");
+ROUTE75.fromNode = "Animate";
+ROUTE75.fromField = "pdelta";
+ROUTE75.toNode = "x_ite";
+ROUTE75.toField = "pdelta";
+browser.currentScene.children[12] = ROUTE75;
+
+ROUTE76 = browser.currentScene.createNode("ROUTE");
+ROUTE76.fromNode = "Animate";
+ROUTE76.fromField = "tdelta";
+ROUTE76.toNode = "x_ite";
+ROUTE76.toField = "tdelta";
+browser.currentScene.children[13] = ROUTE76;
+
+ROUTE77 = browser.currentScene.createNode("ROUTE");
+ROUTE77.fromNode = "Animate";
+ROUTE77.fromField = "a";
+ROUTE77.toNode = "x3dom";
+ROUTE77.toField = "a";
+browser.currentScene.children[14] = ROUTE77;
+
+ROUTE78 = browser.currentScene.createNode("ROUTE");
+ROUTE78.fromNode = "Animate";
+ROUTE78.fromField = "b";
+ROUTE78.toNode = "x3dom";
+ROUTE78.toField = "b";
+browser.currentScene.children[15] = ROUTE78;
+
+ROUTE79 = browser.currentScene.createNode("ROUTE");
+ROUTE79.fromNode = "Animate";
+ROUTE79.fromField = "c";
+ROUTE79.toNode = "x3dom";
+ROUTE79.toField = "c";
+browser.currentScene.children[16] = ROUTE79;
+
+ROUTE80 = browser.currentScene.createNode("ROUTE");
+ROUTE80.fromNode = "Animate";
+ROUTE80.fromField = "d";
+ROUTE80.toNode = "x3dom";
+ROUTE80.toField = "d";
+browser.currentScene.children[17] = ROUTE80;
+
+ROUTE81 = browser.currentScene.createNode("ROUTE");
+ROUTE81.fromNode = "Animate";
+ROUTE81.fromField = "pdelta";
+ROUTE81.toNode = "x3dom";
+ROUTE81.toField = "pdelta";
+browser.currentScene.children[18] = ROUTE81;
+
+ROUTE82 = browser.currentScene.createNode("ROUTE");
+ROUTE82.fromNode = "Animate";
+ROUTE82.fromField = "tdelta";
+ROUTE82.toNode = "x3dom";
+ROUTE82.toField = "tdelta";
+browser.currentScene.children[19] = ROUTE82;
+

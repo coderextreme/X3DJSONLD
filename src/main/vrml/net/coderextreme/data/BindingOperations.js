@@ -1,83 +1,291 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("BindingOperations.x3d"))
-        .addMeta(new meta().setName("description").setContent("Illustrate Viewpoint binding operations (in gory detail!) as described in Chapter 4 concepts. Scene design: a TimeSensor clock drives and IntegerSequencer for each t0/t1/etc. event, and a customized Script node sends bind/unbind events to the correct Viewpoint. Display the browser console to see occurrence of each event."))
-        .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
-        .addMeta(new meta().setName("created").setContent("5 January 2008"))
-        .addMeta(new meta().setName("modified").setContent("22 July 2013"))
-        .addMeta(new meta().setName("reference").setContent("BindingOperations.console.txt"))
-        .addMeta(new meta().setName("reference").setContent("BindingStackOperations.png"))
-        .addMeta(new meta().setName("reference").setContent("X3D for Web Authors, Section 2.5.1, Figure 4.1"))
-        .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com"))
-        .addMeta(new meta().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
-        .addMeta(new meta().setName("rights").setContent("Copyright Don Brutzman and Leonard Daly 2007"))
-        .addMeta(new meta().setName("subject").setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"))
-        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter04ViewingNavigation/BindingOperations.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
-      .setScene(new Scene()
-        .addChild(new Viewpoint().setDEF("View1").setCenterOfRotation(java.newArray("float", [-6,0,0])).setDescription("Viewpoint 1").setPosition(java.newArray("float", [-6,0,5])))
-        .addChild(new Viewpoint().setDEF("View2").setCenterOfRotation(java.newArray("float", [-2,0,0])).setDescription("Viewpoint 2").setPosition(java.newArray("float", [-2,0,5])))
-        .addChild(new Viewpoint().setDEF("View3").setCenterOfRotation(java.newArray("float", [2,0,0])).setDescription("Viewpoint 3").setPosition(java.newArray("float", [2,0,5])))
-        .addChild(new Viewpoint().setDEF("View4").setCenterOfRotation(java.newArray("float", [6,0,0])).setDescription("Viewpoint 4").setPosition(java.newArray("float", [6,0,5])))
-        .addComments(new CommentsBlock("Script initialization ought to first bind view5 below."))
-        .addChild(new Group()
-          .addChild(new Transform().setDEF("Text1").setTranslation(java.newArray("float", [-6,0,0]))
-            .addChild(new Shape()
-              .setGeometry(new Text().setString(java.newArray("java.lang.String", ["View","# 1"]))
-                .setFontStyle(new FontStyle().setDEF("CenterJustify").setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"]))))
-              .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(java.newArray("float", [1,0,0]))))))
-          .addChild(new Transform().setDEF("Text2").setTranslation(java.newArray("float", [-2,0,0]))
-            .addChild(new Shape()
-              .setGeometry(new Text().setString(java.newArray("java.lang.String", ["View","# 2"]))
-                .setFontStyle(new FontStyle().setUSE("CenterJustify")))
-              .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0,1,0]))))))
-          .addChild(new Transform().setDEF("Text3").setTranslation(java.newArray("float", [2,0,0]))
-            .addChild(new Shape()
-              .setGeometry(new Text().setString(java.newArray("java.lang.String", ["View","# 3"]))
-                .setFontStyle(new FontStyle().setUSE("CenterJustify")))
-              .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0,0,1]))))))
-          .addChild(new Transform().setDEF("Text4").setTranslation(java.newArray("float", [6,0,0]))
-            .addChild(new Shape()
-              .setGeometry(new Text().setString(java.newArray("java.lang.String", ["View","# 4"]))
-                .setFontStyle(new FontStyle().setUSE("CenterJustify")))
-              .setAppearance(new Appearance()
-                .setMaterial(new Material())))))
-        .addComments(new CommentsBlock("The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9."))
-        .addComments(new CommentsBlock("It does not need to be studied in this chapter."))
-        .addChild(new Transform().setTranslation(java.newArray("float", [0,-3,8]))
-          .addComments(new CommentsBlock("notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script."))
-          .addChild(new Viewpoint().setDEF("ClickToAnimateView").setDescription("Select animation sequence").setPosition(java.newArray("float", [0,0,7])))
-          .addChild(new Shape()
-            .setGeometry(new Text().setString(java.newArray("java.lang.String", ["Click here to animate"]))
-              .setFontStyle(new FontStyle().setJustify(java.newArray("java.lang.String", ["MIDDLE","BEGIN"]))))
-            .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0.8,0.4,0])))))
-          .addChild(new Shape()
-            .setGeometry(new Box().setSize(java.newArray("float", [7,1,0.02])))
-            .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(1))))
-          .addChild(new TouchSensor().setDEF("TextTouchSensor").setDescription("Click to begin animating viewpoint selections"))
-          .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(10))
-          .addChild(new ROUTE().setFromField("touchTime").setFromNode("TextTouchSensor").setToField("set_startTime").setToNode("Clock"))
-          .addChild(new IntegerSequencer().setDEF("TimingSequencer").setKey(java.newArray("float", [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1])).setKeyValue(java.newArray("int", [0,1,2,3,4,5,6,7,8,10])))
-          .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("TimingSequencer"))
-          .addChild(new Script().setDEF("BindingSequencerEngine")
-            .addField(new field().setType(field.TYPE_SFINT32).setName("set_timeEvent").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType(field.TYPE_SFBOOL).setName("bindView1").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType(field.TYPE_SFBOOL).setName("bindView2").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType(field.TYPE_SFBOOL).setName("bindView3").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType(field.TYPE_SFBOOL).setName("bindView4").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType(field.TYPE_SFBOOL).setName("bindView5").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .addField(new field().setType(field.TYPE_SFBOOL).setName("view1Bound").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType(field.TYPE_SFBOOL).setName("view2Bound").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType(field.TYPE_SFBOOL).setName("view3Bound").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType(field.TYPE_SFBOOL).setName("view4Bound").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType(field.TYPE_SFINT32).setName("priorInputvalue").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("-1"))
-            .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+Viewpoint2 = browser.currentScene.createNode("Viewpoint");
+Viewpoint2.DEF = "View1";
+Viewpoint2.centerOfRotation = [-6,0,0];
+Viewpoint2.description = "Viewpoint 1";
+Viewpoint2.position = [-6,0,5];
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = Viewpoint2;
+
+Viewpoint3 = browser.currentScene.createNode("Viewpoint");
+Viewpoint3.DEF = "View2";
+Viewpoint3.centerOfRotation = [-2,0,0];
+Viewpoint3.description = "Viewpoint 2";
+Viewpoint3.position = [-2,0,5];
+browser.currentScene.children[1] = Viewpoint3;
+
+Viewpoint4 = browser.currentScene.createNode("Viewpoint");
+Viewpoint4.DEF = "View3";
+Viewpoint4.centerOfRotation = [2,0,0];
+Viewpoint4.description = "Viewpoint 3";
+Viewpoint4.position = [2,0,5];
+browser.currentScene.children[2] = Viewpoint4;
+
+Viewpoint5 = browser.currentScene.createNode("Viewpoint");
+Viewpoint5.DEF = "View4";
+Viewpoint5.centerOfRotation = [6,0,0];
+Viewpoint5.description = "Viewpoint 4";
+Viewpoint5.position = [6,0,5];
+browser.currentScene.children[3] = Viewpoint5;
+
+//Script initialization ought to first bind view5 below.
+Group6 = browser.currentScene.createNode("Group");
+Transform7 = browser.currentScene.createNode("Transform");
+Transform7.DEF = "Text1";
+Transform7.translation = [-6,0,0];
+Shape8 = browser.currentScene.createNode("Shape");
+Text9 = browser.currentScene.createNode("Text");
+Text9.string = ["View","# 1"];
+FontStyle10 = browser.currentScene.createNode("FontStyle");
+FontStyle10.DEF = "CenterJustify";
+FontStyle10.justify = ["MIDDLE","MIDDLE"];
+Text9.fontStyle = FontStyle10;
+
+Shape8.geometry = Text9;
+
+Appearance11 = browser.currentScene.createNode("Appearance");
+Material12 = browser.currentScene.createNode("Material");
+Material12.diffuseColor = [1,0,0];
+Appearance11.material = Material12;
+
+Shape8.appearance = Appearance11;
+
+Transform7.children = [];
+
+Transform7.children[0] = Shape8;
+
+Group6.children = [];
+
+Group6.children[0] = Transform7;
+
+Transform13 = browser.currentScene.createNode("Transform");
+Transform13.DEF = "Text2";
+Transform13.translation = [-2,0,0];
+Shape14 = browser.currentScene.createNode("Shape");
+Text15 = browser.currentScene.createNode("Text");
+Text15.string = ["View","# 2"];
+FontStyle16 = browser.currentScene.createNode("FontStyle");
+FontStyle16.USE = "CenterJustify";
+Text15.fontStyle = FontStyle16;
+
+Shape14.geometry = Text15;
+
+Appearance17 = browser.currentScene.createNode("Appearance");
+Material18 = browser.currentScene.createNode("Material");
+Material18.diffuseColor = [0,1,0];
+Appearance17.material = Material18;
+
+Shape14.appearance = Appearance17;
+
+Transform13.children = [];
+
+Transform13.children[0] = Shape14;
+
+Group6.children[1] = Transform13;
+
+Transform19 = browser.currentScene.createNode("Transform");
+Transform19.DEF = "Text3";
+Transform19.translation = [2,0,0];
+Shape20 = browser.currentScene.createNode("Shape");
+Text21 = browser.currentScene.createNode("Text");
+Text21.string = ["View","# 3"];
+FontStyle22 = browser.currentScene.createNode("FontStyle");
+FontStyle22.USE = "CenterJustify";
+Text21.fontStyle = FontStyle22;
+
+Shape20.geometry = Text21;
+
+Appearance23 = browser.currentScene.createNode("Appearance");
+Material24 = browser.currentScene.createNode("Material");
+Material24.diffuseColor = [0,0,1];
+Appearance23.material = Material24;
+
+Shape20.appearance = Appearance23;
+
+Transform19.children = [];
+
+Transform19.children[0] = Shape20;
+
+Group6.children[2] = Transform19;
+
+Transform25 = browser.currentScene.createNode("Transform");
+Transform25.DEF = "Text4";
+Transform25.translation = [6,0,0];
+Shape26 = browser.currentScene.createNode("Shape");
+Text27 = browser.currentScene.createNode("Text");
+Text27.string = ["View","# 4"];
+FontStyle28 = browser.currentScene.createNode("FontStyle");
+FontStyle28.USE = "CenterJustify";
+Text27.fontStyle = FontStyle28;
+
+Shape26.geometry = Text27;
+
+Appearance29 = browser.currentScene.createNode("Appearance");
+Material30 = browser.currentScene.createNode("Material");
+Appearance29.material = Material30;
+
+Shape26.appearance = Appearance29;
+
+Transform25.children = [];
+
+Transform25.children[0] = Shape26;
+
+Group6.children[3] = Transform25;
+
+browser.currentScene.children[4] = Group6;
+
+//The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9.
+//It does not need to be studied in this chapter.
+Transform31 = browser.currentScene.createNode("Transform");
+Transform31.translation = [0,-3,8];
+//notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.
+Viewpoint32 = browser.currentScene.createNode("Viewpoint");
+Viewpoint32.DEF = "ClickToAnimateView";
+Viewpoint32.description = "Select animation sequence";
+Viewpoint32.position = [0,0,7];
+Transform31.children = [];
+
+Transform31.children[0] = Viewpoint32;
+
+Shape33 = browser.currentScene.createNode("Shape");
+Text34 = browser.currentScene.createNode("Text");
+Text34.string = ["Click here to animate"];
+FontStyle35 = browser.currentScene.createNode("FontStyle");
+FontStyle35.justify = ["MIDDLE","BEGIN"];
+Text34.fontStyle = FontStyle35;
+
+Shape33.geometry = Text34;
+
+Appearance36 = browser.currentScene.createNode("Appearance");
+Material37 = browser.currentScene.createNode("Material");
+Material37.diffuseColor = [0.8,0.4,0];
+Appearance36.material = Material37;
+
+Shape33.appearance = Appearance36;
+
+Transform31.children[1] = Shape33;
+
+Shape38 = browser.currentScene.createNode("Shape");
+Box39 = browser.currentScene.createNode("Box");
+Box39.size = [7,1,0.02];
+Shape38.geometry = Box39;
+
+Appearance40 = browser.currentScene.createNode("Appearance");
+Material41 = browser.currentScene.createNode("Material");
+Material41.transparency = 1;
+Appearance40.material = Material41;
+
+Shape38.appearance = Appearance40;
+
+Transform31.children[2] = Shape38;
+
+TouchSensor42 = browser.currentScene.createNode("TouchSensor");
+TouchSensor42.DEF = "TextTouchSensor";
+TouchSensor42.description = "Click to begin animating viewpoint selections";
+Transform31.children[3] = TouchSensor42;
+
+TimeSensor43 = browser.currentScene.createNode("TimeSensor");
+TimeSensor43.DEF = "Clock";
+TimeSensor43.cycleInterval = 10;
+Transform31.children[4] = TimeSensor43;
+
+ROUTE44 = browser.currentScene.createNode("ROUTE");
+ROUTE44.fromField = "touchTime";
+ROUTE44.fromNode = "TextTouchSensor";
+ROUTE44.toField = "set_startTime";
+ROUTE44.toNode = "Clock";
+Transform31.children[5] = ROUTE44;
+
+IntegerSequencer45 = browser.currentScene.createNode("IntegerSequencer");
+IntegerSequencer45.DEF = "TimingSequencer";
+IntegerSequencer45.key = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1];
+IntegerSequencer45.keyValue = [0,1,2,3,4,5,6,7,8,10];
+Transform31.children[6] = IntegerSequencer45;
+
+ROUTE46 = browser.currentScene.createNode("ROUTE");
+ROUTE46.fromField = "fraction_changed";
+ROUTE46.fromNode = "Clock";
+ROUTE46.toField = "set_fraction";
+ROUTE46.toNode = "TimingSequencer";
+Transform31.children[7] = ROUTE46;
+
+Script47 = browser.currentScene.createNode("Script");
+Script47.DEF = "BindingSequencerEngine";
+field48 = browser.currentScene.createNode("field");
+field48.name = "set_timeEvent";
+field48.accessType = "inputOnly";
+field48.type = "SFInt32";
+Script47.field = [];
+
+Script47.field[0] = field48;
+
+field49 = browser.currentScene.createNode("field");
+field49.name = "bindView1";
+field49.accessType = "outputOnly";
+field49.type = "SFBool";
+Script47.field[1] = field49;
+
+field50 = browser.currentScene.createNode("field");
+field50.name = "bindView2";
+field50.accessType = "outputOnly";
+field50.type = "SFBool";
+Script47.field[2] = field50;
+
+field51 = browser.currentScene.createNode("field");
+field51.name = "bindView3";
+field51.accessType = "outputOnly";
+field51.type = "SFBool";
+Script47.field[3] = field51;
+
+field52 = browser.currentScene.createNode("field");
+field52.name = "bindView4";
+field52.accessType = "outputOnly";
+field52.type = "SFBool";
+Script47.field[4] = field52;
+
+field53 = browser.currentScene.createNode("field");
+field53.name = "bindView5";
+field53.accessType = "outputOnly";
+field53.type = "SFBool";
+Script47.field[5] = field53;
+
+field54 = browser.currentScene.createNode("field");
+field54.name = "view1Bound";
+field54.accessType = "inputOnly";
+field54.type = "SFBool";
+Script47.field[6] = field54;
+
+field55 = browser.currentScene.createNode("field");
+field55.name = "view2Bound";
+field55.accessType = "inputOnly";
+field55.type = "SFBool";
+Script47.field[7] = field55;
+
+field56 = browser.currentScene.createNode("field");
+field56.name = "view3Bound";
+field56.accessType = "inputOnly";
+field56.type = "SFBool";
+Script47.field[8] = field56;
+
+field57 = browser.currentScene.createNode("field");
+field57.name = "view4Bound";
+field57.accessType = "inputOnly";
+field57.type = "SFBool";
+Script47.field[9] = field57;
+
+field58 = browser.currentScene.createNode("field");
+field58.name = "priorInputvalue";
+field58.accessType = "initializeOnly";
+field58.type = "SFInt32";
+field58.value = "-1";
+Script47.field[10] = field58;
+
+
+Script47.setSourceCode(`ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -164,18 +372,81 @@
 "function view5Bound (inputValue)\n"+
 "{\n"+
 "    Browser.print (', view5Bound ' + (inputValue));\n"+
-"}"))
-          .addComments(new CommentsBlock("drive Script with TimeSensor clock"))
-          .addChild(new ROUTE().setFromField("value_changed").setFromNode("TimingSequencer").setToField("set_timeEvent").setToNode("BindingSequencerEngine"))
-          .addComments(new CommentsBlock("Script will bind and unbind Viewpoint nodes"))
-          .addChild(new ROUTE().setFromField("bindView1").setFromNode("BindingSequencerEngine").setToField("set_bind").setToNode("View1"))
-          .addChild(new ROUTE().setFromField("bindView2").setFromNode("BindingSequencerEngine").setToField("set_bind").setToNode("View2"))
-          .addChild(new ROUTE().setFromField("bindView3").setFromNode("BindingSequencerEngine").setToField("set_bind").setToNode("View3"))
-          .addChild(new ROUTE().setFromField("bindView4").setFromNode("BindingSequencerEngine").setToField("set_bind").setToNode("View4"))
-          .addChild(new ROUTE().setFromField("bindView5").setFromNode("BindingSequencerEngine").setToField("set_bind").setToNode("ClickToAnimateView"))
-          .addComments(new CommentsBlock("Viewpoint nodes report bind and unbind events"))
-          .addChild(new ROUTE().setFromField("isBound").setFromNode("View1").setToField("view1Bound").setToNode("BindingSequencerEngine"))
-          .addChild(new ROUTE().setFromField("isBound").setFromNode("View2").setToField("view2Bound").setToNode("BindingSequencerEngine"))
-          .addChild(new ROUTE().setFromField("isBound").setFromNode("View3").setToField("view3Bound").setToNode("BindingSequencerEngine"))
-          .addChild(new ROUTE().setFromField("isBound").setFromNode("View4").setToField("view4Bound").setToNode("BindingSequencerEngine"))))      ;
-    X3D0.toFileX3D("../data/BindingOperations.new.x3d");
+"}`)
+Transform31.children[8] = Script47;
+
+//drive Script with TimeSensor clock
+ROUTE59 = browser.currentScene.createNode("ROUTE");
+ROUTE59.fromField = "value_changed";
+ROUTE59.fromNode = "TimingSequencer";
+ROUTE59.toField = "set_timeEvent";
+ROUTE59.toNode = "BindingSequencerEngine";
+Transform31.children[9] = ROUTE59;
+
+//Script will bind and unbind Viewpoint nodes
+ROUTE60 = browser.currentScene.createNode("ROUTE");
+ROUTE60.fromField = "bindView1";
+ROUTE60.fromNode = "BindingSequencerEngine";
+ROUTE60.toField = "set_bind";
+ROUTE60.toNode = "View1";
+Transform31.children[10] = ROUTE60;
+
+ROUTE61 = browser.currentScene.createNode("ROUTE");
+ROUTE61.fromField = "bindView2";
+ROUTE61.fromNode = "BindingSequencerEngine";
+ROUTE61.toField = "set_bind";
+ROUTE61.toNode = "View2";
+Transform31.children[11] = ROUTE61;
+
+ROUTE62 = browser.currentScene.createNode("ROUTE");
+ROUTE62.fromField = "bindView3";
+ROUTE62.fromNode = "BindingSequencerEngine";
+ROUTE62.toField = "set_bind";
+ROUTE62.toNode = "View3";
+Transform31.children[12] = ROUTE62;
+
+ROUTE63 = browser.currentScene.createNode("ROUTE");
+ROUTE63.fromField = "bindView4";
+ROUTE63.fromNode = "BindingSequencerEngine";
+ROUTE63.toField = "set_bind";
+ROUTE63.toNode = "View4";
+Transform31.children[13] = ROUTE63;
+
+ROUTE64 = browser.currentScene.createNode("ROUTE");
+ROUTE64.fromField = "bindView5";
+ROUTE64.fromNode = "BindingSequencerEngine";
+ROUTE64.toField = "set_bind";
+ROUTE64.toNode = "ClickToAnimateView";
+Transform31.children[14] = ROUTE64;
+
+//Viewpoint nodes report bind and unbind events
+ROUTE65 = browser.currentScene.createNode("ROUTE");
+ROUTE65.fromField = "isBound";
+ROUTE65.fromNode = "View1";
+ROUTE65.toField = "view1Bound";
+ROUTE65.toNode = "BindingSequencerEngine";
+Transform31.children[15] = ROUTE65;
+
+ROUTE66 = browser.currentScene.createNode("ROUTE");
+ROUTE66.fromField = "isBound";
+ROUTE66.fromNode = "View2";
+ROUTE66.toField = "view2Bound";
+ROUTE66.toNode = "BindingSequencerEngine";
+Transform31.children[16] = ROUTE66;
+
+ROUTE67 = browser.currentScene.createNode("ROUTE");
+ROUTE67.fromField = "isBound";
+ROUTE67.fromNode = "View3";
+ROUTE67.toField = "view3Bound";
+ROUTE67.toNode = "BindingSequencerEngine";
+Transform31.children[17] = ROUTE67;
+
+ROUTE68 = browser.currentScene.createNode("ROUTE");
+ROUTE68.fromField = "isBound";
+ROUTE68.fromNode = "View4";
+ROUTE68.toField = "view4Bound";
+ROUTE68.toNode = "BindingSequencerEngine";
+Transform31.children[18] = ROUTE68;
+
+browser.currentScene.children[5] = Transform31;
+

@@ -2,19 +2,19 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <meta content='ifscubeworks.json' dir='' http_equiv='' lang='' name='title' scheme=''/>
-    <meta content='http://coderextreme.net/X3DJSONLD/template.json' dir='' http_equiv='' lang='' name='identifier' scheme=''/>
-    <meta content='Template for an Indexed Face Set' dir='' http_equiv='' lang='' name='description' scheme=''/>
-    <meta content='John Carlson' dir='' http_equiv='' lang='' name='creator' scheme=''/>
-    <meta content='4 April 2017' dir='' http_equiv='' lang='' name='created' scheme=''/>
+    <meta content='ifscubeworks.x3d' name='title'/>
+    <meta content='http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d' name='identifier'/>
+    <meta content='Template for an Indexed Face Set' name='description'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='4 April 2017' name='created'/>
   </head>
   <Scene>
-    <Group bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-      <Shape bboxCenter='0 0 0' bboxSize='-1 -1 -1' class=''>
-        <IndexedFaceSet DEF='IndexedFaceSet' ccw='true' class='' colorIndex='0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1' colorPerVertex='true' convex='true' coordIndex='0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1' creaseAngle='0.0' normalIndex='0 0 1 2 3 4 5' normalPerVertex='false' solid='true' texCoordIndex=''>
-          <Color class='' color='0 1 0'/>
-          <Coordinate class='' point='0 0 1 0 1 1 1 1 1 1 0 1'/>
-          <Normal class='' vector='1 0 0 -1 0 0 0 1 0 0 0 -1 0 -1 0 0 0 1'/>
+    <Group>
+      <Shape>
+        <IndexedFaceSet DEF='IndexedFaceSet' colorIndex='0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1' coordIndex='0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1' normalIndex='0 0 1 2 3 4 5' normalPerVertex='false'>
+          <Color color='0 1 0'/>
+          <Coordinate point='0 0 1 0 1 1 1 1 1 1 0 1'/>
+          <Normal vector='1 0 0 -1 0 0 0 1 0 0 0 -1 0 -1 0 0 0 1'/>
         </IndexedFaceSet>
       </Shape>
     </Group>

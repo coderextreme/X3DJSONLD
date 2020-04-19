@@ -1,31 +1,67 @@
-      var X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("indexedfaceset_pixeltexture_entire.x3d"))
-        .addMeta(new meta().setName("reference").setContent("http://www.nist.gov/vrml.html"))
-        .addMeta(new meta().setName("reference").setContent("http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"))
-        .addMeta(new meta().setName("creator").setContent("http://www.itl.nist.gov/div897/ctg/vrml/members.html"))
-        .addMeta(new meta().setName("disclaimer").setContent("This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."))
-        .addMeta(new meta().setName("info").setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"))
-        .addMeta(new meta().setName("translator").setContent("Michael Kass NIST, Don Brutzman NPS"))
-        .addMeta(new meta().setName("translated").setContent("21 January 2001"))
-        .addMeta(new meta().setName("modified").setContent("13 January 2014"))
-        .addMeta(new meta().setName("description").setContent("Test browser ability to completely map one PixelTexture onto the surface of an IndexedFaceSet geometry. Four colored squares should map onto each face of the IndexedFaceSet. The PixelTexture consists of red quarter (lower left), green quarter (lower right), white quarter (upper left) and yellow quarter (upper right). PixelTexture should map once onto the surface of the IndexedFaceSet, with the S (horizontal) axis of the texture corresponding to the X axis of the geometry."))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_entire.x3d"))
-        .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../../license.html")))
-      .setScene(new Scene()
-        .addChild(new Viewpoint().setDescription("Front View"))
-        .addChild(new Viewpoint().setDescription("Rear View").setOrientation(java.newArray("float", [0,1,0,3.14])).setPosition(java.newArray("float", [0,0,-10])))
-        .addChild(new Viewpoint().setDescription("Top View").setOrientation(java.newArray("float", [1,0,0,-1.57])).setPosition(java.newArray("float", [0,10,0])))
-        .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(java.newArray("float", [1,0,0,1.57])).setPosition(java.newArray("float", [0,-10,0])))
-        .addChild(new Viewpoint().setDescription("Right View").setOrientation(java.newArray("float", [0,1,0,1.57])).setPosition(java.newArray("float", [10,0,0])))
-        .addChild(new Viewpoint().setDescription("Left View").setOrientation(java.newArray("float", [0,1,0,-1.57])).setPosition(java.newArray("float", [-10,0,0])))
-        .addChild(new NavigationInfo().setType(java.newArray("java.lang.String", ["EXAMINE","WALK","FLY","ANY"])))
-        .addChild(new Shape()
-          .setAppearance(new Appearance()
-            .setMaterial(new Material())
-            .setTexture(new PixelTexture().setImage(java.newArray("int", [2,2,4,4278190335,16711935,4294967295,4294902015])).setRepeatS(false).setRepeatT(false)))
-          .setGeometry(new IndexedFaceSet().setCoordIndex(java.newArray("int", [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]))
-            .setCoord(new Coordinate().setPoint(java.newArray("float", [-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]))))))      ;
-    X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_entire.new.x3d");
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Interchange";
+X3D0.version = "3.0";
+Viewpoint2 = browser.currentScene.createNode("Viewpoint");
+Viewpoint2.description = "Front View";
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = Viewpoint2;
+
+Viewpoint3 = browser.currentScene.createNode("Viewpoint");
+Viewpoint3.description = "Rear View";
+Viewpoint3.orientation = [0,1,0,3.14];
+Viewpoint3.position = [0,0,-10];
+browser.currentScene.children[1] = Viewpoint3;
+
+Viewpoint4 = browser.currentScene.createNode("Viewpoint");
+Viewpoint4.description = "Top View";
+Viewpoint4.orientation = [1,0,0,-1.57];
+Viewpoint4.position = [0,10,0];
+browser.currentScene.children[2] = Viewpoint4;
+
+Viewpoint5 = browser.currentScene.createNode("Viewpoint");
+Viewpoint5.description = "Bottom View";
+Viewpoint5.orientation = [1,0,0,1.57];
+Viewpoint5.position = [0,-10,0];
+browser.currentScene.children[3] = Viewpoint5;
+
+Viewpoint6 = browser.currentScene.createNode("Viewpoint");
+Viewpoint6.description = "Right View";
+Viewpoint6.orientation = [0,1,0,1.57];
+Viewpoint6.position = [10,0,0];
+browser.currentScene.children[4] = Viewpoint6;
+
+Viewpoint7 = browser.currentScene.createNode("Viewpoint");
+Viewpoint7.description = "Left View";
+Viewpoint7.orientation = [0,1,0,-1.57];
+Viewpoint7.position = [-10,0,0];
+browser.currentScene.children[5] = Viewpoint7;
+
+NavigationInfo8 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo8.type = ["EXAMINE","WALK","FLY","ANY"];
+browser.currentScene.children[6] = NavigationInfo8;
+
+Shape9 = browser.currentScene.createNode("Shape");
+Appearance10 = browser.currentScene.createNode("Appearance");
+Material11 = browser.currentScene.createNode("Material");
+Appearance10.material = Material11;
+
+PixelTexture12 = browser.currentScene.createNode("PixelTexture");
+PixelTexture12.image = [2,2,4,-16776961,16711935,-1,-65281];
+PixelTexture12.repeatS = False;
+PixelTexture12.repeatT = False;
+Appearance10.texture = PixelTexture12;
+
+Shape9.appearance = Appearance10;
+
+IndexedFaceSet13 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet13.coordIndex = [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1];
+Coordinate14 = browser.currentScene.createNode("Coordinate");
+Coordinate14.point = [-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1];
+IndexedFaceSet13.coord = Coordinate14;
+
+Shape9.geometry = IndexedFaceSet13;
+
+browser.currentScene.children[7] = Shape9;
+

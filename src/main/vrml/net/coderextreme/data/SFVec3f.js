@@ -1,23 +1,72 @@
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("SFVec3f.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("description").setContent("3 prismatic spheres"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
-      .setScene(new Scene()
-        .addChild(new NavigationInfo())
-        .addChild(new Transform().setDEF("transform")
-          .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(java.newArray("float", [0.7,0.7,0.7])).setSpecularColor(java.newArray("float", [0.5,0.5,0.5]))))
-            .setGeometry(new Sphere())))
-        .addChild(new Script().setDEF("Bounce")
-          .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_translation").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
-          .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
-          .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-          .addField(new field().setType(field.TYPE_SFVEC3F).setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-          .addField(new field().setType(field.TYPE_SFTIME).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = NavigationInfo2;
+
+Transform3 = browser.currentScene.createNode("Transform");
+Transform3.DEF = "transform";
+Shape4 = browser.currentScene.createNode("Shape");
+Appearance5 = browser.currentScene.createNode("Appearance");
+Material6 = browser.currentScene.createNode("Material");
+Material6.diffuseColor = [0.7,0.7,0.7];
+Material6.specularColor = [0.5,0.5,0.5];
+Appearance5.material = Material6;
+
+Shape4.appearance = Appearance5;
+
+Sphere7 = browser.currentScene.createNode("Sphere");
+Shape4.geometry = Sphere7;
+
+Transform3.children = [];
+
+Transform3.children[0] = Shape4;
+
+browser.currentScene.children[1] = Transform3;
+
+Script8 = browser.currentScene.createNode("Script");
+Script8.DEF = "Bounce";
+field9 = browser.currentScene.createNode("field");
+field9.name = "set_translation";
+field9.accessType = "inputOnly";
+field9.type = "SFVec3f";
+field9.value = "0 0 0";
+Script8.field = [];
+
+Script8.field[0] = field9;
+
+field10 = browser.currentScene.createNode("field");
+field10.name = "translation_changed";
+field10.accessType = "outputOnly";
+field10.type = "SFVec3f";
+field10.value = "0 0 0";
+Script8.field[1] = field10;
+
+field11 = browser.currentScene.createNode("field");
+field11.name = "translation";
+field11.accessType = "inputOutput";
+field11.type = "SFVec3f";
+field11.value = "0 0 0";
+Script8.field[2] = field11;
+
+field12 = browser.currentScene.createNode("field");
+field12.name = "velocity";
+field12.accessType = "inputOutput";
+field12.type = "SFVec3f";
+field12.value = "0 0 0";
+Script8.field[3] = field12;
+
+field13 = browser.currentScene.createNode("field");
+field13.name = "set_fraction";
+field13.accessType = "inputOnly";
+field13.type = "SFTime";
+Script8.field[4] = field13;
+
+
+Script8.setSourceCode(`ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -47,8 +96,26 @@
 "\n"+
 "			function initialize() {\n"+
 "			     newBubble();\n"+
-"			}"))
-        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
-        .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
-        .addChild(new ROUTE().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
-    X3D0.toFileX3D("../data/SFVec3f.new.x3d");
+"			}`)
+browser.currentScene.children[2] = Script8;
+
+TimeSensor14 = browser.currentScene.createNode("TimeSensor");
+TimeSensor14.DEF = "TourTime";
+TimeSensor14.cycleInterval = 0.15;
+TimeSensor14.loop = True;
+browser.currentScene.children[3] = TimeSensor14;
+
+ROUTE15 = browser.currentScene.createNode("ROUTE");
+ROUTE15.fromNode = "TourTime";
+ROUTE15.fromField = "cycleTime";
+ROUTE15.toNode = "Bounce";
+ROUTE15.toField = "set_fraction";
+browser.currentScene.children[4] = ROUTE15;
+
+ROUTE16 = browser.currentScene.createNode("ROUTE");
+ROUTE16.fromNode = "Bounce";
+ROUTE16.fromField = "translation_changed";
+ROUTE16.toNode = "transform";
+ROUTE16.toField = "set_translation";
+browser.currentScene.children[5] = ROUTE16;
+

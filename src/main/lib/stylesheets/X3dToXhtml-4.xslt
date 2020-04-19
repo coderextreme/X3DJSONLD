@@ -7,7 +7,7 @@
    <meta name="revised"     content="28 December 2005" />
    <meta name="description" content="XSL stylesheet to convert X3D source into an easily readable XHTML page.
    				This version applies color and style using Cascading Style Sheet (CSS) markup via HTML span, div tags." />
-   <meta name="url"         content="http://www.web3d.org/x3d/stylesheets/X3dToXhtml-4.xslt" />
+   <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml-4.xslt" />
   </head>
 
 Recommended tools:
@@ -48,7 +48,7 @@ div.indent {margin-left:25px}
 b.warning {color: #CC5500}
 b.error {color: #CC0000}]]>
 				</style>
-				<meta name="generator" content="http://www.web3d.org/x3d/stylesheets/X3dToXhtml-4.xslt"></meta>
+				<meta name="generator" content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml-4.xslt"></meta>
 			</head>
 			<body>
 <pre>

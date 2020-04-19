@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
                 xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
 <!--
-Copyright (c) 2004-2019 held by the author(s).  All rights reserved.
+Copyright (c) 2004-2020 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -48,7 +48,7 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="author"      content="Don Brutzman" />
    <meta name="revised"     content="6 March 2004" />
    <meta name="description" content="XSLT stylesheet to convert X3D source into an easily readable HTML page." />
-   <meta name="url"         content="http://www.web3d.org/x3d/content/X3dToHtml.xslt" />
+   <meta name="url"         content="https://www.web3d.org/x3d/content/X3dToHtml.xslt" />
   </head>
 
 Recommended tool:
@@ -87,7 +87,7 @@ Recommended tool:
    <xsl:otherwise><xsl:text> X3dToHtml </xsl:text></xsl:otherwise>
 </xsl:choose>
 <xsl:text>&lt;/title&gt;&#10;</xsl:text>
-<xsl:text>&lt;meta name=&quot;generator&quot;   content=&quot;X3dToHtml.xsl, http://www.web3d.org/x3d/content/X3dToHtml.xsl&quot;&gt;&#10;</xsl:text>
+<xsl:text>&lt;meta name=&quot;generator&quot;   content=&quot;X3dToHtml.xsl, https://www.web3d.org/x3d/content/X3dToHtml.xsl&quot;&gt;&#10;</xsl:text>
 <xsl:text>&lt;/head&gt;&#10;</xsl:text>
 <xsl:text>&lt;body&gt;&#10;</xsl:text>
 <!-- XML header -->
@@ -101,14 +101,14 @@ Recommended tool:
 	local-name()='texture' or local-name()='textureTransform']" />
 <xsl:choose>
   <xsl:when test="$wrapped">
-    <xsl:text>&amp;lt;!DOCTYPE X3D PUBLIC "http://www.web3d.org/x3d/content/x3d-compromise.dtd"&#10;</xsl:text>
+    <xsl:text>&amp;lt;!DOCTYPE X3D PUBLIC "https://www.web3d.org/x3d/content/x3d-compromise.dtd"&#10;</xsl:text>
     <!-- (no longer used in local doctype)  file://localhost/C: -->
     <xsl:text>                     "file:///www.web3d.org/x3d/content/x3d-compromise.dtd"&amp;gt;&#10;</xsl:text>
   </xsl:when>
   <xsl:otherwise>
     <xsl:text>&amp;lt;!DOCTYPE X3D PUBLIC "http://www.web3d.org/specifications/x3d-3.0.dtd" "file:///www.web3d.org/specifications/x3d-3.0.dtd"></xsl:text>
     <!-- <xsl:text>&amp;lt;!DOCTYPE X3D PUBLIC "http://www.web3d.org/specifications/x3d-3.0.dtd" "file:///www.web3d.org/x3d/content/x3d-3.0.dtd"></xsl:text>-->
-    <!-- <xsl:text>&amp;lt;!DOCTYPE X3D PUBLIC "http://www.web3d.org/x3d/content/x3d-compact.dtd"&#10;</xsl:text> -->
+    <!-- <xsl:text>&amp;lt;!DOCTYPE X3D PUBLIC "https://www.web3d.org/x3d/content/x3d-compact.dtd"&#10;</xsl:text> -->
     <!-- <xsl:text>                     "/www.web3d.org/x3d/content/x3d-compact.dtd"&amp;gt;&#10;</xsl:text> -->
   </xsl:otherwise>
 </xsl:choose>
@@ -305,6 +305,7 @@ Recommended tool:
   <xsl:variable name="notDefaultFieldValue1"
 	select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
 		not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
+                not( local-name()='visible'     and .='true') or
 		not( local-name(..)='X3D' and local-name()='version' and (.='3.0')) and
 		not( local-name(..)='AudioClip'	and
 						((local-name()='loop' and .='false') or

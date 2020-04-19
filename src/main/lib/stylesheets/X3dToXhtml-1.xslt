@@ -7,7 +7,7 @@
    <meta name="revised"     content="28 December 2005" />
    <meta name="description" content="XSLT stylesheet, dissected, to convert X3D source into an easily readable XHTML page.
    				This initial introductory version sets up headers and walks the tree.  Comments are ignored." />
-   <meta name="url"         content="http://www.web3d.org/x3d/stylesheets/X3dToXhtml-1.xslt" />
+   <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml-1.xslt" />
   </head>
 
 Recommended tools:
@@ -39,7 +39,7 @@ Recommended tools:
 						</xsl:otherwise>
 					</xsl:choose>
 				</title>
-				<meta name="generator" content="http://www.web3D.org/x3d/stylesheets/X3dToXhtml-1.xslt"></meta>
+				<meta name="generator" content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml-1.xslt"></meta>
 			</head>
 			<body>
 				<xsl:apply-templates select="*" />

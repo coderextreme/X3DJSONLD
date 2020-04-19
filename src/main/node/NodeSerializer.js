@@ -38,7 +38,7 @@ NodeSerializer.prototype = {
 		str += "  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below\n";
 		str += '  ifReadOnlySuffix: "_alt"\n';
 		str += '};\n';
-		str += "var autoclass = require('../X3Dautoclass');\n";
+		str += "var autoclass = require('../../../X3Dautoclass');\n";
 		str += "var ConfigurationProperties = autoclass.ConfigurationProperties;\n";
 		str += "ConfigurationProperties.showDefaultAttributes = false;\n";
 		str += "ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;\n";
@@ -359,7 +359,7 @@ NodeSerializer.prototype = {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += "\n"+("  ".repeat(n))+".setSourceCode(```"+node.nodeValue.split("\r\n").map(function(x) {
+				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"');
@@ -367,7 +367,7 @@ NodeSerializer.prototype = {
 						replace(/\\n/g, "\\\\n")
 						*/
 					;
-					}).join('\\n\"+\n\"')+'```)';
+					}).join('\\n\"+\n\"')+'")';
 			}
 		}
 		return str;

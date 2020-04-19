@@ -29,7 +29,7 @@
    <meta name="author"      content="Roy Walmsley" />
    <meta name="created"     content="21 May 2015" />
    <meta name="description" content="XSL stylesheet to convert X3D Schema to HTML files for X3D specification." />
-   <meta name="identifier"  content="http://www.web3d.org/x3d/stylesheets/BuildSpecificationVrmlEncodingFromSchema.xslt" />
+   <meta name="identifier"  content="https://www.web3d.org/x3d/stylesheets/BuildSpecificationVrmlEncodingFromSchema.xslt" />
    <meta name="reference"   content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationVrmlEncodingFromSchema.xslt?revision=xxxx&view=markup" />
    <meta name="acknowledgement"   content="Heavily based on BuildSpecificationXmlEncodingFromSchema.xslt by Don Brutzman et al" />
   </head>
@@ -399,7 +399,7 @@ TODO:
         </xsl:element> <!-- </meta> -->
         <xsl:element name="meta">
           <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-          <xsl:attribute name="content"><xsl:text>http://www.web3d.org/x3d/stylesheets/VrmlEncodingOfNodes.html</xsl:text></xsl:attribute>
+          <xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/VrmlEncodingOfNodes.html</xsl:text></xsl:attribute>
         </xsl:element> <!-- </meta> -->
         <xsl:element name="meta">
           <xsl:attribute name="name"><xsl:text>version</xsl:text></xsl:attribute>
@@ -408,18 +408,18 @@ TODO:
 	<xsl:element name="meta">
           <xsl:attribute name="name"><xsl:text>identifier</xsl:text></xsl:attribute>
           <xsl:attribute name="content">
-            <xsl:text>http://www.web3d.org/files/specifications/19776-1/V</xsl:text>
+            <xsl:text>https://www.web3d.org/files/specifications/19776-1/V</xsl:text>
             <xsl:value-of select="$schemaVersionNumber"/>
             <xsl:text>/Part02/VrmlEncodingOfNodes.html</xsl:text>
           </xsl:attribute>
         </xsl:element> <!-- </meta> -->
         <xsl:element name="meta">
           <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-          <xsl:attribute name="content"><xsl:text>http://www.web3d.org/standards/active</xsl:text></xsl:attribute>
+          <xsl:attribute name="content"><xsl:text>https://www.web3d.org/standards/active</xsl:text></xsl:attribute>
         </xsl:element> <!-- </meta> -->
         <xsl:element name="meta">
           <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-          <xsl:attribute name="content"><xsl:text>http://www.web3d.org/specifications</xsl:text></xsl:attribute>
+          <xsl:attribute name="content"><xsl:text>https://www.web3d.org/specifications</xsl:text></xsl:attribute>
         </xsl:element> <!-- </meta> -->
         <xsl:element name="meta">
           <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
@@ -431,7 +431,7 @@ TODO:
         </xsl:element> <!-- </meta> -->
         <xsl:element name="meta">
           <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-          <xsl:attribute name="content"><xsl:text>http://www.web3d.org/specifications/x3d-schema-changelog.txt</xsl:text></xsl:attribute>
+          <xsl:attribute name="content"><xsl:text>https://www.web3d.org/specifications/x3d-schema-changelog.txt</xsl:text></xsl:attribute>
         </xsl:element> <!-- </meta> -->
         <xsl:element name="meta">
           <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
@@ -443,7 +443,7 @@ TODO:
         </xsl:element> <!-- </meta> -->
         <xsl:element name="meta">
           <xsl:attribute name="name"><xsl:text>generator</xsl:text></xsl:attribute>
-          <xsl:attribute name="content"><xsl:text>http://www.web3D.org/x3d/stylesheets/BuildSpecificationVrmlEncodingFromSchema.xslt</xsl:text></xsl:attribute>
+          <xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/BuildSpecificationVrmlEncodingFromSchema.xslt</xsl:text></xsl:attribute>
         </xsl:element> <!-- </meta> -->
         <xsl:element name="meta">
           <xsl:attribute name="name"><xsl:text>generator</xsl:text></xsl:attribute>

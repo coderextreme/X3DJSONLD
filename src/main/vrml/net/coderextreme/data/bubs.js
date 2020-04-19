@@ -1,32 +1,90 @@
-var ProtoInstance0 = null;
-var ProtoInstance1 = null;
-var ProtoInstance2 = null;
-var ProtoInstance3 = null;
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
-      .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("bubs.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("description").setContent("Tour around a prismatic sphere"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d")))
-      .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(java.newArray("java.lang.String", ["EXAMINE"])))
-        .addChild(new Viewpoint().setPosition(java.newArray("float", [0,0,4])).setOrientation(java.newArray("float", [1,0,0,0])).setDescription("Bubbles in action"))
-        .addChild(new Background().setBackUrl(java.newArray("java.lang.String", ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])))
-        .addChild(new ProtoDeclare().setName("Bubble")
-          .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setDEF("transform")
-              .addChild(new Shape()
-                .setGeometry(new Sphere().setRadius(0.25))
-                .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(java.newArray("float", [1,0,0])).setTransparency(0.2))))
-              .addChild(new Script().setDEF("bounce")
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType(field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .setSourceCode("ecmascript:\n"+
+var browser = X3D.getBrowser();
+var X3D0 = {};
+X3D0.profile = "Immersive";
+X3D0.version = "3.3";
+NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo2.type = ["EXAMINE"];
+browser.currentScene.children = [];
+
+browser.currentScene.children[0] = NavigationInfo2;
+
+Viewpoint3 = browser.currentScene.createNode("Viewpoint");
+Viewpoint3.position = [0,0,4];
+Viewpoint3.orientation = [1,0,0,0];
+Viewpoint3.description = "Bubbles in action";
+browser.currentScene.children[1] = Viewpoint3;
+
+Background4 = browser.currentScene.createNode("Background");
+Background4.backUrl = ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"];
+Background4.bottomUrl = ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"];
+Background4.frontUrl = ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"];
+Background4.leftUrl = ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"];
+Background4.rightUrl = ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"];
+Background4.topUrl = ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"];
+browser.currentScene.children[2] = Background4;
+
+ProtoDeclare5 = browser.currentScene.createNode("ProtoDeclare");
+ProtoDeclare5.name = "Bubble";
+ProtoBody6 = browser.currentScene.createNode("ProtoBody");
+Transform7 = browser.currentScene.createNode("Transform");
+Transform7.DEF = "transform";
+Shape8 = browser.currentScene.createNode("Shape");
+Sphere9 = browser.currentScene.createNode("Sphere");
+Sphere9.radius = 0.25;
+Shape8.geometry = Sphere9;
+
+Appearance10 = browser.currentScene.createNode("Appearance");
+Material11 = browser.currentScene.createNode("Material");
+Material11.diffuseColor = [1,0,0];
+Material11.transparency = 0.2;
+Appearance10.material = Material11;
+
+Shape8.appearance = Appearance10;
+
+Transform7.children = [];
+
+Transform7.children[0] = Shape8;
+
+Script12 = browser.currentScene.createNode("Script");
+Script12.DEF = "bounce";
+field13 = browser.currentScene.createNode("field");
+field13.name = "scale";
+field13.accessType = "inputOutput";
+field13.type = "SFVec3f";
+field13.value = "1 1 1";
+Script12.field = [];
+
+Script12.field[0] = field13;
+
+field14 = browser.currentScene.createNode("field");
+field14.name = "translation";
+field14.accessType = "inputOutput";
+field14.type = "SFVec3f";
+field14.value = "0 0 0";
+Script12.field[1] = field14;
+
+field15 = browser.currentScene.createNode("field");
+field15.name = "velocity";
+field15.accessType = "inputOutput";
+field15.type = "SFVec3f";
+field15.value = "0 0 0";
+Script12.field[2] = field15;
+
+field16 = browser.currentScene.createNode("field");
+field16.name = "scalvel";
+field16.accessType = "inputOutput";
+field16.type = "SFVec3f";
+field16.value = "0 0 0";
+Script12.field[3] = field16;
+
+field17 = browser.currentScene.createNode("field");
+field17.name = "set_fraction";
+field17.accessType = "inputOnly";
+field17.type = "SFFloat";
+Script12.field[4] = field17;
+
+
+Script12.setSourceCode(`ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -64,13 +122,61 @@ var ProtoInstance3 = null;
 "	translation.z = 0;\n"+
 "	initialize();\n"+
 "    }\n"+
-"}"))
-              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10).setLoop(true))
-              .addChild(new ROUTE().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-              .addChild(new ROUTE().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
-              .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
-        .addChild(ProtoInstance0 = new ProtoInstance().setName("Bubble").setDEF("bubbleA"))
-        .addChild(ProtoInstance1 = new ProtoInstance().setName("Bubble").setDEF("bubbleB"))
-        .addChild(ProtoInstance2 = new ProtoInstance().setName("Bubble").setDEF("bubbleC"))
-        .addChild(ProtoInstance3 = new ProtoInstance().setName("Bubble").setDEF("bubbleD")))      ;
-    X3D0.toFileX3D("../data/bubs.new.x3d");
+"}`)
+Transform7.children[1] = Script12;
+
+TimeSensor18 = browser.currentScene.createNode("TimeSensor");
+TimeSensor18.DEF = "bubbleClock";
+TimeSensor18.cycleInterval = 10;
+TimeSensor18.loop = True;
+Transform7.children[2] = TimeSensor18;
+
+ROUTE19 = browser.currentScene.createNode("ROUTE");
+ROUTE19.fromNode = "bounce";
+ROUTE19.fromField = "translation_changed";
+ROUTE19.toNode = "transform";
+ROUTE19.toField = "set_translation";
+Transform7.children[3] = ROUTE19;
+
+ROUTE20 = browser.currentScene.createNode("ROUTE");
+ROUTE20.fromNode = "bounce";
+ROUTE20.fromField = "scale_changed";
+ROUTE20.toNode = "transform";
+ROUTE20.toField = "set_scale";
+Transform7.children[4] = ROUTE20;
+
+ROUTE21 = browser.currentScene.createNode("ROUTE");
+ROUTE21.fromNode = "bubbleClock";
+ROUTE21.fromField = "fraction_changed";
+ROUTE21.toNode = "bounce";
+ROUTE21.toField = "set_fraction";
+Transform7.children[5] = ROUTE21;
+
+ProtoBody6.children = [];
+
+ProtoBody6.children[0] = Transform7;
+
+ProtoDeclare5.protoBody = ProtoBody6;
+
+browser.currentScene.children[3] = ProtoDeclare5;
+
+ProtoInstance22 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance22.name = "Bubble";
+ProtoInstance22.DEF = "bubbleA";
+browser.currentScene.children[4] = ProtoInstance22;
+
+ProtoInstance23 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance23.name = "Bubble";
+ProtoInstance23.DEF = "bubbleB";
+browser.currentScene.children[5] = ProtoInstance23;
+
+ProtoInstance24 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance24.name = "Bubble";
+ProtoInstance24.DEF = "bubbleC";
+browser.currentScene.children[6] = ProtoInstance24;
+
+ProtoInstance25 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance25.name = "Bubble";
+ProtoInstance25.DEF = "bubbleD";
+browser.currentScene.children[7] = ProtoInstance25;
+

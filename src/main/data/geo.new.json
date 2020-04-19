@@ -38,15 +38,15 @@
           },
           {
             "@name":"translated",
-            "@content":"18 April 2020"
+            "@content":"19 April 2020"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -95,6 +95,44 @@
                             { "ComposedShader":
                               {
                                 "@language":"GLSL",
+                                "field": [
+                                  {
+                                    "@name":"chromaticDispertion",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFVec3f",
+                                    "@value":[0.98,1,1.033]
+                                  },
+                                  {
+                                    "@name":"cube",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFNode",
+                                    "-children":[
+                                      { "ComposedCubeMapTexture":
+                                        {
+                                          "@USE":"texture"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "@name":"bias",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"scale",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":0.5
+                                  },
+                                  {
+                                    "@name":"power",
+                                    "@accessType":"inputOutput",
+                                    "@type":"SFFloat",
+                                    "@value":2.0
+                                  }
+                                ],
                                 "-parts":[
                                   { "ShaderPart":
                                     {
@@ -109,17 +147,22 @@
                                       "@url":["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"]
                                     }
                                   }
-                                ],
+                                ]
+                              }
+                            },
+                            { "ComposedShader":
+                              {
+                                "@language":"GLSL",
                                 "field": [
                                   {
                                     "@name":"chromaticDispertion",
-                                    "@accessType":"inputOutput",
+                                    "@accessType":"initializeOnly",
                                     "@type":"SFVec3f",
                                     "@value":[0.98,1,1.033]
                                   },
                                   {
                                     "@name":"cube",
-                                    "@accessType":"inputOutput",
+                                    "@accessType":"initializeOnly",
                                     "@type":"SFNode",
                                     "-children":[
                                       { "ComposedCubeMapTexture":
@@ -131,28 +174,23 @@
                                   },
                                   {
                                     "@name":"bias",
-                                    "@accessType":"inputOutput",
+                                    "@accessType":"initializeOnly",
                                     "@type":"SFFloat",
                                     "@value":0.5
                                   },
                                   {
                                     "@name":"scale",
-                                    "@accessType":"inputOutput",
+                                    "@accessType":"initializeOnly",
                                     "@type":"SFFloat",
                                     "@value":0.5
                                   },
                                   {
                                     "@name":"power",
-                                    "@accessType":"inputOutput",
+                                    "@accessType":"initializeOnly",
                                     "@type":"SFFloat",
                                     "@value":2.0
                                   }
-                                ]
-                              }
-                            },
-                            { "ComposedShader":
-                              {
-                                "@language":"GLSL",
+                                ],
                                 "-parts":[
                                   { "ShaderPart":
                                     {
@@ -164,44 +202,6 @@
                                     {
                                       "@USE":"common"
                                     }
-                                  }
-                                ],
-                                "field": [
-                                  {
-                                    "@name":"chromaticDispertion",
-                                    "@accessType":"initializeOnly",
-                                    "@type":"SFVec3f",
-                                    "@value":[0.98,1,1.033]
-                                  },
-                                  {
-                                    "@name":"cube",
-                                    "@accessType":"initializeOnly",
-                                    "@type":"SFNode",
-                                    "-children":[
-                                      { "ComposedCubeMapTexture":
-                                        {
-                                          "@USE":"texture"
-                                        }
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "@name":"bias",
-                                    "@accessType":"initializeOnly",
-                                    "@type":"SFFloat",
-                                    "@value":0.5
-                                  },
-                                  {
-                                    "@name":"scale",
-                                    "@accessType":"initializeOnly",
-                                    "@type":"SFFloat",
-                                    "@value":0.5
-                                  },
-                                  {
-                                    "@name":"power",
-                                    "@accessType":"initializeOnly",
-                                    "@type":"SFFloat",
-                                    "@value":2.0
                                   }
                                 ]
                               }

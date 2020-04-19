@@ -25,7 +25,7 @@ convertJSON([
 	extension : ".x3d.new",
 	},
 	{ 
-	serializer : './X_ITESerializer.js',
+	serializer : './VRMLScriptSerializer.js',
 	folder : "../vrml/net/coderextreme/",
 	extension : ".js",
 	codeOutput : "../",
