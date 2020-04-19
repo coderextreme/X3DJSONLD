@@ -81,6 +81,7 @@ public class SFVec3f {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
+        .addComponent(new componentObject().setName("Scripting").setLevel(1))
         .addMeta(new metaObject().setName("title").setContent("SFVec3f.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("description").setContent("3 prismatic spheres"))
