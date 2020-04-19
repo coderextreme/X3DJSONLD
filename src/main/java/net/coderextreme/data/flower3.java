@@ -81,6 +81,12 @@ public class flower3 {
     }
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
+      .setHead(new headObject()
+        .addMeta(new metaObject().setName("title").setContent("flower3.x3d"))
+        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
+        .addMeta(new metaObject().setName("generator").setContent("manual"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"))
+        .addMeta(new metaObject().setName("description").setContent("a flower")))
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject())
         .addChild(new DirectionalLightObject().setDirection(new float[] {0f,-0.8f,-0.2f}).setIntensity(0.5f))

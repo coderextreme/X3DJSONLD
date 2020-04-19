@@ -26,7 +26,7 @@ meta5.setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")
 head1.addMeta(meta5)
 meta6 = meta()
 meta6.setName("identifier")
-meta6.setContent("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")
+meta6.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/freewrlflowers.x3d")
 
 head1.addMeta(meta6)
 

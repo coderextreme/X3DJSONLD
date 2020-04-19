@@ -50,22 +50,22 @@
             <connect nodeField='translation' protoField='ytranslation'/>
           </IS>
           <ProtoInstance name='anyShape'>
+            <IS>
+              <connect nodeField='myShape' protoField='myShape'/>
+            </IS>
             <fieldValue name='xtranslation' value='0 0 0'/>
+          </ProtoInstance>
+          <ProtoInstance name='anyShape'>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
-          </ProtoInstance>
-          <ProtoInstance name='anyShape'>
             <fieldValue name='xtranslation' value='2 0 0'/>
-            <IS>
-              <connect nodeField='myShape' protoField='myShape'/>
-            </IS>
           </ProtoInstance>
           <ProtoInstance name='anyShape'>
-            <fieldValue name='xtranslation' value='-2 0 0'/>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+            <fieldValue name='xtranslation' value='-2 0 0'/>
           </ProtoInstance>
         </Transform>
       </ProtoBody>

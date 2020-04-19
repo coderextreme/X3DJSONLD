@@ -7,8 +7,8 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroesSync(true);
       var X3D0 =  new autoclass.X3D().setProfileSync("Interchange").setVersionSync("3.3")
       .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("ifscubeworks.json"))
-        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("http://coderextreme.net/X3DJSONLD/template.json"))
+        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("ifscubeworks.x3d"))
+        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d"))
         .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("Template for an Indexed Face Set"))
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
         .addMetaSync(new autoclass.meta().setNameSync("created").setContentSync("4 April 2017")))

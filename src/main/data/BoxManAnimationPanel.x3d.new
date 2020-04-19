@@ -9,45 +9,50 @@
 <meta name="created" content="1 March 2001"></meta>
 <meta name="revision" content="12 January 2017"></meta>
 <meta name="translated" content="14 January 2017"></meta>
-<meta name="modified" content="14 January 2017"></meta>
+<meta name="modified" content="20 October 2019"></meta>
+<meta name="Image" content="BoxManAnimationPanelInclined.png"></meta>
+<meta name="MovingImage" content="BoxManAnimationPanel.mp4"></meta>
+<meta name="MovingImage" content="https://www.youtube.com/watch?v=8tI83Rtg_DU"></meta>
+<meta name="reference" content="https://twitter.com/Web3DConsortium/status/820638047523913728"></meta>
+<meta name="reference" content="https://twitter.com/Web3DConsortium/status/820642726009978881"></meta>
 <meta name="reference" content="http://h-anim.org"></meta>
 <meta name="reference" content="boxman.original.wrl"></meta>
-<meta name="TODO instantReality Forum Issue" content="InstantReality is ignoring the Viewpoint nodes in the topmost HAnimSite. http://forum.instantreality.org"></meta>
+<meta name="TODO" content="InstantReality Forum Issue: InstantReality is ignoring the Viewpoint nodes in the topmost HAnimSite. http://forum.instantreality.org"></meta>
+<meta name="reference" content="BoxMan.x3d"></meta>
 <meta name="reference" content="http://h-anim.org/Models/H-Anim2001/boxman"></meta>
 <meta name="reference" content="http://h-anim.org/Models/H-Anim2001/boxman/boxman.wrl"></meta>
 <meta name="reference" content="http://www.vapourtech.com/team/james/boxman.wrl"></meta>
 <meta name="reference" content="http://h-anim.org/Specifications/H-Anim2001"></meta>
 <meta name="reference" content="http://h-anim.org/Models"></meta>
 <meta name="reference" content="http://h-anim.org/Nodes"></meta>
-<meta name="reference" content="http://www.web3d.org/x3d/content/X3dToVrml97.xslt"></meta>
+<meta name="reference" content="https://www.web3d.org/x3d/content/X3dToVrml97.xslt"></meta>
 <meta name="rights" content="(C) 2000 James Smith - james@vapourtech.com"></meta>
 <meta name="reference" content="http://www.vapourtech.com"></meta>
 <meta name="subject" content="BoxMan H-Anim 2.0"></meta>
-<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManAnimationPanel.x3d"></meta>
+<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManAnimationPanel.x3d"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo info="&quot;(C) 2000 James Smith - james@vapourtech.com&quot; &quot;http://www.vapourtech.com/team/james/boxman.wrl&quot; &quot;Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com&quot;" title="BoxMan - A Seamless VRML Human"></WorldInfo>
 <Background groundColor="0.6 0.6 0.6" skyColor="0.75 0.75 0.75"></Background>
-<HAnimHumanoid name="Humanoid" DEF="hanim_Humanoid" info="&quot;authorName=James Smith&quot; &quot;authorEmail=james@vapourtech.com&quot; &quot;copyright=(C) 2000 James Smith - james@vapourtech.com&quot; &quot;humanoidVersion=2.0&quot;" version="2.0"><HAnimJoint name="HumanoidRoot" DEF="hanim_HumanoidRoot" center="0 0.9723 -0.0728" skinCoordIndex="0 1 2 3 4 5 6 7 8 9 10 11" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><Transform translation="0 0.9723 -0.0728"><Shape DEF="SphereYellow"><Appearance><Material diffuseColor="1 1 0"></Material>
+<HAnimHumanoid name="Humanoid" DEF="boxman_Humanoid" info="&quot;authorName=James Smith&quot; &quot;authorEmail=james@vapourtech.com&quot; &quot;copyright=(C) 2000 James Smith - james@vapourtech.com&quot; &quot;humanoidVersion=2.0&quot;" version="2.0"><HAnimJoint name="humanoid_root" DEF="boxman_HumanoidRoot" center="0 0.9723 -0.0728" skinCoordIndex="0 1 2 3 4 5 6 7 8 9 10 11" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1"><HAnimSegment name="sacrum" DEF="boxman_sacrum"><Transform translation="0 0.9723 -0.0728"><Shape DEF="SphereYellow"><Appearance><Material diffuseColor="1 1 0"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.02"></Sphere>
 </Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.0956 0.9364 0" skinCoordIndex="12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><Transform translation="0.0956 0.9364 0"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_hip" DEF="boxman_l_hip" center="0.0956 0.9364 0" skinCoordIndex="12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"><HAnimSegment name="l_thigh" DEF="boxman_l_thigh"><Transform translation="0.0956 0.9364 0"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.0956 0.5095 -0.0036" skinCoordIndex="36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63" skinCoordWeight="0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"><HAnimSegment name="l_calf" DEF="hanim_l_calf"><Transform translation="0.0956 0.5095 -0.0036"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_knee" DEF="boxman_l_knee" center="0.0956 0.5095 -0.0036" skinCoordIndex="36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63" skinCoordWeight="0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"><HAnimSegment name="l_calf" DEF="boxman_l_calf"><Transform translation="0.0956 0.5095 -0.0036"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_ankle" DEF="hanim_l_ankle" center="0.0946 0.0762 -0.0261" skinCoordIndex="64 65 66 67 68 69 70 71" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="l_hindfoot" DEF="hanim_l_hindfoot"><Transform translation="0.0946 0.0762 -0.0261"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_ankle" DEF="boxman_l_ankle" center="0.0946 0.0762 -0.0261" skinCoordIndex="64 65 66 67 68 69 70 71" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="l_hindfoot" DEF="boxman_l_hindfoot"><Transform translation="0.0946 0.0762 -0.0261"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_midtarsal" DEF="hanim_l_midtarsal" center="0.1079 0.0317 0.067" skinCoordIndex="72 73 74 75 76 77 78 79" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="l_middistal" DEF="hanim_l_middistal"><Transform translation="0.1079 0.0317 0.067"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_midtarsal" DEF="boxman_l_midtarsal" center="0.1079 0.0317 0.067" skinCoordIndex="72 73 74 75 76 77 78 79" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="l_middistal" DEF="boxman_l_middistal"><Transform translation="0.1079 0.0317 0.067"><Shape USE="SphereYellow"></Shape>
 </Transform>
-<HAnimSite name="l_middistal_tip" DEF="hanim_l_middistal_tip" translation="0.095 0.0005 0.1924"><Shape DEF="SphereRed"><Appearance><Material diffuseColor="1 0 0"></Material>
+<HAnimSite name="l_middistal_tip" DEF="boxman_l_middistal_tip" translation="0.095 0.0005 0.1924"><Shape DEF="SphereRed"><Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.02"></Sphere>
 </Shape>
@@ -57,56 +62,56 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.0956 0.9364 0" skinCoordIndex="80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><Transform translation="-0.0956 0.9364 0"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_hip" DEF="boxman_r_hip" center="-0.0956 0.9364 0" skinCoordIndex="80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5"><HAnimSegment name="r_thigh" DEF="boxman_r_thigh"><Transform translation="-0.0956 0.9364 0"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.0956 0.5095 -0.0036" skinCoordIndex="104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131" skinCoordWeight="0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"><HAnimSegment name="r_calf" DEF="hanim_r_calf"><Transform translation="-0.0956 0.5095 -0.0036"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_knee" DEF="boxman_r_knee" center="-0.0956 0.5095 -0.0036" skinCoordIndex="104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131" skinCoordWeight="0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"><HAnimSegment name="r_calf" DEF="boxman_r_calf"><Transform translation="-0.0956 0.5095 -0.0036"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_ankle" DEF="hanim_r_ankle" center="-0.0946 0.0762 -0.0261" skinCoordIndex="132 133 134 135 136 137 138 139" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="r_hindfoot" DEF="hanim_r_hindfoot"><Transform translation="-0.0946 0.0762 -0.0261"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_ankle" DEF="boxman_r_ankle" center="-0.0946 0.0762 -0.0261" skinCoordIndex="132 133 134 135 136 137 138 139" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="r_hindfoot" DEF="boxman_r_hindfoot"><Transform translation="-0.0946 0.0762 -0.0261"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_midtarsal" DEF="hanim_r_midtarsal" center="-0.1079 0.0317 0.067" skinCoordIndex="140 141 142 143 144 145 146 147" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="r_middistal" DEF="hanim_r_middistal"><Transform translation="-0.1079 0.0317 0.067"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_midtarsal" DEF="boxman_r_midtarsal" center="-0.1079 0.0317 0.067" skinCoordIndex="140 141 142 143 144 145 146 147" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="r_middistal" DEF="boxman_r_middistal"><Transform translation="-0.1079 0.0317 0.067"><Shape USE="SphereYellow"></Shape>
 </Transform>
-<HAnimSite name="r_middistal_tip" DEF="hanim_r_middistal_tip" translation="-0.095 0.0005 0.1924"><Shape USE="SphereRed"></Shape>
+<HAnimSite name="r_middistal_tip" DEF="boxman_r_middistal_tip" translation="-0.095 0.0005 0.1924"><Shape USE="SphereRed"></Shape>
 </HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vl5" DEF="hanim_vl5" center="0 1.0817 -0.0728" skinCoordIndex="148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"><HAnimSegment name="l5" DEF="hanim_l5"><Transform translation="0 1.0817 -0.0728"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="vl5" DEF="boxman_vl5" center="0 1.0817 -0.0728" skinCoordIndex="148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"><HAnimSegment name="l5" DEF="boxman_l5"><Transform translation="0 1.0817 -0.0728"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0 1.644 0.036" skinCoordIndex="168 169 170 171 172 173 174 175" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="skull" DEF="hanim_skull"><Transform translation="0 1.644 0.036"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="skullbase" DEF="boxman_skullbase" center="0 1.644 0.036" skinCoordIndex="168 169 170 171 172 173 174 175" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="skull" DEF="boxman_skull"><Transform translation="0 1.644 0.036"><Shape USE="SphereYellow"></Shape>
 </Transform>
-<HAnimSite name="skull_tip" DEF="hanim_skull_tip" translation="-0.0029 1.7771 0.0274"><Shape USE="SphereYellow"></Shape>
+<HAnimSite name="skull_tip" DEF="boxman_skull_tip" translation="-0.0029 1.7771 0.0274"><Shape USE="SphereYellow"></Shape>
 </HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.1968 1.4642 -0.0265" skinCoordIndex="176 177 178 179 180 181 182 183" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><Transform translation="0.1968 1.4642 -0.0265"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_shoulder" DEF="boxman_l_shoulder" center="0.1968 1.4642 -0.0265" skinCoordIndex="176 177 178 179 180 181 182 183" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="l_upperarm" DEF="boxman_l_upperarm"><Transform translation="0.1968 1.4642 -0.0265"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.1982 1.1622 -0.0557" skinCoordIndex="184 185 186 187 188 189 190 191" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><Transform translation="0.1982 1.1622 -0.0557"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_elbow" DEF="boxman_l_elbow" center="0.1982 1.1622 -0.0557" skinCoordIndex="184 185 186 187 188 189 190 191" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="l_forearm" DEF="boxman_l_forearm"><Transform translation="0.1982 1.1622 -0.0557"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="l_wrist" DEF="hanim_l_wrist" center="0.1972 0.8929 -0.069" skinCoordIndex="192 193 194 195 196 197 198 199" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="l_hand" DEF="hanim_l_hand"><Transform translation="0.1972 0.8929 -0.069"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="l_wrist" DEF="boxman_l_wrist" center="0.1972 0.8929 -0.069" skinCoordIndex="192 193 194 195 196 197 198 199" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="l_hand" DEF="boxman_l_hand"><Transform translation="0.1972 0.8929 -0.069"><Shape USE="SphereYellow"></Shape>
 </Transform>
-<HAnimSite name="l_hand_tip" DEF="hanim_l_hand_tip" translation="0.1912 0.6976 -0.071"><Shape USE="SphereRed"></Shape>
+<HAnimSite name="l_hand_tip" DEF="boxman_l_hand_tip" translation="0.1912 0.6976 -0.071"><Shape USE="SphereRed"></Shape>
 </HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.1968 1.4642 -0.0265" skinCoordIndex="200 201 202 203 204 205 206 207" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><Transform translation="-0.1968 1.4642 -0.0265"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_shoulder" DEF="boxman_r_shoulder" center="-0.1968 1.4642 -0.0265" skinCoordIndex="200 201 202 203 204 205 206 207" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="r_upperarm" DEF="boxman_r_upperarm"><Transform translation="-0.1968 1.4642 -0.0265"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.1982 1.1622 -0.0557" skinCoordIndex="208 209 210 211 212 213 214 215" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><Transform translation="-0.1982 1.1622 -0.0557"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_elbow" DEF="boxman_r_elbow" center="-0.1982 1.1622 -0.0557" skinCoordIndex="208 209 210 211 212 213 214 215" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="r_forearm" DEF="boxman_r_forearm"><Transform translation="-0.1982 1.1622 -0.0557"><Shape USE="SphereYellow"></Shape>
 </Transform>
 </HAnimSegment>
-<HAnimJoint name="r_wrist" DEF="hanim_r_wrist" center="-0.1972 0.8929 -0.069" skinCoordIndex="216 217 218 219 220 221 222 223" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="r_hand" DEF="hanim_r_hand"><Transform translation="-0.1972 0.8929 -0.069"><Shape USE="SphereYellow"></Shape>
+<HAnimJoint name="r_wrist" DEF="boxman_r_wrist" center="-0.1972 0.8929 -0.069" skinCoordIndex="216 217 218 219 220 221 222 223" skinCoordWeight="1 1 1 1 1 1 1 1"><HAnimSegment name="r_hand" DEF="boxman_r_hand"><Transform translation="-0.1972 0.8929 -0.069"><Shape USE="SphereYellow"></Shape>
 </Transform>
-<HAnimSite name="r_hand_tip" DEF="hanim_r_hand_tip" translation="-0.1912 0.6976 -0.071"><Shape USE="SphereRed"></Shape>
+<HAnimSite name="r_hand_tip" DEF="boxman_r_hand_tip" translation="-0.1912 0.6976 -0.071"><Shape USE="SphereRed"></Shape>
 </HAnimSite>
 </HAnimSegment>
 </HAnimJoint>
@@ -141,49 +146,49 @@
 </IndexedLineSet>
 </Shape>
 </Group>
-<HAnimJoint USE="hanim_r_wrist"></HAnimJoint>
-<HAnimJoint USE="hanim_r_elbow"></HAnimJoint>
-<HAnimJoint USE="hanim_r_shoulder"></HAnimJoint>
-<HAnimJoint USE="hanim_l_wrist"></HAnimJoint>
-<HAnimJoint USE="hanim_l_elbow"></HAnimJoint>
-<HAnimJoint USE="hanim_l_shoulder"></HAnimJoint>
-<HAnimJoint USE="hanim_skullbase"></HAnimJoint>
-<HAnimJoint USE="hanim_vl5"></HAnimJoint>
-<HAnimJoint USE="hanim_r_midtarsal"></HAnimJoint>
-<HAnimJoint USE="hanim_r_ankle"></HAnimJoint>
-<HAnimJoint USE="hanim_r_knee"></HAnimJoint>
-<HAnimJoint USE="hanim_r_hip"></HAnimJoint>
-<HAnimJoint USE="hanim_l_midtarsal"></HAnimJoint>
-<HAnimJoint USE="hanim_l_ankle"></HAnimJoint>
-<HAnimJoint USE="hanim_l_knee"></HAnimJoint>
-<HAnimJoint USE="hanim_l_hip"></HAnimJoint>
-<HAnimJoint USE="hanim_HumanoidRoot"></HAnimJoint>
-<HAnimSegment USE="hanim_sacrum"></HAnimSegment>
-<HAnimSegment USE="hanim_l_thigh"></HAnimSegment>
-<HAnimSegment USE="hanim_l_calf"></HAnimSegment>
-<HAnimSegment USE="hanim_l_hindfoot"></HAnimSegment>
-<HAnimSegment USE="hanim_l_middistal"></HAnimSegment>
-<HAnimSegment USE="hanim_r_thigh"></HAnimSegment>
-<HAnimSegment USE="hanim_r_calf"></HAnimSegment>
-<HAnimSegment USE="hanim_r_hindfoot"></HAnimSegment>
-<HAnimSegment USE="hanim_r_middistal"></HAnimSegment>
-<HAnimSegment USE="hanim_l5"></HAnimSegment>
-<HAnimSegment USE="hanim_skull"></HAnimSegment>
-<HAnimSegment USE="hanim_l_upperarm"></HAnimSegment>
-<HAnimSegment USE="hanim_l_forearm"></HAnimSegment>
-<HAnimSegment USE="hanim_l_hand"></HAnimSegment>
-<HAnimSegment USE="hanim_r_upperarm"></HAnimSegment>
-<HAnimSegment USE="hanim_r_forearm"></HAnimSegment>
-<HAnimSegment USE="hanim_r_hand"></HAnimSegment>
-<HAnimSite USE="hanim_l_middistal_tip"></HAnimSite>
-<HAnimSite USE="hanim_r_middistal_tip"></HAnimSite>
-<HAnimSite USE="hanim_skull_tip"></HAnimSite>
-<HAnimSite USE="hanim_l_hand_tip"></HAnimSite>
-<HAnimSite USE="hanim_r_hand_tip"></HAnimSite>
-<HAnimSite name="BoxMan_view"><Viewpoint DEF="Inclined_View" description="Inclined View" orientation="0 1 0 0.78" position="2 1 2"></Viewpoint>
-<Viewpoint DEF="Best_View" description="Best View" orientation="0 1 0 -1.57" position="-2 0.25 0"></Viewpoint>
+<HAnimJoint USE="boxman_r_wrist"></HAnimJoint>
+<HAnimJoint USE="boxman_r_elbow"></HAnimJoint>
+<HAnimJoint USE="boxman_r_shoulder"></HAnimJoint>
+<HAnimJoint USE="boxman_l_wrist"></HAnimJoint>
+<HAnimJoint USE="boxman_l_elbow"></HAnimJoint>
+<HAnimJoint USE="boxman_l_shoulder"></HAnimJoint>
+<HAnimJoint USE="boxman_skullbase"></HAnimJoint>
+<HAnimJoint USE="boxman_vl5"></HAnimJoint>
+<HAnimJoint USE="boxman_r_midtarsal"></HAnimJoint>
+<HAnimJoint USE="boxman_r_ankle"></HAnimJoint>
+<HAnimJoint USE="boxman_r_knee"></HAnimJoint>
+<HAnimJoint USE="boxman_r_hip"></HAnimJoint>
+<HAnimJoint USE="boxman_l_midtarsal"></HAnimJoint>
+<HAnimJoint USE="boxman_l_ankle"></HAnimJoint>
+<HAnimJoint USE="boxman_l_knee"></HAnimJoint>
+<HAnimJoint USE="boxman_l_hip"></HAnimJoint>
+<HAnimJoint USE="boxman_HumanoidRoot"></HAnimJoint>
+<HAnimSegment USE="boxman_sacrum"></HAnimSegment>
+<HAnimSegment USE="boxman_l_thigh"></HAnimSegment>
+<HAnimSegment USE="boxman_l_calf"></HAnimSegment>
+<HAnimSegment USE="boxman_l_hindfoot"></HAnimSegment>
+<HAnimSegment USE="boxman_l_middistal"></HAnimSegment>
+<HAnimSegment USE="boxman_r_thigh"></HAnimSegment>
+<HAnimSegment USE="boxman_r_calf"></HAnimSegment>
+<HAnimSegment USE="boxman_r_hindfoot"></HAnimSegment>
+<HAnimSegment USE="boxman_r_middistal"></HAnimSegment>
+<HAnimSegment USE="boxman_l5"></HAnimSegment>
+<HAnimSegment USE="boxman_skull"></HAnimSegment>
+<HAnimSegment USE="boxman_l_upperarm"></HAnimSegment>
+<HAnimSegment USE="boxman_l_forearm"></HAnimSegment>
+<HAnimSegment USE="boxman_l_hand"></HAnimSegment>
+<HAnimSegment USE="boxman_r_upperarm"></HAnimSegment>
+<HAnimSegment USE="boxman_r_forearm"></HAnimSegment>
+<HAnimSegment USE="boxman_r_hand"></HAnimSegment>
+<HAnimSite USE="boxman_l_middistal_tip"></HAnimSite>
+<HAnimSite USE="boxman_r_middistal_tip"></HAnimSite>
+<HAnimSite USE="boxman_skull_tip"></HAnimSite>
+<HAnimSite USE="boxman_l_hand_tip"></HAnimSite>
+<HAnimSite USE="boxman_r_hand_tip"></HAnimSite>
+<HAnimSite name="BoxMan_view"><Viewpoint DEF="Inclined_View" description="Inclined View" orientation="0 1 0 0.78" position="2 0.9 2"></Viewpoint>
 <Viewpoint DEF="Front_View" description="Front View" position="0 1 3"></Viewpoint>
-<Viewpoint DEF="Side_View" description="Side View" orientation="0 1 0 1.57" position="3 1 0"></Viewpoint>
+<Viewpoint DEF="Best_View" description="Right-side View" orientation="0 1 0 -1.57" position="-3 1 0"></Viewpoint>
+<Viewpoint DEF="Side_View" description="Left-side View" orientation="0 1 0 1.57" position="3 1 0"></Viewpoint>
 <Viewpoint DEF="Top_View" description="Top View" orientation="1 0 0 -1.57" position="0 3 0"></Viewpoint>
 </HAnimSite>
 </HAnimHumanoid>
@@ -528,7 +533,7 @@
 </Shape>
 </Transform>
 <ProximitySensor DEF="HudProx" size="50 50 50"></ProximitySensor>
-<Transform DEF="HudXform" rotation="0 1 0 0.78" translation="2 1 2"><Transform scale="0.02 0.02 0.02" translation="-0.48 -0.01 -0.75"><Transform DEF="Stand_Text" translation="0 -0.9 0"><TouchSensor DEF="Stand_Touch"></TouchSensor>
+<Transform DEF="HudXform" rotation="0 1 0 0.78" translation="2 1 2"><Transform scale="0.02 0.02 0.02" translation="-0.4 -0.01 -0.75"><Transform DEF="Stand_Text" translation="0 -0.9 0"><TouchSensor DEF="Stand_Touch"></TouchSensor>
 <Shape DEF="StandText"><Appearance><Material DEF="text_color" ambientIntensity="1" diffuseColor="0.819 0.521 0.169" emissiveColor="0.819 0.521 0.169" specularColor="0.819 0.521 0.169"></Material>
 </Appearance>
 <Text containerField="geometry" string="&quot;Stand&quot;"><FontStyle family="&quot;SANS&quot;"></FontStyle>
@@ -628,6 +633,12 @@
 <IndexedFaceSet containerField="geometry" USE="Backing"></IndexedFaceSet>
 </Shape>
 </Transform>
+<Transform DEF="SceneLabel" translation="1.3 3 0"><Shape DEF="SceneLabelText"><Appearance><Material USE="text_color"></Material>
+</Appearance>
+<Text containerField="geometry" string="&quot;BoxMan&quot; &quot;Animation&quot;"><FontStyle family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+</Text>
+</Shape>
+</Transform>
 </Transform>
 </Transform>
 </Group>
@@ -721,24 +732,24 @@
 <ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_r_pinky1RotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_r_pinky2RotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StopTimer" toField="set_fraction" toNode="Stop_r_pinky3RotInterp"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_HumanoidRootTransInterp" toField="set_translation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_HumanoidRootRotInterp" toField="set_rotation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_l_hipRotInterp" toField="set_rotation" toNode="hanim_l_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_l_kneeRotInterp" toField="set_rotation" toNode="hanim_l_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_l_ankleRotInterp" toField="set_rotation" toNode="hanim_l_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_l_midtarsalRotInterp" toField="set_rotation" toNode="hanim_l_midtarsal"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_r_hipRotInterp" toField="set_rotation" toNode="hanim_r_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_r_kneeRotInterp" toField="set_rotation" toNode="hanim_r_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_r_ankleRotInterp" toField="set_rotation" toNode="hanim_r_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_r_midtarsalRotInterp" toField="set_rotation" toNode="hanim_r_midtarsal"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_vl5RotInterp" toField="set_rotation" toNode="hanim_vl5"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_skullbaseRotInterp" toField="set_rotation" toNode="hanim_skullbase"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_l_shoulderRotInterp" toField="set_rotation" toNode="hanim_l_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_l_elbowRotInterp" toField="set_rotation" toNode="hanim_l_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_l_wristRotInterp" toField="set_rotation" toNode="hanim_l_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_r_shoulderRotInterp" toField="set_rotation" toNode="hanim_r_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_r_elbowRotInterp" toField="set_rotation" toNode="hanim_r_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stop_r_wristRotInterp" toField="set_rotation" toNode="hanim_r_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_HumanoidRootTransInterp" toField="set_translation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_HumanoidRootRotInterp" toField="set_rotation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_l_hipRotInterp" toField="set_rotation" toNode="boxman_l_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_l_kneeRotInterp" toField="set_rotation" toNode="boxman_l_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_l_ankleRotInterp" toField="set_rotation" toNode="boxman_l_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_l_midtarsalRotInterp" toField="set_rotation" toNode="boxman_l_midtarsal"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_r_hipRotInterp" toField="set_rotation" toNode="boxman_r_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_r_kneeRotInterp" toField="set_rotation" toNode="boxman_r_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_r_ankleRotInterp" toField="set_rotation" toNode="boxman_r_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_r_midtarsalRotInterp" toField="set_rotation" toNode="boxman_r_midtarsal"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_vl5RotInterp" toField="set_rotation" toNode="boxman_vl5"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_skullbaseRotInterp" toField="set_rotation" toNode="boxman_skullbase"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_l_shoulderRotInterp" toField="set_rotation" toNode="boxman_l_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_l_elbowRotInterp" toField="set_rotation" toNode="boxman_l_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_l_wristRotInterp" toField="set_rotation" toNode="boxman_l_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_r_shoulderRotInterp" toField="set_rotation" toNode="boxman_r_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_r_elbowRotInterp" toField="set_rotation" toNode="boxman_r_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stop_r_wristRotInterp" toField="set_rotation" toNode="boxman_r_wrist"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StandTimer" toField="set_fraction" toNode="Stand_r_ankleRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StandTimer" toField="set_fraction" toNode="Stand_r_kneeRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StandTimer" toField="set_fraction" toNode="Stand_r_hipRotInterp"></ROUTE>
@@ -772,22 +783,22 @@
 <ROUTE fromField="fraction_changed" fromNode="StandTimer" toField="set_fraction" toNode="Stand_r_index1Roll"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StandTimer" toField="set_fraction" toNode="Stand_r_index2Roll"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="StandTimer" toField="set_fraction" toNode="Stand_r_index3Roll"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_r_ankleRotInterp" toField="set_rotation" toNode="hanim_r_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_r_kneeRotInterp" toField="set_rotation" toNode="hanim_r_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_r_hipRotInterp" toField="set_rotation" toNode="hanim_r_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_l_ankleRotInterp" toField="set_rotation" toNode="hanim_l_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_l_kneeRotInterp" toField="set_rotation" toNode="hanim_l_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_l_hipRotInterp" toField="set_rotation" toNode="hanim_l_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_r_wristRotInterp" toField="set_rotation" toNode="hanim_r_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_r_elbowRotInterp" toField="set_rotation" toNode="hanim_r_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_r_shoulderRotInterp" toField="set_rotation" toNode="hanim_r_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_l_wristRotInterp" toField="set_rotation" toNode="hanim_l_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_l_elbowRotInterp" toField="set_rotation" toNode="hanim_l_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_l_shoulderRotInterp" toField="set_rotation" toNode="hanim_l_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_headRotInterp" toField="set_rotation" toNode="hanim_skullbase"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_whole_bodyRotInterp" toField="set_rotation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_whole_bodyTransInterp" toField="set_translation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Stand_vl5Yaw" toField="set_rotation" toNode="hanim_vl5"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_r_ankleRotInterp" toField="set_rotation" toNode="boxman_r_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_r_kneeRotInterp" toField="set_rotation" toNode="boxman_r_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_r_hipRotInterp" toField="set_rotation" toNode="boxman_r_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_l_ankleRotInterp" toField="set_rotation" toNode="boxman_l_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_l_kneeRotInterp" toField="set_rotation" toNode="boxman_l_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_l_hipRotInterp" toField="set_rotation" toNode="boxman_l_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_r_wristRotInterp" toField="set_rotation" toNode="boxman_r_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_r_elbowRotInterp" toField="set_rotation" toNode="boxman_r_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_r_shoulderRotInterp" toField="set_rotation" toNode="boxman_r_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_l_wristRotInterp" toField="set_rotation" toNode="boxman_l_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_l_elbowRotInterp" toField="set_rotation" toNode="boxman_l_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_l_shoulderRotInterp" toField="set_rotation" toNode="boxman_l_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_headRotInterp" toField="set_rotation" toNode="boxman_skullbase"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_whole_bodyRotInterp" toField="set_rotation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_whole_bodyTransInterp" toField="set_translation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Stand_vl5Yaw" toField="set_rotation" toNode="boxman_vl5"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="PitchTimer" toField="set_fraction" toNode="Pitches_r_ankleRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="PitchTimer" toField="set_fraction" toNode="Pitches_r_kneeRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="PitchTimer" toField="set_fraction" toNode="Pitches_r_hipRotInterp"></ROUTE>
@@ -816,22 +827,22 @@
 <ROUTE fromField="fraction_changed" fromNode="PitchTimer" toField="set_fraction" toNode="Pitch_vc6Yaw"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="PitchTimer" toField="set_fraction" toNode="Pitch_l_thumb1Pitch"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="PitchTimer" toField="set_fraction" toNode="Pitch_r_thumb1Pitch"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_r_ankleRotInterp" toField="set_rotation" toNode="hanim_r_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_r_kneeRotInterp" toField="set_rotation" toNode="hanim_r_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_r_hipRotInterp" toField="set_rotation" toNode="hanim_r_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_l_ankleRotInterp" toField="set_rotation" toNode="hanim_l_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_l_kneeRotInterp" toField="set_rotation" toNode="hanim_l_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_l_hipRotInterp" toField="set_rotation" toNode="hanim_l_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_r_wristRotInterp" toField="set_rotation" toNode="hanim_r_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_r_elbowRotInterp" toField="set_rotation" toNode="hanim_r_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_r_shoulderRotInterp" toField="set_rotation" toNode="hanim_r_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_l_wristRotInterp" toField="set_rotation" toNode="hanim_l_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_l_elbowRotInterp" toField="set_rotation" toNode="hanim_l_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_l_shoulderRotInterp" toField="set_rotation" toNode="hanim_l_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_headRotInterp" toField="set_rotation" toNode="hanim_skullbase"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_whole_bodyRotInterp" toField="set_rotation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitches_whole_bodyTransInterp" toField="set_translation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Pitch_vl5Yaw" toField="set_rotation" toNode="hanim_vl5"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_r_ankleRotInterp" toField="set_rotation" toNode="boxman_r_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_r_kneeRotInterp" toField="set_rotation" toNode="boxman_r_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_r_hipRotInterp" toField="set_rotation" toNode="boxman_r_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_l_ankleRotInterp" toField="set_rotation" toNode="boxman_l_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_l_kneeRotInterp" toField="set_rotation" toNode="boxman_l_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_l_hipRotInterp" toField="set_rotation" toNode="boxman_l_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_r_wristRotInterp" toField="set_rotation" toNode="boxman_r_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_r_elbowRotInterp" toField="set_rotation" toNode="boxman_r_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_r_shoulderRotInterp" toField="set_rotation" toNode="boxman_r_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_l_wristRotInterp" toField="set_rotation" toNode="boxman_l_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_l_elbowRotInterp" toField="set_rotation" toNode="boxman_l_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_l_shoulderRotInterp" toField="set_rotation" toNode="boxman_l_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_headRotInterp" toField="set_rotation" toNode="boxman_skullbase"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_whole_bodyRotInterp" toField="set_rotation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitches_whole_bodyTransInterp" toField="set_translation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Pitch_vl5Yaw" toField="set_rotation" toNode="boxman_vl5"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="YawTimer" toField="set_fraction" toNode="Yaws_r_ankleRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="YawTimer" toField="set_fraction" toNode="Yaws_r_kneeRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="YawTimer" toField="set_fraction" toNode="Yaws_r_hipRotInterp"></ROUTE>
@@ -860,22 +871,22 @@
 <ROUTE fromField="fraction_changed" fromNode="YawTimer" toField="set_fraction" toNode="Yaw_vc6Yaw"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="YawTimer" toField="set_fraction" toNode="Yaw_l_thumb1Pitch"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="YawTimer" toField="set_fraction" toNode="Yaw_r_thumb1Pitch"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_r_ankleRotInterp" toField="set_rotation" toNode="hanim_r_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_r_kneeRotInterp" toField="set_rotation" toNode="hanim_r_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_r_hipRotInterp" toField="set_rotation" toNode="hanim_r_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_l_ankleRotInterp" toField="set_rotation" toNode="hanim_l_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_l_kneeRotInterp" toField="set_rotation" toNode="hanim_l_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_l_hipRotInterp" toField="set_rotation" toNode="hanim_l_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_r_wristRotInterp" toField="set_rotation" toNode="hanim_r_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_r_elbowRotInterp" toField="set_rotation" toNode="hanim_r_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_r_shoulderRotInterp" toField="set_rotation" toNode="hanim_r_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_l_wristRotInterp" toField="set_rotation" toNode="hanim_l_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_l_elbowRotInterp" toField="set_rotation" toNode="hanim_l_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_l_shoulderRotInterp" toField="set_rotation" toNode="hanim_l_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_headRotInterp" toField="set_rotation" toNode="hanim_skullbase"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_whole_bodyRotInterp" toField="set_rotation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaws_whole_bodyTransInterp" toField="set_translation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Yaw_vl5Yaw" toField="set_rotation" toNode="hanim_vl5"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_r_ankleRotInterp" toField="set_rotation" toNode="boxman_r_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_r_kneeRotInterp" toField="set_rotation" toNode="boxman_r_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_r_hipRotInterp" toField="set_rotation" toNode="boxman_r_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_l_ankleRotInterp" toField="set_rotation" toNode="boxman_l_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_l_kneeRotInterp" toField="set_rotation" toNode="boxman_l_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_l_hipRotInterp" toField="set_rotation" toNode="boxman_l_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_r_wristRotInterp" toField="set_rotation" toNode="boxman_r_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_r_elbowRotInterp" toField="set_rotation" toNode="boxman_r_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_r_shoulderRotInterp" toField="set_rotation" toNode="boxman_r_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_l_wristRotInterp" toField="set_rotation" toNode="boxman_l_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_l_elbowRotInterp" toField="set_rotation" toNode="boxman_l_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_l_shoulderRotInterp" toField="set_rotation" toNode="boxman_l_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_headRotInterp" toField="set_rotation" toNode="boxman_skullbase"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_whole_bodyRotInterp" toField="set_rotation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaws_whole_bodyTransInterp" toField="set_translation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Yaw_vl5Yaw" toField="set_rotation" toNode="boxman_vl5"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="RollTimer" toField="set_fraction" toNode="Rolls_r_ankleRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="RollTimer" toField="set_fraction" toNode="Rolls_r_kneeRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="RollTimer" toField="set_fraction" toNode="Rolls_r_hipRotInterp"></ROUTE>
@@ -904,22 +915,22 @@
 <ROUTE fromField="fraction_changed" fromNode="RollTimer" toField="set_fraction" toNode="Roll_vc6Yaw"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="RollTimer" toField="set_fraction" toNode="Roll_l_thumb1Pitch"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="RollTimer" toField="set_fraction" toNode="Roll_r_thumb1Pitch"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_r_ankleRotInterp" toField="set_rotation" toNode="hanim_r_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_r_kneeRotInterp" toField="set_rotation" toNode="hanim_r_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_r_hipRotInterp" toField="set_rotation" toNode="hanim_r_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_l_ankleRotInterp" toField="set_rotation" toNode="hanim_l_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_l_kneeRotInterp" toField="set_rotation" toNode="hanim_l_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_l_hipRotInterp" toField="set_rotation" toNode="hanim_l_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_r_wristRotInterp" toField="set_rotation" toNode="hanim_r_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_r_elbowRotInterp" toField="set_rotation" toNode="hanim_r_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_r_shoulderRotInterp" toField="set_rotation" toNode="hanim_r_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_l_wristRotInterp" toField="set_rotation" toNode="hanim_l_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_l_elbowRotInterp" toField="set_rotation" toNode="hanim_l_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_l_shoulderRotInterp" toField="set_rotation" toNode="hanim_l_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_headRotInterp" toField="set_rotation" toNode="hanim_skullbase"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_whole_bodyRotInterp" toField="set_rotation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Rolls_whole_bodyTransInterp" toField="set_translation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Roll_vl5Yaw" toField="set_rotation" toNode="hanim_vl5"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_r_ankleRotInterp" toField="set_rotation" toNode="boxman_r_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_r_kneeRotInterp" toField="set_rotation" toNode="boxman_r_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_r_hipRotInterp" toField="set_rotation" toNode="boxman_r_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_l_ankleRotInterp" toField="set_rotation" toNode="boxman_l_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_l_kneeRotInterp" toField="set_rotation" toNode="boxman_l_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_l_hipRotInterp" toField="set_rotation" toNode="boxman_l_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_r_wristRotInterp" toField="set_rotation" toNode="boxman_r_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_r_elbowRotInterp" toField="set_rotation" toNode="boxman_r_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_r_shoulderRotInterp" toField="set_rotation" toNode="boxman_r_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_l_wristRotInterp" toField="set_rotation" toNode="boxman_l_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_l_elbowRotInterp" toField="set_rotation" toNode="boxman_l_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_l_shoulderRotInterp" toField="set_rotation" toNode="boxman_l_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_headRotInterp" toField="set_rotation" toNode="boxman_skullbase"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_whole_bodyRotInterp" toField="set_rotation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Rolls_whole_bodyTransInterp" toField="set_translation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Roll_vl5Yaw" toField="set_rotation" toNode="boxman_vl5"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="WalkTimer" toField="set_fraction" toNode="Walk_r_ankleRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="WalkTimer" toField="set_fraction" toNode="Walk_r_kneeRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="WalkTimer" toField="set_fraction" toNode="Walk_r_hipRotInterp"></ROUTE>
@@ -948,22 +959,22 @@
 <ROUTE fromField="fraction_changed" fromNode="WalkTimer" toField="set_fraction" toNode="Walk_vc6Yaw"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="WalkTimer" toField="set_fraction" toNode="Walk_l_thumb1Pitch"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="WalkTimer" toField="set_fraction" toNode="Walk_r_thumb1Pitch"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_r_ankleRotInterp" toField="set_rotation" toNode="hanim_r_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_r_kneeRotInterp" toField="set_rotation" toNode="hanim_r_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_r_hipRotInterp" toField="set_rotation" toNode="hanim_r_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_l_ankleRotInterp" toField="set_rotation" toNode="hanim_l_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_l_kneeRotInterp" toField="set_rotation" toNode="hanim_l_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_l_hipRotInterp" toField="set_rotation" toNode="hanim_l_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_r_wristRotInterp" toField="set_rotation" toNode="hanim_r_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_r_elbowRotInterp" toField="set_rotation" toNode="hanim_r_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_r_shoulderRotInterp" toField="set_rotation" toNode="hanim_r_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_l_wristRotInterp" toField="set_rotation" toNode="hanim_l_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_l_elbowRotInterp" toField="set_rotation" toNode="hanim_l_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_l_shoulderRotInterp" toField="set_rotation" toNode="hanim_l_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_headRotInterp" toField="set_rotation" toNode="hanim_skullbase"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_whole_bodyRotInterp" toField="set_rotation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_whole_bodyTranInterp" toField="set_translation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Walk_vl5Yaw" toField="set_rotation" toNode="hanim_vl5"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_r_ankleRotInterp" toField="set_rotation" toNode="boxman_r_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_r_kneeRotInterp" toField="set_rotation" toNode="boxman_r_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_r_hipRotInterp" toField="set_rotation" toNode="boxman_r_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_l_ankleRotInterp" toField="set_rotation" toNode="boxman_l_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_l_kneeRotInterp" toField="set_rotation" toNode="boxman_l_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_l_hipRotInterp" toField="set_rotation" toNode="boxman_l_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_r_wristRotInterp" toField="set_rotation" toNode="boxman_r_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_r_elbowRotInterp" toField="set_rotation" toNode="boxman_r_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_r_shoulderRotInterp" toField="set_rotation" toNode="boxman_r_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_l_wristRotInterp" toField="set_rotation" toNode="boxman_l_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_l_elbowRotInterp" toField="set_rotation" toNode="boxman_l_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_l_shoulderRotInterp" toField="set_rotation" toNode="boxman_l_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_headRotInterp" toField="set_rotation" toNode="boxman_skullbase"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_whole_bodyRotInterp" toField="set_rotation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_whole_bodyTranInterp" toField="set_translation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Walk_vl5Yaw" toField="set_rotation" toNode="boxman_vl5"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="RunTimer" toField="set_fraction" toNode="Run_r_ankleRotInterp_Run"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="RunTimer" toField="set_fraction" toNode="Run_r_kneeRotInterp_Run"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="RunTimer" toField="set_fraction" toNode="Run_r_hipRotInterp_Run"></ROUTE>
@@ -992,22 +1003,22 @@
 <ROUTE fromField="fraction_changed" fromNode="RunTimer" toField="set_fraction" toNode="Run_vc6Yaw"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="RunTimer" toField="set_fraction" toNode="Run_l_thumb1Pitch"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="RunTimer" toField="set_fraction" toNode="Run_r_thumb1Pitch"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_r_ankleRotInterp_Run" toField="set_rotation" toNode="hanim_r_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_r_kneeRotInterp_Run" toField="set_rotation" toNode="hanim_r_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_r_hipRotInterp_Run" toField="set_rotation" toNode="hanim_r_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_l_ankleRotInterp_Run" toField="set_rotation" toNode="hanim_l_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_l_kneeRotInterp_Run" toField="set_rotation" toNode="hanim_l_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_l_hipRotInterp_Run" toField="set_rotation" toNode="hanim_l_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_r_wristRotInterp_Run" toField="set_rotation" toNode="hanim_r_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_r_elbowRotInterp_Run" toField="set_rotation" toNode="hanim_r_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_r_shoulderRotInterp_Run" toField="set_rotation" toNode="hanim_r_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_l_wristRotInterp_Run" toField="set_rotation" toNode="hanim_l_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_l_elbowRotInterp_Run" toField="set_rotation" toNode="hanim_l_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_l_shoulderRotInterp_Run" toField="set_rotation" toNode="hanim_l_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_headRotInterp_Run" toField="set_rotation" toNode="hanim_skullbase"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_whole_bodyRotInterp_Run" toField="set_rotation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_whole_bodyTranInterp_Run" toField="set_translation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Run_vl5Yaw" toField="set_rotation" toNode="hanim_vl5"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_r_ankleRotInterp_Run" toField="set_rotation" toNode="boxman_r_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_r_kneeRotInterp_Run" toField="set_rotation" toNode="boxman_r_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_r_hipRotInterp_Run" toField="set_rotation" toNode="boxman_r_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_l_ankleRotInterp_Run" toField="set_rotation" toNode="boxman_l_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_l_kneeRotInterp_Run" toField="set_rotation" toNode="boxman_l_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_l_hipRotInterp_Run" toField="set_rotation" toNode="boxman_l_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_r_wristRotInterp_Run" toField="set_rotation" toNode="boxman_r_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_r_elbowRotInterp_Run" toField="set_rotation" toNode="boxman_r_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_r_shoulderRotInterp_Run" toField="set_rotation" toNode="boxman_r_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_l_wristRotInterp_Run" toField="set_rotation" toNode="boxman_l_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_l_elbowRotInterp_Run" toField="set_rotation" toNode="boxman_l_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_l_shoulderRotInterp_Run" toField="set_rotation" toNode="boxman_l_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_headRotInterp_Run" toField="set_rotation" toNode="boxman_skullbase"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_whole_bodyRotInterp_Run" toField="set_rotation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_whole_bodyTranInterp_Run" toField="set_translation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Run_vl5Yaw" toField="set_rotation" toNode="boxman_vl5"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="JumpTimer" toField="set_fraction" toNode="Jump_r_ankleRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="JumpTimer" toField="set_fraction" toNode="Jump_r_kneeRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="JumpTimer" toField="set_fraction" toNode="Jump_r_hipRotInterp"></ROUTE>
@@ -1036,22 +1047,22 @@
 <ROUTE fromField="fraction_changed" fromNode="JumpTimer" toField="set_fraction" toNode="Jump_vc6Yaw"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="JumpTimer" toField="set_fraction" toNode="Jump_l_thumb1Pitch"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="JumpTimer" toField="set_fraction" toNode="Jump_r_thumb1Pitch"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_r_ankleRotInterp" toField="set_rotation" toNode="hanim_r_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_r_kneeRotInterp" toField="set_rotation" toNode="hanim_r_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_r_hipRotInterp" toField="set_rotation" toNode="hanim_r_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_l_ankleRotInterp" toField="set_rotation" toNode="hanim_l_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_l_kneeRotInterp" toField="set_rotation" toNode="hanim_l_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_l_hipRotInterp" toField="set_rotation" toNode="hanim_l_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_r_wristRotInterp" toField="set_rotation" toNode="hanim_r_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_r_elbowRotInterp" toField="set_rotation" toNode="hanim_r_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_r_shoulderRotInterp" toField="set_rotation" toNode="hanim_r_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_l_wristRotInterp" toField="set_rotation" toNode="hanim_l_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_l_elbowRotInterp" toField="set_rotation" toNode="hanim_l_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_l_shoulderRotInterp" toField="set_rotation" toNode="hanim_l_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_headRotInterp" toField="set_rotation" toNode="hanim_skullbase"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_whole_bodyRotInterp" toField="set_rotation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_whole_bodyTranInterp" toField="set_translation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Jump_vl5Yaw" toField="set_rotation" toNode="hanim_vl5"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_r_ankleRotInterp" toField="set_rotation" toNode="boxman_r_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_r_kneeRotInterp" toField="set_rotation" toNode="boxman_r_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_r_hipRotInterp" toField="set_rotation" toNode="boxman_r_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_l_ankleRotInterp" toField="set_rotation" toNode="boxman_l_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_l_kneeRotInterp" toField="set_rotation" toNode="boxman_l_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_l_hipRotInterp" toField="set_rotation" toNode="boxman_l_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_r_wristRotInterp" toField="set_rotation" toNode="boxman_r_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_r_elbowRotInterp" toField="set_rotation" toNode="boxman_r_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_r_shoulderRotInterp" toField="set_rotation" toNode="boxman_r_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_l_wristRotInterp" toField="set_rotation" toNode="boxman_l_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_l_elbowRotInterp" toField="set_rotation" toNode="boxman_l_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_l_shoulderRotInterp" toField="set_rotation" toNode="boxman_l_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_headRotInterp" toField="set_rotation" toNode="boxman_skullbase"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_whole_bodyRotInterp" toField="set_rotation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_whole_bodyTranInterp" toField="set_translation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Jump_vl5Yaw" toField="set_rotation" toNode="boxman_vl5"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="KickTimer" toField="set_fraction" toNode="Kick_l_sternoclavicularRoll"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="KickTimer" toField="set_fraction" toNode="Kick_l_acromioclavicularRoll"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="KickTimer" toField="set_fraction" toNode="Kick_l_shoulderRoll"></ROUTE>
@@ -1078,21 +1089,21 @@
 <ROUTE fromField="fraction_changed" fromNode="KickTimer" toField="set_fraction" toNode="Kick_whole_bodyRotInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="KickTimer" toField="set_fraction" toNode="Kick_whole_bodyTransInterp"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="KickTimer" toField="set_fraction" toNode="Kick_neckRotInterp"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_l_shoulderRoll" toField="set_rotation" toNode="hanim_l_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_l_ForeArmPitch" toField="set_rotation" toNode="hanim_l_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_l_wristRoll" toField="set_rotation" toNode="hanim_l_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_r_shoulderRoll" toField="set_rotation" toNode="hanim_r_shoulder"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_r_ForeArmPitch" toField="set_rotation" toNode="hanim_r_elbow"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_r_wristRoll" toField="set_rotation" toNode="hanim_r_wrist"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_r_hipPitch" toField="set_rotation" toNode="hanim_r_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_r_kneePitch" toField="set_rotation" toNode="hanim_r_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_r_anklePitch" toField="set_rotation" toNode="hanim_r_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_l_hipPitch" toField="set_rotation" toNode="hanim_l_hip"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_l_kneePitch" toField="set_rotation" toNode="hanim_l_knee"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_r_anklePitch" toField="set_rotation" toNode="hanim_l_ankle"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_vl5Yaw" toField="set_rotation" toNode="hanim_vl5"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_whole_bodyRotInterp" toField="set_rotation" toNode="hanim_HumanoidRoot"></ROUTE>
-<ROUTE fromField="value_changed" fromNode="Kick_whole_bodyTransInterp" toField="set_translation" toNode="hanim_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_l_shoulderRoll" toField="set_rotation" toNode="boxman_l_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_l_ForeArmPitch" toField="set_rotation" toNode="boxman_l_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_l_wristRoll" toField="set_rotation" toNode="boxman_l_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_r_shoulderRoll" toField="set_rotation" toNode="boxman_r_shoulder"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_r_ForeArmPitch" toField="set_rotation" toNode="boxman_r_elbow"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_r_wristRoll" toField="set_rotation" toNode="boxman_r_wrist"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_r_hipPitch" toField="set_rotation" toNode="boxman_r_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_r_kneePitch" toField="set_rotation" toNode="boxman_r_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_r_anklePitch" toField="set_rotation" toNode="boxman_r_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_l_hipPitch" toField="set_rotation" toNode="boxman_l_hip"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_l_kneePitch" toField="set_rotation" toNode="boxman_l_knee"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_r_anklePitch" toField="set_rotation" toNode="boxman_l_ankle"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_vl5Yaw" toField="set_rotation" toNode="boxman_vl5"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_whole_bodyRotInterp" toField="set_rotation" toNode="boxman_HumanoidRoot"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="Kick_whole_bodyTransInterp" toField="set_translation" toNode="boxman_HumanoidRoot"></ROUTE>
 <ROUTE fromField="position_changed" fromNode="HudProx" toField="set_translation" toNode="HudXform"></ROUTE>
 <ROUTE fromField="orientation_changed" fromNode="HudProx" toField="set_rotation" toNode="HudXform"></ROUTE>
 <ROUTE fromField="touchTime" fromNode="Stand_Touch" toField="set_stopTime" toNode="PitchTimer"></ROUTE>

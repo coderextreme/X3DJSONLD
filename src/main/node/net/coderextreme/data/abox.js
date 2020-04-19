@@ -1,42 +1,49 @@
 var java = require('java');
-var autoclass = require('../../../X3Dautoclass.js');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
+var autoclass = require('../X3Dautoclass');
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
-ConfigurationProperties.setStripTrailingZeroesSync(true);
+ConfigurationProperties.setStripTrailingZeroes(true);
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
-      var X3D0 =  new autoclass.X3D().setProfileSync("Immersive").setVersionSync("3.3")
-      .setHeadSync(new autoclass.head()
-        .addMetaSync(new autoclass.meta().setNameSync("title").setContentSync("abox.x3d"))
-        .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
-        .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("manual"))
-        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/abox.x3d"))
-        .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("a box")))
-      .setSceneSync(new autoclass.Scene()
-        .addChildSync(new autoclass.ProtoDeclare().setNameSync("anyShape")
-          .setProtoInterfaceSync(new autoclass.ProtoInterface()
-            .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_MFNODE).setNameSync("myShape").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
-              .addChildSync(new autoclass.Shape()
-                .setGeometrySync(new autoclass.Sphere()))))
-          .setProtoBodySync(new autoclass.ProtoBody()
-            .addChildSync(new autoclass.Transform()
-              .setISSync(new autoclass.IS()
-                .addConnectSync(new autoclass.connect().setNodeFieldSync("children").setProtoFieldSync("myShape"))))))
-        .addChildSync(new autoclass.ProtoDeclare().setNameSync("one")
-          .setProtoInterfaceSync(new autoclass.ProtoInterface()
-            .addFieldSync(new autoclass.field().setTypeSync(autoclass.field.TYPE_MFNODE).setNameSync("myShape").setAccessTypeSync(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
-              .addChildSync(new autoclass.Shape()
-                .setGeometrySync(new autoclass.Cylinder()))))
-          .setProtoBodySync(new autoclass.ProtoBody()
-            .addChildSync(new autoclass.Transform()
-              .addChildSync(ProtoInstance0 = new autoclass.ProtoInstance().setNameSync("anyShape")
-                .setISSync(new autoclass.IS()
-                  .addConnectSync(new autoclass.connect().setNodeFieldSync("myShape").setProtoFieldSync("myShape")))))))
-        .addChildSync(ProtoInstance1 = new autoclass.ProtoInstance().setNameSync("one")))      ;
+      var X3D0 =  new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new autoclass.head()
+        .addMeta(new autoclass.meta().setName("title").setContent("abox.x3d"))
+        .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
+        .addMeta(new autoclass.meta().setName("description").setContent("a box")))
+      .setScene(new autoclass.Scene()
+        .addChild(new autoclass.ProtoDeclare().setName("anyShape")
+          .setProtoInterface(new autoclass.ProtoInterface()
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
+              .addChild(new autoclass.Shape()
+                .setGeometry(new autoclass.Sphere()))))
+          .setProtoBody(new autoclass.ProtoBody()
+            .addChild(new autoclass.Transform()
+              .setIS(new autoclass.IS()
+                .addConnect(new autoclass.connect().setNodeField("children").setProtoField("myShape"))))))
+        .addChild(new autoclass.ProtoDeclare().setName("one")
+          .setProtoInterface(new autoclass.ProtoInterface()
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
+              .addChild(new autoclass.Shape()
+                .setGeometry(new autoclass.Cylinder()))))
+          .setProtoBody(new autoclass.ProtoBody()
+            .addChild(new autoclass.Transform()
+              .addChild(ProtoInstance0 = new autoclass.ProtoInstance().setName("anyShape")
+                .setIS(new autoclass.IS()
+                  .addConnect(new autoclass.connect().setNodeField("myShape").setProtoField("myShape")))))))
+        .addChild(ProtoInstance1 = new autoclass.ProtoInstance().setName("one")))      ;
 ProtoInstance1
-          .addFieldValueSync(new autoclass.fieldValue().setNameSync("myShape")
-            .addChildSync(new autoclass.Shape()
-              .setGeometrySync(new autoclass.Box().setSizeSync(java.newArray("float", [java.newFloat(140), java.newFloat(140), java.newFloat(140)])))));
+          .addFieldValue(new autoclass.fieldValue().setName("myShape")
+            .addChild(new autoclass.Shape()
+              .setGeometry(new autoclass.Box().setSize(java.newArray("float", [java.newFloat(140), java.newFloat(140), java.newFloat(140)])))));
     X3D0.toFileX3D("../data/abox.new.x3d");

@@ -23,8 +23,6 @@
               <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
               <ComposedShader DEF='x3dom' language='GLSL'>
                 <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
-                <ShaderPart url='"../shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"'/>
-                <ShaderPart type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
                 <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
                 <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
                 <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
@@ -36,10 +34,10 @@
                 <field name='d' accessType='inputOutput' type='SFFloat' value='20.0'/>
                 <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
                 <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+                <ShaderPart url='"../shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"'/>
+                <ShaderPart type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
               </ComposedShader>
               <ComposedShader DEF='x_ite' language='GLSL'>
-                <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'/>
-                <ShaderPart type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
                 <field name='cube' accessType='inputOutput' type='SFNode'>
                   <ComposedCubeMapTexture USE='texture'/>
                 </field>
@@ -53,6 +51,8 @@
                 <field name='d' accessType='inputOnly' type='SFFloat' value='20.0'/>
                 <field name='tdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
                 <field name='pdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
+                <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'/>
+                <ShaderPart type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
               </ComposedShader>
               <ComposedCubeMapTexture DEF='texture'>
                 <ImageTexture containerField='back' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"'/>

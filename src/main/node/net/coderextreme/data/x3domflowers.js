@@ -18,7 +18,7 @@ var ProtoInstance6 = null;
         .addMetaSync(new autoclass.meta().setNameSync("creator").setContentSync("John Carlson"))
         .addMetaSync(new autoclass.meta().setNameSync("description").setContentSync("5 or more prismatic flowers"))
         .addMetaSync(new autoclass.meta().setNameSync("generator").setContentSync("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")))
+        .addMetaSync(new autoclass.meta().setNameSync("identifier").setContentSync("https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d")))
       .setSceneSync(new autoclass.Scene()
         .addChildSync(new autoclass.NavigationInfo())
         .addCommentsSync(new autoclass.CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))

@@ -105,7 +105,6 @@ JavaSerializer.prototype = {
 		str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
 		str += "public class "+clz+" {\n";
 		str += "  public static void main(String[] args) {\n";
-		str += "    ConfigurationProperties.setShowDefaultAttributes(true);\n";
 		str += "    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);\n";
 		str += "    ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
 		str += "    new "+clz+"().initialize().toFileJSON(\""+clazz+".new.json\");\n";
