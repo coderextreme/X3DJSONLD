@@ -46,7 +46,7 @@ Transform7.children = [];
 Transform7.children[0] = Shape8;
 
 Script12 = browser.currentScene.createNode("Script");
-Script12.DEF = "bounce";
+Script12.DEF = "bounce1";
 field13 = browser.currentScene.createNode("field");
 field13.name = "scale";
 field13.accessType = "inputOutput";
@@ -132,14 +132,14 @@ TimeSensor18.loop = True;
 Transform7.children[2] = TimeSensor18;
 
 ROUTE19 = browser.currentScene.createNode("ROUTE");
-ROUTE19.fromNode = "bounce";
+ROUTE19.fromNode = "bounce1";
 ROUTE19.fromField = "translation_changed";
 ROUTE19.toNode = "transform";
 ROUTE19.toField = "set_translation";
 Transform7.children[3] = ROUTE19;
 
 ROUTE20 = browser.currentScene.createNode("ROUTE");
-ROUTE20.fromNode = "bounce";
+ROUTE20.fromNode = "bounce1";
 ROUTE20.fromField = "scale_changed";
 ROUTE20.toNode = "transform";
 ROUTE20.toField = "set_scale";
@@ -148,7 +148,7 @@ Transform7.children[4] = ROUTE20;
 ROUTE21 = browser.currentScene.createNode("ROUTE");
 ROUTE21.fromNode = "bubbleClock";
 ROUTE21.fromField = "fraction_changed";
-ROUTE21.toNode = "bounce";
+ROUTE21.toNode = "bounce1";
 ROUTE21.toField = "set_fraction";
 Transform7.children[5] = ROUTE21;
 

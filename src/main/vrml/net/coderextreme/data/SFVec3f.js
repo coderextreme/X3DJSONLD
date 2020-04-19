@@ -28,7 +28,7 @@ Transform3.children[0] = Shape4;
 browser.currentScene.children[1] = Transform3;
 
 Script8 = browser.currentScene.createNode("Script");
-Script8.DEF = "Bounce";
+Script8.DEF = "Bounce2";
 field9 = browser.currentScene.createNode("field");
 field9.name = "set_translation";
 field9.accessType = "inputOnly";
@@ -108,12 +108,12 @@ browser.currentScene.children[3] = TimeSensor14;
 ROUTE15 = browser.currentScene.createNode("ROUTE");
 ROUTE15.fromNode = "TourTime";
 ROUTE15.fromField = "cycleTime";
-ROUTE15.toNode = "Bounce";
+ROUTE15.toNode = "Bounce2";
 ROUTE15.toField = "set_fraction";
 browser.currentScene.children[4] = ROUTE15;
 
 ROUTE16 = browser.currentScene.createNode("ROUTE");
-ROUTE16.fromNode = "Bounce";
+ROUTE16.fromNode = "Bounce2";
 ROUTE16.fromField = "translation_changed";
 ROUTE16.toNode = "transform";
 ROUTE16.toField = "set_translation";

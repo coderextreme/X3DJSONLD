@@ -26,7 +26,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setAppearance(new autoclass.Appearance()
               .setMaterial(new autoclass.Material().setDiffuseColor(java.newArray("float", [java.newFloat(0.7), java.newFloat(0.7), java.newFloat(0.7)])).setSpecularColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.5)]))))
             .setGeometry(new autoclass.Sphere())))
-        .addChild(new autoclass.Script().setDEF("Bounce")
+        .addChild(new autoclass.Script().setDEF("Bounce2")
           .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("set_translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
           .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("translation_changed").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
           .addField(new autoclass.field().setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -64,6 +64,6 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "			     newBubble();\n"+
 "			}"))
         .addChild(new autoclass.TimeSensor().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
-        .addChild(new autoclass.ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
-        .addChild(new autoclass.ROUTE().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
+        .addChild(new autoclass.ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
+        .addChild(new autoclass.ROUTE().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
     X3D0.toFileX3D("../data/SFVec3f.new.x3d");

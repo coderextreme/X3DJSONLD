@@ -80,7 +80,7 @@
         },
         {
           "Script": {
-            "@DEF": "Bounce",
+            "@DEF": "Bounce2",
             "field": [
               {
                 "@name": "set_translation",
@@ -174,13 +174,13 @@
           "ROUTE": {
             "@fromNode": "TourTime",
             "@fromField": "cycleTime",
-            "@toNode": "Bounce",
+            "@toNode": "Bounce2",
             "@toField": "set_fraction"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Bounce",
+            "@fromNode": "Bounce2",
             "@fromField": "translation_changed",
             "@toNode": "transform",
             "@toField": "set_translation"
