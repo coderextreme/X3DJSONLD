@@ -1,10 +1,10 @@
 "use strict";
 
-function Three2Serializer () {
+function ThreeSerializer () {
 };
 
 
-Three2Serializer.prototype = {
+ThreeSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		var parentobj = {};
 		parentobj.children = [];
@@ -241,5 +241,5 @@ Three2Serializer.prototype = {
 
 
 if (typeof module === 'object')  {
-	module.exports = Three2Serializer;
+	module.exports = ThreeSerializer;
 }
