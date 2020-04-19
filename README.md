@@ -1,5 +1,7 @@
 ﻿# X3D JSON loader and node.js express web server for serving files from localhost
 
+Version 5.0.2
+
 
 * for using the API, read doc/GettingStarted.pdf  There are still symbols in the global scope I'd like to get rid of.  If you'd like to help, fork and issue a pull request.
 
