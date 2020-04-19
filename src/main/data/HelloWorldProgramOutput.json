@@ -30,10 +30,6 @@
             "@level":3
           },
           {
-            "@name":"Layering",
-            "@level":1
-          },
-          {
             "@name":"Shaders",
             "@level":1
           },
@@ -47,6 +43,14 @@
           },
           {
             "@name":"H-Anim",
+            "@level":1
+          },
+          {
+            "@name":"Grouping",
+            "@level":1
+          },
+          {
+            "@name":"Layering",
             "@level":1
           }
         ],
@@ -82,7 +86,7 @@
           },
           {
             "@name":"reference",
-            "@content":"http://www.web3d.org/specifications/java/X3DJSAIL.html"
+            "@content":"https://www.web3d.org/specifications/java/X3DJSAIL.html"
           },
           {
             "@name":"generator",
@@ -94,7 +98,7 @@
           },
           {
             "@name":"modified",
-            "@content":"19 June 2019"
+            "@content":"4 April 2020"
           },
           {
             "@name":"generator",
@@ -102,7 +106,7 @@
           },
           {
             "@name":"generator",
-            "@content":"http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
+            "@content":"https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
           },
           {
             "@name":"generator",
@@ -138,11 +142,11 @@
           },
           {
             "@name":"reference",
-            "@content":"https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+            "@content":"https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+            "@content":"https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
           },
           {
             "@name":"license",
@@ -226,7 +230,7 @@
                 { "Anchor":
                   {
                     "@description":"select for X3D Java SAI Library (X3DJSAIL) description",
-                    "@url":["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"],
+                    "@url":["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"],
                     "-children":[
                       { "Shape":
                         {
@@ -246,7 +250,7 @@
                                 "-texture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]
+                                      "@url":["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]
                                     }
                                   }
                               }
@@ -411,7 +415,7 @@
                               "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"
                             },
                             {
-                              "#comment":"reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
+                              "#comment":"reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
                             }
                           ],
                           "-geometry":
@@ -750,7 +754,7 @@
           { "Inline":
             {
               "@DEF":"inlineSceneDef",
-              "@url":["someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]
+              "@url":["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]
             }
           },
           { "IMPORT":
@@ -1039,10 +1043,10 @@
                 { "AudioClip":
                   {
                     "@description":"chimes",
-                    "@url":["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
+                    "@url":["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
                     "-children":[
                       {
-                        "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
+                        "#comment":"Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
                       }
                     ]
                   }
@@ -1061,10 +1065,10 @@
                 { "MovieTexture":
                   {
                     "@description":"mpgsys.mpg from ConformanceNist suite",
-                    "@url":["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
+                    "@url":["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
                     "-children":[
                       {
-                        "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
+                        "#comment":"Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
                       },
                       {
                         "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\""
@@ -1309,13 +1313,6 @@
                         }
                       }
                     ]
-                  }
-                },
-                { "HAnimHumanoid":
-                  {
-                    "@name":"TestHumanoid",
-                    "@DEF":"TestHumanoidDEF",
-                    "@version":"2.0"
                   }
                 }
               ]

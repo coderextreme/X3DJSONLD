@@ -2,16 +2,48 @@ load('X3Dautoclass.js');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Example scene flower_sail. </p>
- <p> Related links: flower_sail.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> a flower. </p>
+ <p> Related links: flower_sail.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
+		<tr style="background-color:silver; border-color:silver;">
+			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.flower_sail&nbsp; Document Metadata </td>
+		</tr>
+
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d">flower.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
+			<td> John Carlson </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> manual </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
+			<td> a flower </td>
+		</tr>
+		<tr style="background-color:silver; border-color:silver;">
+			<td style="text-align:center;" colspan="2">  &nbsp; </td>
+		</tr>
+	</table>
+
 	<p>
 		This program uses the
-		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
+		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
-		<a href="http://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
+		<a href="https://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
 		stylesheet to create ES5 source code from an <code>.x3d</code> scene.
 	</p>
 
+	* @author John Carlson
  */
 
 function flower_sail
@@ -28,6 +60,12 @@ flower_sail.prototype = {
   initialize : function ()
   {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  .setHead(new headObject()
+    .addMeta(new metaObject().setName("title").setContent("flower.x3d"))
+    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
+    .addMeta(new metaObject().setName("generator").setContent("manual"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"))
+    .addMeta(new metaObject().setName("description").setContent("a flower")))
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject())
     .addChild(new DirectionalLightObject().setDirection(0.0,-0.8,-0.2).setIntensity(0.5))

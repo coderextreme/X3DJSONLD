@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> beginnings of a force directed graph in 3D. </p>
- <p> Related links: force_sail.java source, <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="http://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="http://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: force_sail.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -41,9 +41,9 @@ load('X3Dautoclass.js');
 
 	<p>
 		This program uses the
-		<a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
+		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
 		It has been produced using the 
-		<a href="http://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
+		<a href="https://www.web3d.org/x3d/stylesheets/X3dToES5.xslt" target="_blank">X3dToES5.xslt</a>
 		stylesheet to create ES5 source code from an <code>.x3d</code> scene.
 	</p>
 
@@ -64,12 +64,13 @@ force_sail.prototype = {
   initialize : function ()
   {
 
-	/** Large attribute array: Extrusion DEF='extrusion' crossSection field, scene-graph level=7, element #40, 34 total numbers made up of 17 2-tuple values */
-	this.extrusion_7_40_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
+	/** Large attribute array: Extrusion DEF='extrusion' crossSection field, scene-graph level=7, element #41, 34 total numbers made up of 17 2-tuple values */
+	this.extrusion_7_41_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
 	.append(new MFVec2fObject(Java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], Java.type("float[]"))))
 	.append(new MFVec2fObject(Java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], Java.type("float[]"))));
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
+    .addComponent(new componentObject().setName("Scripting").setLevel(1))
     .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
     .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
     .addMeta(new metaObject().setName("title").setContent("force.x3d"))
@@ -121,7 +122,7 @@ force_sail.prototype = {
       .setProtoBody(new ProtoBodyObject()
         .addChild(new GroupObject()
           .addChild(new ShapeObject()
-            .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(Java.to([0.0,-50.0,0.0,0.0,50.0,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.extrusion_7_40_crossSection))
+            .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(Java.to([0.0,-50.0,0.0,0.0,50.0,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.extrusion_7_41_crossSection))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(0.0,1.0,0.0))))
           .addChild(new ScriptObject("MoveCylinder").setSourceCode("\n" + 

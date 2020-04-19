@@ -94,23 +94,24 @@ ProtoInstanceObject ProtoInstance6 = null;
         .addComments(new CommentsBlock("comment #3"))
         .addComments(new CommentsBlock("comment #4"))
         .addComponent(new componentObject().setName("Navigation").setLevel(3))
-        .addComponent(new componentObject().setName("Layering").setLevel(1))
         .addComponent(new componentObject().setName("Shaders").setLevel(1))
         .addComponent(new componentObject().setName("CADGeometry").setLevel(2))
         .addComponent(new componentObject().setName("DIS").setLevel(2))
         .addComponent(new componentObject().setName("H-Anim").setLevel(1))
+        .addComponent(new componentObject().setName("Grouping").setLevel(1))
+        .addComponent(new componentObject().setName("Layering").setLevel(1))
         .addUnit(new unitObject().setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1d))
         .addUnit(new unitObject().setName("LengthUnitConversion").setCategory("length").setConversionFactor(1d))
         .addUnit(new unitObject().setName("ForceFromPoundsToNewtons").setCategory("force").setConversionFactor(4.4482d))
         .addMeta(new metaObject().setName("title").setContent("HelloWorldProgramOutput.x3d"))
         .addMeta(new metaObject().setName("info").setContent("continued development and testing in progress"))
         .addMeta(new metaObject().setName("description").setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"))
-        .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
+        .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
         .addMeta(new metaObject().setName("generator").setContent("HelloWorldProgramOutput.java"))
         .addMeta(new metaObject().setName("created").setContent("6 September 2016"))
-        .addMeta(new metaObject().setName("modified").setContent("19 June 2019"))
+        .addMeta(new metaObject().setName("modified").setContent("4 April 2020"))
         .addMeta(new metaObject().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
-        .addMeta(new metaObject().setName("generator").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
+        .addMeta(new metaObject().setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
         .addMeta(new metaObject().setName("generator").setContent("Netbeans http://www.netbeans.org"))
         .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
         .addMeta(new metaObject().setName("reference").setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"))
@@ -119,8 +120,8 @@ ProtoInstanceObject ProtoInstance6 = null;
         .addMeta(new metaObject().setName("reference").setContent("HelloWorldProgramOutput.x3dv"))
         .addMeta(new metaObject().setName("reference").setContent("HelloWorldProgramOutput.wrl"))
         .addMeta(new metaObject().setName("reference").setContent("HelloWorldProgramOutput.html"))
-        .addMeta(new metaObject().setName("reference").setContent("https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
+        .addMeta(new metaObject().setName("reference").setContent("https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
         .addChild(new ViewpointGroupObject().setDescription("Available viewpoints")
@@ -166,7 +167,7 @@ ProtoInstanceObject ProtoInstance6 = null;
               .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"))
               .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'"))
               .addComments(new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"))
-              .addComments(new CommentsBlock("reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"))
+              .addComments(new CommentsBlock("reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"))
               .setGeometry(new TextObject().setString(new MFStringObject(new MFString11().getArray())))))
           .addComments(new CommentsBlock("It's a beautiful world"))
           .addComments(new CommentsBlock("... for you!"))
@@ -308,11 +309,11 @@ ProtoInstanceObject ProtoInstance6 = null;
         .addChild(new SoundObject().setLocation(new float[] {0f,1.6f,0f})
           .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height"))
           .setSource(new AudioClipObject().setDescription("chimes").setUrl(new MFStringObject(new MFString19().getArray()))
-            .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"))))
+            .addComments(new CommentsBlock("Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"))))
         .addChild(new SoundObject().setLocation(new float[] {0f,1.6f,0f})
           .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height"))
           .setSource(new MovieTextureObject().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new MFStringObject(new MFString20().getArray()))
-            .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"))
+            .addComments(new CommentsBlock("Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"))
             .addComments(new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\""))))
         .addComments(new CommentsBlock("Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"))
         .addComments(new CommentsBlock("Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false"))
@@ -349,7 +350,7 @@ ProtoInstanceObject ProtoInstance6 = null;
             .addComments(new CommentsBlock("Test satisfactorily creates MFNode shaders array as an ordered list with mixed content"))
             .addShaders(new ProgramShaderObject().setDEF("TestShader1")
               .addPrograms(new ShaderProgramObject().setType("VERTEX").setDEF("TestShader2")))
-            .setMaterial(ProtoInstance6 = new ProtoInstanceObject().setName("ShaderProto").setDEF("TestShader3"))
+            .addShaders(ProtoInstance6 = new ProtoInstanceObject().setName("ShaderProto").setDEF("TestShader3"))
             .addShaders(new ComposedShaderObject().setDEF("TestShader4")
               .addParts(new ShaderPartObject().setType("VERTEX").setDEF("TestShader5")))))
         .addChild(new TransformObject().setDEF("SpecialtyNodes")
@@ -362,8 +363,7 @@ ProtoInstanceObject ProtoInstance6 = null;
           .addChild(new SignalPduObject())
           .addChild(new TransmitterPduObject())
           .addChild(new DISEntityManagerObject()
-            .addMapping(new DISEntityTypeMappingObject()))
-          .addChild(new HAnimHumanoidObject().setName("TestHumanoid").setDEF("TestHumanoidDEF").setVersion("2.0"))))      ;
+            .addMapping(new DISEntityTypeMappingObject()))))      ;
 ProtoInstance0
               .addFieldValue(new fieldValueObject().setName("description").setValue("ArtDeco01Material can substitute for a Material node"));
 ProtoInstance1
@@ -379,12 +379,12 @@ protected class MFString0 {
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"});
+    return new MFStringObject(new java.lang.String[] {"../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"});
+    return new MFStringObject(new java.lang.String[] {"images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"});
   }
 }
 protected class MFInt323 {
@@ -459,7 +459,7 @@ protected class MFString16 {
 }
 protected class MFString17 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"});
+    return new MFStringObject(new java.lang.String[] {"someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"});
   }
 }
 protected class MFString18 {
@@ -469,12 +469,12 @@ protected class MFString18 {
 }
 protected class MFString19 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"});
+    return new MFStringObject(new java.lang.String[] {"chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"});
   }
 }
 protected class MFString20 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"});
+    return new MFStringObject(new java.lang.String[] {"mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"});
   }
 }
 }

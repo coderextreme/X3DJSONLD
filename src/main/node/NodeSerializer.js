@@ -104,6 +104,7 @@ NodeSerializer.prototype = {
 						if (method === "setShaders") {
 							method = "addShaders"
 							addpre = "";
+						} else if (method === "addValue") {
 						} else {
 							method = "set"+attrs[a].nodeValue.charAt(0).toUpperCase() + attrs[a].nodeValue.slice(1);
 							addpre = "";
@@ -120,6 +121,10 @@ NodeSerializer.prototype = {
 		}
 		if (node.nodeName === "IS") {
 			method = "setIS";
+			addpre = "";
+		}
+		if (method === "setShaders") {
+			method = "addShaders"
 			addpre = "";
 		}
 		return prepre+addpre+method+"";
@@ -359,7 +364,7 @@ NodeSerializer.prototype = {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
+				str += "\n"+("  ".repeat(n))+'.setSourceCode("'+node.nodeValue.split("\r\n").map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"');
