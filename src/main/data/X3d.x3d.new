@@ -4,24 +4,24 @@
 <component name="Layering" level="1"></component>
 <unit name="AngleUnitConversion" category="angle" conversionFactor="1"></unit>
 <unit name="LengthUnitConversion" category="length" conversionFactor="1"></unit>
-<meta name="title" content="HelloWorldProgramOutput.x3d"></meta>
+<meta name="title" content="Java.x3d"></meta>
 <meta name="description" content="Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library"></meta>
 <meta name="reference" content="http://www.web3d.org/specifications/java/X3DJSAIL.html"></meta>
-<meta name="generator" content="HelloWorldProgramOutput.java"></meta>
+<meta name="generator" content="Java.java"></meta>
 <meta name="created" content="6 September 2016"></meta>
 <meta name="modified" content="6 June 2018"></meta>
 <meta name="generator" content="X3D Java Scene Access Interface Library (X3DJSAIL)"></meta>
 <meta name="generator" content="http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"></meta>
 <meta name="generator" content="Netbeans http://www.netbeans.org"></meta>
 <meta name="creator" content="Don Brutzman"></meta>
-<meta name="reference" content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"></meta>
+<meta name="reference" content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/Java.x3d"></meta>
 <meta name="reference" content="Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"></meta>
-<meta name="reference" content="HelloWorldProgramOutput.txt"></meta>
-<meta name="reference" content="HelloWorldProgramOutput.x3dv"></meta>
-<meta name="reference" content="HelloWorldProgramOutput.wrl"></meta>
-<meta name="reference" content="HelloWorldProgramOutput.html"></meta>
-<meta name="X3dValidator" content="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"></meta>
-<meta name="identifier" content="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"></meta>
+<meta name="reference" content="Java.txt"></meta>
+<meta name="reference" content="Java.x3dv"></meta>
+<meta name="reference" content="Java.wrl"></meta>
+<meta name="reference" content="Java.html"></meta>
+<meta name="X3dValidator" content="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/Java.x3d"></meta>
+<meta name="identifier" content="http://www.web3d.org/specifications/java/examples/Java.x3d"></meta>
 <meta name="license" content="../license.html"></meta>
 <meta name="SpecialTest" content="tested sat: name value cannot contain embedded space character"></meta>
 </head>
