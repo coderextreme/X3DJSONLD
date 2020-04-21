@@ -6,7 +6,7 @@
 
 	<groupId>net.coderextreme</groupId>
 	<artifactId>X3DJSONLD</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>7.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>X3DJSONLD</name>
@@ -157,6 +157,87 @@
 								<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
 								  <pattern>\.x3d$</pattern>
 								  <replacement>.java</replacement>
+								</fileMapper>
+							</fileMappers>
+							<parameters>
+								<parameter>
+									<name>packageName</name>
+									<value>net.x3djsonld.data</value>
+								</parameter>
+							</parameters>
+						</transformationSet>
+						<transformationSet>
+							<dir>src/main/data</dir>
+							<stylesheet>src/main/lib/stylesheets/X3dToPython.xslt</stylesheet>
+							<outputDir>src/main/python/net/x3djsonld/data</outputDir>
+							<includes>
+								<include>**/*.x3d</include>
+							</includes>
+							<excludes>
+								<exclude>**/*.intermediate.x3d</exclude>
+								<exclude>**/*.don.x3d</exclude>
+								<exclude>**/*.new</exclude>
+								<exclude>**/*.new.x3d</exclude>
+								<exclude>**/*.json</exclude>
+							</excludes>
+							<fileMappers>
+								<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+								  <pattern>\.x3d$</pattern>
+								  <replacement>.py</replacement>
+								</fileMapper>
+							</fileMappers>
+							<parameters>
+								<parameter>
+									<name>packageName</name>
+									<value>net.x3djsonld.data</value>
+								</parameter>
+							</parameters>
+						</transformationSet>
+						<transformationSet>
+							<dir>src/main/data</dir>
+							<stylesheet>src/main/lib/stylesheets/X3dToNodeJS.xslt</stylesheet>
+							<outputDir>src/main/node/net/x3djsonld/data</outputDir>
+							<includes>
+								<include>**/*.x3d</include>
+							</includes>
+							<excludes>
+								<exclude>**/*.intermediate.x3d</exclude>
+								<exclude>**/*.don.x3d</exclude>
+								<exclude>**/*.new</exclude>
+								<exclude>**/*.new.x3d</exclude>
+								<exclude>**/*.json</exclude>
+							</excludes>
+							<fileMappers>
+								<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+								  <pattern>\.x3d$</pattern>
+								  <replacement>.js</replacement>
+								</fileMapper>
+							</fileMappers>
+							<parameters>
+								<parameter>
+									<name>packageName</name>
+									<value>net.x3djsonld.data</value>
+								</parameter>
+							</parameters>
+						</transformationSet>
+						<transformationSet>
+							<dir>src/main/data</dir>
+							<stylesheet>src/main/lib/stylesheets/X3dToES5.xslt</stylesheet>
+							<outputDir>src/main/nashorn/net/x3djsonld/data</outputDir>
+							<includes>
+								<include>**/*.x3d</include>
+							</includes>
+							<excludes>
+								<exclude>**/*.intermediate.x3d</exclude>
+								<exclude>**/*.don.x3d</exclude>
+								<exclude>**/*.new</exclude>
+								<exclude>**/*.new.x3d</exclude>
+								<exclude>**/*.json</exclude>
+							</excludes>
+							<fileMappers>
+								<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+								  <pattern>\.x3d$</pattern>
+								  <replacement>.js</replacement>
 								</fileMapper>
 							</fileMappers>
 							<parameters>
