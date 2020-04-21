@@ -44,7 +44,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"HelloWorldProgramOutput.x3d"
+            "@content":"Java.x3d"
           },
           {
             "@name":"description",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"generator",
-            "@content":"HelloWorldProgramOutput.java"
+            "@content":"Java.java"
           },
           {
             "@name":"created",
@@ -84,7 +84,7 @@
           },
           {
             "@name":"reference",
-            "@content":"https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"
+            "@content":"https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/Java.x3d"
           },
           {
             "@name":"reference",
@@ -92,27 +92,27 @@
           },
           {
             "@name":"reference",
-            "@content":"HelloWorldProgramOutput.txt"
+            "@content":"Java.txt"
           },
           {
             "@name":"reference",
-            "@content":"HelloWorldProgramOutput.x3dv"
+            "@content":"Java.x3dv"
           },
           {
             "@name":"reference",
-            "@content":"HelloWorldProgramOutput.wrl"
+            "@content":"Java.wrl"
           },
           {
             "@name":"reference",
-            "@content":"HelloWorldProgramOutput.html"
+            "@content":"Java.html"
           },
           {
             "@name":"X3dValidator",
-            "@content":"https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+            "@content":"https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/Java.x3d"
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+            "@content":"http://www.web3d.org/specifications/java/examples/Java.x3d"
           },
           {
             "@name":"license",
