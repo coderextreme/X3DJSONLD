@@ -361,7 +361,7 @@ VRMLScriptSerializer.prototype = {
 					}).join("\r\n");
 				str += "\r\n";
 				if (y !== node.nodeValue) {
-					// console.error("Java Comment Replacing "+node.nodeValue+" with "+y);
+					// console.error("VRML Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				str += "\n"+element.nodeName+stack[0];
