@@ -56,7 +56,7 @@ class ClassPrinter:
         for k,v in doList.items():
             if not k.startswith("X3D"):
                 str += '\t\t\t\t\t\t\t\t"' + k + '" : {\n'
-                str += '\t\t\t\t\t\t\t\t\t"$ref":"#/definitions/'+k+'"\n'
+                str += '\t\t\t\t\t\t\t\t\t"$ref":"#/$defs/'+k+'"\n'
                 str += '\t\t\t\t\t\t\t\t},\n'
         return str
 
@@ -73,7 +73,7 @@ class ClassPrinter:
     def listParents(self):
             str = ""
             str += '\t\t\t\t\t\t\t\t"' + self.name + '" : {\n'
-            str += '\t\t\t\t\t\t\t\t\t"$ref":"#/definitions/'+self.name+'"\n'
+            str += '\t\t\t\t\t\t\t\t\t"$ref":"#/$defs/'+self.name+'"\n'
             str += '\t\t\t\t\t\t\t\t},\n'
             for parent in self.parents:
                str += classes[parent].listParents()
@@ -116,7 +116,7 @@ class ClassPrinter:
         if field.get("name") == "geoSystem":
             str = '''\
             "@geoSystem": {
-		"$ref": "#/definitions/@geoSystem"
+		"$ref": "#/$defs/@geoSystem"
             },
 '''
             return str
@@ -481,7 +481,7 @@ class ClassPrinter:
         if foundFieldDeclaration:
             str += '''\
                                 "field": {
-                                        "$ref": "#/definitions/field"
+                                        "$ref": "#/$defs/field"
                                 },
 '''
 
@@ -546,7 +546,7 @@ class ClassPrinter:
         elif not foundChildren:
             str += '''\
                                 "-children": {
-                                        "$ref": "#/definitions/-childrenStatements"
+                                        "$ref": "#/$defs/-childrenStatements"
                                 },
 '''
         if self.node is not None:
@@ -555,7 +555,7 @@ class ClassPrinter:
             if self.hasIS:
                 str += '''\
                                     "IS": {
-                                            "$ref": "#/definitions/IS"
+                                            "$ref": "#/$defs/IS"
                                     },
 '''
 
@@ -575,11 +575,11 @@ class ClassPrinter:
                             try:
                                 if classes[field.get("name")] != None and field.get("name") != "X3D":
                                     str += '\t\t\t\t\t"' + field.get("name") + '" : {\n'
-                                    str += '\t\t\t\t\t\t"$ref":"#/definitions/'+ field.get("name") +'"\n'
+                                    str += '\t\t\t\t\t\t"$ref":"#/$defs/'+ field.get("name") +'"\n'
                                     str += '\t\t\t\t\t},\n'
                             except:
                                 str += '\t\t\t\t\t"-' + field.get("name") + '" : {\n'
-                                str += '\t\t\t\t\t\t"$ref":"#/definitions/-'+ field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") +'"\n'
+                                str += '\t\t\t\t\t\t"$ref":"#/$defs/-'+ field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") +'"\n'
                                 str += '\t\t\t\t\t},\n'
                                 # container fields
                                 cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") + '" : {\n'
@@ -638,14 +638,14 @@ code = '''{
         "type": "object",
         "properties": {
                 "X3D": {
-                        "$ref": "#/definitions/X3D"
+                        "$ref": "#/$defs/X3D"
                 }
         },
         "required": [
                 "X3D"
         ],
         "additionalProperties": false,
-        "definitions": {
+        "$defs": {
                 "-childrenStatements": {
                         "description": "Comments and ROUTEs",
                         "type": "array",
@@ -657,19 +657,19 @@ code = '''{
                                                 "type": "string"
                                         },
                                         "ROUTE": {
-                                                "$ref": "#/definitions/ROUTE"
+                                                "$ref": "#/$defs/ROUTE"
                                         },
                                         "IMPORT": {
-                                                "$ref": "#/definitions/IMPORT"
+                                                "$ref": "#/$defs/IMPORT"
                                         },
                                         "ProtoDeclare": {
-                                                "$ref": "#/definitions/ProtoDeclare"
+                                                "$ref": "#/$defs/ProtoDeclare"
                                         },
                                         "ExternProtoDeclare": {
-                                                "$ref": "#/definitions/ExternProtoDeclare"
+                                                "$ref": "#/$defs/ExternProtoDeclare"
                                         },
                                         "EXPORT": {
-                                                "$ref": "#/definitions/EXPORT"
+                                                "$ref": "#/$defs/EXPORT"
                                         }
                                 },
                                 "additionalProperties": false
