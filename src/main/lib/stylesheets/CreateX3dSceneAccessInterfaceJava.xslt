@@ -61,7 +61,7 @@ Additional references of interest:
 	
 	<xsl:variable name="newValue"><xsl:text>newValue</xsl:text></xsl:variable><!-- default parameter name -->
 	<xsl:variable name="x3d.tooltips.path">
-		<xsl:text>../tooltips/x3d-3.3.profile.xml</xsl:text>
+		<xsl:text>../tooltips/x3d-4.0.profile.xml</xsl:text>
 	</xsl:variable>
 	<xsl:variable name="x3d.tooltips.document" select="doc($x3d.tooltips.path)"/>
 	
@@ -75,7 +75,7 @@ Additional references of interest:
 	
 		<!-- diagnostics
 		<xsl:variable name="x3d.object.model.path">
-			<xsl:text>../../specifications/X3dUnifiedObjectModel-3.3.xml</xsl:text>
+			<xsl:text>../../specifications/X3dUnifiedObjectModel-4.0.xml</xsl:text>
 		</xsl:variable>
 		<xsl:variable name="x3d.object.model.document" select="doc($x3d.object.model.path)"/>
 		<xsl:message>
@@ -4037,7 +4037,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			// https://stackoverflow.com/questions/403256/how-do-i-read-a-resource-file-from-a-java-jar-file
 			// https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getResourceAsStream(String)
 			// https://stackoverflow.com/questions/11501418/is-it-possible-to-create-a-file-object-from-inputstream
-			// targets: X3DJSAIL.3.3.full.jar and X3DJSAIL.3.3.classes.jar
+			// targets: X3DJSAIL.4.0.full.jar and X3DJSAIL.4.0.classes.jar
 
 			final String systemClassPath = ConfigurationProperties.getClassPath();
 
@@ -4225,7 +4225,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         // https://stackoverflow.com/questions/403256/how-do-i-read-a-resource-file-from-a-java-jar-file
         // https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getResourceAsStream(String)
         // https://stackoverflow.com/questions/11501418/is-it-possible-to-create-a-file-object-from-inputstream
-        // targets: X3DJSAIL.3.3.full.jar and X3DJSAIL.3.3.classes.jar
+        // targets: X3DJSAIL.4.0.full.jar and X3DJSAIL.4.0.classes.jar
 
         final String systemClassPath = ConfigurationProperties.getClassPath();
 
@@ -4438,7 +4438,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	}
 
 	/**
-	 * Serialize scene graph using JavaScriptSerializer.js to create a JavaScript string.
+	 * Serialize scene graph using NodeSerializer.js to create a JavaScript string.
 	 * @see X3DObject#toFileJavaScript(String)
 	 * @return String containing result (if operation succeeds), empty otherwise
 	 */
@@ -4467,7 +4467,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	}
 
 	/**
-	 * Serialize scene graph using JavaScriptSerializer.js to create a JavaScript file.
+	 * Serialize scene graph using NodeSerializer.js to create a JavaScript file.
 	 * @author John Carlson
 	 * @see X3DObject#toStringJavaScript()
 	 * @see SFStringObject#isNMTOKEN(String)
@@ -4537,12 +4537,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                 {
 					// patches by John Carlson
                     bufferedWriter = Files.newBufferedWriter(intermediateJSFilePath, charset);
-					String nashornFolder = "nashorn";
-					String tmpStr = "load('classpath:"+nashornFolder+"/jvm-npm.js');\n";
+					String nodeFolder = "..";
+					String tmpStr = "";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "load('classpath:"+nashornFolder+"/repeatPolyfill.js');\n";
+					tmpStr = "require('java');\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var xmldom = require('"+nashornFolder+"/node_modules/xmldom/dom-parser.js');\n";
+					tmpStr = "var xmldom = require('xmldom');\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
 					tmpStr = "var DOMParser = xmldom.DOMParser;\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
@@ -4558,9 +4558,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
 					tmpStr = "var document = DOMImplementation.createDocument(null, 'X3D', docType);\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var mapToMethod = require('"+nashornFolder+"/node/mapToMethod.js');\n";
+					tmpStr = "var mapToMethod = require('"+nodeFolder+"/node/mapToMethod.js');\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var mapToMethod2 = require('"+nashornFolder+"/node/mapToMethod2.js');\n";
+					tmpStr = "var mapToMethod2 = require('"+nodeFolder+"/node/mapToMethod2.js');\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
 					tmpStr = "for (var par in mapToMethod2) {\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
@@ -4572,11 +4572,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
 					tmpStr = "}\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var fieldTypes = require('"+nashornFolder+"/node/fieldTypes.js');\n";
+					tmpStr = "var fieldTypes = require('"+nodeFolder+"/node/fieldTypes.js');\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "load('classpath:"+nashornFolder+"/node/X3DJSONLD.js');\n";
+					tmpStr = "require('"+nodeFolder+"/node/X3DJSONLD.js');\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "load('classpath:"+nashornFolder+"/node/JavaScriptSerializer.js');\n";
+					tmpStr = "var NodeSerializer = require('"+nodeFolder+"/node/NodeSerializer.js');\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
 					tmpStr = "var child = CreateElement('X3D');\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
@@ -4584,9 +4584,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
 					tmpStr = "print('Returning with', child);\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var output = new JavaScriptSerializer().serializeToString(json, child, '"+fileName+"', mapToMethod, fieldTypes);\n";
+					tmpStr = "var output = new NodeSerializer().serializeToString(json, child, '"+fileName+"', mapToMethod, fieldTypes);\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var FileWriter = Java.type('java.io.FileWriter');\n";
+					tmpStr = "var FileWriter = java.type('java.io.FileWriter');\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
 					tmpStr = "var fw = new FileWriter('"+fileName+"');\n";
 					bufferedWriter.write(tmpStr, 0, tmpStr.length());
@@ -4603,17 +4603,21 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                ", unable to save file: " + exception);
                 }
                 try {
-					ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-					System.out.println("nashorn diagnostic: toFileJavaScript(" + fileName + ") is running engine.eval(load(...)) using intermediateJSFileName='" + intermediateJSFileName + "'");
-//					engine.eval("load('classpath:"+intermediateJSFileName+"');");
-					engine.eval("load('"+intermediateJSFileName+"');");
+					String[] cmd = { "node.exe", "intermediateJSFileName"};
+					Runtime r = Runtime.getRuntime();
+					Process p = r.exec(cmd);
+					p.waitFor();
 					if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
 						intermediateJSFilePath.toFile().deleteOnExit();
-					engine.eval("print('Hello World!');");
                 }
-                catch (ScriptException exception)
+                catch (InterruptedException exception)
                 {
-					throw new X3DException(errorNotice + "ScriptException when processing fileName " + intermediateJSFilePath +
+					throw new X3DException(errorNotice + "InterruptedException when processing fileName " + intermediateJSFilePath +
+							", unable to save result: " + exception);
+		}
+                catch (IOException exception)
+                {
+					throw new X3DException(errorNotice + "IOException when processing fileName " + intermediateJSFilePath +
 							", unable to save result: " + exception);
                 }
                 return outputFilePath.toFile(); // success
@@ -5451,7 +5455,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     // TODO is a grammar needed for file reading?
                     if (exificientGrammarX3D == null) // only needed once, avoid recomputation
                     {
-                        exificientGrammarX3D = GrammarFactory.newInstance().createGrammars("http://www.web3d.org/specifications/x3d-3.3.xsd"); // use XML schema
+                        exificientGrammarX3D = GrammarFactory.newInstance().createGrammars("http://www.web3d.org/specifications/x3d-4.0.xsd"); // use XML schema
                     }
                     exiFactory.setGrammars(exificientGrammarX3D);
                     exiFactory.setCodingMode(CodingMode.COMPRESSION); // use deflate compression for larger XML files
@@ -5521,11 +5525,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     EXISchema schema = null;
 
                     // Faster if the schema is already in EXIG format
-                    if (!new File("examples/x3d-3.3.xsd.exig").exists()) {
+                    if (!new File("examples/x3d-4.0.xsd.exig").exists()) {
                         SerializeEXISchema s = new SerializeEXISchema();
                         try {
-                            schemaInputStream = getClass().getResourceAsStream("/specifications/x3d-3.3.xsd");
-                            s.serializeEXISchema("/specifications/x3d-3.3.xsd", schemaInputStream, "examples/x3d-3.3.xsd.exig");
+                            schemaInputStream = getClass().getResourceAsStream("/specifications/x3d-4.0.xsd");
+                            s.serializeEXISchema("/specifications/x3d-4.0.xsd", schemaInputStream, "examples/x3d-4.0.xsd.exig");
                         } catch (EXISchemaFactoryException | IOException ex) {
                             Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
                             throw new IllegalArgumentException(ex);
@@ -5541,7 +5545,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     }
                     
                     try {
-                        fis = new FileInputStream("examples/x3d-3.3.xsd.exig");
+                        fis = new FileInputStream("examples/x3d-4.0.xsd.exig");
                         schema = new EXISchemaReader().parse(fis);
                     } finally {
                         if (fis != null) {
@@ -5751,7 +5755,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     // TODO can the grammar be precompiled and cached in X3DJSAIL library?
                     if (exificientGrammarX3D == null) // only needed once, avoid recomputation
                     {
-                        exificientGrammarX3D = GrammarFactory.newInstance().createGrammars("http://www.web3d.org/specifications/x3d-3.3.xsd"); // use XML schema
+                        exificientGrammarX3D = GrammarFactory.newInstance().createGrammars("http://www.web3d.org/specifications/x3d-4.0.xsd"); // use XML schema
                     }
                     exiFactory.setGrammars(exificientGrammarX3D);
                     exiFactory.setCodingMode(CodingMode.COMPRESSION); // use deflate compression for larger XML files
@@ -5814,14 +5818,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     fileInputStream = new FileInputStream(newXmlFile); // source
                     out = new FileOutputStream(newExiFile); // destination
 
-                    // 2.5. Turn x3d-3.3.xsd into an EXIG for faster parsing
+                    // 2.5. Turn x3d-4.0.xsd into an EXIG for faster parsing
                     
                     // Faster if the schema is already in EXIG format
-                    if (!new File("examples/x3d-3.3.xsd.exig").exists()) {
+                    if (!new File("examples/x3d-4.0.xsd.exig").exists()) {
                         SerializeEXISchema s = new SerializeEXISchema();
                         try {
-                            schemaInputStream = getClass().getResourceAsStream("/specifications/x3d-3.3.xsd");
-                            s.serializeEXISchema("/specifications/x3d-3.3.xsd", schemaInputStream, "examples/x3d-3.3.xsd.exig");
+                            schemaInputStream = getClass().getResourceAsStream("/specifications/x3d-4.0.xsd");
+                            s.serializeEXISchema("/specifications/x3d-4.0.xsd", schemaInputStream, "examples/x3d-4.0.xsd.exig");
                         } catch (EXISchemaFactoryException | IOException ex) {
                             Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
                             throw new IllegalArgumentException(ex);
@@ -5841,7 +5845,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     EXISchema schema = null;
 
                     try {
-                        fis = new FileInputStream("examples/x3d-3.3.xsd.exig");
+                        fis = new FileInputStream("examples/x3d-4.0.xsd.exig");
                         schema = new EXISchemaReader().parse(fis);
                     } finally {
                         if (fis != null) {
@@ -13785,6 +13789,7 @@ setAttribute method invocations).
 		<xsl:when test="($name = 'X3D')">
 			<!-- TODO fix this hack more thoroughly, possibly via ConfigurationProperties or else by optional parameter in method signature -->
 			<xsl:text>
+		.replace("#X3D V4.0 utf8","#VRML V2.0 utf8")
 		.replace("#X3D V3.3 utf8","#VRML V2.0 utf8")
 		.replace("#X3D V3.2 utf8","#VRML V2.0 utf8")
 		.replace("#X3D V3.1 utf8","#VRML V2.0 utf8")
@@ -30483,7 +30488,7 @@ import javax.script.ScriptException;</xsl:text>
 		<xsl:with-param name="x3dAbstractSpecificationRelativeUrl"><xsl:text></xsl:text></xsl:with-param>
 		<xsl:with-param name="javadocBlock">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
- * Usage: <code>% java -jar X3DJSAIL.3.3.classes.jar -help</code>
+ * Usage: <code>% java -jar X3DJSAIL.4.0.classes.jar -help</code>
  * @see <a href="../../../../../X3DJSAIL.html#CommandLine" target="_blank">X3DJSAIL documentation: Command Line</a>
  * @see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html">JAR File Specification</a>
  * @see <a href="https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html">Java Tutorials, Lesson: Packaging Programs in JAR Files</a>
@@ -32522,7 +32527,7 @@ showing default attribute values, and other custom settings.</p>
 	 */
         // https://stackoverflow.com/questions/21696784/how-to-declare-an-arraylist-with-values
         public static final ArrayList<String> X3DJSAIL_JAR_RELEASE_VERSIONS = 
-            new ArrayList<>(Arrays.asList("X3DJSAIL.3.3.classes.jar", "X3DJSAIL.3.3.full.jar"));
+            new ArrayList<>(Arrays.asList("X3DJSAIL.4.0.classes.jar", "X3DJSAIL.4.0.full.jar","X3DJSAIL.3.3.classes.jar", "X3DJSAIL.3.3.full.jar"));
 
     // ==========================================================================================
 				

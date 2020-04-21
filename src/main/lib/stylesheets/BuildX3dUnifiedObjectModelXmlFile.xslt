@@ -66,7 +66,7 @@ Recommended tool:
     
     <!-- See X3DJSAIL for original tooltip usage code -->
     <xsl:variable name="x3d.tooltips.path">
-		<xsl:text>../tooltips/x3d-3.3.profile.xml</xsl:text>
+		<xsl:text>../tooltips/x3d-4.0.profile.xml</xsl:text>
 	</xsl:variable>
 	<xsl:variable name="x3d.tooltips.document" select="doc($x3d.tooltips.path)"/>
 

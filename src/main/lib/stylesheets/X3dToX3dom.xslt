@@ -70,8 +70,8 @@ POSSIBILITY OF SUCH DAMAGE.
 	<!-- also in CreateContentCatalogPages.xslt -->
     <xsl:param name="urlScene"                 ></xsl:param>      <!-- X3D MFString url list -->
     <!-- TODO update urlCobweb as urlX_ITE when X3D-Edit can be updated -->
-    <xsl:param name="urlCobweb"                >https://code.create3000.de/x_ite</xsl:param> <!-- no trailing slash / -->
-    <xsl:param name="versionCobweb"            >latest/dist</xsl:param> <!-- 1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or 4.1.5 or latest/dist with no trailing slash / -->
+    <xsl:param name="urlCobweb"                >https://cdn.jsdelivr.net/gh/create3000</xsl:param> <!-- no trailing slash / -->
+    <xsl:param name="versionCobweb"            >x_ite@latest/dist</xsl:param> <!-- 1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or 4.1.5 or x_ite@latest/dist with no trailing slash / -->
     <xsl:param name="urlWebsiteX_ITE"          >http://create3000.de/x_ite</xsl:param> <!-- redirection likely -->
     <!-- Catalog generator and configuration parameters -->
     <xsl:param name="x3dSceneAvailable"        >true</xsl:param> <!-- .x3d source, same file name -->
@@ -241,10 +241,10 @@ POSSIBILITY OF SUCH DAMAGE.
                     <!-- <script type="text/javascript" src="https://cdn.rawgit.com/create3000/cobweb/master/stable/1/{$versionCobweb}/x_ite.min.js"></script> -->
                     <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlCobweb"/><xsl:text>/</xsl:text><xsl:value-of select="$versionCobweb"/><xsl:text disable-output-escaping="yes"><![CDATA[/x_ite.min.js"></script>]]></xsl:text>
                     <xsl:text>&#10;</xsl:text>
-					<xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlCobweb"/><xsl:text>/</xsl:text><xsl:value-of select="$versionCobweb"/><xsl:text disable-output-escaping="yes"><![CDATA[/rigid-body-physics.min.js"></script>]]></xsl:text>
+		    <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlCobweb"/><xsl:text>/</xsl:text><xsl:value-of select="$versionCobweb"/><xsl:text disable-output-escaping="yes"><![CDATA[/rigid-body-physics.min.js"></script>]]></xsl:text>
                     <xsl:text>&#10;</xsl:text>
-					<xsl:choose>
-						<xsl:when test="($cobwebStyle = 'simple')">
+                    <xsl:choose>
+                            <xsl:when test="($cobwebStyle = 'simple')">
 	<style type="text/css">
 <xsl:text>
 #main {
@@ -264,8 +264,8 @@ POSSIBILITY OF SUCH DAMAGE.
 }
 </xsl:text>
 </style>
-						</xsl:when>
-						<xsl:otherwise>      
+                            </xsl:when>
+                            <xsl:otherwise>      
 	<style type="text/css">
 		<xsl:text>
          @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);

@@ -2502,7 +2502,18 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                             </xsl:variable>
                             <!-- avoid duplicate fields problem in X3DUOM, e.g. ParticleSet geometry (TODO fix X3DUOM) -->
                             <xsl:if test="not(preceding-sibling::*[@name = $fieldName])">
-                                <xsl:text>
+                                <xsl:choose>
+                                    <xsl:when test="(@type='SFNode')">
+                                        <xsl:text>
+            if self.</xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:text>: # output this SFNode
+                result += self.</xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:text>.toXML(indentLevel=indentLevel+1)</xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>
             ## result += indent + '  ' + 'TODO iterate over each child element' + '\n'
             if self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
@@ -2511,6 +2522,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>:
                     result += each.toXML(indentLevel=indentLevel+1)</xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </xsl:if>
                         </xsl:for-each>
                     </xsl:otherwise>

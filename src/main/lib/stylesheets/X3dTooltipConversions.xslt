@@ -63,7 +63,7 @@ Invocation:
 -  cd   C:\www.web3d.org\x3d\content
    make tooltips
    (or)
-   saxon -t -o X3dToolTips.html 	x3d-3.1.profile.xml X3dTooltipConversions.xslt
+   saxon -t -o X3dToolTips.html 	x3d-4.0.profile.xml X3dTooltipConversions.xslt
 -->
 	<xsl:strip-space elements="*"/>
 	<xsl:output method="html" encoding="utf-8" media-type="text/html" indent="yes"/>
