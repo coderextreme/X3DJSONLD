@@ -8,7 +8,7 @@ cp /dev/null jsdiffs.txt
 
 ${PTYHON} classes.py
 
-(ls *.sail.js; find www_web3d_org -name '*.sail.js') | sed 's/\.sail\.js/.new.x3d/' | xargs ls 2>&1| grep "No such file or directory" | awk '{ print $4; }'| sed "s/^'\.\///" | sed "s/\.new\.x3d':/.sail.js/" | sed "s/^'//" | xargs -L 1 -P 8 jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}" 2> jserrors.txt
+(ls *.js; find www_web3d_org -name '*.js') | sed 's/\.js/.new.x3d/' | xargs ls 2>&1| grep "No such file or directory" | awk '{ print $4; }'| sed "s/^'\.\///" | sed "s/\.new\.x3d':/.js/" | sed "s/^'//" | xargs -L 1 -P 8 jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}" 2> jserrors.txt
 
 for i in *.new.x3d `find www_web3d_org -name '*.new.x3d'`
 do

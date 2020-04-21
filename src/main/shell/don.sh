@@ -12,7 +12,7 @@ python ../python/classes.py
 echo translating to json
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJson.xslt ---
 echo translating to nashorn
-(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToES5.xslt -sail.js ---../nashorn/net/x3djsonld/data/
+(ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToES5.xslt -js ---../nashorn/net/x3djsonld/data/
 echo translating to node.js
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToNodeJS.xslt -js ---../node/net/x3djsonld/data/
 echo translating to java
@@ -34,5 +34,13 @@ done
 popd
 echo running jjs
 pushd ../nashorn
-find ./net/x3djsonld/data -name '*.sail.js' | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
+find ./net/x3djsonld/data -name '*.js' | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
+popd
+echo running python
+pushd ../python
+find ./net/x3djsonld/data -name '*.py' | xargs -L 1 -P $PROCESSORS python
+popd
+echo running node
+pushd ../node
+find ./net/x3djsonld/data -name '*.js' | xargs -L 1 -P $PROCESSORS node
 popd

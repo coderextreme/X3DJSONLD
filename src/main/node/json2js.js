@@ -10,6 +10,6 @@ var convertJSON = require('./convertJSON.js').convertJSON;
 convertJSON([{ 
 	serializer : './JavaScriptSerializer.js',
 	folder : "../nashorn/net/coderextreme/",
-	extension : ".sail.js",
+	extension : ".js",
 	codeOutput : "../",
 	}]);

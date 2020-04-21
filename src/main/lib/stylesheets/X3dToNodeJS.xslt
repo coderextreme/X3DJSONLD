@@ -269,11 +269,11 @@ POSSIBILITY OF SUCH DAMAGE.
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
@@ -309,7 +309,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	}
 }
 </xsl:text><!-- class complete -->
-<xsl:text>new autoclass.</xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().main();</xsl:text>
+<xsl:text>new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().main();</xsl:text>
 
 
     </xsl:template>
@@ -687,7 +687,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		
 		<xsl:text>new autoclass.</xsl:text>
 		<xsl:value-of select="local-name()"/>
-		<xsl:text>Object(</xsl:text>
+		<xsl:text>(</xsl:text>
 		<xsl:choose>
 			<xsl:when test="(string-length(@DEF) > 0) and (string-length(@name) > 0) and (local-name() = 'ProtoInstance')">
 				<!-- special utility constructor using ProtoInstance DEFname and prototypeName; duplicative of .setDEF().setName() -->
@@ -2406,7 +2406,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:value-of select="."/>
 					</xsl:message>
 					-->
-					<xsl:text>Java.to(["</xsl:text>
+					<xsl:text>java.to(["</xsl:text>
 						<xsl:call-template name="java-create-array-from-multiline-string">
 							<xsl:with-param name="inputString">
 								<xsl:call-template name="escape-quote-characters">
@@ -2421,7 +2421,7 @@ POSSIBILITY OF SUCH DAMAGE.
 								</xsl:call-template>
 							</xsl:with-param>
 						</xsl:call-template>
-					<xsl:text>], Java.type("java.lang.String[]"))</xsl:text>
+					<xsl:text>], java.type("java.lang.String[]"))</xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:text>)</xsl:text>
@@ -2507,7 +2507,7 @@ POSSIBILITY OF SUCH DAMAGE.
 </xsl:template>
 
 <xsl:template name="list-component-imports">
-<xsl:text>var autoclass = require('X3Dautoclass.js');</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>var autoclass = require('./X3Dautoclass');</xsl:text><xsl:text>&#10;</xsl:text>
 </xsl:template>
 
 <xsl:template name="tuple-size">
@@ -3172,7 +3172,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:variable name="quotedValue">
 				<xsl:choose>
 					<xsl:when test="not(contains(.,'&quot;'))">
-						<!-- MFStringObject is forgiving, but this code block fixes the error and notifies authors of valid practice -->
+						<!-- MFString is forgiving, but this code block fixes the error and notifies authors of valid practice -->
 						<!-- unquoted MFString values were approved for X3D XML encoding in May 2017 -->
 						<xsl:message>
 							<xsl:text>*** No quotation marks found in MFString array of individual SFString values, wrapped them.</xsl:text>
@@ -3198,7 +3198,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<xsl:text>new autoclass.MFStringObject(</xsl:text>
+			<xsl:text>new autoclass.MFString(</xsl:text>
 			<xsl:text>"</xsl:text>
 			<xsl:call-template name="escape-quote-characters">
 				<xsl:with-param name="inputString">
@@ -3218,9 +3218,9 @@ POSSIBILITY OF SUCH DAMAGE.
 		</xsl:when>
 
 		<xsl:when test="($attributeType = 'MFBool')">
-			<xsl:text>Java.to([</xsl:text>
+			<xsl:text>java.to([</xsl:text>
 			<xsl:value-of select="translate(normalize-space(.),' ',',')"/>
-			<xsl:text>], Java.type("boolean[]"))</xsl:text>
+			<xsl:text>], java.type("boolean[]"))</xsl:text>
 		</xsl:when>
 		<xsl:when test="($attributeType = 'SFFloat')">
 			<xsl:value-of select="."/>
@@ -3230,28 +3230,28 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:value-of select="."/>
 		</xsl:when>
 		<xsl:when test="($attributeType = 'MFInt32') or ($attributeType = 'SFImage')">
-			<xsl:text>Java.to([</xsl:text>
+			<xsl:text>java.to([</xsl:text>
 			<xsl:value-of select="translate(normalize-space(.),' ',',')"/>
-			<xsl:text>], Java.type("int[]"))</xsl:text>
+			<xsl:text>], java.type("int[]"))</xsl:text>
 		</xsl:when>
 		<xsl:when test="($attributeType = 'MFFloat')">
-			<xsl:text>Java.to([</xsl:text>
+			<xsl:text>java.to([</xsl:text>
 			<xsl:call-template name="java-float-numbers">
 				<xsl:with-param name="inputString">
 					<xsl:value-of select="."/>
 				</xsl:with-param>
 				<xsl:with-param name="inputType" select="$attributeType"/>
 			</xsl:call-template>
-			<xsl:text>], Java.type("float[]"))</xsl:text>
+			<xsl:text>], java.type("float[]"))</xsl:text>
 		</xsl:when>
 		<xsl:when test="($attributeType = 'MFDouble')">
-			<xsl:text>Java.to([</xsl:text>
+			<xsl:text>java.to([</xsl:text>
 			<xsl:call-template name="java-double-numbers">
 				<xsl:with-param name="inputString">
 					<xsl:value-of select="."/>
 				</xsl:with-param>
 			</xsl:call-template>
-			<xsl:text>], Java.type("double[]"))</xsl:text>
+			<xsl:text>], java.type("double[]"))</xsl:text>
 		</xsl:when>
 		<xsl:when test="($attributeType = 'SFVec2f') or ($attributeType = 'SFVec3f') or ($attributeType = 'SFVec4f') or
 						($attributeType = 'SFRotation') or starts-with($attributeType, 'SFColor')">
@@ -3275,7 +3275,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f')">
 			<xsl:text>new autoclass.</xsl:text>
 			<xsl:value-of select="$attributeType"/>
-			<xsl:text>Object(</xsl:text>
+			<xsl:text>(</xsl:text>
 			<xsl:choose>
 				<xsl:when test="($tupleCount > $tupleSplitSize)">
 					<xsl:message>
@@ -3303,8 +3303,8 @@ POSSIBILITY OF SUCH DAMAGE.
 								<xsl:text>.append(</xsl:text>
 								<xsl:text>new autoclass.</xsl:text>
 								<xsl:value-of select="$attributeType"/>
-								<xsl:text>Object(</xsl:text>
-								<xsl:text>Java.to([</xsl:text>
+								<xsl:text>(</xsl:text>
+								<xsl:text>java.to([</xsl:text>
 								<xsl:call-template name="java-float-numbers">
 									<xsl:with-param name="inputString">
 										<xsl:value-of select="current-group()"/>
@@ -3325,21 +3325,21 @@ POSSIBILITY OF SUCH DAMAGE.
 						</xsl:choose>
 						<!-- close invocation when all done -->
 						<xsl:if test="(count(current-group()) = 1) or (count(current-group()) &lt; $numbersPerGroup - 1)">
-							<xsl:text>], Java.type("float[]"))</xsl:text>
+							<xsl:text>], java.type("float[]"))</xsl:text>
 								<xsl:text>)</xsl:text>
 								<xsl:text>)</xsl:text>
 							</xsl:if>
 						</xsl:for-each-group>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:text>Java.to([</xsl:text>
+						<xsl:text>java.to([</xsl:text>
 						<xsl:call-template name="java-float-numbers">
 							<xsl:with-param name="inputString">
 								<xsl:value-of select="."/>
 							</xsl:with-param>
 							<xsl:with-param name="inputType" select="$attributeType"/>
 						</xsl:call-template>
-						<xsl:text>], Java.type("float[]"))</xsl:text>
+						<xsl:text>], java.type("float[]"))</xsl:text>
 						<xsl:text>)</xsl:text>
 					</xsl:otherwise>
 				</xsl:choose>
@@ -3348,14 +3348,14 @@ POSSIBILITY OF SUCH DAMAGE.
 							contains($attributeType,'Matrix3d') or contains($attributeType,'Matrix4d')">
 				<xsl:text>new autoclass.</xsl:text>
 				<xsl:value-of select="$attributeType"/>
-				<xsl:text>Object(</xsl:text>
-				<xsl:text>Java.to([</xsl:text>
+				<xsl:text>(</xsl:text>
+				<xsl:text>java.to([</xsl:text>
 				<xsl:call-template name="java-double-numbers">
 					<xsl:with-param name="inputString">
 						<xsl:value-of select="."/>
 					</xsl:with-param>
 				</xsl:call-template>
-				<xsl:text>], Java.type("double[]"))</xsl:text>
+				<xsl:text>], java.type("double[]"))</xsl:text>
 				<xsl:text>)</xsl:text>
 			</xsl:when>
 			<xsl:otherwise>
@@ -3494,7 +3494,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:if test="not($includesFieldTypeObject)">
 					<xsl:text>new autoclass.</xsl:text>
 					<xsl:value-of select="$attributeType"/>
-					<xsl:text>Object(</xsl:text>
+					<xsl:text>(</xsl:text>
 				</xsl:if>
 				<xsl:call-template name="output-attribute-value">
 					<xsl:with-param name="inputString"   select="."/>
