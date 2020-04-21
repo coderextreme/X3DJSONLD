@@ -71,6 +71,7 @@ public class bubs
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
+    .addComponent(new componentObject().setName("Scripting").setLevel(1))
     .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("bubs.x3d"))
     .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Tour around a prismatic sphere"))
@@ -87,7 +88,7 @@ public class bubs
             .setGeometry(new SphereObject().setRadius(0.25f))
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f).setTransparency(0.2f))))
-          .addChild(new ScriptObject("bounce").setSourceCode("\n" + 
+          .addChild(new ScriptObject("bounce1").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);" + "\n" + 
@@ -133,9 +134,9 @@ public class bubs
             .addField(new fieldObject().setName("scalvel").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
             .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
           .addChild(new TimeSensorObject("bubbleClock").setCycleInterval(10).setLoop(true))
-          .addChild(new ROUTEObject().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-          .addChild(new ROUTEObject().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
-          .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
+          .addChild(new ROUTEObject().setFromNode("bounce1").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
+          .addChild(new ROUTEObject().setFromNode("bounce1").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
+          .addChild(new ROUTEObject().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce1").setToField("set_fraction")))))
     .addChild(new ProtoInstanceObject("Bubble", "bubbleA"))
     .addChild(new ProtoInstanceObject("Bubble", "bubbleB"))
     .addChild(new ProtoInstanceObject("Bubble", "bubbleC"))

@@ -51,7 +51,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 12 January 2014 </td>
+			<td> 20 January 2020 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
@@ -67,7 +67,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html" target="_blank">http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html" target="_blank">https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
@@ -87,14 +87,14 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d</a> </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
 			<td> <a href="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d" target="_blank">http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d</a> </td>
 		</tr>
 		<tr>
@@ -139,25 +139,24 @@ public class CameraExamples
     .addMeta(new metaObject().setName("documentation").setContent("Two demos are found in the scene, click the \"red text\" on left or right to start. (a) SimpleShotsTest shows Zoom in/out, Pan left/right, Boom up/down, Tilt left/right, with each is defined by a CameraShot collecting a series of CameraMovements. (b) AimPointTest gradually slews the camera view to look at the sliding cube, then follows it around before returning to original viewpoint."))
     .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Don Brutzman and Jeff Weekley"))
     .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("18 June 2009"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("12 January 2014"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("20 January 2020"))
     .addMeta(new metaObject().setName(metaObject.NAME_TODO       ).setContent("Schematron rules, backed up by initialize() checks"))
     .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("BeyondViewpointCameraNodesWeb3D2009.pdf"))
     .addMeta(new metaObject().setName(metaObject.NAME_MOVINGIMAGE).setContent("CameraExamplesDemo.mp4"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
     .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT    ).setContent("Camera nodes for Viewpoint navigation control"))
     .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("CameraPrototypes.x3d"))
     .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("CameraExamplesConsoleLog.txt"))
     .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.avi"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
-    .addComments(" TODO warn if more than one identifier present ")
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
     .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new SceneObject()
     .addComments(" =============== Camera ============== ")
-    .addChild(new ExternProtoDeclareObject("Camera").setName("Camera").setAppinfo("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images").setUrl(new String[] {"CameraPrototypes.x3d#Camera","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"})
-      .addComments(" Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields ")
+    .addChild(new WorldInfoObject().setTitle("CameraExamples.x3d"))
+    .addChild(new ExternProtoDeclareObject("Camera").setName("Camera").setAppinfo("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images").setUrl(new String[] {"CameraPrototypes.x3d#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"})
       .addField(new fieldObject().setName("description").setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this Camera"))
       .addField(new fieldObject().setName("position").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"))
       .addField(new fieldObject().setName("orientation").setType(fieldObject.TYPE_SFROTATION).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"))
@@ -180,9 +179,10 @@ public class CameraExamples
       .addField(new fieldObject().setName("isActive").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
       .addField(new fieldObject().setName("totalDuration").setType(fieldObject.TYPE_SFTIME).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"))
       .addField(new fieldObject().setName("offlineRender").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("OfflineRender node"))
-      .addField(new fieldObject().setName("traceEnabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress")))
+      .addField(new fieldObject().setName("traceEnabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress"))
+      .addComments(" Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields "))
     .addComments(" =============== CameraShot ============== ")
-    .addChild(new ExternProtoDeclareObject("CameraShot").setName("CameraShot").setAppinfo("CameraShot collects a specific set of CameraMovement animations that make up an individual shot").setUrl(new String[] {"CameraPrototypes.x3d#CameraShot","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"})
+    .addChild(new ExternProtoDeclareObject("CameraShot").setName("CameraShot").setAppinfo("CameraShot collects a specific set of CameraMovement animations that make up an individual shot").setUrl(new String[] {"CameraPrototypes.x3d#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"})
       .addField(new fieldObject().setName("description").setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this CameraShot"))
       .addField(new fieldObject().setName("enabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this CameraShot can be activated"))
       .addField(new fieldObject().setName("moves").setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Set of CameraMovement nodes")
@@ -197,7 +197,7 @@ public class CameraExamples
       .addField(new fieldObject().setName("isActive").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
       .addField(new fieldObject().setName("traceEnabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress")))
     .addComments(" =============== CameraMovement ============== ")
-    .addChild(new ExternProtoDeclareObject("CameraMovement").setName("CameraMovement").setAppinfo("CameraMovement defines a single camera movement animation").setUrl(new String[] {"CameraPrototypes.x3d#CameraMovement","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"})
+    .addChild(new ExternProtoDeclareObject("CameraMovement").setName("CameraMovement").setAppinfo("CameraMovement defines a single camera movement animation").setUrl(new String[] {"CameraPrototypes.x3d#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"})
       .addField(new fieldObject().setName("description").setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this CameraMovement"))
       .addField(new fieldObject().setName("enabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this CameraMovement can be activated"))
       .addField(new fieldObject().setName("duration").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Duration in seconds for this move"))
@@ -211,8 +211,7 @@ public class CameraExamples
       .addField(new fieldObject().setName("isActive").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
       .addField(new fieldObject().setName("traceEnabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress")))
     .addComments(" =============== OfflineRender ============== ")
-    .addChild(new ExternProtoDeclareObject("OfflineRender").setName("OfflineRender").setAppinfo("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)").setUrl(new String[] {"CameraPrototypes.x3d#OfflineRender","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"})
-      .addComments(" TODO non-photorealistic rendering (NPR) parameters ")
+    .addChild(new ExternProtoDeclareObject("OfflineRender").setName("OfflineRender").setAppinfo("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)").setUrl(new String[] {"CameraPrototypes.x3d#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"})
       .addField(new fieldObject().setName("description").setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this OfflineRender"))
       .addField(new fieldObject().setName("enabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this OfflineRender can be activated"))
       .addField(new fieldObject().setName("frameRate").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Frames per second recorded for this rendering"))
@@ -223,7 +222,8 @@ public class CameraExamples
       .addField(new fieldObject().setName("renderCompleteTime").setType(fieldObject.TYPE_SFTIME).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("Render operation complete"))
       .addField(new fieldObject().setName("movieFormat").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Format of rendered output movie (mpeg mp4 etc.), use first supported format"))
       .addField(new fieldObject().setName("imageFormat").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Format of rendered output images (png jpeg gif tiff etc.) use first supported format"))
-      .addField(new fieldObject().setName("traceEnabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress")))
+      .addField(new fieldObject().setName("traceEnabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress"))
+      .addComments(" TODO non-photorealistic rendering (NPR) parameters "))
     .addComments(" =============== Lights, camera, action! ============== ")
     .addChild(new DirectionalLightObject().setDirection(0.0f,-1.0f,0.0f).setGlobal(true).setIntensity(0.8f))
     .addChild(new NavigationInfoObject().setType(new String[] {"EXAMINE","FLY","ANY"}))
@@ -392,7 +392,7 @@ public class CameraExamples
           .setGeometry(new BoxObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
-            .setTexture(new ImageTextureObject().setUrl(new String[] {"images/CameraMoveZoom.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"}))))
+            .setTexture(new ImageTextureObject().setUrl(new String[] {"images/CameraMoveZoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"}))))
         .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setString(new String[] {"Zoom in, out"})
@@ -404,7 +404,7 @@ public class CameraExamples
           .setGeometry(new BoxObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
-            .setTexture(new ImageTextureObject().setUrl(new String[] {"images/CameraMoveDolly.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"}))))
+            .setTexture(new ImageTextureObject().setUrl(new String[] {"images/CameraMoveDolly.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"}))))
         .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setString(new String[] {"Dolly left, right"})
@@ -416,7 +416,7 @@ public class CameraExamples
           .setGeometry(new BoxObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
-            .setTexture(new ImageTextureObject().setUrl(new String[] {"images/CameraMovePan.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"}))))
+            .setTexture(new ImageTextureObject().setUrl(new String[] {"images/CameraMovePan.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"}))))
         .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setString(new String[] {"Pan left, right"})
@@ -428,7 +428,7 @@ public class CameraExamples
           .setGeometry(new BoxObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
-            .setTexture(new ImageTextureObject().setUrl(new String[] {"images/CameraMoveBoom.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"}))))
+            .setTexture(new ImageTextureObject().setUrl(new String[] {"images/CameraMoveBoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"}))))
         .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setString(new String[] {"Boom up, down"})
@@ -440,7 +440,7 @@ public class CameraExamples
           .setGeometry(new BoxObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
-            .setTexture(new ImageTextureObject().setUrl(new String[] {"images/CameraMoveTilt.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"}))))
+            .setTexture(new ImageTextureObject().setUrl(new String[] {"images/CameraMoveTilt.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"}))))
         .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setString(new String[] {"Tilt left, right"})
@@ -477,12 +477,12 @@ public class CameraExamples
               .addComments(" goalAimPoint modified by ROUTE to match moving Box "))
             .addChild(new ProtoInstanceObject("CameraMovement", "MoveAimPoint3.4")
               .addFieldValue(new fieldValueObject().setName("description").setValue("AimPoint 3.4 restore camera back to home"))
-              .addComments(" can test tracking or not using following values ")
               .addFieldValue(new fieldValueObject().setName("tracking").setValue(true))
               .addFieldValue(new fieldValueObject().setName("duration").setValue(5f))
               .addFieldValue(new fieldValueObject().setName("goalPosition").setValue(new SFVec3fObject(4.0f,4.0f,10.0f)))
               .addFieldValue(new fieldValueObject().setName("goalAimPoint").setValue(new SFVec3fObject(4.0f,4.0f,0.0f)))
-              .addFieldValue(new fieldValueObject().setName("goalOrientation").setValue(new SFRotationObject(0.0f,1.0f,0.0f,0.0f))))))))
+              .addFieldValue(new fieldValueObject().setName("goalOrientation").setValue(new SFRotationObject(0.0f,1.0f,0.0f,0.0f)))
+              .addComments(" can test tracking or not using these values "))))))
     .addChild(new GroupObject("AnimationGroup.AimPointTest")
       .addChild(new TimeSensorObject("CameraTimer.AimPointTest"))
       .addComments(" initialize clock to match totalDuration of combined Shot Moves ")
@@ -512,7 +512,7 @@ public class CameraExamples
       .addChild(new ROUTEObject().setFromNode("Camera.AimPointTest").setFromField("orientation_changed").setToNode("CameraShapeTransform").setToField("rotation"))
       .addChild(new TransformObject("CameraOffsetTransform").setTranslation(0.0f,0.0f,0.25f)
         .addChild(new TouchSensorObject("CameraShapeTouched"))
-        .addChild(new InlineObject("CameraShape").setUrl(new String[] {"CameraShape.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"}))
+        .addChild(new InlineObject("CameraShape").setUrl(new String[] {"CameraShape.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"}))
         .addChild(new ShapeObject("SightLine")
           .setGeometry(new IndexedLineSetObject().setCoordIndex(new int[] {0,1})
             .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,0.0f,-100.0f}))))
@@ -563,7 +563,7 @@ public class CameraExamples
         .setGeometry(new BoxObject())
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject())
-          .setTexture(new ImageTextureObject().setUrl(new String[] {"../earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"})))))
+          .setTexture(new ImageTextureObject().setUrl(new String[] {"../earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"})))))
     .addComments(" ================ CrossHair visualization for center of screen ================ ")
     .addChild(new ExternProtoDeclareObject("CrossHair").setName("CrossHair").setAppinfo("CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point").setUrl(new String[] {"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"})
       .addField(new fieldObject().setName("enabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("whether CrissHair orititype is enabled or not"))
@@ -581,7 +581,7 @@ public class CameraExamples
     .addChild(new ROUTEObject().setFromNode("Camera.AimPointTest").setFromField("isBound").setToNode("CrossHairInstance").setToField("set_enabled"))
     .addComments(" turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/> ")
     .addComments(" =============== TODO Launch Prototype Example ============== ")
-    .addChild(new AnchorObject().setDescription("launch CameraExample scene").setParameter(new String[] {"target=_blank"}).setUrl(new String[] {"CameraExample.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"})
+    .addChild(new AnchorObject().setDescription("launch CameraExample scene").setParameter(new String[] {"target=_blank"}).setUrl(new String[] {"CameraExample.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"})
       .addChild(new TransformObject().setTranslation(0.0f,-3.0f,0.0f)
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new String[] {"CameraPrototype","defines a prototype","","Click on this text to see","CameraExample scene"})

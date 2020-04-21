@@ -45,7 +45,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 24 April 2017 </td>
+			<td> 20 October 2019 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -57,7 +57,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest" target="_blank">http://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest" target="_blank">https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
@@ -93,7 +93,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -135,10 +135,10 @@ public class SimpleShader
     .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATOR ).setContent("Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"))
     .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("26 May 2009"))
     .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED ).setContent("15 October 2009"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("24 April 2017"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("20 October 2019"))
     .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.opengl.org/wiki/Fragment_Shader"))
     .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"))
+    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"))
     .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT    ).setContent("X3D shader example"))
     .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("originals/simpleShader.x3dv"))
     .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("ShaderTutorialInstantReality.pdf"))
@@ -147,7 +147,7 @@ public class SimpleShader
     .addMeta(new metaObject().setName("outputStyle").setContent("nicest"))
     .addMeta(new metaObject().setName(metaObject.NAME_WARNING    ).setContent("under development"))
     .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
     .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../../license.html")))
   .setScene(new SceneObject()
     .addChild(new ProtoDeclareObject("myPrototype").setName("myPrototype")
@@ -158,57 +158,16 @@ public class SimpleShader
           .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
               .setMaterial(new MaterialObject().setDiffuseColor(0.5f,0.5f,0.9f))
+              .addShaders(new ComposedShaderObject().setLanguage("GLSL")
+                .addField(new fieldObject().setName("decis").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+                .setIS(new ISObject()
+                  .addConnect(new connectObject().setNodeField("decis").setProtoField("myInputRange")))
+                .addParts(new ShaderPartObject())
+                .addParts(new ShaderPartObject().setType("FRAGMENT")))
               .addShaders(new ComposedShaderObject("Cobweb").setLanguage("GLSL")
                 .addField(new fieldObject().setName("decis").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3fObject(0.95f,0.77f,0.44f)))
-                .addParts(new ShaderPartObject().setSourceCode("ecmascript: " + "\n" + 
-"                  data:text/plain;charset=utf-8," + "\n" + 
-"\n" + 
-"precision mediump float;" + "\n" + 
-"\n" + 
-"uniform mat4 x3d_ProjectionMatrix;" + "\n" + 
-"uniform mat4 x3d_ModelViewMatrix;" + "\n" + 
-"uniform mat3 x3d_NormalMatrix;" + "\n" + 
-"\n" + 
-"attribute vec4 x3d_Vertex;" + "\n" + 
-"attribute vec3 x3d_Normal;" + "\n" + 
-"\n" + 
-"varying vec3 normal;" + "\n" + 
-"\n" + 
-"void main()" + "\n" + 
-"{" + "\n" + 
-"	normal = x3d_NormalMatrix * x3d_Normal;" + "\n" + 
-"	" + "\n" + 
-"	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;" + "\n" + 
-"}" + "\n"))
-                .addParts(new ShaderPartObject("_1").setType("FRAGMENT").setSourceCode("ecmascript: " + "\n" + 
-"                  data:text/plain;charset=utf-8," + "\n" + 
-"\n" + 
-"precision mediump float;" + "\n" + 
-"\n" + 
-"uniform vec3 x3d_LightDirection [x3d_MaxLights];" + "\n" + 
-"\n" + 
-"varying vec3 normal;" + "\n" + 
-"uniform vec3 decis;" + "\n" + 
-"\n" + 
-"void main()" + "\n" + 
-"{" + "\n" + 
-"	float intensity;" + "\n" + 
-"	vec4 color;" + "\n" + 
-"	vec3 n = normalize (normal);" + "\n" + 
-"\n" + 
-"	intensity = abs (dot (x3d_LightDirection [0], n));" + "\n" + 
-"\n" + 
-"	if (intensity > decis[0])" + "\n" + 
-"		color = vec4(0.0,0.5,0.5,1.0);" + "\n" + 
-"	else if (intensity > decis[1])" + "\n" + 
-"		color = vec4(0.6,0.3,0.3,1.0);" + "\n" + 
-"	else if (intensity > decis[2])" + "\n" + 
-"		color = vec4(1.0,0.2,0.2,1.0);" + "\n" + 
-"	else" + "\n" + 
-"		color = vec4(0.0,0.4,0.0,1.0);" + "\n" + 
-"\n" + 
-"	gl_FragColor = color;" + "\n" + 
-"} " + "\n"))))
+                .addParts(new ShaderPartObject())
+                .addParts(new ShaderPartObject("_1").setType("FRAGMENT"))))
             .setGeometry(new SphereObject().setRadius(1.75f))))))
     .addChild(new WorldInfoObject().setTitle("SimpleShader")
       .setMetadata(new MetadataSetObject("Titania").setName("Titania").setReference("http://titania.create3000.de")

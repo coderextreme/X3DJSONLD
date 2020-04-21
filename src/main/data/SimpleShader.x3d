@@ -9,10 +9,10 @@
     <meta content='Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick' name='translator'/>
     <meta content='26 May 2009' name='created'/>
     <meta content='15 October 2009' name='translated'/>
-    <meta content='24 April 2017' name='modified'/>
+    <meta content='20 October 2019' name='modified'/>
     <meta content='http://www.opengl.org/wiki/Fragment_Shader' name='reference'/>
     <meta content='http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader' name='reference'/>
-    <meta content='http://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest' name='reference'/>
     <meta content='X3D shader example' name='subject'/>
     <meta content='originals/simpleShader.x3dv' name='reference'/>
     <meta content='ShaderTutorialInstantReality.pdf' name='reference'/>
@@ -21,7 +21,7 @@
     <meta content='nicest' name='outputStyle'/>
     <meta content='under development' name='warning'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d' name='identifier'/>
     <meta content='../../license.html' name='license'/>
   </head>
   <Scene>
@@ -34,61 +34,18 @@
           <Shape>
             <Appearance>
               <Material diffuseColor='0.5 0.5 0.9'/>
-              <ComposedShader DEF='Cobweb' language='GLSL'>
+              <ComposedShader containerField='shaders' language='GLSL'>
+                <field accessType='initializeOnly' name='decis' type='SFVec3f'/>
+                <IS>
+                  <connect nodeField='decis' protoField='myInputRange'/>
+                </IS>
+                <ShaderPart containerField='parts'/>
+                <ShaderPart containerField='parts' type='FRAGMENT'/>
+              </ComposedShader>
+              <ComposedShader DEF='Cobweb' containerField='shaders' language='GLSL'>
                 <field accessType='initializeOnly' name='decis' type='SFVec3f' value='0.95 0.77 0.44'/>
-                <ShaderPart>
-                  <![CDATA[data:text/plain;charset=utf-8,
-
-precision mediump float;
-
-uniform mat4 x3d_ProjectionMatrix;
-uniform mat4 x3d_ModelViewMatrix;
-uniform mat3 x3d_NormalMatrix;
-
-attribute vec4 x3d_Vertex;
-attribute vec3 x3d_Normal;
-
-varying vec3 normal;
-
-void main()
-{
-	normal = x3d_NormalMatrix * x3d_Normal;
-	
-	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;
-}
-]]>
-                </ShaderPart>
-                <ShaderPart DEF='_1' type='FRAGMENT'>
-                  <![CDATA[data:text/plain;charset=utf-8,
-
-precision mediump float;
-
-uniform vec3 x3d_LightDirection [x3d_MaxLights];
-
-varying vec3 normal;
-uniform vec3 decis;
-
-void main()
-{
-	float intensity;
-	vec4 color;
-	vec3 n = normalize (normal);
-
-	intensity = abs (dot (x3d_LightDirection [0], n));
-
-	if (intensity > decis[0])
-		color = vec4(0.0,0.5,0.5,1.0);
-	else if (intensity > decis[1])
-		color = vec4(0.6,0.3,0.3,1.0);
-	else if (intensity > decis[2])
-		color = vec4(1.0,0.2,0.2,1.0);
-	else
-		color = vec4(0.0,0.4,0.0,1.0);
-
-	gl_FragColor = color;
-} 
-]]>
-                </ShaderPart>
+                <ShaderPart containerField='parts'/>
+                <ShaderPart DEF='_1' containerField='parts' type='FRAGMENT'/>
               </ComposedShader>
             </Appearance>
             <Sphere radius='1.75'/>

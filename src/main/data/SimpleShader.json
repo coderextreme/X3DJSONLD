@@ -38,7 +38,7 @@
           },
           {
             "@name":"modified",
-            "@content":"24 April 2017"
+            "@content":"20 October 2019"
           },
           {
             "@name":"reference",
@@ -50,7 +50,7 @@
           },
           {
             "@name":"reference",
-            "@content":"http://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"
+            "@content":"https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"
           },
           {
             "@name":"subject",
@@ -86,7 +86,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"
           },
           {
             "@name":"license",
@@ -141,6 +141,38 @@
                                     "-shaders":[
                                       { "ComposedShader":
                                         {
+                                          "@language":"GLSL",
+                                          "field": [
+                                            {
+                                              "@name":"decis",
+                                              "@accessType":"initializeOnly",
+                                              "@type":"SFVec3f"
+                                            }
+                                          ],
+                                          "IS": {
+                                              "connect": [
+                                                {
+                                                  "@nodeField":"decis",
+                                                  "@protoField":"myInputRange"
+                                                }
+                                              ]
+                                          },
+                                          "-parts":[
+                                            { "ShaderPart":
+                                              {
+                                                "@type":"VERTEX"
+                                              }
+                                            },
+                                            { "ShaderPart":
+                                              {
+                                                "@type":"FRAGMENT"
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      { "ComposedShader":
+                                        {
                                           "@DEF":"Cobweb",
                                           "@language":"GLSL",
                                           "field": [
@@ -154,70 +186,13 @@
                                           "-parts":[
                                             { "ShaderPart":
                                               {
-                                                "@type":"VERTEX",
-                                                "#sourceText":[
-"",
-"                  data:text/plain;charset=utf-8,",
-"",
-"precision mediump float;",
-"",
-"uniform mat4 x3d_ProjectionMatrix;",
-"uniform mat4 x3d_ModelViewMatrix;",
-"uniform mat3 x3d_NormalMatrix;",
-"",
-"attribute vec4 x3d_Vertex;",
-"attribute vec3 x3d_Normal;",
-"",
-"varying vec3 normal;",
-"",
-"void main()",
-"{",
-"\tnormal = x3d_NormalMatrix * x3d_Normal;",
-"\t",
-"\tgl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;",
-"}",
-"",
-""
-]
+                                                "@type":"VERTEX"
                                               }
                                             },
                                             { "ShaderPart":
                                               {
                                                 "@DEF":"_1",
-                                                "@type":"FRAGMENT",
-                                                "#sourceText":[
-"",
-"                  data:text/plain;charset=utf-8,",
-"",
-"precision mediump float;",
-"",
-"uniform vec3 x3d_LightDirection [x3d_MaxLights];",
-"",
-"varying vec3 normal;",
-"uniform vec3 decis;",
-"",
-"void main()",
-"{",
-"\tfloat intensity;",
-"\tvec4 color;",
-"\tvec3 n = normalize (normal);",
-"",
-"\tintensity = abs (dot (x3d_LightDirection [0], n));",
-"",
-"\tif (intensity > decis[0])",
-"\t\tcolor = vec4(0.0,0.5,0.5,1.0);",
-"\telse if (intensity > decis[1])",
-"\t\tcolor = vec4(0.6,0.3,0.3,1.0);",
-"\telse if (intensity > decis[2])",
-"\t\tcolor = vec4(1.0,0.2,0.2,1.0);",
-"\telse",
-"\t\tcolor = vec4(0.0,0.4,0.0,1.0);",
-"",
-"\tgl_FragColor = color;",
-"} ",
-"",
-""
-]
+                                                "@type":"FRAGMENT"
                                               }
                                             }
                                           ]

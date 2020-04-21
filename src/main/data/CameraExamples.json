@@ -28,7 +28,7 @@
           },
           {
             "@name":"modified",
-            "@content":"12 January 2014"
+            "@content":"20 January 2020"
           },
           {
             "@name":"TODO",
@@ -44,7 +44,7 @@
           },
           {
             "@name":"reference",
-            "@content":"http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"
+            "@content":"https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"
           },
           {
             "@name":"subject",
@@ -64,14 +64,14 @@
           },
           {
             "@name":"reference",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"
           },
           {
-            "@name":"identifier",
+            "@name":"reference",
             "@content":"http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"
           },
           {
@@ -94,11 +94,6 @@
             "@name":"reference",
             "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
-        ],
-        "-children":[
-          {
-            "#comment":"TODO warn if more than one identifier present"
-          }
         ]
     },
     "Scene": {
@@ -106,16 +101,16 @@
           {
             "#comment":"=============== Camera =============="
           },
+          { "WorldInfo":
+            {
+              "@title":"CameraExamples.x3d"
+            }
+          },
           { "ExternProtoDeclare":
             {
               "@name":"Camera",
               "@appinfo":"Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images",
-              "@url":["CameraPrototypes.x3d#Camera","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"],
-              "-children":[
-                {
-                  "#comment":"Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields"
-                }
-              ],
+              "@url":["CameraPrototypes.x3d#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"],
               "field": [
                 {
                   "@name":"description",
@@ -255,6 +250,11 @@
                   "@appinfo":"enable console output to trace script computations and prototype progress",
                   "@type":"SFBool"
                 }
+              ],
+              "-children":[
+                {
+                  "#comment":"Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields"
+                }
               ]
             }
           },
@@ -265,7 +265,7 @@
             {
               "@name":"CameraShot",
               "@appinfo":"CameraShot collects a specific set of CameraMovement animations that make up an individual shot",
-              "@url":["CameraPrototypes.x3d#CameraShot","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"],
+              "@url":["CameraPrototypes.x3d#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"],
               "field": [
                 {
                   "@name":"description",
@@ -354,7 +354,7 @@
             {
               "@name":"CameraMovement",
               "@appinfo":"CameraMovement defines a single camera movement animation",
-              "@url":["CameraPrototypes.x3d#CameraMovement","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"],
+              "@url":["CameraPrototypes.x3d#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"],
               "field": [
                 {
                   "@name":"description",
@@ -438,12 +438,7 @@
             {
               "@name":"OfflineRender",
               "@appinfo":"OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)",
-              "@url":["CameraPrototypes.x3d#OfflineRender","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"],
-              "-children":[
-                {
-                  "#comment":"TODO non-photorealistic rendering (NPR) parameters"
-                }
-              ],
+              "@url":["CameraPrototypes.x3d#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"],
               "field": [
                 {
                   "@name":"description",
@@ -510,6 +505,11 @@
                   "@accessType":"initializeOnly",
                   "@appinfo":"enable console output to trace script computations and prototype progress",
                   "@type":"SFBool"
+                }
+              ],
+              "-children":[
+                {
+                  "#comment":"TODO non-photorealistic rendering (NPR) parameters"
                 }
               ]
             }
@@ -1340,7 +1340,7 @@
                                 "-texture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["images/CameraMoveZoom.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"]
+                                      "@url":["images/CameraMoveZoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"]
                                     }
                                   }
                               }
@@ -1406,7 +1406,7 @@
                                 "-texture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["images/CameraMoveDolly.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"]
+                                      "@url":["images/CameraMoveDolly.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"]
                                     }
                                   }
                               }
@@ -1472,7 +1472,7 @@
                                 "-texture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["images/CameraMovePan.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"]
+                                      "@url":["images/CameraMovePan.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"]
                                     }
                                   }
                               }
@@ -1538,7 +1538,7 @@
                                 "-texture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["images/CameraMoveBoom.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"]
+                                      "@url":["images/CameraMoveBoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"]
                                     }
                                   }
                               }
@@ -1604,7 +1604,7 @@
                                 "-texture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["images/CameraMoveTilt.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"]
+                                      "@url":["images/CameraMoveTilt.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"]
                                     }
                                   }
                               }
@@ -1808,7 +1808,7 @@
                                   ],
                                   "-children":[
                                     {
-                                      "#comment":"can test tracking or not using following values"
+                                      "#comment":"can test tracking or not using these values"
                                     }
                                   ]
                                 }
@@ -1996,7 +1996,7 @@
                       { "Inline":
                         {
                           "@DEF":"CameraShape",
-                          "@url":["CameraShape.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"]
+                          "@url":["CameraShape.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"]
                         }
                       },
                       { "Shape":
@@ -2307,7 +2307,7 @@
                           "-texture":
                             { "ImageTexture":
                               {
-                                "@url":["../earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"]
+                                "@url":["../earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"]
                               }
                             }
                         }
@@ -2412,7 +2412,7 @@
             {
               "@description":"launch CameraExample scene",
               "@parameter":["target=_blank"],
-              "@url":["CameraExample.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"],
+              "@url":["CameraExample.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"],
               "-children":[
                 { "Transform":
                   {

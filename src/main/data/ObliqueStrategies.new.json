@@ -24,7 +24,7 @@
           },
           {
             "@name":"modified",
-            "@content":"18 October 2015"
+            "@content":"10 November 2019"
           },
           {
             "@name":"reference",
@@ -67,15 +67,15 @@
             "@content":"images/ObliqueStrategiesEntryScreen.png"
           },
           {
-            "@name":"audio",
+            "@name":"Sound",
             "@content":"http://translate.google.com/translate_tts?tl=en&q=hello%20X3D"
           },
           {
-            "@name":"audio",
+            "@name":"Sound",
             "@content":"translate_tts_HelloX3D.mp3"
           },
           {
-            "@name":"audio",
+            "@name":"Sound",
             "@content":"translate_tts_HelloX3D.wav"
           },
           {
@@ -96,11 +96,31 @@
           },
           {
             "@name":"warning",
-            "@content":"BSContact error: Script node TextScript: parse error: line 15 \" var strategy = [];"
+            "@content":"TODO resolve potential error in Script node TextScript: parse problem line 15 \" var strategy = [];"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://gist.github.com/alotaiba/1728771"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api"
+          },
+          {
+            "@name":"Sound",
+            "@content":"https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4"
+          },
+          {
+            "@name":"Sound",
+            "@content":"translate_tts_HelloX3D4.mp3"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://cloud.google.com/translate/docs/basic/translating-text"
           },
           {
             "@name":"identifier",
-            "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"
+            "@content":"https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"
           },
           {
             "@name":"generator",
@@ -126,8 +146,14 @@
     },
     "Scene": {
         "-children":[
+          { "WorldInfo":
+            {
+              "@title":"ObliqueStrategies.x3d"
+            }
+          },
           { "NavigationInfo":
             {
+              "@type":["NONE"]
             }
           },
           { "Background":
@@ -222,7 +248,7 @@
           { "Script":
             {
               "@DEF":"TextScript",
-              "@url":["../node/ObliqueStrategiesScript.js"],
+              "@url":["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"],
               "-children":[
                 {
                   "#comment":"initialize() method includes unit test to printAllStrategies() to console"
@@ -248,7 +274,7 @@
                 {
                   "@name":"textToSpeechUrl",
                   "@accessType":"outputOnly",
-                  "@appinfo":"url to invoke Google Translate",
+                  "@appinfo":"\"url to invoke Google Translate\"",
                   "@type":"MFString"
                 },
                 {
@@ -351,7 +377,7 @@
                         {
                           "@DEF":"TextToSpeechAudioClip",
                           "@description":"sends strategy text google translate",
-                          "@url":["http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"]
+                          "@url":["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"]
                         }
                       }
                   }
@@ -587,7 +613,7 @@
                     "@DEF":"TextToSpeechAnchor",
                     "@description":"text to speech in browser",
                     "@parameter":["target=_blank"],
-                    "@url":["http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change"],
+                    "@url":["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"],
                     "-children":[
                       { "ROUTE":
                         {

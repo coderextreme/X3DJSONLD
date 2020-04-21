@@ -146,17 +146,18 @@ ProtoInstanceObject ProtoInstance63 = null;
 ProtoInstanceObject ProtoInstance64 = null;
 ProtoInstanceObject ProtoInstance65 = null;
 ProtoInstanceObject ProtoInstance66 = null;
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
+      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
         .addMeta(new metaObject().setName("title").setContent("NancyPrototypes.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("Cindy Ballreich"))
         .addMeta(new metaObject().setName("translators").setContent("Tom Miller and Don Brutzman, NPS"))
         .addMeta(new metaObject().setName("created").setContent("9 July 2000"))
-        .addMeta(new metaObject().setName("modified").setContent("19 January 2014"))
+        .addMeta(new metaObject().setName("modified").setContent("20 October 2019"))
         .addMeta(new metaObject().setName("description").setContent("Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."))
         .addMeta(new metaObject().setName("warning").setContent("using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead"))
         .addMeta(new metaObject().setName("reference").setContent("NancyNativeTags.x3d"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"))
+        .addMeta(new metaObject().setName("TODO").setContent("Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem."))
+        .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
@@ -187,8 +188,10 @@ ProtoInstanceObject ProtoInstance66 = null;
             .addField(new fieldObject().setType("MFNode").setName("segments").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Segment nodes"))
             .addField(new fieldObject().setType("MFNode").setName("sites").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Site nodes"))
             .addField(new fieldObject().setType("MFNode").setName("viewpoints").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Viewpoint nodes"))
-            .addField(new fieldObject().setType("SFNode").setName("skinCoord").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0").clearChildren())
-            .addField(new fieldObject().setType("SFNode").setName("skinNormal").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0").clearChildren()))
+            .addField(new fieldObject().setType("SFNode").setName("skinCoord").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0")
+              .addComments(new CommentsBlock("NULL node")))
+            .addField(new fieldObject().setType("SFNode").setName("skinNormal").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0")
+              .addComments(new CommentsBlock("NULL node"))))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("HumanoidTransform")
               .setIS(new ISObject()
@@ -251,7 +254,8 @@ ProtoInstanceObject ProtoInstance66 = null;
             .addField(new fieldObject().setType("MFNode").setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
             .addField(new fieldObject().setType("MFNode").setName("addChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
             .addField(new fieldObject().setType("MFNode").setName("removeChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType("SFNode").setName("coord").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Coordinate nodes").clearChildren())
+            .addField(new fieldObject().setType("SFNode").setName("coord").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Coordinate nodes")
+              .addComments(new CommentsBlock("NULL node")))
             .addField(new fieldObject().setType("MFNode").setName("displacers").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Displacer nodes")))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new GroupObject().setDEF("SegmentGroup")
@@ -609,41 +613,41 @@ ProtoInstance0
             .addChild(new GroupObject()));
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("joints")
-            .addChild(ProtoInstance34 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_HumanoidRoot"))
-            .addChild(ProtoInstance35 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_sacroiliac"))
-            .addChild(ProtoInstance36 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_hip"))
-            .addChild(ProtoInstance37 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_knee"))
-            .addChild(ProtoInstance38 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_ankle"))
-            .addChild(ProtoInstance39 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_hip"))
-            .addChild(ProtoInstance40 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_knee"))
-            .addChild(ProtoInstance41 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_ankle"))
-            .addChild(ProtoInstance42 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_vl1"))
-            .addChild(ProtoInstance43 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_shoulder"))
-            .addChild(ProtoInstance44 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_elbow"))
-            .addChild(ProtoInstance45 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_l_wrist"))
-            .addChild(ProtoInstance46 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_shoulder"))
-            .addChild(ProtoInstance47 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_elbow"))
-            .addChild(ProtoInstance48 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_r_wrist"))
-            .addChild(ProtoInstance49 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_vc4"))
-            .addChild(ProtoInstance50 = new ProtoInstanceObject().setName("Joint").setUSE("hanim_skullbase")));
+            .addChild(ProtoInstance34 = new ProtoInstanceObject().setUSE("hanim_HumanoidRoot"))
+            .addChild(ProtoInstance35 = new ProtoInstanceObject().setUSE("hanim_sacroiliac"))
+            .addChild(ProtoInstance36 = new ProtoInstanceObject().setUSE("hanim_l_hip"))
+            .addChild(ProtoInstance37 = new ProtoInstanceObject().setUSE("hanim_l_knee"))
+            .addChild(ProtoInstance38 = new ProtoInstanceObject().setUSE("hanim_l_ankle"))
+            .addChild(ProtoInstance39 = new ProtoInstanceObject().setUSE("hanim_r_hip"))
+            .addChild(ProtoInstance40 = new ProtoInstanceObject().setUSE("hanim_r_knee"))
+            .addChild(ProtoInstance41 = new ProtoInstanceObject().setUSE("hanim_r_ankle"))
+            .addChild(ProtoInstance42 = new ProtoInstanceObject().setUSE("hanim_vl1"))
+            .addChild(ProtoInstance43 = new ProtoInstanceObject().setUSE("hanim_l_shoulder"))
+            .addChild(ProtoInstance44 = new ProtoInstanceObject().setUSE("hanim_l_elbow"))
+            .addChild(ProtoInstance45 = new ProtoInstanceObject().setUSE("hanim_l_wrist"))
+            .addChild(ProtoInstance46 = new ProtoInstanceObject().setUSE("hanim_r_shoulder"))
+            .addChild(ProtoInstance47 = new ProtoInstanceObject().setUSE("hanim_r_elbow"))
+            .addChild(ProtoInstance48 = new ProtoInstanceObject().setUSE("hanim_r_wrist"))
+            .addChild(ProtoInstance49 = new ProtoInstanceObject().setUSE("hanim_vc4"))
+            .addChild(ProtoInstance50 = new ProtoInstanceObject().setUSE("hanim_skullbase")));
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("segments")
-            .addChild(ProtoInstance51 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_pelvis"))
-            .addChild(ProtoInstance52 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_thigh"))
-            .addChild(ProtoInstance53 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_calf"))
-            .addChild(ProtoInstance54 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_hindfoot"))
-            .addChild(ProtoInstance55 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_thigh"))
-            .addChild(ProtoInstance56 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_calf"))
-            .addChild(ProtoInstance57 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_hindfoot"))
-            .addChild(ProtoInstance58 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_c7"))
-            .addChild(ProtoInstance59 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_upperarm"))
-            .addChild(ProtoInstance60 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_forearm"))
-            .addChild(ProtoInstance61 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_l_hand"))
-            .addChild(ProtoInstance62 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_upperarm"))
-            .addChild(ProtoInstance63 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_forearm"))
-            .addChild(ProtoInstance64 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_r_hand"))
-            .addChild(ProtoInstance65 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_c4"))
-            .addChild(ProtoInstance66 = new ProtoInstanceObject().setName("Segment").setUSE("hanim_skull")));
+            .addChild(ProtoInstance51 = new ProtoInstanceObject().setUSE("hanim_pelvis"))
+            .addChild(ProtoInstance52 = new ProtoInstanceObject().setUSE("hanim_l_thigh"))
+            .addChild(ProtoInstance53 = new ProtoInstanceObject().setUSE("hanim_l_calf"))
+            .addChild(ProtoInstance54 = new ProtoInstanceObject().setUSE("hanim_l_hindfoot"))
+            .addChild(ProtoInstance55 = new ProtoInstanceObject().setUSE("hanim_r_thigh"))
+            .addChild(ProtoInstance56 = new ProtoInstanceObject().setUSE("hanim_r_calf"))
+            .addChild(ProtoInstance57 = new ProtoInstanceObject().setUSE("hanim_r_hindfoot"))
+            .addChild(ProtoInstance58 = new ProtoInstanceObject().setUSE("hanim_c7"))
+            .addChild(ProtoInstance59 = new ProtoInstanceObject().setUSE("hanim_l_upperarm"))
+            .addChild(ProtoInstance60 = new ProtoInstanceObject().setUSE("hanim_l_forearm"))
+            .addChild(ProtoInstance61 = new ProtoInstanceObject().setUSE("hanim_l_hand"))
+            .addChild(ProtoInstance62 = new ProtoInstanceObject().setUSE("hanim_r_upperarm"))
+            .addChild(ProtoInstance63 = new ProtoInstanceObject().setUSE("hanim_r_forearm"))
+            .addChild(ProtoInstance64 = new ProtoInstanceObject().setUSE("hanim_r_hand"))
+            .addChild(ProtoInstance65 = new ProtoInstanceObject().setUSE("hanim_c4"))
+            .addChild(ProtoInstance66 = new ProtoInstanceObject().setUSE("hanim_skull")));
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("viewpoints")
             .addChild(new ViewpointObject().setDEF("InclinedView").setDescription("Inclined View").setOrientation(new float[] {-0.113f,0.993f,0.0347f,0.671f}).setPosition(new float[] {1.62f,1.05f,2.06f}))
@@ -651,7 +655,7 @@ ProtoInstance0
             .addChild(new ViewpointObject().setDEF("SideView").setDescription("Side View").setOrientation(new float[] {0f,1f,0f,1.57079f}).setPosition(new float[] {2.5929f,0.854f,0f}))
             .addChild(new ViewpointObject().setDEF("TopView").setDescription("Top View").setOrientation(new float[] {1f,0f,0f,-1.57079f}).setPosition(new float[] {0f,3.4495f,0f})));
 ProtoInstance1
-              .addFieldValue(new fieldValueObject().setName("name").setValue("HumanoidRoot"));
+              .addFieldValue(new fieldValueObject().setName("name").setValue("humanoid_root"));
 ProtoInstance1
               .addFieldValue(new fieldValueObject().setName("center").setValue("-0.00405 0.855 -0.000113"));
 ProtoInstance1
@@ -1016,7 +1020,7 @@ protected class MFVec3f14 {
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"small_logo.gif","http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"});
+    return new MFStringObject(new java.lang.String[] {"small_logo.gif","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"});
   }
 }
 protected class MFInt3216 {

@@ -1,7 +1,7 @@
 var browser = X3D.getBrowser();
 var X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "3.0";
+X3D0.version = "3.3";
 ProtoDeclare2 = browser.currentScene.createNode("ProtoDeclare");
 ProtoDeclare2.name = "Displacer";
 ProtoDeclare2.appinfo = "A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.";
@@ -175,7 +175,7 @@ field28.name = "skinCoord";
 field28.accessType = "inputOutput";
 field28.appinfo = "Hint: H-anim version 2.0";
 field28.type = "SFNode";
-field28.value = ;
+//NULL node
 ProtoInterface10.field[17] = field28;
 
 field29 = browser.currentScene.createNode("field");
@@ -183,7 +183,7 @@ field29.name = "skinNormal";
 field29.accessType = "inputOutput";
 field29.appinfo = "Hint: H-anim version 2.0";
 field29.type = "SFNode";
-field29.value = ;
+//NULL node
 ProtoInterface10.field[18] = field29;
 
 ProtoDeclare9.protoInterface = ProtoInterface10;
@@ -540,7 +540,7 @@ field92.name = "coord";
 field92.accessType = "inputOutput";
 field92.appinfo = "contains Coordinate nodes";
 field92.type = "SFNode";
-field92.value = ;
+//NULL node
 ProtoInterface82.field[9] = field92;
 
 field93 = browser.currentScene.createNode("field");
@@ -769,7 +769,7 @@ ProtoInstance133.name = "Joint";
 ProtoInstance133.DEF = "hanim_HumanoidRoot";
 fieldValue134 = browser.currentScene.createNode("fieldValue");
 fieldValue134.name = "name";
-fieldValue134.value = "HumanoidRoot";
+fieldValue134.value = "humanoid_root";
 ProtoInstance133.fieldValue = [];
 
 ProtoInstance133.fieldValue[0] = fieldValue134;
@@ -1245,7 +1245,7 @@ Appearance229.material = Material230;
 
 ImageTexture231 = browser.currentScene.createNode("ImageTexture");
 ImageTexture231.DEF = "small_logo_Tex";
-ImageTexture231.url = ["small_logo.gif","http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"];
+ImageTexture231.url = ["small_logo.gif","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"];
 Appearance229.texture = ImageTexture231;
 
 Shape228.appearance = Appearance229;
@@ -1834,89 +1834,72 @@ ProtoInstance128.fieldValue[3] = fieldValue132;
 fieldValue339 = browser.currentScene.createNode("fieldValue");
 fieldValue339.name = "joints";
 ProtoInstance340 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance340.name = "Joint";
 ProtoInstance340.USE = "hanim_HumanoidRoot";
 fieldValue339.children = [];
 
 fieldValue339.children[0] = ProtoInstance340;
 
 ProtoInstance341 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance341.name = "Joint";
 ProtoInstance341.USE = "hanim_sacroiliac";
 fieldValue339.children[1] = ProtoInstance341;
 
 ProtoInstance342 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance342.name = "Joint";
 ProtoInstance342.USE = "hanim_l_hip";
 fieldValue339.children[2] = ProtoInstance342;
 
 ProtoInstance343 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance343.name = "Joint";
 ProtoInstance343.USE = "hanim_l_knee";
 fieldValue339.children[3] = ProtoInstance343;
 
 ProtoInstance344 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance344.name = "Joint";
 ProtoInstance344.USE = "hanim_l_ankle";
 fieldValue339.children[4] = ProtoInstance344;
 
 ProtoInstance345 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance345.name = "Joint";
 ProtoInstance345.USE = "hanim_r_hip";
 fieldValue339.children[5] = ProtoInstance345;
 
 ProtoInstance346 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance346.name = "Joint";
 ProtoInstance346.USE = "hanim_r_knee";
 fieldValue339.children[6] = ProtoInstance346;
 
 ProtoInstance347 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance347.name = "Joint";
 ProtoInstance347.USE = "hanim_r_ankle";
 fieldValue339.children[7] = ProtoInstance347;
 
 ProtoInstance348 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance348.name = "Joint";
 ProtoInstance348.USE = "hanim_vl1";
 fieldValue339.children[8] = ProtoInstance348;
 
 ProtoInstance349 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance349.name = "Joint";
 ProtoInstance349.USE = "hanim_l_shoulder";
 fieldValue339.children[9] = ProtoInstance349;
 
 ProtoInstance350 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance350.name = "Joint";
 ProtoInstance350.USE = "hanim_l_elbow";
 fieldValue339.children[10] = ProtoInstance350;
 
 ProtoInstance351 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance351.name = "Joint";
 ProtoInstance351.USE = "hanim_l_wrist";
 fieldValue339.children[11] = ProtoInstance351;
 
 ProtoInstance352 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance352.name = "Joint";
 ProtoInstance352.USE = "hanim_r_shoulder";
 fieldValue339.children[12] = ProtoInstance352;
 
 ProtoInstance353 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance353.name = "Joint";
 ProtoInstance353.USE = "hanim_r_elbow";
 fieldValue339.children[13] = ProtoInstance353;
 
 ProtoInstance354 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance354.name = "Joint";
 ProtoInstance354.USE = "hanim_r_wrist";
 fieldValue339.children[14] = ProtoInstance354;
 
 ProtoInstance355 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance355.name = "Joint";
 ProtoInstance355.USE = "hanim_vc4";
 fieldValue339.children[15] = ProtoInstance355;
 
 ProtoInstance356 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance356.name = "Joint";
 ProtoInstance356.USE = "hanim_skullbase";
 fieldValue339.children[16] = ProtoInstance356;
 
@@ -1925,84 +1908,68 @@ ProtoInstance128.fieldValue[4] = fieldValue339;
 fieldValue357 = browser.currentScene.createNode("fieldValue");
 fieldValue357.name = "segments";
 ProtoInstance358 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance358.name = "Segment";
 ProtoInstance358.USE = "hanim_pelvis";
 fieldValue357.children = [];
 
 fieldValue357.children[0] = ProtoInstance358;
 
 ProtoInstance359 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance359.name = "Segment";
 ProtoInstance359.USE = "hanim_l_thigh";
 fieldValue357.children[1] = ProtoInstance359;
 
 ProtoInstance360 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance360.name = "Segment";
 ProtoInstance360.USE = "hanim_l_calf";
 fieldValue357.children[2] = ProtoInstance360;
 
 ProtoInstance361 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance361.name = "Segment";
 ProtoInstance361.USE = "hanim_l_hindfoot";
 fieldValue357.children[3] = ProtoInstance361;
 
 ProtoInstance362 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance362.name = "Segment";
 ProtoInstance362.USE = "hanim_r_thigh";
 fieldValue357.children[4] = ProtoInstance362;
 
 ProtoInstance363 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance363.name = "Segment";
 ProtoInstance363.USE = "hanim_r_calf";
 fieldValue357.children[5] = ProtoInstance363;
 
 ProtoInstance364 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance364.name = "Segment";
 ProtoInstance364.USE = "hanim_r_hindfoot";
 fieldValue357.children[6] = ProtoInstance364;
 
 ProtoInstance365 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance365.name = "Segment";
 ProtoInstance365.USE = "hanim_c7";
 fieldValue357.children[7] = ProtoInstance365;
 
 ProtoInstance366 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance366.name = "Segment";
 ProtoInstance366.USE = "hanim_l_upperarm";
 fieldValue357.children[8] = ProtoInstance366;
 
 ProtoInstance367 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance367.name = "Segment";
 ProtoInstance367.USE = "hanim_l_forearm";
 fieldValue357.children[9] = ProtoInstance367;
 
 ProtoInstance368 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance368.name = "Segment";
 ProtoInstance368.USE = "hanim_l_hand";
 fieldValue357.children[10] = ProtoInstance368;
 
 ProtoInstance369 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance369.name = "Segment";
 ProtoInstance369.USE = "hanim_r_upperarm";
 fieldValue357.children[11] = ProtoInstance369;
 
 ProtoInstance370 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance370.name = "Segment";
 ProtoInstance370.USE = "hanim_r_forearm";
 fieldValue357.children[12] = ProtoInstance370;
 
 ProtoInstance371 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance371.name = "Segment";
 ProtoInstance371.USE = "hanim_r_hand";
 fieldValue357.children[13] = ProtoInstance371;
 
 ProtoInstance372 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance372.name = "Segment";
 ProtoInstance372.USE = "hanim_c4";
 fieldValue357.children[14] = ProtoInstance372;
 
 ProtoInstance373 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance373.name = "Segment";
 ProtoInstance373.USE = "hanim_skull";
 fieldValue357.children[15] = ProtoInstance373;
 

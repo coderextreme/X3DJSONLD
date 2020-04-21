@@ -2,406 +2,411 @@ var browser = X3D.getBrowser();
 var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+WorldInfo2 = browser.currentScene.createNode("WorldInfo");
+WorldInfo2.title = "ObliqueStrategies.x3d";
 browser.currentScene.children = [];
 
-browser.currentScene.children[0] = NavigationInfo2;
+browser.currentScene.children[0] = WorldInfo2;
 
-Background3 = browser.currentScene.createNode("Background");
-Background3.skyColor = [0.419608,0.427451,1];
-browser.currentScene.children[1] = Background3;
+NavigationInfo3 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo3.type = ["NONE"];
+browser.currentScene.children[1] = NavigationInfo3;
 
-Transform4 = browser.currentScene.createNode("Transform");
-Transform4.scale = [0.4,0.4,0.4];
-Transform4.translation = [0,1,0];
-TouchSensor5 = browser.currentScene.createNode("TouchSensor");
-TouchSensor5.DEF = "RandomTextClickedSensor";
-TouchSensor5.description = "Select to see a new strategy";
-Transform4.children = [];
+Background4 = browser.currentScene.createNode("Background");
+Background4.skyColor = [0.419608,0.427451,1];
+browser.currentScene.children[2] = Background4;
 
-Transform4.children[0] = TouchSensor5;
+Transform5 = browser.currentScene.createNode("Transform");
+Transform5.scale = [0.4,0.4,0.4];
+Transform5.translation = [0,1,0];
+TouchSensor6 = browser.currentScene.createNode("TouchSensor");
+TouchSensor6.DEF = "RandomTextClickedSensor";
+TouchSensor6.description = "Select to see a new strategy";
+Transform5.children = [];
 
-Shape6 = browser.currentScene.createNode("Shape");
-Text7 = browser.currentScene.createNode("Text");
-Text7.string = ["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"];
-FontStyle8 = browser.currentScene.createNode("FontStyle");
-FontStyle8.DEF = "MessageFont";
-FontStyle8.family = ["SANS"];
-FontStyle8.justify = ["MIDDLE","MIDDLE"];
-FontStyle8.style = "BOLD";
-Text7.fontStyle = FontStyle8;
+Transform5.children[0] = TouchSensor6;
 
-Shape6.geometry = Text7;
+Shape7 = browser.currentScene.createNode("Shape");
+Text8 = browser.currentScene.createNode("Text");
+Text8.string = ["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"];
+FontStyle9 = browser.currentScene.createNode("FontStyle");
+FontStyle9.DEF = "MessageFont";
+FontStyle9.family = ["SANS"];
+FontStyle9.justify = ["MIDDLE","MIDDLE"];
+FontStyle9.style = "BOLD";
+Text8.fontStyle = FontStyle9;
 
-Appearance9 = browser.currentScene.createNode("Appearance");
-Material10 = browser.currentScene.createNode("Material");
-Material10.diffuseColor = [1,1,1];
-Appearance9.material = Material10;
+Shape7.geometry = Text8;
 
-Shape6.appearance = Appearance9;
+Appearance10 = browser.currentScene.createNode("Appearance");
+Material11 = browser.currentScene.createNode("Material");
+Material11.diffuseColor = [1,1,1];
+Appearance10.material = Material11;
 
-Transform4.children[1] = Shape6;
+Shape7.appearance = Appearance10;
 
-Transform11 = browser.currentScene.createNode("Transform");
-Transform11.scale = [10,3,1];
-Shape12 = browser.currentScene.createNode("Shape");
-Shape12.DEF = "HeadlineClickSurface";
-IndexedFaceSet13 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet13.coordIndex = [0,1,2,3,-1];
-IndexedFaceSet13.solid = False;
-Coordinate14 = browser.currentScene.createNode("Coordinate");
-Coordinate14.point = [1,1,0,1,-1,0,-1,-1,0,-1,1,0];
-IndexedFaceSet13.coord = Coordinate14;
+Transform5.children[1] = Shape7;
 
-Shape12.geometry = IndexedFaceSet13;
+Transform12 = browser.currentScene.createNode("Transform");
+Transform12.scale = [10,3,1];
+Shape13 = browser.currentScene.createNode("Shape");
+Shape13.DEF = "HeadlineClickSurface";
+IndexedFaceSet14 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet14.coordIndex = [0,1,2,3,-1];
+IndexedFaceSet14.solid = False;
+Coordinate15 = browser.currentScene.createNode("Coordinate");
+Coordinate15.point = [1,1,0,1,-1,0,-1,-1,0,-1,1,0];
+IndexedFaceSet14.coord = Coordinate15;
 
-Appearance15 = browser.currentScene.createNode("Appearance");
-Material16 = browser.currentScene.createNode("Material");
-Material16.ambientIntensity = 0.245763;
-Material16.diffuseColor = [0.34773,0.090909,0.005289];
-Material16.shininess = 0.07;
-Material16.specularColor = [0.336735,0.051091,0.051091];
-Material16.transparency = 0.8;
-Appearance15.material = Material16;
+Shape13.geometry = IndexedFaceSet14;
 
-Shape12.appearance = Appearance15;
+Appearance16 = browser.currentScene.createNode("Appearance");
+Material17 = browser.currentScene.createNode("Material");
+Material17.ambientIntensity = 0.245763;
+Material17.diffuseColor = [0.34773,0.090909,0.005289];
+Material17.shininess = 0.07;
+Material17.specularColor = [0.336735,0.051091,0.051091];
+Material17.transparency = 0.8;
+Appearance16.material = Material17;
 
-Transform11.children = [];
+Shape13.appearance = Appearance16;
 
-Transform11.children[0] = Shape12;
+Transform12.children = [];
 
-Transform4.children[2] = Transform11;
+Transform12.children[0] = Shape13;
 
-browser.currentScene.children[2] = Transform4;
+Transform5.children[2] = Transform12;
 
-Script17 = browser.currentScene.createNode("Script");
-Script17.DEF = "TextScript";
-Script17.url = ["../node/ObliqueStrategiesScript.js"];
+browser.currentScene.children[3] = Transform5;
+
+Script18 = browser.currentScene.createNode("Script");
+Script18.DEF = "TextScript";
+Script18.url = ["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"];
 //initialize() method includes unit test to printAllStrategies() to console
 //TODO insert field definitions here (index string_changed previous next random) and then animate!
-field18 = browser.currentScene.createNode("field");
-field18.name = "index";
-field18.accessType = "initializeOnly";
-field18.appinfo = "index for active strategy card, -1 means no selection";
-field18.type = "SFInt32";
-field18.value = "0";
-Script17.field = [];
-
-Script17.field[0] = field18;
-
 field19 = browser.currentScene.createNode("field");
-field19.name = "string_changed";
-field19.accessType = "outputOnly";
-field19.appinfo = "latest strategy card value";
-field19.type = "MFString";
-Script17.field[1] = field19;
+field19.name = "index";
+field19.accessType = "initializeOnly";
+field19.appinfo = "index for active strategy card, -1 means no selection";
+field19.type = "SFInt32";
+field19.value = "0";
+Script18.field = [];
+
+Script18.field[0] = field19;
 
 field20 = browser.currentScene.createNode("field");
-field20.name = "textToSpeechUrl";
+field20.name = "string_changed";
 field20.accessType = "outputOnly";
-field20.appinfo = "url to invoke Google Translate";
+field20.appinfo = "latest strategy card value";
 field20.type = "MFString";
-Script17.field[2] = field20;
+Script18.field[1] = field20;
 
 field21 = browser.currentScene.createNode("field");
-field21.name = "newCardTime";
+field21.name = "textToSpeechUrl";
 field21.accessType = "outputOnly";
-field21.appinfo = "activate Sound node";
-field21.type = "SFTime";
-Script17.field[3] = field21;
+field21.appinfo = "\"url to invoke Google Translate\"";
+field21.type = "MFString";
+Script18.field[2] = field21;
 
 field22 = browser.currentScene.createNode("field");
-field22.name = "selectPreviousCard";
-field22.accessType = "inputOnly";
-field22.type = "SFBool";
-Script17.field[4] = field22;
+field22.name = "newCardTime";
+field22.accessType = "outputOnly";
+field22.appinfo = "activate Sound node";
+field22.type = "SFTime";
+Script18.field[3] = field22;
 
 field23 = browser.currentScene.createNode("field");
-field23.name = "selectNextCard";
+field23.name = "selectPreviousCard";
 field23.accessType = "inputOnly";
 field23.type = "SFBool";
-Script17.field[5] = field23;
+Script18.field[4] = field23;
 
 field24 = browser.currentScene.createNode("field");
-field24.name = "selectRandomCard";
+field24.name = "selectNextCard";
 field24.accessType = "inputOnly";
 field24.type = "SFBool";
-Script17.field[6] = field24;
+Script18.field[5] = field24;
 
 field25 = browser.currentScene.createNode("field");
-field25.name = "traceEnabled";
-field25.accessType = "initializeOnly";
-field25.appinfo = "controls console tracing";
+field25.name = "selectRandomCard";
+field25.accessType = "inputOnly";
 field25.type = "SFBool";
-field25.value = "true";
-Script17.field[7] = field25;
+Script18.field[6] = field25;
 
-browser.currentScene.children[3] = Script17;
+field26 = browser.currentScene.createNode("field");
+field26.name = "traceEnabled";
+field26.accessType = "initializeOnly";
+field26.appinfo = "controls console tracing";
+field26.type = "SFBool";
+field26.value = "true";
+Script18.field[7] = field26;
 
-Transform26 = browser.currentScene.createNode("Transform");
-Transform26.DEF = "CardTransform";
-Transform26.scale = [0.4,0.4,0.4];
-Transform26.translation = [0,-1.5,0];
-Shape27 = browser.currentScene.createNode("Shape");
-Text28 = browser.currentScene.createNode("Text");
-Text28.DEF = "CardText";
-FontStyle29 = browser.currentScene.createNode("FontStyle");
-FontStyle29.family = ["SANS"];
-FontStyle29.justify = ["MIDDLE","MIDDLE"];
-FontStyle29.style = "BOLD";
-Text28.fontStyle = FontStyle29;
+browser.currentScene.children[4] = Script18;
 
-Shape27.geometry = Text28;
+Transform27 = browser.currentScene.createNode("Transform");
+Transform27.DEF = "CardTransform";
+Transform27.scale = [0.4,0.4,0.4];
+Transform27.translation = [0,-1.5,0];
+Shape28 = browser.currentScene.createNode("Shape");
+Text29 = browser.currentScene.createNode("Text");
+Text29.DEF = "CardText";
+FontStyle30 = browser.currentScene.createNode("FontStyle");
+FontStyle30.family = ["SANS"];
+FontStyle30.justify = ["MIDDLE","MIDDLE"];
+FontStyle30.style = "BOLD";
+Text29.fontStyle = FontStyle30;
 
-Appearance30 = browser.currentScene.createNode("Appearance");
-Material31 = browser.currentScene.createNode("Material");
-Material31.diffuseColor = [1,1,1];
-Appearance30.material = Material31;
+Shape28.geometry = Text29;
 
-Shape27.appearance = Appearance30;
+Appearance31 = browser.currentScene.createNode("Appearance");
+Material32 = browser.currentScene.createNode("Material");
+Material32.diffuseColor = [1,1,1];
+Appearance31.material = Material32;
 
-Transform26.children = [];
+Shape28.appearance = Appearance31;
 
-Transform26.children[0] = Shape27;
+Transform27.children = [];
 
-ROUTE32 = browser.currentScene.createNode("ROUTE");
-ROUTE32.fromField = "string_changed";
-ROUTE32.fromNode = "TextScript";
-ROUTE32.toField = "string";
-ROUTE32.toNode = "CardText";
-Transform26.children[1] = ROUTE32;
+Transform27.children[0] = Shape28;
 
-Sound33 = browser.currentScene.createNode("Sound");
-Sound33.DEF = "CardSoundSpatialization";
-Sound33.maxBack = 100;
-Sound33.maxFront = 100;
-Sound33.minBack = 20;
-Sound33.minFront = 20;
+ROUTE33 = browser.currentScene.createNode("ROUTE");
+ROUTE33.fromField = "string_changed";
+ROUTE33.fromNode = "TextScript";
+ROUTE33.toField = "string";
+ROUTE33.toNode = "CardText";
+Transform27.children[1] = ROUTE33;
+
+Sound34 = browser.currentScene.createNode("Sound");
+Sound34.DEF = "CardSoundSpatialization";
+Sound34.maxBack = 100;
+Sound34.maxFront = 100;
+Sound34.minBack = 20;
+Sound34.minFront = 20;
 //Make sure the sound source AudioClip is audible at the user location
 //Not all X3D players seem to use the .mp3
 //&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players
 //%20 is space character used in uri/url encoding
-AudioClip34 = browser.currentScene.createNode("AudioClip");
-AudioClip34.DEF = "TextToSpeechAudioClip";
-AudioClip34.description = "sends strategy text google translate";
-AudioClip34.url = ["http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"];
-Sound33.source = AudioClip34;
+AudioClip35 = browser.currentScene.createNode("AudioClip");
+AudioClip35.DEF = "TextToSpeechAudioClip";
+AudioClip35.description = "sends strategy text google translate";
+AudioClip35.url = ["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"];
+Sound34.source = AudioClip35;
 
-Transform26.children[2] = Sound33;
-
-ROUTE35 = browser.currentScene.createNode("ROUTE");
-ROUTE35.fromField = "textToSpeechUrl";
-ROUTE35.fromNode = "TextScript";
-ROUTE35.toField = "url";
-ROUTE35.toNode = "TextToSpeechAudioClip";
-Transform26.children[3] = ROUTE35;
+Transform27.children[2] = Sound34;
 
 ROUTE36 = browser.currentScene.createNode("ROUTE");
-ROUTE36.fromField = "newCardTime";
+ROUTE36.fromField = "textToSpeechUrl";
 ROUTE36.fromNode = "TextScript";
-ROUTE36.toField = "startTime";
+ROUTE36.toField = "url";
 ROUTE36.toNode = "TextToSpeechAudioClip";
-Transform26.children[4] = ROUTE36;
+Transform27.children[3] = ROUTE36;
 
-browser.currentScene.children[4] = Transform26;
+ROUTE37 = browser.currentScene.createNode("ROUTE");
+ROUTE37.fromField = "newCardTime";
+ROUTE37.fromNode = "TextScript";
+ROUTE37.toField = "startTime";
+ROUTE37.toNode = "TextToSpeechAudioClip";
+Transform27.children[4] = ROUTE37;
 
-Transform37 = browser.currentScene.createNode("Transform");
-Transform37.scale = [0.4,0.4,0.4];
-Transform37.translation = [-3.2,2.5,0];
-TouchSensor38 = browser.currentScene.createNode("TouchSensor");
-TouchSensor38.DEF = "PreviousTextClickedSensor";
-TouchSensor38.description = "Select to see previous strategy";
-Transform37.children = [];
+browser.currentScene.children[5] = Transform27;
 
-Transform37.children[0] = TouchSensor38;
+Transform38 = browser.currentScene.createNode("Transform");
+Transform38.scale = [0.4,0.4,0.4];
+Transform38.translation = [-3.2,2.5,0];
+TouchSensor39 = browser.currentScene.createNode("TouchSensor");
+TouchSensor39.DEF = "PreviousTextClickedSensor";
+TouchSensor39.description = "Select to see previous strategy";
+Transform38.children = [];
 
-ROUTE39 = browser.currentScene.createNode("ROUTE");
-ROUTE39.fromField = "isActive";
-ROUTE39.fromNode = "PreviousTextClickedSensor";
-ROUTE39.toField = "selectPreviousCard";
-ROUTE39.toNode = "TextScript";
-Transform37.children[1] = ROUTE39;
+Transform38.children[0] = TouchSensor39;
 
-Shape40 = browser.currentScene.createNode("Shape");
-Text41 = browser.currentScene.createNode("Text");
-Text41.string = ["previous"];
-FontStyle42 = browser.currentScene.createNode("FontStyle");
-FontStyle42.USE = "MessageFont";
-Text41.fontStyle = FontStyle42;
+ROUTE40 = browser.currentScene.createNode("ROUTE");
+ROUTE40.fromField = "isActive";
+ROUTE40.fromNode = "PreviousTextClickedSensor";
+ROUTE40.toField = "selectPreviousCard";
+ROUTE40.toNode = "TextScript";
+Transform38.children[1] = ROUTE40;
 
-Shape40.geometry = Text41;
+Shape41 = browser.currentScene.createNode("Shape");
+Text42 = browser.currentScene.createNode("Text");
+Text42.string = ["previous"];
+FontStyle43 = browser.currentScene.createNode("FontStyle");
+FontStyle43.USE = "MessageFont";
+Text42.fontStyle = FontStyle43;
 
-Appearance43 = browser.currentScene.createNode("Appearance");
-Appearance43.DEF = "InterfaceAppearance";
-Material44 = browser.currentScene.createNode("Material");
-Material44.diffuseColor = [1,0,0.6];
-Appearance43.material = Material44;
+Shape41.geometry = Text42;
 
-Shape40.appearance = Appearance43;
+Appearance44 = browser.currentScene.createNode("Appearance");
+Appearance44.DEF = "InterfaceAppearance";
+Material45 = browser.currentScene.createNode("Material");
+Material45.diffuseColor = [1,0,0.6];
+Appearance44.material = Material45;
 
-Transform37.children[2] = Shape40;
+Shape41.appearance = Appearance44;
 
-Transform45 = browser.currentScene.createNode("Transform");
-Transform45.scale = [2,0.6,1];
-Shape46 = browser.currentScene.createNode("Shape");
-Shape46.DEF = "TransparentClickSurface";
+Transform38.children[2] = Shape41;
+
+Transform46 = browser.currentScene.createNode("Transform");
+Transform46.scale = [2,0.6,1];
+Shape47 = browser.currentScene.createNode("Shape");
+Shape47.DEF = "TransparentClickSurface";
 //support Selectable Text with a scalable IFS
-IndexedFaceSet47 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet47.coordIndex = [0,1,2,3,-1];
-IndexedFaceSet47.solid = False;
-Coordinate48 = browser.currentScene.createNode("Coordinate");
-Coordinate48.point = [1,1,0,1,-1,0,-1,-1,0,-1,1,0];
-IndexedFaceSet47.coord = Coordinate48;
+IndexedFaceSet48 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet48.coordIndex = [0,1,2,3,-1];
+IndexedFaceSet48.solid = False;
+Coordinate49 = browser.currentScene.createNode("Coordinate");
+Coordinate49.point = [1,1,0,1,-1,0,-1,-1,0,-1,1,0];
+IndexedFaceSet48.coord = Coordinate49;
 
-Shape46.geometry = IndexedFaceSet47;
+Shape47.geometry = IndexedFaceSet48;
 
-Appearance49 = browser.currentScene.createNode("Appearance");
-Material50 = browser.currentScene.createNode("Material");
-Material50.transparency = 1;
-Appearance49.material = Material50;
+Appearance50 = browser.currentScene.createNode("Appearance");
+Material51 = browser.currentScene.createNode("Material");
+Material51.transparency = 1;
+Appearance50.material = Material51;
 
-Shape46.appearance = Appearance49;
+Shape47.appearance = Appearance50;
 
-Transform45.children = [];
+Transform46.children = [];
 
-Transform45.children[0] = Shape46;
+Transform46.children[0] = Shape47;
 
-Transform37.children[3] = Transform45;
+Transform38.children[3] = Transform46;
 
-browser.currentScene.children[5] = Transform37;
+browser.currentScene.children[6] = Transform38;
 
-Transform51 = browser.currentScene.createNode("Transform");
-Transform51.scale = [0.4,0.4,0.4];
-Transform51.translation = [3.5,2.5,0];
-TouchSensor52 = browser.currentScene.createNode("TouchSensor");
-TouchSensor52.DEF = "NextTextClickedSensor";
-TouchSensor52.description = "Select to see next strategy";
-Transform51.children = [];
+Transform52 = browser.currentScene.createNode("Transform");
+Transform52.scale = [0.4,0.4,0.4];
+Transform52.translation = [3.5,2.5,0];
+TouchSensor53 = browser.currentScene.createNode("TouchSensor");
+TouchSensor53.DEF = "NextTextClickedSensor";
+TouchSensor53.description = "Select to see next strategy";
+Transform52.children = [];
 
-Transform51.children[0] = TouchSensor52;
+Transform52.children[0] = TouchSensor53;
 
-ROUTE53 = browser.currentScene.createNode("ROUTE");
-ROUTE53.fromField = "isActive";
-ROUTE53.fromNode = "NextTextClickedSensor";
-ROUTE53.toField = "selectNextCard";
-ROUTE53.toNode = "TextScript";
-Transform51.children[1] = ROUTE53;
+ROUTE54 = browser.currentScene.createNode("ROUTE");
+ROUTE54.fromField = "isActive";
+ROUTE54.fromNode = "NextTextClickedSensor";
+ROUTE54.toField = "selectNextCard";
+ROUTE54.toNode = "TextScript";
+Transform52.children[1] = ROUTE54;
 
-Shape54 = browser.currentScene.createNode("Shape");
-Text55 = browser.currentScene.createNode("Text");
-Text55.string = ["next"];
-FontStyle56 = browser.currentScene.createNode("FontStyle");
-FontStyle56.USE = "MessageFont";
-Text55.fontStyle = FontStyle56;
+Shape55 = browser.currentScene.createNode("Shape");
+Text56 = browser.currentScene.createNode("Text");
+Text56.string = ["next"];
+FontStyle57 = browser.currentScene.createNode("FontStyle");
+FontStyle57.USE = "MessageFont";
+Text56.fontStyle = FontStyle57;
 
-Shape54.geometry = Text55;
+Shape55.geometry = Text56;
 
-Appearance57 = browser.currentScene.createNode("Appearance");
-Appearance57.USE = "InterfaceAppearance";
-Shape54.appearance = Appearance57;
+Appearance58 = browser.currentScene.createNode("Appearance");
+Appearance58.USE = "InterfaceAppearance";
+Shape55.appearance = Appearance58;
 
-Transform51.children[2] = Shape54;
+Transform52.children[2] = Shape55;
 
-Transform58 = browser.currentScene.createNode("Transform");
-Transform58.scale = [1.2,0.6,1];
-Shape59 = browser.currentScene.createNode("Shape");
-Shape59.USE = "TransparentClickSurface";
-Transform58.children = [];
+Transform59 = browser.currentScene.createNode("Transform");
+Transform59.scale = [1.2,0.6,1];
+Shape60 = browser.currentScene.createNode("Shape");
+Shape60.USE = "TransparentClickSurface";
+Transform59.children = [];
 
-Transform58.children[0] = Shape59;
+Transform59.children[0] = Shape60;
 
-Transform51.children[3] = Transform58;
+Transform52.children[3] = Transform59;
 
-browser.currentScene.children[6] = Transform51;
+browser.currentScene.children[7] = Transform52;
 
-Transform60 = browser.currentScene.createNode("Transform");
-Transform60.scale = [0.4,0.4,0.4];
-Transform60.translation = [-3.3,-0.5,0];
-TouchSensor61 = browser.currentScene.createNode("TouchSensor");
-TouchSensor61.USE = "RandomTextClickedSensor";
-Transform60.children = [];
+Transform61 = browser.currentScene.createNode("Transform");
+Transform61.scale = [0.4,0.4,0.4];
+Transform61.translation = [-3.3,-0.5,0];
+TouchSensor62 = browser.currentScene.createNode("TouchSensor");
+TouchSensor62.USE = "RandomTextClickedSensor";
+Transform61.children = [];
 
-Transform60.children[0] = TouchSensor61;
+Transform61.children[0] = TouchSensor62;
 
-ROUTE62 = browser.currentScene.createNode("ROUTE");
-ROUTE62.fromField = "isActive";
-ROUTE62.fromNode = "RandomTextClickedSensor";
-ROUTE62.toField = "selectRandomCard";
-ROUTE62.toNode = "TextScript";
-Transform60.children[1] = ROUTE62;
+ROUTE63 = browser.currentScene.createNode("ROUTE");
+ROUTE63.fromField = "isActive";
+ROUTE63.fromNode = "RandomTextClickedSensor";
+ROUTE63.toField = "selectRandomCard";
+ROUTE63.toNode = "TextScript";
+Transform61.children[1] = ROUTE63;
 
-Shape63 = browser.currentScene.createNode("Shape");
-Text64 = browser.currentScene.createNode("Text");
-Text64.string = ["random"];
-FontStyle65 = browser.currentScene.createNode("FontStyle");
-FontStyle65.USE = "MessageFont";
-Text64.fontStyle = FontStyle65;
+Shape64 = browser.currentScene.createNode("Shape");
+Text65 = browser.currentScene.createNode("Text");
+Text65.string = ["random"];
+FontStyle66 = browser.currentScene.createNode("FontStyle");
+FontStyle66.USE = "MessageFont";
+Text65.fontStyle = FontStyle66;
 
-Shape63.geometry = Text64;
+Shape64.geometry = Text65;
 
-Appearance66 = browser.currentScene.createNode("Appearance");
-Appearance66.USE = "InterfaceAppearance";
-Shape63.appearance = Appearance66;
+Appearance67 = browser.currentScene.createNode("Appearance");
+Appearance67.USE = "InterfaceAppearance";
+Shape64.appearance = Appearance67;
 
-Transform60.children[2] = Shape63;
+Transform61.children[2] = Shape64;
 
-Transform67 = browser.currentScene.createNode("Transform");
-Transform67.scale = [1.8,0.6,1];
-Shape68 = browser.currentScene.createNode("Shape");
-Shape68.USE = "TransparentClickSurface";
-Transform67.children = [];
+Transform68 = browser.currentScene.createNode("Transform");
+Transform68.scale = [1.8,0.6,1];
+Shape69 = browser.currentScene.createNode("Shape");
+Shape69.USE = "TransparentClickSurface";
+Transform68.children = [];
 
-Transform67.children[0] = Shape68;
+Transform68.children[0] = Shape69;
 
-Transform60.children[3] = Transform67;
+Transform61.children[3] = Transform68;
 
-browser.currentScene.children[7] = Transform60;
+browser.currentScene.children[8] = Transform61;
 
-Transform69 = browser.currentScene.createNode("Transform");
-Transform69.scale = [0.4,0.4,0.4];
-Transform69.translation = [3.3,-0.5,0];
-Anchor70 = browser.currentScene.createNode("Anchor");
-Anchor70.DEF = "TextToSpeechAnchor";
-Anchor70.description = "text to speech in browser";
-Anchor70.parameter = ["target=_blank"];
-Anchor70.url = ["http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change"];
-ROUTE71 = browser.currentScene.createNode("ROUTE");
-ROUTE71.fromField = "textToSpeechUrl";
-ROUTE71.fromNode = "TextScript";
-ROUTE71.toField = "url";
-ROUTE71.toNode = "TextToSpeechAnchor";
-Anchor70.children = [];
+Transform70 = browser.currentScene.createNode("Transform");
+Transform70.scale = [0.4,0.4,0.4];
+Transform70.translation = [3.3,-0.5,0];
+Anchor71 = browser.currentScene.createNode("Anchor");
+Anchor71.DEF = "TextToSpeechAnchor";
+Anchor71.description = "text to speech in browser";
+Anchor71.parameter = ["target=_blank"];
+Anchor71.url = ["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"];
+ROUTE72 = browser.currentScene.createNode("ROUTE");
+ROUTE72.fromField = "textToSpeechUrl";
+ROUTE72.fromNode = "TextScript";
+ROUTE72.toField = "url";
+ROUTE72.toNode = "TextToSpeechAnchor";
+Anchor71.children = [];
 
-Anchor70.children[0] = ROUTE71;
+Anchor71.children[0] = ROUTE72;
 
-Shape72 = browser.currentScene.createNode("Shape");
-Text73 = browser.currentScene.createNode("Text");
-Text73.string = ["speech"];
-FontStyle74 = browser.currentScene.createNode("FontStyle");
-FontStyle74.USE = "MessageFont";
-Text73.fontStyle = FontStyle74;
+Shape73 = browser.currentScene.createNode("Shape");
+Text74 = browser.currentScene.createNode("Text");
+Text74.string = ["speech"];
+FontStyle75 = browser.currentScene.createNode("FontStyle");
+FontStyle75.USE = "MessageFont";
+Text74.fontStyle = FontStyle75;
 
-Shape72.geometry = Text73;
+Shape73.geometry = Text74;
 
-Appearance75 = browser.currentScene.createNode("Appearance");
-Appearance75.USE = "InterfaceAppearance";
-Shape72.appearance = Appearance75;
+Appearance76 = browser.currentScene.createNode("Appearance");
+Appearance76.USE = "InterfaceAppearance";
+Shape73.appearance = Appearance76;
 
-Anchor70.children[1] = Shape72;
+Anchor71.children[1] = Shape73;
 
-Transform76 = browser.currentScene.createNode("Transform");
-Transform76.scale = [1.8,0.6,1];
-Shape77 = browser.currentScene.createNode("Shape");
-Shape77.USE = "TransparentClickSurface";
-Transform76.children = [];
+Transform77 = browser.currentScene.createNode("Transform");
+Transform77.scale = [1.8,0.6,1];
+Shape78 = browser.currentScene.createNode("Shape");
+Shape78.USE = "TransparentClickSurface";
+Transform77.children = [];
 
-Transform76.children[0] = Shape77;
+Transform77.children[0] = Shape78;
 
-Anchor70.children[2] = Transform76;
+Anchor71.children[2] = Transform77;
 
-Transform69.children = [];
+Transform70.children = [];
 
-Transform69.children[0] = Anchor70;
+Transform70.children[0] = Anchor71;
 
-browser.currentScene.children[8] = Transform69;
+browser.currentScene.children[9] = Transform70;
 

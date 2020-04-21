@@ -85,7 +85,7 @@ public class ObliqueStrategies {
         .addMeta(new metaObject().setName("description").setContent("Text scripting and animation example using Oblique Strategies card set by Brian Eno."))
         .addMeta(new metaObject().setName("creator").setContent("Don Brutzman, John Kelly, Ben Cheng"))
         .addMeta(new metaObject().setName("created").setContent("3 November 2013"))
-        .addMeta(new metaObject().setName("modified").setContent("18 October 2015"))
+        .addMeta(new metaObject().setName("modified").setContent("10 November 2019"))
         .addMeta(new metaObject().setName("reference").setContent("oblique.html"))
         .addMeta(new metaObject().setName("reference").setContent("ObliqueStrategies.txt"))
         .addMeta(new metaObject().setName("reference").setContent("ObliqueStrategiesScript.js"))
@@ -96,19 +96,25 @@ public class ObliqueStrategies {
         .addMeta(new metaObject().setName("reference").setContent("https://en.wikipedia.org/wiki/Oblique_Strategies"))
         .addMeta(new metaObject().setName("subject").setContent("Brian Eno, Oblique Strategies"))
         .addMeta(new metaObject().setName("Image").setContent("images/ObliqueStrategiesEntryScreen.png"))
-        .addMeta(new metaObject().setName("audio").setContent("http://translate.google.com/translate_tts?tl=en&q=hello%20X3D"))
-        .addMeta(new metaObject().setName("audio").setContent("translate_tts_HelloX3D.mp3"))
-        .addMeta(new metaObject().setName("audio").setContent("translate_tts_HelloX3D.wav"))
+        .addMeta(new metaObject().setName("Sound").setContent("http://translate.google.com/translate_tts?tl=en&q=hello%20X3D"))
+        .addMeta(new metaObject().setName("Sound").setContent("translate_tts_HelloX3D.mp3"))
+        .addMeta(new metaObject().setName("Sound").setContent("translate_tts_HelloX3D.wav"))
         .addMeta(new metaObject().setName("TODO").setContent("multiliingual translation parameter"))
         .addMeta(new metaObject().setName("reference").setContent("http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech"))
         .addMeta(new metaObject().setName("reference").setContent("http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html"))
         .addMeta(new metaObject().setName("warning").setContent("under development, scene Sound/AudioClip triggering (or retrieved file format) not working"))
-        .addMeta(new metaObject().setName("warning").setContent("BSContact error: Script node TextScript: parse error: line 15 \" var strategy = [];"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"))
+        .addMeta(new metaObject().setName("warning").setContent("TODO resolve potential error in Script node TextScript: parse problem line 15 \" var strategy = [];"))
+        .addMeta(new metaObject().setName("reference").setContent("https://gist.github.com/alotaiba/1728771"))
+        .addMeta(new metaObject().setName("reference").setContent("https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api"))
+        .addMeta(new metaObject().setName("Sound").setContent("https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4"))
+        .addMeta(new metaObject().setName("Sound").setContent("translate_tts_HelloX3D4.mp3"))
+        .addMeta(new metaObject().setName("reference").setContent("https://cloud.google.com/translate/docs/basic/translating-text"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject())
+        .addChild(new WorldInfoObject().setTitle("ObliqueStrategies.x3d"))
+        .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"NONE"}))
         .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor0().getArray())))
         .addChild(new TransformObject().setScale(new float[] {0.4f,0.4f,0.4f}).setTranslation(new float[] {0f,1f,0f})
           .addChild(new TouchSensorObject().setDEF("RandomTextClickedSensor").setDescription("Select to see a new strategy"))
@@ -128,7 +134,7 @@ public class ObliqueStrategies {
           .addComments(new CommentsBlock("TODO insert field definitions here (index string_changed previous next random) and then animate!"))
           .addField(new fieldObject().setType("SFInt32").setName("index").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("index for active strategy card, -1 means no selection").setValue("0"))
           .addField(new fieldObject().setType("MFString").setName("string_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("latest strategy card value"))
-          .addField(new fieldObject().setType("MFString").setName("textToSpeechUrl").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("url to invoke Google Translate"))
+          .addField(new fieldObject().setType("MFString").setName("textToSpeechUrl").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("\"url to invoke Google Translate\""))
           .addField(new fieldObject().setType("SFTime").setName("newCardTime").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("activate Sound node"))
           .addField(new fieldObject().setType("SFBool").setName("selectPreviousCard").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
           .addField(new fieldObject().setType("SFBool").setName("selectNextCard").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
@@ -225,7 +231,7 @@ protected class MFVec3f5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../node/ObliqueStrategiesScript.js"});
+    return new MFStringObject(new java.lang.String[] {"ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"});
   }
 }
 protected class MFString7 {
@@ -240,7 +246,7 @@ protected class MFString8 {
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav"});
+    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"});
   }
 }
 protected class MFString10 {
@@ -275,7 +281,7 @@ protected class MFString15 {
 }
 protected class MFString16 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&q=Overtly%20resist%20change"});
+    return new MFStringObject(new java.lang.String[] {"http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"});
   }
 }
 protected class MFString17 {
