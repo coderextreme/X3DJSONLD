@@ -45,7 +45,7 @@ NodeSerializer.prototype = {
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
 		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
 		// we figure out body first and print it out later
-		var body = "      var "+element.nodeName+0+" =  new autoclass."+element.nodeName+"()";
+		var body = "      var "+element.nodeName+0+" =  (new autoclass."+element.nodeName+"())";
 		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
 		for (var po in this.precode) {
 			str += this.precode[po];
@@ -339,7 +339,7 @@ NodeSerializer.prototype = {
 					ch += node.nodeName+stack[0] + " = ";
 				}
 
-				ch += "new autoclass."+node.nodeName+"()";
+				ch += "(new autoclass."+node.nodeName+"())";
 				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "}";
@@ -359,7 +359,7 @@ NodeSerializer.prototype = {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				str += "\n"+("  ".repeat(n))+'.addComments(new autoclass.CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'"))';
+				str += "\n"+("  ".repeat(n))+'.addComments((new autoclass.CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'")))';
 				if (y !== node.nodeValue) {
 					// console.error("JavaScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
