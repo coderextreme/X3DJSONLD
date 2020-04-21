@@ -89,7 +89,7 @@ diffxml.sh -- compare *.x3d to *.new.x3d
 donall.sh -- run all .x3d in /c/x3d-code/www.web3d.org/x3d/content/examples through don's conversion and compiling and running code.
 execute.sh -- finish executing code
 finish.sh -- finish conversion and compiling of files in /c/x3d-code/www.web3d.org/x3d/content/examples
-nashorn.sh -- a script to run nashorn javascript *.sail.js files
+nashorn.sh -- a script to run nashorn javascript *.js files
 noncompiled.sh -- report non-compiled code
 nonconverted.sh -- report non-converted code
 nonexecuted.sh -- report non-executed java code
