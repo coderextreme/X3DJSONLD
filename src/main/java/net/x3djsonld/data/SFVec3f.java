@@ -66,6 +66,7 @@ public class SFVec3f
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
   .setHead(new headObject()
+    .addComponent(new componentObject().setName("Scripting").setLevel(1))
     .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("SFVec3f.x3d"))
     .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("3 prismatic spheres"))
@@ -77,7 +78,7 @@ public class SFVec3f
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(.7f,.7f,.7f).setSpecularColor(.5f,.5f,.5f)))
         .setGeometry(new SphereObject())))
-    .addChild(new ScriptObject("Bounce").setSourceCode("\n" + 
+    .addChild(new ScriptObject("Bounce2").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "			function newBubble() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
@@ -115,8 +116,8 @@ public class SFVec3f
       .addField(new fieldObject().setName("velocity").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
       .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFTIME).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
     .addChild(new TimeSensorObject("TourTime").setCycleInterval(0.150).setLoop(true))
-    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
-    .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
+    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
+    .addChild(new ROUTEObject().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
     }
 	// end of initialize() method
 

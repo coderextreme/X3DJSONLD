@@ -1,8 +1,8 @@
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"3.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
@@ -24,7 +24,7 @@
           },
           {
             "@name":"modified",
-            "@content":"19 January 2014"
+            "@content":"20 October 2019"
           },
           {
             "@name":"description",
@@ -39,8 +39,12 @@
             "@content":"NancyNativeTags.x3d"
           },
           {
+            "@name":"TODO",
+            "@content":"Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem."
+          },
+          {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"
           },
           {
             "@name":"generator",
@@ -52,15 +56,15 @@
           },
           {
             "@name":"translated",
-            "@content":"26 May 2019"
+            "@content":"21 April 2020"
           },
           {
             "@name":"generator",
-            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
           },
           {
             "@name":"reference",
-            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           }
         ]
     },
@@ -220,13 +224,23 @@
                       "@name":"skinCoord",
                       "@accessType":"inputOutput",
                       "@appinfo":"Hint: H-anim version 2.0",
-                      "@type":"SFNode"
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"NULL node"
+                        }
+                      ]
                     },
                     {
                       "@name":"skinNormal",
                       "@accessType":"inputOutput",
                       "@appinfo":"Hint: H-anim version 2.0",
-                      "@type":"SFNode"
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"NULL node"
+                        }
+                      ]
                     }
                   ]
               },
@@ -533,7 +547,12 @@
                       "@name":"coord",
                       "@accessType":"inputOutput",
                       "@appinfo":"contains Coordinate nodes",
-                      "@type":"SFNode"
+                      "@type":"SFNode",
+                      "-children":[
+                        {
+                          "#comment":"NULL node"
+                        }
+                      ]
                     },
                     {
                       "@name":"displacers",
@@ -734,7 +753,7 @@
                         "fieldValue": [
                           {
                             "@name":"name",
-                            "@value":"HumanoidRoot"
+                            "@value":"humanoid_root"
                           },
                           {
                             "@name":"center",
@@ -1253,7 +1272,7 @@
                                                               { "ImageTexture":
                                                                 {
                                                                   "@DEF":"small_logo_Tex",
-                                                                  "@url":["small_logo.gif","http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"]
+                                                                  "@url":["small_logo.gif","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"]
                                                                 }
                                                               }
                                                           }

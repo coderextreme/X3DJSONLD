@@ -32,7 +32,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 12 January 2014 </td>
+			<td> 20 January 2020 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
@@ -48,7 +48,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html" target="_blank">http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html" target="_blank">https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
@@ -68,14 +68,14 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d</a> </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
 			<td> <a href="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d" target="_blank">http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d</a> </td>
 		</tr>
 		<tr>
@@ -116,23 +116,23 @@ CameraExamples_sail.prototype = {
   initialize : function ()
   {
 
-	/** Large attribute array: ExternProtoDeclare appinfo field, scene-graph level=3, element #21, 31 total values */
-	this.ExternProtoDeclare_Camera_3_21_appinfo = new SFStringObject("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images");
-
-	/** Large attribute array: field appinfo field, scene-graph level=4, element #22, 16 total values */
-	this.field_position_4_22_appinfo = new SFStringObject("Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated");
+	/** Large attribute array: ExternProtoDeclare appinfo field, scene-graph level=3, element #22, 31 total values */
+	this.ExternProtoDeclare_Camera_3_22_appinfo = new SFStringObject("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images");
 
 	/** Large attribute array: field appinfo field, scene-graph level=4, element #23, 16 total values */
-	this.field_orientation_4_23_appinfo = new SFStringObject("Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated");
+	this.field_position_4_23_appinfo = new SFStringObject("Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated");
 
-	/** Large attribute array: ExternProtoDeclare appinfo field, scene-graph level=3, element #71, 20 total values */
-	this.ExternProtoDeclare_OfflineRender_3_71_appinfo = new SFStringObject("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)");
+	/** Large attribute array: field appinfo field, scene-graph level=4, element #24, 16 total values */
+	this.field_orientation_4_24_appinfo = new SFStringObject("Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated");
 
-	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=5, element #383, 245 total numbers */
-	this.IndexedFaceSet_5_383_coordIndex = new MFInt32Object(Java.to([0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1], Java.type("int[]")));
+	/** Large attribute array: ExternProtoDeclare appinfo field, scene-graph level=3, element #72, 20 total values */
+	this.ExternProtoDeclare_OfflineRender_3_72_appinfo = new SFStringObject("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)");
 
-	/** Large attribute array: Coordinate point field, scene-graph level=6, element #383, 192 total numbers made up of 64 3-tuple values */
-	this.Coordinate_6_383_point = new MFVec3fObject() /* splitting up long array to improve readability */
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=5, element #384, 245 total numbers */
+	this.IndexedFaceSet_5_384_coordIndex = new MFInt32Object(Java.to([0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1], Java.type("int[]")));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=6, element #384, 192 total numbers made up of 64 3-tuple values */
+	this.Coordinate_6_384_point = new MFVec3fObject() /* splitting up long array to improve readability */
 	.append(new MFVec3fObject(Java.to([-5.25,5.25,0.0,-3.75,5.25,0.0,-2.25,5.25,0.0,-0.75,5.25,0.0,0.75,5.25,0.0,2.25,5.25,0.0,3.75,5.25,0.0,5.25,5.25,0.0,-5.25,3.75,0.0,-3.75,3.75,0.0], Java.type("float[]"))))
 	.append(new MFVec3fObject(Java.to([-2.25,3.75,0.0,-0.75,3.75,0.0,0.75,3.75,0.0,2.25,3.75,0.0,3.75,3.75,0.0,5.25,3.75,0.0,-5.25,2.25,0.0,-3.75,2.25,0.0,-2.25,2.25,0.0,-0.75,2.25,0.0], Java.type("float[]"))))
 	.append(new MFVec3fObject(Java.to([0.75,2.25,0.0,2.25,2.25,0.0,3.75,2.25,0.0,5.25,2.25,0.0,-5.25,0.75,0.0,-3.75,0.75,0.0,-2.25,0.75,0.0,-0.75,0.75,0.0,0.75,0.75,0.0,2.25,0.75,0.0], Java.type("float[]"))))
@@ -141,8 +141,8 @@ CameraExamples_sail.prototype = {
 	.append(new MFVec3fObject(Java.to([-2.25,-3.75,0.0,-0.75,-3.75,0.0,0.75,-3.75,0.0,2.25,-3.75,0.0,3.75,-3.75,0.0,5.25,-3.75,0.0,-5.25,-5.25,0.0,-3.75,-5.25,0.0,-2.25,-5.25,0.0,-0.75,-5.25,0.0], Java.type("float[]"))))
 	.append(new MFVec3fObject(Java.to([0.75,-5.25,0.0,2.25,-5.25,0.0,3.75,-5.25,0.0,5.25,-5.25,0.0], Java.type("float[]"))));
 
-	/** Large attribute array: ExternProtoDeclare appinfo field, scene-graph level=3, element #403, 20 total values */
-	this.ExternProtoDeclare_CrossHair_3_403_appinfo = new SFStringObject("CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point");
+	/** Large attribute array: ExternProtoDeclare appinfo field, scene-graph level=3, element #404, 20 total values */
+	this.ExternProtoDeclare_CrossHair_3_404_appinfo = new SFStringObject("CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point");
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
     .addMeta(new metaObject().setName("title").setContent("CameraExamples.x3d"))
@@ -150,28 +150,27 @@ CameraExamples_sail.prototype = {
     .addMeta(new metaObject().setName("documentation").setContent("Two demos are found in the scene, click the \"red text\" on left or right to start. (a) SimpleShotsTest shows Zoom in/out, Pan left/right, Boom up/down, Tilt left/right, with each is defined by a CameraShot collecting a series of CameraMovements. (b) AimPointTest gradually slews the camera view to look at the sliding cube, then follows it around before returning to original viewpoint."))
     .addMeta(new metaObject().setName("creator").setContent("Don Brutzman and Jeff Weekley"))
     .addMeta(new metaObject().setName("created").setContent("18 June 2009"))
-    .addMeta(new metaObject().setName("modified").setContent("12 January 2014"))
+    .addMeta(new metaObject().setName("modified").setContent("20 January 2020"))
     .addMeta(new metaObject().setName("TODO").setContent("Schematron rules, backed up by initialize() checks"))
     .addMeta(new metaObject().setName("reference").setContent("BeyondViewpointCameraNodesWeb3D2009.pdf"))
     .addMeta(new metaObject().setName("MovingImage").setContent("CameraExamplesDemo.mp4"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
+    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
     .addMeta(new metaObject().setName("subject").setContent("Camera nodes for Viewpoint navigation control"))
     .addMeta(new metaObject().setName("reference").setContent("CameraPrototypes.x3d"))
     .addMeta(new metaObject().setName("reference").setContent("CameraExamplesConsoleLog.txt"))
     .addMeta(new metaObject().setName("reference").setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.avi"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
-    .addComments(" TODO warn if more than one identifier present ")
-    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
+    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
+    .addMeta(new metaObject().setName("reference").setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
     .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
     .addComments(" =============== Camera ============== ")
-    .addChild(new ExternProtoDeclareObject().setName("Camera").setAppinfo(this.ExternProtoDeclare_Camera_3_21_appinfo).setUrl(new MFStringObject("\"CameraPrototypes.x3d#Camera\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera\" \"CameraPrototypes.wrl#Camera\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera\""))
-      .addComments(" Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields ")
+    .addChild(new WorldInfoObject().setTitle("CameraExamples.x3d"))
+    .addChild(new ExternProtoDeclareObject().setName("Camera").setAppinfo(this.ExternProtoDeclare_Camera_3_22_appinfo).setUrl(new MFStringObject("\"CameraPrototypes.x3d#Camera\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera\" \"CameraPrototypes.wrl#Camera\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera\""))
       .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this Camera"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFVec3f").setAppinfo(this.field_position_4_22_appinfo))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("orientation").setType("SFRotation").setAppinfo(this.field_orientation_4_23_appinfo))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFVec3f").setAppinfo(this.field_position_4_23_appinfo))
+      .addField(new fieldObject().setAccessType("inputOutput").setName("orientation").setType("SFRotation").setAppinfo(this.field_orientation_4_24_appinfo))
       .addField(new fieldObject().setAccessType("inputOutput").setName("fieldOfView").setType("SFFloat").setAppinfo("pi/4"))
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat").setAppinfo("input fraction drives interpolators"))
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_bind").setType("SFBool").setAppinfo("input event binds or unbinds this Camera"))
@@ -191,9 +190,10 @@ CameraExamples_sail.prototype = {
       .addField(new fieldObject().setAccessType("outputOnly").setName("isActive").setType("SFBool").setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
       .addField(new fieldObject().setAccessType("outputOnly").setName("totalDuration").setType("SFTime").setAppinfo("Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("offlineRender").setType("SFNode").setAppinfo("OfflineRender node"))
-      .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setAppinfo("enable console output to trace script computations and prototype progress")))
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setAppinfo("enable console output to trace script computations and prototype progress"))
+      .addComments(" Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields "))
     .addComments(" =============== CameraShot ============== ")
-    .addChild(new ExternProtoDeclareObject().setName("CameraShot").setAppinfo("CameraShot collects a specific set of CameraMovement animations that make up an individual shot").setUrl(new MFStringObject("\"CameraPrototypes.x3d#CameraShot\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot\" \"CameraPrototypes.wrl#CameraShot\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot\""))
+    .addChild(new ExternProtoDeclareObject().setName("CameraShot").setAppinfo("CameraShot collects a specific set of CameraMovement animations that make up an individual shot").setUrl(new MFStringObject("\"CameraPrototypes.x3d#CameraShot\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot\" \"CameraPrototypes.wrl#CameraShot\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot\""))
       .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this CameraShot"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setAppinfo("Whether this CameraShot can be activated"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("moves").setType("MFNode").setAppinfo("Set of CameraMovement nodes")
@@ -208,7 +208,7 @@ CameraExamples_sail.prototype = {
       .addField(new fieldObject().setAccessType("outputOnly").setName("isActive").setType("SFBool").setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setAppinfo("enable console output to trace script computations and prototype progress")))
     .addComments(" =============== CameraMovement ============== ")
-    .addChild(new ExternProtoDeclareObject().setName("CameraMovement").setAppinfo("CameraMovement defines a single camera movement animation").setUrl(new MFStringObject("\"CameraPrototypes.x3d#CameraMovement\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement\" \"CameraPrototypes.wrl#CameraMovement\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement\""))
+    .addChild(new ExternProtoDeclareObject().setName("CameraMovement").setAppinfo("CameraMovement defines a single camera movement animation").setUrl(new MFStringObject("\"CameraPrototypes.x3d#CameraMovement\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement\" \"CameraPrototypes.wrl#CameraMovement\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement\""))
       .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this CameraMovement"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setAppinfo("Whether this CameraMovement can be activated"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("duration").setType("SFFloat").setAppinfo("Duration in seconds for this move"))
@@ -222,8 +222,7 @@ CameraExamples_sail.prototype = {
       .addField(new fieldObject().setAccessType("outputOnly").setName("isActive").setType("SFBool").setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setAppinfo("enable console output to trace script computations and prototype progress")))
     .addComments(" =============== OfflineRender ============== ")
-    .addChild(new ExternProtoDeclareObject().setName("OfflineRender").setAppinfo(this.ExternProtoDeclare_OfflineRender_3_71_appinfo).setUrl(new MFStringObject("\"CameraPrototypes.x3d#OfflineRender\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender\" \"CameraPrototypes.wrl#OfflineRender\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender\""))
-      .addComments(" TODO non-photorealistic rendering (NPR) parameters ")
+    .addChild(new ExternProtoDeclareObject().setName("OfflineRender").setAppinfo(this.ExternProtoDeclare_OfflineRender_3_72_appinfo).setUrl(new MFStringObject("\"CameraPrototypes.x3d#OfflineRender\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender\" \"CameraPrototypes.wrl#OfflineRender\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender\""))
       .addField(new fieldObject().setAccessType("inputOutput").setName("description").setType("SFString").setAppinfo("Text description to be displayed for this OfflineRender"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("enabled").setType("SFBool").setAppinfo("Whether this OfflineRender can be activated"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("frameRate").setType("SFFloat").setAppinfo("Frames per second recorded for this rendering"))
@@ -234,7 +233,8 @@ CameraExamples_sail.prototype = {
       .addField(new fieldObject().setAccessType("outputOnly").setName("renderCompleteTime").setType("SFTime").setAppinfo("Render operation complete"))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("movieFormat").setType("MFString").setAppinfo("Format of rendered output movie (mpeg mp4 etc.), use first supported format"))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("imageFormat").setType("MFString").setAppinfo("Format of rendered output images (png jpeg gif tiff etc.) use first supported format"))
-      .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setAppinfo("enable console output to trace script computations and prototype progress")))
+      .addField(new fieldObject().setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setAppinfo("enable console output to trace script computations and prototype progress"))
+      .addComments(" TODO non-photorealistic rendering (NPR) parameters "))
     .addComments(" =============== Lights, camera, action! ============== ")
     .addChild(new DirectionalLightObject().setDirection(0.0,-1.0,0.0).setIntensity(0.8).setGlobal(true))
     .addChild(new NavigationInfoObject().setType(new MFStringObject("\"EXAMINE\" \"FLY\" \"ANY\"")))
@@ -403,7 +403,7 @@ CameraExamples_sail.prototype = {
           .setGeometry(new BoxObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
-            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/CameraMoveZoom.png\" \"http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png\"")))))
+            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/CameraMoveZoom.png\" \"https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png\"")))))
         .addChild(new TransformObject().setTranslation(0.0,2.0,0.0)
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setString(new MFStringObject("\"Zoom in, out\""))
@@ -415,7 +415,7 @@ CameraExamples_sail.prototype = {
           .setGeometry(new BoxObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
-            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/CameraMoveDolly.png\" \"http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png\"")))))
+            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/CameraMoveDolly.png\" \"https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png\"")))))
         .addChild(new TransformObject().setTranslation(0.0,2.0,0.0)
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setString(new MFStringObject("\"Dolly left, right\""))
@@ -427,7 +427,7 @@ CameraExamples_sail.prototype = {
           .setGeometry(new BoxObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
-            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/CameraMovePan.png\" \"http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png\"")))))
+            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/CameraMovePan.png\" \"https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png\"")))))
         .addChild(new TransformObject().setTranslation(0.0,2.0,0.0)
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setString(new MFStringObject("\"Pan left, right\""))
@@ -439,7 +439,7 @@ CameraExamples_sail.prototype = {
           .setGeometry(new BoxObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
-            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/CameraMoveBoom.png\" \"http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png\"")))))
+            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/CameraMoveBoom.png\" \"https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png\"")))))
         .addChild(new TransformObject().setTranslation(0.0,2.0,0.0)
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setString(new MFStringObject("\"Boom up, down\""))
@@ -451,7 +451,7 @@ CameraExamples_sail.prototype = {
           .setGeometry(new BoxObject())
           .setAppearance(new AppearanceObject()
             .setMaterial(new MaterialObject())
-            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/CameraMoveTilt.png\" \"http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png\"")))))
+            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"images/CameraMoveTilt.png\" \"https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png\"")))))
         .addChild(new TransformObject().setTranslation(0.0,2.0,0.0)
           .addChild(new ShapeObject()
             .setGeometry(new TextObject().setString(new MFStringObject("\"Tilt left, right\""))
@@ -488,12 +488,12 @@ CameraExamples_sail.prototype = {
               .addComments(" goalAimPoint modified by ROUTE to match moving Box "))
             .addChild(new ProtoInstanceObject("MoveAimPoint3.4", "CameraMovement").setDEF("MoveAimPoint3.4").setName("CameraMovement")
               .addFieldValue(new fieldValueObject().setName("description").setValue("AimPoint 3.4 restore camera back to home"))
-              .addComments(" can test tracking or not using following values ")
               .addFieldValue(new fieldValueObject().setName("tracking").setValue("true"))
               .addFieldValue(new fieldValueObject().setName("duration").setValue("5"))
               .addFieldValue(new fieldValueObject().setName("goalPosition").setValue("4 4 10"))
               .addFieldValue(new fieldValueObject().setName("goalAimPoint").setValue("4 4 0"))
-              .addFieldValue(new fieldValueObject().setName("goalOrientation").setValue("0 1 0 0")))))))
+              .addFieldValue(new fieldValueObject().setName("goalOrientation").setValue("0 1 0 0"))
+              .addComments(" can test tracking or not using these values "))))))
     .addChild(new GroupObject("AnimationGroup.AimPointTest")
       .addChild(new TimeSensorObject("CameraTimer.AimPointTest"))
       .addComments(" initialize clock to match totalDuration of combined Shot Moves ")
@@ -523,7 +523,7 @@ CameraExamples_sail.prototype = {
       .addChild(new ROUTEObject().setFromNode("Camera.AimPointTest").setFromField("orientation_changed").setToNode("CameraShapeTransform").setToField("rotation"))
       .addChild(new TransformObject("CameraOffsetTransform").setTranslation(0.0,0.0,0.25)
         .addChild(new TouchSensorObject("CameraShapeTouched"))
-        .addChild(new InlineObject("CameraShape").setUrl(new MFStringObject("\"CameraShape.x3d\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d\"")))
+        .addChild(new InlineObject("CameraShape").setUrl(new MFStringObject("\"CameraShape.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d\"")))
         .addChild(new ShapeObject("SightLine")
           .setGeometry(new IndexedLineSetObject().setCoordIndex(Java.to([0,1], Java.type("int[]")))
             .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(Java.to([0.0,0.0,0.0,0.0,0.0,-100.0], Java.type("float[]"))))))
@@ -557,8 +557,8 @@ CameraExamples_sail.prototype = {
       .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setAmbientIntensity(0.01).setShininess(0.05).setDiffuseColor(1.0,1.0,1.0)))
-        .setGeometry(new IndexedFaceSetObject().setColorPerVertex(false).setNormalPerVertex(false).setSolid(false).setColorIndex(Java.to([0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0], Java.type("int[]"))).setCoordIndex(this.IndexedFaceSet_5_383_coordIndex)
-          .setCoord(new CoordinateObject().setPoint(this.Coordinate_6_383_point))
+        .setGeometry(new IndexedFaceSetObject().setColorPerVertex(false).setNormalPerVertex(false).setSolid(false).setColorIndex(Java.to([0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0], Java.type("int[]"))).setCoordIndex(this.IndexedFaceSet_5_384_coordIndex)
+          .setCoord(new CoordinateObject().setPoint(this.Coordinate_6_384_point))
           .setColor(new ColorObject().setColor(new MFColorObject(Java.to([0.435294,0.741176,0.0,0.0,0.560784,0.580392], Java.type("float[]"))))))))
     .addChild(new TransformObject().setTranslation(0.0,0.25,0.0).setScale(3.0,3.0,3.0)
       .addChild(new InlineObject("CoordinateAxes").setUrl(new MFStringObject("\"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d\" \"../../Savage/Tools/Authoring/CoordinateAxes.x3d\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d\" \"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d\" \"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl\" \"../../Savage/Tools/Authoring/CoordinateAxes.wrl\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl\" \"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl\""))))
@@ -574,9 +574,9 @@ CameraExamples_sail.prototype = {
         .setGeometry(new BoxObject())
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject())
-          .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"../earth-topo.png\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png\""))))))
+          .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"../earth-topo.png\" \"https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png\""))))))
     .addComments(" ================ CrossHair visualization for center of screen ================ ")
-    .addChild(new ExternProtoDeclareObject().setName("CrossHair").setAppinfo(this.ExternProtoDeclare_CrossHair_3_403_appinfo).setUrl(new MFStringObject("\"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair\" \"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair\""))
+    .addChild(new ExternProtoDeclareObject().setName("CrossHair").setAppinfo(this.ExternProtoDeclare_CrossHair_3_404_appinfo).setUrl(new MFStringObject("\"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair\" \"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair\""))
       .addField(new fieldObject().setAccessType("initializeOnly").setName("enabled").setType("SFBool").setAppinfo("whether CrissHair orititype is enabled or not"))
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_enabled").setType("SFBool").setAppinfo("control whether enabled/disabled"))
       .addField(new fieldObject().setAccessType("inputOutput").setName("markerColor").setType("SFColor").setAppinfo("color of CrossHair marker"))
@@ -592,7 +592,7 @@ CameraExamples_sail.prototype = {
     .addChild(new ROUTEObject().setFromNode("Camera.AimPointTest").setFromField("isBound").setToNode("CrossHairInstance").setToField("set_enabled"))
     .addComments(" turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/> ")
     .addComments(" =============== TODO Launch Prototype Example ============== ")
-    .addChild(new AnchorObject().setDescription("launch CameraExample scene").setParameter(new MFStringObject("\"target=_blank\"")).setUrl(new MFStringObject("\"CameraExample.x3d\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d\" \"CameraExample.wrl\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl\""))
+    .addChild(new AnchorObject().setDescription("launch CameraExample scene").setParameter(new MFStringObject("\"target=_blank\"")).setUrl(new MFStringObject("\"CameraExample.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d\" \"CameraExample.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl\""))
       .addChild(new TransformObject().setTranslation(0.0,-3.0,0.0)
         .addChild(new ShapeObject()
           .setGeometry(new TextObject().setString(new MFStringObject("\"CameraPrototype\" \"defines a prototype\" \"\" \"Click on this text to see\" \"CameraExample scene\""))

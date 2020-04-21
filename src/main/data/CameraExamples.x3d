@@ -7,26 +7,25 @@
     <meta content='Two demos are found in the scene, click the "red text" on left or right to start. (a) SimpleShotsTest shows Zoom in/out, Pan left/right, Boom up/down, Tilt left/right, with each is defined by a CameraShot collecting a series of CameraMovements. (b) AimPointTest gradually slews the camera view to look at the sliding cube, then follows it around before returning to original viewpoint.' name='documentation'/>
     <meta content='Don Brutzman and Jeff Weekley' name='creator'/>
     <meta content='18 June 2009' name='created'/>
-    <meta content='12 January 2014' name='modified'/>
+    <meta content='20 January 2020' name='modified'/>
     <meta content='Schematron rules, backed up by initialize() checks' name='TODO'/>
     <meta content='BeyondViewpointCameraNodesWeb3D2009.pdf' name='reference'/>
     <meta content='CameraExamplesDemo.mp4' name='MovingImage'/>
-    <meta content='http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html' name='reference'/>
     <meta content='Camera nodes for Viewpoint navigation control' name='subject'/>
     <meta content='CameraPrototypes.x3d' name='reference'/>
     <meta content='CameraExamplesConsoleLog.txt' name='reference'/>
     <meta content='http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.avi' name='reference'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d' name='reference'/>
-    <!-- TODO warn if more than one identifier present -->
-    <meta content='http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d' name='identifier'/>
-    <meta content='http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d' name='reference'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d' name='identifier'/>
+    <meta content='http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d' name='reference'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <!-- =============== Camera ============== -->
-    <ExternProtoDeclare appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images' name='Camera' url='"CameraPrototypes.x3d#Camera" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera" "CameraPrototypes.wrl#Camera" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"'>
-      <!-- Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields -->
+    <WorldInfo title='CameraExamples.x3d'/>
+    <ExternProtoDeclare appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images' name='Camera' url='"CameraPrototypes.x3d#Camera" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera" "CameraPrototypes.wrl#Camera" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"'>
       <field accessType='inputOutput' appinfo='Text description to be displayed for this Camera' name='description' type='SFString'/>
       <field accessType='inputOutput' appinfo='Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' name='position' type='SFVec3f'/>
       <field accessType='inputOutput' appinfo='Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' name='orientation' type='SFRotation'/>
@@ -50,9 +49,10 @@
       <field accessType='outputOnly' appinfo='Total duration of contained enabled CameraShot (and thus CameraMovement) move durations' name='totalDuration' type='SFTime'/>
       <field accessType='inputOutput' appinfo='OfflineRender node' name='offlineRender' type='SFNode'/>
       <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
+      <!-- Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields -->
     </ExternProtoDeclare>
     <!-- =============== CameraShot ============== -->
-    <ExternProtoDeclare appinfo='CameraShot collects a specific set of CameraMovement animations that make up an individual shot' name='CameraShot' url='"CameraPrototypes.x3d#CameraShot" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot" "CameraPrototypes.wrl#CameraShot" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"'>
+    <ExternProtoDeclare appinfo='CameraShot collects a specific set of CameraMovement animations that make up an individual shot' name='CameraShot' url='"CameraPrototypes.x3d#CameraShot" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot" "CameraPrototypes.wrl#CameraShot" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"'>
       <field accessType='inputOutput' appinfo='Text description to be displayed for this CameraShot' name='description' type='SFString'/>
       <field accessType='inputOutput' appinfo='Whether this CameraShot can be activated' name='enabled' type='SFBool'/>
       <field accessType='inputOutput' appinfo='Set of CameraMovement nodes' name='moves' type='MFNode'>
@@ -69,7 +69,7 @@
       <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
     </ExternProtoDeclare>
     <!-- =============== CameraMovement ============== -->
-    <ExternProtoDeclare appinfo='CameraMovement defines a single camera movement animation' name='CameraMovement' url='"CameraPrototypes.x3d#CameraMovement" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement" "CameraPrototypes.wrl#CameraMovement" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"'>
+    <ExternProtoDeclare appinfo='CameraMovement defines a single camera movement animation' name='CameraMovement' url='"CameraPrototypes.x3d#CameraMovement" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement" "CameraPrototypes.wrl#CameraMovement" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"'>
       <field accessType='inputOutput' appinfo='Text description to be displayed for this CameraMovement' name='description' type='SFString'/>
       <field accessType='inputOutput' appinfo='Whether this CameraMovement can be activated' name='enabled' type='SFBool'/>
       <field accessType='inputOutput' appinfo='Duration in seconds for this move' name='duration' type='SFFloat'/>
@@ -84,8 +84,7 @@
       <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
     </ExternProtoDeclare>
     <!-- =============== OfflineRender ============== -->
-    <ExternProtoDeclare appinfo='OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)' name='OfflineRender' url='"CameraPrototypes.x3d#OfflineRender" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender" "CameraPrototypes.wrl#OfflineRender" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"'>
-      <!-- TODO non-photorealistic rendering (NPR) parameters -->
+    <ExternProtoDeclare appinfo='OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)' name='OfflineRender' url='"CameraPrototypes.x3d#OfflineRender" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender" "CameraPrototypes.wrl#OfflineRender" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"'>
       <field accessType='inputOutput' appinfo='Text description to be displayed for this OfflineRender' name='description' type='SFString'/>
       <field accessType='inputOutput' appinfo='Whether this OfflineRender can be activated' name='enabled' type='SFBool'/>
       <field accessType='inputOutput' appinfo='Frames per second recorded for this rendering' name='frameRate' type='SFFloat'/>
@@ -97,6 +96,7 @@
       <field accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.), use first supported format' name='movieFormat' type='MFString'/>
       <field accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.) use first supported format' name='imageFormat' type='MFString'/>
       <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
+      <!-- TODO non-photorealistic rendering (NPR) parameters -->
     </ExternProtoDeclare>
     <!-- =============== Lights, camera, action! ============== -->
     <DirectionalLight direction='0 -1 0' global='true' intensity='0.8'/>
@@ -306,7 +306,7 @@
           <Box/>
           <Appearance>
             <Material/>
-            <ImageTexture url='"images/CameraMoveZoom.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"'/>
+            <ImageTexture url='"images/CameraMoveZoom.png" "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"'/>
           </Appearance>
         </Shape>
         <Transform translation='0 2 0'>
@@ -325,7 +325,7 @@
           <Box/>
           <Appearance>
             <Material/>
-            <ImageTexture url='"images/CameraMoveDolly.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"'/>
+            <ImageTexture url='"images/CameraMoveDolly.png" "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"'/>
           </Appearance>
         </Shape>
         <Transform translation='0 2 0'>
@@ -344,7 +344,7 @@
           <Box/>
           <Appearance>
             <Material/>
-            <ImageTexture url='"images/CameraMovePan.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"'/>
+            <ImageTexture url='"images/CameraMovePan.png" "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"'/>
           </Appearance>
         </Shape>
         <Transform translation='0 2 0'>
@@ -363,7 +363,7 @@
           <Box/>
           <Appearance>
             <Material/>
-            <ImageTexture url='"images/CameraMoveBoom.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"'/>
+            <ImageTexture url='"images/CameraMoveBoom.png" "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"'/>
           </Appearance>
         </Shape>
         <Transform translation='0 2 0'>
@@ -382,7 +382,7 @@
           <Box/>
           <Appearance>
             <Material/>
-            <ImageTexture url='"images/CameraMoveTilt.png" "http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"'/>
+            <ImageTexture url='"images/CameraMoveTilt.png" "https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"'/>
           </Appearance>
         </Shape>
         <Transform translation='0 2 0'>
@@ -430,12 +430,12 @@
             </ProtoInstance>
             <ProtoInstance DEF='MoveAimPoint3.4' name='CameraMovement'>
               <fieldValue name='description' value='AimPoint 3.4 restore camera back to home'/>
-              <!-- can test tracking or not using following values -->
               <fieldValue name='tracking' value='true'/>
               <fieldValue name='duration' value='5'/>
               <fieldValue name='goalPosition' value='4 4 10'/>
               <fieldValue name='goalAimPoint' value='4 4 0'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
+              <!-- can test tracking or not using these values -->
             </ProtoInstance>
           </fieldValue>
         </ProtoInstance>
@@ -475,7 +475,7 @@
       <ROUTE fromField='orientation_changed' fromNode='Camera.AimPointTest' toField='rotation' toNode='CameraShapeTransform'/>
       <Transform DEF='CameraOffsetTransform' translation='0 0 0.25'>
         <TouchSensor DEF='CameraShapeTouched'/>
-        <Inline DEF='CameraShape' url='"CameraShape.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"'/>
+        <Inline DEF='CameraShape' url='"CameraShape.x3d" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"'/>
         <Shape DEF='SightLine'>
           <IndexedLineSet coordIndex='0 1'>
             <Coordinate point='0 0 0 0 0 -100'/>
@@ -540,7 +540,7 @@
         <Box/>
         <Appearance>
           <Material/>
-          <ImageTexture url='"../earth-topo.png" "http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"'/>
+          <ImageTexture url='"../earth-topo.png" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"'/>
         </Appearance>
       </Shape>
     </Transform>
@@ -563,7 +563,7 @@
     <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_enabled' toNode='CrossHairInstance'/>
     <!-- turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/> -->
     <!-- =============== TODO Launch Prototype Example ============== -->
-    <Anchor description='launch CameraExample scene' parameter='"target=_blank"' url='"CameraExample.x3d" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d" "CameraExample.wrl" "http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"'>
+    <Anchor description='launch CameraExample scene' parameter='"target=_blank"' url='"CameraExample.x3d" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d" "CameraExample.wrl" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"'>
       <Transform translation='0 -3 0'>
         <Shape>
           <Text string='"CameraPrototype" "defines a prototype" "" "Click on this text to see" "CameraExample scene"'>

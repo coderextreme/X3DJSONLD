@@ -57,6 +57,7 @@ SFVec3f_sail.prototype = {
   {
   this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
   .setHead(new headObject()
+    .addComponent(new componentObject().setName("Scripting").setLevel(1))
     .addMeta(new metaObject().setName("title").setContent("SFVec3f.x3d"))
     .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
     .addMeta(new metaObject().setName("description").setContent("3 prismatic spheres"))
@@ -68,7 +69,7 @@ SFVec3f_sail.prototype = {
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7)))
         .setGeometry(new SphereObject())))
-    .addChild(new ScriptObject("Bounce").setSourceCode("\n" + 
+    .addChild(new ScriptObject("Bounce2").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "			function newBubble() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
@@ -106,8 +107,8 @@ SFVec3f_sail.prototype = {
       .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
       .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFTime")))
     .addChild(new TimeSensorObject("TourTime").setCycleInterval(0.150).setLoop(true))
-    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce").setToField("set_fraction"))
-    .addChild(new ROUTEObject().setFromNode("Bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
+    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
+    .addChild(new ROUTEObject().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
   },
   // end of initialize() method
 

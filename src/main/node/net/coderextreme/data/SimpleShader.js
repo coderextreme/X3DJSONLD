@@ -22,10 +22,10 @@ var ProtoInstance0 = null;
         .addMeta((new autoclass.meta()).setName("translator").setContent("Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"))
         .addMeta((new autoclass.meta()).setName("created").setContent("26 May 2009"))
         .addMeta((new autoclass.meta()).setName("translated").setContent("15 October 2009"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("24 April 2017"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.opengl.org/wiki/Fragment_Shader"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"))
-        .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"))
+        .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"))
         .addMeta((new autoclass.meta()).setName("subject").setContent("X3D shader example"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("originals/simpleShader.x3dv"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("ShaderTutorialInstantReality.pdf"))
@@ -34,7 +34,7 @@ var ProtoInstance0 = null;
         .addMeta((new autoclass.meta()).setName("outputStyle").setContent("nicest"))
         .addMeta((new autoclass.meta()).setName("warning").setContent("under development"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
         .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.ProtoDeclare()).setName("myPrototype")
@@ -45,57 +45,16 @@ var ProtoInstance0 = null;
               .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
                   .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.9)])))
+                  .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
+                    .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("decis").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
+                    .setIS((new autoclass.IS())
+                      .addConnect((new autoclass.connect()).setNodeField("decis").setProtoField("myInputRange")))
+                    .addParts((new autoclass.ShaderPart()).setType("VERTEX"))
+                    .addParts((new autoclass.ShaderPart()).setType("FRAGMENT")))
                   .addShaders((new autoclass.ComposedShader()).setDEF("Cobweb").setLanguage("GLSL")
                     .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("decis").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.77 0.44"))
-                    .addParts((new autoclass.ShaderPart()).setType("VERTEX")
-                      .setSourceCode("data:text/plain;charset=utf-8,\n"+
-"\n"+
-"precision mediump float;\n"+
-"\n"+
-"uniform mat4 x3d_ProjectionMatrix;\n"+
-"uniform mat4 x3d_ModelViewMatrix;\n"+
-"uniform mat3 x3d_NormalMatrix;\n"+
-"\n"+
-"attribute vec4 x3d_Vertex;\n"+
-"attribute vec3 x3d_Normal;\n"+
-"\n"+
-"varying vec3 normal;\n"+
-"\n"+
-"void main()\n"+
-"{\n"+
-"	normal = x3d_NormalMatrix * x3d_Normal;\n"+
-"	\n"+
-"	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;\n"+
-"}"))
-                    .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setDEF("_1")
-                      .setSourceCode("data:text/plain;charset=utf-8,\n"+
-"\n"+
-"precision mediump float;\n"+
-"\n"+
-"uniform vec3 x3d_LightDirection [x3d_MaxLights];\n"+
-"\n"+
-"varying vec3 normal;\n"+
-"uniform vec3 decis;\n"+
-"\n"+
-"void main()\n"+
-"{\n"+
-"	float intensity;\n"+
-"	vec4 color;\n"+
-"	vec3 n = normalize (normal);\n"+
-"\n"+
-"	intensity = abs (dot (x3d_LightDirection [0], n));\n"+
-"\n"+
-"	if (intensity > decis[0])\n"+
-"		color = vec4(0.0,0.5,0.5,1.0);\n"+
-"	else if (intensity > decis[1])\n"+
-"		color = vec4(0.6,0.3,0.3,1.0);\n"+
-"	else if (intensity > decis[2])\n"+
-"		color = vec4(1.0,0.2,0.2,1.0);\n"+
-"	else\n"+
-"		color = vec4(0.0,0.4,0.0,1.0);\n"+
-"\n"+
-"	gl_FragColor = color;\n"+
-"}"))))
+                    .addParts((new autoclass.ShaderPart()).setType("VERTEX"))
+                    .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setDEF("_1"))))
                 .setGeometry((new autoclass.Sphere()).setRadius(java.newFloat(1.75)))))))
         .addChild((new autoclass.WorldInfo()).setTitle("SimpleShader")
           .setMetadata((new autoclass.MetadataSet()).setName("Titania").setDEF("Titania").setReference("http://titania.create3000.de")

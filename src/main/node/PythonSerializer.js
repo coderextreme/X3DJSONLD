@@ -3,6 +3,8 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
+var fs = require("fs");
+
 function PythonSerializer () {
 this.code = [];
 this.codeno = 0;
@@ -18,16 +20,24 @@ PythonSerializer.prototype = {
 		var stack = [];
 
 		var str = "";
-		str += "# -*- coding: "+json.X3D.encoding+" -*-\n";
+		// str += "# -*- coding: "+json.X3D.encoding+" -*-\n";
 
-		str += "from x3dpsail import *\n";
+		str += "import x3dpsail as x3d\n";
 
 		stack.unshift(this.preno);
 		this.preno++;
-		str += element.nodeName+stack[0]+" = "+element.nodeName;
-		str += "()\n";
-		str += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
-		str += element.nodeName+stack[0]+".toFileX3D(\""+clazz+".new.x3d\")\n";
+		var bodystr = "";
+        
+        // https://stackoverflow.com/questions/48469666/error-enoent-no-such-file-or-directory-open-moviedata-json
+        // https://stackoverflow.com/questions/3151436/how-can-i-get-the-current-directory-name-in-javascript
+        // console.log('Current directory: ' + process.cwd()); // Node.js method for current directory - not what is needed here
+        // https://flaviocopes.com/node-get-current-folder/ use __dirname under Node.js
+		bodystr += element.nodeName+stack[0]+" = x3d."+element.nodeName;
+		bodystr += "()\n";
+		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
+
+		str += bodystr;
+		str += element.nodeName+stack[0]+".toFileX3D(\""+clazz+"_RoundTrip.x3d\")\n";
 		stack.shift();
 		return str;
 	},
@@ -46,6 +56,15 @@ PythonSerializer.prototype = {
 				*/
                         }
                 }
+                if (type === "boolean") {
+                        for (var v in values) {
+				if (values[v] === 'true') {
+					values[v] = "True";
+				} else if (values[v] === 'false') {
+					values[v] = "False";
+				}
+			}
+		}
 		if (values[0] === "" || values[v] === null) {
 			values.shift();
 		}
@@ -88,12 +107,12 @@ PythonSerializer.prototype = {
 				var attr = attrsa.nodeName;
 				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
 					if (attr === "containerField") {
-						if (method === "setShaders") {
-							method = "addShaders"
-							addpre = "";
+						method = attrsa.nodeValue.charAt(0).toUpperCase() + attrsa.nodeValue.slice(1);
+						if (method === "Shaders") {
+							addpre = "add";
+							method = "Child";
 						} else {
-							method = "set"+attrsa.nodeValue.charAt(0).toUpperCase() + attrsa.nodeValue.slice(1);
-							addpre = "";
+							addpre = "set";
 						}
 					}
 				}
@@ -102,12 +121,24 @@ PythonSerializer.prototype = {
 			}
 		}
 		if (node.nodeName === "IS") {
-			method = "setIS";
-			addpre = "";
+			method = "IS";
+			addpre = "set";
 		}
-		if (method === "setJoints") {
-			method = "addJoints"
-			addpre = "";
+		if (addpre+method === "setJoints") {
+			method = "Joints"
+			addpre = "add";
+		}
+		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
+			method = "Metadata"
+			addpre = "add";
+		}
+		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
+			method = "LayerSet"
+			addpre = "add";
+		}
+		if (method === "setShaders") {
+			method = "Shaders"
+			addpre = "add";
 		}
 		return prepre+addpre+method;
 	},
@@ -246,6 +277,9 @@ PythonSerializer.prototype = {
 					var strval = this.stringValue(attrsa, attr, attrType, element);
 					var method = attr;
 					method = method.charAt(0).toUpperCase() + method.slice(1);
+					if (attr === "class") {
+						method = "CssClass";
+					}
 					str += element.nodeName+stack[0];
 					str += '.set'+method+"("+strval+")\n";
 				}
@@ -260,9 +294,11 @@ PythonSerializer.prototype = {
 				stack.unshift(this.preno);
 				this.preno++;
 				var ch = "";
-				ch += node.nodeName+stack[0]+" = "+node.nodeName;
+				ch += node.nodeName+stack[0]+" = x3d."+node.nodeName;
+
 				ch += "()\n";
-				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				var bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				ch += bodystr;
 				ch += "\n"
 				method = this.printParentChild(element, node, cn, mapToMethod, n);
 				ch += element.nodeName+stack[1]+method+"("+node.nodeName+stack[0]+")\n";

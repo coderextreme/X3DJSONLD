@@ -1,8 +1,8 @@
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"3.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
@@ -24,7 +24,7 @@
           },
           {
             "@name":"modified",
-            "@content":"19 January 2014"
+            "@content":"20 October 2019"
           },
           {
             "@name":"description",
@@ -39,8 +39,12 @@
             "@content":"NancyNativeTags.x3d"
           },
           {
+            "@name":"TODO",
+            "@content":"Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem."
+          },
+          {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"
           },
           {
             "@name":"generator",
@@ -221,14 +225,22 @@
                       "@accessType":"inputOutput",
                       "@appinfo":"Hint: H-anim version 2.0",
                       "@type":"SFNode",
-                      "@value":"NULL"
+                      "-children":[
+                        {
+                          "#comment":"NULL node"
+                        }
+                      ]
                     },
                     {
                       "@name":"skinNormal",
                       "@accessType":"inputOutput",
                       "@appinfo":"Hint: H-anim version 2.0",
                       "@type":"SFNode",
-                      "@value":"NULL"
+                      "-children":[
+                        {
+                          "#comment":"NULL node"
+                        }
+                      ]
                     }
                   ]
               },
@@ -536,7 +548,11 @@
                       "@accessType":"inputOutput",
                       "@appinfo":"contains Coordinate nodes",
                       "@type":"SFNode",
-                      "@value":"NULL"
+                      "-children":[
+                        {
+                          "#comment":"NULL node"
+                        }
+                      ]
                     },
                     {
                       "@name":"displacers",
@@ -737,7 +753,7 @@
                         "fieldValue": [
                           {
                             "@name":"name",
-                            "@value":"HumanoidRoot"
+                            "@value":"humanoid_root"
                           },
                           {
                             "@name":"center",
@@ -1256,7 +1272,7 @@
                                                               { "ImageTexture":
                                                                 {
                                                                   "@DEF":"small_logo_Tex",
-                                                                  "@url":["small_logo.gif","http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"]
+                                                                  "@url":["small_logo.gif","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"]
                                                                 }
                                                               }
                                                           }
@@ -1907,103 +1923,86 @@
                   "-children":[
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_HumanoidRoot"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_sacroiliac"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_l_hip"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_l_knee"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_l_ankle"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_r_hip"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_r_knee"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_r_ankle"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_vl1"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_l_shoulder"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_l_elbow"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_l_wrist"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_r_shoulder"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_r_elbow"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_r_wrist"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_vc4"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Joint",
                         "@USE":"hanim_skullbase"
                       }
                     }
@@ -2014,97 +2013,81 @@
                   "-children":[
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_pelvis"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_l_thigh"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_l_calf"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_l_hindfoot"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_r_thigh"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_r_calf"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_r_hindfoot"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_c7"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_l_upperarm"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_l_forearm"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_l_hand"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_r_upperarm"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_r_forearm"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_r_hand"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_c4"
                       }
                     },
                     { "ProtoInstance":
                       {
-                        "@name":"Segment",
                         "@USE":"hanim_skull"
                       }
                     }

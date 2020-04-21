@@ -121,25 +121,24 @@ ProtoInstanceObject ProtoInstance34 = null;
         .addMeta(new metaObject().setName("documentation").setContent("Two demos are found in the scene, click the \"red text\" on left or right to start. (a) SimpleShotsTest shows Zoom in/out, Pan left/right, Boom up/down, Tilt left/right, with each is defined by a CameraShot collecting a series of CameraMovements. (b) AimPointTest gradually slews the camera view to look at the sliding cube, then follows it around before returning to original viewpoint."))
         .addMeta(new metaObject().setName("creator").setContent("Don Brutzman and Jeff Weekley"))
         .addMeta(new metaObject().setName("created").setContent("18 June 2009"))
-        .addMeta(new metaObject().setName("modified").setContent("12 January 2014"))
+        .addMeta(new metaObject().setName("modified").setContent("20 January 2020"))
         .addMeta(new metaObject().setName("TODO").setContent("Schematron rules, backed up by initialize() checks"))
         .addMeta(new metaObject().setName("reference").setContent("BeyondViewpointCameraNodesWeb3D2009.pdf"))
         .addMeta(new metaObject().setName("MovingImage").setContent("CameraExamplesDemo.mp4"))
-        .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
+        .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"))
         .addMeta(new metaObject().setName("subject").setContent("Camera nodes for Viewpoint navigation control"))
         .addMeta(new metaObject().setName("reference").setContent("CameraPrototypes.x3d"))
         .addMeta(new metaObject().setName("reference").setContent("CameraExamplesConsoleLog.txt"))
         .addMeta(new metaObject().setName("reference").setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.avi"))
-        .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
+        .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
+        .addMeta(new metaObject().setName("reference").setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new metaObject().setName("license").setContent("../license.html"))
-        .addComments(new CommentsBlock("TODO warn if more than one identifier present")))
+        .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
         .addComments(new CommentsBlock("=============== Camera =============="))
+        .addChild(new WorldInfoObject().setTitle("CameraExamples.x3d"))
         .addChild(new ExternProtoDeclareObject().setName("Camera").setAppinfo("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images").setUrl(new MFStringObject(new MFString0().getArray()))
-          .addComments(new CommentsBlock("Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields"))
           .addField(new fieldObject().setType("SFString").setName("description").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this Camera"))
           .addField(new fieldObject().setType("SFVec3f").setName("position").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"))
           .addField(new fieldObject().setType("SFRotation").setName("orientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"))
@@ -162,7 +161,8 @@ ProtoInstanceObject ProtoInstance34 = null;
           .addField(new fieldObject().setType("SFBool").setName("isActive").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("Mark start/stop with true/false output respectively useful to trigger external animations"))
           .addField(new fieldObject().setType("SFTime").setName("totalDuration").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"))
           .addField(new fieldObject().setType("SFNode").setName("offlineRender").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("OfflineRender node"))
-          .addField(new fieldObject().setType("SFBool").setName("traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress")))
+          .addField(new fieldObject().setType("SFBool").setName("traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress"))
+          .addComments(new CommentsBlock("Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields")))
         .addComments(new CommentsBlock("=============== CameraShot =============="))
         .addChild(new ExternProtoDeclareObject().setName("CameraShot").setAppinfo("CameraShot collects a specific set of CameraMovement animations that make up an individual shot").setUrl(new MFStringObject(new MFString1().getArray()))
           .addField(new fieldObject().setType("SFString").setName("description").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this CameraShot"))
@@ -194,7 +194,6 @@ ProtoInstanceObject ProtoInstance34 = null;
           .addField(new fieldObject().setType("SFBool").setName("traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress")))
         .addComments(new CommentsBlock("=============== OfflineRender =============="))
         .addChild(new ExternProtoDeclareObject().setName("OfflineRender").setAppinfo("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)").setUrl(new MFStringObject(new MFString3().getArray()))
-          .addComments(new CommentsBlock("TODO non-photorealistic rendering (NPR) parameters"))
           .addField(new fieldObject().setType("SFString").setName("description").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this OfflineRender"))
           .addField(new fieldObject().setType("SFBool").setName("enabled").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this OfflineRender can be activated"))
           .addField(new fieldObject().setType("SFFloat").setName("frameRate").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Frames per second recorded for this rendering"))
@@ -205,7 +204,8 @@ ProtoInstanceObject ProtoInstance34 = null;
           .addField(new fieldObject().setType("SFTime").setName("renderCompleteTime").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setAppinfo("Render operation complete"))
           .addField(new fieldObject().setType("MFString").setName("movieFormat").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Format of rendered output movie (mpeg mp4 etc.), use first supported format"))
           .addField(new fieldObject().setType("MFString").setName("imageFormat").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Format of rendered output images (png jpeg gif tiff etc.) use first supported format"))
-          .addField(new fieldObject().setType("SFBool").setName("traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress")))
+          .addField(new fieldObject().setType("SFBool").setName("traceEnabled").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress"))
+          .addComments(new CommentsBlock("TODO non-photorealistic rendering (NPR) parameters")))
         .addComments(new CommentsBlock("=============== Lights, camera, action! =============="))
         .addChild(new DirectionalLightObject().setDirection(new float[] {0f,-1f,0f}).setGlobal(true).setIntensity(0.8f))
         .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE","FLY","ANY"}))
@@ -651,7 +651,7 @@ ProtoInstance27
                 .addChild(ProtoInstance30 = new ProtoInstanceObject().setName("CameraMovement").setDEF("MoveAimPoint3.3")
                   .addComments(new CommentsBlock("goalAimPoint modified by ROUTE to match moving Box")))
                 .addChild(ProtoInstance31 = new ProtoInstanceObject().setName("CameraMovement").setDEF("MoveAimPoint3.4")
-                  .addComments(new CommentsBlock("can test tracking or not using following values"))));
+                  .addComments(new CommentsBlock("can test tracking or not using these values"))));
 ProtoInstance28
                   .addFieldValue(new fieldValueObject().setName("description").setValue("AimPoint 3.1 moving BoxPath"));
 ProtoInstance28
@@ -714,22 +714,22 @@ ProtoInstance34
     }
 protected class MFString0 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#Camera","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"});
+    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"});
   }
 }
 protected class MFString1 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#CameraShot","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"});
+    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"});
   }
 }
 protected class MFString2 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#CameraMovement","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"});
+    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"});
   }
 }
 protected class MFString3 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#OfflineRender","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"});
+    return new MFStringObject(new java.lang.String[] {"CameraPrototypes.x3d#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"});
   }
 }
 protected class MFString4 {
@@ -744,7 +744,7 @@ protected class MFString5 {
 }
 protected class MFString6 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/CameraMoveZoom.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"});
+    return new MFStringObject(new java.lang.String[] {"images/CameraMoveZoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"});
   }
 }
 protected class MFString7 {
@@ -759,7 +759,7 @@ protected class MFString8 {
 }
 protected class MFString9 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/CameraMoveDolly.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"});
+    return new MFStringObject(new java.lang.String[] {"images/CameraMoveDolly.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"});
   }
 }
 protected class MFString10 {
@@ -774,7 +774,7 @@ protected class MFString11 {
 }
 protected class MFString12 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/CameraMovePan.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"});
+    return new MFStringObject(new java.lang.String[] {"images/CameraMovePan.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"});
   }
 }
 protected class MFString13 {
@@ -789,7 +789,7 @@ protected class MFString14 {
 }
 protected class MFString15 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/CameraMoveBoom.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"});
+    return new MFStringObject(new java.lang.String[] {"images/CameraMoveBoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"});
   }
 }
 protected class MFString16 {
@@ -804,7 +804,7 @@ protected class MFString17 {
 }
 protected class MFString18 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"images/CameraMoveTilt.png","http://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"});
+    return new MFStringObject(new java.lang.String[] {"images/CameraMoveTilt.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"});
   }
 }
 protected class MFString19 {
@@ -829,7 +829,7 @@ protected class MFString22 {
 }
 protected class MFString23 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraShape.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"});
+    return new MFStringObject(new java.lang.String[] {"CameraShape.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"});
   }
 }
 protected class MFInt3224 {
@@ -894,7 +894,7 @@ protected class MFVec3f35 {
 }
 protected class MFString36 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"../earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"});
+    return new MFStringObject(new java.lang.String[] {"../earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"});
   }
 }
 protected class MFString37 {
@@ -909,7 +909,7 @@ protected class MFString38 {
 }
 protected class MFString39 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"CameraExample.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"});
+    return new MFStringObject(new java.lang.String[] {"CameraExample.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"});
   }
 }
 protected class MFString40 {

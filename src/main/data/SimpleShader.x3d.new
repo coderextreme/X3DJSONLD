@@ -7,10 +7,10 @@
 <meta name="translator" content="Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"></meta>
 <meta name="created" content="26 May 2009"></meta>
 <meta name="translated" content="15 October 2009"></meta>
-<meta name="modified" content="24 April 2017"></meta>
+<meta name="modified" content="20 October 2019"></meta>
 <meta name="reference" content="http://www.opengl.org/wiki/Fragment_Shader"></meta>
 <meta name="reference" content="http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"></meta>
-<meta name="reference" content="http://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"></meta>
+<meta name="reference" content="https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"></meta>
 <meta name="subject" content="X3D shader example"></meta>
 <meta name="reference" content="originals/simpleShader.x3dv"></meta>
 <meta name="reference" content="ShaderTutorialInstantReality.pdf"></meta>
@@ -19,60 +19,21 @@
 <meta name="outputStyle" content="nicest"></meta>
 <meta name="warning" content="under development"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="http://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"></meta>
+<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"></meta>
 <meta name="license" content="../../license.html"></meta>
 </head>
 <Scene><ProtoDeclare name="myPrototype"><ProtoInterface><field name="myInputRange" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="TR"><Shape><Appearance><Material diffuseColor="0.5 0.5 0.9"></Material>
+<ComposedShader language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f"></field>
+<IS><connect nodeField="decis" protoField="myInputRange"></connect>
+</IS>
+<ShaderPart type="VERTEX"></ShaderPart>
+<ShaderPart type="FRAGMENT"></ShaderPart>
+</ComposedShader>
 <ComposedShader DEF="Cobweb" language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f" value="0.95 0.77 0.44"></field>
-<ShaderPart type="VERTEX"><![CDATA[data:text/plain;charset=utf-8,
-
-precision mediump float;
-
-uniform mat4 x3d_ProjectionMatrix;
-uniform mat4 x3d_ModelViewMatrix;
-uniform mat3 x3d_NormalMatrix;
-
-attribute vec4 x3d_Vertex;
-attribute vec3 x3d_Normal;
-
-varying vec3 normal;
-
-void main()
-{
-	normal = x3d_NormalMatrix * x3d_Normal;
-	
-	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;
-}]]></ShaderPart>
-<ShaderPart DEF="_1" type="FRAGMENT"><![CDATA[data:text/plain;charset=utf-8,
-
-precision mediump float;
-
-uniform vec3 x3d_LightDirection [x3d_MaxLights];
-
-varying vec3 normal;
-uniform vec3 decis;
-
-void main()
-{
-	float intensity;
-	vec4 color;
-	vec3 n = normalize (normal);
-
-	intensity = abs (dot (x3d_LightDirection [0], n));
-
-	if (intensity > decis[0])
-		color = vec4(0.0,0.5,0.5,1.0);
-	else if (intensity > decis[1])
-		color = vec4(0.6,0.3,0.3,1.0);
-	else if (intensity > decis[2])
-		color = vec4(1.0,0.2,0.2,1.0);
-	else
-		color = vec4(0.0,0.4,0.0,1.0);
-
-	gl_FragColor = color;
-}]]></ShaderPart>
+<ShaderPart type="VERTEX"></ShaderPart>
+<ShaderPart DEF="_1" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
 <Sphere containerField="geometry" radius="1.75"></Sphere>

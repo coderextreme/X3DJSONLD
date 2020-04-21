@@ -26,84 +26,65 @@ Material9.diffuseColor = [0.5,0.5,0.9];
 Appearance8.material = Material9;
 
 ComposedShader10 = browser.currentScene.createNode("ComposedShader");
-ComposedShader10.DEF = "Cobweb";
 ComposedShader10.language = "GLSL";
 field11 = browser.currentScene.createNode("field");
 field11.name = "decis";
 field11.accessType = "initializeOnly";
 field11.type = "SFVec3f";
-field11.value = "0.95 0.77 0.44";
 ComposedShader10.field = [];
 
 ComposedShader10.field[0] = field11;
 
-ShaderPart12 = browser.currentScene.createNode("ShaderPart");
-ShaderPart12.type = "VERTEX";
+IS12 = browser.currentScene.createNode("IS");
+connect13 = browser.currentScene.createNode("connect");
+connect13.nodeField = "decis";
+connect13.protoField = "myInputRange";
+IS12.connect = [];
 
-ShaderPart12.setSourceCode(`data:text/plain;charset=utf-8,\n"+
-"\n"+
-"precision mediump float;\n"+
-"\n"+
-"uniform mat4 x3d_ProjectionMatrix;\n"+
-"uniform mat4 x3d_ModelViewMatrix;\n"+
-"uniform mat3 x3d_NormalMatrix;\n"+
-"\n"+
-"attribute vec4 x3d_Vertex;\n"+
-"attribute vec3 x3d_Normal;\n"+
-"\n"+
-"varying vec3 normal;\n"+
-"\n"+
-"void main()\n"+
-"{\n"+
-"	normal = x3d_NormalMatrix * x3d_Normal;\n"+
-"	\n"+
-"	gl_Position = x3d_ProjectionMatrix * x3d_ModelViewMatrix * x3d_Vertex;\n"+
-"}`)
-ComposedShader10.parts[1] = ShaderPart12;
+IS12.connect[0] = connect13;
 
-ShaderPart13 = browser.currentScene.createNode("ShaderPart");
-ShaderPart13.DEF = "_1";
-ShaderPart13.type = "FRAGMENT";
+ComposedShader10.iS = IS12;
 
-ShaderPart13.setSourceCode(`data:text/plain;charset=utf-8,\n"+
-"\n"+
-"precision mediump float;\n"+
-"\n"+
-"uniform vec3 x3d_LightDirection [x3d_MaxLights];\n"+
-"\n"+
-"varying vec3 normal;\n"+
-"uniform vec3 decis;\n"+
-"\n"+
-"void main()\n"+
-"{\n"+
-"	float intensity;\n"+
-"	vec4 color;\n"+
-"	vec3 n = normalize (normal);\n"+
-"\n"+
-"	intensity = abs (dot (x3d_LightDirection [0], n));\n"+
-"\n"+
-"	if (intensity > decis[0])\n"+
-"		color = vec4(0.0,0.5,0.5,1.0);\n"+
-"	else if (intensity > decis[1])\n"+
-"		color = vec4(0.6,0.3,0.3,1.0);\n"+
-"	else if (intensity > decis[2])\n"+
-"		color = vec4(1.0,0.2,0.2,1.0);\n"+
-"	else\n"+
-"		color = vec4(0.0,0.4,0.0,1.0);\n"+
-"\n"+
-"	gl_FragColor = color;\n"+
-"}`)
-ComposedShader10.parts[2] = ShaderPart13;
+ShaderPart14 = browser.currentScene.createNode("ShaderPart");
+ShaderPart14.type = "VERTEX";
+ComposedShader10.parts[1] = ShaderPart14;
+
+ShaderPart15 = browser.currentScene.createNode("ShaderPart");
+ShaderPart15.type = "FRAGMENT";
+ComposedShader10.parts[2] = ShaderPart15;
 
 Appearance8.shaders = [];
 
 Appearance8.shaders[0] = ComposedShader10;
 
+ComposedShader16 = browser.currentScene.createNode("ComposedShader");
+ComposedShader16.DEF = "Cobweb";
+ComposedShader16.language = "GLSL";
+field17 = browser.currentScene.createNode("field");
+field17.name = "decis";
+field17.accessType = "initializeOnly";
+field17.type = "SFVec3f";
+field17.value = "0.95 0.77 0.44";
+ComposedShader16.field = [];
+
+ComposedShader16.field[0] = field17;
+
+ShaderPart18 = browser.currentScene.createNode("ShaderPart");
+ShaderPart18.type = "VERTEX";
+ComposedShader16.parts[1] = ShaderPart18;
+
+ShaderPart19 = browser.currentScene.createNode("ShaderPart");
+ShaderPart19.DEF = "_1";
+ShaderPart19.type = "FRAGMENT";
+ComposedShader16.parts[2] = ShaderPart19;
+
+Appearance8.shaders[1] = ComposedShader16;
+
 Shape7.appearance = Appearance8;
 
-Sphere14 = browser.currentScene.createNode("Sphere");
-Sphere14.radius = 1.75;
-Shape7.geometry = Sphere14;
+Sphere20 = browser.currentScene.createNode("Sphere");
+Sphere20.radius = 1.75;
+Shape7.geometry = Sphere20;
 
 Transform6.children = [];
 
@@ -119,78 +100,78 @@ browser.currentScene.children = [];
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
-WorldInfo15 = browser.currentScene.createNode("WorldInfo");
-WorldInfo15.title = "SimpleShader";
-MetadataSet16 = browser.currentScene.createNode("MetadataSet");
-MetadataSet16.name = "Titania";
-MetadataSet16.DEF = "Titania";
-MetadataSet16.reference = "http://titania.create3000.de";
-MetadataSet17 = browser.currentScene.createNode("MetadataSet");
-MetadataSet17.name = "Selection";
-MetadataSet17.DEF = "Selection";
-MetadataSet17.reference = "http://titania.create3000.de";
-MetadataSet18 = browser.currentScene.createNode("MetadataSet");
-MetadataSet18.name = "nodes";
-MetadataSet18.DEF = "nodes";
-MetadataSet18.reference = "http://titania.create3000.de";
+WorldInfo21 = browser.currentScene.createNode("WorldInfo");
+WorldInfo21.title = "SimpleShader";
+MetadataSet22 = browser.currentScene.createNode("MetadataSet");
+MetadataSet22.name = "Titania";
+MetadataSet22.DEF = "Titania";
+MetadataSet22.reference = "http://titania.create3000.de";
+MetadataSet23 = browser.currentScene.createNode("MetadataSet");
+MetadataSet23.name = "Selection";
+MetadataSet23.DEF = "Selection";
+MetadataSet23.reference = "http://titania.create3000.de";
+MetadataSet24 = browser.currentScene.createNode("MetadataSet");
+MetadataSet24.name = "nodes";
+MetadataSet24.DEF = "nodes";
+MetadataSet24.reference = "http://titania.create3000.de";
 //NULL
-MetadataSet17.value = [];
+MetadataSet23.value = [];
 
-MetadataSet17.value[0] = MetadataSet18;
+MetadataSet23.value[0] = MetadataSet24;
 
-MetadataSet16.value = [];
+MetadataSet22.value = [];
 
-MetadataSet16.value[0] = MetadataSet17;
+MetadataSet22.value[0] = MetadataSet23;
 
-MetadataSet19 = browser.currentScene.createNode("MetadataSet");
-MetadataSet19.name = "NavigationInfo";
-MetadataSet19.DEF = "NavigationInfo";
-MetadataSet19.reference = "http://titania.create3000.de";
-MetadataString20 = browser.currentScene.createNode("MetadataString");
-MetadataString20.name = "type";
-MetadataString20.DEF = "type";
-MetadataString20.reference = "http://titania.create3000.de";
-MetadataString20.value = ["EXAMINE"];
-MetadataSet19.value = [];
+MetadataSet25 = browser.currentScene.createNode("MetadataSet");
+MetadataSet25.name = "NavigationInfo";
+MetadataSet25.DEF = "NavigationInfo";
+MetadataSet25.reference = "http://titania.create3000.de";
+MetadataString26 = browser.currentScene.createNode("MetadataString");
+MetadataString26.name = "type";
+MetadataString26.DEF = "type";
+MetadataString26.reference = "http://titania.create3000.de";
+MetadataString26.value = ["EXAMINE"];
+MetadataSet25.value = [];
 
-MetadataSet19.value[0] = MetadataString20;
+MetadataSet25.value[0] = MetadataString26;
 
-MetadataSet16.value[1] = MetadataSet19;
+MetadataSet22.value[1] = MetadataSet25;
 
-MetadataSet21 = browser.currentScene.createNode("MetadataSet");
-MetadataSet21.name = "Viewpoint";
-MetadataSet21.DEF = "Viewpoint";
-MetadataSet21.reference = "http://titania.create3000.de";
-MetadataDouble22 = browser.currentScene.createNode("MetadataDouble");
-MetadataDouble22.name = "position";
-MetadataDouble22.DEF = "position";
-MetadataDouble22.reference = "http://titania.create3000.de";
-MetadataDouble22.value = [6.24067728185014,0.00250837343276661,2.92117542307615];
-MetadataSet21.value = [];
+MetadataSet27 = browser.currentScene.createNode("MetadataSet");
+MetadataSet27.name = "Viewpoint";
+MetadataSet27.DEF = "Viewpoint";
+MetadataSet27.reference = "http://titania.create3000.de";
+MetadataDouble28 = browser.currentScene.createNode("MetadataDouble");
+MetadataDouble28.name = "position";
+MetadataDouble28.DEF = "position";
+MetadataDouble28.reference = "http://titania.create3000.de";
+MetadataDouble28.value = [6.24067728185014,0.00250837343276661,2.92117542307615];
+MetadataSet27.value = [];
 
-MetadataSet21.value[0] = MetadataDouble22;
+MetadataSet27.value[0] = MetadataDouble28;
 
-MetadataDouble23 = browser.currentScene.createNode("MetadataDouble");
-MetadataDouble23.name = "orientation";
-MetadataDouble23.DEF = "orientation";
-MetadataDouble23.reference = "http://titania.create3000.de";
-MetadataDouble23.value = [-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191];
-MetadataSet21.value[1] = MetadataDouble23;
+MetadataDouble29 = browser.currentScene.createNode("MetadataDouble");
+MetadataDouble29.name = "orientation";
+MetadataDouble29.DEF = "orientation";
+MetadataDouble29.reference = "http://titania.create3000.de";
+MetadataDouble29.value = [-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191];
+MetadataSet27.value[1] = MetadataDouble29;
 
-MetadataDouble24 = browser.currentScene.createNode("MetadataDouble");
-MetadataDouble24.name = "centerOfRotation";
-MetadataDouble24.DEF = "centerOfRotation";
-MetadataDouble24.reference = "http://titania.create3000.de";
-MetadataDouble24.value = [-0.808320198626341,-0.358072370409949,0.22817191560906];
-MetadataSet21.value[2] = MetadataDouble24;
+MetadataDouble30 = browser.currentScene.createNode("MetadataDouble");
+MetadataDouble30.name = "centerOfRotation";
+MetadataDouble30.DEF = "centerOfRotation";
+MetadataDouble30.reference = "http://titania.create3000.de";
+MetadataDouble30.value = [-0.808320198626341,-0.358072370409949,0.22817191560906];
+MetadataSet27.value[2] = MetadataDouble30;
 
-MetadataSet16.value[2] = MetadataSet21;
+MetadataSet22.value[2] = MetadataSet27;
 
-WorldInfo15.metadata = MetadataSet16;
+WorldInfo21.metadata = MetadataSet22;
 
-browser.currentScene.children[1] = WorldInfo15;
+browser.currentScene.children[1] = WorldInfo21;
 
-ProtoInstance25 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance25.name = "myPrototype";
-browser.currentScene.children[2] = ProtoInstance25;
+ProtoInstance31 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance31.name = "myPrototype";
+browser.currentScene.children[2] = ProtoInstance31;
 
