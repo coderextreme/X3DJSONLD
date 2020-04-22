@@ -4,70 +4,70 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 Viewpoint2 = browser.currentScene.createNode("Viewpoint");
 Viewpoint2.DEF = "View1";
-Viewpoint2.centerOfRotation = [-6,0,0];
+Viewpoint2.centerOfRotation = new SFVec3f(new float[-6,0,0]);
 Viewpoint2.description = "Viewpoint 1";
-Viewpoint2.position = [-6,0,5];
-browser.currentScene.children = [];
+Viewpoint2.position = new SFVec3f(new float[-6,0,5]);
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Viewpoint2;
 
 Viewpoint3 = browser.currentScene.createNode("Viewpoint");
 Viewpoint3.DEF = "View2";
-Viewpoint3.centerOfRotation = [-2,0,0];
+Viewpoint3.centerOfRotation = new SFVec3f(new float[-2,0,0]);
 Viewpoint3.description = "Viewpoint 2";
-Viewpoint3.position = [-2,0,5];
+Viewpoint3.position = new SFVec3f(new float[-2,0,5]);
 browser.currentScene.children[1] = Viewpoint3;
 
 Viewpoint4 = browser.currentScene.createNode("Viewpoint");
 Viewpoint4.DEF = "View3";
-Viewpoint4.centerOfRotation = [2,0,0];
+Viewpoint4.centerOfRotation = new SFVec3f(new float[2,0,0]);
 Viewpoint4.description = "Viewpoint 3";
-Viewpoint4.position = [2,0,5];
+Viewpoint4.position = new SFVec3f(new float[2,0,5]);
 browser.currentScene.children[2] = Viewpoint4;
 
 Viewpoint5 = browser.currentScene.createNode("Viewpoint");
 Viewpoint5.DEF = "View4";
-Viewpoint5.centerOfRotation = [6,0,0];
+Viewpoint5.centerOfRotation = new SFVec3f(new float[6,0,0]);
 Viewpoint5.description = "Viewpoint 4";
-Viewpoint5.position = [6,0,5];
+Viewpoint5.position = new SFVec3f(new float[6,0,5]);
 browser.currentScene.children[3] = Viewpoint5;
 
 //Script initialization ought to first bind view5 below.
 Group6 = browser.currentScene.createNode("Group");
 Transform7 = browser.currentScene.createNode("Transform");
 Transform7.DEF = "Text1";
-Transform7.translation = [-6,0,0];
+Transform7.translation = new SFVec3f(new float[-6,0,0]);
 Shape8 = browser.currentScene.createNode("Shape");
 Text9 = browser.currentScene.createNode("Text");
-Text9.string = ["View","# 1"];
+Text9.string = new MFString(new java.lang.String["View","# 1"]);
 FontStyle10 = browser.currentScene.createNode("FontStyle");
 FontStyle10.DEF = "CenterJustify";
-FontStyle10.justify = ["MIDDLE","MIDDLE"];
+FontStyle10.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text9.fontStyle = FontStyle10;
 
 Shape8.geometry = Text9;
 
 Appearance11 = browser.currentScene.createNode("Appearance");
 Material12 = browser.currentScene.createNode("Material");
-Material12.diffuseColor = [1,0,0];
+Material12.diffuseColor = new SFColor(new float[1,0,0]);
 Appearance11.material = Material12;
 
 Shape8.appearance = Appearance11;
 
-Transform7.children = [];
+Transform7.children = new MFNode();
 
 Transform7.children[0] = Shape8;
 
-Group6.children = [];
+Group6.children = new MFNode();
 
 Group6.children[0] = Transform7;
 
 Transform13 = browser.currentScene.createNode("Transform");
 Transform13.DEF = "Text2";
-Transform13.translation = [-2,0,0];
+Transform13.translation = new SFVec3f(new float[-2,0,0]);
 Shape14 = browser.currentScene.createNode("Shape");
 Text15 = browser.currentScene.createNode("Text");
-Text15.string = ["View","# 2"];
+Text15.string = new MFString(new java.lang.String["View","# 2"]);
 FontStyle16 = browser.currentScene.createNode("FontStyle");
 FontStyle16.USE = "CenterJustify";
 Text15.fontStyle = FontStyle16;
@@ -76,12 +76,12 @@ Shape14.geometry = Text15;
 
 Appearance17 = browser.currentScene.createNode("Appearance");
 Material18 = browser.currentScene.createNode("Material");
-Material18.diffuseColor = [0,1,0];
+Material18.diffuseColor = new SFColor(new float[0,1,0]);
 Appearance17.material = Material18;
 
 Shape14.appearance = Appearance17;
 
-Transform13.children = [];
+Transform13.children = new MFNode();
 
 Transform13.children[0] = Shape14;
 
@@ -89,10 +89,10 @@ Group6.children[1] = Transform13;
 
 Transform19 = browser.currentScene.createNode("Transform");
 Transform19.DEF = "Text3";
-Transform19.translation = [2,0,0];
+Transform19.translation = new SFVec3f(new float[2,0,0]);
 Shape20 = browser.currentScene.createNode("Shape");
 Text21 = browser.currentScene.createNode("Text");
-Text21.string = ["View","# 3"];
+Text21.string = new MFString(new java.lang.String["View","# 3"]);
 FontStyle22 = browser.currentScene.createNode("FontStyle");
 FontStyle22.USE = "CenterJustify";
 Text21.fontStyle = FontStyle22;
@@ -101,12 +101,12 @@ Shape20.geometry = Text21;
 
 Appearance23 = browser.currentScene.createNode("Appearance");
 Material24 = browser.currentScene.createNode("Material");
-Material24.diffuseColor = [0,0,1];
+Material24.diffuseColor = new SFColor(new float[0,0,1]);
 Appearance23.material = Material24;
 
 Shape20.appearance = Appearance23;
 
-Transform19.children = [];
+Transform19.children = new MFNode();
 
 Transform19.children[0] = Shape20;
 
@@ -114,10 +114,10 @@ Group6.children[2] = Transform19;
 
 Transform25 = browser.currentScene.createNode("Transform");
 Transform25.DEF = "Text4";
-Transform25.translation = [6,0,0];
+Transform25.translation = new SFVec3f(new float[6,0,0]);
 Shape26 = browser.currentScene.createNode("Shape");
 Text27 = browser.currentScene.createNode("Text");
-Text27.string = ["View","# 4"];
+Text27.string = new MFString(new java.lang.String["View","# 4"]);
 FontStyle28 = browser.currentScene.createNode("FontStyle");
 FontStyle28.USE = "CenterJustify";
 Text27.fontStyle = FontStyle28;
@@ -130,7 +130,7 @@ Appearance29.material = Material30;
 
 Shape26.appearance = Appearance29;
 
-Transform25.children = [];
+Transform25.children = new MFNode();
 
 Transform25.children[0] = Shape26;
 
@@ -141,28 +141,28 @@ browser.currentScene.children[4] = Group6;
 //The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9.
 //It does not need to be studied in this chapter.
 Transform31 = browser.currentScene.createNode("Transform");
-Transform31.translation = [0,-3,8];
+Transform31.translation = new SFVec3f(new float[0,-3,8]);
 //notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.
 Viewpoint32 = browser.currentScene.createNode("Viewpoint");
 Viewpoint32.DEF = "ClickToAnimateView";
 Viewpoint32.description = "Select animation sequence";
-Viewpoint32.position = [0,0,7];
-Transform31.children = [];
+Viewpoint32.position = new SFVec3f(new float[0,0,7]);
+Transform31.children = new MFNode();
 
 Transform31.children[0] = Viewpoint32;
 
 Shape33 = browser.currentScene.createNode("Shape");
 Text34 = browser.currentScene.createNode("Text");
-Text34.string = ["Click here to animate"];
+Text34.string = new MFString(new java.lang.String["Click here to animate"]);
 FontStyle35 = browser.currentScene.createNode("FontStyle");
-FontStyle35.justify = ["MIDDLE","BEGIN"];
+FontStyle35.justify = new MFString(new java.lang.String["MIDDLE","BEGIN"]);
 Text34.fontStyle = FontStyle35;
 
 Shape33.geometry = Text34;
 
 Appearance36 = browser.currentScene.createNode("Appearance");
 Material37 = browser.currentScene.createNode("Material");
-Material37.diffuseColor = [0.8,0.4,0];
+Material37.diffuseColor = new SFColor(new float[0.8,0.4,0]);
 Appearance36.material = Material37;
 
 Shape33.appearance = Appearance36;
@@ -171,7 +171,7 @@ Transform31.children[1] = Shape33;
 
 Shape38 = browser.currentScene.createNode("Shape");
 Box39 = browser.currentScene.createNode("Box");
-Box39.size = [7,1,0.02];
+Box39.size = new SFVec3f(new float[7,1,0.02]);
 Shape38.geometry = Box39;
 
 Appearance40 = browser.currentScene.createNode("Appearance");
@@ -202,8 +202,8 @@ Transform31.children[5] = ROUTE44;
 
 IntegerSequencer45 = browser.currentScene.createNode("IntegerSequencer");
 IntegerSequencer45.DEF = "TimingSequencer";
-IntegerSequencer45.key = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1];
-IntegerSequencer45.keyValue = [0,1,2,3,4,5,6,7,8,10];
+IntegerSequencer45.key = new MFFloat(new float[0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1]);
+IntegerSequencer45.keyValue = new MFInt32(new int[0,1,2,3,4,5,6,7,8,10]);
 Transform31.children[6] = IntegerSequencer45;
 
 ROUTE46 = browser.currentScene.createNode("ROUTE");
@@ -219,7 +219,7 @@ field48 = browser.currentScene.createNode("field");
 field48.name = "set_timeEvent";
 field48.accessType = "inputOnly";
 field48.type = "SFInt32";
-Script47.field = [];
+Script47.field = new MFNode();
 
 Script47.field[0] = field48;
 

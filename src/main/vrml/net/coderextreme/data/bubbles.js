@@ -3,8 +3,8 @@ var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo2.type = ["EXAMINE"];
-browser.currentScene.children = [];
+NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE"]);
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
@@ -14,17 +14,17 @@ Viewpoint3.description = "Tour Views";
 browser.currentScene.children[1] = Viewpoint3;
 
 Viewpoint4 = browser.currentScene.createNode("Viewpoint");
-Viewpoint4.position = [0,0,4];
+Viewpoint4.position = new SFVec3f(new float[0,0,4]);
 Viewpoint4.description = "sphere in road";
 browser.currentScene.children[2] = Viewpoint4;
 
 Background5 = browser.currentScene.createNode("Background");
-Background5.backUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"];
-Background5.bottomUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"];
-Background5.frontUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"];
-Background5.leftUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"];
-Background5.rightUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"];
-Background5.topUrl = ["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"];
+Background5.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"]);
+Background5.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"]);
+Background5.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"]);
+Background5.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"]);
+Background5.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"]);
+Background5.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]);
 browser.currentScene.children[3] = Background5;
 
 Transform6 = browser.currentScene.createNode("Transform");
@@ -36,33 +36,33 @@ Shape7.geometry = Sphere8;
 Appearance9 = browser.currentScene.createNode("Appearance");
 Appearance9.DEF = "_01_-_Default";
 Material10 = browser.currentScene.createNode("Material");
-Material10.diffuseColor = [0.7,0.7,0.7];
-Material10.specularColor = [0.5,0.5,0.5];
+Material10.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
+Material10.specularColor = new SFColor(new float[0.5,0.5,0.5]);
 Appearance9.material = Material10;
 
 ComposedCubeMapTexture11 = browser.currentScene.createNode("ComposedCubeMapTexture");
 ImageTexture12 = browser.currentScene.createNode("ImageTexture");
-ImageTexture12.url = ["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"];
+ImageTexture12.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"]);
 ComposedCubeMapTexture11.top = ImageTexture12;
 
 ImageTexture13 = browser.currentScene.createNode("ImageTexture");
-ImageTexture13.url = ["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"];
+ImageTexture13.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"]);
 ComposedCubeMapTexture11.top = ImageTexture13;
 
 ImageTexture14 = browser.currentScene.createNode("ImageTexture");
-ImageTexture14.url = ["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"];
+ImageTexture14.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"]);
 ComposedCubeMapTexture11.top = ImageTexture14;
 
 ImageTexture15 = browser.currentScene.createNode("ImageTexture");
-ImageTexture15.url = ["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"];
+ImageTexture15.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"]);
 ComposedCubeMapTexture11.top = ImageTexture15;
 
 ImageTexture16 = browser.currentScene.createNode("ImageTexture");
-ImageTexture16.url = ["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"];
+ImageTexture16.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"]);
 ComposedCubeMapTexture11.top = ImageTexture16;
 
 ImageTexture17 = browser.currentScene.createNode("ImageTexture");
-ImageTexture17.url = ["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"];
+ImageTexture17.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]);
 ComposedCubeMapTexture11.top = ImageTexture17;
 
 Appearance9.texture = ComposedCubeMapTexture11;
@@ -75,7 +75,7 @@ field19.name = "cube";
 field19.accessType = "inputOutput";
 field19.type = "SFInt32";
 field19.value = "0";
-ComposedShader18.field = [];
+ComposedShader18.field = new MFNode();
 
 ComposedShader18.field[0] = field19;
 
@@ -108,16 +108,16 @@ field23.value = "2";
 ComposedShader18.field[4] = field23;
 
 ShaderPart24 = browser.currentScene.createNode("ShaderPart");
-ShaderPart24.url = ["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"];
+ShaderPart24.url = new MFString(new java.lang.String["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]);
 ShaderPart24.type = "VERTEX";
 ComposedShader18.parts[5] = ShaderPart24;
 
 ShaderPart25 = browser.currentScene.createNode("ShaderPart");
-ShaderPart25.url = ["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"];
+ShaderPart25.url = new MFString(new java.lang.String["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]);
 ShaderPart25.type = "FRAGMENT";
 ComposedShader18.parts[6] = ShaderPart25;
 
-Appearance9.shaders = [];
+Appearance9.shaders = new MFNode();
 
 Appearance9.shaders[0] = ComposedShader18;
 
@@ -129,7 +129,7 @@ field27.name = "cube";
 field27.accessType = "inputOutput";
 field27.type = "SFInt32";
 field27.value = "0";
-ComposedShader26.field = [];
+ComposedShader26.field = new MFNode();
 
 ComposedShader26.field[0] = field27;
 
@@ -162,12 +162,12 @@ field31.value = "2";
 ComposedShader26.field[4] = field31;
 
 ShaderPart32 = browser.currentScene.createNode("ShaderPart");
-ShaderPart32.url = ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"];
+ShaderPart32.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
 ShaderPart32.type = "VERTEX";
 ComposedShader26.parts[5] = ShaderPart32;
 
 ShaderPart33 = browser.currentScene.createNode("ShaderPart");
-ShaderPart33.url = ["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"];
+ShaderPart33.url = new MFString(new java.lang.String["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]);
 ShaderPart33.type = "FRAGMENT";
 ComposedShader26.parts[6] = ShaderPart33;
 
@@ -175,7 +175,7 @@ Appearance9.shaders[1] = ComposedShader26;
 
 Shape7.appearance = Appearance9;
 
-Transform6.children = [];
+Transform6.children = new MFNode();
 
 Transform6.children[0] = Shape7;
 
@@ -189,14 +189,14 @@ browser.currentScene.children[5] = TimeSensor34;
 
 PositionInterpolator35 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator35.DEF = "TourPosition";
-PositionInterpolator35.key = [0,1];
-PositionInterpolator35.keyValue = [0,0,10,0,0,-10];
+PositionInterpolator35.key = new MFFloat(new float[0,1]);
+PositionInterpolator35.keyValue = new MFVec3f(new float[0,0,10,0,0,-10]);
 browser.currentScene.children[6] = PositionInterpolator35;
 
 OrientationInterpolator36 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator36.DEF = "TourOrientation";
-OrientationInterpolator36.key = [0,1];
-OrientationInterpolator36.keyValue = [0,1,0,0,0,1,0,3.1416];
+OrientationInterpolator36.key = new MFFloat(new float[0,1]);
+OrientationInterpolator36.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,3.1416]);
 browser.currentScene.children[7] = OrientationInterpolator36;
 
 Script37 = browser.currentScene.createNode("Script");
@@ -205,7 +205,7 @@ field38 = browser.currentScene.createNode("field");
 field38.name = "set_cycle";
 field38.accessType = "inputOnly";
 field38.type = "SFTime";
-Script37.field = [];
+Script37.field = new MFNode();
 
 Script37.field[0] = field38;
 

@@ -3,24 +3,24 @@ var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo2.type = ["EXAMINE"];
-browser.currentScene.children = [];
+NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE"]);
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
 Viewpoint3 = browser.currentScene.createNode("Viewpoint");
-Viewpoint3.position = [0,0,4];
-Viewpoint3.orientation = [1,0,0,0];
+Viewpoint3.position = new SFVec3f(new float[0,0,4]);
+Viewpoint3.orientation = new SFRotation(new float[1,0,0,0]);
 Viewpoint3.description = "Bubbles in action";
 browser.currentScene.children[1] = Viewpoint3;
 
 Background4 = browser.currentScene.createNode("Background");
-Background4.backUrl = ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"];
-Background4.bottomUrl = ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"];
-Background4.frontUrl = ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"];
-Background4.leftUrl = ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"];
-Background4.rightUrl = ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"];
-Background4.topUrl = ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"];
+Background4.backUrl = new MFString(new java.lang.String["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"]);
+Background4.bottomUrl = new MFString(new java.lang.String["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"]);
+Background4.frontUrl = new MFString(new java.lang.String["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"]);
+Background4.leftUrl = new MFString(new java.lang.String["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]);
+Background4.rightUrl = new MFString(new java.lang.String["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]);
+Background4.topUrl = new MFString(new java.lang.String["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]);
 browser.currentScene.children[2] = Background4;
 
 ProtoDeclare5 = browser.currentScene.createNode("ProtoDeclare");
@@ -35,13 +35,13 @@ Shape8.geometry = Sphere9;
 
 Appearance10 = browser.currentScene.createNode("Appearance");
 Material11 = browser.currentScene.createNode("Material");
-Material11.diffuseColor = [1,0,0];
+Material11.diffuseColor = new SFColor(new float[1,0,0]);
 Material11.transparency = 0.2;
 Appearance10.material = Material11;
 
 Shape8.appearance = Appearance10;
 
-Transform7.children = [];
+Transform7.children = new MFNode();
 
 Transform7.children[0] = Shape8;
 
@@ -52,7 +52,7 @@ field13.name = "scale";
 field13.accessType = "inputOutput";
 field13.type = "SFVec3f";
 field13.value = "1 1 1";
-Script12.field = [];
+Script12.field = new MFNode();
 
 Script12.field[0] = field13;
 
@@ -152,7 +152,7 @@ ROUTE21.toNode = "bounce1";
 ROUTE21.toField = "set_fraction";
 Transform7.children[5] = ROUTE21;
 
-ProtoBody6.children = [];
+ProtoBody6.children = new MFNode();
 
 ProtoBody6.children[0] = Transform7;
 

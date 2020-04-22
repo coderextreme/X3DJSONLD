@@ -4,12 +4,12 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 ExternProtoDeclare2 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare2.name = "ViewPositionOrientation";
-ExternProtoDeclare2.url = ["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"];
+ExternProtoDeclare2.url = new MFString(new java.lang.String["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"]);
 field3 = browser.currentScene.createNode("field");
 field3.name = "enabled";
 field3.accessType = "inputOutput";
 field3.type = "SFBool";
-ExternProtoDeclare2.field = [];
+ExternProtoDeclare2.field = new MFNode();
 
 ExternProtoDeclare2.field[0] = field3;
 
@@ -43,7 +43,7 @@ field8.accessType = "outputOnly";
 field8.type = "MFString";
 ExternProtoDeclare2.field[5] = field8;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ExternProtoDeclare2;
 
@@ -52,7 +52,7 @@ ProtoDeclare9.name = "NewWorldInfoNode";
 ProtoBody10 = browser.currentScene.createNode("ProtoBody");
 WorldInfo11 = browser.currentScene.createNode("WorldInfo");
 WorldInfo11.DEF = "ExamplePrototypeBody";
-ProtoBody10.children = [];
+ProtoBody10.children = new MFNode();
 
 ProtoBody10.children[0] = WorldInfo11;
 
@@ -72,7 +72,7 @@ field15.name = "onlyColor";
 field15.accessType = "inputOutput";
 field15.type = "SFColor";
 field15.value = "1 0 0";
-ProtoInterface14.field = [];
+ProtoInterface14.field = new MFNode();
 
 ProtoInterface14.field[0] = field15;
 
@@ -81,19 +81,19 @@ ProtoDeclare13.protoInterface = ProtoInterface14;
 ProtoBody16 = browser.currentScene.createNode("ProtoBody");
 //Override default diffuseColor value 0.8 0.8 0.8
 Material17 = browser.currentScene.createNode("Material");
-Material17.diffuseColor = [0,0,0];
+Material17.diffuseColor = new SFColor(new float[0,0,0]);
 //Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare.
 IS18 = browser.currentScene.createNode("IS");
 connect19 = browser.currentScene.createNode("connect");
 connect19.nodeField = "emissiveColor";
 connect19.protoField = "onlyColor";
-IS18.connect = [];
+IS18.connect = new MFNode();
 
 IS18.connect[0] = connect19;
 
 Material17.iS = IS18;
 
-ProtoBody16.children = [];
+ProtoBody16.children = new MFNode();
 
 ProtoBody16.children[0] = Material17;
 
@@ -110,13 +110,13 @@ field22.accessType = "inputOutput";
 field22.type = "MFNode";
 Group23 = browser.currentScene.createNode("Group");
 Group23.DEF = "DefaultNodeValue";
-Group23.bboxSize = [2,2,2];
+Group23.bboxSize = new SFVec3f(new float[2,2,2]);
 //Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\"
-field22.children = [];
+field22.children = new MFNode();
 
 field22.children[0] = Group23;
 
-ProtoInterface21.field = [];
+ProtoInterface21.field = new MFNode();
 
 ProtoInterface21.field[0] = field22;
 
@@ -124,23 +124,23 @@ ProtoDeclare20.protoInterface = ProtoInterface21;
 
 ProtoBody24 = browser.currentScene.createNode("ProtoBody");
 Transform25 = browser.currentScene.createNode("Transform");
-Transform25.translation = [0,2,0];
+Transform25.translation = new SFVec3f(new float[0,2,0]);
 Group26 = browser.currentScene.createNode("Group");
 IS27 = browser.currentScene.createNode("IS");
 connect28 = browser.currentScene.createNode("connect");
 connect28.nodeField = "children";
 connect28.protoField = "children";
-IS27.connect = [];
+IS27.connect = new MFNode();
 
 IS27.connect[0] = connect28;
 
 Group26.iS = IS27;
 
-Transform25.children = [];
+Transform25.children = new MFNode();
 
 Transform25.children[0] = Group26;
 
-ProtoBody24.children = [];
+ProtoBody24.children = new MFNode();
 
 ProtoBody24.children[0] = Transform25;
 
@@ -166,12 +166,12 @@ Shape32.geometry = Box33;
 
 Appearance34 = browser.currentScene.createNode("Appearance");
 Material35 = browser.currentScene.createNode("Material");
-Material35.diffuseColor = [0.6,0.4,0.2];
+Material35.diffuseColor = new SFColor(new float[0.6,0.4,0.2]);
 Appearance34.material = Material35;
 
 Shape32.appearance = Appearance34;
 
-Group31.children = [];
+Group31.children = new MFNode();
 
 Group31.children[0] = Shape32;
 
@@ -179,11 +179,11 @@ browser.currentScene.children[7] = Group31;
 
 Transform36 = browser.currentScene.createNode("Transform");
 Transform36.DEF = "TransformExampleUSE";
-Transform36.rotation = [0,1,0,0.78];
-Transform36.translation = [0,2.5,0];
+Transform36.rotation = new SFRotation(new float[0,1,0,0.78]);
+Transform36.translation = new SFVec3f(new float[0,2.5,0]);
 Group37 = browser.currentScene.createNode("Group");
 Group37.USE = "ExampleChildElement";
-Transform36.children = [];
+Transform36.children = new MFNode();
 
 Transform36.children[0] = Group37;
 
@@ -210,7 +210,7 @@ Collision38.proxy = Group43;
 browser.currentScene.children[9] = Collision38;
 
 Transform44 = browser.currentScene.createNode("Transform");
-Transform44.translation = [0,-2.5,0];
+Transform44.translation = new SFVec3f(new float[0,-2.5,0]);
 Shape45 = browser.currentScene.createNode("Shape");
 Appearance46 = browser.currentScene.createNode("Appearance");
 ProtoInstance47 = browser.currentScene.createNode("ProtoInstance");
@@ -218,26 +218,26 @@ ProtoInstance47.name = "EmissiveMaterial";
 fieldValue48 = browser.currentScene.createNode("fieldValue");
 fieldValue48.name = "onlyColor";
 fieldValue48.value = "0.2 0.6 0.6";
-ProtoInstance47.fieldValue = [];
+ProtoInstance47.fieldValue = new MFNode();
 
 ProtoInstance47.fieldValue[0] = fieldValue48;
 
-Appearance46.ers = [];
+Appearance46.shaders = new MFNode();
 
-Appearance46.ers[0] = ProtoInstance47;
+Appearance46.shaders[0] = ProtoInstance47;
 
 Shape45.appearance = Appearance46;
 
 Text49 = browser.currentScene.createNode("Text");
-Text49.string = ["X3D Header Prototype syntax examples","(view console for EXTERNPROTO output)"];
+Text49.string = new MFString(new java.lang.String["X3D Header Prototype syntax examples","(view console for EXTERNPROTO output)"]);
 FontStyle50 = browser.currentScene.createNode("FontStyle");
-FontStyle50.justify = ["MIDDLE","MIDDLE"];
+FontStyle50.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 FontStyle50.size = 0.6;
 Text49.fontStyle = FontStyle50;
 
 Shape45.geometry = Text49;
 
-Transform44.children = [];
+Transform44.children = new MFNode();
 
 Transform44.children[0] = Shape45;
 
@@ -248,7 +248,7 @@ ProtoInstance51.name = "ViewPositionOrientation";
 fieldValue52 = browser.currentScene.createNode("fieldValue");
 fieldValue52.name = "enabled";
 fieldValue52.value = "true";
-ProtoInstance51.fieldValue = [];
+ProtoInstance51.fieldValue = new MFNode();
 
 ProtoInstance51.fieldValue[0] = fieldValue52;
 
@@ -262,8 +262,8 @@ browser.currentScene.children[12] = TimeSensor53;
 
 OrientationInterpolator54 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator54.DEF = "Spinner";
-OrientationInterpolator54.key = [0,0.5,1];
-OrientationInterpolator54.keyValue = [0,1,0,0,0,1,0,3.14159,0,1,0,6.28318];
+OrientationInterpolator54.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator54.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,3.14159,0,1,0,6.28318]);
 browser.currentScene.children[13] = OrientationInterpolator54;
 
 ROUTE55 = browser.currentScene.createNode("ROUTE");
@@ -282,7 +282,7 @@ browser.currentScene.children[15] = ROUTE56;
 
 Inline57 = browser.currentScene.createNode("Inline");
 Inline57.DEF = "someInline";
-Inline57.url = ["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"];
+Inline57.url = new MFString(new java.lang.String["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"]);
 browser.currentScene.children[16] = Inline57;
 
 IMPORT58 = browser.currentScene.createNode("IMPORT");
@@ -293,8 +293,8 @@ browser.currentScene.children[17] = IMPORT58;
 
 PositionInterpolator59 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator59.DEF = "StayInPlace";
-PositionInterpolator59.key = [0,1];
-PositionInterpolator59.keyValue = [0,0,0,0,0,0];
+PositionInterpolator59.key = new MFFloat(new float[0,1]);
+PositionInterpolator59.keyValue = new MFVec3f(new float[0,0,0,0,0,0]);
 browser.currentScene.children[18] = PositionInterpolator59;
 
 ROUTE60 = browser.currentScene.createNode("ROUTE");

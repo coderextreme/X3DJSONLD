@@ -3,19 +3,19 @@ var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.0";
 NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
 Viewpoint3 = browser.currentScene.createNode("Viewpoint");
 Viewpoint3.description = "Two mathematical orbitals";
-Viewpoint3.position = [0,0,50];
+Viewpoint3.position = new SFVec3f(new float[0,0,50]);
 browser.currentScene.children[1] = Viewpoint3;
 
 Group4 = browser.currentScene.createNode("Group");
 DirectionalLight5 = browser.currentScene.createNode("DirectionalLight");
-DirectionalLight5.direction = [1,1,1];
-Group4.children = [];
+DirectionalLight5.direction = new SFVec3f(new float[1,1,1]);
+Group4.children = new MFNode();
 
 Group4.children[0] = DirectionalLight5;
 
@@ -27,7 +27,7 @@ field8.name = "translation";
 field8.accessType = "inputOutput";
 field8.type = "SFVec3f";
 field8.value = "-8 0 0";
-ProtoInterface7.field = [];
+ProtoInterface7.field = new MFNode();
 
 ProtoInterface7.field[0] = field8;
 
@@ -60,14 +60,14 @@ TimeSensor14 = browser.currentScene.createNode("TimeSensor");
 TimeSensor14.DEF = "Clock";
 TimeSensor14.cycleInterval = 16;
 TimeSensor14.loop = True;
-Group13.children = [];
+Group13.children = new MFNode();
 
 Group13.children[0] = TimeSensor14;
 
 OrientationInterpolator15 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator15.DEF = "OrbitPath";
-OrientationInterpolator15.key = [0,0.5,1];
-OrientationInterpolator15.keyValue = [1,0,0,0,1,0,0,3.14,1,0,0,6.28];
+OrientationInterpolator15.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator15.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,3.14,1,0,0,6.28]);
 Group13.children[1] = OrientationInterpolator15;
 
 Transform16 = browser.currentScene.createNode("Transform");
@@ -76,7 +76,7 @@ IS17 = browser.currentScene.createNode("IS");
 connect18 = browser.currentScene.createNode("connect");
 connect18.nodeField = "translation";
 connect18.protoField = "translation";
-IS17.connect = [];
+IS17.connect = new MFNode();
 
 IS17.connect[0] = connect18;
 
@@ -89,7 +89,7 @@ IS22 = browser.currentScene.createNode("IS");
 connect23 = browser.currentScene.createNode("connect");
 connect23.nodeField = "diffuseColor";
 connect23.protoField = "diffuseColor";
-IS22.connect = [];
+IS22.connect = new MFNode();
 
 IS22.connect[0] = connect23;
 
@@ -113,16 +113,16 @@ Shape19.appearance = Appearance20;
 IndexedFaceSet26 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet26.ccw = False;
 IndexedFaceSet26.convex = False;
-IndexedFaceSet26.coordIndex = [0,1,2,-1];
+IndexedFaceSet26.coordIndex = new MFInt32(new int[0,1,2,-1]);
 IndexedFaceSet26.DEF = "Orbit";
 Coordinate27 = browser.currentScene.createNode("Coordinate");
 Coordinate27.DEF = "OrbitCoordinates";
-Coordinate27.point = [0,0,1,0,1,0,1,0,0];
+Coordinate27.point = new MFVec3f(new float[0,0,1,0,1,0,1,0,0]);
 IndexedFaceSet26.coord = Coordinate27;
 
 Shape19.geometry = IndexedFaceSet26;
 
-Transform16.children = [];
+Transform16.children = new MFNode();
 
 Transform16.children[0] = Shape19;
 
@@ -134,7 +134,7 @@ field29 = browser.currentScene.createNode("field");
 field29.name = "set_fraction";
 field29.accessType = "inputOnly";
 field29.type = "SFFloat";
-Script28.field = [];
+Script28.field = new MFNode();
 
 Script28.field[0] = field29;
 
@@ -297,7 +297,7 @@ ROUTE41.toNode = "OrbitPath";
 ROUTE41.toField = "set_fraction";
 Group13.children[8] = ROUTE41;
 
-ProtoBody12.children = [];
+ProtoBody12.children = new MFNode();
 
 ProtoBody12.children[0] = Group13;
 
@@ -310,7 +310,7 @@ ProtoInstance42.name = "orbit";
 fieldValue43 = browser.currentScene.createNode("fieldValue");
 fieldValue43.name = "translation";
 fieldValue43.value = "-8 0 0";
-ProtoInstance42.fieldValue = [];
+ProtoInstance42.fieldValue = new MFNode();
 
 ProtoInstance42.fieldValue[0] = fieldValue43;
 
@@ -336,7 +336,7 @@ ProtoInstance47.name = "orbit";
 fieldValue48 = browser.currentScene.createNode("fieldValue");
 fieldValue48.name = "translation";
 fieldValue48.value = "8 0 0";
-ProtoInstance47.fieldValue = [];
+ProtoInstance47.fieldValue = new MFNode();
 
 ProtoInstance47.fieldValue[0] = fieldValue48;
 

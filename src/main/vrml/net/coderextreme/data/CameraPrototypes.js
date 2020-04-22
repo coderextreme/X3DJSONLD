@@ -13,7 +13,7 @@ field4.name = "description";
 field4.accessType = "inputOutput";
 field4.appinfo = "Text description to be displayed for this Camera";
 field4.type = "SFString";
-ProtoInterface3.field = [];
+ProtoInterface3.field = new MFNode();
 
 ProtoInterface3.field[0] = field4;
 
@@ -196,7 +196,7 @@ IS29 = browser.currentScene.createNode("IS");
 connect30 = browser.currentScene.createNode("connect");
 connect30.nodeField = "description";
 connect30.protoField = "description";
-IS29.connect = [];
+IS29.connect = new MFNode();
 
 IS29.connect[0] = connect30;
 
@@ -232,19 +232,19 @@ IS29.connect[6] = connect36;
 
 Viewpoint28.iS = IS29;
 
-ProtoBody27.children = [];
+ProtoBody27.children = new MFNode();
 
 ProtoBody27.children[0] = Viewpoint28;
 
 //NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation
 NavigationInfo37 = browser.currentScene.createNode("NavigationInfo");
 NavigationInfo37.DEF = "CameraNavInfo";
-NavigationInfo37.type = ["EXAMINE","FLY","ANY"];
+NavigationInfo37.type = new MFString(new java.lang.String["EXAMINE","FLY","ANY"]);
 IS38 = browser.currentScene.createNode("IS");
 connect39 = browser.currentScene.createNode("connect");
 connect39.nodeField = "set_bind";
 connect39.protoField = "set_bind";
-IS38.connect = [];
+IS38.connect = new MFNode();
 
 IS38.connect[0] = connect39;
 
@@ -272,7 +272,7 @@ IS43 = browser.currentScene.createNode("IS");
 connect44 = browser.currentScene.createNode("connect");
 connect44.nodeField = "on";
 connect44.protoField = "headlight";
-IS43.connect = [];
+IS43.connect = new MFNode();
 
 IS43.connect[0] = connect44;
 
@@ -292,13 +292,13 @@ ProtoBody27.children[2] = DirectionalLight42;
 
 PositionInterpolator47 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator47.DEF = "CameraPositionInterpolator";
-PositionInterpolator47.key = [0,1];
-PositionInterpolator47.keyValue = [0,0,0,0,0,0];
+PositionInterpolator47.key = new MFFloat(new float[0,1]);
+PositionInterpolator47.keyValue = new MFVec3f(new float[0,0,0,0,0,0]);
 IS48 = browser.currentScene.createNode("IS");
 connect49 = browser.currentScene.createNode("connect");
 connect49.nodeField = "set_fraction";
 connect49.protoField = "set_fraction";
-IS48.connect = [];
+IS48.connect = new MFNode();
 
 IS48.connect[0] = connect49;
 
@@ -308,13 +308,13 @@ ProtoBody27.children[3] = PositionInterpolator47;
 
 OrientationInterpolator50 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator50.DEF = "CameraOrientationInterpolator";
-OrientationInterpolator50.key = [0,1];
-OrientationInterpolator50.keyValue = [0,1,0,0,0,1,0,0];
+OrientationInterpolator50.key = new MFFloat(new float[0,1]);
+OrientationInterpolator50.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,0]);
 IS51 = browser.currentScene.createNode("IS");
 connect52 = browser.currentScene.createNode("connect");
 connect52.nodeField = "set_fraction";
 connect52.protoField = "set_fraction";
-IS51.connect = [];
+IS51.connect = new MFNode();
 
 IS51.connect[0] = connect52;
 
@@ -346,7 +346,7 @@ field56.name = "description";
 field56.accessType = "inputOutput";
 field56.appinfo = "Text description to be displayed for this Camera";
 field56.type = "SFString";
-Script55.field = [];
+Script55.field = new MFNode();
 
 Script55.field[0] = field56;
 
@@ -471,7 +471,7 @@ field73.appinfo = "node reference to permit getting setting fields from within S
 field73.type = "SFNode";
 Viewpoint74 = browser.currentScene.createNode("Viewpoint");
 Viewpoint74.USE = "CameraViewpoint";
-field73.children = [];
+field73.children = new MFNode();
 
 field73.children[0] = Viewpoint74;
 
@@ -484,7 +484,7 @@ field75.appinfo = "node reference to permit getting setting fields from within S
 field75.type = "SFNode";
 NavigationInfo76 = browser.currentScene.createNode("NavigationInfo");
 NavigationInfo76.USE = "CameraNavInfo";
-field75.children = [];
+field75.children = new MFNode();
 
 field75.children[0] = NavigationInfo76;
 
@@ -497,7 +497,7 @@ field77.appinfo = "node reference to permit getting setting fields from within S
 field77.type = "SFNode";
 PositionInterpolator78 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator78.USE = "CameraPositionInterpolator";
-field77.children = [];
+field77.children = new MFNode();
 
 field77.children[0] = PositionInterpolator78;
 
@@ -510,7 +510,7 @@ field79.appinfo = "node reference to permit getting setting fields from within S
 field79.type = "SFNode";
 OrientationInterpolator80 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator80.USE = "CameraOrientationInterpolator";
-field79.children = [];
+field79.children = new MFNode();
 
 field79.children[0] = OrientationInterpolator80;
 
@@ -604,7 +604,7 @@ IS92 = browser.currentScene.createNode("IS");
 connect93 = browser.currentScene.createNode("connect");
 connect93.nodeField = "description";
 connect93.protoField = "description";
-IS92.connect = [];
+IS92.connect = new MFNode();
 
 IS92.connect[0] = connect93;
 
@@ -1075,7 +1075,7 @@ ProtoBody27.children[12] = ROUTE115;
 
 ProtoDeclare2.protoBody = ProtoBody27;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
@@ -1089,7 +1089,7 @@ field118.name = "description";
 field118.accessType = "inputOutput";
 field118.appinfo = "Text description to be displayed for this CameraShot";
 field118.type = "SFString";
-ProtoInterface117.field = [];
+ProtoInterface117.field = new MFNode();
 
 ProtoInterface117.field[0] = field118;
 
@@ -1191,7 +1191,7 @@ field132.name = "description";
 field132.accessType = "inputOutput";
 field132.appinfo = "Text description to be displayed for this CameraShot";
 field132.type = "SFString";
-Script131.field = [];
+Script131.field = new MFNode();
 
 Script131.field[0] = field132;
 
@@ -1298,7 +1298,7 @@ IS147 = browser.currentScene.createNode("IS");
 connect148 = browser.currentScene.createNode("connect");
 connect148.nodeField = "description";
 connect148.protoField = "description";
-IS147.connect = [];
+IS147.connect = new MFNode();
 
 IS147.connect[0] = connect148;
 
@@ -1453,7 +1453,7 @@ Script131.setSourceCode(`ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[CameraShot] ' + outputString + '\\n');\n"+
 "}`)
-ProtoBody130.children = [];
+ProtoBody130.children = new MFNode();
 
 ProtoBody130.children[0] = Script131;
 
@@ -1472,7 +1472,7 @@ field162.name = "description";
 field162.accessType = "inputOutput";
 field162.appinfo = "Text description to be displayed for this CameraMovement";
 field162.type = "SFString";
-ProtoInterface161.field = [];
+ProtoInterface161.field = new MFNode();
 
 ProtoInterface161.field[0] = field162;
 
@@ -1578,7 +1578,7 @@ field176.name = "description";
 field176.accessType = "inputOutput";
 field176.appinfo = "Text description to be displayed for this CameraMovement";
 field176.type = "SFString";
-Script175.field = [];
+Script175.field = new MFNode();
 
 Script175.field[0] = field176;
 
@@ -1663,7 +1663,7 @@ IS188 = browser.currentScene.createNode("IS");
 connect189 = browser.currentScene.createNode("connect");
 connect189.nodeField = "description";
 connect189.protoField = "description";
-IS188.connect = [];
+IS188.connect = new MFNode();
 
 IS188.connect[0] = connect189;
 
@@ -1815,7 +1815,7 @@ Script175.setSourceCode(`ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[CameraMovement] ' + outputString + '\\n');\n"+
 "}`)
-ProtoBody174.children = [];
+ProtoBody174.children = new MFNode();
 
 ProtoBody174.children[0] = Script175;
 
@@ -1835,7 +1835,7 @@ field203.name = "description";
 field203.accessType = "inputOutput";
 field203.appinfo = "Text description to be displayed for this OfflineRender";
 field203.type = "SFString";
-ProtoInterface202.field = [];
+ProtoInterface202.field = new MFNode();
 
 ProtoInterface202.field[0] = field203;
 
@@ -1929,7 +1929,7 @@ field216.name = "description";
 field216.accessType = "inputOutput";
 field216.appinfo = "Text description to be displayed for this OfflineRender";
 field216.type = "SFString";
-Script215.field = [];
+Script215.field = new MFNode();
 
 Script215.field[0] = field216;
 
@@ -2007,7 +2007,7 @@ IS227 = browser.currentScene.createNode("IS");
 connect228 = browser.currentScene.createNode("connect");
 connect228.nodeField = "description";
 connect228.protoField = "description";
-IS227.connect = [];
+IS227.connect = new MFNode();
 
 IS227.connect[0] = connect228;
 
@@ -2118,7 +2118,7 @@ Script215.setSourceCode(`ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[OfflineRender] ' + outputString + '\\n');\n"+
 "}`)
-ProtoBody214.children = [];
+ProtoBody214.children = new MFNode();
 
 ProtoBody214.children[0] = Script215;
 
@@ -2129,34 +2129,34 @@ browser.currentScene.children[3] = ProtoDeclare201;
 
 //=============== Launch Prototype Example ==============
 Background239 = browser.currentScene.createNode("Background");
-Background239.skyColor = [0.282353,0.380392,0.470588];
+Background239.skyColor = new MFColor(new float[0.282353,0.380392,0.470588]);
 browser.currentScene.children[4] = Background239;
 
 Anchor240 = browser.currentScene.createNode("Anchor");
 Anchor240.description = "launch CameraExample scene";
-Anchor240.url = ["CameraExamples.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"];
+Anchor240.url = new MFString(new java.lang.String["CameraExamples.x3d","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]);
 Transform241 = browser.currentScene.createNode("Transform");
 Shape242 = browser.currentScene.createNode("Shape");
 Text243 = browser.currentScene.createNode("Text");
-Text243.string = ["CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"];
+Text243.string = new MFString(new java.lang.String["CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"]);
 FontStyle244 = browser.currentScene.createNode("FontStyle");
-FontStyle244.justify = ["MIDDLE","MIDDLE"];
+FontStyle244.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text243.fontStyle = FontStyle244;
 
 Shape242.geometry = Text243;
 
 Appearance245 = browser.currentScene.createNode("Appearance");
 Material246 = browser.currentScene.createNode("Material");
-Material246.diffuseColor = [1,1,0.2];
+Material246.diffuseColor = new SFColor(new float[1,1,0.2]);
 Appearance245.material = Material246;
 
 Shape242.appearance = Appearance245;
 
-Transform241.children = [];
+Transform241.children = new MFNode();
 
 Transform241.children[0] = Shape242;
 
-Anchor240.children = [];
+Anchor240.children = new MFNode();
 
 Anchor240.children[0] = Transform241;
 

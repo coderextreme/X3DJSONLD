@@ -6,20 +6,20 @@ X3D0.version = "3.3";
 //PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/
 GeoViewpoint2 = browser.currentScene.createNode("GeoViewpoint");
 GeoViewpoint2.DEF = "Tour";
-GeoViewpoint2.position = [0,0,4];
-GeoViewpoint2.orientation = [1,0,0,0];
+GeoViewpoint2.position = new SFVec3d(new double[0,0,4]);
+GeoViewpoint2.orientation = new SFRotation(new float[1,0,0,0]);
 GeoViewpoint2.description = "Tour Views";
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = GeoViewpoint2;
 
 Background3 = browser.currentScene.createNode("Background");
-Background3.backUrl = ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"];
-Background3.bottomUrl = ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"];
-Background3.frontUrl = ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"];
-Background3.leftUrl = ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"];
-Background3.rightUrl = ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"];
-Background3.topUrl = ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"];
+Background3.backUrl = new MFString(new java.lang.String["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"]);
+Background3.bottomUrl = new MFString(new java.lang.String["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"]);
+Background3.frontUrl = new MFString(new java.lang.String["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"]);
+Background3.leftUrl = new MFString(new java.lang.String["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]);
+Background3.rightUrl = new MFString(new java.lang.String["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]);
+Background3.topUrl = new MFString(new java.lang.String["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]);
 browser.currentScene.children[1] = Background3;
 
 Transform4 = browser.currentScene.createNode("Transform");
@@ -29,13 +29,13 @@ Shape5.geometry = Sphere6;
 
 Appearance7 = browser.currentScene.createNode("Appearance");
 Material8 = browser.currentScene.createNode("Material");
-Material8.diffuseColor = [0.7,0.7,0.7];
-Material8.specularColor = [0.5,0.5,0.5];
+Material8.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
+Material8.specularColor = new SFColor(new float[0.5,0.5,0.5]);
 Appearance7.material = Material8;
 
 Shape5.appearance = Appearance7;
 
-Transform4.children = [];
+Transform4.children = new MFNode();
 
 Transform4.children[0] = Shape5;
 
@@ -49,8 +49,8 @@ browser.currentScene.children[3] = TimeSensor9;
 
 GeoPositionInterpolator10 = browser.currentScene.createNode("GeoPositionInterpolator");
 GeoPositionInterpolator10.DEF = "TourPosition";
-GeoPositionInterpolator10.key = [0,1];
-GeoPositionInterpolator10.keyValue = [0.0015708,0,4,0,0.0015708,4];
+GeoPositionInterpolator10.key = new MFFloat(new float[0,1]);
+GeoPositionInterpolator10.keyValue = new MFVec3d(new double[0.0015708,0,4,0,0.0015708,4]);
 browser.currentScene.children[4] = GeoPositionInterpolator10;
 
 Script11 = browser.currentScene.createNode("Script");
@@ -59,7 +59,7 @@ field12 = browser.currentScene.createNode("field");
 field12.name = "set_cycle";
 field12.accessType = "inputOnly";
 field12.type = "SFTime";
-Script11.field = [];
+Script11.field = new MFNode();
 
 Script11.field[0] = field12;
 

@@ -3,14 +3,14 @@ var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo2.type = ["EXAMINE"];
-browser.currentScene.children = [];
+NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE"]);
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
 Viewpoint3 = browser.currentScene.createNode("Viewpoint");
-Viewpoint3.position = [0,0,4];
-Viewpoint3.orientation = [1,0,0,0];
+Viewpoint3.position = new SFVec3f(new float[0,0,4]);
+Viewpoint3.orientation = new SFRotation(new float[1,0,0,0]);
 Viewpoint3.description = "Bubble in action";
 browser.currentScene.children[1] = Viewpoint3;
 
@@ -26,13 +26,13 @@ Shape7.geometry = Sphere8;
 
 Appearance9 = browser.currentScene.createNode("Appearance");
 Material10 = browser.currentScene.createNode("Material");
-Material10.diffuseColor = [1,0,0];
+Material10.diffuseColor = new SFColor(new float[1,0,0]);
 Material10.transparency = 0.2;
 Appearance9.material = Material10;
 
 Shape7.appearance = Appearance9;
 
-Transform6.children = [];
+Transform6.children = new MFNode();
 
 Transform6.children[0] = Shape7;
 
@@ -43,7 +43,7 @@ field12.name = "scale";
 field12.accessType = "inputOutput";
 field12.type = "SFVec3f";
 field12.value = "1 1 1";
-Script11.field = [];
+Script11.field = new MFNode();
 
 Script11.field[0] = field12;
 
@@ -149,7 +149,7 @@ ROUTE20.toNode = "bounce";
 ROUTE20.toField = "set_fraction";
 Transform6.children[5] = ROUTE20;
 
-ProtoBody5.children = [];
+ProtoBody5.children = new MFNode();
 
 ProtoBody5.children[0] = Transform6;
 

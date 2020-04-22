@@ -13,11 +13,11 @@ Shape5 = browser.currentScene.createNode("Shape");
 Sphere6 = browser.currentScene.createNode("Sphere");
 Shape5.geometry = Sphere6;
 
-field4.children = [];
+field4.children = new MFNode();
 
 field4.children[0] = Shape5;
 
-ProtoInterface3.field = [];
+ProtoInterface3.field = new MFNode();
 
 ProtoInterface3.field[0] = field4;
 
@@ -29,19 +29,19 @@ IS9 = browser.currentScene.createNode("IS");
 connect10 = browser.currentScene.createNode("connect");
 connect10.nodeField = "children";
 connect10.protoField = "myShape";
-IS9.connect = [];
+IS9.connect = new MFNode();
 
 IS9.connect[0] = connect10;
 
 Transform8.iS = IS9;
 
-ProtoBody7.children = [];
+ProtoBody7.children = new MFNode();
 
 ProtoBody7.children[0] = Transform8;
 
 ProtoDeclare2.protoBody = ProtoBody7;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 

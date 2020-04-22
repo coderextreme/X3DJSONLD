@@ -3,14 +3,14 @@ var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 Background2 = browser.currentScene.createNode("Background");
-Background2.skyColor = [1,1,1];
-browser.currentScene.children = [];
+Background2.skyColor = new MFColor(new float[1,1,1]);
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Background2;
 
 Viewpoint3 = browser.currentScene.createNode("Viewpoint");
 Viewpoint3.description = "Default View";
-Viewpoint3.position = [0,0,15];
+Viewpoint3.position = new SFVec3f(new float[0,0,15]);
 browser.currentScene.children[1] = Viewpoint3;
 
 Shape4 = browser.currentScene.createNode("Shape");
@@ -24,10 +24,10 @@ Shape4 = browser.currentScene.createNode("Shape");
 //character entities are listed in HTML specification and are good for any XML
 Text5 = browser.currentScene.createNode("Text");
 Text5.DEF = "DefaultText";
-Text5.string = ["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\\\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\\\ character","Pi Π is &#928; XML character entity"];
+Text5.string = new MFString(new java.lang.String["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\\\ is X3D escape character","double backslash \\\\\\\\ is X3D backslash \\\\ character","Pi Π is &#928; XML character entity"]);
 FontStyle6 = browser.currentScene.createNode("FontStyle");
 FontStyle6.DEF = "CenteredFontStyle";
-FontStyle6.justify = ["MIDDLE","MIDDLE"];
+FontStyle6.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text5.fontStyle = FontStyle6;
 
 Shape4.geometry = Text5;
@@ -35,7 +35,7 @@ Shape4.geometry = Text5;
 Appearance7 = browser.currentScene.createNode("Appearance");
 Material8 = browser.currentScene.createNode("Material");
 Material8.DEF = "DefaultMaterial";
-Material8.diffuseColor = [0.2,0.2,0.2];
+Material8.diffuseColor = new SFColor(new float[0.2,0.2,0.2]);
 Appearance7.material = Material8;
 
 Shape4.appearance = Appearance7;

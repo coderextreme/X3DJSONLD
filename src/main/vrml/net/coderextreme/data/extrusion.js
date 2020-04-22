@@ -6,19 +6,19 @@ Group2 = browser.currentScene.createNode("Group");
 Shape3 = browser.currentScene.createNode("Shape");
 Extrusion4 = browser.currentScene.createNode("Extrusion");
 Extrusion4.DEF = "extrusion";
-Extrusion4.spine = [-50,-50,0,50,50,0];
+Extrusion4.spine = new MFVec3f(new float[-50,-50,0,50,50,0]);
 Extrusion4.creaseAngle = 0.785;
-Extrusion4.crossSection = [1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0];
+Extrusion4.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
 Shape3.geometry = Extrusion4;
 
 Appearance5 = browser.currentScene.createNode("Appearance");
 Material6 = browser.currentScene.createNode("Material");
-Material6.diffuseColor = [0,1,0];
+Material6.diffuseColor = new SFColor(new float[0,1,0]);
 Appearance5.material = Material6;
 
 Shape3.appearance = Appearance5;
 
-Group2.children = [];
+Group2.children = new MFNode();
 
 Group2.children[0] = Shape3;
 
@@ -33,7 +33,7 @@ field9 = browser.currentScene.createNode("field");
 field9.name = "set_cycle";
 field9.accessType = "inputOnly";
 field9.type = "SFTime";
-Script8.field = [];
+Script8.field = new MFNode();
 
 Script8.field[0] = field9;
 
@@ -69,7 +69,7 @@ ROUTE12.toNode = "extrusion";
 ROUTE12.toField = "spine";
 Group2.children[4] = ROUTE12;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Group2;
 

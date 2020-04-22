@@ -8,11 +8,11 @@ ProtoBody3 = browser.currentScene.createNode("ProtoBody");
 Group4 = browser.currentScene.createNode("Group");
 //left
 Transform5 = browser.currentScene.createNode("Transform");
-Transform5.scale = [0.5,0.5,0.5];
+Transform5.scale = new SFVec3f(new float[0.5,0.5,0.5]);
 Shape6 = browser.currentScene.createNode("Shape");
 Appearance7 = browser.currentScene.createNode("Appearance");
 Material8 = browser.currentScene.createNode("Material");
-Material8.diffuseColor = [0.7,1,0];
+Material8.diffuseColor = new SFColor(new float[0.7,1,0]);
 Material8.transparency = 0.5;
 Appearance7.material = Material8;
 
@@ -20,26 +20,26 @@ Shape6.appearance = Appearance7;
 
 Extrusion9 = browser.currentScene.createNode("Extrusion");
 Extrusion9.creaseAngle = 0.785;
-Extrusion9.crossSection = [1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0];
-Extrusion9.spine = [-2.5,0,0,-1.5,0,0];
+Extrusion9.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
+Extrusion9.spine = new MFVec3f(new float[-2.5,0,0,-1.5,0,0]);
 Shape6.geometry = Extrusion9;
 
-Transform5.children = [];
+Transform5.children = new MFNode();
 
 Transform5.children[0] = Shape6;
 
 //<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>
-Group4.children = [];
+Group4.children = new MFNode();
 
 Group4.children[0] = Transform5;
 
 //right
 Transform10 = browser.currentScene.createNode("Transform");
-Transform10.scale = [0.5,0.5,0.5];
+Transform10.scale = new SFVec3f(new float[0.5,0.5,0.5]);
 Shape11 = browser.currentScene.createNode("Shape");
 Appearance12 = browser.currentScene.createNode("Appearance");
 Material13 = browser.currentScene.createNode("Material");
-Material13.diffuseColor = [0,0.7,1];
+Material13.diffuseColor = new SFColor(new float[0,0.7,1]);
 Material13.transparency = 0.5;
 Appearance12.material = Material13;
 
@@ -47,31 +47,31 @@ Shape11.appearance = Appearance12;
 
 Extrusion14 = browser.currentScene.createNode("Extrusion");
 Extrusion14.creaseAngle = 0.785;
-Extrusion14.crossSection = [1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0];
-Extrusion14.spine = [1.5,0,0,2.5,0,0];
+Extrusion14.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
+Extrusion14.spine = new MFVec3f(new float[1.5,0,0,2.5,0,0]);
 Shape11.geometry = Extrusion14;
 
-Transform10.children = [];
+Transform10.children = new MFNode();
 
 Transform10.children[0] = Shape11;
 
 Transform15 = browser.currentScene.createNode("Transform");
-Transform15.translation = [2,0,0];
+Transform15.translation = new SFVec3f(new float[2,0,0]);
 Shape16 = browser.currentScene.createNode("Shape");
 Appearance17 = browser.currentScene.createNode("Appearance");
 Material18 = browser.currentScene.createNode("Material");
 Material18.DEF = "MaterialLightBlue";
-Material18.diffuseColor = [1,1,1];
+Material18.diffuseColor = new SFColor(new float[1,1,1]);
 Appearance17.material = Material18;
 
 Shape16.appearance = Appearance17;
 
 Text19 = browser.currentScene.createNode("Text");
 Text19.DEF = "RightString";
-Text19.string = ["r"];
+Text19.string = new MFString(new java.lang.String["r"]);
 Shape16.geometry = Text19;
 
-Transform15.children = [];
+Transform15.children = new MFNode();
 
 Transform15.children[0] = Shape16;
 
@@ -91,11 +91,11 @@ Group4.children[1] = Transform10;
 
 //up
 Transform22 = browser.currentScene.createNode("Transform");
-Transform22.scale = [0.5,0.5,0.5];
+Transform22.scale = new SFVec3f(new float[0.5,0.5,0.5]);
 Shape23 = browser.currentScene.createNode("Shape");
 Appearance24 = browser.currentScene.createNode("Appearance");
 Material25 = browser.currentScene.createNode("Material");
-Material25.diffuseColor = [0,0.7,1];
+Material25.diffuseColor = new SFColor(new float[0,0.7,1]);
 Material25.transparency = 0.5;
 Appearance24.material = Material25;
 
@@ -103,16 +103,16 @@ Shape23.appearance = Appearance24;
 
 Extrusion26 = browser.currentScene.createNode("Extrusion");
 Extrusion26.creaseAngle = 0.785;
-Extrusion26.crossSection = [1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0];
-Extrusion26.spine = [0,1.5,0,0,2.5,0];
+Extrusion26.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
+Extrusion26.spine = new MFVec3f(new float[0,1.5,0,0,2.5,0]);
 Shape23.geometry = Extrusion26;
 
-Transform22.children = [];
+Transform22.children = new MFNode();
 
 Transform22.children[0] = Shape23;
 
 Transform27 = browser.currentScene.createNode("Transform");
-Transform27.translation = [-0.5,2,0];
+Transform27.translation = new SFVec3f(new float[-0.5,2,0]);
 Shape28 = browser.currentScene.createNode("Shape");
 Appearance29 = browser.currentScene.createNode("Appearance");
 Material30 = browser.currentScene.createNode("Material");
@@ -123,10 +123,10 @@ Shape28.appearance = Appearance29;
 
 Text31 = browser.currentScene.createNode("Text");
 Text31.DEF = "UpString";
-Text31.string = ["u"];
+Text31.string = new MFString(new java.lang.String["u"]);
 Shape28.geometry = Text31;
 
-Transform27.children = [];
+Transform27.children = new MFNode();
 
 Transform27.children[0] = Shape28;
 
@@ -146,11 +146,11 @@ Group4.children[2] = Transform22;
 
 //down
 Transform34 = browser.currentScene.createNode("Transform");
-Transform34.scale = [0.5,0.5,0.5];
+Transform34.scale = new SFVec3f(new float[0.5,0.5,0.5]);
 Shape35 = browser.currentScene.createNode("Shape");
 Appearance36 = browser.currentScene.createNode("Appearance");
 Material37 = browser.currentScene.createNode("Material");
-Material37.diffuseColor = [0.7,1,0];
+Material37.diffuseColor = new SFColor(new float[0.7,1,0]);
 Material37.transparency = 0.5;
 Appearance36.material = Material37;
 
@@ -158,11 +158,11 @@ Shape35.appearance = Appearance36;
 
 Extrusion38 = browser.currentScene.createNode("Extrusion");
 Extrusion38.creaseAngle = 0.785;
-Extrusion38.crossSection = [1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0];
-Extrusion38.spine = [0,-2.5,0,0,-1.5,0];
+Extrusion38.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
+Extrusion38.spine = new MFVec3f(new float[0,-2.5,0,0,-1.5,0]);
 Shape35.geometry = Extrusion38;
 
-Transform34.children = [];
+Transform34.children = new MFNode();
 
 Transform34.children[0] = Shape35;
 
@@ -174,7 +174,7 @@ Transform39 = browser.currentScene.createNode("Transform");
 Shape40 = browser.currentScene.createNode("Shape");
 Appearance41 = browser.currentScene.createNode("Appearance");
 Material42 = browser.currentScene.createNode("Material");
-Material42.diffuseColor = [1,0,0.7];
+Material42.diffuseColor = new SFColor(new float[1,0,0.7]);
 Appearance41.material = Material42;
 
 Shape40.appearance = Appearance41;
@@ -182,13 +182,13 @@ Shape40.appearance = Appearance41;
 Sphere43 = browser.currentScene.createNode("Sphere");
 Shape40.geometry = Sphere43;
 
-Transform39.children = [];
+Transform39.children = new MFNode();
 
 Transform39.children[0] = Shape40;
 
 Transform44 = browser.currentScene.createNode("Transform");
-Transform44.scale = [0.5,0.5,0.5];
-Transform44.translation = [-0.5,0,1];
+Transform44.scale = new SFVec3f(new float[0.5,0.5,0.5]);
+Transform44.translation = new SFVec3f(new float[-0.5,0,1]);
 Shape45 = browser.currentScene.createNode("Shape");
 Appearance46 = browser.currentScene.createNode("Appearance");
 Material47 = browser.currentScene.createNode("Material");
@@ -201,7 +201,7 @@ Text48 = browser.currentScene.createNode("Text");
 Text48.DEF = "CenterString";
 Shape45.geometry = Text48;
 
-Transform44.children = [];
+Transform44.children = new MFNode();
 
 Transform44.children[0] = Shape45;
 
@@ -219,7 +219,7 @@ Transform39.children[3] = TouchSensor50;
 
 Group4.children[4] = Transform39;
 
-ProtoBody3.children = [];
+ProtoBody3.children = new MFNode();
 
 ProtoBody3.children[0] = Group4;
 
@@ -229,7 +229,7 @@ field52 = browser.currentScene.createNode("field");
 field52.name = "set_rightstring";
 field52.accessType = "inputOnly";
 field52.type = "SFString";
-Script51.field = [];
+Script51.field = new MFNode();
 
 Script51.field[0] = field52;
 
@@ -257,7 +257,7 @@ field55 = browser.currentScene.createNode("field");
 field55.name = "set_upstring";
 field55.accessType = "inputOnly";
 field55.type = "SFString";
-Script54.field = [];
+Script54.field = new MFNode();
 
 Script54.field[0] = field55;
 
@@ -285,7 +285,7 @@ field58 = browser.currentScene.createNode("field");
 field58.name = "set_centerstring";
 field58.accessType = "inputOnly";
 field58.type = "SFString";
-Script57.field = [];
+Script57.field = new MFNode();
 
 Script57.field[0] = field58;
 
@@ -372,7 +372,7 @@ ProtoBody3.children[12] = ROUTE68;
 
 ProtoDeclare2.protoBody = ProtoBody3;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
@@ -381,15 +381,15 @@ browser.currentScene.children[1] = NavigationInfo69;
 
 Viewpoint70 = browser.currentScene.createNode("Viewpoint");
 Viewpoint70.description = "Process pipes";
-Viewpoint70.orientation = [1,0,0,-0.4];
-Viewpoint70.position = [0,5,12];
+Viewpoint70.orientation = new SFRotation(new float[1,0,0,-0.4]);
+Viewpoint70.position = new SFVec3f(new float[0,5,12]);
 browser.currentScene.children[2] = Viewpoint70;
 
 Transform71 = browser.currentScene.createNode("Transform");
-Transform71.translation = [0,-2.5,0];
+Transform71.translation = new SFVec3f(new float[0,-2.5,0]);
 ProtoInstance72 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance72.name = "Process";
-Transform71.children = [];
+Transform71.children = new MFNode();
 
 Transform71.children[0] = ProtoInstance72;
 
@@ -398,17 +398,17 @@ browser.currentScene.children[3] = Transform71;
 Transform73 = browser.currentScene.createNode("Transform");
 ProtoInstance74 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance74.name = "Process";
-Transform73.children = [];
+Transform73.children = new MFNode();
 
 Transform73.children[0] = ProtoInstance74;
 
 browser.currentScene.children[4] = Transform73;
 
 Transform75 = browser.currentScene.createNode("Transform");
-Transform75.translation = [0,2.5,0];
+Transform75.translation = new SFVec3f(new float[0,2.5,0]);
 ProtoInstance76 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance76.name = "Process";
-Transform75.children = [];
+Transform75.children = new MFNode();
 
 Transform75.children[0] = ProtoInstance76;
 

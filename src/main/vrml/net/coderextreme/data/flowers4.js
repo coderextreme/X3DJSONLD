@@ -3,17 +3,17 @@ var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
 Background3 = browser.currentScene.createNode("Background");
-Background3.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"];
-Background3.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"];
-Background3.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"];
-Background3.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"];
-Background3.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"];
-Background3.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"];
+Background3.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]);
+Background3.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+Background3.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]);
+Background3.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]);
+Background3.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]);
+Background3.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]);
 browser.currentScene.children[1] = Background3;
 
 Transform4 = browser.currentScene.createNode("Transform");
@@ -21,33 +21,33 @@ Transform4.DEF = "transform";
 Shape5 = browser.currentScene.createNode("Shape");
 Appearance6 = browser.currentScene.createNode("Appearance");
 Material7 = browser.currentScene.createNode("Material");
-Material7.diffuseColor = [0.7,0.7,0.7];
-Material7.specularColor = [0.5,0.5,0.5];
+Material7.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
+Material7.specularColor = new SFColor(new float[0.5,0.5,0.5]);
 Appearance6.material = Material7;
 
 ComposedCubeMapTexture8 = browser.currentScene.createNode("ComposedCubeMapTexture");
 ImageTexture9 = browser.currentScene.createNode("ImageTexture");
-ImageTexture9.url = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"];
+ImageTexture9.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]);
 ComposedCubeMapTexture8.top = ImageTexture9;
 
 ImageTexture10 = browser.currentScene.createNode("ImageTexture");
-ImageTexture10.url = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"];
+ImageTexture10.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
 ComposedCubeMapTexture8.top = ImageTexture10;
 
 ImageTexture11 = browser.currentScene.createNode("ImageTexture");
-ImageTexture11.url = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"];
+ImageTexture11.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]);
 ComposedCubeMapTexture8.top = ImageTexture11;
 
 ImageTexture12 = browser.currentScene.createNode("ImageTexture");
-ImageTexture12.url = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"];
+ImageTexture12.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]);
 ComposedCubeMapTexture8.top = ImageTexture12;
 
 ImageTexture13 = browser.currentScene.createNode("ImageTexture");
-ImageTexture13.url = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"];
+ImageTexture13.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]);
 ComposedCubeMapTexture8.top = ImageTexture13;
 
 ImageTexture14 = browser.currentScene.createNode("ImageTexture");
-ImageTexture14.url = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"];
+ImageTexture14.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]);
 ComposedCubeMapTexture8.top = ImageTexture14;
 
 Appearance6.texture = ComposedCubeMapTexture8;
@@ -60,7 +60,7 @@ field16.name = "cube";
 field16.type = "SFInt32";
 field16.accessType = "inputOutput";
 field16.value = "0";
-ComposedShader15.field = [];
+ComposedShader15.field = new MFNode();
 
 ComposedShader15.field[0] = field16;
 
@@ -93,16 +93,16 @@ field20.value = "2";
 ComposedShader15.field[4] = field20;
 
 ShaderPart21 = browser.currentScene.createNode("ShaderPart");
-ShaderPart21.url = ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"];
+ShaderPart21.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
 ShaderPart21.type = "VERTEX";
 ComposedShader15.parts[5] = ShaderPart21;
 
 ShaderPart22 = browser.currentScene.createNode("ShaderPart");
-ShaderPart22.url = ["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"];
+ShaderPart22.url = new MFString(new java.lang.String["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]);
 ShaderPart22.type = "FRAGMENT";
 ComposedShader15.parts[6] = ShaderPart22;
 
-Appearance6.shaders = [];
+Appearance6.shaders = new MFNode();
 
 Appearance6.shaders[0] = ComposedShader15;
 
@@ -118,7 +118,7 @@ IndexedFaceSet23.coord = Coordinate24;
 
 Shape5.geometry = IndexedFaceSet23;
 
-Transform4.children = [];
+Transform4.children = new MFNode();
 
 Transform4.children[0] = Shape5;
 
@@ -130,7 +130,7 @@ field26 = browser.currentScene.createNode("field");
 field26.name = "set_fraction";
 field26.accessType = "inputOnly";
 field26.type = "SFFloat";
-Script25.field = [];
+Script25.field = new MFNode();
 
 Script25.field[0] = field26;
 

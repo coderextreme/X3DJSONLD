@@ -16,7 +16,7 @@ field4.accessType = "inputOutput";
 field4.appinfo = "color of arch";
 field4.type = "SFColor";
 field4.value = "0.2 0.8 0.8";
-ProtoInterface3.field = [];
+ProtoInterface3.field = new MFNode();
 
 ProtoInterface3.field[0] = field4;
 
@@ -151,7 +151,7 @@ IS25 = browser.currentScene.createNode("IS");
 connect26 = browser.currentScene.createNode("connect");
 connect26.nodeField = "emissiveColor";
 connect26.protoField = "emissiveColor";
-IS25.connect = [];
+IS25.connect = new MFNode();
 
 IS25.connect[0] = connect26;
 
@@ -166,11 +166,11 @@ Appearance23.material = Material24;
 
 Shape20.appearance = Appearance23;
 
-Transform19.children = [];
+Transform19.children = new MFNode();
 
 Transform19.children[0] = Shape20;
 
-ProtoBody18.children = [];
+ProtoBody18.children = new MFNode();
 
 ProtoBody18.children[0] = Transform19;
 
@@ -178,7 +178,7 @@ ProtoBody18.children[0] = Transform19;
 //This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs
 Script28 = browser.currentScene.createNode("Script");
 Script28.DEF = "ArchPrototypeScript";
-Script28.url = ["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"];
+Script28.url = new MFString(new java.lang.String["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]);
 //INPUT PARAMETERS
 //General parameters
 //Parameters to create to create shapes related to arch: put true to apply
@@ -188,7 +188,7 @@ field29.name = "clearSpanWidth";
 field29.accessType = "initializeOnly";
 field29.appinfo = "user or default input for clearSpanWidth parameter";
 field29.type = "SFFloat";
-Script28.field = [];
+Script28.field = new MFNode();
 
 Script28.field[0] = field29;
 
@@ -294,7 +294,7 @@ IS44 = browser.currentScene.createNode("IS");
 connect45 = browser.currentScene.createNode("connect");
 connect45.nodeField = "clearSpanWidth";
 connect45.protoField = "clearSpanWidth";
-IS44.connect = [];
+IS44.connect = new MFNode();
 
 IS44.connect[0] = connect45;
 
@@ -380,7 +380,7 @@ ProtoBody18.children[4] = ROUTE59;
 
 ProtoDeclare2.protoBody = ProtoBody18;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
@@ -390,7 +390,7 @@ ProtoInstance60.DEF = "ArchInstance";
 fieldValue61 = browser.currentScene.createNode("fieldValue");
 fieldValue61.name = "diffuseColor";
 fieldValue61.value = "0.5 0.3 0.6";
-ProtoInstance60.fieldValue = [];
+ProtoInstance60.fieldValue = new MFNode();
 
 ProtoInstance60.fieldValue[0] = fieldValue61;
 
@@ -434,6 +434,6 @@ browser.currentScene.children[1] = ProtoInstance60;
 //Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)
 Inline69 = browser.currentScene.createNode("Inline");
 Inline69.DEF = "CoordinateAxes";
-Inline69.url = ["../data/CoordinateAxes.x3d"];
+Inline69.url = new MFString(new java.lang.String["../data/CoordinateAxes.x3d"]);
 browser.currentScene.children[2] = Inline69;
 

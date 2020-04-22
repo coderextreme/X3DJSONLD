@@ -3,34 +3,34 @@ var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
 DirectionalLight3 = browser.currentScene.createNode("DirectionalLight");
-DirectionalLight3.direction = [0,-0.8,-0.2];
+DirectionalLight3.direction = new SFVec3f(new float[0,-0.8,-0.2]);
 DirectionalLight3.intensity = 0.5;
 browser.currentScene.children[1] = DirectionalLight3;
 
 Background4 = browser.currentScene.createNode("Background");
-Background4.skyColor = [1,1,1];
+Background4.skyColor = new MFColor(new float[1,1,1]);
 browser.currentScene.children[2] = Background4;
 
 Viewpoint5 = browser.currentScene.createNode("Viewpoint");
 Viewpoint5.description = "One mathematical orbital";
-Viewpoint5.position = [0,0,50];
+Viewpoint5.position = new SFVec3f(new float[0,0,50]);
 browser.currentScene.children[3] = Viewpoint5;
 
 Transform6 = browser.currentScene.createNode("Transform");
-Transform6.translation = [0,-1,1];
-Transform6.rotation = [0,1,0,3.1415926];
-Transform6.scale = [1.5,1.5,1.5];
+Transform6.translation = new SFVec3f(new float[0,-1,1]);
+Transform6.rotation = new SFRotation(new float[0,1,0,3.1415926]);
+Transform6.scale = new SFVec3f(new float[1.5,1.5,1.5]);
 Shape7 = browser.currentScene.createNode("Shape");
 Appearance8 = browser.currentScene.createNode("Appearance");
 Material9 = browser.currentScene.createNode("Material");
 Material9.transparency = 0.1;
-Material9.diffuseColor = [0.9,0.3,0.3];
-Material9.specularColor = [0.8,0.8,0.8];
+Material9.diffuseColor = new SFColor(new float[0.9,0.3,0.3]);
+Material9.specularColor = new SFColor(new float[0.8,0.8,0.8]);
 Material9.shininess = 0.145;
 Appearance8.material = Material9;
 
@@ -39,16 +39,16 @@ Shape7.appearance = Appearance8;
 IndexedFaceSet10 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet10.ccw = False;
 IndexedFaceSet10.convex = False;
-IndexedFaceSet10.coordIndex = [0,1,2,-1];
+IndexedFaceSet10.coordIndex = new MFInt32(new int[0,1,2,-1]);
 IndexedFaceSet10.DEF = "Orbit";
 Coordinate11 = browser.currentScene.createNode("Coordinate");
 Coordinate11.DEF = "OrbitCoordinates";
-Coordinate11.point = [0,0,1,0,1,0,1,0,0];
+Coordinate11.point = new MFVec3f(new float[0,0,1,0,1,0,1,0,0]);
 IndexedFaceSet10.coord = Coordinate11;
 
 Shape7.geometry = IndexedFaceSet10;
 
-Transform6.children = [];
+Transform6.children = new MFNode();
 
 Transform6.children[0] = Shape7;
 
@@ -60,7 +60,7 @@ field13 = browser.currentScene.createNode("field");
 field13.name = "set_fraction";
 field13.accessType = "inputOnly";
 field13.type = "SFFloat";
-Script12.field = [];
+Script12.field = new MFNode();
 
 Script12.field[0] = field13;
 

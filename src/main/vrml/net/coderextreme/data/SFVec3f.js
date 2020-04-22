@@ -3,7 +3,7 @@ var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
@@ -12,8 +12,8 @@ Transform3.DEF = "transform";
 Shape4 = browser.currentScene.createNode("Shape");
 Appearance5 = browser.currentScene.createNode("Appearance");
 Material6 = browser.currentScene.createNode("Material");
-Material6.diffuseColor = [0.7,0.7,0.7];
-Material6.specularColor = [0.5,0.5,0.5];
+Material6.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
+Material6.specularColor = new SFColor(new float[0.5,0.5,0.5]);
 Appearance5.material = Material6;
 
 Shape4.appearance = Appearance5;
@@ -21,7 +21,7 @@ Shape4.appearance = Appearance5;
 Sphere7 = browser.currentScene.createNode("Sphere");
 Shape4.geometry = Sphere7;
 
-Transform3.children = [];
+Transform3.children = new MFNode();
 
 Transform3.children[0] = Shape4;
 
@@ -34,7 +34,7 @@ field9.name = "set_translation";
 field9.accessType = "inputOnly";
 field9.type = "SFVec3f";
 field9.value = "0 0 0";
-Script8.field = [];
+Script8.field = new MFNode();
 
 Script8.field[0] = field9;
 
