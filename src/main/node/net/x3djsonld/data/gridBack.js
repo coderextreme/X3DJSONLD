@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -96,26 +104,26 @@ gridBack.prototype = {
 	.append(new autoclass.MFVec3f(java.to([-5.25,-2.25,0.0,-3.75,-2.25,0.0,-2.25,-2.25,0.0,-0.75,-2.25,0.0,0.75,-2.25,0.0,2.25,-2.25,0.0,3.75,-2.25,0.0,5.25,-2.25,0.0,-5.25,-3.75,0.0,-3.75,-3.75,0.0], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([-2.25,-3.75,0.0,-0.75,-3.75,0.0,0.75,-3.75,0.0,2.25,-3.75,0.0,3.75,-3.75,0.0,5.25,-3.75,0.0,-5.25,-5.25,0.0,-3.75,-5.25,0.0,-2.25,-5.25,0.0,-0.75,-5.25,0.0], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([0.75,-5.25,0.0,2.25,-5.25,0.0,3.75,-5.25,0.0,5.25,-5.25,0.0], java.type("float[]"))));
-  this.x3dModel = new autoclass.X3D().setProfile("Interchange").setVersion("3.0")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("gridBack.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))
-    .addMeta(new autoclass.meta().setName("creator").setContent("David Roussel"))
-    .addMeta(new autoclass.meta().setName("translator").setContent("James Harney, Don Brutzman NPS"))
-    .addMeta(new autoclass.meta().setName("created").setContent("8 April 2002"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("12 January 2014"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("http://vrmlstuff.free.fr/materials"))
-    .addMeta(new autoclass.meta().setName("subject").setContent("Universal Media Material Library"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-    .addMeta(new autoclass.meta().setName("license").setContent("../license.html")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Shape()
-      .setAppearance(new autoclass.Appearance()
-        .setMaterial(new autoclass.Material().setAmbientIntensity(0.01).setShininess(0.05).setDiffuseColor(1.0,1.0,1.0)))
-      .setGeometry(new autoclass.IndexedFaceSet().setColorPerVertex(false).setNormalPerVertex(false).setColorIndex(java.to([0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0], java.type("int[]"))).setCoordIndex(this.IndexedFaceSet_4_15_coordIndex)
-        .setCoord(new autoclass.Coordinate().setPoint(this.Coordinate_5_15_point))
-        .setColor(new autoclass.Color().setColor(new autoclass.MFColor(java.to([0.5,0.5,0.5,0.75,0.75,0.75], java.type("float[]"))))))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("gridBack.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("David Roussel"))
+    .addMeta((new autoclass.meta()).setName("translator").setContent("James Harney, Don Brutzman NPS"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("8 April 2002"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("12 January 2014"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("http://vrmlstuff.free.fr/materials"))
+    .addMeta((new autoclass.meta()).setName("subject").setContent("Universal Media Material Library"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Shape())
+      .setAppearance((new autoclass.Appearance())
+        .setMaterial((new autoclass.Material()).setAmbientIntensity(0.01).setShininess(0.05).setDiffuseColor(1.0,1.0,1.0)))
+      .setGeometry((new autoclass.IndexedFaceSet()).setColorPerVertex(false).setNormalPerVertex(false).setColorIndex(java.to([0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0], java.type("int[]"))).setCoordIndex(this.IndexedFaceSet_4_15_coordIndex)
+        .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_5_15_point))
+        .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.to([0.5,0.5,0.5,0.75,0.75,0.75], java.type("float[]"))))))));
   },
   // end of initialize() method
 

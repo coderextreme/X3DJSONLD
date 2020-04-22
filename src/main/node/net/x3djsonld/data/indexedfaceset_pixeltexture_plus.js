@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -119,44 +127,44 @@ indexedfaceset_pixeltexture_plus.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Interchange").setVersion("3.0")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("indexedfaceset_pixeltexture_plus.x3d"))
-    .addMeta(new autoclass.meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-front.jpg"))
-    .addMeta(new autoclass.meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-rear.jpg"))
-    .addMeta(new autoclass.meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-top.jpg"))
-    .addMeta(new autoclass.meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-bottom.jpg"))
-    .addMeta(new autoclass.meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-left.jpg"))
-    .addMeta(new autoclass.meta().setName("Image").setContent("indexedfaceset_pixeltexture_plus-right.jpg"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("http://www.nist.gov/vrml.html"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("http://www.itl.nist.gov/div897/ctg/vrml/members.html"))
-    .addMeta(new autoclass.meta().setName("disclaimer").setContent("This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."))
-    .addMeta(new autoclass.meta().setName("info").setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"))
-    .addMeta(new autoclass.meta().setName("translator").setContent("Michael Kass NIST, Don Brutzman NPS"))
-    .addMeta(new autoclass.meta().setName("translated").setContent("21 January 2001"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("13 January 2014"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Test of browser ability to map a 3 times multiple of an PixelTexture onto an IndexedFaceSet geometry. A 3 by 3 matrix of four equal sized red, green, white and yellow squares in the pixel texture map all the faces of the cube."))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_plus.x3d"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new autoclass.meta().setName("license").setContent("../../license.html")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Viewpoint().setDescription("Front View"))
-    .addChild(new autoclass.Viewpoint().setDescription("Rear View").setPosition(0.0,0.0,-10.0).setOrientation(0.0,1.0,0.0,3.14))
-    .addChild(new autoclass.Viewpoint().setDescription("Top View").setPosition(0.0,10.0,0.0).setOrientation(1.0,0.0,0.0,-1.57))
-    .addChild(new autoclass.Viewpoint().setDescription("Bottom View").setPosition(0.0,-10.0,0.0).setOrientation(1.0,0.0,0.0,1.57))
-    .addChild(new autoclass.Viewpoint().setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(10.0,0.0,0.0))
-    .addChild(new autoclass.Viewpoint().setDescription("Left View").setPosition(-10.0,0.0,0.0).setOrientation(0.0,1.0,0.0,-1.57))
-    .addChild(new autoclass.NavigationInfo().setType(new autoclass.MFString("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\"")))
-    .addChild(new autoclass.Shape()
-      .setAppearance(new autoclass.Appearance()
-        .setMaterial(new autoclass.Material())
-        .setTexture(new autoclass.PixelTexture().setImage(java.to([2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF], java.type("int[]")))))
-      .setGeometry(new autoclass.IndexedFaceSet().setCreaseAngle(0.5).setColorPerVertex(false).setTexCoordIndex(java.to([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1], java.type("int[]"))).setCoordIndex(java.to([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], java.type("int[]")))
-        .setColor(new autoclass.Color().setColor(new autoclass.MFColor(java.to([0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0], java.type("float[]")))))
-        .setCoord(new autoclass.Coordinate().setPoint(new autoclass.MFVec3f(java.to([-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0], java.type("float[]")))))
-        .setTexCoord(new autoclass.TextureCoordinate().setPoint(new autoclass.MFVec2f(java.to([-1.0,2.0,-1.0,-1.0,2.0,2.0,2.0,-1.0], java.type("float[]"))))))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("indexedfaceset_pixeltexture_plus.x3d"))
+    .addMeta((new autoclass.meta()).setName("Image").setContent("indexedfaceset_pixeltexture_plus-front.jpg"))
+    .addMeta((new autoclass.meta()).setName("Image").setContent("indexedfaceset_pixeltexture_plus-rear.jpg"))
+    .addMeta((new autoclass.meta()).setName("Image").setContent("indexedfaceset_pixeltexture_plus-top.jpg"))
+    .addMeta((new autoclass.meta()).setName("Image").setContent("indexedfaceset_pixeltexture_plus-bottom.jpg"))
+    .addMeta((new autoclass.meta()).setName("Image").setContent("indexedfaceset_pixeltexture_plus-left.jpg"))
+    .addMeta((new autoclass.meta()).setName("Image").setContent("indexedfaceset_pixeltexture_plus-right.jpg"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.nist.gov/vrml.html"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("http://www.itl.nist.gov/div897/ctg/vrml/members.html"))
+    .addMeta((new autoclass.meta()).setName("disclaimer").setContent("This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."))
+    .addMeta((new autoclass.meta()).setName("info").setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"))
+    .addMeta((new autoclass.meta()).setName("translator").setContent("Michael Kass NIST, Don Brutzman NPS"))
+    .addMeta((new autoclass.meta()).setName("translated").setContent("21 January 2001"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("13 January 2014"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Test of browser ability to map a 3 times multiple of an PixelTexture onto an IndexedFaceSet geometry. A 3 by 3 matrix of four equal sized red, green, white and yellow squares in the pixel texture map all the faces of the cube."))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_plus.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Viewpoint()).setDescription("Front View"))
+    .addChild((new autoclass.Viewpoint()).setDescription("Rear View").setPosition(0.0,0.0,-10.0).setOrientation(0.0,1.0,0.0,3.14))
+    .addChild((new autoclass.Viewpoint()).setDescription("Top View").setPosition(0.0,10.0,0.0).setOrientation(1.0,0.0,0.0,-1.57))
+    .addChild((new autoclass.Viewpoint()).setDescription("Bottom View").setPosition(0.0,-10.0,0.0).setOrientation(1.0,0.0,0.0,1.57))
+    .addChild((new autoclass.Viewpoint()).setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(10.0,0.0,0.0))
+    .addChild((new autoclass.Viewpoint()).setDescription("Left View").setPosition(-10.0,0.0,0.0).setOrientation(0.0,1.0,0.0,-1.57))
+    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\"")))
+    .addChild((new autoclass.Shape())
+      .setAppearance((new autoclass.Appearance())
+        .setMaterial((new autoclass.Material()))
+        .setTexture((new autoclass.PixelTexture()).setImage(java.to([2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF], java.type("int[]")))))
+      .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(0.5).setColorPerVertex(false).setTexCoordIndex(java.to([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1], java.type("int[]"))).setCoordIndex(java.to([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], java.type("int[]")))
+        .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.to([0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0], java.type("float[]")))))
+        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.to([-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0], java.type("float[]")))))
+        .setTexCoord((new autoclass.TextureCoordinate()).setPoint(new autoclass.MFVec2f(java.to([-1.0,2.0,-1.0,-1.0,2.0,2.0,2.0,-1.0], java.type("float[]"))))))));
   },
   // end of initialize() method
 

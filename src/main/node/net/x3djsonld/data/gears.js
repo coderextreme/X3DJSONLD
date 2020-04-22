@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -365,26 +373,26 @@ gears.prototype = {
 	.append(new autoclass.MFVec3f(java.to([0.517043,-0.855959,0.0,0.856432,0.51626,0.0,0.856432,0.51626,0.0,0.848803,0.528709,0.0,0.848803,0.528709,0.0,0.842595,0.538547,0.0,0.842595,0.538547,0.0,-0.527933,0.849286,0.0,0.767305,-0.641282,0.0,0.847815,-0.530293,0.0], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([0.898662,-0.438642,0.0,0.934775,-0.355241,0.0,0.960701,-0.277585,0.0,0.760406,0.649448,0.0,0.760406,0.649448,0.0,-0.123881,0.992297,0.0,-0.204637,0.978838,0.0,-0.29266,0.956217,0.0,-0.391136,0.920333,0.0,-0.513354,0.858177,0.0], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([0.663728,0.747974,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.882225,0.470828,0.0,0.882225,0.470828,0.0,-0.882225,0.470828,0.0], java.type("float[]"))));
-  this.x3dModel = new autoclass.X3D().setProfile("Interchange").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("gears.x3d"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/template.json"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Template for an Indexed Face Set"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("created").setContent("4 April 2017"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"))
-    .addMeta(new autoclass.meta().setName("license").setContent("../license.html"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("30 April 2017"))
-    .addMeta(new autoclass.meta().setName("translated").setContent("30 April 2017"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.NavigationInfo().setType(new autoclass.MFString("\"EXAMINE\" \"FLY\" \"WALK\" \"ANY\"")))
-    .addChild(new autoclass.Group()
-      .addChild(new autoclass.Shape().setBboxCenter(-4.868185499999999,25.359741,0.0).setBboxSize(77.23637099999999,100.502162,6.0)
-        .setGeometry(new autoclass.IndexedFaceSet("OpenSCAD_Model").setDEF("OpenSCAD_Model").setNormalPerVertex(false).setNormalIndex(this.OpenSCAD_Model_5_13_normalIndex).setColorIndex(this.OpenSCAD_Model_5_13_colorIndex).setCoordIndex(this.OpenSCAD_Model_5_13_coordIndex)
-          .setCoord(new autoclass.Coordinate().setPoint(this.Coordinate_6_13_point))
-          .setNormal(new autoclass.Normal().setVector(this.Normal_6_14_vector))
-          .setColor(new autoclass.Color().setColor(new autoclass.MFColor(java.to([0.0,1.0,0.0], java.type("float[]")))))))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("gears.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/template.json"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Template for an Indexed Face Set"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("4 April 2017"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("30 April 2017"))
+    .addMeta((new autoclass.meta()).setName("translated").setContent("30 April 2017"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\" \"FLY\" \"WALK\" \"ANY\"")))
+    .addChild((new autoclass.Group())
+      .addChild((new autoclass.Shape()).setBboxCenter(-4.868185499999999,25.359741,0.0).setBboxSize(77.23637099999999,100.502162,6.0)
+        .setGeometry((new autoclass.IndexedFaceSet("OpenSCAD_Model")).setDEF("OpenSCAD_Model").setNormalPerVertex(false).setNormalIndex(this.OpenSCAD_Model_5_13_normalIndex).setColorIndex(this.OpenSCAD_Model_5_13_colorIndex).setCoordIndex(this.OpenSCAD_Model_5_13_coordIndex)
+          .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_6_13_point))
+          .setNormal((new autoclass.Normal()).setVector(this.Normal_6_14_vector))
+          .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.to([0.0,1.0,0.0], java.type("float[]")))))))));
   },
   // end of initialize() method
 

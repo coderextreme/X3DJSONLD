@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -71,25 +79,25 @@ ExtrusionHeart.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.0")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("ExtrusionHeart.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Simple extrusion of a Valentine heart."))
-    .addMeta(new autoclass.meta().setName("creator").setContent("Class participants in course Introduction to VRML/X3D."))
-    .addMeta(new autoclass.meta().setName("created").setContent("14 February 2001"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("27 November 2015"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new autoclass.meta().setName("license").setContent("../license.html")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Viewpoint().setDescription("Extrusion Heart").setPosition(0.0,-4.0,0.0).setOrientation(1.0,0.0,0.0,1.57))
-    .addChild(new autoclass.Transform().setTranslation(0.0,-0.5,0.0)
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Extrusion().setSpine(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.5,0.0,0.0,0.9,0.0,0.0,1.0,0.0], java.type("float[]")))).setCrossSection(new autoclass.MFVec2f() /* splitting up long array to improve readability */
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("ExtrusionHeart.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Simple extrusion of a Valentine heart."))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Class participants in course Introduction to VRML/X3D."))
+    .addMeta((new autoclass.meta()).setName("created").setContent("14 February 2001"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("27 November 2015"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Viewpoint()).setDescription("Extrusion Heart").setPosition(0.0,-4.0,0.0).setOrientation(1.0,0.0,0.0,1.57))
+    .addChild((new autoclass.Transform()).setTranslation(0.0,-0.5,0.0)
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.5,0.0,0.0,0.9,0.0,0.0,1.0,0.0], java.type("float[]")))).setCrossSection(new autoclass.MFVec2f() /* splitting up long array to improve readability */
 .append(new autoclass.MFVec2f(java.to([0.0,0.8,0.2,1.0,0.7,0.95,1.0,0.5,0.8,0.0,0.5,-0.3,0.0,-0.7,-0.5,-0.3,-0.8,0.0,-1.0,0.5], java.type("float[]"))))
 .append(new autoclass.MFVec2f(java.to([-0.7,0.95,-0.2,1.0,0.0,0.8], java.type("float[]"))))).setScale(new autoclass.MFVec2f(java.to([0.01,0.01,0.8,0.8,1.0,1.0,0.8,0.8,0.01,0.01], java.type("float[]")))).setCreaseAngle(3.14159).setSolid(false))
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setDiffuseColor(0.8,0.3,0.3))))));
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setDiffuseColor(0.8,0.3,0.3))))));
   },
   // end of initialize() method
 

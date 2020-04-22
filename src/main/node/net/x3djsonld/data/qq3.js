@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -81,45 +89,45 @@ qq3.prototype = {
 	this.Extrusion_8_17_crossSection = new autoclass.MFVec2f() /* splitting up long array to improve readability */
 	.append(new autoclass.MFVec2f(java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], java.type("float[]"))))
 	.append(new autoclass.MFVec2f(java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], java.type("float[]"))));
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("qq3.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("translator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("created").setContent("11 Jan 2015"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("05 May 2017"))
-    .addMeta(new autoclass.meta().setName("description").setContent("12 extrusions to test prototype expander"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/x3d/qq3.x3d"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("manual")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.ProtoDeclare().setName("Process")
-      .setProtoBody(new autoclass.ProtoBody()
-        .addChild(new autoclass.Group()
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("qq3.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("translator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("11 Jan 2015"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("05 May 2017"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("12 extrusions to test prototype expander"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/x3d/qq3.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("manual")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.ProtoDeclare()).setName("Process")
+      .setProtoBody((new autoclass.ProtoBody())
+        .addChild((new autoclass.Group())
           .addComments(" left ")
-          .addChild(new autoclass.Transform().setScale(0.5,0.5,0.5)
-            .addChild(new autoclass.Shape("ShapeLeftDown")
-              .setAppearance(new autoclass.Appearance()
-                .setMaterial(new autoclass.Material().setDiffuseColor(0.7,1.0,0.0)))
-              .setGeometry(new autoclass.Extrusion().setSpine(new autoclass.MFVec3f(java.to([-2.5,0.0,0.0,-1.5,0.0,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection))))
+          .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
+            .addChild((new autoclass.Shape("ShapeLeftDown"))
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(0.7,1.0,0.0)))
+              .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.to([-2.5,0.0,0.0,-1.5,0.0,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection))))
           .addComments(" right ")
-          .addChild(new autoclass.Transform().setScale(0.5,0.5,0.5)
-            .addChild(new autoclass.Shape("ShapeUpRight")
-              .setAppearance(new autoclass.Appearance()
-                .setMaterial(new autoclass.Material().setDiffuseColor(0.0,0.7,1.0)))
-              .setGeometry(new autoclass.Extrusion().setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new autoclass.MFVec3f(java.to([1.5,0.0,0.0,2.5,0.0,0.0], java.type("float[]")))))))
+          .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
+            .addChild((new autoclass.Shape("ShapeUpRight"))
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,0.7,1.0)))
+              .setGeometry((new autoclass.Extrusion()).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new autoclass.MFVec3f(java.to([1.5,0.0,0.0,2.5,0.0,0.0], java.type("float[]")))))))
           .addComments(" up ")
-          .addChild(new autoclass.Transform().setScale(0.5,0.5,0.5)
-            .addChild(new autoclass.Shape().setUSE("ShapeUpRight")))
+          .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
+            .addChild((new autoclass.Shape()).setUSE("ShapeUpRight")))
           .addComments(" down ")
-          .addChild(new autoclass.Transform().setScale(0.5,0.5,0.5)
-            .addChild(new autoclass.Shape().setUSE("ShapeLeftDown"))))))
-    .addChild(new autoclass.Viewpoint().setDescription("Process pipes").setPosition(0.0,5.0,12.0).setOrientation(1.0,0.0,0.0,-0.4))
-    .addChild(new autoclass.Transform().setTranslation(0.0,-2.5,0.0)
-      .addChild(new autoclass.ProtoInstance().setName("Process")))
-    .addChild(new autoclass.Transform()
-      .addChild(new autoclass.ProtoInstance().setName("Process")))
-    .addChild(new autoclass.Transform().setTranslation(0.0,2.5,0.0)
-      .addChild(new autoclass.ProtoInstance().setName("Process"))));
+          .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
+            .addChild((new autoclass.Shape()).setUSE("ShapeLeftDown"))))))
+    .addChild((new autoclass.Viewpoint()).setDescription("Process pipes").setPosition(0.0,5.0,12.0).setOrientation(1.0,0.0,0.0,-0.4))
+    .addChild((new autoclass.Transform()).setTranslation(0.0,-2.5,0.0)
+      .addChild((new autoclass.ProtoInstance()).setName("Process")))
+    .addChild((new autoclass.Transform())
+      .addChild((new autoclass.ProtoInstance()).setName("Process")))
+    .addChild((new autoclass.Transform()).setTranslation(0.0,2.5,0.0)
+      .addChild((new autoclass.ProtoInstance()).setName("Process"))));
   },
   // end of initialize() method
 

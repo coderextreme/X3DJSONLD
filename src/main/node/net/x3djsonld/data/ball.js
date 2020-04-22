@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -59,33 +67,33 @@ ball.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addComponent(new autoclass.component().setName("EnvironmentalEffects").setLevel(1))
-    .addComponent(new autoclass.component().setName("EnvironmentalEffects").setLevel(3))
-    .addComponent(new autoclass.component().setName("Shaders").setLevel(1))
-    .addComponent(new autoclass.component().setName("CubeMapTexturing").setLevel(1))
-    .addMeta(new autoclass.meta().setName("title").setContent("ball.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/ball.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("a prismatic sphere")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.NavigationInfo().setType(new autoclass.MFString("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\"")))
-    .addChild(new autoclass.Viewpoint().setDescription("Tour Views"))
-    .addChild(new autoclass.Background().setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
-    .addChild(new autoclass.Transform()
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Sphere())
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setSpecularColor(0.5,0.5,0.5).setDiffuseColor(0.7,0.7,0.7))
-          .setTexture(new autoclass.ComposedCubeMapTexture("texture")
-            .setBack(new autoclass.ImageTexture().setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
-            .setBottom(new autoclass.ImageTexture().setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
-            .setFront(new autoclass.ImageTexture().setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
-            .setLeft(new autoclass.ImageTexture().setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
-            .setRight(new autoclass.ImageTexture().setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
-            .setTop(new autoclass.ImageTexture().setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(1))
+    .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(3))
+    .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
+    .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
+    .addMeta((new autoclass.meta()).setName("title").setContent("ball.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/ball.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("a prismatic sphere")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\"")))
+    .addChild((new autoclass.Viewpoint()).setDescription("Tour Views"))
+    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
+    .addChild((new autoclass.Transform())
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Sphere()))
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setSpecularColor(0.5,0.5,0.5).setDiffuseColor(0.7,0.7,0.7))
+          .setTexture((new autoclass.ComposedCubeMapTexture("texture"))
+            .setBack((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
+            .setBottom((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
+            .setFront((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
+            .setLeft((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
+            .setRight((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
+            .setTop((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
           .addComments(java.to(["",
 "                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>",
 "			<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>",
@@ -131,24 +139,24 @@ ball.prototype = {
 "		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
 "                </ComposedShader>"], java.type("java.lang.String[]")))
           .addComments(java.to([""], java.type("java.lang.String[]")))
-          .addShaders(new autoclass.ComposedShader().setLanguage("GLSL")
-            .addField(new autoclass.field().setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
-            .addField(new autoclass.field().setAccessType("inputOutput").setName("cube").setType("SFNode")
-              .addChild(new autoclass.ComposedCubeMapTexture().setUSE("texture")))
-            .addField(new autoclass.field().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
-            .addField(new autoclass.field().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
-            .addField(new autoclass.field().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
-            .addParts(new autoclass.ShaderPart().setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs\"")))
-            .addParts(new autoclass.ShaderPart("common").setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
-          .addShaders(new autoclass.ComposedShader().setLanguage("GLSL")
-            .addField(new autoclass.field().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
-            .addField(new autoclass.field().setAccessType("initializeOnly").setName("cube").setType("SFNode")
-              .addChild(new autoclass.ComposedCubeMapTexture().setUSE("texture")))
-            .addField(new autoclass.field().setAccessType("initializeOnly").setName("bias").setType("SFFloat").setValue("0.5"))
-            .addField(new autoclass.field().setAccessType("initializeOnly").setName("scale").setType("SFFloat").setValue("0.5"))
-            .addField(new autoclass.field().setAccessType("initializeOnly").setName("power").setType("SFFloat").setValue("2"))
-            .addParts(new autoclass.ShaderPart().setUrl(new autoclass.MFString("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
-            .addParts(new autoclass.ShaderPart().setUSE("common")))))));
+          .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
+            .addField((new autoclass.field()).setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
+            .addField((new autoclass.field()).setAccessType("inputOutput").setName("cube").setType("SFNode")
+              .addChild((new autoclass.ComposedCubeMapTexture()).setUSE("texture")))
+            .addField((new autoclass.field()).setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
+            .addField((new autoclass.field()).setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
+            .addField((new autoclass.field()).setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
+            .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x3dom.vs\"")))
+            .addParts((new autoclass.ShaderPart("common")).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\""))))
+          .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
+            .addField((new autoclass.field()).setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
+            .addField((new autoclass.field()).setAccessType("initializeOnly").setName("cube").setType("SFNode")
+              .addChild((new autoclass.ComposedCubeMapTexture()).setUSE("texture")))
+            .addField((new autoclass.field()).setAccessType("initializeOnly").setName("bias").setType("SFFloat").setValue("0.5"))
+            .addField((new autoclass.field()).setAccessType("initializeOnly").setName("scale").setType("SFFloat").setValue("0.5"))
+            .addField((new autoclass.field()).setAccessType("initializeOnly").setName("power").setType("SFFloat").setValue("2"))
+            .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
+            .addParts((new autoclass.ShaderPart()).setUSE("common")))))));
   },
   // end of initialize() method
 

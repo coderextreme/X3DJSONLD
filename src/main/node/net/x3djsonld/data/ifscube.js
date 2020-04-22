@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -59,20 +67,20 @@ ifscube.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Interchange").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("ifscube.x3d"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Template for an Indexed Face Set"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("created").setContent("4 April 2017")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Group()
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.IndexedFaceSet("IndexedFaceSet").setDEF("IndexedFaceSet").setCreaseAngle(1.57).setNormalPerVertex(false).setNormalIndex(java.to([0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1], java.type("int[]"))).setColorIndex(java.to([0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1], java.type("int[]"))).setCoordIndex(java.to([0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1], java.type("int[]")))
-          .setCoord(new autoclass.Coordinate().setPoint(new autoclass.MFVec3f(java.to([0.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0], java.type("float[]")))))
-          .setNormal(new autoclass.Normal().setVector(new autoclass.MFVec3f(java.to([1.0,0.0,0.0,-1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,0.0,1.0], java.type("float[]")))))
-          .setColor(new autoclass.Color().setColor(new autoclass.MFColor(java.to([0.0,1.0,0.0], java.type("float[]")))))))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("ifscube.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Template for an Indexed Face Set"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("4 April 2017")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Group())
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.IndexedFaceSet("IndexedFaceSet")).setDEF("IndexedFaceSet").setCreaseAngle(1.57).setNormalPerVertex(false).setNormalIndex(java.to([0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1], java.type("int[]"))).setColorIndex(java.to([0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1], java.type("int[]"))).setCoordIndex(java.to([0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1], java.type("int[]")))
+          .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.to([0.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0], java.type("float[]")))))
+          .setNormal((new autoclass.Normal()).setVector(new autoclass.MFVec3f(java.to([1.0,0.0,0.0,-1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,0.0,1.0], java.type("float[]")))))
+          .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.to([0.0,1.0,0.0], java.type("float[]")))))))));
   },
   // end of initialize() method
 

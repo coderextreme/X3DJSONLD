@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -191,34 +199,34 @@ flipp.prototype = {
 	.append(new autoclass.MFVec3f(java.to([223.047,-18.8189,5.59,233.698,-7.2368,11.94,-109.174,-70.6239,71.37,-107.939,-68.9429,73.66,-83.1762,-64.8699,64.52,-60.2597,-77.5359,77.22,-96.8564,-73.4239,80.01,-75.7239,-77.7709,80.77,-255.032,-76.7379,7.87,-271.253,-78.5029,4.57], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([270.88,41.0393,63.25,258.132,14.5177,73.15,277.433,48.8188,86.61,237.134,15.1495,16.51,249.887,26.3978,9.65,256.63,35.8549,5.84,225.737,6.7142,24.13,-275.222,-69.4079,3.81,-275.351,-74.7999,4.83,-96.7464,-75.3099,78.23], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([-75.6284,-78.6279,79.25,241.616,4.1116,52.32,244.946,1.2884,52.32,260.278,13.1461,73.15,263.392,37.7359,21.59], java.type("float[]"))));
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("generator").setContent("hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html"))
-    .addMeta(new autoclass.meta().setName("title").setContent("flipp.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("flipper flopping around"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("http://www.x3dom.org/x3dom/test/functional/flipp.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("Yvonne Jung, metadata by John Carlson"))
-    .addMeta(new autoclass.meta().setName("translated").setContent("13 March 2016"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Viewpoint("cam0").setDescription("cam0 description").setPosition(0.0,0.0,800.0))
-    .addChild(new autoclass.Viewpoint("cam1").setDescription("cam1 description").setPosition(0.0,0.0,2000.0))
-    .addChild(new autoclass.Viewpoint("cam2").setDescription("cam2 description").setPosition(0.0,200.0,1000.0))
-    .addChild(new autoclass.Background().setGroundColor(new autoclass.MFColor(java.to([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95], java.type("float[]")))).setSkyColor(new autoclass.MFColor(java.to([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95], java.type("float[]")))).setGroundAngle(java.to([0.9,1.5,1.57], java.type("float[]"))).setSkyAngle(java.to([0.9,1.5,1.57], java.type("float[]"))))
-    .addChild(new autoclass.NavigationInfo("user01").setSpeed(50))
-    .addChild(new autoclass.Fog())
-    .addChild(new autoclass.Transform("trans").setRotation(1.0,0.0,0.0,0.78)
-      .addChild(new autoclass.Shape()
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material("mat").setDiffuseColor(0.337255,0.4,0.788235).setAmbientIntensity(0.508497).setSpecularColor(1.0,1.0,1.0)))
-        .setGeometry(new autoclass.IndexedFaceSet().setCreaseAngle(2).setCoordIndex(this.IndexedFaceSet_5_17_coordIndex)
-          .setCoord(new autoclass.Coordinate("pointList").setPoint(this.pointList_6_17_point)))))
-    .addChild(new autoclass.TimeSensor("ts").setCycleInterval(2).setLoop(true))
-    .addChild(new autoclass.ScalarInterpolator("si").setKey(java.to([0.0,0.5,1.0], java.type("float[]"))).setKeyValue(java.to([0.0,1.0,0.0], java.type("float[]"))))
-    .addChild(new autoclass.CoordinateInterpolator("ci").setKeyValue(this.ci_3_23_keyValue).setKey(java.to([0.0,0.5,1.0], java.type("float[]"))))
-    .addChild(new autoclass.ROUTE().setFromNode("ci").setFromField("value_changed").setToNode("pointList").setToField("set_point"))
-    .addChild(new autoclass.ROUTE().setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
-    .addChild(new autoclass.ROUTE().setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("generator").setContent("hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("flipp.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("flipper flopping around"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.x3dom.org/x3dom/test/functional/flipp.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Yvonne Jung, metadata by John Carlson"))
+    .addMeta((new autoclass.meta()).setName("translated").setContent("13 March 2016"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Viewpoint("cam0")).setDescription("cam0 description").setPosition(0.0,0.0,800.0))
+    .addChild((new autoclass.Viewpoint("cam1")).setDescription("cam1 description").setPosition(0.0,0.0,2000.0))
+    .addChild((new autoclass.Viewpoint("cam2")).setDescription("cam2 description").setPosition(0.0,200.0,1000.0))
+    .addChild((new autoclass.Background()).setGroundColor(new autoclass.MFColor(java.to([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95], java.type("float[]")))).setSkyColor(new autoclass.MFColor(java.to([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95], java.type("float[]")))).setGroundAngle(java.to([0.9,1.5,1.57], java.type("float[]"))).setSkyAngle(java.to([0.9,1.5,1.57], java.type("float[]"))))
+    .addChild((new autoclass.NavigationInfo("user01")).setSpeed(50))
+    .addChild((new autoclass.Fog()))
+    .addChild((new autoclass.Transform("trans")).setRotation(1.0,0.0,0.0,0.78)
+      .addChild((new autoclass.Shape())
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material("mat")).setDiffuseColor(0.337255,0.4,0.788235).setAmbientIntensity(0.508497).setSpecularColor(1.0,1.0,1.0)))
+        .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(2).setCoordIndex(this.IndexedFaceSet_5_17_coordIndex)
+          .setCoord((new autoclass.Coordinate("pointList")).setPoint(this.pointList_6_17_point)))))
+    .addChild((new autoclass.TimeSensor("ts")).setCycleInterval(2).setLoop(true))
+    .addChild((new autoclass.ScalarInterpolator("si")).setKey(java.to([0.0,0.5,1.0], java.type("float[]"))).setKeyValue(java.to([0.0,1.0,0.0], java.type("float[]"))))
+    .addChild((new autoclass.CoordinateInterpolator("ci")).setKeyValue(this.ci_3_23_keyValue).setKey(java.to([0.0,0.5,1.0], java.type("float[]"))))
+    .addChild((new autoclass.ROUTE()).setFromNode("ci").setFromField("value_changed").setToNode("pointList").setToField("set_point"))
+    .addChild((new autoclass.ROUTE()).setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")));
   },
   // end of initialize() method
 

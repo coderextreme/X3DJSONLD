@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -59,24 +67,24 @@ bubble.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("bubble.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Tour around a prismatic sphere"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubble.x3d")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.NavigationInfo().setType(new autoclass.MFString("\"EXAMINE\"")))
-    .addChild(new autoclass.Viewpoint().setDescription("Bubble in action").setPosition(0.0,0.0,4.0).setOrientation(1.0,0.0,0.0,0.0))
-    .addChild(new autoclass.ProtoDeclare().setName("Bubble")
-      .setProtoBody(new autoclass.ProtoBody()
-        .addChild(new autoclass.Transform("transform")
-          .addChild(new autoclass.Shape()
-            .setGeometry(new autoclass.Sphere().setRadius(0.25))
-            .setAppearance(new autoclass.Appearance()
-              .setMaterial(new autoclass.Material().setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
-          .addChild(new autoclass.Script("bounce").setSourceCode("\n" + 
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("bubble.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Tour around a prismatic sphere"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubble.x3d")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\"")))
+    .addChild((new autoclass.Viewpoint()).setDescription("Bubble in action").setPosition(0.0,0.0,4.0).setOrientation(1.0,0.0,0.0,0.0))
+    .addChild((new autoclass.ProtoDeclare()).setName("Bubble")
+      .setProtoBody((new autoclass.ProtoBody())
+        .addChild((new autoclass.Transform("transform"))
+          .addChild((new autoclass.Shape())
+            .setGeometry((new autoclass.Sphere()).setRadius(0.25))
+            .setAppearance((new autoclass.Appearance())
+              .setMaterial((new autoclass.Material()).setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
+          .addChild((new autoclass.Script("bounce")).setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);" + "\n" + 
@@ -122,16 +130,16 @@ bubble.prototype = {
 "		initialize();" + "\n" + 
 "	}" + "\n" + 
 "}" + "\n")
-            .addField(new autoclass.field().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-            .addField(new autoclass.field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-            .addField(new autoclass.field().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-            .addField(new autoclass.field().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-            .addField(new autoclass.field().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
-          .addChild(new autoclass.TimeSensor("bubbleClock").setCycleInterval(10).setLoop(true))
-          .addChild(new autoclass.ROUTE().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-          .addChild(new autoclass.ROUTE().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
-          .addChild(new autoclass.ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
-    .addChild(new autoclass.ProtoInstance("bubbleA", "Bubble").setDEF("bubbleA").setName("Bubble")));
+            .addField((new autoclass.field()).setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
+            .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+            .addField((new autoclass.field()).setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
+            .addField((new autoclass.field()).setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
+            .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+          .addChild((new autoclass.TimeSensor("bubbleClock")).setCycleInterval(10).setLoop(true))
+          .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
+          .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
+          .addChild((new autoclass.ROUTE()).setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
+    .addChild((new autoclass.ProtoInstance("bubbleA", "Bubble")).setDEF("bubbleA").setName("Bubble")));
   },
   // end of initialize() method
 

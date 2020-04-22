@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -168,22 +176,22 @@ cube.prototype = {
 	.append(new autoclass.MFVec3f(java.to([0.6700680215655612,-0.6940546711731552,-0.2632431573620444,0.2953926420446791,-0.2953926420446791,-0.9085628068833371,-0.8676362688391348,0.034842086386452815,-0.4959771506946099,0.5570782570787152,0.8146696720733969,-0.16117425630033136,0.6667880112635076,0.6527198421662564,0.35965338268632147,0.8442514176540135,0.4826782402209914,0.2329404649397685,0.6414069258802624,0.759794006537652,0.10634953249682853,0.8075469004611378,0.573479817452956,0.13780022688563842,0.7760915319412962,0.5861728738015592,0.23255815631414228,0.7703933914286524,0.6104690541620894,0.18390637931704049], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([-0.836297311836257,-0.4958046489450144,-0.23406100978155522,-0.8703089248590792,-0.477182467371814,-0.12189859779169422,-0.9028365553976487,-0.34741612430980395,-0.2533538845316235,-0.9006396980824202,-0.3564490762068009,-0.24858034980530005,-0.9295882152093777,-0.22433501922124024,-0.29247145039276795,-0.9227691426188362,-0.2502301930898054,-0.293056240160036,-0.9193681350585208,-0.23302420941452298,-0.3169573316169767,-0.9367596287861517,-0.10852703016424818,-0.3327210266877641,0.5023474270536862,-0.8166238961956499,-0.28420498710398767,0.592905566351132,-0.7816542764434401,-0.1935964398110805], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([0.5945762068827909,-0.7694718137713014,-0.23322148704691967,0.572001466069713,-0.7808318146019156,-0.2512289794581398,0.41667300165890303,0.2516049232341041,-0.8735436865394428,0.41667300165890303,0.2516049232341041,0.8735436865394428], java.type("float[]"))));
-  this.x3dModel = new autoclass.X3D().setProfile("Interchange").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("cube.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Template for an Indexed Face Set"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("created").setContent("4 April 2017"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-    .addMeta(new autoclass.meta().setName("license").setContent("../license.html"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/cube.x3d")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Group()
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.IndexedFaceSet("IndexedFaceSet").setDEF("IndexedFaceSet").setNormalPerVertex(false).setNormalIndex(this.IndexedFaceSet_5_9_normalIndex).setColorIndex(this.IndexedFaceSet_5_9_colorIndex).setCoordIndex(this.IndexedFaceSet_5_9_coordIndex)
-          .setCoord(new autoclass.Coordinate().setPoint(this.Coordinate_6_9_point))
-          .setNormal(new autoclass.Normal().setVector(this.Normal_6_10_vector))
-          .setColor(new autoclass.Color().setColor(new autoclass.MFColor(java.to([0.0,1.0,0.0], java.type("float[]")))))))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("cube.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Template for an Indexed Face Set"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("4 April 2017"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/cube.x3d")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Group())
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.IndexedFaceSet("IndexedFaceSet")).setDEF("IndexedFaceSet").setNormalPerVertex(false).setNormalIndex(this.IndexedFaceSet_5_9_normalIndex).setColorIndex(this.IndexedFaceSet_5_9_colorIndex).setCoordIndex(this.IndexedFaceSet_5_9_coordIndex)
+          .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_6_9_point))
+          .setNormal((new autoclass.Normal()).setVector(this.Normal_6_10_vector))
+          .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.to([0.0,1.0,0.0], java.type("float[]")))))))));
   },
   // end of initialize() method
 

@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -101,25 +109,25 @@ ArchHalf.prototype = {
 	.append(new autoclass.MFVec3f(java.to([2.5,-1.0,3.0,2.0,-1.0,3.0,-2.0,-1.0,0.0,-2.5,-1.0,0.0,-2.5,2.5,0.0,2.5,2.5,0.0,2.5,-1.0,0.0,2.0,-1.0,0.0,2.5,0.0,3.0,2.5,0.0,0.0], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([-2.5,0.0,3.0,-2.5,0.0,0.0,-2.5,2.0,3.0,-2.0,2.0,3.0,-2.0,2.0,0.0,-2.5,2.0,0.0,-2.0,2.5,3.0,-2.0,2.5,0.0,0.0,2.5,3.0,0.0,2.5,0.0], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([2.0,2.0,3.0,2.5,2.0,3.0,2.5,2.0,0.0,2.0,2.0,0.0,2.0,2.5,3.0,2.0,2.5,0.0], java.type("float[]"))));
-  this.x3dModel = new autoclass.X3D().setProfile("Interchange").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("ArchHalf.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."))
-    .addMeta(new autoclass.meta().setName("creator").setContent("Michele Foti, Don Brutzman"))
-    .addMeta(new autoclass.meta().setName("created").setContent("15 December 2014"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("16 February 2016"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("ArchModelingDiagrams.pdf"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Arch"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new autoclass.meta().setName("license").setContent("../license.html")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Shape("Arch")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("ArchHalf.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Michele Foti, Don Brutzman"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("15 December 2014"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("16 February 2016"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("ArchModelingDiagrams.pdf"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://en.wikipedia.org/wiki/Arch"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Shape("Arch"))
       .addComments(" note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly ")
-      .setGeometry(new autoclass.IndexedFaceSet("ArchIndex").setDEF("ArchIndex").setConvex(false).setSolid(false).setCoordIndex(this.ArchIndex_4_12_coordIndex)
-        .setCoord(new autoclass.Coordinate("ArchChord").setPoint(this.ArchChord_5_12_point)))
-      .setAppearance(new autoclass.Appearance()
-        .setMaterial(new autoclass.Material("MaterialNode").setDiffuseColor(1.0,0.75,0.25)))));
+      .setGeometry((new autoclass.IndexedFaceSet("ArchIndex")).setDEF("ArchIndex").setConvex(false).setSolid(false).setCoordIndex(this.ArchIndex_4_12_coordIndex)
+        .setCoord((new autoclass.Coordinate("ArchChord")).setPoint(this.ArchChord_5_12_point)))
+      .setAppearance((new autoclass.Appearance())
+        .setMaterial((new autoclass.Material("MaterialNode")).setDiffuseColor(1.0,0.75,0.25)))));
   },
   // end of initialize() method
 

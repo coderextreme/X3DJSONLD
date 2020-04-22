@@ -1,9 +1,17 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js. </p>
- <p> Related links: <a href="../../../Buildings/ArchPrototype.java">ArchPrototype.java</a> source, <a href="../../../Buildings/ArchPrototypeIndex.html" target="_top">ArchPrototype catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../Buildings/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../Buildings/ArchPrototypeIndex.html" target="_top">ArchPrototype catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -70,7 +78,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author Michele Foti, Don Brutzman
  */
 
-function ArchPrototype
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -79,7 +87,7 @@ function ArchPrototype
     this.initialize();
     return this;
   }
-ArchPrototype.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -107,108 +115,108 @@ ArchPrototype.prototype = {
 
 	/** Large attribute array: field appinfo field, scene-graph level=6, element #49, 29 total values */
 	this.field_computedScale_6_49_appinfo = new autoclass.SFString("computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth");
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("ArchPrototype.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js."))
-    .addMeta(new autoclass.meta().setName("description").setContent("Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information."))
-    .addMeta(new autoclass.meta().setName("creator").setContent("Michele Foti, Don Brutzman"))
-    .addMeta(new autoclass.meta().setName("created").setContent("15 December 2014"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("27 November 2015"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("ArchModelingDiagrams.pdf"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Arch"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new autoclass.meta().setName("license").setContent("../license.html")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.ProtoDeclare().setName("ArchPrototype").setAppinfo(this.ProtoDeclare_ArchPrototype_3_13_appinfo)
-      .setProtoInterface(new autoclass.ProtoInterface()
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("ArchPrototype.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js."))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information."))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Michele Foti, Don Brutzman"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("15 December 2014"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("27 November 2015"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("ArchModelingDiagrams.pdf"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://en.wikipedia.org/wiki/Arch"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.ProtoDeclare()).setName("ArchPrototype").setAppinfo(this.ProtoDeclare_ArchPrototype_3_13_appinfo)
+      .setProtoInterface((new autoclass.ProtoInterface())
         .addComments(" COLOR OF ARCH ")
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("diffuseColor").setType("SFColor").setValue("0.2 0.8 0.8").setAppinfo("color of arch"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("emissiveColor").setType("SFColor").setValue("0.2 0.8 0.8").setAppinfo("color of arch"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("diffuseColor").setType("SFColor").setValue("0.2 0.8 0.8").setAppinfo("color of arch"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("emissiveColor").setType("SFColor").setValue("0.2 0.8 0.8").setAppinfo("color of arch"))
         .addComments(" INPUT PARAMETERS ")
         .addComments(" General parameters: measures in meters ")
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("clearSpanWidth").setType("SFFloat").setValue("4").setAppinfo("clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference"))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("riseHeight").setType("SFFloat").setValue("2").setAppinfo("riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference"))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("depth").setType("SFFloat").setValue("3").setAppinfo("depth"))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("topAbutmentHeight").setType("SFFloat").setValue("0.5").setAppinfo("topAbutmentHeight:topAbutmentHeight=0 means no topAbutment"))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("pierWidth").setType("SFFloat").setValue("0.5").setAppinfo("pierWidth:pierWidtht=0 means no pierWidth"))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("pierHeight").setType("SFFloat").setValue("1").setAppinfo("pierHeight: pierHeight=0 means no pierHeight"))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("clearSpanWidth").setType("SFFloat").setValue("4").setAppinfo("clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference"))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("riseHeight").setType("SFFloat").setValue("2").setAppinfo("riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference"))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("depth").setType("SFFloat").setValue("3").setAppinfo("depth"))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("topAbutmentHeight").setType("SFFloat").setValue("0.5").setAppinfo("topAbutmentHeight:topAbutmentHeight=0 means no topAbutment"))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("pierWidth").setType("SFFloat").setValue("0.5").setAppinfo("pierWidth:pierWidtht=0 means no pierWidth"))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("pierHeight").setType("SFFloat").setValue("1").setAppinfo("pierHeight: pierHeight=0 means no pierHeight"))
         .addComments(" Parameters to create to create shapes related to arch: put true to apply ")
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("archHalf").setType("SFBool").setValue("false").setAppinfo(this.field_archHalf_5_21_appinfo))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("archHalfExtensionWidth").setType("SFFloat").setValue("0").setAppinfo(this.field_archHalfExtensionWidth_5_22_appinfo))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("onlyIntrados").setType("SFBool").setValue("false").setAppinfo(this.field_onlyIntrados_5_23_appinfo))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("archFilled").setType("SFBool").setValue("false").setAppinfo(this.field_archFilled_5_24_appinfo))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("archHalfFilled").setType("SFBool").setValue("false").setAppinfo(this.field_archHalfFilled_5_25_appinfo))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("lintel").setType("SFBool").setValue("false").setAppinfo(this.field_lintel_5_26_appinfo)))
-      .setProtoBody(new autoclass.ProtoBody()
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("archHalf").setType("SFBool").setValue("false").setAppinfo(this.field_archHalf_5_21_appinfo))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("archHalfExtensionWidth").setType("SFFloat").setValue("0").setAppinfo(this.field_archHalfExtensionWidth_5_22_appinfo))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("onlyIntrados").setType("SFBool").setValue("false").setAppinfo(this.field_onlyIntrados_5_23_appinfo))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("archFilled").setType("SFBool").setValue("false").setAppinfo(this.field_archFilled_5_24_appinfo))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("archHalfFilled").setType("SFBool").setValue("false").setAppinfo(this.field_archHalfFilled_5_25_appinfo))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("lintel").setType("SFBool").setValue("false").setAppinfo(this.field_lintel_5_26_appinfo)))
+      .setProtoBody((new autoclass.ProtoBody())
         .addComments(" First node determines node type of this prototype ")
         .addComments(" IndexedFaceset creates arch ")
-        .addChild(new autoclass.Transform("ArchTransform")
-          .addChild(new autoclass.Shape("Arch")
+        .addChild((new autoclass.Transform("ArchTransform"))
+          .addChild((new autoclass.Shape("Arch"))
             .addComments(" note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly ")
-            .setGeometry(new autoclass.IndexedFaceSet("ArchIndex").setDEF("ArchIndex").setConvex(false).setSolid(false)
-              .setCoord(new autoclass.Coordinate("ArchChord")))
-            .setAppearance(new autoclass.Appearance()
-              .setMaterial(new autoclass.Material("MaterialNode")
-                .setIS(new autoclass.IS()
-                  .addConnect(new autoclass.connect().setNodeField("emissiveColor").setProtoField("emissiveColor"))
-                  .addConnect(new autoclass.connect().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
+            .setGeometry((new autoclass.IndexedFaceSet("ArchIndex")).setDEF("ArchIndex").setConvex(false).setSolid(false)
+              .setCoord((new autoclass.Coordinate("ArchChord"))))
+            .setAppearance((new autoclass.Appearance())
+              .setMaterial((new autoclass.Material("MaterialNode"))
+                .setIS((new autoclass.IS())
+                  .addConnect((new autoclass.connect()).setNodeField("emissiveColor").setProtoField("emissiveColor"))
+                  .addConnect((new autoclass.connect()).setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
         .addComments(" This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs ")
-        .addChild(new autoclass.Script("ArchPrototypeScript").setUrl(new autoclass.MFString("\"../node/ArchPrototypeScript.js\" \"https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js\""))
+        .addChild((new autoclass.Script("ArchPrototypeScript")).setUrl(new autoclass.MFString("\"../node/ArchPrototypeScript.js\" \"https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js\""))
           .addComments(" INPUT PARAMETERS ")
           .addComments(" General parameters ")
           .addComments(" Parameters to create to create shapes related to arch: put true to apply ")
           .addComments(" OUTPUT PARAMETERS ")
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("clearSpanWidth").setType("SFFloat").setAppinfo("user or default input for clearSpanWidth parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("riseHeight").setType("SFFloat").setAppinfo("user or default input for riseHeight parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("depth").setType("SFFloat").setAppinfo("user or default input for depth parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("topAbutmentHeight").setType("SFFloat").setAppinfo("user or default input for topAbutmentHeight parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("pierWidth").setType("SFFloat").setAppinfo("user or default input for pierWidth parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("pierHeight").setType("SFFloat").setAppinfo("user or default input for pierHeight parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("archHalf").setType("SFBool").setAppinfo("user or default input for archHalf parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("archHalfExtensionWidth").setType("SFFloat").setAppinfo("user or default input for archHalfExtensionWidth parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("onlyIntrados").setType("SFBool").setAppinfo("user or default input for onlyIntrados parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("archFilled").setType("SFBool").setAppinfo("user or default input for archFilled parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("archHalfFilled").setType("SFBool").setAppinfo("user or default input for archHalfFilled parameter"))
-          .addField(new autoclass.field().setAccessType("initializeOnly").setName("lintel").setType("SFBool").setAppinfo("user or default input for lintel parameter"))
-          .addField(new autoclass.field().setAccessType("outputOnly").setName("computedScale").setType("SFVec3f").setAppinfo(this.field_computedScale_6_49_appinfo))
-          .addField(new autoclass.field().setAccessType("outputOnly").setName("pointOut").setType("MFVec3f").setAppinfo("send computed points to the Coordinate node"))
-          .addField(new autoclass.field().setAccessType("outputOnly").setName("indexOut").setType("MFInt32").setAppinfo("send computed indices to the IndexedFaceSet node"))
-          .setIS(new autoclass.IS()
-            .addConnect(new autoclass.connect().setNodeField("clearSpanWidth").setProtoField("clearSpanWidth"))
-            .addConnect(new autoclass.connect().setNodeField("riseHeight").setProtoField("riseHeight"))
-            .addConnect(new autoclass.connect().setNodeField("depth").setProtoField("depth"))
-            .addConnect(new autoclass.connect().setNodeField("pierWidth").setProtoField("pierWidth"))
-            .addConnect(new autoclass.connect().setNodeField("topAbutmentHeight").setProtoField("topAbutmentHeight"))
-            .addConnect(new autoclass.connect().setNodeField("pierHeight").setProtoField("pierHeight"))
-            .addConnect(new autoclass.connect().setNodeField("archHalf").setProtoField("archHalf"))
-            .addConnect(new autoclass.connect().setNodeField("archHalfExtensionWidth").setProtoField("archHalfExtensionWidth"))
-            .addConnect(new autoclass.connect().setNodeField("onlyIntrados").setProtoField("onlyIntrados"))
-            .addConnect(new autoclass.connect().setNodeField("archFilled").setProtoField("archFilled"))
-            .addConnect(new autoclass.connect().setNodeField("archHalfFilled").setProtoField("archHalfFilled"))
-            .addConnect(new autoclass.connect().setNodeField("lintel").setProtoField("lintel"))))
-        .addChild(new autoclass.ROUTE().setFromNode("ArchPrototypeScript").setFromField("computedScale").setToNode("ArchTransform").setToField("scale"))
-        .addChild(new autoclass.ROUTE().setFromNode("ArchPrototypeScript").setFromField("pointOut").setToNode("ArchChord").setToField("point"))
-        .addChild(new autoclass.ROUTE().setFromNode("ArchPrototypeScript").setFromField("indexOut").setToNode("ArchIndex").setToField("set_coordIndex"))))
-    .addChild(new autoclass.ProtoInstance("ArchInstance", "ArchPrototype").setDEF("ArchInstance").setName("ArchPrototype")
-      .addFieldValue(new autoclass.fieldValue().setName("diffuseColor").setValue("0.5 0.3 0.6"))
-      .addFieldValue(new autoclass.fieldValue().setName("emissiveColor").setValue("0.5 0.3 0.6"))
-      .addFieldValue(new autoclass.fieldValue().setName("clearSpanWidth").setValue("5"))
-      .addFieldValue(new autoclass.fieldValue().setName("riseHeight").setValue("2.5"))
-      .addFieldValue(new autoclass.fieldValue().setName("depth").setValue("2"))
-      .addFieldValue(new autoclass.fieldValue().setName("topAbutmentHeight").setValue("0.6"))
-      .addFieldValue(new autoclass.fieldValue().setName("pierWidth").setValue("1"))
-      .addFieldValue(new autoclass.fieldValue().setName("pierHeight").setValue("2")))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("clearSpanWidth").setType("SFFloat").setAppinfo("user or default input for clearSpanWidth parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("riseHeight").setType("SFFloat").setAppinfo("user or default input for riseHeight parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("depth").setType("SFFloat").setAppinfo("user or default input for depth parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("topAbutmentHeight").setType("SFFloat").setAppinfo("user or default input for topAbutmentHeight parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("pierWidth").setType("SFFloat").setAppinfo("user or default input for pierWidth parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("pierHeight").setType("SFFloat").setAppinfo("user or default input for pierHeight parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("archHalf").setType("SFBool").setAppinfo("user or default input for archHalf parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("archHalfExtensionWidth").setType("SFFloat").setAppinfo("user or default input for archHalfExtensionWidth parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("onlyIntrados").setType("SFBool").setAppinfo("user or default input for onlyIntrados parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("archFilled").setType("SFBool").setAppinfo("user or default input for archFilled parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("archHalfFilled").setType("SFBool").setAppinfo("user or default input for archHalfFilled parameter"))
+          .addField((new autoclass.field()).setAccessType("initializeOnly").setName("lintel").setType("SFBool").setAppinfo("user or default input for lintel parameter"))
+          .addField((new autoclass.field()).setAccessType("outputOnly").setName("computedScale").setType("SFVec3f").setAppinfo(this.field_computedScale_6_49_appinfo))
+          .addField((new autoclass.field()).setAccessType("outputOnly").setName("pointOut").setType("MFVec3f").setAppinfo("send computed points to the Coordinate node"))
+          .addField((new autoclass.field()).setAccessType("outputOnly").setName("indexOut").setType("MFInt32").setAppinfo("send computed indices to the IndexedFaceSet node"))
+          .setIS((new autoclass.IS())
+            .addConnect((new autoclass.connect()).setNodeField("clearSpanWidth").setProtoField("clearSpanWidth"))
+            .addConnect((new autoclass.connect()).setNodeField("riseHeight").setProtoField("riseHeight"))
+            .addConnect((new autoclass.connect()).setNodeField("depth").setProtoField("depth"))
+            .addConnect((new autoclass.connect()).setNodeField("pierWidth").setProtoField("pierWidth"))
+            .addConnect((new autoclass.connect()).setNodeField("topAbutmentHeight").setProtoField("topAbutmentHeight"))
+            .addConnect((new autoclass.connect()).setNodeField("pierHeight").setProtoField("pierHeight"))
+            .addConnect((new autoclass.connect()).setNodeField("archHalf").setProtoField("archHalf"))
+            .addConnect((new autoclass.connect()).setNodeField("archHalfExtensionWidth").setProtoField("archHalfExtensionWidth"))
+            .addConnect((new autoclass.connect()).setNodeField("onlyIntrados").setProtoField("onlyIntrados"))
+            .addConnect((new autoclass.connect()).setNodeField("archFilled").setProtoField("archFilled"))
+            .addConnect((new autoclass.connect()).setNodeField("archHalfFilled").setProtoField("archHalfFilled"))
+            .addConnect((new autoclass.connect()).setNodeField("lintel").setProtoField("lintel"))))
+        .addChild((new autoclass.ROUTE()).setFromNode("ArchPrototypeScript").setFromField("computedScale").setToNode("ArchTransform").setToField("scale"))
+        .addChild((new autoclass.ROUTE()).setFromNode("ArchPrototypeScript").setFromField("pointOut").setToNode("ArchChord").setToField("point"))
+        .addChild((new autoclass.ROUTE()).setFromNode("ArchPrototypeScript").setFromField("indexOut").setToNode("ArchIndex").setToField("set_coordIndex"))))
+    .addChild((new autoclass.ProtoInstance("ArchInstance", "ArchPrototype")).setDEF("ArchInstance").setName("ArchPrototype")
+      .addFieldValue((new autoclass.fieldValue()).setName("diffuseColor").setValue("0.5 0.3 0.6"))
+      .addFieldValue((new autoclass.fieldValue()).setName("emissiveColor").setValue("0.5 0.3 0.6"))
+      .addFieldValue((new autoclass.fieldValue()).setName("clearSpanWidth").setValue("5"))
+      .addFieldValue((new autoclass.fieldValue()).setName("riseHeight").setValue("2.5"))
+      .addFieldValue((new autoclass.fieldValue()).setName("depth").setValue("2"))
+      .addFieldValue((new autoclass.fieldValue()).setName("topAbutmentHeight").setValue("0.6"))
+      .addFieldValue((new autoclass.fieldValue()).setName("pierWidth").setValue("1"))
+      .addFieldValue((new autoclass.fieldValue()).setName("pierHeight").setValue("2")))
     .addComments(" Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) ")
-    .addChild(new autoclass.Inline("CoordinateAxes").setUrl(new autoclass.MFString("\"../data/CoordinateAxes.x3d\""))));
+    .addChild((new autoclass.Inline("CoordinateAxes")).setUrl(new autoclass.MFString("\"../data/CoordinateAxes.x3d\""))));
   },
   // end of initialize() method
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return ArchPrototype model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -270,8 +278,8 @@ ArchPrototype.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.ArchPrototype();
-		print ("ArchPrototype execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new autoclass.NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new ArchPrototype().main();
+new NeedClassName().main();
