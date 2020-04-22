@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -59,37 +67,37 @@ asmallbox.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("asmallbox.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("a box")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.ProtoDeclare().setName("anyShape")
-      .setProtoInterface(new autoclass.ProtoInterface()
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("myShape").setType("MFNode")
-          .addChild(new autoclass.Shape()
-            .setGeometry(new autoclass.Sphere()))))
-      .setProtoBody(new autoclass.ProtoBody()
-        .addChild(new autoclass.Transform()
-          .setIS(new autoclass.IS()
-            .addConnect(new autoclass.connect().setNodeField("children").setProtoField("myShape"))))))
-    .addChild(new autoclass.ProtoDeclare().setName("one")
-      .setProtoInterface(new autoclass.ProtoInterface()
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("myShape").setType("MFNode")
-          .addChild(new autoclass.Shape()
-            .setGeometry(new autoclass.Cylinder()))))
-      .setProtoBody(new autoclass.ProtoBody()
-        .addChild(new autoclass.Transform()
-          .addChild(new autoclass.ProtoInstance().setName("anyShape")
-            .setIS(new autoclass.IS()
-              .addConnect(new autoclass.connect().setNodeField("myShape").setProtoField("myShape")))))))
-    .addChild(new autoclass.ProtoInstance().setName("one")
-      .addFieldValue(new autoclass.fieldValue().setName("myShape")
-        .addChild(new autoclass.Shape()
-          .setGeometry(new autoclass.Box())))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("asmallbox.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("a box")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.ProtoDeclare()).setName("anyShape")
+      .setProtoInterface((new autoclass.ProtoInterface())
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("myShape").setType("MFNode")
+          .addChild((new autoclass.Shape())
+            .setGeometry((new autoclass.Sphere())))))
+      .setProtoBody((new autoclass.ProtoBody())
+        .addChild((new autoclass.Transform())
+          .setIS((new autoclass.IS())
+            .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("myShape"))))))
+    .addChild((new autoclass.ProtoDeclare()).setName("one")
+      .setProtoInterface((new autoclass.ProtoInterface())
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("myShape").setType("MFNode")
+          .addChild((new autoclass.Shape())
+            .setGeometry((new autoclass.Cylinder())))))
+      .setProtoBody((new autoclass.ProtoBody())
+        .addChild((new autoclass.Transform())
+          .addChild((new autoclass.ProtoInstance()).setName("anyShape")
+            .setIS((new autoclass.IS())
+              .addConnect((new autoclass.connect()).setNodeField("myShape").setProtoField("myShape")))))))
+    .addChild((new autoclass.ProtoInstance()).setName("one")
+      .addFieldValue((new autoclass.fieldValue()).setName("myShape")
+        .addChild((new autoclass.Shape())
+          .setGeometry((new autoclass.Box()))))));
   },
   // end of initialize() method
 

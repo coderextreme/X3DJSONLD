@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -1130,31 +1138,31 @@ IcosahedronSubdivisionLevel5.prototype = {
 	.append(new autoclass.MFVec3f(java.to([0.0,0.0,1.0,-0.309017,-0.5,0.809017,0.309017,-0.5,0.809017,0.309017,0.5,0.809017,-0.309017,0.5,0.809017,0.0,0.0,-1.0,-0.309017,0.5,-0.809017,0.309017,0.5,-0.809017,0.309017,-0.5,-0.809017,-0.309017,-0.5,-0.809017], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([0.0,0.850651,-0.525731,0.0,0.850651,0.525731,0.850651,0.525731,0.0,-0.850651,0.525731,0.0,0.0,-0.850651,0.525731,0.0,-0.850651,-0.525731,0.850651,-0.525731,0.0,-0.850651,-0.525731,0.0,0.525731,0.0,-0.850651,0.525731,0.0,0.850651], java.type("float[]"))))
 	.append(new autoclass.MFVec3f(java.to([-0.525731,0.0,0.850651,-0.525731,0.0,-0.850651], java.type("float[]"))));
-  this.x3dModel = new autoclass.X3D().setProfile("Interchange").setVersion("3.1")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("IcosahedronSubdivisionLevel5.x3d"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("IcosahedronSubdivisionLevel5.ply"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles."))
-    .addMeta(new autoclass.meta().setName("created").setContent("13 September 2014"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("27 September 2014"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("Icosahedron.x3d"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Icosahedron"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("https://en.wiktionary.org/wiki/icosahedron"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Platonic_solid"))
-    .addMeta(new autoclass.meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Geodesic_grid"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("Meshlab X3D Exported, http://meshlab.sourceforge.net"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new autoclass.meta().setName("license").setContent("../license.html")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Background().setSkyColor(new autoclass.MFColor(java.to([0.5,1.0,0.9], java.type("float[]")))))
-    .addChild(new autoclass.Viewpoint().setDescription("Icosahedron, subdivision level 5").setPosition(0.0,0.0,6.0))
-    .addChild(new autoclass.Shape("IcosahedronSubdivisionLevel5")
-      .setGeometry(new autoclass.IndexedFaceSet().setSolid(false).setCoordIndex(this.IndexedFaceSet_4_19_coordIndex)
-        .setCoord(new autoclass.Coordinate().setPoint(this.Coordinate_5_19_point)))
-      .setAppearance(new autoclass.Appearance()
-        .setMaterial(new autoclass.Material().setDiffuseColor(0.2,0.5,0.8)))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.1")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("IcosahedronSubdivisionLevel5.x3d"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("IcosahedronSubdivisionLevel5.ply"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles."))
+    .addMeta((new autoclass.meta()).setName("created").setContent("13 September 2014"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("27 September 2014"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("Icosahedron.x3d"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://en.wikipedia.org/wiki/Icosahedron"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://en.wiktionary.org/wiki/icosahedron"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://en.wikipedia.org/wiki/Platonic_solid"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://en.wikipedia.org/wiki/Geodesic_grid"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("Meshlab X3D Exported, http://meshlab.sourceforge.net"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.5,1.0,0.9], java.type("float[]")))))
+    .addChild((new autoclass.Viewpoint()).setDescription("Icosahedron, subdivision level 5").setPosition(0.0,0.0,6.0))
+    .addChild((new autoclass.Shape("IcosahedronSubdivisionLevel5"))
+      .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_4_19_coordIndex)
+        .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_5_19_point)))
+      .setAppearance((new autoclass.Appearance())
+        .setMaterial((new autoclass.Material()).setDiffuseColor(0.2,0.5,0.8)))));
   },
   // end of initialize() method
 

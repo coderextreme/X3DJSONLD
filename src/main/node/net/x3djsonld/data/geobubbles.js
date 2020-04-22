@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -59,27 +67,27 @@ geobubbles.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addComponent(new autoclass.component().setName("Geospatial").setLevel(1))
-    .addMeta(new autoclass.meta().setName("title").setContent("geobubbles.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("geo bubbles")))
-  .setScene(new autoclass.Scene()
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addComponent((new autoclass.component()).setName("Geospatial").setLevel(1))
+    .addMeta((new autoclass.meta()).setName("title").setContent("geobubbles.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("geo bubbles")))
+  .setScene((new autoclass.Scene())
     .addComments("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/")
     .addComments("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/")
-    .addChild(new autoclass.GeoViewpoint("Tour").setDescription("Tour Views").setPosition(0.0,0.0,4.0).setOrientation(1.0,0.0,0.0,0.0))
-    .addChild(new autoclass.Background().setBackUrl(new autoclass.MFString("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
-    .addChild(new autoclass.Transform()
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Sphere())
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setSpecularColor(0.5,0.5,0.5).setDiffuseColor(0.7,0.7,0.7)))))
-    .addChild(new autoclass.TimeSensor("TourTime").setCycleInterval(5).setLoop(true))
-    .addChild(new autoclass.GeoPositionInterpolator("TourPosition").setKey(java.to([0.0,1.0], java.type("float[]"))).setKeyValue(new autoclass.MFVec3d(java.to([0.0015708,0.0,4.0,0.0,0.0015708,4.0], java.type("double[]")))))
-    .addChild(new autoclass.Script("RandomTourTime").setSourceCode("ecmascript:" + "\n" + 
+    .addChild((new autoclass.GeoViewpoint("Tour")).setDescription("Tour Views").setPosition(0.0,0.0,4.0).setOrientation(1.0,0.0,0.0,0.0))
+    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
+    .addChild((new autoclass.Transform())
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Sphere()))
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setSpecularColor(0.5,0.5,0.5).setDiffuseColor(0.7,0.7,0.7)))))
+    .addChild((new autoclass.TimeSensor("TourTime")).setCycleInterval(5).setLoop(true))
+    .addChild((new autoclass.GeoPositionInterpolator("TourPosition")).setKey(java.to([0.0,1.0], java.type("float[]"))).setKeyValue(new autoclass.MFVec3d(java.to([0.0015708,0.0,4.0,0.0,0.0015708,4.0], java.type("double[]")))))
+    .addChild((new autoclass.Script("RandomTourTime")).setSourceCode("ecmascript:" + "\n" + 
 "\n" + 
 "               function set_cycle(value) {" + "\n" + 
 "                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo" + "\n" + 
@@ -96,14 +104,14 @@ geobubbles.prototype = {
 "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);" + "\n" + 
 "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);" + "\n" + 
 "               }")
-      .addField(new autoclass.field().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
-      .addField(new autoclass.field().setAccessType("inputOutput").setName("val").setType("SFFloat").setValue("0"))
-      .addField(new autoclass.field().setAccessType("inputOutput").setName("positions").setType("MFVec3d").setValue("0.0015708 0 4 0 0.0015708 4"))
-      .addField(new autoclass.field().setAccessType("inputOutput").setName("position").setType("MFVec3d").setValue("0.0015708 0 4 0 0.0015708 4")))
-    .addChild(new autoclass.ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
-    .addChild(new autoclass.ROUTE().setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
-    .addChild(new autoclass.ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
-    .addChild(new autoclass.ROUTE().setFromNode("TourPosition").setFromField("geovalue_changed").setToNode("Tour").setToField("set_position")));
+      .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
+      .addField((new autoclass.field()).setAccessType("inputOutput").setName("val").setType("SFFloat").setValue("0"))
+      .addField((new autoclass.field()).setAccessType("inputOutput").setName("positions").setType("MFVec3d").setValue("0.0015708 0 4 0 0.0015708 4"))
+      .addField((new autoclass.field()).setAccessType("inputOutput").setName("position").setType("MFVec3d").setValue("0.0015708 0 4 0 0.0015708 4")))
+    .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
+    .addChild((new autoclass.ROUTE()).setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
+    .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("TourPosition").setFromField("geovalue_changed").setToNode("Tour").setToField("set_position")));
   },
   // end of initialize() method
 

@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -91,74 +99,74 @@ pp3.prototype = {
 	this.Extrusion_8_41_crossSection = new autoclass.MFVec2f() /* splitting up long array to improve readability */
 	.append(new autoclass.MFVec2f(java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], java.type("float[]"))))
 	.append(new autoclass.MFVec2f(java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], java.type("float[]"))));
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("pp3.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("translator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("created").setContent("5 May 2015"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("05 May 2017"))
-    .addMeta(new autoclass.meta().setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/x3d/pp3.x3d"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("manual")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.ProtoDeclare().setName("Process")
-      .setProtoBody(new autoclass.ProtoBody()
-        .addChild(new autoclass.Group()
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("pp3.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("translator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("5 May 2015"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("05 May 2017"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/x3d/pp3.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("manual")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.ProtoDeclare()).setName("Process")
+      .setProtoBody((new autoclass.ProtoBody())
+        .addChild((new autoclass.Group())
           .addComments("left")
-          .addChild(new autoclass.Transform().setScale(0.5,0.5,0.5)
-            .addChild(new autoclass.Shape()
-              .setAppearance(new autoclass.Appearance()
-                .setMaterial(new autoclass.Material().setTransparency(0.5).setDiffuseColor(0.7,1.0,0.0)))
-              .setGeometry(new autoclass.Extrusion().setSpine(new autoclass.MFVec3f(java.to([-2.5,0.0,0.0,-1.5,0.0,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection)))
+          .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setTransparency(0.5).setDiffuseColor(0.7,1.0,0.0)))
+              .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.to([-2.5,0.0,0.0,-1.5,0.0,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection)))
             .addComments("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"))
           .addComments("right")
-          .addChild(new autoclass.Transform().setScale(0.5,0.5,0.5)
-            .addChild(new autoclass.Shape()
-              .setAppearance(new autoclass.Appearance()
-                .setMaterial(new autoclass.Material().setDiffuseColor(0.0,0.7,1.0).setTransparency(0.5)))
-              .setGeometry(new autoclass.Extrusion().setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new autoclass.MFVec3f(java.to([1.5,0.0,0.0,2.5,0.0,0.0], java.type("float[]"))))))
-            .addChild(new autoclass.Transform().setTranslation(2.0,0.0,0.0)
-              .addChild(new autoclass.Shape()
-                .setAppearance(new autoclass.Appearance()
-                  .setMaterial(new autoclass.Material("MaterialLightBlue").setDiffuseColor(1.0,1.0,1.0)))
-                .setGeometry(new autoclass.Text("RightString").setString(new autoclass.MFString("\"r\"")))))
-            .addChild(new autoclass.StringSensor("RightSensor").setEnabled(false))
-            .addChild(new autoclass.TouchSensor("RightTouch").setDescription("touch to activate")))
+          .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,0.7,1.0).setTransparency(0.5)))
+              .setGeometry((new autoclass.Extrusion()).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new autoclass.MFVec3f(java.to([1.5,0.0,0.0,2.5,0.0,0.0], java.type("float[]"))))))
+            .addChild((new autoclass.Transform()).setTranslation(2.0,0.0,0.0)
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material("MaterialLightBlue")).setDiffuseColor(1.0,1.0,1.0)))
+                .setGeometry((new autoclass.Text("RightString")).setString(new autoclass.MFString("\"r\"")))))
+            .addChild((new autoclass.StringSensor("RightSensor")).setEnabled(false))
+            .addChild((new autoclass.TouchSensor("RightTouch")).setDescription("touch to activate")))
           .addComments("up")
-          .addChild(new autoclass.Transform().setScale(0.5,0.5,0.5)
-            .addChild(new autoclass.Shape()
-              .setAppearance(new autoclass.Appearance()
-                .setMaterial(new autoclass.Material().setDiffuseColor(0.0,0.7,1.0).setTransparency(0.5)))
-              .setGeometry(new autoclass.Extrusion().setSpine(new autoclass.MFVec3f(java.to([0.0,1.5,0.0,0.0,2.5,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_29_crossSection)))
-            .addChild(new autoclass.Transform().setTranslation(-0.5,2.0,0.0)
-              .addChild(new autoclass.Shape()
-                .setAppearance(new autoclass.Appearance()
-                  .setMaterial(new autoclass.Material().setUSE("MaterialLightBlue")))
-                .setGeometry(new autoclass.Text("UpString").setString(new autoclass.MFString("\"u\"")))))
-            .addChild(new autoclass.StringSensor("UpSensor").setEnabled(false))
-            .addChild(new autoclass.TouchSensor("UpTouch").setDescription("touch to activate")))
+          .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,0.7,1.0).setTransparency(0.5)))
+              .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.to([0.0,1.5,0.0,0.0,2.5,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_29_crossSection)))
+            .addChild((new autoclass.Transform()).setTranslation(-0.5,2.0,0.0)
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue")))
+                .setGeometry((new autoclass.Text("UpString")).setString(new autoclass.MFString("\"u\"")))))
+            .addChild((new autoclass.StringSensor("UpSensor")).setEnabled(false))
+            .addChild((new autoclass.TouchSensor("UpTouch")).setDescription("touch to activate")))
           .addComments("down")
-          .addChild(new autoclass.Transform().setScale(0.5,0.5,0.5)
-            .addChild(new autoclass.Shape()
-              .setAppearance(new autoclass.Appearance()
-                .setMaterial(new autoclass.Material().setTransparency(0.5).setDiffuseColor(0.7,1.0,0.0)))
-              .setGeometry(new autoclass.Extrusion().setSpine(new autoclass.MFVec3f(java.to([0.0,-2.5,0.0,0.0,-1.5,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_41_crossSection)))
+          .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setTransparency(0.5).setDiffuseColor(0.7,1.0,0.0)))
+              .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.to([0.0,-2.5,0.0,0.0,-1.5,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_41_crossSection)))
             .addComments("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"))
           .addComments("center")
-          .addChild(new autoclass.Transform()
-            .addChild(new autoclass.Shape()
-              .setAppearance(new autoclass.Appearance()
-                .setMaterial(new autoclass.Material().setDiffuseColor(1.0,0.0,0.7)))
-              .setGeometry(new autoclass.Sphere()))
-            .addChild(new autoclass.Transform().setTranslation(-0.5,0.0,1.0).setScale(0.5,0.5,0.5)
-              .addChild(new autoclass.Shape()
-                .setAppearance(new autoclass.Appearance()
-                  .setMaterial(new autoclass.Material().setUSE("MaterialLightBlue")))
-                .setGeometry(new autoclass.Text("CenterString"))))
-            .addChild(new autoclass.StringSensor("CenterSensor").setEnabled(false))
-            .addChild(new autoclass.TouchSensor("CenterTouch").setDescription("touch to activate"))))
-        .addChild(new autoclass.Script("RightSingleToMultiString").setSourceCode("\n" + 
+          .addChild((new autoclass.Transform())
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.7)))
+              .setGeometry((new autoclass.Sphere())))
+            .addChild((new autoclass.Transform()).setTranslation(-0.5,0.0,1.0).setScale(0.5,0.5,0.5)
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue")))
+                .setGeometry((new autoclass.Text("CenterString")))))
+            .addChild((new autoclass.StringSensor("CenterSensor")).setEnabled(false))
+            .addChild((new autoclass.TouchSensor("CenterTouch")).setDescription("touch to activate"))))
+        .addChild((new autoclass.Script("RightSingleToMultiString")).setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -168,9 +176,9 @@ pp3.prototype = {
 "function set_rightstring(rightstr) {" + "\n" + 
 "	rightlines = new MFString(rightstr);" + "\n" + 
 "}" + "\n")
-          .addField(new autoclass.field().setAccessType("inputOnly").setName("set_rightstring").setType("SFString"))
-          .addField(new autoclass.field().setAccessType("outputOnly").setName("rightlines").setType("MFString")))
-        .addChild(new autoclass.Script("UpSingleToMultiString").setSourceCode("\n" + 
+          .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_rightstring").setType("SFString"))
+          .addField((new autoclass.field()).setAccessType("outputOnly").setName("rightlines").setType("MFString")))
+        .addChild((new autoclass.Script("UpSingleToMultiString")).setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -180,9 +188,9 @@ pp3.prototype = {
 "function set_upstring(upstr) {" + "\n" + 
 "	uplines = new MFString(upstr);" + "\n" + 
 "}" + "\n")
-          .addField(new autoclass.field().setAccessType("inputOnly").setName("set_upstring").setType("SFString"))
-          .addField(new autoclass.field().setAccessType("outputOnly").setName("uplines").setType("MFString")))
-        .addChild(new autoclass.Script("CenterSingleToMultiString").setSourceCode("\n" + 
+          .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_upstring").setType("SFString"))
+          .addField((new autoclass.field()).setAccessType("outputOnly").setName("uplines").setType("MFString")))
+        .addChild((new autoclass.Script("CenterSingleToMultiString")).setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -192,25 +200,25 @@ pp3.prototype = {
 "function set_centerstring(centerstr) {" + "\n" + 
 "	centerlines = new MFString(centerstr);" + "\n" + 
 "}" + "\n")
-          .addField(new autoclass.field().setAccessType("inputOnly").setName("set_centerstring").setType("SFString"))
-          .addField(new autoclass.field().setAccessType("outputOnly").setName("centerlines").setType("MFString")))
-        .addChild(new autoclass.ROUTE().setFromNode("CenterSensor").setFromField("enteredText").setToNode("CenterSingleToMultiString").setToField("set_centerstring"))
-        .addChild(new autoclass.ROUTE().setFromNode("CenterSingleToMultiString").setFromField("centerlines").setToNode("CenterString").setToField("set_string"))
-        .addChild(new autoclass.ROUTE().setFromNode("CenterTouch").setFromField("isOver").setToNode("CenterSensor").setToField("set_enabled"))
-        .addChild(new autoclass.ROUTE().setFromNode("RightSensor").setFromField("enteredText").setToNode("RightSingleToMultiString").setToField("set_rightstring"))
-        .addChild(new autoclass.ROUTE().setFromNode("RightSingleToMultiString").setFromField("rightlines").setToNode("RightString").setToField("set_string"))
-        .addChild(new autoclass.ROUTE().setFromNode("RightTouch").setFromField("isOver").setToNode("RightSensor").setToField("set_enabled"))
-        .addChild(new autoclass.ROUTE().setFromNode("UpSensor").setFromField("enteredText").setToNode("UpSingleToMultiString").setToField("set_upstring"))
-        .addChild(new autoclass.ROUTE().setFromNode("UpSingleToMultiString").setFromField("uplines").setToNode("UpString").setToField("set_string"))
-        .addChild(new autoclass.ROUTE().setFromNode("UpTouch").setFromField("isOver").setToNode("UpSensor").setToField("set_enabled"))))
-    .addChild(new autoclass.NavigationInfo())
-    .addChild(new autoclass.Viewpoint().setDescription("Process pipes").setPosition(0.0,5.0,12.0).setOrientation(1.0,0.0,0.0,-0.4))
-    .addChild(new autoclass.Transform().setTranslation(0.0,-2.5,0.0)
-      .addChild(new autoclass.ProtoInstance().setName("Process")))
-    .addChild(new autoclass.Transform()
-      .addChild(new autoclass.ProtoInstance().setName("Process")))
-    .addChild(new autoclass.Transform().setTranslation(0.0,2.5,0.0)
-      .addChild(new autoclass.ProtoInstance().setName("Process"))));
+          .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_centerstring").setType("SFString"))
+          .addField((new autoclass.field()).setAccessType("outputOnly").setName("centerlines").setType("MFString")))
+        .addChild((new autoclass.ROUTE()).setFromNode("CenterSensor").setFromField("enteredText").setToNode("CenterSingleToMultiString").setToField("set_centerstring"))
+        .addChild((new autoclass.ROUTE()).setFromNode("CenterSingleToMultiString").setFromField("centerlines").setToNode("CenterString").setToField("set_string"))
+        .addChild((new autoclass.ROUTE()).setFromNode("CenterTouch").setFromField("isOver").setToNode("CenterSensor").setToField("set_enabled"))
+        .addChild((new autoclass.ROUTE()).setFromNode("RightSensor").setFromField("enteredText").setToNode("RightSingleToMultiString").setToField("set_rightstring"))
+        .addChild((new autoclass.ROUTE()).setFromNode("RightSingleToMultiString").setFromField("rightlines").setToNode("RightString").setToField("set_string"))
+        .addChild((new autoclass.ROUTE()).setFromNode("RightTouch").setFromField("isOver").setToNode("RightSensor").setToField("set_enabled"))
+        .addChild((new autoclass.ROUTE()).setFromNode("UpSensor").setFromField("enteredText").setToNode("UpSingleToMultiString").setToField("set_upstring"))
+        .addChild((new autoclass.ROUTE()).setFromNode("UpSingleToMultiString").setFromField("uplines").setToNode("UpString").setToField("set_string"))
+        .addChild((new autoclass.ROUTE()).setFromNode("UpTouch").setFromField("isOver").setToNode("UpSensor").setToField("set_enabled"))))
+    .addChild((new autoclass.NavigationInfo()))
+    .addChild((new autoclass.Viewpoint()).setDescription("Process pipes").setPosition(0.0,5.0,12.0).setOrientation(1.0,0.0,0.0,-0.4))
+    .addChild((new autoclass.Transform()).setTranslation(0.0,-2.5,0.0)
+      .addChild((new autoclass.ProtoInstance()).setName("Process")))
+    .addChild((new autoclass.Transform())
+      .addChild((new autoclass.ProtoInstance()).setName("Process")))
+    .addChild((new autoclass.Transform()).setTranslation(0.0,2.5,0.0)
+      .addChild((new autoclass.ProtoInstance()).setName("Process"))));
   },
   // end of initialize() method
 

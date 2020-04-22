@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -59,25 +67,25 @@ flower3.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("flower3.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("a flower")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.NavigationInfo())
-    .addChild(new autoclass.DirectionalLight().setDirection(0.0,-0.8,-0.2).setIntensity(0.5))
-    .addChild(new autoclass.Background().setSkyColor(new autoclass.MFColor(java.to([1.000,1.000,1.000], java.type("float[]")))))
-    .addChild(new autoclass.Viewpoint().setDescription("One mathematical orbital").setPosition(0.0,0.0,50.0))
-    .addChild(new autoclass.Transform("OrbitTransform").setTranslation(8.0,0.0,0.0)
-      .addChild(new autoclass.Shape()
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setDiffuseColor(0.0,0.5,1.0).setSpecularColor(0.0,0.5,1.0)))
-        .setGeometry(new autoclass.IndexedFaceSet("Orbit").setDEF("Orbit").setConvex(false)
-          .setCoord(new autoclass.Coordinate("OrbitCoordinates")))))
-    .addChild(new autoclass.Script("OrbitScript").setSourceCode("\n" + 
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("flower3.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("a flower")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.NavigationInfo()))
+    .addChild((new autoclass.DirectionalLight()).setDirection(0.0,-0.8,-0.2).setIntensity(0.5))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([1.000,1.000,1.000], java.type("float[]")))))
+    .addChild((new autoclass.Viewpoint()).setDescription("One mathematical orbital").setPosition(0.0,0.0,50.0))
+    .addChild((new autoclass.Transform("OrbitTransform")).setTranslation(8.0,0.0,0.0)
+      .addChild((new autoclass.Shape())
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,0.5,1.0).setSpecularColor(0.0,0.5,1.0)))
+        .setGeometry((new autoclass.IndexedFaceSet("Orbit")).setDEF("Orbit").setConvex(false)
+          .setCoord((new autoclass.Coordinate("OrbitCoordinates"))))))
+    .addChild((new autoclass.Script("OrbitScript")).setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "    " + "\n" + 
 "var e = 5;" + "\n" + 
@@ -152,9 +160,9 @@ flower3.prototype = {
 "	}" + "\n" + 
 "	generateCoordinates(resolution);" + "\n" + 
 "}" + "\n")
-      .addField(new autoclass.field().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
-      .addField(new autoclass.field().setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
-      .addField(new autoclass.field().setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))
+      .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
+      .addField((new autoclass.field()).setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
+      .addField((new autoclass.field()).setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))
       .addComments(java.to(["",
 "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>",
@@ -163,10 +171,10 @@ flower3.prototype = {
 "        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>",
 "        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>",
 "        <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"], java.type("java.lang.String[]"))))
-    .addChild(new autoclass.TimeSensor("Clock").setCycleInterval(16).setLoop(true))
-    .addChild(new autoclass.ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
-    .addChild(new autoclass.ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-    .addChild(new autoclass.ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")));
+    .addChild((new autoclass.TimeSensor("Clock")).setCycleInterval(16).setLoop(true))
+    .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
+    .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")));
   },
   // end of initialize() method
 

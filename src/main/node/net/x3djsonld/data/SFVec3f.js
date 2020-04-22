@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -55,21 +63,21 @@ SFVec3f.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addComponent(new autoclass.component().setName("Scripting").setLevel(1))
-    .addMeta(new autoclass.meta().setName("title").setContent("SFVec3f.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("description").setContent("3 prismatic spheres"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.NavigationInfo())
-    .addChild(new autoclass.Transform("transform")
-      .addChild(new autoclass.Shape()
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7)))
-        .setGeometry(new autoclass.Sphere())))
-    .addChild(new autoclass.Script("Bounce2").setSourceCode("\n" + 
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
+    .addMeta((new autoclass.meta()).setName("title").setContent("SFVec3f.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("3 prismatic spheres"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.NavigationInfo()))
+    .addChild((new autoclass.Transform("transform"))
+      .addChild((new autoclass.Shape())
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7)))
+        .setGeometry((new autoclass.Sphere()))))
+    .addChild((new autoclass.Script("Bounce2")).setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "			function newBubble() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
@@ -101,14 +109,14 @@ SFVec3f.prototype = {
 "			function initialize() {" + "\n" + 
 "			     newBubble();" + "\n" + 
 "			}" + "\n")
-      .addField(new autoclass.field().setAccessType("inputOnly").setName("set_translation").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new autoclass.field().setAccessType("outputOnly").setName("translation_changed").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new autoclass.field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new autoclass.field().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new autoclass.field().setAccessType("inputOnly").setName("set_fraction").setType("SFTime")))
-    .addChild(new autoclass.TimeSensor("TourTime").setCycleInterval(0.150).setLoop(true))
-    .addChild(new autoclass.ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
-    .addChild(new autoclass.ROUTE().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
+      .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_translation").setType("SFVec3f").setValue("0 0 0"))
+      .addField((new autoclass.field()).setAccessType("outputOnly").setName("translation_changed").setType("SFVec3f").setValue("0 0 0"))
+      .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+      .addField((new autoclass.field()).setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
+      .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFTime")))
+    .addChild((new autoclass.TimeSensor("TourTime")).setCycleInterval(0.150).setLoop(true))
+    .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
+    .addChild((new autoclass.ROUTE()).setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
   },
   // end of initialize() method
 

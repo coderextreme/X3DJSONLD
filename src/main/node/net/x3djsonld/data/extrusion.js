@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -68,22 +76,22 @@ extrusion.prototype = {
 	this.extrusion_5_8_crossSection = new autoclass.MFVec2f() /* splitting up long array to improve readability */
 	.append(new autoclass.MFVec2f(java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], java.type("float[]"))))
 	.append(new autoclass.MFVec2f(java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], java.type("float[]"))));
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("creator").setContent("John W Carlson"))
-    .addMeta(new autoclass.meta().setName("created").setContent("December 13 2015"))
-    .addMeta(new autoclass.meta().setName("title").setContent("extrusion.x3d"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("beginnings of a force directed graph in 3D"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Group()
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Extrusion("extrusion").setSpine(new autoclass.MFVec3f(java.to([-50.0,-50.0,0.0,50.0,50.0,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.extrusion_5_8_crossSection))
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setDiffuseColor(0.0,1.0,0.0))))
-      .addChild(new autoclass.TimeSensor("TourTime").setLoop(true))
-      .addChild(new autoclass.Script("MoveCylinder").setSourceCode("\n" + 
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("December 13 2015"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("extrusion.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("beginnings of a force directed graph in 3D"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Group())
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Extrusion("extrusion")).setSpine(new autoclass.MFVec3f(java.to([-50.0,-50.0,0.0,50.0,50.0,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.extrusion_5_8_crossSection))
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,1.0,0.0))))
+      .addChild((new autoclass.TimeSensor("TourTime")).setLoop(true))
+      .addChild((new autoclass.Script("MoveCylinder")).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -93,10 +101,10 @@ extrusion.prototype = {
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);" + "\n" + 
 "		        spine = new MFVec3f([endA, endB]);" + "\n" + 
 "                }" + "\n")
-        .addField(new autoclass.field().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("-50 -50 0 50 50 0")))
-      .addChild(new autoclass.ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
-      .addChild(new autoclass.ROUTE().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine"))));
+        .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("-50 -50 0 50 50 0")))
+      .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
+      .addChild((new autoclass.ROUTE()).setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine"))));
   },
   // end of initialize() method
 

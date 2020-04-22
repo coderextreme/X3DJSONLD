@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -59,32 +67,32 @@ glflowers.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("glflowers.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("description").setContent("5 or more prismatic flowers"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/glflowers.x3d")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.NavigationInfo())
-    .addChild(new autoclass.Background().setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
-    .addChild(new autoclass.Group()
-      .addChild(new autoclass.ExternProtoDeclare().setName("FlowerProto").setUrl(new autoclass.MFString("\"../data/flowerproto.x3d#FlowerProto\""))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("vertex").setType("MFString"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("fragment").setType("MFString")))
-      .addChild(new autoclass.ProtoDeclare().setName("flower")
-        .setProtoBody(new autoclass.ProtoBody()
-          .addChild(new autoclass.Group()
-            .addChild(new autoclass.ProtoInstance().setName("FlowerProto")
-              .addFieldValue(new autoclass.fieldValue().setName("vertex").setValue("\"../shaders/gl_flowers_chromatic.vs\""))
-              .addFieldValue(new autoclass.fieldValue().setName("fragment").setValue("\"../shaders/common.fs\""))))))
-      .addChild(new autoclass.ProtoInstance().setName("flower"))
-      .addChild(new autoclass.ProtoInstance().setName("flower"))
-      .addChild(new autoclass.ProtoInstance().setName("flower"))
-      .addChild(new autoclass.ProtoInstance().setName("flower"))
-      .addChild(new autoclass.ProtoInstance().setName("flower"))
-      .addChild(new autoclass.ProtoInstance().setName("flower"))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("glflowers.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("5 or more prismatic flowers"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/glflowers.x3d")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.NavigationInfo()))
+    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
+    .addChild((new autoclass.Group())
+      .addChild((new autoclass.ExternProtoDeclare()).setName("FlowerProto").setUrl(new autoclass.MFString("\"../data/flowerproto.x3d#FlowerProto\""))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("vertex").setType("MFString"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("fragment").setType("MFString")))
+      .addChild((new autoclass.ProtoDeclare()).setName("flower")
+        .setProtoBody((new autoclass.ProtoBody())
+          .addChild((new autoclass.Group())
+            .addChild((new autoclass.ProtoInstance()).setName("FlowerProto")
+              .addFieldValue((new autoclass.fieldValue()).setName("vertex").setValue("\"../shaders/gl_flowers_chromatic.vs\""))
+              .addFieldValue((new autoclass.fieldValue()).setName("fragment").setValue("\"../shaders/common.fs\""))))))
+      .addChild((new autoclass.ProtoInstance()).setName("flower"))
+      .addChild((new autoclass.ProtoInstance()).setName("flower"))
+      .addChild((new autoclass.ProtoInstance()).setName("flower"))
+      .addChild((new autoclass.ProtoInstance()).setName("flower"))
+      .addChild((new autoclass.ProtoInstance()).setName("flower"))
+      .addChild((new autoclass.ProtoInstance()).setName("flower"))));
   },
   // end of initialize() method
 

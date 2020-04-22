@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -79,35 +87,35 @@ TextExamples.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.0")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("TextExamples.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Show different escape-character text examples for embedded quotation marks."))
-    .addMeta(new autoclass.meta().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new autoclass.meta().setName("created").setContent("7 April 2001"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("26 April 2016"))
-    .addMeta(new autoclass.meta().setName("warning").setContent("Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."))
-    .addMeta(new autoclass.meta().setName("warning").setContent("Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new autoclass.meta().setName("license").setContent("../license.html")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Transform().setTranslation(0.0,2.0,0.0)
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Text().setString(new autoclass.MFString("\"Compare special character escaping\""))
-          .setFontStyle(new autoclass.FontStyle("testFontStyle").setJustify(new autoclass.MFString("\"MIDDLE\" \"MIDDLE\"")).setSize(0.8)))
-        .setAppearance(new autoclass.Appearance("LightBlueAppearance")
-          .setMaterial(new autoclass.Material().setDiffuseColor(0.1,0.7,0.7)))))
-    .addChild(new autoclass.Transform().setTranslation(-3.0,0.0,0.0)
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Text().setString(new autoclass.MFString("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
-          .setFontStyle(new autoclass.FontStyle().setUSE("testFontStyle")))
-        .setAppearance(new autoclass.Appearance().setUSE("LightBlueAppearance"))))
-    .addChild(new autoclass.Transform().setTranslation(3.0,0.0,0.0)
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Text().setString(new autoclass.MFString("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
-          .setFontStyle(new autoclass.FontStyle().setUSE("testFontStyle")))
-        .setAppearance(new autoclass.Appearance().setUSE("LightBlueAppearance")))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("TextExamples.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Show different escape-character text examples for embedded quotation marks."))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("7 April 2001"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("26 April 2016"))
+    .addMeta((new autoclass.meta()).setName("warning").setContent("Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."))
+    .addMeta((new autoclass.meta()).setName("warning").setContent("Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Transform()).setTranslation(0.0,2.0,0.0)
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"Compare special character escaping\""))
+          .setFontStyle((new autoclass.FontStyle("testFontStyle")).setJustify(new autoclass.MFString("\"MIDDLE\" \"MIDDLE\"")).setSize(0.8)))
+        .setAppearance((new autoclass.Appearance("LightBlueAppearance"))
+          .setMaterial((new autoclass.Material()).setDiffuseColor(0.1,0.7,0.7)))))
+    .addChild((new autoclass.Transform()).setTranslation(-3.0,0.0,0.0)
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
+          .setFontStyle((new autoclass.FontStyle()).setUSE("testFontStyle")))
+        .setAppearance((new autoclass.Appearance()).setUSE("LightBlueAppearance"))))
+    .addChild((new autoclass.Transform()).setTranslation(3.0,0.0,0.0)
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"I don't think so\" \"\" \"he said \\\"Hi\\\"\""))
+          .setFontStyle((new autoclass.FontStyle()).setUSE("testFontStyle")))
+        .setAppearance((new autoclass.Appearance()).setUSE("LightBlueAppearance")))));
   },
   // end of initialize() method
 

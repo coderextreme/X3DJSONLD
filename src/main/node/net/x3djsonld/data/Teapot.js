@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -175,35 +183,35 @@ Teapot.prototype = {
 	.append(new autoclass.MFVec2f(java.to([0.844,0.987,0.875,0.987,0.906,0.987,0.938,0.987,0.969,0.987,1.0,0.987,0.031,0.987,0.0,0.987,0.063,0.987,0.094,0.987], java.type("float[]"))))
 	.append(new autoclass.MFVec2f(java.to([0.125,0.987,0.156,0.987,0.187,0.987,0.219,0.987,0.25,0.987,0.281,0.987,0.313,0.987,0.344,0.987,0.375,0.987,0.406,0.987], java.type("float[]"))))
 	.append(new autoclass.MFVec2f(java.to([0.437,0.987,0.469,0.987,0.5,0.987,0.531,0.987,0.563,0.987,0.594,0.987,0.625,0.987,0.656,0.987], java.type("float[]"))));
-  this.x3dModel = new autoclass.X3D().setProfile("Interchange").setVersion("3.0")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("Teapot.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new autoclass.meta().setName("description").setContent("A mooring buoy used in Naval Harbors").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new autoclass.meta().setName("creator").setContent("LT Patrick Sullivan").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new autoclass.meta().setName("created").setContent("28 July 2006").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new autoclass.meta().setName("modified").setContent("12 January 2014").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://savage.nps.edu/Savage/HarborEquipment/Buoys/MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new autoclass.meta().setName("generator").setContent("VizX3D, http://www.vivaty.com/downloads/studio").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new autoclass.meta().setName("generator").setContent("Wings3D, http://www.wings3d.com").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new autoclass.meta().setName("license").setContent("../../license.html").setDir("").setHttp_equiv("").setLang("").setScheme("")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Transform().setScale(0.3,0.3,0.3)
-      .addChild(new autoclass.Group("MooringBuoyWithHook")
-        .addChild(new autoclass.Transform("Hook")
-          .addChild(new autoclass.Shape()
-            .setAppearance(new autoclass.Appearance()
-              .setMaterial(new autoclass.Material("Black_mat").setDiffuseColor(0.0,0.0,0.0)))
-            .setGeometry(new autoclass.IndexedFaceSet().setCreaseAngle(0.524).setColorIndex(java.to([], java.type("int[]"))).setNormalIndex(java.to([], java.type("int[]"))).setTexCoordIndex(java.to([], java.type("int[]"))).setCoordIndex(this.IndexedFaceSet_7_14_coordIndex)
-              .setCoord(new autoclass.Coordinate().setPoint(this.Coordinate_8_14_point)))))
-        .addChild(new autoclass.Transform("MooringBuoy")
-          .addChild(new autoclass.Shape()
-            .setAppearance(new autoclass.Appearance()
-              .setMaterial(new autoclass.Material("default_mat").setDiffuseColor(0.50196,0.50196,0.50196).setAmbientIntensity(1.0).setShininess(1.0))
-              .setTexture(new autoclass.ImageTexture().setUrl(new autoclass.MFString("\"examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg\""))))
-            .setGeometry(new autoclass.IndexedFaceSet().setCreaseAngle(1.047).setColorIndex(java.to([], java.type("int[]"))).setNormalIndex(java.to([], java.type("int[]"))).setCoordIndex(this.IndexedFaceSet_7_21_coordIndex).setTexCoordIndex(this.IndexedFaceSet_7_21_texCoordIndex)
-              .setCoord(new autoclass.Coordinate().setPoint(this.Coordinate_8_21_point))
-              .setTexCoord(new autoclass.TextureCoordinate().setPoint(this.TextureCoordinate_8_22_point))))))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("Teapot.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta((new autoclass.meta()).setName("description").setContent("A mooring buoy used in Naval Harbors").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("LT Patrick Sullivan").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta((new autoclass.meta()).setName("created").setContent("28 July 2006").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("12 January 2014").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://savage.nps.edu/Savage/HarborEquipment/Buoys/MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("VizX3D, http://www.vivaty.com/downloads/studio").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("Wings3D, http://www.wings3d.com").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html").setDir("").setHttp_equiv("").setLang("").setScheme("")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Transform()).setScale(0.3,0.3,0.3)
+      .addChild((new autoclass.Group("MooringBuoyWithHook"))
+        .addChild((new autoclass.Transform("Hook"))
+          .addChild((new autoclass.Shape())
+            .setAppearance((new autoclass.Appearance())
+              .setMaterial((new autoclass.Material("Black_mat")).setDiffuseColor(0.0,0.0,0.0)))
+            .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(0.524).setColorIndex(java.to([], java.type("int[]"))).setNormalIndex(java.to([], java.type("int[]"))).setTexCoordIndex(java.to([], java.type("int[]"))).setCoordIndex(this.IndexedFaceSet_7_14_coordIndex)
+              .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_8_14_point)))))
+        .addChild((new autoclass.Transform("MooringBuoy"))
+          .addChild((new autoclass.Shape())
+            .setAppearance((new autoclass.Appearance())
+              .setMaterial((new autoclass.Material("default_mat")).setDiffuseColor(0.50196,0.50196,0.50196).setAmbientIntensity(1.0).setShininess(1.0))
+              .setTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg\""))))
+            .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(1.047).setColorIndex(java.to([], java.type("int[]"))).setNormalIndex(java.to([], java.type("int[]"))).setCoordIndex(this.IndexedFaceSet_7_21_coordIndex).setTexCoordIndex(this.IndexedFaceSet_7_21_texCoordIndex)
+              .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_8_21_point))
+              .setTexCoord((new autoclass.TextureCoordinate()).setPoint(this.TextureCoordinate_8_22_point))))))));
   },
   // end of initialize() method
 

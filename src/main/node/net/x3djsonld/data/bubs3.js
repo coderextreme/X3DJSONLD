@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -59,23 +67,23 @@ bubs3.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("bubs3.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("description").setContent("Tour around a prismatic sphere"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.NavigationInfo().setType(new autoclass.MFString("\"EXAMINE\"")))
-    .addChild(new autoclass.Viewpoint().setDescription("Bubbles in action").setPosition(0.0,0.0,4.0).setOrientation(1.0,0.0,0.0,0.0))
-    .addChild(new autoclass.Background().setBackUrl(new autoclass.MFString("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
-    .addChild(new autoclass.Transform("DECLBubble_bubbleA")
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Sphere().setRadius(0.25))
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
-      .addChild(new autoclass.Script("DECLBubble_bubbleA_bounce").setSourceCode("\n" + 
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("bubs3.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Tour around a prismatic sphere"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\"")))
+    .addChild((new autoclass.Viewpoint()).setDescription("Bubbles in action").setPosition(0.0,0.0,4.0).setOrientation(1.0,0.0,0.0,0.0))
+    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
+    .addChild((new autoclass.Transform("DECLBubble_bubbleA"))
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Sphere()).setRadius(0.25))
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
+      .addChild((new autoclass.Script("DECLBubble_bubbleA_bounce")).setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
@@ -116,21 +124,21 @@ bubs3.prototype = {
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}" + "\n")
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
-      .addChild(new autoclass.TimeSensor("DECLBubble_bubbleA_bubbleClock").setCycleInterval(10).setLoop(true))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleA_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleA_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleA_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleA_bounce").setToField("set_fraction")))
-    .addChild(new autoclass.Transform("DECLBubble_bubbleB")
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Sphere().setRadius(0.25))
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
-      .addChild(new autoclass.Script("DECLBubble_bubbleB_bounce").setSourceCode("\n" + 
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleA_bubbleClock")).setCycleInterval(10).setLoop(true))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleA_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleA_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleA_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleA_bounce").setToField("set_fraction")))
+    .addChild((new autoclass.Transform("DECLBubble_bubbleB"))
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Sphere()).setRadius(0.25))
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
+      .addChild((new autoclass.Script("DECLBubble_bubbleB_bounce")).setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
@@ -171,21 +179,21 @@ bubs3.prototype = {
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}" + "\n")
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
-      .addChild(new autoclass.TimeSensor("DECLBubble_bubbleB_bubbleClock").setCycleInterval(10).setLoop(true))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleB_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleB_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleB_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleB_bounce").setToField("set_fraction")))
-    .addChild(new autoclass.Transform("DECLBubble_bubbleC")
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Sphere().setRadius(0.25))
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
-      .addChild(new autoclass.Script("DECLBubble_bubbleC_bounce").setSourceCode("\n" + 
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleB_bubbleClock")).setCycleInterval(10).setLoop(true))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleB_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleB_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleB_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleB_bounce").setToField("set_fraction")))
+    .addChild((new autoclass.Transform("DECLBubble_bubbleC"))
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Sphere()).setRadius(0.25))
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
+      .addChild((new autoclass.Script("DECLBubble_bubbleC_bounce")).setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
@@ -226,21 +234,21 @@ bubs3.prototype = {
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}" + "\n")
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
-      .addChild(new autoclass.TimeSensor("DECLBubble_bubbleC_bubbleClock").setCycleInterval(10).setLoop(true))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleC_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleC_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleC_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleC_bounce").setToField("set_fraction")))
-    .addChild(new autoclass.Transform("DECLBubble_bubbleD")
-      .addChild(new autoclass.Shape()
-        .setGeometry(new autoclass.Sphere().setRadius(0.25))
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
-      .addChild(new autoclass.Script("DECLBubble_bubbleD_bounce").setSourceCode("\n" + 
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleC_bubbleClock")).setCycleInterval(10).setLoop(true))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleC_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleC_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleC_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleC_bounce").setToField("set_fraction")))
+    .addChild((new autoclass.Transform("DECLBubble_bubbleD"))
+      .addChild((new autoclass.Shape())
+        .setGeometry((new autoclass.Sphere()).setRadius(0.25))
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
+      .addChild((new autoclass.Script("DECLBubble_bubbleD_bounce")).setSourceCode("\n" + 
 " " + "\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
@@ -281,15 +289,15 @@ bubs3.prototype = {
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}" + "\n")
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-        .addField(new autoclass.field().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
-      .addChild(new autoclass.TimeSensor("DECLBubble_bubbleD_bubbleClock").setCycleInterval(10).setLoop(true))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleD_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleD_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
-      .addChild(new autoclass.ROUTE().setFromNode("DECLBubble_bubbleD_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleD_bounce").setToField("set_fraction"))));
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
+        .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+      .addChild((new autoclass.TimeSensor("DECLBubble_bubbleD_bubbleClock")).setCycleInterval(10).setLoop(true))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleD_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleD_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
+      .addChild((new autoclass.ROUTE()).setFromNode("DECLBubble_bubbleD_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleD_bounce").setToField("set_fraction"))));
   },
   // end of initialize() method
 

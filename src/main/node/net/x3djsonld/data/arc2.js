@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -59,24 +67,24 @@ arc2.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("arc2.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("Lost, Doug Sanden I think"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("a generic proto to connect two objects")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Viewpoint().setDescription("Only Viewpoint").setPosition(0.0,0.0,5.0))
-    .addChild(new autoclass.Background().setSkyColor(new autoclass.MFColor(java.to([0.4,0.4,0.4], java.type("float[]")))))
-    .addChild(new autoclass.Transform("G1")
-      .addChild(new autoclass.Transform("DECLpoint_INSTANCE_node")
-        .addChild(new autoclass.Shape()
-          .setGeometry(new autoclass.Sphere().setRadius(0.1))
-          .setAppearance(new autoclass.Appearance()
-            .setMaterial(new autoclass.Material().setDiffuseColor(1.0,0.0,0.0))))
-        .addChild(new autoclass.PositionInterpolator("DECLpoint_INSTANCE_PI1").setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,5.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
-        .addChild(new autoclass.Script("DECLpoint_INSTANCE_MB1").setSourceCode("\n" + 
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("arc2.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Lost, Doug Sanden I think"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("a generic proto to connect two objects")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Viewpoint()).setDescription("Only Viewpoint").setPosition(0.0,0.0,5.0))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.4,0.4,0.4], java.type("float[]")))))
+    .addChild((new autoclass.Transform("G1"))
+      .addChild((new autoclass.Transform("DECLpoint_INSTANCE_node"))
+        .addChild((new autoclass.Shape())
+          .setGeometry((new autoclass.Sphere()).setRadius(0.1))
+          .setAppearance((new autoclass.Appearance())
+            .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0))))
+        .addChild((new autoclass.PositionInterpolator("DECLpoint_INSTANCE_PI1")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,5.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
+        .addChild((new autoclass.Script("DECLpoint_INSTANCE_MB1")).setSourceCode("\n" + 
 "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -85,24 +93,24 @@ arc2.prototype = {
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
 "                    keyValue = new MFVec3f(old, translation);" + "\n" + 
 "               }" + "\n")
-          .addField(new autoclass.field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-          .addField(new autoclass.field().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-          .addField(new autoclass.field().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
-          .addField(new autoclass.field().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
-        .addChild(new autoclass.TimeSensor("DECLpoint_INSTANCE_CL1").setCycleInterval(3).setLoop(true))
-        .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE_MB1").setToField("set_location"))
-        .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE_CL1").setFromField("fraction_changed").setToNode("DECLpoint_INSTANCE_PI1").setToField("set_fraction"))
-        .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE_MB1").setFromField("keyValue").setToNode("DECLpoint_INSTANCE_PI1").setToField("keyValue"))
-        .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE_PI1").setFromField("value_changed").setToNode("DECLpoint_INSTANCE_node").setToField("set_translation"))
-        .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE_MB1").setFromField("translation_changed").setToNode("DECLpoint_INSTANCE_node").setToField("set_translation"))))
-    .addChild(new autoclass.Transform("G2")
-      .addChild(new autoclass.Transform("DECLpoint_INSTANCE1000_node")
-        .addChild(new autoclass.Shape()
-          .setGeometry(new autoclass.Sphere().setRadius(0.1))
-          .setAppearance(new autoclass.Appearance()
-            .setMaterial(new autoclass.Material().setDiffuseColor(1.0,0.0,0.0))))
-        .addChild(new autoclass.PositionInterpolator("DECLpoint_INSTANCE1000_PI1").setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,5.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
-        .addChild(new autoclass.Script("DECLpoint_INSTANCE1000_MB1").setSourceCode("\n" + 
+          .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+          .addField((new autoclass.field()).setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
+          .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_location").setType("SFTime"))
+          .addField((new autoclass.field()).setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
+        .addChild((new autoclass.TimeSensor("DECLpoint_INSTANCE_CL1")).setCycleInterval(3).setLoop(true))
+        .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_INSTANCE_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE_MB1").setToField("set_location"))
+        .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_INSTANCE_CL1").setFromField("fraction_changed").setToNode("DECLpoint_INSTANCE_PI1").setToField("set_fraction"))
+        .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_INSTANCE_MB1").setFromField("keyValue").setToNode("DECLpoint_INSTANCE_PI1").setToField("keyValue"))
+        .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_INSTANCE_PI1").setFromField("value_changed").setToNode("DECLpoint_INSTANCE_node").setToField("set_translation"))
+        .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_INSTANCE_MB1").setFromField("translation_changed").setToNode("DECLpoint_INSTANCE_node").setToField("set_translation"))))
+    .addChild((new autoclass.Transform("G2"))
+      .addChild((new autoclass.Transform("DECLpoint_INSTANCE1000_node"))
+        .addChild((new autoclass.Shape())
+          .setGeometry((new autoclass.Sphere()).setRadius(0.1))
+          .setAppearance((new autoclass.Appearance())
+            .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0))))
+        .addChild((new autoclass.PositionInterpolator("DECLpoint_INSTANCE1000_PI1")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,5.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
+        .addChild((new autoclass.Script("DECLpoint_INSTANCE1000_MB1")).setSourceCode("\n" + 
 "\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -111,23 +119,23 @@ arc2.prototype = {
 "                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
 "                    keyValue = new MFVec3f(old, translation);" + "\n" + 
 "               }" + "\n")
-          .addField(new autoclass.field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-          .addField(new autoclass.field().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-          .addField(new autoclass.field().setAccessType("inputOnly").setName("set_location").setType("SFTime"))
-          .addField(new autoclass.field().setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
-        .addChild(new autoclass.TimeSensor("DECLpoint_INSTANCE1000_CL1").setCycleInterval(3).setLoop(true))
-        .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE1000_MB1").setToField("set_location"))
-        .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("fraction_changed").setToNode("DECLpoint_INSTANCE1000_PI1").setToField("set_fraction"))
-        .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE1000_MB1").setFromField("keyValue").setToNode("DECLpoint_INSTANCE1000_PI1").setToField("keyValue"))
-        .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE1000_PI1").setFromField("value_changed").setToNode("DECLpoint_INSTANCE1000_node").setToField("set_translation"))
-        .addChild(new autoclass.ROUTE().setFromNode("DECLpoint_INSTANCE1000_MB1").setFromField("translation_changed").setToNode("DECLpoint_INSTANCE1000_node").setToField("set_translation"))))
-    .addChild(new autoclass.Transform("transC1")
-      .addChild(new autoclass.Transform("rotscaleC1")
-        .addChild(new autoclass.Shape()
-          .setAppearance(new autoclass.Appearance()
-            .setMaterial(new autoclass.Material().setDiffuseColor(0.2,0.7,0.7).setTransparency(0.5)))
-          .setGeometry(new autoclass.Cylinder().setRadius(0.05)))))
-    .addChild(new autoclass.Script("DECLx3dconnector_connector1_S1").setSourceCode("\n" + 
+          .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+          .addField((new autoclass.field()).setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
+          .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_location").setType("SFTime"))
+          .addField((new autoclass.field()).setAccessType("inputOutput").setName("keyValue").setType("MFVec3f").setValue("0 0 0 0 5 0")))
+        .addChild((new autoclass.TimeSensor("DECLpoint_INSTANCE1000_CL1")).setCycleInterval(3).setLoop(true))
+        .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE1000_MB1").setToField("set_location"))
+        .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("fraction_changed").setToNode("DECLpoint_INSTANCE1000_PI1").setToField("set_fraction"))
+        .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_INSTANCE1000_MB1").setFromField("keyValue").setToNode("DECLpoint_INSTANCE1000_PI1").setToField("keyValue"))
+        .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_INSTANCE1000_PI1").setFromField("value_changed").setToNode("DECLpoint_INSTANCE1000_node").setToField("set_translation"))
+        .addChild((new autoclass.ROUTE()).setFromNode("DECLpoint_INSTANCE1000_MB1").setFromField("translation_changed").setToNode("DECLpoint_INSTANCE1000_node").setToField("set_translation"))))
+    .addChild((new autoclass.Transform("transC1"))
+      .addChild((new autoclass.Transform("rotscaleC1"))
+        .addChild((new autoclass.Shape())
+          .setAppearance((new autoclass.Appearance())
+            .setMaterial((new autoclass.Material()).setDiffuseColor(0.2,0.7,0.7).setTransparency(0.5)))
+          .setGeometry((new autoclass.Cylinder()).setRadius(0.05)))))
+    .addChild((new autoclass.Script("DECLx3dconnector_connector1_S1")).setSourceCode("\n" + 
 "\n" + 
 "            ecmascript:" + "\n" + 
 "        function recompute(startpoint,endpoint){" + "\n" + 
@@ -168,18 +176,18 @@ arc2.prototype = {
 "        function set_endpoint(val,t){" + "\n" + 
 "            recompute_and_route(startnode.translation,val);" + "\n" + 
 "        }" + "\n")
-      .addField(new autoclass.field().setAccessType("initializeOnly").setName("startnode").setType("SFNode")
-        .addChild(new autoclass.Transform().setUSE("G1")))
-      .addField(new autoclass.field().setAccessType("initializeOnly").setName("endnode").setType("SFNode")
-        .addChild(new autoclass.Transform().setUSE("G2")))
-      .addField(new autoclass.field().setAccessType("initializeOnly").setName("transC1").setType("SFNode")
-        .addChild(new autoclass.Transform().setUSE("transC1")))
-      .addField(new autoclass.field().setAccessType("initializeOnly").setName("rotscaleC1").setType("SFNode")
-        .addChild(new autoclass.Transform().setUSE("rotscaleC1")))
-      .addField(new autoclass.field().setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
-      .addField(new autoclass.field().setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
-    .addChild(new autoclass.ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
-    .addChild(new autoclass.ROUTE().setFromNode("G2").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")));
+      .addField((new autoclass.field()).setAccessType("initializeOnly").setName("startnode").setType("SFNode")
+        .addChild((new autoclass.Transform()).setUSE("G1")))
+      .addField((new autoclass.field()).setAccessType("initializeOnly").setName("endnode").setType("SFNode")
+        .addChild((new autoclass.Transform()).setUSE("G2")))
+      .addField((new autoclass.field()).setAccessType("initializeOnly").setName("transC1").setType("SFNode")
+        .addChild((new autoclass.Transform()).setUSE("transC1")))
+      .addField((new autoclass.field()).setAccessType("initializeOnly").setName("rotscaleC1").setType("SFNode")
+        .addChild((new autoclass.Transform()).setUSE("rotscaleC1")))
+      .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
+      .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
+    .addChild((new autoclass.ROUTE()).setFromNode("G1").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
+    .addChild((new autoclass.ROUTE()).setFromNode("G2").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")));
   },
   // end of initialize() method
 

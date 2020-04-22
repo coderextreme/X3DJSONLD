@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -75,40 +83,40 @@ CloudsProcedural4.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Immersive").setVersion("3.2")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("CloudsProcedural4.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
-    .addMeta(new autoclass.meta().setName("creator").setContent("Capt Darren W. Murphy"))
-    .addMeta(new autoclass.meta().setName("created").setContent("1 November 2007"))
-    .addMeta(new autoclass.meta().setName("modified").setContent("14 January 2014"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
-    .addMeta(new autoclass.meta().setName("license").setContent("../../license.html"))
-    .addMeta(new autoclass.meta().setName("TODO").setContent("fix links")))
-  .setScene(new autoclass.Scene()
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.2")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("CloudsProcedural4.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Capt Darren W. Murphy"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("1 November 2007"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("14 January 2014"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html"))
+    .addMeta((new autoclass.meta()).setName("TODO").setContent("fix links")))
+  .setScene((new autoclass.Scene())
     .addComments(" A png image file for the cloud texture must be designated in the ecmascript node. ")
-    .addChild(new autoclass.Viewpoint().setDescription("Main").setOrientation(0.0,1.0,0.0,1.57).setPosition(50000.0,1000.0,42000.0).setJump(false))
-    .addChild(new autoclass.Viewpoint().setDescription("Light House Tower").setOrientation(0.0,1.0,0.0,1.3).setPosition(45000.0,1290.0,44000.0).setJump(false))
-    .addChild(new autoclass.Viewpoint().setDescription("centerWest").setOrientation(0.0,1.0,0.0,2.5).setPosition(48000.0,1000.0,20000.0).setJump(false))
-    .addChild(new autoclass.Background().setGroundColor(new autoclass.MFColor(java.to([0.0,0.0,1.0], java.type("float[]")))).setSkyColor(new autoclass.MFColor(java.to([0.0,0.0,1.0], java.type("float[]")))))
-    .addChild(new autoclass.DirectionalLight().setDirection(-1.0,0.0,0.0).setAmbientIntensity(1).setGlobal(true))
-    .addChild(new autoclass.Group("Terrain")
-      .addChild(new autoclass.Transform().setTranslation(25000.0,0.0,25000.0).setScale(50.0,50.0,50.0)
-        .addChild(new autoclass.Inline().setUrl(new autoclass.MFString("\"MontereyBayLargeMesh.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d\" \"MontereyBayLargeMesh.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl\""))))
-      .addChild(new autoclass.Transform().setRotation(1.0,0.0,0.0,1.57).setTranslation(25000.0,0.0,25000.0)
-        .addChild(new autoclass.Shape()
-          .setGeometry(new autoclass.Rectangle2D().setSize(77000.0,55000.0))
-          .setAppearance(new autoclass.Appearance()
-            .setTexture(new autoclass.ImageTexture().setUrl(new autoclass.MFString("\"ocean.png\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png\"")))))))
-    .addChild(new autoclass.Group("Placemarks")
-      .addChild(new autoclass.Transform().setTranslation(45000.0,30.0,44000.0).setScale(50.0,50.0,50.0)
-        .addChild(new autoclass.Inline().setUrl(new autoclass.MFString("\"Lighthouse.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d\" \"Lighthouse.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl\"")))))
-    .addChild(new autoclass.Group("Clouds")
-      .addChild(new autoclass.Transform("Cumulus"))
-      .addChild(new autoclass.Transform("Cirrus"))
-      .addChild(new autoclass.Transform("Fog"))
-      .addChild(new autoclass.Script("PixelScript").setDirectOutput(true).setSourceCode("\n" + 
+    .addChild((new autoclass.Viewpoint()).setDescription("Main").setOrientation(0.0,1.0,0.0,1.57).setPosition(50000.0,1000.0,42000.0).setJump(false))
+    .addChild((new autoclass.Viewpoint()).setDescription("Light House Tower").setOrientation(0.0,1.0,0.0,1.3).setPosition(45000.0,1290.0,44000.0).setJump(false))
+    .addChild((new autoclass.Viewpoint()).setDescription("centerWest").setOrientation(0.0,1.0,0.0,2.5).setPosition(48000.0,1000.0,20000.0).setJump(false))
+    .addChild((new autoclass.Background()).setGroundColor(new autoclass.MFColor(java.to([0.0,0.0,1.0], java.type("float[]")))).setSkyColor(new autoclass.MFColor(java.to([0.0,0.0,1.0], java.type("float[]")))))
+    .addChild((new autoclass.DirectionalLight()).setDirection(-1.0,0.0,0.0).setAmbientIntensity(1).setGlobal(true))
+    .addChild((new autoclass.Group("Terrain"))
+      .addChild((new autoclass.Transform()).setTranslation(25000.0,0.0,25000.0).setScale(50.0,50.0,50.0)
+        .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"MontereyBayLargeMesh.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d\" \"MontereyBayLargeMesh.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl\""))))
+      .addChild((new autoclass.Transform()).setRotation(1.0,0.0,0.0,1.57).setTranslation(25000.0,0.0,25000.0)
+        .addChild((new autoclass.Shape())
+          .setGeometry((new autoclass.Rectangle2D()).setSize(77000.0,55000.0))
+          .setAppearance((new autoclass.Appearance())
+            .setTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"ocean.png\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png\"")))))))
+    .addChild((new autoclass.Group("Placemarks"))
+      .addChild((new autoclass.Transform()).setTranslation(45000.0,30.0,44000.0).setScale(50.0,50.0,50.0)
+        .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"Lighthouse.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d\" \"Lighthouse.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl\"")))))
+    .addChild((new autoclass.Group("Clouds"))
+      .addChild((new autoclass.Transform("Cumulus")))
+      .addChild((new autoclass.Transform("Cirrus")))
+      .addChild((new autoclass.Transform("Fog")))
+      .addChild((new autoclass.Script("PixelScript")).setDirectOutput(true).setSourceCode("\n" + 
 "        " + "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -491,12 +499,12 @@ CloudsProcedural4.prototype = {
 "\n" + 
 "cirrus();" + "\n" + 
 "}" + "\n")
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("Cumulus").setType("SFNode")
-          .addChild(new autoclass.Transform().setUSE("Cumulus")))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("Cirrus").setType("SFNode")
-          .addChild(new autoclass.Transform().setUSE("Cirrus")))
-        .addField(new autoclass.field().setAccessType("initializeOnly").setName("Fog").setType("SFNode")))
-      .addChild(new autoclass.DirectionalLight().setDirection(-1.0,-1.0,0.0).setAmbientIntensity(1).setColor(1.0,0.0,0.0).setGlobal(true))));
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("Cumulus").setType("SFNode")
+          .addChild((new autoclass.Transform()).setUSE("Cumulus")))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("Cirrus").setType("SFNode")
+          .addChild((new autoclass.Transform()).setUSE("Cirrus")))
+        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("Fog").setType("SFNode")))
+      .addChild((new autoclass.DirectionalLight()).setDirection(-1.0,-1.0,0.0).setAmbientIntensity(1).setColor(1.0,0.0,0.0).setGlobal(true))));
   },
   // end of initialize() method
 

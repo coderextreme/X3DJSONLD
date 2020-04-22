@@ -1,3 +1,11 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
 var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
@@ -59,19 +67,19 @@ sphere.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new autoclass.X3D().setProfile("Interchange").setVersion("3.3")
-  .setHead(new autoclass.head()
-    .addMeta(new autoclass.meta().setName("title").setContent("sphere.x3d"))
-    .addMeta(new autoclass.meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new autoclass.meta().setName("generator").setContent("manual"))
-    .addMeta(new autoclass.meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
-    .addMeta(new autoclass.meta().setName("description").setContent("a sphere")))
-  .setScene(new autoclass.Scene()
-    .addChild(new autoclass.Group()
-      .addChild(new autoclass.Shape()
-        .setAppearance(new autoclass.Appearance()
-          .setMaterial(new autoclass.Material().setDiffuseColor(1.0,1.0,1.0)))
-        .setGeometry(new autoclass.Sphere()))));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("sphere.x3d"))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("a sphere")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.Group())
+      .addChild((new autoclass.Shape())
+        .setAppearance((new autoclass.Appearance())
+          .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0)))
+        .setGeometry((new autoclass.Sphere())))));
   },
   // end of initialize() method
 
