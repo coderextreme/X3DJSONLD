@@ -3,7 +3,9 @@
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
 
-var fs = require("fs");
+let fs = require("fs");
+let DOMSerializer = require('./DOMSerializer.js');
+let serializer = new DOMSerializer();
 
 function VRMLScriptSerializer () {
 this.code = [];
@@ -17,20 +19,20 @@ VRMLScriptSerializer.prototype = {
 		this.code = [];
 		this.codeno = 0;
 		this.preno = 0;
-		var stack = [];
+		let stack = [];
 
-		var str = "";
+		let str = "";
 
 		stack.unshift(this.preno);
 		this.preno++;
-		var bodystr = "";
+		let bodystr = "";
         
         // https://stackoverflow.com/questions/48469666/error-enoent-no-such-file-or-directory-open-moviedata-json
         // https://stackoverflow.com/questions/3151436/how-can-i-get-the-current-directory-name-in-javascript
         // console.log('Current directory: ' + process.cwd()); // Node.js method for current directory - not what is needed here
         // https://flaviocopes.com/node-get-current-folder/ use __dirname under Node.js
-		bodystr += "var browser = X3D.getBrowser();\n";
-		bodystr += "var "+element.nodeName+stack[0]+" = {};\n";
+		bodystr += "let browser = X3D.getBrowser();\n";
+		bodystr += "let "+element.nodeName+stack[0]+" = {};\n";
 		bodystr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack);
 
 		str += bodystr;
@@ -72,8 +74,8 @@ VRMLScriptSerializer.prototype = {
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
-		var prepre = ".";
-		var addpre = "set";
+		let prepre = ".";
+		let addpre = "set";
 		if (cn > 0 && node.nodeName !== 'IS') {
 			addpre = "add";
 		}
@@ -81,7 +83,7 @@ VRMLScriptSerializer.prototype = {
 			addpre = "add";
 		}
 
-		var method = node.nodeName;
+		let method = node.nodeName;
 		if (typeof mapToMethod[element.nodeName] === 'object') {
 			if (typeof mapToMethod[element.nodeName][node.nodeName] === 'string') {
 				addpre = "";
@@ -95,12 +97,12 @@ VRMLScriptSerializer.prototype = {
 		} else {
 			method = method.charAt(0).toUpperCase() + method.slice(1);
 		}
-		for (var a in node.attributes) {
-			var attrs = node.attributes;
+		for (let a in node.attributes) {
+			let attrs = node.attributes;
 			try {
 				parseInt(a);
-				var attrsa = attrs[a];
-				var attr = attrsa.nodeName;
+				let attrsa = attrs[a];
+				let attr = attrsa.nodeName;
 				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
 					if (attr === "containerField") {
 						if (method.charAt(0) < 'a') {
@@ -137,8 +139,8 @@ VRMLScriptSerializer.prototype = {
 		return prepre+addpre+method;
 	},
 	stringValue : function(attrsa, attr, attrType, element) {
-		var strval;
-		var nodeValue = attrsa.nodeValue;
+		let strval;
+		let nodeValue = attrsa.nodeValue;
 		if (nodeValue === 'NULL') {
 			strval = "";
 		} else if (attrType === "SFString") {
@@ -173,7 +175,7 @@ VRMLScriptSerializer.prototype = {
 			strval = this.printSubArray(attrType, "java.lang.String",
 				nodeValue.substr(1, nodeValue.length-2).split(/"[ ,\t\r\n]+"/).
 				map(function(x) {
-					var y = x.
+					let y = x.
 					       replace(/(\\\\+)/g, '$1$1').
 					       replace(/\\\\"/g, '\\\"').
 					       replace(/""/g, '\\"\\"').
@@ -230,15 +232,15 @@ VRMLScriptSerializer.prototype = {
 		return strval;
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
-		var str = "";
-		var attrType = "";
-		for (var a in element.attributes) {
-			var attrs = element.attributes;
+		let str = "";
+		let attrType = "";
+		for (let a in element.attributes) {
+			let attrs = element.attributes;
 			try {
 				parseInt(a);
-				var attrsa = attrs[a];
+				let attrsa = attrs[a];
 				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
-					var attr = attrsa.nodeName;
+					let attr = attrsa.nodeName;
 					if (attr === "xmlns:xsd") {
 						continue;
 					} else if (attr === "xsd:noNamespaceSchemaLocation" ) {
@@ -268,7 +270,7 @@ VRMLScriptSerializer.prototype = {
 					if (typeof fieldTypes[element.nodeName] !== 'undefined') {
 						attrType = fieldTypes[element.nodeName][attr];
 					}
-					var strval = this.stringValue(attrsa, attr, attrType, element);
+					let strval = this.stringValue(attrsa, attr, attrType, element);
 					var method = attr;
 					if (method.charAt(0) < 'a') {
 						method = method.charAt(0).toUpperCase() + method.slice(1);
@@ -284,21 +286,24 @@ VRMLScriptSerializer.prototype = {
 			}
 			attrType = "";
 		}
-		var ai = 0;
-		for (var cn in element.childNodes) {
-			var node = element.childNodes[cn];
+		let ai = 0;
+		for (let cn in element.childNodes) {
+			let node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 				if (node.nodeName === "head") {
 					continue;
 				}
 				stack.unshift(this.preno);
 				this.preno++;
-				var ch = "";
-				if (node.nodeName !== "Scene") {
-					ch += node.nodeName+stack[0]+" = browser.currentScene.createNode(\""+ node.nodeName+"\");\n";
+				let ch = "";
+				if (node.nodeName === "ProtoDeclare") {
+					ch += "let "+node.nodeName+stack[0]+" = browser.createX3DFromString(`"+serializer.serializeToString({ "X3D" : { "version" : "4.0"}}, node)+"`);\n";
+
+				} else if (node.nodeName !== "Scene") {
+					ch += "let "+node.nodeName+stack[0]+" = browser.currentScene.createNode(\""+ node.nodeName+"\");\n";
 				}
 
-				var bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				let bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				ch += bodystr;
 				method = this.printParentChild(element, node, cn, mapToMethod, n);
 				if (element.nodeName !== "X3D") {
@@ -368,7 +373,7 @@ VRMLScriptSerializer.prototype = {
 				str += ch;
 				stack.shift();
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
-				var y = node.nodeValue.
+				let y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
 				// str += ".addComments(CommentsBlock(\"\"\""+y+"\"\"\")) \\\n";

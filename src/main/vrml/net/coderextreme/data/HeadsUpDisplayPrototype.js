@@ -1,12 +1,94 @@
-var browser = X3D.getBrowser();
-var X3D0 = {};
+let browser = X3D.getBrowser();
+let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.0";
-ProtoDeclare2 = browser.currentScene.createNode("ProtoDeclare");
+let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
+<ProtoDeclare name="HeadsUpDisplay" appinfo="HeadsUpDisplay positions child geometry in screen space, movable by the user" ><ProtoInterface><field name="children" accessType="inputOutput" appinfo="Displayed subscene positioned as a HUD." type="MFNode"><!--default is null array of nodes--></field>
+<field name="dragChildren" accessType="inputOutput" appinfo="Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position." type="MFNode"><!--default is null array of nodes--></field>
+<field name="locationOffset" accessType="initializeOnly" appinfo="Modified screen location and distance (for size)." type="SFVec3f" value="-2 -2 0"></field>
+<field name="traceEnabled" accessType="initializeOnly" appinfo="Enable/disable console output for troubleshooting." type="SFBool" value="false"></field>
+</ProtoInterface>
+<ProtoBody><Group><ProximitySensor DEF="WhereSensor" size="1000000000 1000000000 1000000000"><IS><connect nodeField="center" protoField="locationOffset"></connect>
+</IS>
+</ProximitySensor>
+<Transform DEF="FixedLocation"><Transform DEF="MovableLocation"><Transform DEF="LocationOffset"><IS><connect nodeField="translation" protoField="locationOffset"></connect>
+</IS>
+<Transform translation="0 0 -10"><Group><IS><connect nodeField="children" protoField="children"></connect>
+</IS>
+</Group>
+<Group DEF="PlaneMovementSensorGroup"><Group DEF="DragGeometry"><IS><connect nodeField="children" protoField="dragChildren"></connect>
+</IS>
+</Group>
+<PlaneSensor DEF="PlaneMovementSensor" description="click and drag to move interface"><IS><connect nodeField="offset" protoField="locationOffset"></connect>
+</IS>
+</PlaneSensor>
+<VisibilitySensor DEF="MovementVisibilitySensor"></VisibilitySensor>
+<Script DEF="VisibilityControlScript"><field name="traceEnabled" accessType="initializeOnly" type="SFBool"></field>
+<field name="isVisible" accessType="initializeOnly" type="SFBool" value="true"></field>
+<field name="planeSensorTranslation" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<field name="setIsVisible" accessType="inputOnly" type="SFBool"></field>
+<field name="setPlaneSensorIsActive" accessType="inputOnly" type="SFBool"></field>
+<field name="setPlaneSensorTranslation" accessType="inputOnly" type="SFVec3f"></field>
+<field name="translationChanged" accessType="outputOnly" type="SFVec3f"></field>
+<field name="translationOffsetChanged" accessType="outputOnly" type="SFVec3f"></field>
+<IS><connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
+</IS>
+<![CDATA[ecmascript:
+
+function tracePrint (text)
+{
+	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);
+}
+function setIsVisible (value, timeStamp)
+{
+	isVisible = value;
+	tracePrint('isVisible=' + value);
+}
+function setPlaneSensorIsActive (value, timeStamp)
+{
+	tracePrint('PlaneSensor isActive=' + value);
+
+	if (value == false)
+	{
+		tracePrint('planeSensorTranslation=' + planeSensorTranslation);
+		if (isVisible)
+		{
+			translationChanged = planeSensorTranslation;
+		}
+		else
+		{
+			// fell off screen, reset to center
+			translationChanged = new SFVec3f(0, 0, 0);
+			translationOffsetChanged  = new SFVec3f(0, 0, 0);
+		}
+	}
+}
+function setPlaneSensorTranslation (value, timeStamp)
+{
+	planeSensorTranslation = value;
+	tracePrint('planeSensorTranslation=' + value);
+}]]></Script>
+<ROUTE fromField="isActive" fromNode="PlaneMovementSensor" toField="setPlaneSensorIsActive" toNode="VisibilityControlScript"></ROUTE>
+<ROUTE fromField="translation_changed" fromNode="PlaneMovementSensor" toField="setPlaneSensorTranslation" toNode="VisibilityControlScript"></ROUTE>
+<ROUTE fromField="isActive" fromNode="MovementVisibilitySensor" toField="setIsVisible" toNode="VisibilityControlScript"></ROUTE>
+</Group>
+</Transform>
+</Transform>
+<ROUTE fromField="translation_changed" fromNode="PlaneMovementSensor" toField="set_translation" toNode="MovableLocation"></ROUTE>
+<ROUTE fromField="translationChanged" fromNode="VisibilityControlScript" toField="set_translation" toNode="MovableLocation"></ROUTE>
+<ROUTE fromField="translationOffsetChanged" fromNode="VisibilityControlScript" toField="set_offset" toNode="PlaneMovementSensor"></ROUTE>
+</Transform>
+</Transform>
+<ROUTE fromField="position_changed" fromNode="WhereSensor" toField="set_translation" toNode="FixedLocation"></ROUTE>
+<ROUTE fromField="orientation_changed" fromNode="WhereSensor" toField="set_rotation" toNode="FixedLocation"></ROUTE>
+</Group>
+</ProtoBody>
+</ProtoDeclare>`);
 ProtoDeclare2.name = "HeadsUpDisplay";
 ProtoDeclare2.appinfo = "HeadsUpDisplay positions child geometry in screen space, movable by the user";
-ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
-field4 = browser.currentScene.createNode("field");
+let ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
+let field4 = browser.currentScene.createNode("field");
 field4.name = "children";
 field4.accessType = "inputOutput";
 field4.appinfo = "Displayed subscene positioned as a HUD.";
@@ -16,7 +98,7 @@ ProtoInterface3.field = new MFNode();
 
 ProtoInterface3.field[0] = field4;
 
-field5 = browser.currentScene.createNode("field");
+let field5 = browser.currentScene.createNode("field");
 field5.name = "dragChildren";
 field5.accessType = "inputOutput";
 field5.appinfo = "Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.";
@@ -24,7 +106,7 @@ field5.type = "MFNode";
 //default is null array of nodes
 ProtoInterface3.field[1] = field5;
 
-field6 = browser.currentScene.createNode("field");
+let field6 = browser.currentScene.createNode("field");
 field6.name = "locationOffset";
 field6.accessType = "initializeOnly";
 field6.appinfo = "Modified screen location and distance (for size).";
@@ -32,7 +114,7 @@ field6.type = "SFVec3f";
 field6.value = "-2 -2 0";
 ProtoInterface3.field[2] = field6;
 
-field7 = browser.currentScene.createNode("field");
+let field7 = browser.currentScene.createNode("field");
 field7.name = "traceEnabled";
 field7.accessType = "initializeOnly";
 field7.appinfo = "Enable/disable console output for troubleshooting.";
@@ -42,13 +124,13 @@ ProtoInterface3.field[3] = field7;
 
 ProtoDeclare2.protoInterface = ProtoInterface3;
 
-ProtoBody8 = browser.currentScene.createNode("ProtoBody");
-Group9 = browser.currentScene.createNode("Group");
-ProximitySensor10 = browser.currentScene.createNode("ProximitySensor");
+let ProtoBody8 = browser.currentScene.createNode("ProtoBody");
+let Group9 = browser.currentScene.createNode("Group");
+let ProximitySensor10 = browser.currentScene.createNode("ProximitySensor");
 ProximitySensor10.DEF = "WhereSensor";
 ProximitySensor10.size = new SFVec3f(new float[1000000000,1000000000,1000000000]);
-IS11 = browser.currentScene.createNode("IS");
-connect12 = browser.currentScene.createNode("connect");
+let IS11 = browser.currentScene.createNode("IS");
+let connect12 = browser.currentScene.createNode("connect");
 connect12.nodeField = "center";
 connect12.protoField = "locationOffset";
 IS11.connect = new MFNode();
@@ -61,14 +143,14 @@ Group9.children = new MFNode();
 
 Group9.children[0] = ProximitySensor10;
 
-Transform13 = browser.currentScene.createNode("Transform");
+let Transform13 = browser.currentScene.createNode("Transform");
 Transform13.DEF = "FixedLocation";
-Transform14 = browser.currentScene.createNode("Transform");
+let Transform14 = browser.currentScene.createNode("Transform");
 Transform14.DEF = "MovableLocation";
-Transform15 = browser.currentScene.createNode("Transform");
+let Transform15 = browser.currentScene.createNode("Transform");
 Transform15.DEF = "LocationOffset";
-IS16 = browser.currentScene.createNode("IS");
-connect17 = browser.currentScene.createNode("connect");
+let IS16 = browser.currentScene.createNode("IS");
+let connect17 = browser.currentScene.createNode("connect");
 connect17.nodeField = "translation";
 connect17.protoField = "locationOffset";
 IS16.connect = new MFNode();
@@ -77,11 +159,11 @@ IS16.connect[0] = connect17;
 
 Transform15.iS = IS16;
 
-Transform18 = browser.currentScene.createNode("Transform");
+let Transform18 = browser.currentScene.createNode("Transform");
 Transform18.translation = new SFVec3f(new float[0,0,-10]);
-Group19 = browser.currentScene.createNode("Group");
-IS20 = browser.currentScene.createNode("IS");
-connect21 = browser.currentScene.createNode("connect");
+let Group19 = browser.currentScene.createNode("Group");
+let IS20 = browser.currentScene.createNode("IS");
+let connect21 = browser.currentScene.createNode("connect");
 connect21.nodeField = "children";
 connect21.protoField = "children";
 IS20.connect = new MFNode();
@@ -94,12 +176,12 @@ Transform18.children = new MFNode();
 
 Transform18.children[0] = Group19;
 
-Group22 = browser.currentScene.createNode("Group");
+let Group22 = browser.currentScene.createNode("Group");
 Group22.DEF = "PlaneMovementSensorGroup";
-Group23 = browser.currentScene.createNode("Group");
+let Group23 = browser.currentScene.createNode("Group");
 Group23.DEF = "DragGeometry";
-IS24 = browser.currentScene.createNode("IS");
-connect25 = browser.currentScene.createNode("connect");
+let IS24 = browser.currentScene.createNode("IS");
+let connect25 = browser.currentScene.createNode("connect");
 connect25.nodeField = "children";
 connect25.protoField = "dragChildren";
 IS24.connect = new MFNode();
@@ -112,11 +194,11 @@ Group22.children = new MFNode();
 
 Group22.children[0] = Group23;
 
-PlaneSensor26 = browser.currentScene.createNode("PlaneSensor");
+let PlaneSensor26 = browser.currentScene.createNode("PlaneSensor");
 PlaneSensor26.DEF = "PlaneMovementSensor";
 PlaneSensor26.description = "click and drag to move interface";
-IS27 = browser.currentScene.createNode("IS");
-connect28 = browser.currentScene.createNode("connect");
+let IS27 = browser.currentScene.createNode("IS");
+let connect28 = browser.currentScene.createNode("connect");
 connect28.nodeField = "offset";
 connect28.protoField = "locationOffset";
 IS27.connect = new MFNode();
@@ -127,13 +209,13 @@ PlaneSensor26.iS = IS27;
 
 Group22.children[1] = PlaneSensor26;
 
-VisibilitySensor29 = browser.currentScene.createNode("VisibilitySensor");
+let VisibilitySensor29 = browser.currentScene.createNode("VisibilitySensor");
 VisibilitySensor29.DEF = "MovementVisibilitySensor";
 Group22.children[2] = VisibilitySensor29;
 
-Script30 = browser.currentScene.createNode("Script");
+let Script30 = browser.currentScene.createNode("Script");
 Script30.DEF = "VisibilityControlScript";
-field31 = browser.currentScene.createNode("field");
+let field31 = browser.currentScene.createNode("field");
 field31.name = "traceEnabled";
 field31.accessType = "initializeOnly";
 field31.type = "SFBool";
@@ -141,52 +223,52 @@ Script30.field = new MFNode();
 
 Script30.field[0] = field31;
 
-field32 = browser.currentScene.createNode("field");
+let field32 = browser.currentScene.createNode("field");
 field32.name = "isVisible";
 field32.accessType = "initializeOnly";
 field32.type = "SFBool";
 field32.value = "true";
 Script30.field[1] = field32;
 
-field33 = browser.currentScene.createNode("field");
+let field33 = browser.currentScene.createNode("field");
 field33.name = "planeSensorTranslation";
 field33.accessType = "initializeOnly";
 field33.type = "SFVec3f";
 field33.value = "0 0 0";
 Script30.field[2] = field33;
 
-field34 = browser.currentScene.createNode("field");
+let field34 = browser.currentScene.createNode("field");
 field34.name = "setIsVisible";
 field34.accessType = "inputOnly";
 field34.type = "SFBool";
 Script30.field[3] = field34;
 
-field35 = browser.currentScene.createNode("field");
+let field35 = browser.currentScene.createNode("field");
 field35.name = "setPlaneSensorIsActive";
 field35.accessType = "inputOnly";
 field35.type = "SFBool";
 Script30.field[4] = field35;
 
-field36 = browser.currentScene.createNode("field");
+let field36 = browser.currentScene.createNode("field");
 field36.name = "setPlaneSensorTranslation";
 field36.accessType = "inputOnly";
 field36.type = "SFVec3f";
 Script30.field[5] = field36;
 
-field37 = browser.currentScene.createNode("field");
+let field37 = browser.currentScene.createNode("field");
 field37.name = "translationChanged";
 field37.accessType = "outputOnly";
 field37.type = "SFVec3f";
 Script30.field[6] = field37;
 
-field38 = browser.currentScene.createNode("field");
+let field38 = browser.currentScene.createNode("field");
 field38.name = "translationOffsetChanged";
 field38.accessType = "outputOnly";
 field38.type = "SFVec3f";
 Script30.field[7] = field38;
 
-IS39 = browser.currentScene.createNode("IS");
-connect40 = browser.currentScene.createNode("connect");
+let IS39 = browser.currentScene.createNode("IS");
+let connect40 = browser.currentScene.createNode("connect");
 connect40.nodeField = "traceEnabled";
 connect40.protoField = "traceEnabled";
 IS39.connect = new MFNode();
@@ -233,21 +315,21 @@ Script30.setSourceCode(`ecmascript:\n"+
 "}`)
 Group22.children[3] = Script30;
 
-ROUTE41 = browser.currentScene.createNode("ROUTE");
+let ROUTE41 = browser.currentScene.createNode("ROUTE");
 ROUTE41.fromField = "isActive";
 ROUTE41.fromNode = "PlaneMovementSensor";
 ROUTE41.toField = "setPlaneSensorIsActive";
 ROUTE41.toNode = "VisibilityControlScript";
 Group22.children[4] = ROUTE41;
 
-ROUTE42 = browser.currentScene.createNode("ROUTE");
+let ROUTE42 = browser.currentScene.createNode("ROUTE");
 ROUTE42.fromField = "translation_changed";
 ROUTE42.fromNode = "PlaneMovementSensor";
 ROUTE42.toField = "setPlaneSensorTranslation";
 ROUTE42.toNode = "VisibilityControlScript";
 Group22.children[5] = ROUTE42;
 
-ROUTE43 = browser.currentScene.createNode("ROUTE");
+let ROUTE43 = browser.currentScene.createNode("ROUTE");
 ROUTE43.fromField = "isActive";
 ROUTE43.fromNode = "MovementVisibilitySensor";
 ROUTE43.toField = "setIsVisible";
@@ -264,21 +346,21 @@ Transform14.children = new MFNode();
 
 Transform14.children[0] = Transform15;
 
-ROUTE44 = browser.currentScene.createNode("ROUTE");
+let ROUTE44 = browser.currentScene.createNode("ROUTE");
 ROUTE44.fromField = "translation_changed";
 ROUTE44.fromNode = "PlaneMovementSensor";
 ROUTE44.toField = "set_translation";
 ROUTE44.toNode = "MovableLocation";
 Transform14.children[1] = ROUTE44;
 
-ROUTE45 = browser.currentScene.createNode("ROUTE");
+let ROUTE45 = browser.currentScene.createNode("ROUTE");
 ROUTE45.fromField = "translationChanged";
 ROUTE45.fromNode = "VisibilityControlScript";
 ROUTE45.toField = "set_translation";
 ROUTE45.toNode = "MovableLocation";
 Transform14.children[2] = ROUTE45;
 
-ROUTE46 = browser.currentScene.createNode("ROUTE");
+let ROUTE46 = browser.currentScene.createNode("ROUTE");
 ROUTE46.fromField = "translationOffsetChanged";
 ROUTE46.fromNode = "VisibilityControlScript";
 ROUTE46.toField = "set_offset";
@@ -291,14 +373,14 @@ Transform13.children[0] = Transform14;
 
 Group9.children[1] = Transform13;
 
-ROUTE47 = browser.currentScene.createNode("ROUTE");
+let ROUTE47 = browser.currentScene.createNode("ROUTE");
 ROUTE47.fromField = "position_changed";
 ROUTE47.fromNode = "WhereSensor";
 ROUTE47.toField = "set_translation";
 ROUTE47.toNode = "FixedLocation";
 Group9.children[2] = ROUTE47;
 
-ROUTE48 = browser.currentScene.createNode("ROUTE");
+let ROUTE48 = browser.currentScene.createNode("ROUTE");
 ROUTE48.fromField = "orientation_changed";
 ROUTE48.fromNode = "WhereSensor";
 ROUTE48.toField = "set_rotation";
@@ -316,27 +398,27 @@ browser.currentScene.children = new MFNode();
 browser.currentScene.children[0] = ProtoDeclare2;
 
 //====================
-Background49 = browser.currentScene.createNode("Background");
+let Background49 = browser.currentScene.createNode("Background");
 Background49.groundColor = new MFColor(new float[0.1,0.1,0.3]);
 Background49.skyColor = new MFColor(new float[0.5,0.5,0.1]);
 browser.currentScene.children[1] = Background49;
 
-Anchor50 = browser.currentScene.createNode("Anchor");
+let Anchor50 = browser.currentScene.createNode("Anchor");
 Anchor50.description = "HeadsUpDisplayExample";
 Anchor50.parameter = new MFString(new java.lang.String["target=_blank"]);
 Anchor50.url = new MFString(new java.lang.String["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"]);
-Shape51 = browser.currentScene.createNode("Shape");
-Appearance52 = browser.currentScene.createNode("Appearance");
-Material53 = browser.currentScene.createNode("Material");
+let Shape51 = browser.currentScene.createNode("Shape");
+let Appearance52 = browser.currentScene.createNode("Appearance");
+let Material53 = browser.currentScene.createNode("Material");
 Material53.diffuseColor = new SFColor(new float[0,1,1]);
 Material53.emissiveColor = new SFColor(new float[0,1,1]);
 Appearance52.material = Material53;
 
 Shape51.appearance = Appearance52;
 
-Text54 = browser.currentScene.createNode("Text");
+let Text54 = browser.currentScene.createNode("Text");
 Text54.string = new MFString(new java.lang.String["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"]);
-FontStyle55 = browser.currentScene.createNode("FontStyle");
+let FontStyle55 = browser.currentScene.createNode("FontStyle");
 FontStyle55.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 FontStyle55.size = 0.8;
 Text54.fontStyle = FontStyle55;

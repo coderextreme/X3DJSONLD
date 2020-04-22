@@ -1,32 +1,32 @@
-var browser = X3D.getBrowser();
-var X3D0 = {};
+let browser = X3D.getBrowser();
+let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.0";
-Transform2 = browser.currentScene.createNode("Transform");
+let Transform2 = browser.currentScene.createNode("Transform");
 Transform2.DEF = "F16Transform";
-Transform3 = browser.currentScene.createNode("Transform");
+let Transform3 = browser.currentScene.createNode("Transform");
 Transform3.DEF = "MainFrameTransform";
 Transform3.scale = new SFVec3f(new float[3,3,3]);
-Shape4 = browser.currentScene.createNode("Shape");
+let Shape4 = browser.currentScene.createNode("Shape");
 Shape4.DEF = "Nose";
-Appearance5 = browser.currentScene.createNode("Appearance");
-Material6 = browser.currentScene.createNode("Material");
+let Appearance5 = browser.currentScene.createNode("Appearance");
+let Material6 = browser.currentScene.createNode("Material");
 Material6.diffuseColor = new SFColor(new float[0.25,0.25,0.25]);
 Appearance5.material = Material6;
 
 Shape4.appearance = Appearance5;
 
-IndexedFaceSet7 = browser.currentScene.createNode("IndexedFaceSet");
+let IndexedFaceSet7 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet7.coordIndex = new MFInt32(new int[24,0,3,-1,4,0,24,-1,25,26,27,-1,28,25,27,-1,27,29,28,-1,27,30,29,-1,27,31,30,-1,3,18,24,-1]);
 IndexedFaceSet7.creaseAngle = 0.5;
 IndexedFaceSet7.normalIndex = new MFInt32(new int[16,0,3,-1,4,0,16,-1,17,17,17,-1,18,18,18,-1,19,19,19,-1,20,20,20,-1,21,21,21,-1,3,14,16,-1]);
 IndexedFaceSet7.solid = False;
-Coordinate8 = browser.currentScene.createNode("Coordinate");
+let Coordinate8 = browser.currentScene.createNode("Coordinate");
 Coordinate8.DEF = "coordinates";
 Coordinate8.point = new MFVec3f(new float[-0.32,0.36,-4.91,-0.38,0.43,-4.21,0,0.6,-4.2,0,0.5,-4.9,-0.5,0,-4.9,-0.6,0,-4.2,1,0,5.8,1,0,5.3,2.8,-0.4,6.3,2.8,-0.4,6.61,0.31,-0.36,-4.9,0.4,-0.35,-4.2,0,-0.4,-4.2,0,-0.4,-4.9,-0.31,-0.36,-4.9,-0.4,-0.35,-4.2,0.5,0,-4.9,0.6,0,-4.2,0.32,0.36,-4.91,0.38,0.43,-4.21,-1,0,5.8,-1,0,5.3,-2.8,-0.4,6.3,-2.8,-0.4,6.61,0,-0.1,-7,-0.31,-0.36,-4.9,-0.5,0,-4.9,0,-0.1,-7,0,-0.4,-4.9,0.31,-0.36,-4.9,0.5,0,-4.9,0.32,0.36,-4.91,-0.27,0.93,-3.51,0,1.1,-3.6,-0.33,0.5,-3.41,-0.34,0.9,-1.73,0,0.9,-1,0,1.1,-1.8,-0.38,0.64,-1.68,0.34,0.9,-1.73,0,0.9,-1,0.38,0.64,-1.68,0.34,0.9,-1.73,0.27,0.93,-3.51,0.33,0.5,-3.41,0,1.3,-2.8,0.45,1.02,-2.68,0.38,0.64,-1.68,0.53,0.5,-2.56,-0.53,0.5,-2.56,-0.45,1.02,-2.68,-0.53,0.75,0,-0.56,0.66,2.8,0,0.7,2.8,0,0.8,0,-1.1,0.3,0,-1,0.3,2.8,-0.37,0.57,4.9,0,0.59,4.9,-0.7,0.3,4.9,-0.7,0.3,4.9,-0.7,0,7,-0.5,0.49,7,-0.5,0.49,7,0,0.7,7,-1.4,0,0,-1.4,0,3.9,-1.4,0,3.9,-1,0,3.9,-1,0.3,2.8,-1,0.3,4.9,-0.59,0.65,-0.77,-0.8,0.3,-0.6,-1.4,0,-0.7,-1,-0.1,2.8,-0.7,-0.7,-2.5,-0.5,-0.9,-2.5,-0.5,-0.9,-0.6,-0.7,-0.7,-0.6,0,-1,-2.5,0,-1,-0.6,-0.72,-0.12,-2.5,-0.8,-0.3,-2.5,-0.8,-0.3,-0.6,-0.8,-0.3,-2.5,-0.8,-0.3,-0.6,-1.4,0,0,-1.4,0,-0.7,-0.7,-0.1,4.9,-1,-0.1,4.9,-0.5,-0.9,4.9,-0.7,-0.7,4.9,0,-1,4.9,-0.7,-0.1,4.9,-0.5,-0.5,7,-0.7,0,7,0,-0.7,7,-1,0,7.4,-2.8,-0.4,7.1,-2.57,-0.32,7.42,-4.9,0.1,4,-5.1,0.1,4,-5.1,-0.1,4,-4.9,-0.1,4,-5.1,0.1,1.6,-5.1,-0.1,1.6,-4.9,0.1,2.8,-4.9,-0.1,2.8,-0.58,-0.83,3.6,-0.72,-1.4,3.9,-0.69,-1.32,4.9,-0.58,-0.83,4.9,0.58,-0.83,3.6,0.72,-1.4,3.9,0.69,-1.32,4.9,0.58,-0.83,4.9,4.9,-0.1,2.8,5.1,-0.1,1.6,5.1,-0.1,4,4.9,-0.1,4,-0.8,0,-2.5,4.9,0.1,4,5.1,0.1,4,5.1,0.1,1.6,4.9,0.1,2.8,0.59,0.65,-0.77,0.8,0.3,-0.6,0.8,0,-2.5,-0.8,0,-2.5,0.8,-0.3,-0.6,0.72,-0.12,-2.5,0.8,0,-2.5,1,0,7.4,2.8,-0.4,7.1,2.57,-0.32,7.42,-0.7,0,7.4,0.5,-0.9,4.9,0.7,-0.7,4.9,0.5,-0.5,7,-4.9,0,2.8,-4.9,0,3.9,0.7,-0.1,4.9,0.7,0,7,1.4,0,0,4.9,0,2.8,4.9,0,3.9,1.4,0,3.9,1.4,0,-0.7,1.4,0,-0.7,0.7,-0.7,-0.6,0.8,-0.3,-0.6,0.5,-0.9,-0.6,1,-0.1,4.9,1,0.3,4.9,0.7,0,7.4,0.7,0.3,4.9,0.7,-0.1,4.9,0.56,0.66,2.8,0.53,0.75,0,1,0.3,2.8,1.1,0.3,0,0.37,0.57,4.9,0.7,0.3,4.9,0.5,0.49,7,0.7,0,7,0.5,0.49,7,1.4,0,3.9,1.4,0,0,1,0.3,2.8,1,0,3.9,1,-0.1,2.8,0.5,-0.9,-2.5,0.7,-0.7,-2.5,0.8,-0.3,-2.5,0.8,-0.3,-2.5,1,0.3,3.9,0.59,0.65,-0.77,0,0.7,2.8,0,1.4,4.5,0,0.59,4.9,0,3.5,6.8,0,3.5,8.1,0,1.4,7.3,0,0.7,7,0,0.7,7.3,-1,0.3,3.9,0,0.35,7.7,-0.25,0.24,7.7,-0.35,0,7.7,-0.25,-0.25,7.7,0,-0.35,7.7,0.25,-0.25,7.7,0.35,0,7.7,0.25,0.24,7.7,0,-0.2,-2.5,0.7,-0.7,-2.5,0.5,-0.9,-2.5,0,-1,-2.5,-0.5,-0.9,-2.5,-0.7,-0.7,-2.5,0,-0.2,-2.5,-0.72,-0.12,-2.5,0.72,-0.12,-2.5,0.25,0.24,7.7,0.35,0,7.7,-0.35,0,7.7,-0.25,0.24,7.7]);
 IndexedFaceSet7.coord = Coordinate8;
 
-Normal9 = browser.currentScene.createNode("Normal");
+let Normal9 = browser.currentScene.createNode("Normal");
 Normal9.DEF = "normalVector";
 Normal9.vector = new MFVec3f(new float[-0.68,0.714,-0.166,-0.689,0.721,-0.072,0,0.965,-0.26,0,0.985,-0.175,-0.99,-0.016,-0.138,-0.999,-0.022,-0.037,0.567,-0.819,-0.093,0.561,-0.828,0,0,-1,0,0,-0.997,-0.071,-0.567,-0.819,-0.093,-0.561,-0.828,0,0.99,-0.016,-0.138,0.999,-0.022,-0.037,0.68,0.714,-0.166,0.689,0.721,-0.072,-0.351,0.889,-0.294,-0.868,-0.459,-0.19,-0.13,-0.982,-0.14,0.13,-0.982,-0.14,0.868,-0.459,-0.19,0.872,0.431,-0.231,-0.834,0.445,-0.327,0,0.929,-0.369,-0.88,0.401,-0.256,-0.799,0.577,0.169,-0.58,0.798,0.164,0,0.998,0.065,-0.862,0.486,0.146,0.886,0.219,0.408,0.799,0.577,0.169,0.834,0.445,-0.327,0.88,0.401,-0.256,0,0.995,-0.096,0.842,0.534,-0.08,0.862,0.486,0.146,0.833,0.549,-0.073,-0.833,0.549,-0.073,-0.842,0.534,-0.08,-0.485,0.87,-0.089,-0.37,0.929,0,0,1,0,0,1,-0.01,-0.592,0.796,-0.125,-0.573,0.818,0.05,-0.37,0.929,-0.01,0,1,-0.025,-0.487,0.873,0.036,-0.923,0.381,0.05,-0.683,0.704,0.195,0,0.99,0.14,-0.707,0.707,0,-0.385,0.912,0.141,0,0.966,0.259,-0.563,0.826,-0.037,-0.661,0.738,-0.138,-0.521,0.846,-0.115,0,-0.996,0.09,-0.773,-0.436,-0.461,-0.42,-0.781,-0.463,-0.474,-0.881,0,-0.871,-0.492,0,0,-0.891,-0.455,-0.917,0.399,0,-0.881,0.074,-0.467,-0.902,-0.429,-0.039,-0.09,-0.995,0.05,-0.451,-0.892,0,-0.28,-0.959,0.04,-0.468,-0.878,0.097,-0.877,-0.474,0.085,0,-0.997,0.072,-0.693,-0.72,0.045,-0.79,-0.562,0.244,-0.968,0.003,0.25,0,-0.966,0.257,0,0,1,-1,0,0,0.987,0,-0.16,1,0,0,-0.831,-0.551,-0.08,0.563,0.826,-0.037,0.661,0.738,-0.138,0.998,-0.037,-0.049,-0.987,0,-0.16,-0.998,-0.037,-0.049,0.831,-0.551,-0.08,0,-0.999,0.04,0,0.993,0.12,0.468,-0.878,0.097,0.877,-0.474,0.085,0.79,-0.562,0.244,-0.419,-0.897,-0.14,0.693,-0.72,0.045,0.968,0.003,0.25,0.521,0.846,-0.115,0.419,-0.897,-0.14,0.871,-0.492,0,0.902,-0.429,-0.039,0.474,-0.881,0,0.37,0.929,0,0.485,0.87,-0.089,0.573,0.818,0.05,0.592,0.796,-0.125,0.37,0.929,-0.01,0.487,0.873,0.036,0.923,0.381,0.05,0.683,0.704,0.195,0.385,0.912,0.141,0.707,0.707,0,0.42,-0.781,-0.463,0.773,-0.436,-0.461,0.917,0.399,0,0.881,0.074,-0.467,0.09,-0.995,0.05,0.451,-0.892,0,0.28,-0.959,0.04,0.42,0.901,-0.11,0,0.666,0.746,-0.481,0.468,0.741,-0.674,0,0.738,-0.475,-0.475,0.741,0,-0.674,0.738,0.475,-0.475,0.741,0.674,0,0.738,0.481,0.468,0.741,0,0,-1,0,-0.893,-0.45,-0.901,-0.224,-0.372,0.901,-0.224,-0.372,0.841,0.34,0.421,-0.841,0.34,0.421]);
 IndexedFaceSet7.normal = Normal9;
@@ -37,26 +37,26 @@ Transform3.children = new MFNode();
 
 Transform3.children[0] = Shape4;
 
-Shape10 = browser.currentScene.createNode("Shape");
+let Shape10 = browser.currentScene.createNode("Shape");
 Shape10.DEF = "Canopy";
-Appearance11 = browser.currentScene.createNode("Appearance");
-Material12 = browser.currentScene.createNode("Material");
+let Appearance11 = browser.currentScene.createNode("Appearance");
+let Material12 = browser.currentScene.createNode("Material");
 Material12.diffuseColor = new SFColor(new float[0.25,0.25,0.25]);
 Material12.transparency = 0.8;
 Appearance11.material = Material12;
 
 Shape10.appearance = Appearance11;
 
-IndexedFaceSet13 = browser.currentScene.createNode("IndexedFaceSet");
+let IndexedFaceSet13 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet13.coordIndex = new MFInt32(new int[2,32,33,-1,34,32,2,-1,35,36,37,-1,38,36,35,-1,39,40,41,-1,37,36,42,-1,2,43,44,-1,33,43,2,-1,45,37,42,46,-1,46,42,47,48,-1,33,45,46,43,-1,43,46,48,44,-1,34,49,50,32,-1,32,50,45,33,-1,49,38,35,50,-1,50,35,37,45,-1]);
 IndexedFaceSet13.creaseAngle = 0.5;
 IndexedFaceSet13.normalIndex = new MFInt32(new int[2,22,23,-1,24,22,2,-1,25,26,27,-1,28,26,25,-1,29,29,29,-1,27,26,30,-1,2,31,32,-1,23,31,2,-1,33,27,30,34,-1,34,30,35,36,-1,23,33,34,31,-1,31,34,36,32,-1,24,37,38,22,-1,22,38,33,23,-1,37,28,25,38,-1,38,25,27,33,-1]);
 IndexedFaceSet13.solid = False;
-Coordinate14 = browser.currentScene.createNode("Coordinate");
+let Coordinate14 = browser.currentScene.createNode("Coordinate");
 Coordinate14.USE = "coordinates";
 IndexedFaceSet13.coord = Coordinate14;
 
-Normal15 = browser.currentScene.createNode("Normal");
+let Normal15 = browser.currentScene.createNode("Normal");
 Normal15.USE = "normalVector";
 IndexedFaceSet13.normal = Normal15;
 
@@ -64,25 +64,25 @@ Shape10.geometry = IndexedFaceSet13;
 
 Transform3.children[1] = Shape10;
 
-Shape16 = browser.currentScene.createNode("Shape");
+let Shape16 = browser.currentScene.createNode("Shape");
 Shape16.DEF = "MainBodyAndWingEdges";
-Appearance17 = browser.currentScene.createNode("Appearance");
-Material18 = browser.currentScene.createNode("Material");
+let Appearance17 = browser.currentScene.createNode("Appearance");
+let Material18 = browser.currentScene.createNode("Material");
 Material18.diffuseColor = new SFColor(new float[0.1796,0.1914,0.2382]);
 Appearance17.material = Material18;
 
 Shape16.appearance = Appearance17;
 
-IndexedFaceSet19 = browser.currentScene.createNode("IndexedFaceSet");
+let IndexedFaceSet19 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet19.coordIndex = new MFInt32(new int[51,52,53,54,-1,55,56,52,51,-1,52,57,58,53,-1,56,59,57,52,-1,60,61,62,-1,57,59,63,-1,57,63,64,-1,58,57,64,-1,56,55,65,66,-1,67,68,69,-1,69,70,60,-1,71,54,36,-1,51,54,71,-1,72,51,71,-1,55,51,72,-1,72,73,55,-1,65,55,73,-1,68,67,74,-1,75,76,77,78,-1,76,79,80,77,-1,81,82,83,-1,84,75,78,85,-1,83,74,67,-1,67,86,87,83,-1,74,88,89,-1,88,74,83,-1,78,77,90,91,-1,77,80,92,90,-1,85,91,93,-1,85,78,91,-1,94,95,93,-1,94,93,91,-1,91,96,94,-1,96,91,90,-1,90,92,96,-1,100,101,102,103,-1,101,104,105,102,-1,104,106,107,105,-1,106,100,103,107,-1,106,104,101,100,-1,103,102,105,107,-1,116,117,118,119,-1,120,81,83,-1,121,122,123,124,-1,116,119,121,124,-1,48,125,126,127,-1,117,116,124,123,-1,128,72,71,49,-1,118,117,123,122,-1,119,118,122,121,-1,129,130,131,-1,89,88,135,97,-1,60,70,97,135,-1,70,89,97,-1,96,92,136,-1,136,137,96,-1,138,96,137,-1,120,83,87,-1,128,73,72,-1,137,141,138,-1,141,142,138,-1,126,147,127,-1,148,129,131,-1,137,149,150,-1,141,137,150,-1,136,92,80,151,-1,137,136,151,149,-1,132,152,153,-1,154,132,153,155,-1,132,154,156,152,-1,54,53,157,158,-1,158,157,159,160,-1,53,58,161,157,-1,157,161,162,159,-1,163,164,155,-1,165,162,161,-1,64,165,161,-1,64,161,58,-1,166,167,160,159,-1,168,169,146,-1,155,153,168,-1,36,54,125,-1,125,54,158,-1,125,158,126,-1,126,158,160,-1,160,147,126,-1,147,160,167,-1,170,146,169,-1,149,151,171,172,-1,151,80,79,171,-1,129,173,130,-1,150,149,172,174,-1,146,170,129,-1,129,148,143,146,-1,152,156,170,-1,129,170,156,-1,156,154,164,-1,154,155,164,-1,168,175,169,-1,175,153,152,169,-1,152,170,169,-1,48,47,125,-1,41,40,176,-1,71,38,49,-1,71,36,38,-1,61,135,88,-1,61,60,135,-1,68,185,69,-1,68,74,89,-1,68,89,70,185,-1]);
 IndexedFaceSet19.creaseAngle = 0.5;
 IndexedFaceSet19.normalIndex = new MFInt32(new int[39,40,41,42,-1,43,44,40,39,-1,40,45,46,41,-1,44,47,45,40,-1,48,48,48,-1,45,47,49,-1,45,49,50,-1,46,45,50,-1,44,43,51,52,-1,53,53,53,-1,41,41,41,-1,54,42,26,-1,39,42,54,-1,55,39,54,-1,43,39,55,-1,55,56,43,-1,51,43,56,-1,57,57,57,-1,58,59,60,61,-1,59,62,8,60,-1,63,63,63,-1,64,58,61,65,-1,66,66,66,-1,67,67,67,67,-1,8,8,8,-1,68,68,68,-1,61,60,69,70,-1,60,8,71,69,-1,65,70,72,-1,65,61,70,-1,73,74,72,-1,73,72,70,-1,70,75,73,-1,75,70,69,-1,69,71,75,-1,76,76,76,76,-1,77,77,77,77,-1,78,78,78,78,-1,79,79,79,79,-1,41,41,41,41,-1,8,8,8,8,-1,8,8,8,8,-1,80,80,80,-1,41,41,41,41,-1,77,77,77,77,-1,36,81,82,83,-1,84,84,84,84,-1,85,55,54,37,-1,79,79,79,79,-1,76,76,76,76,-1,86,86,86,-1,87,87,87,87,-1,88,88,88,88,-1,77,77,77,-1,75,71,89,-1,89,90,75,-1,91,75,90,-1,92,92,92,-1,85,56,55,-1,90,93,91,-1,93,94,91,-1,82,95,83,-1,96,96,96,-1,90,97,98,-1,93,90,98,-1,89,71,8,99,-1,90,89,99,97,-1,79,79,79,-1,88,88,88,88,-1,87,87,87,87,-1,42,41,100,101,-1,101,100,102,103,-1,41,46,104,100,-1,100,104,105,102,-1,106,106,106,-1,107,105,104,-1,50,107,104,-1,50,104,46,-1,108,109,103,102,-1,53,53,53,-1,41,41,41,-1,26,42,81,-1,81,42,101,-1,81,101,82,-1,82,101,103,-1,103,95,82,-1,95,103,109,-1,57,57,57,-1,97,99,110,111,-1,99,8,62,110,-1,112,112,112,-1,98,97,111,113,-1,114,114,114,-1,115,115,115,115,-1,8,8,8,-1,116,116,116,-1,77,77,77,-1,77,77,77,-1,79,79,79,-1,79,79,79,79,-1,79,79,79,-1,36,35,81,-1,117,117,117,-1,54,28,37,-1,54,26,28,-1,79,79,79,-1,79,79,79,-1,77,77,77,-1,77,77,77,-1,77,77,77,77,-1]);
 IndexedFaceSet19.solid = False;
-Coordinate20 = browser.currentScene.createNode("Coordinate");
+let Coordinate20 = browser.currentScene.createNode("Coordinate");
 Coordinate20.USE = "coordinates";
 IndexedFaceSet19.coord = Coordinate20;
 
-Normal21 = browser.currentScene.createNode("Normal");
+let Normal21 = browser.currentScene.createNode("Normal");
 Normal21.USE = "normalVector";
 IndexedFaceSet19.normal = Normal21;
 
@@ -90,25 +90,25 @@ Shape16.geometry = IndexedFaceSet19;
 
 Transform3.children[2] = Shape16;
 
-Shape22 = browser.currentScene.createNode("Shape");
+let Shape22 = browser.currentScene.createNode("Shape");
 Shape22.DEF = "ExhaustExitFlatPanel";
-Appearance23 = browser.currentScene.createNode("Appearance");
-Material24 = browser.currentScene.createNode("Material");
+let Appearance23 = browser.currentScene.createNode("Appearance");
+let Material24 = browser.currentScene.createNode("Material");
 Material24.diffuseColor = new SFColor(new float[0.5,0.5,0.5]);
 Appearance23.material = Material24;
 
 Shape22.appearance = Appearance23;
 
-IndexedFaceSet25 = browser.currentScene.createNode("IndexedFaceSet");
+let IndexedFaceSet25 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet25.coordIndex = new MFInt32(new int[186,187,188,189,190,-1,190,191,192,193,186,-1]);
 IndexedFaceSet25.creaseAngle = 0.5;
 IndexedFaceSet25.normalIndex = new MFInt32(new int[118,119,120,121,122,-1,122,123,124,125,118,-1]);
 IndexedFaceSet25.solid = False;
-Coordinate26 = browser.currentScene.createNode("Coordinate");
+let Coordinate26 = browser.currentScene.createNode("Coordinate");
 Coordinate26.USE = "coordinates";
 IndexedFaceSet25.coord = Coordinate26;
 
-Normal27 = browser.currentScene.createNode("Normal");
+let Normal27 = browser.currentScene.createNode("Normal");
 Normal27.USE = "normalVector";
 IndexedFaceSet25.normal = Normal27;
 
@@ -116,25 +116,25 @@ Shape22.geometry = IndexedFaceSet25;
 
 Transform3.children[3] = Shape22;
 
-Shape28 = browser.currentScene.createNode("Shape");
+let Shape28 = browser.currentScene.createNode("Shape");
 Shape28.DEF = "ExhaustEntranceFrontBottomPart";
-Appearance29 = browser.currentScene.createNode("Appearance");
-Material30 = browser.currentScene.createNode("Material");
+let Appearance29 = browser.currentScene.createNode("Appearance");
+let Material30 = browser.currentScene.createNode("Material");
 Material30.diffuseColor = new SFColor(new float[0.2304,0.2304,0.2304]);
 Appearance29.material = Material30;
 
 Shape28.appearance = Appearance29;
 
-IndexedFaceSet31 = browser.currentScene.createNode("IndexedFaceSet");
+let IndexedFaceSet31 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet31.coordIndex = new MFInt32(new int[194,130,173,195,196,197,-1,197,198,199,82,81,194,-1]);
 IndexedFaceSet31.creaseAngle = 0.5;
 IndexedFaceSet31.normalIndex = new MFInt32(new int[126,126,126,126,126,126,-1,126,126,126,126,126,126,-1]);
 IndexedFaceSet31.solid = False;
-Coordinate32 = browser.currentScene.createNode("Coordinate");
+let Coordinate32 = browser.currentScene.createNode("Coordinate");
 Coordinate32.USE = "coordinates";
 IndexedFaceSet31.coord = Coordinate32;
 
-Normal33 = browser.currentScene.createNode("Normal");
+let Normal33 = browser.currentScene.createNode("Normal");
 Normal33.USE = "normalVector";
 IndexedFaceSet31.normal = Normal33;
 
@@ -142,25 +142,25 @@ Shape28.geometry = IndexedFaceSet31;
 
 Transform3.children[4] = Shape28;
 
-Shape34 = browser.currentScene.createNode("Shape");
+let Shape34 = browser.currentScene.createNode("Shape");
 Shape34.DEF = "ThirdPartFromNoseUnderCanopy";
-Appearance35 = browser.currentScene.createNode("Appearance");
-Material36 = browser.currentScene.createNode("Material");
+let Appearance35 = browser.currentScene.createNode("Appearance");
+let Material36 = browser.currentScene.createNode("Material");
 Material36.diffuseColor = new SFColor(new float[0.6,0.6,0.6]);
 Appearance35.material = Material36;
 
 Shape34.appearance = Appearance35;
 
-IndexedFaceSet37 = browser.currentScene.createNode("IndexedFaceSet");
+let IndexedFaceSet37 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet37.coordIndex = new MFInt32(new int[12,200,201,15,-1,19,48,127,17,-1,15,201,128,5,-1,17,127,202,11,-1,11,202,200,12,-1,5,128,49,1,-1,48,19,44,-1,19,2,44,-1,34,1,49,-1,34,2,1,-1]);
 IndexedFaceSet37.creaseAngle = 0.5;
 IndexedFaceSet37.normalIndex = new MFInt32(new int[8,127,128,11,-1,15,36,83,13,-1,11,128,85,5,-1,13,83,129,7,-1,7,129,127,8,-1,5,85,37,1,-1,36,15,32,-1,15,2,32,-1,24,1,37,-1,24,2,1,-1]);
 IndexedFaceSet37.solid = False;
-Coordinate38 = browser.currentScene.createNode("Coordinate");
+let Coordinate38 = browser.currentScene.createNode("Coordinate");
 Coordinate38.USE = "coordinates";
 IndexedFaceSet37.coord = Coordinate38;
 
-Normal39 = browser.currentScene.createNode("Normal");
+let Normal39 = browser.currentScene.createNode("Normal");
 Normal39.USE = "normalVector";
 IndexedFaceSet37.normal = Normal39;
 
@@ -168,26 +168,26 @@ Shape34.geometry = IndexedFaceSet37;
 
 Transform3.children[5] = Shape34;
 
-Shape40 = browser.currentScene.createNode("Shape");
+let Shape40 = browser.currentScene.createNode("Shape");
 Shape40.DEF = "RearExhaustExitPartLastPartOfMainBody";
-Appearance41 = browser.currentScene.createNode("Appearance");
-Material42 = browser.currentScene.createNode("Material");
+let Appearance41 = browser.currentScene.createNode("Appearance");
+let Material42 = browser.currentScene.createNode("Material");
 Material42.diffuseColor = new SFColor(new float[0.37,0.37,0.37]);
 Material42.shininess = 0.5;
 Appearance41.material = Material42;
 
 Shape40.appearance = Appearance41;
 
-IndexedFaceSet43 = browser.currentScene.createNode("IndexedFaceSet");
+let IndexedFaceSet43 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet43.coordIndex = new MFInt32(new int[64,186,193,165,-1,203,204,164,163,-1,192,191,138,142,-1,191,190,96,138,-1,94,96,190,189,-1,95,94,189,188,-1,63,187,186,64,-1,62,61,205,206,-1]);
 IndexedFaceSet43.creaseAngle = 0.5;
 IndexedFaceSet43.normalIndex = new MFInt32(new int[50,118,125,107,-1,130,130,130,130,-1,124,123,91,94,-1,123,122,75,91,-1,73,75,122,121,-1,74,73,121,120,-1,49,119,118,50,-1,131,131,131,131,-1]);
 IndexedFaceSet43.solid = False;
-Coordinate44 = browser.currentScene.createNode("Coordinate");
+let Coordinate44 = browser.currentScene.createNode("Coordinate");
 Coordinate44.USE = "coordinates";
 IndexedFaceSet43.coord = Coordinate44;
 
-Normal45 = browser.currentScene.createNode("Normal");
+let Normal45 = browser.currentScene.createNode("Normal");
 Normal45.USE = "normalVector";
 IndexedFaceSet43.normal = Normal45;
 
@@ -195,26 +195,26 @@ Shape40.geometry = IndexedFaceSet43;
 
 Transform3.children[6] = Shape40;
 
-Shape46 = browser.currentScene.createNode("Shape");
+let Shape46 = browser.currentScene.createNode("Shape");
 Shape46.DEF = "WingsAndTail";
-Appearance47 = browser.currentScene.createNode("Appearance");
-Material48 = browser.currentScene.createNode("Material");
+let Appearance47 = browser.currentScene.createNode("Appearance");
+let Material48 = browser.currentScene.createNode("Material");
 Material48.emissiveColor = new SFColor(new float[0.1796,0.1914,0.2382]);
 Appearance47.material = Material48;
 
 Shape46.appearance = Appearance47;
 
-IndexedFaceSet49 = browser.currentScene.createNode("IndexedFaceSet");
+let IndexedFaceSet49 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet49.colorPerVertex = False;
 IndexedFaceSet49.coordIndex = new MFInt32(new int[6,7,8,9,-1,9,8,7,6,-1,20,21,22,23,-1,23,22,21,20,-1,97,20,23,98,99,-1,99,98,23,20,97,-1,108,109,110,111,-1,111,110,109,108,-1,112,113,114,115,-1,115,114,113,112,-1,132,6,9,133,134,-1,134,133,9,6,132,-1,86,139,140,67,-1,67,140,139,86,-1,143,144,145,146,-1,146,145,144,143,-1,177,178,179,-1,179,178,177,-1,178,180,181,182,183,179,-1,179,183,182,181,180,178,-1,182,184,183,-1,183,184,182,-1,177,178,179,-1,179,178,177,-1,178,180,181,182,183,179,-1,179,183,182,181,180,178,-1,182,184,183,-1,183,184,182,-1]);
 IndexedFaceSet49.creaseAngle = 0.5;
 IndexedFaceSet49.normalIndex = new MFInt32(new int[50,118,125,107,-1,130,130,130,130,-1,124,123,91,94,-1,123,122,75,91,-1,73,75,122,121,-1,74,73,121,120,-1,49,119,118,50,-1,131,131,131,131,-1]);
 IndexedFaceSet49.solid = False;
-Coordinate50 = browser.currentScene.createNode("Coordinate");
+let Coordinate50 = browser.currentScene.createNode("Coordinate");
 Coordinate50.USE = "coordinates";
 IndexedFaceSet49.coord = Coordinate50;
 
-Normal51 = browser.currentScene.createNode("Normal");
+let Normal51 = browser.currentScene.createNode("Normal");
 Normal51.USE = "normalVector";
 IndexedFaceSet49.normal = Normal51;
 
@@ -222,25 +222,25 @@ Shape46.geometry = IndexedFaceSet49;
 
 Transform3.children[7] = Shape46;
 
-Shape52 = browser.currentScene.createNode("Shape");
+let Shape52 = browser.currentScene.createNode("Shape");
 Shape52.DEF = "SecondPartAfterNose";
-Appearance53 = browser.currentScene.createNode("Appearance");
-Material54 = browser.currentScene.createNode("Material");
+let Appearance53 = browser.currentScene.createNode("Appearance");
+let Material54 = browser.currentScene.createNode("Material");
 Material54.diffuseColor = new SFColor(new float[0.6,0.6,0.6]);
 Appearance53.material = Material54;
 
 Shape52.appearance = Appearance53;
 
-IndexedFaceSet55 = browser.currentScene.createNode("IndexedFaceSet");
+let IndexedFaceSet55 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet55.coordIndex = new MFInt32(new int[0,1,2,3,-1,4,5,1,0,-1,10,11,12,13,-1,14,15,5,4,-1,13,12,15,14,-1,16,17,11,10,-1,18,19,17,16,-1,3,2,19,18,-1]);
 IndexedFaceSet55.creaseAngle = 0.5;
 IndexedFaceSet55.normalIndex = new MFInt32(new int[0,1,2,3,-1,4,5,1,0,-1,6,7,8,9,-1,10,11,5,4,-1,9,8,11,10,-1,12,13,7,6,-1,14,15,13,12,-1,3,2,15,14,-1]);
 IndexedFaceSet55.solid = False;
-Coordinate56 = browser.currentScene.createNode("Coordinate");
+let Coordinate56 = browser.currentScene.createNode("Coordinate");
 Coordinate56.USE = "coordinates";
 IndexedFaceSet55.coord = Coordinate56;
 
-Normal57 = browser.currentScene.createNode("Normal");
+let Normal57 = browser.currentScene.createNode("Normal");
 Normal57.USE = "normalVector";
 IndexedFaceSet55.normal = Normal57;
 
@@ -252,12 +252,12 @@ Transform2.children = new MFNode();
 
 Transform2.children[0] = Transform3;
 
-Transform58 = browser.currentScene.createNode("Transform");
+let Transform58 = browser.currentScene.createNode("Transform");
 Transform58.DEF = "CockpitTransform";
 Transform58.rotation = new SFRotation(new float[1,0,0,-0.1]);
 Transform58.scale = new SFVec3f(new float[0.045,0.045,0.045]);
 Transform58.translation = new SFVec3f(new float[0,1,-10]);
-Inline59 = browser.currentScene.createNode("Inline");
+let Inline59 = browser.currentScene.createNode("Inline");
 Inline59.url = new MFString(new java.lang.String["Cockpit.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d","Cockpit.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl"]);
 Transform58.children = new MFNode();
 
@@ -265,12 +265,12 @@ Transform58.children[0] = Inline59;
 
 Transform2.children[1] = Transform58;
 
-Transform60 = browser.currentScene.createNode("Transform");
+let Transform60 = browser.currentScene.createNode("Transform");
 Transform60.DEF = "SeatTransform";
 Transform60.rotation = new SFRotation(new float[-1,0,0,-0.1]);
 Transform60.scale = new SFVec3f(new float[0.9,0.9,0.9]);
 Transform60.translation = new SFVec3f(new float[0,0,-8.3]);
-Inline61 = browser.currentScene.createNode("Inline");
+let Inline61 = browser.currentScene.createNode("Inline");
 Inline61.url = new MFString(new java.lang.String["Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"]);
 Transform60.children = new MFNode();
 
@@ -278,13 +278,13 @@ Transform60.children[0] = Inline61;
 
 Transform2.children[2] = Transform60;
 
-Transform62 = browser.currentScene.createNode("Transform");
+let Transform62 = browser.currentScene.createNode("Transform");
 Transform62.DEF = "FrontWheelTransform";
 Transform62.center = new SFVec3f(new float[0,2.5,0]);
 Transform62.rotation = new SFRotation(new float[-1,0,0,1.92]);
 Transform62.translation = new SFVec3f(new float[0.7,-5.2,-6.5]);
 //Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)
-Inline63 = browser.currentScene.createNode("Inline");
+let Inline63 = browser.currentScene.createNode("Inline");
 Inline63.url = new MFString(new java.lang.String["FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"]);
 Transform62.children = new MFNode();
 
@@ -292,13 +292,13 @@ Transform62.children[0] = Inline63;
 
 Transform2.children[3] = Transform62;
 
-Transform64 = browser.currentScene.createNode("Transform");
+let Transform64 = browser.currentScene.createNode("Transform");
 Transform64.DEF = "RearLeftWheelTransform";
 Transform64.center = new SFVec3f(new float[0,2.5,0]);
 Transform64.rotation = new SFRotation(new float[1,0,1,1.92]);
 Transform64.translation = new SFVec3f(new float[-2.95,-5,7]);
 //Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)
-Inline65 = browser.currentScene.createNode("Inline");
+let Inline65 = browser.currentScene.createNode("Inline");
 Inline65.url = new MFString(new java.lang.String["RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"]);
 Transform64.children = new MFNode();
 
@@ -306,13 +306,13 @@ Transform64.children[0] = Inline65;
 
 Transform2.children[4] = Transform64;
 
-Transform66 = browser.currentScene.createNode("Transform");
+let Transform66 = browser.currentScene.createNode("Transform");
 Transform66.DEF = "RearRightWheelTransform";
 Transform66.center = new SFVec3f(new float[0,2.5,0]);
 Transform66.rotation = new SFRotation(new float[-1,0,-1,1.92]);
 Transform66.translation = new SFVec3f(new float[2.95,-5,7]);
 //Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)
-Inline67 = browser.currentScene.createNode("Inline");
+let Inline67 = browser.currentScene.createNode("Inline");
 Inline67.url = new MFString(new java.lang.String["RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"]);
 Transform66.children = new MFNode();
 
@@ -320,21 +320,21 @@ Transform66.children[0] = Inline67;
 
 Transform2.children[5] = Transform66;
 
-Transform68 = browser.currentScene.createNode("Transform");
+let Transform68 = browser.currentScene.createNode("Transform");
 Transform68.DEF = "CockpitButtonsTransform";
-Transform69 = browser.currentScene.createNode("Transform");
+let Transform69 = browser.currentScene.createNode("Transform");
 Transform69.DEF = "UpButtonTransform";
 Transform69.rotation = new SFRotation(new float[1,0,0,1.57]);
 Transform69.scale = new SFVec3f(new float[0.008,0.008,0.008]);
 Transform69.translation = new SFVec3f(new float[-0.95,1.05,-10]);
-Shape70 = browser.currentScene.createNode("Shape");
-Cylinder71 = browser.currentScene.createNode("Cylinder");
+let Shape70 = browser.currentScene.createNode("Shape");
+let Cylinder71 = browser.currentScene.createNode("Cylinder");
 Cylinder71.height = 1;
 Cylinder71.radius = 4;
 Shape70.geometry = Cylinder71;
 
-Appearance72 = browser.currentScene.createNode("Appearance");
-Material73 = browser.currentScene.createNode("Material");
+let Appearance72 = browser.currentScene.createNode("Appearance");
+let Material73 = browser.currentScene.createNode("Material");
 Material73.diffuseColor = new SFColor(new float[1,0,0]);
 Material73.shininess = 0.8;
 Appearance72.material = Material73;
@@ -345,7 +345,7 @@ Transform69.children = new MFNode();
 
 Transform69.children[0] = Shape70;
 
-TouchSensor74 = browser.currentScene.createNode("TouchSensor");
+let TouchSensor74 = browser.currentScene.createNode("TouchSensor");
 TouchSensor74.DEF = "TouchSensorUp";
 TouchSensor74.description = "click for gears up";
 Transform69.children[1] = TouchSensor74;
@@ -354,19 +354,19 @@ Transform68.children = new MFNode();
 
 Transform68.children[0] = Transform69;
 
-Transform75 = browser.currentScene.createNode("Transform");
+let Transform75 = browser.currentScene.createNode("Transform");
 Transform75.DEF = "DownButtonTransform";
 Transform75.rotation = new SFRotation(new float[1,0,0,1.57]);
 Transform75.scale = new SFVec3f(new float[0.008,0.008,0.008]);
 Transform75.translation = new SFVec3f(new float[-0.83,1.05,-10]);
-Shape76 = browser.currentScene.createNode("Shape");
-Cylinder77 = browser.currentScene.createNode("Cylinder");
+let Shape76 = browser.currentScene.createNode("Shape");
+let Cylinder77 = browser.currentScene.createNode("Cylinder");
 Cylinder77.height = 1;
 Cylinder77.radius = 4;
 Shape76.geometry = Cylinder77;
 
-Appearance78 = browser.currentScene.createNode("Appearance");
-Material79 = browser.currentScene.createNode("Material");
+let Appearance78 = browser.currentScene.createNode("Appearance");
+let Material79 = browser.currentScene.createNode("Material");
 Material79.diffuseColor = new SFColor(new float[1,1,0]);
 Material79.shininess = 0.8;
 Appearance78.material = Material79;
@@ -377,24 +377,24 @@ Transform75.children = new MFNode();
 
 Transform75.children[0] = Shape76;
 
-TouchSensor80 = browser.currentScene.createNode("TouchSensor");
+let TouchSensor80 = browser.currentScene.createNode("TouchSensor");
 TouchSensor80.DEF = "TouchSensorDown";
 TouchSensor80.description = "click for gears down";
 Transform75.children[1] = TouchSensor80;
 
 Transform68.children[1] = Transform75;
 
-Transform81 = browser.currentScene.createNode("Transform");
+let Transform81 = browser.currentScene.createNode("Transform");
 Transform81.DEF = "GearUpTextTransform";
 Transform81.scale = new SFVec3f(new float[0.06,0.06,0.06]);
 Transform81.translation = new SFVec3f(new float[-0.65,1.55,-10]);
-Shape82 = browser.currentScene.createNode("Shape");
-Text83 = browser.currentScene.createNode("Text");
+let Shape82 = browser.currentScene.createNode("Shape");
+let Text83 = browser.currentScene.createNode("Text");
 Text83.string = new MFString(new java.lang.String["RED Button","Gear Up"]);
 Shape82.geometry = Text83;
 
-Appearance84 = browser.currentScene.createNode("Appearance");
-Material85 = browser.currentScene.createNode("Material");
+let Appearance84 = browser.currentScene.createNode("Appearance");
+let Material85 = browser.currentScene.createNode("Material");
 Material85.diffuseColor = new SFColor(new float[1,0,0]);
 Appearance84.material = Material85;
 
@@ -406,18 +406,18 @@ Transform81.children[0] = Shape82;
 
 Transform68.children[2] = Transform81;
 
-Transform86 = browser.currentScene.createNode("Transform");
+let Transform86 = browser.currentScene.createNode("Transform");
 Transform86.DEF = "GearDownTextTransform";
 Transform86.scale = new SFVec3f(new float[0.06,0.06,0.06]);
 Transform86.translation = new SFVec3f(new float[-0.65,1.35,-10]);
-Shape87 = browser.currentScene.createNode("Shape");
-Text88 = browser.currentScene.createNode("Text");
+let Shape87 = browser.currentScene.createNode("Shape");
+let Text88 = browser.currentScene.createNode("Text");
 Text88.length = new MFFloat(new float[5.5]);
 Text88.string = new MFString(new java.lang.String["YELLOW Button","Gear Down"]);
 Shape87.geometry = Text88;
 
-Appearance89 = browser.currentScene.createNode("Appearance");
-Material90 = browser.currentScene.createNode("Material");
+let Appearance89 = browser.currentScene.createNode("Appearance");
+let Material90 = browser.currentScene.createNode("Material");
 Material90.diffuseColor = new SFColor(new float[1,1,0]);
 Appearance89.material = Material90;
 
@@ -429,19 +429,19 @@ Transform86.children[0] = Shape87;
 
 Transform68.children[3] = Transform86;
 
-Transform91 = browser.currentScene.createNode("Transform");
+let Transform91 = browser.currentScene.createNode("Transform");
 Transform91.DEF = "FireButtonTransform";
 Transform91.rotation = new SFRotation(new float[1,0,0,1.57]);
 Transform91.scale = new SFVec3f(new float[0.008,0.008,0.008]);
 Transform91.translation = new SFVec3f(new float[0.52,1.6,-10]);
-Shape92 = browser.currentScene.createNode("Shape");
-Cylinder93 = browser.currentScene.createNode("Cylinder");
+let Shape92 = browser.currentScene.createNode("Shape");
+let Cylinder93 = browser.currentScene.createNode("Cylinder");
 Cylinder93.height = 1;
 Cylinder93.radius = 4;
 Shape92.geometry = Cylinder93;
 
-Appearance94 = browser.currentScene.createNode("Appearance");
-Material95 = browser.currentScene.createNode("Material");
+let Appearance94 = browser.currentScene.createNode("Appearance");
+let Material95 = browser.currentScene.createNode("Material");
 Material95.diffuseColor = new SFColor(new float[0,0.75,0.18]);
 Material95.shininess = 0.8;
 Appearance94.material = Material95;
@@ -452,24 +452,24 @@ Transform91.children = new MFNode();
 
 Transform91.children[0] = Shape92;
 
-TouchSensor96 = browser.currentScene.createNode("TouchSensor");
+let TouchSensor96 = browser.currentScene.createNode("TouchSensor");
 TouchSensor96.DEF = "FireSensor";
 TouchSensor96.description = "click to fire";
 Transform91.children[1] = TouchSensor96;
 
 Transform68.children[4] = Transform91;
 
-Transform97 = browser.currentScene.createNode("Transform");
+let Transform97 = browser.currentScene.createNode("Transform");
 Transform97.DEF = "FireTextTransform";
 Transform97.scale = new SFVec3f(new float[0.06,0.06,0.06]);
 Transform97.translation = new SFVec3f(new float[0.36,1.5,-10]);
-Shape98 = browser.currentScene.createNode("Shape");
-Text99 = browser.currentScene.createNode("Text");
+let Shape98 = browser.currentScene.createNode("Shape");
+let Text99 = browser.currentScene.createNode("Text");
 Text99.string = new MFString(new java.lang.String["Target Locked"," FIRE!..","(Green Button)"]);
 Shape98.geometry = Text99;
 
-Appearance100 = browser.currentScene.createNode("Appearance");
-Material101 = browser.currentScene.createNode("Material");
+let Appearance100 = browser.currentScene.createNode("Appearance");
+let Material101 = browser.currentScene.createNode("Material");
 Material101.diffuseColor = new SFColor(new float[0,0.75,0.18]);
 Appearance100.material = Material101;
 
@@ -483,54 +483,54 @@ Transform68.children[5] = Transform97;
 
 Transform2.children[6] = Transform68;
 
-Viewpoint102 = browser.currentScene.createNode("Viewpoint");
+let Viewpoint102 = browser.currentScene.createNode("Viewpoint");
 Viewpoint102.description = "F16 Close Look-up";
 Viewpoint102.orientation = new SFRotation(new float[-0.559,-0.827,-0.057,1.3534]);
 Viewpoint102.position = new SFVec3f(new float[-28.7,19.9,17.4]);
 Transform2.children[7] = Viewpoint102;
 
-Viewpoint103 = browser.currentScene.createNode("Viewpoint");
+let Viewpoint103 = browser.currentScene.createNode("Viewpoint");
 Viewpoint103.description = "Cockpit";
 Viewpoint103.orientation = new SFRotation(new float[-1,0,0,0.1249]);
 Viewpoint103.position = new SFVec3f(new float[0,1.5,-7.9]);
 Transform2.children[8] = Viewpoint103;
 
-Viewpoint104 = browser.currentScene.createNode("Viewpoint");
+let Viewpoint104 = browser.currentScene.createNode("Viewpoint");
 Viewpoint104.DEF = "LandingGearAnimationView";
 Viewpoint104.description = "Landing Gear Animation View";
 Viewpoint104.orientation = new SFRotation(new float[-0.003,1,-0.012,2.5741]);
 Viewpoint104.position = new SFVec3f(new float[16.1,-5.8,-24.6]);
 Transform2.children[9] = Viewpoint104;
 
-Viewpoint105 = browser.currentScene.createNode("Viewpoint");
+let Viewpoint105 = browser.currentScene.createNode("Viewpoint");
 Viewpoint105.description = "Cockpit Left View";
 Viewpoint105.orientation = new SFRotation(new float[-0.276,-0.922,-0.271,1.2338]);
 Viewpoint105.position = new SFVec3f(new float[-6.7,6.1,-3.9]);
 Transform2.children[10] = Viewpoint105;
 
-Viewpoint106 = browser.currentScene.createNode("Viewpoint");
+let Viewpoint106 = browser.currentScene.createNode("Viewpoint");
 Viewpoint106.description = "F-16 Front View";
 Viewpoint106.orientation = new SFRotation(new float[-0.007,0.995,0.102,3.1152]);
 Viewpoint106.position = new SFVec3f(new float[-0.1,13.4,-65]);
 Transform2.children[11] = Viewpoint106;
 
-Viewpoint107 = browser.currentScene.createNode("Viewpoint");
+let Viewpoint107 = browser.currentScene.createNode("Viewpoint");
 Viewpoint107.description = "Cockpit Target View";
 Viewpoint107.orientation = new SFRotation(new float[-0.834,-0.523,-0.176,0.0875]);
 Viewpoint107.position = new SFVec3f(new float[0,2.4,-7.9]);
 Transform2.children[12] = Viewpoint107;
 
-Transform108 = browser.currentScene.createNode("Transform");
+let Transform108 = browser.currentScene.createNode("Transform");
 Transform108.DEF = "NoseAntennaTransform";
 Transform108.rotation = new SFRotation(new float[1,0,0,1.57]);
 Transform108.translation = new SFVec3f(new float[0,-0.275,-21]);
-Shape109 = browser.currentScene.createNode("Shape");
-Cylinder110 = browser.currentScene.createNode("Cylinder");
+let Shape109 = browser.currentScene.createNode("Shape");
+let Cylinder110 = browser.currentScene.createNode("Cylinder");
 Cylinder110.radius = 0.05;
 Shape109.geometry = Cylinder110;
 
-Appearance111 = browser.currentScene.createNode("Appearance");
-Material112 = browser.currentScene.createNode("Material");
+let Appearance111 = browser.currentScene.createNode("Appearance");
+let Material112 = browser.currentScene.createNode("Material");
 Material112.diffuseColor = new SFColor(new float[0.5,0.5,0.5]);
 Material112.shininess = 0.5;
 Appearance111.material = Material112;
@@ -547,64 +547,64 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Transform2;
 
-TimeSensor113 = browser.currentScene.createNode("TimeSensor");
+let TimeSensor113 = browser.currentScene.createNode("TimeSensor");
 TimeSensor113.DEF = "WheelUp";
 TimeSensor113.cycleInterval = 8;
 browser.currentScene.children[1] = TimeSensor113;
 
-OrientationInterpolator114 = browser.currentScene.createNode("OrientationInterpolator");
+let OrientationInterpolator114 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator114.DEF = "GearUpInterpolator";
 OrientationInterpolator114.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator114.keyValue = new MFRotation(new float[1,0,0,0,1,0,0,-0.79,1,0,0,-1.92]);
 browser.currentScene.children[2] = OrientationInterpolator114;
 
-ROUTE115 = browser.currentScene.createNode("ROUTE");
+let ROUTE115 = browser.currentScene.createNode("ROUTE");
 ROUTE115.fromField = "touchTime";
 ROUTE115.fromNode = "TouchSensorUp";
 ROUTE115.toField = "set_startTime";
 ROUTE115.toNode = "WheelUp";
 browser.currentScene.children[3] = ROUTE115;
 
-ROUTE116 = browser.currentScene.createNode("ROUTE");
+let ROUTE116 = browser.currentScene.createNode("ROUTE");
 ROUTE116.fromField = "fraction_changed";
 ROUTE116.fromNode = "WheelUp";
 ROUTE116.toField = "set_fraction";
 ROUTE116.toNode = "GearUpInterpolator";
 browser.currentScene.children[4] = ROUTE116;
 
-ROUTE117 = browser.currentScene.createNode("ROUTE");
+let ROUTE117 = browser.currentScene.createNode("ROUTE");
 ROUTE117.fromField = "value_changed";
 ROUTE117.fromNode = "GearUpInterpolator";
 ROUTE117.toField = "set_rotation";
 ROUTE117.toNode = "FrontWheelTransform";
 browser.currentScene.children[5] = ROUTE117;
 
-TimeSensor118 = browser.currentScene.createNode("TimeSensor");
+let TimeSensor118 = browser.currentScene.createNode("TimeSensor");
 TimeSensor118.DEF = "WheelDown";
 TimeSensor118.cycleInterval = 8;
 browser.currentScene.children[6] = TimeSensor118;
 
-OrientationInterpolator119 = browser.currentScene.createNode("OrientationInterpolator");
+let OrientationInterpolator119 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator119.DEF = "GearDownInterpolator";
 OrientationInterpolator119.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator119.keyValue = new MFRotation(new float[1,0,0,-1.92,1,0,0,-0.79,1,0,0,0]);
 browser.currentScene.children[7] = OrientationInterpolator119;
 
-ROUTE120 = browser.currentScene.createNode("ROUTE");
+let ROUTE120 = browser.currentScene.createNode("ROUTE");
 ROUTE120.fromField = "touchTime";
 ROUTE120.fromNode = "TouchSensorDown";
 ROUTE120.toField = "set_startTime";
 ROUTE120.toNode = "WheelDown";
 browser.currentScene.children[8] = ROUTE120;
 
-ROUTE121 = browser.currentScene.createNode("ROUTE");
+let ROUTE121 = browser.currentScene.createNode("ROUTE");
 ROUTE121.fromField = "fraction_changed";
 ROUTE121.fromNode = "WheelDown";
 ROUTE121.toField = "set_fraction";
 ROUTE121.toNode = "GearDownInterpolator";
 browser.currentScene.children[9] = ROUTE121;
 
-ROUTE122 = browser.currentScene.createNode("ROUTE");
+let ROUTE122 = browser.currentScene.createNode("ROUTE");
 ROUTE122.fromField = "value_changed";
 ROUTE122.fromNode = "GearDownInterpolator";
 ROUTE122.toField = "set_rotation";
@@ -612,64 +612,64 @@ ROUTE122.toNode = "FrontWheelTransform";
 browser.currentScene.children[10] = ROUTE122;
 
 //Animation commands for Rear Right Wheel Starts
-TimeSensor123 = browser.currentScene.createNode("TimeSensor");
+let TimeSensor123 = browser.currentScene.createNode("TimeSensor");
 TimeSensor123.DEF = "RRearUp1";
 TimeSensor123.cycleInterval = 8;
 browser.currentScene.children[11] = TimeSensor123;
 
-TimeSensor124 = browser.currentScene.createNode("TimeSensor");
+let TimeSensor124 = browser.currentScene.createNode("TimeSensor");
 TimeSensor124.DEF = "RRearDown1";
 TimeSensor124.cycleInterval = 8;
 browser.currentScene.children[12] = TimeSensor124;
 
-OrientationInterpolator125 = browser.currentScene.createNode("OrientationInterpolator");
+let OrientationInterpolator125 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator125.DEF = "RRearInterUp1";
 OrientationInterpolator125.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator125.keyValue = new MFRotation(new float[-1,0,-1,0,-1,0,-1,0.44,-1,0,-1,1.92]);
 browser.currentScene.children[13] = OrientationInterpolator125;
 
-OrientationInterpolator126 = browser.currentScene.createNode("OrientationInterpolator");
+let OrientationInterpolator126 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator126.DEF = "RRearInterDown1";
 OrientationInterpolator126.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator126.keyValue = new MFRotation(new float[-1,0,-1,1.92,-1,0,-1,0.44,-1,0,-1,0]);
 browser.currentScene.children[14] = OrientationInterpolator126;
 
-ROUTE127 = browser.currentScene.createNode("ROUTE");
+let ROUTE127 = browser.currentScene.createNode("ROUTE");
 ROUTE127.fromField = "touchTime";
 ROUTE127.fromNode = "TouchSensorDown";
 ROUTE127.toField = "set_startTime";
 ROUTE127.toNode = "RRearDown1";
 browser.currentScene.children[15] = ROUTE127;
 
-ROUTE128 = browser.currentScene.createNode("ROUTE");
+let ROUTE128 = browser.currentScene.createNode("ROUTE");
 ROUTE128.fromField = "touchTime";
 ROUTE128.fromNode = "TouchSensorUp";
 ROUTE128.toField = "set_startTime";
 ROUTE128.toNode = "RRearUp1";
 browser.currentScene.children[16] = ROUTE128;
 
-ROUTE129 = browser.currentScene.createNode("ROUTE");
+let ROUTE129 = browser.currentScene.createNode("ROUTE");
 ROUTE129.fromField = "fraction_changed";
 ROUTE129.fromNode = "RRearDown1";
 ROUTE129.toField = "set_fraction";
 ROUTE129.toNode = "RRearInterDown1";
 browser.currentScene.children[17] = ROUTE129;
 
-ROUTE130 = browser.currentScene.createNode("ROUTE");
+let ROUTE130 = browser.currentScene.createNode("ROUTE");
 ROUTE130.fromField = "fraction_changed";
 ROUTE130.fromNode = "RRearUp1";
 ROUTE130.toField = "set_fraction";
 ROUTE130.toNode = "RRearInterUp1";
 browser.currentScene.children[18] = ROUTE130;
 
-ROUTE131 = browser.currentScene.createNode("ROUTE");
+let ROUTE131 = browser.currentScene.createNode("ROUTE");
 ROUTE131.fromField = "value_changed";
 ROUTE131.fromNode = "RRearInterDown1";
 ROUTE131.toField = "set_rotation";
 ROUTE131.toNode = "RearRightWheelTransform";
 browser.currentScene.children[19] = ROUTE131;
 
-ROUTE132 = browser.currentScene.createNode("ROUTE");
+let ROUTE132 = browser.currentScene.createNode("ROUTE");
 ROUTE132.fromField = "value_changed";
 ROUTE132.fromNode = "RRearInterUp1";
 ROUTE132.toField = "set_rotation";
@@ -677,83 +677,83 @@ ROUTE132.toNode = "RearRightWheelTransform";
 browser.currentScene.children[20] = ROUTE132;
 
 //Animation commands for Rear Left Wheel
-TimeSensor133 = browser.currentScene.createNode("TimeSensor");
+let TimeSensor133 = browser.currentScene.createNode("TimeSensor");
 TimeSensor133.DEF = "LRearUp1";
 TimeSensor133.cycleInterval = 8;
 browser.currentScene.children[21] = TimeSensor133;
 
-TimeSensor134 = browser.currentScene.createNode("TimeSensor");
+let TimeSensor134 = browser.currentScene.createNode("TimeSensor");
 TimeSensor134.DEF = "LRearDown1";
 TimeSensor134.cycleInterval = 8;
 browser.currentScene.children[22] = TimeSensor134;
 
-OrientationInterpolator135 = browser.currentScene.createNode("OrientationInterpolator");
+let OrientationInterpolator135 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator135.DEF = "LRearInterUp1";
 OrientationInterpolator135.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator135.keyValue = new MFRotation(new float[1,0,1,0,1,0,1,0.44,1,0,1,1.92]);
 browser.currentScene.children[23] = OrientationInterpolator135;
 
-OrientationInterpolator136 = browser.currentScene.createNode("OrientationInterpolator");
+let OrientationInterpolator136 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator136.DEF = "LRearInterDown1";
 OrientationInterpolator136.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator136.keyValue = new MFRotation(new float[1,0,1,1.92,1,0,1,0.44,1,0,1,0]);
 browser.currentScene.children[24] = OrientationInterpolator136;
 
-ROUTE137 = browser.currentScene.createNode("ROUTE");
+let ROUTE137 = browser.currentScene.createNode("ROUTE");
 ROUTE137.fromField = "touchTime";
 ROUTE137.fromNode = "TouchSensorDown";
 ROUTE137.toField = "set_startTime";
 ROUTE137.toNode = "LRearDown1";
 browser.currentScene.children[25] = ROUTE137;
 
-ROUTE138 = browser.currentScene.createNode("ROUTE");
+let ROUTE138 = browser.currentScene.createNode("ROUTE");
 ROUTE138.fromField = "touchTime";
 ROUTE138.fromNode = "TouchSensorUp";
 ROUTE138.toField = "set_startTime";
 ROUTE138.toNode = "LRearUp1";
 browser.currentScene.children[26] = ROUTE138;
 
-ROUTE139 = browser.currentScene.createNode("ROUTE");
+let ROUTE139 = browser.currentScene.createNode("ROUTE");
 ROUTE139.fromField = "fraction_changed";
 ROUTE139.fromNode = "LRearDown1";
 ROUTE139.toField = "set_fraction";
 ROUTE139.toNode = "LRearInterDown1";
 browser.currentScene.children[27] = ROUTE139;
 
-ROUTE140 = browser.currentScene.createNode("ROUTE");
+let ROUTE140 = browser.currentScene.createNode("ROUTE");
 ROUTE140.fromField = "fraction_changed";
 ROUTE140.fromNode = "LRearUp1";
 ROUTE140.toField = "set_fraction";
 ROUTE140.toNode = "LRearInterUp1";
 browser.currentScene.children[28] = ROUTE140;
 
-ROUTE141 = browser.currentScene.createNode("ROUTE");
+let ROUTE141 = browser.currentScene.createNode("ROUTE");
 ROUTE141.fromField = "value_changed";
 ROUTE141.fromNode = "LRearInterDown1";
 ROUTE141.toField = "set_rotation";
 ROUTE141.toNode = "RearLeftWheelTransform";
 browser.currentScene.children[29] = ROUTE141;
 
-ROUTE142 = browser.currentScene.createNode("ROUTE");
+let ROUTE142 = browser.currentScene.createNode("ROUTE");
 ROUTE142.fromField = "value_changed";
 ROUTE142.fromNode = "LRearInterUp1";
 ROUTE142.toField = "set_rotation";
 ROUTE142.toNode = "RearLeftWheelTransform";
 browser.currentScene.children[30] = ROUTE142;
 
-Background143 = browser.currentScene.createNode("Background");
+let Background143 = browser.currentScene.createNode("Background");
 Background143.groundAngle = new MFFloat(new float[1.309,1.570796]);
 Background143.groundColor = new MFColor(new float[0,0.3,0.7,0,0.35,0.75,0,0.4,0.8]);
 Background143.skyAngle = new MFFloat(new float[1.309,1.571]);
 Background143.skyColor = new MFColor(new float[0,0.3,0.8,0,0.5,1,1,1,1]);
 browser.currentScene.children[31] = Background143;
 
-Transform144 = browser.currentScene.createNode("Transform");
+let Transform144 = browser.currentScene.createNode("Transform");
 Transform144.DEF = "RightmostAmraamTransform";
 Transform144.rotation = new SFRotation(new float[-1,0,0,1.57]);
 Transform144.scale = new SFVec3f(new float[1.4,1.4,1.4]);
 Transform144.translation = new SFVec3f(new float[15.65,0,4.5]);
-Inline145 = browser.currentScene.createNode("Inline");
+let Inline145 = browser.currentScene.createNode("Inline");
 Inline145.DEF = "Amraam";
 Inline145.url = new MFString(new java.lang.String["../../Weapons/Missiles/Amraam.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d","../../Weapons/Missiles/Amraam.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"]);
 Transform144.children = new MFNode();
@@ -762,12 +762,12 @@ Transform144.children[0] = Inline145;
 
 browser.currentScene.children[32] = Transform144;
 
-Transform146 = browser.currentScene.createNode("Transform");
+let Transform146 = browser.currentScene.createNode("Transform");
 Transform146.DEF = "LeftmostAmraamTransform";
 Transform146.rotation = new SFRotation(new float[-1,0,0,1.57]);
 Transform146.scale = new SFVec3f(new float[1.4,1.4,1.4]);
 Transform146.translation = new SFVec3f(new float[-15.65,0,4.5]);
-Inline147 = browser.currentScene.createNode("Inline");
+let Inline147 = browser.currentScene.createNode("Inline");
 Inline147.USE = "Amraam";
 Transform146.children = new MFNode();
 
@@ -775,12 +775,12 @@ Transform146.children[0] = Inline147;
 
 browser.currentScene.children[33] = Transform146;
 
-Transform148 = browser.currentScene.createNode("Transform");
+let Transform148 = browser.currentScene.createNode("Transform");
 Transform148.DEF = "SidewinderHolderTransformRight";
 Transform148.rotation = new SFRotation(new float[0,1,0,1.57]);
 Transform148.scale = new SFVec3f(new float[6,3,3]);
 Transform148.translation = new SFVec3f(new float[9,-1.125,8]);
-Inline149 = browser.currentScene.createNode("Inline");
+let Inline149 = browser.currentScene.createNode("Inline");
 Inline149.DEF = "SidewinderHolder";
 Inline149.url = new MFString(new java.lang.String["SidewinderHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d","SidewinderHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl"]);
 Transform148.children = new MFNode();
@@ -789,12 +789,12 @@ Transform148.children[0] = Inline149;
 
 browser.currentScene.children[34] = Transform148;
 
-Transform150 = browser.currentScene.createNode("Transform");
+let Transform150 = browser.currentScene.createNode("Transform");
 Transform150.DEF = "SidewinderHolderTransformLeft";
 Transform150.rotation = new SFRotation(new float[0,1,0,1.57]);
 Transform150.scale = new SFVec3f(new float[6,3,3]);
 Transform150.translation = new SFVec3f(new float[-8.45,-1.125,8]);
-Inline151 = browser.currentScene.createNode("Inline");
+let Inline151 = browser.currentScene.createNode("Inline");
 Inline151.USE = "SidewinderHolder";
 Transform150.children = new MFNode();
 
@@ -802,12 +802,12 @@ Transform150.children[0] = Inline151;
 
 browser.currentScene.children[35] = Transform150;
 
-Transform152 = browser.currentScene.createNode("Transform");
+let Transform152 = browser.currentScene.createNode("Transform");
 Transform152.DEF = "TurkishFlagTransformLeft";
 Transform152.rotation = new SFRotation(new float[0,-1,0,1.57]);
 Transform152.scale = new SFVec3f(new float[0.3,0.25,0.3]);
 Transform152.translation = new SFVec3f(new float[-0.01,8,19.5]);
-Inline153 = browser.currentScene.createNode("Inline");
+let Inline153 = browser.currentScene.createNode("Inline");
 Inline153.url = new MFString(new java.lang.String["TurkishFlagLeft.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d","TurkishFlagLeft.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl"]);
 Transform152.children = new MFNode();
 
@@ -815,12 +815,12 @@ Transform152.children[0] = Inline153;
 
 browser.currentScene.children[36] = Transform152;
 
-Transform154 = browser.currentScene.createNode("Transform");
+let Transform154 = browser.currentScene.createNode("Transform");
 Transform154.DEF = "TurkishFlagTransformRight";
 Transform154.rotation = new SFRotation(new float[0,1,0,1.57]);
 Transform154.scale = new SFVec3f(new float[0.3,0.25,0.3]);
 Transform154.translation = new SFVec3f(new float[0.01,8,20.5]);
-Inline155 = browser.currentScene.createNode("Inline");
+let Inline155 = browser.currentScene.createNode("Inline");
 Inline155.url = new MFString(new java.lang.String["TurkishFlagRight.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d","TurkishFlagRight.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl"]);
 Transform154.children = new MFNode();
 
@@ -828,10 +828,10 @@ Transform154.children[0] = Inline155;
 
 browser.currentScene.children[37] = Transform154;
 
-Transform156 = browser.currentScene.createNode("Transform");
+let Transform156 = browser.currentScene.createNode("Transform");
 Transform156.DEF = "AmraamHolderTransformLeft";
 Transform156.translation = new SFVec3f(new float[-12,-0.176,10.7]);
-Inline157 = browser.currentScene.createNode("Inline");
+let Inline157 = browser.currentScene.createNode("Inline");
 Inline157.DEF = "AmraamHolder";
 Inline157.url = new MFString(new java.lang.String["AmraamHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d","AmraamHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl"]);
 Transform156.children = new MFNode();
@@ -840,10 +840,10 @@ Transform156.children[0] = Inline157;
 
 browser.currentScene.children[38] = Transform156;
 
-Transform158 = browser.currentScene.createNode("Transform");
+let Transform158 = browser.currentScene.createNode("Transform");
 Transform158.DEF = "AmraamHolderTransformRight";
 Transform158.translation = new SFVec3f(new float[12,-0.176,10.7]);
-Inline159 = browser.currentScene.createNode("Inline");
+let Inline159 = browser.currentScene.createNode("Inline");
 Inline159.USE = "AmraamHolder";
 Transform158.children = new MFNode();
 
@@ -851,12 +851,12 @@ Transform158.children[0] = Inline159;
 
 browser.currentScene.children[39] = Transform158;
 
-Transform160 = browser.currentScene.createNode("Transform");
+let Transform160 = browser.currentScene.createNode("Transform");
 Transform160.DEF = "AmraamInnerTransformRight";
 Transform160.rotation = new SFRotation(new float[-1,0,0,1.57]);
 Transform160.scale = new SFVec3f(new float[1.4,1.4,1.4]);
 Transform160.translation = new SFVec3f(new float[12,-1.6,4.5]);
-Inline161 = browser.currentScene.createNode("Inline");
+let Inline161 = browser.currentScene.createNode("Inline");
 Inline161.USE = "Amraam";
 Transform160.children = new MFNode();
 
@@ -864,12 +864,12 @@ Transform160.children[0] = Inline161;
 
 browser.currentScene.children[40] = Transform160;
 
-Transform162 = browser.currentScene.createNode("Transform");
+let Transform162 = browser.currentScene.createNode("Transform");
 Transform162.DEF = "AmraamInnerTransformLeft";
 Transform162.rotation = new SFRotation(new float[-1,0,0,1.57]);
 Transform162.scale = new SFVec3f(new float[1.4,1.4,1.4]);
 Transform162.translation = new SFVec3f(new float[-12,-1.6,4.5]);
-Inline163 = browser.currentScene.createNode("Inline");
+let Inline163 = browser.currentScene.createNode("Inline");
 Inline163.USE = "Amraam";
 Transform162.children = new MFNode();
 
@@ -877,12 +877,12 @@ Transform162.children[0] = Inline163;
 
 browser.currentScene.children[41] = Transform162;
 
-Transform164 = browser.currentScene.createNode("Transform");
+let Transform164 = browser.currentScene.createNode("Transform");
 Transform164.DEF = "SidewinderTransformLeft";
 Transform164.rotation = new SFRotation(new float[-1,0,0,1.57]);
 Transform164.scale = new SFVec3f(new float[1.6,1.6,1.6]);
 Transform164.translation = new SFVec3f(new float[-8.7,-2,3.5]);
-Inline165 = browser.currentScene.createNode("Inline");
+let Inline165 = browser.currentScene.createNode("Inline");
 Inline165.DEF = "Sidewinder";
 Inline165.url = new MFString(new java.lang.String["../../Weapons/Missiles/Sidewinder.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d","../../Weapons/Missiles/Sidewinder.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl"]);
 Transform164.children = new MFNode();
@@ -891,12 +891,12 @@ Transform164.children[0] = Inline165;
 
 browser.currentScene.children[42] = Transform164;
 
-Transform166 = browser.currentScene.createNode("Transform");
+let Transform166 = browser.currentScene.createNode("Transform");
 Transform166.DEF = "SidewinderTransformRight";
 Transform166.rotation = new SFRotation(new float[-1,0,0,1.57]);
 Transform166.scale = new SFVec3f(new float[1.6,1.6,1.6]);
 Transform166.translation = new SFVec3f(new float[8.7,-2,3.5]);
-Inline167 = browser.currentScene.createNode("Inline");
+let Inline167 = browser.currentScene.createNode("Inline");
 Inline167.USE = "Sidewinder";
 Transform166.children = new MFNode();
 
@@ -904,12 +904,12 @@ Transform166.children[0] = Inline167;
 
 browser.currentScene.children[43] = Transform166;
 
-Transform168 = browser.currentScene.createNode("Transform");
+let Transform168 = browser.currentScene.createNode("Transform");
 Transform168.DEF = "FuelTankHolderTransformLeft";
 Transform168.rotation = new SFRotation(new float[0,1,0,1.57]);
 Transform168.scale = new SFVec3f(new float[1.5,1.5,1.5]);
 Transform168.translation = new SFVec3f(new float[-4.8,-1.125,6]);
-Inline169 = browser.currentScene.createNode("Inline");
+let Inline169 = browser.currentScene.createNode("Inline");
 Inline169.DEF = "FuelTankHolder";
 Inline169.url = new MFString(new java.lang.String["FuelTankHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d","FuelTankHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl"]);
 Transform168.children = new MFNode();
@@ -918,12 +918,12 @@ Transform168.children[0] = Inline169;
 
 browser.currentScene.children[44] = Transform168;
 
-Transform170 = browser.currentScene.createNode("Transform");
+let Transform170 = browser.currentScene.createNode("Transform");
 Transform170.DEF = "FuelTankHolderTransformRight";
 Transform170.rotation = new SFRotation(new float[0,1,0,1.57]);
 Transform170.scale = new SFVec3f(new float[1.5,1.5,1.5]);
 Transform170.translation = new SFVec3f(new float[5.3,-1.125,6]);
-Inline171 = browser.currentScene.createNode("Inline");
+let Inline171 = browser.currentScene.createNode("Inline");
 Inline171.USE = "FuelTankHolder";
 Transform170.children = new MFNode();
 
@@ -931,12 +931,12 @@ Transform170.children[0] = Inline171;
 
 browser.currentScene.children[45] = Transform170;
 
-Transform172 = browser.currentScene.createNode("Transform");
+let Transform172 = browser.currentScene.createNode("Transform");
 Transform172.DEF = "FuelTankTransformRight";
 Transform172.rotation = new SFRotation(new float[-1,0,0,1.57]);
 Transform172.scale = new SFVec3f(new float[1.5,1.5,1.5]);
 Transform172.translation = new SFVec3f(new float[5,-2.85,5.5]);
-Inline173 = browser.currentScene.createNode("Inline");
+let Inline173 = browser.currentScene.createNode("Inline");
 Inline173.DEF = "FuelTank";
 Inline173.url = new MFString(new java.lang.String["FuelTank.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d","FuelTank.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl"]);
 Transform172.children = new MFNode();
@@ -945,12 +945,12 @@ Transform172.children[0] = Inline173;
 
 browser.currentScene.children[46] = Transform172;
 
-Transform174 = browser.currentScene.createNode("Transform");
+let Transform174 = browser.currentScene.createNode("Transform");
 Transform174.DEF = "FuelTankTransformLeft";
 Transform174.rotation = new SFRotation(new float[-1,0,0,1.57]);
 Transform174.scale = new SFVec3f(new float[1.5,1.5,1.5]);
 Transform174.translation = new SFVec3f(new float[-5,-2.85,5.5]);
-Inline175 = browser.currentScene.createNode("Inline");
+let Inline175 = browser.currentScene.createNode("Inline");
 Inline175.USE = "FuelTank";
 Transform174.children = new MFNode();
 
@@ -958,15 +958,15 @@ Transform174.children[0] = Inline175;
 
 browser.currentScene.children[47] = Transform174;
 
-Transform176 = browser.currentScene.createNode("Transform");
+let Transform176 = browser.currentScene.createNode("Transform");
 Transform176.DEF = "InlineCoverOfPlaneTansform";
-Shape177 = browser.currentScene.createNode("Shape");
-Box178 = browser.currentScene.createNode("Box");
+let Shape177 = browser.currentScene.createNode("Shape");
+let Box178 = browser.currentScene.createNode("Box");
 Box178.size = new SFVec3f(new float[4.15,0.1,20]);
 Shape177.geometry = Box178;
 
-Appearance179 = browser.currentScene.createNode("Appearance");
-Material180 = browser.currentScene.createNode("Material");
+let Appearance179 = browser.currentScene.createNode("Appearance");
+let Material180 = browser.currentScene.createNode("Material");
 Material180.diffuseColor = new SFColor(new float[0.25,0.25,0.25]);
 Appearance179.material = Material180;
 
@@ -978,10 +978,10 @@ Transform176.children[0] = Shape177;
 
 browser.currentScene.children[48] = Transform176;
 
-Transform181 = browser.currentScene.createNode("Transform");
+let Transform181 = browser.currentScene.createNode("Transform");
 Transform181.DEF = "TargetHelicopterTransform";
 Transform181.translation = new SFVec3f(new float[16,-50,-500]);
-Inline182 = browser.currentScene.createNode("Inline");
+let Inline182 = browser.currentScene.createNode("Inline");
 Inline182.url = new MFString(new java.lang.String["Target.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d","Target.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl"]);
 Transform181.children = new MFNode();
 
@@ -989,46 +989,46 @@ Transform181.children[0] = Inline182;
 
 browser.currentScene.children[49] = Transform181;
 
-TimeSensor183 = browser.currentScene.createNode("TimeSensor");
+let TimeSensor183 = browser.currentScene.createNode("TimeSensor");
 TimeSensor183.DEF = "FireClock";
 TimeSensor183.cycleInterval = 8;
 browser.currentScene.children[50] = TimeSensor183;
 
-PositionInterpolator184 = browser.currentScene.createNode("PositionInterpolator");
+let PositionInterpolator184 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator184.DEF = "MissilePath";
 PositionInterpolator184.key = new MFFloat(new float[0,0.1,1]);
 PositionInterpolator184.keyValue = new MFVec3f(new float[-15.65,0,4.5,-15.65,-2,4.5,16,-50,-500]);
 browser.currentScene.children[51] = PositionInterpolator184;
 
-ROUTE185 = browser.currentScene.createNode("ROUTE");
+let ROUTE185 = browser.currentScene.createNode("ROUTE");
 ROUTE185.fromField = "touchTime";
 ROUTE185.fromNode = "FireSensor";
 ROUTE185.toField = "set_startTime";
 ROUTE185.toNode = "FireClock";
 browser.currentScene.children[52] = ROUTE185;
 
-ROUTE186 = browser.currentScene.createNode("ROUTE");
+let ROUTE186 = browser.currentScene.createNode("ROUTE");
 ROUTE186.fromField = "fraction_changed";
 ROUTE186.fromNode = "FireClock";
 ROUTE186.toField = "set_fraction";
 ROUTE186.toNode = "MissilePath";
 browser.currentScene.children[53] = ROUTE186;
 
-ROUTE187 = browser.currentScene.createNode("ROUTE");
+let ROUTE187 = browser.currentScene.createNode("ROUTE");
 ROUTE187.fromField = "value_changed";
 ROUTE187.fromNode = "MissilePath";
 ROUTE187.toField = "set_translation";
 ROUTE187.toNode = "LeftmostAmraamTransform";
 browser.currentScene.children[54] = ROUTE187;
 
-Viewpoint188 = browser.currentScene.createNode("Viewpoint");
+let Viewpoint188 = browser.currentScene.createNode("Viewpoint");
 Viewpoint188.DEF = "MissileLaunchView";
 Viewpoint188.description = "Missile Fire View";
 Viewpoint188.orientation = new SFRotation(new float[0.094,-0.994,0.057,1.1716]);
 Viewpoint188.position = new SFVec3f(new float[-344.3,-142.8,-27.7]);
 browser.currentScene.children[55] = Viewpoint188;
 
-ROUTE189 = browser.currentScene.createNode("ROUTE");
+let ROUTE189 = browser.currentScene.createNode("ROUTE");
 ROUTE189.fromField = "isActive";
 ROUTE189.fromNode = "FireSensor";
 ROUTE189.toField = "set_bind";
