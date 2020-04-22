@@ -304,7 +304,7 @@ POSSIBILITY OF SUCH DAMAGE.
     main : function (argv)
     {
 		]]>var testObject = new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>();
-		print ("</xsl:text>          <xsl:value-of select="$newClassName"/>
+		console.log ("</xsl:text>          <xsl:value-of select="$newClassName"/>
 		<xsl:text> execution self-validation test results: " + testObject.validateSelf());
 	}
 }
