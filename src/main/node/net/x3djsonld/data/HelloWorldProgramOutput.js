@@ -184,10 +184,10 @@ HelloWorldProgramOutput.prototype = {
     .addChild((new autoclass.Shape("LineShape"))
       .setAppearance((new autoclass.Appearance())
         .setMaterial((new autoclass.Material()).setEmissiveColor(0.6,0.19607843,0.8)))
-      .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.to([0,1,2,3,4,0], java.type("int[]")))
+      .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,2,3,4,0]))
         .addComments(" Coordinate 3-tuple point count: 6 ")
-        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.to([0.0,1.5,0.0,2.0,1.5,0.0,2.0,1.5,-2.0,-2.0,1.5,-2.0,-2.0,1.5,0.0,0.0,1.5,0.0], java.type("float[]")))))))
-    .addChild((new autoclass.PositionInterpolator("BoxPathAnimator")).setKey(java.to([0.0,0.125,0.375,0.625,0.875,1.0], java.type("float[]"))).setKeyValue(new autoclass.MFVec3f(java.to([0.0,1.5,0.0,2.0,1.5,0.0,2.0,1.5,-2.0,-2.0,1.5,-2.0,-2.0,1.5,0.0,0.0,1.5,0.0], java.type("float[]")))))
+        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,1.5,0.0,2.0,1.5,0.0,2.0,1.5,-2.0,-2.0,1.5,-2.0,-2.0,1.5,0.0,0.0,1.5,0.0]))))))
+    .addChild((new autoclass.PositionInterpolator("BoxPathAnimator")).setKey(java.newArray("float", [0.0,0.125,0.375,0.625,0.875,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,1.5,0.0,2.0,1.5,0.0,2.0,1.5,-2.0,-2.0,1.5,-2.0,-2.0,1.5,0.0,0.0,1.5,0.0]))))
     .addChild((new autoclass.TimeSensor("OrbitClock")).setCycleInterval(8.0).setLoop(true))
     .addChild((new autoclass.ROUTE()).setFromNode("OrbitClock").setFromField("fraction_changed").setToNode("BoxPathAnimator").setToField("set_fraction"))
     .addChild((new autoclass.ROUTE()).setFromNode("BoxPathAnimator").setFromField("value_changed").setToNode("LogoGeometryTransform").setToField("set_translation"))
@@ -214,7 +214,7 @@ HelloWorldProgramOutput.prototype = {
       .addComments(" ... for you! ")
       .addComments(" https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) "))
     .addComments(" repeatedly spin 180 degrees as a readable special effect ")
-    .addChild((new autoclass.OrientationInterpolator("SpinInterpolator")).setKey(java.to([0.0,0.5,1.0], java.type("float[]"))).setKeyValue(new autoclass.MFRotation(java.to([0.0,1.0,0.0,4.712389,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.5707964], java.type("float[]")))))
+    .addChild((new autoclass.OrientationInterpolator("SpinInterpolator")).setKey(java.newArray("float", [0.0,0.5,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,1.0,0.0,4.712389,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.5707964]))))
     .addChild((new autoclass.TimeSensor("SpinClock")).setCycleInterval(5.0).setLoop(true))
     .addChild((new autoclass.ROUTE()).setFromNode("SpinClock").setFromField("fraction_changed").setToNode("SpinInterpolator").setToField("set_fraction"))
     .addChild((new autoclass.ROUTE()).setFromNode("SpinInterpolator").setFromField("value_changed").setToNode("TextTransform").setToField("rotation"))
@@ -231,7 +231,7 @@ HelloWorldProgramOutput.prototype = {
 "}" + "\n")
         .addField((new autoclass.field()).setAccessType("inputOnly").setName("colorInput").setType("SFColor"))
         .addField((new autoclass.field()).setAccessType("outputOnly").setName("colorsOutput").setType("MFColor")))
-      .addChild((new autoclass.ColorInterpolator("ColorAnimator")).setKey(java.to([0.0,0.5,1.0], java.type("float[]"))).setKeyValue(new autoclass.MFColor(java.to([0.9411765,1.0,1.0,0.29411766,0.0,0.50980395,0.9411765,1.0,1.0], java.type("float[]"))))
+      .addChild((new autoclass.ColorInterpolator("ColorAnimator")).setKey(java.newArray("float", [0.0,0.5,1.0])).setKeyValue(new autoclass.MFColor(java.newArray("float", [0.9411765,1.0,1.0,0.29411766,0.0,0.50980395,0.9411765,1.0,1.0])))
         .addComments(" AZURE to INDIGO and back again "))
       .addChild((new autoclass.TimeSensor("ColorClock")).setCycleInterval(60.0).setLoop(true))
       .addChild((new autoclass.ROUTE()).setFromNode("colorTypeConversionScript").setFromField("colorsOutput").setToNode("GradualBackground").setToField("skyColor"))
@@ -477,8 +477,8 @@ HelloWorldProgramOutput.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.HelloWorldProgramOutput();
-		print ("HelloWorldProgramOutput execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new HelloWorldProgramOutput();
+		console.log ("HelloWorldProgramOutput execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new HelloWorldProgramOutput().main();

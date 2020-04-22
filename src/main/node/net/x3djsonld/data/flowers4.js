@@ -98,8 +98,8 @@ flowers4.prototype = {
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
             .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
             .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"")))))
-        .addComments(java.to(["",
-"                <Sphere>"], java.type("java.lang.String[]")))
+        .addComments(java.newArray("java.lang.String",["",
+"                <Sphere>"]))
         .setGeometry((new autoclass.IndexedFaceSet("Orbit")).setDEF("Orbit").setConvex(false)
           .setCoord((new autoclass.Coordinate("OrbitCoordinates"))))))
     .addChild((new autoclass.Script("OrbitScript")).setSourceCode("\n" + 
@@ -250,8 +250,8 @@ flowers4.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.flowers4();
-		print ("flowers4 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new flowers4();
+		console.log ("flowers4 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new flowers4().main();

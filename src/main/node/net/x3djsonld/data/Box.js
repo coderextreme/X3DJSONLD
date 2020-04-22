@@ -190,8 +190,8 @@ Box.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.Box();
-		print ("Box execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new Box();
+		console.log ("Box execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new Box().main();

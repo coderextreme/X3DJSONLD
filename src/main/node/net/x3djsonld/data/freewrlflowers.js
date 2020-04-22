@@ -160,8 +160,8 @@ freewrlflowers.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.freewrlflowers();
-		print ("freewrlflowers execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new freewrlflowers();
+		console.log ("freewrlflowers execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new freewrlflowers().main();

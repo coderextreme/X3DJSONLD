@@ -196,8 +196,8 @@ rubik.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.rubik();
-		print ("rubik execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new rubik();
+		console.log ("rubik execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new rubik().main();

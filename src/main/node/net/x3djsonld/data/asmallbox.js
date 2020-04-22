@@ -165,8 +165,8 @@ asmallbox.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.asmallbox();
-		print ("asmallbox execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new asmallbox();
+		console.log ("asmallbox execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new asmallbox().main();

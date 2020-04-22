@@ -94,7 +94,7 @@ ball.prototype = {
             .setLeft((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
             .setRight((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
             .setTop((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
-          .addComments(java.to(["",
+          .addComments(java.newArray("java.lang.String",["",
 "                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>",
 "			<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>",
 "                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>",
@@ -103,8 +103,8 @@ ball.prototype = {
 "                        <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>",
 "                        </ShaderProgram>",
 "			<ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>",
-"		    </ProgramShader>"], java.type("java.lang.String[]")))
-          .addComments(java.to(["",
+"		    </ProgramShader>"]))
+          .addComments(java.newArray("java.lang.String",["",
 "                <ComposedShader language='GLSL'>",
 "		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>",
 "		  <field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\">",
@@ -115,8 +115,8 @@ ball.prototype = {
 "		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>",
 "		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
 "		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
-"                </ComposedShader>"], java.type("java.lang.String[]")))
-          .addComments(java.to(["",
+"                </ComposedShader>"]))
+          .addComments(java.newArray("java.lang.String",["",
 "                <ComposedShader language='GLSL'>",
 "		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>",
 "		  <field name='cube' type='SFNode' accessType=\"inputOutput\">",
@@ -127,8 +127,8 @@ ball.prototype = {
 "		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>",
 "		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
 "		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
-"                </ComposedShader>"], java.type("java.lang.String[]")))
-          .addComments(java.to(["",
+"                </ComposedShader>"]))
+          .addComments(java.newArray("java.lang.String",["",
 "                <ComposedShader language='GLSL'>",
 "		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>",
 "		  <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field>",
@@ -137,8 +137,8 @@ ball.prototype = {
 "		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>",
 "		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
 "		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>",
-"                </ComposedShader>"], java.type("java.lang.String[]")))
-          .addComments(java.to([""], java.type("java.lang.String[]")))
+"                </ComposedShader>"]))
+          .addComments(java.newArray("java.lang.String",[""]))
           .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1 1.033"))
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("cube").setType("SFNode")
@@ -224,8 +224,8 @@ ball.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.ball();
-		print ("ball execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new ball();
+		console.log ("ball execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new ball().main();

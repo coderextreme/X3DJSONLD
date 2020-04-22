@@ -159,8 +159,8 @@ browser.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.browser();
-		print ("browser execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new browser();
+		console.log ("browser execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new browser().main();

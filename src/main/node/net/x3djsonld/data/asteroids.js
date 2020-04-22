@@ -152,8 +152,8 @@ asteroids.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.asteroids();
-		print ("asteroids execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new asteroids();
+		console.log ("asteroids execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new asteroids().main();

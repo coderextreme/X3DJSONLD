@@ -77,7 +77,7 @@ flower3.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.NavigationInfo()))
     .addChild((new autoclass.DirectionalLight()).setDirection(0.0,-0.8,-0.2).setIntensity(0.5))
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([1.000,1.000,1.000], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [1.000,1.000,1.000]))))
     .addChild((new autoclass.Viewpoint()).setDescription("One mathematical orbital").setPosition(0.0,0.0,50.0))
     .addChild((new autoclass.Transform("OrbitTransform")).setTranslation(8.0,0.0,0.0)
       .addChild((new autoclass.Shape())
@@ -163,14 +163,14 @@ flower3.prototype = {
       .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
       .addField((new autoclass.field()).setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
       .addField((new autoclass.field()).setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))
-      .addComments(java.to(["",
+      .addComments(java.newArray("java.lang.String",["",
 "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>",
 "        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>",
-"        <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"], java.type("java.lang.String[]"))))
+"        <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"])))
     .addChild((new autoclass.TimeSensor("Clock")).setCycleInterval(16).setLoop(true))
     .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
     .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
@@ -242,8 +242,8 @@ flower3.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.flower3();
-		print ("flower3 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new flower3();
+		console.log ("flower3 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new flower3().main();

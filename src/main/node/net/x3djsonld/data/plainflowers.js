@@ -160,8 +160,8 @@ plainflowers.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.plainflowers();
-		print ("plainflowers execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new plainflowers();
+		console.log ("plainflowers execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new plainflowers().main();

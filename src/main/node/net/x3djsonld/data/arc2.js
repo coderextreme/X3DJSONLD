@@ -76,14 +76,14 @@ arc2.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("a generic proto to connect two objects")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Viewpoint()).setDescription("Only Viewpoint").setPosition(0.0,0.0,5.0))
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.4,0.4,0.4], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.4,0.4,0.4]))))
     .addChild((new autoclass.Transform("G1"))
       .addChild((new autoclass.Transform("DECLpoint_INSTANCE_node"))
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.Sphere()).setRadius(0.1))
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0))))
-        .addChild((new autoclass.PositionInterpolator("DECLpoint_INSTANCE_PI1")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,5.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
+        .addChild((new autoclass.PositionInterpolator("DECLpoint_INSTANCE_PI1")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,5.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
         .addChild((new autoclass.Script("DECLpoint_INSTANCE_MB1")).setSourceCode("\n" + 
 "\n" + 
 "\n" + 
@@ -109,7 +109,7 @@ arc2.prototype = {
           .setGeometry((new autoclass.Sphere()).setRadius(0.1))
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0))))
-        .addChild((new autoclass.PositionInterpolator("DECLpoint_INSTANCE1000_PI1")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,5.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
+        .addChild((new autoclass.PositionInterpolator("DECLpoint_INSTANCE1000_PI1")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,5.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
         .addChild((new autoclass.Script("DECLpoint_INSTANCE1000_MB1")).setSourceCode("\n" + 
 "\n" + 
 "\n" + 
@@ -255,8 +255,8 @@ arc2.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.arc2();
-		print ("arc2 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new arc2();
+		console.log ("arc2 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new arc2().main();

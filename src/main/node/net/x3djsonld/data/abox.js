@@ -165,8 +165,8 @@ abox.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.abox();
-		print ("abox execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new abox();
+		console.log ("abox execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new abox().main();

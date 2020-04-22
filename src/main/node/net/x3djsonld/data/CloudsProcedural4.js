@@ -99,7 +99,7 @@ CloudsProcedural4.prototype = {
     .addChild((new autoclass.Viewpoint()).setDescription("Main").setOrientation(0.0,1.0,0.0,1.57).setPosition(50000.0,1000.0,42000.0).setJump(false))
     .addChild((new autoclass.Viewpoint()).setDescription("Light House Tower").setOrientation(0.0,1.0,0.0,1.3).setPosition(45000.0,1290.0,44000.0).setJump(false))
     .addChild((new autoclass.Viewpoint()).setDescription("centerWest").setOrientation(0.0,1.0,0.0,2.5).setPosition(48000.0,1000.0,20000.0).setJump(false))
-    .addChild((new autoclass.Background()).setGroundColor(new autoclass.MFColor(java.to([0.0,0.0,1.0], java.type("float[]")))).setSkyColor(new autoclass.MFColor(java.to([0.0,0.0,1.0], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.0,0.0,1.0]))).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.0,0.0,1.0]))))
     .addChild((new autoclass.DirectionalLight()).setDirection(-1.0,0.0,0.0).setAmbientIntensity(1).setGlobal(true))
     .addChild((new autoclass.Group("Terrain"))
       .addChild((new autoclass.Transform()).setTranslation(25000.0,0.0,25000.0).setScale(50.0,50.0,50.0)
@@ -572,8 +572,8 @@ CloudsProcedural4.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.CloudsProcedural4();
-		print ("CloudsProcedural4 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new CloudsProcedural4();
+		console.log ("CloudsProcedural4 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new CloudsProcedural4().main();

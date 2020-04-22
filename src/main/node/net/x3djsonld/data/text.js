@@ -167,8 +167,8 @@ text.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.text();
-		print ("text execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new text();
+		console.log ("text execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new text().main();

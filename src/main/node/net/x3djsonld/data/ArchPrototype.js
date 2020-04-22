@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js. </p>
- <p> Related links: <a href="../../../Buildings/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../Buildings/ArchPrototypeIndex.html" target="_top">ArchPrototype catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../Buildings/ArchPrototype.java">ArchPrototype.java</a> source, <a href="../../../Buildings/ArchPrototypeIndex.html" target="_top">ArchPrototype catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -78,7 +78,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author Michele Foti, Don Brutzman
  */
 
-function NeedClassName
+function ArchPrototype
   /** Default constructor to create this object. */
   ()
   {
@@ -87,7 +87,7 @@ function NeedClassName
     this.initialize();
     return this;
   }
-NeedClassName.prototype = {
+ArchPrototype.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -216,7 +216,7 @@ NeedClassName.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return NeedClassName model
+   * @return ArchPrototype model
    */
   getX3dModel : function()
   {	  
@@ -278,8 +278,8 @@ NeedClassName.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.NeedClassName();
-		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new ArchPrototype();
+		console.log ("ArchPrototype execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new NeedClassName().main();
+new ArchPrototype().main();

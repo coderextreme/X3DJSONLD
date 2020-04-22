@@ -93,9 +93,9 @@ ExtrusionHeart.prototype = {
     .addChild((new autoclass.Viewpoint()).setDescription("Extrusion Heart").setPosition(0.0,-4.0,0.0).setOrientation(1.0,0.0,0.0,1.57))
     .addChild((new autoclass.Transform()).setTranslation(0.0,-0.5,0.0)
       .addChild((new autoclass.Shape())
-        .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.5,0.0,0.0,0.9,0.0,0.0,1.0,0.0], java.type("float[]")))).setCrossSection(new autoclass.MFVec2f() /* splitting up long array to improve readability */
-.append(new autoclass.MFVec2f(java.to([0.0,0.8,0.2,1.0,0.7,0.95,1.0,0.5,0.8,0.0,0.5,-0.3,0.0,-0.7,-0.5,-0.3,-0.8,0.0,-1.0,0.5], java.type("float[]"))))
-.append(new autoclass.MFVec2f(java.to([-0.7,0.95,-0.2,1.0,0.0,0.8], java.type("float[]"))))).setScale(new autoclass.MFVec2f(java.to([0.01,0.01,0.8,0.8,1.0,1.0,0.8,0.8,0.01,0.01], java.type("float[]")))).setCreaseAngle(3.14159).setSolid(false))
+        .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.5,0.0,0.0,0.9,0.0,0.0,1.0,0.0]))).setCrossSection(new autoclass.MFVec2f() /* splitting up long array to improve readability */
+.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.8,0.2,1.0,0.7,0.95,1.0,0.5,0.8,0.0,0.5,-0.3,0.0,-0.7,-0.5,-0.3,-0.8,0.0,-1.0,0.5])))
+.append(new autoclass.MFVec2f(java.newArray("float", [-0.7,0.95,-0.2,1.0,0.0,0.8])))).setScale(new autoclass.MFVec2f(java.newArray("float", [0.01,0.01,0.8,0.8,1.0,1.0,0.8,0.8,0.01,0.01]))).setCreaseAngle(3.14159).setSolid(false))
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setDiffuseColor(0.8,0.3,0.3))))));
   },
@@ -165,8 +165,8 @@ ExtrusionHeart.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.ExtrusionHeart();
-		print ("ExtrusionHeart execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new ExtrusionHeart();
+		console.log ("ExtrusionHeart execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new ExtrusionHeart().main();

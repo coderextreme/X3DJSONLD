@@ -86,7 +86,7 @@ geobubbles.prototype = {
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setSpecularColor(0.5,0.5,0.5).setDiffuseColor(0.7,0.7,0.7)))))
     .addChild((new autoclass.TimeSensor("TourTime")).setCycleInterval(5).setLoop(true))
-    .addChild((new autoclass.GeoPositionInterpolator("TourPosition")).setKey(java.to([0.0,1.0], java.type("float[]"))).setKeyValue(new autoclass.MFVec3d(java.to([0.0015708,0.0,4.0,0.0,0.0015708,4.0], java.type("double[]")))))
+    .addChild((new autoclass.GeoPositionInterpolator("TourPosition")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFVec3d(java.newArray("double", [0.0015708,0.0,4.0,0.0,0.0015708,4.0]))))
     .addChild((new autoclass.Script("RandomTourTime")).setSourceCode("ecmascript:" + "\n" + 
 "\n" + 
 "               function set_cycle(value) {" + "\n" + 
@@ -179,8 +179,8 @@ geobubbles.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.geobubbles();
-		print ("geobubbles execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new geobubbles();
+		console.log ("geobubbles execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new geobubbles().main();

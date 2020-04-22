@@ -183,8 +183,8 @@ TextExamples.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.TextExamples();
-		print ("TextExamples execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new TextExamples();
+		console.log ("TextExamples execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new TextExamples().main();

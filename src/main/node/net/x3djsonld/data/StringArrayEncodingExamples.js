@@ -126,7 +126,7 @@ StringArrayEncodingExamples.prototype = {
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Viewpoint("EntryView")).setDescription("Hello MFString syntax"))
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.6,1.0,0.8], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.6,1.0,0.8]))))
     .addChild((new autoclass.Shape())
       .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"One, Two, Three\" \"\" \"He said, \\\"Immel did it!\\\"\""))
         .addComments(" alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
@@ -201,8 +201,8 @@ StringArrayEncodingExamples.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.StringArrayEncodingExamples();
-		print ("StringArrayEncodingExamples execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new StringArrayEncodingExamples();
+		console.log ("StringArrayEncodingExamples execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new StringArrayEncodingExamples().main();

@@ -101,7 +101,7 @@ PixelTextureComponentExamples.prototype = {
   {
 
 	/** Large attribute array: PixelTexture image field, scene-graph level=6, element #68, 67 total numbers */
-	this.PixelTexture_6_68_image = new autoclass.SFImage(java.to([8,8,1,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc], java.type("int[]")));
+	this.PixelTexture_6_68_image = new autoclass.SFImage(java.newArray("int", [8,8,1,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc]));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("PixelTextureComponentExamples.x3d"))
@@ -118,7 +118,7 @@ PixelTextureComponentExamples.prototype = {
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.1,0.1,0.4], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.1,0.1,0.4]))))
     .addChild((new autoclass.Viewpoint()).setDescription("Table 5.18 SFImage component examples").setPosition(0.0,0.0,14.0))
     .addChild((new autoclass.Transform()).setTranslation(-6.0,0.0,0.0)
       .addChild((new autoclass.Shape())
@@ -134,7 +134,7 @@ PixelTextureComponentExamples.prototype = {
     .addChild((new autoclass.Transform()).setTranslation(-3.0,0.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
-          .setTexture((new autoclass.PixelTexture("OneComponent")).setImage(java.to([1,2,1,0xFF,0x00], java.type("int[]")))))
+          .setTexture((new autoclass.PixelTexture("OneComponent")).setImage(java.newArray("int", [1,2,1,0xFF,0x00]))))
         .setGeometry((new autoclass.Box())))
       .addChild((new autoclass.Transform()).setTranslation(0.0,-2.0,0.0)
         .addChild((new autoclass.Shape())
@@ -144,7 +144,7 @@ PixelTextureComponentExamples.prototype = {
     .addChild((new autoclass.Transform())
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
-          .setTexture((new autoclass.PixelTexture("TwoComponents")).setImage(java.to([2,1,2,0xCCFF,0x2277], java.type("int[]")))))
+          .setTexture((new autoclass.PixelTexture("TwoComponents")).setImage(java.newArray("int", [2,1,2,0xCCFF,0x2277]))))
         .setGeometry((new autoclass.Box())))
       .addChild((new autoclass.Transform()).setTranslation(0.0,-2.0,0.0)
         .addChild((new autoclass.Shape())
@@ -155,7 +155,7 @@ PixelTextureComponentExamples.prototype = {
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
           .addComments(" note 0x000000 = 0 ")
-          .setTexture((new autoclass.PixelTexture("ThreeComponents")).setImage(java.to([2,4,3,0xFF0000,0xFF00,0x000000,0,0,0,0xFFFFFF,0xFFFF00], java.type("int[]")))))
+          .setTexture((new autoclass.PixelTexture("ThreeComponents")).setImage(java.newArray("int", [2,4,3,0xFF0000,0xFF00,0x000000,0,0,0,0xFFFFFF,0xFFFF00]))))
         .setGeometry((new autoclass.Box())))
       .addChild((new autoclass.Transform()).setTranslation(0.0,-2.0,0.0)
         .addChild((new autoclass.Shape())
@@ -166,7 +166,7 @@ PixelTextureComponentExamples.prototype = {
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
           .addComments(" Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 ")
-          .setTexture((new autoclass.PixelTexture("FourComponents")).setImage(java.to([3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F], java.type("int[]")))))
+          .setTexture((new autoclass.PixelTexture("FourComponents")).setImage(java.newArray("int", [3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F]))))
         .setGeometry((new autoclass.Box())))
       .addChild((new autoclass.Transform()).setTranslation(0.0,-2.0,0.0)
         .addChild((new autoclass.Shape())
@@ -246,8 +246,8 @@ PixelTextureComponentExamples.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.PixelTextureComponentExamples();
-		print ("PixelTextureComponentExamples execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new PixelTextureComponentExamples();
+		console.log ("PixelTextureComponentExamples execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new PixelTextureComponentExamples().main();

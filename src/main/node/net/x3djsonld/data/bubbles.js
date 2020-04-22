@@ -112,8 +112,8 @@ bubbles.prototype = {
             .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
             .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"")))))))
     .addChild((new autoclass.TimeSensor("TourTime")).setCycleInterval(5).setLoop(true))
-    .addChild((new autoclass.PositionInterpolator("TourPosition")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,10.0,0.0,0.0,-10.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
-    .addChild((new autoclass.OrientationInterpolator("TourOrientation")).setKey(java.to([0.0,1.0], java.type("float[]"))).setKeyValue(new autoclass.MFRotation(java.to([0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.1416], java.type("float[]")))))
+    .addChild((new autoclass.PositionInterpolator("TourPosition")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,10.0,0.0,0.0,-10.0]))).setKey(java.newArray("float", [0.0,1.0])))
+    .addChild((new autoclass.OrientationInterpolator("TourOrientation")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.1416]))))
     .addChild((new autoclass.Script("RandomTourTime")).setSourceCode("\n" + 
 "	    ecmascript:" + "\n" + 
 "               function set_cycle(value) {" + "\n" + 
@@ -218,8 +218,8 @@ bubbles.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.bubbles();
-		print ("bubbles execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new bubbles();
+		console.log ("bubbles execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new bubbles().main();

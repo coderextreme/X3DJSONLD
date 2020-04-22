@@ -187,7 +187,7 @@ HeadsUpDisplayPrototype.prototype = {
           .addChild((new autoclass.ROUTE()).setFromNode("WhereSensor").setFromField("position_changed").setToNode("FixedLocation").setToField("set_translation"))
           .addChild((new autoclass.ROUTE()).setFromNode("WhereSensor").setFromField("orientation_changed").setToNode("FixedLocation").setToField("set_rotation")))))
     .addComments(" ==================== ")
-    .addChild((new autoclass.Background()).setGroundColor(new autoclass.MFColor(java.to([0.1,0.1,0.3], java.type("float[]")))).setSkyColor(new autoclass.MFColor(java.to([0.5,0.5,0.1], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.1,0.1,0.3]))).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.5,0.5,0.1]))))
     .addChild((new autoclass.Anchor()).setDescription("HeadsUpDisplayExample").setParameter(new autoclass.MFString("\"target=_blank\"")).setUrl(new autoclass.MFString("\"HeadsUpDisplayExample.x3d\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d\" \"HeadsUpDisplayExample.wrl\" \"https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl\""))
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
@@ -261,8 +261,8 @@ HeadsUpDisplayPrototype.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.HeadsUpDisplayPrototype();
-		print ("HeadsUpDisplayPrototype execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new HeadsUpDisplayPrototype();
+		console.log ("HeadsUpDisplayPrototype execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new HeadsUpDisplayPrototype().main();

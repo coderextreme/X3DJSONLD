@@ -160,11 +160,11 @@ indexedfaceset_pixeltexture_plus.prototype = {
     .addChild((new autoclass.Shape())
       .setAppearance((new autoclass.Appearance())
         .setMaterial((new autoclass.Material()))
-        .setTexture((new autoclass.PixelTexture()).setImage(java.to([2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF], java.type("int[]")))))
-      .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(0.5).setColorPerVertex(false).setTexCoordIndex(java.to([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1], java.type("int[]"))).setCoordIndex(java.to([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], java.type("int[]")))
-        .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.to([0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0], java.type("float[]")))))
-        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.to([-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0], java.type("float[]")))))
-        .setTexCoord((new autoclass.TextureCoordinate()).setPoint(new autoclass.MFVec2f(java.to([-1.0,2.0,-1.0,-1.0,2.0,2.0,2.0,-1.0], java.type("float[]"))))))));
+        .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF]))))
+      .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(0.5).setColorPerVertex(false).setTexCoordIndex(java.newArray("int", [0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1])).setCoordIndex(java.newArray("int", [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]))
+        .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0]))))
+        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0]))))
+        .setTexCoord((new autoclass.TextureCoordinate()).setPoint(new autoclass.MFVec2f(java.newArray("float", [-1.0,2.0,-1.0,-1.0,2.0,2.0,2.0,-1.0])))))));
   },
   // end of initialize() method
 
@@ -232,8 +232,8 @@ indexedfaceset_pixeltexture_plus.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.indexedfaceset_pixeltexture_plus();
-		print ("indexedfaceset_pixeltexture_plus execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new indexedfaceset_pixeltexture_plus();
+		console.log ("indexedfaceset_pixeltexture_plus execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new indexedfaceset_pixeltexture_plus().main();

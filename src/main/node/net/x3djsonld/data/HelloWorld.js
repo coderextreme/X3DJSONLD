@@ -249,8 +249,8 @@ HelloWorld.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.HelloWorld();
-		print ("HelloWorld execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new HelloWorld();
+		console.log ("HelloWorld execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new HelloWorld().main();

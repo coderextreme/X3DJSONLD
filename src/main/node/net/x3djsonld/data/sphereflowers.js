@@ -164,8 +164,8 @@ sphereflowers.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.sphereflowers();
-		print ("sphereflowers execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new sphereflowers();
+		console.log ("sphereflowers execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new sphereflowers().main();

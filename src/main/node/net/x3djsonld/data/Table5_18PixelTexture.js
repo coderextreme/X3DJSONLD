@@ -110,12 +110,12 @@ Table5_18PixelTexture.prototype = {
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.0,0.0,1.0], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.0,0.0,1.0]))))
     .addChild((new autoclass.Transform("Checkerboard")).setTranslation(0.0,0.0,-10.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
           .setTextureTransform((new autoclass.TextureTransform()).setScale(500.0,500.0))
-          .setTexture((new autoclass.PixelTexture()).setImage(java.to([2,2,3,0xE6B5FD,0xFFDBB7,0xFFDBB7,0xE6B5FD], java.type("int[]")))))
+          .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,2,3,0xE6B5FD,0xFFDBB7,0xFFDBB7,0xE6B5FD]))))
         .setGeometry((new autoclass.Box()).setSize(1000.0,1000.0,.01))))
     .addChild((new autoclass.Viewpoint()).setDescription("View All").setPosition(0.0,0.0,20.0))
     .addChild((new autoclass.Viewpoint()).setDescription("Empty Image").setPosition(0.0,5.0,5.0))
@@ -128,25 +128,25 @@ Table5_18PixelTexture.prototype = {
     .addChild((new autoclass.Transform("BW")).setTranslation(-5.0,0.0,0.0).setRotation(1.0,1.0,0.0,1.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
-          .setTexture((new autoclass.PixelTexture()).setImage(java.to([1,2,1,0xFF,0x00], java.type("int[]")))))
+          .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [1,2,1,0xFF,0x00]))))
         .setGeometry((new autoclass.Box()).setUSE("StandardBox"))))
     .addChild((new autoclass.Viewpoint()).setDescription("Black and white with Alpha PixelTexture").setPosition(5.0,0.0,5.0))
     .addChild((new autoclass.Transform("AlphaBW")).setRotation(1.0,1.0,0.0,1.0).setTranslation(5.0,0.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
-          .setTexture((new autoclass.PixelTexture()).setImage(java.to([2,1,2,0xCCFF,0x2277], java.type("int[]")))))
+          .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,1,2,0xCCFF,0x2277]))))
         .setGeometry((new autoclass.Box()).setUSE("StandardBox"))))
     .addChild((new autoclass.Viewpoint()).setDescription("RGB PixelTexture").setPosition(-5.0,-5.0,5.0))
     .addChild((new autoclass.Transform("RGB")).setTranslation(-5.0,-5.0,0.0).setRotation(1.0,1.0,0.0,1.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
-          .setTexture((new autoclass.PixelTexture()).setImage(java.to([2,4,3,0xFF0000,0x00FF00,0,0,0,0,0xFFFFFF,0xFFFF00], java.type("int[]")))))
+          .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,4,3,0xFF0000,0x00FF00,0,0,0,0,0xFFFFFF,0xFFFF00]))))
         .setGeometry((new autoclass.Box()).setUSE("StandardBox"))))
     .addChild((new autoclass.Viewpoint()).setDescription("RGB with Alpha PixelTexture").setPosition(5.0,-5.0,5.0))
     .addChild((new autoclass.Transform("AlphaRGB")).setRotation(1.0,1.0,0.0,1.0).setTranslation(5.0,-5.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
-          .setTexture((new autoclass.PixelTexture()).setImage(java.to([3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F], java.type("int[]")))))
+          .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F]))))
         .setGeometry((new autoclass.Box()).setUSE("StandardBox")))));
   },
   // end of initialize() method
@@ -215,8 +215,8 @@ Table5_18PixelTexture.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.Table5_18PixelTexture();
-		print ("Table5_18PixelTexture execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new Table5_18PixelTexture();
+		console.log ("Table5_18PixelTexture execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new Table5_18PixelTexture().main();

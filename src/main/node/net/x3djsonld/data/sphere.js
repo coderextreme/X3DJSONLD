@@ -147,8 +147,8 @@ sphere.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.sphere();
-		print ("sphere execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new sphere();
+		console.log ("sphere execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new sphere().main();

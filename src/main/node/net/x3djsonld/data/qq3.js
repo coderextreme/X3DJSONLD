@@ -82,13 +82,13 @@ qq3.prototype = {
 
 	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #12, 34 total numbers made up of 17 2-tuple values */
 	this.Extrusion_8_12_crossSection = new autoclass.MFVec2f() /* splitting up long array to improve readability */
-	.append(new autoclass.MFVec2f(java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], java.type("float[]"))))
-	.append(new autoclass.MFVec2f(java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], java.type("float[]"))));
+	.append(new autoclass.MFVec2f(java.newArray("float", [1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38])))
+	.append(new autoclass.MFVec2f(java.newArray("float", [-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00])));
 
 	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #17, 34 total numbers made up of 17 2-tuple values */
 	this.Extrusion_8_17_crossSection = new autoclass.MFVec2f() /* splitting up long array to improve readability */
-	.append(new autoclass.MFVec2f(java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], java.type("float[]"))))
-	.append(new autoclass.MFVec2f(java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], java.type("float[]"))));
+	.append(new autoclass.MFVec2f(java.newArray("float", [1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38])))
+	.append(new autoclass.MFVec2f(java.newArray("float", [-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00])));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("qq3.x3d"))
@@ -108,13 +108,13 @@ qq3.prototype = {
             .addChild((new autoclass.Shape("ShapeLeftDown"))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(0.7,1.0,0.0)))
-              .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.to([-2.5,0.0,0.0,-1.5,0.0,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection))))
+              .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.newArray("float", [-2.5,0.0,0.0,-1.5,0.0,0.0]))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection))))
           .addComments(" right ")
           .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
             .addChild((new autoclass.Shape("ShapeUpRight"))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,0.7,1.0)))
-              .setGeometry((new autoclass.Extrusion()).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new autoclass.MFVec3f(java.to([1.5,0.0,0.0,2.5,0.0,0.0], java.type("float[]")))))))
+              .setGeometry((new autoclass.Extrusion()).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new autoclass.MFVec3f(java.newArray("float", [1.5,0.0,0.0,2.5,0.0,0.0]))))))
           .addComments(" up ")
           .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
             .addChild((new autoclass.Shape()).setUSE("ShapeUpRight")))
@@ -195,8 +195,8 @@ qq3.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.qq3();
-		print ("qq3 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new qq3();
+		console.log ("qq3 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new qq3().main();

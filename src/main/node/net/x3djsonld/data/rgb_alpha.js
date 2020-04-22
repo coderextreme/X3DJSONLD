@@ -146,7 +146,7 @@ rgb_alpha.prototype = {
         .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()))
-            .setTexture((new autoclass.PixelTexture("RgbOpacityCheckerboard")).setImage(java.to([2,2,4,0xFF0000FF,0xFFFF0000,0xFFFF0000,0xFF0000FF], java.type("int[]")))))
+            .setTexture((new autoclass.PixelTexture("RgbOpacityCheckerboard")).setImage(java.newArray("int", [2,2,4,0xFF0000FF,0xFFFF0000,0xFFFF0000,0xFF0000FF]))))
           .setGeometry((new autoclass.Box()))))
       .addChild((new autoclass.Transform()).setTranslation(-4.85443,0.0694381,-0.00149918)
         .addChild((new autoclass.Shape())
@@ -233,8 +233,8 @@ rgb_alpha.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.rgb_alpha();
-		print ("rgb_alpha execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new rgb_alpha();
+		console.log ("rgb_alpha execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new rgb_alpha().main();

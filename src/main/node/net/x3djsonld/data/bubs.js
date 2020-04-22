@@ -206,8 +206,8 @@ bubs.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.bubs();
-		print ("bubs execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new bubs();
+		console.log ("bubs execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new bubs().main();

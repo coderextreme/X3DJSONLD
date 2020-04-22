@@ -130,9 +130,9 @@ indexedfaceset_pixeltexture_entire.prototype = {
     .addChild((new autoclass.Shape())
       .setAppearance((new autoclass.Appearance())
         .setMaterial((new autoclass.Material()))
-        .setTexture((new autoclass.PixelTexture()).setImage(java.to([2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF], java.type("int[]"))).setRepeatS(false).setRepeatT(false)))
-      .setGeometry((new autoclass.IndexedFaceSet()).setCoordIndex(java.to([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], java.type("int[]")))
-        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.to([-2.0,1.5,1.0,-2.0,-1.5,1.0,2.0,1.5,1.0,2.0,-1.5,1.0,2.0,1.5,-1.0,2.0,-1.5,-1.0,-2.0,1.5,-1.0,-2.0,-1.5,-1.0], java.type("float[]"))))))));
+        .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF])).setRepeatS(false).setRepeatT(false)))
+      .setGeometry((new autoclass.IndexedFaceSet()).setCoordIndex(java.newArray("int", [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]))
+        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-2.0,1.5,1.0,-2.0,-1.5,1.0,2.0,1.5,1.0,2.0,-1.5,1.0,2.0,1.5,-1.0,2.0,-1.5,-1.0,-2.0,1.5,-1.0,-2.0,-1.5,-1.0])))))));
   },
   // end of initialize() method
 
@@ -200,8 +200,8 @@ indexedfaceset_pixeltexture_entire.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.indexedfaceset_pixeltexture_entire();
-		print ("indexedfaceset_pixeltexture_entire execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new indexedfaceset_pixeltexture_entire();
+		console.log ("indexedfaceset_pixeltexture_entire execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new indexedfaceset_pixeltexture_entire().main();

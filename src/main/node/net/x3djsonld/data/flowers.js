@@ -96,10 +96,10 @@ flowers.prototype = {
                 .setTop((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
               .addShaders((new autoclass.ComposedShader("x3dom")).setLanguage("GLSL")
                 .addField((new autoclass.field()).setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
-                .addComments(java.to([" ",
+                .addComments(java.newArray("java.lang.String",[" ",
 "		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
 "			  <ComposedCubeMapTexture USE=\"texture\"/>",
-"		  </field>"], java.type("java.lang.String[]")))
+"		  </field>"]))
                 .addField((new autoclass.field()).setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
                 .addField((new autoclass.field()).setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
                 .addField((new autoclass.field()).setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
@@ -291,8 +291,8 @@ flowers.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.flowers();
-		print ("flowers execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new flowers();
+		console.log ("flowers execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new flowers().main();

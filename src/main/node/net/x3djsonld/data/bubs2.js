@@ -227,8 +227,8 @@ bubs2.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.bubs2();
-		print ("bubs2 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new bubs2();
+		console.log ("bubs2 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new bubs2().main();

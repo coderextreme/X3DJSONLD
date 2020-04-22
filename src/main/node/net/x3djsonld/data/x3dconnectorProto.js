@@ -76,7 +76,7 @@ x3dconnectorProto.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("a generic proto to connect two objects")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Viewpoint()).setDescription("Only Viewpoint").setPosition(0.0,0.0,5.0))
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.4,0.4,0.4], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.4,0.4,0.4]))))
     .addChild((new autoclass.Transform("G1"))
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
@@ -291,8 +291,8 @@ x3dconnectorProto.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.x3dconnectorProto();
-		print ("x3dconnectorProto execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new x3dconnectorProto();
+		console.log ("x3dconnectorProto execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new x3dconnectorProto().main();

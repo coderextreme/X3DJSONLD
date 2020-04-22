@@ -248,8 +248,8 @@ mirror.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.mirror();
-		print ("mirror execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new mirror();
+		console.log ("mirror execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new mirror().main();

@@ -121,7 +121,7 @@ HeadsUpDisplayExample.prototype = {
       .addField((new autoclass.field()).setAccessType("inputOutput").setName("children").setType("MFNode").setAppinfo("X3D content positioned at HUD offset"))
       .addField((new autoclass.field()).setAccessType("outputOnly").setName("position_changed").setType("SFVec3f").setAppinfo("HUD position update (in world coordinates) relative to original location"))
       .addField((new autoclass.field()).setAccessType("outputOnly").setName("orientation_changed").setType("SFRotation").setAppinfo("HUD orientation update relative to original location")))
-    .addChild((new autoclass.Background("SandyShallowBottom")).setSkyAngle(java.to([0.04,0.05,0.1,1.309,1.570], java.type("float[]"))).setGroundAngle(java.to([0.05,1.52,1.56,1.5707], java.type("float[]"))).setGroundColor(new autoclass.MFColor(java.to([0.2,0.2,0.0,0.3,0.3,0.0,0.5,0.5,0.3,0.1,0.3,0.4,0.0,0.2,0.4], java.type("float[]")))).setSkyColor(new autoclass.MFColor(java.to([0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9], java.type("float[]")))))
+    .addChild((new autoclass.Background("SandyShallowBottom")).setSkyAngle(java.newArray("float", [0.04,0.05,0.1,1.309,1.570])).setGroundAngle(java.newArray("float", [0.05,1.52,1.56,1.5707])).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.2,0.2,0.0,0.3,0.3,0.0,0.5,0.5,0.3,0.1,0.3,0.4,0.0,0.2,0.4]))).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9]))))
     .addChild((new autoclass.Viewpoint()).setDescription("Heads-up display (HUD)"))
     .addComments(" ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence ")
     .addChild((new autoclass.ProtoInstance("HeadsUpDisplayInstance", "HeadsUpDisplay")).setDEF("HeadsUpDisplayInstance").setName("HeadsUpDisplay")
@@ -201,8 +201,8 @@ HeadsUpDisplayExample.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.HeadsUpDisplayExample();
-		print ("HeadsUpDisplayExample execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new HeadsUpDisplayExample();
+		console.log ("HeadsUpDisplayExample execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new HeadsUpDisplayExample().main();
