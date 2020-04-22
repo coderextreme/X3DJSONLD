@@ -74,8 +74,8 @@ force.prototype = {
 
 	/** Large attribute array: Extrusion DEF='extrusion' crossSection field, scene-graph level=7, element #41, 34 total numbers made up of 17 2-tuple values */
 	this.extrusion_7_41_crossSection = new autoclass.MFVec2f() /* splitting up long array to improve readability */
-	.append(new autoclass.MFVec2f(java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], java.type("float[]"))))
-	.append(new autoclass.MFVec2f(java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], java.type("float[]"))));
+	.append(new autoclass.MFVec2f(java.newArray("float", [1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38])))
+	.append(new autoclass.MFVec2f(java.newArray("float", [-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00])));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
@@ -104,7 +104,7 @@ force.prototype = {
                   .setFontStyle((new autoclass.FontStyle()).setJustify(new autoclass.MFString("\"MIDDLE\" \"MIDDLE\"")).setSize(5)))
                 .setAppearance((new autoclass.Appearance())
                   .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,0.0,1.0))))))
-          .addChild((new autoclass.PositionInterpolator("NodePosition")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,5.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
+          .addChild((new autoclass.PositionInterpolator("NodePosition")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,5.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
           .addChild((new autoclass.Script("MoveBall")).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -130,7 +130,7 @@ force.prototype = {
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Group())
           .addChild((new autoclass.Shape())
-            .setGeometry((new autoclass.Extrusion("extrusion")).setSpine(new autoclass.MFVec3f(java.to([0.0,-50.0,0.0,0.0,50.0,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.extrusion_7_41_crossSection))
+            .setGeometry((new autoclass.Extrusion("extrusion")).setSpine(new autoclass.MFVec3f(java.newArray("float", [0.0,-50.0,0.0,0.0,50.0,0.0]))).setCreaseAngle(0.785).setCrossSection(this.extrusion_7_41_crossSection))
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,1.0,0.0))))
           .addChild((new autoclass.Script("MoveCylinder")).setSourceCode("\n" + 
@@ -205,10 +205,10 @@ force.prototype = {
       .addField((new autoclass.field()).setAccessType("inputOutput").setName("counter").setType("SFInt32").setValue("0"))
       .addField((new autoclass.field()).setAccessType("outputOnly").setName("node_changed").setType("SFNode"))
       .addField((new autoclass.field()).setAccessType("inputOnly").setName("add_node").setType("SFBool").setValue("false"))
-      .addComments(java.to(["",
+      .addComments(java.newArray("java.lang.String",["",
 "            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">",
 "                <Transform USE=\"HoldsContent\"/>",
-"            </field>"], java.type("java.lang.String[]"))))
+"            </field>"])))
     .addChild((new autoclass.ROUTE()).setFromNode("clickGenerator").setFromField("isActive").setToNode("clickHandler").setToField("add_node"))
     .addChild((new autoclass.ROUTE()).setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
     .addChild((new autoclass.ROUTE()).setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB"))
@@ -283,8 +283,8 @@ force.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.force();
-		print ("force execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new force();
+		console.log ("force execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new force().main();

@@ -236,8 +236,8 @@ rubikFurnace.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.rubikFurnace();
-		print ("rubikFurnace execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new rubikFurnace();
+		console.log ("rubikFurnace execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new rubikFurnace().main();

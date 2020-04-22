@@ -112,10 +112,10 @@ flowers7.prototype = {
             .setTop((new autoclass.ImageTexture("topShader")).setUrl(new autoclass.MFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png\""))))
           .addShaders((new autoclass.ComposedShader("x3dom")).setLanguage("GLSL")
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
-            .addComments(java.to([" ",
+            .addComments(java.newArray("java.lang.String",[" ",
 "		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
 "			  <ComposedCubeMapTexture USE=\"texture\"/>",
-"		  </field>"], java.type("java.lang.String[]")))
+"		  </field>"]))
             .addField((new autoclass.field()).setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
@@ -176,7 +176,7 @@ flowers7.prototype = {
       .addField((new autoclass.field()).setAccessType("inputOutput").setName("bottom").setType("MFString"))
       .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
       .addField((new autoclass.field()).setAccessType("inputOutput").setName("old").setType("SFInt32").setValue("-1")))
-    .addComments(java.to(["",
+    .addComments(java.newArray("java.lang.String",["",
 "            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>",
 "            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>",
@@ -190,7 +190,7 @@ flowers7.prototype = {
 "            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"], java.type("java.lang.String[]")))
+"            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"]))
     .addChild((new autoclass.Script("Animate")).setDirectOutput(true).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -320,8 +320,8 @@ flowers7.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.flowers7();
-		print ("flowers7 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new flowers7();
+		console.log ("flowers7 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new flowers7().main();

@@ -78,8 +78,8 @@ fors2.prototype = {
 
 	/** Large attribute array: Extrusion DEF='extrusion' crossSection field, scene-graph level=6, element #34, 34 total numbers made up of 17 2-tuple values */
 	this.extrusion_6_34_crossSection = new autoclass.MFVec2f() /* splitting up long array to improve readability */
-	.append(new autoclass.MFVec2f(java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], java.type("float[]"))))
-	.append(new autoclass.MFVec2f(java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], java.type("float[]"))));
+	.append(new autoclass.MFVec2f(java.newArray("float", [1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38])))
+	.append(new autoclass.MFVec2f(java.newArray("float", [-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0])));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
@@ -106,7 +106,7 @@ fors2.prototype = {
               .addComments("comment before Material")
               .addComments("comment after Material")
               .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0)))))
-        .addChild((new autoclass.PositionInterpolator("NodePosition")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,5.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
+        .addChild((new autoclass.PositionInterpolator("NodePosition")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,5.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
         .addChild((new autoclass.Script("MoveBall")).setSourceCode("\n" + 
 " ecmascript:" + "\n" + 
 "					function set_cycle(value) {" + "\n" + 
@@ -130,7 +130,7 @@ fors2.prototype = {
         .addField((new autoclass.field()).setAccessType("inputOnly").setName("positionB").setType("SFVec3f")))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Shape())
-          .setGeometry((new autoclass.Extrusion("extrusion")).setSpine(new autoclass.MFVec3f(java.to([0.0,-50.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.extrusion_6_34_crossSection))
+          .setGeometry((new autoclass.Extrusion("extrusion")).setSpine(new autoclass.MFVec3f(java.newArray("float", [0.0,-50.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0]))).setCreaseAngle(0.785).setCrossSection(this.extrusion_6_34_crossSection))
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,1.0,0.0))))
         .addChild((new autoclass.Script("MoveCylinder")).setSourceCode("\n" + 
@@ -240,8 +240,8 @@ fors2.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.fors2();
-		print ("fors2 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new fors2();
+		console.log ("fors2 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new fors2().main();

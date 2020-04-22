@@ -76,7 +76,7 @@ arc1.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("a generic proto to connect two objects")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Viewpoint()).setDescription("Only Viewpoint").setPosition(0.0,0.0,5.0))
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.4,0.4,0.4], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.4,0.4,0.4]))))
     .addChild((new autoclass.ProtoDeclare()).setName("point")
       .setProtoInterface((new autoclass.ProtoInterface())
         .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0")))
@@ -88,7 +88,7 @@ arc1.prototype = {
             .setGeometry((new autoclass.Sphere()).setRadius(0.1))
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0))))
-          .addChild((new autoclass.PositionInterpolator("PI1")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,5.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
+          .addChild((new autoclass.PositionInterpolator("PI1")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,5.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
           .addChild((new autoclass.Script("MB1")).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -259,8 +259,8 @@ arc1.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.arc1();
-		print ("arc1 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new arc1();
+		console.log ("arc1 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new arc1().main();

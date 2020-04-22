@@ -77,10 +77,10 @@ ifscubeworks.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Shape())
-        .setGeometry((new autoclass.IndexedFaceSet("IndexedFaceSet")).setDEF("IndexedFaceSet").setNormalPerVertex(false).setColorIndex(java.to([0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1], java.type("int[]"))).setCoordIndex(java.to([0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1], java.type("int[]"))).setNormalIndex(java.to([0,0,1,2,3,4,5], java.type("int[]")))
-          .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.to([0.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0], java.type("float[]")))))
-          .setNormal((new autoclass.Normal()).setVector(new autoclass.MFVec3f(java.to([1.0,0.0,0.0,-1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,0.0,1.0], java.type("float[]")))))
-          .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.to([0.0,1.0,0.0], java.type("float[]")))))))));
+        .setGeometry((new autoclass.IndexedFaceSet("IndexedFaceSet")).setDEF("IndexedFaceSet").setNormalPerVertex(false).setColorIndex(java.newArray("int", [0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1])).setCoordIndex(java.newArray("int", [0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1])).setNormalIndex(java.newArray("int", [0,0,1,2,3,4,5]))
+          .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0]))))
+          .setNormal((new autoclass.Normal()).setVector(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,-1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,-1.0,0.0,-1.0,0.0,0.0,0.0,1.0]))))
+          .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.newArray("float", [0.0,1.0,0.0]))))))));
   },
   // end of initialize() method
 
@@ -148,8 +148,8 @@ ifscubeworks.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.ifscubeworks();
-		print ("ifscubeworks execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new ifscubeworks();
+		console.log ("ifscubeworks execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new ifscubeworks().main();

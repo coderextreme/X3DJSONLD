@@ -108,7 +108,7 @@ TextSpecialCharacters.prototype = {
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([1.0,1.0,1.0], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [1.0,1.0,1.0]))))
     .addChild((new autoclass.Viewpoint()).setDescription("Default View").setPosition(0.0,0.0,15.0))
     .addChild((new autoclass.Shape())
       .addComments(" Empty string \"\" means to skip a line ")
@@ -190,8 +190,8 @@ TextSpecialCharacters.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.TextSpecialCharacters();
-		print ("TextSpecialCharacters execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new TextSpecialCharacters();
+		console.log ("TextSpecialCharacters execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new TextSpecialCharacters().main();

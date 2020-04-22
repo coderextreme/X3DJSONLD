@@ -241,8 +241,8 @@ mirror2.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.mirror2();
-		print ("mirror2 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new mirror2();
+		console.log ("mirror2 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new mirror2().main();

@@ -178,9 +178,9 @@ SimpleShader.prototype = {
         .addValue((new autoclass.MetadataSet("NavigationInfo")).setName("NavigationInfo").setReference("http://titania.create3000.de")
           .addValue((new autoclass.MetadataString("type")).setName("type").setValue(new autoclass.MFString("\"EXAMINE\"")).setReference("http://titania.create3000.de")))
         .addValue((new autoclass.MetadataSet("Viewpoint")).setName("Viewpoint").setReference("http://titania.create3000.de")
-          .addValue((new autoclass.MetadataDouble("position")).setName("position").setValue(java.to([6.24067728185014,0.00250837343276661,2.92117542307615], java.type("double[]"))).setReference("http://titania.create3000.de"))
-          .addValue((new autoclass.MetadataDouble("orientation")).setName("orientation").setValue(java.to([-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191], java.type("double[]"))).setReference("http://titania.create3000.de"))
-          .addValue((new autoclass.MetadataDouble("centerOfRotation")).setName("centerOfRotation").setValue(java.to([-0.808320198626341,-0.358072370409949,0.22817191560906], java.type("double[]"))).setReference("http://titania.create3000.de")))))
+          .addValue((new autoclass.MetadataDouble("position")).setName("position").setValue(java.newArray("double", [6.24067728185014,0.00250837343276661,2.92117542307615])).setReference("http://titania.create3000.de"))
+          .addValue((new autoclass.MetadataDouble("orientation")).setName("orientation").setValue(java.newArray("double", [-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191])).setReference("http://titania.create3000.de"))
+          .addValue((new autoclass.MetadataDouble("centerOfRotation")).setName("centerOfRotation").setValue(java.newArray("double", [-0.808320198626341,-0.358072370409949,0.22817191560906])).setReference("http://titania.create3000.de")))))
     .addChild((new autoclass.ProtoInstance()).setName("myPrototype")));
   },
   // end of initialize() method
@@ -249,8 +249,8 @@ SimpleShader.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.SimpleShader();
-		print ("SimpleShader execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new SimpleShader();
+		console.log ("SimpleShader execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new SimpleShader().main();

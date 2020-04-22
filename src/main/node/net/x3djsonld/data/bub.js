@@ -93,7 +93,7 @@ bub.prototype = {
                 .setLeft((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
                 .setRight((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
                 .setTop((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
-              .addComments(java.to(["",
+              .addComments(java.newArray("java.lang.String",["",
 "					<ComposedShader DEF='gl' language=\"GLSL\">",
 "					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>",
 "					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>",
@@ -113,7 +113,7 @@ bub.prototype = {
 "",
 "					  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' type='VERTEX'></ShaderPart>",
 "					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
-"					</ComposedShader>"], java.type("java.lang.String[]")))
+"					</ComposedShader>"]))
               .addShaders((new autoclass.ComposedShader("x3dom")).setLanguage("GLSL")
                 .addField((new autoclass.field()).setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
                 .addField((new autoclass.field()).setAccessType("inputOutput").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
@@ -122,7 +122,7 @@ bub.prototype = {
                 .addField((new autoclass.field()).setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2.0"))
                 .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
                 .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\""))))
-              .addComments(java.to(["",
+              .addComments(java.newArray("java.lang.String",["",
 "					<ComposedShader DEF='instant' language=\"GLSL\">",
 "					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>",
 "					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>",
@@ -132,7 +132,7 @@ bub.prototype = {
 "",
 "			      <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type='VERTEX'></ShaderPart>",
 "			      <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
-"                            </ComposedShader>"], java.type("java.lang.String[]")))
+"                            </ComposedShader>"]))
               .addShaders((new autoclass.ComposedShader("x_ite")).setLanguage("GLSL")
                 .addField((new autoclass.field()).setAccessType("inputOutput").setName("cube").setType("SFNode")
                   .addChild((new autoclass.ComposedCubeMapTexture()).setUSE("texture")))
@@ -245,8 +245,8 @@ bub.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.bub();
-		print ("bub execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new bub();
+		console.log ("bub execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new bub().main();

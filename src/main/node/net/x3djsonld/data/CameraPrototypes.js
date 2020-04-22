@@ -191,10 +191,10 @@ CameraPrototypes.prototype = {
             .addConnect((new autoclass.connect()).setNodeField("on").setProtoField("headlight"))
             .addConnect((new autoclass.connect()).setNodeField("color").setProtoField("headlightColor"))
             .addConnect((new autoclass.connect()).setNodeField("intensity").setProtoField("headlightIntensity"))))
-        .addChild((new autoclass.PositionInterpolator("CameraPositionInterpolator")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,0.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]")))
+        .addChild((new autoclass.PositionInterpolator("CameraPositionInterpolator")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0]))).setKey(java.newArray("float", [0.0,1.0]))
           .setIS((new autoclass.IS())
             .addConnect((new autoclass.connect()).setNodeField("set_fraction").setProtoField("set_fraction"))))
-        .addChild((new autoclass.OrientationInterpolator("CameraOrientationInterpolator")).setKey(java.to([0.0,1.0], java.type("float[]"))).setKeyValue(new autoclass.MFRotation(java.to([0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0], java.type("float[]"))))
+        .addChild((new autoclass.OrientationInterpolator("CameraOrientationInterpolator")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0])))
           .setIS((new autoclass.IS())
             .addConnect((new autoclass.connect()).setNodeField("set_fraction").setProtoField("set_fraction"))))
         .addChild((new autoclass.ROUTE()).setFromNode("CameraPositionInterpolator").setFromField("value_changed").setToNode("CameraViewpoint").setToField("position"))
@@ -982,7 +982,7 @@ CameraPrototypes.prototype = {
             .addConnect((new autoclass.connect()).setNodeField("traceEnabled").setProtoField("traceEnabled"))))
         .addComments(" Add any ROUTEs here, going from Script to other nodes within ProtoBody ")))
     .addComments(" =============== Launch Prototype Example ============== ")
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.282353,0.380392,0.470588], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.282353,0.380392,0.470588]))))
     .addChild((new autoclass.Anchor()).setDescription("launch CameraExample scene").setUrl(new autoclass.MFString("\"CameraExamples.x3d\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d\" \"CameraExamples.wrl\" \"http://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl\""))
       .addChild((new autoclass.Transform())
         .addChild((new autoclass.Shape())
@@ -1057,8 +1057,8 @@ CameraPrototypes.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.CameraPrototypes();
-		print ("CameraPrototypes execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new CameraPrototypes();
+		console.log ("CameraPrototypes execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new CameraPrototypes().main();

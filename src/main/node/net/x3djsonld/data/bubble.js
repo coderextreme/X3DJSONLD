@@ -207,8 +207,8 @@ bubble.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.bubble();
-		print ("bubble execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new bubble();
+		console.log ("bubble execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new bubble().main();

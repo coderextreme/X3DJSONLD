@@ -162,12 +162,12 @@ X3dHeaderPrototypeSyntaxExamples.prototype = {
     .addChild((new autoclass.ProtoInstance()).setName("ViewPositionOrientation")
       .addFieldValue((new autoclass.fieldValue()).setName("enabled").setValue("true")))
     .addChild((new autoclass.TimeSensor("Clock")).setCycleInterval(4).setLoop(true))
-    .addChild((new autoclass.OrientationInterpolator("Spinner")).setKey(java.to([0.0,0.5,1.0], java.type("float[]"))).setKeyValue(new autoclass.MFRotation(java.to([0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.14159,0.0,1.0,0.0,6.28318], java.type("float[]")))))
+    .addChild((new autoclass.OrientationInterpolator("Spinner")).setKey(java.newArray("float", [0.0,0.5,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.14159,0.0,1.0,0.0,6.28318]))))
     .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("Spinner").setToField("set_fraction"))
     .addChild((new autoclass.ROUTE()).setFromNode("Spinner").setFromField("value_changed").setToNode("TransformExampleUSE").setToField("rotation"))
     .addChild((new autoclass.Inline("someInline")).setUrl(new autoclass.MFString("\"someUrl.x3d\" \"http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d\"")))
     .addChild((new autoclass.IMPORT()).setImportedDEF("someName").setInlineDEF("someInline").setAS("someInlineRoot"))
-    .addChild((new autoclass.PositionInterpolator("StayInPlace")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,0.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
+    .addChild((new autoclass.PositionInterpolator("StayInPlace")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
     .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("StayInPlace").setToField("set_fraction"))
     .addChild((new autoclass.ROUTE()).setFromNode("StayInPlace").setFromField("value_changed").setToNode("someInlineRoot").setToField("set_translation")));
   },
@@ -237,8 +237,8 @@ X3dHeaderPrototypeSyntaxExamples.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.X3dHeaderPrototypeSyntaxExamples();
-		print ("X3dHeaderPrototypeSyntaxExamples execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new X3dHeaderPrototypeSyntaxExamples();
+		console.log ("X3dHeaderPrototypeSyntaxExamples execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new X3dHeaderPrototypeSyntaxExamples().main();

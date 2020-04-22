@@ -184,8 +184,8 @@ SFVec3f.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.SFVec3f();
-		print ("SFVec3f execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new SFVec3f();
+		console.log ("SFVec3f execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new SFVec3f().main();

@@ -178,8 +178,8 @@ geo.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.geo();
-		print ("geo execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new geo();
+		console.log ("geo execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new geo().main();

@@ -172,7 +172,7 @@ BindingOperations.prototype = {
       .addChild((new autoclass.TouchSensor("TextTouchSensor")).setDescription("Click to begin animating viewpoint selections"))
       .addChild((new autoclass.TimeSensor("Clock")).setCycleInterval(10))
       .addChild((new autoclass.ROUTE()).setFromNode("TextTouchSensor").setFromField("touchTime").setToNode("Clock").setToField("set_startTime"))
-      .addChild((new autoclass.IntegerSequencer("TimingSequencer")).setKey(java.to([0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1.0], java.type("float[]"))).setKeyValue(java.to([0,1,2,3,4,5,6,7,8,10], java.type("int[]"))))
+      .addChild((new autoclass.IntegerSequencer("TimingSequencer")).setKey(java.newArray("float", [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1.0])).setKeyValue(java.newArray("int", [0,1,2,3,4,5,6,7,8,10])))
       .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("TimingSequencer").setToField("set_fraction"))
       .addChild((new autoclass.Script("BindingSequencerEngine")).setSourceCode("\n" + 
 "        ecmascript:" + "\n" + 
@@ -354,8 +354,8 @@ BindingOperations.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.BindingOperations();
-		print ("BindingOperations execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new BindingOperations();
+		console.log ("BindingOperations execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new BindingOperations().main();

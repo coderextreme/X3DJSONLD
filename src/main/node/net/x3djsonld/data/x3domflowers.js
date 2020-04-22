@@ -161,8 +161,8 @@ x3domflowers.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.x3domflowers();
-		print ("x3domflowers execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new x3domflowers();
+		console.log ("x3domflowers execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new x3domflowers().main();

@@ -203,8 +203,8 @@ CoordinateAxes.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.CoordinateAxes();
-		print ("CoordinateAxes execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new CoordinateAxes();
+		console.log ("CoordinateAxes execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new CoordinateAxes().main();

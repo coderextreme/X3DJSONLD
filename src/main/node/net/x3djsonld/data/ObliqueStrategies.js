@@ -207,7 +207,7 @@ ObliqueStrategies.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.WorldInfo()).setTitle("ObliqueStrategies.x3d"))
     .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"NONE\"")))
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.419608,0.427451,1.0], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.419608,0.427451,1.0]))))
     .addChild((new autoclass.Transform()).setTranslation(0.0,1.0,0.0).setScale(0.4,0.4,0.4)
       .addChild((new autoclass.TouchSensor("RandomTextClickedSensor")).setDescription("Select to see a new strategy"))
       .addChild((new autoclass.Shape())
@@ -217,8 +217,8 @@ ObliqueStrategies.prototype = {
           .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0))))
       .addChild((new autoclass.Transform()).setScale(10.0,3.0,1.0)
         .addChild((new autoclass.Shape("HeadlineClickSurface"))
-          .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(java.to([0,1,2,3,-1], java.type("int[]")))
-            .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.to([1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0], java.type("float[]"))))))
+          .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(java.newArray("int", [0,1,2,3,-1]))
+            .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0])))))
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setShininess(0.07).setAmbientIntensity(0.245763).setSpecularColor(0.336735,0.051091,0.051091).setDiffuseColor(0.34773,0.090909,0.005289).setTransparency(0.8))))))
     .addChild((new autoclass.Script("TextScript")).setUrl(new autoclass.MFString("\"ObliqueStrategiesScript.js\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js\""))
@@ -258,8 +258,8 @@ ObliqueStrategies.prototype = {
       .addChild((new autoclass.Transform()).setScale(2.0,0.6,1.0)
         .addChild((new autoclass.Shape("TransparentClickSurface"))
           .addComments(" support Selectable Text with a scalable IFS ")
-          .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(java.to([0,1,2,3,-1], java.type("int[]")))
-            .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.to([1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0], java.type("float[]"))))))
+          .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(java.newArray("int", [0,1,2,3,-1]))
+            .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0])))))
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setTransparency(1))))))
     .addChild((new autoclass.Transform()).setScale(0.4,0.4,0.4).setTranslation(3.5,2.5,0.0)
@@ -356,8 +356,8 @@ ObliqueStrategies.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.ObliqueStrategies();
-		print ("ObliqueStrategies execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new ObliqueStrategies();
+		console.log ("ObliqueStrategies execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new ObliqueStrategies().main();

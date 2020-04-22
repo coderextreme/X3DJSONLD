@@ -76,7 +76,7 @@ arcold.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("an attempt to implement an arc in a graph")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Viewpoint()).setDescription("a moving graph").setPosition(0.0,0.0,5.0))
-    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.to([0.4,0.4,0.4], java.type("float[]")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.4,0.4,0.4]))))
     .addChild((new autoclass.Transform("trans1"))
       .addChild((new autoclass.Transform("rotscale1"))
         .addChild((new autoclass.Shape())
@@ -106,7 +106,7 @@ arcold.prototype = {
             .setGeometry((new autoclass.Sphere()).setRadius(0.1))
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0))))
-          .addChild((new autoclass.PositionInterpolator("PI1")).setKeyValue(new autoclass.MFVec3f(java.to([0.0,0.0,0.0,0.0,5.0,0.0], java.type("float[]")))).setKey(java.to([0.0,1.0], java.type("float[]"))))
+          .addChild((new autoclass.PositionInterpolator("PI1")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,5.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
           .addChild((new autoclass.Script("MB1")).setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
@@ -296,8 +296,8 @@ arcold.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.arcold();
-		print ("arcold execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new arcold();
+		console.log ("arcold execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new arcold().main();

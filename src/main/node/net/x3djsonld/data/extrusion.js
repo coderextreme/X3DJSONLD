@@ -74,8 +74,8 @@ extrusion.prototype = {
 
 	/** Large attribute array: Extrusion DEF='extrusion' crossSection field, scene-graph level=5, element #8, 34 total numbers made up of 17 2-tuple values */
 	this.extrusion_5_8_crossSection = new autoclass.MFVec2f() /* splitting up long array to improve readability */
-	.append(new autoclass.MFVec2f(java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], java.type("float[]"))))
-	.append(new autoclass.MFVec2f(java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], java.type("float[]"))));
+	.append(new autoclass.MFVec2f(java.newArray("float", [1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38])))
+	.append(new autoclass.MFVec2f(java.newArray("float", [-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00])));
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("creator").setContent("John W Carlson"))
@@ -87,7 +87,7 @@ extrusion.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Shape())
-        .setGeometry((new autoclass.Extrusion("extrusion")).setSpine(new autoclass.MFVec3f(java.to([-50.0,-50.0,0.0,50.0,50.0,0.0], java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.extrusion_5_8_crossSection))
+        .setGeometry((new autoclass.Extrusion("extrusion")).setSpine(new autoclass.MFVec3f(java.newArray("float", [-50.0,-50.0,0.0,50.0,50.0,0.0]))).setCreaseAngle(0.785).setCrossSection(this.extrusion_5_8_crossSection))
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,1.0,0.0))))
       .addChild((new autoclass.TimeSensor("TourTime")).setLoop(true))
@@ -172,8 +172,8 @@ extrusion.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.extrusion();
-		print ("extrusion execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new extrusion();
+		console.log ("extrusion execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new extrusion().main();

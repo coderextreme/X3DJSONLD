@@ -160,8 +160,8 @@ glflowers.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.glflowers();
-		print ("glflowers execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new glflowers();
+		console.log ("glflowers execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new glflowers().main();

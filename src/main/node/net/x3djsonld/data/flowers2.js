@@ -109,7 +109,7 @@ flowers2.prototype = {
         .setProtoBody((new autoclass.ProtoBody())
           .addChild((new autoclass.Group())
             .addChild((new autoclass.TimeSensor("Clock")).setCycleInterval(16).setLoop(true))
-            .addChild((new autoclass.OrientationInterpolator("OrbitPath")).setKey(java.to([0.0,0.50,1.0], java.type("float[]"))).setKeyValue(new autoclass.MFRotation(java.to([1.0,0.0,0.0,0.0,1.0,0.0,0.0,3.14,1.0,0.0,0.0,6.28], java.type("float[]")))))
+            .addChild((new autoclass.OrientationInterpolator("OrbitPath")).setKey(java.newArray("float", [0.0,0.50,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.0,1.0,0.0,0.0,3.14,1.0,0.0,0.0,6.28]))))
             .addChild((new autoclass.Transform("OrbitTransform"))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("translation")))
@@ -120,12 +120,12 @@ flowers2.prototype = {
                       .addConnect((new autoclass.connect()).setNodeField("diffuseColor").setProtoField("diffuseColor"))
                       .addConnect((new autoclass.connect()).setNodeField("specularColor").setProtoField("specularColor"))
                       .addConnect((new autoclass.connect()).setNodeField("transparency").setProtoField("transparency")))))
-                .addComments(java.to(["",
+                .addComments(java.newArray("java.lang.String",["",
 "				  <IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\">",
 "				    <Coordinate DEF=\"OrbitCoordinates\"/>",
-"				  </IndexedFaceSet>"], java.type("java.lang.String[]")))
-                .setGeometry((new autoclass.IndexedFaceSet("Orbit")).setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(java.to([0,1,2,-1], java.type("int[]")))
-                  .setCoord((new autoclass.Coordinate("OrbitCoordinates")).setPoint(new autoclass.MFVec3f(java.to([0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0], java.type("float[]"))))))))
+"				  </IndexedFaceSet>"]))
+                .setGeometry((new autoclass.IndexedFaceSet("Orbit")).setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(java.newArray("int", [0,1,2,-1]))
+                  .setCoord((new autoclass.Coordinate("OrbitCoordinates")).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0])))))))
             .addChild((new autoclass.Script("OrbitScript")).setSourceCode("\n" + 
 "			" + "\n" + 
 "			ecmascript:" + "\n" + 
@@ -292,8 +292,8 @@ flowers2.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.flowers2();
-		print ("flowers2 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new flowers2();
+		console.log ("flowers2 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new flowers2().main();

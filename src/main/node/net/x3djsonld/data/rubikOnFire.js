@@ -225,8 +225,8 @@ rubikOnFire.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new autoclass.rubikOnFire();
-		print ("rubikOnFire execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new rubikOnFire();
+		console.log ("rubikOnFire execution self-validation test results: " + testObject.validateSelf());
 	}
 }
 new rubikOnFire().main();
