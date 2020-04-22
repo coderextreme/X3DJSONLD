@@ -362,4 +362,6 @@ app.get("*.json", function(req, res, next) {
 });
 
 
-app.listen(port);
+app.listen(port, 'localhost', function() {
+  console.log("... port %d in %s mode", port, app.settings.env);
+});
