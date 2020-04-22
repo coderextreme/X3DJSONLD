@@ -5822,7 +5822,7 @@ class ExternProtoDeclare(_X3DStatement):
         if self.name:
             result += " name='" + self.name + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -5958,7 +5958,7 @@ class field(_X3DStatement):
         if self.type:
             result += " type='" + self.type + "'"
         if self.value:
-            result += " value='" + self.value + "'"
+            result += " value='" + str(self.value) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -6034,7 +6034,7 @@ class fieldValue(_X3DStatement):
         if self.name:
             result += " name='" + self.name + "'"
         if self.value:
-            result += " value='" + self.value + "'"
+            result += " value='" + str(self.value) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -6868,9 +6868,9 @@ class X3D(_X3DNode):
         elif self.version == '4.1':
             result += self.X3D_XML_SCHEMA_ATTRIBUTES_4_1
         result += '>' + '\n' # finish open tag
-        if self.head.hasChild():
+        if self.head and self.head.hasChild():
             result += str(self.head.toXML(indentLevel=indentLevel+1))
-        if self.Scene.hasChild():
+        if self.Scene and self.Scene.hasChild():
             result += str(self.Scene.toXML(indentLevel=indentLevel+1))
         result += '</X3D>' + '\n'
 #       print('XML serialization complete.', flush=True)
@@ -7035,9 +7035,9 @@ class Anchor(_X3DGroupingNode, _X3DUrlObject):
         if self.displayBBox != False:
             result += " displayBBox='" + str(self.displayBBox) + "'"
         if self.parameter != list():
-            result += " parameter='" + self.parameter + "'"
+            result += " parameter='" + str(self.parameter) + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if self.visible != True:
             result += " visible='" + str(self.visible) + "'"
         if not self.hasChild():
@@ -7626,7 +7626,7 @@ class AudioClip(_X3DSoundSourceNode, _X3DUrlObject):
         if self.stopTime != 0:
             result += " stopTime='" + str(self.stopTime) + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -7828,27 +7828,27 @@ class Background(_X3DBackgroundNode):
         if self.USE:
             result += " USE='" + self.USE + "'"
         if self.backUrl != list():
-            result += " backUrl='" + self.backUrl + "'"
+            result += " backUrl='" + str(self.backUrl) + "'"
         if self.bottomUrl != list():
-            result += " bottomUrl='" + self.bottomUrl + "'"
+            result += " bottomUrl='" + str(self.bottomUrl) + "'"
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.frontUrl != list():
-            result += " frontUrl='" + self.frontUrl + "'"
+            result += " frontUrl='" + str(self.frontUrl) + "'"
         if self.groundAngle != list():
             result += " groundAngle='" + str(self.groundAngle) + "'"
         if self.groundColor != list():
             result += " groundColor='" + str(self.groundColor) + "'"
         if self.leftUrl != list():
-            result += " leftUrl='" + self.leftUrl + "'"
+            result += " leftUrl='" + str(self.leftUrl) + "'"
         if self.rightUrl != list():
-            result += " rightUrl='" + self.rightUrl + "'"
+            result += " rightUrl='" + str(self.rightUrl) + "'"
         if self.skyAngle != list():
             result += " skyAngle='" + str(self.skyAngle) + "'"
         if self.skyColor != [(0, 0, 0)]:
             result += " skyColor='" + str(self.skyColor) + "'"
         if self.topUrl != list():
-            result += " topUrl='" + self.topUrl + "'"
+            result += " topUrl='" + str(self.topUrl) + "'"
         if self.transparency != 0:
             result += " transparency='" + str(self.transparency) + "'"
         if not self.hasChild():
@@ -7962,7 +7962,7 @@ class BallJoint(_X3DRigidJointNode):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.forceOutput != ["NONE"]:
-            result += " forceOutput='" + self.forceOutput + "'"
+            result += " forceOutput='" + str(self.forceOutput) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -10520,7 +10520,7 @@ class CollisionCollection(_X3DChildNode, _X3DBoundedObject):
         if self.USE:
             result += " USE='" + self.USE + "'"
         if self.appliedParameters != ["BOUNCE"]:
-            result += " appliedParameters='" + self.appliedParameters + "'"
+            result += " appliedParameters='" + str(self.appliedParameters) + "'"
         if self.bboxCenter != (0, 0, 0):
             result += " bboxCenter='" + str(self.bboxCenter) + "'"
         if self.bboxSize != (-1, -1, -1):
@@ -12280,7 +12280,7 @@ class Contact(_X3DNode):
         if self.USE:
             result += " USE='" + self.USE + "'"
         if self.appliedParameters != ["BOUNCE"]:
-            result += " appliedParameters='" + self.appliedParameters + "'"
+            result += " appliedParameters='" + str(self.appliedParameters) + "'"
         if self.bounce != 0:
             result += " bounce='" + str(self.bounce) + "'"
         if self.class_:
@@ -13754,7 +13754,7 @@ class DISEntityTypeMapping(_X3DInfoNode, _X3DUrlObject):
         if self.subcategory != 0:
             result += " subcategory='" + str(self.subcategory) + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -14142,7 +14142,7 @@ class DoubleAxisHingeJoint(_X3DRigidJointNode):
         if self.desiredAngularVelocity2 != 0:
             result += " desiredAngularVelocity2='" + str(self.desiredAngularVelocity2) + "'"
         if self.forceOutput != ["NONE"]:
-            result += " forceOutput='" + self.forceOutput + "'"
+            result += " forceOutput='" + str(self.forceOutput) + "'"
         if self.maxAngle1 != 3.141592653:
             result += " maxAngle1='" + str(self.maxAngle1) + "'"
         if self.maxTorque1 != 0:
@@ -15608,7 +15608,7 @@ class EspduTransform(_X3DGroupingNode, _X3DNetworkSensorNode):
         if self.geoCoords != (0, 0, 0):
             result += " geoCoords='" + str(self.geoCoords) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.linearAcceleration != (0, 0, 0):
             result += " linearAcceleration='" + str(self.linearAcceleration) + "'"
         if self.linearVelocity != (0, 0, 0):
@@ -16543,11 +16543,11 @@ class FontStyle(_X3DFontStyleNode):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.family != ["SERIF"]:
-            result += " family='" + self.family + "'"
+            result += " family='" + str(self.family) + "'"
         if self.horizontal != True:
             result += " horizontal='" + str(self.horizontal) + "'"
         if self.justify != ["BEGIN"]:
-            result += " justify='" + self.justify + "'"
+            result += " justify='" + str(self.justify) + "'"
         if self.language:
             result += " language='" + self.language + "'"
         if self.leftToRight != True:
@@ -16836,7 +16836,7 @@ class GeoCoordinate(_X3DCoordinateNode):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.point != list():
             result += " point='" + str(self.point) + "'"
         if not self.hasChild():
@@ -17140,7 +17140,7 @@ class GeoElevationGrid(_X3DGeometryNode):
         if self.geoGridOrigin != (0, 0, 0):
             result += " geoGridOrigin='" + str(self.geoGridOrigin) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.height != [0, 0, 0, 0]:
             result += " height='" + str(self.height) + "'"
         if self.normalPerVertex != True:
@@ -17331,7 +17331,7 @@ class GeoLocation(_X3DGroupingNode):
         if self.geoCoords != (0, 0, 0):
             result += " geoCoords='" + str(self.geoCoords) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.visible != True:
             result += " visible='" + str(self.visible) + "'"
         if not self.hasChild():
@@ -17581,23 +17581,23 @@ class GeoLOD(_X3DChildNode, _X3DBoundedObject):
         if self.center != (0, 0, 0):
             result += " center='" + str(self.center) + "'"
         if self.child1Url != list():
-            result += " child1Url='" + self.child1Url + "'"
+            result += " child1Url='" + str(self.child1Url) + "'"
         if self.child2Url != list():
-            result += " child2Url='" + self.child2Url + "'"
+            result += " child2Url='" + str(self.child2Url) + "'"
         if self.child3Url != list():
-            result += " child3Url='" + self.child3Url + "'"
+            result += " child3Url='" + str(self.child3Url) + "'"
         if self.child4Url != list():
-            result += " child4Url='" + self.child4Url + "'"
+            result += " child4Url='" + str(self.child4Url) + "'"
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.displayBBox != False:
             result += " displayBBox='" + str(self.displayBBox) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.range != 10:
             result += " range='" + str(self.range) + "'"
         if self.rootUrl != list():
-            result += " rootUrl='" + self.rootUrl + "'"
+            result += " rootUrl='" + str(self.rootUrl) + "'"
         if self.visible != True:
             result += " visible='" + str(self.visible) + "'"
         if not self.hasChild():
@@ -17698,9 +17698,9 @@ class GeoMetadata(_X3DInfoNode, _X3DUrlObject):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.summary != list():
-            result += " summary='" + self.summary + "'"
+            result += " summary='" + str(self.summary) + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -17799,7 +17799,7 @@ class GeoOrigin(_X3DNode):
         if self.geoCoords != (0, 0, 0):
             result += " geoCoords='" + str(self.geoCoords) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.rotateYUp != False:
             result += " rotateYUp='" + str(self.rotateYUp) + "'"
         if not self.hasChild():
@@ -17909,7 +17909,7 @@ class GeoPositionInterpolator(_X3DInterpolatorNode):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.key != list():
             result += " key='" + str(self.key) + "'"
         if self.keyValue != list():
@@ -18056,7 +18056,7 @@ class GeoProximitySensor(_X3DEnvironmentalSensorNode):
         if self.geoCenter != (0, 0, 0):
             result += " geoCenter='" + str(self.geoCenter) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.size != (0, 0, 0):
             result += " size='" + str(self.size) + "'"
         if not self.hasChild():
@@ -18172,7 +18172,7 @@ class GeoTouchSensor(_X3DTouchSensorNode):
         if self.enabled != True:
             result += " enabled='" + str(self.enabled) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -18393,7 +18393,7 @@ class GeoTransform(_X3DGroupingNode):
         if self.geoCenter != (0, 0, 0):
             result += " geoCenter='" + str(self.geoCenter) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.rotation != (0, 0, 1, 0):
             result += " rotation='" + str(self.rotation) + "'"
         if self.scale != (1, 1, 1):
@@ -18604,7 +18604,7 @@ class GeoViewpoint(_X3DViewpointNode):
         if self.fieldOfView != 0.7854:
             result += " fieldOfView='" + str(self.fieldOfView) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.jump != True:
             result += " jump='" + str(self.jump) + "'"
         if self.orientation != (0, 0, 1, 0):
@@ -19325,7 +19325,7 @@ class HAnimHumanoid(_X3DChildNode, _X3DBoundedObject):
         if self.displayBBox != False:
             result += " displayBBox='" + str(self.displayBBox) + "'"
         if self.info != list():
-            result += " info='" + self.info + "'"
+            result += " info='" + str(self.info) + "'"
         if self.jointBindingPositions != [(0, 0, 0)]:
             result += " jointBindingPositions='" + str(self.jointBindingPositions) + "'"
         if self.jointBindingRotations != [(0, 0, 1, 0)]:
@@ -19952,7 +19952,7 @@ class HAnimMotion(_X3DChildNode):
         if self.USE:
             result += " USE='" + self.USE + "'"
         if self.channels != list():
-            result += " channels='" + self.channels + "'"
+            result += " channels='" + str(self.channels) + "'"
         if self.channelsEnabled != list():
             result += " channelsEnabled='" + str(self.channelsEnabled) + "'"
         if self.class_:
@@ -19970,7 +19970,7 @@ class HAnimMotion(_X3DChildNode):
         if self.frameIndex != 0:
             result += " frameIndex='" + str(self.frameIndex) + "'"
         if self.joints != list():
-            result += " joints='" + self.joints + "'"
+            result += " joints='" + str(self.joints) + "'"
         if self.loa != -1:
             result += " loa='" + str(self.loa) + "'"
         if self.loop != False:
@@ -20532,7 +20532,7 @@ class ImageCubeMapTexture(_X3DEnvironmentTextureNode, _X3DUrlObject):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -20646,7 +20646,7 @@ class ImageTexture(_X3DTexture2DNode, _X3DUrlObject):
         if self.repeatT != True:
             result += " repeatT='" + str(self.repeatT) + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -20775,7 +20775,7 @@ class ImageTexture3D(_X3DTexture3DNode, _X3DUrlObject):
         if self.repeatT != False:
             result += " repeatT='" + str(self.repeatT) + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -22340,7 +22340,7 @@ class Inline(_X3DChildNode, _X3DBoundedObject, _X3DUrlObject):
         if self.load != True:
             result += " load='" + str(self.load) + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if self.visible != True:
             result += " visible='" + str(self.visible) + "'"
         if not self.hasChild():
@@ -22844,6 +22844,7 @@ class Layer(_X3DLayerNode):
         self.__objectType = objectType
     @property # getter - - - - - - - - - -
     def pickable(self):
+        """pickable determines whether pick traversal is performed for this layer."""
         return self.__pickable
     @pickable.setter
     def pickable(self, pickable=None):
@@ -22903,7 +22904,7 @@ class Layer(_X3DLayerNode):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.objectType != ["ALL"]:
-            result += " objectType='" + self.objectType + "'"
+            result += " objectType='" + str(self.objectType) + "'"
         if self.pickable != True:
             result += " pickable='" + str(self.pickable) + "'"
         if self.visible != True:
@@ -23144,19 +23145,19 @@ class Layout(_X3DLayoutNode): #  # TODO fix additional inheritance method resolu
         if self.USE:
             result += " USE='" + self.USE + "'"
         if self.align != ["CENTER", "CENTER"]:
-            result += " align='" + self.align + "'"
+            result += " align='" + str(self.align) + "'"
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.offset != [0, 0]:
             result += " offset='" + str(self.offset) + "'"
         if self.offsetUnits != ["WORLD", "WORLD"]:
-            result += " offsetUnits='" + self.offsetUnits + "'"
+            result += " offsetUnits='" + str(self.offsetUnits) + "'"
         if self.scaleMode != ["NONE", "NONE"]:
-            result += " scaleMode='" + self.scaleMode + "'"
+            result += " scaleMode='" + str(self.scaleMode) + "'"
         if self.size != [1, 1]:
             result += " size='" + str(self.size) + "'"
         if self.sizeUnits != ["WORLD", "WORLD"]:
-            result += " sizeUnits='" + self.sizeUnits + "'"
+            result += " sizeUnits='" + str(self.sizeUnits) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -23383,6 +23384,7 @@ class LayoutLayer(_X3DLayerNode): #  # TODO fix additional inheritance method re
         self.__objectType = objectType
     @property # getter - - - - - - - - - -
     def pickable(self):
+        """pickable determines whether pick traversal is performed for this layer."""
         return self.__pickable
     @pickable.setter
     def pickable(self, pickable=None):
@@ -23455,7 +23457,7 @@ class LayoutLayer(_X3DLayerNode): #  # TODO fix additional inheritance method re
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.objectType != ["ALL"]:
-            result += " objectType='" + self.objectType + "'"
+            result += " objectType='" + str(self.objectType) + "'"
         if self.pickable != True:
             result += " pickable='" + str(self.pickable) + "'"
         if self.visible != True:
@@ -23621,7 +23623,7 @@ class LinePickSensor(_X3DPickSensorNode):
         if self.matchCriterion != 'MATCH_ANY':
             result += " matchCriterion='" + self.matchCriterion + "'"
         if self.objectType != ["ALL"]:
-            result += " objectType='" + self.objectType + "'"
+            result += " objectType='" + str(self.objectType) + "'"
         if self.sortOrder != 'CLOSEST':
             result += " sortOrder='" + self.sortOrder + "'"
         if not self.hasChild():
@@ -25148,7 +25150,7 @@ class MetadataString(_X3DNode): # , _X3DMetadataObject # TODO fix additional inh
         if self.reference:
             result += " reference='" + self.reference + "'"
         if self.value != list():
-            result += " value='" + self.value + "'"
+            result += " value='" + str(self.value) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -25484,7 +25486,7 @@ class MotorJoint(_X3DRigidJointNode):
         if self.enabledAxes != 1:
             result += " enabledAxes='" + str(self.enabledAxes) + "'"
         if self.forceOutput != ["NONE"]:
-            result += " forceOutput='" + self.forceOutput + "'"
+            result += " forceOutput='" + str(self.forceOutput) + "'"
         if self.motor1Axis != (0, 0, 0):
             result += " motor1Axis='" + str(self.motor1Axis) + "'"
         if self.motor2Axis != (0, 0, 0):
@@ -25738,7 +25740,7 @@ class MovieTexture(_X3DSoundSourceNode, _X3DTexture2DNode, _X3DUrlObject):
         if self.stopTime != 0:
             result += " stopTime='" + str(self.stopTime) + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -25878,11 +25880,11 @@ class MultiTexture(_X3DTextureNode):
         if self.color != (1, 1, 1):
             result += " color='" + str(self.color) + "'"
         if self.function != list():
-            result += " function='" + self.function + "'"
+            result += " function='" + str(self.function) + "'"
         if self.mode != list():
-            result += " mode='" + self.mode + "'"
+            result += " mode='" + str(self.mode) + "'"
         if self.source != list():
-            result += " source='" + self.source + "'"
+            result += " source='" + str(self.source) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -26181,9 +26183,9 @@ class NavigationInfo(_X3DBindableNode):
         if self.transitionTime != 1.0:
             result += " transitionTime='" + str(self.transitionTime) + "'"
         if self.transitionType != ["LINEAR"]:
-            result += " transitionType='" + self.transitionType + "'"
+            result += " transitionType='" + str(self.transitionType) + "'"
         if self.type != ["EXAMINE", "ANY"]:
-            result += " type='" + self.type + "'"
+            result += " type='" + str(self.type) + "'"
         if self.visibilityLimit != 0:
             result += " visibilityLimit='" + str(self.visibilityLimit) + "'"
         if not self.hasChild():
@@ -28802,7 +28804,7 @@ class PackagedShader(_X3DShaderNode): # , _X3DUrlObject, _X3DProgrammableShaderO
         if self.language:
             result += " language='" + self.language + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -29329,7 +29331,7 @@ class PickableGroup(_X3DGroupingNode, _X3DPickableObject):
         if self.displayBBox != False:
             result += " displayBBox='" + str(self.displayBBox) + "'"
         if self.objectType != ["ALL"]:
-            result += " objectType='" + self.objectType + "'"
+            result += " objectType='" + str(self.objectType) + "'"
         if self.pickable != True:
             result += " pickable='" + str(self.pickable) + "'"
         if self.visible != True:
@@ -30213,7 +30215,7 @@ class PointPickSensor(_X3DPickSensorNode):
         if self.matchCriterion != 'MATCH_ANY':
             result += " matchCriterion='" + self.matchCriterion + "'"
         if self.objectType != ["ALL"]:
-            result += " objectType='" + self.objectType + "'"
+            result += " objectType='" + str(self.objectType) + "'"
         if self.sortOrder != 'CLOSEST':
             result += " sortOrder='" + self.sortOrder + "'"
         if not self.hasChild():
@@ -31549,7 +31551,7 @@ class PrimitivePickSensor(_X3DPickSensorNode):
         if self.matchCriterion != 'MATCH_ANY':
             result += " matchCriterion='" + self.matchCriterion + "'"
         if self.objectType != ["ALL"]:
-            result += " objectType='" + self.objectType + "'"
+            result += " objectType='" + str(self.objectType) + "'"
         if self.sortOrder != 'CLOSEST':
             result += " sortOrder='" + self.sortOrder + "'"
         if not self.hasChild():
@@ -32551,7 +32553,7 @@ class ReceiverPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
         if self.geoCoords != (0, 0, 0):
             result += " geoCoords='" + str(self.geoCoords) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.multicastRelayHost:
             result += " multicastRelayHost='" + self.multicastRelayHost + "'"
         if self.multicastRelayPort != 0:
@@ -33836,11 +33838,11 @@ class ScreenFontStyle(_X3DFontStyleNode):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.family != ["SERIF"]:
-            result += " family='" + self.family + "'"
+            result += " family='" + str(self.family) + "'"
         if self.horizontal != True:
             result += " horizontal='" + str(self.horizontal) + "'"
         if self.justify != ["BEGIN"]:
-            result += " justify='" + self.justify + "'"
+            result += " justify='" + str(self.justify) + "'"
         if self.language:
             result += " language='" + self.language + "'"
         if self.leftToRight != True:
@@ -34093,7 +34095,7 @@ class Script(_X3DScriptNode):
         if self.mustEvaluate != False:
             result += " mustEvaluate='" + str(self.mustEvaluate) + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -34519,7 +34521,7 @@ class ShaderPart(_X3DNode): # , _X3DUrlObject # TODO fix additional inheritance 
         if self.type != 'VERTEX':
             result += " type='" + self.type + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -34617,7 +34619,7 @@ class ShaderProgram(_X3DNode): # , _X3DUrlObject, _X3DProgrammableShaderObject #
         if self.type != 'VERTEX':
             result += " type='" + self.type + "'"
         if self.url != list():
-            result += " url='" + self.url + "'"
+            result += " url='" + str(self.url) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -35183,7 +35185,7 @@ class SignalPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
         if self.geoCoords != (0, 0, 0):
             result += " geoCoords='" + str(self.geoCoords) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.multicastRelayHost:
             result += " multicastRelayHost='" + self.multicastRelayHost + "'"
         if self.multicastRelayPort != 0:
@@ -35522,7 +35524,7 @@ class SingleAxisHingeJoint(_X3DRigidJointNode):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.forceOutput != ["NONE"]:
-            result += " forceOutput='" + self.forceOutput + "'"
+            result += " forceOutput='" + str(self.forceOutput) + "'"
         if self.maxAngle != 3.141592653:
             result += " maxAngle='" + str(self.maxAngle) + "'"
         if self.minAngle != -3.141592653:
@@ -35710,7 +35712,7 @@ class SliderJoint(_X3DRigidJointNode):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.forceOutput != ["NONE"]:
-            result += " forceOutput='" + self.forceOutput + "'"
+            result += " forceOutput='" + str(self.forceOutput) + "'"
         if self.maxSeparation != 1:
             result += " maxSeparation='" + str(self.maxSeparation) + "'"
         if self.minSeparation != 0:
@@ -37694,7 +37696,7 @@ class Text(_X3DGeometryNode):
         if self.solid != False:
             result += " solid='" + str(self.solid) + "'"
         if self.string != list():
-            result += " string='" + self.string + "'"
+            result += " string='" + str(self.string) + "'"
         if not self.hasChild():
             result += '/>' + '\n'
         else:
@@ -40089,7 +40091,7 @@ class TransmitterPdu(_X3DNetworkSensorNode, _X3DBoundedObject):
         if self.geoCoords != (0, 0, 0):
             result += " geoCoords='" + str(self.geoCoords) + "'"
         if self.geoSystem != ["GD", "WE"]:
-            result += " geoSystem='" + self.geoSystem + "'"
+            result += " geoSystem='" + str(self.geoSystem) + "'"
         if self.inputSource != 0:
             result += " inputSource='" + str(self.inputSource) + "'"
         if self.lengthOfModulationParameters != 0:
@@ -41371,7 +41373,7 @@ class UniversalJoint(_X3DRigidJointNode):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.forceOutput != ["NONE"]:
-            result += " forceOutput='" + self.forceOutput + "'"
+            result += " forceOutput='" + str(self.forceOutput) + "'"
         if self.stop1Bounce != 0:
             result += " stop1Bounce='" + str(self.stop1Bounce) + "'"
         if self.stop1ErrorCorrection != 0.8:
@@ -42427,7 +42429,7 @@ class VolumePickSensor(_X3DPickSensorNode):
         if self.matchCriterion != 'MATCH_ANY':
             result += " matchCriterion='" + self.matchCriterion + "'"
         if self.objectType != ["ALL"]:
-            result += " objectType='" + self.objectType + "'"
+            result += " objectType='" + str(self.objectType) + "'"
         if self.sortOrder != 'CLOSEST':
             result += " sortOrder='" + self.sortOrder + "'"
         if not self.hasChild():
@@ -42645,7 +42647,7 @@ class WorldInfo(_X3DInfoNode):
         if self.class_:
             result += " class_='" + self.class_ + "'"
         if self.info != list():
-            result += " info='" + self.info + "'"
+            result += " info='" + str(self.info) + "'"
         if self.title:
             result += " title='" + self.title + "'"
         if not self.hasChild():
