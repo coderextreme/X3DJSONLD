@@ -1,11 +1,31 @@
-var browser = X3D.getBrowser();
-var X3D0 = {};
+let browser = X3D.getBrowser();
+let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.2";
-ProtoDeclare2 = browser.currentScene.createNode("ProtoDeclare");
+let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
+<ProtoDeclare name="myPrototype" ><ProtoInterface><field name="myInputRange" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
+</ProtoInterface>
+<ProtoBody><Transform DEF="TR"><Shape><Appearance><Material diffuseColor="0.5 0.5 0.9"></Material>
+<ComposedShader language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f"></field>
+<IS><connect nodeField="decis" protoField="myInputRange"></connect>
+</IS>
+<ShaderPart type="VERTEX"></ShaderPart>
+<ShaderPart type="FRAGMENT"></ShaderPart>
+</ComposedShader>
+<ComposedShader DEF="Cobweb" language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f" value="0.95 0.77 0.44"></field>
+<ShaderPart type="VERTEX"></ShaderPart>
+<ShaderPart DEF="_1" type="FRAGMENT"></ShaderPart>
+</ComposedShader>
+</Appearance>
+<Sphere containerField="geometry" radius="1.75"></Sphere>
+</Shape>
+</Transform>
+</ProtoBody>
+</ProtoDeclare>`);
 ProtoDeclare2.name = "myPrototype";
-ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
-field4 = browser.currentScene.createNode("field");
+let ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
+let field4 = browser.currentScene.createNode("field");
 field4.name = "myInputRange";
 field4.accessType = "initializeOnly";
 field4.type = "SFVec3f";
@@ -16,18 +36,18 @@ ProtoInterface3.field[0] = field4;
 
 ProtoDeclare2.protoInterface = ProtoInterface3;
 
-ProtoBody5 = browser.currentScene.createNode("ProtoBody");
-Transform6 = browser.currentScene.createNode("Transform");
+let ProtoBody5 = browser.currentScene.createNode("ProtoBody");
+let Transform6 = browser.currentScene.createNode("Transform");
 Transform6.DEF = "TR";
-Shape7 = browser.currentScene.createNode("Shape");
-Appearance8 = browser.currentScene.createNode("Appearance");
-Material9 = browser.currentScene.createNode("Material");
+let Shape7 = browser.currentScene.createNode("Shape");
+let Appearance8 = browser.currentScene.createNode("Appearance");
+let Material9 = browser.currentScene.createNode("Material");
 Material9.diffuseColor = new SFColor(new float[0.5,0.5,0.9]);
 Appearance8.material = Material9;
 
-ComposedShader10 = browser.currentScene.createNode("ComposedShader");
+let ComposedShader10 = browser.currentScene.createNode("ComposedShader");
 ComposedShader10.language = "GLSL";
-field11 = browser.currentScene.createNode("field");
+let field11 = browser.currentScene.createNode("field");
 field11.name = "decis";
 field11.accessType = "initializeOnly";
 field11.type = "SFVec3f";
@@ -35,8 +55,8 @@ ComposedShader10.field = new MFNode();
 
 ComposedShader10.field[0] = field11;
 
-IS12 = browser.currentScene.createNode("IS");
-connect13 = browser.currentScene.createNode("connect");
+let IS12 = browser.currentScene.createNode("IS");
+let connect13 = browser.currentScene.createNode("connect");
 connect13.nodeField = "decis";
 connect13.protoField = "myInputRange";
 IS12.connect = new MFNode();
@@ -45,11 +65,11 @@ IS12.connect[0] = connect13;
 
 ComposedShader10.iS = IS12;
 
-ShaderPart14 = browser.currentScene.createNode("ShaderPart");
+let ShaderPart14 = browser.currentScene.createNode("ShaderPart");
 ShaderPart14.type = "VERTEX";
 ComposedShader10.parts[1] = ShaderPart14;
 
-ShaderPart15 = browser.currentScene.createNode("ShaderPart");
+let ShaderPart15 = browser.currentScene.createNode("ShaderPart");
 ShaderPart15.type = "FRAGMENT";
 ComposedShader10.parts[2] = ShaderPart15;
 
@@ -57,10 +77,10 @@ Appearance8.shaders = new MFNode();
 
 Appearance8.shaders[0] = ComposedShader10;
 
-ComposedShader16 = browser.currentScene.createNode("ComposedShader");
+let ComposedShader16 = browser.currentScene.createNode("ComposedShader");
 ComposedShader16.DEF = "Cobweb";
 ComposedShader16.language = "GLSL";
-field17 = browser.currentScene.createNode("field");
+let field17 = browser.currentScene.createNode("field");
 field17.name = "decis";
 field17.accessType = "initializeOnly";
 field17.type = "SFVec3f";
@@ -69,11 +89,11 @@ ComposedShader16.field = new MFNode();
 
 ComposedShader16.field[0] = field17;
 
-ShaderPart18 = browser.currentScene.createNode("ShaderPart");
+let ShaderPart18 = browser.currentScene.createNode("ShaderPart");
 ShaderPart18.type = "VERTEX";
 ComposedShader16.parts[1] = ShaderPart18;
 
-ShaderPart19 = browser.currentScene.createNode("ShaderPart");
+let ShaderPart19 = browser.currentScene.createNode("ShaderPart");
 ShaderPart19.DEF = "_1";
 ShaderPart19.type = "FRAGMENT";
 ComposedShader16.parts[2] = ShaderPart19;
@@ -82,7 +102,7 @@ Appearance8.shaders[1] = ComposedShader16;
 
 Shape7.appearance = Appearance8;
 
-Sphere20 = browser.currentScene.createNode("Sphere");
+let Sphere20 = browser.currentScene.createNode("Sphere");
 Sphere20.radius = 1.75;
 Shape7.geometry = Sphere20;
 
@@ -100,17 +120,17 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
-WorldInfo21 = browser.currentScene.createNode("WorldInfo");
+let WorldInfo21 = browser.currentScene.createNode("WorldInfo");
 WorldInfo21.title = "SimpleShader";
-MetadataSet22 = browser.currentScene.createNode("MetadataSet");
+let MetadataSet22 = browser.currentScene.createNode("MetadataSet");
 MetadataSet22.name = "Titania";
 MetadataSet22.DEF = "Titania";
 MetadataSet22.reference = "http://titania.create3000.de";
-MetadataSet23 = browser.currentScene.createNode("MetadataSet");
+let MetadataSet23 = browser.currentScene.createNode("MetadataSet");
 MetadataSet23.name = "Selection";
 MetadataSet23.DEF = "Selection";
 MetadataSet23.reference = "http://titania.create3000.de";
-MetadataSet24 = browser.currentScene.createNode("MetadataSet");
+let MetadataSet24 = browser.currentScene.createNode("MetadataSet");
 MetadataSet24.name = "nodes";
 MetadataSet24.DEF = "nodes";
 MetadataSet24.reference = "http://titania.create3000.de";
@@ -123,11 +143,11 @@ MetadataSet22.value = new MFNode();
 
 MetadataSet22.value[0] = MetadataSet23;
 
-MetadataSet25 = browser.currentScene.createNode("MetadataSet");
+let MetadataSet25 = browser.currentScene.createNode("MetadataSet");
 MetadataSet25.name = "NavigationInfo";
 MetadataSet25.DEF = "NavigationInfo";
 MetadataSet25.reference = "http://titania.create3000.de";
-MetadataString26 = browser.currentScene.createNode("MetadataString");
+let MetadataString26 = browser.currentScene.createNode("MetadataString");
 MetadataString26.name = "type";
 MetadataString26.DEF = "type";
 MetadataString26.reference = "http://titania.create3000.de";
@@ -138,11 +158,11 @@ MetadataSet25.value[0] = MetadataString26;
 
 MetadataSet22.value[1] = MetadataSet25;
 
-MetadataSet27 = browser.currentScene.createNode("MetadataSet");
+let MetadataSet27 = browser.currentScene.createNode("MetadataSet");
 MetadataSet27.name = "Viewpoint";
 MetadataSet27.DEF = "Viewpoint";
 MetadataSet27.reference = "http://titania.create3000.de";
-MetadataDouble28 = browser.currentScene.createNode("MetadataDouble");
+let MetadataDouble28 = browser.currentScene.createNode("MetadataDouble");
 MetadataDouble28.name = "position";
 MetadataDouble28.DEF = "position";
 MetadataDouble28.reference = "http://titania.create3000.de";
@@ -151,14 +171,14 @@ MetadataSet27.value = new MFNode();
 
 MetadataSet27.value[0] = MetadataDouble28;
 
-MetadataDouble29 = browser.currentScene.createNode("MetadataDouble");
+let MetadataDouble29 = browser.currentScene.createNode("MetadataDouble");
 MetadataDouble29.name = "orientation";
 MetadataDouble29.DEF = "orientation";
 MetadataDouble29.reference = "http://titania.create3000.de";
 MetadataDouble29.value = new MFDouble(new double[-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191]);
 MetadataSet27.value[1] = MetadataDouble29;
 
-MetadataDouble30 = browser.currentScene.createNode("MetadataDouble");
+let MetadataDouble30 = browser.currentScene.createNode("MetadataDouble");
 MetadataDouble30.name = "centerOfRotation";
 MetadataDouble30.DEF = "centerOfRotation";
 MetadataDouble30.reference = "http://titania.create3000.de";
@@ -171,7 +191,7 @@ WorldInfo21.metadata = MetadataSet22;
 
 browser.currentScene.children[1] = WorldInfo21;
 
-ProtoInstance31 = browser.currentScene.createNode("ProtoInstance");
+let ProtoInstance31 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance31.name = "myPrototype";
 browser.currentScene.children[2] = ProtoInstance31;
 

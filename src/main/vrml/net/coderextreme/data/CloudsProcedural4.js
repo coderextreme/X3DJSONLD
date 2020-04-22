@@ -1,9 +1,9 @@
-var browser = X3D.getBrowser();
-var X3D0 = {};
+let browser = X3D.getBrowser();
+let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.2";
 //A png image file for the cloud texture must be designated in the ecmascript node.
-Viewpoint2 = browser.currentScene.createNode("Viewpoint");
+let Viewpoint2 = browser.currentScene.createNode("Viewpoint");
 Viewpoint2.description = "Main";
 Viewpoint2.jump = False;
 Viewpoint2.orientation = new SFRotation(new float[0,1,0,1.57]);
@@ -12,37 +12,37 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Viewpoint2;
 
-Viewpoint3 = browser.currentScene.createNode("Viewpoint");
+let Viewpoint3 = browser.currentScene.createNode("Viewpoint");
 Viewpoint3.description = "Light House Tower";
 Viewpoint3.jump = False;
 Viewpoint3.orientation = new SFRotation(new float[0,1,0,1.3]);
 Viewpoint3.position = new SFVec3f(new float[45000,1290,44000]);
 browser.currentScene.children[1] = Viewpoint3;
 
-Viewpoint4 = browser.currentScene.createNode("Viewpoint");
+let Viewpoint4 = browser.currentScene.createNode("Viewpoint");
 Viewpoint4.description = "centerWest";
 Viewpoint4.jump = False;
 Viewpoint4.orientation = new SFRotation(new float[0,1,0,2.5]);
 Viewpoint4.position = new SFVec3f(new float[48000,1000,20000]);
 browser.currentScene.children[2] = Viewpoint4;
 
-Background5 = browser.currentScene.createNode("Background");
+let Background5 = browser.currentScene.createNode("Background");
 Background5.groundColor = new MFColor(new float[0,0,1]);
 Background5.skyColor = new MFColor(new float[0,0,1]);
 browser.currentScene.children[3] = Background5;
 
-DirectionalLight6 = browser.currentScene.createNode("DirectionalLight");
+let DirectionalLight6 = browser.currentScene.createNode("DirectionalLight");
 DirectionalLight6.ambientIntensity = 1;
 DirectionalLight6.direction = new SFVec3f(new float[-1,0,0]);
 DirectionalLight6.global = True;
 browser.currentScene.children[4] = DirectionalLight6;
 
-Group7 = browser.currentScene.createNode("Group");
+let Group7 = browser.currentScene.createNode("Group");
 Group7.DEF = "Terrain";
-Transform8 = browser.currentScene.createNode("Transform");
+let Transform8 = browser.currentScene.createNode("Transform");
 Transform8.scale = new SFVec3f(new float[50,50,50]);
 Transform8.translation = new SFVec3f(new float[25000,0,25000]);
-Inline9 = browser.currentScene.createNode("Inline");
+let Inline9 = browser.currentScene.createNode("Inline");
 Inline9.url = new MFString(new java.lang.String["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"]);
 Transform8.children = new MFNode();
 
@@ -52,16 +52,16 @@ Group7.children = new MFNode();
 
 Group7.children[0] = Transform8;
 
-Transform10 = browser.currentScene.createNode("Transform");
+let Transform10 = browser.currentScene.createNode("Transform");
 Transform10.rotation = new SFRotation(new float[1,0,0,1.57]);
 Transform10.translation = new SFVec3f(new float[25000,0,25000]);
-Shape11 = browser.currentScene.createNode("Shape");
-Rectangle2D12 = browser.currentScene.createNode("Rectangle2D");
+let Shape11 = browser.currentScene.createNode("Shape");
+let Rectangle2D12 = browser.currentScene.createNode("Rectangle2D");
 Rectangle2D12.size = new SFVec2f(new float[77000,55000]);
 Shape11.geometry = Rectangle2D12;
 
-Appearance13 = browser.currentScene.createNode("Appearance");
-ImageTexture14 = browser.currentScene.createNode("ImageTexture");
+let Appearance13 = browser.currentScene.createNode("Appearance");
+let ImageTexture14 = browser.currentScene.createNode("ImageTexture");
 ImageTexture14.url = new MFString(new java.lang.String["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"]);
 Appearance13.texture = ImageTexture14;
 
@@ -75,12 +75,12 @@ Group7.children[1] = Transform10;
 
 browser.currentScene.children[5] = Group7;
 
-Group15 = browser.currentScene.createNode("Group");
+let Group15 = browser.currentScene.createNode("Group");
 Group15.DEF = "Placemarks";
-Transform16 = browser.currentScene.createNode("Transform");
+let Transform16 = browser.currentScene.createNode("Transform");
 Transform16.scale = new SFVec3f(new float[50,50,50]);
 Transform16.translation = new SFVec3f(new float[45000,30,44000]);
-Inline17 = browser.currentScene.createNode("Inline");
+let Inline17 = browser.currentScene.createNode("Inline");
 Inline17.url = new MFString(new java.lang.String["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"]);
 Transform16.children = new MFNode();
 
@@ -92,30 +92,30 @@ Group15.children[0] = Transform16;
 
 browser.currentScene.children[6] = Group15;
 
-Group18 = browser.currentScene.createNode("Group");
+let Group18 = browser.currentScene.createNode("Group");
 Group18.DEF = "Clouds";
-Transform19 = browser.currentScene.createNode("Transform");
+let Transform19 = browser.currentScene.createNode("Transform");
 Transform19.DEF = "Cumulus";
 Group18.children = new MFNode();
 
 Group18.children[0] = Transform19;
 
-Transform20 = browser.currentScene.createNode("Transform");
+let Transform20 = browser.currentScene.createNode("Transform");
 Transform20.DEF = "Cirrus";
 Group18.children[1] = Transform20;
 
-Transform21 = browser.currentScene.createNode("Transform");
+let Transform21 = browser.currentScene.createNode("Transform");
 Transform21.DEF = "Fog";
 Group18.children[2] = Transform21;
 
-Script22 = browser.currentScene.createNode("Script");
+let Script22 = browser.currentScene.createNode("Script");
 Script22.DEF = "PixelScript";
 Script22.directOutput = True;
-field23 = browser.currentScene.createNode("field");
+let field23 = browser.currentScene.createNode("field");
 field23.name = "Cumulus";
 field23.accessType = "initializeOnly";
 field23.type = "SFNode";
-Transform24 = browser.currentScene.createNode("Transform");
+let Transform24 = browser.currentScene.createNode("Transform");
 Transform24.USE = "Cumulus";
 field23.children = new MFNode();
 
@@ -125,11 +125,11 @@ Script22.field = new MFNode();
 
 Script22.field[0] = field23;
 
-field25 = browser.currentScene.createNode("field");
+let field25 = browser.currentScene.createNode("field");
 field25.name = "Cirrus";
 field25.accessType = "initializeOnly";
 field25.type = "SFNode";
-Transform26 = browser.currentScene.createNode("Transform");
+let Transform26 = browser.currentScene.createNode("Transform");
 Transform26.USE = "Cirrus";
 field25.children = new MFNode();
 
@@ -137,7 +137,7 @@ field25.children[0] = Transform26;
 
 Script22.field[1] = field25;
 
-field27 = browser.currentScene.createNode("field");
+let field27 = browser.currentScene.createNode("field");
 field27.name = "Fog";
 field27.accessType = "initializeOnly";
 field27.type = "SFNode";
@@ -527,7 +527,7 @@ Script22.setSourceCode(`ecmascript:\n"+
 "}`)
 Group18.children[3] = Script22;
 
-DirectionalLight28 = browser.currentScene.createNode("DirectionalLight");
+let DirectionalLight28 = browser.currentScene.createNode("DirectionalLight");
 DirectionalLight28.ambientIntensity = 1;
 DirectionalLight28.color = new SFColor(new float[1,0,0]);
 DirectionalLight28.direction = new SFVec3f(new float[-1,-1,0]);

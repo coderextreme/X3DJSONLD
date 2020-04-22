@@ -1,8 +1,8 @@
-var browser = X3D.getBrowser();
-var X3D0 = {};
+let browser = X3D.getBrowser();
+let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-Script2 = browser.currentScene.createNode("Script");
+let Script2 = browser.currentScene.createNode("Script");
 Script2.DEF = "Browser";
 
 Script2.setSourceCode(`ecmascript:\n"+
@@ -13,7 +13,7 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Script2;
 
-Script3 = browser.currentScene.createNode("Script");
+let Script3 = browser.currentScene.createNode("Script");
 Script3.DEF = "Clouds";
 
 Script3.setSourceCode(`ecmascript:\n"+

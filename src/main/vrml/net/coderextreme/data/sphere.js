@@ -1,17 +1,17 @@
-var browser = X3D.getBrowser();
-var X3D0 = {};
+let browser = X3D.getBrowser();
+let X3D0 = {};
 X3D0.profile = "Interchange";
 X3D0.version = "3.3";
-Group2 = browser.currentScene.createNode("Group");
-Shape3 = browser.currentScene.createNode("Shape");
-Appearance4 = browser.currentScene.createNode("Appearance");
-Material5 = browser.currentScene.createNode("Material");
+let Group2 = browser.currentScene.createNode("Group");
+let Shape3 = browser.currentScene.createNode("Shape");
+let Appearance4 = browser.currentScene.createNode("Appearance");
+let Material5 = browser.currentScene.createNode("Material");
 Material5.diffuseColor = new SFColor(new float[1,1,1]);
 Appearance4.material = Material5;
 
 Shape3.appearance = Appearance4;
 
-Sphere6 = browser.currentScene.createNode("Sphere");
+let Sphere6 = browser.currentScene.createNode("Sphere");
 Shape3.geometry = Sphere6;
 
 Group2.children = new MFNode();

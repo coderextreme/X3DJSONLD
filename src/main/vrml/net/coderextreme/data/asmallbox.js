@@ -1,16 +1,26 @@
-var browser = X3D.getBrowser();
-var X3D0 = {};
+let browser = X3D.getBrowser();
+let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-ProtoDeclare2 = browser.currentScene.createNode("ProtoDeclare");
+let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
+<ProtoDeclare name="anyShape" ><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+</Shape>
+</field>
+</ProtoInterface>
+<ProtoBody><Transform><IS><connect nodeField="children" protoField="myShape"></connect>
+</IS>
+</Transform>
+</ProtoBody>
+</ProtoDeclare>`);
 ProtoDeclare2.name = "anyShape";
-ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
-field4 = browser.currentScene.createNode("field");
+let ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
+let field4 = browser.currentScene.createNode("field");
 field4.name = "myShape";
 field4.accessType = "inputOutput";
 field4.type = "MFNode";
-Shape5 = browser.currentScene.createNode("Shape");
-Sphere6 = browser.currentScene.createNode("Sphere");
+let Shape5 = browser.currentScene.createNode("Shape");
+let Sphere6 = browser.currentScene.createNode("Sphere");
 Shape5.geometry = Sphere6;
 
 field4.children = new MFNode();
@@ -23,10 +33,10 @@ ProtoInterface3.field[0] = field4;
 
 ProtoDeclare2.protoInterface = ProtoInterface3;
 
-ProtoBody7 = browser.currentScene.createNode("ProtoBody");
-Transform8 = browser.currentScene.createNode("Transform");
-IS9 = browser.currentScene.createNode("IS");
-connect10 = browser.currentScene.createNode("connect");
+let ProtoBody7 = browser.currentScene.createNode("ProtoBody");
+let Transform8 = browser.currentScene.createNode("Transform");
+let IS9 = browser.currentScene.createNode("IS");
+let connect10 = browser.currentScene.createNode("connect");
 connect10.nodeField = "children";
 connect10.protoField = "myShape";
 IS9.connect = new MFNode();
@@ -45,15 +55,26 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
-ProtoDeclare11 = browser.currentScene.createNode("ProtoDeclare");
+let ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
+<ProtoDeclare name="one" ><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder containerField="geometry"></Cylinder>
+</Shape>
+</field>
+</ProtoInterface>
+<ProtoBody><Transform><ProtoInstance name="anyShape"><IS><connect nodeField="myShape" protoField="myShape"></connect>
+</IS>
+</ProtoInstance>
+</Transform>
+</ProtoBody>
+</ProtoDeclare>`);
 ProtoDeclare11.name = "one";
-ProtoInterface12 = browser.currentScene.createNode("ProtoInterface");
-field13 = browser.currentScene.createNode("field");
+let ProtoInterface12 = browser.currentScene.createNode("ProtoInterface");
+let field13 = browser.currentScene.createNode("field");
 field13.name = "myShape";
 field13.accessType = "inputOutput";
 field13.type = "MFNode";
-Shape14 = browser.currentScene.createNode("Shape");
-Cylinder15 = browser.currentScene.createNode("Cylinder");
+let Shape14 = browser.currentScene.createNode("Shape");
+let Cylinder15 = browser.currentScene.createNode("Cylinder");
 Shape14.geometry = Cylinder15;
 
 field13.children = new MFNode();
@@ -66,12 +87,12 @@ ProtoInterface12.field[0] = field13;
 
 ProtoDeclare11.protoInterface = ProtoInterface12;
 
-ProtoBody16 = browser.currentScene.createNode("ProtoBody");
-Transform17 = browser.currentScene.createNode("Transform");
-ProtoInstance18 = browser.currentScene.createNode("ProtoInstance");
+let ProtoBody16 = browser.currentScene.createNode("ProtoBody");
+let Transform17 = browser.currentScene.createNode("Transform");
+let ProtoInstance18 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance18.name = "anyShape";
-IS19 = browser.currentScene.createNode("IS");
-connect20 = browser.currentScene.createNode("connect");
+let IS19 = browser.currentScene.createNode("IS");
+let connect20 = browser.currentScene.createNode("connect");
 connect20.nodeField = "myShape";
 connect20.protoField = "myShape";
 IS19.connect = new MFNode();
@@ -92,12 +113,12 @@ ProtoDeclare11.protoBody = ProtoBody16;
 
 browser.currentScene.children[1] = ProtoDeclare11;
 
-ProtoInstance21 = browser.currentScene.createNode("ProtoInstance");
+let ProtoInstance21 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance21.name = "one";
-fieldValue22 = browser.currentScene.createNode("fieldValue");
+let fieldValue22 = browser.currentScene.createNode("fieldValue");
 fieldValue22.name = "myShape";
-Shape23 = browser.currentScene.createNode("Shape");
-Box24 = browser.currentScene.createNode("Box");
+let Shape23 = browser.currentScene.createNode("Shape");
+let Box24 = browser.currentScene.createNode("Box");
 Shape23.geometry = Box24;
 
 fieldValue22.children = new MFNode();

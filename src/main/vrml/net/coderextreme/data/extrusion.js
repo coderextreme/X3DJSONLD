@@ -1,18 +1,18 @@
-var browser = X3D.getBrowser();
-var X3D0 = {};
+let browser = X3D.getBrowser();
+let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-Group2 = browser.currentScene.createNode("Group");
-Shape3 = browser.currentScene.createNode("Shape");
-Extrusion4 = browser.currentScene.createNode("Extrusion");
+let Group2 = browser.currentScene.createNode("Group");
+let Shape3 = browser.currentScene.createNode("Shape");
+let Extrusion4 = browser.currentScene.createNode("Extrusion");
 Extrusion4.DEF = "extrusion";
 Extrusion4.spine = new MFVec3f(new float[-50,-50,0,50,50,0]);
 Extrusion4.creaseAngle = 0.785;
 Extrusion4.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
 Shape3.geometry = Extrusion4;
 
-Appearance5 = browser.currentScene.createNode("Appearance");
-Material6 = browser.currentScene.createNode("Material");
+let Appearance5 = browser.currentScene.createNode("Appearance");
+let Material6 = browser.currentScene.createNode("Material");
 Material6.diffuseColor = new SFColor(new float[0,1,0]);
 Appearance5.material = Material6;
 
@@ -22,14 +22,14 @@ Group2.children = new MFNode();
 
 Group2.children[0] = Shape3;
 
-TimeSensor7 = browser.currentScene.createNode("TimeSensor");
+let TimeSensor7 = browser.currentScene.createNode("TimeSensor");
 TimeSensor7.DEF = "TourTime";
 TimeSensor7.loop = True;
 Group2.children[1] = TimeSensor7;
 
-Script8 = browser.currentScene.createNode("Script");
+let Script8 = browser.currentScene.createNode("Script");
 Script8.DEF = "MoveCylinder";
-field9 = browser.currentScene.createNode("field");
+let field9 = browser.currentScene.createNode("field");
 field9.name = "set_cycle";
 field9.accessType = "inputOnly";
 field9.type = "SFTime";
@@ -37,7 +37,7 @@ Script8.field = new MFNode();
 
 Script8.field[0] = field9;
 
-field10 = browser.currentScene.createNode("field");
+let field10 = browser.currentScene.createNode("field");
 field10.name = "spine";
 field10.accessType = "inputOutput";
 field10.type = "MFVec3f";
@@ -55,14 +55,14 @@ Script8.setSourceCode(`ecmascript:\n"+
 "                }`)
 Group2.children[2] = Script8;
 
-ROUTE11 = browser.currentScene.createNode("ROUTE");
+let ROUTE11 = browser.currentScene.createNode("ROUTE");
 ROUTE11.fromNode = "TourTime";
 ROUTE11.fromField = "cycleTime";
 ROUTE11.toNode = "MoveCylinder";
 ROUTE11.toField = "set_cycle";
 Group2.children[3] = ROUTE11;
 
-ROUTE12 = browser.currentScene.createNode("ROUTE");
+let ROUTE12 = browser.currentScene.createNode("ROUTE");
 ROUTE12.fromNode = "MoveCylinder";
 ROUTE12.fromField = "spine_changed";
 ROUTE12.toNode = "extrusion";
