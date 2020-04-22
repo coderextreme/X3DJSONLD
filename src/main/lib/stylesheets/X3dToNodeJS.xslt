@@ -685,7 +685,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>this.x3dModel = </xsl:text>
 		</xsl:if>
 		
-		<xsl:text>new autoclass.</xsl:text>
+		<xsl:text>(new autoclass.</xsl:text>
 		<xsl:value-of select="local-name()"/>
 		<xsl:text>(</xsl:text>
 		<xsl:choose>
@@ -703,7 +703,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:text>"</xsl:text>
 			</xsl:when>
 		</xsl:choose>
-		<xsl:text>)</xsl:text>
+		<xsl:text>))</xsl:text>
 		
 		<!-- handle attribute(s) if any -->
 		<xsl:call-template name="process-attributes-in-order">
@@ -2507,6 +2507,14 @@ POSSIBILITY OF SUCH DAMAGE.
 </xsl:template>
 
 <xsl:template name="list-component-imports">
+	<xsl:text>var java = require('java');</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>java.asyncOptions = {</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>  syncSuffix: "",              // Sync methods use the base name(!!)</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below</xsl:text><xsl:text>&#10;</xsl:text>
+<xsl:text>  ifReadOnlySuffix: "_alt"</xsl:text><xsl:text>&#10;</xsl:text>
+<xsl:text>};</xsl:text><xsl:text>&#10;</xsl:text>
 	<xsl:text>var autoclass = require('./X3Dautoclass');</xsl:text><xsl:text>&#10;</xsl:text>
 </xsl:template>
 
