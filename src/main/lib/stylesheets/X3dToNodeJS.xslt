@@ -303,7 +303,7 @@ POSSIBILITY OF SUCH DAMAGE.
      */
     main : function (argv)
     {
-		]]>var testObject = new autoclass.</xsl:text><xsl:value-of select="$newClassName"/><xsl:text>();
+		]]>var testObject = new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>();
 		print ("</xsl:text>          <xsl:value-of select="$newClassName"/>
 		<xsl:text> execution self-validation test results: " + testObject.validateSelf());
 	}
@@ -2406,7 +2406,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:value-of select="."/>
 					</xsl:message>
 					-->
-					<xsl:text>java.to(["</xsl:text>
+					<xsl:text>java.newArray("java.lang.String",["</xsl:text>
 						<xsl:call-template name="java-create-array-from-multiline-string">
 							<xsl:with-param name="inputString">
 								<xsl:call-template name="escape-quote-characters">
@@ -2421,7 +2421,7 @@ POSSIBILITY OF SUCH DAMAGE.
 								</xsl:call-template>
 							</xsl:with-param>
 						</xsl:call-template>
-					<xsl:text>], java.type("java.lang.String[]"))</xsl:text>
+					<xsl:text>])</xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:text>)</xsl:text>
@@ -3226,9 +3226,9 @@ POSSIBILITY OF SUCH DAMAGE.
 		</xsl:when>
 
 		<xsl:when test="($attributeType = 'MFBool')">
-			<xsl:text>java.to([</xsl:text>
+			<xsl:text>java.newArray("boolean", [</xsl:text>
 			<xsl:value-of select="translate(normalize-space(.),' ',',')"/>
-			<xsl:text>], java.type("boolean[]"))</xsl:text>
+			<xsl:text>])</xsl:text>
 		</xsl:when>
 		<xsl:when test="($attributeType = 'SFFloat')">
 			<xsl:value-of select="."/>
@@ -3238,28 +3238,28 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:value-of select="."/>
 		</xsl:when>
 		<xsl:when test="($attributeType = 'MFInt32') or ($attributeType = 'SFImage')">
-			<xsl:text>java.to([</xsl:text>
+			<xsl:text>java.newArray("int", [</xsl:text>
 			<xsl:value-of select="translate(normalize-space(.),' ',',')"/>
-			<xsl:text>], java.type("int[]"))</xsl:text>
+			<xsl:text>])</xsl:text>
 		</xsl:when>
 		<xsl:when test="($attributeType = 'MFFloat')">
-			<xsl:text>java.to([</xsl:text>
+			<xsl:text>java.newArray("float", [</xsl:text>
 			<xsl:call-template name="java-float-numbers">
 				<xsl:with-param name="inputString">
 					<xsl:value-of select="."/>
 				</xsl:with-param>
 				<xsl:with-param name="inputType" select="$attributeType"/>
 			</xsl:call-template>
-			<xsl:text>], java.type("float[]"))</xsl:text>
+			<xsl:text>])</xsl:text>
 		</xsl:when>
 		<xsl:when test="($attributeType = 'MFDouble')">
-			<xsl:text>java.to([</xsl:text>
+			<xsl:text>java.newArray("double", [</xsl:text>
 			<xsl:call-template name="java-double-numbers">
 				<xsl:with-param name="inputString">
 					<xsl:value-of select="."/>
 				</xsl:with-param>
 			</xsl:call-template>
-			<xsl:text>], java.type("double[]"))</xsl:text>
+			<xsl:text>])</xsl:text>
 		</xsl:when>
 		<xsl:when test="($attributeType = 'SFVec2f') or ($attributeType = 'SFVec3f') or ($attributeType = 'SFVec4f') or
 						($attributeType = 'SFRotation') or starts-with($attributeType, 'SFColor')">
@@ -3312,7 +3312,7 @@ POSSIBILITY OF SUCH DAMAGE.
 								<xsl:text>new autoclass.</xsl:text>
 								<xsl:value-of select="$attributeType"/>
 								<xsl:text>(</xsl:text>
-								<xsl:text>java.to([</xsl:text>
+								<xsl:text>java.newArray("float", [</xsl:text>
 								<xsl:call-template name="java-float-numbers">
 									<xsl:with-param name="inputString">
 										<xsl:value-of select="current-group()"/>
@@ -3333,21 +3333,21 @@ POSSIBILITY OF SUCH DAMAGE.
 						</xsl:choose>
 						<!-- close invocation when all done -->
 						<xsl:if test="(count(current-group()) = 1) or (count(current-group()) &lt; $numbersPerGroup - 1)">
-							<xsl:text>], java.type("float[]"))</xsl:text>
+							<xsl:text>])</xsl:text>
 								<xsl:text>)</xsl:text>
 								<xsl:text>)</xsl:text>
 							</xsl:if>
 						</xsl:for-each-group>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:text>java.to([</xsl:text>
+						<xsl:text>java.newArray("float", [</xsl:text>
 						<xsl:call-template name="java-float-numbers">
 							<xsl:with-param name="inputString">
 								<xsl:value-of select="."/>
 							</xsl:with-param>
 							<xsl:with-param name="inputType" select="$attributeType"/>
 						</xsl:call-template>
-						<xsl:text>], java.type("float[]"))</xsl:text>
+						<xsl:text>])</xsl:text>
 						<xsl:text>)</xsl:text>
 					</xsl:otherwise>
 				</xsl:choose>
@@ -3357,13 +3357,13 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:text>new autoclass.</xsl:text>
 				<xsl:value-of select="$attributeType"/>
 				<xsl:text>(</xsl:text>
-				<xsl:text>java.to([</xsl:text>
+				<xsl:text>java.newArray("double", [</xsl:text>
 				<xsl:call-template name="java-double-numbers">
 					<xsl:with-param name="inputString">
 						<xsl:value-of select="."/>
 					</xsl:with-param>
 				</xsl:call-template>
-				<xsl:text>], java.type("double[]"))</xsl:text>
+				<xsl:text>])</xsl:text>
 				<xsl:text>)</xsl:text>
 			</xsl:when>
 			<xsl:otherwise>
