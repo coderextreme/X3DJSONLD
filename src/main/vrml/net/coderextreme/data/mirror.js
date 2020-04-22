@@ -3,41 +3,41 @@ var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 Viewpoint2 = browser.currentScene.createNode("Viewpoint");
-Viewpoint2.position = [0,5,100];
+Viewpoint2.position = new SFVec3f(new float[0,5,100]);
 Viewpoint2.description = "Switch background and images texture";
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Viewpoint2;
 
 TextureBackground3 = browser.currentScene.createNode("TextureBackground");
 ImageTexture4 = browser.currentScene.createNode("ImageTexture");
 ImageTexture4.DEF = "leftBack";
-ImageTexture4.url = ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"];
+ImageTexture4.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"]);
 TextureBackground3.topTexture = ImageTexture4;
 
 ImageTexture5 = browser.currentScene.createNode("ImageTexture");
 ImageTexture5.DEF = "rightBack";
-ImageTexture5.url = ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"];
+ImageTexture5.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"]);
 TextureBackground3.topTexture = ImageTexture5;
 
 ImageTexture6 = browser.currentScene.createNode("ImageTexture");
 ImageTexture6.DEF = "frontBack";
-ImageTexture6.url = ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"];
+ImageTexture6.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"]);
 TextureBackground3.topTexture = ImageTexture6;
 
 ImageTexture7 = browser.currentScene.createNode("ImageTexture");
 ImageTexture7.DEF = "backBack";
-ImageTexture7.url = ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"];
+ImageTexture7.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"]);
 TextureBackground3.topTexture = ImageTexture7;
 
 ImageTexture8 = browser.currentScene.createNode("ImageTexture");
 ImageTexture8.DEF = "topBack";
-ImageTexture8.url = ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"];
+ImageTexture8.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"]);
 TextureBackground3.topTexture = ImageTexture8;
 
 ImageTexture9 = browser.currentScene.createNode("ImageTexture");
 ImageTexture9.DEF = "bottomBack";
-ImageTexture9.url = ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"];
+ImageTexture9.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"]);
 TextureBackground3.topTexture = ImageTexture9;
 
 browser.currentScene.children[1] = TextureBackground3;
@@ -46,39 +46,39 @@ Transform10 = browser.currentScene.createNode("Transform");
 Shape11 = browser.currentScene.createNode("Shape");
 Appearance12 = browser.currentScene.createNode("Appearance");
 Material13 = browser.currentScene.createNode("Material");
-Material13.diffuseColor = [0.7,0.7,0.7];
-Material13.specularColor = [0.5,0.5,0.5];
+Material13.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
+Material13.specularColor = new SFColor(new float[0.5,0.5,0.5]);
 Appearance12.material = Material13;
 
 ComposedCubeMapTexture14 = browser.currentScene.createNode("ComposedCubeMapTexture");
 ImageTexture15 = browser.currentScene.createNode("ImageTexture");
 ImageTexture15.DEF = "backShader";
-ImageTexture15.url = ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"];
+ImageTexture15.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"]);
 ComposedCubeMapTexture14.top = ImageTexture15;
 
 ImageTexture16 = browser.currentScene.createNode("ImageTexture");
 ImageTexture16.DEF = "bottomShader";
-ImageTexture16.url = ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"];
+ImageTexture16.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"]);
 ComposedCubeMapTexture14.top = ImageTexture16;
 
 ImageTexture17 = browser.currentScene.createNode("ImageTexture");
 ImageTexture17.DEF = "frontShader";
-ImageTexture17.url = ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"];
+ImageTexture17.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"]);
 ComposedCubeMapTexture14.top = ImageTexture17;
 
 ImageTexture18 = browser.currentScene.createNode("ImageTexture");
 ImageTexture18.DEF = "leftShader";
-ImageTexture18.url = ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"];
+ImageTexture18.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"]);
 ComposedCubeMapTexture14.top = ImageTexture18;
 
 ImageTexture19 = browser.currentScene.createNode("ImageTexture");
 ImageTexture19.DEF = "rightShader";
-ImageTexture19.url = ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"];
+ImageTexture19.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"]);
 ComposedCubeMapTexture14.top = ImageTexture19;
 
 ImageTexture20 = browser.currentScene.createNode("ImageTexture");
 ImageTexture20.DEF = "topShader";
-ImageTexture20.url = ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"];
+ImageTexture20.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"]);
 ComposedCubeMapTexture14.top = ImageTexture20;
 
 Appearance12.texture = ComposedCubeMapTexture14;
@@ -92,7 +92,7 @@ field22.name = "chromaticDispertion";
 field22.accessType = "inputOutput";
 field22.type = "SFVec3f";
 field22.value = "0.98 1 1.033";
-ComposedShader21.field = [];
+ComposedShader21.field = new MFNode();
 
 ComposedShader21.field[0] = field22;
 
@@ -125,16 +125,16 @@ field26.value = "2";
 ComposedShader21.field[4] = field26;
 
 ShaderPart27 = browser.currentScene.createNode("ShaderPart");
-ShaderPart27.url = ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"];
+ShaderPart27.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
 ShaderPart27.type = "VERTEX";
 ComposedShader21.parts[5] = ShaderPart27;
 
 ShaderPart28 = browser.currentScene.createNode("ShaderPart");
-ShaderPart28.url = ["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"];
+ShaderPart28.url = new MFString(new java.lang.String["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"]);
 ShaderPart28.type = "FRAGMENT";
 ComposedShader21.parts[6] = ShaderPart28;
 
-Appearance12.shaders = [];
+Appearance12.shaders = new MFNode();
 
 Appearance12.shaders[0] = ComposedShader21;
 
@@ -147,7 +147,7 @@ field30.name = "chromaticDispertion";
 field30.accessType = "inputOutput";
 field30.type = "SFVec3f";
 field30.value = "0.98 1 1.033";
-ComposedShader29.field = [];
+ComposedShader29.field = new MFNode();
 
 ComposedShader29.field[0] = field30;
 
@@ -180,12 +180,12 @@ field34.value = "2";
 ComposedShader29.field[4] = field34;
 
 ShaderPart35 = browser.currentScene.createNode("ShaderPart");
-ShaderPart35.url = ["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"];
+ShaderPart35.url = new MFString(new java.lang.String["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"]);
 ShaderPart35.type = "VERTEX";
 ComposedShader29.parts[5] = ShaderPart35;
 
 ShaderPart36 = browser.currentScene.createNode("ShaderPart");
-ShaderPart36.url = ["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/mix.fs"];
+ShaderPart36.url = new MFString(new java.lang.String["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/mix.fs"]);
 ShaderPart36.type = "FRAGMENT";
 ComposedShader29.parts[6] = ShaderPart36;
 
@@ -197,7 +197,7 @@ Sphere37 = browser.currentScene.createNode("Sphere");
 Sphere37.radius = 30;
 Shape11.geometry = Sphere37;
 
-Transform10.children = [];
+Transform10.children = new MFNode();
 
 Transform10.children[0] = Shape11;
 
@@ -209,7 +209,7 @@ field39.name = "frontUrls";
 field39.type = "MFString";
 field39.accessType = "initializeOnly";
 field39.value = "\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"";
-Script38.field = [];
+Script38.field = new MFNode();
 
 Script38.field[0] = field39;
 

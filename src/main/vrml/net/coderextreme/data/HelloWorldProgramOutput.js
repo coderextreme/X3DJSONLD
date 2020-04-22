@@ -8,23 +8,23 @@ ViewpointGroup2.description = "Available viewpoints";
 Viewpoint3 = browser.currentScene.createNode("Viewpoint");
 Viewpoint3.DEF = "DefaultView";
 Viewpoint3.description = "Hello X3DJSAIL";
-ViewpointGroup2.children = [];
+ViewpointGroup2.children = new MFNode();
 
 ViewpointGroup2.children[0] = Viewpoint3;
 
 Viewpoint4 = browser.currentScene.createNode("Viewpoint");
 Viewpoint4.DEF = "TopDownView";
 Viewpoint4.description = "top-down view from above";
-Viewpoint4.orientation = [1,0,0,-1.570796];
-Viewpoint4.position = [0,100,0];
+Viewpoint4.orientation = new SFRotation(new float[1,0,0,-1.570796]);
+Viewpoint4.position = new SFVec3f(new float[0,100,0]);
 ViewpointGroup2.children[1] = Viewpoint4;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ViewpointGroup2;
 
 NavigationInfo5 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo5.type = ["EXAMINE","FLY","ANY"];
+NavigationInfo5.type = new MFString(new java.lang.String["EXAMINE","FLY","ANY"]);
 browser.currentScene.children[1] = NavigationInfo5;
 
 WorldInfo6 = browser.currentScene.createNode("WorldInfo");
@@ -43,7 +43,7 @@ browser.currentScene.children[4] = WorldInfo8;
 MetadataString9 = browser.currentScene.createNode("MetadataString");
 MetadataString9.name = "test";
 MetadataString9.DEF = "scene.addChildMetadata";
-MetadataString9.value = ["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"];
+MetadataString9.value = new MFString(new java.lang.String["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]);
 browser.currentScene.metadata[5] = MetadataString9;
 
 LayerSet10 = browser.currentScene.createNode("LayerSet");
@@ -52,22 +52,22 @@ browser.currentScene.layerSet[6] = LayerSet10;
 
 Transform11 = browser.currentScene.createNode("Transform");
 Transform11.DEF = "LogoGeometryTransform";
-Transform11.translation = [0,1.5,0];
+Transform11.translation = new SFVec3f(new float[0,1.5,0]);
 Anchor12 = browser.currentScene.createNode("Anchor");
 Anchor12.description = "select for X3D Java SAI Library (X3DJSAIL) description";
-Anchor12.url = ["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"];
+Anchor12.url = new MFString(new java.lang.String["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"]);
 Shape13 = browser.currentScene.createNode("Shape");
 Shape13.DEF = "BoxShape";
 Appearance14 = browser.currentScene.createNode("Appearance");
 Material15 = browser.currentScene.createNode("Material");
 Material15.DEF = "GreenMaterial";
-Material15.diffuseColor = [0,1,1];
-Material15.emissiveColor = [0.8,0,0];
+Material15.diffuseColor = new SFColor(new float[0,1,1]);
+Material15.emissiveColor = new SFColor(new float[0.8,0,0]);
 Material15.transparency = 0.1;
 Appearance14.material = Material15;
 
 ImageTexture16 = browser.currentScene.createNode("ImageTexture");
-ImageTexture16.url = ["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"];
+ImageTexture16.url = new MFString(new java.lang.String["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]);
 Appearance14.texture = ImageTexture16;
 
 Shape13.appearance = Appearance14;
@@ -77,11 +77,11 @@ Box17.DEF = "test-NMTOKEN_regex.0123456789";
 Box17.CssClass = "untextured";
 Shape13.geometry = Box17;
 
-Anchor12.children = [];
+Anchor12.children = new MFNode();
 
 Anchor12.children[0] = Shape13;
 
-Transform11.children = [];
+Transform11.children = new MFNode();
 
 Transform11.children[0] = Anchor12;
 
@@ -91,16 +91,16 @@ Shape18 = browser.currentScene.createNode("Shape");
 Shape18.DEF = "LineShape";
 Appearance19 = browser.currentScene.createNode("Appearance");
 Material20 = browser.currentScene.createNode("Material");
-Material20.emissiveColor = [0.6,0.19607843,0.8];
+Material20.emissiveColor = new SFColor(new float[0.6,0.19607843,0.8]);
 Appearance19.material = Material20;
 
 Shape18.appearance = Appearance19;
 
 IndexedLineSet21 = browser.currentScene.createNode("IndexedLineSet");
-IndexedLineSet21.coordIndex = [0,1,2,3,4,0];
+IndexedLineSet21.coordIndex = new MFInt32(new int[0,1,2,3,4,0]);
 //Coordinate 3-tuple point count: 6
 Coordinate22 = browser.currentScene.createNode("Coordinate");
-Coordinate22.point = [0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0];
+Coordinate22.point = new MFVec3f(new float[0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0]);
 IndexedLineSet21.coord = Coordinate22;
 
 Shape18.geometry = IndexedLineSet21;
@@ -109,8 +109,8 @@ browser.currentScene.children[8] = Shape18;
 
 PositionInterpolator23 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator23.DEF = "BoxPathAnimator";
-PositionInterpolator23.key = [0,0.125,0.375,0.625,0.875,1];
-PositionInterpolator23.keyValue = [0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0];
+PositionInterpolator23.key = new MFFloat(new float[0,0.125,0.375,0.625,0.875,1]);
+PositionInterpolator23.keyValue = new MFVec3f(new float[0,1.5,0,2,1.5,0,2,1.5,-2,-2,1.5,-2,-2,1.5,0,0,1.5,0]);
 browser.currentScene.children[9] = PositionInterpolator23;
 
 TimeSensor24 = browser.currentScene.createNode("TimeSensor");
@@ -135,7 +135,7 @@ browser.currentScene.children[12] = ROUTE26;
 
 Transform27 = browser.currentScene.createNode("Transform");
 Transform27.DEF = "TextTransform";
-Transform27.translation = [0,-1.5,0];
+Transform27.translation = new SFVec3f(new float[0,-1.5,0]);
 Shape28 = browser.currentScene.createNode("Shape");
 Appearance29 = browser.currentScene.createNode("Appearance");
 Material30 = browser.currentScene.createNode("Material");
@@ -145,32 +145,32 @@ Appearance29.material = Material30;
 Shape28.appearance = Appearance29;
 
 Text31 = browser.currentScene.createNode("Text");
-Text31.string = ["X3D Java","SAI Library","X3DJSAIL"];
+Text31.string = new MFString(new java.lang.String["X3D Java","SAI Library","X3DJSAIL"]);
 //Comment example A, plain quotation marks: He said, \"Immel did it!\"
 //Comment example B, XML character entities: He said, &quot;Immel did it!&quot;
 MetadataSet32 = browser.currentScene.createNode("MetadataSet");
 MetadataSet32.name = "EscapedQuotationMarksMetadataSet";
 MetadataString33 = browser.currentScene.createNode("MetadataString");
 MetadataString33.name = "quotesTestC";
-MetadataString33.value = ["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""];
-MetadataSet32.value = [];
+MetadataString33.value = new MFString(new java.lang.String["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]);
+MetadataSet32.value = new MFNode();
 
 MetadataSet32.value[0] = MetadataString33;
 
 MetadataString34 = browser.currentScene.createNode("MetadataString");
 MetadataString34.name = "extraChildTest";
-MetadataString34.value = ["checks MetadataSetObject addValue() method"];
+MetadataString34.value = new MFString(new java.lang.String["checks MetadataSetObject addValue() method"]);
 MetadataSet32.value[1] = MetadataString34;
 
 Text31.metadata = MetadataSet32;
 
 FontStyle35 = browser.currentScene.createNode("FontStyle");
-FontStyle35.justify = ["MIDDLE","MIDDLE"];
+FontStyle35.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text31.fontStyle = FontStyle35;
 
 Shape28.geometry = Text31;
 
-Transform27.children = [];
+Transform27.children = new MFNode();
 
 Transform27.children[0] = Shape28;
 
@@ -183,7 +183,7 @@ Shape37.DEF = "ProxyShape";
 //alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
 //reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
 Text38 = browser.currentScene.createNode("Text");
-Text38.string = ["One, Two, Text","","He said, \"Immel did it!\" \"\""];
+Text38.string = new MFString(new java.lang.String["One, Two, Text","","He said, \"Immel did it!\" \"\""]);
 Shape37.geometry = Text38;
 
 Collision36.proxy = Shape37;
@@ -198,8 +198,8 @@ browser.currentScene.children[13] = Transform27;
 //repeatedly spin 180 degrees as a readable special effect
 OrientationInterpolator39 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator39.DEF = "SpinInterpolator";
-OrientationInterpolator39.key = [0,0.5,1];
-OrientationInterpolator39.keyValue = [0,1,0,4.712389,0,1,0,0,0,1,0,1.5707964];
+OrientationInterpolator39.key = new MFFloat(new float[0,0.5,1]);
+OrientationInterpolator39.keyValue = new MFRotation(new float[0,1,0,4.712389,0,1,0,0,0,1,0,1.5707964]);
 browser.currentScene.children[14] = OrientationInterpolator39;
 
 TimeSensor40 = browser.currentScene.createNode("TimeSensor");
@@ -226,7 +226,7 @@ Group43 = browser.currentScene.createNode("Group");
 Group43.DEF = "BackgroundGroup";
 Background44 = browser.currentScene.createNode("Background");
 Background44.DEF = "GradualBackground";
-Group43.children = [];
+Group43.children = new MFNode();
 
 Group43.children[0] = Background44;
 
@@ -236,7 +236,7 @@ field46 = browser.currentScene.createNode("field");
 field46.name = "colorInput";
 field46.accessType = "inputOnly";
 field46.type = "SFColor";
-Script45.field = [];
+Script45.field = new MFNode();
 
 Script45.field[0] = field46;
 
@@ -258,8 +258,8 @@ Group43.children[1] = Script45;
 
 ColorInterpolator48 = browser.currentScene.createNode("ColorInterpolator");
 ColorInterpolator48.DEF = "ColorAnimator";
-ColorInterpolator48.key = [0,0.5,1];
-ColorInterpolator48.keyValue = [0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1];
+ColorInterpolator48.key = new MFFloat(new float[0,0.5,1]);
+ColorInterpolator48.keyValue = new MFColor(new float[0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1]);
 //AZURE to INDIGO and back again
 Group43.children[2] = ColorInterpolator48;
 
@@ -302,7 +302,7 @@ field55.accessType = "inputOutput";
 field55.appinfo = "tooltip for descriptionField";
 field55.type = "SFString";
 field55.value = "ArtDeco01Material prototype is a Material node";
-ProtoInterface54.field = [];
+ProtoInterface54.field = new MFNode();
 
 ProtoInterface54.field[0] = field55;
 
@@ -319,10 +319,10 @@ ProtoBody57 = browser.currentScene.createNode("ProtoBody");
 //Initial node of ProtoBody determines prototype node type
 Material58 = browser.currentScene.createNode("Material");
 Material58.ambientIntensity = 0.25;
-Material58.diffuseColor = [0.282435,0.085159,0.134462];
+Material58.diffuseColor = new SFColor(new float[0.282435,0.085159,0.134462]);
 Material58.shininess = 0.127273;
-Material58.specularColor = [0.276305,0.11431,0.139857];
-ProtoBody57.children = [];
+Material58.specularColor = new SFColor(new float[0.276305,0.11431,0.139857]);
+ProtoBody57.children = new MFNode();
 
 ProtoBody57.children[0] = Material58;
 
@@ -334,7 +334,7 @@ IS60 = browser.currentScene.createNode("IS");
 connect61 = browser.currentScene.createNode("connect");
 connect61.nodeField = "description";
 connect61.protoField = "description";
-IS60.connect = [];
+IS60.connect = new MFNode();
 
 IS60.connect[0] = connect61;
 
@@ -354,14 +354,14 @@ browser.currentScene.children[19] = ProtoDeclare53;
 ExternProtoDeclare63 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare63.name = "ArtDeco02Material";
 ExternProtoDeclare63.appinfo = "this is a different Material node";
-ExternProtoDeclare63.url = ["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"];
+ExternProtoDeclare63.url = new MFString(new java.lang.String["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]);
 //[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"
 field64 = browser.currentScene.createNode("field");
 field64.name = "description";
 field64.accessType = "inputOutput";
 field64.appinfo = "tooltip for descriptionField";
 field64.type = "SFString";
-ExternProtoDeclare63.field = [];
+ExternProtoDeclare63.field = new MFNode();
 
 ExternProtoDeclare63.field[0] = field64;
 
@@ -379,13 +379,13 @@ ProtoInstance67.name = "ArtDeco01Material";
 fieldValue68 = browser.currentScene.createNode("fieldValue");
 fieldValue68.name = "description";
 fieldValue68.value = "ArtDeco01Material can substitute for a Material node";
-ProtoInstance67.fieldValue = [];
+ProtoInstance67.fieldValue = new MFNode();
 
 ProtoInstance67.fieldValue[0] = fieldValue68;
 
-Appearance66.ers = [];
+Appearance66.shaders = new MFNode();
 
-Appearance66.ers[0] = ProtoInstance67;
+Appearance66.shaders[0] = ProtoInstance67;
 
 Shape65.appearance = Appearance66;
 
@@ -407,13 +407,13 @@ ProtoInstance72.DEF = "ArtDeco02MaterialDEF";
 fieldValue73 = browser.currentScene.createNode("fieldValue");
 fieldValue73.name = "description";
 fieldValue73.value = "ArtDeco02Material can substitute for another Material node";
-ProtoInstance72.fieldValue = [];
+ProtoInstance72.fieldValue = new MFNode();
 
 ProtoInstance72.fieldValue[0] = fieldValue73;
 
-Appearance71.ers = [];
+Appearance71.shaders = new MFNode();
 
-Appearance71.ers[0] = ProtoInstance72;
+Appearance71.shaders[0] = ProtoInstance72;
 
 Shape70.appearance = Appearance71;
 
@@ -431,9 +431,9 @@ Appearance76.DEF = "TestAppearance3";
 //ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE.
 ProtoInstance77 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance77.USE = "ArtDeco02MaterialDEF";
-Appearance76.ers = [];
+Appearance76.shaders = new MFNode();
 
-Appearance76.ers[0] = ProtoInstance77;
+Appearance76.shaders[0] = ProtoInstance77;
 
 Shape75.appearance = Appearance76;
 
@@ -446,7 +446,7 @@ browser.currentScene.children[23] = Shape75;
 
 Inline79 = browser.currentScene.createNode("Inline");
 Inline79.DEF = "inlineSceneDef";
-Inline79.url = ["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"];
+Inline79.url = new MFString(new java.lang.String["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]);
 browser.currentScene.children[24] = Inline79;
 
 IMPORT80 = browser.currentScene.createNode("IMPORT");
@@ -470,7 +470,7 @@ field84.name = "enabled";
 field84.accessType = "inputOutput";
 field84.type = "SFBool";
 field84.value = "true";
-ProtoInterface83.field = [];
+ProtoInterface83.field = new MFNode();
 
 ProtoInterface83.field[0] = field84;
 
@@ -525,7 +525,7 @@ IS93 = browser.currentScene.createNode("IS");
 connect94 = browser.currentScene.createNode("connect");
 connect94.nodeField = "diffuseColor";
 connect94.protoField = "diffuseColor";
-IS93.connect = [];
+IS93.connect = new MFNode();
 
 IS93.connect[0] = connect94;
 
@@ -556,7 +556,7 @@ IS93.connect[5] = connect99;
 
 Material92.iS = IS93;
 
-ProtoBody91.children = [];
+ProtoBody91.children = new MFNode();
 
 ProtoBody91.children[0] = Material92;
 
@@ -567,7 +567,7 @@ field101 = browser.currentScene.createNode("field");
 field101.name = "enabled";
 field101.accessType = "inputOutput";
 field101.type = "SFBool";
-Script100.field = [];
+Script100.field = new MFNode();
 
 Script100.field[0] = field101;
 
@@ -593,7 +593,7 @@ IS105 = browser.currentScene.createNode("IS");
 connect106 = browser.currentScene.createNode("connect");
 connect106.nodeField = "enabled";
 connect106.protoField = "enabled";
-IS105.connect = [];
+IS105.connect = new MFNode();
 
 IS105.connect[0] = connect106;
 
@@ -641,7 +641,7 @@ Shape109 = browser.currentScene.createNode("Shape");
 MetadataString110 = browser.currentScene.createNode("MetadataString");
 MetadataString110.name = "findThisNameValue";
 MetadataString110.DEF = "FindableMetadataStringTest";
-MetadataString110.value = ["test case"];
+MetadataString110.value = new MFString(new java.lang.String["test case"]);
 Shape109.metadata = MetadataString110;
 
 Appearance111 = browser.currentScene.createNode("Appearance");
@@ -650,9 +650,9 @@ Appearance111.DEF = "DeclarativeAppearanceExample";
 ProtoInstance112 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance112.name = "MaterialModulator";
 ProtoInstance112.DEF = "MyMaterialModulator";
-Appearance111.ers = [];
+Appearance111.shaders = new MFNode();
 
-Appearance111.ers[0] = ProtoInstance112;
+Appearance111.shaders[0] = ProtoInstance112;
 
 Shape109.appearance = Appearance111;
 
@@ -662,7 +662,7 @@ Cone113.bottomRadius = 0.05;
 Cone113.height = 0.1;
 Shape109.geometry = Cone113;
 
-Group108.children = [];
+Group108.children = new MFNode();
 
 Group108.children[0] = Shape109;
 
@@ -688,22 +688,22 @@ Group114.DEF = "TestFieldObjectsGroup";
 browser.currentScene.children[29] = Group114;
 
 Sound115 = browser.currentScene.createNode("Sound");
-Sound115.location = [0,1.6,0];
+Sound115.location = new SFVec3f(new float[0,1.6,0]);
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
 AudioClip116 = browser.currentScene.createNode("AudioClip");
 AudioClip116.description = "chimes";
-AudioClip116.url = ["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"];
+AudioClip116.url = new MFString(new java.lang.String["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]);
 //Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
 Sound115.source = AudioClip116;
 
 browser.currentScene.children[30] = Sound115;
 
 Sound117 = browser.currentScene.createNode("Sound");
-Sound117.location = [0,1.6,0];
+Sound117.location = new SFVec3f(new float[0,1.6,0]);
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
 MovieTexture118 = browser.currentScene.createNode("MovieTexture");
 MovieTexture118.description = "mpgsys.mpg from ConformanceNist suite";
-MovieTexture118.url = ["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"];
+MovieTexture118.url = new MFString(new java.lang.String["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]);
 //Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
 //Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\"
 Sound117.source = MovieTexture118;
@@ -743,7 +743,7 @@ field126 = browser.currentScene.createNode("field");
 field126.name = "description";
 field126.accessType = "initializeOnly";
 field126.type = "SFString";
-ProtoInterface125.field = [];
+ProtoInterface125.field = new MFNode();
 
 ProtoInterface125.field[0] = field126;
 
@@ -751,13 +751,13 @@ ProtoDeclare124.protoInterface = ProtoInterface125;
 
 ProtoBody127 = browser.currentScene.createNode("ProtoBody");
 WorldInfo128 = browser.currentScene.createNode("WorldInfo");
-ProtoBody127.children = [];
+ProtoBody127.children = new MFNode();
 
 ProtoBody127.children[0] = WorldInfo128;
 
 ProtoDeclare124.protoBody = ProtoBody127;
 
-Group123.children = [];
+Group123.children = new MFNode();
 
 Group123.children[0] = ProtoDeclare124;
 
@@ -767,7 +767,7 @@ ProtoInstance129.DEF = "Proto1";
 fieldValue130 = browser.currentScene.createNode("fieldValue");
 fieldValue130.name = "description";
 fieldValue130.value = "testing 1 2 3";
-ProtoInstance129.fieldValue = [];
+ProtoInstance129.fieldValue = new MFNode();
 
 ProtoInstance129.fieldValue[0] = fieldValue130;
 
@@ -795,7 +795,7 @@ ProtoDeclare134 = browser.currentScene.createNode("ProtoDeclare");
 ProtoDeclare134.name = "ShaderProto";
 ProtoBody135 = browser.currentScene.createNode("ProtoBody");
 ProgramShader136 = browser.currentScene.createNode("ProgramShader");
-ProtoBody135.children = [];
+ProtoBody135.children = new MFNode();
 
 ProtoBody135.children[0] = ProgramShader136;
 
@@ -812,11 +812,11 @@ ProgramShader139.DEF = "TestShader1";
 ShaderProgram140 = browser.currentScene.createNode("ShaderProgram");
 ShaderProgram140.DEF = "TestShader2";
 ShaderProgram140.type = "VERTEX";
-ProgramShader139.programs = [];
+ProgramShader139.programs = new MFNode();
 
 ProgramShader139.programs[0] = ShaderProgram140;
 
-Appearance138.shaders = [];
+Appearance138.shaders = new MFNode();
 
 Appearance138.shaders[0] = ProgramShader139;
 
@@ -830,7 +830,7 @@ ComposedShader142.DEF = "TestShader4";
 ShaderPart143 = browser.currentScene.createNode("ShaderPart");
 ShaderPart143.DEF = "TestShader5";
 ShaderPart143.type = "VERTEX";
-ComposedShader142.parts = [];
+ComposedShader142.parts = new MFNode();
 
 ComposedShader142.parts[0] = ShaderPart143;
 
@@ -846,19 +846,19 @@ CADLayer145 = browser.currentScene.createNode("CADLayer");
 CADAssembly146 = browser.currentScene.createNode("CADAssembly");
 CADPart147 = browser.currentScene.createNode("CADPart");
 CADFace148 = browser.currentScene.createNode("CADFace");
-CADPart147.children = [];
+CADPart147.children = new MFNode();
 
 CADPart147.children[0] = CADFace148;
 
-CADAssembly146.children = [];
+CADAssembly146.children = new MFNode();
 
 CADAssembly146.children[0] = CADPart147;
 
-CADLayer145.children = [];
+CADLayer145.children = new MFNode();
 
 CADLayer145.children[0] = CADAssembly146;
 
-Transform144.children = [];
+Transform144.children = new MFNode();
 
 Transform144.children[0] = CADLayer145;
 
@@ -876,7 +876,7 @@ Transform144.children[4] = TransmitterPdu152;
 
 DISEntityManager153 = browser.currentScene.createNode("DISEntityManager");
 DISEntityTypeMapping154 = browser.currentScene.createNode("DISEntityTypeMapping");
-DISEntityManager153.mapping = [];
+DISEntityManager153.mapping = new MFNode();
 
 DISEntityManager153.mapping[0] = DISEntityTypeMapping154;
 

@@ -5,7 +5,7 @@ X3D0.version = "3.3";
 Transform2 = browser.currentScene.createNode("Transform");
 Shape3 = browser.currentScene.createNode("Shape");
 Text4 = browser.currentScene.createNode("Text");
-Text4.string = ["Node\"\"\""];
+Text4.string = new MFString(new java.lang.String["Node\"\"\""]);
 FontStyle5 = browser.currentScene.createNode("FontStyle");
 Text4.fontStyle = FontStyle5;
 
@@ -17,13 +17,13 @@ Appearance6.material = Material7;
 
 Shape3.appearance = Appearance6;
 
-Transform2.children = [];
+Transform2.children = new MFNode();
 
 Transform2.children[0] = Shape3;
 
 Shape8 = browser.currentScene.createNode("Shape");
 Text9 = browser.currentScene.createNode("Text");
-Text9.string = ["Node2","\\\\","\\\\\\\\","Node2"];
+Text9.string = new MFString(new java.lang.String["Node2","\\\\","\\\\\\\\","Node2"]);
 FontStyle10 = browser.currentScene.createNode("FontStyle");
 Text9.fontStyle = FontStyle10;
 
@@ -39,7 +39,7 @@ Transform2.children[1] = Shape8;
 
 Shape13 = browser.currentScene.createNode("Shape");
 Text14 = browser.currentScene.createNode("Text");
-Text14.string = ["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""];
+Text14.string = new MFString(new java.lang.String["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""]);
 FontStyle15 = browser.currentScene.createNode("FontStyle");
 Text14.fontStyle = FontStyle15;
 
@@ -59,7 +59,7 @@ field19.name = "frontUrls";
 field19.type = "MFString";
 field19.accessType = "initializeOnly";
 field19.value = "\"rnl_front.png\" \"uffizi_front.png\"";
-Script18.field = [];
+Script18.field = new MFNode();
 
 Script18.field[0] = field19;
 
@@ -68,7 +68,7 @@ Script18.setSourceCode(`ecmascript:\n"+
 "			    var me = '\"1\" \"\"2\" \"\\n3\"';`)
 Transform2.children[3] = Script18;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Transform2;
 

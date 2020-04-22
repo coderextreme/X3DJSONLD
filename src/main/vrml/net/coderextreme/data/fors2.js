@@ -10,7 +10,7 @@ field4.name = "position";
 field4.accessType = "inputOutput";
 field4.type = "SFVec3f";
 field4.value = "0 0 0";
-ProtoInterface3.field = [];
+ProtoInterface3.field = new MFNode();
 
 ProtoInterface3.field[0] = field4;
 
@@ -23,7 +23,7 @@ IS7 = browser.currentScene.createNode("IS");
 connect8 = browser.currentScene.createNode("connect");
 connect8.nodeField = "translation";
 connect8.protoField = "position";
-IS7.connect = [];
+IS7.connect = new MFNode();
 
 IS7.connect[0] = connect8;
 
@@ -40,23 +40,23 @@ Appearance11 = browser.currentScene.createNode("Appearance");
 //comment before Material
 //comment after Material
 Material12 = browser.currentScene.createNode("Material");
-Material12.diffuseColor = [1,0,0];
+Material12.diffuseColor = new SFColor(new float[1,0,0]);
 Appearance11.material = Material12;
 
 Shape9.appearance = Appearance11;
 
-Transform6.children = [];
+Transform6.children = new MFNode();
 
 Transform6.children[0] = Shape9;
 
-ProtoBody5.children = [];
+ProtoBody5.children = new MFNode();
 
 ProtoBody5.children[0] = Transform6;
 
 PositionInterpolator13 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator13.DEF = "NodePosition";
-PositionInterpolator13.key = [0,1];
-PositionInterpolator13.keyValue = [0,0,0,0,5,0];
+PositionInterpolator13.key = new MFFloat(new float[0,1]);
+PositionInterpolator13.keyValue = new MFVec3f(new float[0,0,0,0,5,0]);
 ProtoBody5.children[1] = PositionInterpolator13;
 
 Script14 = browser.currentScene.createNode("Script");
@@ -66,7 +66,7 @@ field15.name = "translation";
 field15.accessType = "inputOutput";
 field15.type = "SFVec3f";
 field15.value = "50 50 0";
-Script14.field = [];
+Script14.field = new MFNode();
 
 Script14.field[0] = field15;
 
@@ -135,7 +135,7 @@ ProtoBody5.children[7] = ROUTE23;
 
 ProtoDeclare2.protoBody = ProtoBody5;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
@@ -146,7 +146,7 @@ field26 = browser.currentScene.createNode("field");
 field26.name = "positionA";
 field26.accessType = "inputOnly";
 field26.type = "SFVec3f";
-ProtoInterface25.field = [];
+ProtoInterface25.field = new MFNode();
 
 ProtoInterface25.field[0] = field26;
 
@@ -163,18 +163,18 @@ Shape29 = browser.currentScene.createNode("Shape");
 Extrusion30 = browser.currentScene.createNode("Extrusion");
 Extrusion30.DEF = "extrusion";
 Extrusion30.creaseAngle = 0.785;
-Extrusion30.crossSection = [1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0];
-Extrusion30.spine = [0,-50,0,0,0,0,0,50,0];
+Extrusion30.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
+Extrusion30.spine = new MFVec3f(new float[0,-50,0,0,0,0,0,50,0]);
 Shape29.geometry = Extrusion30;
 
 Appearance31 = browser.currentScene.createNode("Appearance");
 Material32 = browser.currentScene.createNode("Material");
-Material32.diffuseColor = [0,1,0];
+Material32.diffuseColor = new SFColor(new float[0,1,0]);
 Appearance31.material = Material32;
 
 Shape29.appearance = Appearance31;
 
-ProtoBody28.children = [];
+ProtoBody28.children = new MFNode();
 
 ProtoBody28.children[0] = Shape29;
 
@@ -185,7 +185,7 @@ field34.name = "spine";
 field34.accessType = "inputOutput";
 field34.type = "MFVec3f";
 field34.value = "0 -50 0 0 0 0 0 50 0";
-Script33.field = [];
+Script33.field = new MFNode();
 
 Script33.field[0] = field34;
 
@@ -205,7 +205,7 @@ IS37 = browser.currentScene.createNode("IS");
 connect38 = browser.currentScene.createNode("connect");
 connect38.nodeField = "set_endA";
 connect38.protoField = "positionA";
-IS37.connect = [];
+IS37.connect = new MFNode();
 
 IS37.connect[0] = connect38;
 
@@ -253,18 +253,18 @@ ProtoDeclare24.protoBody = ProtoBody28;
 browser.currentScene.children[1] = ProtoDeclare24;
 
 Transform41 = browser.currentScene.createNode("Transform");
-Transform41.scale = [0.1,0.1,0.1];
+Transform41.scale = new SFVec3f(new float[0.1,0.1,0.1]);
 ProtoInstance42 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance42.name = "node";
 ProtoInstance42.DEF = "nodeA";
 fieldValue43 = browser.currentScene.createNode("fieldValue");
 fieldValue43.name = "position";
 fieldValue43.value = "-50 -50 -50";
-ProtoInstance42.fieldValue = [];
+ProtoInstance42.fieldValue = new MFNode();
 
 ProtoInstance42.fieldValue[0] = fieldValue43;
 
-Transform41.children = [];
+Transform41.children = new MFNode();
 
 Transform41.children[0] = ProtoInstance42;
 
@@ -274,7 +274,7 @@ ProtoInstance44.DEF = "nodeB";
 fieldValue45 = browser.currentScene.createNode("fieldValue");
 fieldValue45.name = "position";
 fieldValue45.value = "50 50 50";
-ProtoInstance44.fieldValue = [];
+ProtoInstance44.fieldValue = new MFNode();
 
 ProtoInstance44.fieldValue[0] = fieldValue45;
 
@@ -286,7 +286,7 @@ ProtoInstance46.DEF = "linkA";
 fieldValue47 = browser.currentScene.createNode("fieldValue");
 fieldValue47.name = "positionA";
 fieldValue47.value = "0 0 0";
-ProtoInstance46.fieldValue = [];
+ProtoInstance46.fieldValue = new MFNode();
 
 ProtoInstance46.fieldValue[0] = fieldValue47;
 

@@ -3,14 +3,14 @@ var X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 Viewpoint2 = browser.currentScene.createNode("Viewpoint");
-Viewpoint2.position = [0,0,5];
+Viewpoint2.position = new SFVec3f(new float[0,0,5]);
 Viewpoint2.description = "Only Viewpoint";
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Viewpoint2;
 
 Background3 = browser.currentScene.createNode("Background");
-Background3.skyColor = [0.4,0.4,0.4];
+Background3.skyColor = new MFColor(new float[0.4,0.4,0.4]);
 browser.currentScene.children[1] = Background3;
 
 Transform4 = browser.currentScene.createNode("Transform");
@@ -18,7 +18,7 @@ Transform4.DEF = "G1";
 Shape5 = browser.currentScene.createNode("Shape");
 Appearance6 = browser.currentScene.createNode("Appearance");
 Material7 = browser.currentScene.createNode("Material");
-Material7.diffuseColor = [0.7,0.2,0.2];
+Material7.diffuseColor = new SFColor(new float[0.7,0.2,0.2]);
 Appearance6.material = Material7;
 
 Shape5.appearance = Appearance6;
@@ -27,7 +27,7 @@ Sphere8 = browser.currentScene.createNode("Sphere");
 Sphere8.radius = 0.1;
 Shape5.geometry = Sphere8;
 
-Transform4.children = [];
+Transform4.children = new MFNode();
 
 Transform4.children[0] = Shape5;
 
@@ -47,11 +47,11 @@ browser.currentScene.children[2] = Transform4;
 
 Transform11 = browser.currentScene.createNode("Transform");
 Transform11.DEF = "G2";
-Transform11.translation = [1,-1,0.01];
+Transform11.translation = new SFVec3f(new float[1,-1,0.01]);
 Shape12 = browser.currentScene.createNode("Shape");
 Appearance13 = browser.currentScene.createNode("Appearance");
 Material14 = browser.currentScene.createNode("Material");
-Material14.diffuseColor = [0.2,0.7,0.2];
+Material14.diffuseColor = new SFColor(new float[0.2,0.7,0.2]);
 Appearance13.material = Material14;
 
 Shape12.appearance = Appearance13;
@@ -60,13 +60,13 @@ Sphere15 = browser.currentScene.createNode("Sphere");
 Sphere15.radius = 0.1;
 Shape12.geometry = Sphere15;
 
-Transform11.children = [];
+Transform11.children = new MFNode();
 
 Transform11.children[0] = Shape12;
 
 PlaneSensor16 = browser.currentScene.createNode("PlaneSensor");
 PlaneSensor16.description = "Grab to move";
-PlaneSensor16.offset = [1,-1,0.01];
+PlaneSensor16.offset = new SFVec3f(new float[1,-1,0.01]);
 PlaneSensor16.DEF = "PS2";
 Transform11.children[1] = PlaneSensor16;
 
@@ -81,11 +81,11 @@ browser.currentScene.children[3] = Transform11;
 
 Transform18 = browser.currentScene.createNode("Transform");
 Transform18.DEF = "G3";
-Transform18.translation = [1,1,0.01];
+Transform18.translation = new SFVec3f(new float[1,1,0.01]);
 Shape19 = browser.currentScene.createNode("Shape");
 Appearance20 = browser.currentScene.createNode("Appearance");
 Material21 = browser.currentScene.createNode("Material");
-Material21.diffuseColor = [0.2,0.7,0.2];
+Material21.diffuseColor = new SFColor(new float[0.2,0.7,0.2]);
 Appearance20.material = Material21;
 
 Shape19.appearance = Appearance20;
@@ -94,13 +94,13 @@ Sphere22 = browser.currentScene.createNode("Sphere");
 Sphere22.radius = 0.1;
 Shape19.geometry = Sphere22;
 
-Transform18.children = [];
+Transform18.children = new MFNode();
 
 Transform18.children[0] = Shape19;
 
 PlaneSensor23 = browser.currentScene.createNode("PlaneSensor");
 PlaneSensor23.description = "Grab to move";
-PlaneSensor23.offset = [1,1,0.01];
+PlaneSensor23.offset = new SFVec3f(new float[1,1,0.01]);
 PlaneSensor23.DEF = "PS3";
 Transform18.children[1] = PlaneSensor23;
 
@@ -115,11 +115,11 @@ browser.currentScene.children[4] = Transform18;
 
 Transform25 = browser.currentScene.createNode("Transform");
 Transform25.DEF = "G4";
-Transform25.translation = [-1,1,0.01];
+Transform25.translation = new SFVec3f(new float[-1,1,0.01]);
 Shape26 = browser.currentScene.createNode("Shape");
 Appearance27 = browser.currentScene.createNode("Appearance");
 Material28 = browser.currentScene.createNode("Material");
-Material28.diffuseColor = [0.2,0.7,0.2];
+Material28.diffuseColor = new SFColor(new float[0.2,0.7,0.2]);
 Appearance27.material = Material28;
 
 Shape26.appearance = Appearance27;
@@ -128,13 +128,13 @@ Sphere29 = browser.currentScene.createNode("Sphere");
 Sphere29.radius = 0.1;
 Shape26.geometry = Sphere29;
 
-Transform25.children = [];
+Transform25.children = new MFNode();
 
 Transform25.children[0] = Shape26;
 
 PlaneSensor30 = browser.currentScene.createNode("PlaneSensor");
 PlaneSensor30.description = "Grab to move";
-PlaneSensor30.offset = [-1,1,0.01];
+PlaneSensor30.offset = new SFVec3f(new float[-1,1,0.01]);
 PlaneSensor30.DEF = "PS4";
 Transform25.children[1] = PlaneSensor30;
 
@@ -154,7 +154,7 @@ Transform33.DEF = "rotscaleC1";
 Shape34 = browser.currentScene.createNode("Shape");
 Appearance35 = browser.currentScene.createNode("Appearance");
 Material36 = browser.currentScene.createNode("Material");
-Material36.diffuseColor = [0.2,0.7,0.7];
+Material36.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);
 Material36.transparency = 0.5;
 Appearance35.material = Material36;
 
@@ -164,11 +164,11 @@ Cylinder37 = browser.currentScene.createNode("Cylinder");
 Cylinder37.radius = 0.05;
 Shape34.geometry = Cylinder37;
 
-Transform33.children = [];
+Transform33.children = new MFNode();
 
 Transform33.children[0] = Shape34;
 
-Transform32.children = [];
+Transform32.children = new MFNode();
 
 Transform32.children[0] = Transform33;
 
@@ -181,7 +181,7 @@ Transform39.DEF = "rotscaleC2";
 Shape40 = browser.currentScene.createNode("Shape");
 Appearance41 = browser.currentScene.createNode("Appearance");
 Material42 = browser.currentScene.createNode("Material");
-Material42.diffuseColor = [0.2,0.7,0.7];
+Material42.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);
 Material42.transparency = 0.5;
 Appearance41.material = Material42;
 
@@ -191,11 +191,11 @@ Cylinder43 = browser.currentScene.createNode("Cylinder");
 Cylinder43.radius = 0.05;
 Shape40.geometry = Cylinder43;
 
-Transform39.children = [];
+Transform39.children = new MFNode();
 
 Transform39.children[0] = Shape40;
 
-Transform38.children = [];
+Transform38.children = new MFNode();
 
 Transform38.children[0] = Transform39;
 
@@ -208,7 +208,7 @@ Transform45.DEF = "rotscaleC3";
 Shape46 = browser.currentScene.createNode("Shape");
 Appearance47 = browser.currentScene.createNode("Appearance");
 Material48 = browser.currentScene.createNode("Material");
-Material48.diffuseColor = [0.2,0.7,0.7];
+Material48.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);
 Material48.transparency = 0.5;
 Appearance47.material = Material48;
 
@@ -218,11 +218,11 @@ Cylinder49 = browser.currentScene.createNode("Cylinder");
 Cylinder49.radius = 0.05;
 Shape46.geometry = Cylinder49;
 
-Transform45.children = [];
+Transform45.children = new MFNode();
 
 Transform45.children[0] = Shape46;
 
-Transform44.children = [];
+Transform44.children = new MFNode();
 
 Transform44.children[0] = Transform45;
 
@@ -235,7 +235,7 @@ field52 = browser.currentScene.createNode("field");
 field52.name = "startnode";
 field52.accessType = "initializeOnly";
 field52.type = "SFNode";
-ProtoInterface51.field = [];
+ProtoInterface51.field = new MFNode();
 
 ProtoInterface51.field[0] = field52;
 
@@ -278,7 +278,7 @@ field60 = browser.currentScene.createNode("field");
 field60.name = "startnode";
 field60.accessType = "initializeOnly";
 field60.type = "SFNode";
-Script59.field = [];
+Script59.field = new MFNode();
 
 Script59.field[0] = field60;
 
@@ -316,7 +316,7 @@ IS66 = browser.currentScene.createNode("IS");
 connect67 = browser.currentScene.createNode("connect");
 connect67.nodeField = "startnode";
 connect67.protoField = "startnode";
-IS66.connect = [];
+IS66.connect = new MFNode();
 
 IS66.connect[0] = connect67;
 
@@ -387,7 +387,7 @@ Script59.setSourceCode(`ecmascript:\n"+
 "        function set_endpoint(val,t){\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
 "        }`)
-ProtoBody58.children = [];
+ProtoBody58.children = new MFNode();
 
 ProtoBody58.children[0] = Script59;
 
@@ -402,11 +402,11 @@ fieldValue74 = browser.currentScene.createNode("fieldValue");
 fieldValue74.name = "startnode";
 Transform75 = browser.currentScene.createNode("Transform");
 Transform75.USE = "G1";
-fieldValue74.children = [];
+fieldValue74.children = new MFNode();
 
 fieldValue74.children[0] = Transform75;
 
-ProtoInstance73.fieldValue = [];
+ProtoInstance73.fieldValue = new MFNode();
 
 ProtoInstance73.fieldValue[0] = fieldValue74;
 
@@ -414,7 +414,7 @@ fieldValue76 = browser.currentScene.createNode("fieldValue");
 fieldValue76.name = "endnode";
 Transform77 = browser.currentScene.createNode("Transform");
 Transform77.USE = "G2";
-fieldValue76.children = [];
+fieldValue76.children = new MFNode();
 
 fieldValue76.children[0] = Transform77;
 
@@ -424,7 +424,7 @@ fieldValue78 = browser.currentScene.createNode("fieldValue");
 fieldValue78.name = "transnode";
 Transform79 = browser.currentScene.createNode("Transform");
 Transform79.USE = "transC1";
-fieldValue78.children = [];
+fieldValue78.children = new MFNode();
 
 fieldValue78.children[0] = Transform79;
 
@@ -434,7 +434,7 @@ fieldValue80 = browser.currentScene.createNode("fieldValue");
 fieldValue80.name = "rotscalenode";
 Transform81 = browser.currentScene.createNode("Transform");
 Transform81.USE = "rotscaleC1";
-fieldValue80.children = [];
+fieldValue80.children = new MFNode();
 
 fieldValue80.children[0] = Transform81;
 
@@ -457,11 +457,11 @@ fieldValue85 = browser.currentScene.createNode("fieldValue");
 fieldValue85.name = "startnode";
 Transform86 = browser.currentScene.createNode("Transform");
 Transform86.USE = "G1";
-fieldValue85.children = [];
+fieldValue85.children = new MFNode();
 
 fieldValue85.children[0] = Transform86;
 
-ProtoInstance84.fieldValue = [];
+ProtoInstance84.fieldValue = new MFNode();
 
 ProtoInstance84.fieldValue[0] = fieldValue85;
 
@@ -469,7 +469,7 @@ fieldValue87 = browser.currentScene.createNode("fieldValue");
 fieldValue87.name = "endnode";
 Transform88 = browser.currentScene.createNode("Transform");
 Transform88.USE = "G3";
-fieldValue87.children = [];
+fieldValue87.children = new MFNode();
 
 fieldValue87.children[0] = Transform88;
 
@@ -479,7 +479,7 @@ fieldValue89 = browser.currentScene.createNode("fieldValue");
 fieldValue89.name = "transnode";
 Transform90 = browser.currentScene.createNode("Transform");
 Transform90.USE = "transC2";
-fieldValue89.children = [];
+fieldValue89.children = new MFNode();
 
 fieldValue89.children[0] = Transform90;
 
@@ -489,7 +489,7 @@ fieldValue91 = browser.currentScene.createNode("fieldValue");
 fieldValue91.name = "rotscalenode";
 Transform92 = browser.currentScene.createNode("Transform");
 Transform92.USE = "rotscaleC2";
-fieldValue91.children = [];
+fieldValue91.children = new MFNode();
 
 fieldValue91.children[0] = Transform92;
 
@@ -512,11 +512,11 @@ fieldValue96 = browser.currentScene.createNode("fieldValue");
 fieldValue96.name = "startnode";
 Transform97 = browser.currentScene.createNode("Transform");
 Transform97.USE = "G1";
-fieldValue96.children = [];
+fieldValue96.children = new MFNode();
 
 fieldValue96.children[0] = Transform97;
 
-ProtoInstance95.fieldValue = [];
+ProtoInstance95.fieldValue = new MFNode();
 
 ProtoInstance95.fieldValue[0] = fieldValue96;
 
@@ -524,7 +524,7 @@ fieldValue98 = browser.currentScene.createNode("fieldValue");
 fieldValue98.name = "endnode";
 Transform99 = browser.currentScene.createNode("Transform");
 Transform99.USE = "G4";
-fieldValue98.children = [];
+fieldValue98.children = new MFNode();
 
 fieldValue98.children[0] = Transform99;
 
@@ -534,7 +534,7 @@ fieldValue100 = browser.currentScene.createNode("fieldValue");
 fieldValue100.name = "transnode";
 Transform101 = browser.currentScene.createNode("Transform");
 Transform101.USE = "transC3";
-fieldValue100.children = [];
+fieldValue100.children = new MFNode();
 
 fieldValue100.children[0] = Transform101;
 
@@ -544,7 +544,7 @@ fieldValue102 = browser.currentScene.createNode("fieldValue");
 fieldValue102.name = "rotscalenode";
 Transform103 = browser.currentScene.createNode("Transform");
 Transform103.USE = "rotscaleC3";
-fieldValue102.children = [];
+fieldValue102.children = new MFNode();
 
 fieldValue102.children[0] = Transform103;
 

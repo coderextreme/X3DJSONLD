@@ -5,20 +5,20 @@ X3D0.version = "3.3";
 //=============== Camera ==============
 WorldInfo2 = browser.currentScene.createNode("WorldInfo");
 WorldInfo2.title = "CameraExamples.x3d";
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = WorldInfo2;
 
 ExternProtoDeclare3 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare3.name = "Camera";
 ExternProtoDeclare3.appinfo = "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images";
-ExternProtoDeclare3.url = ["CameraPrototypes.x3d#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"];
+ExternProtoDeclare3.url = new MFString(new java.lang.String["CameraPrototypes.x3d#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"]);
 field4 = browser.currentScene.createNode("field");
 field4.name = "description";
 field4.accessType = "inputOutput";
 field4.appinfo = "Text description to be displayed for this Camera";
 field4.type = "SFString";
-ExternProtoDeclare3.field = [];
+ExternProtoDeclare3.field = new MFNode();
 
 ExternProtoDeclare3.field[0] = field4;
 
@@ -183,13 +183,13 @@ browser.currentScene.children[1] = ExternProtoDeclare3;
 ExternProtoDeclare27 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare27.name = "CameraShot";
 ExternProtoDeclare27.appinfo = "CameraShot collects a specific set of CameraMovement animations that make up an individual shot";
-ExternProtoDeclare27.url = ["CameraPrototypes.x3d#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"];
+ExternProtoDeclare27.url = new MFString(new java.lang.String["CameraPrototypes.x3d#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"]);
 field28 = browser.currentScene.createNode("field");
 field28.name = "description";
 field28.accessType = "inputOutput";
 field28.appinfo = "Text description to be displayed for this CameraShot";
 field28.type = "SFString";
-ExternProtoDeclare27.field = [];
+ExternProtoDeclare27.field = new MFNode();
 
 ExternProtoDeclare27.field[0] = field28;
 
@@ -277,13 +277,13 @@ browser.currentScene.children[2] = ExternProtoDeclare27;
 ExternProtoDeclare40 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare40.name = "CameraMovement";
 ExternProtoDeclare40.appinfo = "CameraMovement defines a single camera movement animation";
-ExternProtoDeclare40.url = ["CameraPrototypes.x3d#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"];
+ExternProtoDeclare40.url = new MFString(new java.lang.String["CameraPrototypes.x3d#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"]);
 field41 = browser.currentScene.createNode("field");
 field41.name = "description";
 field41.accessType = "inputOutput";
 field41.appinfo = "Text description to be displayed for this CameraMovement";
 field41.type = "SFString";
-ExternProtoDeclare40.field = [];
+ExternProtoDeclare40.field = new MFNode();
 
 ExternProtoDeclare40.field[0] = field41;
 
@@ -370,13 +370,13 @@ browser.currentScene.children[3] = ExternProtoDeclare40;
 ExternProtoDeclare53 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare53.name = "OfflineRender";
 ExternProtoDeclare53.appinfo = "OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)";
-ExternProtoDeclare53.url = ["CameraPrototypes.x3d#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"];
+ExternProtoDeclare53.url = new MFString(new java.lang.String["CameraPrototypes.x3d#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"]);
 field54 = browser.currentScene.createNode("field");
 field54.name = "description";
 field54.accessType = "inputOutput";
 field54.appinfo = "Text description to be displayed for this OfflineRender";
 field54.type = "SFString";
-ExternProtoDeclare53.field = [];
+ExternProtoDeclare53.field = new MFNode();
 
 ExternProtoDeclare53.field[0] = field54;
 
@@ -455,24 +455,24 @@ browser.currentScene.children[4] = ExternProtoDeclare53;
 
 //=============== Lights, camera, action! ==============
 DirectionalLight65 = browser.currentScene.createNode("DirectionalLight");
-DirectionalLight65.direction = [0,-1,0];
+DirectionalLight65.direction = new SFVec3f(new float[0,-1,0]);
 DirectionalLight65.global = True;
 DirectionalLight65.intensity = 0.8;
 browser.currentScene.children[5] = DirectionalLight65;
 
 NavigationInfo66 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo66.type = ["EXAMINE","FLY","ANY"];
+NavigationInfo66.type = new MFString(new java.lang.String["EXAMINE","FLY","ANY"]);
 browser.currentScene.children[6] = NavigationInfo66;
 
 Viewpoint67 = browser.currentScene.createNode("Viewpoint");
 Viewpoint67.description = "Camera test scene entry view";
-Viewpoint67.position = [0,2,12];
+Viewpoint67.position = new SFVec3f(new float[0,2,12]);
 browser.currentScene.children[7] = Viewpoint67;
 
 Viewpoint68 = browser.currentScene.createNode("Viewpoint");
 Viewpoint68.description = "Camera test scene from above";
-Viewpoint68.orientation = [1,0,0,-1.57079];
-Viewpoint68.position = [0,150,0];
+Viewpoint68.orientation = new SFRotation(new float[1,0,0,-1.57079]);
+Viewpoint68.position = new SFVec3f(new float[0,150,0]);
 browser.currentScene.children[8] = Viewpoint68;
 
 //Keep prototype instances in same file while developing, then move later
@@ -484,7 +484,7 @@ ProtoInstance69.DEF = "Camera.SimpleShotsTest";
 fieldValue70 = browser.currentScene.createNode("fieldValue");
 fieldValue70.name = "description";
 fieldValue70.value = "SimpleShotsTest for camera Zoom Dolly Pan Boom and Tilt";
-ProtoInstance69.fieldValue = [];
+ProtoInstance69.fieldValue = new MFNode();
 
 ProtoInstance69.fieldValue[0] = fieldValue70;
 
@@ -506,7 +506,7 @@ ProtoInstance74.DEF = "Zoom";
 fieldValue75 = browser.currentScene.createNode("fieldValue");
 fieldValue75.name = "description";
 fieldValue75.value = "Simple shot of Camera Zoom";
-ProtoInstance74.fieldValue = [];
+ProtoInstance74.fieldValue = new MFNode();
 
 ProtoInstance74.fieldValue[0] = fieldValue75;
 
@@ -527,7 +527,7 @@ ProtoInstance79.name = "CameraMovement";
 fieldValue80 = browser.currentScene.createNode("fieldValue");
 fieldValue80.name = "description";
 fieldValue80.value = "Camera Zoom In";
-ProtoInstance79.fieldValue = [];
+ProtoInstance79.fieldValue = new MFNode();
 
 ProtoInstance79.fieldValue[0] = fieldValue80;
 
@@ -546,7 +546,7 @@ fieldValue83.name = "goalOrientation";
 fieldValue83.value = "0 1 0 0";
 ProtoInstance79.fieldValue[3] = fieldValue83;
 
-fieldValue78.children = [];
+fieldValue78.children = new MFNode();
 
 fieldValue78.children[0] = ProtoInstance79;
 
@@ -555,7 +555,7 @@ ProtoInstance84.name = "CameraMovement";
 fieldValue85 = browser.currentScene.createNode("fieldValue");
 fieldValue85.name = "description";
 fieldValue85.value = "Camera Zoom Out";
-ProtoInstance84.fieldValue = [];
+ProtoInstance84.fieldValue = new MFNode();
 
 ProtoInstance84.fieldValue[0] = fieldValue85;
 
@@ -581,7 +581,7 @@ ProtoInstance89.name = "CameraMovement";
 fieldValue90 = browser.currentScene.createNode("fieldValue");
 fieldValue90.name = "description";
 fieldValue90.value = "Camera Pause";
-ProtoInstance89.fieldValue = [];
+ProtoInstance89.fieldValue = new MFNode();
 
 ProtoInstance89.fieldValue[0] = fieldValue90;
 
@@ -604,7 +604,7 @@ fieldValue78.children[2] = ProtoInstance89;
 
 ProtoInstance74.fieldValue[3] = fieldValue78;
 
-fieldValue73.children = [];
+fieldValue73.children = new MFNode();
 
 fieldValue73.children[0] = ProtoInstance74;
 
@@ -614,7 +614,7 @@ ProtoInstance94.DEF = "Dolly";
 fieldValue95 = browser.currentScene.createNode("fieldValue");
 fieldValue95.name = "description";
 fieldValue95.value = "Simple shot of Camera Dolly";
-ProtoInstance94.fieldValue = [];
+ProtoInstance94.fieldValue = new MFNode();
 
 ProtoInstance94.fieldValue[0] = fieldValue95;
 
@@ -636,7 +636,7 @@ ProtoInstance99.DEF = "DollyMove1";
 fieldValue100 = browser.currentScene.createNode("fieldValue");
 fieldValue100.name = "description";
 fieldValue100.value = "Camera Dolly from Right to Left";
-ProtoInstance99.fieldValue = [];
+ProtoInstance99.fieldValue = new MFNode();
 
 ProtoInstance99.fieldValue[0] = fieldValue100;
 
@@ -655,7 +655,7 @@ fieldValue103.name = "goalOrientation";
 fieldValue103.value = "0 1 0 0";
 ProtoInstance99.fieldValue[3] = fieldValue103;
 
-fieldValue98.children = [];
+fieldValue98.children = new MFNode();
 
 fieldValue98.children[0] = ProtoInstance99;
 
@@ -664,7 +664,7 @@ ProtoInstance104.name = "CameraMovement";
 fieldValue105 = browser.currentScene.createNode("fieldValue");
 fieldValue105.name = "description";
 fieldValue105.value = "Camera Dolly from Left to Right";
-ProtoInstance104.fieldValue = [];
+ProtoInstance104.fieldValue = new MFNode();
 
 ProtoInstance104.fieldValue[0] = fieldValue105;
 
@@ -690,7 +690,7 @@ ProtoInstance109.name = "CameraMovement";
 fieldValue110 = browser.currentScene.createNode("fieldValue");
 fieldValue110.name = "description";
 fieldValue110.value = "Camera Pause";
-ProtoInstance109.fieldValue = [];
+ProtoInstance109.fieldValue = new MFNode();
 
 ProtoInstance109.fieldValue[0] = fieldValue110;
 
@@ -721,7 +721,7 @@ ProtoInstance114.DEF = "Pan";
 fieldValue115 = browser.currentScene.createNode("fieldValue");
 fieldValue115.name = "description";
 fieldValue115.value = "Simple shot of Camera Pan left right and back to center";
-ProtoInstance114.fieldValue = [];
+ProtoInstance114.fieldValue = new MFNode();
 
 ProtoInstance114.fieldValue[0] = fieldValue115;
 
@@ -743,7 +743,7 @@ ProtoInstance119.DEF = "PanLeft";
 fieldValue120 = browser.currentScene.createNode("fieldValue");
 fieldValue120.name = "description";
 fieldValue120.value = "Pan Left";
-ProtoInstance119.fieldValue = [];
+ProtoInstance119.fieldValue = new MFNode();
 
 ProtoInstance119.fieldValue[0] = fieldValue120;
 
@@ -762,7 +762,7 @@ fieldValue123.name = "goalOrientation";
 fieldValue123.value = "0 1 0 0.4";
 ProtoInstance119.fieldValue[3] = fieldValue123;
 
-fieldValue118.children = [];
+fieldValue118.children = new MFNode();
 
 fieldValue118.children[0] = ProtoInstance119;
 
@@ -772,7 +772,7 @@ ProtoInstance124.DEF = "PanRight";
 fieldValue125 = browser.currentScene.createNode("fieldValue");
 fieldValue125.name = "description";
 fieldValue125.value = "Pan Right";
-ProtoInstance124.fieldValue = [];
+ProtoInstance124.fieldValue = new MFNode();
 
 ProtoInstance124.fieldValue[0] = fieldValue125;
 
@@ -798,7 +798,7 @@ ProtoInstance129.name = "CameraMovement";
 fieldValue130 = browser.currentScene.createNode("fieldValue");
 fieldValue130.name = "description";
 fieldValue130.value = "Camera Pan back to Center";
-ProtoInstance129.fieldValue = [];
+ProtoInstance129.fieldValue = new MFNode();
 
 ProtoInstance129.fieldValue[0] = fieldValue130;
 
@@ -824,7 +824,7 @@ ProtoInstance134.name = "CameraMovement";
 fieldValue135 = browser.currentScene.createNode("fieldValue");
 fieldValue135.name = "description";
 fieldValue135.value = "Camera Pause";
-ProtoInstance134.fieldValue = [];
+ProtoInstance134.fieldValue = new MFNode();
 
 ProtoInstance134.fieldValue[0] = fieldValue135;
 
@@ -855,7 +855,7 @@ ProtoInstance139.DEF = "CameraBoom";
 fieldValue140 = browser.currentScene.createNode("fieldValue");
 fieldValue140.name = "description";
 fieldValue140.value = "Camera Boom";
-ProtoInstance139.fieldValue = [];
+ProtoInstance139.fieldValue = new MFNode();
 
 ProtoInstance139.fieldValue[0] = fieldValue140;
 
@@ -877,7 +877,7 @@ ProtoInstance144.DEF = "CameraBoomUp";
 fieldValue145 = browser.currentScene.createNode("fieldValue");
 fieldValue145.name = "description";
 fieldValue145.value = "Camera Boom Up";
-ProtoInstance144.fieldValue = [];
+ProtoInstance144.fieldValue = new MFNode();
 
 ProtoInstance144.fieldValue[0] = fieldValue145;
 
@@ -896,7 +896,7 @@ fieldValue148.name = "goalOrientation";
 fieldValue148.value = "0 1 0 0";
 ProtoInstance144.fieldValue[3] = fieldValue148;
 
-fieldValue143.children = [];
+fieldValue143.children = new MFNode();
 
 fieldValue143.children[0] = ProtoInstance144;
 
@@ -906,7 +906,7 @@ ProtoInstance149.DEF = "BoomDown";
 fieldValue150 = browser.currentScene.createNode("fieldValue");
 fieldValue150.name = "description";
 fieldValue150.value = "Camera Boom Down";
-ProtoInstance149.fieldValue = [];
+ProtoInstance149.fieldValue = new MFNode();
 
 ProtoInstance149.fieldValue[0] = fieldValue150;
 
@@ -933,7 +933,7 @@ ProtoInstance154.DEF = "BoomPause";
 fieldValue155 = browser.currentScene.createNode("fieldValue");
 fieldValue155.name = "description";
 fieldValue155.value = "Camera Pause";
-ProtoInstance154.fieldValue = [];
+ProtoInstance154.fieldValue = new MFNode();
 
 ProtoInstance154.fieldValue[0] = fieldValue155;
 
@@ -964,7 +964,7 @@ ProtoInstance159.DEF = "CameraTilt";
 fieldValue160 = browser.currentScene.createNode("fieldValue");
 fieldValue160.name = "description";
 fieldValue160.value = "Camera Tilt";
-ProtoInstance159.fieldValue = [];
+ProtoInstance159.fieldValue = new MFNode();
 
 ProtoInstance159.fieldValue[0] = fieldValue160;
 
@@ -990,7 +990,7 @@ ProtoInstance165.name = "CameraMovement";
 fieldValue166 = browser.currentScene.createNode("fieldValue");
 fieldValue166.name = "description";
 fieldValue166.value = "Camera Tilt Pause";
-ProtoInstance165.fieldValue = [];
+ProtoInstance165.fieldValue = new MFNode();
 
 ProtoInstance165.fieldValue[0] = fieldValue166;
 
@@ -1009,7 +1009,7 @@ fieldValue169.name = "goalOrientation";
 fieldValue169.value = "0 0 1 0";
 ProtoInstance165.fieldValue[3] = fieldValue169;
 
-fieldValue164.children = [];
+fieldValue164.children = new MFNode();
 
 fieldValue164.children[0] = ProtoInstance165;
 
@@ -1019,7 +1019,7 @@ ProtoInstance170.DEF = "TiltDown";
 fieldValue171 = browser.currentScene.createNode("fieldValue");
 fieldValue171.name = "description";
 fieldValue171.value = "Camera Tilt Left";
-ProtoInstance170.fieldValue = [];
+ProtoInstance170.fieldValue = new MFNode();
 
 ProtoInstance170.fieldValue[0] = fieldValue171;
 
@@ -1046,7 +1046,7 @@ ProtoInstance175.DEF = "TiltPause";
 fieldValue176 = browser.currentScene.createNode("fieldValue");
 fieldValue176.name = "description";
 fieldValue176.value = "Camera Tilt Pause";
-ProtoInstance175.fieldValue = [];
+ProtoInstance175.fieldValue = new MFNode();
 
 ProtoInstance175.fieldValue[0] = fieldValue176;
 
@@ -1072,7 +1072,7 @@ ProtoInstance180.name = "CameraMovement";
 fieldValue181 = browser.currentScene.createNode("fieldValue");
 fieldValue181.name = "description";
 fieldValue181.value = "Camera Tilt Right";
-ProtoInstance180.fieldValue = [];
+ProtoInstance180.fieldValue = new MFNode();
 
 ProtoInstance180.fieldValue[0] = fieldValue181;
 
@@ -1098,7 +1098,7 @@ ProtoInstance185.name = "CameraMovement";
 fieldValue186 = browser.currentScene.createNode("fieldValue");
 fieldValue186.name = "description";
 fieldValue186.value = "Camera Tilt Pause";
-ProtoInstance185.fieldValue = [];
+ProtoInstance185.fieldValue = new MFNode();
 
 ProtoInstance185.fieldValue[0] = fieldValue186;
 
@@ -1125,7 +1125,7 @@ ProtoInstance190.DEF = "TiltReset";
 fieldValue191 = browser.currentScene.createNode("fieldValue");
 fieldValue191.name = "description";
 fieldValue191.value = "Camera Tilt Reset";
-ProtoInstance190.fieldValue = [];
+ProtoInstance190.fieldValue = new MFNode();
 
 ProtoInstance190.fieldValue[0] = fieldValue191;
 
@@ -1152,7 +1152,7 @@ ProtoInstance195.DEF = "TiltUp";
 fieldValue196 = browser.currentScene.createNode("fieldValue");
 fieldValue196.name = "description";
 fieldValue196.value = "Return to home";
-ProtoInstance195.fieldValue = [];
+ProtoInstance195.fieldValue = new MFNode();
 
 ProtoInstance195.fieldValue[0] = fieldValue196;
 
@@ -1185,7 +1185,7 @@ Group200 = browser.currentScene.createNode("Group");
 Group200.DEF = "AnimationGroup.SimpleShots";
 TimeSensor201 = browser.currentScene.createNode("TimeSensor");
 TimeSensor201.DEF = "CameraTimer.SimpleShots";
-Group200.children = [];
+Group200.children = new MFNode();
 
 Group200.children[0] = TimeSensor201;
 
@@ -1207,10 +1207,10 @@ Group200.children[2] = ROUTE203;
 
 Transform204 = browser.currentScene.createNode("Transform");
 Transform204.DEF = "Trigger.SimpleShots";
-Transform204.translation = [-4,4,0];
+Transform204.translation = new SFVec3f(new float[-4,4,0]);
 BooleanFilter205 = browser.currentScene.createNode("BooleanFilter");
 BooleanFilter205.DEF = "TextTouchActive.SimpleShotsFilter";
-Transform204.children = [];
+Transform204.children = new MFNode();
 
 Transform204.children[0] = BooleanFilter205;
 
@@ -1242,9 +1242,9 @@ Transform204.children[4] = ROUTE209;
 
 Shape210 = browser.currentScene.createNode("Shape");
 Text211 = browser.currentScene.createNode("Text");
-Text211.string = ["Click to animate","SimpleShotsTest"];
+Text211.string = new MFString(new java.lang.String["Click to animate","SimpleShotsTest"]);
 FontStyle212 = browser.currentScene.createNode("FontStyle");
-FontStyle212.justify = ["MIDDLE","MIDDLE"];
+FontStyle212.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text211.fontStyle = FontStyle212;
 
 Shape210.geometry = Text211;
@@ -1253,9 +1253,9 @@ Appearance213 = browser.currentScene.createNode("Appearance");
 Material214 = browser.currentScene.createNode("Material");
 Material214.DEF = "ArtDeco5";
 Material214.ambientIntensity = 0.24;
-Material214.diffuseColor = [0.945455,0.318988,0.321717];
+Material214.diffuseColor = new SFColor(new float[0.945455,0.318988,0.321717]);
 Material214.shininess = 0.01;
-Material214.specularColor = [0.072727,0.021705,0.010732];
+Material214.specularColor = new SFColor(new float[0.072727,0.021705,0.010732]);
 //Universal Media Library: ArtDeco 5
 Appearance213.material = Material214;
 
@@ -1274,7 +1274,7 @@ Appearance216.material = Material217;
 Shape215.appearance = Appearance216;
 
 Box218 = browser.currentScene.createNode("Box");
-Box218.size = [6,2,0.0001];
+Box218.size = new SFVec3f(new float[6,2,0.0001]);
 Shape215.geometry = Box218;
 
 Transform204.children[6] = Shape215;
@@ -1287,7 +1287,7 @@ Group219 = browser.currentScene.createNode("Group");
 Group219.DEF = "SimpleShotsTargets";
 Transform220 = browser.currentScene.createNode("Transform");
 Transform220.DEF = "TargetBoxZoom";
-Transform220.translation = [-50,1,-20];
+Transform220.translation = new SFVec3f(new float[-50,1,-20]);
 Shape221 = browser.currentScene.createNode("Shape");
 Box222 = browser.currentScene.createNode("Box");
 Shape221.geometry = Box222;
@@ -1297,22 +1297,22 @@ Material224 = browser.currentScene.createNode("Material");
 Appearance223.material = Material224;
 
 ImageTexture225 = browser.currentScene.createNode("ImageTexture");
-ImageTexture225.url = ["images/CameraMoveZoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"];
+ImageTexture225.url = new MFString(new java.lang.String["images/CameraMoveZoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveZoom.png"]);
 Appearance223.texture = ImageTexture225;
 
 Shape221.appearance = Appearance223;
 
-Transform220.children = [];
+Transform220.children = new MFNode();
 
 Transform220.children[0] = Shape221;
 
 Transform226 = browser.currentScene.createNode("Transform");
-Transform226.translation = [0,2,0];
+Transform226.translation = new SFVec3f(new float[0,2,0]);
 Shape227 = browser.currentScene.createNode("Shape");
 Text228 = browser.currentScene.createNode("Text");
-Text228.string = ["Zoom in, out"];
+Text228.string = new MFString(new java.lang.String["Zoom in, out"]);
 FontStyle229 = browser.currentScene.createNode("FontStyle");
-FontStyle229.justify = ["MIDDLE","MIDDLE"];
+FontStyle229.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text228.fontStyle = FontStyle229;
 
 Shape227.geometry = Text228;
@@ -1323,19 +1323,19 @@ Appearance230.material = Material231;
 
 Shape227.appearance = Appearance230;
 
-Transform226.children = [];
+Transform226.children = new MFNode();
 
 Transform226.children[0] = Shape227;
 
 Transform220.children[1] = Transform226;
 
-Group219.children = [];
+Group219.children = new MFNode();
 
 Group219.children[0] = Transform220;
 
 Transform232 = browser.currentScene.createNode("Transform");
 Transform232.DEF = "TargetBoxDolly";
-Transform232.translation = [-40,1,-20];
+Transform232.translation = new SFVec3f(new float[-40,1,-20]);
 Shape233 = browser.currentScene.createNode("Shape");
 Box234 = browser.currentScene.createNode("Box");
 Shape233.geometry = Box234;
@@ -1345,22 +1345,22 @@ Material236 = browser.currentScene.createNode("Material");
 Appearance235.material = Material236;
 
 ImageTexture237 = browser.currentScene.createNode("ImageTexture");
-ImageTexture237.url = ["images/CameraMoveDolly.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"];
+ImageTexture237.url = new MFString(new java.lang.String["images/CameraMoveDolly.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveDolly.png"]);
 Appearance235.texture = ImageTexture237;
 
 Shape233.appearance = Appearance235;
 
-Transform232.children = [];
+Transform232.children = new MFNode();
 
 Transform232.children[0] = Shape233;
 
 Transform238 = browser.currentScene.createNode("Transform");
-Transform238.translation = [0,2,0];
+Transform238.translation = new SFVec3f(new float[0,2,0]);
 Shape239 = browser.currentScene.createNode("Shape");
 Text240 = browser.currentScene.createNode("Text");
-Text240.string = ["Dolly left, right"];
+Text240.string = new MFString(new java.lang.String["Dolly left, right"]);
 FontStyle241 = browser.currentScene.createNode("FontStyle");
-FontStyle241.justify = ["MIDDLE","MIDDLE"];
+FontStyle241.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text240.fontStyle = FontStyle241;
 
 Shape239.geometry = Text240;
@@ -1371,7 +1371,7 @@ Appearance242.material = Material243;
 
 Shape239.appearance = Appearance242;
 
-Transform238.children = [];
+Transform238.children = new MFNode();
 
 Transform238.children[0] = Shape239;
 
@@ -1381,7 +1381,7 @@ Group219.children[1] = Transform232;
 
 Transform244 = browser.currentScene.createNode("Transform");
 Transform244.DEF = "TargetBoxPan";
-Transform244.translation = [-30,1,-20];
+Transform244.translation = new SFVec3f(new float[-30,1,-20]);
 Shape245 = browser.currentScene.createNode("Shape");
 Box246 = browser.currentScene.createNode("Box");
 Shape245.geometry = Box246;
@@ -1391,22 +1391,22 @@ Material248 = browser.currentScene.createNode("Material");
 Appearance247.material = Material248;
 
 ImageTexture249 = browser.currentScene.createNode("ImageTexture");
-ImageTexture249.url = ["images/CameraMovePan.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"];
+ImageTexture249.url = new MFString(new java.lang.String["images/CameraMovePan.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMovePan.png"]);
 Appearance247.texture = ImageTexture249;
 
 Shape245.appearance = Appearance247;
 
-Transform244.children = [];
+Transform244.children = new MFNode();
 
 Transform244.children[0] = Shape245;
 
 Transform250 = browser.currentScene.createNode("Transform");
-Transform250.translation = [0,2,0];
+Transform250.translation = new SFVec3f(new float[0,2,0]);
 Shape251 = browser.currentScene.createNode("Shape");
 Text252 = browser.currentScene.createNode("Text");
-Text252.string = ["Pan left, right"];
+Text252.string = new MFString(new java.lang.String["Pan left, right"]);
 FontStyle253 = browser.currentScene.createNode("FontStyle");
-FontStyle253.justify = ["MIDDLE","MIDDLE"];
+FontStyle253.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text252.fontStyle = FontStyle253;
 
 Shape251.geometry = Text252;
@@ -1417,7 +1417,7 @@ Appearance254.material = Material255;
 
 Shape251.appearance = Appearance254;
 
-Transform250.children = [];
+Transform250.children = new MFNode();
 
 Transform250.children[0] = Shape251;
 
@@ -1427,7 +1427,7 @@ Group219.children[2] = Transform244;
 
 Transform256 = browser.currentScene.createNode("Transform");
 Transform256.DEF = "TargetBoxBoom";
-Transform256.translation = [-20,1,-20];
+Transform256.translation = new SFVec3f(new float[-20,1,-20]);
 Shape257 = browser.currentScene.createNode("Shape");
 Box258 = browser.currentScene.createNode("Box");
 Shape257.geometry = Box258;
@@ -1437,22 +1437,22 @@ Material260 = browser.currentScene.createNode("Material");
 Appearance259.material = Material260;
 
 ImageTexture261 = browser.currentScene.createNode("ImageTexture");
-ImageTexture261.url = ["images/CameraMoveBoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"];
+ImageTexture261.url = new MFString(new java.lang.String["images/CameraMoveBoom.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveBoom.png"]);
 Appearance259.texture = ImageTexture261;
 
 Shape257.appearance = Appearance259;
 
-Transform256.children = [];
+Transform256.children = new MFNode();
 
 Transform256.children[0] = Shape257;
 
 Transform262 = browser.currentScene.createNode("Transform");
-Transform262.translation = [0,2,0];
+Transform262.translation = new SFVec3f(new float[0,2,0]);
 Shape263 = browser.currentScene.createNode("Shape");
 Text264 = browser.currentScene.createNode("Text");
-Text264.string = ["Boom up, down"];
+Text264.string = new MFString(new java.lang.String["Boom up, down"]);
 FontStyle265 = browser.currentScene.createNode("FontStyle");
-FontStyle265.justify = ["MIDDLE","MIDDLE"];
+FontStyle265.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text264.fontStyle = FontStyle265;
 
 Shape263.geometry = Text264;
@@ -1463,7 +1463,7 @@ Appearance266.material = Material267;
 
 Shape263.appearance = Appearance266;
 
-Transform262.children = [];
+Transform262.children = new MFNode();
 
 Transform262.children[0] = Shape263;
 
@@ -1473,7 +1473,7 @@ Group219.children[3] = Transform256;
 
 Transform268 = browser.currentScene.createNode("Transform");
 Transform268.DEF = "TargetBoxTilt";
-Transform268.translation = [-10,1,-20];
+Transform268.translation = new SFVec3f(new float[-10,1,-20]);
 Shape269 = browser.currentScene.createNode("Shape");
 Box270 = browser.currentScene.createNode("Box");
 Shape269.geometry = Box270;
@@ -1483,22 +1483,22 @@ Material272 = browser.currentScene.createNode("Material");
 Appearance271.material = Material272;
 
 ImageTexture273 = browser.currentScene.createNode("ImageTexture");
-ImageTexture273.url = ["images/CameraMoveTilt.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"];
+ImageTexture273.url = new MFString(new java.lang.String["images/CameraMoveTilt.png","https://www.web3d.org/x3d/content/examples/Basic/development/images/CameraMoveTilt.png"]);
 Appearance271.texture = ImageTexture273;
 
 Shape269.appearance = Appearance271;
 
-Transform268.children = [];
+Transform268.children = new MFNode();
 
 Transform268.children[0] = Shape269;
 
 Transform274 = browser.currentScene.createNode("Transform");
-Transform274.translation = [0,2,0];
+Transform274.translation = new SFVec3f(new float[0,2,0]);
 Shape275 = browser.currentScene.createNode("Shape");
 Text276 = browser.currentScene.createNode("Text");
-Text276.string = ["Tilt left, right"];
+Text276.string = new MFString(new java.lang.String["Tilt left, right"]);
 FontStyle277 = browser.currentScene.createNode("FontStyle");
-FontStyle277.justify = ["MIDDLE","MIDDLE"];
+FontStyle277.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text276.fontStyle = FontStyle277;
 
 Shape275.geometry = Text276;
@@ -1509,7 +1509,7 @@ Appearance278.material = Material279;
 
 Shape275.appearance = Appearance278;
 
-Transform274.children = [];
+Transform274.children = new MFNode();
 
 Transform274.children[0] = Shape275;
 
@@ -1526,7 +1526,7 @@ ProtoInstance280.DEF = "Camera.AimPointTest";
 fieldValue281 = browser.currentScene.createNode("fieldValue");
 fieldValue281.name = "description";
 fieldValue281.value = "AimPointTest for moving camera tracking moving target";
-ProtoInstance280.fieldValue = [];
+ProtoInstance280.fieldValue = new MFNode();
 
 ProtoInstance280.fieldValue[0] = fieldValue281;
 
@@ -1543,7 +1543,7 @@ ProtoInstance284.DEF = "Shot5";
 fieldValue285 = browser.currentScene.createNode("fieldValue");
 fieldValue285.name = "description";
 fieldValue285.value = "#3 Tracking shot";
-ProtoInstance284.fieldValue = [];
+ProtoInstance284.fieldValue = new MFNode();
 
 ProtoInstance284.fieldValue[0] = fieldValue285;
 
@@ -1565,7 +1565,7 @@ ProtoInstance289.DEF = "MoveAimPoint3.1";
 fieldValue290 = browser.currentScene.createNode("fieldValue");
 fieldValue290.name = "description";
 fieldValue290.value = "AimPoint 3.1 moving BoxPath";
-ProtoInstance289.fieldValue = [];
+ProtoInstance289.fieldValue = new MFNode();
 
 ProtoInstance289.fieldValue[0] = fieldValue290;
 
@@ -1585,7 +1585,7 @@ fieldValue293.value = "6 6 10";
 ProtoInstance289.fieldValue[3] = fieldValue293;
 
 //goalAimPoint modified by ROUTE to match moving Box
-fieldValue288.children = [];
+fieldValue288.children = new MFNode();
 
 fieldValue288.children[0] = ProtoInstance289;
 
@@ -1595,7 +1595,7 @@ ProtoInstance294.DEF = "MoveAimPoint3.2";
 fieldValue295 = browser.currentScene.createNode("fieldValue");
 fieldValue295.name = "description";
 fieldValue295.value = "AimPoint 3.2 pan right while tracking";
-ProtoInstance294.fieldValue = [];
+ProtoInstance294.fieldValue = new MFNode();
 
 ProtoInstance294.fieldValue[0] = fieldValue295;
 
@@ -1623,7 +1623,7 @@ ProtoInstance299.DEF = "MoveAimPoint3.3";
 fieldValue300 = browser.currentScene.createNode("fieldValue");
 fieldValue300.name = "description";
 fieldValue300.value = "AimPoint 3.3 boom up while tracking";
-ProtoInstance299.fieldValue = [];
+ProtoInstance299.fieldValue = new MFNode();
 
 ProtoInstance299.fieldValue[0] = fieldValue300;
 
@@ -1651,7 +1651,7 @@ ProtoInstance304.DEF = "MoveAimPoint3.4";
 fieldValue305 = browser.currentScene.createNode("fieldValue");
 fieldValue305.name = "description";
 fieldValue305.value = "AimPoint 3.4 restore camera back to home";
-ProtoInstance304.fieldValue = [];
+ProtoInstance304.fieldValue = new MFNode();
 
 ProtoInstance304.fieldValue[0] = fieldValue305;
 
@@ -1685,7 +1685,7 @@ fieldValue288.children[3] = ProtoInstance304;
 
 ProtoInstance284.fieldValue[3] = fieldValue288;
 
-fieldValue283.children = [];
+fieldValue283.children = new MFNode();
 
 fieldValue283.children[0] = ProtoInstance284;
 
@@ -1697,7 +1697,7 @@ Group311 = browser.currentScene.createNode("Group");
 Group311.DEF = "AnimationGroup.AimPointTest";
 TimeSensor312 = browser.currentScene.createNode("TimeSensor");
 TimeSensor312.DEF = "CameraTimer.AimPointTest";
-Group311.children = [];
+Group311.children = new MFNode();
 
 Group311.children[0] = TimeSensor312;
 
@@ -1719,10 +1719,10 @@ Group311.children[2] = ROUTE314;
 
 Transform315 = browser.currentScene.createNode("Transform");
 Transform315.DEF = "Trigger.AimPointTest";
-Transform315.translation = [4,4,0];
+Transform315.translation = new SFVec3f(new float[4,4,0]);
 BooleanFilter316 = browser.currentScene.createNode("BooleanFilter");
 BooleanFilter316.DEF = "TextTouchActive.AimPointFilter";
-Transform315.children = [];
+Transform315.children = new MFNode();
 
 Transform315.children[0] = BooleanFilter316;
 
@@ -1754,9 +1754,9 @@ Transform315.children[4] = ROUTE320;
 
 Shape321 = browser.currentScene.createNode("Shape");
 Text322 = browser.currentScene.createNode("Text");
-Text322.string = ["Click to animate","AimPointTest"];
+Text322.string = new MFString(new java.lang.String["Click to animate","AimPointTest"]);
 FontStyle323 = browser.currentScene.createNode("FontStyle");
-FontStyle323.justify = ["MIDDLE","MIDDLE"];
+FontStyle323.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 Text322.fontStyle = FontStyle323;
 
 Shape321.geometry = Text322;
@@ -1786,14 +1786,14 @@ browser.currentScene.children[14] = ProtoInstance327;
 //=============== animate a camera shape to visualize view changes ==============
 Transform328 = browser.currentScene.createNode("Transform");
 Transform328.DEF = "CameraShapeTransform";
-Transform328.translation = [0,0.5,0];
+Transform328.translation = new SFVec3f(new float[0,0.5,0]);
 //move CameraShape using active Camera
 ROUTE329 = browser.currentScene.createNode("ROUTE");
 ROUTE329.fromField = "position_changed";
 ROUTE329.fromNode = "Camera.SimpleShotsTest";
 ROUTE329.toField = "translation";
 ROUTE329.toNode = "CameraShapeTransform";
-Transform328.children = [];
+Transform328.children = new MFNode();
 
 Transform328.children[0] = ROUTE329;
 
@@ -1820,31 +1820,31 @@ Transform328.children[3] = ROUTE332;
 
 Transform333 = browser.currentScene.createNode("Transform");
 Transform333.DEF = "CameraOffsetTransform";
-Transform333.translation = [0,0,0.25];
+Transform333.translation = new SFVec3f(new float[0,0,0.25]);
 TouchSensor334 = browser.currentScene.createNode("TouchSensor");
 TouchSensor334.DEF = "CameraShapeTouched";
-Transform333.children = [];
+Transform333.children = new MFNode();
 
 Transform333.children[0] = TouchSensor334;
 
 Inline335 = browser.currentScene.createNode("Inline");
 Inline335.DEF = "CameraShape";
-Inline335.url = ["CameraShape.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"];
+Inline335.url = new MFString(new java.lang.String["CameraShape.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraShape.x3d"]);
 Transform333.children[1] = Inline335;
 
 Shape336 = browser.currentScene.createNode("Shape");
 Shape336.DEF = "SightLine";
 IndexedLineSet337 = browser.currentScene.createNode("IndexedLineSet");
-IndexedLineSet337.coordIndex = [0,1];
+IndexedLineSet337.coordIndex = new MFInt32(new int[0,1]);
 Coordinate338 = browser.currentScene.createNode("Coordinate");
-Coordinate338.point = [0,0,0,0,0,-100];
+Coordinate338.point = new MFVec3f(new float[0,0,0,0,0,-100]);
 IndexedLineSet337.coord = Coordinate338;
 
 Shape336.geometry = IndexedLineSet337;
 
 Appearance339 = browser.currentScene.createNode("Appearance");
 Material340 = browser.currentScene.createNode("Material");
-Material340.emissiveColor = [0.8,0.8,0.4];
+Material340.emissiveColor = new SFColor(new float[0.8,0.8,0.4]);
 Appearance339.material = Material340;
 
 Shape336.appearance = Appearance339;
@@ -1857,13 +1857,13 @@ Transform328.children[4] = Transform333;
 ExternProtoDeclare341 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare341.name = "ViewFrustum";
 ExternProtoDeclare341.appinfo = "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes";
-ExternProtoDeclare341.url = ["../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum"];
+ExternProtoDeclare341.url = new MFString(new java.lang.String["../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum"]);
 field342 = browser.currentScene.createNode("field");
 field342.name = "ViewpointNode";
 field342.accessType = "initializeOnly";
 field342.appinfo = "required: insert Viewpoint DEF or USE node for view of interest";
 field342.type = "SFNode";
-ExternProtoDeclare341.field = [];
+ExternProtoDeclare341.field = new MFNode();
 
 ExternProtoDeclare341.field[0] = field342;
 
@@ -1926,12 +1926,12 @@ fieldValue351.name = "ViewpointNode";
 Viewpoint352 = browser.currentScene.createNode("Viewpoint");
 Viewpoint352.DEF = "FrustumViewpoint";
 Viewpoint352.description = "viewpoint for ViewFrustum";
-Viewpoint352.position = [0,0,0];
-fieldValue351.children = [];
+Viewpoint352.position = new SFVec3f(new float[0,0,0]);
+fieldValue351.children = new MFNode();
 
 fieldValue351.children[0] = Viewpoint352;
 
-ProtoInstance350.fieldValue = [];
+ProtoInstance350.fieldValue = new MFNode();
 
 ProtoInstance350.fieldValue[0] = fieldValue351;
 
@@ -1939,9 +1939,9 @@ fieldValue353 = browser.currentScene.createNode("fieldValue");
 fieldValue353.name = "NavigationInfoNode";
 NavigationInfo354 = browser.currentScene.createNode("NavigationInfo");
 NavigationInfo354.DEF = "TestNavigationInfo";
-NavigationInfo354.transitionType = ["ANIMATE"];
+NavigationInfo354.transitionType = new MFString(new java.lang.String["ANIMATE"]);
 NavigationInfo354.visibilityLimit = 100;
-fieldValue353.children = [];
+fieldValue353.children = new MFNode();
 
 fieldValue353.children[0] = NavigationInfo354;
 
@@ -1991,51 +1991,51 @@ browser.currentScene.children[15] = Transform328;
 
 //=============== add checkerboard, axes and other things to look at while animating ==============
 Background362 = browser.currentScene.createNode("Background");
-Background362.skyColor = [0.282353,0.380392,0.470588];
+Background362.skyColor = new MFColor(new float[0.282353,0.380392,0.470588]);
 browser.currentScene.children[16] = Background362;
 
 Transform363 = browser.currentScene.createNode("Transform");
-Transform363.rotation = [1,0,0,-1.57079];
-Transform363.scale = [10,10,10];
+Transform363.rotation = new SFRotation(new float[1,0,0,-1.57079]);
+Transform363.scale = new SFVec3f(new float[10,10,10]);
 Shape364 = browser.currentScene.createNode("Shape");
 Appearance365 = browser.currentScene.createNode("Appearance");
 Material366 = browser.currentScene.createNode("Material");
 Material366.ambientIntensity = 0.01;
-Material366.diffuseColor = [1,1,1];
+Material366.diffuseColor = new SFColor(new float[1,1,1]);
 Material366.shininess = 0.05;
 Appearance365.material = Material366;
 
 Shape364.appearance = Appearance365;
 
 IndexedFaceSet367 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet367.colorIndex = [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0];
+IndexedFaceSet367.colorIndex = new MFInt32(new int[0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0]);
 IndexedFaceSet367.colorPerVertex = False;
-IndexedFaceSet367.coordIndex = [0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1];
+IndexedFaceSet367.coordIndex = new MFInt32(new int[0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1,4,12,13,5,-1,5,13,14,6,-1,6,14,15,7,-1,8,16,17,9,-1,9,17,18,10,-1,10,18,19,11,-1,11,19,20,12,-1,12,20,21,13,-1,13,21,22,14,-1,14,22,23,15,-1,16,24,25,17,-1,17,25,26,18,-1,18,26,27,19,-1,19,27,28,20,-1,20,28,29,21,-1,21,29,30,22,-1,22,30,31,23,-1,24,32,33,25,-1,25,33,34,26,-1,26,34,35,27,-1,27,35,36,28,-1,28,36,37,29,-1,29,37,38,30,-1,30,38,39,31,-1,32,40,41,33,-1,33,41,42,34,-1,34,42,43,35,-1,35,43,44,36,-1,36,44,45,37,-1,37,45,46,38,-1,38,46,47,39,-1,40,48,49,41,-1,41,49,50,42,-1,42,50,51,43,-1,43,51,52,44,-1,44,52,53,45,-1,45,53,54,46,-1,46,54,55,47,-1,48,56,57,49,-1,49,57,58,50,-1,50,58,59,51,-1,51,59,60,52,-1,52,60,61,53,-1,53,61,62,54,-1,54,62,63,55,-1]);
 IndexedFaceSet367.normalPerVertex = False;
 IndexedFaceSet367.solid = False;
 Coordinate368 = browser.currentScene.createNode("Coordinate");
-Coordinate368.point = [-5.25,5.25,0,-3.75,5.25,0,-2.25,5.25,0,-0.75,5.25,0,0.75,5.25,0,2.25,5.25,0,3.75,5.25,0,5.25,5.25,0,-5.25,3.75,0,-3.75,3.75,0,-2.25,3.75,0,-0.75,3.75,0,0.75,3.75,0,2.25,3.75,0,3.75,3.75,0,5.25,3.75,0,-5.25,2.25,0,-3.75,2.25,0,-2.25,2.25,0,-0.75,2.25,0,0.75,2.25,0,2.25,2.25,0,3.75,2.25,0,5.25,2.25,0,-5.25,0.75,0,-3.75,0.75,0,-2.25,0.75,0,-0.75,0.75,0,0.75,0.75,0,2.25,0.75,0,3.75,0.75,0,5.25,0.75,0,-5.25,-0.75,0,-3.75,-0.75,0,-2.25,-0.75,0,-0.75,-0.75,0,0.75,-0.75,0,2.25,-0.75,0,3.75,-0.75,0,5.25,-0.75,0,-5.25,-2.25,0,-3.75,-2.25,0,-2.25,-2.25,0,-0.75,-2.25,0,0.75,-2.25,0,2.25,-2.25,0,3.75,-2.25,0,5.25,-2.25,0,-5.25,-3.75,0,-3.75,-3.75,0,-2.25,-3.75,0,-0.75,-3.75,0,0.75,-3.75,0,2.25,-3.75,0,3.75,-3.75,0,5.25,-3.75,0,-5.25,-5.25,0,-3.75,-5.25,0,-2.25,-5.25,0,-0.75,-5.25,0,0.75,-5.25,0,2.25,-5.25,0,3.75,-5.25,0,5.25,-5.25,0];
+Coordinate368.point = new MFVec3f(new float[-5.25,5.25,0,-3.75,5.25,0,-2.25,5.25,0,-0.75,5.25,0,0.75,5.25,0,2.25,5.25,0,3.75,5.25,0,5.25,5.25,0,-5.25,3.75,0,-3.75,3.75,0,-2.25,3.75,0,-0.75,3.75,0,0.75,3.75,0,2.25,3.75,0,3.75,3.75,0,5.25,3.75,0,-5.25,2.25,0,-3.75,2.25,0,-2.25,2.25,0,-0.75,2.25,0,0.75,2.25,0,2.25,2.25,0,3.75,2.25,0,5.25,2.25,0,-5.25,0.75,0,-3.75,0.75,0,-2.25,0.75,0,-0.75,0.75,0,0.75,0.75,0,2.25,0.75,0,3.75,0.75,0,5.25,0.75,0,-5.25,-0.75,0,-3.75,-0.75,0,-2.25,-0.75,0,-0.75,-0.75,0,0.75,-0.75,0,2.25,-0.75,0,3.75,-0.75,0,5.25,-0.75,0,-5.25,-2.25,0,-3.75,-2.25,0,-2.25,-2.25,0,-0.75,-2.25,0,0.75,-2.25,0,2.25,-2.25,0,3.75,-2.25,0,5.25,-2.25,0,-5.25,-3.75,0,-3.75,-3.75,0,-2.25,-3.75,0,-0.75,-3.75,0,0.75,-3.75,0,2.25,-3.75,0,3.75,-3.75,0,5.25,-3.75,0,-5.25,-5.25,0,-3.75,-5.25,0,-2.25,-5.25,0,-0.75,-5.25,0,0.75,-5.25,0,2.25,-5.25,0,3.75,-5.25,0,5.25,-5.25,0]);
 IndexedFaceSet367.coord = Coordinate368;
 
 Color369 = browser.currentScene.createNode("Color");
-Color369.color = [0.435294,0.741176,0,0,0.560784,0.580392];
+Color369.color = new MFColor(new float[0.435294,0.741176,0,0,0.560784,0.580392]);
 IndexedFaceSet367.color = Color369;
 
 Shape364.geometry = IndexedFaceSet367;
 
-Transform363.children = [];
+Transform363.children = new MFNode();
 
 Transform363.children[0] = Shape364;
 
 browser.currentScene.children[17] = Transform363;
 
 Transform370 = browser.currentScene.createNode("Transform");
-Transform370.scale = [3,3,3];
-Transform370.translation = [0,0.25,0];
+Transform370.scale = new SFVec3f(new float[3,3,3]);
+Transform370.translation = new SFVec3f(new float[0,0.25,0]);
 Inline371 = browser.currentScene.createNode("Inline");
 Inline371.DEF = "CoordinateAxes";
-Inline371.url = ["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"];
-Transform370.children = [];
+Inline371.url = new MFString(new java.lang.String["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../Savage/Tools/Authoring/CoordinateAxes.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../Savage/Tools/Authoring/CoordinateAxes.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]);
+Transform370.children = new MFNode();
 
 Transform370.children[0] = Inline371;
 
@@ -2045,9 +2045,9 @@ Transform372 = browser.currentScene.createNode("Transform");
 Transform372.DEF = "MovingBoxTransform";
 PositionInterpolator373 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator373.DEF = "BoxPath";
-PositionInterpolator373.key = [0,0.25,0.5,0.75,1];
-PositionInterpolator373.keyValue = [-5,1,5,45,1,5,45,1,-45,-5,1,-45,-5,1,5];
-Transform372.children = [];
+PositionInterpolator373.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
+PositionInterpolator373.keyValue = new MFVec3f(new float[-5,1,5,45,1,5,45,1,-45,-5,1,-45,-5,1,5]);
+Transform372.children = new MFNode();
 
 Transform372.children[0] = PositionInterpolator373;
 
@@ -2101,7 +2101,7 @@ Material383 = browser.currentScene.createNode("Material");
 Appearance382.material = Material383;
 
 ImageTexture384 = browser.currentScene.createNode("ImageTexture");
-ImageTexture384.url = ["../earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"];
+ImageTexture384.url = new MFString(new java.lang.String["../earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"]);
 Appearance382.texture = ImageTexture384;
 
 Shape380.appearance = Appearance382;
@@ -2114,13 +2114,13 @@ browser.currentScene.children[19] = Transform372;
 ExternProtoDeclare385 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare385.name = "CrossHair";
 ExternProtoDeclare385.appinfo = "CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point";
-ExternProtoDeclare385.url = ["../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"];
+ExternProtoDeclare385.url = new MFString(new java.lang.String["../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"]);
 field386 = browser.currentScene.createNode("field");
 field386.name = "enabled";
 field386.accessType = "initializeOnly";
 field386.appinfo = "whether CrissHair orititype is enabled or not";
 field386.type = "SFBool";
-ExternProtoDeclare385.field = [];
+ExternProtoDeclare385.field = new MFNode();
 
 ExternProtoDeclare385.field[0] = field386;
 
@@ -2160,7 +2160,7 @@ ProtoInstance391.DEF = "CrossHairInstance";
 fieldValue392 = browser.currentScene.createNode("fieldValue");
 fieldValue392.name = "enabled";
 fieldValue392.value = "true";
-ProtoInstance391.fieldValue = [];
+ProtoInstance391.fieldValue = new MFNode();
 
 ProtoInstance391.fieldValue[0] = fieldValue392;
 
@@ -2200,15 +2200,15 @@ browser.currentScene.children[23] = ROUTE397;
 //=============== TODO Launch Prototype Example ==============
 Anchor398 = browser.currentScene.createNode("Anchor");
 Anchor398.description = "launch CameraExample scene";
-Anchor398.parameter = ["target=_blank"];
-Anchor398.url = ["CameraExample.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"];
+Anchor398.parameter = new MFString(new java.lang.String["target=_blank"]);
+Anchor398.url = new MFString(new java.lang.String["CameraExample.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"]);
 Transform399 = browser.currentScene.createNode("Transform");
-Transform399.translation = [0,-3,0];
+Transform399.translation = new SFVec3f(new float[0,-3,0]);
 Shape400 = browser.currentScene.createNode("Shape");
 Text401 = browser.currentScene.createNode("Text");
-Text401.string = ["CameraPrototype","defines a prototype","","Click on this text to see","CameraExample scene"];
+Text401.string = new MFString(new java.lang.String["CameraPrototype","defines a prototype","","Click on this text to see","CameraExample scene"]);
 FontStyle402 = browser.currentScene.createNode("FontStyle");
-FontStyle402.justify = ["MIDDLE","MIDDLE"];
+FontStyle402.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 FontStyle402.size = 0.5;
 Text401.fontStyle = FontStyle402;
 
@@ -2216,16 +2216,16 @@ Shape400.geometry = Text401;
 
 Appearance403 = browser.currentScene.createNode("Appearance");
 Material404 = browser.currentScene.createNode("Material");
-Material404.diffuseColor = [1,1,0.2];
+Material404.diffuseColor = new SFColor(new float[1,1,0.2]);
 Appearance403.material = Material404;
 
 Shape400.appearance = Appearance403;
 
-Transform399.children = [];
+Transform399.children = new MFNode();
 
 Transform399.children[0] = Shape400;
 
-Anchor398.children = [];
+Anchor398.children = new MFNode();
 
 Anchor398.children[0] = Transform399;
 

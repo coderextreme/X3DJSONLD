@@ -10,7 +10,7 @@ field4.name = "position";
 field4.accessType = "inputOutput";
 field4.type = "SFVec3f";
 field4.value = "0 0 0";
-ProtoInterface3.field = [];
+ProtoInterface3.field = new MFNode();
 
 ProtoInterface3.field[0] = field4;
 
@@ -23,7 +23,7 @@ IS7 = browser.currentScene.createNode("IS");
 connect8 = browser.currentScene.createNode("connect");
 connect8.nodeField = "translation";
 connect8.protoField = "position";
-IS7.connect = [];
+IS7.connect = new MFNode();
 
 IS7.connect[0] = connect8;
 
@@ -35,22 +35,22 @@ Shape9.geometry = Sphere10;
 
 Appearance11 = browser.currentScene.createNode("Appearance");
 Material12 = browser.currentScene.createNode("Material");
-Material12.diffuseColor = [1,0,0];
+Material12.diffuseColor = new SFColor(new float[1,0,0]);
 Appearance11.material = Material12;
 
 Shape9.appearance = Appearance11;
 
-Transform6.children = [];
+Transform6.children = new MFNode();
 
 Transform6.children[0] = Shape9;
 
 Transform13 = browser.currentScene.createNode("Transform");
-Transform13.translation = [1,0,0];
+Transform13.translation = new SFVec3f(new float[1,0,0]);
 Shape14 = browser.currentScene.createNode("Shape");
 Text15 = browser.currentScene.createNode("Text");
-Text15.string = ["Node"];
+Text15.string = new MFString(new java.lang.String["Node"]);
 FontStyle16 = browser.currentScene.createNode("FontStyle");
-FontStyle16.justify = ["MIDDLE","MIDDLE"];
+FontStyle16.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 FontStyle16.size = 5;
 Text15.fontStyle = FontStyle16;
 
@@ -58,25 +58,25 @@ Shape14.geometry = Text15;
 
 Appearance17 = browser.currentScene.createNode("Appearance");
 Material18 = browser.currentScene.createNode("Material");
-Material18.diffuseColor = [0,0,1];
+Material18.diffuseColor = new SFColor(new float[0,0,1]);
 Appearance17.material = Material18;
 
 Shape14.appearance = Appearance17;
 
-Transform13.children = [];
+Transform13.children = new MFNode();
 
 Transform13.children[0] = Shape14;
 
 Transform6.children[1] = Transform13;
 
-ProtoBody5.children = [];
+ProtoBody5.children = new MFNode();
 
 ProtoBody5.children[0] = Transform6;
 
 PositionInterpolator19 = browser.currentScene.createNode("PositionInterpolator");
 PositionInterpolator19.DEF = "NodePosition";
-PositionInterpolator19.key = [0,1];
-PositionInterpolator19.keyValue = [0,0,0,0,5,0];
+PositionInterpolator19.key = new MFFloat(new float[0,1]);
+PositionInterpolator19.keyValue = new MFVec3f(new float[0,0,0,0,5,0]);
 ProtoBody5.children[1] = PositionInterpolator19;
 
 Script20 = browser.currentScene.createNode("Script");
@@ -86,7 +86,7 @@ field21.name = "translation";
 field21.accessType = "inputOutput";
 field21.type = "SFVec3f";
 field21.value = "50 50 0";
-Script20.field = [];
+Script20.field = new MFNode();
 
 Script20.field[0] = field21;
 
@@ -155,7 +155,7 @@ ProtoBody5.children[7] = ROUTE29;
 
 ProtoDeclare2.protoBody = ProtoBody5;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
@@ -166,7 +166,7 @@ field32 = browser.currentScene.createNode("field");
 field32.name = "set_positionA";
 field32.accessType = "inputOnly";
 field32.type = "SFVec3f";
-ProtoInterface31.field = [];
+ProtoInterface31.field = new MFNode();
 
 ProtoInterface31.field[0] = field32;
 
@@ -183,18 +183,18 @@ Shape35 = browser.currentScene.createNode("Shape");
 Extrusion36 = browser.currentScene.createNode("Extrusion");
 Extrusion36.DEF = "extrusion";
 Extrusion36.creaseAngle = 0.785;
-Extrusion36.crossSection = [1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0];
-Extrusion36.spine = [0,-50,0,0,50,0];
+Extrusion36.crossSection = new MFVec2f(new float[1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0]);
+Extrusion36.spine = new MFVec3f(new float[0,-50,0,0,50,0]);
 Shape35.geometry = Extrusion36;
 
 Appearance37 = browser.currentScene.createNode("Appearance");
 Material38 = browser.currentScene.createNode("Material");
-Material38.diffuseColor = [0,1,0];
+Material38.diffuseColor = new SFColor(new float[0,1,0]);
 Appearance37.material = Material38;
 
 Shape35.appearance = Appearance37;
 
-ProtoBody34.children = [];
+ProtoBody34.children = new MFNode();
 
 ProtoBody34.children[0] = Shape35;
 
@@ -205,7 +205,7 @@ field40.name = "spine";
 field40.accessType = "inputOutput";
 field40.type = "MFVec3f";
 field40.value = "0 -50 0 0 50 0";
-Script39.field = [];
+Script39.field = new MFNode();
 
 Script39.field[0] = field40;
 
@@ -225,7 +225,7 @@ IS43 = browser.currentScene.createNode("IS");
 connect44 = browser.currentScene.createNode("connect");
 connect44.nodeField = "set_endA";
 connect44.protoField = "set_positionA";
-IS43.connect = [];
+IS43.connect = new MFNode();
 
 IS43.connect[0] = connect44;
 
@@ -273,13 +273,13 @@ browser.currentScene.children[1] = ProtoDeclare30;
 
 Transform47 = browser.currentScene.createNode("Transform");
 Transform47.DEF = "HoldsContent";
-Transform47.scale = [0.1,0.1,0.1];
+Transform47.scale = new SFVec3f(new float[0.1,0.1,0.1]);
 PlaneSensor48 = browser.currentScene.createNode("PlaneSensor");
 PlaneSensor48.DEF = "clickGenerator";
-PlaneSensor48.minPosition = [-50,-50];
-PlaneSensor48.maxPosition = [50,50];
+PlaneSensor48.minPosition = new SFVec2f(new float[-50,-50]);
+PlaneSensor48.maxPosition = new SFVec2f(new float[50,50]);
 PlaneSensor48.description = "click on background to add nodes, click on nodes to add links";
-Transform47.children = [];
+Transform47.children = new MFNode();
 
 Transform47.children[0] = PlaneSensor48;
 
@@ -289,7 +289,7 @@ ProtoInstance49.DEF = "nodeA";
 fieldValue50 = browser.currentScene.createNode("fieldValue");
 fieldValue50.name = "position";
 fieldValue50.value = "0 0 0";
-ProtoInstance49.fieldValue = [];
+ProtoInstance49.fieldValue = new MFNode();
 
 ProtoInstance49.fieldValue[0] = fieldValue50;
 
@@ -301,7 +301,7 @@ ProtoInstance51.DEF = "nodeB";
 fieldValue52 = browser.currentScene.createNode("fieldValue");
 fieldValue52.name = "position";
 fieldValue52.value = "50 50 50";
-ProtoInstance51.fieldValue = [];
+ProtoInstance51.fieldValue = new MFNode();
 
 ProtoInstance51.fieldValue[0] = fieldValue52;
 
@@ -313,7 +313,7 @@ ProtoInstance53.DEF = "linkA";
 fieldValue54 = browser.currentScene.createNode("fieldValue");
 fieldValue54.name = "set_positionA";
 fieldValue54.value = "0 0 0";
-ProtoInstance53.fieldValue = [];
+ProtoInstance53.fieldValue = new MFNode();
 
 ProtoInstance53.fieldValue[0] = fieldValue54;
 

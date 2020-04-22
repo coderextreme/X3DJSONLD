@@ -6,68 +6,68 @@ X3D0.version = "3.2";
 Viewpoint2 = browser.currentScene.createNode("Viewpoint");
 Viewpoint2.description = "Main";
 Viewpoint2.jump = False;
-Viewpoint2.orientation = [0,1,0,1.57];
-Viewpoint2.position = [50000,1000,42000];
-browser.currentScene.children = [];
+Viewpoint2.orientation = new SFRotation(new float[0,1,0,1.57]);
+Viewpoint2.position = new SFVec3f(new float[50000,1000,42000]);
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Viewpoint2;
 
 Viewpoint3 = browser.currentScene.createNode("Viewpoint");
 Viewpoint3.description = "Light House Tower";
 Viewpoint3.jump = False;
-Viewpoint3.orientation = [0,1,0,1.3];
-Viewpoint3.position = [45000,1290,44000];
+Viewpoint3.orientation = new SFRotation(new float[0,1,0,1.3]);
+Viewpoint3.position = new SFVec3f(new float[45000,1290,44000]);
 browser.currentScene.children[1] = Viewpoint3;
 
 Viewpoint4 = browser.currentScene.createNode("Viewpoint");
 Viewpoint4.description = "centerWest";
 Viewpoint4.jump = False;
-Viewpoint4.orientation = [0,1,0,2.5];
-Viewpoint4.position = [48000,1000,20000];
+Viewpoint4.orientation = new SFRotation(new float[0,1,0,2.5]);
+Viewpoint4.position = new SFVec3f(new float[48000,1000,20000]);
 browser.currentScene.children[2] = Viewpoint4;
 
 Background5 = browser.currentScene.createNode("Background");
-Background5.groundColor = [0,0,1];
-Background5.skyColor = [0,0,1];
+Background5.groundColor = new MFColor(new float[0,0,1]);
+Background5.skyColor = new MFColor(new float[0,0,1]);
 browser.currentScene.children[3] = Background5;
 
 DirectionalLight6 = browser.currentScene.createNode("DirectionalLight");
 DirectionalLight6.ambientIntensity = 1;
-DirectionalLight6.direction = [-1,0,0];
+DirectionalLight6.direction = new SFVec3f(new float[-1,0,0]);
 DirectionalLight6.global = True;
 browser.currentScene.children[4] = DirectionalLight6;
 
 Group7 = browser.currentScene.createNode("Group");
 Group7.DEF = "Terrain";
 Transform8 = browser.currentScene.createNode("Transform");
-Transform8.scale = [50,50,50];
-Transform8.translation = [25000,0,25000];
+Transform8.scale = new SFVec3f(new float[50,50,50]);
+Transform8.translation = new SFVec3f(new float[25000,0,25000]);
 Inline9 = browser.currentScene.createNode("Inline");
-Inline9.url = ["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"];
-Transform8.children = [];
+Inline9.url = new MFString(new java.lang.String["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"]);
+Transform8.children = new MFNode();
 
 Transform8.children[0] = Inline9;
 
-Group7.children = [];
+Group7.children = new MFNode();
 
 Group7.children[0] = Transform8;
 
 Transform10 = browser.currentScene.createNode("Transform");
-Transform10.rotation = [1,0,0,1.57];
-Transform10.translation = [25000,0,25000];
+Transform10.rotation = new SFRotation(new float[1,0,0,1.57]);
+Transform10.translation = new SFVec3f(new float[25000,0,25000]);
 Shape11 = browser.currentScene.createNode("Shape");
 Rectangle2D12 = browser.currentScene.createNode("Rectangle2D");
-Rectangle2D12.size = [77000,55000];
+Rectangle2D12.size = new SFVec2f(new float[77000,55000]);
 Shape11.geometry = Rectangle2D12;
 
 Appearance13 = browser.currentScene.createNode("Appearance");
 ImageTexture14 = browser.currentScene.createNode("ImageTexture");
-ImageTexture14.url = ["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"];
+ImageTexture14.url = new MFString(new java.lang.String["ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"]);
 Appearance13.texture = ImageTexture14;
 
 Shape11.appearance = Appearance13;
 
-Transform10.children = [];
+Transform10.children = new MFNode();
 
 Transform10.children[0] = Shape11;
 
@@ -78,15 +78,15 @@ browser.currentScene.children[5] = Group7;
 Group15 = browser.currentScene.createNode("Group");
 Group15.DEF = "Placemarks";
 Transform16 = browser.currentScene.createNode("Transform");
-Transform16.scale = [50,50,50];
-Transform16.translation = [45000,30,44000];
+Transform16.scale = new SFVec3f(new float[50,50,50]);
+Transform16.translation = new SFVec3f(new float[45000,30,44000]);
 Inline17 = browser.currentScene.createNode("Inline");
-Inline17.url = ["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"];
-Transform16.children = [];
+Inline17.url = new MFString(new java.lang.String["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"]);
+Transform16.children = new MFNode();
 
 Transform16.children[0] = Inline17;
 
-Group15.children = [];
+Group15.children = new MFNode();
 
 Group15.children[0] = Transform16;
 
@@ -96,7 +96,7 @@ Group18 = browser.currentScene.createNode("Group");
 Group18.DEF = "Clouds";
 Transform19 = browser.currentScene.createNode("Transform");
 Transform19.DEF = "Cumulus";
-Group18.children = [];
+Group18.children = new MFNode();
 
 Group18.children[0] = Transform19;
 
@@ -117,11 +117,11 @@ field23.accessType = "initializeOnly";
 field23.type = "SFNode";
 Transform24 = browser.currentScene.createNode("Transform");
 Transform24.USE = "Cumulus";
-field23.children = [];
+field23.children = new MFNode();
 
 field23.children[0] = Transform24;
 
-Script22.field = [];
+Script22.field = new MFNode();
 
 Script22.field[0] = field23;
 
@@ -131,7 +131,7 @@ field25.accessType = "initializeOnly";
 field25.type = "SFNode";
 Transform26 = browser.currentScene.createNode("Transform");
 Transform26.USE = "Cirrus";
-field25.children = [];
+field25.children = new MFNode();
 
 field25.children[0] = Transform26;
 
@@ -529,8 +529,8 @@ Group18.children[3] = Script22;
 
 DirectionalLight28 = browser.currentScene.createNode("DirectionalLight");
 DirectionalLight28.ambientIntensity = 1;
-DirectionalLight28.color = [1,0,0];
-DirectionalLight28.direction = [-1,-1,0];
+DirectionalLight28.color = new SFColor(new float[1,0,0]);
+DirectionalLight28.direction = new SFVec3f(new float[-1,-1,0]);
 DirectionalLight28.global = True;
 Group18.children[4] = DirectionalLight28;
 

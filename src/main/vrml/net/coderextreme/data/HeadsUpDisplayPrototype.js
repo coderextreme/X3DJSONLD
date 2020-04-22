@@ -12,7 +12,7 @@ field4.accessType = "inputOutput";
 field4.appinfo = "Displayed subscene positioned as a HUD.";
 field4.type = "MFNode";
 //default is null array of nodes
-ProtoInterface3.field = [];
+ProtoInterface3.field = new MFNode();
 
 ProtoInterface3.field[0] = field4;
 
@@ -46,18 +46,18 @@ ProtoBody8 = browser.currentScene.createNode("ProtoBody");
 Group9 = browser.currentScene.createNode("Group");
 ProximitySensor10 = browser.currentScene.createNode("ProximitySensor");
 ProximitySensor10.DEF = "WhereSensor";
-ProximitySensor10.size = [1000000000,1000000000,1000000000];
+ProximitySensor10.size = new SFVec3f(new float[1000000000,1000000000,1000000000]);
 IS11 = browser.currentScene.createNode("IS");
 connect12 = browser.currentScene.createNode("connect");
 connect12.nodeField = "center";
 connect12.protoField = "locationOffset";
-IS11.connect = [];
+IS11.connect = new MFNode();
 
 IS11.connect[0] = connect12;
 
 ProximitySensor10.iS = IS11;
 
-Group9.children = [];
+Group9.children = new MFNode();
 
 Group9.children[0] = ProximitySensor10;
 
@@ -71,26 +71,26 @@ IS16 = browser.currentScene.createNode("IS");
 connect17 = browser.currentScene.createNode("connect");
 connect17.nodeField = "translation";
 connect17.protoField = "locationOffset";
-IS16.connect = [];
+IS16.connect = new MFNode();
 
 IS16.connect[0] = connect17;
 
 Transform15.iS = IS16;
 
 Transform18 = browser.currentScene.createNode("Transform");
-Transform18.translation = [0,0,-10];
+Transform18.translation = new SFVec3f(new float[0,0,-10]);
 Group19 = browser.currentScene.createNode("Group");
 IS20 = browser.currentScene.createNode("IS");
 connect21 = browser.currentScene.createNode("connect");
 connect21.nodeField = "children";
 connect21.protoField = "children";
-IS20.connect = [];
+IS20.connect = new MFNode();
 
 IS20.connect[0] = connect21;
 
 Group19.iS = IS20;
 
-Transform18.children = [];
+Transform18.children = new MFNode();
 
 Transform18.children[0] = Group19;
 
@@ -102,13 +102,13 @@ IS24 = browser.currentScene.createNode("IS");
 connect25 = browser.currentScene.createNode("connect");
 connect25.nodeField = "children";
 connect25.protoField = "dragChildren";
-IS24.connect = [];
+IS24.connect = new MFNode();
 
 IS24.connect[0] = connect25;
 
 Group23.iS = IS24;
 
-Group22.children = [];
+Group22.children = new MFNode();
 
 Group22.children[0] = Group23;
 
@@ -119,7 +119,7 @@ IS27 = browser.currentScene.createNode("IS");
 connect28 = browser.currentScene.createNode("connect");
 connect28.nodeField = "offset";
 connect28.protoField = "locationOffset";
-IS27.connect = [];
+IS27.connect = new MFNode();
 
 IS27.connect[0] = connect28;
 
@@ -137,7 +137,7 @@ field31 = browser.currentScene.createNode("field");
 field31.name = "traceEnabled";
 field31.accessType = "initializeOnly";
 field31.type = "SFBool";
-Script30.field = [];
+Script30.field = new MFNode();
 
 Script30.field[0] = field31;
 
@@ -189,7 +189,7 @@ IS39 = browser.currentScene.createNode("IS");
 connect40 = browser.currentScene.createNode("connect");
 connect40.nodeField = "traceEnabled";
 connect40.protoField = "traceEnabled";
-IS39.connect = [];
+IS39.connect = new MFNode();
 
 IS39.connect[0] = connect40;
 
@@ -256,11 +256,11 @@ Group22.children[6] = ROUTE43;
 
 Transform18.children[1] = Group22;
 
-Transform15.children = [];
+Transform15.children = new MFNode();
 
 Transform15.children[0] = Transform18;
 
-Transform14.children = [];
+Transform14.children = new MFNode();
 
 Transform14.children[0] = Transform15;
 
@@ -285,7 +285,7 @@ ROUTE46.toField = "set_offset";
 ROUTE46.toNode = "PlaneMovementSensor";
 Transform14.children[3] = ROUTE46;
 
-Transform13.children = [];
+Transform13.children = new MFNode();
 
 Transform13.children[0] = Transform14;
 
@@ -305,45 +305,45 @@ ROUTE48.toField = "set_rotation";
 ROUTE48.toNode = "FixedLocation";
 Group9.children[3] = ROUTE48;
 
-ProtoBody8.children = [];
+ProtoBody8.children = new MFNode();
 
 ProtoBody8.children[0] = Group9;
 
 ProtoDeclare2.protoBody = ProtoBody8;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
 //====================
 Background49 = browser.currentScene.createNode("Background");
-Background49.groundColor = [0.1,0.1,0.3];
-Background49.skyColor = [0.5,0.5,0.1];
+Background49.groundColor = new MFColor(new float[0.1,0.1,0.3]);
+Background49.skyColor = new MFColor(new float[0.5,0.5,0.1]);
 browser.currentScene.children[1] = Background49;
 
 Anchor50 = browser.currentScene.createNode("Anchor");
 Anchor50.description = "HeadsUpDisplayExample";
-Anchor50.parameter = ["target=_blank"];
-Anchor50.url = ["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"];
+Anchor50.parameter = new MFString(new java.lang.String["target=_blank"]);
+Anchor50.url = new MFString(new java.lang.String["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"]);
 Shape51 = browser.currentScene.createNode("Shape");
 Appearance52 = browser.currentScene.createNode("Appearance");
 Material53 = browser.currentScene.createNode("Material");
-Material53.diffuseColor = [0,1,1];
-Material53.emissiveColor = [0,1,1];
+Material53.diffuseColor = new SFColor(new float[0,1,1]);
+Material53.emissiveColor = new SFColor(new float[0,1,1]);
 Appearance52.material = Material53;
 
 Shape51.appearance = Appearance52;
 
 Text54 = browser.currentScene.createNode("Text");
-Text54.string = ["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"];
+Text54.string = new MFString(new java.lang.String["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"]);
 FontStyle55 = browser.currentScene.createNode("FontStyle");
-FontStyle55.justify = ["MIDDLE","MIDDLE"];
+FontStyle55.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 FontStyle55.size = 0.8;
 Text54.fontStyle = FontStyle55;
 
 Shape51.geometry = Text54;
 
-Anchor50.children = [];
+Anchor50.children = new MFNode();
 
 Anchor50.children[0] = Shape51;
 

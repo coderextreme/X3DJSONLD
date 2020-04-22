@@ -68,7 +68,7 @@ VRMLScriptSerializer.prototype = {
 			values.pop();
 		}
 
-		return '['+lead+values.join(j)+trail+']';
+		return 'new '+attrType+'(new '+type+'['+lead+values.join(j)+trail+'])';
 	},
 
 	printParentChild : function (element, node, cn, mapToMethod, n) {
@@ -308,12 +308,22 @@ VRMLScriptSerializer.prototype = {
 						ch += "browser.currentScene.";
 					}
 				}
+				console.log(element.nodeName, node.nodeName, method, fieldTypes[element.nodeName][node.nodeName]);
 				if (method.startsWith(".set")) {
 					if (method.startsWith(".setadd")) {
 						method = method.substring(4);
+						console.log(method);
 						method = method.charAt(0).toLowerCase() + method.slice(1);
+						console.log(method);
 						if (ai === 0) {
-							ch += (method.substr(7,1).toLowerCase())+method.substr(8)+" = [];\n\n";
+							if (typeof fieldTypes[element.nodeName] !== 'undefined' && typeof fieldTypes[element.nodeName][node.nodeName] !== 'undefined') {
+								let attrType = fieldTypes[element.nodeName][node.nodeName];
+								ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = new "+attrType+"();\n\n";
+							} else {
+								let attrType = fieldTypes[element.nodeName][(method.substr(3,1).toLowerCase())+method.substr(4)];
+								console.log(attrType, (method.substr(3,1).toLowerCase())+method.substr(4));
+								ch += (method.substr(3,1).toLowerCase())+method.substr(4)+" = new "+attrType+"();\n\n";
+							}
 							if (element.nodeName !== "X3D") {
 								if (element.nodeName !== "Scene") {
 									ch += element.nodeName+stack[1]+".";
@@ -322,7 +332,7 @@ VRMLScriptSerializer.prototype = {
 								}
 							}
 						}
-						ch += (method.substr(7,1).toLowerCase())+method.substr(8)+"["+ai+"] = "+node.nodeName+stack[0]+";\n\n";
+						ch += (method.substr(3,1).toLowerCase())+method.substr(4)+"["+ai+"] = "+node.nodeName+stack[0]+";\n\n";
 						ai++;
 					} else if (method.startsWith(".setset")) {
 						method = method.substring(4);
@@ -337,7 +347,13 @@ VRMLScriptSerializer.prototype = {
 					}
 				} else {
 					if (ai === 0) {
-						ch += (method.substr(4,1).toLowerCase())+method.substr(5)+" = [];\n\n";
+						if (typeof fieldTypes[element.nodeName] !== 'undefined' && typeof fieldTypes[element.nodeName][node.nodeName] !== 'undefined') {
+							let attrType = fieldTypes[element.nodeName][node.nodeName];
+							ch += (method.substr(4,1).toLowerCase())+method.substr(5)+" = new "+attrType+"();\n\n";
+						} else {
+							let attrType = fieldTypes[element.nodeName][(method.substr(4,1).toLowerCase())+method.substr(5)];
+							ch += (method.substr(4,1).toLowerCase())+method.substr(5)+" = new "+attrType+"();\n\n";
+						}
 						if (element.nodeName !== "X3D") {
 							if (element.nodeName !== "Scene") {
 								ch += element.nodeName+stack[1]+".";

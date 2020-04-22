@@ -10,7 +10,7 @@ field4.name = "myInputRange";
 field4.accessType = "initializeOnly";
 field4.type = "SFVec3f";
 field4.value = "0.95 0.44 0.22";
-ProtoInterface3.field = [];
+ProtoInterface3.field = new MFNode();
 
 ProtoInterface3.field[0] = field4;
 
@@ -22,7 +22,7 @@ Transform6.DEF = "TR";
 Shape7 = browser.currentScene.createNode("Shape");
 Appearance8 = browser.currentScene.createNode("Appearance");
 Material9 = browser.currentScene.createNode("Material");
-Material9.diffuseColor = [0.5,0.5,0.9];
+Material9.diffuseColor = new SFColor(new float[0.5,0.5,0.9]);
 Appearance8.material = Material9;
 
 ComposedShader10 = browser.currentScene.createNode("ComposedShader");
@@ -31,7 +31,7 @@ field11 = browser.currentScene.createNode("field");
 field11.name = "decis";
 field11.accessType = "initializeOnly";
 field11.type = "SFVec3f";
-ComposedShader10.field = [];
+ComposedShader10.field = new MFNode();
 
 ComposedShader10.field[0] = field11;
 
@@ -39,7 +39,7 @@ IS12 = browser.currentScene.createNode("IS");
 connect13 = browser.currentScene.createNode("connect");
 connect13.nodeField = "decis";
 connect13.protoField = "myInputRange";
-IS12.connect = [];
+IS12.connect = new MFNode();
 
 IS12.connect[0] = connect13;
 
@@ -53,7 +53,7 @@ ShaderPart15 = browser.currentScene.createNode("ShaderPart");
 ShaderPart15.type = "FRAGMENT";
 ComposedShader10.parts[2] = ShaderPart15;
 
-Appearance8.shaders = [];
+Appearance8.shaders = new MFNode();
 
 Appearance8.shaders[0] = ComposedShader10;
 
@@ -65,7 +65,7 @@ field17.name = "decis";
 field17.accessType = "initializeOnly";
 field17.type = "SFVec3f";
 field17.value = "0.95 0.77 0.44";
-ComposedShader16.field = [];
+ComposedShader16.field = new MFNode();
 
 ComposedShader16.field[0] = field17;
 
@@ -86,17 +86,17 @@ Sphere20 = browser.currentScene.createNode("Sphere");
 Sphere20.radius = 1.75;
 Shape7.geometry = Sphere20;
 
-Transform6.children = [];
+Transform6.children = new MFNode();
 
 Transform6.children[0] = Shape7;
 
-ProtoBody5.children = [];
+ProtoBody5.children = new MFNode();
 
 ProtoBody5.children[0] = Transform6;
 
 ProtoDeclare2.protoBody = ProtoBody5;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
@@ -115,11 +115,11 @@ MetadataSet24.name = "nodes";
 MetadataSet24.DEF = "nodes";
 MetadataSet24.reference = "http://titania.create3000.de";
 //NULL
-MetadataSet23.value = [];
+MetadataSet23.value = new MFNode();
 
 MetadataSet23.value[0] = MetadataSet24;
 
-MetadataSet22.value = [];
+MetadataSet22.value = new MFNode();
 
 MetadataSet22.value[0] = MetadataSet23;
 
@@ -131,8 +131,8 @@ MetadataString26 = browser.currentScene.createNode("MetadataString");
 MetadataString26.name = "type";
 MetadataString26.DEF = "type";
 MetadataString26.reference = "http://titania.create3000.de";
-MetadataString26.value = ["EXAMINE"];
-MetadataSet25.value = [];
+MetadataString26.value = new MFString(new java.lang.String["EXAMINE"]);
+MetadataSet25.value = new MFNode();
 
 MetadataSet25.value[0] = MetadataString26;
 
@@ -146,8 +146,8 @@ MetadataDouble28 = browser.currentScene.createNode("MetadataDouble");
 MetadataDouble28.name = "position";
 MetadataDouble28.DEF = "position";
 MetadataDouble28.reference = "http://titania.create3000.de";
-MetadataDouble28.value = [6.24067728185014,0.00250837343276661,2.92117542307615];
-MetadataSet27.value = [];
+MetadataDouble28.value = new MFDouble(new double[6.24067728185014,0.00250837343276661,2.92117542307615]);
+MetadataSet27.value = new MFNode();
 
 MetadataSet27.value[0] = MetadataDouble28;
 
@@ -155,14 +155,14 @@ MetadataDouble29 = browser.currentScene.createNode("MetadataDouble");
 MetadataDouble29.name = "orientation";
 MetadataDouble29.DEF = "orientation";
 MetadataDouble29.reference = "http://titania.create3000.de";
-MetadataDouble29.value = [-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191];
+MetadataDouble29.value = new MFDouble(new double[-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191]);
 MetadataSet27.value[1] = MetadataDouble29;
 
 MetadataDouble30 = browser.currentScene.createNode("MetadataDouble");
 MetadataDouble30.name = "centerOfRotation";
 MetadataDouble30.DEF = "centerOfRotation";
 MetadataDouble30.reference = "http://titania.create3000.de";
-MetadataDouble30.value = [-0.808320198626341,-0.358072370409949,0.22817191560906];
+MetadataDouble30.value = new MFDouble(new double[-0.808320198626341,-0.358072370409949,0.22817191560906]);
 MetadataSet27.value[2] = MetadataDouble30;
 
 MetadataSet22.value[2] = MetadataSet27;

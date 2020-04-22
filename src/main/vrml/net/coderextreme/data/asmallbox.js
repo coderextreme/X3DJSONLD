@@ -13,11 +13,11 @@ Shape5 = browser.currentScene.createNode("Shape");
 Sphere6 = browser.currentScene.createNode("Sphere");
 Shape5.geometry = Sphere6;
 
-field4.children = [];
+field4.children = new MFNode();
 
 field4.children[0] = Shape5;
 
-ProtoInterface3.field = [];
+ProtoInterface3.field = new MFNode();
 
 ProtoInterface3.field[0] = field4;
 
@@ -29,19 +29,19 @@ IS9 = browser.currentScene.createNode("IS");
 connect10 = browser.currentScene.createNode("connect");
 connect10.nodeField = "children";
 connect10.protoField = "myShape";
-IS9.connect = [];
+IS9.connect = new MFNode();
 
 IS9.connect[0] = connect10;
 
 Transform8.iS = IS9;
 
-ProtoBody7.children = [];
+ProtoBody7.children = new MFNode();
 
 ProtoBody7.children[0] = Transform8;
 
 ProtoDeclare2.protoBody = ProtoBody7;
 
-browser.currentScene.children = [];
+browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
@@ -56,11 +56,11 @@ Shape14 = browser.currentScene.createNode("Shape");
 Cylinder15 = browser.currentScene.createNode("Cylinder");
 Shape14.geometry = Cylinder15;
 
-field13.children = [];
+field13.children = new MFNode();
 
 field13.children[0] = Shape14;
 
-ProtoInterface12.field = [];
+ProtoInterface12.field = new MFNode();
 
 ProtoInterface12.field[0] = field13;
 
@@ -74,17 +74,17 @@ IS19 = browser.currentScene.createNode("IS");
 connect20 = browser.currentScene.createNode("connect");
 connect20.nodeField = "myShape";
 connect20.protoField = "myShape";
-IS19.connect = [];
+IS19.connect = new MFNode();
 
 IS19.connect[0] = connect20;
 
 ProtoInstance18.iS = IS19;
 
-Transform17.children = [];
+Transform17.children = new MFNode();
 
 Transform17.children[0] = ProtoInstance18;
 
-ProtoBody16.children = [];
+ProtoBody16.children = new MFNode();
 
 ProtoBody16.children[0] = Transform17;
 
@@ -100,11 +100,11 @@ Shape23 = browser.currentScene.createNode("Shape");
 Box24 = browser.currentScene.createNode("Box");
 Shape23.geometry = Box24;
 
-fieldValue22.children = [];
+fieldValue22.children = new MFNode();
 
 fieldValue22.children[0] = Shape23;
 
-ProtoInstance21.fieldValue = [];
+ProtoInstance21.fieldValue = new MFNode();
 
 ProtoInstance21.fieldValue[0] = fieldValue22;
 
