@@ -220,8 +220,20 @@ JavaSerializer.prototype = {
 			addpre = "";
 		}
 		if (node.nodeName === "IS") {
-			method = "setIS";
-			addpre = "";
+			method = "IS";
+			addpre = "set";
+		}
+		if (addpre+method === "setJoints") {
+			method = "Joints"
+			addpre = "add";
+		}
+		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
+			method = "Metadata"
+			addpre = "add";
+		}
+		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
+			method = "LayerSet"
+			addpre = "add";
 		}
 		return prepre+addpre+method;
 	},
