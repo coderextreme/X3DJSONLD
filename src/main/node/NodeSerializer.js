@@ -123,6 +123,18 @@ NodeSerializer.prototype = {
 			method = "setIS";
 			addpre = "";
 		}
+		if (addpre+method === "setJoints") {
+			method = "Joints"
+			addpre = "add";
+		}
+		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
+			method = "Metadata"
+			addpre = "add";
+		}
+		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
+			method = "LayerSet"
+			addpre = "add";
+		}
 		if (method === "setShaders") {
 			method = "addShaders"
 			addpre = "";

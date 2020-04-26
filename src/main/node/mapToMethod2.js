@@ -56,7 +56,8 @@ var mapToMethod2 = {
 	},
 	"Scene" : {
 		"LayerSet" : "addLayerSet",
-		"MetadataString" : "addMetadata"
+		"MetadataString" : "addMetadata",
+		"MetadataSet" : "addChildren"
 	}
 };
 
