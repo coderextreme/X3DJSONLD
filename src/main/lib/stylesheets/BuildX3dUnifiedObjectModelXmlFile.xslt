@@ -199,8 +199,9 @@ Recommended tool:
 					<xsl:for-each select="*/xs:enumeration">
 						<xsl:variable name="enumerationName" select="@value"/>
                         <xsl:variable name="priorIndex" select="preceding-sibling::*[1]//xs:attribute[@name='index']/@fixed"/>
-						<xsl:element name="enumeration">
-							<xsl:attribute name="value" select="translate(@value,'-','')"/>
+                        <xsl:element name="enumeration">
+                            <xsl:attribute name="value" select="@value"/>
+                            <!-- translate(@value,'-','') do not remove hyphens from enumerations in X3DUOM (e.g. H-Anim), that can happen in language bindings -->
                             <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
                                 <xsl:variable  name="attributeName"        select="@name"/>
                                 <xsl:variable  name="attributeValue"       select="@fixed"/>
@@ -239,7 +240,7 @@ Recommended tool:
                                         </xsl:if>
                                     </xsl:attribute>
                                 </xsl:if>
-								<!-- left/right checks -->
+				<!-- left/right checks -->
                                 <xsl:if test="(starts-with($enumerationName,'l_') and starts-with($attributeValue,'r_')) or
                                               (starts-with($enumerationName,'r_') and starts-with($attributeValue,'l_')) or
                                               (starts-with($enumerationName,'l_') and starts-with($attributeAlias,'r_')) or
@@ -248,17 +249,17 @@ Recommended tool:
                                         <xsl:text>*** error in </xsl:text>
                                         <xsl:value-of select="$simpleTypeName"/>
                                         <xsl:text> enumeration </xsl:text>
-										<xsl:value-of select="$enumerationName"/>
+					<xsl:value-of select="$enumerationName"/>
                                         <xsl:text>, attributeName </xsl:text>
                                         <xsl:value-of select="$attributeName"/>
-										<xsl:if test="(string-length($attributeValue) > 0)">
-											<xsl:text>, attributeValue </xsl:text>
-											<xsl:value-of select="$attributeValue"/>
-										</xsl:if>
-										<xsl:if test="(string-length($attributeAlias) > 0)">
-											<xsl:text>, attributeAlias </xsl:text>
-											<xsl:value-of select="$attributeAlias"/>
-										</xsl:if>
+                                        <xsl:if test="(string-length($attributeValue) > 0)">
+                                                <xsl:text>, attributeValue </xsl:text>
+                                                <xsl:value-of select="$attributeValue"/>
+                                        </xsl:if>
+                                        <xsl:if test="(string-length($attributeAlias) > 0)">
+                                                <xsl:text>, attributeAlias </xsl:text>
+                                                <xsl:value-of select="$attributeAlias"/>
+                                        </xsl:if>
                                         <xsl:text>, </xsl:text>
                                         <xsl:if test="(string-length(normalize-space($attributeIndex)) > 0)">
                                             <xsl:text>index#</xsl:text>
@@ -316,7 +317,7 @@ Recommended tool:
                                     </xsl:message>
                                 </xsl:if>
                                 <!-- LOA consistency check for segments and joints -->
-								<xsl:variable name="matchingJointLoaValue"   select="//xs:simpleType[@name=  'jointNameValues']/xs:restriction/xs:enumeration[@value = $attributeParent]//xs:attribute[@name = 'loa']/@fixed"/>
+				<xsl:variable name="matchingJointLoaValue"   select="//xs:simpleType[@name=  'jointNameValues']/xs:restriction/xs:enumeration[@value = $attributeParent]//xs:attribute[@name = 'loa']/@fixed"/>
                                 <xsl:variable name="matchingSegmentLoaValue" select="//xs:simpleType[@name='segmentNameValues']/xs:restriction/xs:enumeration[@value = $attributeParent]//xs:attribute[@name = 'loa']/@fixed"/>
                                 <xsl:if test="starts-with($schemaFullVersionNumber,'4') and
 								              not(($attributeParent= 'humanoid_root')        and ($attributeName='loa') and    ($attributeValue = '1')) and
@@ -345,7 +346,7 @@ Recommended tool:
                                         <xsl:text>'</xsl:text>
                                     </xsl:message>
                                 </xsl:if>
-								<xsl:variable name="aliasErrorMessageHeader">
+                                <xsl:variable name="aliasErrorMessageHeader">
                                         <xsl:text>*** error in </xsl:text>
                                         <xsl:value-of select="$simpleTypeName"/>
                                         <xsl:text> enumeration </xsl:text>
@@ -364,10 +365,10 @@ Recommended tool:
                                         <xsl:text>' alias='</xsl:text>
                                         <xsl:value-of select="$attributeAlias"/>
                                         <xsl:text>'</xsl:text>
-								</xsl:variable>
-								<!-- duplicate alias check -->
-								<!-- TODO fix warning -->
-								<xsl:variable name="matchingJointAliasValue"   select="//xs:simpleType[@name=       'jointNameValues']/xs:restriction/xs:enumeration[@name != $enumerationName]//xs:attribute[@name = 'alias'][@fixed = $attributeAlias]/@fixed"/>
+                                </xsl:variable>
+                                <!-- duplicate alias check -->
+                                <!-- TODO fix warning -->
+                                <xsl:variable name="matchingJointAliasValue"   select="//xs:simpleType[@name=       'jointNameValues']/xs:restriction/xs:enumeration[@name != $enumerationName]//xs:attribute[@name = 'alias'][@fixed = $attributeAlias]/@fixed"/>
                                 <xsl:variable name="matchingSegmentAliasValue" select="//xs:simpleType[@name=     'segmentNameValues']/xs:restriction/xs:enumeration[@name != $enumerationName]//xs:attribute[@name = 'alias'][@fixed = $attributeAlias]/@fixed"/>
                                 <xsl:variable name="matchingFeatureAliasValue" select="//xs:simpleType[@name='featurePointNameValues']/xs:restriction/xs:enumeration[@name != $enumerationName]//xs:attribute[@name = 'alias'][@fixed = $attributeAlias]/@fixed"/>
                                 <xsl:if test="(starts-with($schemaFullVersionNumber,'4') and 
@@ -376,20 +377,20 @@ Recommended tool:
                                                (string-length($matchingSegmentAliasValue) > 0) or
                                                (string-length($matchingFeatureAliasValue) > 0)))">
                                     <xsl:message>
-										<xsl:value-of select="$aliasErrorMessageHeader"/>
+                                        <xsl:value-of select="$aliasErrorMessageHeader"/>
                                         <xsl:text> has matching alias value</xsl:text>
-										<xsl:if test="(string-length($matchingJointAliasValue) > 0)">
-											<xsl:text>, joint </xsl:text>
-											<xsl:value-of select="$matchingJointAliasValue"/>
-										</xsl:if>
-										<xsl:if test="(string-length($matchingSegmentAliasValue) > 0)">
-											<xsl:text>, segment </xsl:text>
-											<xsl:value-of select="$matchingSegmentAliasValue"/>
-										</xsl:if>
-										<xsl:if test="(string-length($matchingFeatureAliasValue) > 0)">
-											<xsl:text>, feature point </xsl:text>
-											<xsl:value-of select="$matchingFeatureAliasValue"/>
-										</xsl:if>
+                                        <xsl:if test="(string-length($matchingJointAliasValue) > 0)">
+                                                <xsl:text>, joint </xsl:text>
+                                                <xsl:value-of select="$matchingJointAliasValue"/>
+                                        </xsl:if>
+                                        <xsl:if test="(string-length($matchingSegmentAliasValue) > 0)">
+                                                <xsl:text>, segment </xsl:text>
+                                                <xsl:value-of select="$matchingSegmentAliasValue"/>
+                                        </xsl:if>
+                                        <xsl:if test="(string-length($matchingFeatureAliasValue) > 0)">
+                                                <xsl:text>, feature point </xsl:text>
+                                                <xsl:value-of select="$matchingFeatureAliasValue"/>
+                                        </xsl:if>
                                     </xsl:message>
                                 </xsl:if>
                             </xsl:for-each>
@@ -399,26 +400,26 @@ Recommended tool:
                             <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
                                 <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
                             </xsl:if>
-							<xsl:variable name="enumerationAppinfo" select="xs:annotation/xs:appinfo"/>
-							<xsl:if test="(string-length(normalize-space($enumerationAppinfo)) > 0)">
-								<xsl:attribute name="appinfo" select="normalize-space($enumerationAppinfo)"/>
-							</xsl:if>
-							<xsl:variable name="enumerationDocumentation" select="xs:annotation/xs:documentation/@source"/>
-							<xsl:choose>
-								<xsl:when test="(string-length(normalize-space($enumerationDocumentation)) > 0)">
-									<xsl:attribute name="documentation" select="normalize-space($enumerationDocumentation)"/>
-								</xsl:when>
-								<xsl:when test="starts-with($schemaFullVersionNumber,'4') and 
-                                               (($simpleTypeName = 'featurePointNameValues') or ($simpleTypeName = 'jointNameValues') or ($simpleTypeName = 'segmentNameValues'))">
-									<xsl:message>
+                            <xsl:variable name="enumerationAppinfo" select="xs:annotation/xs:appinfo"/>
+                            <xsl:if test="(string-length(normalize-space($enumerationAppinfo)) > 0)">
+                                    <xsl:attribute name="appinfo" select="normalize-space($enumerationAppinfo)"/>
+                            </xsl:if>
+                            <xsl:variable name="enumerationDocumentation" select="xs:annotation/xs:documentation/@source"/>
+                            <xsl:choose>
+                                    <xsl:when test="(string-length(normalize-space($enumerationDocumentation)) > 0)">
+                                            <xsl:attribute name="documentation" select="normalize-space($enumerationDocumentation)"/>
+                                    </xsl:when>
+                                    <xsl:when test="starts-with($schemaFullVersionNumber,'4') and 
+                                                    (($simpleTypeName = 'featurePointNameValues') or ($simpleTypeName = 'jointNameValues') or ($simpleTypeName = 'segmentNameValues'))">
+                                            <xsl:message>
                                         <xsl:text>*** error in </xsl:text>
                                         <xsl:value-of select="$simpleTypeName"/>
                                         <xsl:text> enumeration </xsl:text>
-										<xsl:value-of select="$enumerationName"/>
+                                        <xsl:value-of select="$enumerationName"/>
                                         <xsl:text>: missing documentation url </xsl:text>
                                     </xsl:message>
-								</xsl:when>
-							</xsl:choose>
+                                    </xsl:when>
+                            </xsl:choose>
                             <xsl:if test="($name='profileNames')">
 								<xsl:variable name="nodeList" select="translate(normalize-space(substring-after($enumerationAppinfo,'Allowed X3D nodes for this profile are:')),'.','')"/>
 								<!-- get statementList from Core profile enumeration appinfo within profileNames -->
@@ -452,7 +453,7 @@ Recommended tool:
         <xsl:element name="FieldTypes">
             <xsl:for-each select="//xs:schema/xs:simpleType[starts-with(@name, 'SF') or starts-with(@name, 'MF')]">
                 <xsl:sort select="substring(@name, 3)"/>
-                <xsl:sort select="substring(@name, 1, 2)" order="descending"/>
+                <xsl:sort select="substring(@name, 1, 2)" order="descending"/><!-- SF MF -->
                 <xsl:variable name="fieldType" select="@name"/>
 				<!--
 	<xs:simpleType name="SFBool">
@@ -1492,9 +1493,9 @@ Recommended tool:
 			</xsl:message>
 		</xsl:if> -->
             <xsl:element name="field">
+                <xsl:attribute name="name" select="$fieldName"/>
                 <xsl:attribute name="type" select="$fieldType"/>
                 <xsl:attribute name="accessType" select="$fieldAccessType"/>
-                <xsl:attribute name="name" select="$fieldName"/>
                 <!-- default -->
                 <xsl:choose>
                         <xsl:when test="$givenType='SFNode'">
@@ -1691,12 +1692,30 @@ Recommended tool:
                     </xsl:message> -->
                 </xsl:if>
                 <xsl:choose>
+                    <xsl:when test="starts-with($baseType,'SF') or starts-with($baseType,'MF')">
+                        <xsl:attribute name="simpleType">
+                            <xsl:value-of select="$baseType"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="baseType">
+                            <xsl:value-of select="//xs:simpleType[@name = $baseType]/xs:restriction/@base"/>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="ends-with($baseType,'Choices') or ends-with($baseType,'Values')">
+                        <xsl:attribute name="simpleType">
+                            <xsl:value-of select="$baseType"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="baseType">
+                            <xsl:value-of select="//xs:simpleType[@name = $baseType]/xs:restriction/@base"/>
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="(string-length($baseType) > 0)">
+                        <!-- no simpleType -->
                         <xsl:attribute name="baseType">
                             <xsl:value-of select="$baseType"/>
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="(@type = 'xs:NMTOKEN') or (@type = 'xs:NMTOKENS') or (@type = 'xs:token') or (@type = 'xs:ID') or (@type = 'xs:IDREF')">
+                        <!-- no simpleType -->
                         <xsl:attribute name="baseType">
                             <xsl:value-of select="@type"/>
                         </xsl:attribute>

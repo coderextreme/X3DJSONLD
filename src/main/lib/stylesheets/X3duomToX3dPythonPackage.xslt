@@ -67,16 +67,18 @@ __all__ = [</xsl:text>
                 <xsl:text>, </xsl:text>
             </xsl:for-each>
 
+            <xsl:text>&#10;</xsl:text>
             <xsl:text>
     # Simple Type Enumerations
     </xsl:text>
-            <xsl:for-each select="//SimpleTypeEnumerations/SimpleType">
+            <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[not(starts-with(@name,'containerField')) and not(ends-with(@name,'AccessTypes'))]">
                 <xsl:text>'</xsl:text>
                 <xsl:value-of select="@name"/>
                 <xsl:text>'</xsl:text>
                 <xsl:text>, </xsl:text>
             </xsl:for-each>
 
+            <xsl:text>&#10;</xsl:text>
             <xsl:text>
     # Abstract Object Types
     </xsl:text>
@@ -87,6 +89,7 @@ __all__ = [</xsl:text>
                 <xsl:text>, </xsl:text>
             </xsl:for-each>
 
+            <xsl:text>&#10;</xsl:text>
             <xsl:text>
     # Abstract Node Types
     </xsl:text>
@@ -97,6 +100,7 @@ __all__ = [</xsl:text>
                 <xsl:text>, </xsl:text>
             </xsl:for-each>
 
+            <xsl:text>&#10;</xsl:text>
             <xsl:text>
     # Concrete Nodes
     </xsl:text>
@@ -107,6 +111,7 @@ __all__ = [</xsl:text>
                 <xsl:text>, </xsl:text>
             </xsl:for-each>
 
+            <xsl:text>&#10;</xsl:text>
             <xsl:text>
     # Statements
     </xsl:text>
@@ -117,6 +122,7 @@ __all__ = [</xsl:text>
                 <xsl:text>, </xsl:text>
             </xsl:for-each>
 
+            <xsl:text>&#10;</xsl:text>
             <xsl:text>
     # Utility functions
     </xsl:text>
@@ -160,8 +166,74 @@ This work is part of the X3D Python Scene Access Interface Library (X3DPSAIL).
 """
 
 _DEBUG = True       # options True False
-
+    
 ###############################################
+
+# SimpleType Enumerations
+</xsl:text>
+
+        <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[count(enumeration) > 1]
+                                [not(starts-with(@name,'containerField')) and not(ends-with(@name,'AccessTypes'))]">
+            <xsl:text>&#10;</xsl:text>
+            <xsl:value-of select="upper-case(@name)"/>
+            <xsl:text> = (</xsl:text>
+            <xsl:choose>
+                <xsl:when test="ends-with(@name,'Choices')">
+                    <xsl:if test="(@baseType = 'MFString')">
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>    </xsl:text><!-- indent -->
+                        <xsl:text># note these MFString values use XML syntax</xsl:text>
+                    </xsl:if>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:text>    </xsl:text><!-- indent -->
+                    <xsl:text># strict set of allowed values follow, no other values are valid</xsl:text>
+                </xsl:when>
+                <xsl:when test="ends-with(@name,'Values')">
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:text>    </xsl:text><!-- indent -->
+                    <xsl:text># specification-defined values follow, other values are also allowed</xsl:text>
+                </xsl:when>
+            </xsl:choose>
+            <xsl:for-each select="enumeration">
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>    </xsl:text><!-- indent -->
+                <xsl:text>'</xsl:text>
+                <xsl:value-of select="@value"/>
+                <xsl:text>'</xsl:text>
+                <xsl:if test="not(position() = last())">
+                    <xsl:text>,</xsl:text>
+                </xsl:if>
+                <xsl:if test="(string-length(@appinfo) > 0)">
+                    <xsl:text> # </xsl:text>
+                    <xsl:value-of select="@appinfo"/>
+                </xsl:if>
+            </xsl:for-each>
+            <xsl:text>&#10;</xsl:text>
+            <xsl:text>)</xsl:text>
+            <xsl:if test="ends-with(@name,'Choices')">
+                <xsl:variable name="assertFunctionName" select="concat('assertValid',upper-case(substring(@name,1,1)),substring(substring-before(@name,'Choices'),2))"/>
+                <xsl:text>
+def </xsl:text><xsl:value-of select="$assertFunctionName"/><xsl:text>(fieldName, value):
+    """
+    Utility function to assert type validity of </xsl:text><xsl:value-of select="@name"/><xsl:text> value, otherwise raise X3DTypeError with diagnostic message.
+    Note MFString enumeration values are provided in XML syntax, so check accordingly.
+    """
+    if  not value:
+        return True # no failure on empty defaults
+    if  isinstance(value,SFString) or isinstance(value,str):
+        if str(value) in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>:
+            return True
+        raise X3DTypeError(fieldName + ' value=' + value + ' does not match allowed enumerations in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>=' + str(</xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>))
+    if  isinstance(value,MFString):
+        if MFString(value).XML() in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>:
+            return True
+        raise X3DTypeError(fieldName + ' value=' + MFString(value).XML() + ' does not match allowed enumerations in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>=' + str(</xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>))</xsl:text>
+            </xsl:if>
+        <xsl:text>&#10;</xsl:text>
+        </xsl:for-each>
+
+        <xsl:text>&#10;</xsl:text>
+        <xsl:text>###############################################
 
 # Utility Functions
 </xsl:text>
@@ -1563,6 +1635,57 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:when>
         </xsl:choose>
         
+        <xsl:text>
+    def XML(self):
+        """ Provide XML value for this field. """
+        </xsl:text>
+        <xsl:choose>
+            <xsl:when test="($fieldTypeName = 'SFString')">
+                <xsl:text>return str(self.__value)</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'MFString')">
+                <xsl:text>result = ''
+        for each in self.__value:
+            result += '"' + str(each) + '"' + ' '
+        result = result.rstrip(' ')
+        return result</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'SFBool')">
+                <xsl:text>return str(self.__value).lower()</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'MFBool')">
+                <xsl:text>return str(self.__value).lower().replace(',','').replace('[','').replace(']','')</xsl:text>
+            </xsl:when>
+            <xsl:when test="starts-with($fieldTypeName, 'SF') and (contains($fieldTypeName, 'Double') or contains($fieldTypeName, 'Float') or contains($fieldTypeName, 'Vec') or
+                            contains($fieldTypeName, 'Int32') or contains($fieldTypeName, 'Time') or contains($fieldTypeName, 'Color') or contains($fieldTypeName, 'Rotation') or
+                            contains($fieldTypeName, 'Image') or contains($fieldTypeName, 'Matrix'))">
+                <xsl:text>return str(self.__value).lower().replace(',','').replace('(','').replace(')','').replace('[','').replace(']','')</xsl:text>
+            </xsl:when>
+            <xsl:when test="starts-with($fieldTypeName, 'MF') and (contains($fieldTypeName, 'Double') or contains($fieldTypeName, 'Float') or contains($fieldTypeName, 'Vec') or 
+                            contains($fieldTypeName, 'Int32') or contains($fieldTypeName, 'Time') or contains($fieldTypeName, 'Color') or contains($fieldTypeName, 'Rotation') or
+                            contains($fieldTypeName, 'Image') or contains($fieldTypeName, 'Matrix'))">
+                <xsl:text>return str(self.__value).lower().replace('(','').replace(')','').replace(',','').replace('[','').replace(']','')</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'SFNode')">
+                <xsl:text>if (not self.__value is None):
+            return self.__value.XML()</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'MFNode')">
+                <xsl:text>result = ''
+        for each in self.__value:
+            result += each.XML() # has line break '\n' at end, which is OK
+        result = result.rstrip('\n')
+        return result</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>return str(self.__value)</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** missing XML() method for fieldType </xsl:text>
+                    <xsl:value-of select="$fieldTypeName"/>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+        
         <xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>
         
@@ -2240,16 +2363,16 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     
                     <!-- next two are value attribute within 'fieldValue' or field within ExternProtoDeclare, which have no local definition of type -->
                     <xsl:when test="(($elementName = 'fieldValue') and ($fieldName = 'value'))">
-                    <xsl:text>
+                        <xsl:text>
         assertValidFieldInitializationValue(self.name, type(value), value, parent='fieldValue')</xsl:text>
                     </xsl:when>
                     <xsl:when test="(($elementName = 'field')      and ($fieldName = 'value') and ($parentElementName = 'ExternProtoDeclare'))">
-                    <xsl:text>
+                        <xsl:text>
         assertValidFieldInitializationValue(self.name, type(value), value, parent='ExternProtoDeclare/field')</xsl:text>
                     </xsl:when>
                     <!-- next is value attribute within 'field' -->
                     <xsl:when test="($elementName = 'field') and ($fieldName = 'value')">
-                    <xsl:text>
+                        <xsl:text>
         assertValidFieldInitializationValue(self.name, self.type, value, parent='field/@value')</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
@@ -2262,6 +2385,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:call-template name="valueRestrictionCheck">
                     <xsl:with-param name="fieldName" select="$fieldName"/>
                     <xsl:with-param name="indent"><xsl:text>    </xsl:text></xsl:with-param>
+                    <xsl:with-param name="simpleType"  ><xsl:value-of select="@simpleType"/></xsl:with-param>
                     <xsl:with-param name="type"        ><xsl:value-of select="@type"/></xsl:with-param>
                     <xsl:with-param name="minInclusive"><xsl:value-of select="@minInclusive"/></xsl:with-param>
                     <xsl:with-param name="maxInclusive"><xsl:value-of select="@maxInclusive"/></xsl:with-param>
@@ -2357,10 +2481,10 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:otherwise>
         </xsl:choose>
         
-        <!-- toXML() function -->
+        <!-- XML() function -->
         <xsl:text>
     # output function - - - - - - - - - -
-    def toXML(self, indentLevel=0):
+    def XML(self, indentLevel=0):
         """ Provide Canonical X3D output serialization using XML encoding. """
         indent = '  ' * indentLevel
         result = ''</xsl:text>
@@ -2369,7 +2493,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <xsl:text>
         # if _DEBUG: result += indent + '# invoked class function </xsl:text>
             <xsl:value-of select="$elementName"/>
-            <xsl:text disable-output-escaping="yes"><![CDATA[.toXML(indentLevel=' + str(indentLevel) + '), indent="' + indent + '"' + '\n'
+            <xsl:text disable-output-escaping="yes"><![CDATA[.XML(indentLevel=' + str(indentLevel) + '), indent="' + indent + '"' + '\n'
         result += indent + self.XML_HEADER + '\n'
         if self.version == '3.0':
             result += indent + self.XML_DOCTYPE_X3D_3_0 + '\n'
@@ -2397,20 +2521,20 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         elif self.version == '4.1':
             result += self.X3D_XML_SCHEMA_ATTRIBUTES_4_1
         result += '>' + '\n' # finish open tag
-        if self.head.hasChild():
-            result += str(self.head.toXML(indentLevel=indentLevel+1))
-        if self.Scene.hasChild():
-            result += str(self.Scene.toXML(indentLevel=indentLevel+1))
+        if self.head and self.head.hasChild():
+            result += str(self.head.XML(indentLevel=indentLevel+1))
+        if self.Scene and self.Scene.hasChild():
+            result += str(self.Scene.XML(indentLevel=indentLevel+1))
         result += '</X3D>' + '\n'
 #       print('XML serialization complete.', flush=True)
         return result]]></xsl:text>
             </xsl:when>
-            <xsl:otherwise> <!-- non-X3D toXML() -->
+            <xsl:otherwise> <!-- non-X3D XML() -->
                 <xsl:text>
         result = indent ### confirm
         # if _DEBUG: result += indent + '# invoked class function </xsl:text>
                 <xsl:value-of select="$elementName"/>
-                <xsl:text disable-output-escaping="yes"><![CDATA[.toXML(self=' + str(self) + ', indentLevel=' + str(indentLevel) + '), indent="' + indent + '"'
+                <xsl:text disable-output-escaping="yes"><![CDATA[.XML(self=' + str(self) + ', indentLevel=' + str(indentLevel) + '), indent="' + indent + '"'
         # print(result)
         result += '<]]></xsl:text>
                 <!-- opening tag is unclosed since followed by attributes -->
@@ -2448,11 +2572,13 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>='" + </xsl:text>
                         <xsl:choose>
-                            <xsl:when test="not(@type='SFString') and not(@type='MFString')">
-                                <xsl:text>str(</xsl:text>
+                            <!-- always stringify value in field/fieldValue since it is arbitrary type -->
+                            <xsl:when test="not(@type='SFString') or (starts-with($elementName,'field') and ($fieldName = 'value'))">
+                                <xsl:value-of select="@type"/>
+                                <xsl:text>(</xsl:text>
                                 <xsl:text>self.</xsl:text>
                                 <xsl:value-of select="$fieldName"/>
-                                <xsl:text>)</xsl:text>
+                                <xsl:text>).XML()</xsl:text>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:text>self.</xsl:text>
@@ -2479,9 +2605,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             if self.children: # walk each child node, if any
                 ## print('* </xsl:text>
                         <xsl:value-of select="$elementName"/>
-                        <xsl:text> found self.children, now invoking toXML(' + str(indentLevel+1) + ')', flush=True)
+                        <xsl:text> found self.children, now invoking XML(' + str(indentLevel+1) + ')', flush=True)
                 for each in self.children:
-                    result += each.toXML(indentLevel=indentLevel+1)</xsl:text>
+                    result += each.XML(indentLevel=indentLevel+1)</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:for-each select="$allFields[contains(@type,'Node')]">
@@ -2510,7 +2636,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:text>: # output this SFNode
                 result += self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>.toXML(indentLevel=indentLevel+1)</xsl:text>
+                        <xsl:text>.XML(indentLevel=indentLevel+1)</xsl:text>
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:text>
@@ -2521,7 +2647,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 for each in self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>:
-                    result += each.toXML(indentLevel=indentLevel+1)</xsl:text>
+                    result += each.XML(indentLevel=indentLevel+1)</xsl:text>
                                     </xsl:otherwise>
                                 </xsl:choose>
                             </xsl:if>
@@ -2731,6 +2857,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     
     <xsl:template name="valueRestrictionCheck">
         <xsl:param name="fieldName"></xsl:param>
+        <xsl:param name="simpleType"></xsl:param>
         <xsl:param name="type"></xsl:param>
         <xsl:param name="minInclusive"></xsl:param>
         <xsl:param name="maxInclusive"></xsl:param>
@@ -2755,6 +2882,13 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:when test="($fieldName = 'bboxSize')">
                 <xsl:value-of select="$assertionPrefix"/>
                 <xsl:text>assertBoundingBox</xsl:text>
+                <xsl:value-of select="$assertionSuffix"/>
+                <xsl:text>)</xsl:text>
+            </xsl:when>
+            <xsl:when test="ends-with($simpleType,'Choices')">
+                <xsl:variable name="assertFunctionName" select="concat('assertValid',upper-case(substring($simpleType,1,1)),substring(substring-before($simpleType,'Choices'),2))"/>
+                <xsl:value-of select="$assertionPrefix"/>
+                <xsl:value-of select="$assertFunctionName"/>
                 <xsl:value-of select="$assertionSuffix"/>
                 <xsl:text>)</xsl:text>
             </xsl:when>

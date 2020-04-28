@@ -28,7 +28,7 @@
 <CollidableOffset bboxCenter='0 0 0' bboxSize='-1 -1 -1' enabled='true' rotation='0 0 1 0' translation='0 0 0' containerField='children'/>
 <CollidableShape bboxCenter='0 0 0' bboxSize='-1 -1 -1' enabled='true' rotation='0 0 1 0' translation='0 0 0' containerField='children'/>
 <Collision bboxCenter='0 0 0' bboxSize='-1 -1 -1' enabled='true' containerField='children'/>
-<CollisionCollection appliedParameters='"BOUNCE"' bounce='0' enabled='true' frictionCoefficients='0 0' minBounceSpeed='0.1' slipFactors='0 0' softnessConstantForceMix='0.0001' softnessErrorCorrection='0.8' surfaceSpeed='0 0' containerField='collider'/>
+<CollisionCollection appliedParameters='"BOUNCE"' bboxCenter='0 0 0' bboxSize='-1 -1 -1' bounce='0' enabled='true' frictionCoefficients='0 0' minBounceSpeed='0.1' slipFactors='0 0' softnessConstantForceMix='0.0001' softnessErrorCorrection='0.8' surfaceSpeed='0 0' containerField='collider'/>
 <CollisionSensor enabled='true' containerField='children'/>
 <CollisionSpace bboxCenter='0 0 0' bboxSize='-1 -1 -1' enabled='true' useGeometry='false' containerField='children'/>
 <Color color='' containerField='color'/>
