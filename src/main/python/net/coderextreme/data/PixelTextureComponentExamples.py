@@ -4,68 +4,68 @@ X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
 head1 = x3d.head()
 meta2 = x3d.meta()
-meta2.setName("title")
 meta2.setContent("PixelTextureComponentExamples.x3d")
+meta2.setName("title")
 
 head1.addMeta(meta2)
 meta3 = x3d.meta()
-meta3.setName("description")
 meta3.setContent("This example shows the five PixelTexture components, with 0 to 4 components each, shown in Table 5-18.")
+meta3.setName("description")
 
 head1.addMeta(meta3)
 meta4 = x3d.meta()
-meta4.setName("creator")
 meta4.setContent("Leonard Daly and Don Brutzman")
+meta4.setName("creator")
 
 head1.addMeta(meta4)
 meta5 = x3d.meta()
-meta5.setName("created")
 meta5.setContent("25 August 2008")
+meta5.setName("created")
 
 head1.addMeta(meta5)
 meta6 = x3d.meta()
-meta6.setName("modified")
 meta6.setContent("7 January 2014")
+meta6.setName("modified")
 
 head1.addMeta(meta6)
 meta7 = x3d.meta()
-meta7.setName("reference")
 meta7.setContent("http://X3dGraphics.com")
+meta7.setName("reference")
 
 head1.addMeta(meta7)
 meta8 = x3d.meta()
-meta8.setName("reference")
 meta8.setContent("X3D for Web Authors, Table 5.18")
+meta8.setName("reference")
 
 head1.addMeta(meta8)
 meta9 = x3d.meta()
-meta9.setName("reference")
 meta9.setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html")
+meta9.setName("reference")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()
-meta10.setName("rights")
 meta10.setContent("Copyright (c) 2006, Daly Realism and Don Brutzman")
+meta10.setName("rights")
 
 head1.addMeta(meta10)
 meta11 = x3d.meta()
-meta11.setName("subject")
 meta11.setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com")
+meta11.setName("subject")
 
 head1.addMeta(meta11)
 meta12 = x3d.meta()
-meta12.setName("identifier")
 meta12.setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d")
+meta12.setName("identifier")
 
 head1.addMeta(meta12)
 meta13 = x3d.meta()
-meta13.setName("generator")
 meta13.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta13.setName("generator")
 
 head1.addMeta(meta13)
 meta14 = x3d.meta()
-meta14.setName("license")
 meta14.setContent("../license.html")
+meta14.setName("license")
 
 head1.addMeta(meta14)
 
@@ -198,7 +198,7 @@ Transform49 = x3d.Transform()
 Transform49.setTranslation([3,0,0])
 Shape50 = x3d.Shape()
 Appearance51 = x3d.Appearance()
-#note 0x000000 = 0
+# note 0x000000 = 0 
 PixelTexture52 = x3d.PixelTexture()
 PixelTexture52.setDEF("ThreeComponents")
 PixelTexture52.setImage([2,4,3,16711680,65280,0,0,0,0,16777215,16776960])
@@ -236,7 +236,7 @@ Transform59 = x3d.Transform()
 Transform59.setTranslation([6,0,0])
 Shape60 = x3d.Shape()
 Appearance61 = x3d.Appearance()
-#Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127
+# Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 
 PixelTexture62 = x3d.PixelTexture()
 PixelTexture62.setDEF("FourComponents")
 PixelTexture62.setImage([3,2,4,-16776961,16711935,65535,-16777089,16711807,65407])
@@ -270,7 +270,7 @@ Transform64.addChildren(Shape65)
 Transform59.addChildren(Transform64)
 
 Scene15.addChildren(Transform59)
-#Background from PixelTextureBW.x3d
+# Background from PixelTextureBW.x3d 
 Transform69 = x3d.Transform()
 Transform69.setTranslation([0,6,-2])
 Shape70 = x3d.Shape()

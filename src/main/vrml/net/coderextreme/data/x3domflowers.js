@@ -3,11 +3,12 @@ let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE","ANY"]);
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
-//Images courtesy of Paul Debevec's Light Probe Image Gallery
+// Images courtesy of Paul Debevec's Light Probe Image Gallery 
 let Background3 = browser.currentScene.createNode("Background");
 Background3.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]);
 Background3.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
@@ -22,16 +23,16 @@ let ExternProtoDeclare5 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare5.name = "FlowerProto";
 ExternProtoDeclare5.url = new MFString(new java.lang.String["../data/flowerproto.json#FlowerProto"]);
 let field6 = browser.currentScene.createNode("field");
-field6.name = "vertex";
 field6.accessType = "inputOutput";
+field6.name = "vertex";
 field6.type = "MFString";
 ExternProtoDeclare5.field = new MFNode();
 
 ExternProtoDeclare5.field[0] = field6;
 
 let field7 = browser.currentScene.createNode("field");
-field7.name = "fragment";
 field7.accessType = "inputOutput";
+field7.name = "fragment";
 field7.type = "MFString";
 ExternProtoDeclare5.field[1] = field7;
 

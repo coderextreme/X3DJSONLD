@@ -192,7 +192,7 @@ let ProtoDeclare24 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 		        spine = new MFVec3f([value, spine[1]]);
 		    }
                 }
-
+                
                 function set_endB(value) {
 		    if (typeof spine === "undefined") {
 		        spine = new MFVec3f([value, value]);
@@ -200,7 +200,7 @@ let ProtoDeclare24 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 		        spine = new MFVec3f([spine[0], value]);
 		    }
                 }
-
+                
                 function set_spine(value) {
 		    Browser.print('\n'+'"');
                     spine = value;
@@ -294,7 +294,7 @@ Script33.setSourceCode(`ecmascript:\n"+
 "		        spine = new MFVec3f([value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === \"undefined\") {\n"+
 "		        spine = new MFVec3f([value, value]);\n"+
@@ -302,7 +302,7 @@ Script33.setSourceCode(`ecmascript:\n"+
 "		        spine = new MFVec3f([spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_spine(value) {\n"+
 "		    Browser.print('\\n'+'\"');\n"+
 "                    spine = value;\n"+

@@ -6,56 +6,56 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "NancyPrototypes.x3d"
+          "@content": "NancyPrototypes.x3d",
+          "@name": "title"
         },
         {
-          "@name": "creator",
-          "@content": "Cindy Ballreich"
+          "@content": "Cindy Ballreich",
+          "@name": "creator"
         },
         {
-          "@name": "translators",
-          "@content": "Tom Miller and Don Brutzman, NPS"
+          "@content": "Tom Miller and Don Brutzman, NPS",
+          "@name": "translators"
         },
         {
-          "@name": "created",
-          "@content": "9 July 2000"
+          "@content": "9 July 2000",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "20 October 2019"
+          "@content": "20 October 2019",
+          "@name": "modified"
         },
         {
-          "@name": "description",
-          "@content": "Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."
+          "@content": "Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces.",
+          "@name": "description"
         },
         {
-          "@name": "warning",
-          "@content": "using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead"
+          "@content": "using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead",
+          "@name": "warning"
         },
         {
-          "@name": "reference",
-          "@content": "NancyNativeTags.x3d"
+          "@content": "NancyNativeTags.x3d",
+          "@name": "reference"
         },
         {
-          "@name": "TODO",
-          "@content": "Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem."
+          "@content": "Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem.",
+          "@name": "TODO"
         },
         {
-          "@name": "identifier",
-          "@content": "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -71,24 +71,24 @@
       "-children": [
         {
           "ProtoDeclare": {
-            "@name": "Displacer",
             "@appinfo": "A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.",
             "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html",
+            "@name": "Displacer",
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "name",
                   "@accessType": "inputOutput",
+                  "@name": "name",
                   "@type": "SFString"
                 },
                 {
-                  "@name": "coordIndex",
                   "@accessType": "inputOutput",
+                  "@name": "coordIndex",
                   "@type": "MFInt32"
                 },
                 {
-                  "@name": "displacements",
                   "@accessType": "inputOutput",
+                  "@name": "displacements",
                   "@type": "MFVec3f"
                 }
               ]
@@ -108,42 +108,42 @@
         },
         {
           "ProtoDeclare": {
-            "@name": "Humanoid",
             "@appinfo": "The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.",
             "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html",
+            "@name": "Humanoid",
             "ProtoInterface": {
               "-children": [
                 {
-                  "#comment": "H-Anim v1.1 field definitions"
+                  "#comment": " H-Anim v1.1 field definitions "
                 }
               ],
               "field": [
                 {
-                  "@name": "name",
                   "@accessType": "inputOutput",
+                  "@name": "name",
                   "@type": "SFString"
                 },
                 {
-                  "@name": "version",
                   "@accessType": "inputOutput",
                   "@appinfo": "legal values: 1.1 or 2.0",
+                  "@name": "version",
                   "@type": "SFString",
                   "@value": "1.1"
                 },
                 {
-                  "@name": "humanoidVersion",
                   "@accessType": "inputOutput",
                   "@appinfo": "Version of the humanoid being modeled. Hint: H-anim version 2.0",
+                  "@name": "humanoidVersion",
                   "@type": "SFString"
                 },
                 {
-                  "@name": "info",
                   "@accessType": "inputOutput",
+                  "@name": "info",
                   "@type": "MFString"
                 },
                 {
-                  "@name": "translation",
                   "@accessType": "inputOutput",
+                  "@name": "translation",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -152,8 +152,8 @@
                   ]
                 },
                 {
-                  "@name": "rotation",
                   "@accessType": "inputOutput",
+                  "@name": "rotation",
                   "@type": "SFRotation",
                   "@value": [
                     0,
@@ -163,8 +163,8 @@
                   ]
                 },
                 {
-                  "@name": "center",
                   "@accessType": "inputOutput",
+                  "@name": "center",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -173,8 +173,8 @@
                   ]
                 },
                 {
-                  "@name": "scale",
                   "@accessType": "inputOutput",
+                  "@name": "scale",
                   "@type": "SFVec3f",
                   "@value": [
                     1,
@@ -183,8 +183,8 @@
                   ]
                 },
                 {
-                  "@name": "scaleOrientation",
                   "@accessType": "inputOutput",
+                  "@name": "scaleOrientation",
                   "@type": "SFRotation",
                   "@value": [
                     0,
@@ -194,8 +194,8 @@
                   ]
                 },
                 {
-                  "@name": "bboxCenter",
                   "@accessType": "initializeOnly",
+                  "@name": "bboxCenter",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -204,8 +204,8 @@
                   ]
                 },
                 {
-                  "@name": "bboxSize",
                   "@accessType": "initializeOnly",
+                  "@name": "bboxSize",
                   "@type": "SFVec3f",
                   "@value": [
                     -1,
@@ -214,62 +214,62 @@
                   ]
                 },
                 {
-                  "@name": "humanoidBody",
                   "@accessType": "inputOutput",
                   "@appinfo": "H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton",
                   "@documentation": "http://H-Anim.org/Specifications/H-Anim1.1/#humanoid",
+                  "@name": "humanoidBody",
                   "@type": "MFNode"
                 },
                 {
-                  "@name": "skeleton",
                   "@accessType": "inputOutput",
                   "@appinfo": "H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody",
                   "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html",
+                  "@name": "skeleton",
                   "@type": "MFNode"
                 },
                 {
-                  "@name": "joints",
                   "@accessType": "inputOutput",
                   "@appinfo": "Container field for Joint nodes",
+                  "@name": "joints",
                   "@type": "MFNode"
                 },
                 {
-                  "@name": "segments",
                   "@accessType": "inputOutput",
                   "@appinfo": "Container field for Segment nodes",
+                  "@name": "segments",
                   "@type": "MFNode"
                 },
                 {
-                  "@name": "sites",
                   "@accessType": "inputOutput",
                   "@appinfo": "Container field for Site nodes",
+                  "@name": "sites",
                   "@type": "MFNode"
                 },
                 {
-                  "@name": "viewpoints",
                   "@accessType": "inputOutput",
                   "@appinfo": "Container field for Viewpoint nodes",
+                  "@name": "viewpoints",
                   "@type": "MFNode"
                 },
                 {
-                  "@name": "skinCoord",
                   "@accessType": "inputOutput",
                   "@appinfo": "Hint: H-anim version 2.0",
+                  "@name": "skinCoord",
                   "@type": "SFNode",
                   "-children": [
                     {
-                      "#comment": "NULL node"
+                      "#comment": " NULL node "
                     }
                   ]
                 },
                 {
-                  "@name": "skinNormal",
                   "@accessType": "inputOutput",
                   "@appinfo": "Hint: H-anim version 2.0",
+                  "@name": "skinNormal",
                   "@type": "SFNode",
                   "-children": [
                     {
-                      "#comment": "NULL node"
+                      "#comment": " NULL node "
                     }
                   ]
                 }
@@ -361,29 +361,29 @@
         },
         {
           "ProtoDeclare": {
-            "@name": "Joint",
             "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
             "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html",
+            "@name": "Joint",
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "name",
                   "@accessType": "inputOutput",
+                  "@name": "name",
                   "@type": "SFString"
                 },
                 {
+                  "@accessType": "inputOutput",
                   "@name": "ulimit",
-                  "@accessType": "inputOutput",
                   "@type": "MFFloat"
                 },
                 {
+                  "@accessType": "inputOutput",
                   "@name": "llimit",
-                  "@accessType": "inputOutput",
                   "@type": "MFFloat"
                 },
                 {
-                  "@name": "limitOrientation",
                   "@accessType": "inputOutput",
+                  "@name": "limitOrientation",
                   "@type": "SFRotation",
                   "@value": [
                     0,
@@ -393,18 +393,18 @@
                   ]
                 },
                 {
-                  "@name": "skinCoordIndex",
                   "@accessType": "inputOutput",
+                  "@name": "skinCoordIndex",
                   "@type": "MFInt32"
                 },
                 {
-                  "@name": "skinCoordWeight",
                   "@accessType": "inputOutput",
+                  "@name": "skinCoordWeight",
                   "@type": "MFFloat"
                 },
                 {
-                  "@name": "stiffness",
                   "@accessType": "inputOutput",
+                  "@name": "stiffness",
                   "@type": "MFFloat",
                   "@value": [
                     0,
@@ -413,8 +413,8 @@
                   ]
                 },
                 {
-                  "@name": "translation",
                   "@accessType": "inputOutput",
+                  "@name": "translation",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -423,8 +423,8 @@
                   ]
                 },
                 {
-                  "@name": "rotation",
                   "@accessType": "inputOutput",
+                  "@name": "rotation",
                   "@type": "SFRotation",
                   "@value": [
                     0,
@@ -434,8 +434,8 @@
                   ]
                 },
                 {
-                  "@name": "scale",
                   "@accessType": "inputOutput",
+                  "@name": "scale",
                   "@type": "SFVec3f",
                   "@value": [
                     1,
@@ -444,8 +444,8 @@
                   ]
                 },
                 {
-                  "@name": "scaleOrientation",
                   "@accessType": "inputOutput",
+                  "@name": "scaleOrientation",
                   "@type": "SFRotation",
                   "@value": [
                     0,
@@ -455,8 +455,8 @@
                   ]
                 },
                 {
-                  "@name": "center",
                   "@accessType": "inputOutput",
+                  "@name": "center",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -465,8 +465,8 @@
                   ]
                 },
                 {
+                  "@accessType": "initializeOnly",
                   "@name": "bboxCenter",
-                  "@accessType": "initializeOnly",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -475,8 +475,8 @@
                   ]
                 },
                 {
-                  "@name": "bboxSize",
                   "@accessType": "initializeOnly",
+                  "@name": "bboxSize",
                   "@type": "SFVec3f",
                   "@value": [
                     -1,
@@ -485,18 +485,18 @@
                   ]
                 },
                 {
-                  "@name": "children",
                   "@accessType": "inputOutput",
+                  "@name": "children",
                   "@type": "MFNode"
                 },
                 {
+                  "@accessType": "inputOnly",
                   "@name": "addChildren",
-                  "@accessType": "inputOnly",
                   "@type": "MFNode"
                 },
                 {
-                  "@name": "removeChildren",
                   "@accessType": "inputOnly",
+                  "@name": "removeChildren",
                   "@type": "MFNode"
                 }
               ]
@@ -558,25 +558,25 @@
         },
         {
           "ProtoDeclare": {
-            "@name": "Segment",
             "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.",
             "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html",
+            "@name": "Segment",
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "name",
                   "@accessType": "inputOutput",
+                  "@name": "name",
                   "@type": "SFString"
                 },
                 {
-                  "@name": "mass",
                   "@accessType": "inputOutput",
+                  "@name": "mass",
                   "@type": "SFFloat",
                   "@value": 0
                 },
                 {
-                  "@name": "centerOfMass",
                   "@accessType": "inputOutput",
+                  "@name": "centerOfMass",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -585,8 +585,8 @@
                   ]
                 },
                 {
-                  "@name": "momentsOfInertia",
                   "@accessType": "inputOutput",
+                  "@name": "momentsOfInertia",
                   "@type": "MFFloat",
                   "@value": [
                     0,
@@ -601,8 +601,8 @@
                   ]
                 },
                 {
-                  "@name": "bboxCenter",
                   "@accessType": "initializeOnly",
+                  "@name": "bboxCenter",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -611,8 +611,8 @@
                   ]
                 },
                 {
-                  "@name": "bboxSize",
                   "@accessType": "initializeOnly",
+                  "@name": "bboxSize",
                   "@type": "SFVec3f",
                   "@value": [
                     -1,
@@ -621,35 +621,35 @@
                   ]
                 },
                 {
-                  "@name": "children",
                   "@accessType": "inputOutput",
+                  "@name": "children",
                   "@type": "MFNode"
                 },
                 {
+                  "@accessType": "inputOnly",
                   "@name": "addChildren",
-                  "@accessType": "inputOnly",
                   "@type": "MFNode"
                 },
                 {
+                  "@accessType": "inputOnly",
                   "@name": "removeChildren",
-                  "@accessType": "inputOnly",
                   "@type": "MFNode"
                 },
                 {
-                  "@name": "coord",
                   "@accessType": "inputOutput",
                   "@appinfo": "contains Coordinate nodes",
+                  "@name": "coord",
                   "@type": "SFNode",
                   "-children": [
                     {
-                      "#comment": "NULL node"
+                      "#comment": " NULL node "
                     }
                   ]
                 },
                 {
-                  "@name": "displacers",
                   "@accessType": "inputOutput",
                   "@appinfo": "contains Displacer nodes",
+                  "@name": "displacers",
                   "@type": "MFNode"
                 }
               ]
@@ -691,19 +691,19 @@
         },
         {
           "ProtoDeclare": {
-            "@name": "Site",
             "@appinfo": "The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).",
             "@documentation": "http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html",
+            "@name": "Site",
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "name",
                   "@accessType": "inputOutput",
+                  "@name": "name",
                   "@type": "SFString"
                 },
                 {
-                  "@name": "translation",
                   "@accessType": "inputOutput",
+                  "@name": "translation",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -712,8 +712,8 @@
                   ]
                 },
                 {
-                  "@name": "rotation",
                   "@accessType": "inputOutput",
+                  "@name": "rotation",
                   "@type": "SFRotation",
                   "@value": [
                     0,
@@ -723,8 +723,8 @@
                   ]
                 },
                 {
-                  "@name": "scale",
                   "@accessType": "inputOutput",
+                  "@name": "scale",
                   "@type": "SFVec3f",
                   "@value": [
                     1,
@@ -733,8 +733,8 @@
                   ]
                 },
                 {
-                  "@name": "scaleOrientation",
                   "@accessType": "inputOutput",
+                  "@name": "scaleOrientation",
                   "@type": "SFRotation",
                   "@value": [
                     0,
@@ -744,8 +744,8 @@
                   ]
                 },
                 {
-                  "@name": "center",
                   "@accessType": "inputOutput",
+                  "@name": "center",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -754,8 +754,8 @@
                   ]
                 },
                 {
+                  "@accessType": "initializeOnly",
                   "@name": "bboxCenter",
-                  "@accessType": "initializeOnly",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -764,8 +764,8 @@
                   ]
                 },
                 {
-                  "@name": "bboxSize",
                   "@accessType": "initializeOnly",
+                  "@name": "bboxSize",
                   "@type": "SFVec3f",
                   "@value": [
                     -1,
@@ -774,18 +774,18 @@
                   ]
                 },
                 {
-                  "@name": "children",
                   "@accessType": "inputOutput",
+                  "@name": "children",
                   "@type": "MFNode"
                 },
                 {
+                  "@accessType": "inputOnly",
                   "@name": "addChildren",
-                  "@accessType": "inputOnly",
                   "@type": "MFNode"
                 },
                 {
-                  "@name": "removeChildren",
                   "@accessType": "inputOnly",
+                  "@name": "removeChildren",
                   "@type": "MFNode"
                 }
               ]
@@ -846,12 +846,12 @@
           }
         },
         {
-          "#comment": "Start scene graph."
+          "#comment": " Start scene graph. "
         },
         {
           "ProtoInstance": {
-            "@name": "Humanoid",
             "@DEF": "Humanoid",
+            "@name": "Humanoid",
             "fieldValue": [
               {
                 "@name": "name",
@@ -877,8 +877,8 @@
                 "-children": [
                   {
                     "ProtoInstance": {
-                      "@name": "Joint",
                       "@DEF": "hanim_HumanoidRoot",
+                      "@name": "Joint",
                       "fieldValue": [
                         {
                           "@name": "name",
@@ -897,8 +897,8 @@
                           "-children": [
                             {
                               "ProtoInstance": {
-                                "@name": "Joint",
                                 "@DEF": "hanim_sacroiliac",
+                                "@name": "Joint",
                                 "fieldValue": [
                                   {
                                     "@name": "name",
@@ -917,8 +917,8 @@
                                     "-children": [
                                       {
                                         "ProtoInstance": {
-                                          "@name": "Segment",
                                           "@DEF": "hanim_pelvis",
+                                          "@name": "Segment",
                                           "fieldValue": [
                                             {
                                               "@name": "name",
@@ -1951,8 +1951,8 @@
                                       },
                                       {
                                         "ProtoInstance": {
-                                          "@name": "Joint",
                                           "@DEF": "hanim_l_hip",
+                                          "@name": "Joint",
                                           "fieldValue": [
                                             {
                                               "@name": "name",
@@ -1971,8 +1971,8 @@
                                               "-children": [
                                                 {
                                                   "ProtoInstance": {
-                                                    "@name": "Segment",
                                                     "@DEF": "hanim_l_thigh",
+                                                    "@name": "Segment",
                                                     "fieldValue": [
                                                       {
                                                         "@name": "name",
@@ -2361,8 +2361,8 @@
                                                 },
                                                 {
                                                   "ProtoInstance": {
-                                                    "@name": "Joint",
                                                     "@DEF": "hanim_l_knee",
+                                                    "@name": "Joint",
                                                     "fieldValue": [
                                                       {
                                                         "@name": "name",
@@ -2381,8 +2381,8 @@
                                                         "-children": [
                                                           {
                                                             "ProtoInstance": {
-                                                              "@name": "Segment",
                                                               "@DEF": "hanim_l_calf",
+                                                              "@name": "Segment",
                                                               "fieldValue": [
                                                                 {
                                                                   "@name": "name",
@@ -2936,8 +2936,8 @@
                                                           },
                                                           {
                                                             "ProtoInstance": {
-                                                              "@name": "Joint",
                                                               "@DEF": "hanim_l_ankle",
+                                                              "@name": "Joint",
                                                               "fieldValue": [
                                                                 {
                                                                   "@name": "name",
@@ -2956,8 +2956,8 @@
                                                                   "-children": [
                                                                     {
                                                                       "ProtoInstance": {
-                                                                        "@name": "Segment",
                                                                         "@DEF": "hanim_l_hindfoot",
+                                                                        "@name": "Segment",
                                                                         "fieldValue": [
                                                                           {
                                                                             "@name": "name",
@@ -3560,8 +3560,8 @@
                                       },
                                       {
                                         "ProtoInstance": {
-                                          "@name": "Joint",
                                           "@DEF": "hanim_r_hip",
+                                          "@name": "Joint",
                                           "fieldValue": [
                                             {
                                               "@name": "name",
@@ -3580,8 +3580,8 @@
                                               "-children": [
                                                 {
                                                   "ProtoInstance": {
-                                                    "@name": "Segment",
                                                     "@DEF": "hanim_r_thigh",
+                                                    "@name": "Segment",
                                                     "fieldValue": [
                                                       {
                                                         "@name": "name",
@@ -3959,8 +3959,8 @@
                                                 },
                                                 {
                                                   "ProtoInstance": {
-                                                    "@name": "Joint",
                                                     "@DEF": "hanim_r_knee",
+                                                    "@name": "Joint",
                                                     "fieldValue": [
                                                       {
                                                         "@name": "name",
@@ -3979,8 +3979,8 @@
                                                         "-children": [
                                                           {
                                                             "ProtoInstance": {
-                                                              "@name": "Segment",
                                                               "@DEF": "hanim_r_calf",
+                                                              "@name": "Segment",
                                                               "fieldValue": [
                                                                 {
                                                                   "@name": "name",
@@ -4534,8 +4534,8 @@
                                                           },
                                                           {
                                                             "ProtoInstance": {
-                                                              "@name": "Joint",
                                                               "@DEF": "hanim_r_ankle",
+                                                              "@name": "Joint",
                                                               "fieldValue": [
                                                                 {
                                                                   "@name": "name",
@@ -4554,8 +4554,8 @@
                                                                   "-children": [
                                                                     {
                                                                       "ProtoInstance": {
-                                                                        "@name": "Segment",
                                                                         "@DEF": "hanim_r_hindfoot",
+                                                                        "@name": "Segment",
                                                                         "fieldValue": [
                                                                           {
                                                                             "@name": "name",
@@ -5162,8 +5162,8 @@
                             },
                             {
                               "ProtoInstance": {
-                                "@name": "Joint",
                                 "@DEF": "hanim_vl1",
+                                "@name": "Joint",
                                 "fieldValue": [
                                   {
                                     "@name": "name",
@@ -5182,8 +5182,8 @@
                                     "-children": [
                                       {
                                         "ProtoInstance": {
-                                          "@name": "Segment",
                                           "@DEF": "hanim_c7",
+                                          "@name": "Segment",
                                           "fieldValue": [
                                             {
                                               "@name": "name",
@@ -7370,8 +7370,8 @@
                                       },
                                       {
                                         "ProtoInstance": {
-                                          "@name": "Joint",
                                           "@DEF": "hanim_l_shoulder",
+                                          "@name": "Joint",
                                           "fieldValue": [
                                             {
                                               "@name": "name",
@@ -7390,8 +7390,8 @@
                                               "-children": [
                                                 {
                                                   "ProtoInstance": {
-                                                    "@name": "Segment",
                                                     "@DEF": "hanim_l_upperarm",
+                                                    "@name": "Segment",
                                                     "fieldValue": [
                                                       {
                                                         "@name": "name",
@@ -7688,8 +7688,8 @@
                                                 },
                                                 {
                                                   "ProtoInstance": {
-                                                    "@name": "Joint",
                                                     "@DEF": "hanim_l_elbow",
+                                                    "@name": "Joint",
                                                     "fieldValue": [
                                                       {
                                                         "@name": "name",
@@ -7708,8 +7708,8 @@
                                                         "-children": [
                                                           {
                                                             "ProtoInstance": {
-                                                              "@name": "Segment",
                                                               "@DEF": "hanim_l_forearm",
+                                                              "@name": "Segment",
                                                               "fieldValue": [
                                                                 {
                                                                   "@name": "name",
@@ -7967,8 +7967,8 @@
                                                           },
                                                           {
                                                             "ProtoInstance": {
-                                                              "@name": "Joint",
                                                               "@DEF": "hanim_l_wrist",
+                                                              "@name": "Joint",
                                                               "fieldValue": [
                                                                 {
                                                                   "@name": "name",
@@ -7987,8 +7987,8 @@
                                                                   "-children": [
                                                                     {
                                                                       "ProtoInstance": {
-                                                                        "@name": "Segment",
                                                                         "@DEF": "hanim_l_hand",
+                                                                        "@name": "Segment",
                                                                         "fieldValue": [
                                                                           {
                                                                             "@name": "name",
@@ -8580,8 +8580,8 @@
                                       },
                                       {
                                         "ProtoInstance": {
-                                          "@name": "Joint",
                                           "@DEF": "hanim_r_shoulder",
+                                          "@name": "Joint",
                                           "fieldValue": [
                                             {
                                               "@name": "name",
@@ -8600,8 +8600,8 @@
                                               "-children": [
                                                 {
                                                   "ProtoInstance": {
-                                                    "@name": "Segment",
                                                     "@DEF": "hanim_r_upperarm",
+                                                    "@name": "Segment",
                                                     "fieldValue": [
                                                       {
                                                         "@name": "name",
@@ -8958,8 +8958,8 @@
                                                 },
                                                 {
                                                   "ProtoInstance": {
-                                                    "@name": "Joint",
                                                     "@DEF": "hanim_r_elbow",
+                                                    "@name": "Joint",
                                                     "fieldValue": [
                                                       {
                                                         "@name": "name",
@@ -8978,8 +8978,8 @@
                                                         "-children": [
                                                           {
                                                             "ProtoInstance": {
-                                                              "@name": "Segment",
                                                               "@DEF": "hanim_r_forearm",
+                                                              "@name": "Segment",
                                                               "fieldValue": [
                                                                 {
                                                                   "@name": "name",
@@ -9303,8 +9303,8 @@
                                                           },
                                                           {
                                                             "ProtoInstance": {
-                                                              "@name": "Joint",
                                                               "@DEF": "hanim_r_wrist",
+                                                              "@name": "Joint",
                                                               "fieldValue": [
                                                                 {
                                                                   "@name": "name",
@@ -9323,8 +9323,8 @@
                                                                   "-children": [
                                                                     {
                                                                       "ProtoInstance": {
-                                                                        "@name": "Segment",
                                                                         "@DEF": "hanim_r_hand",
+                                                                        "@name": "Segment",
                                                                         "fieldValue": [
                                                                           {
                                                                             "@name": "name",
@@ -9911,8 +9911,8 @@
                                       },
                                       {
                                         "ProtoInstance": {
-                                          "@name": "Joint",
                                           "@DEF": "hanim_vc4",
+                                          "@name": "Joint",
                                           "fieldValue": [
                                             {
                                               "@name": "name",
@@ -9931,8 +9931,8 @@
                                               "-children": [
                                                 {
                                                   "ProtoInstance": {
-                                                    "@name": "Segment",
                                                     "@DEF": "hanim_c4",
+                                                    "@name": "Segment",
                                                     "fieldValue": [
                                                       {
                                                         "@name": "name",
@@ -10135,8 +10135,8 @@
                                                 },
                                                 {
                                                   "ProtoInstance": {
-                                                    "@name": "Joint",
                                                     "@DEF": "hanim_skullbase",
+                                                    "@name": "Joint",
                                                     "fieldValue": [
                                                       {
                                                         "@name": "name",
@@ -10155,8 +10155,8 @@
                                                         "-children": [
                                                           {
                                                             "ProtoInstance": {
-                                                              "@name": "Segment",
                                                               "@DEF": "hanim_skull",
+                                                              "@name": "Segment",
                                                               "fieldValue": [
                                                                 {
                                                                   "@name": "name",

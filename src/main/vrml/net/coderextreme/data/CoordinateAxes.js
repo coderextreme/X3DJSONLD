@@ -4,12 +4,13 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let Collision2 = browser.currentScene.createNode("Collision");
 Collision2.DEF = "DoNotCollideWithVisualizationWidget";
-//Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.
-//This NavigationInfo allows examine mode and will be overridden by any parent scene.
-//Each arrow goes from +1m to -1m to allow linear scaling to fit a scene
-//Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user
+Collision2.enabled = True;
+// Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. 
+// This NavigationInfo allows examine mode and will be overridden by any parent scene. 
+// Each arrow goes from +1m to -1m to allow linear scaling to fit a scene 
+// Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user 
 let Group3 = browser.currentScene.createNode("Group");
-//Vertical Y arrow and label
+// Vertical Y arrow and label 
 let Group4 = browser.currentScene.createNode("Group");
 Group4.DEF = "ArrowGreen";
 let Shape5 = browser.currentScene.createNode("Shape");
@@ -93,7 +94,7 @@ Collision2.proxy = Group3;
 
 let Transform20 = browser.currentScene.createNode("Transform");
 Transform20.rotation = new SFRotation(new float[0,0,1,-1.57079]);
-//Horizontal X arrow and label
+// Horizontal X arrow and label 
 let Group21 = browser.currentScene.createNode("Group");
 let Group22 = browser.currentScene.createNode("Group");
 Group22.DEF = "ArrowRed";
@@ -139,7 +140,7 @@ Group21.children[0] = Group22;
 let Transform31 = browser.currentScene.createNode("Transform");
 Transform31.rotation = new SFRotation(new float[0,0,1,1.57079]);
 Transform31.translation = new SFVec3f(new float[0.072,1.1,0]);
-//note label rotated back to original coordinate frame
+// note label rotated back to original coordinate frame 
 let Billboard32 = browser.currentScene.createNode("Billboard");
 let Shape33 = browser.currentScene.createNode("Shape");
 let Appearance34 = browser.currentScene.createNode("Appearance");
@@ -172,7 +173,7 @@ Collision2.proxy = Transform20;
 
 let Transform37 = browser.currentScene.createNode("Transform");
 Transform37.rotation = new SFRotation(new float[1,0,0,1.57079]);
-//Perpendicular Z arrow and label, note right-hand rule
+// Perpendicular Z arrow and label, note right-hand rule 
 let Group38 = browser.currentScene.createNode("Group");
 let Group39 = browser.currentScene.createNode("Group");
 Group39.DEF = "ArrowBlue";
@@ -218,7 +219,7 @@ Group38.children[0] = Group39;
 let Transform48 = browser.currentScene.createNode("Transform");
 Transform48.rotation = new SFRotation(new float[1,0,0,-1.57079]);
 Transform48.translation = new SFVec3f(new float[0,1.1,0.072]);
-//note label rotated back to original coordinate frame
+// note label rotated back to original coordinate frame 
 let Billboard49 = browser.currentScene.createNode("Billboard");
 let Shape50 = browser.currentScene.createNode("Shape");
 let Appearance51 = browser.currentScene.createNode("Appearance");

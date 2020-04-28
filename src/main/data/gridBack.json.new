@@ -6,52 +6,52 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "gridBack.x3d"
+          "@content": "gridBack.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Checkerboard grid background for X3D/VRML materials selection."
+          "@content": "Checkerboard grid background for X3D/VRML materials selection.",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "David Roussel"
+          "@content": "David Roussel",
+          "@name": "creator"
         },
         {
-          "@name": "translator",
-          "@content": "James Harney, Don Brutzman NPS"
+          "@content": "James Harney, Don Brutzman NPS",
+          "@name": "translator"
         },
         {
-          "@name": "created",
-          "@content": "8 April 2002"
+          "@content": "8 April 2002",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "12 January 2014"
+          "@content": "12 January 2014",
+          "@name": "modified"
         },
         {
-          "@name": "reference",
-          "@content": "http://vrmlstuff.free.fr/materials"
+          "@content": "http://vrmlstuff.free.fr/materials",
+          "@name": "reference"
         },
         {
-          "@name": "subject",
-          "@content": "Universal Media Material Library"
+          "@content": "Universal Media Material Library",
+          "@name": "subject"
         },
         {
-          "@name": "identifier",
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",

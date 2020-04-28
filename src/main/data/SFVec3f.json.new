@@ -6,8 +6,8 @@
     "head": {
       "component": [
         {
-          "@name": "Scripting",
-          "@level": 1
+          "@level": 1,
+          "@name": "Scripting"
         }
       ],
       "meta": [
@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -44,11 +44,21 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
+          }
         },
         {
           "Transform": {
             "@DEF": "transform",
+            "@translation": [
+              0,
+              0,
+              0
+            ],
             "-children": [
               {
                 "Shape": {

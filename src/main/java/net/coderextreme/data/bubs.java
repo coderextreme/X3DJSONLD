@@ -85,7 +85,7 @@ ProtoInstanceObject ProtoInstance2 = null;
 ProtoInstanceObject ProtoInstance3 = null;
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
-        .addComponent(new componentObject().setName("Scripting").setLevel(1))
+        .addComponent(new componentObject().setLevel(1).setName("Scripting"))
         .addMeta(new metaObject().setName("title").setContent("bubs.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("description").setContent("Tour around a prismatic sphere"))

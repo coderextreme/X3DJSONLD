@@ -170,7 +170,7 @@
             <Appearance>
               <Material diffuseColor='0 0.75 0.18'/>
             </Appearance>
-            <Text string='"Target Locked" " FIRE!.." "(Green Button)"'/>
+            <Text string='"Target Locked" "      FIRE!.." "(Green Button)"'/>
           </Shape>
         </Transform>
       </Transform>

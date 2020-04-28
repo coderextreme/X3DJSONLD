@@ -6,94 +6,94 @@
     "head": {
       "component": [
         {
-          "@name": "Shaders",
-          "@level": 1
+          "@level": 1,
+          "@name": "Shaders"
         }
       ],
       "meta": [
         {
-          "@name": "title",
-          "@content": "SimpleShader.x3d"
+          "@content": "SimpleShader.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Simple shader example"
+          "@content": "Simple shader example",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "John Stewart"
+          "@content": "John Stewart",
+          "@name": "creator"
         },
         {
-          "@name": "translator",
-          "@content": "Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"
+          "@content": "Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick",
+          "@name": "translator"
         },
         {
-          "@name": "created",
-          "@content": "26 May 2009"
+          "@content": "26 May 2009",
+          "@name": "created"
+        },
+        {
+          "@content": "15 October 2009",
+          "@name": "translated"
+        },
+        {
+          "@content": "20 October 2019",
+          "@name": "modified"
+        },
+        {
+          "@content": "http://www.opengl.org/wiki/Fragment_Shader",
+          "@name": "reference"
+        },
+        {
+          "@content": "http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader",
+          "@name": "reference"
+        },
+        {
+          "@content": "https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest",
+          "@name": "reference"
+        },
+        {
+          "@content": "X3D shader example",
+          "@name": "subject"
+        },
+        {
+          "@content": "originals/simpleShader.x3dv",
+          "@name": "reference"
+        },
+        {
+          "@content": "ShaderTutorialInstantReality.pdf",
+          "@name": "reference"
+        },
+        {
+          "@content": "Titania V3.0.3, http://titania.create3000.de",
+          "@name": "generator"
+        },
+        {
+          "@content": "World of Titania",
+          "@name": "comment"
+        },
+        {
+          "@content": "nicest",
+          "@name": "outputStyle"
+        },
+        {
+          "@content": "under development",
+          "@name": "warning"
+        },
+        {
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
+        },
+        {
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d",
+          "@name": "identifier"
+        },
+        {
+          "@content": "../../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "15 October 2009"
-        },
-        {
-          "@name": "modified",
-          "@content": "20 October 2019"
-        },
-        {
-          "@name": "reference",
-          "@content": "http://www.opengl.org/wiki/Fragment_Shader"
-        },
-        {
-          "@name": "reference",
-          "@content": "http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"
-        },
-        {
-          "@name": "reference",
-          "@content": "https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"
-        },
-        {
-          "@name": "subject",
-          "@content": "X3D shader example"
-        },
-        {
-          "@name": "reference",
-          "@content": "originals/simpleShader.x3dv"
-        },
-        {
-          "@name": "reference",
-          "@content": "ShaderTutorialInstantReality.pdf"
-        },
-        {
-          "@name": "generator",
-          "@content": "Titania V3.0.3, http://titania.create3000.de"
-        },
-        {
-          "@name": "comment",
-          "@content": "World of Titania"
-        },
-        {
-          "@name": "outputStyle",
-          "@content": "nicest"
-        },
-        {
-          "@name": "warning",
-          "@content": "under development"
-        },
-        {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-        },
-        {
-          "@name": "identifier",
-          "@content": "https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"
-        },
-        {
-          "@name": "license",
-          "@content": "../../license.html"
-        },
-        {
-          "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -113,8 +113,8 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "myInputRange",
                   "@accessType": "initializeOnly",
+                  "@name": "myInputRange",
                   "@type": "SFVec3f",
                   "@value": [
                     0.95,
@@ -149,8 +149,8 @@
                                     "@language": "GLSL",
                                     "field": [
                                       {
-                                        "@name": "decis",
                                         "@accessType": "initializeOnly",
+                                        "@name": "decis",
                                         "@type": "SFVec3f"
                                       }
                                     ],
@@ -164,9 +164,7 @@
                                     },
                                     "-parts": [
                                       {
-                                        "ShaderPart": {
-                                          "@type": "VERTEX"
-                                        }
+                                        "ShaderPart": {}
                                       },
                                       {
                                         "ShaderPart": {
@@ -182,8 +180,8 @@
                                     "@language": "GLSL",
                                     "field": [
                                       {
-                                        "@name": "decis",
                                         "@accessType": "initializeOnly",
+                                        "@name": "decis",
                                         "@type": "SFVec3f",
                                         "@value": [
                                           0.95,
@@ -194,9 +192,7 @@
                                     ],
                                     "-parts": [
                                       {
-                                        "ShaderPart": {
-                                          "@type": "VERTEX"
-                                        }
+                                        "ShaderPart": {}
                                       },
                                       {
                                         "ShaderPart": {
@@ -229,23 +225,23 @@
             "@title": "SimpleShader",
             "-metadata": {
               "MetadataSet": {
-                "@name": "Titania",
                 "@DEF": "Titania",
+                "@name": "Titania",
                 "@reference": "http://titania.create3000.de",
                 "-value": [
                   {
                     "MetadataSet": {
-                      "@name": "Selection",
                       "@DEF": "Selection",
+                      "@name": "Selection",
                       "@reference": "http://titania.create3000.de",
                       "-value": {
                         "MetadataSet": {
-                          "@name": "nodes",
                           "@DEF": "nodes",
+                          "@name": "nodes",
                           "@reference": "http://titania.create3000.de",
                           "-children": [
                             {
-                              "#comment": "NULL"
+                              "#comment": " NULL "
                             }
                           ]
                         }
@@ -254,13 +250,13 @@
                   },
                   {
                     "MetadataSet": {
-                      "@name": "NavigationInfo",
                       "@DEF": "NavigationInfo",
+                      "@name": "NavigationInfo",
                       "@reference": "http://titania.create3000.de",
                       "-value": {
                         "MetadataString": {
-                          "@name": "type",
                           "@DEF": "type",
+                          "@name": "type",
                           "@reference": "http://titania.create3000.de",
                           "@value": [
                             "EXAMINE"
@@ -271,14 +267,14 @@
                   },
                   {
                     "MetadataSet": {
-                      "@name": "Viewpoint",
                       "@DEF": "Viewpoint",
+                      "@name": "Viewpoint",
                       "@reference": "http://titania.create3000.de",
                       "-value": [
                         {
                           "MetadataDouble": {
-                            "@name": "position",
                             "@DEF": "position",
+                            "@name": "position",
                             "@reference": "http://titania.create3000.de",
                             "@value": [
                               6.24067728185014,
@@ -289,8 +285,8 @@
                         },
                         {
                           "MetadataDouble": {
-                            "@name": "orientation",
                             "@DEF": "orientation",
+                            "@name": "orientation",
                             "@reference": "http://titania.create3000.de",
                             "@value": [
                               -0.110173424710488,
@@ -302,8 +298,8 @@
                         },
                         {
                           "MetadataDouble": {
-                            "@name": "centerOfRotation",
                             "@DEF": "centerOfRotation",
+                            "@name": "centerOfRotation",
                             "@reference": "http://titania.create3000.de",
                             "@value": [
                               -0.808320198626341,

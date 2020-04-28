@@ -33,12 +33,13 @@ X3D0.setHead(head1)
 Scene7 = x3d.Scene()
 Collision8 = x3d.Collision()
 Collision8.setDEF("DoNotCollideWithVisualizationWidget")
-#Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.
-#This NavigationInfo allows examine mode and will be overridden by any parent scene.
-#Each arrow goes from +1m to -1m to allow linear scaling to fit a scene
-#Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user
+Collision8.setEnabled(True)
+# Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. 
+# This NavigationInfo allows examine mode and will be overridden by any parent scene. 
+# Each arrow goes from +1m to -1m to allow linear scaling to fit a scene 
+# Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user 
 Group9 = x3d.Group()
-#Vertical Y arrow and label
+# Vertical Y arrow and label 
 Group10 = x3d.Group()
 Group10.setDEF("ArrowGreen")
 Shape11 = x3d.Shape()
@@ -112,7 +113,7 @@ Group9.addChildren(Transform19)
 Collision8.setProxy(Group9)
 Transform26 = x3d.Transform()
 Transform26.setRotation([0,0,1,-1.57079])
-#Horizontal X arrow and label
+# Horizontal X arrow and label 
 Group27 = x3d.Group()
 Group28 = x3d.Group()
 Group28.setDEF("ArrowRed")
@@ -152,7 +153,7 @@ Group27.addChildren(Group28)
 Transform37 = x3d.Transform()
 Transform37.setRotation([0,0,1,1.57079])
 Transform37.setTranslation([0.072,1.1,0])
-#note label rotated back to original coordinate frame
+# note label rotated back to original coordinate frame 
 Billboard38 = x3d.Billboard()
 Shape39 = x3d.Shape()
 Appearance40 = x3d.Appearance()
@@ -179,7 +180,7 @@ Transform26.addChildren(Group27)
 Collision8.setProxy(Transform26)
 Transform43 = x3d.Transform()
 Transform43.setRotation([1,0,0,1.57079])
-#Perpendicular Z arrow and label, note right-hand rule
+# Perpendicular Z arrow and label, note right-hand rule 
 Group44 = x3d.Group()
 Group45 = x3d.Group()
 Group45.setDEF("ArrowBlue")
@@ -219,7 +220,7 @@ Group44.addChildren(Group45)
 Transform54 = x3d.Transform()
 Transform54.setRotation([1,0,0,-1.57079])
 Transform54.setTranslation([0,1.1,0.072])
-#note label rotated back to original coordinate frame
+# note label rotated back to original coordinate frame 
 Billboard55 = x3d.Billboard()
 Shape56 = x3d.Shape()
 Appearance57 = x3d.Appearance()

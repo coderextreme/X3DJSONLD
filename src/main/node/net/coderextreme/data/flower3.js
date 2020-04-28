@@ -20,7 +20,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a flower")))
       .setScene((new autoclass.Scene())
-        .addChild((new autoclass.NavigationInfo()))
+        .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE","ANY"])))
         .addChild((new autoclass.DirectionalLight()).setDirection(java.newArray("float", [java.newFloat(0), java.newFloat(-0.8), java.newFloat(-0.2)])).setIntensity(java.newFloat(0.5)))
         .addChild((new autoclass.Background()).setSkyColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))
         .addChild((new autoclass.Viewpoint()).setDescription("One mathematical orbital").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(50)])))
@@ -28,15 +28,23 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(0.5), java.newFloat(1)])).setSpecularColor(java.newArray("float", [java.newFloat(0), java.newFloat(0.5), java.newFloat(1)]))))
-            .setGeometry((new autoclass.IndexedFaceSet()).setConvex(false).setDEF("Orbit")
+            .setGeometry((new autoclass.IndexedFaceSet()).setConvex(false).setDEF("Orbit").setCreaseAngle(java.newFloat(0))
               .setCoord((new autoclass.Coordinate()).setDEF("OrbitCoordinates")))))
         .addChild((new autoclass.Script()).setDEF("OrbitScript")
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFVEC3F).setName("coordinates").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFINT32).setName("coordIndexes").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-          .addComments((new autoclass.CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>")))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("set_fraction"))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY).setName("coordinates"))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFINT32).setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY).setName("coordIndexes"))
+          .addComments((new autoclass.CommentsBlock("")))
+          .addComments((new autoclass.CommentsBlock("        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>")))
+          .addComments((new autoclass.CommentsBlock("        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>")))
+          .addComments((new autoclass.CommentsBlock("        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>")))
+          .addComments((new autoclass.CommentsBlock("        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>")))
+          .addComments((new autoclass.CommentsBlock("        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>")))
+          .addComments((new autoclass.CommentsBlock("        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>")))
+          .addComments((new autoclass.CommentsBlock("        <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>")))
+          .addComments((new autoclass.CommentsBlock("	")))
           .setSourceCode("ecmascript:\n"+
-"\n"+
+"    \n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
 "var g = 5;\n"+

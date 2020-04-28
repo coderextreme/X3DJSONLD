@@ -2,38 +2,38 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-//Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n
+// Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n 
 let ExternProtoDeclare2 = browser.currentScene.createNode("ExternProtoDeclare");
-ExternProtoDeclare2.name = "HeadsUpDisplay";
 ExternProtoDeclare2.appinfo = "Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location";
+ExternProtoDeclare2.name = "HeadsUpDisplay";
 ExternProtoDeclare2.url = new MFString(new java.lang.String["HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","HeadsUpDisplayPrototype.wrl#HeadsUpDisplay","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"]);
 let field3 = browser.currentScene.createNode("field");
-field3.name = "screenOffset";
 field3.accessType = "inputOutput";
 field3.appinfo = "offset position for HUD relative to current view location, default 0 0 -5";
+field3.name = "screenOffset";
 field3.type = "SFVec3f";
 ExternProtoDeclare2.field = new MFNode();
 
 ExternProtoDeclare2.field[0] = field3;
 
 let field4 = browser.currentScene.createNode("field");
-field4.name = "children";
 field4.accessType = "inputOutput";
 field4.appinfo = "X3D content positioned at HUD offset";
+field4.name = "children";
 field4.type = "MFNode";
 ExternProtoDeclare2.field[1] = field4;
 
 let field5 = browser.currentScene.createNode("field");
-field5.name = "position_changed";
 field5.accessType = "outputOnly";
 field5.appinfo = "HUD position update (in world coordinates) relative to original location";
+field5.name = "position_changed";
 field5.type = "SFVec3f";
 ExternProtoDeclare2.field[2] = field5;
 
 let field6 = browser.currentScene.createNode("field");
-field6.name = "orientation_changed";
 field6.accessType = "outputOnly";
 field6.appinfo = "HUD orientation update relative to original location";
+field6.name = "orientation_changed";
 field6.type = "SFRotation";
 ExternProtoDeclare2.field[3] = field6;
 
@@ -53,11 +53,11 @@ let Viewpoint8 = browser.currentScene.createNode("Viewpoint");
 Viewpoint8.description = "Heads-up display (HUD)";
 browser.currentScene.children[2] = Viewpoint8;
 
-//ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence
+// ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence 
 let ProtoInstance9 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance9.name = "HeadsUpDisplay";
 ProtoInstance9.DEF = "HeadsUpDisplayInstance";
-//example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view
+ProtoInstance9.name = "HeadsUpDisplay";
+// example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view 
 let fieldValue10 = browser.currentScene.createNode("fieldValue");
 fieldValue10.name = "screenOffset";
 fieldValue10.value = "-0.75 1 -5";

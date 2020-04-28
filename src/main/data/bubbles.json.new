@@ -45,7 +45,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -485,7 +485,7 @@
               "                        position_changed = new MFVec3f();",
               "                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);",
               "                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);",
-              "",
+              "                        ",
               "                        orientation_changed = new MFRotation();",
               "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);",
               "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);",

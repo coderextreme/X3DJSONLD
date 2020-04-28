@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd" ><head><meta name="title" content="MFString.x3d"></meta>
-<meta name="description" content="F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey"></meta>
-<meta name="creator" content="Murat ONDER, LTJG, Turkish Navy"></meta>
-<meta name="creator" content="The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission."></meta>
-<meta name="created" content="13 July 2003"></meta>
-<meta name="modified" content="27 November 2015"></meta>
-<meta name="reference" content="http://www.fas.org/man/dod-101/sys/ac/f-16.htm"></meta>
-<meta name="permission" content="Here is a copy of the permission for the usage of the main hull; -----Original Message----- From: Soji Yamakawa [mailto:soji@andrew.cmu.edu] Sent: Tuesday, September 16, 2003 8:00 PM To: Onder, Murat TUR Subject: Re: VRML model points usage permission Sure. No problem. Soji ----- Original Message ----- From: &quot;Murat Onder&quot; &lt;monder@nps.navy.mil> To: &lt;Soji_Yamakawa@cmu.edu>; &lt;PEB01130@nifty.ne.jp> Sent: Monday, September 15, 2003 3:50 PM Subject: VRML model points usage permission Hi Sir, I&amp;apos;m a MS student in Naval Postgraduate School. I'm making a model of Turkish F-16 for my project in a VRML course. For the main hull of the F-16, I want to use the coordinate points of your VRML model since I think that model represents well enough F-16. This is going to be only a student project and will not be used for any commercial purposes. Of course I'll make the citation and put the reference links to your page in the meta files of x3d file. I'd like to know if you can give permission to use those points in my model. V/R, Murat Onder LTJG, TU NAVY"/>
-<meta name="reference" content="The landing gears are taken from the Savage Archive, from F18 Blue Angel, then modified and re-animated."></meta>
-<meta name="drawing" content="&quot;Drawing.jpg&quot; &quot;../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg&quot;"></meta>
-<meta name="Image" content="&quot;FrontView.jpg&quot; &quot;FrontView2.jpg&quot; &quot;Missiles.jpg&quot; &quot;../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg&quot; &quot;../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg&quot; &quot;../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg&quot;"></meta>
-<meta name="identifier" content="https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/F16.x3d"></meta>
-<meta name="subject" content="F16, F-16, Fighting Falcon"></meta>
-<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="license" content="../../license.html"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd" ><head><meta content="MFString.x3d" name="title"></meta>
+<meta content="F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey" name="description"></meta>
+<meta content="Murat ONDER, LTJG, Turkish Navy" name="creator"></meta>
+<meta content="The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission." name="creator"></meta>
+<meta content="13 July 2003" name="created"></meta>
+<meta content="27 November 2015" name="modified"></meta>
+<meta content="http://www.fas.org/man/dod-101/sys/ac/f-16.htm" name="reference"></meta>
+<meta content="Here is a copy of the permission for the usage of the main hull; -----Original Message----- From: Soji Yamakawa [mailto:soji@andrew.cmu.edu] Sent: Tuesday, September 16, 2003 8:00 PM To: Onder, Murat TUR Subject: Re: VRML model points usage permission Sure. No problem. Soji ----- Original Message ----- From: &quot;Murat Onder&quot; &lt;monder@nps.navy.mil> To: &lt;Soji_Yamakawa@cmu.edu>; &lt;PEB01130@nifty.ne.jp> Sent: Monday, September 15, 2003 3:50 PM Subject: VRML model points usage permission Hi Sir, I&amp;apos;m a MS student in Naval Postgraduate School. I'm making a model of Turkish F-16 for my project in a VRML course. For the main hull of the F-16, I want to use the coordinate points of your VRML model since I think that model represents well enough F-16. This is going to be only a student project and will not be used for any commercial purposes. Of course I'll make the citation and put the reference links to your page in the meta files of x3d file. I'd like to know if you can give permission to use those points in my model. V/R, Murat Onder LTJG, TU NAVY" name="permission"/>
+<meta content="The landing gears are taken from the Savage Archive, from F18 Blue Angel, then modified and re-animated." name="reference"></meta>
+<meta content="&quot;Drawing.jpg&quot; &quot;../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg&quot;" name="drawing"></meta>
+<meta content="&quot;FrontView.jpg&quot; &quot;FrontView2.jpg&quot; &quot;Missiles.jpg&quot; &quot;../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg&quot; &quot;../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg&quot; &quot;../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg&quot;" name="Image"></meta>
+<meta content="https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/F16.x3d" name="identifier"></meta>
+<meta content="F16, F-16, Fighting Falcon" name="subject"></meta>
+<meta content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" name="generator"></meta>
+<meta content="../../license.html" name="license"></meta>
 </head>
 <Scene><Transform DEF="F16Transform"><Transform DEF="MainFrameTransform" scale="3 3 3"><Shape DEF="Nose"><Appearance><Material diffuseColor="0.25 0.25 0.25"></Material>
 </Appearance>
@@ -75,11 +75,11 @@
 </Transform>
 <Transform DEF="SeatTransform" rotation="-1 0 0 -0.1" scale="0.9 0.9 0.9" translation="0 0 -8.3"><Inline url="&quot;Seat.x3d&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d&quot; &quot;Seat.wrl&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl&quot;"></Inline>
 </Transform>
-<Transform DEF="FrontWheelTransform" center="0 2.5 0" rotation="-1 0 0 1.92" translation="0.7 -5.2 -6.5"><!--Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)--><Inline url="&quot;FrontWheel.x3d&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d&quot; &quot;FrontWheel.wrl&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl&quot;"></Inline>
+<Transform DEF="FrontWheelTransform" center="0 2.5 0" rotation="-1 0 0 1.92" translation="0.7 -5.2 -6.5"><!-- Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel) --><Inline url="&quot;FrontWheel.x3d&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d&quot; &quot;FrontWheel.wrl&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl&quot;"></Inline>
 </Transform>
-<Transform DEF="RearLeftWheelTransform" center="0 2.5 0" rotation="1 0 1 1.92" translation="-2.95 -5 7"><!--Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)--><Inline url="&quot;RearLeftWheel.x3d&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d&quot; &quot;RearLeftWheel.wrl&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl&quot;"></Inline>
+<Transform DEF="RearLeftWheelTransform" center="0 2.5 0" rotation="1 0 1 1.92" translation="-2.95 -5 7"><!-- Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) --><Inline url="&quot;RearLeftWheel.x3d&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d&quot; &quot;RearLeftWheel.wrl&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl&quot;"></Inline>
 </Transform>
-<Transform DEF="RearRightWheelTransform" center="0 2.5 0" rotation="-1 0 -1 1.92" translation="2.95 -5 7"><!--Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)--><Inline url="&quot;RearRightWheel.x3d&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d&quot; &quot;RearRightWheel.wrl&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl&quot;"></Inline>
+<Transform DEF="RearRightWheelTransform" center="0 2.5 0" rotation="-1 0 -1 1.92" translation="2.95 -5 7"><!-- Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) --><Inline url="&quot;RearRightWheel.x3d&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d&quot; &quot;RearRightWheel.wrl&quot; &quot;https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl&quot;"></Inline>
 </Transform>
 <Transform DEF="CockpitButtonsTransform"><Transform DEF="UpButtonTransform" rotation="1 0 0 1.57" scale="0.008 0.008 0.008" translation="-0.95 1.05 -10"><Shape><Cylinder containerField="geometry" height="1" radius="4"></Cylinder>
 <Appearance><Material diffuseColor="1 0 0" shininess="0.8"></Material>
@@ -109,7 +109,7 @@
 </Shape>
 <TouchSensor DEF="FireSensor" description="click to fire"></TouchSensor>
 </Transform>
-<Transform DEF="FireTextTransform" scale="0.06 0.06 0.06" translation="0.36 1.5 -10"><Shape><Text containerField="geometry" string="&quot;Target Locked&quot; &quot; FIRE!..&quot; &quot;(Green Button)&quot;"></Text>
+<Transform DEF="FireTextTransform" scale="0.06 0.06 0.06" translation="0.36 1.5 -10"><Shape><Text containerField="geometry" string="&quot;Target Locked&quot; &quot;      FIRE!..&quot; &quot;(Green Button)&quot;"></Text>
 <Appearance><Material diffuseColor="0 0.75 0.18"></Material>
 </Appearance>
 </Shape>
@@ -137,7 +137,7 @@
 <ROUTE fromField="touchTime" fromNode="TouchSensorDown" toField="set_startTime" toNode="WheelDown"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="WheelDown" toField="set_fraction" toNode="GearDownInterpolator"></ROUTE>
 <ROUTE fromField="value_changed" fromNode="GearDownInterpolator" toField="set_rotation" toNode="FrontWheelTransform"></ROUTE>
-<!--Animation commands for Rear Right Wheel Starts--><TimeSensor DEF="RRearUp1" cycleInterval="8"></TimeSensor>
+<!-- Animation commands for Rear Right Wheel Starts --><TimeSensor DEF="RRearUp1" cycleInterval="8"></TimeSensor>
 <TimeSensor DEF="RRearDown1" cycleInterval="8"></TimeSensor>
 <OrientationInterpolator DEF="RRearInterUp1" key="0 0.5 1" keyValue="-1 0 -1 0 -1 0 -1 0.44 -1 0 -1 1.92"></OrientationInterpolator>
 <OrientationInterpolator DEF="RRearInterDown1" key="0 0.5 1" keyValue="-1 0 -1 1.92 -1 0 -1 0.44 -1 0 -1 0"></OrientationInterpolator>
@@ -147,7 +147,7 @@
 <ROUTE fromField="fraction_changed" fromNode="RRearUp1" toField="set_fraction" toNode="RRearInterUp1"></ROUTE>
 <ROUTE fromField="value_changed" fromNode="RRearInterDown1" toField="set_rotation" toNode="RearRightWheelTransform"></ROUTE>
 <ROUTE fromField="value_changed" fromNode="RRearInterUp1" toField="set_rotation" toNode="RearRightWheelTransform"></ROUTE>
-<!--Animation commands for Rear Left Wheel--><TimeSensor DEF="LRearUp1" cycleInterval="8"></TimeSensor>
+<!-- Animation commands for Rear Left Wheel --><TimeSensor DEF="LRearUp1" cycleInterval="8"></TimeSensor>
 <TimeSensor DEF="LRearDown1" cycleInterval="8"></TimeSensor>
 <OrientationInterpolator DEF="LRearInterUp1" key="0 0.5 1" keyValue="1 0 1 0 1 0 1 0.44 1 0 1 1.92"></OrientationInterpolator>
 <OrientationInterpolator DEF="LRearInterDown1" key="0 0.5 1" keyValue="1 0 1 1.92 1 0 1 0.44 1 0 1 0"></OrientationInterpolator>
@@ -204,5 +204,5 @@
 <ROUTE fromField="value_changed" fromNode="MissilePath" toField="set_translation" toNode="LeftmostAmraamTransform"></ROUTE>
 <Viewpoint DEF="MissileLaunchView" description="Missile Fire View" orientation="0.094 -0.994 0.057 1.1716" position="-344.3 -142.8 -27.7"></Viewpoint>
 <ROUTE fromField="isActive" fromNode="FireSensor" toField="set_bind" toNode="MissileLaunchView"></ROUTE>
-<!--TODO fix type, add filter--></Scene>
+<!-- TODO fix type, add filter --></Scene>
 </X3D>

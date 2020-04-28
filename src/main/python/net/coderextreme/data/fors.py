@@ -78,6 +78,7 @@ Shape21 = x3d.Shape()
 Text22 = x3d.Text()
 Text22.setString(["Node"])
 FontStyle23 = x3d.FontStyle()
+FontStyle23.setFamily(["SERIF"])
 FontStyle23.setJustify(["MIDDLE","MIDDLE"])
 FontStyle23.setSize(5)
 
@@ -258,7 +259,7 @@ Script46.setSourceCode('''ecmascript:\n"+
 "		        spine = new MFVec3f([value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
 "		        spine = new MFVec3f([value, value]);\n"+
@@ -266,7 +267,7 @@ Script46.setSourceCode('''ecmascript:\n"+
 "		        spine = new MFVec3f([spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_spine(value) {\n"+
 "                    spine = value;\n"+
 "                }''')
@@ -288,14 +289,15 @@ Transform54.setDEF("HoldsContent")
 Transform54.setScale([0.1,0.1,0.1])
 PlaneSensor55 = x3d.PlaneSensor()
 PlaneSensor55.setDEF("clickGenerator")
+PlaneSensor55.setEnabled(True)
 PlaneSensor55.setMinPosition([-50,-50])
 PlaneSensor55.setMaxPosition([50,50])
 PlaneSensor55.setDescription("click on background to add nodes, click on nodes to add links")
 
 Transform54.addChildren(PlaneSensor55)
 ProtoInstance56 = x3d.ProtoInstance()
-ProtoInstance56.setName("node")
 ProtoInstance56.setDEF("nodeA")
+ProtoInstance56.setName("node")
 fieldValue57 = x3d.fieldValue()
 fieldValue57.setName("position")
 fieldValue57.setValue("0 0 0")
@@ -304,8 +306,8 @@ ProtoInstance56.addFieldValue(fieldValue57)
 
 Transform54.addChildren(ProtoInstance56)
 ProtoInstance58 = x3d.ProtoInstance()
-ProtoInstance58.setName("node")
 ProtoInstance58.setDEF("nodeB")
+ProtoInstance58.setName("node")
 fieldValue59 = x3d.fieldValue()
 fieldValue59.setName("position")
 fieldValue59.setValue("50 50 50")
@@ -314,8 +316,8 @@ ProtoInstance58.addFieldValue(fieldValue59)
 
 Transform54.addChildren(ProtoInstance58)
 ProtoInstance60 = x3d.ProtoInstance()
-ProtoInstance60.setName("cylinder")
 ProtoInstance60.setDEF("linkA")
+ProtoInstance60.setName("cylinder")
 fieldValue61 = x3d.fieldValue()
 fieldValue61.setName("set_positionA")
 fieldValue61.setValue("0 0 0")

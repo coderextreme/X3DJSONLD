@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -52,7 +52,12 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
+          }
         },
         {
           "Background": {
@@ -224,13 +229,20 @@
                   },
                   "-children": [
                     {
-                      "#comment": "<Sphere>"
+                      "#comment": ""
+                    },
+                    {
+                      "#comment": "                <Sphere>"
+                    },
+                    {
+                      "#comment": "\t\t"
                     }
                   ],
                   "-geometry": {
                     "IndexedFaceSet": {
                       "@convex": false,
                       "@DEF": "Orbit",
+                      "@creaseAngle": 0,
                       "-coord": {
                         "Coordinate": {
                           "@DEF": "OrbitCoordinates"
@@ -248,18 +260,18 @@
             "@DEF": "OrbitScript",
             "field": [
               {
-                "@name": "set_fraction",
                 "@accessType": "inputOnly",
+                "@name": "set_fraction",
                 "@type": "SFFloat"
               },
               {
-                "@name": "coordinates",
                 "@accessType": "inputOutput",
+                "@name": "coordinates",
                 "@type": "MFVec3f"
               },
               {
-                "@name": "coordIndexes",
                 "@accessType": "outputOnly",
+                "@name": "coordIndexes",
                 "@type": "MFInt32"
               }
             ],

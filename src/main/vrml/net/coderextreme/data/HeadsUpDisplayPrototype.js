@@ -4,10 +4,10 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.0";
 let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="HeadsUpDisplay" appinfo="HeadsUpDisplay positions child geometry in screen space, movable by the user" ><ProtoInterface><field name="children" accessType="inputOutput" appinfo="Displayed subscene positioned as a HUD." type="MFNode"><!--default is null array of nodes--></field>
-<field name="dragChildren" accessType="inputOutput" appinfo="Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position." type="MFNode"><!--default is null array of nodes--></field>
-<field name="locationOffset" accessType="initializeOnly" appinfo="Modified screen location and distance (for size)." type="SFVec3f" value="-2 -2 0"></field>
-<field name="traceEnabled" accessType="initializeOnly" appinfo="Enable/disable console output for troubleshooting." type="SFBool" value="false"></field>
+<ProtoDeclare appinfo="HeadsUpDisplay positions child geometry in screen space, movable by the user" name="HeadsUpDisplay" ><ProtoInterface><field accessType="inputOutput" appinfo="Displayed subscene positioned as a HUD." name="children" type="MFNode"><!-- default is null array of nodes --></field>
+<field accessType="inputOutput" appinfo="Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position." name="dragChildren" type="MFNode"><!-- default is null array of nodes --></field>
+<field accessType="initializeOnly" appinfo="Modified screen location and distance (for size)." name="locationOffset" type="SFVec3f" value="-2 -2 0"></field>
+<field accessType="initializeOnly" appinfo="Enable/disable console output for troubleshooting." name="traceEnabled" type="SFBool" value="false"></field>
 </ProtoInterface>
 <ProtoBody><Group><ProximitySensor DEF="WhereSensor" size="1000000000 1000000000 1000000000"><IS><connect nodeField="center" protoField="locationOffset"></connect>
 </IS>
@@ -24,14 +24,14 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 </IS>
 </PlaneSensor>
 <VisibilitySensor DEF="MovementVisibilitySensor"></VisibilitySensor>
-<Script DEF="VisibilityControlScript"><field name="traceEnabled" accessType="initializeOnly" type="SFBool"></field>
-<field name="isVisible" accessType="initializeOnly" type="SFBool" value="true"></field>
-<field name="planeSensorTranslation" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
-<field name="setIsVisible" accessType="inputOnly" type="SFBool"></field>
-<field name="setPlaneSensorIsActive" accessType="inputOnly" type="SFBool"></field>
-<field name="setPlaneSensorTranslation" accessType="inputOnly" type="SFVec3f"></field>
-<field name="translationChanged" accessType="outputOnly" type="SFVec3f"></field>
-<field name="translationOffsetChanged" accessType="outputOnly" type="SFVec3f"></field>
+<Script DEF="VisibilityControlScript"><field accessType="initializeOnly" name="traceEnabled" type="SFBool"></field>
+<field accessType="initializeOnly" name="isVisible" type="SFBool" value="true"></field>
+<field accessType="initializeOnly" name="planeSensorTranslation" type="SFVec3f" value="0 0 0"></field>
+<field accessType="inputOnly" name="setIsVisible" type="SFBool"></field>
+<field accessType="inputOnly" name="setPlaneSensorIsActive" type="SFBool"></field>
+<field accessType="inputOnly" name="setPlaneSensorTranslation" type="SFVec3f"></field>
+<field accessType="outputOnly" name="translationChanged" type="SFVec3f"></field>
+<field accessType="outputOnly" name="translationOffsetChanged" type="SFVec3f"></field>
 <IS><connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
 <![CDATA[ecmascript:
@@ -85,39 +85,39 @@ function setPlaneSensorTranslation (value, timeStamp)
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare2.name = "HeadsUpDisplay";
 ProtoDeclare2.appinfo = "HeadsUpDisplay positions child geometry in screen space, movable by the user";
+ProtoDeclare2.name = "HeadsUpDisplay";
 let ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
 let field4 = browser.currentScene.createNode("field");
-field4.name = "children";
 field4.accessType = "inputOutput";
 field4.appinfo = "Displayed subscene positioned as a HUD.";
+field4.name = "children";
 field4.type = "MFNode";
-//default is null array of nodes
+// default is null array of nodes 
 ProtoInterface3.field = new MFNode();
 
 ProtoInterface3.field[0] = field4;
 
 let field5 = browser.currentScene.createNode("field");
-field5.name = "dragChildren";
 field5.accessType = "inputOutput";
 field5.appinfo = "Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.";
+field5.name = "dragChildren";
 field5.type = "MFNode";
-//default is null array of nodes
+// default is null array of nodes 
 ProtoInterface3.field[1] = field5;
 
 let field6 = browser.currentScene.createNode("field");
-field6.name = "locationOffset";
 field6.accessType = "initializeOnly";
 field6.appinfo = "Modified screen location and distance (for size).";
+field6.name = "locationOffset";
 field6.type = "SFVec3f";
 field6.value = "-2 -2 0";
 ProtoInterface3.field[2] = field6;
 
 let field7 = browser.currentScene.createNode("field");
-field7.name = "traceEnabled";
 field7.accessType = "initializeOnly";
 field7.appinfo = "Enable/disable console output for troubleshooting.";
+field7.name = "traceEnabled";
 field7.type = "SFBool";
 field7.value = "false";
 ProtoInterface3.field[3] = field7;
@@ -216,54 +216,54 @@ Group22.children[2] = VisibilitySensor29;
 let Script30 = browser.currentScene.createNode("Script");
 Script30.DEF = "VisibilityControlScript";
 let field31 = browser.currentScene.createNode("field");
-field31.name = "traceEnabled";
 field31.accessType = "initializeOnly";
+field31.name = "traceEnabled";
 field31.type = "SFBool";
 Script30.field = new MFNode();
 
 Script30.field[0] = field31;
 
 let field32 = browser.currentScene.createNode("field");
-field32.name = "isVisible";
 field32.accessType = "initializeOnly";
+field32.name = "isVisible";
 field32.type = "SFBool";
 field32.value = "true";
 Script30.field[1] = field32;
 
 let field33 = browser.currentScene.createNode("field");
-field33.name = "planeSensorTranslation";
 field33.accessType = "initializeOnly";
+field33.name = "planeSensorTranslation";
 field33.type = "SFVec3f";
 field33.value = "0 0 0";
 Script30.field[2] = field33;
 
 let field34 = browser.currentScene.createNode("field");
-field34.name = "setIsVisible";
 field34.accessType = "inputOnly";
+field34.name = "setIsVisible";
 field34.type = "SFBool";
 Script30.field[3] = field34;
 
 let field35 = browser.currentScene.createNode("field");
-field35.name = "setPlaneSensorIsActive";
 field35.accessType = "inputOnly";
+field35.name = "setPlaneSensorIsActive";
 field35.type = "SFBool";
 Script30.field[4] = field35;
 
 let field36 = browser.currentScene.createNode("field");
-field36.name = "setPlaneSensorTranslation";
 field36.accessType = "inputOnly";
+field36.name = "setPlaneSensorTranslation";
 field36.type = "SFVec3f";
 Script30.field[5] = field36;
 
 let field37 = browser.currentScene.createNode("field");
-field37.name = "translationChanged";
 field37.accessType = "outputOnly";
+field37.name = "translationChanged";
 field37.type = "SFVec3f";
 Script30.field[6] = field37;
 
 let field38 = browser.currentScene.createNode("field");
-field38.name = "translationOffsetChanged";
 field38.accessType = "outputOnly";
+field38.name = "translationOffsetChanged";
 field38.type = "SFVec3f";
 Script30.field[7] = field38;
 
@@ -397,7 +397,7 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare2;
 
-//====================
+// ==================== 
 let Background49 = browser.currentScene.createNode("Background");
 Background49.groundColor = new MFColor(new float[0.1,0.1,0.3]);
 Background49.skyColor = new MFColor(new float[0.5,0.5,0.1]);

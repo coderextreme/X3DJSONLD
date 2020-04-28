@@ -4,78 +4,78 @@ X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
 head1 = x3d.head()
 meta2 = x3d.meta()
-meta2.setName("title")
 meta2.setContent("BindingOperations.x3d")
+meta2.setName("title")
 
 head1.addMeta(meta2)
 meta3 = x3d.meta()
-meta3.setName("description")
 meta3.setContent("Illustrate Viewpoint binding operations (in gory detail!) as described in Chapter 4 concepts. Scene design: a TimeSensor clock drives and IntegerSequencer for each t0/t1/etc. event, and a customized Script node sends bind/unbind events to the correct Viewpoint. Display the browser console to see occurrence of each event.")
+meta3.setName("description")
 
 head1.addMeta(meta3)
 meta4 = x3d.meta()
-meta4.setName("creator")
 meta4.setContent("Don Brutzman")
+meta4.setName("creator")
 
 head1.addMeta(meta4)
 meta5 = x3d.meta()
-meta5.setName("created")
 meta5.setContent("5 January 2008")
+meta5.setName("created")
 
 head1.addMeta(meta5)
 meta6 = x3d.meta()
-meta6.setName("modified")
 meta6.setContent("22 July 2013")
+meta6.setName("modified")
 
 head1.addMeta(meta6)
 meta7 = x3d.meta()
-meta7.setName("reference")
 meta7.setContent("BindingOperations.console.txt")
+meta7.setName("reference")
 
 head1.addMeta(meta7)
 meta8 = x3d.meta()
-meta8.setName("reference")
 meta8.setContent("BindingStackOperations.png")
+meta8.setName("reference")
 
 head1.addMeta(meta8)
 meta9 = x3d.meta()
-meta9.setName("reference")
 meta9.setContent("X3D for Web Authors, Section 2.5.1, Figure 4.1")
+meta9.setName("reference")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()
-meta10.setName("reference")
 meta10.setContent("http://X3dGraphics.com")
+meta10.setName("reference")
 
 head1.addMeta(meta10)
 meta11 = x3d.meta()
-meta11.setName("reference")
 meta11.setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html")
+meta11.setName("reference")
 
 head1.addMeta(meta11)
 meta12 = x3d.meta()
-meta12.setName("rights")
 meta12.setContent("Copyright Don Brutzman and Leonard Daly 2007")
+meta12.setName("rights")
 
 head1.addMeta(meta12)
 meta13 = x3d.meta()
-meta13.setName("subject")
 meta13.setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com")
+meta13.setName("subject")
 
 head1.addMeta(meta13)
 meta14 = x3d.meta()
-meta14.setName("identifier")
 meta14.setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter04ViewingNavigation/BindingOperations.x3d")
+meta14.setName("identifier")
 
 head1.addMeta(meta14)
 meta15 = x3d.meta()
-meta15.setName("generator")
 meta15.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta15.setName("generator")
 
 head1.addMeta(meta15)
 meta16 = x3d.meta()
-meta16.setName("license")
 meta16.setContent("../license.html")
+meta16.setName("license")
 
 head1.addMeta(meta16)
 
@@ -109,7 +109,7 @@ Viewpoint21.setDescription("Viewpoint 4")
 Viewpoint21.setPosition([6,0,5])
 
 Scene17.addChildren(Viewpoint21)
-#Script initialization ought to first bind view5 below.
+# Script initialization ought to first bind view5 below. 
 Group22 = x3d.Group()
 Transform23 = x3d.Transform()
 Transform23.setDEF("Text1")
@@ -205,11 +205,11 @@ Transform41.addChildren(Shape42)
 Group22.addChildren(Transform41)
 
 Scene17.addChildren(Group22)
-#The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9.
-#It does not need to be studied in this chapter.
+# The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9. 
+# It does not need to be studied in this chapter. 
 Transform47 = x3d.Transform()
 Transform47.setTranslation([0,-3,8])
-#notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.
+# notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script. 
 Viewpoint48 = x3d.Viewpoint()
 Viewpoint48.setDEF("ClickToAnimateView")
 Viewpoint48.setDescription("Select animation sequence")
@@ -281,68 +281,68 @@ Transform47.addChildren(ROUTE62)
 Script63 = x3d.Script()
 Script63.setDEF("BindingSequencerEngine")
 field64 = x3d.field()
-field64.setName("set_timeEvent")
 field64.setAccessType("inputOnly")
+field64.setName("set_timeEvent")
 field64.setType("SFInt32")
 
 Script63.addField(field64)
 field65 = x3d.field()
-field65.setName("bindView1")
 field65.setAccessType("outputOnly")
+field65.setName("bindView1")
 field65.setType("SFBool")
 
 Script63.addField(field65)
 field66 = x3d.field()
-field66.setName("bindView2")
 field66.setAccessType("outputOnly")
+field66.setName("bindView2")
 field66.setType("SFBool")
 
 Script63.addField(field66)
 field67 = x3d.field()
-field67.setName("bindView3")
 field67.setAccessType("outputOnly")
+field67.setName("bindView3")
 field67.setType("SFBool")
 
 Script63.addField(field67)
 field68 = x3d.field()
-field68.setName("bindView4")
 field68.setAccessType("outputOnly")
+field68.setName("bindView4")
 field68.setType("SFBool")
 
 Script63.addField(field68)
 field69 = x3d.field()
-field69.setName("bindView5")
 field69.setAccessType("outputOnly")
+field69.setName("bindView5")
 field69.setType("SFBool")
 
 Script63.addField(field69)
 field70 = x3d.field()
-field70.setName("view1Bound")
 field70.setAccessType("inputOnly")
+field70.setName("view1Bound")
 field70.setType("SFBool")
 
 Script63.addField(field70)
 field71 = x3d.field()
-field71.setName("view2Bound")
 field71.setAccessType("inputOnly")
+field71.setName("view2Bound")
 field71.setType("SFBool")
 
 Script63.addField(field71)
 field72 = x3d.field()
-field72.setName("view3Bound")
 field72.setAccessType("inputOnly")
+field72.setName("view3Bound")
 field72.setType("SFBool")
 
 Script63.addField(field72)
 field73 = x3d.field()
-field73.setName("view4Bound")
 field73.setAccessType("inputOnly")
+field73.setName("view4Bound")
 field73.setType("SFBool")
 
 Script63.addField(field73)
 field74 = x3d.field()
-field74.setName("priorInputvalue")
 field74.setAccessType("initializeOnly")
+field74.setName("priorInputvalue")
 field74.setType("SFInt32")
 field74.setValue("-1")
 
@@ -364,7 +364,7 @@ Script63.setSourceCode('''ecmascript:\n"+
 "    // new value provided\n"+
 "    priorInputvalue = inputValue;\n"+
 "    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\n"+
-"\n"+
+"        \n"+
 "    // mimics user execution of Figure 4.1 steps t_0 through t_8\n"+
 "    if (inputValue == 0)\n"+
 "    {\n"+
@@ -438,7 +438,7 @@ Script63.setSourceCode('''ecmascript:\n"+
 "}''')
 
 Transform47.addChildren(Script63)
-#drive Script with TimeSensor clock
+# drive Script with TimeSensor clock 
 ROUTE75 = x3d.ROUTE()
 ROUTE75.setFromField("value_changed")
 ROUTE75.setFromNode("TimingSequencer")
@@ -446,7 +446,7 @@ ROUTE75.setToField("set_timeEvent")
 ROUTE75.setToNode("BindingSequencerEngine")
 
 Transform47.addChildren(ROUTE75)
-#Script will bind and unbind Viewpoint nodes
+# Script will bind and unbind Viewpoint nodes 
 ROUTE76 = x3d.ROUTE()
 ROUTE76.setFromField("bindView1")
 ROUTE76.setFromNode("BindingSequencerEngine")
@@ -482,7 +482,7 @@ ROUTE80.setToField("set_bind")
 ROUTE80.setToNode("ClickToAnimateView")
 
 Transform47.addChildren(ROUTE80)
-#Viewpoint nodes report bind and unbind events
+# Viewpoint nodes report bind and unbind events 
 ROUTE81 = x3d.ROUTE()
 ROUTE81.setFromField("isBound")
 ROUTE81.setFromNode("View1")

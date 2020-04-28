@@ -31,7 +31,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -116,6 +116,9 @@
                                           ],
                                           "-fontStyle": {
                                             "FontStyle": {
+                                              "@family": [
+                                                "SERIF"
+                                              ],
                                               "@justify": [
                                                 "MIDDLE",
                                                 "MIDDLE"
@@ -394,7 +397,7 @@
                             "\t\t        spine = new MFVec3f([value, spine[1]]);",
                             "\t\t    }",
                             "                }",
-                            "",
+                            "                ",
                             "                function set_endB(value) {",
                             "\t\t    if (typeof spine === 'undefined') {",
                             "\t\t        spine = new MFVec3f([value, value]);",
@@ -402,7 +405,7 @@
                             "\t\t        spine = new MFVec3f([spine[0], value]);",
                             "\t\t    }",
                             "                }",
-                            "",
+                            "                ",
                             "                function set_spine(value) {",
                             "                    spine = value;",
                             "                }"
@@ -436,6 +439,7 @@
               {
                 "PlaneSensor": {
                   "@DEF": "clickGenerator",
+                  "@enabled": true,
                   "@minPosition": [
                     -50,
                     -50
@@ -449,8 +453,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@name": "node",
                   "@DEF": "nodeA",
+                  "@name": "node",
                   "fieldValue": [
                     {
                       "@name": "position",
@@ -465,8 +469,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@name": "node",
                   "@DEF": "nodeB",
+                  "@name": "node",
                   "fieldValue": [
                     {
                       "@name": "position",
@@ -481,24 +485,24 @@
               },
               {
                 "ProtoInstance": {
-                  "@name": "node",
                   "@DEF": "nodeC",
-                  "fieldValue": [
-                    {
-                      "@name": "position",
-                      "@value": [
-                        -50,
-                        -50,
-                        -50
-                      ]
-                    }
-                  ]
-                }
-              },
-              {
-                "ProtoInstance": {
                   "@name": "node",
+                  "fieldValue": [
+                    {
+                      "@name": "position",
+                      "@value": [
+                        -50,
+                        -50,
+                        -50
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "ProtoInstance": {
                   "@DEF": "nodeD",
+                  "@name": "node",
                   "fieldValue": [
                     {
                       "@name": "position",
@@ -513,8 +517,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@name": "cylinder",
                   "@DEF": "linkA",
+                  "@name": "cylinder",
                   "fieldValue": [
                     {
                       "@name": "set_positionA",
@@ -537,8 +541,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@name": "cylinder",
                   "@DEF": "linkB",
+                  "@name": "cylinder",
                   "fieldValue": [
                     {
                       "@name": "set_positionA",
@@ -561,8 +565,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@name": "cylinder",
                   "@DEF": "linkC",
+                  "@name": "cylinder",
                   "fieldValue": [
                     {
                       "@name": "set_positionA",
@@ -591,26 +595,38 @@
             "@DEF": "clickHandler",
             "field": [
               {
-                "@name": "counter",
                 "@accessType": "inputOutput",
+                "@name": "counter",
                 "@value": 0,
                 "@type": "SFInt32"
               },
               {
-                "@name": "node_changed",
                 "@accessType": "outputOnly",
+                "@name": "node_changed",
                 "@type": "SFNode"
               },
               {
-                "@name": "add_node",
                 "@accessType": "inputOnly",
+                "@name": "add_node",
                 "@value": false,
                 "@type": "SFBool"
               }
             ],
             "-children": [
               {
-                "#comment": "<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
+                "#comment": ""
+              },
+              {
+                "#comment": "            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"
+              },
+              {
+                "#comment": "                <Transform USE=\"HoldsContent\"/>"
+              },
+              {
+                "#comment": "            </field>"
+              },
+              {
+                "#comment": "\t    "
               }
             ],
             "#sourceText": [
@@ -630,7 +646,7 @@
               "\t\t\t\t  ]",
               "\t\t\t\t}",
               "\t\t\t});",
-              "",
+              "                ",
               "        }"
             ]
           }

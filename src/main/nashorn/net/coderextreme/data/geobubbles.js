@@ -6,7 +6,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
-        .addComponent(new componentObject().setName("Geospatial").setLevel(1))
+        .addComponent(new componentObject().setLevel(1).setName("Geospatial"))
         .addMeta(new metaObject().setName("title").setContent("geobubbles.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
@@ -15,7 +15,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene(new SceneObject()
         .addComments(new CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
         .addComments(new CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
-        .addChild(new GeoViewpointObject().setDEF("Tour").setPosition(Java.to([0,0,4], Java.type("double[]"))).setOrientation(Java.to([1,0,0,0], Java.type("float[]"))).setDescription("Tour Views"))
+        .addChild(new GeoViewpointObject().setDEF("Tour").setPosition(Java.to([0,0,4], Java.type("double[]"))).setOrientation(Java.to([1,0,0,0], Java.type("float[]"))).setDescription("Tour Views").setRetainUserOffsets(false))
         .addChild(new BackgroundObject().setBackUrl(Java.to(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"], Java.type("java.lang.String[]"))))
         .addChild(new TransformObject()
           .addChild(new ShapeObject()

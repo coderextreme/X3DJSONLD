@@ -151,7 +151,7 @@ ProtoInstanceObject ProtoInstance2 = null;
 "		        spine = new MFVec3f([value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === \"undefined\") {\n"+
 "		        spine = new MFVec3f([value, value]);\n"+
@@ -159,7 +159,7 @@ ProtoInstanceObject ProtoInstance2 = null;
 "		        spine = new MFVec3f([spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_spine(value) {\n"+
 "		    Browser.print('\\n'+'\"');\n"+
 "                    spine = value;\n"+

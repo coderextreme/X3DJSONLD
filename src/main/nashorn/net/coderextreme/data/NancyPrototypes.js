@@ -73,50 +73,50 @@ var ProtoInstance65 = null;
 var ProtoInstance66 = null;
       var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("NancyPrototypes.x3d"))
-        .addMeta(new metaObject().setName("creator").setContent("Cindy Ballreich"))
-        .addMeta(new metaObject().setName("translators").setContent("Tom Miller and Don Brutzman, NPS"))
-        .addMeta(new metaObject().setName("created").setContent("9 July 2000"))
-        .addMeta(new metaObject().setName("modified").setContent("20 October 2019"))
-        .addMeta(new metaObject().setName("description").setContent("Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."))
-        .addMeta(new metaObject().setName("warning").setContent("using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead"))
-        .addMeta(new metaObject().setName("reference").setContent("NancyNativeTags.x3d"))
-        .addMeta(new metaObject().setName("TODO").setContent("Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem."))
-        .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"))
-        .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new metaObject().setName("license").setContent("../license.html")))
+        .addMeta(new metaObject().setContent("NancyPrototypes.x3d").setName("title"))
+        .addMeta(new metaObject().setContent("Cindy Ballreich").setName("creator"))
+        .addMeta(new metaObject().setContent("Tom Miller and Don Brutzman, NPS").setName("translators"))
+        .addMeta(new metaObject().setContent("9 July 2000").setName("created"))
+        .addMeta(new metaObject().setContent("20 October 2019").setName("modified"))
+        .addMeta(new metaObject().setContent("Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces.").setName("description"))
+        .addMeta(new metaObject().setContent("using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead").setName("warning"))
+        .addMeta(new metaObject().setContent("NancyNativeTags.x3d").setName("reference"))
+        .addMeta(new metaObject().setContent("Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem.").setName("TODO"))
+        .addMeta(new metaObject().setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d").setName("identifier"))
+        .addMeta(new metaObject().setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit").setName("generator"))
+        .addMeta(new metaObject().setContent("../license.html").setName("license")))
       .setScene(new SceneObject()
-        .addChild(new ProtoDeclareObject().setName("Displacer").setAppinfo("A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html")
+        .addChild(new ProtoDeclareObject().setAppinfo("A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html").setName("Displacer")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setName("coordIndex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setName("displacements").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("coordIndex"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("displacements")))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new WorldInfoObject().setInfo(Java.to(["null body node"], Java.type("java.lang.String[]"))))))
-        .addChild(new ProtoDeclareObject().setName("Humanoid").setAppinfo("The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html")
+        .addChild(new ProtoDeclareObject().setAppinfo("The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html").setName("Humanoid")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addComments(new CommentsBlock("H-Anim v1.1 field definitions"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("version").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("legal values: 1.1 or 2.0").setValue("1.1"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("humanoidVersion").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Version of the humanoid being modeled. Hint: H-anim version 2.0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setName("info").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("rotation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("center").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("scaleOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("humanoidBody").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton").setDocumentation("http://H-Anim.org/Specifications/H-Anim1.1/#humanoid"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("skeleton").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("joints").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Joint nodes"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("segments").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Segment nodes"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("sites").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Site nodes"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("viewpoints").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Viewpoint nodes"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("skinCoord").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0")
-              .addComments(new CommentsBlock("NULL node")))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("skinNormal").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0")
-              .addComments(new CommentsBlock("NULL node"))))
+            .addComments(new CommentsBlock(" H-Anim v1.1 field definitions "))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("legal values: 1.1 or 2.0").setName("version").setValue("1.1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Version of the humanoid being modeled. Hint: H-anim version 2.0").setName("humanoidVersion"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("info"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("translation").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("rotation").setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("center").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("scaleOrientation").setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton").setDocumentation("http://H-Anim.org/Specifications/H-Anim1.1/#humanoid").setName("humanoidBody"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html").setName("skeleton"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Joint nodes").setName("joints"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Segment nodes").setName("segments"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Site nodes").setName("sites"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Viewpoint nodes").setName("viewpoints"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0").setName("skinCoord")
+              .addComments(new CommentsBlock(" NULL node ")))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0").setName("skinNormal")
+              .addComments(new CommentsBlock(" NULL node "))))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("HumanoidTransform")
               .setIS(new ISObject()
@@ -136,25 +136,25 @@ var ProtoInstance66 = null;
               .addChild(new GroupObject().setDEF("HumanoidGroup3")
                 .setIS(new ISObject()
                   .addConnect(new connectObject().setNodeField("children").setProtoField("viewpoints")))))))
-        .addChild(new ProtoDeclareObject().setName("Joint").setAppinfo("The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html")
+        .addChild(new ProtoDeclareObject().setAppinfo("The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html").setName("Joint")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setName("ulimit").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setName("llimit").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("limitOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setName("skinCoordIndex").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setName("skinCoordWeight").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setName("stiffness").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("rotation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("scaleOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("center").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("addChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("removeChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("ulimit"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("llimit"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("limitOrientation").setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("skinCoordIndex"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("skinCoordWeight"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("stiffness").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("translation").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("rotation").setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("scaleOrientation").setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("center").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("children"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("addChildren"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("removeChildren")))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("JointTransform")
               .setIS(new ISObject()
@@ -168,20 +168,20 @@ var ProtoInstance66 = null;
                 .addConnect(new connectObject().setNodeField("children").setProtoField("children"))
                 .addConnect(new connectObject().setNodeField("addChildren").setProtoField("addChildren"))
                 .addConnect(new connectObject().setNodeField("removeChildren").setProtoField("removeChildren"))))))
-        .addChild(new ProtoDeclareObject().setName("Segment").setAppinfo("The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html")
+        .addChild(new ProtoDeclareObject().setAppinfo("The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html").setName("Segment")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("mass").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("centerOfMass").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setName("momentsOfInertia").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 0 0 0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("addChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("removeChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setName("coord").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Coordinate nodes")
-              .addComments(new CommentsBlock("NULL node")))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("displacers").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Displacer nodes")))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("mass").setValue("0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("centerOfMass").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("momentsOfInertia").setValue("0 0 0 0 0 0 0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("children"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("addChildren"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("removeChildren"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Coordinate nodes").setName("coord")
+              .addComments(new CommentsBlock(" NULL node ")))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Displacer nodes").setName("displacers")))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new GroupObject().setDEF("SegmentGroup")
               .setIS(new ISObject()
@@ -190,19 +190,19 @@ var ProtoInstance66 = null;
                 .addConnect(new connectObject().setNodeField("children").setProtoField("children"))
                 .addConnect(new connectObject().setNodeField("addChildren").setProtoField("addChildren"))
                 .addConnect(new connectObject().setNodeField("removeChildren").setProtoField("removeChildren"))))))
-        .addChild(new ProtoDeclareObject().setName("Site").setAppinfo("The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html")
+        .addChild(new ProtoDeclareObject().setAppinfo("The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html").setName("Site")
           .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setName("name").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("rotation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("scale").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setName("scaleOrientation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("center").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("bboxSize").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("children").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("addChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setName("removeChildren").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFSTRING).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("translation").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("rotation").setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFROTATION).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("scaleOrientation").setValue("0 0 1 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("center").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter").setValue("0 0 0"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setName("children"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("addChildren"))
+            .addField(new fieldObject().setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setName("removeChildren")))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject().setDEF("SiteTransform")
               .setIS(new ISObject()
@@ -216,8 +216,8 @@ var ProtoInstance66 = null;
                 .addConnect(new connectObject().setNodeField("children").setProtoField("children"))
                 .addConnect(new connectObject().setNodeField("addChildren").setProtoField("addChildren"))
                 .addConnect(new connectObject().setNodeField("removeChildren").setProtoField("removeChildren"))))))
-        .addComments(new CommentsBlock("Start scene graph."))
-        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("Humanoid").setDEF("Humanoid"))
+        .addComments(new CommentsBlock(" Start scene graph. "))
+        .addChild(ProtoInstance0 = new ProtoInstanceObject().setDEF("Humanoid").setName("Humanoid"))
         .addChild(new WorldInfoObject().setInfo(Java.to(["Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc."], Java.type("java.lang.String[]"))).setTitle("Nancy - an H-Anim compliant avatar by 3Name3D"))
         .addChild(new NavigationInfoObject().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))).setAvatarSize(Java.to([0.15,1.53,0.75], Java.type("float[]"))).setSpeed(0.5))
         .addChild(new GroupObject().setDEF("Interface")
@@ -534,7 +534,7 @@ ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("info").setValue("\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/h-anim/small_logo.gif> is present and proper credit is given.\""));
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("humanoidBody")
-            .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_HumanoidRoot"))
+            .addChild(ProtoInstance1 = new ProtoInstanceObject().setDEF("hanim_HumanoidRoot").setName("Joint"))
             .addChild(new GroupObject()));
 ProtoInstance0
           .addFieldValue(new fieldValueObject().setName("joints")
@@ -585,17 +585,17 @@ ProtoInstance1
               .addFieldValue(new fieldValueObject().setName("center").setValue("-0.00405 0.855 -0.000113"));
 ProtoInstance1
               .addFieldValue(new fieldValueObject().setName("children")
-                .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_sacroiliac"))
-                .addChild(ProtoInstance16 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_vl1")));
+                .addChild(ProtoInstance2 = new ProtoInstanceObject().setDEF("hanim_sacroiliac").setName("Joint"))
+                .addChild(ProtoInstance16 = new ProtoInstanceObject().setDEF("hanim_vl1").setName("Joint")));
 ProtoInstance2
                   .addFieldValue(new fieldValueObject().setName("name").setValue("sacroiliac"));
 ProtoInstance2
                   .addFieldValue(new fieldValueObject().setName("center").setValue("0 1.01 -0.0204"));
 ProtoInstance2
                   .addFieldValue(new fieldValueObject().setName("children")
-                    .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_pelvis"))
-                    .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_hip"))
-                    .addChild(ProtoInstance10 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_hip")));
+                    .addChild(ProtoInstance3 = new ProtoInstanceObject().setDEF("hanim_pelvis").setName("Segment"))
+                    .addChild(ProtoInstance4 = new ProtoInstanceObject().setDEF("hanim_l_hip").setName("Joint"))
+                    .addChild(ProtoInstance10 = new ProtoInstanceObject().setDEF("hanim_r_hip").setName("Joint")));
 ProtoInstance3
                       .addFieldValue(new fieldValueObject().setName("name").setValue("pelvis"));
 ProtoInstance3
@@ -611,8 +611,8 @@ ProtoInstance4
                       .addFieldValue(new fieldValueObject().setName("center").setValue("0.122 0.888271 -0.0693267"));
 ProtoInstance4
                       .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_thigh"))
-                        .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_knee")));
+                        .addChild(ProtoInstance5 = new ProtoInstanceObject().setDEF("hanim_l_thigh").setName("Segment"))
+                        .addChild(ProtoInstance6 = new ProtoInstanceObject().setDEF("hanim_l_knee").setName("Joint")));
 ProtoInstance5
                           .addFieldValue(new fieldValueObject().setName("name").setValue("l_thigh"));
 ProtoInstance5
@@ -628,8 +628,8 @@ ProtoInstance6
                           .addFieldValue(new fieldValueObject().setName("center").setValue("0.0738 0.517 -0.0284"));
 ProtoInstance6
                           .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(ProtoInstance7 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_calf"))
-                            .addChild(ProtoInstance8 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_ankle")));
+                            .addChild(ProtoInstance7 = new ProtoInstanceObject().setDEF("hanim_l_calf").setName("Segment"))
+                            .addChild(ProtoInstance8 = new ProtoInstanceObject().setDEF("hanim_l_ankle").setName("Joint")));
 ProtoInstance7
                               .addFieldValue(new fieldValueObject().setName("name").setValue("l_calf"));
 ProtoInstance7
@@ -645,7 +645,7 @@ ProtoInstance8
                               .addFieldValue(new fieldValueObject().setName("center").setValue("0.0645 0.0719 -0.048"));
 ProtoInstance8
                               .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(ProtoInstance9 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_hindfoot")));
+                                .addChild(ProtoInstance9 = new ProtoInstanceObject().setDEF("hanim_l_hindfoot").setName("Segment")));
 ProtoInstance9
                                   .addFieldValue(new fieldValueObject().setName("name").setValue("l_hindfoot"));
 ProtoInstance9
@@ -661,8 +661,8 @@ ProtoInstance10
                       .addFieldValue(new fieldValueObject().setName("center").setValue("-0.11 0.892362 -0.0732533"));
 ProtoInstance10
                       .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(ProtoInstance11 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_thigh"))
-                        .addChild(ProtoInstance12 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_knee")));
+                        .addChild(ProtoInstance11 = new ProtoInstanceObject().setDEF("hanim_r_thigh").setName("Segment"))
+                        .addChild(ProtoInstance12 = new ProtoInstanceObject().setDEF("hanim_r_knee").setName("Joint")));
 ProtoInstance11
                           .addFieldValue(new fieldValueObject().setName("name").setValue("r_thigh"));
 ProtoInstance11
@@ -678,8 +678,8 @@ ProtoInstance12
                           .addFieldValue(new fieldValueObject().setName("center").setValue("-0.0699 0.51 -0.0166"));
 ProtoInstance12
                           .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(ProtoInstance13 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_calf"))
-                            .addChild(ProtoInstance14 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_ankle")));
+                            .addChild(ProtoInstance13 = new ProtoInstanceObject().setDEF("hanim_r_calf").setName("Segment"))
+                            .addChild(ProtoInstance14 = new ProtoInstanceObject().setDEF("hanim_r_ankle").setName("Joint")));
 ProtoInstance13
                               .addFieldValue(new fieldValueObject().setName("name").setValue("r_calf"));
 ProtoInstance13
@@ -695,7 +695,7 @@ ProtoInstance14
                               .addFieldValue(new fieldValueObject().setName("center").setValue("-0.064 0.0753 -0.0412"));
 ProtoInstance14
                               .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(ProtoInstance15 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_hindfoot")));
+                                .addChild(ProtoInstance15 = new ProtoInstanceObject().setDEF("hanim_r_hindfoot").setName("Segment")));
 ProtoInstance15
                                   .addFieldValue(new fieldValueObject().setName("name").setValue("r_hindfoot"));
 ProtoInstance15
@@ -711,10 +711,10 @@ ProtoInstance16
                   .addFieldValue(new fieldValueObject().setName("center").setValue("-0.00405 1.07 -0.0275"));
 ProtoInstance16
                   .addFieldValue(new fieldValueObject().setName("children")
-                    .addChild(ProtoInstance17 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_c7"))
-                    .addChild(ProtoInstance18 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_shoulder"))
-                    .addChild(ProtoInstance24 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_shoulder"))
-                    .addChild(ProtoInstance30 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_vc4")));
+                    .addChild(ProtoInstance17 = new ProtoInstanceObject().setDEF("hanim_c7").setName("Segment"))
+                    .addChild(ProtoInstance18 = new ProtoInstanceObject().setDEF("hanim_l_shoulder").setName("Joint"))
+                    .addChild(ProtoInstance24 = new ProtoInstanceObject().setDEF("hanim_r_shoulder").setName("Joint"))
+                    .addChild(ProtoInstance30 = new ProtoInstanceObject().setDEF("hanim_vc4").setName("Joint")));
 ProtoInstance17
                       .addFieldValue(new fieldValueObject().setName("name").setValue("l1"));
 ProtoInstance17
@@ -732,8 +732,8 @@ ProtoInstance18
                       .addFieldValue(new fieldValueObject().setName("center").setValue("0.167 1.36 -0.0518"));
 ProtoInstance18
                       .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(ProtoInstance19 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_upperarm"))
-                        .addChild(ProtoInstance20 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_elbow")));
+                        .addChild(ProtoInstance19 = new ProtoInstanceObject().setDEF("hanim_l_upperarm").setName("Segment"))
+                        .addChild(ProtoInstance20 = new ProtoInstanceObject().setDEF("hanim_l_elbow").setName("Joint")));
 ProtoInstance19
                           .addFieldValue(new fieldValueObject().setName("name").setValue("l_upperarm"));
 ProtoInstance19
@@ -750,8 +750,8 @@ ProtoInstance20
                           .addFieldValue(new fieldValueObject().setName("center").setValue("0.196 1.07 -0.0518"));
 ProtoInstance20
                           .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(ProtoInstance21 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_forearm"))
-                            .addChild(ProtoInstance22 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_l_wrist")));
+                            .addChild(ProtoInstance21 = new ProtoInstanceObject().setDEF("hanim_l_forearm").setName("Segment"))
+                            .addChild(ProtoInstance22 = new ProtoInstanceObject().setDEF("hanim_l_wrist").setName("Joint")));
 ProtoInstance21
                               .addFieldValue(new fieldValueObject().setName("name").setValue("l_forearm"));
 ProtoInstance21
@@ -768,7 +768,7 @@ ProtoInstance22
                               .addFieldValue(new fieldValueObject().setName("center").setValue("0.213 0.811 -0.0338"));
 ProtoInstance22
                               .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(ProtoInstance23 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_l_hand")));
+                                .addChild(ProtoInstance23 = new ProtoInstanceObject().setDEF("hanim_l_hand").setName("Segment")));
 ProtoInstance23
                                   .addFieldValue(new fieldValueObject().setName("name").setValue("l_hand"));
 ProtoInstance23
@@ -785,8 +785,8 @@ ProtoInstance24
                       .addFieldValue(new fieldValueObject().setName("center").setValue("-0.167 1.36 -0.0458"));
 ProtoInstance24
                       .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(ProtoInstance25 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_upperarm"))
-                        .addChild(ProtoInstance26 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_elbow")));
+                        .addChild(ProtoInstance25 = new ProtoInstanceObject().setDEF("hanim_r_upperarm").setName("Segment"))
+                        .addChild(ProtoInstance26 = new ProtoInstanceObject().setDEF("hanim_r_elbow").setName("Joint")));
 ProtoInstance25
                           .addFieldValue(new fieldValueObject().setName("name").setValue("r_upperarm"));
 ProtoInstance25
@@ -803,8 +803,8 @@ ProtoInstance26
                           .addFieldValue(new fieldValueObject().setName("center").setValue("-0.192 1.07 -0.0498"));
 ProtoInstance26
                           .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(ProtoInstance27 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_forearm"))
-                            .addChild(ProtoInstance28 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_r_wrist")));
+                            .addChild(ProtoInstance27 = new ProtoInstanceObject().setDEF("hanim_r_forearm").setName("Segment"))
+                            .addChild(ProtoInstance28 = new ProtoInstanceObject().setDEF("hanim_r_wrist").setName("Joint")));
 ProtoInstance27
                               .addFieldValue(new fieldValueObject().setName("name").setValue("r_forearm"));
 ProtoInstance27
@@ -821,7 +821,7 @@ ProtoInstance28
                               .addFieldValue(new fieldValueObject().setName("center").setValue("-0.217 0.811 -0.0338"));
 ProtoInstance28
                               .addFieldValue(new fieldValueObject().setName("children")
-                                .addChild(ProtoInstance29 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_r_hand")));
+                                .addChild(ProtoInstance29 = new ProtoInstanceObject().setDEF("hanim_r_hand").setName("Segment")));
 ProtoInstance29
                                   .addFieldValue(new fieldValueObject().setName("name").setValue("r_hand"));
 ProtoInstance29
@@ -838,8 +838,8 @@ ProtoInstance30
                       .addFieldValue(new fieldValueObject().setName("center").setValue("0 1.43 -0.0458"));
 ProtoInstance30
                       .addFieldValue(new fieldValueObject().setName("children")
-                        .addChild(ProtoInstance31 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_c4"))
-                        .addChild(ProtoInstance32 = new ProtoInstanceObject().setName("Joint").setDEF("hanim_skullbase")));
+                        .addChild(ProtoInstance31 = new ProtoInstanceObject().setDEF("hanim_c4").setName("Segment"))
+                        .addChild(ProtoInstance32 = new ProtoInstanceObject().setDEF("hanim_skullbase").setName("Joint")));
 ProtoInstance31
                           .addFieldValue(new fieldValueObject().setName("name").setValue("c4"));
 ProtoInstance31
@@ -855,7 +855,7 @@ ProtoInstance32
                           .addFieldValue(new fieldValueObject().setName("center").setValue("0 1.54 -0.0409"));
 ProtoInstance32
                           .addFieldValue(new fieldValueObject().setName("children")
-                            .addChild(ProtoInstance33 = new ProtoInstanceObject().setName("Segment").setDEF("hanim_skull")));
+                            .addChild(ProtoInstance33 = new ProtoInstanceObject().setDEF("hanim_skull").setName("Segment")));
 ProtoInstance33
                               .addFieldValue(new fieldValueObject().setName("name").setValue("skull"));
 ProtoInstance33

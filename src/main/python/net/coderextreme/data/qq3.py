@@ -4,43 +4,43 @@ X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
 head1 = x3d.head()
 meta2 = x3d.meta()
-meta2.setName("title")
 meta2.setContent("qq3.x3d")
+meta2.setName("title")
 
 head1.addMeta(meta2)
 meta3 = x3d.meta()
-meta3.setName("creator")
 meta3.setContent("John Carlson")
+meta3.setName("creator")
 
 head1.addMeta(meta3)
 meta4 = x3d.meta()
-meta4.setName("translator")
 meta4.setContent("John Carlson")
+meta4.setName("translator")
 
 head1.addMeta(meta4)
 meta5 = x3d.meta()
-meta5.setName("created")
 meta5.setContent("11 Jan 2015")
+meta5.setName("created")
 
 head1.addMeta(meta5)
 meta6 = x3d.meta()
-meta6.setName("modified")
 meta6.setContent("05 May 2017")
+meta6.setName("modified")
 
 head1.addMeta(meta6)
 meta7 = x3d.meta()
-meta7.setName("description")
 meta7.setContent("12 extrusions to test prototype expander")
+meta7.setName("description")
 
 head1.addMeta(meta7)
 meta8 = x3d.meta()
-meta8.setName("identifier")
 meta8.setContent("https://coderextreme.net/x3d/qq3.x3d")
+meta8.setName("identifier")
 
 head1.addMeta(meta8)
 meta9 = x3d.meta()
-meta9.setName("generator")
 meta9.setContent("manual")
+meta9.setName("generator")
 
 head1.addMeta(meta9)
 
@@ -50,7 +50,7 @@ ProtoDeclare11 = x3d.ProtoDeclare()
 ProtoDeclare11.setName("Process")
 ProtoBody12 = x3d.ProtoBody()
 Group13 = x3d.Group()
-#left
+# left 
 Transform14 = x3d.Transform()
 Transform14.setScale([0.5,0.5,0.5])
 Shape15 = x3d.Shape()
@@ -72,7 +72,7 @@ Shape15.setGeometry(Extrusion18)
 Transform14.addChildren(Shape15)
 
 Group13.addChildren(Transform14)
-#right
+# right 
 Transform19 = x3d.Transform()
 Transform19.setScale([0.5,0.5,0.5])
 Shape20 = x3d.Shape()
@@ -94,7 +94,7 @@ Shape20.setGeometry(Extrusion23)
 Transform19.addChildren(Shape20)
 
 Group13.addChildren(Transform19)
-#up
+# up 
 Transform24 = x3d.Transform()
 Transform24.setScale([0.5,0.5,0.5])
 Shape25 = x3d.Shape()
@@ -103,7 +103,7 @@ Shape25.setUSE("ShapeUpRight")
 Transform24.addChildren(Shape25)
 
 Group13.addChildren(Transform24)
-#down
+# down 
 Transform26 = x3d.Transform()
 Transform26.setScale([0.5,0.5,0.5])
 Shape27 = x3d.Shape()
@@ -133,6 +133,7 @@ Transform29.addChildren(ProtoInstance30)
 
 Scene10.addChildren(Transform29)
 Transform31 = x3d.Transform()
+Transform31.setTranslation([0,0,0])
 ProtoInstance32 = x3d.ProtoInstance()
 ProtoInstance32.setName("Process")
 

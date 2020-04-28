@@ -22,8 +22,8 @@
           "@content": "5 May 2015"
         },
         {
-          "@name": "modified",
-          "@content": "05 May 2017"
+          "@content": "05 May 2017",
+          "@name": "modified"
         },
         {
           "@name": "description",
@@ -39,7 +39,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -263,7 +263,8 @@
                             {
                               "StringSensor": {
                                 "@DEF": "RightSensor",
-                                "@enabled": false
+                                "@enabled": false,
+                                "@deletionAllowed": true
                               }
                             },
                             {
@@ -388,7 +389,8 @@
                             {
                               "StringSensor": {
                                 "@DEF": "UpSensor",
-                                "@enabled": false
+                                "@enabled": false,
+                                "@deletionAllowed": true
                               }
                             },
                             {
@@ -547,7 +549,8 @@
                             {
                               "StringSensor": {
                                 "@DEF": "CenterSensor",
-                                "@enabled": false
+                                "@enabled": false,
+                                "@deletionAllowed": true
                               }
                             },
                             {

@@ -6,44 +6,44 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "HeadsUpDisplayPrototype.x3d"
+          "@content": "HeadsUpDisplayPrototype.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Generic Heads Up Display (HUD) prototype to keep children on screen."
+          "@content": "Generic Heads Up Display (HUD) prototype to keep children on screen.",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "Don Brutzman"
+          "@content": "Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "created",
-          "@content": "9 November 2003"
+          "@content": "9 November 2003",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "14 January 2014"
+          "@content": "14 January 2014",
+          "@name": "modified"
         },
         {
-          "@name": "subject",
-          "@content": "HUD Heads Up Display"
+          "@content": "HUD Heads Up Display",
+          "@name": "subject"
         },
         {
-          "@name": "identifier",
-          "@content": "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d"
+          "@content": "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../../license.html"
+          "@content": "../../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -59,36 +59,36 @@
       "-children": [
         {
           "ProtoDeclare": {
-            "@name": "HeadsUpDisplay",
             "@appinfo": "HeadsUpDisplay positions child geometry in screen space, movable by the user",
+            "@name": "HeadsUpDisplay",
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "children",
                   "@accessType": "inputOutput",
                   "@appinfo": "Displayed subscene positioned as a HUD.",
+                  "@name": "children",
                   "@type": "MFNode",
                   "-children": [
                     {
-                      "#comment": "default is null array of nodes"
+                      "#comment": " default is null array of nodes "
                     }
                   ]
                 },
                 {
-                  "@name": "dragChildren",
                   "@accessType": "inputOutput",
                   "@appinfo": "Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.",
+                  "@name": "dragChildren",
                   "@type": "MFNode",
                   "-children": [
                     {
-                      "#comment": "default is null array of nodes"
+                      "#comment": " default is null array of nodes "
                     }
                   ]
                 },
                 {
-                  "@name": "locationOffset",
                   "@accessType": "initializeOnly",
                   "@appinfo": "Modified screen location and distance (for size).",
+                  "@name": "locationOffset",
                   "@type": "SFVec3f",
                   "@value": [
                     -2,
@@ -97,9 +97,9 @@
                   ]
                 },
                 {
-                  "@name": "traceEnabled",
                   "@accessType": "initializeOnly",
                   "@appinfo": "Enable/disable console output for troubleshooting.",
+                  "@name": "traceEnabled",
                   "@type": "SFBool",
                   "@value": false
                 }
@@ -209,19 +209,19 @@
                                                         "@DEF": "VisibilityControlScript",
                                                         "field": [
                                                           {
-                                                            "@name": "traceEnabled",
                                                             "@accessType": "initializeOnly",
+                                                            "@name": "traceEnabled",
                                                             "@type": "SFBool"
                                                           },
                                                           {
-                                                            "@name": "isVisible",
                                                             "@accessType": "initializeOnly",
+                                                            "@name": "isVisible",
                                                             "@type": "SFBool",
                                                             "@value": true
                                                           },
                                                           {
-                                                            "@name": "planeSensorTranslation",
                                                             "@accessType": "initializeOnly",
+                                                            "@name": "planeSensorTranslation",
                                                             "@type": "SFVec3f",
                                                             "@value": [
                                                               0,
@@ -230,28 +230,28 @@
                                                             ]
                                                           },
                                                           {
+                                                            "@accessType": "inputOnly",
                                                             "@name": "setIsVisible",
-                                                            "@accessType": "inputOnly",
                                                             "@type": "SFBool"
                                                           },
                                                           {
+                                                            "@accessType": "inputOnly",
                                                             "@name": "setPlaneSensorIsActive",
-                                                            "@accessType": "inputOnly",
                                                             "@type": "SFBool"
                                                           },
                                                           {
-                                                            "@name": "setPlaneSensorTranslation",
                                                             "@accessType": "inputOnly",
+                                                            "@name": "setPlaneSensorTranslation",
                                                             "@type": "SFVec3f"
                                                           },
                                                           {
+                                                            "@accessType": "outputOnly",
                                                             "@name": "translationChanged",
-                                                            "@accessType": "outputOnly",
                                                             "@type": "SFVec3f"
                                                           },
                                                           {
-                                                            "@name": "translationOffsetChanged",
                                                             "@accessType": "outputOnly",
+                                                            "@name": "translationOffsetChanged",
                                                             "@type": "SFVec3f"
                                                           }
                                                         ],
@@ -389,7 +389,7 @@
           }
         },
         {
-          "#comment": "===================="
+          "#comment": " ==================== "
         },
         {
           "Background": {

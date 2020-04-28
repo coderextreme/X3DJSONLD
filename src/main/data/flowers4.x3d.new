@@ -8,7 +8,7 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/flowers4.x3d"></meta>
 <meta name="description" content="an animated flower"></meta>
 </head>
-<Scene><NavigationInfo></NavigationInfo>
+<Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
 <Background backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;" frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></Background>
 <Transform DEF="transform"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
@@ -27,13 +27,13 @@
 <ShaderPart url="&quot;../shaders/pc_bubbles.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
-<!--<Sphere>--><IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
+<!----><!--                <Sphere>--><!--		--><IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit" creaseAngle="0"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<field name="coordinates" accessType="inputOutput" type="MFVec3f"></field>
-<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
+<Script DEF="OrbitScript"><field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
+<field accessType="inputOutput" name="coordinates" type="MFVec3f"></field>
+<field accessType="outputOnly" name="coordIndexes" type="MFInt32"></field>
 <![CDATA[ecmascript:
 
 var e = 5;

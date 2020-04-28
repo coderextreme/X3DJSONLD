@@ -6,56 +6,56 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "Table5_18PixelTexture"
+          "@content": "Table5_18PixelTexture",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "PixelTexture example for Table 5.18"
+          "@content": "PixelTexture example for Table 5.18",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "Leonard Daly and Don Brutzman"
+          "@content": "Leonard Daly and Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "created",
-          "@content": "18 December 2006"
+          "@content": "18 December 2006",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "2 April 2017"
+          "@content": "2 April 2017",
+          "@name": "modified"
         },
         {
-          "@name": "reference",
-          "@content": "http://X3dGraphics.com"
+          "@content": "http://X3dGraphics.com",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html",
+          "@name": "reference"
         },
         {
-          "@name": "rights",
-          "@content": "Copyright 2006, Daly Realism and Don Brutzman"
+          "@content": "Copyright 2006, Daly Realism and Don Brutzman",
+          "@name": "rights"
         },
         {
-          "@name": "subject",
-          "@content": "X3D, PixelTexture"
+          "@content": "X3D, PixelTexture",
+          "@name": "subject"
         },
         {
-          "@name": "identifier",
-          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture"
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",

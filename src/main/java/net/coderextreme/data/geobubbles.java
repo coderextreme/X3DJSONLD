@@ -81,7 +81,7 @@ public class geobubbles {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
       .setHead(new headObject()
-        .addComponent(new componentObject().setName("Geospatial").setLevel(1))
+        .addComponent(new componentObject().setLevel(1).setName("Geospatial"))
         .addMeta(new metaObject().setName("title").setContent("geobubbles.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
@@ -90,7 +90,7 @@ public class geobubbles {
       .setScene(new SceneObject()
         .addComments(new CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
         .addComments(new CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
-        .addChild(new GeoViewpointObject().setDEF("Tour").setPosition(new double[] {0d,0d,4d}).setOrientation(new float[] {1f,0f,0f,0f}).setDescription("Tour Views"))
+        .addChild(new GeoViewpointObject().setDEF("Tour").setPosition(new double[] {0d,0d,4d}).setOrientation(new float[] {1f,0f,0f,0f}).setDescription("Tour Views").setRetainUserOffsets(false))
         .addChild(new BackgroundObject().setBackUrl(new MFStringObject(new MFString0().getArray())).setBottomUrl(new MFStringObject(new MFString1().getArray())).setFrontUrl(new MFStringObject(new MFString2().getArray())).setLeftUrl(new MFStringObject(new MFString3().getArray())).setRightUrl(new MFStringObject(new MFString4().getArray())).setTopUrl(new MFStringObject(new MFString5().getArray())))
         .addChild(new TransformObject()
           .addChild(new ShapeObject()

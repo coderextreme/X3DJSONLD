@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -54,7 +54,10 @@
                     {
                       "Shape": {
                         "-geometry": {
-                          "Sphere": {}
+                          "Sphere": {
+                            "@radius": 1,
+                            "@solid": true
+                          }
                         }
                       }
                     }

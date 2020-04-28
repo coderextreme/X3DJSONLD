@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -42,7 +42,12 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
+          }
         },
         {
           "DirectionalLight": {
@@ -124,7 +129,9 @@
                         2,
                         -1
                       ],
+                      "@creaseAngle": 0,
                       "@DEF": "Orbit",
+                      "@solid": true,
                       "-coord": {
                         "Coordinate": {
                           "@DEF": "OrbitCoordinates",
@@ -153,24 +160,48 @@
             "@DEF": "OrbitScript",
             "field": [
               {
-                "@name": "set_fraction",
                 "@accessType": "inputOnly",
+                "@name": "set_fraction",
                 "@type": "SFFloat"
               },
               {
-                "@name": "coordinates",
                 "@accessType": "outputOnly",
+                "@name": "coordinates",
                 "@type": "MFVec3f"
               },
               {
-                "@name": "coordIndexes",
                 "@accessType": "outputOnly",
+                "@name": "coordIndexes",
                 "@type": "MFInt32"
               }
             ],
             "-children": [
               {
-                "#comment": "<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"
+                "#comment": ""
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"
+              },
+              {
+                "#comment": "\t"
               }
             ],
             "#sourceText": [
