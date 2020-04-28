@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.2.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.2.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.2 of X3D -->
-<!-- Generated 2020-04-23-07:00 06:54:34.58-07:00 -->
+<!-- Generated 2020-04-26-07:00 22:09:30.385-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.2"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -28,14 +28,15 @@
          <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
          <enumeration value="&#34;USER_FRICTION&#34;"
                       appinfo="The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used."/>
-         <enumeration value="&#34;FRICTION_COEFFICIENT2&#34;"
+         <enumeration value="&#34;FRICTION_COEFFICIENT-2&#34;"
                       appinfo="Apply frictionCoefficients values"/>
          <enumeration value="&#34;ERROR_REDUCTION&#34;" appinfo="Apply softnessErrorCorrection value"/>
          <enumeration value="&#34;CONSTANT_FORCE&#34;" appinfo="Apply softnessConstantForceMix value"/>
-         <enumeration value="&#34;SPEED1&#34;" appinfo="Apply first component of surfaceSpeed array"/>
-         <enumeration value="&#34;SPEED2&#34;" appinfo="Apply second component of surfaceSpeed array"/>
-         <enumeration value="&#34;SLIP1&#34;" appinfo="Apply first component of slipFactors array"/>
-         <enumeration value="&#34;SLIP2&#34;" appinfo="Apply second component of slipFactors array"/>
+         <enumeration value="&#34;SPEED-1&#34;" appinfo="Apply first component of surfaceSpeed array"/>
+         <enumeration value="&#34;SPEED-2&#34;"
+                      appinfo="Apply second component of surfaceSpeed array"/>
+         <enumeration value="&#34;SLIP-1&#34;" appinfo="Apply first component of slipFactors array"/>
+         <enumeration value="&#34;SLIP-2&#34;" appinfo="Apply second component of slipFactors array"/>
       </SimpleType>
       <SimpleType name="bboxSizeType"
                   baseType="SFVec3f"
@@ -47,8 +48,10 @@
                   baseType="xs:NMTOKEN"
                   appinfo="closureTypeChoices are strictly allowed enumeration values for ArcClose2D closureType field."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry2D.html#ArcClose2D">
-         <enumeration value="PIE"/>
-         <enumeration value="CHORD"/>
+         <enumeration value="PIE"
+                      appinfo="Connects arc endpoints to center, forming a pie wedge"/>
+         <enumeration value="CHORD"
+                      appinfo="Connects arc endpoints directly to each other, as in chord on a circle"/>
       </SimpleType>
       <SimpleType name="componentNameChoices"
                   baseType="xs:NMTOKEN"
@@ -90,7 +93,7 @@
          <enumeration value="Grouping"
                       appinfo="The Grouping component describes how nodes are organized into groups to establish a transformation hierarchy for the X3D scene graph."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/group.html"/>
-         <enumeration value="HAnim"
+         <enumeration value="H-Anim"
                       appinfo="The Humanoid Animation (H-Anim) component for X3D defines node bindings and other details for implementing ISO/IEC 19774, the H-Anim International Specificaiton."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"/>
          <enumeration value="Interpolation"
@@ -194,7 +197,8 @@
                   appinfo="containerFieldChoicesHAnimJoint lists the allowed containerField enumeration values for HAnimJoint node: default &#34;children&#34; if parent node is another HAnimJoint, otherwise &#34;joints&#34; or &#34;skeleton&#34; if parent node is HAnimHumanoid."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="children" appinfo="parent node is another HAnimJoint"/>
-         <enumeration value="joints" appinfo="parent node is HAnimHumanoid"/>
+         <enumeration value="joints"
+                      appinfo="parent node is HAnimHumanoid, typically as a USE node"/>
          <enumeration value="skeleton" appinfo="parent node is HAnimHumanoid"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesHAnimSegment"
@@ -202,14 +206,16 @@
                   appinfo="containerFieldChoicesHAnimSegment lists the allowed containerField enumeration values for HAnimSegment node: default &#34;children&#34; if parent node is another HAnimJoint, otherwise &#34;joints&#34; or &#34;skeleton&#34; if parent node is HAnimHumanoid."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="children" appinfo="parent node is HAnimJoint"/>
-         <enumeration value="segments" appinfo="parent node is HAnimHumanoid"/>
+         <enumeration value="segments"
+                      appinfo="parent node is HAnimHumanoid, typically as a USE node"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesHAnimSite"
                   baseType="xs:NMTOKEN"
                   appinfo="containerFieldChoicesHAnimSite lists the allowed containerField enumeration values for HAnimSite node: default &#34;children&#34; if parent node is another HAnimJoint, otherwise &#34;sites&#34;, &#34;skeleton&#34; or &#34;viewpoints&#34; if parent node is HAnimHumanoid."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="children" appinfo="parent node is HAnimSegment"/>
-         <enumeration value="sites" appinfo="parent node is HAnimHumanoid"/>
+         <enumeration value="sites"
+                      appinfo="parent node is HAnimHumanoid, typically as a USE node"/>
          <enumeration value="skeleton" appinfo="parent node is HAnimHumanoid"/>
          <enumeration value="viewpoints" appinfo="parent node is HAnimHumanoid"/>
       </SimpleType>
@@ -327,87 +333,121 @@
                   baseType="xs:NMTOKEN"
                   appinfo="fieldTypeChoices are enumerations for all allowed names of X3DField types."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html">
-         <enumeration value="SFBool"/>
-         <enumeration value="MFBool"/>
-         <enumeration value="SFColor"/>
-         <enumeration value="MFColor"/>
-         <enumeration value="SFColorRGBA"/>
-         <enumeration value="MFColorRGBA"/>
-         <enumeration value="SFDouble"/>
-         <enumeration value="MFDouble"/>
-         <enumeration value="SFFloat"/>
-         <enumeration value="MFFloat"/>
-         <enumeration value="SFImage"/>
-         <enumeration value="MFImage"/>
-         <enumeration value="SFInt32"/>
-         <enumeration value="SFNode"/>
-         <enumeration value="MFNode"/>
-         <enumeration value="MFInt32"/>
-         <enumeration value="SFRotation"/>
-         <enumeration value="MFRotation"/>
-         <enumeration value="SFString"/>
-         <enumeration value="MFString"/>
-         <enumeration value="SFTime"/>
-         <enumeration value="MFTime"/>
-         <enumeration value="SFVec2d"/>
-         <enumeration value="MFVec2d"/>
-         <enumeration value="SFVec2f"/>
-         <enumeration value="MFVec2f"/>
-         <enumeration value="SFVec3d"/>
-         <enumeration value="MFVec3d"/>
-         <enumeration value="SFVec3f"/>
-         <enumeration value="MFVec3f"/>
-         <enumeration value="SFVec4d"/>
-         <enumeration value="MFVec4d"/>
-         <enumeration value="SFVec4f"/>
-         <enumeration value="MFVec4f"/>
-         <enumeration value="SFMatrix3d"/>
-         <enumeration value="MFMatrix3d"/>
-         <enumeration value="SFMatrix3f"/>
-         <enumeration value="MFMatrix3f"/>
-         <enumeration value="SFMatrix4d"/>
-         <enumeration value="MFMatrix4d"/>
-         <enumeration value="SFMatrix4f"/>
-         <enumeration value="MFMatrix4f"/>
+         <enumeration value="SFBool" appinfo="Single Field (singleton) Boolean"/>
+         <enumeration value="MFBool" appinfo="Multiple Field (list) Boolean"/>
+         <enumeration value="SFColor"
+                      appinfo="Single Field (singleton) color value, red-green-blue"/>
+         <enumeration value="MFColor"
+                      appinfo="Multiple Field (list) color value, red-green-blue"/>
+         <enumeration value="SFColorRGBA"
+                      appinfo="Single Field (singleton) color value, red-green-blue alpha (opacity)"/>
+         <enumeration value="MFColorRGBA"
+                      appinfo="Multiple Field (list) color value, red-green-blue alpha (opacity)"/>
+         <enumeration value="SFDouble"
+                      appinfo="Single Field (singleton) double-precision (64-bit) float"/>
+         <enumeration value="MFDouble"
+                      appinfo="Multiple Field (list) 2-tuple double-precision (64-bit) float vector"/>
+         <enumeration value="SFFloat"
+                      appinfo="Single Field (singleton) single-precision (32-bit) float"/>
+         <enumeration value="MFFloat"
+                      appinfo="Multiple Field (list) single-precision (32-bit) float vector"/>
+         <enumeration value="SFImage" appinfo="Single Field (singleton) image value"/>
+         <enumeration value="MFImage" appinfo="Multiple Field (list) image values"/>
+         <enumeration value="SFInt32" appinfo="Single Field (singleton) 32-bit integer"/>
+         <enumeration value="MFInt32" appinfo="Multiple Field (list) 32-bit integer"/>
+         <enumeration value="SFNode" appinfo="Single Field (singleton) node"/>
+         <enumeration value="MFNode" appinfo="Multiple Field (list) nodes"/>
+         <enumeration value="SFRotation"
+                      appinfo="Single Field (singleton) rotation value using 3-tuple axis, radian angle"/>
+         <enumeration value="MFRotation"
+                      appinfo="Multiple Field (list) rotation values using 3-tuple axis, radian angle"/>
+         <enumeration value="SFString" appinfo="Single Field (singleton) string value"/>
+         <enumeration value="MFString" appinfo="Multiple Field (list) SFString array"/>
+         <enumeration value="SFTime" appinfo="Single Field (singleton) time value in seconds"/>
+         <enumeration value="MFTime" appinfo="Multiple Field (list) time array in seconds"/>
+         <enumeration value="SFVec2d"
+                      appinfo="Single Field (singleton) 2-tuple double-precision float vector"/>
+         <enumeration value="MFVec2d"
+                      appinfo="Multiple Field (list) 2-tuple double-precision float vectors"/>
+         <enumeration value="SFVec2f"
+                      appinfo="Single Field (singleton) 2-tuple single-precision float vector"/>
+         <enumeration value="MFVec2f"
+                      appinfo="Multiple Field (list) 2-tuple single-precision float vectors"/>
+         <enumeration value="SFVec3d"
+                      appinfo="Single Field (singleton) 3-tuple double-precision float vector"/>
+         <enumeration value="MFVec3d"
+                      appinfo="Multiple Field (list) 3-tuple double-precision float vectors"/>
+         <enumeration value="SFVec3f"
+                      appinfo="Single Field (singleton) 3-tuple single-precision float vector"/>
+         <enumeration value="MFVec3f"
+                      appinfo="Multiple Field (list) 3-tuple single-precision float vectors"/>
+         <enumeration value="SFVec4d"
+                      appinfo="Single Field (singleton) 4-tuple double-precision float vector"/>
+         <enumeration value="MFVec4d"
+                      appinfo="Multiple Field (list) 4-tuple double-precision float vectors"/>
+         <enumeration value="SFVec4f"
+                      appinfo="Single Field (singleton) 4-tuple single-precision float vector"/>
+         <enumeration value="MFVec4f"
+                      appinfo="Multiple Field (list) 4-tuple single-precision float vectors"/>
+         <enumeration value="SFMatrix3d"
+                      appinfo="Single Field (singleton) 3×3 matrix of double-precision floating point numbers"/>
+         <enumeration value="MFMatrix3d"
+                      appinfo="Multiple Field (list) 3×3 matrices of double-precision floating point numbers"/>
+         <enumeration value="SFMatrix3f"
+                      appinfo="Single Field (singleton) 3×3 matrix of single-precision floating point numbers"/>
+         <enumeration value="MFMatrix3f"
+                      appinfo="Multiple Field (list) 3×3 matrices of double-precision floating point numbers"/>
+         <enumeration value="SFMatrix4d"
+                      appinfo="Single Field (singleton) 4×4 matrix of double-precision floating point numbers"/>
+         <enumeration value="MFMatrix4d"
+                      appinfo="Multiple Field (list) 4×4 matric3w of double-precision floating point numbers"/>
+         <enumeration value="SFMatrix4f"
+                      appinfo="Single Field (singleton) 4×4 matrix of single-precision floating point numbers"/>
+         <enumeration value="MFMatrix4f"
+                      appinfo="Multiple Field (list) 4×4 matrices of single-precision floating point numbers"/>
       </SimpleType>
       <SimpleType name="fogTypeChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="fogTypeChoices are strictly allowed enumeration values for Fog node fogType field."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/enveffects.html#Fog">
-         <enumeration value="LINEAR"/>
-         <enumeration value="EXPONENTIAL"/>
+         <enumeration value="LINEAR" appinfo="linear blending as a function of distance"/>
+         <enumeration value="EXPONENTIAL"
+                      appinfo="exponential blending as a function of distance"/>
       </SimpleType>
       <SimpleType name="fontFamilyValues"
                   baseType="MFString"
                   appinfo="fontFamilyValues are allowed enumeration values for FontStyle/ScreenFontStyle node family field. Unbounded, additional values are possible."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/text.html#Fontfamilyandstyle">
-         <enumeration value="&#34;SANS&#34;"/>
-         <enumeration value="&#34;SERIF&#34;"/>
-         <enumeration value="&#34;TYPEWRITER&#34;"/>
+         <enumeration value="&#34;SANS&#34;"
+                      appinfo="default font family for sans-serif font such as Helvetica"/>
+         <enumeration value="&#34;SERIF&#34;"
+                      appinfo="default font family for serif font such as Times-Roman"/>
+         <enumeration value="&#34;TYPEWRITER&#34;"
+                      appinfo="default font family for a fixed-pitch font such as Courier"/>
       </SimpleType>
       <SimpleType name="fontStyleChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="fontStyleChoices are strictly allowed enumeration values for FontStyle/ScreenFontStyle node style field."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/text.html#Fontfamilyandstyle">
-         <enumeration value="PLAIN"/>
-         <enumeration value="BOLD"/>
-         <enumeration value="ITALIC"/>
-         <enumeration value="BOLDITALIC"/>
+         <enumeration value="PLAIN" appinfo="default plain type"/>
+         <enumeration value="BOLD" appinfo="boldface type"/>
+         <enumeration value="ITALIC" appinfo="italic type"/>
+         <enumeration value="BOLDITALIC" appinfo="bold and italic type"/>
       </SimpleType>
       <SimpleType name="forceOutputValues"
                   baseType="MFString"
                   appinfo="forceOutputValues are suggested values for X3DRigidJointNode type forceOutput field. Unbounded, additional values are possible."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#X3DRigidJointNode">
-         <enumeration value="&#34;ALL&#34;"/>
-         <enumeration value="&#34;NONE&#34;"/>
+         <enumeration value="&#34;ALL&#34;" appinfo="all forceOutput fields computed"/>
+         <enumeration value="&#34;NONE&#34;" appinfo="no forceOutput fields computed"/>
       </SimpleType>
       <SimpleType name="generatedCubeMapTextureUpdateChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="generatedCubeMapTextureUpdateChoices are strictly allowed enumeration values for GeneratedCubeMapTexture field named 'update'."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/env_texture.html#GeneratedCubeMapTexture">
-         <enumeration value="NONE"/>
-         <enumeration value="NEXT_FRAME_ONLY"/>
-         <enumeration value="ALWAYS"/>
+         <enumeration value="NONE" appinfo="no further texture updates are rendered"/>
+         <enumeration value="NEXT_FRAME_ONLY" appinfo="render texture once at end of frame"/>
+         <enumeration value="ALWAYS" appinfo="texture to be rendered every frame"/>
       </SimpleType>
       <SimpleType name="geoMetadataKeyValues"
                   baseType="xs:NMTOKEN"
@@ -1355,8 +1395,12 @@
                   baseType="xs:NMTOKEN"
                   appinfo="intersectionTypeValues are suggested values for X3DPickSensorNode type intersectionType field. Unbounded, additional values are possible."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#X3DPickSensorNode">
-         <enumeration value="BOUNDS"/>
-         <enumeration value="GEOMETRY"/>
+         <enumeration value="BOUNDS"
+                      appinfo="TODO undefined in X3D specification"
+                      documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+         <enumeration value="GEOMETRY"
+                      appinfo="TODO undefined in X3D specification"
+                      documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
       </SimpleType>
       <SimpleType name="justifyChoices"
                   baseType="MFString"
@@ -1554,9 +1598,11 @@
                   baseType="MFString"
                   appinfo="multiTextureFunctionValues are allowed values for the MultiTexture node function attribute, one per each texture. An empty string indicates no function is applied. Multiple optional values, but cannot be extended."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-ValuesForFunctionField">
-         <enumeration value="&#34;COMPLEMENT&#34;"/>
-         <enumeration value="&#34;ALPHAREPLICATE&#34;"/>
-         <enumeration value="&#34;&#34;"/>
+         <enumeration value="&#34;COMPLEMENT&#34;" appinfo="Invert argument x as (1 - x)"/>
+         <enumeration value="&#34;ALPHAREPLICATE&#34;"
+                      appinfo="Replicate alpha information to all color channels before operation completes."/>
+         <enumeration value="&#34;&#34;"
+                      appinfo="No function is applied - empty SFString is allowed value within MFString array"/>
       </SimpleType>
       <SimpleType name="multiTextureModeValues"
                   baseType="MFString"
@@ -1596,29 +1642,36 @@
                   baseType="MFString"
                   appinfo="Permitted values for the transitionType field in the NavigationInfo node. Unbounded, additional values are possible."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#NavigationInfo">
-         <enumeration value="&#34;TELEPORT&#34;"/>
-         <enumeration value="&#34;LINEAR&#34;"/>
-         <enumeration value="&#34;ANIMATE&#34;"/>
+         <enumeration value="&#34;TELEPORT&#34;" appinfo="immediate transition"/>
+         <enumeration value="&#34;LINEAR&#34;"
+                      appinfo="transition may proceed directly through intervening objects"/>
+         <enumeration value="&#34;ANIMATE&#34;" appinfo="rowser-specific transition"/>
       </SimpleType>
       <SimpleType name="navigationTypeValues"
                   baseType="MFString"
                   appinfo="Permitted values for the type field in the NavigationInfo node. Unbounded, additional values are possible."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#NavigationInfo">
-         <enumeration value="&#34;ANY&#34;"/>
-         <enumeration value="&#34;WALK&#34;"/>
-         <enumeration value="&#34;EXAMINE&#34;"/>
-         <enumeration value="&#34;FLY&#34;"/>
-         <enumeration value="&#34;LOOKAT&#34;"/>
-         <enumeration value="&#34;NONE&#34;"/>
-         <enumeration value="&#34;EXPLORE&#34;"/>
+         <enumeration value="&#34;ANY&#34;" appinfo="browser can offer any type for user to choose"/>
+         <enumeration value="&#34;WALK&#34;"
+                      appinfo="free navigation, avatar remains on ground, collision detection"/>
+         <enumeration value="&#34;EXAMINE&#34;"
+                      appinfo="view an individual object by rotating view about center"/>
+         <enumeration value="&#34;FLY&#34;" appinfo="free navigation, collision detection"/>
+         <enumeration value="&#34;LOOKAT&#34;" appinfo="navigate to particular object"/>
+         <enumeration value="&#34;NONE&#34;" appinfo="disables all navigation interfaces"/>
+         <enumeration value="&#34;EXPLORE&#34;"
+                      appinfo="consistent keystroke navigation for both geospatial and Cartesian modes"/>
       </SimpleType>
       <SimpleType name="networkModeChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="networkModeChoices are strictly allowed enumeration values for DIS field networkMode."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/dis.html#CommonDISfields">
-         <enumeration value="standAlone"/>
-         <enumeration value="networkReader"/>
-         <enumeration value="networkWriter"/>
+         <enumeration value="standAlone"
+                      appinfo="ignore network but still respond to events in local scene"/>
+         <enumeration value="networkReader"
+                      appinfo="listen to network and read PDU packets at readInterval, act as remotely linked copy of entity"/>
+         <enumeration value="networkWriter"
+                      appinfo="send PDU packets to network at writeInterval, act as master entity"/>
       </SimpleType>
       <SimpleType name="outputOnlyAccessTypes"
                   baseType="xs:NMTOKEN"
@@ -1723,27 +1776,33 @@
                   baseType="xs:NMTOKEN"
                   appinfo="particleSystemGeometryTypeValues are allowed enumeration values for the ParticleSystem node geometryType field. Unbounded, additional values are possible."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/particle_systems.html#ParticleSystem">
-         <enumeration value="LINE"/>
-         <enumeration value="POINT"/>
-         <enumeration value="QUAD"/>
-         <enumeration value="SPRITE"/>
-         <enumeration value="TRIANGLE"/>
-         <enumeration value="GEOMETRY"/>
+         <enumeration value="LINE"
+                      appinfo="line is drawn along current velocity vector of particle"/>
+         <enumeration value="POINT" appinfo="point geometry is rendered at particle position"/>
+         <enumeration value="QUAD"
+                      appinfo="quad geometry is rendered at particle position facing direction traveled"/>
+         <enumeration value="SPRITE"
+                      appinfo="quad geometry is rendered at particle position facing screen"/>
+         <enumeration value="TRIANGLE"
+                      appinfo="pair of triangles creating quad geometry is rendered at particle position facing direction traveled"/>
+         <enumeration value="GEOMETRY"
+                      appinfo="geometry field is used for rendering each particle"/>
       </SimpleType>
       <SimpleType name="phaseFunctionValues"
                   baseType="SFString"
                   appinfo="Default values for the phaseFunction field in the ShadedVolumeStyle. Unbounded, additional values are possible."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#ShadedVolumeStyle">
-         <enumeration value="HenyeyGreenstein"/>
-         <enumeration value="NONE"/>
+         <enumeration value="Henyey-Greenstein"
+                      appinfo="Henyey-Greenstein phase function for scattering model"/>
+         <enumeration value="NONE" appinfo="no scattering"/>
       </SimpleType>
       <SimpleType name="pickableObjectTypeValues"
                   baseType="MFString"
                   appinfo="Suggested values for the objectType field in the abstract types X3DPickableObject and X3DPickSensorNode. Unbounded, additional values are possible."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#X3DPickableObject">
-         <enumeration value="&#34;ALL&#34;"/>
-         <enumeration value="&#34;NONE&#34;"/>
-         <enumeration value="&#34;TERRAIN&#34;"/>
+         <enumeration value="&#34;ALL&#34;" appinfo="each node is available for picking"/>
+         <enumeration value="&#34;NONE&#34;" appinfo="no node is available for picking"/>
+         <enumeration value="&#34;TERRAIN&#34;" appinfo="TERRAIN is an example value"/>
       </SimpleType>
       <SimpleType name="pickSensorMatchCriterionChoices"
                   baseType="xs:NMTOKEN"
@@ -1792,85 +1851,117 @@
                   baseType="xs:NMTOKEN"
                   appinfo="projectionVolumeStyleTypeChoices are strictly allowed enumeration values for ProjectionVolumeStyle field named 'type'."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#ProjectionVolumeStyle">
-         <enumeration value="MAX"/>
-         <enumeration value="MIN"/>
-         <enumeration value="AVERAGE"/>
+         <enumeration value="MAX"
+                      appinfo="Maximum Intensity Projection (MIP) or Least MIP (LMIP) algorithm is used to generate output color"/>
+         <enumeration value="MIN"
+                      appinfo="Minimum Intensity Projection algorithm is used to generate output color"/>
+         <enumeration value="AVERAGE"
+                      appinfo="All voxels along ray are averaged to generate output color"/>
       </SimpleType>
       <SimpleType name="shaderLanguageValues"
                   baseType="xs:NMTOKEN"
                   appinfo="Suggested values for the language field in shader nodes include &#34;Cg&#34; &#34;GLSL&#34; &#34;HLSL&#34;, other values are optionally supported by browsers. Used to optionally determine the language type if no MIME-type information is available. Unbounded, additional values are possible."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#X3DShaderNode">
-         <enumeration value="Cg"/>
-         <enumeration value="GLSL"/>
-         <enumeration value="HLSL"/>
+         <enumeration value="Cg" appinfo="nVidia Cg shading language"/>
+         <enumeration value="GLSL" appinfo="OpenGL shading language (GLSL)"/>
+         <enumeration value="HLSL" appinfo="Microsoft High Level Shading Language (HLSL)"/>
       </SimpleType>
       <SimpleType name="shaderPartTypeValues"
                   baseType="xs:NMTOKEN"
                   appinfo="shaderPartTypeValues are allowed enumeration values for ShaderPart type field. Unbounded, additional values are possible."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#ShaderPart">
-         <enumeration value="VERTEX"/>
-         <enumeration value="FRAGMENT"/>
+         <enumeration value="VERTEX" appinfo="vertex shader"/>
+         <enumeration value="FRAGMENT" appinfo="fragment shader"/>
       </SimpleType>
       <SimpleType name="textureBoundaryModeChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="textureBoundaryModeChoices are strictly allowed enumeration values for TextureProperties boundaryMode* fields."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-TextureBoundaryModes">
-         <enumeration value="CLAMP"/>
-         <enumeration value="CLAMP_TO_EDGE"/>
-         <enumeration value="CLAMP_TO_BOUNDARY"/>
-         <enumeration value="MIRRORED_REPEAT"/>
-         <enumeration value="REPEAT"/>
+         <enumeration value="CLAMP" appinfo="Clamp texture coordinates to range [0,1]"/>
+         <enumeration value="CLAMP_TO_EDGE"
+                      appinfo="Clamp texture coordinates such that a border texel is never sampled"/>
+         <enumeration value="CLAMP_TO_BOUNDARY"
+                      appinfo="Clamp texture coordinates such that texture samples are border texels for fragments"/>
+         <enumeration value="MIRRORED_REPEAT"
+                      appinfo="Texture coordinates are mirrored and then clamped as in CLAMP_TO_EDGE"/>
+         <enumeration value="REPEAT" appinfo="Repeat a texture across the fragment"/>
       </SimpleType>
       <SimpleType name="textureCompressionModeChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="textureCompressionModeChoices are strictly allowed enumeration values for TextureProperties field textureCompression."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-TextureCompressionModes">
-         <enumeration value="DEFAULT"/>
-         <enumeration value="FASTEST"/>
-         <enumeration value="HIGH"/>
-         <enumeration value="LOW"/>
-         <enumeration value="MEDIUM"/>
-         <enumeration value="NICEST"/>
+         <enumeration value="DEFAULT" appinfo="browser-specified default compression mode"/>
+         <enumeration value="FASTEST" appinfo="fastest method available"/>
+         <enumeration value="HIGH" appinfo="greatest amount of compression"/>
+         <enumeration value="LOW" appinfo="least amount of compression"/>
+         <enumeration value="MEDIUM" appinfo="moderate amount of compressions"/>
+         <enumeration value="NICEST" appinfo="highest quality method available"/>
       </SimpleType>
       <SimpleType name="textureCoordinateGeneratorModeChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="textureCoordinateGeneratorModeChoices are strictly allowed enumeration values for TextureCoordinateGenerator mode field."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-Texturecoordgeneration">
-         <enumeration value="SPHERE"/>
-         <enumeration value="CAMERASPACENORMAL"/>
-         <enumeration value="CAMERASPACEPOSITION"/>
-         <enumeration value="CAMERASPACEREFLECTIONVECTOR"/>
-         <enumeration value="SPHERELOCAL"/>
-         <enumeration value="COORD"/>
-         <enumeration value="COORDEYE"/>
-         <enumeration value="NOISE"/>
-         <enumeration value="NOISEEYE"/>
-         <enumeration value="SPHEREREFLECT"/>
-         <enumeration value="SPHEREREFLECTLOCAL"/>
+         <enumeration value="SPHERE"
+                      appinfo="Creates texture coordinates for a spherical environment"/>
+         <enumeration value="CAMERASPACENORMAL"
+                      appinfo="Use vertex normal, transformed to camera space, as input texture coordinates"/>
+         <enumeration value="CAMERASPACEPOSITION"
+                      appinfo="Use vertex position, transformed to camera space, as input texture coordinates"/>
+         <enumeration value="CAMERASPACEREFLECTIONVECTOR"
+                      appinfo="Use reflection vector, transformed to camera space, as input texture coordinates"/>
+         <enumeration value="SPHERE-LOCAL" appinfo="Sphere mapping but in local coordinates"/>
+         <enumeration value="COORD" appinfo="Use vertex coordinates"/>
+         <enumeration value="COORD-EYE"
+                      appinfo="Use vertex coordinates transformed to camera space"/>
+         <enumeration value="NOISE"
+                      appinfo="Apply Perlin solid noise function on vertex coordinates"/>
+         <enumeration value="NOISE-EYE"
+                      appinfo="Apply Perlin solid noise function on vertex coordinates transformed to camera space"/>
+         <enumeration value="SPHERE-REFLECT"
+                      appinfo="similar to CAMERASPACEREFLECTIONVECTOR with optional index of refraction"/>
+         <enumeration value="SPHERE-REFLECT-LOCAL"
+                      appinfo="Similar to SPHERE-REFLECT transformed to camera space"/>
       </SimpleType>
       <SimpleType name="textureMagnificationModeChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="textureMagnificationModeChoices are strictly allowed enumeration values for TextureProperties field magnificationFilter."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-TextureMagnificationModes">
-         <enumeration value="AVG_PIXEL"/>
-         <enumeration value="DEFAULT"/>
-         <enumeration value="FASTEST"/>
-         <enumeration value="NEAREST_PIXEL"/>
-         <enumeration value="NICEST"/>
+         <enumeration value="AVG_PIXEL"
+                      appinfo="weighted average of four texture elements closest to center of pixel being textured"/>
+         <enumeration value="DEFAULT" appinfo="browser-specified default magnification mode"/>
+         <enumeration value="FASTEST" appinfo="fastest method available"/>
+         <enumeration value="NEAREST_PIXEL"
+                      appinfo="texture element nearest to the center of pixel being textured"/>
+         <enumeration value="NICEST" appinfo="highest quality method available"/>
       </SimpleType>
       <SimpleType name="textureMinificationModeChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="textureMinificationModeChoices are strictly allowed enumeration values for TextureProperties field minificationFilter."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-TextureMinificationModes">
-         <enumeration value="AVG_PIXEL"/>
-         <enumeration value="AVG_PIXEL_AVG_MIPMAP"/>
-         <enumeration value="AVG_PIXEL_NEAREST_MIPMAP"/>
-         <enumeration value="DEFAULT"/>
-         <enumeration value="FASTEST"/>
-         <enumeration value="NEAREST_PIXEL"/>
-         <enumeration value="NEAREST_PIXEL_AVG_MIPMAP"/>
-         <enumeration value="NEAREST_PIXEL_NEAREST_MIPMAP"/>
-         <enumeration value="NICEST"/>
+         <enumeration value="AVG_PIXEL"
+                      appinfo="weighted average of four texture elements closest to center of pixel being textured"/>
+         <enumeration value="AVG_PIXEL_AVG_MIPMAP" appinfo="tri-linear mipmap filtering"/>
+         <enumeration value="AVG_PIXEL_NEAREST_MIPMAP"
+                      appinfo="choose mipmap that most closely matches size of pixel being textured, use weighted average of four texture elements closest to center of pixel"/>
+         <enumeration value="DEFAULT" appinfo="browser-specified default minification mode"/>
+         <enumeration value="FASTEST"
+                      appinfo="fastest method available, use mipmaps if possible"/>
+         <enumeration value="NEAREST_PIXEL"
+                      appinfo="texture element nearest to center of pixel being textured"/>
+         <enumeration value="NEAREST_PIXEL_AVG_MIPMAP"
+                      appinfo="texture element nearest to center of pixel being textured, use average of two nearest mipmaps"/>
+         <enumeration value="NEAREST_PIXEL_NEAREST_MIPMAP"
+                      appinfo="texture element nearest to center of pixel being textured, use nearest mipmap"/>
+         <enumeration value="NICEST" appinfo="highest quality method available"/>
+      </SimpleType>
+      <SimpleType name="unitCategoryChoices"
+                  baseType="xs:NMTOKEN"
+                  appinfo="unitCategoryChoices are strictly allowed enumeration values for standard units in the UNIT statement."
+                  documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#t-Standardunits">
+         <enumeration value="angle" appinfo="angle default is radians"/>
+         <enumeration value="force" appinfo="force default is newtons"/>
+         <enumeration value="length" appinfo="length default is meters"/>
+         <enumeration value="mass" appinfo="mass default is kilograms"/>
       </SimpleType>
       <SimpleType name="x3dVersionChoices"
                   baseType="xs:NMTOKEN"
@@ -2330,9 +2421,11 @@
                    accessType="inputOutput"
                    default="LINEAR"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="fogTypeChoices">
-               <enumeration value="LINEAR"/>
-               <enumeration value="EXPONENTIAL"/>
+                   simpleType="fogTypeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="LINEAR" appinfo="linear blending as a function of distance."/>
+               <enumeration value="EXPONENTIAL"
+                            appinfo="exponential blending as a function of distance."/>
             </field>
             <field name="visibilityRange"
                    type="SFFloat"
@@ -2351,7 +2444,7 @@
       </AbstractObjectType>
       <AbstractObjectType name="X3DPickableObject">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#X3DPickableObject"
-                              appinfo="The X3DPickableObject abstract object type marks a node as being capable of having customized picking performed on its contents or children.">
+                              appinfo="The X3DPickableObject abstract interface marks a node as being capable of having customized picking performed on its contents or children.">
             <componentInfo name="Picking" level="1"/>
             <field name="pickable"
                    type="SFBool"
@@ -4054,9 +4147,14 @@
                    accessType="initializeOnly"
                    default="BOUNDS"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="intersectionTypeValues">
-               <enumeration value="BOUNDS"/>
-               <enumeration value="GEOMETRY"/>
+                   simpleType="intersectionTypeValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="BOUNDS"
+                            appinfo="TODO undefined in X3D specification."
+                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+               <enumeration value="GEOMETRY"
+                            appinfo="TODO undefined in X3D specification."
+                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -4073,7 +4171,8 @@
                    accessType="inputOutput"
                    default="MATCH_ANY"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="pickSensorMatchCriterionChoices">
+                   simpleType="pickSensorMatchCriterionChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="MATCH_ANY"/>
                <enumeration value="MATCH_EVERY"/>
                <enumeration value="MATCH_ONLY_ONE"/>
@@ -4089,10 +4188,11 @@
                    accessType="inputOutput"
                    default="&#34;ALL&#34;"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickableObjectTypeValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
-               <enumeration value="&#34;TERRAIN&#34;"/>
+                   simpleType="pickableObjectTypeValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="each node is available for picking."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no node is available for picking."/>
+               <enumeration value="&#34;TERRAIN&#34;" appinfo="TERRAIN is an example value."/>
             </field>
             <field name="pickedGeometry"
                    type="MFNode"
@@ -4112,7 +4212,8 @@
                    accessType="initializeOnly"
                    default="CLOSEST"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickSensorSortOrderValues">
+                   simpleType="pickSensorSortOrderValues"
+                   baseType="xs:NMTOKEN">
                <enumeration value="ANY"/>
                <enumeration value="CLOSEST"/>
                <enumeration value="ALL"/>
@@ -4264,9 +4365,10 @@
                    accessType="inputOutput"
                    default="&#34;NONE&#34;"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="forceOutputValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
+                   simpleType="forceOutputValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="all forceOutput fields computed."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no forceOutput fields computed."/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -4441,10 +4543,11 @@
                    type="SFString"
                    accessType="initializeOnly"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="shaderLanguageValues">
-               <enumeration value="Cg"/>
-               <enumeration value="GLSL"/>
-               <enumeration value="HLSL"/>
+                   simpleType="shaderLanguageValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="Cg" appinfo="nVidia Cg shading language."/>
+               <enumeration value="GLSL" appinfo="OpenGL shading language (GLSL)."/>
+               <enumeration value="HLSL" appinfo="Microsoft High Level Shading Language (HLSL)."/>
             </field>
             <field name="metadata"
                    type="SFNode"
@@ -5436,9 +5539,12 @@
                    accessType="initializeOnly"
                    default="PIE"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="closureTypeChoices">
-               <enumeration value="PIE"/>
-               <enumeration value="CHORD"/>
+                   simpleType="closureTypeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="PIE"
+                            appinfo="Connects arc endpoints to center, forming a pie wedge."/>
+               <enumeration value="CHORD"
+                            appinfo="Connects arc endpoints directly to each other, as in chord on a circle."/>
             </field>
             <field name="endAngle"
                    type="SFFloat"
@@ -5740,9 +5846,10 @@
                    default="&#34;NONE&#34;"
                    inheritedFrom="X3DRigidJointNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="forceOutputValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
+                   simpleType="forceOutputValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="all forceOutput fields computed."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no forceOutput fields computed."/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -6754,7 +6861,8 @@
                    accessType="inputOutput"
                    default="&#34;BOUNCE&#34;"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="appliedParametersChoices">
+                   simpleType="appliedParametersChoices"
+                   baseType="MFString">
                <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
                <enumeration value="&#34;USER_FRICTION&#34;"
                             appinfo="The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used."/>
@@ -7328,10 +7436,11 @@
                    accessType="initializeOnly"
                    inheritedFrom="X3DShaderNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="shaderLanguageValues">
-               <enumeration value="Cg"/>
-               <enumeration value="GLSL"/>
-               <enumeration value="HLSL"/>
+                   simpleType="shaderLanguageValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="Cg" appinfo="nVidia Cg shading language."/>
+               <enumeration value="GLSL" appinfo="OpenGL shading language (GLSL)."/>
+               <enumeration value="HLSL" appinfo="Microsoft High Level Shading Language (HLSL)."/>
             </field>
             <field name="metadata"
                    type="SFNode"
@@ -7582,7 +7691,8 @@
                    accessType="inputOutput"
                    default="&#34;BOUNCE&#34;"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="appliedParametersChoices">
+                   simpleType="appliedParametersChoices"
+                   baseType="MFString">
                <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
                <enumeration value="&#34;USER_FRICTION&#34;"
                             appinfo="The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used."/>
@@ -8528,9 +8638,10 @@
                    default="&#34;NONE&#34;"
                    inheritedFrom="X3DRigidJointNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="forceOutputValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
+                   simpleType="forceOutputValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="all forceOutput fields computed."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no forceOutput fields computed."/>
             </field>
             <field name="hinge1Angle" type="SFFloat" accessType="outputOnly"/>
             <field name="hinge1AngleRate" type="SFFloat" accessType="outputOnly"/>
@@ -9029,10 +9140,14 @@
                    accessType="inputOutput"
                    default="standAlone"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="networkModeChoices">
-               <enumeration value="standAlone"/>
-               <enumeration value="networkReader"/>
-               <enumeration value="networkWriter"/>
+                   simpleType="networkModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="standAlone"
+                            appinfo="ignore network but still respond to events in local scene."/>
+               <enumeration value="networkReader"
+                            appinfo="listen to network and read PDU packets at readInterval, act as remotely linked copy of entity."/>
+               <enumeration value="networkWriter"
+                            appinfo="send PDU packets to network at writeInterval, act as master entity."/>
             </field>
             <field name="port" type="SFInt32" accessType="inputOutput" default="0"/>
             <field name="readInterval"
@@ -9408,9 +9523,11 @@
                    default="LINEAR"
                    inheritedFrom="X3DFogObject"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="fogTypeChoices">
-               <enumeration value="LINEAR"/>
-               <enumeration value="EXPONENTIAL"/>
+                   simpleType="fogTypeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="LINEAR" appinfo="linear blending as a function of distance."/>
+               <enumeration value="EXPONENTIAL"
+                            appinfo="exponential blending as a function of distance."/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -9512,10 +9629,14 @@
                    accessType="initializeOnly"
                    default="&#34;SERIF&#34;"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="fontFamilyValues">
-               <enumeration value="&#34;SANS&#34;"/>
-               <enumeration value="&#34;SERIF&#34;"/>
-               <enumeration value="&#34;TYPEWRITER&#34;"/>
+                   simpleType="fontFamilyValues"
+                   baseType="MFString">
+               <enumeration value="&#34;SANS&#34;"
+                            appinfo="default font family for sans-serif font such as Helvetica."/>
+               <enumeration value="&#34;SERIF&#34;"
+                            appinfo="default font family for serif font such as Times-Roman."/>
+               <enumeration value="&#34;TYPEWRITER&#34;"
+                            appinfo="default font family for a fixed-pitch font such as Courier."/>
             </field>
             <field name="horizontal"
                    type="SFBool"
@@ -9532,7 +9653,8 @@
                    accessType="initializeOnly"
                    default="&#34;BEGIN&#34;"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="justifyChoices">
+                   simpleType="justifyChoices"
+                   baseType="MFString">
                <enumeration value="&#34;MIDDLE&#34;"/>
                <enumeration value="&#34;MIDDLE&#34; &#34;BEGIN&#34;"/>
                <enumeration value="&#34;MIDDLE&#34; &#34;END&#34;"/>
@@ -9580,11 +9702,12 @@
                    accessType="initializeOnly"
                    default="PLAIN"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="fontStyleChoices">
-               <enumeration value="PLAIN"/>
-               <enumeration value="BOLD"/>
-               <enumeration value="ITALIC"/>
-               <enumeration value="BOLDITALIC"/>
+                   simpleType="fontStyleChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="PLAIN" appinfo="default plain type."/>
+               <enumeration value="BOLD" appinfo="boldface type."/>
+               <enumeration value="ITALIC" appinfo="italic type."/>
+               <enumeration value="BOLDITALIC" appinfo="bold and italic type."/>
             </field>
             <field name="topToBottom"
                    type="SFBool"
@@ -9690,10 +9813,11 @@
                    accessType="inputOutput"
                    default="NONE"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="generatedCubeMapTextureUpdateChoices">
-               <enumeration value="NONE"/>
-               <enumeration value="NEXT_FRAME_ONLY"/>
-               <enumeration value="ALWAYS"/>
+                   simpleType="generatedCubeMapTextureUpdateChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="NONE" appinfo="no further texture updates are rendered."/>
+               <enumeration value="NEXT_FRAME_ONLY" appinfo="render texture once at end of frame."/>
+               <enumeration value="ALWAYS" appinfo="texture to be rendered every frame."/>
             </field>
             <field name="DEF"
                    type="SFString"
@@ -10717,7 +10841,8 @@
                    type="SFString"
                    accessType="inputOutput"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="hanimFeaturePointNameValues">
+                   simpleType="hanimFeaturePointNameValues"
+                   baseType="xs:NMTOKEN">
                <enumeration value="sellion" index="1" description="Sellion"/>
                <enumeration value="r_infraorbitale" index="2" description="Right Infraorbitale"/>
                <enumeration value="l_infraorbitale" index="3" description="Left Infraorbitale"/>
@@ -10978,7 +11103,8 @@
                    accessType="inputOutput"
                    default="2.0"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="hanimVersionChoices">
+                   simpleType="hanimVersionChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="1.0"
                             appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006."
                             documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
@@ -11082,7 +11208,8 @@
                    type="SFString"
                    accessType="inputOutput"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="hanimJointNameValues">
+                   simpleType="hanimJointNameValues"
+                   baseType="xs:NMTOKEN">
                <enumeration value="humanoid_root" index="1"/>
                <enumeration value="sacroiliac" index="2"/>
                <enumeration value="l_hip" index="3"/>
@@ -11311,7 +11438,8 @@
                    type="SFString"
                    accessType="inputOutput"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="hanimSegmentNameValues">
+                   simpleType="hanimSegmentNameValues"
+                   baseType="xs:NMTOKEN">
                <enumeration value="sacrum" index="1"/>
                <enumeration value="pelvis" index="2"/>
                <enumeration value="l_thigh" index="3"/>
@@ -11494,7 +11622,8 @@
                    type="SFString"
                    accessType="inputOutput"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="hanimFeaturePointNameValues">
+                   simpleType="hanimFeaturePointNameValues"
+                   baseType="xs:NMTOKEN">
                <enumeration value="sellion" index="1" description="Sellion"/>
                <enumeration value="r_infraorbitale" index="2" description="Right Infraorbitale"/>
                <enumeration value="l_infraorbitale" index="3" description="Left Infraorbitale"/>
@@ -12859,7 +12988,8 @@
                    accessType="inputOutput"
                    default="&#34;CENTER&#34; &#34;CENTER&#34;"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="layoutAlignChoices">
+                   simpleType="layoutAlignChoices"
+                   baseType="MFString">
                <enumeration value="&#34;LEFT&#34; &#34;BOTTOM&#34;"/>
                <enumeration value="&#34;LEFT&#34; &#34;CENTER&#34;"/>
                <enumeration value="&#34;LEFT&#34; &#34;TOP&#34;"/>
@@ -12891,7 +13021,8 @@
                    accessType="inputOutput"
                    default="&#34;WORLD&#34; &#34;WORLD&#34;"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="layoutUnitsChoices">
+                   simpleType="layoutUnitsChoices"
+                   baseType="MFString">
                <enumeration value="&#34;WORLD&#34; &#34;WORLD&#34;"/>
                <enumeration value="&#34;WORLD&#34; &#34;FRACTION&#34;"/>
                <enumeration value="&#34;WORLD&#34; &#34;PIXEL&#34;"/>
@@ -12908,7 +13039,8 @@
                    accessType="inputOutput"
                    default="&#34;NONE&#34; &#34;NONE&#34;"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="layoutScaleModeChoices">
+                   simpleType="layoutScaleModeChoices"
+                   baseType="MFString">
                <enumeration value="&#34;NONE&#34; &#34;NONE&#34;"/>
                <enumeration value="&#34;NONE&#34; &#34;FRACTION&#34;"/>
                <enumeration value="&#34;NONE&#34; &#34;STRETCH&#34;"/>
@@ -12936,7 +13068,8 @@
                    accessType="inputOutput"
                    default="&#34;WORLD&#34; &#34;WORLD&#34;"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="layoutUnitsChoices">
+                   simpleType="layoutUnitsChoices"
+                   baseType="MFString">
                <enumeration value="&#34;WORLD&#34; &#34;WORLD&#34;"/>
                <enumeration value="&#34;WORLD&#34; &#34;FRACTION&#34;"/>
                <enumeration value="&#34;WORLD&#34; &#34;PIXEL&#34;"/>
@@ -13125,9 +13258,14 @@
                    default="BOUNDS"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="intersectionTypeValues">
-               <enumeration value="BOUNDS"/>
-               <enumeration value="GEOMETRY"/>
+                   simpleType="intersectionTypeValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="BOUNDS"
+                            appinfo="TODO undefined in X3D specification."
+                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+               <enumeration value="GEOMETRY"
+                            appinfo="TODO undefined in X3D specification."
+                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -13145,7 +13283,8 @@
                    default="MATCH_ANY"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="pickSensorMatchCriterionChoices">
+                   simpleType="pickSensorMatchCriterionChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="MATCH_ANY"/>
                <enumeration value="MATCH_EVERY"/>
                <enumeration value="MATCH_ONLY_ONE"/>
@@ -13162,10 +13301,11 @@
                    default="&#34;ALL&#34;"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickableObjectTypeValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
-               <enumeration value="&#34;TERRAIN&#34;"/>
+                   simpleType="pickableObjectTypeValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="each node is available for picking."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no node is available for picking."/>
+               <enumeration value="&#34;TERRAIN&#34;" appinfo="TERRAIN is an example value."/>
             </field>
             <field name="pickedGeometry"
                    type="MFNode"
@@ -13194,7 +13334,8 @@
                    default="CLOSEST"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickSensorSortOrderValues">
+                   simpleType="pickSensorSortOrderValues"
+                   baseType="xs:NMTOKEN">
                <enumeration value="ANY"/>
                <enumeration value="CLOSEST"/>
                <enumeration value="ALL"/>
@@ -13424,9 +13565,11 @@
                    default="LINEAR"
                    inheritedFrom="X3DFogObject"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="fogTypeChoices">
-               <enumeration value="LINEAR"/>
-               <enumeration value="EXPONENTIAL"/>
+                   simpleType="fogTypeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="LINEAR" appinfo="linear blending as a function of distance."/>
+               <enumeration value="EXPONENTIAL"
+                            appinfo="exponential blending as a function of distance."/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -14023,9 +14166,10 @@
                    default="&#34;NONE&#34;"
                    inheritedFrom="X3DRigidJointNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="forceOutputValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
+                   simpleType="forceOutputValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="all forceOutput fields computed."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no forceOutput fields computed."/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -14248,10 +14392,13 @@
                    type="MFString"
                    accessType="inputOutput"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="multiTextureFunctionValues">
-               <enumeration value="&#34;COMPLEMENT&#34;"/>
-               <enumeration value="&#34;ALPHAREPLICATE&#34;"/>
-               <enumeration value="&#34;&#34;"/>
+                   simpleType="multiTextureFunctionValues"
+                   baseType="MFString">
+               <enumeration value="&#34;COMPLEMENT&#34;" appinfo="Invert argument x as (1 - x)."/>
+               <enumeration value="&#34;ALPHAREPLICATE&#34;"
+                            appinfo="Replicate alpha information to all color channels before operation completes."/>
+               <enumeration value="&#34;&#34;"
+                            appinfo="No function is applied - empty SFString is allowed value within MFString array."/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -14269,7 +14416,8 @@
                    type="MFString"
                    accessType="inputOutput"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="multiTextureModeValues">
+                   simpleType="multiTextureModeValues"
+                   baseType="MFString">
                <enumeration value="&#34;ADD&#34;"/>
                <enumeration value="&#34;ADDSIGNED&#34;"/>
                <enumeration value="&#34;ADDSIGNED2X&#34;"/>
@@ -14295,7 +14443,8 @@
                    type="MFString"
                    accessType="inputOutput"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="multiTextureSourceValues">
+                   simpleType="multiTextureSourceValues"
+                   baseType="MFString">
                <enumeration value="&#34;DIFFUSE&#34;"/>
                <enumeration value="&#34;FACTOR&#34;"/>
                <enumeration value="&#34;SPECULAR&#34;"/>
@@ -14477,24 +14626,30 @@
                    accessType="inputOutput"
                    default="&#34;LINEAR&#34;"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="navigationTransitionTypeValues">
-               <enumeration value="&#34;TELEPORT&#34;"/>
-               <enumeration value="&#34;LINEAR&#34;"/>
-               <enumeration value="&#34;ANIMATE&#34;"/>
+                   simpleType="navigationTransitionTypeValues"
+                   baseType="MFString">
+               <enumeration value="&#34;TELEPORT&#34;" appinfo="immediate transition."/>
+               <enumeration value="&#34;LINEAR&#34;"
+                            appinfo="transition may proceed directly through intervening objects."/>
+               <enumeration value="&#34;ANIMATE&#34;" appinfo="rowser-specific transition."/>
             </field>
             <field name="type"
                    type="MFString"
                    accessType="inputOutput"
                    default="&#34;EXAMINE&#34; &#34;ANY&#34;"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="navigationTypeValues">
-               <enumeration value="&#34;ANY&#34;"/>
-               <enumeration value="&#34;WALK&#34;"/>
-               <enumeration value="&#34;EXAMINE&#34;"/>
-               <enumeration value="&#34;FLY&#34;"/>
-               <enumeration value="&#34;LOOKAT&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
-               <enumeration value="&#34;EXPLORE&#34;"/>
+                   simpleType="navigationTypeValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ANY&#34;" appinfo="browser can offer any type for user to choose."/>
+               <enumeration value="&#34;WALK&#34;"
+                            appinfo="free navigation, avatar remains on ground, collision detection."/>
+               <enumeration value="&#34;EXAMINE&#34;"
+                            appinfo="view an individual object by rotating view about center."/>
+               <enumeration value="&#34;FLY&#34;" appinfo="free navigation, collision detection."/>
+               <enumeration value="&#34;LOOKAT&#34;" appinfo="navigate to particular object."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="disables all navigation interfaces."/>
+               <enumeration value="&#34;EXPLORE&#34;"
+                            appinfo="consistent keystroke navigation for both geospatial and Cartesian modes."/>
             </field>
             <field name="visibilityLimit"
                    type="SFFloat"
@@ -15722,10 +15877,11 @@
                    accessType="initializeOnly"
                    inheritedFrom="X3DShaderNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="shaderLanguageValues">
-               <enumeration value="Cg"/>
-               <enumeration value="GLSL"/>
-               <enumeration value="HLSL"/>
+                   simpleType="shaderLanguageValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="Cg" appinfo="nVidia Cg shading language."/>
+               <enumeration value="GLSL" appinfo="OpenGL shading language (GLSL)."/>
+               <enumeration value="HLSL" appinfo="Microsoft High Level Shading Language (HLSL)."/>
             </field>
             <field name="metadata"
                    type="SFNode"
@@ -15822,13 +15978,20 @@
                    accessType="initializeOnly"
                    default="QUAD"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="particleSystemGeometryTypeValues">
-               <enumeration value="LINE"/>
-               <enumeration value="POINT"/>
-               <enumeration value="QUAD"/>
-               <enumeration value="SPRITE"/>
-               <enumeration value="TRIANGLE"/>
-               <enumeration value="GEOMETRY"/>
+                   simpleType="particleSystemGeometryTypeValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="LINE"
+                            appinfo="line is drawn along current velocity vector of particle."/>
+               <enumeration value="POINT"
+                            appinfo="point geometry is rendered at particle position."/>
+               <enumeration value="QUAD"
+                            appinfo="quad geometry is rendered at particle position facing direction traveled."/>
+               <enumeration value="SPRITE"
+                            appinfo="quad geometry is rendered at particle position facing screen."/>
+               <enumeration value="TRIANGLE"
+                            appinfo="pair of triangles creating quad geometry is rendered at particle position facing direction traveled."/>
+               <enumeration value="GEOMETRY"
+                            appinfo="geometry field is used for rendering each particle."/>
                <componentInfo name="ParticleSystems" level="3"/>
             </field>
             <field name="IS"
@@ -15960,10 +16123,11 @@
                    default="&#34;ALL&#34;"
                    inheritedFrom="X3DPickableObject"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickableObjectTypeValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
-               <enumeration value="&#34;TERRAIN&#34;"/>
+                   simpleType="pickableObjectTypeValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="each node is available for picking."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no node is available for picking."/>
+               <enumeration value="&#34;TERRAIN&#34;" appinfo="TERRAIN is an example value."/>
             </field>
             <field name="pickable"
                    type="SFBool"
@@ -16382,9 +16546,14 @@
                    default="BOUNDS"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="intersectionTypeValues">
-               <enumeration value="BOUNDS"/>
-               <enumeration value="GEOMETRY"/>
+                   simpleType="intersectionTypeValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="BOUNDS"
+                            appinfo="TODO undefined in X3D specification."
+                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+               <enumeration value="GEOMETRY"
+                            appinfo="TODO undefined in X3D specification."
+                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -16402,7 +16571,8 @@
                    default="MATCH_ANY"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="pickSensorMatchCriterionChoices">
+                   simpleType="pickSensorMatchCriterionChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="MATCH_ANY"/>
                <enumeration value="MATCH_EVERY"/>
                <enumeration value="MATCH_ONLY_ONE"/>
@@ -16419,10 +16589,11 @@
                    default="&#34;ALL&#34;"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickableObjectTypeValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
-               <enumeration value="&#34;TERRAIN&#34;"/>
+                   simpleType="pickableObjectTypeValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="each node is available for picking."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no node is available for picking."/>
+               <enumeration value="&#34;TERRAIN&#34;" appinfo="TERRAIN is an example value."/>
             </field>
             <field name="pickedGeometry"
                    type="MFNode"
@@ -16447,7 +16618,8 @@
                    default="CLOSEST"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickSensorSortOrderValues">
+                   simpleType="pickSensorSortOrderValues"
+                   baseType="xs:NMTOKEN">
                <enumeration value="ANY"/>
                <enumeration value="CLOSEST"/>
                <enumeration value="ALL"/>
@@ -17071,9 +17243,14 @@
                    default="BOUNDS"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="intersectionTypeValues">
-               <enumeration value="BOUNDS"/>
-               <enumeration value="GEOMETRY"/>
+                   simpleType="intersectionTypeValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="BOUNDS"
+                            appinfo="TODO undefined in X3D specification."
+                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+               <enumeration value="GEOMETRY"
+                            appinfo="TODO undefined in X3D specification."
+                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -17091,7 +17268,8 @@
                    default="MATCH_ANY"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="pickSensorMatchCriterionChoices">
+                   simpleType="pickSensorMatchCriterionChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="MATCH_ANY"/>
                <enumeration value="MATCH_EVERY"/>
                <enumeration value="MATCH_ONLY_ONE"/>
@@ -17108,10 +17286,11 @@
                    default="&#34;ALL&#34;"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickableObjectTypeValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
-               <enumeration value="&#34;TERRAIN&#34;"/>
+                   simpleType="pickableObjectTypeValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="each node is available for picking."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no node is available for picking."/>
+               <enumeration value="&#34;TERRAIN&#34;" appinfo="TERRAIN is an example value."/>
             </field>
             <field name="pickedGeometry"
                    type="MFNode"
@@ -17135,7 +17314,8 @@
                    default="CLOSEST"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickSensorSortOrderValues">
+                   simpleType="pickSensorSortOrderValues"
+                   baseType="xs:NMTOKEN">
                <enumeration value="ANY"/>
                <enumeration value="CLOSEST"/>
                <enumeration value="ALL"/>
@@ -17197,10 +17377,11 @@
                    accessType="initializeOnly"
                    inheritedFrom="X3DShaderNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="shaderLanguageValues">
-               <enumeration value="Cg"/>
-               <enumeration value="GLSL"/>
-               <enumeration value="HLSL"/>
+                   simpleType="shaderLanguageValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="Cg" appinfo="nVidia Cg shading language."/>
+               <enumeration value="GLSL" appinfo="OpenGL shading language (GLSL)."/>
+               <enumeration value="HLSL" appinfo="Microsoft High Level Shading Language (HLSL)."/>
             </field>
             <field name="metadata"
                    type="SFNode"
@@ -17522,10 +17703,14 @@
                    accessType="inputOutput"
                    default="standAlone"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="networkModeChoices">
-               <enumeration value="standAlone"/>
-               <enumeration value="networkReader"/>
-               <enumeration value="networkWriter"/>
+                   simpleType="networkModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="standAlone"
+                            appinfo="ignore network but still respond to events in local scene."/>
+               <enumeration value="networkReader"
+                            appinfo="listen to network and read PDU packets at readInterval, act as remotely linked copy of entity."/>
+               <enumeration value="networkWriter"
+                            appinfo="send PDU packets to network at writeInterval, act as master entity."/>
             </field>
             <field name="port" type="SFInt32" accessType="inputOutput" default="0"/>
             <field name="radioID"
@@ -18000,10 +18185,14 @@
                    accessType="initializeOnly"
                    default="&#34;SERIF&#34;"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="fontFamilyValues">
-               <enumeration value="&#34;SANS&#34;"/>
-               <enumeration value="&#34;SERIF&#34;"/>
-               <enumeration value="&#34;TYPEWRITER&#34;"/>
+                   simpleType="fontFamilyValues"
+                   baseType="MFString">
+               <enumeration value="&#34;SANS&#34;"
+                            appinfo="default font family for sans-serif font such as Helvetica."/>
+               <enumeration value="&#34;SERIF&#34;"
+                            appinfo="default font family for serif font such as Times-Roman."/>
+               <enumeration value="&#34;TYPEWRITER&#34;"
+                            appinfo="default font family for a fixed-pitch font such as Courier."/>
             </field>
             <field name="horizontal"
                    type="SFBool"
@@ -18020,7 +18209,8 @@
                    accessType="initializeOnly"
                    default="&#34;BEGIN&#34;"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="justifyChoices">
+                   simpleType="justifyChoices"
+                   baseType="MFString">
                <enumeration value="&#34;MIDDLE&#34;"/>
                <enumeration value="&#34;MIDDLE&#34; &#34;BEGIN&#34;"/>
                <enumeration value="&#34;MIDDLE&#34; &#34;END&#34;"/>
@@ -18068,11 +18258,12 @@
                    accessType="initializeOnly"
                    default="PLAIN"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="fontStyleChoices">
-               <enumeration value="PLAIN"/>
-               <enumeration value="BOLD"/>
-               <enumeration value="ITALIC"/>
-               <enumeration value="BOLDITALIC"/>
+                   simpleType="fontStyleChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="PLAIN" appinfo="default plain type."/>
+               <enumeration value="BOLD" appinfo="boldface type."/>
+               <enumeration value="ITALIC" appinfo="italic type."/>
+               <enumeration value="BOLDITALIC" appinfo="bold and italic type."/>
             </field>
             <field name="topToBottom"
                    type="SFBool"
@@ -18249,9 +18440,10 @@
                    accessType="inputOutput"
                    default="VERTEX"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="shaderPartTypeValues">
-               <enumeration value="VERTEX"/>
-               <enumeration value="FRAGMENT"/>
+                   simpleType="shaderPartTypeValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="VERTEX" appinfo="vertex shader."/>
+               <enumeration value="FRAGMENT" appinfo="fragment shader."/>
             </field>
             <field name="url"
                    type="MFString"
@@ -18309,9 +18501,10 @@
                    accessType="inputOutput"
                    default="VERTEX"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="shaderPartTypeValues">
-               <enumeration value="VERTEX"/>
-               <enumeration value="FRAGMENT"/>
+                   simpleType="shaderPartTypeValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="VERTEX" appinfo="vertex shader."/>
+               <enumeration value="FRAGMENT" appinfo="fragment shader."/>
             </field>
             <field name="url"
                    type="MFString"
@@ -18487,10 +18680,14 @@
                    accessType="inputOutput"
                    default="standAlone"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="networkModeChoices">
-               <enumeration value="standAlone"/>
-               <enumeration value="networkReader"/>
-               <enumeration value="networkWriter"/>
+                   simpleType="networkModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="standAlone"
+                            appinfo="ignore network but still respond to events in local scene."/>
+               <enumeration value="networkReader"
+                            appinfo="listen to network and read PDU packets at readInterval, act as remotely linked copy of entity."/>
+               <enumeration value="networkWriter"
+                            appinfo="send PDU packets to network at writeInterval, act as master entity."/>
             </field>
             <field name="port" type="SFInt32" accessType="inputOutput" default="0"/>
             <field name="radioID"
@@ -18591,9 +18788,10 @@
                    default="&#34;NONE&#34;"
                    inheritedFrom="X3DRigidJointNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="forceOutputValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
+                   simpleType="forceOutputValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="all forceOutput fields computed."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no forceOutput fields computed."/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -18672,9 +18870,10 @@
                    default="&#34;NONE&#34;"
                    inheritedFrom="X3DRigidJointNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="forceOutputValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
+                   simpleType="forceOutputValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="all forceOutput fields computed."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no forceOutput fields computed."/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -19914,18 +20113,28 @@
                    accessType="inputOutput"
                    default="SPHERE"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="textureCoordinateGeneratorModeChoices">
-               <enumeration value="SPHERE"/>
-               <enumeration value="CAMERASPACENORMAL"/>
-               <enumeration value="CAMERASPACEPOSITION"/>
-               <enumeration value="CAMERASPACEREFLECTIONVECTOR"/>
-               <enumeration value="SPHERE-LOCAL"/>
-               <enumeration value="COORD"/>
-               <enumeration value="COORD-EYE"/>
-               <enumeration value="NOISE"/>
-               <enumeration value="NOISE-EYE"/>
-               <enumeration value="SPHERE-REFLECT"/>
-               <enumeration value="SPHERE-REFLECT-LOCAL"/>
+                   simpleType="textureCoordinateGeneratorModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="SPHERE"
+                            appinfo="Creates texture coordinates for a spherical environment."/>
+               <enumeration value="CAMERASPACENORMAL"
+                            appinfo="Use vertex normal, transformed to camera space, as input texture coordinates."/>
+               <enumeration value="CAMERASPACEPOSITION"
+                            appinfo="Use vertex position, transformed to camera space, as input texture coordinates."/>
+               <enumeration value="CAMERASPACEREFLECTIONVECTOR"
+                            appinfo="Use reflection vector, transformed to camera space, as input texture coordinates."/>
+               <enumeration value="SPHERE-LOCAL" appinfo="Sphere mapping but in local coordinates."/>
+               <enumeration value="COORD" appinfo="Use vertex coordinates."/>
+               <enumeration value="COORD-EYE"
+                            appinfo="Use vertex coordinates transformed to camera space."/>
+               <enumeration value="NOISE"
+                            appinfo="Apply Perlin solid noise function on vertex coordinates."/>
+               <enumeration value="NOISE-EYE"
+                            appinfo="Apply Perlin solid noise function on vertex coordinates transformed to camera space."/>
+               <enumeration value="SPHERE-REFLECT"
+                            appinfo="similar to CAMERASPACEREFLECTIONVECTOR with optional index of refraction."/>
+               <enumeration value="SPHERE-REFLECT-LOCAL"
+                            appinfo="Similar to SPHERE-REFLECT transformed to camera space."/>
             </field>
             <field name="parameter" type="MFFloat" accessType="inputOutput"/>
             <field name="DEF"
@@ -19975,36 +20184,48 @@
                    accessType="inputOutput"
                    default="REPEAT"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="textureBoundaryModeChoices">
-               <enumeration value="CLAMP"/>
-               <enumeration value="CLAMP_TO_EDGE"/>
-               <enumeration value="CLAMP_TO_BOUNDARY"/>
-               <enumeration value="MIRRORED_REPEAT"/>
-               <enumeration value="REPEAT"/>
+                   simpleType="textureBoundaryModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="CLAMP" appinfo="Clamp texture coordinates to range [0,1]."/>
+               <enumeration value="CLAMP_TO_EDGE"
+                            appinfo="Clamp texture coordinates such that a border texel is never sampled."/>
+               <enumeration value="CLAMP_TO_BOUNDARY"
+                            appinfo="Clamp texture coordinates such that texture samples are border texels for fragments."/>
+               <enumeration value="MIRRORED_REPEAT"
+                            appinfo="Texture coordinates are mirrored and then clamped as in CLAMP_TO_EDGE."/>
+               <enumeration value="REPEAT" appinfo="Repeat a texture across the fragment."/>
             </field>
             <field name="boundaryModeS"
                    type="SFString"
                    accessType="inputOutput"
                    default="REPEAT"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="textureBoundaryModeChoices">
-               <enumeration value="CLAMP"/>
-               <enumeration value="CLAMP_TO_EDGE"/>
-               <enumeration value="CLAMP_TO_BOUNDARY"/>
-               <enumeration value="MIRRORED_REPEAT"/>
-               <enumeration value="REPEAT"/>
+                   simpleType="textureBoundaryModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="CLAMP" appinfo="Clamp texture coordinates to range [0,1]."/>
+               <enumeration value="CLAMP_TO_EDGE"
+                            appinfo="Clamp texture coordinates such that a border texel is never sampled."/>
+               <enumeration value="CLAMP_TO_BOUNDARY"
+                            appinfo="Clamp texture coordinates such that texture samples are border texels for fragments."/>
+               <enumeration value="MIRRORED_REPEAT"
+                            appinfo="Texture coordinates are mirrored and then clamped as in CLAMP_TO_EDGE."/>
+               <enumeration value="REPEAT" appinfo="Repeat a texture across the fragment."/>
             </field>
             <field name="boundaryModeT"
                    type="SFString"
                    accessType="inputOutput"
                    default="REPEAT"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="textureBoundaryModeChoices">
-               <enumeration value="CLAMP"/>
-               <enumeration value="CLAMP_TO_EDGE"/>
-               <enumeration value="CLAMP_TO_BOUNDARY"/>
-               <enumeration value="MIRRORED_REPEAT"/>
-               <enumeration value="REPEAT"/>
+                   simpleType="textureBoundaryModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="CLAMP" appinfo="Clamp texture coordinates to range [0,1]."/>
+               <enumeration value="CLAMP_TO_EDGE"
+                            appinfo="Clamp texture coordinates such that a border texel is never sampled."/>
+               <enumeration value="CLAMP_TO_BOUNDARY"
+                            appinfo="Clamp texture coordinates such that texture samples are border texels for fragments."/>
+               <enumeration value="MIRRORED_REPEAT"
+                            appinfo="Texture coordinates are mirrored and then clamped as in CLAMP_TO_EDGE."/>
+               <enumeration value="REPEAT" appinfo="Repeat a texture across the fragment."/>
             </field>
             <field name="generateMipMaps"
                    type="SFBool"
@@ -20021,12 +20242,15 @@
                    accessType="inputOutput"
                    default="FASTEST"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="textureMagnificationModeChoices">
-               <enumeration value="AVG_PIXEL"/>
-               <enumeration value="DEFAULT"/>
-               <enumeration value="FASTEST"/>
-               <enumeration value="NEAREST_PIXEL"/>
-               <enumeration value="NICEST"/>
+                   simpleType="textureMagnificationModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="AVG_PIXEL"
+                            appinfo="weighted average of four texture elements closest to center of pixel being textured."/>
+               <enumeration value="DEFAULT" appinfo="browser-specified default magnification mode."/>
+               <enumeration value="FASTEST" appinfo="fastest method available."/>
+               <enumeration value="NEAREST_PIXEL"
+                            appinfo="texture element nearest to the center of pixel being textured."/>
+               <enumeration value="NICEST" appinfo="highest quality method available."/>
             </field>
             <field name="metadata"
                    type="SFNode"
@@ -20039,29 +20263,37 @@
                    accessType="inputOutput"
                    default="FASTEST"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="textureMinificationModeChoices">
-               <enumeration value="AVG_PIXEL"/>
-               <enumeration value="AVG_PIXEL_AVG_MIPMAP"/>
-               <enumeration value="AVG_PIXEL_NEAREST_MIPMAP"/>
-               <enumeration value="DEFAULT"/>
-               <enumeration value="FASTEST"/>
-               <enumeration value="NEAREST_PIXEL"/>
-               <enumeration value="NEAREST_PIXEL_AVG_MIPMAP"/>
-               <enumeration value="NEAREST_PIXEL_NEAREST_MIPMAP"/>
-               <enumeration value="NICEST"/>
+                   simpleType="textureMinificationModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="AVG_PIXEL"
+                            appinfo="weighted average of four texture elements closest to center of pixel being textured."/>
+               <enumeration value="AVG_PIXEL_AVG_MIPMAP" appinfo="tri-linear mipmap filtering."/>
+               <enumeration value="AVG_PIXEL_NEAREST_MIPMAP"
+                            appinfo="choose mipmap that most closely matches size of pixel being textured, use weighted average of four texture elements closest to center of pixel."/>
+               <enumeration value="DEFAULT" appinfo="browser-specified default minification mode."/>
+               <enumeration value="FASTEST"
+                            appinfo="fastest method available, use mipmaps if possible."/>
+               <enumeration value="NEAREST_PIXEL"
+                            appinfo="texture element nearest to center of pixel being textured."/>
+               <enumeration value="NEAREST_PIXEL_AVG_MIPMAP"
+                            appinfo="texture element nearest to center of pixel being textured, use average of two nearest mipmaps."/>
+               <enumeration value="NEAREST_PIXEL_NEAREST_MIPMAP"
+                            appinfo="texture element nearest to center of pixel being textured, use nearest mipmap."/>
+               <enumeration value="NICEST" appinfo="highest quality method available."/>
             </field>
             <field name="textureCompression"
                    type="SFString"
                    accessType="inputOutput"
                    default="FASTEST"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="textureCompressionModeChoices">
-               <enumeration value="DEFAULT"/>
-               <enumeration value="FASTEST"/>
-               <enumeration value="HIGH"/>
-               <enumeration value="LOW"/>
-               <enumeration value="MEDIUM"/>
-               <enumeration value="NICEST"/>
+                   simpleType="textureCompressionModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="DEFAULT" appinfo="browser-specified default compression mode."/>
+               <enumeration value="FASTEST" appinfo="fastest method available."/>
+               <enumeration value="HIGH" appinfo="greatest amount of compression."/>
+               <enumeration value="LOW" appinfo="least amount of compression."/>
+               <enumeration value="MEDIUM" appinfo="moderate amount of compressions."/>
+               <enumeration value="NICEST" appinfo="highest quality method available."/>
             </field>
             <field name="texturePriority"
                    type="SFFloat"
@@ -20747,10 +20979,14 @@
                    accessType="inputOutput"
                    default="standAlone"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="networkModeChoices">
-               <enumeration value="standAlone"/>
-               <enumeration value="networkReader"/>
-               <enumeration value="networkWriter"/>
+                   simpleType="networkModeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="standAlone"
+                            appinfo="ignore network but still respond to events in local scene."/>
+               <enumeration value="networkReader"
+                            appinfo="listen to network and read PDU packets at readInterval, act as remotely linked copy of entity."/>
+               <enumeration value="networkWriter"
+                            appinfo="send PDU packets to network at writeInterval, act as master entity."/>
             </field>
             <field name="port" type="SFInt32" accessType="inputOutput" default="0"/>
             <field name="power"
@@ -21342,9 +21578,10 @@
                    default="&#34;NONE&#34;"
                    inheritedFrom="X3DRigidJointNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="forceOutputValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
+                   simpleType="forceOutputValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="all forceOutput fields computed."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no forceOutput fields computed."/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -21796,9 +22033,14 @@
                    default="BOUNDS"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="intersectionTypeValues">
-               <enumeration value="BOUNDS"/>
-               <enumeration value="GEOMETRY"/>
+                   simpleType="intersectionTypeValues"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="BOUNDS"
+                            appinfo="TODO undefined in X3D specification."
+                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+               <enumeration value="GEOMETRY"
+                            appinfo="TODO undefined in X3D specification."
+                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -21816,7 +22058,8 @@
                    default="MATCH_ANY"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="pickSensorMatchCriterionChoices">
+                   simpleType="pickSensorMatchCriterionChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="MATCH_ANY"/>
                <enumeration value="MATCH_EVERY"/>
                <enumeration value="MATCH_ONLY_ONE"/>
@@ -21833,10 +22076,11 @@
                    default="&#34;ALL&#34;"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickableObjectTypeValues">
-               <enumeration value="&#34;ALL&#34;"/>
-               <enumeration value="&#34;NONE&#34;"/>
-               <enumeration value="&#34;TERRAIN&#34;"/>
+                   simpleType="pickableObjectTypeValues"
+                   baseType="MFString">
+               <enumeration value="&#34;ALL&#34;" appinfo="each node is available for picking."/>
+               <enumeration value="&#34;NONE&#34;" appinfo="no node is available for picking."/>
+               <enumeration value="&#34;TERRAIN&#34;" appinfo="TERRAIN is an example value."/>
             </field>
             <field name="pickedGeometry"
                    type="MFNode"
@@ -21860,7 +22104,8 @@
                    default="CLOSEST"
                    inheritedFrom="X3DPickSensorNode"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="pickSensorSortOrderValues">
+                   simpleType="pickSensorSortOrderValues"
+                   baseType="xs:NMTOKEN">
                <enumeration value="ANY"/>
                <enumeration value="CLOSEST"/>
                <enumeration value="ALL"/>
@@ -22012,7 +22257,8 @@
                    accessType="inputOutput"
                    use="required"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="componentNameChoices">
+                   simpleType="componentNameChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="Core"
                             appinfo="The Core component supplies the base functionality for the X3D run-time system, including the abstract base node type, field types, the event model, and routing."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html"/>
@@ -22182,7 +22428,8 @@
                    accessType="inputOutput"
                    use="required"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="accessTypeChoices">
+                   simpleType="accessTypeChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="initializeOnly"
                             appinfo="A field with accessType initializeOnly can be initialized, but cannot send or receive events."/>
                <enumeration value="inputOnly"
@@ -22208,49 +22455,81 @@
                    accessType="inputOutput"
                    use="required"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="fieldTypeChoices">
-               <enumeration value="SFBool"/>
-               <enumeration value="MFBool"/>
-               <enumeration value="SFColor"/>
-               <enumeration value="MFColor"/>
-               <enumeration value="SFColorRGBA"/>
-               <enumeration value="MFColorRGBA"/>
-               <enumeration value="SFDouble"/>
-               <enumeration value="MFDouble"/>
-               <enumeration value="SFFloat"/>
-               <enumeration value="MFFloat"/>
-               <enumeration value="SFImage"/>
-               <enumeration value="MFImage"/>
-               <enumeration value="SFInt32"/>
-               <enumeration value="SFNode"/>
-               <enumeration value="MFNode"/>
-               <enumeration value="MFInt32"/>
-               <enumeration value="SFRotation"/>
-               <enumeration value="MFRotation"/>
-               <enumeration value="SFString"/>
-               <enumeration value="MFString"/>
-               <enumeration value="SFTime"/>
-               <enumeration value="MFTime"/>
-               <enumeration value="SFVec2d"/>
-               <enumeration value="MFVec2d"/>
-               <enumeration value="SFVec2f"/>
-               <enumeration value="MFVec2f"/>
-               <enumeration value="SFVec3d"/>
-               <enumeration value="MFVec3d"/>
-               <enumeration value="SFVec3f"/>
-               <enumeration value="MFVec3f"/>
-               <enumeration value="SFVec4d"/>
-               <enumeration value="MFVec4d"/>
-               <enumeration value="SFVec4f"/>
-               <enumeration value="MFVec4f"/>
-               <enumeration value="SFMatrix3d"/>
-               <enumeration value="MFMatrix3d"/>
-               <enumeration value="SFMatrix3f"/>
-               <enumeration value="MFMatrix3f"/>
-               <enumeration value="SFMatrix4d"/>
-               <enumeration value="MFMatrix4d"/>
-               <enumeration value="SFMatrix4f"/>
-               <enumeration value="MFMatrix4f"/>
+                   simpleType="fieldTypeChoices"
+                   baseType="xs:NMTOKEN">
+               <enumeration value="SFBool" appinfo="Single Field (singleton) Boolean."/>
+               <enumeration value="MFBool" appinfo="Multiple Field (list) Boolean."/>
+               <enumeration value="SFColor"
+                            appinfo="Single Field (singleton) color value, red-green-blue."/>
+               <enumeration value="MFColor"
+                            appinfo="Multiple Field (list) color value, red-green-blue."/>
+               <enumeration value="SFColorRGBA"
+                            appinfo="Single Field (singleton) color value, red-green-blue alpha (opacity)."/>
+               <enumeration value="MFColorRGBA"
+                            appinfo="Multiple Field (list) color value, red-green-blue alpha (opacity)."/>
+               <enumeration value="SFDouble"
+                            appinfo="Single Field (singleton) double-precision (64-bit) float."/>
+               <enumeration value="MFDouble"
+                            appinfo="Multiple Field (list) 2-tuple double-precision (64-bit) float vector."/>
+               <enumeration value="SFFloat"
+                            appinfo="Single Field (singleton) single-precision (32-bit) float."/>
+               <enumeration value="MFFloat"
+                            appinfo="Multiple Field (list) single-precision (32-bit) float vector."/>
+               <enumeration value="SFImage" appinfo="Single Field (singleton) image value."/>
+               <enumeration value="MFImage" appinfo="Multiple Field (list) image values."/>
+               <enumeration value="SFInt32" appinfo="Single Field (singleton) 32-bit integer."/>
+               <enumeration value="MFInt32" appinfo="Multiple Field (list) 32-bit integer."/>
+               <enumeration value="SFNode" appinfo="Single Field (singleton) node."/>
+               <enumeration value="MFNode" appinfo="Multiple Field (list) nodes."/>
+               <enumeration value="SFRotation"
+                            appinfo="Single Field (singleton) rotation value using 3-tuple axis, radian angle."/>
+               <enumeration value="MFRotation"
+                            appinfo="Multiple Field (list) rotation values using 3-tuple axis, radian angle."/>
+               <enumeration value="SFString" appinfo="Single Field (singleton) string value."/>
+               <enumeration value="MFString" appinfo="Multiple Field (list) SFString array."/>
+               <enumeration value="SFTime"
+                            appinfo="Single Field (singleton) time value in seconds."/>
+               <enumeration value="MFTime" appinfo="Multiple Field (list) time array in seconds."/>
+               <enumeration value="SFVec2d"
+                            appinfo="Single Field (singleton) 2-tuple double-precision float vector."/>
+               <enumeration value="MFVec2d"
+                            appinfo="Multiple Field (list) 2-tuple double-precision float vectors."/>
+               <enumeration value="SFVec2f"
+                            appinfo="Single Field (singleton) 2-tuple single-precision float vector."/>
+               <enumeration value="MFVec2f"
+                            appinfo="Multiple Field (list) 2-tuple single-precision float vectors."/>
+               <enumeration value="SFVec3d"
+                            appinfo="Single Field (singleton) 3-tuple double-precision float vector."/>
+               <enumeration value="MFVec3d"
+                            appinfo="Multiple Field (list) 3-tuple double-precision float vectors."/>
+               <enumeration value="SFVec3f"
+                            appinfo="Single Field (singleton) 3-tuple single-precision float vector."/>
+               <enumeration value="MFVec3f"
+                            appinfo="Multiple Field (list) 3-tuple single-precision float vectors."/>
+               <enumeration value="SFVec4d"
+                            appinfo="Single Field (singleton) 4-tuple double-precision float vector."/>
+               <enumeration value="MFVec4d"
+                            appinfo="Multiple Field (list) 4-tuple double-precision float vectors."/>
+               <enumeration value="SFVec4f"
+                            appinfo="Single Field (singleton) 4-tuple single-precision float vector."/>
+               <enumeration value="MFVec4f"
+                            appinfo="Multiple Field (list) 4-tuple single-precision float vectors."/>
+               <enumeration value="SFMatrix3d"
+                            appinfo="Single Field (singleton) 3×3 matrix of double-precision floating point numbers."/>
+               <enumeration value="MFMatrix3d"
+                            appinfo="Multiple Field (list) 3×3 matrices of double-precision floating point numbers."/>
+               <enumeration value="SFMatrix3f"
+                            appinfo="Single Field (singleton) 3×3 matrix of single-precision floating point numbers."/>
+               <enumeration value="MFMatrix3f"
+                            appinfo="Multiple Field (list) 3×3 matrices of double-precision floating point numbers."/>
+               <enumeration value="SFMatrix4d"
+                            appinfo="Single Field (singleton) 4×4 matrix of double-precision floating point numbers."/>
+               <enumeration value="MFMatrix4d"
+                            appinfo="Multiple Field (list) 4×4 matric3w of double-precision floating point numbers."/>
+               <enumeration value="SFMatrix4f"
+                            appinfo="Single Field (singleton) 4×4 matrix of single-precision floating point numbers."/>
+               <enumeration value="MFMatrix4f"
+                            appinfo="Multiple Field (list) 4×4 matrices of single-precision floating point numbers."/>
             </field>
             <field name="value" type="SFString" accessType="inputOutput"/>
             <ContentModel>
@@ -22340,7 +22619,8 @@
                    type="SFString"
                    accessType="inputOutput"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="metaDirectionChoices">
+                   simpleType="metaDirectionChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="rtl" appinfo="right-to-left."/>
                <enumeration value="ltr" appinfo="left-to-right."/>
             </field>
@@ -22351,7 +22631,8 @@
                    accessType="inputOutput"
                    use="required"
                    additionalEnumerationValuesAllowed="true"
-                   baseType="metaNameValues">
+                   simpleType="metaNameValues"
+                   baseType="xs:NMTOKEN">
                <enumeration value="accessRights"
                             appinfo="permission required to access resource or security status."
                             documentation="http://www.dublincore.org/documents/dcmi-terms/#terms-accessRights"/>
@@ -22574,7 +22855,8 @@
                    default="Immersive"
                    use="required"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="profileNameChoices">
+                   simpleType="profileNameChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="Core"
                             appinfo="Core Profile includes no nodes and is provided as the basis for custom componentization. Allowed X3D statements for all profiles are: connect ExternProtoDeclare EXPORT field fieldValue IMPORT IS ProtoBody ProtoDeclare ProtoInterface ProtoInstance ROUTE X3D. Allowed X3D nodes for this profile are: MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/coreprofile.html"/>
@@ -22608,7 +22890,8 @@
                    default="3.3"
                    use="required"
                    additionalEnumerationValuesAllowed="false"
-                   baseType="x3dVersionChoices">
+                   simpleType="x3dVersionChoices"
+                   baseType="xs:NMTOKEN">
                <enumeration value="3.0"
                             appinfo="X3D version 3.0 approved by ISO in 2004."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.0/index.html"/>
