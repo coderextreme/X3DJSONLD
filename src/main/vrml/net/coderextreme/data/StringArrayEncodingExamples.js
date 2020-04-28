@@ -16,8 +16,8 @@ browser.currentScene.children[1] = Background3;
 let Shape4 = browser.currentScene.createNode("Shape");
 let Text5 = browser.currentScene.createNode("Text");
 Text5.string = new MFString(new java.lang.String["One, Two, Three","","He said, \"Immel did it!\""]);
-//alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
-//alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
+// alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' 
+// alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) 
 let FontStyle6 = browser.currentScene.createNode("FontStyle");
 FontStyle6.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 FontStyle6.style = "BOLD";

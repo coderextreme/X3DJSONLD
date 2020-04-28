@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"22 April 2020"
+            "@content":"26 April 2020"
           },
           {
             "@name":"generator",
@@ -475,7 +475,19 @@
               "@DEF":"clickHandler",
               "-children":[
                 {
-                  "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
+                  "#comment":""
+                },
+                {
+                  "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"
+                },
+                {
+                  "#comment":"<Transform USE=\"HoldsContent\"/>"
+                },
+                {
+                  "#comment":"</field>"
+                },
+                {
+                  "#comment":""
                 }
               ],
               "field": [

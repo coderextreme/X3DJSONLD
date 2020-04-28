@@ -222,12 +222,12 @@ CloudStringF = new Array();
 
 		if (Y <= 30) //cloud shading and lighting control
   	{	
-	image = ' "CloudTexture1_5.png" "https://savage.nps.edu/Savage/Environment/Spheretexture.png" \n';
+	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \n';
   	}
 
   		else
   	{	
-	image = ' "CloudTexture1_4.png" "https://savage.nps.edu/Savage/Environment/Spheretexture.png" \n';
+	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \n';
   	}
 
 	
@@ -371,7 +371,7 @@ CloudStringF = new Array();
 		'			    material Material {			\n' +
 		'			    }					\n' +
  		'	                      texture ImageTexture {	        \n' +
-		'	                        url ["cloudtexture3.png" "https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png" ] \n' +
+		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] \n' +
 		'	                      }	                                \n' +
 		'	                    }	                                \n' +
 		'	                    geometry IndexedFaceSet {	        \n' +     // define type of geometry to texture

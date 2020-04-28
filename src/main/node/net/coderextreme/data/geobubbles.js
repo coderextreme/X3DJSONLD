@@ -14,7 +14,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
-        .addComponent((new autoclass.component()).setName("Geospatial").setLevel(1))
+        .addComponent((new autoclass.component()).setLevel(1).setName("Geospatial"))
         .addMeta((new autoclass.meta()).setName("title").setContent("geobubbles.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
@@ -23,7 +23,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setScene((new autoclass.Scene())
         .addComments((new autoclass.CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/")))
         .addComments((new autoclass.CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/")))
-        .addChild((new autoclass.GeoViewpoint()).setDEF("Tour").setPosition(java.newArray("double", [0,0,4])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setDescription("Tour Views"))
+        .addChild((new autoclass.GeoViewpoint()).setDEF("Tour").setPosition(java.newArray("double", [0,0,4])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setDescription("Tour Views").setRetainUserOffsets(false))
         .addChild((new autoclass.Background()).setBackUrl(java.newArray("java.lang.String", ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])))
         .addChild((new autoclass.Transform())
           .addChild((new autoclass.Shape())

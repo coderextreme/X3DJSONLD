@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -42,10 +42,15 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
+          }
         },
         {
-          "#comment": "Images courtesy of Paul Debevec's Light Probe Image Gallery"
+          "#comment": " Images courtesy of Paul Debevec's Light Probe Image Gallery "
         },
         {
           "Background": {
@@ -86,13 +91,13 @@
                   ],
                   "field": [
                     {
-                      "@name": "vertex",
                       "@accessType": "inputOutput",
+                      "@name": "vertex",
                       "@type": "MFString"
                     },
                     {
-                      "@name": "fragment",
                       "@accessType": "inputOutput",
+                      "@name": "fragment",
                       "@type": "MFString"
                     }
                   ]

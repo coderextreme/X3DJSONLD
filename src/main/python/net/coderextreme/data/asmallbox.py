@@ -40,6 +40,8 @@ field10.setAccessType("inputOutput")
 field10.setType("MFNode")
 Shape11 = x3d.Shape()
 Sphere12 = x3d.Sphere()
+Sphere12.setRadius(1)
+Sphere12.setSolid(True)
 
 Shape11.setGeometry(Sphere12)
 

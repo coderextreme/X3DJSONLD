@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"22 April 2020"
+            "@content":"26 April 2020"
           },
           {
             "@name":"generator",
@@ -96,7 +96,19 @@
                                           "@language":"GLSL",
                                           "-children":[
                                             {
-                                              "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                              "#comment":""
+                                            },
+                                            {
+                                              "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\">"
+                                            },
+                                            {
+                                              "#comment":"<ComposedCubeMapTexture USE=\"texture\"/>"
+                                            },
+                                            {
+                                              "#comment":"</field>"
+                                            },
+                                            {
+                                              "#comment":""
                                             }
                                           ],
                                           "field": [

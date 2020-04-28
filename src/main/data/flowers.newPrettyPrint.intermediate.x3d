@@ -22,7 +22,11 @@
             <Appearance>
               <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
               <ComposedShader DEF='x3dom' language='GLSL'>
-                <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
+                <!--  -->
+                <!-- <field name='cube' type='SFNode' accessType="inputOutput"> -->
+                <!-- <ComposedCubeMapTexture USE="texture"/> -->
+                <!-- </field> -->
+                <!--  -->
                 <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
                 <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
                 <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>

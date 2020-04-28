@@ -143,7 +143,7 @@ let Transform35 = browser.currentScene.createNode("Transform");
 Transform35.translation = new SFVec3f(new float[3,0,0]);
 let Shape36 = browser.currentScene.createNode("Shape");
 let Appearance37 = browser.currentScene.createNode("Appearance");
-//note 0x000000 = 0
+// note 0x000000 = 0 
 let PixelTexture38 = browser.currentScene.createNode("PixelTexture");
 PixelTexture38.DEF = "ThreeComponents";
 PixelTexture38.image = new SFImage(new int[2,4,3,16711680,65280,0,0,0,0,16777215,16776960]);
@@ -185,7 +185,7 @@ let Transform45 = browser.currentScene.createNode("Transform");
 Transform45.translation = new SFVec3f(new float[6,0,0]);
 let Shape46 = browser.currentScene.createNode("Shape");
 let Appearance47 = browser.currentScene.createNode("Appearance");
-//Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127
+// Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 
 let PixelTexture48 = browser.currentScene.createNode("PixelTexture");
 PixelTexture48.DEF = "FourComponents";
 PixelTexture48.image = new SFImage(new int[3,2,4,-16776961,16711935,65535,-16777089,16711807,65407]);
@@ -223,7 +223,7 @@ Transform45.children[1] = Transform50;
 
 browser.currentScene.children[6] = Transform45;
 
-//Background from PixelTextureBW.x3d
+// Background from PixelTextureBW.x3d 
 let Transform55 = browser.currentScene.createNode("Transform");
 Transform55.translation = new SFVec3f(new float[0,6,-2]);
 let Shape56 = browser.currentScene.createNode("Shape");

@@ -5,6 +5,7 @@ X3D0.version = "3.3";
 let Viewpoint2 = browser.currentScene.createNode("Viewpoint");
 Viewpoint2.position = new SFVec3f(new float[0,0,5]);
 Viewpoint2.description = "Only Viewpoint";
+Viewpoint2.orientation = new SFRotation(new float[0,0,1,0]);
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Viewpoint2;
@@ -108,19 +109,19 @@ browser.currentScene.children[4] = Transform18;
 
 let ProtoDeclare24 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="x3dconnector" ><ProtoInterface><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="endnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="transnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
-<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoDeclare name="x3dconnector" ><ProtoInterface><field accessType="initializeOnly" name="startnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="endnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="transnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="rotscalenode" type="SFNode"></field>
+<field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
+<field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Script DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="endnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="transnode" accessType="initializeOnly" type="SFNode"></field>
-<field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
-<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
-<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
+<ProtoBody><Script DEF="S1"><field accessType="initializeOnly" name="startnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="endnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="transnode" type="SFNode"></field>
+<field accessType="initializeOnly" name="rotscalenode" type="SFNode"></field>
+<field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
+<field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
 <IS><connect nodeField="startnode" protoField="startnode"></connect>
 <connect nodeField="endnode" protoField="endnode"></connect>
 <connect nodeField="transnode" protoField="transnode"></connect>
@@ -172,40 +173,40 @@ let ProtoDeclare24 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 ProtoDeclare24.name = "x3dconnector";
 let ProtoInterface25 = browser.currentScene.createNode("ProtoInterface");
 let field26 = browser.currentScene.createNode("field");
-field26.name = "startnode";
 field26.accessType = "initializeOnly";
+field26.name = "startnode";
 field26.type = "SFNode";
 ProtoInterface25.field = new MFNode();
 
 ProtoInterface25.field[0] = field26;
 
 let field27 = browser.currentScene.createNode("field");
-field27.name = "endnode";
 field27.accessType = "initializeOnly";
+field27.name = "endnode";
 field27.type = "SFNode";
 ProtoInterface25.field[1] = field27;
 
 let field28 = browser.currentScene.createNode("field");
-field28.name = "transnode";
 field28.accessType = "initializeOnly";
+field28.name = "transnode";
 field28.type = "SFNode";
 ProtoInterface25.field[2] = field28;
 
 let field29 = browser.currentScene.createNode("field");
-field29.name = "rotscalenode";
 field29.accessType = "initializeOnly";
+field29.name = "rotscalenode";
 field29.type = "SFNode";
 ProtoInterface25.field[3] = field29;
 
 let field30 = browser.currentScene.createNode("field");
-field30.name = "set_startpoint";
 field30.accessType = "inputOnly";
+field30.name = "set_startpoint";
 field30.type = "SFVec3f";
 ProtoInterface25.field[4] = field30;
 
 let field31 = browser.currentScene.createNode("field");
-field31.name = "set_endpoint";
 field31.accessType = "inputOnly";
+field31.name = "set_endpoint";
 field31.type = "SFVec3f";
 ProtoInterface25.field[5] = field31;
 
@@ -215,40 +216,40 @@ let ProtoBody32 = browser.currentScene.createNode("ProtoBody");
 let Script33 = browser.currentScene.createNode("Script");
 Script33.DEF = "S1";
 let field34 = browser.currentScene.createNode("field");
-field34.name = "startnode";
 field34.accessType = "initializeOnly";
+field34.name = "startnode";
 field34.type = "SFNode";
 Script33.field = new MFNode();
 
 Script33.field[0] = field34;
 
 let field35 = browser.currentScene.createNode("field");
-field35.name = "endnode";
 field35.accessType = "initializeOnly";
+field35.name = "endnode";
 field35.type = "SFNode";
 Script33.field[1] = field35;
 
 let field36 = browser.currentScene.createNode("field");
-field36.name = "transnode";
 field36.accessType = "initializeOnly";
+field36.name = "transnode";
 field36.type = "SFNode";
 Script33.field[2] = field36;
 
 let field37 = browser.currentScene.createNode("field");
-field37.name = "rotscalenode";
 field37.accessType = "initializeOnly";
+field37.name = "rotscalenode";
 field37.type = "SFNode";
 Script33.field[3] = field37;
 
 let field38 = browser.currentScene.createNode("field");
-field38.name = "set_startpoint";
 field38.accessType = "inputOnly";
+field38.name = "set_startpoint";
 field38.type = "SFVec3f";
 Script33.field[4] = field38;
 
 let field39 = browser.currentScene.createNode("field");
-field39.name = "set_endpoint";
 field39.accessType = "inputOnly";
+field39.name = "set_endpoint";
 field39.type = "SFVec3f";
 Script33.field[5] = field39;
 

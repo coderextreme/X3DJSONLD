@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -57,16 +57,16 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "vertex",
                   "@accessType": "inputOutput",
+                  "@name": "vertex",
                   "@type": "MFString",
                   "@value": [
                     "../shaders/gl_flowers_chromatic.vs"
                   ]
                 },
                 {
-                  "@name": "fragment",
                   "@accessType": "inputOutput",
+                  "@name": "fragment",
                   "@type": "MFString",
                   "@value": [
                     "../shaders/pc_flowers.fs"
@@ -79,6 +79,11 @@
                 {
                   "Transform": {
                     "@DEF": "transform",
+                    "@translation": [
+                      0,
+                      0,
+                      0
+                    ],
                     "-children": [
                       {
                         "Shape": {
@@ -230,7 +235,19 @@
                                     ],
                                     "-children": [
                                       {
-                                        "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                        "#comment": " "
+                                      },
+                                      {
+                                        "#comment": "\t\t       <field name='cube' type='SFNode' accessType=\"inputOutput\">"
+                                      },
+                                      {
+                                        "#comment": "\t\t\t  <ComposedCubeMapTexture USE=\"texture\"/>"
+                                      },
+                                      {
+                                        "#comment": "\t\t  </field>"
+                                      },
+                                      {
+                                        "#comment": "\t\t  "
                                       }
                                     ],
                                     "-parts": [

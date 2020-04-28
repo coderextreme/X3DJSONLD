@@ -12,7 +12,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
-<Transform translation="1 0 0"><Shape><Text containerField="geometry" string="&quot;Node&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
+<Transform translation="1 0 0"><Shape><Text containerField="geometry" string="&quot;Node&quot;"><FontStyle family="&quot;SERIF&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
 </Text>
 <Appearance><Material diffuseColor="0 0 1"></Material>
 </Appearance>
@@ -85,6 +85,7 @@ let Shape14 = browser.currentScene.createNode("Shape");
 let Text15 = browser.currentScene.createNode("Text");
 Text15.string = new MFString(new java.lang.String["Node"]);
 let FontStyle16 = browser.currentScene.createNode("FontStyle");
+FontStyle16.family = new MFString(new java.lang.String["SERIF"]);
 FontStyle16.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
 FontStyle16.size = 5;
 Text15.fontStyle = FontStyle16;
@@ -218,7 +219,7 @@ let ProtoDeclare30 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 		        spine = new MFVec3f([value, spine[1]]);
 		    }
                 }
-
+                
                 function set_endB(value) {
 		    if (typeof spine === 'undefined') {
 		        spine = new MFVec3f([value, value]);
@@ -226,7 +227,7 @@ let ProtoDeclare30 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 		        spine = new MFVec3f([spine[0], value]);
 		    }
                 }
-
+                
                 function set_spine(value) {
                     spine = value;
                 }]]></Script>
@@ -319,7 +320,7 @@ Script39.setSourceCode(`ecmascript:\n"+
 "		        spine = new MFVec3f([value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
 "		        spine = new MFVec3f([value, value]);\n"+
@@ -327,7 +328,7 @@ Script39.setSourceCode(`ecmascript:\n"+
 "		        spine = new MFVec3f([spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_spine(value) {\n"+
 "                    spine = value;\n"+
 "                }`)
@@ -349,6 +350,7 @@ Transform47.DEF = "HoldsContent";
 Transform47.scale = new SFVec3f(new float[0.1,0.1,0.1]);
 let PlaneSensor48 = browser.currentScene.createNode("PlaneSensor");
 PlaneSensor48.DEF = "clickGenerator";
+PlaneSensor48.enabled = True;
 PlaneSensor48.minPosition = new SFVec2f(new float[-50,-50]);
 PlaneSensor48.maxPosition = new SFVec2f(new float[50,50]);
 PlaneSensor48.description = "click on background to add nodes, click on nodes to add links";
@@ -357,8 +359,8 @@ Transform47.children = new MFNode();
 Transform47.children[0] = PlaneSensor48;
 
 let ProtoInstance49 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance49.name = "node";
 ProtoInstance49.DEF = "nodeA";
+ProtoInstance49.name = "node";
 let fieldValue50 = browser.currentScene.createNode("fieldValue");
 fieldValue50.name = "position";
 fieldValue50.value = "0 0 0";
@@ -369,8 +371,8 @@ ProtoInstance49.fieldValue[0] = fieldValue50;
 Transform47.children[1] = ProtoInstance49;
 
 let ProtoInstance51 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance51.name = "node";
 ProtoInstance51.DEF = "nodeB";
+ProtoInstance51.name = "node";
 let fieldValue52 = browser.currentScene.createNode("fieldValue");
 fieldValue52.name = "position";
 fieldValue52.value = "50 50 50";
@@ -381,8 +383,8 @@ ProtoInstance51.fieldValue[0] = fieldValue52;
 Transform47.children[2] = ProtoInstance51;
 
 let ProtoInstance53 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance53.name = "cylinder";
 ProtoInstance53.DEF = "linkA";
+ProtoInstance53.name = "cylinder";
 let fieldValue54 = browser.currentScene.createNode("fieldValue");
 fieldValue54.name = "set_positionA";
 fieldValue54.value = "0 0 0";

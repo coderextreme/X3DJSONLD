@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -52,10 +52,15 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
+          }
         },
         {
-          "#comment": "Images courtesy of Paul Debevec's Light Probe Image Gallery"
+          "#comment": " Images courtesy of Paul Debevec's Light Probe Image Gallery "
         },
         {
           "Background": {
@@ -255,7 +260,19 @@
                             ],
                             "-children": [
                               {
-                                "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                "#comment": " "
+                              },
+                              {
+                                "#comment": "\t\t       <field name='cube' type='SFNode' accessType=\"inputOutput\">"
+                              },
+                              {
+                                "#comment": "\t\t\t  <ComposedCubeMapTexture USE=\"texture\"/>"
+                              },
+                              {
+                                "#comment": "\t\t  </field>"
+                              },
+                              {
+                                "#comment": "\t\t  "
                               }
                             ],
                             "-parts": [
@@ -559,7 +576,52 @@
           }
         },
         {
-          "#comment": "<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"
+          "#comment": ""
+        },
+        {
+          "#comment": "            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>"
+        },
+        {
+          "#comment": "            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"
+        },
+        {
+          "#comment": "\t    "
         },
         {
           "Script": {

@@ -38,7 +38,7 @@ var ProtoInstance2 = null;
               .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)]))
                 .addChild((new autoclass.Shape())
                   .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["Node"]))
-                    .setFontStyle((new autoclass.FontStyle()).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(java.newFloat(5))))
+                    .setFontStyle((new autoclass.FontStyle()).setFamily(java.newArray("java.lang.String", ["SERIF"])).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(java.newFloat(5))))
                   .setAppearance((new autoclass.Appearance())
                     .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1)])))))))
             .addChild((new autoclass.PositionInterpolator()).setDEF("NodePosition").setKey(java.newArray("float", [java.newFloat(0), java.newFloat(1)])).setKeyValue(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(5), java.newFloat(0)])))
@@ -84,7 +84,7 @@ var ProtoInstance2 = null;
 "		        spine = new MFVec3f([value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
 "		        spine = new MFVec3f([value, value]);\n"+
@@ -92,16 +92,16 @@ var ProtoInstance2 = null;
 "		        spine = new MFVec3f([spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_spine(value) {\n"+
 "                    spine = value;\n"+
 "                }"))
             .addChild((new autoclass.ROUTE()).setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
         .addChild((new autoclass.Transform()).setDEF("HoldsContent").setScale(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.1), java.newFloat(0.1)]))
-          .addChild((new autoclass.PlaneSensor()).setDEF("clickGenerator").setMinPosition(java.newArray("float", [java.newFloat(-50), java.newFloat(-50)])).setMaxPosition(java.newArray("float", [java.newFloat(50), java.newFloat(50)])).setDescription("click on background to add nodes, click on nodes to add links"))
-          .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeA"))
-          .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeB"))
-          .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("cylinder").setDEF("linkA")))
+          .addChild((new autoclass.PlaneSensor()).setDEF("clickGenerator").setEnabled(true).setMinPosition(java.newArray("float", [java.newFloat(-50), java.newFloat(-50)])).setMaxPosition(java.newArray("float", [java.newFloat(50), java.newFloat(50)])).setDescription("click on background to add nodes, click on nodes to add links"))
+          .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setDEF("nodeA").setName("node"))
+          .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setDEF("nodeB").setName("node"))
+          .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setDEF("linkA").setName("cylinder")))
         .addChild((new autoclass.ROUTE()).setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
         .addChild((new autoclass.ROUTE()).setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB")))      ;
 ProtoInstance0

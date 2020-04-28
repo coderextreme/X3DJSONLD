@@ -1,94 +1,93 @@
-{ "X3D": {
-    "encoding":"UTF-8",
-    "@profile":"Immersive",
-    "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+{
+  "X3D": {
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
-        "meta": [
-          {
-            "@name":"title",
-            "@content":"asteroids.x3d"
-          },
-          {
-            "@name":"creator",
-            "@content":"John Carlson"
-          },
-          {
-            "@name":"generator",
-            "@content":"manual"
-          },
-          {
-            "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/asteroids.x3d"
-          },
-          {
-            "@name":"description",
-            "@content":"asteroids"
-          },
-          {
-            "@name":"translated",
-            "@content":"22 April 2020"
-          },
-          {
-            "@name":"generator",
-            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-          },
-          {
-            "@name":"reference",
-            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-          }
-        ]
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "asteroids.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/asteroids.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "asteroids"
+        },
+        {
+          "@name": "translated",
+          "@content": "26 April 2020"
+        },
+        {
+          "@name": "generator",
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
     },
     "Scene": {
-        "-children":[
-          { "ProtoDeclare":
-            {
-              "@name":"anyShape",
-              "ProtoInterface": {
-                  "field": [
+      "-children": [
+        {
+          "ProtoDeclare": {
+            "@name": "anyShape",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@name": "myShape",
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "-children": [
                     {
-                      "@name":"myShape",
-                      "@accessType":"inputOutput",
-                      "@type":"MFNode",
-                      "-children":[
-                        { "Shape":
-                          {
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              }
-                          }
-                        }
-                      ]
-                    }
-                  ]
-              },
-              "ProtoBody": {
-                  "-children":[
-                    { "Transform":
-                      {
-                        "IS": {
-                            "connect": [
-                              {
-                                "@nodeField":"children",
-                                "@protoField":"myShape"
-                              }
-                            ]
+                      "Shape": {
+                        "-geometry": {
+                          "Sphere": {}
                         }
                       }
                     }
                   ]
-              }
-            }
-          },
-          { "ProtoInstance":
-            {
-              "@name":"anyShape"
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "children",
+                          "@protoField": "myShape"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             }
           }
-        ]
-    }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "anyShape"
+          }
+        }
+      ]
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

@@ -4,8 +4,8 @@ X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
 head1 = x3d.head()
 component2 = x3d.component()
-component2.setName("Scripting")
 component2.setLevel(1)
+component2.setName("Scripting")
 
 head1.addComponent(component2)
 component3 = x3d.component()
@@ -47,9 +47,10 @@ head1.addMeta(meta9)
 X3D0.setHead(head1)
 Scene10 = x3d.Scene()
 NavigationInfo11 = x3d.NavigationInfo()
+NavigationInfo11.setType(["EXAMINE","ANY"])
 
 Scene10.addChildren(NavigationInfo11)
-#Images courtesy of Paul Debevec's Light Probe Image Gallery
+# Images courtesy of Paul Debevec's Light Probe Image Gallery 
 Background12 = x3d.Background()
 Background12.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])
 Background12.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])
@@ -64,6 +65,7 @@ ProtoDeclare13.setName("flower")
 ProtoBody14 = x3d.ProtoBody()
 Transform15 = x3d.Transform()
 Transform15.setDEF("animate_transform")
+Transform15.setTranslation([0,0,0])
 Shape16 = x3d.Shape()
 Appearance17 = x3d.Appearance()
 Material18 = x3d.Material()
@@ -179,7 +181,11 @@ field37.setAccessType("inputOutput")
 field37.setValue("0")
 
 ComposedShader26.addField(field37)
-#<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
+# 
+#		       <field name='cube' type='SFNode' accessType=\"inputOutput\">
+#			  <ComposedCubeMapTexture USE=\"texture\"/>
+#		  </field>
+#		  
 ShaderPart38 = x3d.ShaderPart()
 ShaderPart38.setUrl(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"])
 ShaderPart38.setType("VERTEX")

@@ -6,60 +6,60 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "HeadsUpDisplayExample.x3d"
+          "@content": "HeadsUpDisplayExample.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Prototype definition that demonstrates use of a simple HeadsUpDisplay (HUD) prototype that maintains a stable position for its children on the screen."
+          "@content": "Prototype definition that demonstrates use of a simple HeadsUpDisplay (HUD) prototype that maintains a stable position for its children on the screen.",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "Leonard Daly and Don Brutzman"
+          "@content": "Leonard Daly and Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "created",
-          "@content": "15 July 2006"
+          "@content": "15 July 2006",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "24 October 2016"
+          "@content": "24 October 2016",
+          "@name": "modified"
         },
         {
-          "@name": "reference",
-          "@content": "HeadsUpDisplayPrototype.x3d"
+          "@content": "HeadsUpDisplayPrototype.x3d",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://X3dGraphics.com"
+          "@content": "http://X3dGraphics.com",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html",
+          "@name": "reference"
         },
         {
-          "@name": "rights",
-          "@content": "Copyright 2006, Daly Realism and Don Brutzman"
+          "@content": "Copyright 2006, Daly Realism and Don Brutzman",
+          "@name": "rights"
         },
         {
-          "@name": "subject",
-          "@content": "X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
+          "@content": "X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com",
+          "@name": "subject"
         },
         {
-          "@name": "identifier",
-          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayExample.x3d"
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayExample.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -74,12 +74,12 @@
     "Scene": {
       "-children": [
         {
-          "#comment": "Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n"
+          "#comment": " Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n "
         },
         {
           "ExternProtoDeclare": {
-            "@name": "HeadsUpDisplay",
             "@appinfo": "Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location",
+            "@name": "HeadsUpDisplay",
             "@url": [
               "HeadsUpDisplayPrototype.x3d#HeadsUpDisplay",
               "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay",
@@ -88,27 +88,27 @@
             ],
             "field": [
               {
-                "@name": "screenOffset",
                 "@accessType": "inputOutput",
                 "@appinfo": "offset position for HUD relative to current view location, default 0 0 -5",
+                "@name": "screenOffset",
                 "@type": "SFVec3f"
               },
               {
-                "@name": "children",
                 "@accessType": "inputOutput",
                 "@appinfo": "X3D content positioned at HUD offset",
+                "@name": "children",
                 "@type": "MFNode"
               },
               {
-                "@name": "position_changed",
                 "@accessType": "outputOnly",
                 "@appinfo": "HUD position update (in world coordinates) relative to original location",
+                "@name": "position_changed",
                 "@type": "SFVec3f"
               },
               {
-                "@name": "orientation_changed",
                 "@accessType": "outputOnly",
                 "@appinfo": "HUD orientation update relative to original location",
+                "@name": "orientation_changed",
                 "@type": "SFRotation"
               }
             ]
@@ -175,15 +175,15 @@
           }
         },
         {
-          "#comment": "ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"
+          "#comment": " ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence "
         },
         {
           "ProtoInstance": {
-            "@name": "HeadsUpDisplay",
             "@DEF": "HeadsUpDisplayInstance",
+            "@name": "HeadsUpDisplay",
             "-children": [
               {
-                "#comment": "example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view"
+                "#comment": " example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view "
               }
             ],
             "fieldValue": [

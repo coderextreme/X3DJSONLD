@@ -6,68 +6,68 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "IcosahedronSubdivisionLevel5.x3d"
+          "@content": "IcosahedronSubdivisionLevel5.x3d",
+          "@name": "title"
         },
         {
-          "@name": "reference",
-          "@content": "IcosahedronSubdivisionLevel5.ply"
+          "@content": "IcosahedronSubdivisionLevel5.ply",
+          "@name": "reference"
         },
         {
-          "@name": "description",
-          "@content": "Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles."
+          "@content": "Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles.",
+          "@name": "description"
         },
         {
-          "@name": "created",
-          "@content": "13 September 2014"
+          "@content": "13 September 2014",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "27 September 2014"
+          "@content": "27 September 2014",
+          "@name": "modified"
         },
         {
-          "@name": "creator",
-          "@content": "Don Brutzman"
+          "@content": "Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "reference",
-          "@content": "Icosahedron.x3d"
+          "@content": "Icosahedron.x3d",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "https://en.wikipedia.org/wiki/Icosahedron"
+          "@content": "https://en.wikipedia.org/wiki/Icosahedron",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "https://en.wiktionary.org/wiki/icosahedron"
+          "@content": "https://en.wiktionary.org/wiki/icosahedron",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "https://en.wikipedia.org/wiki/Platonic_solid"
+          "@content": "https://en.wikipedia.org/wiki/Platonic_solid",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "https://en.wikipedia.org/wiki/Geodesic_grid"
+          "@content": "https://en.wikipedia.org/wiki/Geodesic_grid",
+          "@name": "reference"
         },
         {
-          "@name": "identifier",
-          "@content": "http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d"
+          "@content": "http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "Meshlab X3D Exported, http://meshlab.sourceforge.net"
+          "@content": "Meshlab X3D Exported, http://meshlab.sourceforge.net",
+          "@name": "generator"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",

@@ -32,6 +32,7 @@ head1.addMeta(meta6)
 X3D0.setHead(head1)
 Scene7 = x3d.Scene()
 NavigationInfo8 = x3d.NavigationInfo()
+NavigationInfo8.setType(["EXAMINE","ANY"])
 
 Scene7.addChildren(NavigationInfo8)
 DirectionalLight9 = x3d.DirectionalLight()
@@ -63,6 +64,7 @@ Shape13.setAppearance(Appearance14)
 IndexedFaceSet16 = x3d.IndexedFaceSet()
 IndexedFaceSet16.setConvex(False)
 IndexedFaceSet16.setDEF("Orbit")
+IndexedFaceSet16.setCreaseAngle(0)
 Coordinate17 = x3d.Coordinate()
 Coordinate17.setDEF("OrbitCoordinates")
 
@@ -76,27 +78,35 @@ Scene7.addChildren(Transform12)
 Script18 = x3d.Script()
 Script18.setDEF("OrbitScript")
 field19 = x3d.field()
-field19.setName("set_fraction")
 field19.setAccessType("inputOnly")
+field19.setName("set_fraction")
 field19.setType("SFFloat")
 
 Script18.addField(field19)
 field20 = x3d.field()
-field20.setName("coordinates")
 field20.setAccessType("outputOnly")
+field20.setName("coordinates")
 field20.setType("MFVec3f")
 
 Script18.addField(field20)
 field21 = x3d.field()
-field21.setName("coordIndexes")
 field21.setAccessType("outputOnly")
+field21.setName("coordIndexes")
 field21.setType("MFInt32")
 
 Script18.addField(field21)
-#<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>
+#
+#        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>
+#        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>
+#        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>
+#        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>
+#        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>
+#        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>
+#        <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>
+#	
 
 Script18.setSourceCode('''ecmascript:\n"+
-"\n"+
+"    \n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
 "var g = 5;\n"+

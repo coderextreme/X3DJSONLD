@@ -26,7 +26,7 @@ var ProtoInstance1 = null;
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
               .addChild((new autoclass.Shape())
-                .setGeometry((new autoclass.Sphere())))))
+                .setGeometry((new autoclass.Sphere()).setRadius(java.newFloat(1)).setSolid(true)))))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform())
               .setIS((new autoclass.IS())

@@ -6,70 +6,70 @@
     "head": {
       "component": [
         {
-          "@name": "Geospatial",
-          "@level": 1
+          "@level": 1,
+          "@name": "Geospatial"
         },
         {
-          "@name": "NURBS",
-          "@level": 2
+          "@level": 2,
+          "@name": "NURBS"
         },
         {
-          "@name": "Core",
-          "@level": 2
+          "@level": 2,
+          "@name": "Core"
         },
         {
-          "@name": "Navigation",
-          "@level": 1
+          "@level": 1,
+          "@name": "Navigation"
         },
         {
-          "@name": "Text",
-          "@level": 1
+          "@level": 1,
+          "@name": "Text"
         }
       ],
       "meta": [
         {
-          "@name": "title",
-          "@content": "X3dHeaderPrototypeSyntaxExamples.x3d"
+          "@content": "X3dHeaderPrototypeSyntaxExamples.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "X3D scene header and prototype syntax examples. This example header indicates that the content is XML encoded, follows the Interactive Profile and explicitly lists additional necessary components. The X3D header may also contain additional semantic information. Used for specification EXAMPLE excerpts in 19776:1 XML Encoding."
+          "@content": "X3D scene header and prototype syntax examples. This example header indicates that the content is XML encoded, follows the Interactive Profile and explicitly lists additional necessary components. The X3D header may also contain additional semantic information. Used for specification EXAMPLE excerpts in 19776:1 XML Encoding.",
+          "@name": "description"
         },
         {
-          "@name": "created",
-          "@content": "14 October 2002"
+          "@content": "14 October 2002",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "27 May 2017"
+          "@content": "27 May 2017",
+          "@name": "modified"
         },
         {
-          "@name": "creator",
-          "@content": "Don Brutzman"
+          "@content": "Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "specificationSection",
-          "@content": "X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 4.3 XML file syntax"
+          "@content": "X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 4.3 XML file syntax",
+          "@name": "specificationSection"
         },
         {
-          "@name": "specificationUrl",
-          "@content": "http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax"
+          "@content": "http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax",
+          "@name": "specificationUrl"
         },
         {
-          "@name": "identifier",
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d"
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -94,33 +94,33 @@
             ],
             "field": [
               {
-                "@name": "enabled",
                 "@accessType": "inputOutput",
+                "@name": "enabled",
                 "@type": "SFBool"
               },
               {
-                "@name": "traceEnabled",
                 "@accessType": "initializeOnly",
+                "@name": "traceEnabled",
                 "@type": "SFBool"
               },
               {
-                "@name": "set_traceEnabled",
                 "@accessType": "inputOnly",
+                "@name": "set_traceEnabled",
                 "@type": "SFBool"
               },
               {
-                "@name": "position_changed",
                 "@accessType": "outputOnly",
+                "@name": "position_changed",
                 "@type": "SFVec3f"
               },
               {
-                "@name": "orientation_changed",
                 "@accessType": "outputOnly",
+                "@name": "orientation_changed",
                 "@type": "SFRotation"
               },
               {
-                "@name": "outputViewpointString",
                 "@accessType": "outputOnly",
+                "@name": "outputViewpointString",
                 "@type": "MFString"
               }
             ]
@@ -151,8 +151,8 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "onlyColor",
                   "@accessType": "inputOutput",
+                  "@name": "onlyColor",
                   "@type": "SFColor",
                   "@value": [
                     1,
@@ -165,7 +165,7 @@
             "ProtoBody": {
               "-children": [
                 {
-                  "#comment": "Override default diffuseColor value 0.8 0.8 0.8"
+                  "#comment": " Override default diffuseColor value 0.8 0.8 0.8 "
                 },
                 {
                   "Material": {
@@ -176,7 +176,7 @@
                     ],
                     "-children": [
                       {
-                        "#comment": "Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare."
+                        "#comment": " Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. "
                       }
                     ],
                     "IS": {
@@ -199,8 +199,8 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "children",
                   "@accessType": "inputOutput",
+                  "@name": "children",
                   "@type": "MFNode",
                   "-children": [
                     {
@@ -213,7 +213,7 @@
                         ],
                         "-children": [
                           {
-                            "#comment": "Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\""
+                            "#comment": " Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\" "
                           }
                         ]
                       }
@@ -257,7 +257,7 @@
           }
         },
         {
-          "#comment": "===================="
+          "#comment": " ==================== "
         },
         {
           "Viewpoint": {
@@ -321,7 +321,7 @@
               "Shape": {
                 "-children": [
                   {
-                    "#comment": "note that Collision proxy Shape is not rendered"
+                    "#comment": " note that Collision proxy Shape is not rendered "
                   }
                 ],
                 "-geometry": {

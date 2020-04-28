@@ -6,60 +6,60 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "PixelTextureComponentExamples.x3d"
+          "@content": "PixelTextureComponentExamples.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "This example shows the five PixelTexture components, with 0 to 4 components each, shown in Table 5-18."
+          "@content": "This example shows the five PixelTexture components, with 0 to 4 components each, shown in Table 5-18.",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "Leonard Daly and Don Brutzman"
+          "@content": "Leonard Daly and Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "created",
-          "@content": "25 August 2008"
+          "@content": "25 August 2008",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "7 January 2014"
+          "@content": "7 January 2014",
+          "@name": "modified"
         },
         {
-          "@name": "reference",
-          "@content": "http://X3dGraphics.com"
+          "@content": "http://X3dGraphics.com",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "X3D for Web Authors, Table 5.18"
+          "@content": "X3D for Web Authors, Table 5.18",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html"
+          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html",
+          "@name": "reference"
         },
         {
-          "@name": "rights",
-          "@content": "Copyright (c) 2006, Daly Realism and Don Brutzman"
+          "@content": "Copyright (c) 2006, Daly Realism and Don Brutzman",
+          "@name": "rights"
         },
         {
-          "@name": "subject",
-          "@content": "X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
+          "@content": "X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com",
+          "@name": "subject"
         },
         {
-          "@name": "identifier",
-          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d"
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -305,7 +305,7 @@
                     "Appearance": {
                       "-children": [
                         {
-                          "#comment": "note 0x000000 = 0"
+                          "#comment": " note 0x000000 = 0 "
                         }
                       ],
                       "-texture": {
@@ -382,7 +382,7 @@
                     "Appearance": {
                       "-children": [
                         {
-                          "#comment": "Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127"
+                          "#comment": " Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 "
                         }
                       ],
                       "-texture": {
@@ -444,7 +444,7 @@
           }
         },
         {
-          "#comment": "Background from PixelTextureBW.x3d"
+          "#comment": " Background from PixelTextureBW.x3d "
         },
         {
           "Transform": {

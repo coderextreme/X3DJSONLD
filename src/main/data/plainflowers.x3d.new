@@ -6,10 +6,10 @@
 <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/plainflowers.x3d"></meta>
 </head>
-<Scene><NavigationInfo></NavigationInfo>
+<Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
 <Background backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;" frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></Background>
-<Group><ExternProtoDeclare name="FlowerProto" url="&quot;../data/flowerproto.x3d#FlowerProto&quot;"><field name="vertex" accessType="inputOutput" type="MFString"></field>
-<field name="fragment" accessType="inputOutput" type="MFString"></field>
+<Group><ExternProtoDeclare name="FlowerProto" url="&quot;../data/flowerproto.x3d#FlowerProto&quot;"><field accessType="inputOutput" name="vertex" type="MFString"></field>
+<field accessType="inputOutput" name="fragment" type="MFString"></field>
 </ExternProtoDeclare>
 <ProtoDeclare name="flower"><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x_ite_flowers_plain.vs&quot;"></fieldValue>
 <fieldValue name="fragment" value="&quot;../shaders/plain.fs&quot;"></fieldValue>

@@ -81,50 +81,50 @@ var ProtoInstance65 = null;
 var ProtoInstance66 = null;
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
-        .addMeta((new autoclass.meta()).setName("title").setContent("NancyPrototypes.x3d"))
-        .addMeta((new autoclass.meta()).setName("creator").setContent("Cindy Ballreich"))
-        .addMeta((new autoclass.meta()).setName("translators").setContent("Tom Miller and Don Brutzman, NPS"))
-        .addMeta((new autoclass.meta()).setName("created").setContent("9 July 2000"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
-        .addMeta((new autoclass.meta()).setName("description").setContent("Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."))
-        .addMeta((new autoclass.meta()).setName("warning").setContent("using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead"))
-        .addMeta((new autoclass.meta()).setName("reference").setContent("NancyNativeTags.x3d"))
-        .addMeta((new autoclass.meta()).setName("TODO").setContent("Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem."))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"))
-        .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
+        .addMeta((new autoclass.meta()).setContent("NancyPrototypes.x3d").setName("title"))
+        .addMeta((new autoclass.meta()).setContent("Cindy Ballreich").setName("creator"))
+        .addMeta((new autoclass.meta()).setContent("Tom Miller and Don Brutzman, NPS").setName("translators"))
+        .addMeta((new autoclass.meta()).setContent("9 July 2000").setName("created"))
+        .addMeta((new autoclass.meta()).setContent("20 October 2019").setName("modified"))
+        .addMeta((new autoclass.meta()).setContent("Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces.").setName("description"))
+        .addMeta((new autoclass.meta()).setContent("using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead").setName("warning"))
+        .addMeta((new autoclass.meta()).setContent("NancyNativeTags.x3d").setName("reference"))
+        .addMeta((new autoclass.meta()).setContent("Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem.").setName("TODO"))
+        .addMeta((new autoclass.meta()).setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d").setName("identifier"))
+        .addMeta((new autoclass.meta()).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit").setName("generator"))
+        .addMeta((new autoclass.meta()).setContent("../license.html").setName("license")))
       .setScene((new autoclass.Scene())
-        .addChild((new autoclass.ProtoDeclare()).setName("Displacer").setAppinfo("A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html")
+        .addChild((new autoclass.ProtoDeclare()).setAppinfo("A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Displacer.html").setName("Displacer")
           .setProtoInterface((new autoclass.ProtoInterface())
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setName("name").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFINT32).setName("coordIndex").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFVEC3F).setName("displacements").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFINT32).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("coordIndex"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("displacements")))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.WorldInfo()).setInfo(java.newArray("java.lang.String", ["null body node"])))))
-        .addChild((new autoclass.ProtoDeclare()).setName("Humanoid").setAppinfo("The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html")
+        .addChild((new autoclass.ProtoDeclare()).setAppinfo("The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html").setName("Humanoid")
           .setProtoInterface((new autoclass.ProtoInterface())
-            .addComments((new autoclass.CommentsBlock("H-Anim v1.1 field definitions")))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setName("name").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setName("version").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("legal values: 1.1 or 2.0").setValue("1.1"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setName("humanoidVersion").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Version of the humanoid being modeled. Hint: H-anim version 2.0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setName("info").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setName("rotation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("center").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("scale").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setName("scaleOrientation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("bboxSize").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("humanoidBody").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton").setDocumentation("http://H-Anim.org/Specifications/H-Anim1.1/#humanoid"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("skeleton").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("joints").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Joint nodes"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("segments").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Segment nodes"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("sites").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Site nodes"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("viewpoints").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Viewpoint nodes"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("skinCoord").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0")
-              .addComments((new autoclass.CommentsBlock("NULL node"))))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("skinNormal").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0")
-              .addComments((new autoclass.CommentsBlock("NULL node")))))
+            .addComments((new autoclass.CommentsBlock(" H-Anim v1.1 field definitions ")))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("legal values: 1.1 or 2.0").setName("version").setValue("1.1"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Version of the humanoid being modeled. Hint: H-anim version 2.0").setName("humanoidVersion"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("info"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("translation").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("rotation").setValue("0 0 1 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("center").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("scaleOrientation").setValue("0 0 1 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton").setDocumentation("http://H-Anim.org/Specifications/H-Anim1.1/#humanoid").setName("humanoidBody"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("H-Anim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Humanoid.html").setName("skeleton"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Joint nodes").setName("joints"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Segment nodes").setName("segments"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Site nodes").setName("sites"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Container field for Viewpoint nodes").setName("viewpoints"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0").setName("skinCoord")
+              .addComments((new autoclass.CommentsBlock(" NULL node "))))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Hint: H-anim version 2.0").setName("skinNormal")
+              .addComments((new autoclass.CommentsBlock(" NULL node ")))))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform()).setDEF("HumanoidTransform")
               .setIS((new autoclass.IS())
@@ -144,25 +144,25 @@ var ProtoInstance66 = null;
               .addChild((new autoclass.Group()).setDEF("HumanoidGroup3")
                 .setIS((new autoclass.IS())
                   .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("viewpoints")))))))
-        .addChild((new autoclass.ProtoDeclare()).setName("Joint").setAppinfo("The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html")
+        .addChild((new autoclass.ProtoDeclare()).setAppinfo("The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Joint.html").setName("Joint")
           .setProtoInterface((new autoclass.ProtoInterface())
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setName("name").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFFLOAT).setName("ulimit").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFFLOAT).setName("llimit").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setName("limitOrientation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFINT32).setName("skinCoordIndex").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFFLOAT).setName("skinCoordWeight").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFFLOAT).setName("stiffness").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setName("rotation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("scale").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setName("scaleOrientation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("center").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("bboxSize").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("children").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("addChildren").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("removeChildren").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFFLOAT).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("ulimit"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFFLOAT).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("llimit"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("limitOrientation").setValue("0 0 1 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFINT32).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("skinCoordIndex"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFFLOAT).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("skinCoordWeight"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFFLOAT).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("stiffness").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("translation").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("rotation").setValue("0 0 1 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("scaleOrientation").setValue("0 0 1 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("center").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("children"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("addChildren"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("removeChildren")))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform()).setDEF("JointTransform")
               .setIS((new autoclass.IS())
@@ -176,20 +176,20 @@ var ProtoInstance66 = null;
                 .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("children"))
                 .addConnect((new autoclass.connect()).setNodeField("addChildren").setProtoField("addChildren"))
                 .addConnect((new autoclass.connect()).setNodeField("removeChildren").setProtoField("removeChildren"))))))
-        .addChild((new autoclass.ProtoDeclare()).setName("Segment").setAppinfo("The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html")
+        .addChild((new autoclass.ProtoDeclare()).setAppinfo("The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Segment.html").setName("Segment")
           .setProtoInterface((new autoclass.ProtoInterface())
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setName("name").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("mass").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("centerOfMass").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFFLOAT).setName("momentsOfInertia").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 0 0 0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("bboxSize").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("children").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("addChildren").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("removeChildren").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("coord").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Coordinate nodes")
-              .addComments((new autoclass.CommentsBlock("NULL node"))))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("displacers").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Displacer nodes")))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("mass").setValue("0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("centerOfMass").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFFLOAT).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("momentsOfInertia").setValue("0 0 0 0 0 0 0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("children"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("addChildren"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("removeChildren"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Coordinate nodes").setName("coord")
+              .addComments((new autoclass.CommentsBlock(" NULL node "))))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("contains Displacer nodes").setName("displacers")))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Group()).setDEF("SegmentGroup")
               .setIS((new autoclass.IS())
@@ -198,19 +198,19 @@ var ProtoInstance66 = null;
                 .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("children"))
                 .addConnect((new autoclass.connect()).setNodeField("addChildren").setProtoField("addChildren"))
                 .addConnect((new autoclass.connect()).setNodeField("removeChildren").setProtoField("removeChildren"))))))
-        .addChild((new autoclass.ProtoDeclare()).setName("Site").setAppinfo("The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html")
+        .addChild((new autoclass.ProtoDeclare()).setAppinfo("The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).").setDocumentation("http://H-Anim.org/Specifications/H-Anim2001/part1/Site.html").setName("Site")
           .setProtoInterface((new autoclass.ProtoInterface())
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setName("name").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setName("rotation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("scale").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setName("scaleOrientation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 1 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("center").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("bboxCenter").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("bboxSize").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("-1 -1 -1"))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("children").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("addChildren").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("removeChildren").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("translation").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("rotation").setValue("0 0 1 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFROTATION).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("scaleOrientation").setValue("0 0 1 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("center").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter").setValue("0 0 0"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("children"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("addChildren"))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("removeChildren")))
           .setProtoBody((new autoclass.ProtoBody())
             .addChild((new autoclass.Transform()).setDEF("SiteTransform")
               .setIS((new autoclass.IS())
@@ -224,8 +224,8 @@ var ProtoInstance66 = null;
                 .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("children"))
                 .addConnect((new autoclass.connect()).setNodeField("addChildren").setProtoField("addChildren"))
                 .addConnect((new autoclass.connect()).setNodeField("removeChildren").setProtoField("removeChildren"))))))
-        .addComments((new autoclass.CommentsBlock("Start scene graph.")))
-        .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("Humanoid").setDEF("Humanoid"))
+        .addComments((new autoclass.CommentsBlock(" Start scene graph. ")))
+        .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setDEF("Humanoid").setName("Humanoid"))
         .addChild((new autoclass.WorldInfo()).setInfo(java.newArray("java.lang.String", ["Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc."])).setTitle("Nancy - an H-Anim compliant avatar by 3Name3D"))
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])).setAvatarSize(java.newArray("float", [java.newFloat(0.15), java.newFloat(1.53), java.newFloat(0.75)])).setSpeed(java.newFloat(0.5)))
         .addChild((new autoclass.Group()).setDEF("Interface")
@@ -542,7 +542,7 @@ ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("info").setValue("\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/h-anim/small_logo.gif> is present and proper credit is given.\""));
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("humanoidBody")
-            .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_HumanoidRoot"))
+            .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setDEF("hanim_HumanoidRoot").setName("Joint"))
             .addChild((new autoclass.Group())));
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("joints")
@@ -593,17 +593,17 @@ ProtoInstance1
               .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("-0.00405 0.855 -0.000113"));
 ProtoInstance1
               .addFieldValue((new autoclass.fieldValue()).setName("children")
-                .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_sacroiliac"))
-                .addChild(ProtoInstance16 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_vl1")));
+                .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setDEF("hanim_sacroiliac").setName("Joint"))
+                .addChild(ProtoInstance16 = (new autoclass.ProtoInstance()).setDEF("hanim_vl1").setName("Joint")));
 ProtoInstance2
                   .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("sacroiliac"));
 ProtoInstance2
                   .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("0 1.01 -0.0204"));
 ProtoInstance2
                   .addFieldValue((new autoclass.fieldValue()).setName("children")
-                    .addChild(ProtoInstance3 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_pelvis"))
-                    .addChild(ProtoInstance4 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_l_hip"))
-                    .addChild(ProtoInstance10 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_r_hip")));
+                    .addChild(ProtoInstance3 = (new autoclass.ProtoInstance()).setDEF("hanim_pelvis").setName("Segment"))
+                    .addChild(ProtoInstance4 = (new autoclass.ProtoInstance()).setDEF("hanim_l_hip").setName("Joint"))
+                    .addChild(ProtoInstance10 = (new autoclass.ProtoInstance()).setDEF("hanim_r_hip").setName("Joint")));
 ProtoInstance3
                       .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("pelvis"));
 ProtoInstance3
@@ -619,8 +619,8 @@ ProtoInstance4
                       .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("0.122 0.888271 -0.0693267"));
 ProtoInstance4
                       .addFieldValue((new autoclass.fieldValue()).setName("children")
-                        .addChild(ProtoInstance5 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_l_thigh"))
-                        .addChild(ProtoInstance6 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_l_knee")));
+                        .addChild(ProtoInstance5 = (new autoclass.ProtoInstance()).setDEF("hanim_l_thigh").setName("Segment"))
+                        .addChild(ProtoInstance6 = (new autoclass.ProtoInstance()).setDEF("hanim_l_knee").setName("Joint")));
 ProtoInstance5
                           .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("l_thigh"));
 ProtoInstance5
@@ -636,8 +636,8 @@ ProtoInstance6
                           .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("0.0738 0.517 -0.0284"));
 ProtoInstance6
                           .addFieldValue((new autoclass.fieldValue()).setName("children")
-                            .addChild(ProtoInstance7 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_l_calf"))
-                            .addChild(ProtoInstance8 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_l_ankle")));
+                            .addChild(ProtoInstance7 = (new autoclass.ProtoInstance()).setDEF("hanim_l_calf").setName("Segment"))
+                            .addChild(ProtoInstance8 = (new autoclass.ProtoInstance()).setDEF("hanim_l_ankle").setName("Joint")));
 ProtoInstance7
                               .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("l_calf"));
 ProtoInstance7
@@ -653,7 +653,7 @@ ProtoInstance8
                               .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("0.0645 0.0719 -0.048"));
 ProtoInstance8
                               .addFieldValue((new autoclass.fieldValue()).setName("children")
-                                .addChild(ProtoInstance9 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_l_hindfoot")));
+                                .addChild(ProtoInstance9 = (new autoclass.ProtoInstance()).setDEF("hanim_l_hindfoot").setName("Segment")));
 ProtoInstance9
                                   .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("l_hindfoot"));
 ProtoInstance9
@@ -669,8 +669,8 @@ ProtoInstance10
                       .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("-0.11 0.892362 -0.0732533"));
 ProtoInstance10
                       .addFieldValue((new autoclass.fieldValue()).setName("children")
-                        .addChild(ProtoInstance11 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_r_thigh"))
-                        .addChild(ProtoInstance12 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_r_knee")));
+                        .addChild(ProtoInstance11 = (new autoclass.ProtoInstance()).setDEF("hanim_r_thigh").setName("Segment"))
+                        .addChild(ProtoInstance12 = (new autoclass.ProtoInstance()).setDEF("hanim_r_knee").setName("Joint")));
 ProtoInstance11
                           .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("r_thigh"));
 ProtoInstance11
@@ -686,8 +686,8 @@ ProtoInstance12
                           .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("-0.0699 0.51 -0.0166"));
 ProtoInstance12
                           .addFieldValue((new autoclass.fieldValue()).setName("children")
-                            .addChild(ProtoInstance13 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_r_calf"))
-                            .addChild(ProtoInstance14 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_r_ankle")));
+                            .addChild(ProtoInstance13 = (new autoclass.ProtoInstance()).setDEF("hanim_r_calf").setName("Segment"))
+                            .addChild(ProtoInstance14 = (new autoclass.ProtoInstance()).setDEF("hanim_r_ankle").setName("Joint")));
 ProtoInstance13
                               .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("r_calf"));
 ProtoInstance13
@@ -703,7 +703,7 @@ ProtoInstance14
                               .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("-0.064 0.0753 -0.0412"));
 ProtoInstance14
                               .addFieldValue((new autoclass.fieldValue()).setName("children")
-                                .addChild(ProtoInstance15 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_r_hindfoot")));
+                                .addChild(ProtoInstance15 = (new autoclass.ProtoInstance()).setDEF("hanim_r_hindfoot").setName("Segment")));
 ProtoInstance15
                                   .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("r_hindfoot"));
 ProtoInstance15
@@ -719,10 +719,10 @@ ProtoInstance16
                   .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("-0.00405 1.07 -0.0275"));
 ProtoInstance16
                   .addFieldValue((new autoclass.fieldValue()).setName("children")
-                    .addChild(ProtoInstance17 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_c7"))
-                    .addChild(ProtoInstance18 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_l_shoulder"))
-                    .addChild(ProtoInstance24 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_r_shoulder"))
-                    .addChild(ProtoInstance30 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_vc4")));
+                    .addChild(ProtoInstance17 = (new autoclass.ProtoInstance()).setDEF("hanim_c7").setName("Segment"))
+                    .addChild(ProtoInstance18 = (new autoclass.ProtoInstance()).setDEF("hanim_l_shoulder").setName("Joint"))
+                    .addChild(ProtoInstance24 = (new autoclass.ProtoInstance()).setDEF("hanim_r_shoulder").setName("Joint"))
+                    .addChild(ProtoInstance30 = (new autoclass.ProtoInstance()).setDEF("hanim_vc4").setName("Joint")));
 ProtoInstance17
                       .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("l1"));
 ProtoInstance17
@@ -740,8 +740,8 @@ ProtoInstance18
                       .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("0.167 1.36 -0.0518"));
 ProtoInstance18
                       .addFieldValue((new autoclass.fieldValue()).setName("children")
-                        .addChild(ProtoInstance19 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_l_upperarm"))
-                        .addChild(ProtoInstance20 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_l_elbow")));
+                        .addChild(ProtoInstance19 = (new autoclass.ProtoInstance()).setDEF("hanim_l_upperarm").setName("Segment"))
+                        .addChild(ProtoInstance20 = (new autoclass.ProtoInstance()).setDEF("hanim_l_elbow").setName("Joint")));
 ProtoInstance19
                           .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("l_upperarm"));
 ProtoInstance19
@@ -758,8 +758,8 @@ ProtoInstance20
                           .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("0.196 1.07 -0.0518"));
 ProtoInstance20
                           .addFieldValue((new autoclass.fieldValue()).setName("children")
-                            .addChild(ProtoInstance21 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_l_forearm"))
-                            .addChild(ProtoInstance22 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_l_wrist")));
+                            .addChild(ProtoInstance21 = (new autoclass.ProtoInstance()).setDEF("hanim_l_forearm").setName("Segment"))
+                            .addChild(ProtoInstance22 = (new autoclass.ProtoInstance()).setDEF("hanim_l_wrist").setName("Joint")));
 ProtoInstance21
                               .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("l_forearm"));
 ProtoInstance21
@@ -776,7 +776,7 @@ ProtoInstance22
                               .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("0.213 0.811 -0.0338"));
 ProtoInstance22
                               .addFieldValue((new autoclass.fieldValue()).setName("children")
-                                .addChild(ProtoInstance23 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_l_hand")));
+                                .addChild(ProtoInstance23 = (new autoclass.ProtoInstance()).setDEF("hanim_l_hand").setName("Segment")));
 ProtoInstance23
                                   .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("l_hand"));
 ProtoInstance23
@@ -793,8 +793,8 @@ ProtoInstance24
                       .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("-0.167 1.36 -0.0458"));
 ProtoInstance24
                       .addFieldValue((new autoclass.fieldValue()).setName("children")
-                        .addChild(ProtoInstance25 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_r_upperarm"))
-                        .addChild(ProtoInstance26 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_r_elbow")));
+                        .addChild(ProtoInstance25 = (new autoclass.ProtoInstance()).setDEF("hanim_r_upperarm").setName("Segment"))
+                        .addChild(ProtoInstance26 = (new autoclass.ProtoInstance()).setDEF("hanim_r_elbow").setName("Joint")));
 ProtoInstance25
                           .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("r_upperarm"));
 ProtoInstance25
@@ -811,8 +811,8 @@ ProtoInstance26
                           .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("-0.192 1.07 -0.0498"));
 ProtoInstance26
                           .addFieldValue((new autoclass.fieldValue()).setName("children")
-                            .addChild(ProtoInstance27 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_r_forearm"))
-                            .addChild(ProtoInstance28 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_r_wrist")));
+                            .addChild(ProtoInstance27 = (new autoclass.ProtoInstance()).setDEF("hanim_r_forearm").setName("Segment"))
+                            .addChild(ProtoInstance28 = (new autoclass.ProtoInstance()).setDEF("hanim_r_wrist").setName("Joint")));
 ProtoInstance27
                               .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("r_forearm"));
 ProtoInstance27
@@ -829,7 +829,7 @@ ProtoInstance28
                               .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("-0.217 0.811 -0.0338"));
 ProtoInstance28
                               .addFieldValue((new autoclass.fieldValue()).setName("children")
-                                .addChild(ProtoInstance29 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_r_hand")));
+                                .addChild(ProtoInstance29 = (new autoclass.ProtoInstance()).setDEF("hanim_r_hand").setName("Segment")));
 ProtoInstance29
                                   .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("r_hand"));
 ProtoInstance29
@@ -846,8 +846,8 @@ ProtoInstance30
                       .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("0 1.43 -0.0458"));
 ProtoInstance30
                       .addFieldValue((new autoclass.fieldValue()).setName("children")
-                        .addChild(ProtoInstance31 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_c4"))
-                        .addChild(ProtoInstance32 = (new autoclass.ProtoInstance()).setName("Joint").setDEF("hanim_skullbase")));
+                        .addChild(ProtoInstance31 = (new autoclass.ProtoInstance()).setDEF("hanim_c4").setName("Segment"))
+                        .addChild(ProtoInstance32 = (new autoclass.ProtoInstance()).setDEF("hanim_skullbase").setName("Joint")));
 ProtoInstance31
                           .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("c4"));
 ProtoInstance31
@@ -863,7 +863,7 @@ ProtoInstance32
                           .addFieldValue((new autoclass.fieldValue()).setName("center").setValue("0 1.54 -0.0409"));
 ProtoInstance32
                           .addFieldValue((new autoclass.fieldValue()).setName("children")
-                            .addChild(ProtoInstance33 = (new autoclass.ProtoInstance()).setName("Segment").setDEF("hanim_skull")));
+                            .addChild(ProtoInstance33 = (new autoclass.ProtoInstance()).setDEF("hanim_skull").setName("Segment")));
 ProtoInstance33
                               .addFieldValue((new autoclass.fieldValue()).setName("name").setValue("skull"));
 ProtoInstance33

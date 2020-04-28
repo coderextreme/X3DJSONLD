@@ -41,6 +41,7 @@ Appearance10.setMaterial(Material11)
 
 Shape9.setAppearance(Appearance10)
 Sphere12 = x3d.Sphere()
+Sphere12.setRadius(1)
 
 Shape9.setGeometry(Sphere12)
 

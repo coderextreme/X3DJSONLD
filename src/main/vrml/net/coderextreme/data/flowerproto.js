@@ -4,10 +4,10 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="FlowerProto" ><ProtoInterface><field name="vertex" accessType="inputOutput" type="MFString" value="&quot;../shaders/gl_flowers_chromatic.vs&quot;"></field>
-<field name="fragment" accessType="inputOutput" type="MFString" value="&quot;../shaders/pc_flowers.fs&quot;"></field>
+<ProtoDeclare name="FlowerProto" ><ProtoInterface><field accessType="inputOutput" name="vertex" type="MFString" value="&quot;../shaders/gl_flowers_chromatic.vs&quot;"></field>
+<field accessType="inputOutput" name="fragment" type="MFString" value="&quot;../shaders/pc_flowers.fs&quot;"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="transform"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<ProtoBody><Transform DEF="transform" translation="0 0 0"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottom" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
 <ImageTexture containerField="front" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
@@ -26,7 +26,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <field name="d" type="SFFloat" accessType="inputOutput" value="20"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
-<!--<field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field>--><ShaderPart type="VERTEX"><IS><connect nodeField="url" protoField="vertex"></connect>
+<!-- --><!--		       <field name='cube' type='SFNode' accessType="inputOutput">--><!--			  <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>--><!--		  </field>--><!--		  --><ShaderPart type="VERTEX"><IS><connect nodeField="url" protoField="vertex"></connect>
 </IS>
 </ShaderPart>
 <ShaderPart type="FRAGMENT"><IS><connect nodeField="url" protoField="fragment"></connect>
@@ -126,8 +126,8 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 ProtoDeclare2.name = "FlowerProto";
 let ProtoInterface3 = browser.currentScene.createNode("ProtoInterface");
 let field4 = browser.currentScene.createNode("field");
-field4.name = "vertex";
 field4.accessType = "inputOutput";
+field4.name = "vertex";
 field4.type = "MFString";
 field4.value = "\"../shaders/gl_flowers_chromatic.vs\"";
 ProtoInterface3.field = new MFNode();
@@ -135,8 +135,8 @@ ProtoInterface3.field = new MFNode();
 ProtoInterface3.field[0] = field4;
 
 let field5 = browser.currentScene.createNode("field");
-field5.name = "fragment";
 field5.accessType = "inputOutput";
+field5.name = "fragment";
 field5.type = "MFString";
 field5.value = "\"../shaders/pc_flowers.fs\"";
 ProtoInterface3.field[1] = field5;
@@ -146,6 +146,7 @@ ProtoDeclare2.protoInterface = ProtoInterface3;
 let ProtoBody6 = browser.currentScene.createNode("ProtoBody");
 let Transform7 = browser.currentScene.createNode("Transform");
 Transform7.DEF = "transform";
+Transform7.translation = new SFVec3f(new float[0,0,0]);
 let Shape8 = browser.currentScene.createNode("Shape");
 let Appearance9 = browser.currentScene.createNode("Appearance");
 let Material10 = browser.currentScene.createNode("Material");
@@ -263,7 +264,11 @@ field29.accessType = "inputOutput";
 field29.value = "0";
 ComposedShader18.field[10] = field29;
 
-//<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
+// 
+//		       <field name='cube' type='SFNode' accessType=\"inputOutput\">
+//			  <ComposedCubeMapTexture USE=\"texture\"/>
+//		  </field>
+//		  
 let ShaderPart30 = browser.currentScene.createNode("ShaderPart");
 ShaderPart30.type = "VERTEX";
 let IS31 = browser.currentScene.createNode("IS");

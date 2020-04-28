@@ -32,9 +32,10 @@ head1.addMeta(meta6)
 X3D0.setHead(head1)
 Scene7 = x3d.Scene()
 NavigationInfo8 = x3d.NavigationInfo()
+NavigationInfo8.setType(["EXAMINE","ANY"])
 
 Scene7.addChildren(NavigationInfo8)
-#Images courtesy of Paul Debevec's Light Probe Image Gallery
+# Images courtesy of Paul Debevec's Light Probe Image Gallery 
 Background9 = x3d.Background()
 Background9.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])
 Background9.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])
@@ -49,14 +50,14 @@ ExternProtoDeclare11 = x3d.ExternProtoDeclare()
 ExternProtoDeclare11.setName("FlowerProto")
 ExternProtoDeclare11.setUrl(["../data/flowerproto.json#FlowerProto"])
 field12 = x3d.field()
-field12.setName("vertex")
 field12.setAccessType("inputOutput")
+field12.setName("vertex")
 field12.setType("MFString")
 
 ExternProtoDeclare11.addField(field12)
 field13 = x3d.field()
-field13.setName("fragment")
 field13.setAccessType("inputOutput")
+field13.setName("fragment")
 field13.setType("MFString")
 
 ExternProtoDeclare11.addField(field13)

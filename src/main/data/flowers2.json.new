@@ -6,8 +6,8 @@
     "head": {
       "component": [
         {
-          "@name": "Scripting",
-          "@level": 1
+          "@level": 1,
+          "@name": "Scripting"
         }
       ],
       "meta": [
@@ -16,40 +16,40 @@
           "@content": "flowers2.x3d"
         },
         {
-          "@name": "creator",
-          "@content": "John Carlson"
+          "@content": "John Carlson",
+          "@name": "creator"
         },
         {
-          "@name": "transcriber",
-          "@content": "John Carlson"
+          "@content": "John Carlson",
+          "@name": "transcriber"
         },
         {
-          "@name": "created",
-          "@content": "23 January 2005"
+          "@content": "23 January 2005",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "21 March 2018"
+          "@content": "21 March 2018",
+          "@name": "modified"
         },
         {
-          "@name": "description",
-          "@content": "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"
+          "@content": "2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)",
+          "@name": "description"
         },
         {
-          "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "manually written"
+          "@content": "manually written",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "http://www.web3d.org/x3d/content/examples/license.html"
+          "@content": "http://www.web3d.org/x3d/content/examples/license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -64,7 +64,12 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
+          }
         },
         {
           "Viewpoint": {
@@ -207,7 +212,19 @@
                                       },
                                       "-children": [
                                         {
-                                          "#comment": "<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                          "#comment": ""
+                                        },
+                                        {
+                                          "#comment": "\t\t\t\t  <IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\">"
+                                        },
+                                        {
+                                          "#comment": "\t\t\t\t    <Coordinate DEF=\"OrbitCoordinates\"/>"
+                                        },
+                                        {
+                                          "#comment": "\t\t\t\t  </IndexedFaceSet>"
+                                        },
+                                        {
+                                          "#comment": "\t\t\t\t  "
                                         }
                                       ],
                                       "-geometry": {
@@ -220,7 +237,9 @@
                                             2,
                                             -1
                                           ],
+                                          "@creaseAngle": 0,
                                           "@DEF": "Orbit",
+                                          "@solid": true,
                                           "-coord": {
                                             "Coordinate": {
                                               "@DEF": "OrbitCoordinates",
@@ -249,47 +268,47 @@
                                 "@DEF": "OrbitScript",
                                 "field": [
                                   {
-                                    "@name": "set_fraction",
                                     "@accessType": "inputOnly",
+                                    "@name": "set_fraction",
                                     "@type": "SFFloat"
                                   },
                                   {
-                                    "@name": "coordinates",
                                     "@accessType": "outputOnly",
+                                    "@name": "coordinates",
                                     "@type": "MFVec3f"
                                   },
                                   {
-                                    "@name": "coordIndexes",
                                     "@accessType": "outputOnly",
+                                    "@name": "coordIndexes",
                                     "@type": "MFInt32"
                                   },
                                   {
+                                    "@accessType": "inputOutput",
                                     "@name": "e",
-                                    "@accessType": "inputOutput",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
                                   {
+                                    "@accessType": "inputOutput",
                                     "@name": "f",
-                                    "@accessType": "inputOutput",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
                                   {
+                                    "@accessType": "inputOutput",
                                     "@name": "g",
-                                    "@accessType": "inputOutput",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
                                   {
+                                    "@accessType": "inputOutput",
                                     "@name": "h",
-                                    "@accessType": "inputOutput",
                                     "@type": "SFFloat",
                                     "@value": 5
                                   },
                                   {
-                                    "@name": "resolution",
                                     "@accessType": "inputOutput",
+                                    "@name": "resolution",
                                     "@type": "SFInt32",
                                     "@value": 50
                                   }

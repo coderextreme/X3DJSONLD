@@ -107,11 +107,56 @@ ImageTexture26.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_t
 ComposedCubeMapTexture20.setTop(ImageTexture26)
 
 Appearance18.setTexture(ComposedCubeMapTexture20)
-#<ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'> <ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/> </ShaderProgram> <ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/> </ProgramShader>
-#<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>
-#<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>
-#<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> </ComposedShader>
 #
+#                    <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>
+#			<ShaderProgram url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs' type='VERTEX'>
+#                        <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
+#                        <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>
+#                        <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>
+#                        <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>
+#                        </ShaderProgram>
+#			<ShaderProgram url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>
+#		    </ProgramShader>
+#		
+#
+#                <ComposedShader language='GLSL'>
+#		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
+#		  <field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\">
+#			<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>
+#		  </field>
+#		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
+#		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
+#		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
+#		  <ShaderPart url='\"../shaders/contact.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>
+#		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+#                </ComposedShader>
+#		
+#
+#                <ComposedShader language='GLSL'>
+#		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
+#		  <field name='cube' type='SFNode' accessType=\"inputOutput\">
+#			<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>
+#		  </field>
+#		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+#		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+#		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
+#		  <ShaderPart url='\"../shaders/octaga.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>
+#		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+#                </ComposedShader>
+#		
+#
+#                <ComposedShader language='GLSL'>
+#		  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>
+#		  <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field>
+#		  <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
+#		  <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>
+#		  <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>
+#		  <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>
+#		  <ShaderPart url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+#                </ComposedShader>
+#		
+#
+#		
 ComposedShader27 = x3d.ComposedShader()
 ComposedShader27.setLanguage("GLSL")
 field28 = x3d.field()

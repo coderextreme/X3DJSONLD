@@ -6,52 +6,52 @@
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "TextSpecialCharacters.x3d"
+          "@content": "TextSpecialCharacters.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities"
+          "@content": "Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "Don Brutzman"
+          "@content": "Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "created",
-          "@content": "12 July 2008"
+          "@content": "12 July 2008",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "2 April 2017"
+          "@content": "2 April 2017",
+          "@name": "modified"
         },
         {
-          "@name": "reference",
-          "@content": "Character entity references in HTML 4"
+          "@content": "Character entity references in HTML 4",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.w3.org/TR/REC-html40/sgml/entities.html"
+          "@content": "http://www.w3.org/TR/REC-html40/sgml/entities.html",
+          "@name": "reference"
         },
         {
-          "@name": "rights",
-          "@content": "Copyright (c) Don Brutzman and Leonard Daly, 2008"
+          "@content": "Copyright (c) Don Brutzman and Leonard Daly, 2008",
+          "@name": "rights"
         },
         {
-          "@name": "identifier",
-          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -88,28 +88,28 @@
           "Shape": {
             "-children": [
               {
-                "#comment": "Empty string \"\" means to skip a line"
+                "#comment": " Empty string \"\" means to skip a line "
               },
               {
-                "#comment": "The ampersand escape characters are based on XML rules"
+                "#comment": " The ampersand escape characters are based on XML rules "
               },
               {
-                "#comment": "apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute"
+                "#comment": " apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute "
               },
               {
-                "#comment": "ampersand & is &amp; and needs to be escaped"
+                "#comment": " ampersand & is &amp; and needs to be escaped "
               },
               {
-                "#comment": "quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"
+                "#comment": " quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute "
               },
               {
-                "#comment": "quotation \" can be used within an X3D string if escaped with backslash \\ as \\\"\""
+                "#comment": " quotation \" can be used within an X3D string if escaped with backslash \\ as \\\" "
               },
               {
-                "#comment": "backslash \\ is used as escape character for \" (and itself) in X3D"
+                "#comment": " backslash \\ is used as escape character for \" (and itself) in X3D "
               },
               {
-                "#comment": "character entities are listed in HTML specification and are good for any XML"
+                "#comment": " character entities are listed in HTML specification and are good for any XML "
               }
             ],
             "-geometry": {
@@ -119,9 +119,9 @@
                   "Character entity substitutions:",
                   "empty string \"\" skips a line:",
                   "",
-                  "apostrophe ' is &apos;",
+                  "apostrophe  '  is &apos;",
                   "ampersand & is &amp;",
-                  "quote mark \" is &quot;",
+                  "quote mark  \"  is &quot;",
                   "backslash \\ is X3D escape character",
                   "double backslash \\\\ is X3D backslash \\ character",
                   "Pi Π is &#928; XML character entity"

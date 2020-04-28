@@ -3,11 +3,12 @@ let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE","ANY"]);
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
-//Images courtesy of Paul Debevec's Light Probe Image Gallery
+// Images courtesy of Paul Debevec's Light Probe Image Gallery 
 let Background3 = browser.currentScene.createNode("Background");
 Background3.DEF = "background";
 Background3.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"]);
@@ -147,7 +148,11 @@ field27.accessType = "inputOutput";
 field27.value = "0";
 ComposedShader16.field[10] = field27;
 
-//<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
+// 
+//		       <field name='cube' type='SFNode' accessType=\"inputOutput\">
+//			  <ComposedCubeMapTexture USE=\"texture\"/>
+//		  </field>
+//		  
 let ShaderPart28 = browser.currentScene.createNode("ShaderPart");
 ShaderPart28.url = new MFString(new java.lang.String["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]);
 ShaderPart28.type = "VERTEX";
@@ -387,7 +392,22 @@ Script46.setSourceCode(`ecmascript:\n"+
 "        }`)
 browser.currentScene.children[4] = Script46;
 
-//<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
+//
+//            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>
+//            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>
+//            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>
+//            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>
+//            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>
+//            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>
+//            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>
+//            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>
+//            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>
+//            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>
+//            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>
+//            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>
+//            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>
+//            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
+//	    
 let Script61 = browser.currentScene.createNode("Script");
 Script61.DEF = "Animate";
 Script61.directOutput = True;

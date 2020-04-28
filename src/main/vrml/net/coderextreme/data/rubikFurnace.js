@@ -22,7 +22,7 @@ let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
+<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="xtranslation"></connect>
 <connect nodeField="children" protoField="myShape"></connect>
 </IS>
 </Transform>
@@ -64,6 +64,7 @@ ProtoDeclare4.protoInterface = ProtoInterface5;
 
 let ProtoBody12 = browser.currentScene.createNode("ProtoBody");
 let Transform13 = browser.currentScene.createNode("Transform");
+Transform13.translation = new SFVec3f(new float[0,0,0]);
 let IS14 = browser.currentScene.createNode("IS");
 let connect15 = browser.currentScene.createNode("connect");
 connect15.nodeField = "translation";
@@ -96,7 +97,7 @@ let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
+<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="ytranslation"></connect>
 </IS>
 <ProtoInstance name="anyShape"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
 <IS><connect nodeField="myShape" protoField="myShape"></connect>
@@ -149,6 +150,7 @@ ProtoDeclare17.protoInterface = ProtoInterface18;
 
 let ProtoBody25 = browser.currentScene.createNode("ProtoBody");
 let Transform26 = browser.currentScene.createNode("Transform");
+Transform26.translation = new SFVec3f(new float[0,0,0]);
 let IS27 = browser.currentScene.createNode("IS");
 let connect28 = browser.currentScene.createNode("connect");
 connect28.nodeField = "translation";
@@ -241,7 +243,7 @@ let ProtoDeclare41 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ztranslation"></connect>
+<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="ztranslation"></connect>
 </IS>
 <ProtoInstance name="three"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
 <IS><connect nodeField="myShape" protoField="myShape"></connect>
@@ -294,6 +296,7 @@ ProtoDeclare41.protoInterface = ProtoInterface42;
 
 let ProtoBody49 = browser.currentScene.createNode("ProtoBody");
 let Transform50 = browser.currentScene.createNode("Transform");
+Transform50.translation = new SFVec3f(new float[0,0,0]);
 let IS51 = browser.currentScene.createNode("IS");
 let connect52 = browser.currentScene.createNode("connect");
 connect52.nodeField = "translation";
@@ -386,7 +389,7 @@ let ProtoDeclare65 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ttranslation"></connect>
+<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="ttranslation"></connect>
 </IS>
 <ProtoInstance name="nine"><fieldValue name="ztranslation" value="0 0 0"></fieldValue>
 <IS><connect nodeField="myShape" protoField="myShape"></connect>
@@ -439,6 +442,7 @@ ProtoDeclare65.protoInterface = ProtoInterface66;
 
 let ProtoBody73 = browser.currentScene.createNode("ProtoBody");
 let Transform74 = browser.currentScene.createNode("Transform");
+Transform74.translation = new SFVec3f(new float[0,0,0]);
 let IS75 = browser.currentScene.createNode("IS");
 let connect76 = browser.currentScene.createNode("connect");
 connect76.nodeField = "translation";

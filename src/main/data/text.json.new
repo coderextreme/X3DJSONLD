@@ -31,7 +31,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -130,7 +130,7 @@
                   ],
                   "#sourceText": [
                     "ecmascript:",
-                    "\t\t\t    var me = '\"1\" \"\"2\" \"\n3\"';"
+                    "\t\t\t    var me = '\"1\" \"\\\"2\" \"\n3\"';"
                   ]
                 }
               }

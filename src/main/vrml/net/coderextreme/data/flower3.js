@@ -3,6 +3,7 @@ let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE","ANY"]);
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
@@ -36,6 +37,7 @@ Shape7.appearance = Appearance8;
 let IndexedFaceSet10 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet10.convex = False;
 IndexedFaceSet10.DEF = "Orbit";
+IndexedFaceSet10.creaseAngle = 0;
 let Coordinate11 = browser.currentScene.createNode("Coordinate");
 Coordinate11.DEF = "OrbitCoordinates";
 IndexedFaceSet10.coord = Coordinate11;
@@ -51,29 +53,37 @@ browser.currentScene.children[4] = Transform6;
 let Script12 = browser.currentScene.createNode("Script");
 Script12.DEF = "OrbitScript";
 let field13 = browser.currentScene.createNode("field");
-field13.name = "set_fraction";
 field13.accessType = "inputOnly";
+field13.name = "set_fraction";
 field13.type = "SFFloat";
 Script12.field = new MFNode();
 
 Script12.field[0] = field13;
 
 let field14 = browser.currentScene.createNode("field");
-field14.name = "coordinates";
 field14.accessType = "outputOnly";
+field14.name = "coordinates";
 field14.type = "MFVec3f";
 Script12.field[1] = field14;
 
 let field15 = browser.currentScene.createNode("field");
-field15.name = "coordIndexes";
 field15.accessType = "outputOnly";
+field15.name = "coordIndexes";
 field15.type = "MFInt32";
 Script12.field[2] = field15;
 
-//<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>
+//
+//        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>
+//        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>
+//        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>
+//        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>
+//        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>
+//        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>
+//        <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>
+//	
 
 Script12.setSourceCode(`ecmascript:\n"+
-"\n"+
+"    \n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
 "var g = 5;\n"+

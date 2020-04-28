@@ -4,58 +4,58 @@ X3D0.setProfile("Interactive")
 X3D0.setVersion("3.1")
 head1 = x3d.head()
 meta2 = x3d.meta()
-meta2.setName("title")
 meta2.setContent("CameraShape.x3d")
+meta2.setName("title")
 
 head1.addMeta(meta2)
 meta3 = x3d.meta()
-meta3.setName("description")
 meta3.setContent("Simple video camera shape")
+meta3.setName("description")
 
 head1.addMeta(meta3)
 meta4 = x3d.meta()
-meta4.setName("creator")
 meta4.setContent("Jeff Weekley and Don Brutzman")
+meta4.setName("creator")
 
 head1.addMeta(meta4)
 meta5 = x3d.meta()
-meta5.setName("created")
 meta5.setContent("2 June 2009")
+meta5.setName("created")
 
 head1.addMeta(meta5)
 meta6 = x3d.meta()
-meta6.setName("translated")
 meta6.setContent("2 June 2009")
+meta6.setName("translated")
 
 head1.addMeta(meta6)
 meta7 = x3d.meta()
-meta7.setName("modified")
 meta7.setContent("13 January 2014")
+meta7.setName("modified")
 
 head1.addMeta(meta7)
 meta8 = x3d.meta()
-meta8.setName("reference")
 meta8.setContent("CameraExamples.x3d")
+meta8.setName("reference")
 
 head1.addMeta(meta8)
 meta9 = x3d.meta()
-meta9.setName("identifier")
 meta9.setContent("http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d")
+meta9.setName("identifier")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()
-meta10.setName("generator")
 meta10.setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")
+meta10.setName("generator")
 
 head1.addMeta(meta10)
 meta11 = x3d.meta()
-meta11.setName("generator")
 meta11.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta11.setName("generator")
 
 head1.addMeta(meta11)
 meta12 = x3d.meta()
-meta12.setName("license")
 meta12.setContent("../../license.html")
+meta12.setName("license")
 
 head1.addMeta(meta12)
 
@@ -109,7 +109,7 @@ Material24.setAmbientIntensity(0.25)
 Material24.setDiffuseColor([0.372322,0.371574,0.373173])
 Material24.setShininess(0.02)
 Material24.setSpecularColor([0.890909,0.887832,0.890909])
-#Universal Media Library: Metals 30
+# Universal Media Library: Metals 30 
 
 Appearance23.setMaterial(Material24)
 

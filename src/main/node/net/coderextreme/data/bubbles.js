@@ -79,7 +79,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "                        position_changed = new MFVec3f();\n"+
 "                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);\n"+
 "                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);\n"+
-"\n"+
+"                        \n"+
 "                        orientation_changed = new MFRotation();\n"+
 "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
 "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+

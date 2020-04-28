@@ -6,8 +6,8 @@
     "head": {
       "component": [
         {
-          "@name": "Geospatial",
-          "@level": 1
+          "@level": 1,
+          "@name": "Geospatial"
         }
       ],
       "meta": [
@@ -33,7 +33,7 @@
         },
         {
           "@name": "translated",
-          "@content": "22 April 2020"
+          "@content": "26 April 2020"
         },
         {
           "@name": "generator",
@@ -67,7 +67,8 @@
               0,
               0
             ],
-            "@description": "Tour Views"
+            "@description": "Tour Views",
+            "@retainUserOffsets": false
           }
         },
         {
