@@ -215,11 +215,11 @@ Additional references of interest:
 				<xsl:text disable-output-escaping="yes">ArrayList&lt;Float&gt;</xsl:text>
 			</xsl:when>
 			<xsl:when test="contains( $x3dType,'FVec2f') or contains( $x3dType,'FVec3f') or (@baseType='bboxSizeType') or contains( $x3dType,'FVec4f') or contains( $x3dType,'FRotation') or contains( $x3dType,'FColor') or
-                            contains($baseType,'FVec2f') or contains($baseType,'FVec3f') or ($baseType='bboxSizeType') or contains($baseType,'FVec4f') or contains($baseType,'FRotation') or contains($baseType,'FColor')">
+                                        contains($baseType,'FVec2f') or contains($baseType,'FVec3f') or ($baseType='bboxSizeType') or contains($baseType,'FVec4f') or contains($baseType,'FRotation') or contains($baseType,'FColor')">
 				<xsl:text>float[]</xsl:text>
 			</xsl:when>
 			<xsl:when test="( $x3dType = 'SFMatrix3f') or ( $x3dType = 'MFMatrix3f') or ( $x3dType = 'SFMatrix4f') or ($ x3dType = 'MFMatrix4f') or
-                            ($baseType = 'SFMatrix3f') or ($baseType = 'MFMatrix3f') or ($baseType = 'SFMatrix4f') or ($baseType = 'MFMatrix4f')">
+                                        ($baseType = 'SFMatrix3f') or ($baseType = 'MFMatrix3f') or ($baseType = 'SFMatrix4f') or ($baseType = 'MFMatrix4f')">
 				<xsl:text>float[]</xsl:text>
 			</xsl:when>
 			<xsl:when test="($x3dType = 'SFDouble') or ($x3dType = 'SFTime') or ($baseType = 'SFDouble') or ($baseType = 'SFTime')">
@@ -232,11 +232,11 @@ Additional references of interest:
 				<xsl:text disable-output-escaping="yes">ArrayList&lt;Double&gt;</xsl:text>
 			</xsl:when>
 			<xsl:when test="contains( $x3dType,'FVec2d') or contains( $x3dType,'FVec3d') or contains( $x3dType,'FVec4d') or
-                            contains($baseType,'FVec2d') or contains($baseType,'FVec3d') or contains($baseType,'FVec4d')">
+                                        contains($baseType,'FVec2d') or contains($baseType,'FVec3d') or contains($baseType,'FVec4d')">
 				<xsl:text>double[]</xsl:text>
 			</xsl:when>
 			<xsl:when test="( $x3dType = 'SFMatrix3d') or ( $x3dType = 'MFMatrix3d') or ( $x3dType = 'SFMatrix4d') or ( $x3dType = 'MFMatrix4d') or
-                            ($baseType = 'SFMatrix3d') or ($baseType = 'MFMatrix3d') or ($baseType = 'SFMatrix4d') or ($baseType = 'MFMatrix4d')">
+                                        ($baseType = 'SFMatrix3d') or ($baseType = 'MFMatrix3d') or ($baseType = 'SFMatrix4d') or ($baseType = 'MFMatrix4d')">
 				<xsl:text>double[]</xsl:text>
 			</xsl:when>
 			<xsl:when test="(@name = 'head') or (@name = 'Scene') or (@name = 'IS') or (@name = 'ProtoInterface') or (@name = 'ProtoBody')">
@@ -529,7 +529,7 @@ Additional references of interest:
     <!-- ===================================================== -->
     
     <xsl:template name="tupleSize">
-		<xsl:param name="x3dType"/>
+	<xsl:param name="x3dType"/>
 		
         <xsl:variable name="tupleSizeComputed">
             <xsl:choose>
@@ -1520,7 +1520,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				</xsl:otherwise>
 			</xsl:choose>
 			
-			<xsl:text>    */</xsl:text><!-- end javadoc -->
+			<xsl:text> */</xsl:text><!-- end javadoc -->
 			<xsl:text>&#10;</xsl:text>
 			
 			<!-- ********************************************************************************** -->
@@ -1666,7 +1666,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                           not(starts-with($name, 'X3DConcrete')) and not($isUtilityClass = 'true') and
                           not($name = 'X3DLoaderDOM') and not($name = 'BlenderLauncher') and not($name = 'MeshLabLauncher') and not($name = 'CommandLine') and not($name = 'ConfigurationProperties') and not(($isUtilityClass = 'true')) and not(starts-with($name,'X3DUnifiedObjectModel'))">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	/** required by internal interface, empty list provided since no children array present in this class */
+    /** required by internal interface, empty list provided since no children array present in this class */
     private ArrayList<String> commentsList; 
 ]]></xsl:text>
 			</xsl:if>
@@ -1702,7 +1702,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 								<xsl:if test="position()=1">
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>	// Member value declarations are encapsulated and private, using preferred Java types for concretes library</xsl:text>
+									<xsl:text>    // Member value declarations are encapsulated and private, using preferred Java types for concretes library</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 								</xsl:if>
 								<xsl:variable name="isX3dStatement">
@@ -1774,7 +1774,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                             </xsl:if>
                                         </xsl:otherwise>
                                     </xsl:choose>
-								</xsl:variable>
+                                </xsl:variable>
                                 <xsl:variable name="javaReferenceType"><!-- base type of ArrayList -->
                                     <xsl:choose>
                                         <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
@@ -1794,10 +1794,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                         <xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
                                     </xsl:call-template>
                                 </xsl:variable>
-								<xsl:if test="not(preceding-sibling::*[@name=$memberObjectName]) and not(preceding-sibling::*[@name=concat('set',$memberObjectName)]) and not(preceding-sibling::*[@name=concat('set_',$memberObjectName)]) and not(preceding-sibling::*[@name=concat($memberObjectName,'_changed')])">
-									<!-- debug -->
-									<xsl:text>&#10;</xsl:text>
-                                    <xsl:text> /* </xsl:text>
+                                <xsl:if test="not(preceding-sibling::*[@name=$memberObjectName]) and not(preceding-sibling::*[@name=concat('set',$memberObjectName)]) and not(preceding-sibling::*[@name=concat('set_',$memberObjectName)]) and not(preceding-sibling::*[@name=concat($memberObjectName,'_changed')])">
+                                    <!-- debug -->
+                                    <xsl:text>&#10;</xsl:text>
+                                    <xsl:text>    /* </xsl:text>
                                     <xsl:text>@name=</xsl:text>
                                     <xsl:value-of select="@name"/>
                                     <xsl:text>, @type=</xsl:text>
@@ -1816,8 +1816,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                     <xsl:value-of select="@acceptableNodeTypes"/>
                                     <xsl:text> */ </xsl:text>
                                     
-									<xsl:text>&#10;</xsl:text>
-                                    <xsl:text>	private </xsl:text>
+                                    <xsl:text>&#10;</xsl:text>
+                                    <xsl:text>    private </xsl:text>
                                     <xsl:choose>
                                         <xsl:when test="contains($javaType,'ArrayList')">
                                             <xsl:text disable-output-escaping="yes"><![CDATA[ArrayList<]]></xsl:text>
@@ -2229,6 +2229,15 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
 									<xsl:value-of select="$fieldName"/>
 									<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+									<xsl:if test="(string-length(../@simpleType) > 0)">
+										<xsl:text> with X3DUOM simpleType </xsl:text>
+										<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
+										<xsl:value-of select="../@simpleType"/>
+										<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
+									</xsl:if>
+									<xsl:if test="(string-length(../@simpleType) > 0) and (string-length(../@baseType) > 0)">
+                                                                            <xsl:text> and </xsl:text>
+									</xsl:if>
 									<xsl:if test="(string-length(../@baseType) > 0)">
 										<xsl:text> with X3DUOM baseType </xsl:text>
 										<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
@@ -2284,10 +2293,23 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									</xsl:if>
 									<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 									<xsl:text> (XML syntax).</xsl:text>
-									<xsl:if test="(string-length(../@baseType) > 0) and (ends-with(../@baseType,'Choices') or ends-with(../@baseType,'Values'))">
+									<xsl:if test="(string-length(../@simpleType) > 0) and (ends-with(../@simpleType,'Choices') or ends-with(../@simpleType,'Values'))">
 										<xsl:text>&#10;</xsl:text>
-										<xsl:text>	 * @see #</xsl:text>
+                                                                                <xsl:text disable-output-escaping="yes"><![CDATA[	 * @see <a href="http://web3d.org/specifications/X3dSchemaDocumentation4.0/x3d-4.0_]]></xsl:text> 
+										<xsl:value-of select="../@simpleType"/>
+										<xsl:text>.html</xsl:text>
+                                                                                <xsl:text disable-output-escaping="yes"><![CDATA[">XML Schema: ]]></xsl:text> 
+										<xsl:value-of select="../@simpleType"/>
+                                                                                <xsl:text disable-output-escaping="yes"><![CDATA[</a>]]></xsl:text> 
+									</xsl:if>
+									<xsl:if test="(string-length(../@baseType) > 0) and (ends-with(../@baseType,'Choices') or ends-with(../@baseType,'Values'))">
+                                                                                <xsl:text disable-output-escaping="yes"><![CDATA[ * @see <a href="http://web3d.org/specifications/X3dSchemaDocumentation4.0/x3d-4.0_]]></xsl:text> 
 										<xsl:value-of select="../@baseType"/>
+										<xsl:text>.html</xsl:text>
+                                                                                <xsl:text disable-output-escaping="yes"><![CDATA[>>XML Schema: ]]></xsl:text> 
+										<xsl:value-of select="../@baseType"/>
+                                                                                <xsl:text disable-output-escaping="yes"><![CDATA[</a>]]></xsl:text> 
+										<xsl:text>&#10;</xsl:text>
 									</xsl:if>
 									<xsl:if test="(string-length(normalize-space(@documentation)) > 0)">
 										<xsl:text>&#10;</xsl:text>
@@ -2382,20 +2404,20 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:if test="(string-length(@parent) > 0)">
 										<xsl:variable name="parentJavadocObject">
 											<xsl:choose>
-												<xsl:when test="(../@baseType = 'hanimJointNameValues')">
+												<xsl:when test="(../@simpleType = 'hanimJointNameValues')">
 													<!-- joint parents are joints -->
 													<xsl:text>HAnimJointObject</xsl:text>
 												</xsl:when>
-												<xsl:when test="(../@baseType = 'hanimSegmentNameValues')">
+												<xsl:when test="(../@simpleType = 'hanimSegmentNameValues')">
 													<!-- segment parents are joints -->
 													<xsl:text>HAnimJointObject</xsl:text>
 												</xsl:when>
-												<xsl:when test="(../@baseType = 'hanimFeaturePointNameValues')">
+												<xsl:when test="(../@simpleType = 'hanimFeaturePointNameValues')">
 													<!-- site parents are segments -->
 													<xsl:text>HAnimSegmentObject</xsl:text>
 												</xsl:when>
 												<xsl:otherwise>
-													<xsl:value-of select="../@baseType"/>
+													<xsl:value-of select="../@simpleType"/>
 													<xsl:message>
 														<xsl:text>*** javadoc generation error, unrecognized enumeration constant baseType=</xsl:text>
 														<xsl:value-of select="../@baseType"/>
@@ -2484,7 +2506,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								</xsl:if>
 								<xsl:for-each select="enumeration[(string-length(@index) > 0)]">
 									<xsl:variable name="enumerationName" select="@value"/>
-									<xsl:variable name="typeName"        select="substring-before(../@baseType,'Values')"/>
+                                                                        <xsl:variable name="typeName">
+                                                                            <xsl:choose>
+                                                                                <xsl:when test="(string-length(../@simpleType) > 0)">
+                                                                                     <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
+                                                                                </xsl:when>
+                                                                                <xsl:when test="(string-length(../@baseType) > 0)">
+                                                                                     <xsl:value-of select="substring-before(../@baseType,'Values')"/>
+                                                                                </xsl:when>
+                                                                            </xsl:choose>
+                                                                        </xsl:variable>
 									<xsl:variable name="suffixName">
 										<xsl:value-of select="upper-case(substring($typeName,1,1))"/>
 										<xsl:value-of select="substring($typeName,2)"/>
@@ -2527,7 +2558,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								
 								<xsl:for-each select="enumeration[(string-length(@loa) > 0)]">
 									<xsl:variable name="enumerationName" select="@value"/>
-									<xsl:variable name="typeName"        select="substring-before(../@baseType,'Values')"/>
+                                                                        <xsl:variable name="typeName">
+                                                                            <xsl:choose>
+                                                                                <xsl:when test="(string-length(../@simpleType) > 0)">
+                                                                                     <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
+                                                                                </xsl:when>
+                                                                                <xsl:when test="(string-length(../@baseType) > 0)">
+                                                                                     <xsl:value-of select="substring-before(../@baseType,'Values')"/>
+                                                                                </xsl:when>
+                                                                            </xsl:choose>
+                                                                        </xsl:variable>
 									<xsl:variable name="suffixName">
 										<xsl:value-of select="upper-case(substring($typeName,1,1))"/>
 										<xsl:value-of select="substring($typeName,2)"/>
@@ -2570,7 +2610,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 								<xsl:for-each select="enumeration[(string-length(@alias) > 0)]">
 									<xsl:variable name="enumerationName" select="@value"/>
-									<xsl:variable name="typeName"        select="substring-before(../@baseType,'Values')"/>
+                                                                        <xsl:variable name="typeName">
+                                                                            <xsl:choose>
+                                                                                <xsl:when test="(string-length(../@simpleType) > 0)">
+                                                                                     <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
+                                                                                </xsl:when>
+                                                                                <xsl:when test="(string-length(../@baseType) > 0)">
+                                                                                     <xsl:value-of select="substring-before(../@baseType,'Values')"/>
+                                                                                </xsl:when>
+                                                                            </xsl:choose>
+                                                                        </xsl:variable>
 									<xsl:variable name="suffixName">
 										<xsl:value-of select="upper-case(substring($typeName,1,1))"/>
 										<xsl:value-of select="substring($typeName,2)"/>
@@ -2613,7 +2662,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 								<xsl:for-each select="enumeration[(string-length(@parent) > 0)]">
 									<xsl:variable name="enumerationName" select="@value"/>
-									<xsl:variable name="typeName"        select="substring-before(../@baseType,'Values')"/>
+                                                                        <xsl:variable name="typeName">
+                                                                            <xsl:choose>
+                                                                                <xsl:when test="(string-length(../@simpleType) > 0)">
+                                                                                     <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
+                                                                                </xsl:when>
+                                                                                <xsl:when test="(string-length(../@baseType) > 0)">
+                                                                                     <xsl:value-of select="substring-before(../@baseType,'Values')"/>
+                                                                                </xsl:when>
+                                                                            </xsl:choose>
+                                                                        </xsl:variable>
 									<xsl:variable name="suffixName">
 										<xsl:value-of select="upper-case(substring($typeName,1,1))"/>
 										<xsl:value-of select="substring($typeName,2)"/>

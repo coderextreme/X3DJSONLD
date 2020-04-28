@@ -127,16 +127,20 @@ sys.exit()
         <xsl:choose>
             <xsl:when test="($insertPackagePrefix = 'true')">
                 <xsl:text>
-if         x3d.metaDiagnostics(newModel): # built-in utility method in X3D class
-    print (x3d.metaDiagnostics(newModel))</xsl:text>
+if        x3d.metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(x3d.metaDiagnostics(newModel))</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>
-if         metaDiagnostics(newModel): # built-in utility method in X3D class
-    print (metaDiagnostics(newModel))</xsl:text>
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
         <xsl:text>
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
 print ("python x3d.py load successful</xsl:text>
         <xsl:if test="(string-length($modelFileName) > 0)">
             <xsl:text> for </xsl:text>

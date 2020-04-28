@@ -28,7 +28,7 @@
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix xs:     <http://www.w3.org/2001/XMLSchema#> .
 ]]></xsl:text>
 
 <!-- Additional namespaces, as yet unused:
@@ -130,6 +130,12 @@
         <xsl:text>&#10;</xsl:text>
         <xsl:text>###############################################
 
+# SimpleTypeEnumerations
+
+</xsl:text>
+        <xsl:apply-templates select="//SimpleTypeEnumerations/*"/>
+        <xsl:text>###############################################
+
 # AbstractNodeTypes
 
 </xsl:text>
@@ -199,6 +205,94 @@
         
         <xsl:text> .</xsl:text>
         <xsl:text>&#10;</xsl:text>
+        
+    </xsl:template>
+
+    <!-- ===================================================== -->
+    
+    <xsl:template match="SimpleType"> <!-- rule to process each element -->
+    
+        <!-- this element has ancestor::SimpleTypeEnumerations -->
+        <xsl:variable name="simpleTypeName" select="@name"/>
+        <xsl:variable name="fieldName">
+            <xsl:choose>
+                <xsl:when test="ends-with($simpleTypeName,'Choices')">
+                    <xsl:value-of select="substring-before($simpleTypeName,'Choices')"/>
+                </xsl:when>
+                <xsl:when test="ends-with($simpleTypeName,'Values')">
+                    <xsl:value-of select="substring-before($simpleTypeName,'Values')"/>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:if test="not(starts-with($simpleTypeName,'containerFieldChoices')) and not(ends-with($simpleTypeName,'AccessTypes'))">
+            <!-- skip all containerFieldChoices, only pertinent to XML encoding -->
+            <!-- skip all *AccessTypes, only used for internal XML Schema checks -->
+            <xsl:text>:</xsl:text>
+            <xsl:value-of select="$simpleTypeName"/>
+            <xsl:text> rdf:type rdfs:Datatype ;</xsl:text>
+            <xsl:text>&#10;</xsl:text>
+            <xsl:text>  rdfs:label </xsl:text>
+            <xsl:text>"</xsl:text>
+            <xsl:value-of select="$simpleTypeName"/>
+            <xsl:text>"</xsl:text>
+            <xsl:if test="(string-length(@appinfo) > 0)">
+                <xsl:text> ;</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text> </xsl:text>
+                <xsl:text> dc:description </xsl:text>
+                <xsl:text>"</xsl:text>
+                <xsl:value-of select="translate(substring-before(@appinfo, '.'),'&quot;','')"/>
+                <xsl:text>"</xsl:text>
+            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="(string-length(@baseType) > 0)">
+                    <xsl:text> ;</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:text> </xsl:text>
+                    <xsl:text> rdfs:range </xsl:text>
+                    <xsl:if test="not(starts-with(@baseType,'xs:'))">
+                        <xsl:text>:</xsl:text>
+                    </xsl:if>
+                    <xsl:value-of select="@baseType"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:message>
+                        <xsl:text>*** error, no baseType found in X3DUOM for SimpleType </xsl:text>
+                        <xsl:value-of select="$simpleTypeName"/>
+                    </xsl:message>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:choose>
+                <xsl:when test="(count(enumeration) > 0)">
+                    <xsl:text> ;</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:text> </xsl:text>
+                    <xsl:text> rdfs:domain [ owl:unionOf (</xsl:text>
+                    <xsl:for-each select="enumeration">
+                        <!-- value may include "quoted" "enumeration" "values" -->
+                        <xsl:text> '</xsl:text>
+                        <xsl:value-of select="@value"/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:for-each>
+                    <xsl:text> ) ]</xsl:text>
+                    <xsl:text> .</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:for-each select="enumeration[string-length(@appinfo) > 0]">
+                        <xsl:text># </xsl:text>
+                        <xsl:value-of select="@value"/>
+                        <xsl:text> "</xsl:text>
+                        <xsl:value-of select="@appinfo"/>
+                        <xsl:text>"</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:for-each>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text> .</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:text>&#10;</xsl:text>
+        </xsl:if>
         
     </xsl:template>
 
@@ -332,6 +426,10 @@
                         <xsl:text>, default=</xsl:text>
                         <xsl:value-of select="@default"/>
                     </xsl:if>
+                    <xsl:if test="(string-length(@simpleType) > 0)">
+                        <xsl:text>, simpleType=</xsl:text>
+                        <xsl:value-of select="@simpleType"/>
+                    </xsl:if>
                     <xsl:if test="(string-length(@baseType) > 0)">
                         <xsl:text>, baseType=</xsl:text>
                         <xsl:value-of select="@baseType"/>
@@ -395,6 +493,14 @@
                         <xsl:when test="contains(@type, 'Node')">
                             <xsl:text>:</xsl:text><!-- ObjectProperty is local namespace, not x3d: namespace -->
                             <xsl:value-of select="@acceptableNodeTypes"/>
+                        </xsl:when>
+                        <xsl:when test="(string-length(@simpleType) > 0)">
+                            <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
+                            <xsl:value-of select="@simpleType"/>
+                        </xsl:when>
+                        <!-- owl supports xs: XML Schema types -->
+                        <xsl:when test="starts-with(@baseType,'xs:')">
+                            <xsl:value-of select="@baseType"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
@@ -498,6 +604,18 @@
                         <xsl:when test="contains(@type, 'Node')">
                             <xsl:text>:</xsl:text><!-- ObjectProperty is local namespace, not x3d: namespace -->
                             <xsl:value-of select="@acceptableNodeTypes"/>
+                        </xsl:when>
+                        <xsl:when test="(string-length(@simpleType) > 0)">
+                            <xsl:if test="not(starts-with(@simpleType,'xs:'))">
+                                 <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
+                            </xsl:if>
+                            <xsl:value-of select="@simpleType"/>
+                        </xsl:when>
+                        <xsl:when test="(string-length(@baseType) > 0)">
+                            <xsl:if test="not(starts-with(@baseType,'xs:'))">
+                                 <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
+                            </xsl:if>
+                            <xsl:value-of select="@baseType"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
