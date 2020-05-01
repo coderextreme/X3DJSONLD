@@ -57,7 +57,6 @@ function ProcessJSON(json, file) {
 		var route = routecode.join('\n');
 		var loop = loopItems.join('\n');
 		var totalcode = code+"\n"+route+"\n"+loop;
-		// console.log(totalcode);
 		try {
 			eval(totalcode);
 			fs.writeFileSync(outfile+".good.js", totalcode);
