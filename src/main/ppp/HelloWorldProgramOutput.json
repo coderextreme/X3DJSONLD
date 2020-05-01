@@ -1,38 +1,32 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "-children": [
       {
-        "#comment": "x3dVersionComparisonTest for this model: supportsX3dVersion(X3DObject.VERSION_3_0)=true"
+        "#comment": " x3dVersionComparisonTest for this model: supportsX3dVersion(X3DObject.VERSION_3_0)=true "
       }
     ],
     "head": {
       "-children": [
         {
-          "#comment": "comment #1"
+          "#comment": " comment #1 "
         },
         {
-          "#comment": "comment #2"
+          "#comment": " comment #2 "
         },
         {
-          "#comment": "comment #3"
+          "#comment": " comment #3 "
         },
         {
-          "#comment": "comment #4"
+          "#comment": " comment #4 "
         }
       ],
       "component": [
         {
           "@name": "Navigation",
           "@level": 3
-        },
-        {
-          "@name": "Layering",
-          "@level": 1
         },
         {
           "@name": "Shaders",
@@ -48,6 +42,14 @@
         },
         {
           "@name": "H-Anim",
+          "@level": 1
+        },
+        {
+          "@name": "Grouping",
+          "@level": 1
+        },
+        {
+          "@name": "Layering",
           "@level": 1
         }
       ],
@@ -70,96 +72,96 @@
       ],
       "meta": [
         {
-          "@name": "title",
-          "@content": "HelloWorldProgramOutput.x3d"
+          "@content": "HelloWorldProgramOutput.x3d",
+          "@name": "title"
         },
         {
-          "@name": "info",
-          "@content": "continued development and testing in progress"
+          "@content": "continued development and testing in progress",
+          "@name": "info"
         },
         {
-          "@name": "description",
-          "@content": "Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"
+          "@content": "Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)",
+          "@name": "description"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.web3d.org/specifications/java/X3DJSAIL.html"
+          "@content": "https://www.web3d.org/specifications/java/X3DJSAIL.html",
+          "@name": "reference"
         },
         {
-          "@name": "generator",
-          "@content": "HelloWorldProgramOutput.java"
+          "@content": "HelloWorldProgramOutput.java",
+          "@name": "generator"
         },
         {
-          "@name": "created",
-          "@content": "6 September 2016"
+          "@content": "6 September 2016",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "19 June 2019"
+          "@content": "4 April 2020",
+          "@name": "modified"
         },
         {
-          "@name": "generator",
-          "@content": "X3D Java Scene Access Interface Library (X3DJSAIL)"
+          "@content": "X3D Java Scene Access Interface Library (X3DJSAIL)",
+          "@name": "generator"
         },
         {
-          "@name": "generator",
-          "@content": "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
+          "@content": "https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java",
+          "@name": "generator"
         },
         {
-          "@name": "generator",
-          "@content": "Netbeans http://www.netbeans.org"
+          "@content": "Netbeans http://www.netbeans.org",
+          "@name": "generator"
         },
         {
-          "@name": "creator",
-          "@content": "Don Brutzman"
+          "@content": "Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "reference",
-          "@content": "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"
+          "@content": "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"
+          "@content": "Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "HelloWorldProgramOutput.txt"
+          "@content": "HelloWorldProgramOutput.txt",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "HelloWorldProgramOutput.x3dv"
+          "@content": "HelloWorldProgramOutput.x3dv",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "HelloWorldProgramOutput.wrl"
+          "@content": "HelloWorldProgramOutput.wrl",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "HelloWorldProgramOutput.html"
+          "@content": "HelloWorldProgramOutput.html",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+          "@content": "https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d",
+          "@name": "reference"
         },
         {
-          "@name": "identifier",
-          "@content": "http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+          "@content": "https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "19 April 2020"
+          "@content": "1 May 2020"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -197,6 +199,14 @@
         },
         {
           "NavigationInfo": {
+            "@avatarSize": [
+              0.25,
+              1.6,
+              0.75
+            ],
+            "@transitionType": [
+              "LINEAR"
+            ],
             "@type": [
               "EXAMINE",
               "FLY",
@@ -221,20 +231,6 @@
           }
         },
         {
-          "MetadataString": {
-            "@name": "test",
-            "@DEF": "scene.addChildMetadata",
-            "@value": [
-              "Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"
-            ]
-          }
-        },
-        {
-          "LayerSet": {
-            "@DEF": "scene.addChildLayerSetTest"
-          }
-        },
-        {
           "Transform": {
             "@DEF": "LogoGeometryTransform",
             "@translation": [
@@ -248,7 +244,7 @@
                   "@description": "select for X3D Java SAI Library (X3DJSAIL) description",
                   "@url": [
                     "../X3DJSAIL.html",
-                    "http://www.web3d.org/specifications/java/X3DJSAIL.html"
+                    "https://www.web3d.org/specifications/java/X3DJSAIL.html"
                   ],
                   "-children": [
                     {
@@ -276,7 +272,7 @@
                               "ImageTexture": {
                                 "@url": [
                                   "images/X3dJavaSceneAccessInterfaceSaiLibrary.png",
-                                  "http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"
+                                  "https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"
                                 ]
                               }
                             }
@@ -324,7 +320,7 @@
                 ],
                 "-children": [
                   {
-                    "#comment": "Coordinate 3-tuple point count: 6"
+                    "#comment": " Coordinate 3-tuple point count: 6 "
                   }
                 ],
                 "-coord": {
@@ -440,10 +436,10 @@
                       ],
                       "-children": [
                         {
-                          "#comment": "Comment example A, plain quotation marks: He said, \"Immel did it!\""
+                          "#comment": " Comment example A, plain quotation marks: He said, \"Immel did it!\" "
                         },
                         {
-                          "#comment": "Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
+                          "#comment": " Comment example B, XML character entities: He said, &quot;Immel did it!&quot; "
                         }
                       ],
                       "-metadata": {
@@ -471,6 +467,9 @@
                       },
                       "-fontStyle": {
                         "FontStyle": {
+                          "@family": [
+                            "SERIF"
+                          ],
                           "@justify": [
                             "MIDDLE",
                             "MIDDLE"
@@ -485,7 +484,7 @@
                 "Collision": {
                   "-children": [
                     {
-                      "#comment": "test containerField='proxy'"
+                      "#comment": " test containerField='proxy' "
                     }
                   ],
                   "-proxy": {
@@ -493,16 +492,16 @@
                       "@DEF": "ProxyShape",
                       "-children": [
                         {
-                          "#comment": "alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"
+                          "#comment": " alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' "
                         },
                         {
-                          "#comment": "alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'"
+                          "#comment": " alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"' "
                         },
                         {
-                          "#comment": "alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"
+                          "#comment": " alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"Immel did it!\\\"\"}) "
                         },
                         {
-                          "#comment": "reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
+                          "#comment": " reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html "
                         }
                       ],
                       "-geometry": {
@@ -510,7 +509,8 @@
                           "@string": [
                             "One, Two, Text",
                             "",
-                            "He said, \"Immel did it!\" \"\""
+                            "He said, \"Immel did it!",
+                            "\""
                           ]
                         }
                       }
@@ -519,19 +519,19 @@
                 }
               },
               {
-                "#comment": "It's a beautiful world"
+                "#comment": " It's a beautiful world "
               },
               {
-                "#comment": "... for you!"
+                "#comment": " ... for you! "
               },
               {
-                "#comment": "https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song)"
+                "#comment": " https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) "
               }
             ]
           }
         },
         {
-          "#comment": "repeatedly spin 180 degrees as a readable special effect"
+          "#comment": " repeatedly spin 180 degrees as a readable special effect "
         },
         {
           "OrientationInterpolator": {
@@ -606,16 +606,13 @@
                   ],
                   "#sourceText": [
                     "",
-                    "",
                     "ecmascript:",
                     "",
                     "function colorInput (eventValue) // Example source code",
                     "{",
                     "   colorsOutput = new MFColor(eventValue); // assigning value sends output event",
                     "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');",
-                    "}",
-                    "",
-                    ""
+                    "}"
                   ]
                 }
               },
@@ -640,7 +637,7 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "AZURE to INDIGO and back again"
+                      "#comment": " AZURE to INDIGO and back again "
                     }
                   ]
                 }
@@ -682,7 +679,7 @@
         {},
         {},
         {
-          "#comment": "Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place"
+          "#comment": " Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place "
         },
         {
           "Shape": {
@@ -692,11 +689,11 @@
                 "@DEF": "TestAppearance1",
                 "-children": [
                   {
-                    "#comment": "ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java"
+                    "#comment": " ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java "
                   }
                 ],
                 "-material": {
-                  "#comment": "Initial node of ProtoBody determines prototype node type"
+                  "#comment": " Initial node of ProtoBody determines prototype node type "
                 }
               }
             },
@@ -715,7 +712,7 @@
                 "@DEF": "TestAppearance2",
                 "-children": [
                   {
-                    "#comment": "ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java"
+                    "#comment": " ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java "
                   }
                 ],
                 "-material": {}
@@ -737,7 +734,7 @@
                 "@DEF": "TestAppearance3",
                 "-children": [
                   {
-                    "#comment": "ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE."
+                    "#comment": " ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. "
                   }
                 ],
                 "-material": {
@@ -760,7 +757,7 @@
             "@DEF": "inlineSceneDef",
             "@url": [
               "someOtherScene.x3d",
-              "http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"
+              "https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"
             ]
           }
         },
@@ -779,7 +776,7 @@
         },
         {},
         {
-          "#comment": "Test success: declarative statement createDeclarativeShapeTests()"
+          "#comment": " Test success: declarative statement createDeclarativeShapeTests() "
         },
         {
           "Group": {
@@ -789,8 +786,8 @@
                 "Shape": {
                   "-metadata": {
                     "MetadataString": {
-                      "@name": "findThisNameValue",
                       "@DEF": "FindableMetadataStringTest",
+                      "@name": "findThisNameValue",
                       "@value": [
                         "test case"
                       ]
@@ -801,7 +798,7 @@
                       "@DEF": "DeclarativeAppearanceExample",
                       "-children": [
                         {
-                          "#comment": "DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance"
+                          "#comment": " DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance "
                         }
                       ],
                       "-material": {
@@ -839,7 +836,7 @@
                 }
               },
               {
-                "#comment": "Test success: declarativeGroup.addChild() singleton pipeline method"
+                "#comment": " Test success: declarativeGroup.addChild() singleton pipeline method "
               },
               {
                 "Switch": {
@@ -849,7 +846,7 @@
                       "Group": {
                         "-children": [
                           {
-                            "#comment": "Only first node (the node type) is renderable, others are along for the ride"
+                            "#comment": " Only first node (the node type) is renderable, others are along for the ride "
                           },
                           {
                             "Script": {
@@ -884,7 +881,6 @@
                               ],
                               "#sourceText": [
                                 "",
-                                "",
                                 "ecmascript:",
                                 "function initialize ()",
                                 "{",
@@ -900,16 +896,14 @@
                                 "    red   = newColor.r;",
                                 "    green = newColor.g;",
                                 "    blue  = newColor.b;",
-                                "",
+                                "    ",
                                 "    // note different modulation rates for each color component, % is modulus operator",
                                 "    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);",
                                 "\tif (enabled)",
                                 "\t{",
                                 "\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');",
                                 "\t}",
-                                "}",
-                                "",
-                                ""
+                                "}"
                               ]
                             }
                           }
@@ -923,50 +917,50 @@
           }
         },
         {
-          "#comment": "Test success: declarative statement addChild()"
+          "#comment": " Test success: declarative statement addChild() "
         },
         {
-          "#comment": "Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>"
+          "#comment": " Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance> "
         },
         {
-          "#comment": "Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/>"
+          "#comment": " Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/> "
         },
         {
-          "#comment": "Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found"
+          "#comment": " Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found "
         },
         {
-          "#comment": "Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found"
+          "#comment": " Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found "
         },
         {
-          "#comment": "Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found"
+          "#comment": " Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found "
         },
         {
           "Group": {
             "@DEF": "TestFieldObjectsGroup",
             "-children": [
               {
-                "#comment": "testFieldObjects() results"
+                "#comment": " testFieldObjects() results "
               },
               {
-                "#comment": "SFBool default=true, true=true, false=false, negate()=true"
+                "#comment": " SFBool default=true, true=true, false=false, negate()=true "
               },
               {
-                "#comment": "MFBool default=, initial=true false true, negate()=false true false"
+                "#comment": " MFBool default=, initial=true false true, negate()=false true false "
               },
               {
-                "#comment": "SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0"
+                "#comment": " SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0 "
               },
               {
-                "#comment": "MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7"
+                "#comment": " MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 "
               },
               {
-                "#comment": "... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear="
+                "#comment": " ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= "
               },
               {
-                "#comment": "SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true"
+                "#comment": " SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true "
               },
               {
-                "#comment": "regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value"
+                "#comment": " regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value "
               }
             ]
           }
@@ -980,7 +974,7 @@
             ],
             "-children": [
               {
-                "#comment": "set sound-ellipsoid location height at 1.6m to match typical avatar height"
+                "#comment": " set sound-ellipsoid location height at 1.6m to match typical avatar height "
               }
             ],
             "-source": {
@@ -988,11 +982,11 @@
                 "@description": "chimes",
                 "@url": [
                   "chimes.wav",
-                  "http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"
+                  "https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"
                 ],
                 "-children": [
                   {
-                    "#comment": "Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
+                    "#comment": " Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d "
                   }
                 ]
               }
@@ -1008,7 +1002,7 @@
             ],
             "-children": [
               {
-                "#comment": "set sound-ellipsoid location height at 1.6m to match typical avatar height"
+                "#comment": " set sound-ellipsoid location height at 1.6m to match typical avatar height "
               }
             ],
             "-source": {
@@ -1016,14 +1010,14 @@
                 "@description": "mpgsys.mpg from ConformanceNist suite",
                 "@url": [
                   "mpgsys.mpg",
-                  "http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"
+                  "https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"
                 ],
                 "-children": [
                   {
-                    "#comment": "Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
+                    "#comment": " Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d "
                   },
                   {
-                    "#comment": "Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\""
+                    "#comment": " Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\" "
                   }
                 ]
               }
@@ -1031,32 +1025,32 @@
           }
         },
         {
-          "#comment": "Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"
+          "#comment": " Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true "
         },
         {
-          "#comment": "Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false"
+          "#comment": " Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false "
         },
         {
-          "#comment": "Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false"
+          "#comment": " Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false "
         },
         {
-          "#comment": "Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true"
+          "#comment": " Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true "
         },
         {
-          "#comment": "Test success: CommentsBlock.isNode()=false, testComments.isNode()=false"
+          "#comment": " Test success: CommentsBlock.isNode()=false, testComments.isNode()=false "
         },
         {
-          "#comment": "Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true"
+          "#comment": " Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true "
         },
         {
           "Shape": {
             "@DEF": "ExtrusionShape",
             "-children": [
               {
-                "#comment": "ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'"
+                "#comment": " ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' "
               },
               {
-                "#comment": "ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'"
+                "#comment": " ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]' "
               }
             ],
             "-appearance": {
@@ -1080,7 +1074,7 @@
           "Group": {
             "-children": [
               {
-                "#comment": "Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes"
+                "#comment": " Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes "
               },
               {},
               {
@@ -1091,7 +1085,7 @@
                   "@DEF": "Node2",
                   "-children": [
                     {
-                      "#comment": "intentionally empty"
+                      "#comment": " intentionally empty "
                     }
                   ]
                 }
@@ -1104,13 +1098,13 @@
                   "@DEF": "Node4",
                   "-children": [
                     {
-                      "#comment": "intentionally empty"
+                      "#comment": " intentionally empty "
                     }
                   ]
                 }
               },
               {
-                "#comment": "Test satisfactorily creates MFNode children array as an ordered list with mixed content"
+                "#comment": " Test satisfactorily creates MFNode children array as an ordered list with mixed content "
               }
             ]
           }
@@ -1122,24 +1116,21 @@
               "Appearance": {
                 "-children": [
                   {
-                    "#comment": "Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes"
+                    "#comment": " Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes "
                   },
                   {
-                    "#comment": "Test satisfactorily creates MFNode shaders array as an ordered list with mixed content"
+                    "#comment": " Test satisfactorily creates MFNode shaders array as an ordered list with mixed content "
                   }
                 ],
                 "-shaders": [
                   {
                     "ProgramShader": {
                       "@DEF": "TestShader1",
-                      "-programs": [
-                        {
-                          "ShaderProgram": {
-                            "@DEF": "TestShader2",
-                            "@type": "VERTEX"
-                          }
+                      "-programs": {
+                        "ShaderProgram": {
+                          "@DEF": "TestShader2"
                         }
-                      ]
+                      }
                     }
                   },
                   {
@@ -1148,14 +1139,11 @@
                   {
                     "ComposedShader": {
                       "@DEF": "TestShader4",
-                      "-parts": [
-                        {
-                          "ShaderPart": {
-                            "@DEF": "TestShader5",
-                            "@type": "VERTEX"
-                          }
+                      "-parts": {
+                        "ShaderPart": {
+                          "@DEF": "TestShader5"
                         }
-                      ]
+                      }
                     }
                   }
                 ]
@@ -1189,31 +1177,42 @@
                 }
               },
               {
-                "EspduTransform": {}
-              },
-              {
-                "ReceiverPdu": {}
-              },
-              {
-                "SignalPdu": {}
-              },
-              {
-                "TransmitterPdu": {}
-              },
-              {
-                "DISEntityManager": {
-                  "-mapping": [
-                    {
-                      "DISEntityTypeMapping": {}
-                    }
+                "EspduTransform": {
+                  "@geoSystem": [
+                    "GD",
+                    "WE"
                   ]
                 }
               },
               {
-                "HAnimHumanoid": {
-                  "@name": "TestHumanoid",
-                  "@DEF": "TestHumanoidDEF",
-                  "@version": "2.0"
+                "ReceiverPdu": {
+                  "@geoSystem": [
+                    "GD",
+                    "WE"
+                  ]
+                }
+              },
+              {
+                "SignalPdu": {
+                  "@geoSystem": [
+                    "GD",
+                    "WE"
+                  ]
+                }
+              },
+              {
+                "TransmitterPdu": {
+                  "@geoSystem": [
+                    "GD",
+                    "WE"
+                  ]
+                }
+              },
+              {
+                "DISEntityManager": {
+                  "-mapping": {
+                    "DISEntityTypeMapping": {}
+                  }
                 }
               }
             ]
@@ -1243,10 +1242,10 @@
                       }
                     },
                     {
-                      "#comment": "[HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\""
+                      "#comment": " [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\" "
                     },
                     {
-                      "#comment": "presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types"
+                      "#comment": " presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types "
                     },
                     {
                       "TouchSensor": {
@@ -1260,7 +1259,26 @@
             ]
           }
         }
-      ]
-    }
+      ],
+      "-metadata": {
+        "MetadataString": {
+          "@DEF": "scene.addChildMetadata",
+          "@name": "test",
+          "@value": [
+            "Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"
+          ]
+        }
+      },
+      "-layerSet": {
+        "LayerSet": {
+          "@DEF": "scene.addChildLayerSetTest",
+          "@order": [
+            0
+          ]
+        }
+      }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

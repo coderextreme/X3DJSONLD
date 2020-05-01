@@ -153,7 +153,7 @@ X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = fu
 		try {
 			this.proxy.Cumulus = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting Cumulus '+e);
+			console.log('Problems setting Cumulus '+e);
 			console.error('Problems setting Cumulus',e);
 		}
 	};
@@ -164,14 +164,14 @@ X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = fu
 	try {
 		this.Cumulus = X3DJSON.nodeUtil('Scene','Cumulus');
 	} catch (e) {
-		alert('Problems setting Cumulus '+e);
+		console.log('Problems setting Cumulus '+e);
 		console.error('Problems setting Cumulus',e);
 	}
 	this.set_Cirrus = function (value) {
 		try {
 			this.proxy.Cirrus = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting Cirrus '+e);
+			console.log('Problems setting Cirrus '+e);
 			console.error('Problems setting Cirrus',e);
 		}
 	};
@@ -182,14 +182,14 @@ X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = fu
 	try {
 		this.Cirrus = X3DJSON.nodeUtil('Scene','Cirrus');
 	} catch (e) {
-		alert('Problems setting Cirrus '+e);
+		console.log('Problems setting Cirrus '+e);
 		console.error('Problems setting Cirrus',e);
 	}
 	this.set_Fog = function (value) {
 		try {
 			this.proxy.Fog = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting Fog '+e);
+			console.log('Problems setting Fog '+e);
 			console.error('Problems setting Fog',e);
 		}
 	};
@@ -200,10 +200,9 @@ X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = fu
 	try {
 		this.Fog = new SFNode();
 	} catch (e) {
-		alert('Problems setting Fog '+e);
+		console.log('Problems setting Fog '+e);
 		console.error('Problems setting Fog',e);
 	}
-
 
 ecmascript:
 
@@ -384,12 +383,12 @@ CloudStringF = new Array();
 
 		if (Y <= 30) //cloud shading and lighting control
   	{	
-	image = ' "CloudTexture1_5.png" "https://savage.nps.edu/Savage/Environment/Spheretexture.png" ';
+	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" ';
   	}
 
   		else
   	{	
-	image = ' "CloudTexture1_4.png" "https://savage.nps.edu/Savage/Environment/Spheretexture.png" ';
+	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" ';
   	}
 
 	
@@ -534,7 +533,7 @@ CloudStringF = new Array();
 		'			    material Material {			' +
 		'			    }					' +
  		'	                      texture ImageTexture {	        ' +
-		'	                        url ["cloudtexture3.png" "https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png" ] ' +
+		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] ' +
 		'	                      }	                                ' +
 		'	                    }	                                ' +
 		'	                    geometry IndexedFaceSet {	        ' +     // define type of geometry to texture
@@ -594,9 +593,7 @@ X3DJSON.nodeUtil('Scene','Cirrus', 'children')[i] = newNode[0];
 this.cumulus();
 
 this.cirrus();
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

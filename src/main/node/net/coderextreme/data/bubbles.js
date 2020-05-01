@@ -18,6 +18,10 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(3))
         .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
         .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
+        .addComponent((new autoclass.component()).setName("Texturing").setLevel(1))
+        .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
+        .addComponent((new autoclass.component()).setName("Shape").setLevel(4))
+        .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
         .addMeta((new autoclass.meta()).setName("title").setContent("bubbles.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
@@ -84,8 +88,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
 "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+
 "		   } catch (e) {\n"+
-"		   	if (typeof alert === 'function') {\n"+
-"				alert(e);\n"+
+"		   	if (typeof console.log === 'function') {\n"+
+"				console.log(e);\n"+
 "			}\n"+
 "		   }\n"+
 "               }"))

@@ -127,9 +127,11 @@ ecmascript:
 	}
 	function recompute_and_route(startpoint, endpoint) {
 	      var trafo = recompute(startpoint, endpoint);
-	      position.translation = trafo.translation;
-	      rotscale.rotation = trafo.rotation;
-	      rotscale.scale = trafo.scale;
+	      if (trafo) {
+		      position.translation = trafo.translation;
+		      rotscale.rotation = trafo.rotation;
+		      rotscale.scale = trafo.scale;
+	      }
 	}
         function initialize(){
             recompute_and_route(startnode.translation,endnode.translation);

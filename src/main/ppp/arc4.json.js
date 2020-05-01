@@ -153,7 +153,7 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'] = function()
 		try {
 			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting translation '+e);
+			console.log('Problems setting translation '+e);
 			console.error('Problems setting translation',e);
 		}
 	};
@@ -164,14 +164,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'] = function()
 	try {
 		this.translation = new SFVec3f(0,0,0);
 	} catch (e) {
-		alert('Problems setting translation '+e);
+		console.log('Problems setting translation '+e);
 		console.error('Problems setting translation',e);
 	}
 	this.set_old = function (value) {
 		try {
 			this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting old '+e);
+			console.log('Problems setting old '+e);
 			console.error('Problems setting old',e);
 		}
 	};
@@ -182,14 +182,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'] = function()
 	try {
 		this.old = new SFVec3f(0,0,0);
 	} catch (e) {
-		alert('Problems setting old '+e);
+		console.log('Problems setting old '+e);
 		console.error('Problems setting old',e);
 	}
 	this.set_location = function (value) {
 		try {
 			this.proxy.location = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting location '+e);
+			console.log('Problems setting location '+e);
 			console.error('Problems setting location',e);
 		}
 	};
@@ -200,14 +200,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'] = function()
 	try {
 		this.location = undefined;
 	} catch (e) {
-		alert('Problems setting location '+e);
+		console.log('Problems setting location '+e);
 		console.error('Problems setting location',e);
 	}
 	this.set_keyValue = function (value) {
 		try {
 			this.proxy.keyValue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValue '+e);
+			console.log('Problems setting keyValue '+e);
 			console.error('Problems setting keyValue',e);
 		}
 	};
@@ -218,10 +218,9 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'] = function()
 	try {
 		this.keyValue = new MFVec3f([new SFVec3f ( 0 , 0 , 0 ),new SFVec3f ( 0 , 5 , 0 )]);
 	} catch (e) {
-		alert('Problems setting keyValue '+e);
+		console.log('Problems setting keyValue '+e);
 		console.error('Problems setting keyValue',e);
 	}
-
 ecmascript:
 	
 	this.set_location = function (value) {
@@ -230,7 +229,6 @@ ecmascript:
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.keyValue);
 		}
-
 
 ;
 
@@ -279,7 +277,7 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'] = function()
 		try {
 			this.proxy.translation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting translation '+e);
+			console.log('Problems setting translation '+e);
 			console.error('Problems setting translation',e);
 		}
 	};
@@ -290,14 +288,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'] = function()
 	try {
 		this.translation = new SFVec3f(0,0,0);
 	} catch (e) {
-		alert('Problems setting translation '+e);
+		console.log('Problems setting translation '+e);
 		console.error('Problems setting translation',e);
 	}
 	this.set_old = function (value) {
 		try {
 			this.proxy.old = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting old '+e);
+			console.log('Problems setting old '+e);
 			console.error('Problems setting old',e);
 		}
 	};
@@ -308,14 +306,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'] = function()
 	try {
 		this.old = new SFVec3f(0,0,0);
 	} catch (e) {
-		alert('Problems setting old '+e);
+		console.log('Problems setting old '+e);
 		console.error('Problems setting old',e);
 	}
 	this.set_location = function (value) {
 		try {
 			this.proxy.location = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting location '+e);
+			console.log('Problems setting location '+e);
 			console.error('Problems setting location',e);
 		}
 	};
@@ -326,14 +324,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'] = function()
 	try {
 		this.location = undefined;
 	} catch (e) {
-		alert('Problems setting location '+e);
+		console.log('Problems setting location '+e);
 		console.error('Problems setting location',e);
 	}
 	this.set_keyValue = function (value) {
 		try {
 			this.proxy.keyValue = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValue '+e);
+			console.log('Problems setting keyValue '+e);
 			console.error('Problems setting keyValue',e);
 		}
 	};
@@ -344,10 +342,9 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'] = function()
 	try {
 		this.keyValue = new MFVec3f([new SFVec3f ( 0 , 0 , 0 ),new SFVec3f ( 0 , 5 , 0 )]);
 	} catch (e) {
-		alert('Problems setting keyValue '+e);
+		console.log('Problems setting keyValue '+e);
 		console.error('Problems setting keyValue',e);
 	}
-
 ecmascript:
 	
 	this.set_location = function (value) {
@@ -356,7 +353,6 @@ ecmascript:
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.keyValue);
 		}
-
 
 ;
 
@@ -405,7 +401,7 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'
 		try {
 			this.proxy.startnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting startnode '+e);
+			console.log('Problems setting startnode '+e);
 			console.error('Problems setting startnode',e);
 		}
 	};
@@ -416,14 +412,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'
 	try {
 		this.startnode = new SFNode();
 	} catch (e) {
-		alert('Problems setting startnode '+e);
+		console.log('Problems setting startnode '+e);
 		console.error('Problems setting startnode',e);
 	}
 	this.set_endnode = function (value) {
 		try {
 			this.proxy.endnode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting endnode '+e);
+			console.log('Problems setting endnode '+e);
 			console.error('Problems setting endnode',e);
 		}
 	};
@@ -434,14 +430,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'
 	try {
 		this.endnode = new SFNode();
 	} catch (e) {
-		alert('Problems setting endnode '+e);
+		console.log('Problems setting endnode '+e);
 		console.error('Problems setting endnode',e);
 	}
 	this.set_position = function (value) {
 		try {
 			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting position '+e);
+			console.log('Problems setting position '+e);
 			console.error('Problems setting position',e);
 		}
 	};
@@ -452,14 +448,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'
 	try {
 		this.position = X3DJSON.nodeUtil('Scene','DECLx3dconnector_connector1_trans');
 	} catch (e) {
-		alert('Problems setting position '+e);
+		console.log('Problems setting position '+e);
 		console.error('Problems setting position',e);
 	}
 	this.set_rotscale = function (value) {
 		try {
 			this.proxy.rotscale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting rotscale '+e);
+			console.log('Problems setting rotscale '+e);
 			console.error('Problems setting rotscale',e);
 		}
 	};
@@ -470,14 +466,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'
 	try {
 		this.rotscale = X3DJSON.nodeUtil('Scene','DECLx3dconnector_connector1_rotscale');
 	} catch (e) {
-		alert('Problems setting rotscale '+e);
+		console.log('Problems setting rotscale '+e);
 		console.error('Problems setting rotscale',e);
 	}
 	this.set_startpoint = function (value) {
 		try {
 			this.proxy.startpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting startpoint '+e);
+			console.log('Problems setting startpoint '+e);
 			console.error('Problems setting startpoint',e);
 		}
 	};
@@ -488,14 +484,14 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'
 	try {
 		this.startpoint = undefined;
 	} catch (e) {
-		alert('Problems setting startpoint '+e);
+		console.log('Problems setting startpoint '+e);
 		console.error('Problems setting startpoint',e);
 	}
 	this.set_endpoint = function (value) {
 		try {
 			this.proxy.endpoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting endpoint '+e);
+			console.log('Problems setting endpoint '+e);
 			console.error('Problems setting endpoint',e);
 		}
 	};
@@ -506,10 +502,9 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'
 	try {
 		this.endpoint = undefined;
 	} catch (e) {
-		alert('Problems setting endpoint '+e);
+		console.log('Problems setting endpoint '+e);
 		console.error('Problems setting endpoint',e);
 	}
-
 ecmascript:
        
 	this.recompute = function (startpoint,endpoint){
@@ -579,8 +574,7 @@ ecmascript:
 
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(this.proxy.startnode.translation,val);
-        }
-;
+        };
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -612,12 +606,16 @@ X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1']['
 X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1']['ACTION'],X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].initialize === "function") X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].initialize();
+    if (X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1')) {
 X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','cycleTime'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','cycleTime'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1')) {
 X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1').addEventListener('outputchange', function(event) {
 }, false);
+}
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -640,14 +638,20 @@ X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1']['ACTION']['keyV
 		}
 });
 			X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);
+    if (X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1')) {
 X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1')) {
 X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','cycleTime'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1','cycleTime'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1')) {
 X3DJSON.nodeUtil('Scene','DECLpoint_G2_CL1').addEventListener('outputchange', function(event) {
 }, false);
+}
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -670,15 +674,21 @@ X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1']['ACTION']['keyV
 		}
 });
 			X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'].keyValue, __eventTime);
+    if (X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1')) {
 X3DJSON.nodeUtil('Scene','DECLpoint_G2_PI1').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLpoint_G1_node')) {
 X3DJSON.nodeUtil('Scene','DECLpoint_G1_node').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_node','translation'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_startpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G1_node','translation'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','DECLpoint_G2_node')) {
 X3DJSON.nodeUtil('Scene','DECLpoint_G2_node').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G2_node','translation'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'].set_endpoint(X3DJSON.nodeUtil('Scene','DECLpoint_G2_node','translation'), __eventTime);
 			X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].set_location(X3DJSON.nodeUtil('Scene','DECLpoint_G1_CL1','cycleTime'), __eventTime);
 			X3DJSON.nodeUtil('Scene','DECLpoint_G1_PI1','keyValue',typeof X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue === "function" ? X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue() : X3DJSON['Obj']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'].keyValue, __eventTime);

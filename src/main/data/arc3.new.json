@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 April 2020"
+            "@content":"01 May 2020"
           },
           {
             "@name":"generator",
@@ -423,9 +423,11 @@
 "\t}",
 "\tfunction recompute_and_route(startpoint, endpoint) {",
 "\t      var trafo = recompute(startpoint, endpoint);",
-"\t      position.translation = trafo.translation;",
-"\t      rotscale.rotation = trafo.rotation;",
-"\t      rotscale.scale = trafo.scale;",
+"\t      if (trafo) {",
+"\t\t      position.translation = trafo.translation;",
+"\t\t      rotscale.rotation = trafo.rotation;",
+"\t\t      rotscale.scale = trafo.scale;",
+"\t      }",
 "\t}",
 "        function initialize(){",
 "            recompute_and_route(startnode.translation,endnode.translation);",

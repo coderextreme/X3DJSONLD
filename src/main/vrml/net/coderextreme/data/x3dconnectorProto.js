@@ -277,9 +277,11 @@ let ProtoDeclare50 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 	}
 	function recompute_and_route(startpoint, endpoint) {
 	      var trafo = recompute(startpoint, endpoint);
-	      transnode.translation = trafo.translation;
-	      rotscalenode.rotation = trafo.rotation;
-	      rotscalenode.scale = trafo.scale;
+	      if (trafo) {
+		      transnode.translation = trafo.translation;
+		      rotscalenode.rotation = trafo.rotation;
+		      rotscalenode.scale = trafo.scale;
+	      }
 	}
         function initialize(){
             recompute_and_route(startnode.translation,endnode.translation);
@@ -437,9 +439,11 @@ Script59.setSourceCode(`ecmascript:\n"+
 "	}\n"+
 "	function recompute_and_route(startpoint, endpoint) {\n"+
 "	      var trafo = recompute(startpoint, endpoint);\n"+
-"	      transnode.translation = trafo.translation;\n"+
-"	      rotscalenode.rotation = trafo.rotation;\n"+
-"	      rotscalenode.scale = trafo.scale;\n"+
+"	      if (trafo) {\n"+
+"		      transnode.translation = trafo.translation;\n"+
+"		      rotscalenode.rotation = trafo.rotation;\n"+
+"		      rotscalenode.scale = trafo.scale;\n"+
+"	      }\n"+
 "	}\n"+
 "        function initialize(){\n"+
 "            recompute_and_route(startnode.translation,endnode.translation);\n"+

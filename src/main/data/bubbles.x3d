@@ -83,8 +83,8 @@
                         orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);
                         orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);
 		   } catch (e) {
-		   	if (typeof alert === 'function') {
-				alert(e);
+		   	if (typeof console.log === 'function') {
+				console.log(e);
 			}
 		   }
                }]]></Script>

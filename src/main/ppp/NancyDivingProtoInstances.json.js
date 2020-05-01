@@ -153,7 +153,7 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -164,14 +164,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.traceEnabled = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -182,14 +182,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.traceEnabled = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 	this.set_position = function (value) {
 		try {
 			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting position '+e);
+			console.log('Problems setting position '+e);
 			console.error('Problems setting position',e);
 		}
 	};
@@ -200,14 +200,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.position = new SFVec3f(0,0,0);
 	} catch (e) {
-		alert('Problems setting position '+e);
+		console.log('Problems setting position '+e);
 		console.error('Problems setting position',e);
 	}
 	this.set_orientation = function (value) {
 		try {
 			this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting orientation '+e);
+			console.log('Problems setting orientation '+e);
 			console.error('Problems setting orientation',e);
 		}
 	};
@@ -218,14 +218,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.orientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting orientation '+e);
+		console.log('Problems setting orientation '+e);
 		console.error('Problems setting orientation',e);
 	}
 	this.set_position = function (value) {
 		try {
 			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting position '+e);
+			console.log('Problems setting position '+e);
 			console.error('Problems setting position',e);
 		}
 	};
@@ -236,14 +236,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.position = new SFVec3f(0,0,0);
 	} catch (e) {
-		alert('Problems setting position '+e);
+		console.log('Problems setting position '+e);
 		console.error('Problems setting position',e);
 	}
 	this.set_orientation = function (value) {
 		try {
 			this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting orientation '+e);
+			console.log('Problems setting orientation '+e);
 			console.error('Problems setting orientation',e);
 		}
 	};
@@ -254,14 +254,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.orientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting orientation '+e);
+		console.log('Problems setting orientation '+e);
 		console.error('Problems setting orientation',e);
 	}
 	this.set_position = function (value) {
 		try {
 			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting position '+e);
+			console.log('Problems setting position '+e);
 			console.error('Problems setting position',e);
 		}
 	};
@@ -272,14 +272,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.position = new SFVec3f(0,0,0);
 	} catch (e) {
-		alert('Problems setting position '+e);
+		console.log('Problems setting position '+e);
 		console.error('Problems setting position',e);
 	}
 	this.set_orientation = function (value) {
 		try {
 			this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting orientation '+e);
+			console.log('Problems setting orientation '+e);
 			console.error('Problems setting orientation',e);
 		}
 	};
@@ -290,14 +290,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.orientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting orientation '+e);
+		console.log('Problems setting orientation '+e);
 		console.error('Problems setting orientation',e);
 	}
 	this.set_outputViewpointString = function (value) {
 		try {
 			this.proxy.outputViewpointString = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting outputViewpointString '+e);
+			console.log('Problems setting outputViewpointString '+e);
 			console.error('Problems setting outputViewpointString',e);
 		}
 	};
@@ -308,7 +308,7 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.outputViewpointString = new MFString();
 	} catch (e) {
-		alert('Problems setting outputViewpointString '+e);
+		console.log('Problems setting outputViewpointString '+e);
 		console.error('Problems setting outputViewpointString',e);
 	}
 
@@ -418,7 +418,7 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -429,14 +429,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.traceEnabled = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -447,14 +447,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.traceEnabled = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 	this.set_position = function (value) {
 		try {
 			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting position '+e);
+			console.log('Problems setting position '+e);
 			console.error('Problems setting position',e);
 		}
 	};
@@ -465,14 +465,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.position = new SFVec3f(0,0,0);
 	} catch (e) {
-		alert('Problems setting position '+e);
+		console.log('Problems setting position '+e);
 		console.error('Problems setting position',e);
 	}
 	this.set_orientation = function (value) {
 		try {
 			this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting orientation '+e);
+			console.log('Problems setting orientation '+e);
 			console.error('Problems setting orientation',e);
 		}
 	};
@@ -483,14 +483,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.orientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting orientation '+e);
+		console.log('Problems setting orientation '+e);
 		console.error('Problems setting orientation',e);
 	}
 	this.set_position = function (value) {
 		try {
 			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting position '+e);
+			console.log('Problems setting position '+e);
 			console.error('Problems setting position',e);
 		}
 	};
@@ -501,14 +501,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.position = new SFVec3f(0,0,0);
 	} catch (e) {
-		alert('Problems setting position '+e);
+		console.log('Problems setting position '+e);
 		console.error('Problems setting position',e);
 	}
 	this.set_orientation = function (value) {
 		try {
 			this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting orientation '+e);
+			console.log('Problems setting orientation '+e);
 			console.error('Problems setting orientation',e);
 		}
 	};
@@ -519,14 +519,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.orientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting orientation '+e);
+		console.log('Problems setting orientation '+e);
 		console.error('Problems setting orientation',e);
 	}
 	this.set_position = function (value) {
 		try {
 			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting position '+e);
+			console.log('Problems setting position '+e);
 			console.error('Problems setting position',e);
 		}
 	};
@@ -537,14 +537,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.position = new SFVec3f(0,0,0);
 	} catch (e) {
-		alert('Problems setting position '+e);
+		console.log('Problems setting position '+e);
 		console.error('Problems setting position',e);
 	}
 	this.set_orientation = function (value) {
 		try {
 			this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting orientation '+e);
+			console.log('Problems setting orientation '+e);
 			console.error('Problems setting orientation',e);
 		}
 	};
@@ -555,14 +555,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.orientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting orientation '+e);
+		console.log('Problems setting orientation '+e);
 		console.error('Problems setting orientation',e);
 	}
 	this.set_outputViewpointString = function (value) {
 		try {
 			this.proxy.outputViewpointString = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting outputViewpointString '+e);
+			console.log('Problems setting outputViewpointString '+e);
 			console.error('Problems setting outputViewpointString',e);
 		}
 	};
@@ -573,7 +573,7 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPo
 	try {
 		this.outputViewpointString = new MFString();
 	} catch (e) {
-		alert('Problems setting outputViewpointString '+e);
+		console.log('Problems setting outputViewpointString '+e);
 		console.error('Problems setting outputViewpointString',e);
 	}
 
@@ -683,7 +683,7 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_
 		try {
 			this.proxy.keyValueR = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValueR '+e);
+			console.log('Problems setting keyValueR '+e);
 			console.error('Problems setting keyValueR',e);
 		}
 	};
@@ -694,14 +694,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_
 	try {
 		this.keyValueR = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting keyValueR '+e);
+		console.log('Problems setting keyValueR '+e);
 		console.error('Problems setting keyValueR',e);
 	}
 	this.set_keyValueL = function (value) {
 		try {
 			this.proxy.keyValueL = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValueL '+e);
+			console.log('Problems setting keyValueL '+e);
 			console.error('Problems setting keyValueL',e);
 		}
 	};
@@ -712,14 +712,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_
 	try {
 		this.keyValueL = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting keyValueL '+e);
+		console.log('Problems setting keyValueL '+e);
 		console.error('Problems setting keyValueL',e);
 	}
 	this.set_fraction = function (value) {
 		try {
 			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting fraction '+e);
+			console.log('Problems setting fraction '+e);
 			console.error('Problems setting fraction',e);
 		}
 	};
@@ -730,14 +730,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_
 	try {
 		this.fraction = undefined;
 	} catch (e) {
-		alert('Problems setting fraction '+e);
+		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
 	this.set_finL = function (value) {
 		try {
 			this.proxy.finL = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting finL '+e);
+			console.log('Problems setting finL '+e);
 			console.error('Problems setting finL',e);
 		}
 	};
@@ -748,14 +748,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_
 	try {
 		this.finL = new SFBool();
 	} catch (e) {
-		alert('Problems setting finL '+e);
+		console.log('Problems setting finL '+e);
 		console.error('Problems setting finL',e);
 	}
 	this.set_finR = function (value) {
 		try {
 			this.proxy.finR = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting finR '+e);
+			console.log('Problems setting finR '+e);
 			console.error('Problems setting finR',e);
 		}
 	};
@@ -766,14 +766,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_
 	try {
 		this.finR = new SFBool();
 	} catch (e) {
-		alert('Problems setting finR '+e);
+		console.log('Problems setting finR '+e);
 		console.error('Problems setting finR',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -784,7 +784,7 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_
 	try {
 		this.traceEnabled = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 
@@ -944,7 +944,7 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScr
 		try {
 			this.proxy.rotationL = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting rotationL '+e);
+			console.log('Problems setting rotationL '+e);
 			console.error('Problems setting rotationL',e);
 		}
 	};
@@ -955,14 +955,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScr
 	try {
 		this.rotationL = undefined;
 	} catch (e) {
-		alert('Problems setting rotationL '+e);
+		console.log('Problems setting rotationL '+e);
 		console.error('Problems setting rotationL',e);
 	}
 	this.set_rotationR = function (value) {
 		try {
 			this.proxy.rotationR = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting rotationR '+e);
+			console.log('Problems setting rotationR '+e);
 			console.error('Problems setting rotationR',e);
 		}
 	};
@@ -973,14 +973,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScr
 	try {
 		this.rotationR = undefined;
 	} catch (e) {
-		alert('Problems setting rotationR '+e);
+		console.log('Problems setting rotationR '+e);
 		console.error('Problems setting rotationR',e);
 	}
 	this.set_fin_warpL = function (value) {
 		try {
 			this.proxy.fin_warpL = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting fin_warpL '+e);
+			console.log('Problems setting fin_warpL '+e);
 			console.error('Problems setting fin_warpL',e);
 		}
 	};
@@ -991,14 +991,14 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScr
 	try {
 		this.fin_warpL = new SFBool();
 	} catch (e) {
-		alert('Problems setting fin_warpL '+e);
+		console.log('Problems setting fin_warpL '+e);
 		console.error('Problems setting fin_warpL',e);
 	}
 	this.set_fin_warpR = function (value) {
 		try {
 			this.proxy.fin_warpR = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting fin_warpR '+e);
+			console.log('Problems setting fin_warpR '+e);
 			console.error('Problems setting fin_warpR',e);
 		}
 	};
@@ -1009,7 +1009,7 @@ X3DJSON['Script']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScr
 	try {
 		this.fin_warpR = new SFBool();
 	} catch (e) {
-		alert('Problems setting fin_warpR '+e);
+		console.log('Problems setting fin_warpR '+e);
 		console.error('Problems setting fin_warpR',e);
 	}
 
@@ -1096,27 +1096,39 @@ X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript
 X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].initialize();
+    if (X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_ExampleViewPositionOrientation_WhereSensor')) {
 X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_ExampleViewPositionOrientation_WhereSensor').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_ExampleViewPositionOrientation_OutputPositionOrientation'].set_position(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_ExampleViewPositionOrientation_WhereSensor','position'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_ExampleViewPositionOrientation_OutputPositionOrientation'].set_position(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_ExampleViewPositionOrientation_WhereSensor','position'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_ExampleViewPositionOrientation_WhereSensor')) {
 X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_ExampleViewPositionOrientation_WhereSensor').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_ExampleViewPositionOrientation_OutputPositionOrientation'].set_orientation(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_ExampleViewPositionOrientation_WhereSensor','orientation'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_ExampleViewPositionOrientation_OutputPositionOrientation'].set_orientation(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_ExampleViewPositionOrientation_WhereSensor','orientation'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_INSTANCE_WhereSensor')) {
 X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_INSTANCE_WhereSensor').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_INSTANCE_OutputPositionOrientation'].set_position(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_INSTANCE_WhereSensor','position'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_INSTANCE_OutputPositionOrientation'].set_position(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_INSTANCE_WhereSensor','position'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_INSTANCE_WhereSensor')) {
 X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_INSTANCE_WhereSensor').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_INSTANCE_OutputPositionOrientation'].set_orientation(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_INSTANCE_WhereSensor','orientation'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_INSTANCE_OutputPositionOrientation'].set_orientation(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_INSTANCE_WhereSensor','orientation'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinTriggerProximitySensor')) {
 X3DJSON.nodeUtil('Scene','DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinTriggerProximitySensor').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinClock')) {
 X3DJSON.nodeUtil('Scene','DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinClock').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].set_fraction(X3DJSON.nodeUtil('Scene','DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinClock','fraction'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].set_fraction(X3DJSON.nodeUtil('Scene','DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinClock','fraction'), __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
@@ -1162,89 +1174,169 @@ X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_han
 		}
 });
 			X3DJSON.nodeUtil('Scene','DECLSegment_hanim_l_hindfoot_FIELDchildren_Finl','spine',typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].keyValueL === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].keyValueL() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].keyValueL, __eventTime);
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubbleClock').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath1')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath1').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath2')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath2').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath3')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath3').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath4')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath4').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath5')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath5').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath6')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath6').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath7')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath7').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath8')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath8').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath9')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath9').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath10')) {
 X3DJSON.nodeUtil('Scene','DECLSegment_hanim_skull_FIELDchildren_BubblePath10').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','TriggerProximitySensor')) {
 X3DJSON.nodeUtil('Scene','TriggerProximitySensor').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','r_ankleRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','r_ankleRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','r_kneeRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','r_kneeRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','r_hipRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','r_hipRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','l_ankleRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','l_ankleRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','l_kneeRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','l_kneeRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].set_rotationL(X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive','value'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].set_rotationL(X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive','value'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].set_rotationR(X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive','value'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].set_rotationR(X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive','value'), __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
@@ -1264,10 +1356,14 @@ X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript
 }
 X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript']['ACTION']['fin_warpL'].push(function(property, value) {
 		if (property === 'fin_warpL') {
+		if (X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'] && typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].finL(typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL, __eventTime);
 		}
+		}
 });
+		if (X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'] && typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].finL(typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL, __eventTime);
+		}
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -1286,48 +1382,90 @@ X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript
 }
 X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript']['ACTION']['fin_warpR'].push(function(property, value) {
 		if (property === 'fin_warpR') {
+		if (X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'] && typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].finR(typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR, __eventTime);
 		}
+		}
 });
+		if (X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'] && typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].finR(typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR, __eventTime);
+		}
+    if (X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','lower_bodyRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','lower_bodyRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','headRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','headRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','neckRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','neckRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','upper_bodyRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','upper_bodyRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','whole_bodyRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','whole_bodyRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','whole_bodyTranInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','whole_bodyTranInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','Dive_Time')) {
 X3DJSON.nodeUtil('Scene','Dive_Time').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','r_wristRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','r_wristRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','r_elbowRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','r_elbowRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','r_shoulderRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','r_shoulderRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','l_wristRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','l_wristRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','l_elbowRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','l_elbowRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','l_shoulderRotInterp_BasicDive')) {
 X3DJSON.nodeUtil('Scene','l_shoulderRotInterp_BasicDive').addEventListener('outputchange', function(event) {
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_ExampleViewPositionOrientation_OutputPositionOrientation'].set_position(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_ExampleViewPositionOrientation_WhereSensor','position'), __eventTime);
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_ExampleViewPositionOrientation_OutputPositionOrientation'].set_orientation(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_ExampleViewPositionOrientation_WhereSensor','orientation'), __eventTime);
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLViewPositionOrientation_INSTANCE_OutputPositionOrientation'].set_position(X3DJSON.nodeUtil('Scene','DECLViewPositionOrientation_INSTANCE_WhereSensor','position'), __eventTime);
@@ -1337,5 +1475,9 @@ X3DJSON.nodeUtil('Scene','l_shoulderRotInterp_BasicDive').addEventListener('outp
 			X3DJSON.nodeUtil('Scene','DECLSegment_hanim_l_hindfoot_FIELDchildren_Finl','spine',typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].keyValueL === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].keyValueL() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].keyValueL, __eventTime);
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].set_rotationL(X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive','value'), __eventTime);
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].set_rotationR(X3DJSON.nodeUtil('Scene','l_hipRotInterp_BasicDive','value'), __eventTime);
+		if (X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'] && typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].finL(typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpL, __eventTime);
+		}
+		if (X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'] && typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR) {
 			X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['DECLJoint_hanim_HumanoidRoot_FIELDchildren_FinScript'].finR(typeof X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR === "function" ? X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR() : X3DJSON['Obj']['Scene']['../data/NancyDivingProtoInstances.json']['finWarpScript'].fin_warpR, __eventTime);
+		}

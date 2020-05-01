@@ -85,6 +85,10 @@ public class bubbles {
         .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new componentObject().setName("Shaders").setLevel(1))
         .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
+        .addComponent(new componentObject().setName("Texturing").setLevel(1))
+        .addComponent(new componentObject().setName("Rendering").setLevel(1))
+        .addComponent(new componentObject().setName("Shape").setLevel(4))
+        .addComponent(new componentObject().setName("Grouping").setLevel(3))
         .addMeta(new metaObject().setName("title").setContent("bubbles.x3d"))
         .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
         .addMeta(new metaObject().setName("generator").setContent("manual"))
@@ -151,8 +155,8 @@ public class bubbles {
 "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
 "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+
 "		   } catch (e) {\n"+
-"		   	if (typeof alert === 'function') {\n"+
-"				alert(e);\n"+
+"		   	if (typeof console.log === 'function') {\n"+
+"				console.log(e);\n"+
 "			}\n"+
 "		   }\n"+
 "               }"))
