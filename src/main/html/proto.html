@@ -1,0 +1,768 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>X3D JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+   <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+   <script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.js'> </script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/create3000/x_ite@4.6.10/dist/x_ite.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/create3000/x_ite@4.6.10/dist/x_ite.min.js"></script>
+<script type="text/javascript" src="https://raw.githack.com/andreasplesch/x_ite_dom/master/release/x_ite_dom.1.3.js"></script>
+   <!--
+    <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
+    -->
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.10.2/ajv.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
+    <style type="text/css">
+    X3DCanvas, X3D, #image {
+        background:#000;
+	width: 300px;
+	height:150px;
+    }
+    table td, table td * {
+        vertical-align: top;
+    }
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+    </style>
+</head>
+<body>
+<table>
+<tr>
+<td>
+<select id="file">
+<option>./www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryExternPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/CAD/CadGeometryPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/AceticAcid.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Alanine.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/ButanedioicAcid.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Caffeine.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Cholesterol.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Cortisone.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/CyclohexeneOxide.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Cyclopentanamine.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Digitoxigenin.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/DimethylSulfoxide.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Ethanol.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/GlycerolDiacetate.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Histamine.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Oxytocin.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/PyruvicAcid.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Riboflavin.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/SomatoStatin.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/TartaricAcid.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Tetrahydrofuran.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/TransDCE.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/VitaminK.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/_1_4_Dihydronaphthalene.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/_3_Methyl_1H_indene.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/_3_Methy_1H_indene.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/course/ExtrusionCrossSectionExampleShip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/course/ExtrusionCrossSectionExampleTorus.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/course/ExtrusionCrossSectionPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/Arc2dComponentPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/BooleanSequencerPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/BradenPrototypeInitializeExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/CoordinateInterpolator2dPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/EventUtilityExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/EventUtilityPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/ExampleExternPrototype1.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/ExampleExternPrototype2.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/Geometry2dComponentExternProtos.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/Geometry2dComponentPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/IntegerSequencerExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/IntegerSequencerPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/KeySensorActivationKeySwitchTest.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/KeySensorActivationKeySwitchTestInteractive.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/KeySensorActivationKeySwitchTestInterchange.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/LoadSensorExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/LoadSensorPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/MetadataExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/MetadataPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/PhysicalUnitRepresentationPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/PixelTextureInterpolatorPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/PositionInterpolator2dPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/ProtoInstanceExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/ProtoMFNodeSensorExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/ProtoTagDtdDeclarationExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/QuadTreeExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentExternProtoDefinitions.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/RenderingComponentPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/SceneNodePrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/SchemaTest.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/SpinGroupInternalSubsetDeclaration.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/TestProtoInterfaceNodeScope.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/TestPrototypeInterpolators.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/TestSchematronDiagnostics.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/ViewpointGroupExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/ViewpointGroupPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/development/X3dRetreatProtoExercise.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/AriesEspduPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/BeachTanks.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/CannonProject.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/DISEntityPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/EspduTransformExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/EspduTransformPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/ExternProtoDeclareDefinitions.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/DistributedInteractiveSimulation/RadioCommunicationsPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/CodedCompressedPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/EightCoded.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/EightCompressed.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/FishCoded.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/FishCompressed.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/LionCoded.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/LionCompressed.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/TeapotCoded.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/TeapotCompressed.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/FollowerExternalPrototypeDeclarations.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/FollowerPrototypeDeclarations.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/originals/bitmanagement-nodes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/originals/Sky.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/PoorMansInertia.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/RoomDesired.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/RoomDirect.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/Sky.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/Slider.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/TestOrientationFollower.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/TestPosition2DFollower.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/TestPositionFollower.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/TestSliders.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/ThirdPersonViewChaser.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Followers/ThirdPersonViewFollower.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Geospatial/CaliforniaCampuses.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Geospatial/CaliforniaCampusesTour3Altitudes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Geospatial/CaliforniaCampusesTour4Altitudes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Geospatial/CaliforniaCampusesTour5Altitudes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Geospatial/GeoSpatialExternProtoDeclarations.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Geospatial/KmlPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Geospatial/newGeospatialScene.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/AllenDuttonProtoInstances.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/AllenStandShootRifleM24.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimBehaviorPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/InterchangableActorsViaDynamicRoutingPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_JumpAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_KneelAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_RunAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_StandAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_StopAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_SwimmingFlutterKickAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyDivingProtoInstances.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyStandShootRifleM24.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/originals/LOA3ExampleSourceWithDiamondsOriginal.2013April29.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/originals/LOA3ExampleSourceWithDiamondsOriginal.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/LatticeXvl/XvlShellExternProtoDeclare.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/LatticeXvl/XvlShellProtoDeclare.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Networking/NetworkSensorConnectionPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/NURBS/NurbsExternPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/NURBS/NurbsPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/NURBS/originals/4ducks.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/NURBS/originals/animated_patch22.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ScriptConformance/CreateNodesFromPrototypeECMAScript.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/ScriptConformance/CreateNodesFromPrototypeJava.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/StudentProjects/Chair.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/StudentProjects/Desk.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/StudentProjects/LaetitiaWithDvdController.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/StudentProjects/ProjectileInterpolatorArena.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/StudentProjects/ProjectileInterpolatorPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/StudentProjects/ProjectileSliderBarPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/StudentProjects/Room.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/StudentProjects/WallLamp.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/AutumnExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/AutumnPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/GlassExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/GlassPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/MetalsPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/NeonExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/NeonPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/RococoExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/RococoPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SantaFeExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SantaFePrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SheenExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SheenPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SilkyExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SilkyPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SpringExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SpringPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SummerExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/SummerPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/TropicalExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/TropicalPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/WinterExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/WinterPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/ChopperRotor.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/Example04.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/Example07.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/Example15.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/Example16.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/RefractiveMaterial.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Vrml97Specification/Rotor.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Web3dOutreach/CubeLogoPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Web3dOutreach/LogoLetterPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Web3dOutreach/VirtualRealityHackathonLogoLetterPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/Web3dOutreach/Web3dTimeline.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/Chopper.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/ECMAScriptSaiCreateNodesFromPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/JavaSaiCreateNodesFromPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/originals/JavaSAI/CreateNodesFromPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/Prototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/PrototypesPlus.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/RefractiveMaterial.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/Robot.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/Rotor.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/ShuttlesAndPendulums.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Fog/default_binding_proto.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/default_binding_proto.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/Viewpoint/default_binding_proto.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/different_name.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/different_name_proto.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/first_proto.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/first_proto_file.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/first_proto_proto.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/ignore_externproto.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/multi_url_specific.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/multi_url_specific_nofile.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/second_proto_file.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/specific_proto.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/EXTERNPROTO/specific_proto_proto.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/LocalFog/LocalFogEffectsTest.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/PROTO/def.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/PROTO/fivedeepinternalroute.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/PROTO/fivedeepnesting.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/PROTO/route_inside.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Miscellaneous/PROTO/simple.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Sensors/Keyboard/KeySensorActivationKeySwitchTest.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Sensors/Keyboard/KeySensorActivationKeySwitchTestCore.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Sensors/Keyboard/KeySensorActivationKeySwitchTestInteractive.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/ConformanceNist/Sensors/Keyboard/KeySensorActivationKeySwitchTestInterchange.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersV1/BoxMan.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersV1/InterchangableActorsViaDynamicRoutingPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersV1/NancyStandShootRifleM24.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/AllenDuttonProtoInstances.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/AllenStandShootRifleM24.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_JumpAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_KneelAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_RunAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_StandAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_StopAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_SwimmingFlutterKickAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_WalkAnimation.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyDivingProtoInstances.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_1WallColorPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_2MaterialPrototypesLibrary.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_3MaterialExternalPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_4WoodAppearancePrototypesLibrary.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_5WoodAppearanceExternalPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_6DonutPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_7DonutExternalPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_9SpinGroupPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/aTorch.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/aTorch1.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/aTorch2.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Bounce3.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Boxes.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Button.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Columns.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Cut.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/CutPlane.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Flames.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Floater.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Loader.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Match.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/One.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Robots.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/TexturePlane.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Three.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/TumbleGroup.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Two.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/Vector.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Siggraph98Course/VectorField1.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Animation/CubeWithLabeledSidesViewpointSequencer.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Animation/ViewpointSequencerPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/Building.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/BuildingHistory1.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/BuildingHistory1Small.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/BuildingHistory2.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/BuildingHistory2Alternative.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/BuildingHistory2AlternativeSmall.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/BuildingHistory2Small.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/BuildingSmall.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/UiPanel.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/ViewpointSequencerPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/UserInterface/WaypointInterpolatorPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/GeometricShapes/MobiusExtrusion.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/GeometricShapes/ParallelepipedExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/GeometricShapes/ParallelepipedPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/GeometricShapes/StairStepPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/MotionAnimation/BvhSeamless3dExport1.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/SanCarlosCathedral/SanCarlosCathedral.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/SanCarlosCathedral/SanCarlosCathedralWorkingVersion/SanCarlosCathedral.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/AmbientIntensity.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/AmbientIntensity_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/CircleFishPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/CircleFishPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/CircleFishPTPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/CircleFishPTPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Garibaldi.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/GaribaldiLocalTexture.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/GaribaldiLocalTexture_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/GaribaldiRemote.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/GaribaldiRemoteNoTexture.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/GaribaldiRemoteNoTexture_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/GaribaldiRemote_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Garibaldi_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureGaribaldi.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureGaribaldi_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/TextureLocalGaribaldi.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/TextureLocalGaribaldi_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/TextureRemoteGaribaldi.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/TextureRemoteGaribaldi_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter06GeometryPointsLinesPolygons/ExtrusionCrossSectionITSSPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter06GeometryPointsLinesPolygons/ExtrusionCrossSectionITSSPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter06GeometryPointsLinesPolygons/ExtrusionCrossSectionPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter06GeometryPointsLinesPolygons/ExtrusionCrossSectionPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter06GeometryPointsLinesPolygons/ExtrusionPentagon.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter06GeometryPointsLinesPolygons/ExtrusionPentagonCrossSectionItss.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter06GeometryPointsLinesPolygons/ExtrusionPentagonCrossSectionItssTexture.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter06GeometryPointsLinesPolygons/ExtrusionPentagonCrossSectionItssTexture_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter06GeometryPointsLinesPolygons/ExtrusionPentagonCrossSectionItss_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter06GeometryPointsLinesPolygons/ExtrusionPentagon_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/CircleFishPositionInterpolator.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/CircleFishPositionInterpolator_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/CircleFishPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/CircleFishPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/CircleFishPTPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/CircleFishPTPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/ColorInterpolatorFishPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/ColorInterpolatorFishPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/Garibaldi.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/Garibaldi_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/MotionInterpolatorFishPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/MotionInterpolatorFishPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/OrientationInterpolatorFishExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/OrientationInterpolatorFishExample_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/OrientationInterpolatorFishPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/OrientationInterpolatorFishPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/PositionInterpolatorPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/PositionInterpolatorPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/ScalarInterpolatorFishExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/ScalarInterpolatorFishExample_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/ScalarInterpolatorFishPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/ScalarInterpolatorFishPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter11LightingEnvironmentalEffects/BackgroundKelpForestMain.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter11LightingEnvironmentalEffects/FogKelpForestMain.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter11LightingEnvironmentalEffects/TextureBackgroundKelpForestMain.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/CollisionKelpForestMain.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/LoadSensorKelpForestMain.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/LoadSensorKelpForestMain_timeOut.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/ProximitySensorKelpForestMain.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/ProximitySensorMultiple.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/ProximitySensorMultiple_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/ProximitySensorNoOverlap.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/ProximitySensorNoOverlap_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/ProximitySensorSingle.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/ProximitySensorSingle_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/SoundAudioClip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/SoundAudioClip_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter12EnvironmentSensorSound/VisibilitySensorKelpForestMain.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoExamplesExcerpt.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoExamplesExcerpt_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayExample_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HudKelpForest.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HudKelpForest_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulator.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorExamples_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorPrototypeExpanded.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorPrototypeExpanded_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulator_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/TextStringPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/TextStringPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/WhereAmIExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/WhereAmIExample_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/WhereAmIPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/WhereAmIPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/BlackSurfPerch.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/BlackSurfPerch_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/BlueRockFish.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/BlueRockFish_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/CircleFishExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/CircleFishExample_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/CircleFishLodExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/CircleFishLodExample_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/CircleFishLodPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/CircleFishLodPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/CircleFishPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/CircleFishPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/FishExamples.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/FishExamples_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/FishModelComparison.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/FishModelComparison_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/FishPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/FishPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/Garibaldi.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/Garibaldi_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/HalfMoonGroup.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/HalfMoonGroup_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/HalfMoonPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/HalfMoonPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpBass.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpBass_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpExamplesNoBase.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpExamplesNoBase_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpForestNoNancy.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpSurfPerch.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpSurfPerch_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/RubberLipGroup.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/RubberLipGroup_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/SeaStarHighResolutionExample.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/SeaStarHighResolutionExample_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/SeaStarHighResolutionPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/SeaStarHighResolutionPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/SeaStarPrototype.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/SeaStarPrototype_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/StripedSurfPerch.x3d</option>
+<option>./www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/StripedSurfPerch_RoundTrip.x3d</option>
+<option>./www.web3d.org/x3d/languages/c/Debug/CreateNodesFromPrototype.x3d</option>
+<option>./www.web3d.org/x3d/languages/c/Release/CreateNodesFromPrototype.x3d</option>
+<option>./www.web3d.org/x3d/languages/cpp/Debug/CreateNodesFromPrototype.x3d</option>
+<option>./www.web3d.org/x3d/languages/cpp/Release/CreateNodesFromPrototype.x3d</option>
+<option>./www.web3d.org/x3d/languages/csharp/1.Examples_exe/X3DViewer_Data/StreamingAssets/CreateNodesFromPrototype.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/data/Json.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/data/Node.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/examples/examples/temp.exiInputTransformed.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutputCanonical.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutputTidy.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutputTidy_CommandLine.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput_CommandLine.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput_CommandLineUnzipped.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput_ReloadedDOM.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/HelloWorldProgramOutput.Java.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/HelloWorldProgramOutput.Nashorn.js.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/HelloWorldProgramOutput.Nashorn.js.newPrettyPrint.intermediate.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/HelloWorldProgramOutput.Node.js.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/HelloWorldProgramOutput.Node.js.newPrettyPrint.intermediate.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/Java.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/Json.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/JsonPrettyPrint.intermediate.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/Nashorn.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/Nashorn0.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/NashornPrettyPrint.intermediate.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/Node.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/Node0.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/NodePrettyPrint.intermediate.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/Quotes.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/nashorn/examples/X3d.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/examples/Node.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/HelloWorldProgramOutput.Java.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/Java.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/Json.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/Json.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/JsonPrettyPrint.intermediate.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/Node.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/Node.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/Node0.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/Quotes.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/node/examples/X3d.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pyjnius/examples/abox.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutputCanonical.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutputTidy.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutputTidy_CommandLine.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutput_CommandLine.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutput_CommandLineUnzipped.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutput_ReloadedDOM.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/abox.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/arc.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/arc1.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/ArchPrototype.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/arcold.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/asmallbox.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/Box.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/bub.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/bubble.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/CameraExamples.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/CameraPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/cobweb.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/cobweb2.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/flowerproto.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/flowers.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/force.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/fors.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/fors2.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/freewrlflowers.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/glflowers.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/HeadsUpDisplayExample.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/plainflowers.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/pp3.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/qq3.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/rubik.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/rubikFurnace.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/rubikOnFire.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/sphereflowers.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/x3dconnector.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/x3dconnectorProto.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/X3dHeaderPrototypeSyntaxExamples.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/java/src/python/pythonapi/data/x3domflowers.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/node/examples/abox.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/node/examples/abox.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/node/examples/examples/abox.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/node/examples/examples/HelloWorldProgramOutput.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/node/examples/HelloWorldProgramOutput.new.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/node/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/test/arc.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/test/CameraExamples.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/test/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/test/SpinGroupInternalSubsetDeclaration.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/vrmlscript/examples/abox.x3d</option>
+<option>./www.web3d.org/x3d/stylesheets/vrmlscript/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/tools/canonical/test/testFiles/AllVrml97Nodes.x3d</option>
+<option>./www.web3d.org/x3d/tools/canonical/test/testFiles/TestInternalDTDQuadTreeExamples.x3d</option>
+<option>./www.web3d.org/x3d/tools/canonical/test/testFiles/TestInternalSubsetDeclaration.x3d</option>
+<option>./www.web3d.org/x3d/tools/canonical/test/testFiles/TestRemoveCommaSeparator.x3d</option>
+<option>./www.web3d.org/x3d/tools/Vrml97ToX3dNist/JavaLBExamples/CreateNodesFromPrototype.x3d</option>
+<option>./www.web3d.org/x3d/tools/Vrml97ToX3dNist/test/ai0ToX3D.x3d</option>
+<option>./www.web3d.org/x3d/tools/Vrml97ToX3dNist/test/Figure31.7DonutExternalPrototypeToX3D.x3d</option>
+<option>./www.web3d.org/x3d/tools/Vrml97ToX3dNist/test/Figure31.9SpinGroupPrototypeToX3d.x3d</option>
+<option>./www.web3d.org/x3d/tools/Vrml97ToX3dNist/test/NewShapeToX3D.x3d</option>
+<option>./www.web3d.org/x3d/tools/Vrml97ToX3dNist/test/TranslationTestScene.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/examples/HelloWorldProgramOutputCanonical.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/examples/HelloWorldProgramOutputTidy.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/examples/HelloWorldProgramOutputTidy_CommandLine.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/examples/HelloWorldProgramOutput_CommandLine.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/examples/HelloWorldProgramOutput_CommandLineUnzipped.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/examples/HelloWorldProgramOutput_ReloadedDOM.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/HelloWorldProgramOutput.Java.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/HelloWorldProgramOutput.Nashorn.js.new.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/HelloWorldProgramOutput.Nashorn.js.newPrettyPrint.intermediate.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/Java.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/Json.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/JsonPrettyPrint.intermediate.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/Nashorn.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/Nashorn0.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/NashornPrettyPrint.intermediate.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/Quotes.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/nashorn/examples/X3d.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/examples/Node.new.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/HelloWorldProgramOutput.Java.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/Java.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/Json.new.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/Json.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/Node.new.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/Node.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/Node0.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/Quotes.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/node/examples/X3d.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pyjnius/examples/abox.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutputCanonical.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutputTidy.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutputTidy_CommandLine.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutput_CommandLine.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutput_CommandLineUnzipped.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pyjnius/examples/HelloWorldProgramOutput_ReloadedDOM.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/abox.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/arc.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/arc1.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/ArchPrototype.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/arcold.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/asmallbox.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/Box.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/bub.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/bubble.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/CameraExamples.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/CameraPrototypes.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/cobweb.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/cobweb2.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/flowerproto.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/flowers.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/force.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/fors.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/fors2.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/freewrlflowers.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/glflowers.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/HeadsUpDisplayExample.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/plainflowers.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/pp3.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/qq3.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/rubik.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/rubikFurnace.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/rubikOnFire.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/sphereflowers.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/x3dconnector.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/x3dconnectorProto.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/X3dHeaderPrototypeSyntaxExamples.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/java/src/python/pythonapi/data/x3domflowers.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/node/examples/abox.new.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/node/examples/abox.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/node/examples/HelloWorldProgramOutput.new.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/node/examples/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/test/arc.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/test/CameraExamples.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/test/HelloWorldProgramOutput.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/test/SpinGroupInternalSubsetDeclaration.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/vrmlscript/examples/abox.x3d</option>
+<option>./www.web3d.org/x3d/tools/X3dEdit3.3/X3D/src/org/web3d/x3d/externals/stylesheets/vrmlscript/examples/HelloWorldProgramOutput.x3d</option>
+</select>
+<input type="text" onchange="filter(event)"></input>
+</td>
+<td>
+Prototype Expander? <input id="prototype" type="checkbox" checked></input>
+JSON Scripts? <input id="scripting" type="checkbox" checked></input>
+Use Namespace: <select id="namespace">
+<option>http://www.web3d.org/specifications/x3d</option>
+<option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
+<option>https://www.x3dom.org/x3dom</option>
+<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- X_ITE -->
+<option>none</option> <!-- X3DOM HTML -->
+</select>
+</td>
+</tr>
+<tr>
+	<td>
+		Click <a onclick='updateFromJson(undefined, $("#file option:selected").text());encodeJSON(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer, convert to STL,  convert to EXI, and convert to XML (and display).<br>
+	</td>
+	<td>
+		Click <a onclick='updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into X_ITE and XML X3DOM viewer. Converts to JSON.<br>
+	</td>
+	<td>
+		Click <a onclick='decodeEXI4JSON();updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
+	</td>
+</tr>
+<tr>
+<td>
+	<textarea id="json" rows="15" cols="80"></textarea><br>
+    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
+		<Scene>
+		</Scene>
+    </X3D>
+    <X3DCanvas id='x_itejson' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </X3DCanvas>
+</td>
+<td>
+	<textarea id="xml" rows="15" cols="80"></textarea><br>
+    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
+		<Scene id="x3domxml">
+		</Scene>
+    </X3D>
+    <X3DCanvas id='x_itexml' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </X3DCanvas>
+</td>
+<td>
+		<textarea id="exi" rows="15" cols="80"></textarea>
+		Standard Image<br></br>
+		<image height="150px" width="300px" id="image" src="">
+</td>
+</tr>
+<tr>
+<td>
+	<a href="../nashorn/X3Dautoclass.js">X3Dautoclass.js</a>
+	Save the link and copy the text below to a the file &quot;your_file_name.js&quot; and run with, copy X3DJSAIL.4.0.full.jar and saxon9he.jar to the same folder and run:  $ jjs -cp X3DJSAIL.4.0.full.jar your_file_name.js .
+<textarea id="java" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+	Click <a onclick='updateFromStl($("#file option:selected").text());'>here</a> to load STL text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click <a id="dom">here</a> to capture a snapshot.
+<textarea id="stl" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
+<textarea id="ply" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</body>
+    <script type="text/javascript" src="../node/JavaScriptSerializer.js"></script>
+    <script type="text/javascript" src="../node/DOM2JSONSerializer.js"></script>
+    <script src="../node/Three2Serializer.js"></script>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="../node/Script.js"></script>
+    <script type="text/javascript" src="../node/mapToMethod.js"></script>
+    <script type="text/javascript" src="../node/mapToMethod2.js"></script>
+    <script type="text/javascript" src="../node/fieldTypes.js"></script>
+    <script type="text/javascript" src="../node/matrix.js"></script>
+    <script type="text/javascript" src="../node/convertPlyToJson.js"></script>
+    <script type="text/javascript" src="../node/convertStlToJson.js"></script>
+    <script type="text/javascript" src="../node/convertJsonToStl.js"></script>
+    <script src="../../../node_modules/three/build/three.js"></script>
+    <script src="../../../node_modules/three/examples/js/controls/OrbitControls.js"></script>
+    <script src="../../../node_modules/three/examples/js/libs/chevrotain.min.js"></script>
+    <script src="../node/x3d-parser.js"></script>
+    <script src="../node/x3d-loader.js"></script>
+    <script src="../node/threex3dloader.js"></script>
+    <script src="../../../node_modules/three/examples/js/loaders/VRMLLoader.js"></script>
+    <script type="text/javascript" src="../node/loadValidate.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
+    <script type="text/javascript" src="../node/exi.js"></script>
+    <script type="text/javascript">
+	$(document).ready(function() {
+		loadJson('../data/ball.json'); // does load ball.json
+	});
+    </script>
+</html>
