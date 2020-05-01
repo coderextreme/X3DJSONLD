@@ -62,20 +62,15 @@ class Script {
 var X3DJSON = {}; // global
 
 class Scripts {
-	constructor() {
-		X3DJSON = {}; // global
-		this.runRoutes = [];
-		if (typeof this.intervalId !== 'undefined') {
-			// console.error("Interval", this.X3DJSON.intervalId, "cleared");
-			clearInterval(this.intervalId);
+	runAllRoutes() {
+		for (let r in X3DJSON.runRoutes) {
+			X3DJSON.runRoutes[r]();
 		}
-		this.intervalId = setInterval(this.runAllRoutes, 1000 / 60 );
 	}
 
-	runAllRoutes() {
-		for (var r in this.runRoutes) {
-			this.runRoutes[r]();
-		}
+	constructor() {
+		X3DJSON = {}; // global, overrite with each construction
+		X3DJSON.runRoutes = [];
 	}
 
 	loadScripts(json, selector, url) {
@@ -109,7 +104,7 @@ class Scripts {
 		$('body').append(routes);
 		*/
 
-		var loop = {}
+		var loop = {};
 		loop.id = "loop";
 		loop.type = "text/javascript";
 		loop.text = loopItems.join("\n");
@@ -122,7 +117,7 @@ class Scripts {
 		var jsonScript = "var myjson = "+JSON.stringify(json, null, 2);
 		try {
 			// TODO eval is evil
-			if (typeof jsonScript != 'undefined') {
+			if (typeof jsonScript !== 'undefined') {
 				//console.log(jsonScript);
 				eval(jsonScript);
 			}
@@ -134,7 +129,7 @@ class Scripts {
 		// initialize scripts
 		try {
 			// TODO eval is evil
-			if (typeof scripts.text != 'undefined') {
+			if (typeof scripts.text !== 'undefined') {
 				//console.log(scripts.text);
 				eval(scripts.text);
 			}
@@ -147,7 +142,7 @@ class Scripts {
 		// run initializers, initializeOnly routes, and eventHandler initialization, proxies
 		try {
 			// TODO eval is evil
-			if (typeof routes.text != 'undefined') {
+			if (typeof routes.text !== 'undefined') {
 				//console.log(routes.text);
 				eval(routes.text);
 			}
@@ -155,21 +150,26 @@ class Scripts {
 			alert(e);
 			console.error(e);
 		}
-		// event loop
-		this.runRoutes.push(function() {
+		/* event loop */
+		X3DJSON.runRoutes[X3DJSON.runRoutes.length] = function() {
 			try {
-				// TODO eval is evil
-				if (typeof loop.text != 'undefined') {
-					//console.log(loop.text);
+				/* TODO eval is evil */
+				if (typeof loop.text !== 'undefined') {
+					/* console.log(loop.text); */
 					eval(loop.text);
 				}
-				x3dom.reload();  // This may be necessary
+				x3dom.reload();  /* This may be necessary */
 			} catch (e) {
 				alert(e);
 				console.error(e);
 			}
 			__eventTime += 1000 / 60;
-		});
+		};
+		if (typeof this.intervalId !== 'undefined') {
+			// console.error("Interval", this.X3DJSON.intervalId, "cleared");
+			clearInterval(this.intervalId);
+		}
+		this.intervalId = setInterval(this.runAllRoutes, 1000 / 60 );
 	}
 
 	zapSource(object) {
