@@ -153,7 +153,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -164,14 +164,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("SimpleShotsTest for camera Zoom Dolly Pan Boom and Tilt");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_position = function (value) {
 		try {
 			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting position '+e);
+			console.log('Problems setting position '+e);
 			console.error('Problems setting position',e);
 		}
 	};
@@ -182,14 +182,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.position = new SFVec3f(-4,4,10);
 	} catch (e) {
-		alert('Problems setting position '+e);
+		console.log('Problems setting position '+e);
 		console.error('Problems setting position',e);
 	}
 	this.set_orientation = function (value) {
 		try {
 			this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting orientation '+e);
+			console.log('Problems setting orientation '+e);
 			console.error('Problems setting orientation',e);
 		}
 	};
@@ -200,14 +200,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.orientation = new SFRotation(0,0,1,0);
 	} catch (e) {
-		alert('Problems setting orientation '+e);
+		console.log('Problems setting orientation '+e);
 		console.error('Problems setting orientation',e);
 	}
 	this.set_fraction = function (value) {
 		try {
 			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting fraction '+e);
+			console.log('Problems setting fraction '+e);
 			console.error('Problems setting fraction',e);
 		}
 	};
@@ -218,14 +218,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.fraction = undefined;
 	} catch (e) {
-		alert('Problems setting fraction '+e);
+		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
 	this.set_bind = function (value) {
 		try {
 			this.proxy.bind = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting bind '+e);
+			console.log('Problems setting bind '+e);
 			console.error('Problems setting bind',e);
 		}
 	};
@@ -236,14 +236,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.bind = undefined;
 	} catch (e) {
-		alert('Problems setting bind '+e);
+		console.log('Problems setting bind '+e);
 		console.error('Problems setting bind',e);
 	}
 	this.set_fieldOfView = function (value) {
 		try {
 			this.proxy.fieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting fieldOfView '+e);
+			console.log('Problems setting fieldOfView '+e);
 			console.error('Problems setting fieldOfView',e);
 		}
 	};
@@ -254,14 +254,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.fieldOfView = new SFFloat(0.7854);
 	} catch (e) {
-		alert('Problems setting fieldOfView '+e);
+		console.log('Problems setting fieldOfView '+e);
 		console.error('Problems setting fieldOfView',e);
 	}
 	this.set_nearClipPlane = function (value) {
 		try {
 			this.proxy.nearClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting nearClipPlane '+e);
+			console.log('Problems setting nearClipPlane '+e);
 			console.error('Problems setting nearClipPlane',e);
 		}
 	};
@@ -272,14 +272,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.nearClipPlane = new SFFloat(0.25);
 	} catch (e) {
-		alert('Problems setting nearClipPlane '+e);
+		console.log('Problems setting nearClipPlane '+e);
 		console.error('Problems setting nearClipPlane',e);
 	}
 	this.set_farClipPlane = function (value) {
 		try {
 			this.proxy.farClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting farClipPlane '+e);
+			console.log('Problems setting farClipPlane '+e);
 			console.error('Problems setting farClipPlane',e);
 		}
 	};
@@ -290,14 +290,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.farClipPlane = new SFFloat(0);
 	} catch (e) {
-		alert('Problems setting farClipPlane '+e);
+		console.log('Problems setting farClipPlane '+e);
 		console.error('Problems setting farClipPlane',e);
 	}
 	this.set_shots = function (value) {
 		try {
 			this.proxy.shots = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting shots '+e);
+			console.log('Problems setting shots '+e);
 			console.error('Problems setting shots',e);
 		}
 	};
@@ -308,14 +308,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.shots = new MFNode();
 	} catch (e) {
-		alert('Problems setting shots '+e);
+		console.log('Problems setting shots '+e);
 		console.error('Problems setting shots',e);
 	}
 	this.set_filterColor = function (value) {
 		try {
 			this.proxy.filterColor = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting filterColor '+e);
+			console.log('Problems setting filterColor '+e);
 			console.error('Problems setting filterColor',e);
 		}
 	};
@@ -326,14 +326,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.filterColor = new SFColor(1,1,1);
 	} catch (e) {
-		alert('Problems setting filterColor '+e);
+		console.log('Problems setting filterColor '+e);
 		console.error('Problems setting filterColor',e);
 	}
 	this.set_filterTransparency = function (value) {
 		try {
 			this.proxy.filterTransparency = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting filterTransparency '+e);
+			console.log('Problems setting filterTransparency '+e);
 			console.error('Problems setting filterTransparency',e);
 		}
 	};
@@ -344,14 +344,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.filterTransparency = new SFFloat(1);
 	} catch (e) {
-		alert('Problems setting filterTransparency '+e);
+		console.log('Problems setting filterTransparency '+e);
 		console.error('Problems setting filterTransparency',e);
 	}
 	this.set_upVector = function (value) {
 		try {
 			this.proxy.upVector = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting upVector '+e);
+			console.log('Problems setting upVector '+e);
 			console.error('Problems setting upVector',e);
 		}
 	};
@@ -362,14 +362,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.upVector = new SFVec3f(0,1,0);
 	} catch (e) {
-		alert('Problems setting upVector '+e);
+		console.log('Problems setting upVector '+e);
 		console.error('Problems setting upVector',e);
 	}
 	this.set_fStop = function (value) {
 		try {
 			this.proxy.fStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting fStop '+e);
+			console.log('Problems setting fStop '+e);
 			console.error('Problems setting fStop',e);
 		}
 	};
@@ -380,14 +380,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.fStop = new SFFloat(5.6);
 	} catch (e) {
-		alert('Problems setting fStop '+e);
+		console.log('Problems setting fStop '+e);
 		console.error('Problems setting fStop',e);
 	}
 	this.set_focusDistance = function (value) {
 		try {
 			this.proxy.focusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting focusDistance '+e);
+			console.log('Problems setting focusDistance '+e);
 			console.error('Problems setting focusDistance',e);
 		}
 	};
@@ -398,14 +398,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.focusDistance = new SFFloat(10);
 	} catch (e) {
-		alert('Problems setting focusDistance '+e);
+		console.log('Problems setting focusDistance '+e);
 		console.error('Problems setting focusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -416,14 +416,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_totalDuration = function (value) {
 		try {
 			this.proxy.totalDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting totalDuration '+e);
+			console.log('Problems setting totalDuration '+e);
 			console.error('Problems setting totalDuration',e);
 		}
 	};
@@ -434,14 +434,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.totalDuration = new SFTime();
 	} catch (e) {
-		alert('Problems setting totalDuration '+e);
+		console.log('Problems setting totalDuration '+e);
 		console.error('Problems setting totalDuration',e);
 	}
 	this.set_offlineRender = function (value) {
 		try {
 			this.proxy.offlineRender = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting offlineRender '+e);
+			console.log('Problems setting offlineRender '+e);
 			console.error('Problems setting offlineRender',e);
 		}
 	};
@@ -452,14 +452,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.offlineRender = X3DJSON.nodeUtil('Scene','undefined');
 	} catch (e) {
-		alert('Problems setting offlineRender '+e);
+		console.log('Problems setting offlineRender '+e);
 		console.error('Problems setting offlineRender',e);
 	}
 	this.set_ViewpointNode = function (value) {
 		try {
 			this.proxy.ViewpointNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting ViewpointNode '+e);
+			console.log('Problems setting ViewpointNode '+e);
 			console.error('Problems setting ViewpointNode',e);
 		}
 	};
@@ -470,14 +470,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.ViewpointNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint');
 	} catch (e) {
-		alert('Problems setting ViewpointNode '+e);
+		console.log('Problems setting ViewpointNode '+e);
 		console.error('Problems setting ViewpointNode',e);
 	}
 	this.set_NavInfoNode = function (value) {
 		try {
 			this.proxy.NavInfoNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting NavInfoNode '+e);
+			console.log('Problems setting NavInfoNode '+e);
 			console.error('Problems setting NavInfoNode',e);
 		}
 	};
@@ -488,14 +488,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.NavInfoNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraNavInfo');
 	} catch (e) {
-		alert('Problems setting NavInfoNode '+e);
+		console.log('Problems setting NavInfoNode '+e);
 		console.error('Problems setting NavInfoNode',e);
 	}
 	this.set_CameraPI = function (value) {
 		try {
 			this.proxy.CameraPI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting CameraPI '+e);
+			console.log('Problems setting CameraPI '+e);
 			console.error('Problems setting CameraPI',e);
 		}
 	};
@@ -506,14 +506,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.CameraPI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator');
 	} catch (e) {
-		alert('Problems setting CameraPI '+e);
+		console.log('Problems setting CameraPI '+e);
 		console.error('Problems setting CameraPI',e);
 	}
 	this.set_CameraOI = function (value) {
 		try {
 			this.proxy.CameraOI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting CameraOI '+e);
+			console.log('Problems setting CameraOI '+e);
 			console.error('Problems setting CameraOI',e);
 		}
 	};
@@ -524,14 +524,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.CameraOI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator');
 	} catch (e) {
-		alert('Problems setting CameraOI '+e);
+		console.log('Problems setting CameraOI '+e);
 		console.error('Problems setting CameraOI',e);
 	}
 	this.set_key = function (value) {
 		try {
 			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting key '+e);
+			console.log('Problems setting key '+e);
 			console.error('Problems setting key',e);
 		}
 	};
@@ -542,14 +542,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.key = new MFFloat();
 	} catch (e) {
-		alert('Problems setting key '+e);
+		console.log('Problems setting key '+e);
 		console.error('Problems setting key',e);
 	}
 	this.set_keyValuePosition = function (value) {
 		try {
 			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValuePosition '+e);
+			console.log('Problems setting keyValuePosition '+e);
 			console.error('Problems setting keyValuePosition',e);
 		}
 	};
@@ -560,14 +560,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValuePosition = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting keyValuePosition '+e);
+		console.log('Problems setting keyValuePosition '+e);
 		console.error('Problems setting keyValuePosition',e);
 	}
 	this.set_keyValueOrientation = function (value) {
 		try {
 			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValueOrientation '+e);
+			console.log('Problems setting keyValueOrientation '+e);
 			console.error('Problems setting keyValueOrientation',e);
 		}
 	};
@@ -578,14 +578,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValueOrientation = new MFRotation();
 	} catch (e) {
-		alert('Problems setting keyValueOrientation '+e);
+		console.log('Problems setting keyValueOrientation '+e);
 		console.error('Problems setting keyValueOrientation',e);
 	}
 	this.set_animated = function (value) {
 		try {
 			this.proxy.animated = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting animated '+e);
+			console.log('Problems setting animated '+e);
 			console.error('Problems setting animated',e);
 		}
 	};
@@ -596,14 +596,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.animated = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting animated '+e);
+		console.log('Problems setting animated '+e);
 		console.error('Problems setting animated',e);
 	}
 	this.set_initialized = function (value) {
 		try {
 			this.proxy.initialized = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialized '+e);
+			console.log('Problems setting initialized '+e);
 			console.error('Problems setting initialized',e);
 		}
 	};
@@ -614,14 +614,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialized = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting initialized '+e);
+		console.log('Problems setting initialized '+e);
 		console.error('Problems setting initialized',e);
 	}
 	this.set_shotCount = function (value) {
 		try {
 			this.proxy.shotCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting shotCount '+e);
+			console.log('Problems setting shotCount '+e);
 			console.error('Problems setting shotCount',e);
 		}
 	};
@@ -632,14 +632,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.shotCount = new SFInt32(0);
 	} catch (e) {
-		alert('Problems setting shotCount '+e);
+		console.log('Problems setting shotCount '+e);
 		console.error('Problems setting shotCount',e);
 	}
 	this.set_movesCount = function (value) {
 		try {
 			this.proxy.movesCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting movesCount '+e);
+			console.log('Problems setting movesCount '+e);
 			console.error('Problems setting movesCount',e);
 		}
 	};
@@ -650,14 +650,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.movesCount = new SFInt32(0);
 	} catch (e) {
-		alert('Problems setting movesCount '+e);
+		console.log('Problems setting movesCount '+e);
 		console.error('Problems setting movesCount',e);
 	}
 	this.set_frameCount = function (value) {
 		try {
 			this.proxy.frameCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting frameCount '+e);
+			console.log('Problems setting frameCount '+e);
 			console.error('Problems setting frameCount',e);
 		}
 	};
@@ -668,14 +668,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.frameCount = new SFFloat(0);
 	} catch (e) {
-		alert('Problems setting frameCount '+e);
+		console.log('Problems setting frameCount '+e);
 		console.error('Problems setting frameCount',e);
 	}
 	this.set_startTime = function (value) {
 		try {
 			this.proxy.startTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting startTime '+e);
+			console.log('Problems setting startTime '+e);
 			console.error('Problems setting startTime',e);
 		}
 	};
@@ -686,14 +686,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.startTime = new SFTime(0);
 	} catch (e) {
-		alert('Problems setting startTime '+e);
+		console.log('Problems setting startTime '+e);
 		console.error('Problems setting startTime',e);
 	}
 	this.set_priorTraceTime = function (value) {
 		try {
 			this.proxy.priorTraceTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting priorTraceTime '+e);
+			console.log('Problems setting priorTraceTime '+e);
 			console.error('Problems setting priorTraceTime',e);
 		}
 	};
@@ -704,14 +704,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.priorTraceTime = new SFTime(0);
 	} catch (e) {
-		alert('Problems setting priorTraceTime '+e);
+		console.log('Problems setting priorTraceTime '+e);
 		console.error('Problems setting priorTraceTime',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -722,10 +722,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraScript
@@ -1089,9 +1088,7 @@ ecmascript:
          console.error ('[Camera: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[Camera] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -1138,7 +1135,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -1149,14 +1146,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Simple shot of Camera Zoom");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -1167,14 +1164,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_moves = function (value) {
 		try {
 			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting moves '+e);
+			console.log('Problems setting moves '+e);
 			console.error('Problems setting moves',e);
 		}
 	};
@@ -1185,14 +1182,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.moves = new MFNode();
 	} catch (e) {
-		alert('Problems setting moves '+e);
+		console.log('Problems setting moves '+e);
 		console.error('Problems setting moves',e);
 	}
 	this.set_initialPosition = function (value) {
 		try {
 			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialPosition '+e);
+			console.log('Problems setting initialPosition '+e);
 			console.error('Problems setting initialPosition',e);
 		}
 	};
@@ -1203,14 +1200,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialPosition = new SFVec3f(-50,1,-10);
 	} catch (e) {
-		alert('Problems setting initialPosition '+e);
+		console.log('Problems setting initialPosition '+e);
 		console.error('Problems setting initialPosition',e);
 	}
 	this.set_initialOrientation = function (value) {
 		try {
 			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialOrientation '+e);
+			console.log('Problems setting initialOrientation '+e);
 			console.error('Problems setting initialOrientation',e);
 		}
 	};
@@ -1221,14 +1218,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting initialOrientation '+e);
+		console.log('Problems setting initialOrientation '+e);
 		console.error('Problems setting initialOrientation',e);
 	}
 	this.set_initialAimPoint = function (value) {
 		try {
 			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialAimPoint '+e);
+			console.log('Problems setting initialAimPoint '+e);
 			console.error('Problems setting initialAimPoint',e);
 		}
 	};
@@ -1239,14 +1236,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting initialAimPoint '+e);
+		console.log('Problems setting initialAimPoint '+e);
 		console.error('Problems setting initialAimPoint',e);
 	}
 	this.set_initialFieldOfView = function (value) {
 		try {
 			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFieldOfView '+e);
+			console.log('Problems setting initialFieldOfView '+e);
 			console.error('Problems setting initialFieldOfView',e);
 		}
 	};
@@ -1257,14 +1254,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFieldOfView '+e);
+		console.log('Problems setting initialFieldOfView '+e);
 		console.error('Problems setting initialFieldOfView',e);
 	}
 	this.set_initialFStop = function (value) {
 		try {
 			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFStop '+e);
+			console.log('Problems setting initialFStop '+e);
 			console.error('Problems setting initialFStop',e);
 		}
 	};
@@ -1275,14 +1272,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFStop '+e);
+		console.log('Problems setting initialFStop '+e);
 		console.error('Problems setting initialFStop',e);
 	}
 	this.set_initialFocusDistance = function (value) {
 		try {
 			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFocusDistance '+e);
+			console.log('Problems setting initialFocusDistance '+e);
 			console.error('Problems setting initialFocusDistance',e);
 		}
 	};
@@ -1293,14 +1290,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFocusDistance '+e);
+		console.log('Problems setting initialFocusDistance '+e);
 		console.error('Problems setting initialFocusDistance',e);
 	}
 	this.set_shotDuration = function (value) {
 		try {
 			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting shotDuration '+e);
+			console.log('Problems setting shotDuration '+e);
 			console.error('Problems setting shotDuration',e);
 		}
 	};
@@ -1311,14 +1308,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.shotDuration = new SFTime();
 	} catch (e) {
-		alert('Problems setting shotDuration '+e);
+		console.log('Problems setting shotDuration '+e);
 		console.error('Problems setting shotDuration',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -1329,14 +1326,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -1347,14 +1344,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 	this.set_key = function (value) {
 		try {
 			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting key '+e);
+			console.log('Problems setting key '+e);
 			console.error('Problems setting key',e);
 		}
 	};
@@ -1365,14 +1362,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.key = new MFFloat();
 	} catch (e) {
-		alert('Problems setting key '+e);
+		console.log('Problems setting key '+e);
 		console.error('Problems setting key',e);
 	}
 	this.set_keyValuePosition = function (value) {
 		try {
 			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValuePosition '+e);
+			console.log('Problems setting keyValuePosition '+e);
 			console.error('Problems setting keyValuePosition',e);
 		}
 	};
@@ -1383,14 +1380,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValuePosition = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting keyValuePosition '+e);
+		console.log('Problems setting keyValuePosition '+e);
 		console.error('Problems setting keyValuePosition',e);
 	}
 	this.set_keyValueOrientation = function (value) {
 		try {
 			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValueOrientation '+e);
+			console.log('Problems setting keyValueOrientation '+e);
 			console.error('Problems setting keyValueOrientation',e);
 		}
 	};
@@ -1401,10 +1398,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValueOrientation = new MFRotation();
 	} catch (e) {
-		alert('Problems setting keyValueOrientation '+e);
+		console.log('Problems setting keyValueOrientation '+e);
 		console.error('Problems setting keyValueOrientation',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraShotScript
@@ -1511,9 +1507,7 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -1560,7 +1554,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -1571,14 +1565,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Zoom In");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -1589,14 +1583,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -1607,14 +1601,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(3);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -1625,14 +1619,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-50,1,-15);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -1643,14 +1637,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -1661,14 +1655,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -1679,14 +1673,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -1697,14 +1691,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -1715,14 +1709,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -1733,14 +1727,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -1751,14 +1745,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -1769,10 +1763,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -1874,9 +1867,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -1923,7 +1914,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -1934,14 +1925,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Zoom Out");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -1952,14 +1943,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -1970,14 +1961,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(3);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -1988,14 +1979,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-50,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -2006,14 +1997,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -2024,14 +2015,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -2042,14 +2033,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -2060,14 +2051,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -2078,14 +2069,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -2096,14 +2087,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -2114,14 +2105,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -2132,10 +2123,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -2237,9 +2227,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -2286,7 +2274,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -2297,14 +2285,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Pause");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -2315,14 +2303,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -2333,14 +2321,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(1);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -2351,14 +2339,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-50,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -2369,14 +2357,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -2387,14 +2375,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -2405,14 +2393,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -2423,14 +2411,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -2441,14 +2429,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -2459,14 +2447,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -2477,14 +2465,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -2495,10 +2483,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -2600,9 +2587,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -2649,7 +2634,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -2660,14 +2645,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Simple shot of Camera Dolly");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -2678,14 +2663,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_moves = function (value) {
 		try {
 			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting moves '+e);
+			console.log('Problems setting moves '+e);
 			console.error('Problems setting moves',e);
 		}
 	};
@@ -2696,14 +2681,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.moves = new MFNode();
 	} catch (e) {
-		alert('Problems setting moves '+e);
+		console.log('Problems setting moves '+e);
 		console.error('Problems setting moves',e);
 	}
 	this.set_initialPosition = function (value) {
 		try {
 			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialPosition '+e);
+			console.log('Problems setting initialPosition '+e);
 			console.error('Problems setting initialPosition',e);
 		}
 	};
@@ -2714,14 +2699,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialPosition = new SFVec3f(-40,1,-10);
 	} catch (e) {
-		alert('Problems setting initialPosition '+e);
+		console.log('Problems setting initialPosition '+e);
 		console.error('Problems setting initialPosition',e);
 	}
 	this.set_initialOrientation = function (value) {
 		try {
 			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialOrientation '+e);
+			console.log('Problems setting initialOrientation '+e);
 			console.error('Problems setting initialOrientation',e);
 		}
 	};
@@ -2732,14 +2717,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting initialOrientation '+e);
+		console.log('Problems setting initialOrientation '+e);
 		console.error('Problems setting initialOrientation',e);
 	}
 	this.set_initialAimPoint = function (value) {
 		try {
 			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialAimPoint '+e);
+			console.log('Problems setting initialAimPoint '+e);
 			console.error('Problems setting initialAimPoint',e);
 		}
 	};
@@ -2750,14 +2735,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting initialAimPoint '+e);
+		console.log('Problems setting initialAimPoint '+e);
 		console.error('Problems setting initialAimPoint',e);
 	}
 	this.set_initialFieldOfView = function (value) {
 		try {
 			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFieldOfView '+e);
+			console.log('Problems setting initialFieldOfView '+e);
 			console.error('Problems setting initialFieldOfView',e);
 		}
 	};
@@ -2768,14 +2753,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFieldOfView '+e);
+		console.log('Problems setting initialFieldOfView '+e);
 		console.error('Problems setting initialFieldOfView',e);
 	}
 	this.set_initialFStop = function (value) {
 		try {
 			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFStop '+e);
+			console.log('Problems setting initialFStop '+e);
 			console.error('Problems setting initialFStop',e);
 		}
 	};
@@ -2786,14 +2771,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFStop '+e);
+		console.log('Problems setting initialFStop '+e);
 		console.error('Problems setting initialFStop',e);
 	}
 	this.set_initialFocusDistance = function (value) {
 		try {
 			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFocusDistance '+e);
+			console.log('Problems setting initialFocusDistance '+e);
 			console.error('Problems setting initialFocusDistance',e);
 		}
 	};
@@ -2804,14 +2789,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFocusDistance '+e);
+		console.log('Problems setting initialFocusDistance '+e);
 		console.error('Problems setting initialFocusDistance',e);
 	}
 	this.set_shotDuration = function (value) {
 		try {
 			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting shotDuration '+e);
+			console.log('Problems setting shotDuration '+e);
 			console.error('Problems setting shotDuration',e);
 		}
 	};
@@ -2822,14 +2807,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.shotDuration = new SFTime();
 	} catch (e) {
-		alert('Problems setting shotDuration '+e);
+		console.log('Problems setting shotDuration '+e);
 		console.error('Problems setting shotDuration',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -2840,14 +2825,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -2858,14 +2843,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 	this.set_key = function (value) {
 		try {
 			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting key '+e);
+			console.log('Problems setting key '+e);
 			console.error('Problems setting key',e);
 		}
 	};
@@ -2876,14 +2861,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.key = new MFFloat();
 	} catch (e) {
-		alert('Problems setting key '+e);
+		console.log('Problems setting key '+e);
 		console.error('Problems setting key',e);
 	}
 	this.set_keyValuePosition = function (value) {
 		try {
 			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValuePosition '+e);
+			console.log('Problems setting keyValuePosition '+e);
 			console.error('Problems setting keyValuePosition',e);
 		}
 	};
@@ -2894,14 +2879,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValuePosition = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting keyValuePosition '+e);
+		console.log('Problems setting keyValuePosition '+e);
 		console.error('Problems setting keyValuePosition',e);
 	}
 	this.set_keyValueOrientation = function (value) {
 		try {
 			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValueOrientation '+e);
+			console.log('Problems setting keyValueOrientation '+e);
 			console.error('Problems setting keyValueOrientation',e);
 		}
 	};
@@ -2912,10 +2897,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValueOrientation = new MFRotation();
 	} catch (e) {
-		alert('Problems setting keyValueOrientation '+e);
+		console.log('Problems setting keyValueOrientation '+e);
 		console.error('Problems setting keyValueOrientation',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraShotScript
@@ -3022,9 +3006,7 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -3071,7 +3053,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -3082,14 +3064,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Dolly from Right to Left");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -3100,14 +3082,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -3118,14 +3100,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(3);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -3136,14 +3118,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-45,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -3154,14 +3136,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -3172,14 +3154,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -3190,14 +3172,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -3208,14 +3190,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -3226,14 +3208,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -3244,14 +3226,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -3262,14 +3244,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -3280,10 +3262,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -3385,9 +3366,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -3434,7 +3413,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -3445,14 +3424,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Dolly from Left to Right");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -3463,14 +3442,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -3481,14 +3460,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(3);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -3499,14 +3478,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-40,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -3517,14 +3496,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -3535,14 +3514,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -3553,14 +3532,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -3571,14 +3550,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -3589,14 +3568,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -3607,14 +3586,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -3625,14 +3604,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -3643,10 +3622,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -3748,9 +3726,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -3797,7 +3773,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -3808,14 +3784,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Pause");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -3826,14 +3802,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -3844,14 +3820,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(1);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -3862,14 +3838,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-40,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -3880,14 +3856,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -3898,14 +3874,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -3916,14 +3892,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -3934,14 +3910,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -3952,14 +3928,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -3970,14 +3946,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -3988,14 +3964,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -4006,10 +3982,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -4111,9 +4086,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -4160,7 +4133,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -4171,14 +4144,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Simple shot of Camera Pan left right and back to center");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -4189,14 +4162,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_moves = function (value) {
 		try {
 			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting moves '+e);
+			console.log('Problems setting moves '+e);
 			console.error('Problems setting moves',e);
 		}
 	};
@@ -4207,14 +4180,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.moves = new MFNode();
 	} catch (e) {
-		alert('Problems setting moves '+e);
+		console.log('Problems setting moves '+e);
 		console.error('Problems setting moves',e);
 	}
 	this.set_initialPosition = function (value) {
 		try {
 			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialPosition '+e);
+			console.log('Problems setting initialPosition '+e);
 			console.error('Problems setting initialPosition',e);
 		}
 	};
@@ -4225,14 +4198,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialPosition = new SFVec3f(-30,1,-10);
 	} catch (e) {
-		alert('Problems setting initialPosition '+e);
+		console.log('Problems setting initialPosition '+e);
 		console.error('Problems setting initialPosition',e);
 	}
 	this.set_initialOrientation = function (value) {
 		try {
 			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialOrientation '+e);
+			console.log('Problems setting initialOrientation '+e);
 			console.error('Problems setting initialOrientation',e);
 		}
 	};
@@ -4243,14 +4216,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting initialOrientation '+e);
+		console.log('Problems setting initialOrientation '+e);
 		console.error('Problems setting initialOrientation',e);
 	}
 	this.set_initialAimPoint = function (value) {
 		try {
 			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialAimPoint '+e);
+			console.log('Problems setting initialAimPoint '+e);
 			console.error('Problems setting initialAimPoint',e);
 		}
 	};
@@ -4261,14 +4234,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting initialAimPoint '+e);
+		console.log('Problems setting initialAimPoint '+e);
 		console.error('Problems setting initialAimPoint',e);
 	}
 	this.set_initialFieldOfView = function (value) {
 		try {
 			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFieldOfView '+e);
+			console.log('Problems setting initialFieldOfView '+e);
 			console.error('Problems setting initialFieldOfView',e);
 		}
 	};
@@ -4279,14 +4252,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFieldOfView '+e);
+		console.log('Problems setting initialFieldOfView '+e);
 		console.error('Problems setting initialFieldOfView',e);
 	}
 	this.set_initialFStop = function (value) {
 		try {
 			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFStop '+e);
+			console.log('Problems setting initialFStop '+e);
 			console.error('Problems setting initialFStop',e);
 		}
 	};
@@ -4297,14 +4270,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFStop '+e);
+		console.log('Problems setting initialFStop '+e);
 		console.error('Problems setting initialFStop',e);
 	}
 	this.set_initialFocusDistance = function (value) {
 		try {
 			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFocusDistance '+e);
+			console.log('Problems setting initialFocusDistance '+e);
 			console.error('Problems setting initialFocusDistance',e);
 		}
 	};
@@ -4315,14 +4288,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFocusDistance '+e);
+		console.log('Problems setting initialFocusDistance '+e);
 		console.error('Problems setting initialFocusDistance',e);
 	}
 	this.set_shotDuration = function (value) {
 		try {
 			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting shotDuration '+e);
+			console.log('Problems setting shotDuration '+e);
 			console.error('Problems setting shotDuration',e);
 		}
 	};
@@ -4333,14 +4306,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.shotDuration = new SFTime();
 	} catch (e) {
-		alert('Problems setting shotDuration '+e);
+		console.log('Problems setting shotDuration '+e);
 		console.error('Problems setting shotDuration',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -4351,14 +4324,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -4369,14 +4342,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 	this.set_key = function (value) {
 		try {
 			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting key '+e);
+			console.log('Problems setting key '+e);
 			console.error('Problems setting key',e);
 		}
 	};
@@ -4387,14 +4360,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.key = new MFFloat();
 	} catch (e) {
-		alert('Problems setting key '+e);
+		console.log('Problems setting key '+e);
 		console.error('Problems setting key',e);
 	}
 	this.set_keyValuePosition = function (value) {
 		try {
 			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValuePosition '+e);
+			console.log('Problems setting keyValuePosition '+e);
 			console.error('Problems setting keyValuePosition',e);
 		}
 	};
@@ -4405,14 +4378,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValuePosition = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting keyValuePosition '+e);
+		console.log('Problems setting keyValuePosition '+e);
 		console.error('Problems setting keyValuePosition',e);
 	}
 	this.set_keyValueOrientation = function (value) {
 		try {
 			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValueOrientation '+e);
+			console.log('Problems setting keyValueOrientation '+e);
 			console.error('Problems setting keyValueOrientation',e);
 		}
 	};
@@ -4423,10 +4396,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValueOrientation = new MFRotation();
 	} catch (e) {
-		alert('Problems setting keyValueOrientation '+e);
+		console.log('Problems setting keyValueOrientation '+e);
 		console.error('Problems setting keyValueOrientation',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraShotScript
@@ -4533,9 +4505,7 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -4582,7 +4552,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -4593,14 +4563,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Pan Left");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -4611,14 +4581,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -4629,14 +4599,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(2);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -4647,14 +4617,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-30,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -4665,14 +4635,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0.4);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -4683,14 +4653,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -4701,14 +4671,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -4719,14 +4689,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -4737,14 +4707,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -4755,14 +4725,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -4773,14 +4743,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -4791,10 +4761,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -4896,9 +4865,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -4945,7 +4912,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -4956,14 +4923,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Pan Right");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -4974,14 +4941,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -4992,14 +4959,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(3);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -5010,14 +4977,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-30,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -5028,14 +4995,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,-0.4);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -5046,14 +5013,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -5064,14 +5031,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -5082,14 +5049,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -5100,14 +5067,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -5118,14 +5085,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -5136,14 +5103,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -5154,10 +5121,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -5259,9 +5225,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -5308,7 +5272,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -5319,14 +5283,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Pan back to Center");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -5337,14 +5301,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -5355,14 +5319,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(2);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -5373,14 +5337,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-30,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -5391,14 +5355,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -5409,14 +5373,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -5427,14 +5391,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -5445,14 +5409,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -5463,14 +5427,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -5481,14 +5445,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -5499,14 +5463,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -5517,10 +5481,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -5622,9 +5585,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -5671,7 +5632,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -5682,14 +5643,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Pause");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -5700,14 +5661,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -5718,14 +5679,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(2);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -5736,14 +5697,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-30,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -5754,14 +5715,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -5772,14 +5733,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -5790,14 +5751,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -5808,14 +5769,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -5826,14 +5787,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -5844,14 +5805,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -5862,14 +5823,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -5880,10 +5841,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -5985,9 +5945,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -6034,7 +5992,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -6045,14 +6003,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Boom");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -6063,14 +6021,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_moves = function (value) {
 		try {
 			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting moves '+e);
+			console.log('Problems setting moves '+e);
 			console.error('Problems setting moves',e);
 		}
 	};
@@ -6081,14 +6039,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.moves = new MFNode();
 	} catch (e) {
-		alert('Problems setting moves '+e);
+		console.log('Problems setting moves '+e);
 		console.error('Problems setting moves',e);
 	}
 	this.set_initialPosition = function (value) {
 		try {
 			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialPosition '+e);
+			console.log('Problems setting initialPosition '+e);
 			console.error('Problems setting initialPosition',e);
 		}
 	};
@@ -6099,14 +6057,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialPosition = new SFVec3f(-20,1,-10);
 	} catch (e) {
-		alert('Problems setting initialPosition '+e);
+		console.log('Problems setting initialPosition '+e);
 		console.error('Problems setting initialPosition',e);
 	}
 	this.set_initialOrientation = function (value) {
 		try {
 			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialOrientation '+e);
+			console.log('Problems setting initialOrientation '+e);
 			console.error('Problems setting initialOrientation',e);
 		}
 	};
@@ -6117,14 +6075,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting initialOrientation '+e);
+		console.log('Problems setting initialOrientation '+e);
 		console.error('Problems setting initialOrientation',e);
 	}
 	this.set_initialAimPoint = function (value) {
 		try {
 			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialAimPoint '+e);
+			console.log('Problems setting initialAimPoint '+e);
 			console.error('Problems setting initialAimPoint',e);
 		}
 	};
@@ -6135,14 +6093,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting initialAimPoint '+e);
+		console.log('Problems setting initialAimPoint '+e);
 		console.error('Problems setting initialAimPoint',e);
 	}
 	this.set_initialFieldOfView = function (value) {
 		try {
 			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFieldOfView '+e);
+			console.log('Problems setting initialFieldOfView '+e);
 			console.error('Problems setting initialFieldOfView',e);
 		}
 	};
@@ -6153,14 +6111,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFieldOfView '+e);
+		console.log('Problems setting initialFieldOfView '+e);
 		console.error('Problems setting initialFieldOfView',e);
 	}
 	this.set_initialFStop = function (value) {
 		try {
 			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFStop '+e);
+			console.log('Problems setting initialFStop '+e);
 			console.error('Problems setting initialFStop',e);
 		}
 	};
@@ -6171,14 +6129,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFStop '+e);
+		console.log('Problems setting initialFStop '+e);
 		console.error('Problems setting initialFStop',e);
 	}
 	this.set_initialFocusDistance = function (value) {
 		try {
 			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFocusDistance '+e);
+			console.log('Problems setting initialFocusDistance '+e);
 			console.error('Problems setting initialFocusDistance',e);
 		}
 	};
@@ -6189,14 +6147,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFocusDistance '+e);
+		console.log('Problems setting initialFocusDistance '+e);
 		console.error('Problems setting initialFocusDistance',e);
 	}
 	this.set_shotDuration = function (value) {
 		try {
 			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting shotDuration '+e);
+			console.log('Problems setting shotDuration '+e);
 			console.error('Problems setting shotDuration',e);
 		}
 	};
@@ -6207,14 +6165,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.shotDuration = new SFTime();
 	} catch (e) {
-		alert('Problems setting shotDuration '+e);
+		console.log('Problems setting shotDuration '+e);
 		console.error('Problems setting shotDuration',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -6225,14 +6183,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -6243,14 +6201,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 	this.set_key = function (value) {
 		try {
 			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting key '+e);
+			console.log('Problems setting key '+e);
 			console.error('Problems setting key',e);
 		}
 	};
@@ -6261,14 +6219,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.key = new MFFloat();
 	} catch (e) {
-		alert('Problems setting key '+e);
+		console.log('Problems setting key '+e);
 		console.error('Problems setting key',e);
 	}
 	this.set_keyValuePosition = function (value) {
 		try {
 			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValuePosition '+e);
+			console.log('Problems setting keyValuePosition '+e);
 			console.error('Problems setting keyValuePosition',e);
 		}
 	};
@@ -6279,14 +6237,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValuePosition = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting keyValuePosition '+e);
+		console.log('Problems setting keyValuePosition '+e);
 		console.error('Problems setting keyValuePosition',e);
 	}
 	this.set_keyValueOrientation = function (value) {
 		try {
 			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValueOrientation '+e);
+			console.log('Problems setting keyValueOrientation '+e);
 			console.error('Problems setting keyValueOrientation',e);
 		}
 	};
@@ -6297,10 +6255,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValueOrientation = new MFRotation();
 	} catch (e) {
-		alert('Problems setting keyValueOrientation '+e);
+		console.log('Problems setting keyValueOrientation '+e);
 		console.error('Problems setting keyValueOrientation',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraShotScript
@@ -6407,9 +6364,7 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -6456,7 +6411,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -6467,14 +6422,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Boom Up");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -6485,14 +6440,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -6503,14 +6458,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(3);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -6521,14 +6476,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-20,5,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -6539,14 +6494,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -6557,14 +6512,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -6575,14 +6530,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -6593,14 +6548,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -6611,14 +6566,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -6629,14 +6584,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -6647,14 +6602,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -6665,10 +6620,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -6770,9 +6724,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -6819,7 +6771,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -6830,14 +6782,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Boom Down");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -6848,14 +6800,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -6866,14 +6818,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(3);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -6884,14 +6836,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-20,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -6902,14 +6854,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -6920,14 +6872,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -6938,14 +6890,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -6956,14 +6908,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -6974,14 +6926,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -6992,14 +6944,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -7010,14 +6962,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -7028,10 +6980,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -7133,9 +7084,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -7182,7 +7131,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -7193,14 +7142,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Pause");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -7211,14 +7160,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -7229,14 +7178,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(2);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -7247,14 +7196,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-20,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -7265,14 +7214,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -7283,14 +7232,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -7301,14 +7250,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -7319,14 +7268,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -7337,14 +7286,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -7355,14 +7304,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -7373,14 +7322,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -7391,10 +7340,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -7496,9 +7444,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -7545,7 +7491,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -7556,14 +7502,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Tilt");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -7574,14 +7520,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_moves = function (value) {
 		try {
 			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting moves '+e);
+			console.log('Problems setting moves '+e);
 			console.error('Problems setting moves',e);
 		}
 	};
@@ -7592,14 +7538,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.moves = new MFNode();
 	} catch (e) {
-		alert('Problems setting moves '+e);
+		console.log('Problems setting moves '+e);
 		console.error('Problems setting moves',e);
 	}
 	this.set_initialPosition = function (value) {
 		try {
 			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialPosition '+e);
+			console.log('Problems setting initialPosition '+e);
 			console.error('Problems setting initialPosition',e);
 		}
 	};
@@ -7610,14 +7556,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialPosition = new SFVec3f(-10,1,-10);
 	} catch (e) {
-		alert('Problems setting initialPosition '+e);
+		console.log('Problems setting initialPosition '+e);
 		console.error('Problems setting initialPosition',e);
 	}
 	this.set_initialOrientation = function (value) {
 		try {
 			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialOrientation '+e);
+			console.log('Problems setting initialOrientation '+e);
 			console.error('Problems setting initialOrientation',e);
 		}
 	};
@@ -7628,14 +7574,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialOrientation = new SFRotation(0,0,1,0);
 	} catch (e) {
-		alert('Problems setting initialOrientation '+e);
+		console.log('Problems setting initialOrientation '+e);
 		console.error('Problems setting initialOrientation',e);
 	}
 	this.set_initialAimPoint = function (value) {
 		try {
 			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialAimPoint '+e);
+			console.log('Problems setting initialAimPoint '+e);
 			console.error('Problems setting initialAimPoint',e);
 		}
 	};
@@ -7646,14 +7592,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting initialAimPoint '+e);
+		console.log('Problems setting initialAimPoint '+e);
 		console.error('Problems setting initialAimPoint',e);
 	}
 	this.set_initialFieldOfView = function (value) {
 		try {
 			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFieldOfView '+e);
+			console.log('Problems setting initialFieldOfView '+e);
 			console.error('Problems setting initialFieldOfView',e);
 		}
 	};
@@ -7664,14 +7610,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFieldOfView '+e);
+		console.log('Problems setting initialFieldOfView '+e);
 		console.error('Problems setting initialFieldOfView',e);
 	}
 	this.set_initialFStop = function (value) {
 		try {
 			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFStop '+e);
+			console.log('Problems setting initialFStop '+e);
 			console.error('Problems setting initialFStop',e);
 		}
 	};
@@ -7682,14 +7628,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFStop '+e);
+		console.log('Problems setting initialFStop '+e);
 		console.error('Problems setting initialFStop',e);
 	}
 	this.set_initialFocusDistance = function (value) {
 		try {
 			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFocusDistance '+e);
+			console.log('Problems setting initialFocusDistance '+e);
 			console.error('Problems setting initialFocusDistance',e);
 		}
 	};
@@ -7700,14 +7646,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.initialFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFocusDistance '+e);
+		console.log('Problems setting initialFocusDistance '+e);
 		console.error('Problems setting initialFocusDistance',e);
 	}
 	this.set_shotDuration = function (value) {
 		try {
 			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting shotDuration '+e);
+			console.log('Problems setting shotDuration '+e);
 			console.error('Problems setting shotDuration',e);
 		}
 	};
@@ -7718,14 +7664,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.shotDuration = new SFTime();
 	} catch (e) {
-		alert('Problems setting shotDuration '+e);
+		console.log('Problems setting shotDuration '+e);
 		console.error('Problems setting shotDuration',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -7736,14 +7682,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -7754,14 +7700,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 	this.set_key = function (value) {
 		try {
 			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting key '+e);
+			console.log('Problems setting key '+e);
 			console.error('Problems setting key',e);
 		}
 	};
@@ -7772,14 +7718,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.key = new MFFloat();
 	} catch (e) {
-		alert('Problems setting key '+e);
+		console.log('Problems setting key '+e);
 		console.error('Problems setting key',e);
 	}
 	this.set_keyValuePosition = function (value) {
 		try {
 			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValuePosition '+e);
+			console.log('Problems setting keyValuePosition '+e);
 			console.error('Problems setting keyValuePosition',e);
 		}
 	};
@@ -7790,14 +7736,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValuePosition = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting keyValuePosition '+e);
+		console.log('Problems setting keyValuePosition '+e);
 		console.error('Problems setting keyValuePosition',e);
 	}
 	this.set_keyValueOrientation = function (value) {
 		try {
 			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValueOrientation '+e);
+			console.log('Problems setting keyValueOrientation '+e);
 			console.error('Problems setting keyValueOrientation',e);
 		}
 	};
@@ -7808,10 +7754,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.keyValueOrientation = new MFRotation();
 	} catch (e) {
-		alert('Problems setting keyValueOrientation '+e);
+		console.log('Problems setting keyValueOrientation '+e);
 		console.error('Problems setting keyValueOrientation',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraShotScript
@@ -7918,9 +7863,7 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -7967,7 +7910,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -7978,14 +7921,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Tilt Pause");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -7996,14 +7939,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -8014,14 +7957,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(1);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -8032,14 +7975,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-10,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -8050,14 +7993,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,0,1,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -8068,14 +8011,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -8086,14 +8029,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -8104,14 +8047,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -8122,14 +8065,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -8140,14 +8083,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -8158,14 +8101,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -8176,10 +8119,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -8281,9 +8223,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -8330,7 +8270,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -8341,14 +8281,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Tilt Left");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -8359,14 +8299,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -8377,14 +8317,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(3);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -8395,14 +8335,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-10,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -8413,14 +8353,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,0,1,0.785);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -8431,14 +8371,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -8449,14 +8389,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -8467,14 +8407,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -8485,14 +8425,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -8503,14 +8443,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -8521,14 +8461,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -8539,10 +8479,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -8644,9 +8583,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -8693,7 +8630,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -8704,14 +8641,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Tilt Pause");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -8722,14 +8659,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -8740,14 +8677,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(1);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -8758,14 +8695,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-10,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -8776,14 +8713,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,0,1,0.785);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -8794,14 +8731,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -8812,14 +8749,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -8830,14 +8767,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -8848,14 +8785,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -8866,14 +8803,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -8884,14 +8821,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -8902,10 +8839,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -9007,9 +8943,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -9056,7 +8990,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -9067,14 +9001,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Tilt Right");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -9085,14 +9019,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -9103,14 +9037,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(3);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -9121,14 +9055,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-10,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -9139,14 +9073,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,0,1,-0.785);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -9157,14 +9091,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -9175,14 +9109,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -9193,14 +9127,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -9211,14 +9145,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -9229,14 +9163,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -9247,14 +9181,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -9265,10 +9199,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -9370,9 +9303,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -9419,7 +9350,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -9430,14 +9361,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Tilt Pause");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -9448,14 +9379,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -9466,14 +9397,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(1);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -9484,14 +9415,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-10,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -9502,14 +9433,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,0,1,-0.785);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -9520,14 +9451,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -9538,14 +9469,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -9556,14 +9487,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -9574,14 +9505,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -9592,14 +9523,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -9610,14 +9541,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -9628,10 +9559,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -9733,9 +9663,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -9782,7 +9710,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -9793,14 +9721,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Camera Tilt Reset");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -9811,14 +9739,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -9829,14 +9757,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(1);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -9847,14 +9775,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(-10,1,-10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -9865,14 +9793,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,0,1,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -9883,14 +9811,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -9901,14 +9829,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -9919,14 +9847,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -9937,14 +9865,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -9955,14 +9883,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -9973,14 +9901,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -9991,10 +9919,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -10096,9 +10023,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -10145,7 +10070,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -10156,14 +10081,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.description = new SFString("Return to home");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -10174,14 +10099,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -10192,14 +10117,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.duration = new SFFloat(2);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -10210,14 +10135,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalPosition = new SFVec3f(0,2,12);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -10228,14 +10153,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalOrientation = new SFRotation(0,0,1,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -10246,14 +10171,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.tracking = new SFBool();
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -10264,14 +10189,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -10282,14 +10207,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -10300,14 +10225,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -10318,14 +10243,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -10336,14 +10261,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -10354,10 +10279,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -10459,9 +10383,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -10508,7 +10430,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -10519,14 +10441,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.description = new SFString("AimPointTest for moving camera tracking moving target");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_position = function (value) {
 		try {
 			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting position '+e);
+			console.log('Problems setting position '+e);
 			console.error('Problems setting position',e);
 		}
 	};
@@ -10537,14 +10459,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.position = new SFVec3f(4,4,10);
 	} catch (e) {
-		alert('Problems setting position '+e);
+		console.log('Problems setting position '+e);
 		console.error('Problems setting position',e);
 	}
 	this.set_orientation = function (value) {
 		try {
 			this.proxy.orientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting orientation '+e);
+			console.log('Problems setting orientation '+e);
 			console.error('Problems setting orientation',e);
 		}
 	};
@@ -10555,14 +10477,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.orientation = new SFRotation(0,0,1,0);
 	} catch (e) {
-		alert('Problems setting orientation '+e);
+		console.log('Problems setting orientation '+e);
 		console.error('Problems setting orientation',e);
 	}
 	this.set_fraction = function (value) {
 		try {
 			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting fraction '+e);
+			console.log('Problems setting fraction '+e);
 			console.error('Problems setting fraction',e);
 		}
 	};
@@ -10573,14 +10495,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.fraction = undefined;
 	} catch (e) {
-		alert('Problems setting fraction '+e);
+		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
 	this.set_bind = function (value) {
 		try {
 			this.proxy.bind = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting bind '+e);
+			console.log('Problems setting bind '+e);
 			console.error('Problems setting bind',e);
 		}
 	};
@@ -10591,14 +10513,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.bind = undefined;
 	} catch (e) {
-		alert('Problems setting bind '+e);
+		console.log('Problems setting bind '+e);
 		console.error('Problems setting bind',e);
 	}
 	this.set_fieldOfView = function (value) {
 		try {
 			this.proxy.fieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting fieldOfView '+e);
+			console.log('Problems setting fieldOfView '+e);
 			console.error('Problems setting fieldOfView',e);
 		}
 	};
@@ -10609,14 +10531,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.fieldOfView = new SFFloat(0.7854);
 	} catch (e) {
-		alert('Problems setting fieldOfView '+e);
+		console.log('Problems setting fieldOfView '+e);
 		console.error('Problems setting fieldOfView',e);
 	}
 	this.set_nearClipPlane = function (value) {
 		try {
 			this.proxy.nearClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting nearClipPlane '+e);
+			console.log('Problems setting nearClipPlane '+e);
 			console.error('Problems setting nearClipPlane',e);
 		}
 	};
@@ -10627,14 +10549,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.nearClipPlane = new SFFloat(0.25);
 	} catch (e) {
-		alert('Problems setting nearClipPlane '+e);
+		console.log('Problems setting nearClipPlane '+e);
 		console.error('Problems setting nearClipPlane',e);
 	}
 	this.set_farClipPlane = function (value) {
 		try {
 			this.proxy.farClipPlane = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting farClipPlane '+e);
+			console.log('Problems setting farClipPlane '+e);
 			console.error('Problems setting farClipPlane',e);
 		}
 	};
@@ -10645,14 +10567,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.farClipPlane = new SFFloat(0);
 	} catch (e) {
-		alert('Problems setting farClipPlane '+e);
+		console.log('Problems setting farClipPlane '+e);
 		console.error('Problems setting farClipPlane',e);
 	}
 	this.set_shots = function (value) {
 		try {
 			this.proxy.shots = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting shots '+e);
+			console.log('Problems setting shots '+e);
 			console.error('Problems setting shots',e);
 		}
 	};
@@ -10663,14 +10585,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.shots = new MFNode();
 	} catch (e) {
-		alert('Problems setting shots '+e);
+		console.log('Problems setting shots '+e);
 		console.error('Problems setting shots',e);
 	}
 	this.set_filterColor = function (value) {
 		try {
 			this.proxy.filterColor = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting filterColor '+e);
+			console.log('Problems setting filterColor '+e);
 			console.error('Problems setting filterColor',e);
 		}
 	};
@@ -10681,14 +10603,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.filterColor = new SFColor(1,1,1);
 	} catch (e) {
-		alert('Problems setting filterColor '+e);
+		console.log('Problems setting filterColor '+e);
 		console.error('Problems setting filterColor',e);
 	}
 	this.set_filterTransparency = function (value) {
 		try {
 			this.proxy.filterTransparency = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting filterTransparency '+e);
+			console.log('Problems setting filterTransparency '+e);
 			console.error('Problems setting filterTransparency',e);
 		}
 	};
@@ -10699,14 +10621,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.filterTransparency = new SFFloat(1);
 	} catch (e) {
-		alert('Problems setting filterTransparency '+e);
+		console.log('Problems setting filterTransparency '+e);
 		console.error('Problems setting filterTransparency',e);
 	}
 	this.set_upVector = function (value) {
 		try {
 			this.proxy.upVector = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting upVector '+e);
+			console.log('Problems setting upVector '+e);
 			console.error('Problems setting upVector',e);
 		}
 	};
@@ -10717,14 +10639,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.upVector = new SFVec3f(0,1,0);
 	} catch (e) {
-		alert('Problems setting upVector '+e);
+		console.log('Problems setting upVector '+e);
 		console.error('Problems setting upVector',e);
 	}
 	this.set_fStop = function (value) {
 		try {
 			this.proxy.fStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting fStop '+e);
+			console.log('Problems setting fStop '+e);
 			console.error('Problems setting fStop',e);
 		}
 	};
@@ -10735,14 +10657,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.fStop = new SFFloat(5.6);
 	} catch (e) {
-		alert('Problems setting fStop '+e);
+		console.log('Problems setting fStop '+e);
 		console.error('Problems setting fStop',e);
 	}
 	this.set_focusDistance = function (value) {
 		try {
 			this.proxy.focusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting focusDistance '+e);
+			console.log('Problems setting focusDistance '+e);
 			console.error('Problems setting focusDistance',e);
 		}
 	};
@@ -10753,14 +10675,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.focusDistance = new SFFloat(10);
 	} catch (e) {
-		alert('Problems setting focusDistance '+e);
+		console.log('Problems setting focusDistance '+e);
 		console.error('Problems setting focusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -10771,14 +10693,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_totalDuration = function (value) {
 		try {
 			this.proxy.totalDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting totalDuration '+e);
+			console.log('Problems setting totalDuration '+e);
 			console.error('Problems setting totalDuration',e);
 		}
 	};
@@ -10789,14 +10711,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.totalDuration = new SFTime();
 	} catch (e) {
-		alert('Problems setting totalDuration '+e);
+		console.log('Problems setting totalDuration '+e);
 		console.error('Problems setting totalDuration',e);
 	}
 	this.set_offlineRender = function (value) {
 		try {
 			this.proxy.offlineRender = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting offlineRender '+e);
+			console.log('Problems setting offlineRender '+e);
 			console.error('Problems setting offlineRender',e);
 		}
 	};
@@ -10807,14 +10729,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.offlineRender = X3DJSON.nodeUtil('Scene','undefined');
 	} catch (e) {
-		alert('Problems setting offlineRender '+e);
+		console.log('Problems setting offlineRender '+e);
 		console.error('Problems setting offlineRender',e);
 	}
 	this.set_ViewpointNode = function (value) {
 		try {
 			this.proxy.ViewpointNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting ViewpointNode '+e);
+			console.log('Problems setting ViewpointNode '+e);
 			console.error('Problems setting ViewpointNode',e);
 		}
 	};
@@ -10825,14 +10747,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.ViewpointNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint');
 	} catch (e) {
-		alert('Problems setting ViewpointNode '+e);
+		console.log('Problems setting ViewpointNode '+e);
 		console.error('Problems setting ViewpointNode',e);
 	}
 	this.set_NavInfoNode = function (value) {
 		try {
 			this.proxy.NavInfoNode = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting NavInfoNode '+e);
+			console.log('Problems setting NavInfoNode '+e);
 			console.error('Problems setting NavInfoNode',e);
 		}
 	};
@@ -10843,14 +10765,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.NavInfoNode = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraNavInfo');
 	} catch (e) {
-		alert('Problems setting NavInfoNode '+e);
+		console.log('Problems setting NavInfoNode '+e);
 		console.error('Problems setting NavInfoNode',e);
 	}
 	this.set_CameraPI = function (value) {
 		try {
 			this.proxy.CameraPI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting CameraPI '+e);
+			console.log('Problems setting CameraPI '+e);
 			console.error('Problems setting CameraPI',e);
 		}
 	};
@@ -10861,14 +10783,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.CameraPI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator');
 	} catch (e) {
-		alert('Problems setting CameraPI '+e);
+		console.log('Problems setting CameraPI '+e);
 		console.error('Problems setting CameraPI',e);
 	}
 	this.set_CameraOI = function (value) {
 		try {
 			this.proxy.CameraOI = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting CameraOI '+e);
+			console.log('Problems setting CameraOI '+e);
 			console.error('Problems setting CameraOI',e);
 		}
 	};
@@ -10879,14 +10801,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.CameraOI = X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator');
 	} catch (e) {
-		alert('Problems setting CameraOI '+e);
+		console.log('Problems setting CameraOI '+e);
 		console.error('Problems setting CameraOI',e);
 	}
 	this.set_key = function (value) {
 		try {
 			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting key '+e);
+			console.log('Problems setting key '+e);
 			console.error('Problems setting key',e);
 		}
 	};
@@ -10897,14 +10819,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.key = new MFFloat();
 	} catch (e) {
-		alert('Problems setting key '+e);
+		console.log('Problems setting key '+e);
 		console.error('Problems setting key',e);
 	}
 	this.set_keyValuePosition = function (value) {
 		try {
 			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValuePosition '+e);
+			console.log('Problems setting keyValuePosition '+e);
 			console.error('Problems setting keyValuePosition',e);
 		}
 	};
@@ -10915,14 +10837,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.keyValuePosition = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting keyValuePosition '+e);
+		console.log('Problems setting keyValuePosition '+e);
 		console.error('Problems setting keyValuePosition',e);
 	}
 	this.set_keyValueOrientation = function (value) {
 		try {
 			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValueOrientation '+e);
+			console.log('Problems setting keyValueOrientation '+e);
 			console.error('Problems setting keyValueOrientation',e);
 		}
 	};
@@ -10933,14 +10855,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.keyValueOrientation = new MFRotation();
 	} catch (e) {
-		alert('Problems setting keyValueOrientation '+e);
+		console.log('Problems setting keyValueOrientation '+e);
 		console.error('Problems setting keyValueOrientation',e);
 	}
 	this.set_animated = function (value) {
 		try {
 			this.proxy.animated = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting animated '+e);
+			console.log('Problems setting animated '+e);
 			console.error('Problems setting animated',e);
 		}
 	};
@@ -10951,14 +10873,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.animated = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting animated '+e);
+		console.log('Problems setting animated '+e);
 		console.error('Problems setting animated',e);
 	}
 	this.set_initialized = function (value) {
 		try {
 			this.proxy.initialized = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialized '+e);
+			console.log('Problems setting initialized '+e);
 			console.error('Problems setting initialized',e);
 		}
 	};
@@ -10969,14 +10891,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.initialized = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting initialized '+e);
+		console.log('Problems setting initialized '+e);
 		console.error('Problems setting initialized',e);
 	}
 	this.set_shotCount = function (value) {
 		try {
 			this.proxy.shotCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting shotCount '+e);
+			console.log('Problems setting shotCount '+e);
 			console.error('Problems setting shotCount',e);
 		}
 	};
@@ -10987,14 +10909,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.shotCount = new SFInt32(0);
 	} catch (e) {
-		alert('Problems setting shotCount '+e);
+		console.log('Problems setting shotCount '+e);
 		console.error('Problems setting shotCount',e);
 	}
 	this.set_movesCount = function (value) {
 		try {
 			this.proxy.movesCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting movesCount '+e);
+			console.log('Problems setting movesCount '+e);
 			console.error('Problems setting movesCount',e);
 		}
 	};
@@ -11005,14 +10927,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.movesCount = new SFInt32(0);
 	} catch (e) {
-		alert('Problems setting movesCount '+e);
+		console.log('Problems setting movesCount '+e);
 		console.error('Problems setting movesCount',e);
 	}
 	this.set_frameCount = function (value) {
 		try {
 			this.proxy.frameCount = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting frameCount '+e);
+			console.log('Problems setting frameCount '+e);
 			console.error('Problems setting frameCount',e);
 		}
 	};
@@ -11023,14 +10945,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.frameCount = new SFFloat(0);
 	} catch (e) {
-		alert('Problems setting frameCount '+e);
+		console.log('Problems setting frameCount '+e);
 		console.error('Problems setting frameCount',e);
 	}
 	this.set_startTime = function (value) {
 		try {
 			this.proxy.startTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting startTime '+e);
+			console.log('Problems setting startTime '+e);
 			console.error('Problems setting startTime',e);
 		}
 	};
@@ -11041,14 +10963,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.startTime = new SFTime(0);
 	} catch (e) {
-		alert('Problems setting startTime '+e);
+		console.log('Problems setting startTime '+e);
 		console.error('Problems setting startTime',e);
 	}
 	this.set_priorTraceTime = function (value) {
 		try {
 			this.proxy.priorTraceTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting priorTraceTime '+e);
+			console.log('Problems setting priorTraceTime '+e);
 			console.error('Problems setting priorTraceTime',e);
 		}
 	};
@@ -11059,14 +10981,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.priorTraceTime = new SFTime(0);
 	} catch (e) {
-		alert('Problems setting priorTraceTime '+e);
+		console.log('Problems setting priorTraceTime '+e);
 		console.error('Problems setting priorTraceTime',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -11077,10 +10999,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraScript
@@ -11444,9 +11365,7 @@ ecmascript:
          console.error ('[Camera: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[Camera] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -11493,7 +11412,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -11504,14 +11423,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.description = new SFString("#3 Tracking shot");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -11522,14 +11441,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_moves = function (value) {
 		try {
 			this.proxy.moves = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting moves '+e);
+			console.log('Problems setting moves '+e);
 			console.error('Problems setting moves',e);
 		}
 	};
@@ -11540,14 +11459,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.moves = new MFNode();
 	} catch (e) {
-		alert('Problems setting moves '+e);
+		console.log('Problems setting moves '+e);
 		console.error('Problems setting moves',e);
 	}
 	this.set_initialPosition = function (value) {
 		try {
 			this.proxy.initialPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialPosition '+e);
+			console.log('Problems setting initialPosition '+e);
 			console.error('Problems setting initialPosition',e);
 		}
 	};
@@ -11558,14 +11477,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.initialPosition = new SFVec3f(6,6,10);
 	} catch (e) {
-		alert('Problems setting initialPosition '+e);
+		console.log('Problems setting initialPosition '+e);
 		console.error('Problems setting initialPosition',e);
 	}
 	this.set_initialOrientation = function (value) {
 		try {
 			this.proxy.initialOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialOrientation '+e);
+			console.log('Problems setting initialOrientation '+e);
 			console.error('Problems setting initialOrientation',e);
 		}
 	};
@@ -11576,14 +11495,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.initialOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting initialOrientation '+e);
+		console.log('Problems setting initialOrientation '+e);
 		console.error('Problems setting initialOrientation',e);
 	}
 	this.set_initialAimPoint = function (value) {
 		try {
 			this.proxy.initialAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialAimPoint '+e);
+			console.log('Problems setting initialAimPoint '+e);
 			console.error('Problems setting initialAimPoint',e);
 		}
 	};
@@ -11594,14 +11513,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.initialAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting initialAimPoint '+e);
+		console.log('Problems setting initialAimPoint '+e);
 		console.error('Problems setting initialAimPoint',e);
 	}
 	this.set_initialFieldOfView = function (value) {
 		try {
 			this.proxy.initialFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFieldOfView '+e);
+			console.log('Problems setting initialFieldOfView '+e);
 			console.error('Problems setting initialFieldOfView',e);
 		}
 	};
@@ -11612,14 +11531,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.initialFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFieldOfView '+e);
+		console.log('Problems setting initialFieldOfView '+e);
 		console.error('Problems setting initialFieldOfView',e);
 	}
 	this.set_initialFStop = function (value) {
 		try {
 			this.proxy.initialFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFStop '+e);
+			console.log('Problems setting initialFStop '+e);
 			console.error('Problems setting initialFStop',e);
 		}
 	};
@@ -11630,14 +11549,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.initialFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFStop '+e);
+		console.log('Problems setting initialFStop '+e);
 		console.error('Problems setting initialFStop',e);
 	}
 	this.set_initialFocusDistance = function (value) {
 		try {
 			this.proxy.initialFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting initialFocusDistance '+e);
+			console.log('Problems setting initialFocusDistance '+e);
 			console.error('Problems setting initialFocusDistance',e);
 		}
 	};
@@ -11648,14 +11567,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.initialFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting initialFocusDistance '+e);
+		console.log('Problems setting initialFocusDistance '+e);
 		console.error('Problems setting initialFocusDistance',e);
 	}
 	this.set_shotDuration = function (value) {
 		try {
 			this.proxy.shotDuration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting shotDuration '+e);
+			console.log('Problems setting shotDuration '+e);
 			console.error('Problems setting shotDuration',e);
 		}
 	};
@@ -11666,14 +11585,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.shotDuration = new SFTime();
 	} catch (e) {
-		alert('Problems setting shotDuration '+e);
+		console.log('Problems setting shotDuration '+e);
 		console.error('Problems setting shotDuration',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -11684,14 +11603,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -11702,14 +11621,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
 	this.set_key = function (value) {
 		try {
 			this.proxy.key = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting key '+e);
+			console.log('Problems setting key '+e);
 			console.error('Problems setting key',e);
 		}
 	};
@@ -11720,14 +11639,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.key = new MFFloat();
 	} catch (e) {
-		alert('Problems setting key '+e);
+		console.log('Problems setting key '+e);
 		console.error('Problems setting key',e);
 	}
 	this.set_keyValuePosition = function (value) {
 		try {
 			this.proxy.keyValuePosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValuePosition '+e);
+			console.log('Problems setting keyValuePosition '+e);
 			console.error('Problems setting keyValuePosition',e);
 		}
 	};
@@ -11738,14 +11657,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.keyValuePosition = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting keyValuePosition '+e);
+		console.log('Problems setting keyValuePosition '+e);
 		console.error('Problems setting keyValuePosition',e);
 	}
 	this.set_keyValueOrientation = function (value) {
 		try {
 			this.proxy.keyValueOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting keyValueOrientation '+e);
+			console.log('Problems setting keyValueOrientation '+e);
 			console.error('Problems setting keyValueOrientation',e);
 		}
 	};
@@ -11756,10 +11675,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.keyValueOrientation = new MFRotation();
 	} catch (e) {
-		alert('Problems setting keyValueOrientation '+e);
+		console.log('Problems setting keyValueOrientation '+e);
 		console.error('Problems setting keyValueOrientation',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraShotScript
@@ -11866,9 +11784,7 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -11918,7 +11834,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -11929,14 +11845,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.description = new SFString("AimPoint 3.1 moving BoxPath");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -11947,14 +11863,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -11965,14 +11881,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.duration = new SFFloat(8);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -11983,14 +11899,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalPosition = new SFVec3f(6,6,10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -12001,14 +11917,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalOrientation = new SFRotation();
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -12019,14 +11935,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.tracking = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -12037,14 +11953,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -12055,14 +11971,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -12073,14 +11989,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -12091,14 +12007,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -12109,14 +12025,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -12127,10 +12043,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -12232,9 +12147,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -12290,7 +12203,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -12301,14 +12214,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.description = new SFString("AimPoint 3.2 pan right while tracking");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -12319,14 +12232,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -12337,14 +12250,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.duration = new SFFloat(8);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -12355,14 +12268,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalPosition = new SFVec3f(40,6,12);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -12373,14 +12286,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalOrientation = new SFRotation();
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -12391,14 +12304,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.tracking = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -12409,14 +12322,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -12427,14 +12340,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -12445,14 +12358,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -12463,14 +12376,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -12481,14 +12394,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -12499,10 +12412,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -12604,9 +12516,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -12662,7 +12572,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -12673,14 +12583,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.description = new SFString("AimPoint 3.3 boom up while tracking");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -12691,14 +12601,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -12709,14 +12619,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.duration = new SFFloat(3);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -12727,14 +12637,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalPosition = new SFVec3f(40,20,13);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -12745,14 +12655,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalOrientation = new SFRotation();
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -12763,14 +12673,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.tracking = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -12781,14 +12691,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalAimPoint = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -12799,14 +12709,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -12817,14 +12727,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -12835,14 +12745,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -12853,14 +12763,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -12871,10 +12781,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -12976,9 +12885,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -13034,7 +12941,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -13045,14 +12952,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.description = new SFString("AimPoint 3.4 restore camera back to home");
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -13063,14 +12970,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.enabled = new SFBool();
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_duration = function (value) {
 		try {
 			this.proxy.duration = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting duration '+e);
+			console.log('Problems setting duration '+e);
 			console.error('Problems setting duration',e);
 		}
 	};
@@ -13081,14 +12988,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.duration = new SFFloat(5);
 	} catch (e) {
-		alert('Problems setting duration '+e);
+		console.log('Problems setting duration '+e);
 		console.error('Problems setting duration',e);
 	}
 	this.set_goalPosition = function (value) {
 		try {
 			this.proxy.goalPosition = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalPosition '+e);
+			console.log('Problems setting goalPosition '+e);
 			console.error('Problems setting goalPosition',e);
 		}
 	};
@@ -13099,14 +13006,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalPosition = new SFVec3f(4,4,10);
 	} catch (e) {
-		alert('Problems setting goalPosition '+e);
+		console.log('Problems setting goalPosition '+e);
 		console.error('Problems setting goalPosition',e);
 	}
 	this.set_goalOrientation = function (value) {
 		try {
 			this.proxy.goalOrientation = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalOrientation '+e);
+			console.log('Problems setting goalOrientation '+e);
 			console.error('Problems setting goalOrientation',e);
 		}
 	};
@@ -13117,14 +13024,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalOrientation = new SFRotation(0,1,0,0);
 	} catch (e) {
-		alert('Problems setting goalOrientation '+e);
+		console.log('Problems setting goalOrientation '+e);
 		console.error('Problems setting goalOrientation',e);
 	}
 	this.set_tracking = function (value) {
 		try {
 			this.proxy.tracking = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting tracking '+e);
+			console.log('Problems setting tracking '+e);
 			console.error('Problems setting tracking',e);
 		}
 	};
@@ -13135,14 +13042,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.tracking = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting tracking '+e);
+		console.log('Problems setting tracking '+e);
 		console.error('Problems setting tracking',e);
 	}
 	this.set_goalAimPoint = function (value) {
 		try {
 			this.proxy.goalAimPoint = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalAimPoint '+e);
+			console.log('Problems setting goalAimPoint '+e);
 			console.error('Problems setting goalAimPoint',e);
 		}
 	};
@@ -13153,14 +13060,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalAimPoint = new SFVec3f(4,4,0);
 	} catch (e) {
-		alert('Problems setting goalAimPoint '+e);
+		console.log('Problems setting goalAimPoint '+e);
 		console.error('Problems setting goalAimPoint',e);
 	}
 	this.set_goalFieldOfView = function (value) {
 		try {
 			this.proxy.goalFieldOfView = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFieldOfView '+e);
+			console.log('Problems setting goalFieldOfView '+e);
 			console.error('Problems setting goalFieldOfView',e);
 		}
 	};
@@ -13171,14 +13078,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFieldOfView = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFieldOfView '+e);
+		console.log('Problems setting goalFieldOfView '+e);
 		console.error('Problems setting goalFieldOfView',e);
 	}
 	this.set_goalFStop = function (value) {
 		try {
 			this.proxy.goalFStop = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFStop '+e);
+			console.log('Problems setting goalFStop '+e);
 			console.error('Problems setting goalFStop',e);
 		}
 	};
@@ -13189,14 +13096,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFStop = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFStop '+e);
+		console.log('Problems setting goalFStop '+e);
 		console.error('Problems setting goalFStop',e);
 	}
 	this.set_goalFocusDistance = function (value) {
 		try {
 			this.proxy.goalFocusDistance = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting goalFocusDistance '+e);
+			console.log('Problems setting goalFocusDistance '+e);
 			console.error('Problems setting goalFocusDistance',e);
 		}
 	};
@@ -13207,14 +13114,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.goalFocusDistance = new SFFloat();
 	} catch (e) {
-		alert('Problems setting goalFocusDistance '+e);
+		console.log('Problems setting goalFocusDistance '+e);
 		console.error('Problems setting goalFocusDistance',e);
 	}
 	this.set_isActive = function (value) {
 		try {
 			this.proxy.isActive = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting isActive '+e);
+			console.log('Problems setting isActive '+e);
 			console.error('Problems setting isActive',e);
 		}
 	};
@@ -13225,14 +13132,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.isActive = new SFBool();
 	} catch (e) {
-		alert('Problems setting isActive '+e);
+		console.log('Problems setting isActive '+e);
 		console.error('Problems setting isActive',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -13243,10 +13150,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // CameraMovementScript
@@ -13348,9 +13254,7 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -13403,7 +13307,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 		try {
 			this.proxy.description = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting description '+e);
+			console.log('Problems setting description '+e);
 			console.error('Problems setting description',e);
 		}
 	};
@@ -13414,14 +13318,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.description = new SFString();
 	} catch (e) {
-		alert('Problems setting description '+e);
+		console.log('Problems setting description '+e);
 		console.error('Problems setting description',e);
 	}
 	this.set_enabled = function (value) {
 		try {
 			this.proxy.enabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting enabled '+e);
+			console.log('Problems setting enabled '+e);
 			console.error('Problems setting enabled',e);
 		}
 	};
@@ -13432,14 +13336,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.enabled = new SFBool(true);
 	} catch (e) {
-		alert('Problems setting enabled '+e);
+		console.log('Problems setting enabled '+e);
 		console.error('Problems setting enabled',e);
 	}
 	this.set_frameRate = function (value) {
 		try {
 			this.proxy.frameRate = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting frameRate '+e);
+			console.log('Problems setting frameRate '+e);
 			console.error('Problems setting frameRate',e);
 		}
 	};
@@ -13450,14 +13354,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.frameRate = new SFFloat(30);
 	} catch (e) {
-		alert('Problems setting frameRate '+e);
+		console.log('Problems setting frameRate '+e);
 		console.error('Problems setting frameRate',e);
 	}
 	this.set_frameSize = function (value) {
 		try {
 			this.proxy.frameSize = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting frameSize '+e);
+			console.log('Problems setting frameSize '+e);
 			console.error('Problems setting frameSize',e);
 		}
 	};
@@ -13468,14 +13372,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.frameSize = new SFVec2f(640,480);
 	} catch (e) {
-		alert('Problems setting frameSize '+e);
+		console.log('Problems setting frameSize '+e);
 		console.error('Problems setting frameSize',e);
 	}
 	this.set_pixelAspectRatio = function (value) {
 		try {
 			this.proxy.pixelAspectRatio = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting pixelAspectRatio '+e);
+			console.log('Problems setting pixelAspectRatio '+e);
 			console.error('Problems setting pixelAspectRatio',e);
 		}
 	};
@@ -13486,14 +13390,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.pixelAspectRatio = new SFFloat(1.33);
 	} catch (e) {
-		alert('Problems setting pixelAspectRatio '+e);
+		console.log('Problems setting pixelAspectRatio '+e);
 		console.error('Problems setting pixelAspectRatio',e);
 	}
 	this.set_startTime = function (value) {
 		try {
 			this.proxy.startTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting startTime '+e);
+			console.log('Problems setting startTime '+e);
 			console.error('Problems setting startTime',e);
 		}
 	};
@@ -13504,14 +13408,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.startTime = undefined;
 	} catch (e) {
-		alert('Problems setting startTime '+e);
+		console.log('Problems setting startTime '+e);
 		console.error('Problems setting startTime',e);
 	}
 	this.set_progress = function (value) {
 		try {
 			this.proxy.progress = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting progress '+e);
+			console.log('Problems setting progress '+e);
 			console.error('Problems setting progress',e);
 		}
 	};
@@ -13522,14 +13426,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.progress = new SFFloat();
 	} catch (e) {
-		alert('Problems setting progress '+e);
+		console.log('Problems setting progress '+e);
 		console.error('Problems setting progress',e);
 	}
 	this.set_renderCompleteTime = function (value) {
 		try {
 			this.proxy.renderCompleteTime = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting renderCompleteTime '+e);
+			console.log('Problems setting renderCompleteTime '+e);
 			console.error('Problems setting renderCompleteTime',e);
 		}
 	};
@@ -13540,14 +13444,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.renderCompleteTime = new SFTime();
 	} catch (e) {
-		alert('Problems setting renderCompleteTime '+e);
+		console.log('Problems setting renderCompleteTime '+e);
 		console.error('Problems setting renderCompleteTime',e);
 	}
 	this.set_movieFormat = function (value) {
 		try {
 			this.proxy.movieFormat = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting movieFormat '+e);
+			console.log('Problems setting movieFormat '+e);
 			console.error('Problems setting movieFormat',e);
 		}
 	};
@@ -13558,14 +13462,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.movieFormat = new MFString("mpeg");
 	} catch (e) {
-		alert('Problems setting movieFormat '+e);
+		console.log('Problems setting movieFormat '+e);
 		console.error('Problems setting movieFormat',e);
 	}
 	this.set_imageFormat = function (value) {
 		try {
 			this.proxy.imageFormat = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting imageFormat '+e);
+			console.log('Problems setting imageFormat '+e);
 			console.error('Problems setting imageFormat',e);
 		}
 	};
@@ -13576,14 +13480,14 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.imageFormat = new MFString("png");
 	} catch (e) {
-		alert('Problems setting imageFormat '+e);
+		console.log('Problems setting imageFormat '+e);
 		console.error('Problems setting imageFormat',e);
 	}
 	this.set_traceEnabled = function (value) {
 		try {
 			this.proxy.traceEnabled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting traceEnabled '+e);
+			console.log('Problems setting traceEnabled '+e);
 			console.error('Problems setting traceEnabled',e);
 		}
 	};
@@ -13594,10 +13498,9 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 	try {
 		this.traceEnabled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting traceEnabled '+e);
+		console.log('Problems setting traceEnabled '+e);
 		console.error('Problems setting traceEnabled',e);
 	}
-
 
 ecmascript:
 	this.initialize = function () // OfflineRenderScript
@@ -13660,9 +13563,7 @@ ecmascript:
          console.error ('[OfflineRender: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[OfflineRender] ' + outputString + '');
-}
-
-;
+};
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -13694,10 +13595,14 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTAN
 X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].proxy = X3DJSON.createProxy(X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']['ACTION'],X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript']);
 }
 if (typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].initialize === "function") X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INSTANCE10000_OfflineRenderScript'].initialize();
+    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator')) {
 X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraPositionInterpolator').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator')) {
 X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraOrientationInterpolator').addEventListener('outputchange', function(event) {
 }, false);
+}
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13830,22 +13735,34 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Simple
 		}
 });
 			X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].totalDuration, __eventTime);
+    if (X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots')) {
 X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','fraction'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.SimpleShots','fraction'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter')) {
 X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.SimpleShotsFilter','inputTrue'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','TextTouch.SimpleShots')) {
 X3DJSON.nodeUtil('Scene','TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','TextTouch.SimpleShots')) {
 X3DJSON.nodeUtil('Scene','TextTouch.SimpleShots').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator')) {
 X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraPositionInterpolator').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator')) {
 X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraOrientationInterpolator').addEventListener('outputchange', function(event) {
 }, false);
+}
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -13978,18 +13895,26 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPoi
 		}
 });
 			X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','cycleInterval',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].totalDuration, __eventTime);
+    if (X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest')) {
 X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','fraction'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_fraction(X3DJSON.nodeUtil('Scene','CameraTimer.AimPointTest','fraction'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter')) {
 X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter').addEventListener('outputchange', function(event) {
 			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
 }, false);
+}
 			X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].set_bind(X3DJSON.nodeUtil('Scene','TextTouchActive.AimPointFilter','inputTrue'), __eventTime);
+    if (X3DJSON.nodeUtil('Scene','TextTouch.AimPointTest')) {
 X3DJSON.nodeUtil('Scene','TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','TextTouch.AimPointTest')) {
 X3DJSON.nodeUtil('Scene','TextTouch.AimPointTest').addEventListener('outputchange', function(event) {
 }, false);
+}
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -14078,24 +14003,42 @@ X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPoi
 		}
 });
 			X3DJSON.nodeUtil('Scene','CameraShapeTransform','rotation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.AimPointTest_CameraScript'].orientation, __eventTime);
+    if (X3DJSON.nodeUtil('Scene','CameraShapeTouched')) {
 X3DJSON.nodeUtil('Scene','CameraShapeTouched').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','ViewFrustumToggle')) {
 X3DJSON.nodeUtil('Scene','ViewFrustumToggle').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','BoxPath')) {
 X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','BoxPath')) {
 X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','BoxPath')) {
 X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','BoxPath')) {
 X3DJSON.nodeUtil('Scene','BoxPath').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','BoxTimer')) {
 X3DJSON.nodeUtil('Scene','BoxTimer').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint')) {
 X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint').addEventListener('outputchange', function(event) {
 }, false);
+}
+    if (X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint')) {
 X3DJSON.nodeUtil('Scene','DECLCamera_Camera.AimPointTest_CameraViewpoint').addEventListener('outputchange', function(event) {
 }, false);
+}
 			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','position',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].position, __eventTime);
 			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','orientation',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].orientation, __eventTime);
 			X3DJSON.nodeUtil('Scene','DECLCamera_Camera.SimpleShotsTest_CameraViewpoint','bind',typeof X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive === "function" ? X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive() : X3DJSON['Obj']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.SimpleShotsTest_CameraScript'].isActive, __eventTime);

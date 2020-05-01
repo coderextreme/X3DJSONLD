@@ -4,6 +4,10 @@
   <head>
     <component name='Shaders' level='1'/>
     <component name='CubeMapTexturing' level='1'/>
+    <component name='Texturing' level='1'/>
+    <component name='Rendering' level='1'/>
+    <component name='Shape' level='4'/>
+    <component name='Grouping' level='3'/>
     <meta content='geo.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>

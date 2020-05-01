@@ -1,102 +1,100 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.2",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.2.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "CameraPrototypes.x3d"
+          "@content": "CameraPrototypes.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."
+          "@content": "Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement.",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "Don Brutzman and Jeff Weekley"
+          "@content": "Don Brutzman and Jeff Weekley",
+          "@name": "creator"
         },
         {
-          "@name": "created",
-          "@content": "16 March 2009"
+          "@content": "16 March 2009",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "25 October 2016"
+          "@content": "25 October 2016",
+          "@name": "modified"
         },
         {
-          "@name": "TODO",
-          "@content": "Schematron rules, backed up by initialize() checks"
+          "@content": "Schematron rules, backed up by initialize() checks",
+          "@name": "TODO"
         },
         {
-          "@name": "reference",
-          "@content": "BeyondViewpointCameraNodesWeb3D2009.pdf"
+          "@content": "BeyondViewpointCameraNodesWeb3D2009.pdf",
+          "@name": "reference"
         },
         {
-          "@name": "reference",
-          "@content": "http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"
+          "@content": "http://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html",
+          "@name": "reference"
         },
         {
-          "@name": "subject",
-          "@content": "Camera nodes for Viewpoint navigation control"
+          "@content": "Camera nodes for Viewpoint navigation control",
+          "@name": "subject"
         },
         {
-          "@name": "reference",
-          "@content": "CameraExamples.x3d"
+          "@content": "CameraExamples.x3d",
+          "@name": "reference"
         },
         {
-          "@name": "identifier",
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "reference",
-          "@content": "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
+          "@content": "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d",
+          "@name": "reference"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "19 April 2020"
+          "@content": "1 May 2020"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "#comment": "=============== Camera =============="
+          "#comment": " =============== Camera ============== "
         },
         {},
         {
-          "#comment": "=============== CameraShot =============="
+          "#comment": " =============== CameraShot ============== "
         },
         {},
         {
-          "#comment": "=============== CameraMovement =============="
+          "#comment": " =============== CameraMovement ============== "
         },
         {},
         {
-          "#comment": "=============== OfflineRender =============="
+          "#comment": " =============== OfflineRender ============== "
         },
         {},
         {
-          "#comment": "=============== Launch Prototype Example =============="
+          "#comment": " =============== Launch Prototype Example ============== "
         },
         {
           "Background": {
@@ -163,6 +161,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

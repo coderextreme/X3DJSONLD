@@ -153,7 +153,7 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 		try {
 			this.proxy.clearSpanWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting clearSpanWidth '+e);
+			console.log('Problems setting clearSpanWidth '+e);
 			console.error('Problems setting clearSpanWidth',e);
 		}
 	};
@@ -164,14 +164,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.clearSpanWidth = new SFFloat(5);
 	} catch (e) {
-		alert('Problems setting clearSpanWidth '+e);
+		console.log('Problems setting clearSpanWidth '+e);
 		console.error('Problems setting clearSpanWidth',e);
 	}
 	this.set_riseHeight = function (value) {
 		try {
 			this.proxy.riseHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting riseHeight '+e);
+			console.log('Problems setting riseHeight '+e);
 			console.error('Problems setting riseHeight',e);
 		}
 	};
@@ -182,14 +182,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.riseHeight = new SFFloat(2.5);
 	} catch (e) {
-		alert('Problems setting riseHeight '+e);
+		console.log('Problems setting riseHeight '+e);
 		console.error('Problems setting riseHeight',e);
 	}
 	this.set_depth = function (value) {
 		try {
 			this.proxy.depth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting depth '+e);
+			console.log('Problems setting depth '+e);
 			console.error('Problems setting depth',e);
 		}
 	};
@@ -200,14 +200,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.depth = new SFFloat(2);
 	} catch (e) {
-		alert('Problems setting depth '+e);
+		console.log('Problems setting depth '+e);
 		console.error('Problems setting depth',e);
 	}
 	this.set_topAbutmentHeight = function (value) {
 		try {
 			this.proxy.topAbutmentHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting topAbutmentHeight '+e);
+			console.log('Problems setting topAbutmentHeight '+e);
 			console.error('Problems setting topAbutmentHeight',e);
 		}
 	};
@@ -218,14 +218,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.topAbutmentHeight = new SFFloat(0.6);
 	} catch (e) {
-		alert('Problems setting topAbutmentHeight '+e);
+		console.log('Problems setting topAbutmentHeight '+e);
 		console.error('Problems setting topAbutmentHeight',e);
 	}
 	this.set_pierWidth = function (value) {
 		try {
 			this.proxy.pierWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting pierWidth '+e);
+			console.log('Problems setting pierWidth '+e);
 			console.error('Problems setting pierWidth',e);
 		}
 	};
@@ -236,14 +236,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.pierWidth = new SFFloat(1);
 	} catch (e) {
-		alert('Problems setting pierWidth '+e);
+		console.log('Problems setting pierWidth '+e);
 		console.error('Problems setting pierWidth',e);
 	}
 	this.set_pierHeight = function (value) {
 		try {
 			this.proxy.pierHeight = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting pierHeight '+e);
+			console.log('Problems setting pierHeight '+e);
 			console.error('Problems setting pierHeight',e);
 		}
 	};
@@ -254,14 +254,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.pierHeight = new SFFloat(2);
 	} catch (e) {
-		alert('Problems setting pierHeight '+e);
+		console.log('Problems setting pierHeight '+e);
 		console.error('Problems setting pierHeight',e);
 	}
 	this.set_archHalf = function (value) {
 		try {
 			this.proxy.archHalf = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting archHalf '+e);
+			console.log('Problems setting archHalf '+e);
 			console.error('Problems setting archHalf',e);
 		}
 	};
@@ -272,14 +272,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.archHalf = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting archHalf '+e);
+		console.log('Problems setting archHalf '+e);
 		console.error('Problems setting archHalf',e);
 	}
 	this.set_archHalfExtensionWidth = function (value) {
 		try {
 			this.proxy.archHalfExtensionWidth = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting archHalfExtensionWidth '+e);
+			console.log('Problems setting archHalfExtensionWidth '+e);
 			console.error('Problems setting archHalfExtensionWidth',e);
 		}
 	};
@@ -290,14 +290,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.archHalfExtensionWidth = new SFFloat(0);
 	} catch (e) {
-		alert('Problems setting archHalfExtensionWidth '+e);
+		console.log('Problems setting archHalfExtensionWidth '+e);
 		console.error('Problems setting archHalfExtensionWidth',e);
 	}
 	this.set_onlyIntrados = function (value) {
 		try {
 			this.proxy.onlyIntrados = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting onlyIntrados '+e);
+			console.log('Problems setting onlyIntrados '+e);
 			console.error('Problems setting onlyIntrados',e);
 		}
 	};
@@ -308,14 +308,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.onlyIntrados = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting onlyIntrados '+e);
+		console.log('Problems setting onlyIntrados '+e);
 		console.error('Problems setting onlyIntrados',e);
 	}
 	this.set_archFilled = function (value) {
 		try {
 			this.proxy.archFilled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting archFilled '+e);
+			console.log('Problems setting archFilled '+e);
 			console.error('Problems setting archFilled',e);
 		}
 	};
@@ -326,14 +326,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.archFilled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting archFilled '+e);
+		console.log('Problems setting archFilled '+e);
 		console.error('Problems setting archFilled',e);
 	}
 	this.set_archHalfFilled = function (value) {
 		try {
 			this.proxy.archHalfFilled = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting archHalfFilled '+e);
+			console.log('Problems setting archHalfFilled '+e);
 			console.error('Problems setting archHalfFilled',e);
 		}
 	};
@@ -344,14 +344,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.archHalfFilled = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting archHalfFilled '+e);
+		console.log('Problems setting archHalfFilled '+e);
 		console.error('Problems setting archHalfFilled',e);
 	}
 	this.set_lintel = function (value) {
 		try {
 			this.proxy.lintel = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting lintel '+e);
+			console.log('Problems setting lintel '+e);
 			console.error('Problems setting lintel',e);
 		}
 	};
@@ -362,14 +362,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.lintel = new SFBool(false);
 	} catch (e) {
-		alert('Problems setting lintel '+e);
+		console.log('Problems setting lintel '+e);
 		console.error('Problems setting lintel',e);
 	}
 	this.set_computedScale = function (value) {
 		try {
 			this.proxy.computedScale = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting computedScale '+e);
+			console.log('Problems setting computedScale '+e);
 			console.error('Problems setting computedScale',e);
 		}
 	};
@@ -380,14 +380,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.computedScale = new SFVec3f();
 	} catch (e) {
-		alert('Problems setting computedScale '+e);
+		console.log('Problems setting computedScale '+e);
 		console.error('Problems setting computedScale',e);
 	}
 	this.set_pointOut = function (value) {
 		try {
 			this.proxy.pointOut = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting pointOut '+e);
+			console.log('Problems setting pointOut '+e);
 			console.error('Problems setting pointOut',e);
 		}
 	};
@@ -398,14 +398,14 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.pointOut = new MFVec3f();
 	} catch (e) {
-		alert('Problems setting pointOut '+e);
+		console.log('Problems setting pointOut '+e);
 		console.error('Problems setting pointOut',e);
 	}
 	this.set_indexOut = function (value) {
 		try {
 			this.proxy.indexOut = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
 		} catch (e) {
-			alert('Problems setting indexOut '+e);
+			console.log('Problems setting indexOut '+e);
 			console.error('Problems setting indexOut',e);
 		}
 	};
@@ -416,7 +416,7 @@ X3DJSON['Script']['Scene']['../data/ArchPrototype.json']['DECLArchPrototype_Arch
 	try {
 		this.indexOut = new MFInt32();
 	} catch (e) {
-		alert('Problems setting indexOut '+e);
+		console.log('Problems setting indexOut '+e);
 		console.error('Problems setting indexOut',e);
 	}
 // ArchPrototypeScript.js

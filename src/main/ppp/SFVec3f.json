@@ -1,11 +1,15 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
+      "component": [
+        {
+          "@level": 1,
+          "@name": "Scripting"
+        }
+      ],
       "meta": [
         {
           "@name": "title",
@@ -25,26 +29,36 @@
         },
         {
           "@name": "translated",
-          "@content": "19 April 2020"
+          "@content": "1 May 2020"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
+          }
         },
         {
           "Transform": {
             "@DEF": "transform",
+            "@translation": [
+              0,
+              0,
+              0
+            ],
             "-children": [
               {
                 "Shape": {
@@ -76,7 +90,7 @@
         },
         {
           "Script": {
-            "@DEF": "Bounce",
+            "@DEF": "Bounce2",
             "field": [
               {
                 "@name": "set_translation",
@@ -125,7 +139,6 @@
               }
             ],
             "#sourceText": [
-              "",
               "ecmascript:",
               "\t\t\tfunction newBubble() {",
               "\t\t\t    translation = new SFVec3f(0, 0, 0);",
@@ -157,8 +170,6 @@
               "\t\t\tfunction initialize() {",
               "\t\t\t     newBubble();",
               "\t\t\t}",
-              "",
-              "",
               ""
             ]
           }
@@ -174,19 +185,21 @@
           "ROUTE": {
             "@fromNode": "TourTime",
             "@fromField": "cycleTime",
-            "@toNode": "Bounce",
+            "@toNode": "Bounce2",
             "@toField": "set_fraction"
           }
         },
         {
           "ROUTE": {
-            "@fromNode": "Bounce",
+            "@fromNode": "Bounce2",
             "@fromField": "translation_changed",
             "@toNode": "transform",
             "@toField": "set_translation"
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

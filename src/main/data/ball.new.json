@@ -21,6 +21,26 @@
           {
             "@name":"CubeMapTexturing",
             "@level":1
+          },
+          {
+            "@name":"Texturing",
+            "@level":1
+          },
+          {
+            "@name":"Rendering",
+            "@level":1
+          },
+          {
+            "@name":"Shape",
+            "@level":4
+          },
+          {
+            "@name":"Grouping",
+            "@level":3
+          },
+          {
+            "@name":"Core",
+            "@level":1
           }
         ],
         "meta": [
@@ -46,7 +66,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 April 2020"
+            "@content":"01 May 2020"
           },
           {
             "@name":"generator",

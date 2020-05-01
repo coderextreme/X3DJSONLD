@@ -1,63 +1,61 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "TextExamples.x3d"
+          "@content": "TextExamples.x3d",
+          "@name": "title"
         },
         {
-          "@name": "description",
-          "@content": "Show different escape-character text examples for embedded quotation marks."
+          "@content": "Show different escape-character text examples for embedded quotation marks.",
+          "@name": "description"
         },
         {
-          "@name": "creator",
-          "@content": "Don Brutzman"
+          "@content": "Don Brutzman",
+          "@name": "creator"
         },
         {
-          "@name": "created",
-          "@content": "7 April 2001"
+          "@content": "7 April 2001",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "26 April 2016"
+          "@content": "26 April 2016",
+          "@name": "modified"
         },
         {
-          "@name": "warning",
-          "@content": "Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."
+          "@content": "Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control.",
+          "@name": "warning"
         },
         {
-          "@name": "warning",
-          "@content": "Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."
+          "@content": "Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations.",
+          "@name": "warning"
         },
         {
-          "@name": "identifier",
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "19 April 2020"
+          "@content": "1 May 2020"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -178,6 +176,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

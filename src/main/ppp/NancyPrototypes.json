@@ -1,67 +1,69 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
-    "@version": "3.0",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
     "head": {
       "meta": [
         {
-          "@name": "title",
-          "@content": "NancyPrototypes.x3d"
+          "@content": "NancyPrototypes.x3d",
+          "@name": "title"
         },
         {
-          "@name": "creator",
-          "@content": "Cindy Ballreich"
+          "@content": "Cindy Ballreich",
+          "@name": "creator"
         },
         {
-          "@name": "translators",
-          "@content": "Tom Miller and Don Brutzman, NPS"
+          "@content": "Tom Miller and Don Brutzman, NPS",
+          "@name": "translators"
         },
         {
-          "@name": "created",
-          "@content": "9 July 2000"
+          "@content": "9 July 2000",
+          "@name": "created"
         },
         {
-          "@name": "modified",
-          "@content": "19 January 2014"
+          "@content": "20 October 2019",
+          "@name": "modified"
         },
         {
-          "@name": "description",
-          "@content": "Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."
+          "@content": "Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces.",
+          "@name": "description"
         },
         {
-          "@name": "warning",
-          "@content": "using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead"
+          "@content": "using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead",
+          "@name": "warning"
         },
         {
-          "@name": "reference",
-          "@content": "NancyNativeTags.x3d"
+          "@content": "NancyNativeTags.x3d",
+          "@name": "reference"
         },
         {
-          "@name": "identifier",
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"
+          "@content": "Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem.",
+          "@name": "TODO"
         },
         {
-          "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d",
+          "@name": "identifier"
         },
         {
-          "@name": "license",
-          "@content": "../license.html"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+          "@name": "generator"
+        },
+        {
+          "@content": "../license.html",
+          "@name": "license"
         },
         {
           "@name": "translated",
-          "@content": "19 April 2020"
+          "@content": "1 May 2020"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -73,7 +75,7 @@
         {},
         {},
         {
-          "#comment": "Start scene graph."
+          "#comment": " Start scene graph. "
         },
         {
           "Transform": {
@@ -4634,7 +4636,7 @@
                                                   "@DEF": "DECLSegment_hanim_c7_FIELDchildren_small_logo_Tex",
                                                   "@url": [
                                                     "small_logo.gif",
-                                                    "http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"
+                                                    "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/small_logo.gif"
                                                   ]
                                                 }
                                               }
@@ -20888,6 +20890,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

@@ -115,9 +115,11 @@ var ProtoInstance12 = null;
 "	}\n"+
 "	function recompute_and_route(startpoint, endpoint) {\n"+
 "	      var trafo = recompute(startpoint, endpoint);\n"+
-"	      position.translation = trafo.translation;\n"+
-"	      rotscale.rotation = trafo.rotation;\n"+
-"	      rotscale.scale = trafo.scale;\n"+
+"	      if (trafo) {\n"+
+"		      position.translation = trafo.translation;\n"+
+"		      rotscale.rotation = trafo.rotation;\n"+
+"		      rotscale.scale = trafo.scale;\n"+
+"	      }\n"+
 "	}\n"+
 "        function initialize(){\n"+
 "            recompute_and_route(startnode.translation,endnode.translation);\n"+

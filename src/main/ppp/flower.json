@@ -1,10 +1,8 @@
 {
   "X3D": {
-    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -29,22 +27,27 @@
         },
         {
           "@name": "translated",
-          "@content": "19 April 2020"
+          "@content": "1 May 2020"
         },
         {
           "@name": "generator",
-          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {}
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE",
+              "ANY"
+            ]
+          }
         },
         {
           "DirectionalLight": {
@@ -126,7 +129,9 @@
                         2,
                         -1
                       ],
+                      "@creaseAngle": 0,
                       "@DEF": "Orbit",
+                      "@solid": true,
                       "-coord": {
                         "Coordinate": {
                           "@DEF": "OrbitCoordinates",
@@ -155,28 +160,51 @@
             "@DEF": "OrbitScript",
             "field": [
               {
-                "@name": "set_fraction",
                 "@accessType": "inputOnly",
+                "@name": "set_fraction",
                 "@type": "SFFloat"
               },
               {
-                "@name": "coordinates",
                 "@accessType": "outputOnly",
+                "@name": "coordinates",
                 "@type": "MFVec3f"
               },
               {
-                "@name": "coordIndexes",
                 "@accessType": "outputOnly",
+                "@name": "coordIndexes",
                 "@type": "MFInt32"
               }
             ],
             "-children": [
               {
-                "#comment": "<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"
+                "#comment": ""
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"
+              },
+              {
+                "#comment": "        <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"
+              },
+              {
+                "#comment": "\t"
               }
             ],
             "#sourceText": [
-              "",
               "ecmascript:",
               "",
               "var e = 5;",
@@ -250,8 +278,7 @@
               "\t\th = 4;",
               "\t}",
               "\tgenerateCoordinates(resolution);",
-              "}",
-              ""
+              "}"
             ]
           }
         },
@@ -287,6 +314,8 @@
           }
         }
       ]
-    }
+    },
+    "encoding": "UTF-8",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
   }
 }

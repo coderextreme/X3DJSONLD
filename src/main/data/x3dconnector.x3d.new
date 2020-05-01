@@ -74,9 +74,11 @@
 	}
 	function recompute_and_route(startpoint, endpoint) {
 	      var trafo = recompute(startpoint, endpoint);
-	      transnode.translation = trafo.translation;
-	      rotscalenode.rotation = trafo.rotation;
-	      rotscalenode.scale = trafo.scale;
+	      if (trafo) {
+		      transnode.translation = trafo.translation;
+		      rotscalenode.rotation = trafo.rotation;
+		      rotscalenode.scale = trafo.scale;
+	      }
 	}
         function initialize(){
             recompute_and_route(startnode.translation,endnode.translation);
