@@ -1,13 +1,14 @@
 var express = require('express');
+var fs = require('fs');
+var https = require('https');
 var app = express();
-var http = require('http').Server(app);
+
 var glob = require( 'glob' );  
 var config = require("./src/main/node/config");
 var port = process.env.PORT || 3000;
 var path = require('path');
 var DOMParser = require('xmldom').DOMParser;
 
-var fs = require("fs");
 var X3DJSONLD = require('./src/main/node/X3DJSONLD.js');
 
 var PROTOS = require('./src/main/node/PrototypeExpander')
@@ -362,6 +363,11 @@ app.get("*.json", function(req, res, next) {
 });
 
 
-app.listen(port, 'localhost', function() {
-  console.log("... port %d in %s mode", port, app.settings.env);
-});
+https.createServer({
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')
+}, app)
+.listen(3000, 'localhost', function () {
+  console.log('Example app listening on port 3000! Go to https://localhost:3000/')
+})
+
