@@ -98,7 +98,7 @@ DOM2JSONSerializer.prototype = {
 			function(x) { return x.
 				replace(/\t/g, '\t').
 				replace(/\\n/g, "\n");
-				replace(/.*/g, '"$1"');
+				// replace(/.*/g, '"$1"');
 			});
 		return st;
 	},
