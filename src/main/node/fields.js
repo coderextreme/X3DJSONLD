@@ -2021,7 +2021,7 @@ x3dom.fields.Quaternion.prototype.slerp = function (that, t) {
 
 x3dom.fields.Quaternion.rotateFromTo = function (fromVec, toVec) {
     var from = fromVec.normalize();
-    var to   = toVec.normalize();
+    var to   = toVec.normalize() || new x3dom.fields.SFVec3f(1, 0, 0);
     var cost = from.dot(to);
 
     // check for degeneracies

@@ -331,7 +331,7 @@ DOM2JSONSerializer.prototype = {
 			} else {
 				fieldName = '-'+attrName;
 				var attrType;
-				if (typeof fieldTypes[element.nodeName] !== 'undefined') {
+				if (element && element.nodeName && fieldTypes[element.nodeName]) {
 					attrType = fieldTypes[element.nodeName][attrName];
 				}
 				// console.error(element.nodeName, fieldName, node.nodeName, attrType);
@@ -387,7 +387,7 @@ DOM2JSONSerializer.prototype = {
 	subSerializeToString : function(element, fieldTypes, n, mapToMethod) {
 		var fields = this.descendFields(element, fieldTypes);
 		var object = {};
-		if (typeof element != 'undefined') {
+		if (element && element.childNodes) {
 			for (var cn in element.childNodes) {
 				if (element.childNodes.hasOwnProperty(cn)) {
 					var node = element.childNodes[cn];

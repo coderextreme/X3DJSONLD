@@ -122,7 +122,7 @@ class Scripts {
 				eval(jsonScript);
 			}
 		} catch (e) {
-			alert(e);
+			console.log(e);
 			console.error(e);
 		}
 
@@ -134,7 +134,7 @@ class Scripts {
 				eval(scripts.text);
 			}
 		} catch (e) {
-			alert(e);
+			console.log(e);
 			console.error(e);
 		    
 		}
@@ -147,7 +147,7 @@ class Scripts {
 				eval(routes.text);
 			}
 		} catch (e) {
-			alert(e);
+			console.log(e);
 			console.error(e);
 		}
 		/* event loop */
@@ -160,7 +160,7 @@ class Scripts {
 				}
 				x3dom.reload();  /* This may be necessary */
 			} catch (e) {
-				alert(e);
+				console.log(e);
 				console.error(e);
 			}
 			__eventTime += 1000 / 60;
@@ -356,7 +356,13 @@ class Scripts {
 			if (typeof toScript !== 'undefined') {
 				to = this.useX3DJSON('Obj', selector, url, toScript.name) + '.'+set+toField+'(';
 			}
+			if (typeof fromScript !== 'undefined' && typeof toScript !== 'undefined') {
+				log.log("		if ("+this.useX3DJSON('Obj', selector, url, toScript.name)+" && "+from+") {");
+			}
 			log.log("			"+to+from+", __eventTime);");
+			if (typeof fromScript !== 'undefined' && typeof toScript !== 'undefined') {
+				log.log("		}");
+			}
 		}
 	}
 
@@ -381,9 +387,11 @@ class Scripts {
 		var fromScript = mypackage.find(fromNode);
 		// var fromRoute = fromNode+":"+fromField+":"+toNode+":"+toField+":FROM";
 		if (typeof fromScript === 'undefined') {
-			routecode.log(this.nodeUtil(selector)+fromNode+"').addEventListener('outputchange', function(event) {");
-			this.doRoute(mypackage, fromNode, fromField, toNode, toField, routecode, set, changed, selector, url);
-			routecode.log("}, false);");	
+			routecode.log("    if ("+this.nodeUtil(selector)+fromNode+"')) {")
+				routecode.log(this.nodeUtil(selector)+fromNode+"').addEventListener('outputchange', function(event) {");
+				this.doRoute(mypackage, fromNode, fromField, toNode, toField, routecode, set, changed, selector, url);
+				routecode.log("}, false);");	
+			routecode.log("}");	
 			/*
 			routecode.log(this.declareX3DJSON('ROUTE', selector, url, fromRoute));
 			routecode.log(this.useX3DJSON('ROUTE', selector, url, fromRoute)+" = new MutationObserver(function(mutations) {");
@@ -617,7 +625,7 @@ class Scripts {
 				classes.log(indent.repeat(2) + "try {");
 				classes.log(indent.repeat(3) + "this.proxy."+v+" = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);");
 				classes.log(indent.repeat(2) + "} catch (e) {");
-				classes.log(indent.repeat(3) + "alert('Problems setting "+v+" '+e);");
+				classes.log(indent.repeat(3) + "console.log('Problems setting "+v+" '+e);");
 				classes.log(indent.repeat(3) + "console.error('Problems setting "+v+"',e);");
 				classes.log(indent.repeat(2) + "}");
 				classes.log(indent.repeat(1) + "};");
@@ -634,7 +642,7 @@ class Scripts {
 				classes.log(indent.repeat(1) + "try {");
 				classes.log(indent.repeat(2) + "this." + v + " = "+values[v]+";");
 				classes.log(indent.repeat(1) + "} catch (e) {");
-				classes.log(indent.repeat(2) + "alert('Problems setting "+v+" '+e);");
+				classes.log(indent.repeat(2) + "console.log('Problems setting "+v+" '+e);");
 				classes.log(indent.repeat(2) + "console.error('Problems setting "+v+"',e);");
 				classes.log(indent.repeat(1) + "}");
 			}
