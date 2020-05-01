@@ -22,33 +22,21 @@ from x3d import *
 
 ###############################################
 
-newModel=X3D(profile='Immersive',version='3.3',
+newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    component(level=1,name='Scripting'),
-    meta(name='title',content='SFVec3f.x3d'),
-    meta(name='creator',content='John Carlson'),
-    meta(name='description',content='3 prismatic spheres'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/SFVec3f.x3d')]),
+    meta(content='Carlson, I',name='John W'),
+    meta(content='Carlson, II',name='John A'),
+    meta(content='Carlson, III',name='John R')]),
   Scene=Scene(
     children=[
-    NavigationInfo(),
-    Transform(DEF='transform',
+    Group(displayBBox=false,
       children=[
-      Shape(
+      Shape(displayBBox=false,
         appearance=Appearance(
-          material=Material(diffuseColor=(.7,.7,.7),specularColor=(.5,.5,.5))),
-        geometry=Sphere(),)]),
-    Script(DEF='Bounce2',
-      field=[
-      field(name='set_translation',accessType='inputOnly',type='SFVec3f',value=(0,0,0)),
-      field(name='translation_changed',accessType='outputOnly',type='SFVec3f',value=(0,0,0)),
-      field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
-      field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
-      field(name='set_fraction',accessType='inputOnly',type='SFTime')]),
-    TimeSensor(DEF='TourTime',cycleInterval=0.150,loop=True),
-    ROUTE(fromNode='TourTime',fromField='cycleTime',toNode='Bounce2',toField='set_fraction'),
-    ROUTE(fromNode='Bounce2',fromField='translation_changed',toNode='transform',toField='set_translation')])
+          material=Material(diffuseColor=(1,0,0))),
+        Box(),])]),
+    Transform(displayBBox=false,rotation=(7,8,9,3.14),scale=(4,5,6),translation=(1,2,3))])
 ) # X3D model complete
 
 ###############################################
@@ -61,4 +49,4 @@ print('check  newModel.XML() serialization...')
 newModelXML = newModel.XML() # test export method XML() for exceptions
 # print(newModelXML) # debug
 
-print ("python x3d.py load successful for SFVec3f.py")
+print ("python x3d.py load successful")

@@ -118,6 +118,10 @@ newModel=X3D(profile='Immersive',version='3.3',
 # Self-test diagnostics
 ###############################################
 
-if         metaDiagnostics(newModel): # built-in utility method in X3D class
-    print (metaDiagnostics(newModel))
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
 print ("python x3d.py load successful for PixelTextureComponentExamples.py")

@@ -15,7 +15,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/annexdA.java">annexdA.java</a> source, <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01JinIndex.html" target="_top">KoreanCharacterAnnexD01Jin catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01Jin.java">KoreanCharacterAnnexD01Jin.java</a> source, <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01JinIndex.html" target="_top">KoreanCharacterAnnexD01Jin catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -103,10 +103,10 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-public class annexdA
+public class KoreanCharacterAnnexD01Jin
 {
 	/** Default constructor to create this object. */
-	public annexdA ()
+	public KoreanCharacterAnnexD01Jin ()
 	{
 	  initialize();
 	}
@@ -2676,7 +2676,7 @@ public class annexdA
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-	 * @return annexdA model
+	 * @return KoreanCharacterAnnexD01Jin model
 	 */
 	public X3DObject getX3dModel()
 	{	  
@@ -2693,7 +2693,7 @@ public class annexdA
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new annexdA().getX3dModel();
+        X3DObject thisExampleX3dObject = new KoreanCharacterAnnexD01Jin().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -2724,13 +2724,13 @@ public class annexdA
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"annexdA\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"KoreanCharacterAnnexD01Jin\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dObject.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"annexdA\" self-validation test results: ");
+			System.out.print("Java program \"KoreanCharacterAnnexD01Jin\" self-validation test results: ");
 			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}
