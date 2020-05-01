@@ -11,7 +11,7 @@ if (typeof require !== 'undefined') {
 	fs = require("fs");
 	http = require("http");
 	https = require("https");
-	DOM2JSONSerializer = require('./DOM2JSONSerializer'),
+	DOM2JSONSerializer = require('./DOM2JSONSerializer');
 	fieldTypes = require('./fieldTypes');
 	mapToMethod = require('./mapToMethod');
 	DOMParser = require('xmldom').DOMParser;
@@ -941,18 +941,6 @@ PROTOS.prototype = {
 					json = JSON.parse(data);
 					protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
 				} catch (e) {
-					/*
-					console.error("Failed to parse JSON from " + filename);
-					if (filename.endsWith(".x3d") && (typeof runAndSend === "function")) {
-						console.error("calling run and send");
-						console.error("loadedProto converting " + filename);
-						runAndSend(['---silent', filename], function(json) {
-							console.error("got", json, "from run and send, searching for", protoname);
-							protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
-						});
-						console.error("async skip of run and send " + filename);
-					} else
-					*/
 					if (typeof DOM2JSONSerializer === 'function') {
 						try {
 							var doc = null;
@@ -1186,12 +1174,30 @@ PROTOS.prototype = {
 								var filename = url;
 								if (filename.endsWith(".json")) {
 									filename = filename.substring(0, filename.lastIndexOf("."))+".x3d";
-									// console.error("converting possible X3D to JSON", filename);
-									if (typeof runAndSend === 'function') {
-										runAndSend(['---silent', filename], function(jsobj) {
-											data = JSON.stringify(jsobj);
+									if (typeof DOM2JSONSerializer === 'function') {
+										try {
+											var doc = null;
+											try {  
+												var domParser = new DOMParser();
+												doc = domParser.parseFromString (data, 'application/xml');
+										
+											} catch (e) {
+												throw e;
+											}
+											var element = doc.documentElement;
+											var serializer = new DOM2JSONSerializer();
+											json = serializer.serializeToString(null, element, filename, mapToMethod, fieldTypes);
+											data = JSON.stringify(json);
 											loadedCallback(data, filename, protoexp, done, externProtoDeclare, obj);
-										});
+											//protoexp.searchAndReplaceProto(filename, json, protoname, protoexp.founddef, obj, objret);
+										} catch (e) {
+											if (typeof alert === 'function') {
+												alert(e);
+											}
+											console.error("DOM2JSONSerializer Convert failed", e);
+										}
+									} else {
+										console.error("DOM2JSONSerializer not a function", e);
 									}
 								}
 							}
@@ -1242,7 +1248,9 @@ PROTOS.prototype = {
 					newobject[p] = this.externalPrototypeExpander(file, object[p]);
 				}
 			}
-			var expectedreturn = Object.keys(object).length;
+			if (object !== null && typeof object !== 'undefined') {
+				var expectedreturn = Object.keys(object).length;
+			}
 			// Wait for expectedreturn tasks to finish
 			while (expectedreturn > Object.keys(newobject).length + 1); {  // when they are equal, we exit
 			       // console.error(expectedreturn, '=', Object.keys(newobject).length);

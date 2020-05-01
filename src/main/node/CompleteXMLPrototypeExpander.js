@@ -14,18 +14,14 @@ var convertJSON = require('./convertJSON.js');
 var loadSchema = convertJSON.loadSchema;
 var doValidate = convertJSON.doValidate;
 var loadX3DJS = convertJSON.loadX3DJS;
-var DOMSerializer = require('./DOMSerializer.js');
-var serializer = new DOMSerializer();
+var DOM2JSONSerializer = require('./DOM2JSONSerializer.js');
+var serializer = new DOM2JSONSerializer();
 
 var Script = require('./Script');
 var LOG = Script.LOG;
 
 // Convert from XML to JSON
-var runsaxon = require('./allsaxon');
 process.argv.shift();
-process.argv.shift();
-runsaxon(process.argv);
-process.argv.shift(); // get rid of -- args
 process.argv.shift();
 
 function ProcessJSON(json, file) {

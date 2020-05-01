@@ -87,7 +87,7 @@ function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
 	var validated_version = validate[version];
         if (typeof validated_version === 'undefined') {
 		var ajv = new Ajv({allErrors:true, verbose:true});
-		      if (typeof $ === 'function') {
+		      if (typeof $ === 'function' && typeof $.getJSON === 'function') {
 			      $.getJSON("../schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
 				      validated_version = addSchema(ajv, schemajson, version);
 				      doValidate(json, validated_version, file, X3DJSONLD, success, undefined);
