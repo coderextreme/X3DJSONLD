@@ -15,7 +15,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01Jin.java">KoreanCharacterAnnexD01Jin.java</a> source, <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01JinIndex.html" target="_top">KoreanCharacterAnnexD01Jin catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/annexdA.java">annexdA.java</a> source, <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01JinIndex.html" target="_top">KoreanCharacterAnnexD01Jin catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -103,10 +103,10 @@ import org.web3d.x3d.jsail.Texturing.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-public class KoreanCharacterAnnexD01Jin
+public class annexdA
 {
 	/** Default constructor to create this object. */
-	public KoreanCharacterAnnexD01Jin ()
+	public annexdA ()
 	{
 	  initialize();
 	}
@@ -464,8 +464,8 @@ public class KoreanCharacterAnnexD01Jin
                         .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(new int[] {4,,2,,0,,-1,,0,,5,,4,,-1,,6,,1,,3,,-1,,3,,7,,6,,-1,,1,,6,,5,,-1,,5,,0,,1,,-1,,8,,4,,5,,-1,,5,,9,,8,,-1,,10,,6,,7,,-1,,7,,11,,10,,-1,,9,,5,,6,,-1,,6,,10,,9,,-1,,12,,8,,9,,-1,,9,,13,,12,,-1,,14,,10,,11,,-1,,11,,15,,14,,-1,,13,,9,,10,,-1,,10,,14,,13,,-1,,4,,16,,2,,-1,,2,,16,,7,,-1,,7,,3,,2,,-1,,17,,20,,18,,-1,,18,,19,,17,,-1,,21,,11,,7,,-1,,7,,16,,21,,-1,,8,,12,,21,,-1,,12,,15,,11,,-1,,11,,21,,12,,-1,,13,,14,,15,,-1,,15,,12,,13,,-1,,8,,17,,19,,-1,,19,,4,,8,,-1,,4,,19,,18,,-1,,18,,16,,4,,-1,,16,,18,,20,,-1,,20,,21,,16,,-1,,21,,20,,17,,-1,,17,,8,,21,,-1,,22,,23,,27,,-1,,26,,24,,25,,-1}).setTexCoordIndex(new int[] {4,,7,,5,,-1,,5,,6,,4,,-1,,2,,0,,1,,-1,,1,,3,,2,,-1,,14,,17,,15,,-1,,15,,16,,14,,-1,,8,,4,,6,,-1,,6,,9,,8,,-1,,38,,41,,39,,-1,,39,,40,,38,,-1,,18,,37,,36,,-1,,36,,19,,18,,-1,,10,,8,,9,,-1,,9,,11,,10,,-1,,42,,38,,40,,-1,,40,,43,,42,,-1,,20,,18,,19,,-1,,19,,21,,20,,-1,,22,,23,,24,,-1,,24,,23,,25,,-1,,25,,26,,24,,-1,,27,,30,,28,,-1,,28,,29,,27,,-1,,31,,32,,25,,-1,,25,,23,,31,,-1,,33,,34,,31,,-1,,34,,35,,32,,-1,,32,,31,,34,,-1,,20,,21,,35,,-1,,35,,34,,20,,-1,,8,,13,,12,,-1,,12,,4,,8,,-1,,22,,29,,28,,-1,,28,,23,,22,,-1,,23,,28,,30,,-1,,30,,31,,23,,-1,,31,,30,,27,,-1,,27,,33,,31,,-1,,14,,26,,24,,-1,,14,,24,,16,,-1})
                           .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-1.247f,0.07f,0.7975f,-1.209f,0.0872f,-1.349f,0.7098f,-0.0015f,0.8912f,0.7183f,0.0002f,-1.283f,0.9295f,-0.613f,1.478f,-1.647f,-0.4252f,1.388f,-1.589f,-0.3921f,-1.989f,1.044f,-0.5947f,-1.984f,0.8227f,-2.521f,2.408f,-1.951f,-2.334f,2.08f,-1.892f,-2.301f,-2.409f,1.192f,-2.614f,-2.248f,0.5703f,-3.958f,1.694f,-0.8836f,-4.2f,1.75f,-0.8251f,-4.167f,-2.071f,0.7842f,-3.968f,-1.934f,1.037f,-0.5968f,-0.1872f,1.642f,-2.561f,1.941f,1.951f,-0.9492f,0.058f,1.914f,-1.016f,1.885f,1.649f,-2.56f,0.1377f,1.066f,-2.61f,-0.2014f,-1.209f,0.0872f,-1.349f,0.7183f,0.0002f,-1.283f,0.7098f,-0.0015f,0.8912f,-1.247f,0.07f,0.7975f,-1.209f,0.0872f,-1.349f,0.7098f,-0.0015f,0.8912f})))
                           .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.8107f,0.9924f,0.8122f,0.9033f,0.7694f,0.9912f,0.7683f,0.9026f,0.1329f,0.0347f,0.0307f,0.0051f,0.0134f,0.0353f,0.1366f,0.0058f,0.1249f,0.1081f,0.0147f,0.117f,0.1349f,0.1856f,0.0462f,0.1842f,0.1559f,0.0454f,0.148f,0.1033f,0.3244f,0.0096f,0.1758f,0.0039f,0.1759f,0.011f,0.3241f,0.0033f,0.173f,0.1764f,0.3074f,0.1757f,0.1732f,0.1519f,0.3074f,0.1513f,0.1756f,0.032f,0.2159f,0.0368f,0.1791f,0.0165f,0.3169f,0.0458f,0.3158f,0.0193f,0.172f,0.0594f,0.2087f,0.0476f,0.1736f,0.0504f,0.2073f,0.064f,0.2362f,0.0821f,0.3267f,0.0796f,0.1717f,0.0822f,0.1726f,0.1297f,0.3077f,0.1289f,0.3074f,0.1865f,0.1742f,0.184f,0.0061f,0.1086f,0.1366f,0.0368f,0.1241f,0.1189f,0.0168f,0.0309f,0.0211f,0.1882f,0.14f,0.1857f})))))))))))))
-      .addChild(new HAnimMotionObject().setChannels(""6 Xposition Yposition Zposition Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation""
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimMotion channels: $isNumeric=false, $attributeType=, value='"6 Xposition Yposition Zposition Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation"']
+      .addChild(new HAnimMotionObject().setChannels("6 Xposition Yposition Zposition Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation"
+// [*** X3dToJava.xslt error: encountered incorrect type, HAnimMotion channels: $isNumeric=false, $attributeType=, value='6 Xposition Yposition Zposition Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation                      3 Zrotation Xrotation Yrotation']
 ).setEnabled(true).setEndFrame("0"
 // [*** X3dToJava.xslt error: encountered incorrect type, HAnimMotion endFrame: $isNumeric=true, $attributeType=, value='0']
 ).setFrameCount("392"
@@ -478,8 +478,8 @@ public class KoreanCharacterAnnexD01Jin
 // [*** X3dToJava.xslt error: encountered incorrect type, HAnimMotion frameIndex: $isNumeric=true, $attributeType=, value='0']
 ).setFrameTime("0.033333"
 // [*** X3dToJava.xslt error: encountered incorrect type, HAnimMotion frameTime: $isNumeric=true, $attributeType=, value='0.033333']
-).setJoints(""HumanoidRoot, l_hip, l_knee, l_talocrural, r_hip,                    r_knee, r_talocrural, vl5, IGNORED, l_shoulder,                    l_elbow, l_radiocarpal, IGNORED, r_shoulder, r_elbow,                    r_radiocarpal, IGNORED, skullbase""
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimMotion joints: $isNumeric=false, $attributeType=, value='"HumanoidRoot, l_hip, l_knee, l_talocrural, r_hip,                    r_knee, r_talocrural, vl5, IGNORED, l_shoulder,                    l_elbow, l_radiocarpal, IGNORED, r_shoulder, r_elbow,                    r_radiocarpal, IGNORED, skullbase"']
+).setJoints("HumanoidRoot, l_hip, l_knee, l_talocrural, r_hip,                    r_knee, r_talocrural, vl5, IGNORED, l_shoulder,                    l_elbow, l_radiocarpal, IGNORED, r_shoulder, r_elbow,                    r_radiocarpal, IGNORED, skullbase"
+// [*** X3dToJava.xslt error: encountered incorrect type, HAnimMotion joints: $isNumeric=false, $attributeType=, value='HumanoidRoot, l_hip, l_knee, l_talocrural, r_hip,                    r_knee, r_talocrural, vl5, IGNORED, l_shoulder,                    l_elbow, l_radiocarpal, IGNORED, r_shoulder, r_elbow,                    r_radiocarpal, IGNORED, skullbase']
 ).setLoa(-1).setLoop(true).setStartFrame("0"
 // [*** X3dToJava.xslt error: encountered incorrect type, HAnimMotion startFrame: $isNumeric=true, $attributeType=, value='0']
 ).setValues(getHAnimMotion_4_201_values()))));
@@ -2676,7 +2676,7 @@ public class KoreanCharacterAnnexD01Jin
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-	 * @return KoreanCharacterAnnexD01Jin model
+	 * @return annexdA model
 	 */
 	public X3DObject getX3dModel()
 	{	  
@@ -2693,7 +2693,7 @@ public class KoreanCharacterAnnexD01Jin
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new KoreanCharacterAnnexD01Jin().getX3dModel();
+        X3DObject thisExampleX3dObject = new annexdA().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -2724,13 +2724,13 @@ public class KoreanCharacterAnnexD01Jin
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"KoreanCharacterAnnexD01Jin\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"annexdA\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dObject.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"KoreanCharacterAnnexD01Jin\" self-validation test results: ");
+			System.out.print("Java program \"annexdA\" self-validation test results: ");
 			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}

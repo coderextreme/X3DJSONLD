@@ -23,8 +23,8 @@
 
 <Scene>
 <NavigationInfo speed="1.5" type='"EXAMINE" "ANY"'/>
-<!--Viewpoint centerOfRotation="0 1 0" description="AnnexD01Jin" position="0 35 113"/-->
-<Viewpoint centerOfRotation="0 1 0" description="AnnexD01Jin" position="0 40 140" />
+<Viewpoint centerOfRotation="0 1 0" description="AnnexD01Jin" position="0 35 113"/>
+<!--Viewpoint centerOfRotation="0 1 0" description="AnnexD01Jin" position="0 40 140" /-->
 
 <HAnimHumanoid DEF="hanim_AnnexD01Jin" info='"humanoidVersion=2.0"' name="AnnexD01Jin" scale="0.0225 0.0225 0.0225" version="2.0">
 

@@ -1,0 +1,214 @@
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"4.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "head": {
+        "component": [
+          {
+            "@name":"H-Anim",
+            "@level":1
+          }
+        ],
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"HAnimModelsHandsFeet.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2"
+          },
+          {
+            "@name":"creator",
+            "@content":"YOO Kwan Hee and Don Brutzman"
+          },
+          {
+            "@name":"created",
+            "@content":"8 February 2015"
+          },
+          {
+            "@name":"modified",
+            "@content":"20 October 2019"
+          },
+          {
+            "@name":"warning",
+            "@content":"not yet to scale"
+          },
+          {
+            "@name":"warning",
+            "@content":"TODO will X3D HAnim component add a new level to support LOA-4 functionality?"
+          },
+          {
+            "@name":"Image",
+            "@content":"HAnimModelsHandsFeet.png"
+          },
+          {
+            "@name":"Image",
+            "@content":"HAnimModelsHandsFeetWithFour1mGrids.png"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://www.web3d.org/working-groups/humanoid-animation-h-anim"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://www.web3d.org/files/specifications/19774/V1.0"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"
+          },
+          {
+            "@name":"subject",
+            "@content":"X3D H-Anim humanoid animation"
+          },
+          {
+            "@name":"warning",
+            "@content":"scene, DOCTYPE and Schema under development."
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"05 May 2020"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
+    },
+    "Scene": {
+        "-children":[
+          { "WorldInfo":
+            {
+              "@title":"HAnimModelsHandsFeet.x3d"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Hands and feet 10m"
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Hands and feet 1.7m",
+              "@position":[0,0,1.7]
+            }
+          },
+          { "Transform":
+            {
+              "@displayBBox":false,
+              "@translation":[-1,1,0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@displayBBox":false,
+                    "@url":["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"]
+                  }
+                },
+                {
+                  "#comment":"Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model"
+                },
+                { "Transform":
+                  {
+                    "@DEF":"GridXY_20x20Fixed_AdjustScale",
+                    "@displayBBox":false,
+                    "@scale":[0.1,0.1,0.1],
+                    "-children":[
+                      { "Inline":
+                        {
+                          "@DEF":"GridXY_20x20Fixed",
+                          "@displayBBox":false,
+                          "@url":["GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@displayBBox":false,
+              "@translation":[1,1,0],
+              "-children":[
+                { "Inline":
+                  {
+                    "@displayBBox":false,
+                    "@url":["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@USE":"GridXY_20x20Fixed_AdjustScale"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@displayBBox":false,
+              "@translation":[-1,-1,0],
+              "-children":[
+                {
+                  "#comment":"rotation='0 0 1 3.141593'"
+                },
+                { "Inline":
+                  {
+                    "@displayBBox":false,
+                    "@url":["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@USE":"GridXY_20x20Fixed_AdjustScale"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@displayBBox":false,
+              "@translation":[1,-1,0],
+              "-children":[
+                {
+                  "#comment":"rotation='0 0 1 3.141593'"
+                },
+                { "Inline":
+                  {
+                    "@displayBBox":false,
+                    "@url":["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"]
+                  }
+                },
+                { "Transform":
+                  {
+                    "@USE":"GridXY_20x20Fixed_AdjustScale"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}
