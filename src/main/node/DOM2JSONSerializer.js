@@ -21,7 +21,7 @@ DOM2JSONSerializer.prototype = {
 			obj['X3D'] = {};
 		}
 		obj['X3D']['encoding'] = 'UTF-8';
-		obj['X3D']['JSON schema'] = 'http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json';
+		obj['X3D']['JSON schema'] = 'http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json';
 		if (typeof obj['X3D']['head'] !== 'undefined') {
 			var date = new Date();
 			var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ][date.getMonth()];
@@ -179,7 +179,7 @@ DOM2JSONSerializer.prototype = {
 							attrType === "MFInt32"||
 							attrType === "MFImage"||
 							attrType === "SFImage") {
-							attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), parseInt);
+							attrval = this.descendSubArray(attrs[a].nodeValue.trim().split(/[\n\r\t ,]+/), parseInt);
 						} else if (
 							attrType === "SFColor"||
 							attrType === "MFColor"||
@@ -209,10 +209,10 @@ DOM2JSONSerializer.prototype = {
 							attrType === "SFColorRGBA"||
 							attrType === "MFColorRGBA"||
 							attrType === "MFDouble") {
-							attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), parseFloat);
+							attrval = this.descendSubArray(attrs[a].nodeValue.trim().split(/[\n\r\t ,]+/), parseFloat);
 						} else if (
 							attrType === "MFBool") {
-							attrval = this.descendSubArray(attrs[a].nodeValue.split(/[ ,]+/), this.parseBool);
+							attrval = this.descendSubArray(attrs[a].nodeValue.trim().split(/[\n\r\t ,]+/), this.parseBool);
 						} else {
 							attrval = attrs[a].nodeValue.replace(/\\?"/g, "\\\"");
 						}
@@ -347,7 +347,7 @@ DOM2JSONSerializer.prototype = {
 						fields[fieldName].push(subobject);
 					}
 				} else {
-					if (attrName === 'children' || attrName === 'shaders') {
+					if (attrName === 'children' || attrName === 'shaders' || attrName === 'skeleton') {
 						if (typeof fields[fieldName] === 'undefined') {
 							fields[fieldName] = []
 						}

@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01JinIndex.html" target="_top">KoreanCharacterAnnexD01Jin catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/annexdA.java">annexdA.java</a> source, <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01JinIndex.html" target="_top">KoreanCharacterAnnexD01Jin catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -98,7 +98,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-function NeedClassName
+function annexdA
   /** Default constructor to create this object. */
   ()
   {
@@ -107,7 +107,7 @@ function NeedClassName
     this.initialize();
     return this;
   }
-NeedClassName.prototype = {
+annexdA.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -612,4 +612,4 @@ NeedClassName.prototype = {
 
 	/** Large attribute array: TextureCoordinate point field, scene-graph level=14, element #190, 88 total numbers made up of 44 2-tuple values */
 	this.TextureCoordinate_14_190_point = new autoclass.MFVec2f() /* splitting up long array to improve readability */
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.124
+	.append(new autoclass.MFVec2f(java.newArray("float", [0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117]))

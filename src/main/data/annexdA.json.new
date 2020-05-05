@@ -77,7 +77,7 @@
         },
         {
           "@name": "translated",
-          "@content": "1 May 2020"
+          "@content": "5 May 2020"
         },
         {
           "@name": "generator",
@@ -101,9 +101,6 @@
           }
         },
         {
-          "#comment": "Viewpoint centerOfRotation=\"0 1 0\" description=\"AnnexD01Jin\" position=\"0 35 113\"/"
-        },
-        {
           "Viewpoint": {
             "@centerOfRotation": [
               0,
@@ -113,10 +110,13 @@
             "@description": "AnnexD01Jin",
             "@position": [
               0,
-              40,
-              140
+              35,
+              113
             ]
           }
+        },
+        {
+          "#comment": "Viewpoint centerOfRotation=\"0 1 0\" description=\"AnnexD01Jin\" position=\"0 40 140\" /"
         },
         {
           "HAnimHumanoid": {
@@ -131,7 +131,7 @@
               0.0225
             ],
             "@version": "2.0",
-            "-skeleton": {
+            "-joints": {
               "HAnimJoint": {
                 "@DEF": "hanim_HumanoidRoot",
                 "@center": [
@@ -25926,12 +25926,8 @@
                 "@loop": true,
                 "@frameTime": "0.033333",
                 "@frameDuration": 0.033333,
-                "@joints": [
-                  "HumanoidRoot, l_hip, l_knee, l_talocrural, r_hip,\r\n                   r_knee, r_talocrural, vl5, IGNORED, l_shoulder,\r\n                   l_elbow, l_radiocarpal, IGNORED, r_shoulder, r_elbow,\r\n                   r_radiocarpal, IGNORED, skullbase"
-                ],
-                "@channels": [
-                  "6 Xposition Yposition Zposition Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation"
-                ],
+                "@joints": "\"HumanoidRoot, l_hip, l_knee, l_talocrural, r_hip,\r\n                   r_knee, r_talocrural, vl5, IGNORED, l_shoulder,\r\n                   l_elbow, l_radiocarpal, IGNORED, r_shoulder, r_elbow,\r\n                   r_radiocarpal, IGNORED, skullbase\"",
+                "@channels": "\"6 Xposition Yposition Zposition Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\"",
                 "@values": [
                   102.2373,
                   37.3864,
@@ -48285,6 +48281,6 @@
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }

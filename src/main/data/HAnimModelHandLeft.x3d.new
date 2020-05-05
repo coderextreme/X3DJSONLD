@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component level="1" name="H-Anim"></component>
+<meta content="HAnimModelHandLeft.x3d" name="title"></meta>
+<meta content="Left hand, using high-fidelity definitions for H-Anim version 2.2" name="description"></meta>
+<meta content="YOO Kwan Hee and Don Brutzman" name="creator"></meta>
+<meta content="26 January 2015" name="created"></meta>
+<meta content="20 October 2019" name="modified"></meta>
+<meta content="not yet to scale" name="warning"></meta>
+<meta content="TODO will X3D HAnim component add a new level to support LOA-4 functionality?" name="warning"></meta>
+<meta content="https://www.web3d.org/working-groups/humanoid-animation-h-anim" name="reference"></meta>
+<meta content="https://www.web3d.org/files/specifications/19774/V1.0" name="reference"></meta>
+<meta content="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html" name="reference"></meta>
+<meta content="X3D H-Anim humanoid animation" name="subject"></meta>
+<meta content="scene, DOCTYPE and Schema under development." name="warning"></meta>
+<meta content="Integrate and confirm Segment/Joint names, Viewpoints." name="TODO"></meta>
+<meta content="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d" name="identifier"></meta>
+<meta content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" name="generator"></meta>
+<meta content="../license.html" name="license"></meta>
+</head>
+<Scene><WorldInfo title="HAnimModelHandLeft.x3d"></WorldInfo>
+<HAnimHumanoid DEF="Humanoid_Left_hand" jointBindingPositions="0 0 0" jointBindingRotations="0 0 1 0" jointBindingScales="1 1 1" loa="-1" name="Humanoid_Left_hand" skeletalConfiguration="BASIC" version="2.0"><HAnimJoint DEF="hanim_HumanoidRoot" name="humanoid_root"><HAnimJoint DEF="l_radiocarpal_joint" name="l_radiocarpal_joint"><HAnimSegment DEF="l_wrist" name="l_wrist"><Transform><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
+<Appearance DEF="HAnimJointAppearanceBlue"><Material diffuseColor="0 0 1"></Material>
+</Appearance>
+</Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="RCToMC12" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0.1 0.1 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="RCToMC3" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 0 0.07 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="RCToMC45" coordIndex="0 1"><Coordinate containerField="coord" point="0 0 0 -0.1 0.1 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<!-- MC12 --><HAnimJoint DEF="l_midcarpal_joint_12" center="0.1 0.1 0" name="l_midcarpal_joint_12"><HAnimSegment DEF="l_trapezoid" name="l_trapezoid"><Transform translation="0.1 0.1 0"><Shape DEF="HAnimNewJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
+<Appearance DEF="HAnimJointAppearanceRed"><Material diffuseColor="1 0 0"></Material>
+</Appearance>
+</Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="MC12toCMC1" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.1 0 0.2 0.15 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="MC12toCMC2" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.1 0 0.1 0.2 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<!-- thumb finger --><HAnimJoint DEF="l_carpometacarpal_joint_1" center="0.2 0.15 0" name="l_carpometacarpal_joint_1"><HAnimSegment DEF="l_metacarpal_1" name="l_metacarpal_1"><Transform translation="0.2 0.15 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="CMC1toMCP1" coordIndex="0 1"><Coordinate containerField="coord" point="0.2 0.15 0 0.3 0.3 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_metacarpophalangeal_joint_1" center="0.3 0.3 0" name="l_metacarpophalangeal_joint_1"><HAnimSegment DEF="l_proximal_phalanges1" name="l_proximal_phalanges1"><Transform translation="0.3 0.3 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="MCP11toIP1" coordIndex="0 1"><Coordinate containerField="coord" point="0.3 0.3 0 0.35 0.4 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_interphalangeal_joint_1" center="0.35 0.4 0" name="l_interphalangeal_joint_1"><HAnimSegment DEF="l_distal_phalanges1" name="l_distal_phalanges1"><Transform translation="0.35 0.4 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="fingertip_l_interphalangeal_joint_1" coordIndex="0 1"><Coordinate containerField="coord" point="0.35 0.4 0 0.36 0.45 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+<!-- index finger --><HAnimJoint DEF="l_carpometacarpal_joint_2" center="0.1 0.2 0" name="l_carpometacarpal_joint_2"><HAnimSegment DEF="l_metacarpal2" name="l_metacarpal2"><Transform translation="0.1 0.2 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="CMC2toMCP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.1 0.2 0 0.15 0.5 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_metacarpophalangeal_joint_2" center="0.15 0.5 0" name="l_metacarpophalangeal_joint_2"><HAnimSegment DEF="l_proximal_phalanges2" name="l_proximal_phalanges2"><Transform translation="0.15 0.5 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="MCP2toPIP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.15 0.5 0 0.2 0.7 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_proximal_interphalangeal_joint_2" center="0.2 0.7 0" name="l_proximal_interphalangeal_joint_2"><HAnimSegment DEF="l_middle_phalanges2" name="l_middle_phalanges2"><Transform translation="0.2 0.7 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="PIP2toDIP2" coordIndex="0 1"><Coordinate containerField="coord" point="0.2 0.7 0 0.24 0.87 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_distal_interphalangeal_joint_2" center="0.24 0.87 0" name="l_distal_interphalangeal_joint_2"><HAnimSegment DEF="l_distal_phalanges2" name="l_distal_phalanges2"><Transform translation="0.24 0.87 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="fingertip_l_distal_interphalangeal_joint_2" coordIndex="0 1"><Coordinate containerField="coord" point="0.24 0.87 0 0.26 0.93 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+<!-- MC3 --><HAnimJoint DEF="l_midcarpal_joint_3" center="0 0.07 0" name="l_midcarpal_joint_3"><HAnimSegment DEF="l_capitate" name="l_capitate"><Transform translation="0 0.07 0"><Shape USE="HAnimNewJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="MC3toCMC3" coordIndex="0 1"><Coordinate containerField="coord" point="0 0.07 0 0 0.2 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<!-- Middle fingle --><HAnimJoint DEF="l_carpometacarpal_joint_3" center="0 0.2 0" name="l_carpometacarpal_joint_3"><HAnimSegment DEF="l_metacarpal3" name="l_metacarpal3"><Transform translation="0 0.2 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="CMC3toMCP3" coordIndex="0 1"><Coordinate containerField="coord" point="0 0.2 0 0.03 0.5 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_metacarpophalangeal_joint_3" center="0.03 0.5 0" name="l_metacarpophalangeal_joint_3"><HAnimSegment DEF="l_proximal_phalanges3" name="l_proximal_phalanges3"><Transform translation="0.03 0.5 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="MCP3toPIP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.03 0.5 0 0.05 0.75 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_proximal_interphalangeal_joint_3" center="0.05 0.75 0" name="l_proximal_interphalangeal_joint_3"><HAnimSegment DEF="l_middle_phalanges3" name="l_middle_phalanges3"><Transform translation="0.05 0.75 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="PIP3toDIP3" coordIndex="0 1"><Coordinate containerField="coord" point="0.05 0.75 0 0.08 0.96 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_distal_interphalangeal_joint_3" center="0.08 0.96 0" name="l_distal_interphalangeal_joint_3"><HAnimSegment DEF="l_distal_phalanges3" name="l_distal_phalanges3"><Transform translation="0.08 0.96 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="fingertip_l_distal_interphalangeal_joint_3" coordIndex="0 1"><Coordinate containerField="coord" point="0.08 0.96 0 0.09 1.05 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+<!-- MC45 --><HAnimJoint DEF="l_midcarpal_joint_45" center="-0.1 0.1 0" name="l_midcarpal_joint_12"><HAnimSegment DEF="l_hamate" name="l_hamate"><Transform translation="-0.1 0.1 0"><Shape USE="HAnimNewJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="MC45toCMC4" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.1 0 -0.1 0.2 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="MC45toCMC5" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.1 0 -0.15 0.17 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<!-- ring finger --><HAnimJoint DEF="l_carpometacarpal_joint_4" center="-0.1 0.2 0" name="l_carpometacarpal_joint_4"><HAnimSegment DEF="l_metacarpal4" name="l_metacarpal4"><Transform translation="-0.1 0.2 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="CMC4toMCP4" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.2 0 -0.1 0.47 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_metacarpophalangeal_joint_4" center="-0.1 0.47 0" name="l_metacarpophalangeal_joint_4"><HAnimSegment DEF="l_proximal_phalanges4" name="l_proximal_phalanges4"><Transform translation="-0.1 0.47 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="MCP4toPIP4" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.47 0 -0.1 0.7 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_proximal_interphalangeal_joint_4" center="-0.1 0.7 0" name="l_proximal_interphalangeal_joint_4"><HAnimSegment DEF="l_middle_phalanges4" name="l_middle_phalanges4"><Transform translation="-0.1 0.7 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="PIP4toDIP4" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.7 0 -0.1 0.93 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_distal_interphalangeal_joint_4" center="-0.1 0.93 0" name="l_distal_interphalangeal_joint_4"><HAnimSegment DEF="l_distal_phalanx4" name="l_distal_phalanx4"><Transform translation="-0.1 0.93 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="fingertip_l_distal_interphalangeal_joint_4" coordIndex="0 1"><Coordinate containerField="coord" point="-0.1 0.93 0 -0.1 1 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+<!-- pinky finger --><HAnimJoint DEF="l_carpometacarpal_joint_5" center="-0.15 0.17 0" name="l_carpometacarpal_joint_5"><HAnimSegment DEF="l_metacarpal5" name="l_metacarpal5"><Transform translation="-0.15 0.17 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="CMC5toMCP5" coordIndex="0 1"><Coordinate containerField="coord" point="-0.15 0.17 0 -0.2 0.4 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_metacarpophalangeal_joint_5" center="-0.2 0.4 0" name="l_metacarpophalangeal_joint_5"><HAnimSegment DEF="l_proximal_phalanges5" name="l_proximal_phalanges2"><Transform translation="-0.2 0.4 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="MCP5toPIP5" coordIndex="0 1"><Coordinate containerField="coord" point="-0.2 0.4 0 -0.23 0.63 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_proximal_interphalangeal_joint_5" center="-0.23 0.63 0" name="l_proximal_interphalangeal_joint_5"><HAnimSegment DEF="l_middle_phalanges5" name="l_middle_phalanges5"><Transform translation="-0.23 0.63 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="PIP5toDIP5" coordIndex="0 1"><Coordinate containerField="coord" point="-0.23 0.63 0 -0.25 0.79 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+<HAnimJoint DEF="l_distal_interphalangeal_joint_5" center="-0.25 0.79 0" name="l_distal_interphalangeal_joint_5"><HAnimSegment DEF="l_distal_phalanges5" name="l_distal_phalanges5"><Transform translation="-0.25 0.79 0"><Shape USE="HAnimJointShape"></Shape>
+</Transform>
+<Shape><Appearance><Material emissiveColor="1 1 1"></Material>
+</Appearance>
+<IndexedLineSet containerField="geometry" DEF="fingertip_l_distal_interphalangeal_joint_5" coordIndex="0 1"><Coordinate containerField="coord" point="-0.25 0.79 0 -0.26 0.85 0"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</HAnimSegment>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+</HAnimJoint>
+<HAnimJoint USE="hanim_HumanoidRoot"></HAnimJoint>
+<HAnimJoint USE="l_radiocarpal_joint"></HAnimJoint>
+<HAnimJoint USE="l_midcarpal_joint_12"></HAnimJoint>
+<HAnimJoint USE="l_carpometacarpal_joint_1"></HAnimJoint>
+<HAnimJoint USE="l_metacarpophalangeal_joint_1"></HAnimJoint>
+<HAnimJoint USE="l_interphalangeal_joint_1"></HAnimJoint>
+<HAnimJoint USE="l_carpometacarpal_joint_2"></HAnimJoint>
+<HAnimJoint USE="l_metacarpophalangeal_joint_2"></HAnimJoint>
+<HAnimJoint USE="l_proximal_interphalangeal_joint_2"></HAnimJoint>
+<HAnimJoint USE="l_distal_interphalangeal_joint_2"></HAnimJoint>
+<HAnimJoint USE="l_midcarpal_joint_3"></HAnimJoint>
+<HAnimJoint USE="l_carpometacarpal_joint_3"></HAnimJoint>
+<HAnimJoint USE="l_metacarpophalangeal_joint_3"></HAnimJoint>
+<HAnimJoint USE="l_proximal_interphalangeal_joint_3"></HAnimJoint>
+<HAnimJoint USE="l_distal_interphalangeal_joint_3"></HAnimJoint>
+<HAnimJoint USE="l_midcarpal_joint_45"></HAnimJoint>
+<HAnimJoint USE="l_carpometacarpal_joint_4"></HAnimJoint>
+<HAnimJoint USE="l_metacarpophalangeal_joint_4"></HAnimJoint>
+<HAnimJoint USE="l_proximal_interphalangeal_joint_4"></HAnimJoint>
+<HAnimJoint USE="l_distal_interphalangeal_joint_4"></HAnimJoint>
+<HAnimJoint USE="l_carpometacarpal_joint_5"></HAnimJoint>
+<HAnimJoint USE="l_metacarpophalangeal_joint_5"></HAnimJoint>
+<HAnimJoint USE="l_proximal_interphalangeal_joint_5"></HAnimJoint>
+<HAnimJoint USE="l_distal_interphalangeal_joint_5"></HAnimJoint>
+<HAnimSegment USE="l_wrist"></HAnimSegment>
+<HAnimSegment USE="l_trapezoid"></HAnimSegment>
+<HAnimSegment USE="l_metacarpal_1"></HAnimSegment>
+<HAnimSegment USE="l_proximal_phalanges1"></HAnimSegment>
+<HAnimSegment USE="l_distal_phalanges1"></HAnimSegment>
+<HAnimSegment USE="l_metacarpal2"></HAnimSegment>
+<HAnimSegment USE="l_proximal_phalanges2"></HAnimSegment>
+<HAnimSegment USE="l_middle_phalanges2"></HAnimSegment>
+<HAnimSegment USE="l_distal_phalanges2"></HAnimSegment>
+<HAnimSegment USE="l_capitate"></HAnimSegment>
+<HAnimSegment USE="l_metacarpal3"></HAnimSegment>
+<HAnimSegment USE="l_proximal_phalanges3"></HAnimSegment>
+<HAnimSegment USE="l_middle_phalanges3"></HAnimSegment>
+<HAnimSegment USE="l_distal_phalanges3"></HAnimSegment>
+<HAnimSegment USE="l_hamate"></HAnimSegment>
+<HAnimSegment USE="l_metacarpal4"></HAnimSegment>
+<HAnimSegment USE="l_proximal_phalanges4"></HAnimSegment>
+<HAnimSegment USE="l_middle_phalanges4"></HAnimSegment>
+<HAnimSegment USE="l_distal_phalanx4"></HAnimSegment>
+<HAnimSegment USE="l_metacarpal5"></HAnimSegment>
+<HAnimSegment USE="l_proximal_phalanges5"></HAnimSegment>
+<HAnimSegment USE="l_middle_phalanges5"></HAnimSegment>
+<HAnimSegment USE="l_distal_phalanges5"></HAnimSegment>
+</HAnimHumanoid>
+</Scene>
+</X3D>
