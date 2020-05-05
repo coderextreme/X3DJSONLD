@@ -25202,9 +25202,16 @@
             "type": "string"
           },
           "@dir": {
-            "enum": [
-              "rtl",
-              "ltr"
+            "anyOf": [
+              {
+                "enum": [
+                  "rtl",
+                  "ltr"
+                ]
+              },
+              {
+                "type": "string"
+              }
             ],
             "type": "string"
           },
