@@ -117,7 +117,7 @@ public class BoxManAnimationPanel {
         .addChild(new WorldInfoObject().setInfo(new MFStringObject(new MFString0().getArray())).setTitle("BoxMan - A Seamless VRML Human"))
         .addChild(new BackgroundObject().setGroundColor(new MFColorObject(new MFColor1().getArray())).setSkyColor(new MFColorObject(new MFColor2().getArray())))
         .addChild(new HAnimHumanoidObject().setDEF("boxman_Humanoid").setInfo(new MFStringObject(new MFString3().getArray())).setName("Humanoid").setVersion("2.0")
-          .setSkeleton(new HAnimJointObject().setDEF("boxman_HumanoidRoot").setCenter(new float[] {0f,0.9723f,-0.0728f}).setName("humanoid_root").setSkinCoordIndex(new MFInt32Object(new MFInt324().getArray())).setSkinCoordWeight(new MFFloatObject(new MFFloat5().getArray()))
+          .addJoints(new HAnimJointObject().setDEF("boxman_HumanoidRoot").setCenter(new float[] {0f,0.9723f,-0.0728f}).setName("humanoid_root").setSkinCoordIndex(new MFInt32Object(new MFInt324().getArray())).setSkinCoordWeight(new MFFloatObject(new MFFloat5().getArray()))
             .addChild(new HAnimSegmentObject().setDEF("boxman_sacrum").setName("sacrum")
               .addChild(new TransformObject().setTranslation(new float[] {0f,0.9723f,-0.0728f})
                 .addChild(new ShapeObject().setDEF("SphereYellow")
