@@ -132,6 +132,11 @@
 
 # SimpleTypeEnumerations
 
+# OWL 2 Web Ontology Language Quick Reference Guide (Second Edition)
+# W3C Recommendation 11 December 2012
+# 2.4 Data Ranges
+# https://www.w3.org/TR/2012/REC-owl2-quick-reference-20121211/#Data_Ranges
+
 </xsl:text>
         <xsl:apply-templates select="//SimpleTypeEnumerations/*"/>
         <xsl:text>###############################################
@@ -235,25 +240,16 @@
             <xsl:text>"</xsl:text>
             <xsl:value-of select="$simpleTypeName"/>
             <xsl:text>"</xsl:text>
-            <xsl:if test="(string-length(@appinfo) > 0)">
-                <xsl:text> ;</xsl:text>
-                <xsl:text>&#10;</xsl:text>
-                <xsl:text> </xsl:text>
-                <xsl:text> dc:description </xsl:text>
-                <xsl:text>"</xsl:text>
-                <xsl:value-of select="translate(substring-before(@appinfo, '.'),'&quot;','')"/>
-                <xsl:text>"</xsl:text>
-            </xsl:if>
+            <xsl:text> ;</xsl:text>
             <xsl:choose>
                 <xsl:when test="(string-length(@baseType) > 0)">
-                    <xsl:text> ;</xsl:text>
-                    <xsl:text>&#10;</xsl:text>
-                    <xsl:text> </xsl:text>
-                    <xsl:text> rdfs:range </xsl:text>
+                    <!-- superfluous information for ontology
+                    <xsl:text> # baseType </xsl:text>
                     <xsl:if test="not(starts-with(@baseType,'xs:'))">
                         <xsl:text>:</xsl:text>
                     </xsl:if>
                     <xsl:value-of select="@baseType"/>
+                -->
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:message>
@@ -262,12 +258,20 @@
                     </xsl:message>
                 </xsl:otherwise>
             </xsl:choose>
+            <xsl:if test="(string-length(@appinfo) > 0)">
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text> </xsl:text>
+                <xsl:text> dc:description </xsl:text>
+                <xsl:text>"</xsl:text>
+                <xsl:value-of select="translate(substring-before(@appinfo, '.'),'&quot;','')"/>
+                <xsl:text>"</xsl:text>
+            </xsl:if>
             <xsl:choose>
                 <xsl:when test="(count(enumeration) > 0)">
                     <xsl:text> ;</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text> </xsl:text>
-                    <xsl:text> rdfs:domain [ owl:unionOf (</xsl:text>
+                    <xsl:text> rdfs:domain [ owl:oneOf (</xsl:text>
                     <xsl:for-each select="enumeration">
                         <!-- value may include "quoted" "enumeration" "values" -->
                         <xsl:text> '</xsl:text>
@@ -609,7 +613,14 @@
                             <xsl:if test="not(starts-with(@simpleType,'xs:'))">
                                  <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
                             </xsl:if>
-                            <xsl:value-of select="@simpleType"/>
+                            <xsl:choose>
+                                <xsl:when test="ends-with(@simpleType,'Values')">
+                                    <xsl:value-of select="@baseType"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="@simpleType"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:when>
                         <xsl:when test="(string-length(@baseType) > 0)">
                             <xsl:if test="not(starts-with(@baseType,'xs:'))">
@@ -632,6 +643,10 @@
                     </xsl:if>
 
                     <xsl:text> .</xsl:text>
+                                <xsl:if test="ends-with(@simpleType,'Values')">
+                                    <xsl:text> # alternate enumerations allowed, supported values found in </xsl:text>
+                                    <xsl:value-of select="@simpleType"/>
+                                </xsl:if>
                     <xsl:text>&#10;</xsl:text>
 <!--
 :hasParentAppearance owl:inverseOf :hasFillProperties . #old

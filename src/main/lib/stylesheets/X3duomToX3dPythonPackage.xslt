@@ -216,7 +216,7 @@ _DEBUG = True       # options True False
 def </xsl:text><xsl:value-of select="$assertFunctionName"/><xsl:text>(fieldName, value):
     """
     Utility function to assert type validity of </xsl:text><xsl:value-of select="@name"/><xsl:text> value, otherwise raise X3DTypeError with diagnostic message.
-    Note MFString enumeration values are provided in XML syntax, so check accordingly.
+    Note MFString enumeration values are provided in XML syntax, so check validity accordingly.
     """
     if  not value:
         return True # no failure on empty defaults
@@ -376,7 +376,7 @@ def isX3DNode(value):
 </xsl:text>
         <xsl:apply-templates select="//AbstractObjectTypes/*"/>
 
-        <xsl:text>###############################################
+        <xsl:text disable-output-escaping="yes"><![CDATA[###############################################
 
 # Statements
 
@@ -430,7 +430,8 @@ class Comment(_X3DStatement):
     NAME = 'Comment'
     SPECIFICATION_URL = ''
     TOOLTIP_URL = 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html'
-    DEFAULT_VALUE = list()
+    DEFAULT_VALUE = ''
+    FIELD_DECLARATIONS = []
     REGEX_XML = r'(\s|\S)*' # (includes lower-case true, false)
     def __init__(self, value=None):
         self.value = value
@@ -443,8 +444,21 @@ class Comment(_X3DStatement):
         """ The value setter only allows correctly typed values. """
         if  value is None:
             value = self.DEFAULT_VALUE
-        assertValidMFString(value)
-        self.__value = value
+        self.__value = str(value)
+    # output function - - - - - - - - - -
+    def XML(self, indentLevel=0, syntax="XML"):
+        result = ''
+        indent = '  ' * indentLevel
+        if self.value:
+            result = indent + '<!-- ' + self.value + ' -->' + '\n'
+        return result
+    # output function - - - - - - - - - -
+    def VRML(self, indentLevel=0, VRML97=False):
+        result = ''
+        indent = '  ' * indentLevel
+        if self.value:
+            result = '\n' + indent + '# ' + self.value
+        return result
 
 def isComment(value):
     """
@@ -452,7 +466,7 @@ def isComment(value):
     """
     return isinstance(value, _X3DComment)
 
-</xsl:text>
+]]></xsl:text>
         <xsl:apply-templates select="//Statements/*"/>
         <xsl:text>###############################################
 
@@ -1406,12 +1420,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <xsl:variable name="hasEmptyDefault" select="(string-length(@defaultValue) = 0)"/>
         <xsl:variable name="annotation">
             <xsl:choose>
-                <xsl:when test="($fieldTypeName = 'SFBool')">
-                    <xsl:text>SFBool is a logical type with possible values (True|False).</xsl:text>
+                <xsl:when test="contains($fieldTypeName, 'FBool')">
+                    <xsl:text>Python Boolean values are capitalized as True or False. </xsl:text>
+                    <xsl:value-of select="InterfaceDefinition/@appinfo"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="substring-before(InterfaceDefinition/@appinfo,'.')"/>
-                    <xsl:text>.</xsl:text>
+                    <xsl:value-of select="InterfaceDefinition/@appinfo"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -1426,6 +1440,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:text>
     """
     </xsl:text>
+        <xsl:text>Field type </xsl:text>
             <xsl:value-of select="$annotation"/>
             <xsl:text>
     """</xsl:text>
@@ -1637,7 +1652,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         
         <xsl:text>
     def XML(self):
-        """ Provide XML value for this field. """
+        """ Provide XML value for this field type. """
         </xsl:text>
         <xsl:choose>
             <xsl:when test="($fieldTypeName = 'SFString')">
@@ -1673,7 +1688,64 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:when test="($fieldTypeName = 'MFNode')">
                 <xsl:text>result = ''
         for each in self.__value:
-            result += each.XML() # has line break '\n' at end, which is OK
+            if (not self.__value is None):
+                result += each.XML() # has line break '\n' at end, which is OK
+        result = result.rstrip('\n')
+        return result</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>return str(self.__value)</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** missing XML() method for fieldType </xsl:text>
+                    <xsl:value-of select="$fieldTypeName"/>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+        
+        <xsl:text>
+    def VRML(self):
+        """ Provide VRML value for this field type. """
+        </xsl:text>
+        <xsl:choose>
+            <!-- TODO covered ?? -->
+            <xsl:when test="($fieldTypeName = 'NMTOKEN')">
+                <xsl:text>return str(self.__value)</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'SFString')">
+                <xsl:text>return '"' + str(self.__value) + '"'</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'MFString')">
+                <xsl:text>result = ''
+        for each in self.__value:
+            result += '"' + str(each) + '"' + ' '
+        result = '[' + result.rstrip(' ') + ']'
+        return result</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'SFBool')">
+                <xsl:text>return str(self.__value).upper()</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'MFBool')">
+                <xsl:text>return str(self.__value).upper().replace(',','').replace('[','').replace(']','')</xsl:text>
+            </xsl:when>
+            <xsl:when test="starts-with($fieldTypeName, 'SF') and (contains($fieldTypeName, 'Double') or contains($fieldTypeName, 'Float') or contains($fieldTypeName, 'Vec') or
+                            contains($fieldTypeName, 'Int32') or contains($fieldTypeName, 'Time') or contains($fieldTypeName, 'Color') or contains($fieldTypeName, 'Rotation') or
+                            contains($fieldTypeName, 'Image') or contains($fieldTypeName, 'Matrix'))">
+                <xsl:text>return str(self.__value).lower().replace(',','').replace('(','').replace(')','').replace('[','').replace(']','')</xsl:text>
+            </xsl:when>
+            <xsl:when test="starts-with($fieldTypeName, 'MF') and (contains($fieldTypeName, 'Double') or contains($fieldTypeName, 'Float') or contains($fieldTypeName, 'Vec') or 
+                            contains($fieldTypeName, 'Int32') or contains($fieldTypeName, 'Time') or contains($fieldTypeName, 'Color') or contains($fieldTypeName, 'Rotation') or
+                            contains($fieldTypeName, 'Image') or contains($fieldTypeName, 'Matrix'))">
+                <xsl:text>return '[' + str(self.__value).lower().replace('(','').replace(')','').replace(',','').replace('[','').replace(']','') + ']'</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'SFNode')">
+                <xsl:text>if (not self.__value is None):
+            return self.__value.VRML()</xsl:text>
+            </xsl:when>
+            <xsl:when test="($fieldTypeName = 'MFNode')">
+                <xsl:text>result = ''
+        for each in self.__value:
+            if (not self.__value is None):
+                result += each.VRML() # has line break '\n' at end, which is OK
         result = result.rstrip('\n')
         return result</xsl:text>
             </xsl:when>
@@ -2004,7 +2076,79 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     X3D_XML_SCHEMA_ATTRIBUTES_3_1 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'"
     X3D_XML_SCHEMA_ATTRIBUTES_3_2 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.2.xsd'"
     X3D_XML_SCHEMA_ATTRIBUTES_3_3 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_4_0 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'"]]></xsl:text>
+    X3D_XML_SCHEMA_ATTRIBUTES_4_0 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'"
+    VRML97_HEADER = '#VRML V2.0 utf8'
+    CLASSIC_VRML_HEADER_PREFIX = '#VRML V' # followed by X3D version number
+    CLASSIC_VRML_HEADER_SUFFIX = ' utf8'
+    X3DOM_HEADER = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- =================================================================== -->
+<!-- embedded X3D scene appears after html/head/script and style entries -->
+<!-- =================================================================== -->
+<html>
+   <head>
+      <title></title>
+      <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge"/>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Numbered X3DOM release versions: https://doc.x3dom.org/download -->
+<!-- Developer X3DOM release version: https://doc.x3dom.org/download/dev -->
+<link rel="stylesheet"
+            type="text/css"
+            href="https://x3dom.org/release/x3dom.css"/>
+      <script type="text/javascript" src="https://x3dom.org/release/x3dom-full.js"/>
+      <meta name="warning"
+            content="Webfonts must be loaded prior to using Text node in X3D scene... see https://x3dom.org/x3dom/example/x3dom_text.html"/>
+      <!-- X3DOM needs Web Fonts when an X3D Text node is included -->
+      <!-- adapted from https://x3dom.org/x3dom/example/x3dom_text.html and http://web.mit.edu/jmorzins/www/fonts.html -->
+      <style type="text/css">
+/* ============================================================================= */
+@font-face {
+  font-family: 'SERIF'; /* default original */
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roman'), url('Roman.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SERIF'; /* default alternate */
+  font-style: normal;
+  font-weight: 700;
+  src: local('Times New Roman'), local('TimesNewRoman'), url('Times New Roman.ttf') format('truetype');
+}
+/* ============================================================================= */
+@font-face {
+  font-family: 'SANS'; /* default original */
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial'), url('Arial.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SANS'; /* default alternate */
+  font-style: normal;
+  font-weight: 400;
+  src: local('Helvetica'), url('Helvetica.ttf') format('truetype');
+}
+/* ============================================================================= */
+@font-face {
+  font-family: 'TYPEWRITER'; /* default original */
+  font-style: normal;
+  font-weight: 900;
+  src: local('Courier'), url('Courier.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TYPEWRITER'; /* default alternate */
+  font-style: normal;
+  font-weight: 900;
+  src: local('Courier New'), url('Courier New.ttf') format('truetype');
+}
+/* ============================================================================= */
+</style>
+   </head>
+   <body>"""
+    X3DOM_FOOTER = """      
+   </body>
+</html>
+"""]]></xsl:text>
             </xsl:when>
         </xsl:choose>
     
@@ -2481,13 +2625,13 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:otherwise>
         </xsl:choose>
         
-        <!-- XML() function -->
+        <!-- XML() and HTML5() functions -->
         <xsl:text>
     # output function - - - - - - - - - -
-    def XML(self, indentLevel=0):
+    def XML(self, indentLevel=0, syntax="XML"):
         """ Provide Canonical X3D output serialization using XML encoding. """
-        indent = '  ' * indentLevel
-        result = ''</xsl:text>
+        result = ''
+        indent = '  ' * indentLevel</xsl:text>
         <xsl:choose>
             <xsl:when test="($elementName = 'X3D')">
         <xsl:text>
@@ -2522,12 +2666,28 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             result += self.X3D_XML_SCHEMA_ATTRIBUTES_4_1
         result += '>' + '\n' # finish open tag
         if self.head and self.head.hasChild():
-            result += str(self.head.XML(indentLevel=indentLevel+1))
+            result += str(self.head.XML(indentLevel=indentLevel+1,syntax=syntax))
         if self.Scene and self.Scene.hasChild():
-            result += str(self.Scene.XML(indentLevel=indentLevel+1))
+            result += str(self.Scene.XML(indentLevel=indentLevel+1,syntax=syntax))
         result += '</X3D>' + '\n'
 #       print('XML serialization complete.', flush=True)
-        return result]]></xsl:text>
+        return result
+    # output function - - - - - - - - - -
+    def VRML97(self, indentLevel=0):
+        """ Provide VRML97 output serialization suitable for .wrl file. """
+        return VRML(self, indentLevel=0, VRML97=True)
+    # output function - - - - - - - - - -
+    def ClassicVRML(self, indentLevel=0):
+        """ Provide ClassicVRML output serialization suitable for .x3dv file. """
+        return VRML(self, indentLevel=0, VRML97=False)
+    # output function - - - - - - - - - -
+#    def X_ITE(self): #TODO
+#        """ Provide X_ITE output serialization suitable for .html file. """
+#        return X3D.X_ITE_HEADER + result + self.XML(indentLevel=0, syntax="XML") + X3D.X_ITE_FOOTER:
+    # output function - - - - - - - - - -
+    def X3DOM(self, indentLevel=0):
+        """ Provide X3DOM output serialization suitable for .html file. """
+        return X3D.X3DOM_HEADER + self.XML(indentLevel=0, syntax="HTML5") + X3D.X3DOM_FOOTER]]></xsl:text>
             </xsl:when>
             <xsl:otherwise> <!-- non-X3D XML() -->
                 <xsl:text>
@@ -2591,9 +2751,15 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 </xsl:for-each>
                 <xsl:text>
         if not self.hasChild():</xsl:text>
-                <!-- singleton tag -->
                 <xsl:text disable-output-escaping="yes"><![CDATA[
-            result += '/>' + '\n'
+            if syntax.upper() == "HTML5":
+                result += '></]]></xsl:text><!-- closing tag -->
+                <xsl:value-of select="$elementName"/>
+                <xsl:text disable-output-escaping="yes"><![CDATA[>' + '\n' # no self-closing tags allowed by HTML5
+            elif syntax.upper() == "XML":
+                result += '/>' + '\n' # singleton element
+            else:
+                raise X3DValueError('.toXML(syntax=' + syntax + ') is incorrect, allowed values are "HTML5" and "XML"')
         else:
             result += '>' + '\n']]></xsl:text>
                 <!-- output child SFNode/MFNode fields as child XML elements -->
@@ -2606,8 +2772,16 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 ## print('* </xsl:text>
                         <xsl:value-of select="$elementName"/>
                         <xsl:text> found self.children, now invoking XML(' + str(indentLevel+1) + ')', flush=True)
+                # order is significant for component, unit, meta statements
                 for each in self.children:
-                    result += each.XML(indentLevel=indentLevel+1)</xsl:text>
+                    if isinstance(each, component):
+                        result += each.XML(indentLevel=indentLevel+1,syntax=syntax)
+                for each in self.children:
+                    if isinstance(each, unit):
+                        result += each.XML(indentLevel=indentLevel+1,syntax=syntax)
+                for each in self.children:
+                    if isinstance(each, meta):
+                        result += each.XML(indentLevel=indentLevel+1,syntax=syntax)</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:for-each select="$allFields[contains(@type,'Node')]">
@@ -2636,7 +2810,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:text>: # output this SFNode
                 result += self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>.XML(indentLevel=indentLevel+1)</xsl:text>
+                        <xsl:text>.XML(indentLevel=indentLevel+1,syntax=syntax)</xsl:text>
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:text>
@@ -2647,7 +2821,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 for each in self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>:
-                    result += each.XML(indentLevel=indentLevel+1)</xsl:text>
+                    result += each.XML(indentLevel=indentLevel+1,syntax=syntax)</xsl:text>
                                     </xsl:otherwise>
                                 </xsl:choose>
                             </xsl:if>
@@ -2666,6 +2840,233 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         return result]]></xsl:text>
             </xsl:otherwise>
         </xsl:choose>
+        <xsl:text>
+    # output function - - - - - - - - - -
+    def HTML5(self, indentLevel=0):
+        """ Provide HTML5 output serialization using XML encoding with no singleton self-closing elements. """
+        return self.XML(indentLevel, syntax="HTML5")</xsl:text>
+        <!-- VRML() functions -->
+        <xsl:text>
+    # output function - - - - - - - - - -
+    def VRML(self, indentLevel=0, VRML97=False):
+        """ Provide X3D output serialization using VRML encoding. """
+        result = ''</xsl:text>
+        <xsl:if test="not($elementName = 'X3D')       and not($elementName = 'head') and not($elementName = 'Scene') and 
+                      not($elementName = 'component') and not($elementName = 'unit') and not($elementName = 'meta')">
+            <xsl:text>
+        indent = '  ' * indentLevel</xsl:text>
+        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="($elementName = 'X3D')">
+                <xsl:text>
+        if VRML97:
+            result += self.VRML97_HEADER + '\n'
+            result += '# X3D-to-VRML97 serialization autogenerated by X3DPSAIL x3d.py' + '\n'
+        else:
+            result += self.CLASSIC_VRML_HEADER_PREFIX + str(self.version) + self.CLASSIC_VRML_HEADER_SUFFIX + '\n'
+        result += '# X3D-to-ClassicVRML serialization autogenerated by X3DPSAIL x3d.py' + '\n'
+        result += '\n'
+        if not VRML97:
+            result += 'PROFILE '
+            if not self.profile or VRML97:
+                result += 'IMMERSIVE' + '\n'
+            else:
+                result += self.profile + '\n'
+                    
+        if self.head and self.head.hasChild():
+            result += str(self.head.VRML(indentLevel=indentLevel+1,VRML97=VRML97))
+        if self.Scene and self.Scene.hasChild():
+            result += str(self.Scene.VRML(indentLevel=indentLevel+1,VRML97=VRML97))
+        result += '\n'</xsl:text>
+            </xsl:when>
+            <xsl:when test="($elementName = 'Scene')">
+                                        <xsl:text>
+        if self.children: # walk each child node, if any
+            for each in self.children:
+                result += each.VRML(indentLevel=0,VRML97=VRML97)</xsl:text>
+            </xsl:when>
+            <xsl:when test="($elementName = 'component')">
+                <xsl:text>
+        result += 'COMPONENT ' + self.name + ':' + str(self.level) + '\n'</xsl:text>
+            </xsl:when>
+            <xsl:when test="($elementName = 'unit')">
+                <xsl:text>
+        result += 'UNIT ' + self.category + ' ' + self.name + ' ' + str(self.conversionFactor) + '\n'</xsl:text>
+            </xsl:when>
+            <xsl:when test="($elementName = 'meta')">
+                <xsl:text>
+        result += 'META "' + self.name + '" "' + self.content + '"' + '\n'</xsl:text>
+            </xsl:when>
+            <xsl:otherwise> <!-- non-X3D VRML() -->
+                <xsl:if test="not($elementName = 'Scene') and not($elementName = 'head')">
+                    <xsl:text>
+        # if _DEBUG: result += indent + '# invoked class function </xsl:text>
+                    <xsl:value-of select="$elementName"/>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[.VRML(self=' + str(self) + ', indentLevel=' + str(indentLevel) + '), indent="' + indent + '"'
+        # print(result)]]></xsl:text>
+                    <xsl:text>
+        if indentLevel == 0:
+            result += '\n'
+        if self.DEF:
+            result += 'DEF ' + self.DEF + ' ' + '</xsl:text>
+                    <xsl:value-of select="$elementName"/>
+                    <xsl:text>' + ' {'
+        elif self.USE:
+            result += 'USE ' + self.USE # no node name, nothing follows
+        else:
+            result += '</xsl:text>
+                    <xsl:value-of select="$elementName"/>
+                    <xsl:text>' + ' {'</xsl:text>
+                </xsl:if>
+                <!-- opening tag is unclosed since followed by attributes -->
+                <!-- output simple-type fields as XML attributes -->
+                <xsl:for-each select="$allFields[not(contains(@type,'Node'))][not(@name='DEF') and not(@name='USE')]">
+                    <xsl:sort select="@name" order="ascending"/>
+                    <xsl:sort select="(@name = 'USE')"/>
+                    <xsl:sort select="(@name = 'DEF')"/>
+                    
+                    <xsl:variable name="fieldName">
+                        <xsl:call-template name="fieldName">
+                            <xsl:with-param name="name" select="@name"/>
+                        </xsl:call-template>
+                    </xsl:variable>
+                    <xsl:variable name="defaultValue">
+                        <xsl:call-template name="pythonValue">
+                            <xsl:with-param name="x3dValue" select="@default"/>
+                            <xsl:with-param name="x3dType" select="@type"/>
+                        </xsl:call-template>
+                    </xsl:variable>
+                    <!-- avoid duplicate fields problem in X3DUOM, e.g. ParticleSet geometry (TODO fix X3DUOM) -->
+                    <xsl:if test="not(preceding-sibling::*[@name = $fieldName])">
+                        <xsl:text>
+        if self.</xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:if test="not(@type = 'SFString') or (string-length(@default) > 0)">
+                            <xsl:text> != </xsl:text>
+                            <xsl:value-of select="$defaultValue"/>
+                        </xsl:if>
+                        <xsl:text>:
+            result += " </xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:text>" + </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="(@type='NMTOKEN')">
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                            </xsl:when>
+                            <xsl:when test="(@type='SFString')">
+                                <xsl:text> '"' + </xsl:text>
+                                <!-- TODO python escape for quote characters -->
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text> + '"'</xsl:text>
+                            </xsl:when>
+                            <!-- always stringify value in field/fieldValue since it is arbitrary type -->
+                            <xsl:when test="not(@type='SFString') or (starts-with($elementName,'field') and ($fieldName = 'value'))">
+                                <xsl:value-of select="@type"/>
+                                <xsl:text>(</xsl:text>
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text>).VRML()</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        
+                        <xsl:text> + ""</xsl:text>
+                    </xsl:if>
+                </xsl:for-each>
+                <!-- output child SFNode/MFNode fields as child XML elements -->
+                <xsl:choose>
+                    <xsl:when test="($elementName = 'head')">
+                        <!-- head is a special case, component/unit/meta are forcibly collected under MFNode 'children' -->
+                        <xsl:text>
+        ## result += indent + '  ' + 'TODO iterate over each child element' + '\n'
+        if self.children: # walk each child node, if any
+            ## print('* </xsl:text>
+                        <xsl:value-of select="$elementName"/>
+                        <xsl:text> found self.children, now invoking VRML(' + str(indentLevel+1) + ', ' + VRML97 + ')', flush=True)
+            # order is significant for component, unit, meta statements
+            for each in self.children:
+                if isinstance(each, component):
+                    result += each.VRML(indentLevel=indentLevel+1,VRML97=VRML97)
+            for each in self.children:
+                if isinstance(each, unit):
+                    result += each.VRML(indentLevel=indentLevel+1,VRML97=VRML97)
+            for each in self.children:
+                if isinstance(each, meta):
+                    result += each.VRML(indentLevel=indentLevel+1,VRML97=VRML97)</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:for-each select="$allFields[contains(@type,'Node')]">
+                            <xsl:sort select="(@type='MFNode')"/>
+                            <xsl:sort select="(@type='SFNode')"/>
+                            <xsl:sort select="@name" order="ascending"/>
+
+                            <xsl:variable name="fieldName">
+                                <xsl:call-template name="fieldName">
+                                    <xsl:with-param name="name" select="@name"/>
+                                </xsl:call-template>
+                            </xsl:variable>
+                            <xsl:variable name="defaultValue">
+                                <xsl:call-template name="pythonValue">
+                                    <xsl:with-param name="x3dValue" select="@default"/>
+                                    <xsl:with-param name="x3dType" select="@type"/>
+                                </xsl:call-template>
+                            </xsl:variable>
+                            <!-- diagostic
+                            <xsl:message>
+                                    <xsl:text>*** elementName=</xsl:text>
+                                    <xsl:value-of select="$elementName"/>
+                                    <xsl:text>, @name=</xsl:text>
+                                    <xsl:value-of select="@name"/>
+                                    <xsl:text>, fieldName=</xsl:text>
+                                    <xsl:value-of select="$fieldName"/>
+                            </xsl:message> -->
+                            <!-- avoid duplicate fields problem in X3DUOM, e.g. ParticleSet geometry (TODO fix X3DUOM) -->
+                            <xsl:if test="not(preceding-sibling::*[@name = $fieldName])">
+                                <xsl:choose>
+                                    <xsl:when test="(@type='SFNode')">
+                                        <xsl:text>
+        if self.</xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:text>: # output this SFNode
+            result += '\n' + '  ' + indent + '</xsl:text><!-- one further indent -->
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:text> ' + self.</xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:text>.VRML(indentLevel=indentLevel+1,VRML97=VRML97)</xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>
+        ## result += indent + '  ' + 'TODO iterate over each child element' + '\n'
+        if self.</xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:text>: # walk each child node, if any
+            for each in self.</xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:text>:
+                result += each.VRML(indentLevel=indentLevel+1,VRML97=VRML97)</xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:if>
+                        </xsl:for-each>
+                        <xsl:text>
+        if not self.USE:
+            result += </xsl:text>
+            <!-- <xsl:text>'\n' + indent + </xsl:text> TODO only skip line if end of child node -->
+            <xsl:text>' }'</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:otherwise>
+        </xsl:choose>
+
+        <xsl:text>
+#       print('VRML serialization complete.', flush=True)
+        return result</xsl:text>
         
         <xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>
