@@ -73,8 +73,12 @@ DOM2JSONSerializer.prototype = {
 	},
 
 	descendSubArray: function (values, convert) {
-		for (var v in values) {
-			values[v] = convert(values[v]);
+		if (values[0] !== '' && values[0] !== null) {
+			for (var v in values) {
+				values[v] = convert(values[v]);
+			}
+		} else {
+			values = [];
 		}
 		return values;
 	},

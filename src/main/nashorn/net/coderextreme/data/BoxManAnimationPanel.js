@@ -42,7 +42,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new WorldInfoObject().setInfo(Java.to(["(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"], Java.type("java.lang.String[]"))).setTitle("BoxMan - A Seamless VRML Human"))
         .addChild(new BackgroundObject().setGroundColor(Java.to([0.6,0.6,0.6], Java.type("float[]"))).setSkyColor(Java.to([0.75,0.75,0.75], Java.type("float[]"))))
         .addChild(new HAnimHumanoidObject().setDEF("boxman_Humanoid").setInfo(Java.to(["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"], Java.type("java.lang.String[]"))).setName("Humanoid").setVersion("2.0")
-          .setSkeleton(new HAnimJointObject().setDEF("boxman_HumanoidRoot").setCenter(Java.to([0,0.9723,-0.0728], Java.type("float[]"))).setName("humanoid_root").setSkinCoordIndex(Java.to([0,1,2,3,4,5,6,7,8,9,10,11], Java.type("int[]"))).setSkinCoordWeight(Java.to([1,1,1,1,1,1,1,1,1,1,1,1], Java.type("float[]")))
+          .addJoints(new HAnimJointObject().setDEF("boxman_HumanoidRoot").setCenter(Java.to([0,0.9723,-0.0728], Java.type("float[]"))).setName("humanoid_root").setSkinCoordIndex(Java.to([0,1,2,3,4,5,6,7,8,9,10,11], Java.type("int[]"))).setSkinCoordWeight(Java.to([1,1,1,1,1,1,1,1,1,1,1,1], Java.type("float[]")))
             .addChild(new HAnimSegmentObject().setDEF("boxman_sacrum").setName("sacrum")
               .addChild(new TransformObject().setTranslation(Java.to([0,0.9723,-0.0728], Java.type("float[]")))
                 .addChild(new ShapeObject().setDEF("SphereYellow")
