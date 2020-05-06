@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2020-04-26-07:00 22:04:01.868-07:00 -->
+<!-- Generated 2020-05-05-07:00 20:47:08.858-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -10,7 +10,7 @@
       <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
       <SimpleType name="accessTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="accessTypeChoices are strictly allowed enumeration values for accessType. Prior names in VRML97 were eventIn, eventOut, field, exposedField respectively."
+                  appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a Script node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#FieldSemantics">
          <enumeration value="initializeOnly"
                       appinfo="A field with accessType initializeOnly can be initialized, but cannot send or receive events."/>
@@ -107,7 +107,7 @@
                       appinfo="The Humanoid Animation (HAnim) component for X3D defines node bindings and other details for implementing ISO/IEC 19774, the HAnim International Specification."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"/>
          <enumeration value="H-Anim"
-                      appinfo="Legacy enumeration H-Anim for X3Dv3 provides backwards compatibility with Humanoid Animation (HAnim) version 1, preferred form is HAnim."
+                      appinfo="Legacy enumeration H-Anim for X3D versions 3.0-3.3 provides backwards compatibility with Humanoid Animation (HAnim) version 1, preferred form of enumeration value is HAnim."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"/>
          <enumeration value="Interpolation"
                       appinfo="Interpolator nodes provide keyframe-based animation capability."
@@ -436,7 +436,7 @@
       </SimpleType>
       <SimpleType name="fontFamilyValues"
                   baseType="MFString"
-                  appinfo="fontFamilyValues are allowed enumeration values for FontStyle/ScreenFontStyle node family field. Unbounded, additional values are possible."
+                  appinfo="fontFamilyValues are supported enumeration values for FontStyle/ScreenFontStyle node family field. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/text.html#Fontfamilyandstyle">
          <enumeration value="&#34;SANS&#34;"
                       appinfo="default font family for sans-serif font such as Helvetica"/>
@@ -456,7 +456,7 @@
       </SimpleType>
       <SimpleType name="forceOutputValues"
                   baseType="MFString"
-                  appinfo="forceOutputValues are suggested values for X3DRigidJointNode type forceOutput field. Unbounded, additional values are possible."
+                  appinfo="forceOutputValues are supported enumeration values for X3DRigidJointNode type forceOutput field. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#X3DRigidJointNode">
          <enumeration value="&#34;ALL&#34;" appinfo="all forceOutput fields computed"/>
          <enumeration value="&#34;NONE&#34;" appinfo="no forceOutput fields computed"/>
@@ -488,16 +488,10 @@
          <enumeration value="dataUrl"/>
          <enumeration value="dataFormat"/>
       </SimpleType>
-      <SimpleType name="geoSystemType"
+      <SimpleType name="geoSystemEarthEllipsoidValues"
                   baseType="MFString"
-                  documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#Specifyingaspatialreference"/>
-      <SimpleType name="geoSystemValues"
-                  baseType="xs:NMTOKEN"
-                  appinfo="The allowed values of spatial reference frames and earth ellipsoids."
-                  documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#Spatialreferenceframes">
-         <enumeration value="GD" appinfo="Geodetic spatial reference frame"/>
-         <enumeration value="GC" appinfo="Geocentric spatial reference frame"/>
-         <enumeration value="UTM" appinfo="Universal Transverse Mercator"/>
+                  appinfo="geoSystemEarthEllipsoidValues are allowed enumeration values of earth ellipsoids, providing second value for any geoSystem field that has first value GD. Unbounded, additional values are allowed.."
+                  documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#Specifyingaspatialreference">
          <enumeration value="AM" appinfo="Modified Airy"/>
          <enumeration value="AN" appinfo="Australian National"/>
          <enumeration value="BN" appinfo="Bessel 1841 (Namibia)"/>
@@ -524,6 +518,25 @@
          <enumeration value="Zn" appinfo="Zone number (1..60) (only used with UTM)"/>
          <enumeration value="S" appinfo="Southern hemisphere (only used with UTM)"/>
       </SimpleType>
+      <SimpleType name="geoSystemSpatialReferenceFrameValues"
+                  baseType="xs:NMTOKEN"
+                  appinfo="geoSystemSpatialReferenceFrameValues are allowed enumeration values of spatial reference frames and earth ellipsoids, providing first value for geoSystem field. Unbounded, additional values are allowed."
+                  documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#Spatialreferenceframes">
+         <enumeration value="GD"
+                      appinfo="Geodetic spatial reference frame (latitude/longitude), to be followed by ellipsoid"/>
+         <enumeration value="UTM"
+                      appinfo="Universal Transverse Mercator. One further required argument must be supplied for UTM in order to specify the zone number (1..60) with optional suffix of &#34;S&#34; may be appended in order to specify that the coordinates are in the southern hemisphere. Optional arguments can follow."/>
+         <enumeration value="GC"
+                      appinfo="Earth-fixed Geocentric with respect to the WGS84 ellipsoid. No additional arguments are supported."/>
+         <enumeration value="GDC"
+                      appinfo="Synonymous to GD, but may be subject to future deprecation"/>
+         <enumeration value="GCC"
+                      appinfo="Synonymous to GC, but may be subject to future deprecation"/>
+      </SimpleType>
+      <SimpleType name="geoSystemType"
+                  baseType="MFString"
+                  appinfo="The first enumeration value of geoSystem is one of geoSystemSpatialReferenceFrameValues. If first value is GD, then second enumeration value is one of geoSystemEarthEllipsoidValues."
+                  documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#Specifyingaspatialreference"/>
       <SimpleType name="hanimFeaturePointNameValues"
                   baseType="xs:NMTOKEN"
                   appinfo="Feature point names for identification of HAnimSite/HAnimDIsplacer nodes as defined in the HAnim Architecture specification. Alternate names are also allowed, aliases from CAESAR and ISO 7250 are provided. HAnimSite/HAnimDisplacer name fields must append suffix _view _tip _pt based on functional purpose, thus strict hanimFeaturePointNameValues validation is turned off by default. CAESAR feature point names, index and description for use by HAnimDisplacer nodes as defined in the HAnim Architecture specification. ISO 7250-1 points are defined at https://www.iso.org/standard/65246.html Wikipedia overview reference https://en.wikipedia.org/wiki/Anatomical_terminology"
@@ -1215,7 +1228,7 @@
       </SimpleType>
       <SimpleType name="hanimJointNameValues"
                   baseType="xs:NMTOKEN"
-                  appinfo="CAESAR joint names for identification of HAnimJoint nodes as defined in the HAnim Architecture specification. Alternate names are also allowed."
+                  appinfo="CAESAR joint names for identification of HAnimJoint nodes as defined in the HAnim Architecture specification. Alternate name values are also allowed."
                   documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/concepts.html#Hierarchy">
          <enumeration value="humanoid_root"
                       index="1"
@@ -1970,7 +1983,7 @@
       </SimpleType>
       <SimpleType name="hanimSegmentNameValues"
                   baseType="xs:NMTOKEN"
-                  appinfo="CAESAR segment names for identification of HAnimSegment nodes as defined in the HAnim Architecture specification. Alternate names are also allowed."
+                  appinfo="CAESAR segment names for identification of HAnimSegment nodes as defined in the HAnim Architecture specification. Alternate name values are also allowed."
                   documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/concepts.html#Hierarchy">
          <enumeration value="sacrum"
                       index="1"
@@ -3284,11 +3297,11 @@
       <SimpleType name="intensityType"
                   baseType="SFFloat"
                   defaultValue="0.0"
-                  appinfo="intensityType values are floats ranging [0..1]"
+                  appinfo="intensityType value is an SFFloat ranging [0..1]"
                   documentation="_Evaluating the X3D Schema with semantic web tools_, Web3D 2012 Conference, Petit, Marc (EDF), Henry Boccon-Gibod (EDF), Mouton, Christophe (EDF)"/>
       <SimpleType name="intersectionTypeValues"
                   baseType="xs:NMTOKEN"
-                  appinfo="intersectionTypeValues are suggested values for X3DPickSensorNode type intersectionType field. Unbounded, additional values are possible."
+                  appinfo="intersectionTypeValues are supported enumeration values for X3DPickSensorNode type intersectionType field. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#X3DPickSensorNode">
          <enumeration value="BOUNDS"
                       appinfo="TODO undefined in X3D specification"
@@ -3384,7 +3397,7 @@
       </SimpleType>
       <SimpleType name="metaNameValues"
                   baseType="xs:NMTOKEN"
-                  appinfo="metaNameValues are suggested optional values for meta element name field. Additional names are also defined and allowed."
+                  appinfo="metaNameValues are supported enumeration values for meta element name field. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaTags">
          <enumeration value="accessRights"
                       appinfo="permission required to access resource or security status"
@@ -3495,7 +3508,7 @@
       </SimpleType>
       <SimpleType name="multiTextureFunctionValues"
                   baseType="MFString"
-                  appinfo="multiTextureFunctionValues are allowed values for the MultiTexture node function attribute, one per each texture. An empty string indicates no function is applied. Multiple optional values, but cannot be extended."
+                  appinfo="multiTextureFunctionValues are supported enumeration values for the MultiTexture node function attribute, one per each texture. An empty string indicates no function is applied. Multiple optional values, but cannot be extended."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-ValuesForFunctionField">
          <enumeration value="&#34;COMPLEMENT&#34;" appinfo="Invert argument x as (1 - x)"/>
          <enumeration value="&#34;ALPHAREPLICATE&#34;"
@@ -3505,7 +3518,7 @@
       </SimpleType>
       <SimpleType name="multiTextureModeValues"
                   baseType="MFString"
-                  appinfo="multiTextureModeValues are allowed values for the MultiTexture mode attribute, one per each texture. Multiple optional values, but cannot be extended."
+                  appinfo="multiTextureModeValues are supported enumeration values for the MultiTexture mode attribute, one per each texture. Multiple optional values, but cannot be extended."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-MultitextureModes">
          <enumeration value="&#34;ADD&#34;"/>
          <enumeration value="&#34;ADDSIGNED&#34;"/>
@@ -3530,7 +3543,7 @@
       </SimpleType>
       <SimpleType name="multiTextureSourceValues"
                   baseType="MFString"
-                  appinfo="multiTextureSourceValues are allowed values for the MultiTexture node source attribute, one per each texture. Multiple optional values, but cannot be extended."
+                  appinfo="multiTextureSourceValues are supported enumeration values for the MultiTexture node source attribute, one per each texture. Multiple optional values, but cannot be extended."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-ValuesForSourceField">
          <enumeration value="&#34;DIFFUSE&#34;"/>
          <enumeration value="&#34;FACTOR&#34;"/>
@@ -3539,7 +3552,7 @@
       </SimpleType>
       <SimpleType name="navigationTransitionTypeValues"
                   baseType="MFString"
-                  appinfo="Permitted values for the transitionType field in the NavigationInfo node. Unbounded, additional values are possible."
+                  appinfo="navigationTransitionTypeValues are supported enumeration values for the transitionType field in the NavigationInfo node. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#NavigationInfo">
          <enumeration value="&#34;TELEPORT&#34;" appinfo="immediate transition"/>
          <enumeration value="&#34;LINEAR&#34;"
@@ -3548,7 +3561,7 @@
       </SimpleType>
       <SimpleType name="navigationTypeValues"
                   baseType="MFString"
-                  appinfo="Permitted values for the type field in the NavigationInfo node. Unbounded, additional values are possible."
+                  appinfo="navigationTypeValues are supported enumeration values for the type field in the NavigationInfo node. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/navigation.html#NavigationInfo">
          <enumeration value="&#34;ANY&#34;" appinfo="browser can offer any type for user to choose"/>
          <enumeration value="&#34;WALK&#34;"
@@ -3674,7 +3687,7 @@
       </SimpleType>
       <SimpleType name="particleSystemGeometryTypeValues"
                   baseType="xs:NMTOKEN"
-                  appinfo="particleSystemGeometryTypeValues are allowed enumeration values for the ParticleSystem node geometryType field. Unbounded, additional values are possible."
+                  appinfo="particleSystemGeometryTypeValues are supported enumeration values for the ParticleSystem node geometryType field. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/particle_systems.html#ParticleSystem">
          <enumeration value="LINE"
                       appinfo="line is drawn along current velocity vector of particle"/>
@@ -3690,7 +3703,7 @@
       </SimpleType>
       <SimpleType name="phaseFunctionValues"
                   baseType="SFString"
-                  appinfo="Default values for the phaseFunction field in the ShadedVolumeStyle. Unbounded, additional values are possible."
+                  appinfo="phaseFunctionValues are supported enumeration values for the phaseFunction field in the ShadedVolumeStyle. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#ShadedVolumeStyle">
          <enumeration value="Henyey-Greenstein"
                       appinfo="Henyey-Greenstein phase function for scattering model"/>
@@ -3698,7 +3711,7 @@
       </SimpleType>
       <SimpleType name="pickableObjectTypeValues"
                   baseType="MFString"
-                  appinfo="Suggested values for the objectType field in the abstract types X3DPickableObject and X3DPickSensorNode. Unbounded, additional values are possible."
+                  appinfo="pickableObjectTypeValues are supported enumeration values for the objectType field in the abstract types X3DPickableObject and X3DPickSensorNode. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#X3DPickableObject">
          <enumeration value="&#34;ALL&#34;" appinfo="each node is available for picking"/>
          <enumeration value="&#34;NONE&#34;" appinfo="no node is available for picking"/>
@@ -3706,7 +3719,7 @@
       </SimpleType>
       <SimpleType name="pickSensorMatchCriterionChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="pickSensorMatchCriterionChoices are strictly allowed enumeration values for X3DPickSensorNode node matchCriterion field. Bounded, no additional values are possible."
+                  appinfo="pickSensorMatchCriterionChoices are strictly allowed enumeration values for X3DPickSensorNode node matchCriterion field. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#X3DPickSensorNode">
          <enumeration value="MATCH_ANY"
                       appinfo="any match of objectType values is acceptable"/>
@@ -3717,7 +3730,7 @@
       </SimpleType>
       <SimpleType name="pickSensorSortOrderValues"
                   baseType="xs:NMTOKEN"
-                  appinfo="pickSensorSortOrderValues are allowed enumeration values for X3DPickSensorNode node sortOrder field. Unbounded, additional values are possible."
+                  appinfo="pickSensorSortOrderValues are supported enumeration values for X3DPickSensorNode node sortOrder field. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#X3DPickSensorNode">
          <enumeration value="ANY"
                       appinfo="any single object that can satisfy picking conditions"/>
@@ -3770,7 +3783,7 @@
       </SimpleType>
       <SimpleType name="shaderLanguageValues"
                   baseType="xs:NMTOKEN"
-                  appinfo="Suggested values for the language field in shader nodes include &#34;Cg&#34; &#34;GLSL&#34; &#34;HLSL&#34;, other values are optionally supported by browsers. Used to optionally determine the language type if no MIME-type information is available. Unbounded, additional values are possible."
+                  appinfo="shaderLanguageValues are supported enumeration values for the language field in shader nodes including &#34;Cg&#34; &#34;GLSL&#34; &#34;HLSL&#34;, other values are optionally supported by browsers. Used to optionally determine the language type if no MIME-type information is available. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#X3DShaderNode">
          <enumeration value="Cg" appinfo="nVidia Cg shading language"/>
          <enumeration value="GLSL" appinfo="OpenGL shading language (GLSL)"/>
@@ -3778,7 +3791,7 @@
       </SimpleType>
       <SimpleType name="shaderPartTypeValues"
                   baseType="xs:NMTOKEN"
-                  appinfo="shaderPartTypeValues are allowed enumeration values for ShaderPart type field. Unbounded, additional values are possible."
+                  appinfo="shaderPartTypeValues are allowed enumeration values for ShaderPart type field. Unbounded, additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#ShaderPart">
          <enumeration value="VERTEX" appinfo="vertex shader"/>
          <enumeration value="FRAGMENT" appinfo="fragment shader"/>
@@ -3912,7 +3925,7 @@
                  defaultValue="true"
                  regex="\s*(true|false)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFBoolAndMFBool"
-                              appinfo="SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.">
+                              appinfo="SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: XML boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.">
             <Inheritance baseType="xs:boolean"/>
          </InterfaceDefinition>
       </FieldType>
@@ -3922,7 +3935,7 @@
                  defaultValue=""
                  regex="\s*((true|false)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFBoolAndMFBool"
-                              appinfo="MFBool is an array of Boolean values. Type MFBool was previously undefined in the VRML97 Specification, but nevertheless needed for event utilities and scripting. Example use: MFBool is useful for defining a series of behavior states using a BooleanSequencer prototype. Hint: boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.">
+                              appinfo="MFBool is an array of boolean values. Type MFBool was previously undefined in the VRML97 Specification, but nevertheless needed for event utilities and scripting. Example use: MFBool is useful for defining a series of behavior states using a BooleanSequencer prototype. Hint: XML boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -3932,7 +3945,7 @@
                  defaultValue="0 0 0"
                  regex="(\s)*(([+]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){2}([+]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorAndMFColor"
-                              appinfo="The SFColor field specifies one RGB (red-green-blue) color triple. Each color value is an RGB triple of floating point numbers in the range 0.0 to 1.0. The default value of an uninitialized SFColor field is (0 0 0). Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFColor specifies one RGB (red-green-blue) color triple, where each color value is an RGB triple of floating point numbers in range [0,1]. The default value of an uninitialized SFColor field is (0 0 0). Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -3942,7 +3955,7 @@
                  defaultValue=""
                  regex="(\s)*((([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){2}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorAndMFColor"
-                              appinfo="MFColor specifies zero or more SFColor RGB triples. Each color value is an RGB triple of floating point numbers in the range 0.0 to 1.0. The default value of an uninitialized MFColor field is the empty list. Individual SFColor array values are optionally separated by commas.">
+                              appinfo="MFColor specifies zero or more SFColor RGB triples, where each color value is an RGB triple of floating point numbers in range [0,1]. The default value of an uninitialized MFColor field is the empty list. Individual SFColor array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -3952,7 +3965,7 @@
                  defaultValue="0 0 0 0"
                  regex="(\s)*(([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){3}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA"
-                              appinfo="The SFColorRGBA field specifies one RGBA (red-green-blue-alpha) color 4-tuple. Each color value is an RGBA 4-tuple of floating point numbers in the range 0.0 to 1.0. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized SFColorRGBA field is (0 0 0 0). Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFColorRGBA specifies one RGBA (red-green-blue-alpha) color 4-tuple, where each color value is an RGBA 4-tuple of floating point numbers in range [0,1]. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized SFColorRGBA field is (0 0 0 0). Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -3962,7 +3975,7 @@
                  defaultValue=""
                  regex="(\s)*((([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){3}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA"
-                              appinfo="MFColorRGBA specifies zero or more SFColorRGBA 4-tuples. Each color value is an RGBA 4-tuple of floating point numbers in the range 0.0 to 1.0. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized MFColor field is the empty list. Individual SFColorRGBA array values are optionally separated by commas.">
+                              appinfo="MFColorRGBA specifies zero or more SFColorRGBA 4-tuples, where each color value is an RGBA 4-tuple of floating point numbers in range [0,1]. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized MFColor field is the empty list. Individual SFColorRGBA array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -3972,7 +3985,7 @@
                  defaultValue="0.0"
                  regex="(\s)*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFDoubleAndMFDouble"
-                              appinfo="SFDouble is a double-precision floating-point type. Array values are optionally separated by commas. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale.">
+                              appinfo="SFDouble is a double-precision floating-point type. Array values are optionally separated by commas in XML syntax. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale.">
             <Inheritance baseType="xs:double"/>
          </InterfaceDefinition>
       </FieldType>
@@ -3982,7 +3995,7 @@
                  defaultValue=""
                  regex="(\s)*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFDoubleAndMFDouble"
-                              appinfo="MFDouble is an array of Double values, meaning a double-precision floating-point array type. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale. Array values are optionally separated by commas.">
+                              appinfo="MFDouble is an array of Double values, meaning a double-precision floating-point array type. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale. Array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4002,7 +4015,7 @@
                  defaultValue=""
                  regex="(\s)*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFFloatAndMFFloat"
-                              appinfo="MFFloat is an array of SFFloat values, meaning a single-precision floating-point array type. Array values are optionally separated by commas.">
+                              appinfo="MFFloat is an array of SFFloat values, meaning a single-precision floating-point array type. Array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4012,7 +4025,7 @@
                  defaultValue="0 0 0"
                  regex="\s*([+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?\s+){2}[+]?[0-4](\s+(0x[0-9a-fA-F]{1,16}|[+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?))*\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFImageAndMFImage"
-                              appinfo="The SFImage field specifies a single uncompressed 2-dimensional pixel image. SFImage fields contain three integers representing the width, height and number of components in the image, followed by (width x height) hexadecimal or integer values representing the pixels in the image.">
+                              appinfo="SFImage specifies a single uncompressed 2-dimensional pixel image. SFImage fields contain three integers representing the width, height and number of components in the image, followed by (width x height) hexadecimal or integer values representing the pixels in the image.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4032,7 +4045,7 @@
                  defaultValue="0"
                  regex="(\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFInt32AndMFInt32"
-                              appinfo="An SFInt32 field specifies one 32-bit signed integer.">
+                              appinfo="SFInt32 specifies one 32-bit signed integer.">
             <Inheritance baseType="xs:integer"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4042,7 +4055,7 @@
                  defaultValue=""
                  regex="(\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFInt32AndMFInt32"
-                              appinfo="An MFInt32 field defines an array of 32-bit signed integers. Array values are optionally separated by commas.">
+                              appinfo="MFInt32 defines an array of 32-bit signed integers. Array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4052,7 +4065,7 @@
                  defaultValue="1 0 0 0 1 0 0 0 1"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){8}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix3dAndMFMatrix3d"
-                              appinfo="SFMatrix3d specifies a 3x3 matrix of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFMatrix3d specifies a 3x3 matrix of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4072,7 +4085,7 @@
                  defaultValue="1 0 0 0 1 0 0 0 1"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){8}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix3fAndMFMatrix3f"
-                              appinfo="SFMatrix3f specifies a 3x3 matrix of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFMatrix3f specifies a 3x3 matrix of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4092,7 +4105,7 @@
                  defaultValue="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){15}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix4dAndMFMatrix4d"
-                              appinfo="SFMatrix4d specifies a 4x4 matrix of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFMatrix4d specifies a 4x4 matrix of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4112,7 +4125,7 @@
                  defaultValue="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){15}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFMatrix4fAndMFMatrix4f"
-                              appinfo="SFMatrix4f specifies a 4x4 matrix of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFMatrix4f specifies a 4x4 matrix of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4128,13 +4141,13 @@
       </FieldType>
       <FieldType type="SFNode" tupleSize="1" isArray="false" defaultValue="">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFNodeAndMFNode"
-                              appinfo="The SFNode field specifies an X3D node; the default empty value of an uninitialized SFNode field is sometimes described as NULL.">
+                              appinfo="SFNode specifies an X3D node; the default empty value of an uninitialized SFNode field is sometimes described as NULL.">
             <Inheritance baseType="SFString"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFNode" tupleSize="1" isArray="true" defaultValue="">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFNodeAndMFNode"
-                              appinfo="The MFNode field specifies zero or more nodes; the default value of an MFNode field is the empty list.">
+                              appinfo="MFNode specifies zero or more nodes; the default value of an MFNode field is the empty list.">
             <Inheritance baseType="SFString"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4144,7 +4157,7 @@
                  defaultValue="0 0 1 0"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFRotationAndMFRotation"
-                              appinfo="SFRotation is an axis-angle 4-tuple, indicating X-Y-Z direction axis plus angle orientation about that axis. The first three values specify a normalized axis vector about which the rotation takes place, so the first three values shall be within the range [-1..+1] in order to represent a normalized unit vector. The fourth value specifies the amount of right-handed rotation about that axis in radians. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFRotation is an axis-angle 4-tuple, indicating X-Y-Z direction axis plus angle orientation about that axis. The first three values specify a normalized axis vector about which the rotation takes place, so the first three values shall be within the range [-1..+1] in order to represent a normalized unit vector. The fourth value specifies the amount of right-handed rotation about that axis in radians. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4154,7 +4167,7 @@
                  defaultValue=""
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFRotationAndMFRotation"
-                              appinfo="MFRotation is an array of SFRotation values. Individual singleton SFRotation array values are optionally separated by commas.">
+                              appinfo="MFRotation is an array of SFRotation values. Individual singleton SFRotation array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4174,7 +4187,7 @@
                  defaultValue=""
                  regex="(\s|\S)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"
-                              appinfo="MFString is an array of SFString values, each &#34;quoted&#34; and separated by whitespace. Individual SFString array values are optionally separated by commas."/>
+                              appinfo="MFString is an array of SFString values, each &#34;quoted&#34; and separated by whitespace. Individual SFString array values are optionally separated by commas in XML syntax."/>
       </FieldType>
       <FieldType type="SFTime"
                  tupleSize="1"
@@ -4182,7 +4195,7 @@
                  defaultValue="-1.0"
                  regex="(\s)*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFTimeAndMFTime"
-                              appinfo="The SFTime field specifies a single time value. Time values are specified as a double-precision floating point number. Typically, SFTime fields represent the number of seconds since Jan 1, 1970, 00:00:00 GMT.">
+                              appinfo="SFTime specifies a single time value, expressed as a double-precision floating point number. Typically, SFTime fields represent the number of seconds since Jan 1, 1970, 00:00:00 GMT.">
             <Inheritance baseType="xs:double"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4192,7 +4205,7 @@
                  defaultValue=""
                  regex="(\s)*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFTimeAndMFTime"
-                              appinfo="MFTime is an array of SFTime values. Array values are optionally separated by commas.">
+                              appinfo="MFTime is an array of SFTime values. Array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4202,7 +4215,7 @@
                  defaultValue="0.0 0.0"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){1}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec2dAndMFVec2d"
-                              appinfo="SFVec2d is a 2-tuple pair of SFDouble values. Hint: SFVec2d can be used to specify a 2D double-precision coordinate. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFVec2d is a 2-tuple pair of SFDouble values. Hint: SFVec2d can be used to specify a 2D double-precision coordinate. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4212,7 +4225,7 @@
                  defaultValue=""
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){1}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec2dAndMFVec2d"
-                              appinfo="MFVec2d is an array of SFVec2d values. Individual singleton SFVec2d array values are optionally separated by commas.">
+                              appinfo="MFVec2d is an array of SFVec2d values. Individual singleton SFVec2d array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4222,7 +4235,7 @@
                  defaultValue="0.0 0.0"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){1}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec2fAndMFVec2f"
-                              appinfo="SFVec2f is a 2-tuple pair of SFFloat values. Hint: SFVec2f can be used to specify a 2D single-precision coordinate. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFVec2f is a 2-tuple pair of SFFloat values. Hint: SFVec2f can be used to specify a 2D single-precision coordinate. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4232,7 +4245,7 @@
                  defaultValue=""
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){1}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec2fAndMFVec2f"
-                              appinfo="MFVec2f is an array of SFVec2f values. Individual singleton SFVec2f array values are optionally separated by commas.">
+                              appinfo="MFVec2f is an array of SFVec2f values. Individual singleton SFVec2f array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4242,7 +4255,7 @@
                  defaultValue="0.0 0.0 0.0"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){2}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec3dAndMFVec3d"
-                              appinfo="SFVec3d is a 3-tuple triplet of SFDouble values. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision. Hint: SFVec3d can be used to specify a georeferenced 3D coordinate. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFVec3d is a 3-tuple triplet of SFDouble values. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision. Hint: SFVec3d can be used to specify a georeferenced 3D coordinate. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4252,7 +4265,7 @@
                  defaultValue=""
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){2}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec3dAndMFVec3d"
-                              appinfo="MFVec3d is an array of SFVec3d values. Individual singleton SFVec3d array values are optionally separated by commas. Original rationale for inclusion: GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision. Hint: MFVec3d can be used to specify a list of georeferenced 3D coordinates.">
+                              appinfo="MFVec3d is an array of SFVec3d values. Individual singleton SFVec3d array values are optionally separated by commas in XML syntax. Original rationale for inclusion: GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision. Hint: MFVec3d can be used to specify a list of georeferenced 3D coordinates.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4262,7 +4275,7 @@
                  defaultValue="0.0 0.0 0.0"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){2}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec3fAndMFVec3f"
-                              appinfo="SFVec3f is a 3-tuple triplet of SFFloat values. Hint: SFVec3f can be used to specify a 3D coordinate or a 3D scale value. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFVec3f is a 3-tuple triplet of SFFloat values. Hint: SFVec3f can be used to specify a 3D coordinate or a 3D scale value. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4272,7 +4285,7 @@
                  defaultValue=""
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){2}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec3fAndMFVec3f"
-                              appinfo="MFVec3f is an array of SFVec3f values. Individual singleton SFVec3f array values are optionally separated by commas.">
+                              appinfo="MFVec3f is an array of SFVec3f values. Individual singleton SFVec3f array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4282,7 +4295,7 @@
                  defaultValue="0.0 0.0 0.0 0.0"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec4dAndMFVec4d"
-                              appinfo="SFVec4d is a 4-tuple set of double-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFVec4d is a 4-tuple set of double-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4292,7 +4305,7 @@
                  defaultValue=""
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec4dAndMFVec4d"
-                              appinfo="MFVec4d is zero or more SFVec4d values. Individual singleton SFVec4d array values are optionally separated by commas.">
+                              appinfo="MFVec4d is zero or more SFVec4d values. Individual singleton SFVec4d array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4302,7 +4315,7 @@
                  defaultValue="0.0 0.0 0.0 0.0"
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec4fAndMFVec4f"
-                              appinfo="SFVec4f is a 4-tuple set of single-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters in attribute values do not pass strict XML validation.">
+                              appinfo="SFVec4f is a 4-tuple set of single-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -4312,7 +4325,7 @@
                  defaultValue=""
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFVec4fAndMFVec4f"
-                              appinfo="MFVec4f is zero or more SFVec4f values. Individual singleton SFVec4f array values are optionally separated by commas.">
+                              appinfo="MFVec4f is zero or more SFVec4f values. Individual singleton SFVec4f array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string"/>
          </InterfaceDefinition>
       </FieldType>
@@ -28666,7 +28679,7 @@
                             appinfo="The Humanoid Animation (HAnim) component for X3D defines node bindings and other details for implementing ISO/IEC 19774, the HAnim International Specification."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"/>
                <enumeration value="H-Anim"
-                            appinfo="Legacy enumeration H-Anim for X3Dv3 provides backwards compatibility with Humanoid Animation (HAnim) version 1, preferred form is HAnim."
+                            appinfo="Legacy enumeration H-Anim for X3D versions 3.0-3.3 provides backwards compatibility with Humanoid Animation (HAnim) version 1, preferred form of enumeration value is HAnim."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"/>
                <enumeration value="Interpolation"
                             appinfo="Interpolator nodes provide keyframe-based animation capability."
