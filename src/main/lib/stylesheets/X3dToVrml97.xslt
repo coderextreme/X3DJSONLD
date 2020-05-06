@@ -897,7 +897,7 @@ PROTO HAnimDisplacer [
       <xsl:if test="(//HAnimHumanoid[@version='1.1'] or //HAnimHumanoid/humanoidBody) and (//HAnimHumanoid[@version='2.0'] or //HAnimHumanoid/skeleton or //HAnimHumanoid/skin or //HAnimHumanoid/skinCoord or //HAnimHumanoid/skinNormal)">
         <xsl:call-template name="output-error">
           <xsl:with-param name="errorString">
-          <xsl:text>H-Anim 1.1 and 2.0 models can't be present in same file due to HAnimHumanoid Prototype differences</xsl:text>
+          <xsl:text>HAnim 1.1 and 2.0 models can't be present in same file due to HAnimHumanoid Prototype differences</xsl:text>
           </xsl:with-param>
           <xsl:with-param name="node" select="local-name(//HAnimHumanoid)"/>
           <xsl:with-param name="DEF"  select="//HAnimHumanoid/@DEF"/>
@@ -2158,6 +2158,7 @@ EXTERNPROTO TransmitterPdu [
   	(@name='Geospatial') or
   	(@name='Grouping') or
   	(@name='H-Anim') or
+  	(@name='HAnim') or
   	(@name='Interpolation') or
   	(@name='KeyDeviceSensor') or
   	(@name='Lighting') or
@@ -13760,11 +13761,12 @@ EXTERNPROTO TransmitterPdu [
             <xsl:when test="local-name()='GeoPositionInterpolator'">				<xsl:text>Full.Geospatial=1</xsl:text></xsl:when>
             <xsl:when test="local-name()='GeoTouchSensor'">					<xsl:text>Full.Geospatial=1</xsl:text></xsl:when>
             <xsl:when test="local-name()='GeoViewpoint'">					<xsl:text>Full.Geospatial=1</xsl:text></xsl:when>
-            <xsl:when test="local-name()='HAnimDisplacer'">					<xsl:text>Full.H-Anim=1</xsl:text></xsl:when>
-            <xsl:when test="local-name()='HAnimHumanoid'">					<xsl:text>Full.H-Anim=1</xsl:text></xsl:when>
-            <xsl:when test="local-name()='HAnimJoint'">						<xsl:text>Full.H-Anim=1</xsl:text></xsl:when>
-            <xsl:when test="local-name()='HAnimSegment'">					<xsl:text>Full.H-Anim=1</xsl:text></xsl:when>
-            <xsl:when test="local-name()='HAnimSite'">						<xsl:text>Full.H-Anim=1</xsl:text></xsl:when>
+            <!-- H-Anim component renamed to HAnim in X3D4 -->
+            <xsl:when test="local-name()='HAnimDisplacer'">					<xsl:text>Full.HAnim=1</xsl:text></xsl:when>
+            <xsl:when test="local-name()='HAnimHumanoid'">					<xsl:text>Full.HAnim=1</xsl:text></xsl:when>
+            <xsl:when test="local-name()='HAnimJoint'">						<xsl:text>Full.HAnim=1</xsl:text></xsl:when>
+            <xsl:when test="local-name()='HAnimSegment'">					<xsl:text>Full.HAnim=1</xsl:text></xsl:when>
+            <xsl:when test="local-name()='HAnimSite'">						<xsl:text>Full.HAnim=1</xsl:text></xsl:when>
             <xsl:when test="local-name()='NurbsCurve'">						<xsl:text>Full.NURBS=1</xsl:text></xsl:when>
             <xsl:when test="local-name()='NurbsCurve2D'">					<xsl:text>Full.NURBS=3</xsl:text></xsl:when>
             <xsl:when test="local-name()='NurbsOrientationInterpolator'">			<xsl:text>Full.NURBS=1</xsl:text></xsl:when>
@@ -13953,7 +13955,7 @@ EXTERNPROTO TransmitterPdu [
       <xsl:if test="$neededComponent and not($neededComponent='') and not(/X3D/head/component[@name=$neededComponent and ($neededLevel &lt;= @level)])
       		    and count(preceding::*[local-name()=$nodeName]) = 0"><!-- only report first node -->
         <xsl:choose>
-          <xsl:when test="/X3D/head/component[@name=$neededComponent]">
+          <xsl:when test="/X3D/head/component[translate(@name,'-','')=$neededComponent]"><!-- H-Anim component renamed to HAnim in X3D4 -->
             <xsl:call-template name="output-hint">
               <xsl:with-param name="hintString">
                 <xsl:text>Complete functionality for </xsl:text>
