@@ -1,153 +1,78 @@
-{
-  "X3D": {
-    "@profile": "Immersive",
-    "@version": "4.0",
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"4.0",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
-      "meta": [
-        {
-          "@content": "Carlson, I",
-          "@name": "John W"
-        },
-        {
-          "@content": "Carlson, II",
-          "@name": "John A"
-        },
-        {
-          "@content": "Carlson, III",
-          "@name": "John R"
-        },
-        {
-          "@name": "translated",
-          "@content": "1 May 2020"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
-        },
-        {
-          "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-        }
-      ]
+        "meta": [
+          {
+            "@name":"John W",
+            "@content":"Carlson, I"
+          },
+          {
+            "@name":"John A",
+            "@content":"Carlson, II"
+          },
+          {
+            "@name":"John R",
+            "@content":"Carlson, III"
+          },
+          {
+            "@name":"translated",
+            "@content":"06 May 2020"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
     },
     "Scene": {
-      "-children": [
-        {
-          "Group": {
-            "@bboxCenter": [
-              0,
-              0,
-              0
-            ],
-            "@bboxSize": [
-              -1,
-              -1,
-              -1
-            ],
-            "@displayBBox": false,
-            "@visible": true,
-            "-children": [
-              {
-                "Shape": {
-                  "@bboxCenter": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "@bboxSize": [
-                    -1,
-                    -1,
-                    -1
-                  ],
-                  "@displayBBox": false,
-                  "@visible": true,
-                  "-appearance": {
-                    "Appearance": {
-                      "-material": {
-                        "Material": {
-                          "@ambientIntensity": 0.2,
-                          "@diffuseColor": [
-                            1,
-                            0,
-                            0
-                          ],
-                          "@emissiveColor": [
-                            0,
-                            0,
-                            0
-                          ],
-                          "@shininess": 0.2,
-                          "@specularColor": [
-                            0,
-                            0,
-                            0
-                          ],
-                          "@transparency": 0
+        "-children":[
+          { "Group":
+            {
+              "@displayBBox":false,
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "Shape":
+                  {
+                    "@displayBBox":false,
+                    "-IllegalChildNodeFieldNameNotFound":[
+                      { "Appearance":
+                          "-IllegalChildNodeFieldNameNotFound":[
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0,0]
+                              }
+                            }
+                          ]
+                      }
+                    ],
+                    "-IllegalChildNodeFieldNameNotFound":[
+                      { "Box":
+                        {
                         }
                       }
-                    }
-                  },
-                  "-geometry": {
-                    "Box": {
-                      "@size": [
-                        2,
-                        2,
-                        2
-                      ],
-                      "@solid": true
-                    }
+                    ]
                   }
                 }
-              }
-            ]
+              ]
+            }
           }
-        },
-        {
-          "Transform": {
-            "@bboxCenter": [
-              0,
-              0,
-              0
-            ],
-            "@bboxSize": [
-              -1,
-              -1,
-              -1
-            ],
-            "@center": [
-              0,
-              0,
-              0
-            ],
-            "@displayBBox": false,
-            "@rotation": [
-              7,
-              8,
-              9,
-              3.14
-            ],
-            "@scale": [
-              4,
-              5,
-              6
-            ],
-            "@scaleOrientation": [
-              0,
-              0,
-              1,
-              0
-            ],
-            "@translation": [
-              1,
-              2,
-              3
-            ],
-            "@visible": true
+        ],
+        "-children":[
+          { "Transform":
+            {
+              "@displayBBox":false,
+              "@rotation":[7,8,9,3.14],
+              "@scale":[4,5,6],
+              "@translation":[1,2,3]
+            }
           }
-        }
-      ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+        ]
+    }
   }
 }

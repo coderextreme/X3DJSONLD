@@ -87,7 +87,7 @@
         },
         {
           "@name": "translated",
-          "@content": "1 May 2020"
+          "@content": "6 May 2020"
         },
         {
           "@name": "generator",
@@ -244,9 +244,6 @@
                               "-geometry": {
                                 "IndexedFaceSet": {
                                   "@ccw": true,
-                                  "@colorIndex": [
-                                    null
-                                  ],
                                   "@colorPerVertex": true,
                                   "@convex": true,
                                   "@coordIndex": [
@@ -1756,14 +1753,8 @@
                                     -1
                                   ],
                                   "@creaseAngle": 0.524,
-                                  "@normalIndex": [
-                                    null
-                                  ],
                                   "@normalPerVertex": true,
                                   "@solid": true,
-                                  "@texCoordIndex": [
-                                    null
-                                  ],
                                   "@class": "",
                                   "-coord": {
                                     "Coordinate": {
@@ -2452,9 +2443,6 @@
                               "-geometry": {
                                 "IndexedFaceSet": {
                                   "@ccw": true,
-                                  "@colorIndex": [
-                                    null
-                                  ],
                                   "@colorPerVertex": true,
                                   "@convex": true,
                                   "@coordIndex": [
@@ -4748,9 +4736,6 @@
                                     -1
                                   ],
                                   "@creaseAngle": 1.047,
-                                  "@normalIndex": [
-                                    null
-                                  ],
                                   "@normalPerVertex": true,
                                   "@solid": true,
                                   "@texCoordIndex": [
@@ -8514,6 +8499,6 @@
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }

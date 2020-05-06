@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "1 May 2020"
+          "@content": "6 May 2020"
         },
         {
           "@name": "generator",
@@ -285,6 +285,6 @@
       ]
     },
     "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
   }
 }

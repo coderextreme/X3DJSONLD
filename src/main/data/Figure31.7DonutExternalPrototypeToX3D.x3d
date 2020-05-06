@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Warning:  transitional DOCTYPE in source .x3d file -->
+<!DOCTYPE X3D PUBLIC "http://www.web3d.org/specifications/x3d-3.0.dtd" "file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.0.dtd">
+<X3D version="3.1" profile="Full">
+ <head>
+   <meta name="title" content="test\Figure31.7DonutExternalPrototypeToX3D.x3d"/>
+   <meta name="description" content="*enter description here, short-sentence summaries preferred*"/>
+   <meta name="creator" content="*enter name of original author here*"/>
+   <meta name="translator" content="*if manually translating VRML-to-X3D, enter name of person translating here*"/>
+   <meta name="created" content="*enter date of initial version here*"/>
+   <meta name="translated" content="03 December 2011"/>
+   <meta name="modified"    content="03 December 2011"/>
+   <meta name="version" content="*enter version here*"/>
+   <meta name="reference" content="*enter reference citation or relative/online url here*"/>
+   <meta name="reference" content="*enter additional url/bibliographic reference information here*"/>
+   <meta name="requires" content="*enter reference resource here if required to support function, delivery, or coherence of content*"/>
+   <meta name="rights" content="*enter copyright information here* Example:  Copyright (c) Web3D Consortium Inc. 2006"/>
+   <meta name="drawing" content="*enter drawing filename/url here*"/>
+   <meta name="image" content="*enter image filename/url here*"/>
+   <meta name="MovingImage" content="*enter movie filename/url here*"/>
+   <meta name="photo" content="*enter photo filename/url here*"/>
+   <meta name="subject" content="*enter subject keywords here*"/>
+   <meta name="accessRights" content="*enter permission statements or url here*"/>
+   <meta name="warning" content="*insert any known warnings, bugs or errors here*"/>
+   <meta name="identifier" content="http://*enter online url address for this file here*/test\Figure31.7DonutExternalPrototypeToX3D.x3d"/>
+   <meta name="generator" content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"/>
+   <meta name="license" content="../../license.html"/>
+ </head>
+ <Scene>
+  <NavigationInfo  type='"EXAMINE" "ANY"'/>
+  <ExternProtoDeclare name="Donut"  url='"Figure31.6DonutPrototype.wrl#Donut" "http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Chapter31-Prototypes/Figure31.6DonutPrototype.wrl#Donut" "Figure31.6DonutPrototype.x3d#Donut" "http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Chapter31-Prototypes/Figure31.6DonutPrototype.x3d#Donut"'>
+      <field  name="crossSectionRadius" type="SFFloat" accessType="initializeOnly"/>
+      <field  name="set_spineRadius" type="SFFloat" accessType="inputOnly"/>
+      <field  name="set_crossSectionRadius" type="SFFloat" accessType="inputOnly"/>
+      <field  name="spineResolution" type="SFInt32" accessType="initializeOnly"/>
+      <field  name="crossSectionResolution" type="SFInt32" accessType="initializeOnly"/>
+      <field  name="spineRadius" type="SFFloat" accessType="initializeOnly"/>
+  </ExternProtoDeclare>
+  <ExternProtoDeclare name="LightOak"  url='"Figure31.4WoodAppearancePrototypesLibrary.wrl#LightOak" "http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Chapter31-Prototypes/Figure31.4WoodAppearancePrototypesLibrary.wrl#LightOak" "Figure31.4WoodAppearancePrototypesLibrary.x3d#LightOak" "http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Chapter31-Prototypes/Figure31.4WoodAppearancePrototypesLibrary.x3d#LightOak"'>
+      <field  name="textureTransform" type="SFNode" accessType="inputOutput"/>
+  </ExternProtoDeclare>
+  <Viewpoint  position="0.0 7.0 12.0" orientation="1.0 0.0 0.0  -0.52" description="Click to pick a size"/>
+  <Transform  translation="0.0 2.0 0.0">
+      <Shape >
+          <ProtoInstance name="LightOak">
+            <fieldValue name="textureTransform">
+              <TextureTransform  center="-0.0 5.0" rotation="0.758" scale="2.0 0.5" translation="0.5 0.0"/>
+            </fieldValue>
+          </ProtoInstance>
+          <ProtoInstance name="Donut">
+            <fieldValue name="crossSectionRadius" value="1.0"/>
+            <fieldValue name="spineRadius" value="2.0"/>
+          </ProtoInstance>
+      </Shape>
+  </Transform>
+  <TimeSensor  DEF="Clock"  loop="true" cycleInterval="10.0"/>
+  <ScalarInterpolator  DEF="DonutThickness"  key=" 0.0 0.4 0.5 0.9 1.0" keyValue=" 0.75 1.25 1.25 0.75 0.75"/>
+  <Transform  translation="0.0 -2.0 0.0">
+      <Shape >
+          <Appearance >
+              <ImageTexture  url='"../Chapter17-Textures/icing.jpg" "http://www.web3d.org/x3d/content/examples/Vrml2.0Sourcebook/Chapter17-Textures/icing.jpg"'/>
+          </Appearance>
+          <ProtoInstance name="Donut" DEF="SpecialtyOfTheHouse">
+            <fieldValue name="crossSectionRadius" value="0.5"/>
+            <fieldValue name="spineRadius" value="2.0"/>
+          </ProtoInstance>
+      </Shape>
+      <TouchSensor  DEF="StopSizeChanges" />
+  </Transform>
+<ROUTE fromNode="Clock" fromField="fraction_changed" toNode="DonutThickness" toField="set_fraction"/>
+<ROUTE fromNode="DonutThickness" fromField="value_changed" toNode="SpecialtyOfTheHouse" toField="set_crossSectionRadius"/>
+<ROUTE fromNode="StopSizeChanges" fromField="touchTime" toNode="Clock" toField="stopTime"/>
+ </Scene>
+</X3D>
