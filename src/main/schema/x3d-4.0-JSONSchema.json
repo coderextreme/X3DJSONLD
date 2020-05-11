@@ -9298,7 +9298,6 @@
             "@version": {
               "enum": [
                 "1.0",
-                "1.1",
                 "2.0"
               ],
               "default": "2.0",
@@ -9779,6 +9778,7 @@
             },
             "@frameCount": {
               "minimum": 0,
+              "default": 0,
               "type": "integer"
             },
             "@frameDuration": {
@@ -25202,16 +25202,9 @@
             "type": "string"
           },
           "@dir": {
-            "anyOf": [
-              {
-                "enum": [
-                  "rtl",
-                  "ltr"
-                ]
-              },
-              {
-                "type": "string"
-              }
+            "enum": [
+              "rtl",
+              "ltr"
             ],
             "type": "string"
           },
