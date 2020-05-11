@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.2.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.2.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.2 of X3D -->
-<!-- Generated 2020-05-05-07:00 20:51:37.219-07:00 -->
+<!-- Generated 2020-05-10-07:00 23:03:41.707-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.2"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -133,7 +133,7 @@
                       appinfo="The Rendering component includes fundamental rendering primitives such as TriangleSet and PointSet nodes, as well as geometric properties nodes that define how coordinate indices, colors, normals and texture coordinates are specified."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html"/>
          <enumeration value="RigidBodyPhysics"
-                      appinfo="The RigidBodyPhysics component describes how to model rigid bodies and their interactions through the application of basic physics principles to effect motion."
+                      appinfo="The Rigid Body Physics component describes how to model rigid bodies and their interactions through the application of basic physics principles to effect motion."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html"/>
          <enumeration value="Scripting"
                       appinfo="The Script component describes how Script nodes are used to effect changes in X3D worlds."
@@ -893,17 +893,14 @@
       </SimpleType>
       <SimpleType name="hanimVersionChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node. Note that HAnim version 2.0 is under review, while versions 1.0/1.1 include small incompatibilities."
+                  appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimHumanoid">
          <enumeration value="1.0"
-                      appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006."
-                      documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
-         <enumeration value="1.1"
-                      appinfo="International standard HAnim 19774 version 1 amendment."
-                      documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
+                      appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since it was never formally approved, version 1.1 is no longer an allowed value."
+                      documentation="https://www.web3d.org/documents/specifications/19774/V1.0"/>
          <enumeration value="2.0"
-                      appinfo="Draft revision standard HAnim 19774 version 2 under review by ISO in 2018."
-                      documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
+                      appinfo="Revised standard HAnim 19774 version 2 parts 1 and 2 were approved by ISO in Novemer 2019, published by Web3D Consortium May 2020."
+                      documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
       </SimpleType>
       <SimpleType name="initializeOnlyAccessTypes"
                   baseType="xs:NMTOKEN"
@@ -11133,14 +11130,11 @@
                    simpleType="hanimVersionChoices"
                    baseType="xs:NMTOKEN">
                <enumeration value="1.0"
-                            appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006."
-                            documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
-               <enumeration value="1.1"
-                            appinfo="International standard HAnim 19774 version 1 amendment."
-                            documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
+                            appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since it was never formally approved, version 1.1 is no longer an allowed value."
+                            documentation="https://www.web3d.org/documents/specifications/19774/V1.0"/>
                <enumeration value="2.0"
-                            appinfo="Draft revision standard HAnim 19774 version 2 under review by ISO in 2018."
-                            documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
+                            appinfo="Revised standard HAnim 19774 version 2 parts 1 and 2 were approved by ISO in Novemer 2019, published by Web3D Consortium May 2020."
+                            documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
             </field>
             <field name="viewpoints"
                    type="MFNode"
@@ -22390,7 +22384,7 @@
                             appinfo="The Rendering component includes fundamental rendering primitives such as TriangleSet and PointSet nodes, as well as geometric properties nodes that define how coordinate indices, colors, normals and texture coordinates are specified."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html"/>
                <enumeration value="RigidBodyPhysics"
-                            appinfo="The RigidBodyPhysics component describes how to model rigid bodies and their interactions through the application of basic physics principles to effect motion."
+                            appinfo="The Rigid Body Physics component describes how to model rigid bodies and their interactions through the application of basic physics principles to effect motion."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html"/>
                <enumeration value="Scripting"
                             appinfo="The Script component describes how Script nodes are used to effect changes in X3D worlds."
