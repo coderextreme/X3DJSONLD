@@ -40,7 +40,7 @@ function ProcessJSON(json, file) {
 		var classes = new LOG();
 		var routecode = new LOG();
 		var loopItems = new LOG();
-		console.error("OUTPUTTING", file);
+		console.error("OUTPUTTING", outfile);
 
 		classes.push("var x3dom = require('../node/fields.js');");
 		classes.push("if (typeof X3DJSON === 'undefined') {");
