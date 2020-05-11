@@ -9061,7 +9061,6 @@
             "@version": {
               "enum": [
                 "1.0",
-                "1.1",
                 "2.0"
               ],
               "default": "2.0",
@@ -24095,6 +24094,7 @@
               "Geometry3D",
               "Geospatial",
               "Grouping",
+              "HAnim",
               "H-Anim",
               "Interpolation",
               "KeyDeviceSensor",
