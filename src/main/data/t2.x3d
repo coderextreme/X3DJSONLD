@@ -63,6 +63,7 @@
 			<ProtoInstance name="org">
 				<fieldValue name="col"
 					value="0 0.300000011920929 1" />
+				<fieldValue name="posi" />
 				<IS>
 					<connect nodeField="posi" protoField="pos" />
 				</IS>

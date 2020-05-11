@@ -112,9 +112,9 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "posi",
                   "@accessType": "initializeOnly",
                   "@type": "SFVec3f",
+                  "@name": "posi",
                   "@value": [
                     0,
                     0,
@@ -122,9 +122,9 @@
                   ]
                 },
                 {
-                  "@name": "col",
                   "@accessType": "initializeOnly",
                   "@type": "SFColor",
+                  "@name": "col",
                   "@value": [
                     0,
                     0,
@@ -185,9 +185,9 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@name": "pos",
                   "@accessType": "initializeOnly",
                   "@type": "SFVec3f",
+                  "@name": "pos",
                   "@value": [
                     0,
                     0,
@@ -209,6 +209,9 @@
                           0.300000011920929,
                           1
                         ]
+                      },
+                      {
+                        "@name": "posi"
                       }
                     ],
                     "IS": {
