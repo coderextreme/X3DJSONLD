@@ -45,6 +45,7 @@
             <connect nodeField='posi' protoField='pos'/>
           </IS>
           <fieldValue name='col' value='0 0.3 1'/>
+          <fieldValue name='posi'/>
         </ProtoInstance>
       </ProtoBody>
     </ProtoDeclare>
