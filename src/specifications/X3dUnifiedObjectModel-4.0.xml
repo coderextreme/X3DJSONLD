@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2020-05-05-07:00 20:47:08.858-07:00 -->
+<!-- Generated 2020-05-10-07:00 22:56:34.224-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -104,7 +104,7 @@
                       appinfo="The Grouping component describes how nodes are organized into groups to establish a transformation hierarchy for the X3D scene graph."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/group.html"/>
          <enumeration value="HAnim"
-                      appinfo="The Humanoid Animation (HAnim) component for X3D defines node bindings and other details for implementing ISO/IEC 19774, the HAnim International Specification."
+                      appinfo="The Humanoid Animation (HAnim) component for X3D defines node bindings and other details for implementing ISO/IEC 19774, the HAnim International Specification. Original name was H-Anim for X3D versions 3.0 through 3.3, both enumeration values HAnim and H-Anim are allowed to pass validation."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"/>
          <enumeration value="H-Anim"
                       appinfo="Legacy enumeration H-Anim for X3D versions 3.0-3.3 provides backwards compatibility with Humanoid Animation (HAnim) version 1, preferred form of enumeration value is HAnim."
@@ -540,7 +540,7 @@
       <SimpleType name="hanimFeaturePointNameValues"
                   baseType="xs:NMTOKEN"
                   appinfo="Feature point names for identification of HAnimSite/HAnimDIsplacer nodes as defined in the HAnim Architecture specification. Alternate names are also allowed, aliases from CAESAR and ISO 7250 are provided. HAnimSite/HAnimDisplacer name fields must append suffix _view _tip _pt based on functional purpose, thus strict hanimFeaturePointNameValues validation is turned off by default. CAESAR feature point names, index and description for use by HAnimDisplacer nodes as defined in the HAnim Architecture specification. ISO 7250-1 points are defined at https://www.iso.org/standard/65246.html Wikipedia overview reference https://en.wikipedia.org/wiki/Anatomical_terminology"
-                  documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/FeaturePoints.html">
+                  documentation="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html">
          <enumeration value="skull_vertex"
                       index="0"
                       alias="vertex"
@@ -1214,7 +1214,8 @@
       </SimpleType>
       <SimpleType name="hanimHumanoidInfoKeyValues"
                   baseType="xs:NMTOKEN"
-                  documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid">
+                  appinfo="Keyword names for keyword=value metadata pairs describing a given HAnimHumanoid."
+                  documentation="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid">
          <enumeration value="authorName"/>
          <enumeration value="authorEmail"/>
          <enumeration value="copyright"/>
@@ -1229,7 +1230,7 @@
       <SimpleType name="hanimJointNameValues"
                   baseType="xs:NMTOKEN"
                   appinfo="CAESAR joint names for identification of HAnimJoint nodes as defined in the HAnim Architecture specification. Alternate name values are also allowed."
-                  documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/concepts.html#Hierarchy">
+                  documentation="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy">
          <enumeration value="humanoid_root"
                       index="1"
                       loa="0"
@@ -1984,7 +1985,7 @@
       <SimpleType name="hanimSegmentNameValues"
                   baseType="xs:NMTOKEN"
                   appinfo="CAESAR segment names for identification of HAnimSegment nodes as defined in the HAnim Architecture specification. Alternate name values are also allowed."
-                  documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/concepts.html#Hierarchy">
+                  documentation="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy">
          <enumeration value="sacrum"
                       index="1"
                       loa="1"
@@ -2769,17 +2770,14 @@
       </SimpleType>
       <SimpleType name="hanimVersionChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node. Note that HAnim version 2.0 is under review, while versions 1.0/1.1 include small incompatibilities."
+                  appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimHumanoid">
          <enumeration value="1.0"
-                      appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006."
-                      documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
-         <enumeration value="1.1"
-                      appinfo="International standard HAnim 19774 version 1 amendment."
-                      documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
+                      appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since it was never formally approved, version 1.1 is no longer an allowed value."
+                      documentation="https://www.web3d.org/documents/specifications/19774/V1.0"/>
          <enumeration value="2.0"
-                      appinfo="Draft revision standard HAnim 19774 version 2 under review by ISO in 2018."
-                      documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
+                      appinfo="Revised standard HAnim 19774 version 2 parts 1 and 2 were approved by ISO in Novemer 2019, published by Web3D Consortium May 2020."
+                      documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
       </SimpleType>
       <SimpleType name="initializeOnlyAccessTypes"
                   baseType="xs:NMTOKEN"
@@ -3047,6 +3045,7 @@
          <enumeration value="forceID"/>
          <enumeration value="forceOutput"/>
          <enumeration value="forces"/>
+         <enumeration value="frameCount"/>
          <enumeration value="frameDuration"/>
          <enumeration value="frameIncrement"/>
          <enumeration value="frameIndex"/>
@@ -3387,7 +3386,7 @@
       <SimpleType name="loaType"
                   baseType="SFInt32"
                   appinfo="Level Of Articulation 0..4 indicates complexity and detail of joints for given humanoid skeletal hierarchy. Note that value of -1 indicates that no LOA conformance is provided."
-                  documentation="TODO HAnim specification"/>
+                  documentation="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#LevelsOfArticulation"/>
       <SimpleType name="metaDirectionChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="metaDirectionChoices are strictly allowed enumeration values for meta element direction field."
@@ -3620,7 +3619,6 @@
          <enumeration value="finalText"/>
          <enumeration value="firedTime"/>
          <enumeration value="fraction_changed"/>
-         <enumeration value="frameCount"/>
          <enumeration value="geovalue_changed"/>
          <enumeration value="hinge1Angle"/>
          <enumeration value="hinge1AngleRate"/>
@@ -14470,14 +14468,11 @@
                    simpleType="hanimVersionChoices"
                    baseType="xs:NMTOKEN">
                <enumeration value="1.0"
-                            appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006."
-                            documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
-               <enumeration value="1.1"
-                            appinfo="International standard HAnim 19774 version 1 amendment."
-                            documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
+                            appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since it was never formally approved, version 1.1 is no longer an allowed value."
+                            documentation="https://www.web3d.org/documents/specifications/19774/V1.0"/>
                <enumeration value="2.0"
-                            appinfo="Draft revision standard HAnim 19774 version 2 under review by ISO in 2018."
-                            documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid"/>
+                            appinfo="Revised standard HAnim 19774 version 2 parts 1 and 2 were approved by ISO in Novemer 2019, published by Web3D Consortium May 2020."
+                            documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
             </field>
             <field name="viewpoints"
                    type="MFNode"
@@ -14509,6 +14504,7 @@
                <NodeContentModel name="HAnimJoint" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="HAnimSegment" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="HAnimSite" minOccurs="0" maxOccurs="unbounded"/>
+               <NodeContentModel name="HAnimMotion" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="Group"/>
                <NodeContentModel name="Transform"/>
                <NodeContentModel name="Shape"/>
@@ -15430,7 +15426,8 @@
                    minInclusive="-1"/>
             <field name="frameCount"
                    type="SFInt32"
-                   accessType="outputOnly"
+                   accessType="inputOutput"
+                   default="0"
                    minInclusive="0"/>
             <field name="frameDuration"
                    type="SFTime"
@@ -28676,7 +28673,7 @@
                             appinfo="The Grouping component describes how nodes are organized into groups to establish a transformation hierarchy for the X3D scene graph."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/group.html"/>
                <enumeration value="HAnim"
-                            appinfo="The Humanoid Animation (HAnim) component for X3D defines node bindings and other details for implementing ISO/IEC 19774, the HAnim International Specification."
+                            appinfo="The Humanoid Animation (HAnim) component for X3D defines node bindings and other details for implementing ISO/IEC 19774, the HAnim International Specification. Original name was H-Anim for X3D versions 3.0 through 3.3, both enumeration values HAnim and H-Anim are allowed to pass validation."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"/>
                <enumeration value="H-Anim"
                             appinfo="Legacy enumeration H-Anim for X3D versions 3.0-3.3 provides backwards compatibility with Humanoid Animation (HAnim) version 1, preferred form of enumeration value is HAnim."
@@ -29009,7 +29006,7 @@
             <field name="dir"
                    type="SFString"
                    accessType="inputOutput"
-                   additionalEnumerationValuesAllowed="true"
+                   additionalEnumerationValuesAllowed="false"
                    simpleType="metaDirectionChoices"
                    baseType="xs:NMTOKEN">
                <enumeration value="rtl" appinfo="right-to-left."/>
