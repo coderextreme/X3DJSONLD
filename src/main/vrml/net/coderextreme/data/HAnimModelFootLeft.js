@@ -9,27 +9,33 @@ browser.currentScene.children = new MFNode();
 browser.currentScene.children[0] = WorldInfo2;
 
 let HAnimHumanoid3 = browser.currentScene.createNode("HAnimHumanoid");
+HAnimHumanoid3.name = "Humanoid_Left_Foot";
 HAnimHumanoid3.DEF = "Humanoid_Left_Foot";
 HAnimHumanoid3.info = new MFString(new java.lang.String["humanoidVersion=2.0"]);
 HAnimHumanoid3.jointBindingPositions = new MFVec3f(new float[0,0,0]);
 HAnimHumanoid3.jointBindingRotations = new MFRotation(new float[0,0,1,0]);
 HAnimHumanoid3.jointBindingScales = new MFVec3f(new float[1,1,1]);
 HAnimHumanoid3.loa = -1;
-HAnimHumanoid3.name = "Humanoid_Left_Foot";
 HAnimHumanoid3.skeletalConfiguration = "BASIC";
 HAnimHumanoid3.version = "2.0";
+HAnimHumanoid3.displayBBox = False;
 let HAnimJoint4 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint4.DEF = "hanim_HumanoidRoot";
 HAnimJoint4.name = "humanoid_root";
+HAnimJoint4.DEF = "hanim_HumanoidRoot";
+HAnimJoint4.displayBBox = False;
 let HAnimJoint5 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint5.DEF = "l_talocrural_joint";
 HAnimJoint5.name = "l_talocrural_joint";
+HAnimJoint5.DEF = "l_talocrural_joint";
+HAnimJoint5.displayBBox = False;
 let HAnimSegment6 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment6.DEF = "l_talus";
 HAnimSegment6.name = "l_talus";
+HAnimSegment6.DEF = "l_talus";
+HAnimSegment6.displayBBox = False;
 let Transform7 = browser.currentScene.createNode("Transform");
+Transform7.displayBBox = False;
 let Shape8 = browser.currentScene.createNode("Shape");
 Shape8.DEF = "HAnimJointShape";
+Shape8.displayBBox = False;
 let Sphere9 = browser.currentScene.createNode("Sphere");
 Sphere9.radius = 0.025;
 Shape8.geometry = Sphere9;
@@ -51,6 +57,7 @@ HAnimSegment6.children = new MFNode();
 HAnimSegment6.children[0] = Transform7;
 
 let Shape12 = browser.currentScene.createNode("Shape");
+Shape12.displayBBox = False;
 let Appearance13 = browser.currentScene.createNode("Appearance");
 let Material14 = browser.currentScene.createNode("Material");
 Material14.emissiveColor = new SFColor(new float[1,1,1]);
@@ -70,6 +77,7 @@ Shape12.geometry = IndexedLineSet15;
 HAnimSegment6.children[1] = Shape12;
 
 let Shape17 = browser.currentScene.createNode("Shape");
+Shape17.displayBBox = False;
 let Appearance18 = browser.currentScene.createNode("Appearance");
 let Material19 = browser.currentScene.createNode("Material");
 Material19.emissiveColor = new SFColor(new float[1,1,1]);
@@ -92,16 +100,19 @@ HAnimJoint5.children = new MFNode();
 
 HAnimJoint5.children[0] = HAnimSegment6;
 
-// TCN 
+//TCN
 let HAnimJoint22 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint22.name = "l_talocalcaneonavicular_joint";
 HAnimJoint22.DEF = "l_talocalcaneonavicular_joint";
 HAnimJoint22.center = new SFVec3f(new float[0,-0.3,0]);
-HAnimJoint22.name = "l_talocalcaneonavicular_joint";
+HAnimJoint22.displayBBox = False;
 let HAnimSegment23 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment23.DEF = "l_navicular";
 HAnimSegment23.name = "l_navicular";
+HAnimSegment23.DEF = "l_navicular";
+HAnimSegment23.displayBBox = False;
 let Transform24 = browser.currentScene.createNode("Transform");
 Transform24.translation = new SFVec3f(new float[0,-0.3,0]);
+Transform24.displayBBox = False;
 let Shape25 = browser.currentScene.createNode("Shape");
 Shape25.USE = "HAnimJointShape";
 Transform24.children = new MFNode();
@@ -113,6 +124,7 @@ HAnimSegment23.children = new MFNode();
 HAnimSegment23.children[0] = Transform24;
 
 let Shape26 = browser.currentScene.createNode("Shape");
+Shape26.displayBBox = False;
 let Appearance27 = browser.currentScene.createNode("Appearance");
 let Material28 = browser.currentScene.createNode("Material");
 Material28.emissiveColor = new SFColor(new float[1,1,1]);
@@ -132,6 +144,7 @@ Shape26.geometry = IndexedLineSet29;
 HAnimSegment23.children[1] = Shape26;
 
 let Shape31 = browser.currentScene.createNode("Shape");
+Shape31.displayBBox = False;
 let Appearance32 = browser.currentScene.createNode("Appearance");
 let Material33 = browser.currentScene.createNode("Material");
 Material33.emissiveColor = new SFColor(new float[1,1,1]);
@@ -151,6 +164,7 @@ Shape31.geometry = IndexedLineSet34;
 HAnimSegment23.children[2] = Shape31;
 
 let Shape36 = browser.currentScene.createNode("Shape");
+Shape36.displayBBox = False;
 let Appearance37 = browser.currentScene.createNode("Appearance");
 let Material38 = browser.currentScene.createNode("Material");
 Material38.emissiveColor = new SFColor(new float[1,1,1]);
@@ -173,16 +187,19 @@ HAnimJoint22.children = new MFNode();
 
 HAnimJoint22.children[0] = HAnimSegment23;
 
-// CN1 
+//CN1
 let HAnimJoint41 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint41.name = "l_cuneonavicular_joint1";
 HAnimJoint41.DEF = "l_cuneonavicular_joint1";
 HAnimJoint41.center = new SFVec3f(new float[-0.1,-0.45,0]);
-HAnimJoint41.name = "l_cuneonavicular_joint1";
+HAnimJoint41.displayBBox = False;
 let HAnimSegment42 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment42.DEF = "l_cuneiform1";
 HAnimSegment42.name = "l_cuneiform1";
+HAnimSegment42.DEF = "l_cuneiform1";
+HAnimSegment42.displayBBox = False;
 let Transform43 = browser.currentScene.createNode("Transform");
 Transform43.translation = new SFVec3f(new float[-0.1,-0.45,0]);
+Transform43.displayBBox = False;
 let Shape44 = browser.currentScene.createNode("Shape");
 Shape44.USE = "HAnimJointShape";
 Transform43.children = new MFNode();
@@ -194,6 +211,7 @@ HAnimSegment42.children = new MFNode();
 HAnimSegment42.children[0] = Transform43;
 
 let Shape45 = browser.currentScene.createNode("Shape");
+Shape45.displayBBox = False;
 let Appearance46 = browser.currentScene.createNode("Appearance");
 let Material47 = browser.currentScene.createNode("Material");
 Material47.emissiveColor = new SFColor(new float[1,1,1]);
@@ -217,14 +235,17 @@ HAnimJoint41.children = new MFNode();
 HAnimJoint41.children[0] = HAnimSegment42;
 
 let HAnimJoint50 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint50.name = "l_tarsometatarsal_joint1";
 HAnimJoint50.DEF = "l_tarsometatarsal_joint1";
 HAnimJoint50.center = new SFVec3f(new float[-0.1,-0.6,0]);
-HAnimJoint50.name = "l_tarsometatarsal_joint1";
+HAnimJoint50.displayBBox = False;
 let HAnimSegment51 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment51.DEF = "l_metatarsal1";
 HAnimSegment51.name = "l_metatarsal1";
+HAnimSegment51.DEF = "l_metatarsal1";
+HAnimSegment51.displayBBox = False;
 let Transform52 = browser.currentScene.createNode("Transform");
 Transform52.translation = new SFVec3f(new float[-0.1,-0.6,0]);
+Transform52.displayBBox = False;
 let Shape53 = browser.currentScene.createNode("Shape");
 Shape53.USE = "HAnimJointShape";
 Transform52.children = new MFNode();
@@ -236,6 +257,7 @@ HAnimSegment51.children = new MFNode();
 HAnimSegment51.children[0] = Transform52;
 
 let Shape54 = browser.currentScene.createNode("Shape");
+Shape54.displayBBox = False;
 let Appearance55 = browser.currentScene.createNode("Appearance");
 let Material56 = browser.currentScene.createNode("Material");
 Material56.emissiveColor = new SFColor(new float[1,1,1]);
@@ -259,14 +281,17 @@ HAnimJoint50.children = new MFNode();
 HAnimJoint50.children[0] = HAnimSegment51;
 
 let HAnimJoint59 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint59.name = "l_metatarsophalangeal_joint1";
 HAnimJoint59.DEF = "l_metatarsophalangeal_joint1";
 HAnimJoint59.center = new SFVec3f(new float[-0.1,-0.9,0]);
-HAnimJoint59.name = "l_metatarsophalangeal_joint1";
+HAnimJoint59.displayBBox = False;
 let HAnimSegment60 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment60.DEF = "l_proximal_phalanges1";
 HAnimSegment60.name = "l_proximal_phalanges1";
+HAnimSegment60.DEF = "l_proximal_phalanges1";
+HAnimSegment60.displayBBox = False;
 let Transform61 = browser.currentScene.createNode("Transform");
 Transform61.translation = new SFVec3f(new float[-0.1,-0.9,0]);
+Transform61.displayBBox = False;
 let Shape62 = browser.currentScene.createNode("Shape");
 Shape62.USE = "HAnimJointShape";
 Transform61.children = new MFNode();
@@ -278,6 +303,7 @@ HAnimSegment60.children = new MFNode();
 HAnimSegment60.children[0] = Transform61;
 
 let Shape63 = browser.currentScene.createNode("Shape");
+Shape63.displayBBox = False;
 let Appearance64 = browser.currentScene.createNode("Appearance");
 let Material65 = browser.currentScene.createNode("Material");
 Material65.emissiveColor = new SFColor(new float[1,1,1]);
@@ -301,14 +327,17 @@ HAnimJoint59.children = new MFNode();
 HAnimJoint59.children[0] = HAnimSegment60;
 
 let HAnimJoint68 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint68.name = "l_f_Interphalangeal_joint";
 HAnimJoint68.DEF = "l_f_Interphalangeal_joint";
 HAnimJoint68.center = new SFVec3f(new float[-0.1,-1.05,0]);
-HAnimJoint68.name = "l_f_Interphalangeal_joint";
+HAnimJoint68.displayBBox = False;
 let HAnimSegment69 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment69.DEF = "l_distal_phalanges1";
 HAnimSegment69.name = "l_distal_phalanges1";
+HAnimSegment69.DEF = "l_distal_phalanges1";
+HAnimSegment69.displayBBox = False;
 let Transform70 = browser.currentScene.createNode("Transform");
 Transform70.translation = new SFVec3f(new float[-0.1,-1.05,0]);
+Transform70.displayBBox = False;
 let Shape71 = browser.currentScene.createNode("Shape");
 Shape71.USE = "HAnimJointShape";
 Transform70.children = new MFNode();
@@ -320,6 +349,7 @@ HAnimSegment69.children = new MFNode();
 HAnimSegment69.children[0] = Transform70;
 
 let Shape72 = browser.currentScene.createNode("Shape");
+Shape72.displayBBox = False;
 let Appearance73 = browser.currentScene.createNode("Appearance");
 let Material74 = browser.currentScene.createNode("Material");
 Material74.emissiveColor = new SFColor(new float[1,1,1]);
@@ -350,16 +380,19 @@ HAnimJoint41.children[1] = HAnimJoint50;
 
 HAnimJoint22.children[1] = HAnimJoint41;
 
-// CN2 
+//CN2
 let HAnimJoint77 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint77.name = "l_cuneonavicular_joint2";
 HAnimJoint77.DEF = "l_cuneonavicular_joint2";
 HAnimJoint77.center = new SFVec3f(new float[0,-0.45,0]);
-HAnimJoint77.name = "l_cuneonavicular_joint2";
+HAnimJoint77.displayBBox = False;
 let HAnimSegment78 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment78.DEF = "l_cuneiform2";
 HAnimSegment78.name = "l_cuneiform2";
+HAnimSegment78.DEF = "l_cuneiform2";
+HAnimSegment78.displayBBox = False;
 let Transform79 = browser.currentScene.createNode("Transform");
 Transform79.translation = new SFVec3f(new float[0,-0.45,0]);
+Transform79.displayBBox = False;
 let Shape80 = browser.currentScene.createNode("Shape");
 Shape80.USE = "HAnimJointShape";
 Transform79.children = new MFNode();
@@ -371,6 +404,7 @@ HAnimSegment78.children = new MFNode();
 HAnimSegment78.children[0] = Transform79;
 
 let Shape81 = browser.currentScene.createNode("Shape");
+Shape81.displayBBox = False;
 let Appearance82 = browser.currentScene.createNode("Appearance");
 let Material83 = browser.currentScene.createNode("Material");
 Material83.emissiveColor = new SFColor(new float[1,1,1]);
@@ -394,14 +428,17 @@ HAnimJoint77.children = new MFNode();
 HAnimJoint77.children[0] = HAnimSegment78;
 
 let HAnimJoint86 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint86.name = "l_tarsometatarsal_joint2";
 HAnimJoint86.DEF = "l_tarsometatarsal_joint2";
 HAnimJoint86.center = new SFVec3f(new float[0.05,-0.6,0]);
-HAnimJoint86.name = "l_tarsometatarsal_joint2";
+HAnimJoint86.displayBBox = False;
 let HAnimSegment87 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment87.DEF = "l_metatarsal2";
 HAnimSegment87.name = "l_metatarsal2";
+HAnimSegment87.DEF = "l_metatarsal2";
+HAnimSegment87.displayBBox = False;
 let Transform88 = browser.currentScene.createNode("Transform");
 Transform88.translation = new SFVec3f(new float[0.05,-0.6,0]);
+Transform88.displayBBox = False;
 let Shape89 = browser.currentScene.createNode("Shape");
 Shape89.USE = "HAnimJointShape";
 Transform88.children = new MFNode();
@@ -413,6 +450,7 @@ HAnimSegment87.children = new MFNode();
 HAnimSegment87.children[0] = Transform88;
 
 let Shape90 = browser.currentScene.createNode("Shape");
+Shape90.displayBBox = False;
 let Appearance91 = browser.currentScene.createNode("Appearance");
 let Material92 = browser.currentScene.createNode("Material");
 Material92.emissiveColor = new SFColor(new float[1,1,1]);
@@ -436,14 +474,17 @@ HAnimJoint86.children = new MFNode();
 HAnimJoint86.children[0] = HAnimSegment87;
 
 let HAnimJoint95 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint95.name = "l_metatarsophalangeal_joint2";
 HAnimJoint95.DEF = "l_metatarsophalangeal_joint2";
 HAnimJoint95.center = new SFVec3f(new float[0.05,-0.9,0]);
-HAnimJoint95.name = "l_metatarsophalangeal_joint2";
+HAnimJoint95.displayBBox = False;
 let HAnimSegment96 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment96.DEF = "l_proximal_phalanges2";
 HAnimSegment96.name = "l_proximal_phalanges2";
+HAnimSegment96.DEF = "l_proximal_phalanges2";
+HAnimSegment96.displayBBox = False;
 let Transform97 = browser.currentScene.createNode("Transform");
 Transform97.translation = new SFVec3f(new float[0.05,-0.9,0]);
+Transform97.displayBBox = False;
 let Shape98 = browser.currentScene.createNode("Shape");
 Shape98.USE = "HAnimJointShape";
 Transform97.children = new MFNode();
@@ -455,6 +496,7 @@ HAnimSegment96.children = new MFNode();
 HAnimSegment96.children[0] = Transform97;
 
 let Shape99 = browser.currentScene.createNode("Shape");
+Shape99.displayBBox = False;
 let Appearance100 = browser.currentScene.createNode("Appearance");
 let Material101 = browser.currentScene.createNode("Material");
 Material101.emissiveColor = new SFColor(new float[1,1,1]);
@@ -478,14 +520,17 @@ HAnimJoint95.children = new MFNode();
 HAnimJoint95.children[0] = HAnimSegment96;
 
 let HAnimJoint104 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint104.name = "l_f_proximal_Interphalangeal_joint2";
 HAnimJoint104.DEF = "l_f_proximal_Interphalangeal_joint2";
 HAnimJoint104.center = new SFVec3f(new float[0.05,-1.05,0]);
-HAnimJoint104.name = "l_f_proximal_Interphalangeal_joint2";
+HAnimJoint104.displayBBox = False;
 let HAnimSegment105 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment105.DEF = "l_middle_phalanges2";
 HAnimSegment105.name = "l_middle_phalanges2";
+HAnimSegment105.DEF = "l_middle_phalanges2";
+HAnimSegment105.displayBBox = False;
 let Transform106 = browser.currentScene.createNode("Transform");
 Transform106.translation = new SFVec3f(new float[0.05,-1.05,0]);
+Transform106.displayBBox = False;
 let Shape107 = browser.currentScene.createNode("Shape");
 Shape107.USE = "HAnimJointShape";
 Transform106.children = new MFNode();
@@ -497,6 +542,7 @@ HAnimSegment105.children = new MFNode();
 HAnimSegment105.children[0] = Transform106;
 
 let Shape108 = browser.currentScene.createNode("Shape");
+Shape108.displayBBox = False;
 let Appearance109 = browser.currentScene.createNode("Appearance");
 let Material110 = browser.currentScene.createNode("Material");
 Material110.emissiveColor = new SFColor(new float[1,1,1]);
@@ -520,14 +566,17 @@ HAnimJoint104.children = new MFNode();
 HAnimJoint104.children[0] = HAnimSegment105;
 
 let HAnimJoint113 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint113.name = "l_f_distal_Interphalangeal_joint2";
 HAnimJoint113.DEF = "l_f_distal_Interphalangeal_joint2";
 HAnimJoint113.center = new SFVec3f(new float[0.05,-1.12,0]);
-HAnimJoint113.name = "l_f_distal_Interphalangeal_joint2";
+HAnimJoint113.displayBBox = False;
 let HAnimSegment114 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment114.DEF = "l_distal_phalanges2";
 HAnimSegment114.name = "l_distal_phalanges2";
+HAnimSegment114.DEF = "l_distal_phalanges2";
+HAnimSegment114.displayBBox = False;
 let Transform115 = browser.currentScene.createNode("Transform");
 Transform115.translation = new SFVec3f(new float[0.05,-1.12,0]);
+Transform115.displayBBox = False;
 let Shape116 = browser.currentScene.createNode("Shape");
 Shape116.USE = "HAnimJointShape";
 Transform115.children = new MFNode();
@@ -539,6 +588,7 @@ HAnimSegment114.children = new MFNode();
 HAnimSegment114.children[0] = Transform115;
 
 let Shape117 = browser.currentScene.createNode("Shape");
+Shape117.displayBBox = False;
 let Appearance118 = browser.currentScene.createNode("Appearance");
 let Material119 = browser.currentScene.createNode("Material");
 Material119.emissiveColor = new SFColor(new float[1,1,1]);
@@ -571,16 +621,19 @@ HAnimJoint77.children[1] = HAnimJoint86;
 
 HAnimJoint22.children[2] = HAnimJoint77;
 
-// CN3 
+//CN3
 let HAnimJoint122 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint122.name = "l_cuneonavicular_joint3";
 HAnimJoint122.DEF = "l_cuneonavicular_joint3";
 HAnimJoint122.center = new SFVec3f(new float[0.1,-0.4,0]);
-HAnimJoint122.name = "l_cuneonavicular_joint3";
+HAnimJoint122.displayBBox = False;
 let HAnimSegment123 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment123.DEF = "l_cuneiform3";
 HAnimSegment123.name = "l_cuneiform3";
+HAnimSegment123.DEF = "l_cuneiform3";
+HAnimSegment123.displayBBox = False;
 let Transform124 = browser.currentScene.createNode("Transform");
 Transform124.translation = new SFVec3f(new float[0.1,-0.4,0]);
+Transform124.displayBBox = False;
 let Shape125 = browser.currentScene.createNode("Shape");
 Shape125.USE = "HAnimJointShape";
 Transform124.children = new MFNode();
@@ -592,6 +645,7 @@ HAnimSegment123.children = new MFNode();
 HAnimSegment123.children[0] = Transform124;
 
 let Shape126 = browser.currentScene.createNode("Shape");
+Shape126.displayBBox = False;
 let Appearance127 = browser.currentScene.createNode("Appearance");
 let Material128 = browser.currentScene.createNode("Material");
 Material128.emissiveColor = new SFColor(new float[1,1,1]);
@@ -615,14 +669,17 @@ HAnimJoint122.children = new MFNode();
 HAnimJoint122.children[0] = HAnimSegment123;
 
 let HAnimJoint131 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint131.name = "l_tarsometatarsal_joint3";
 HAnimJoint131.DEF = "l_tarsometatarsal_joint3";
 HAnimJoint131.center = new SFVec3f(new float[0.15,-0.6,0]);
-HAnimJoint131.name = "l_tarsometatarsal_joint3";
+HAnimJoint131.displayBBox = False;
 let HAnimSegment132 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment132.DEF = "l_metatarsal3";
 HAnimSegment132.name = "l_metatarsal3";
+HAnimSegment132.DEF = "l_metatarsal3";
+HAnimSegment132.displayBBox = False;
 let Transform133 = browser.currentScene.createNode("Transform");
 Transform133.translation = new SFVec3f(new float[0.15,-0.6,0]);
+Transform133.displayBBox = False;
 let Shape134 = browser.currentScene.createNode("Shape");
 Shape134.USE = "HAnimJointShape";
 Transform133.children = new MFNode();
@@ -634,6 +691,7 @@ HAnimSegment132.children = new MFNode();
 HAnimSegment132.children[0] = Transform133;
 
 let Shape135 = browser.currentScene.createNode("Shape");
+Shape135.displayBBox = False;
 let Appearance136 = browser.currentScene.createNode("Appearance");
 let Material137 = browser.currentScene.createNode("Material");
 Material137.emissiveColor = new SFColor(new float[1,1,1]);
@@ -657,14 +715,17 @@ HAnimJoint131.children = new MFNode();
 HAnimJoint131.children[0] = HAnimSegment132;
 
 let HAnimJoint140 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint140.name = "l_metatarsophalangeal_joint3";
 HAnimJoint140.DEF = "l_metatarsophalangeal_joint3";
 HAnimJoint140.center = new SFVec3f(new float[0.15,-0.9,0]);
-HAnimJoint140.name = "l_metatarsophalangeal_joint3";
+HAnimJoint140.displayBBox = False;
 let HAnimSegment141 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment141.DEF = "l_proximal_phalanges3";
 HAnimSegment141.name = "l_proximal_phalanges3";
+HAnimSegment141.DEF = "l_proximal_phalanges3";
+HAnimSegment141.displayBBox = False;
 let Transform142 = browser.currentScene.createNode("Transform");
 Transform142.translation = new SFVec3f(new float[0.15,-0.9,0]);
+Transform142.displayBBox = False;
 let Shape143 = browser.currentScene.createNode("Shape");
 Shape143.USE = "HAnimJointShape";
 Transform142.children = new MFNode();
@@ -676,6 +737,7 @@ HAnimSegment141.children = new MFNode();
 HAnimSegment141.children[0] = Transform142;
 
 let Shape144 = browser.currentScene.createNode("Shape");
+Shape144.displayBBox = False;
 let Appearance145 = browser.currentScene.createNode("Appearance");
 let Material146 = browser.currentScene.createNode("Material");
 Material146.emissiveColor = new SFColor(new float[1,1,1]);
@@ -699,14 +761,17 @@ HAnimJoint140.children = new MFNode();
 HAnimJoint140.children[0] = HAnimSegment141;
 
 let HAnimJoint149 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint149.name = "l_f_proximal_Interphalangeal_joint3";
 HAnimJoint149.DEF = "l_f_proximal_Interphalangeal_joint3";
 HAnimJoint149.center = new SFVec3f(new float[0.15,-1.05,0]);
-HAnimJoint149.name = "l_f_proximal_Interphalangeal_joint3";
+HAnimJoint149.displayBBox = False;
 let HAnimSegment150 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment150.DEF = "l_middle_phalanges3";
 HAnimSegment150.name = "l_middle_phalanges3";
+HAnimSegment150.DEF = "l_middle_phalanges3";
+HAnimSegment150.displayBBox = False;
 let Transform151 = browser.currentScene.createNode("Transform");
 Transform151.translation = new SFVec3f(new float[0.15,-1.05,0]);
+Transform151.displayBBox = False;
 let Shape152 = browser.currentScene.createNode("Shape");
 Shape152.USE = "HAnimJointShape";
 Transform151.children = new MFNode();
@@ -718,6 +783,7 @@ HAnimSegment150.children = new MFNode();
 HAnimSegment150.children[0] = Transform151;
 
 let Shape153 = browser.currentScene.createNode("Shape");
+Shape153.displayBBox = False;
 let Appearance154 = browser.currentScene.createNode("Appearance");
 let Material155 = browser.currentScene.createNode("Material");
 Material155.emissiveColor = new SFColor(new float[1,1,1]);
@@ -741,14 +807,17 @@ HAnimJoint149.children = new MFNode();
 HAnimJoint149.children[0] = HAnimSegment150;
 
 let HAnimJoint158 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint158.name = "l_f_distal_Interphalangeal_joint3";
 HAnimJoint158.DEF = "l_f_distal_Interphalangeal_joint3";
 HAnimJoint158.center = new SFVec3f(new float[0.15,-1.13,0]);
-HAnimJoint158.name = "l_f_distal_Interphalangeal_joint3";
+HAnimJoint158.displayBBox = False;
 let HAnimSegment159 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment159.DEF = "l_distal_phalanges3";
 HAnimSegment159.name = "l_distal_phalanges3";
+HAnimSegment159.DEF = "l_distal_phalanges3";
+HAnimSegment159.displayBBox = False;
 let Transform160 = browser.currentScene.createNode("Transform");
 Transform160.translation = new SFVec3f(new float[0.15,-1.13,0]);
+Transform160.displayBBox = False;
 let Shape161 = browser.currentScene.createNode("Shape");
 Shape161.USE = "HAnimJointShape";
 Transform160.children = new MFNode();
@@ -760,6 +829,7 @@ HAnimSegment159.children = new MFNode();
 HAnimSegment159.children[0] = Transform160;
 
 let Shape162 = browser.currentScene.createNode("Shape");
+Shape162.displayBBox = False;
 let Appearance163 = browser.currentScene.createNode("Appearance");
 let Material164 = browser.currentScene.createNode("Material");
 Material164.emissiveColor = new SFColor(new float[1,1,1]);
@@ -794,16 +864,19 @@ HAnimJoint22.children[3] = HAnimJoint122;
 
 HAnimJoint5.children[1] = HAnimJoint22;
 
-// CC 
+//CC
 let HAnimJoint167 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint167.name = "l_calcaneuscuboid_joint";
 HAnimJoint167.DEF = "l_calcaneuscuboid_joint";
 HAnimJoint167.center = new SFVec3f(new float[0.2,0.3,0]);
-HAnimJoint167.name = "l_calcaneuscuboid_joint";
+HAnimJoint167.displayBBox = False;
 let HAnimSegment168 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment168.DEF = "l_calcaneus";
 HAnimSegment168.name = "l_calcaneus";
+HAnimSegment168.DEF = "l_calcaneus";
+HAnimSegment168.displayBBox = False;
 let Transform169 = browser.currentScene.createNode("Transform");
 Transform169.translation = new SFVec3f(new float[0.2,0.3,0]);
+Transform169.displayBBox = False;
 let Shape170 = browser.currentScene.createNode("Shape");
 Shape170.USE = "HAnimJointShape";
 Transform169.children = new MFNode();
@@ -815,6 +888,7 @@ HAnimSegment168.children = new MFNode();
 HAnimSegment168.children[0] = Transform169;
 
 let Shape171 = browser.currentScene.createNode("Shape");
+Shape171.displayBBox = False;
 let Appearance172 = browser.currentScene.createNode("Appearance");
 let Material173 = browser.currentScene.createNode("Material");
 Material173.emissiveColor = new SFColor(new float[1,1,1]);
@@ -837,16 +911,19 @@ HAnimJoint167.children = new MFNode();
 
 HAnimJoint167.children[0] = HAnimSegment168;
 
-// TT 
+//TT
 let HAnimJoint176 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint176.name = "l_transverse_tarsal_joint";
 HAnimJoint176.DEF = "l_transverse_tarsal_joint";
 HAnimJoint176.center = new SFVec3f(new float[0.21,-0.3,0]);
-HAnimJoint176.name = "l_transverse_tarsal_joint";
+HAnimJoint176.displayBBox = False;
 let HAnimSegment177 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment177.DEF = "l_cuboid";
 HAnimSegment177.name = "l_cuboid";
+HAnimSegment177.DEF = "l_cuboid";
+HAnimSegment177.displayBBox = False;
 let Transform178 = browser.currentScene.createNode("Transform");
 Transform178.translation = new SFVec3f(new float[0.21,-0.3,0]);
+Transform178.displayBBox = False;
 let Shape179 = browser.currentScene.createNode("Shape");
 Shape179.USE = "HAnimJointShape";
 Transform178.children = new MFNode();
@@ -858,6 +935,7 @@ HAnimSegment177.children = new MFNode();
 HAnimSegment177.children[0] = Transform178;
 
 let Shape180 = browser.currentScene.createNode("Shape");
+Shape180.displayBBox = False;
 let Appearance181 = browser.currentScene.createNode("Appearance");
 let Material182 = browser.currentScene.createNode("Material");
 Material182.emissiveColor = new SFColor(new float[1,1,1]);
@@ -877,6 +955,7 @@ Shape180.geometry = IndexedLineSet183;
 HAnimSegment177.children[1] = Shape180;
 
 let Shape185 = browser.currentScene.createNode("Shape");
+Shape185.displayBBox = False;
 let Appearance186 = browser.currentScene.createNode("Appearance");
 let Material187 = browser.currentScene.createNode("Material");
 Material187.emissiveColor = new SFColor(new float[1,1,1]);
@@ -899,16 +978,19 @@ HAnimJoint176.children = new MFNode();
 
 HAnimJoint176.children[0] = HAnimSegment177;
 
-// TMT4 
+//TMT4
 let HAnimJoint190 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint190.name = "l_tarsometatarsal_joint4";
 HAnimJoint190.DEF = "l_tarsometatarsal_joint4";
 HAnimJoint190.center = new SFVec3f(new float[0.25,-0.58,0]);
-HAnimJoint190.name = "l_tarsometatarsal_joint4";
+HAnimJoint190.displayBBox = False;
 let HAnimSegment191 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment191.DEF = "l_metatarsal4";
 HAnimSegment191.name = "l_metatarsal4";
+HAnimSegment191.DEF = "l_metatarsal4";
+HAnimSegment191.displayBBox = False;
 let Transform192 = browser.currentScene.createNode("Transform");
 Transform192.translation = new SFVec3f(new float[0.25,-0.58,0]);
+Transform192.displayBBox = False;
 let Shape193 = browser.currentScene.createNode("Shape");
 Shape193.USE = "HAnimJointShape";
 Transform192.children = new MFNode();
@@ -920,6 +1002,7 @@ HAnimSegment191.children = new MFNode();
 HAnimSegment191.children[0] = Transform192;
 
 let Shape194 = browser.currentScene.createNode("Shape");
+Shape194.displayBBox = False;
 let Appearance195 = browser.currentScene.createNode("Appearance");
 let Material196 = browser.currentScene.createNode("Material");
 Material196.emissiveColor = new SFColor(new float[1,1,1]);
@@ -943,14 +1026,17 @@ HAnimJoint190.children = new MFNode();
 HAnimJoint190.children[0] = HAnimSegment191;
 
 let HAnimJoint199 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint199.name = "l_metatarsophalangeal_joint4";
 HAnimJoint199.DEF = "l_metatarsophalangeal_joint4";
 HAnimJoint199.center = new SFVec3f(new float[0.25,-0.87,0]);
-HAnimJoint199.name = "l_metatarsophalangeal_joint4";
+HAnimJoint199.displayBBox = False;
 let HAnimSegment200 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment200.DEF = "l_proximal_phalanges4";
 HAnimSegment200.name = "l_proximal_phalanges4";
+HAnimSegment200.DEF = "l_proximal_phalanges4";
+HAnimSegment200.displayBBox = False;
 let Transform201 = browser.currentScene.createNode("Transform");
 Transform201.translation = new SFVec3f(new float[0.25,-0.87,0]);
+Transform201.displayBBox = False;
 let Shape202 = browser.currentScene.createNode("Shape");
 Shape202.USE = "HAnimJointShape";
 Transform201.children = new MFNode();
@@ -962,6 +1048,7 @@ HAnimSegment200.children = new MFNode();
 HAnimSegment200.children[0] = Transform201;
 
 let Shape203 = browser.currentScene.createNode("Shape");
+Shape203.displayBBox = False;
 let Appearance204 = browser.currentScene.createNode("Appearance");
 let Material205 = browser.currentScene.createNode("Material");
 Material205.emissiveColor = new SFColor(new float[1,1,1]);
@@ -985,14 +1072,17 @@ HAnimJoint199.children = new MFNode();
 HAnimJoint199.children[0] = HAnimSegment200;
 
 let HAnimJoint208 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint208.name = "l_f_proximal_Interphalangeal_joint4";
 HAnimJoint208.DEF = "l_f_proximal_Interphalangeal_joint4";
 HAnimJoint208.center = new SFVec3f(new float[0.25,-1,0]);
-HAnimJoint208.name = "l_f_proximal_Interphalangeal_joint4";
+HAnimJoint208.displayBBox = False;
 let HAnimSegment209 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment209.DEF = "l_middle_phalanges4";
 HAnimSegment209.name = "l_middle_phalanges4";
+HAnimSegment209.DEF = "l_middle_phalanges4";
+HAnimSegment209.displayBBox = False;
 let Transform210 = browser.currentScene.createNode("Transform");
 Transform210.translation = new SFVec3f(new float[0.25,-1,0]);
+Transform210.displayBBox = False;
 let Shape211 = browser.currentScene.createNode("Shape");
 Shape211.USE = "HAnimJointShape";
 Transform210.children = new MFNode();
@@ -1004,6 +1094,7 @@ HAnimSegment209.children = new MFNode();
 HAnimSegment209.children[0] = Transform210;
 
 let Shape212 = browser.currentScene.createNode("Shape");
+Shape212.displayBBox = False;
 let Appearance213 = browser.currentScene.createNode("Appearance");
 let Material214 = browser.currentScene.createNode("Material");
 Material214.emissiveColor = new SFColor(new float[1,1,1]);
@@ -1027,14 +1118,17 @@ HAnimJoint208.children = new MFNode();
 HAnimJoint208.children[0] = HAnimSegment209;
 
 let HAnimJoint217 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint217.name = "l_f_distal_Interphalangeal_joint4";
 HAnimJoint217.DEF = "l_f_distal_Interphalangeal_joint4";
 HAnimJoint217.center = new SFVec3f(new float[0.25,-1.1,0]);
-HAnimJoint217.name = "l_f_distal_Interphalangeal_joint4";
+HAnimJoint217.displayBBox = False;
 let HAnimSegment218 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment218.DEF = "l_distal_phalanges4";
 HAnimSegment218.name = "l_distal_phalanges4";
+HAnimSegment218.DEF = "l_distal_phalanges4";
+HAnimSegment218.displayBBox = False;
 let Transform219 = browser.currentScene.createNode("Transform");
 Transform219.translation = new SFVec3f(new float[0.25,-1.1,0]);
+Transform219.displayBBox = False;
 let Shape220 = browser.currentScene.createNode("Shape");
 Shape220.USE = "HAnimJointShape";
 Transform219.children = new MFNode();
@@ -1046,6 +1140,7 @@ HAnimSegment218.children = new MFNode();
 HAnimSegment218.children[0] = Transform219;
 
 let Shape221 = browser.currentScene.createNode("Shape");
+Shape221.displayBBox = False;
 let Appearance222 = browser.currentScene.createNode("Appearance");
 let Material223 = browser.currentScene.createNode("Material");
 Material223.emissiveColor = new SFColor(new float[1,1,1]);
@@ -1076,16 +1171,19 @@ HAnimJoint190.children[1] = HAnimJoint199;
 
 HAnimJoint176.children[1] = HAnimJoint190;
 
-// TMT5 
+//TMT5
 let HAnimJoint226 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint226.name = "l_tarsometatarsal_joint5";
 HAnimJoint226.DEF = "l_tarsometatarsal_joint5";
 HAnimJoint226.center = new SFVec3f(new float[0.33,-0.52,0]);
-HAnimJoint226.name = "l_tarsometatarsal_joint5";
+HAnimJoint226.displayBBox = False;
 let HAnimSegment227 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment227.DEF = "l_metatarsal5";
 HAnimSegment227.name = "l_metatarsal5";
+HAnimSegment227.DEF = "l_metatarsal5";
+HAnimSegment227.displayBBox = False;
 let Transform228 = browser.currentScene.createNode("Transform");
 Transform228.translation = new SFVec3f(new float[0.33,-0.52,0]);
+Transform228.displayBBox = False;
 let Shape229 = browser.currentScene.createNode("Shape");
 Shape229.USE = "HAnimJointShape";
 Transform228.children = new MFNode();
@@ -1097,6 +1195,7 @@ HAnimSegment227.children = new MFNode();
 HAnimSegment227.children[0] = Transform228;
 
 let Shape230 = browser.currentScene.createNode("Shape");
+Shape230.displayBBox = False;
 let Appearance231 = browser.currentScene.createNode("Appearance");
 let Material232 = browser.currentScene.createNode("Material");
 Material232.emissiveColor = new SFColor(new float[1,1,1]);
@@ -1120,14 +1219,17 @@ HAnimJoint226.children = new MFNode();
 HAnimJoint226.children[0] = HAnimSegment227;
 
 let HAnimJoint235 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint235.name = "l_metatarsophalangeal_joint5";
 HAnimJoint235.DEF = "l_metatarsophalangeal_joint5";
 HAnimJoint235.center = new SFVec3f(new float[0.34,-0.8,0]);
-HAnimJoint235.name = "l_metatarsophalangeal_joint5";
+HAnimJoint235.displayBBox = False;
 let HAnimSegment236 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment236.DEF = "l_proximal_phalanges5";
 HAnimSegment236.name = "l_proximal_phalanges5";
+HAnimSegment236.DEF = "l_proximal_phalanges5";
+HAnimSegment236.displayBBox = False;
 let Transform237 = browser.currentScene.createNode("Transform");
 Transform237.translation = new SFVec3f(new float[0.34,-0.8,0]);
+Transform237.displayBBox = False;
 let Shape238 = browser.currentScene.createNode("Shape");
 Shape238.USE = "HAnimJointShape";
 Transform237.children = new MFNode();
@@ -1139,6 +1241,7 @@ HAnimSegment236.children = new MFNode();
 HAnimSegment236.children[0] = Transform237;
 
 let Shape239 = browser.currentScene.createNode("Shape");
+Shape239.displayBBox = False;
 let Appearance240 = browser.currentScene.createNode("Appearance");
 let Material241 = browser.currentScene.createNode("Material");
 Material241.emissiveColor = new SFColor(new float[1,1,1]);
@@ -1162,14 +1265,17 @@ HAnimJoint235.children = new MFNode();
 HAnimJoint235.children[0] = HAnimSegment236;
 
 let HAnimJoint244 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint244.name = "l_f_proximal_Interphalangeal_joint5";
 HAnimJoint244.DEF = "l_f_proximal_Interphalangeal_joint5";
 HAnimJoint244.center = new SFVec3f(new float[0.34,-0.95,0]);
-HAnimJoint244.name = "l_f_proximal_Interphalangeal_joint5";
+HAnimJoint244.displayBBox = False;
 let HAnimSegment245 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment245.DEF = "l_middle_phalanges5";
 HAnimSegment245.name = "l_middle_phalanges5";
+HAnimSegment245.DEF = "l_middle_phalanges5";
+HAnimSegment245.displayBBox = False;
 let Transform246 = browser.currentScene.createNode("Transform");
 Transform246.translation = new SFVec3f(new float[0.34,-0.95,0]);
+Transform246.displayBBox = False;
 let Shape247 = browser.currentScene.createNode("Shape");
 Shape247.USE = "HAnimJointShape";
 Transform246.children = new MFNode();
@@ -1181,6 +1287,7 @@ HAnimSegment245.children = new MFNode();
 HAnimSegment245.children[0] = Transform246;
 
 let Shape248 = browser.currentScene.createNode("Shape");
+Shape248.displayBBox = False;
 let Appearance249 = browser.currentScene.createNode("Appearance");
 let Material250 = browser.currentScene.createNode("Material");
 Material250.emissiveColor = new SFColor(new float[1,1,1]);
@@ -1204,14 +1311,17 @@ HAnimJoint244.children = new MFNode();
 HAnimJoint244.children[0] = HAnimSegment245;
 
 let HAnimJoint253 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint253.name = "l_f_distal_Interphalangeal_joint5";
 HAnimJoint253.DEF = "l_f_distal_Interphalangeal_joint5";
 HAnimJoint253.center = new SFVec3f(new float[0.34,-1.05,0]);
-HAnimJoint253.name = "l_f_distal_Interphalangeal_joint5";
+HAnimJoint253.displayBBox = False;
 let HAnimSegment254 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment254.DEF = "l_distal_phalanges5";
 HAnimSegment254.name = "l_distal_phalanges5";
+HAnimSegment254.DEF = "l_distal_phalanges5";
+HAnimSegment254.displayBBox = False;
 let Transform255 = browser.currentScene.createNode("Transform");
 Transform255.translation = new SFVec3f(new float[0.34,-1.05,0]);
+Transform255.displayBBox = False;
 let Shape256 = browser.currentScene.createNode("Shape");
 Shape256.USE = "HAnimJointShape";
 Transform255.children = new MFNode();
@@ -1223,6 +1333,7 @@ HAnimSegment254.children = new MFNode();
 HAnimSegment254.children[0] = Transform255;
 
 let Shape257 = browser.currentScene.createNode("Shape");
+Shape257.displayBBox = False;
 let Appearance258 = browser.currentScene.createNode("Appearance");
 let Material259 = browser.currentScene.createNode("Material");
 Material259.emissiveColor = new SFColor(new float[1,1,1]);

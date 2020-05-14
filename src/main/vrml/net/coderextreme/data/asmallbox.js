@@ -4,7 +4,7 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="anyShape" ><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry" radius="1" solid="true"></Sphere>
+<ProtoDeclare name="anyShape" ><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
 </Shape>
 </field>
 </ProtoInterface>
@@ -21,8 +21,6 @@ field4.accessType = "inputOutput";
 field4.type = "MFNode";
 let Shape5 = browser.currentScene.createNode("Shape");
 let Sphere6 = browser.currentScene.createNode("Sphere");
-Sphere6.radius = 1;
-Sphere6.solid = True;
 Shape5.geometry = Sphere6;
 
 field4.children = new MFNode();

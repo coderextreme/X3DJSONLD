@@ -62,10 +62,9 @@ head1.addMeta(meta12)
 X3D0.setHead(head1)
 Scene13 = x3d.Scene()
 NavigationInfo14 = x3d.NavigationInfo()
-NavigationInfo14.setType(["EXAMINE","ANY"])
 
 Scene13.addChildren(NavigationInfo14)
-# Images courtesy of Paul Debevec's Light Probe Image Gallery 
+#Images courtesy of Paul Debevec's Light Probe Image Gallery
 Background15 = x3d.Background()
 Background15.setDEF("background")
 Background15.setBackUrl(["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_back.png"])
@@ -203,11 +202,7 @@ field39.setAccessType("inputOutput")
 field39.setValue("0")
 
 ComposedShader28.addField(field39)
-# 
-#		       <field name='cube' type='SFNode' accessType=\"inputOutput\">
-#			  <ComposedCubeMapTexture USE=\"texture\"/>
-#		  </field>
-#		  
+#<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
 ShaderPart40 = x3d.ShaderPart()
 ShaderPart40.setUrl(["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"])
 ShaderPart40.setType("VERTEX")
@@ -437,22 +432,7 @@ Script58.setSourceCode('''ecmascript:\n"+
 "        }''')
 
 Scene13.addChildren(Script58)
-#
-#            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>
-#            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>
-#            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>
-#            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>
-#            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>
-#            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>
-#            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>
-#            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>
-#            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>
-#            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>
-#            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>
-#            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>
-#            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>
-#            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
-#	    
+#<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
 Script73 = x3d.Script()
 Script73.setDEF("Animate")
 Script73.setDirectOutput(True)

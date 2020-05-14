@@ -32,7 +32,7 @@ Viewpoint5.description = "Viewpoint 4";
 Viewpoint5.position = new SFVec3f(new float[6,0,5]);
 browser.currentScene.children[3] = Viewpoint5;
 
-// Script initialization ought to first bind view5 below. 
+//Script initialization ought to first bind view5 below.
 let Group6 = browser.currentScene.createNode("Group");
 let Transform7 = browser.currentScene.createNode("Transform");
 Transform7.DEF = "Text1";
@@ -138,11 +138,11 @@ Group6.children[3] = Transform25;
 
 browser.currentScene.children[4] = Group6;
 
-// The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9. 
-// It does not need to be studied in this chapter. 
+//The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9.
+//It does not need to be studied in this chapter.
 let Transform31 = browser.currentScene.createNode("Transform");
 Transform31.translation = new SFVec3f(new float[0,-3,8]);
-// notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script. 
+//notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.
 let Viewpoint32 = browser.currentScene.createNode("Viewpoint");
 Viewpoint32.DEF = "ClickToAnimateView";
 Viewpoint32.description = "Select animation sequence";
@@ -216,70 +216,70 @@ Transform31.children[7] = ROUTE46;
 let Script47 = browser.currentScene.createNode("Script");
 Script47.DEF = "BindingSequencerEngine";
 let field48 = browser.currentScene.createNode("field");
-field48.accessType = "inputOnly";
 field48.name = "set_timeEvent";
+field48.accessType = "inputOnly";
 field48.type = "SFInt32";
 Script47.field = new MFNode();
 
 Script47.field[0] = field48;
 
 let field49 = browser.currentScene.createNode("field");
-field49.accessType = "outputOnly";
 field49.name = "bindView1";
+field49.accessType = "outputOnly";
 field49.type = "SFBool";
 Script47.field[1] = field49;
 
 let field50 = browser.currentScene.createNode("field");
-field50.accessType = "outputOnly";
 field50.name = "bindView2";
+field50.accessType = "outputOnly";
 field50.type = "SFBool";
 Script47.field[2] = field50;
 
 let field51 = browser.currentScene.createNode("field");
-field51.accessType = "outputOnly";
 field51.name = "bindView3";
+field51.accessType = "outputOnly";
 field51.type = "SFBool";
 Script47.field[3] = field51;
 
 let field52 = browser.currentScene.createNode("field");
-field52.accessType = "outputOnly";
 field52.name = "bindView4";
+field52.accessType = "outputOnly";
 field52.type = "SFBool";
 Script47.field[4] = field52;
 
 let field53 = browser.currentScene.createNode("field");
-field53.accessType = "outputOnly";
 field53.name = "bindView5";
+field53.accessType = "outputOnly";
 field53.type = "SFBool";
 Script47.field[5] = field53;
 
 let field54 = browser.currentScene.createNode("field");
-field54.accessType = "inputOnly";
 field54.name = "view1Bound";
+field54.accessType = "inputOnly";
 field54.type = "SFBool";
 Script47.field[6] = field54;
 
 let field55 = browser.currentScene.createNode("field");
-field55.accessType = "inputOnly";
 field55.name = "view2Bound";
+field55.accessType = "inputOnly";
 field55.type = "SFBool";
 Script47.field[7] = field55;
 
 let field56 = browser.currentScene.createNode("field");
-field56.accessType = "inputOnly";
 field56.name = "view3Bound";
+field56.accessType = "inputOnly";
 field56.type = "SFBool";
 Script47.field[8] = field56;
 
 let field57 = browser.currentScene.createNode("field");
-field57.accessType = "inputOnly";
 field57.name = "view4Bound";
+field57.accessType = "inputOnly";
 field57.type = "SFBool";
 Script47.field[9] = field57;
 
 let field58 = browser.currentScene.createNode("field");
-field58.accessType = "initializeOnly";
 field58.name = "priorInputvalue";
+field58.accessType = "initializeOnly";
 field58.type = "SFInt32";
 field58.value = "-1";
 Script47.field[10] = field58;
@@ -301,7 +301,7 @@ Script47.setSourceCode(`ecmascript:\n"+
 "    // new value provided\n"+
 "    priorInputvalue = inputValue;\n"+
 "    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\n"+
-"        \n"+
+"\n"+
 "    // mimics user execution of Figure 4.1 steps t_0 through t_8\n"+
 "    if (inputValue == 0)\n"+
 "    {\n"+
@@ -375,7 +375,7 @@ Script47.setSourceCode(`ecmascript:\n"+
 "}`)
 Transform31.children[8] = Script47;
 
-// drive Script with TimeSensor clock 
+//drive Script with TimeSensor clock
 let ROUTE59 = browser.currentScene.createNode("ROUTE");
 ROUTE59.fromField = "value_changed";
 ROUTE59.fromNode = "TimingSequencer";
@@ -383,7 +383,7 @@ ROUTE59.toField = "set_timeEvent";
 ROUTE59.toNode = "BindingSequencerEngine";
 Transform31.children[9] = ROUTE59;
 
-// Script will bind and unbind Viewpoint nodes 
+//Script will bind and unbind Viewpoint nodes
 let ROUTE60 = browser.currentScene.createNode("ROUTE");
 ROUTE60.fromField = "bindView1";
 ROUTE60.fromNode = "BindingSequencerEngine";
@@ -419,7 +419,7 @@ ROUTE64.toField = "set_bind";
 ROUTE64.toNode = "ClickToAnimateView";
 Transform31.children[14] = ROUTE64;
 
-// Viewpoint nodes report bind and unbind events 
+//Viewpoint nodes report bind and unbind events
 let ROUTE65 = browser.currentScene.createNode("ROUTE");
 ROUTE65.fromField = "isBound";
 ROUTE65.fromNode = "View1";

@@ -52,7 +52,7 @@ Material12.ambientIntensity = 0.25;
 Material12.diffuseColor = new SFColor(new float[0.372322,0.371574,0.373173]);
 Material12.shininess = 0.02;
 Material12.specularColor = new SFColor(new float[0.890909,0.887832,0.890909]);
-// Universal Media Library: Metals 30 
+//Universal Media Library: Metals 30
 Appearance11.material = Material12;
 
 Shape10.appearance = Appearance11;

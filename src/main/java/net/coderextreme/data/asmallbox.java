@@ -93,7 +93,7 @@ ProtoInstanceObject ProtoInstance1 = null;
           .setProtoInterface(new ProtoInterfaceObject()
             .addField(new fieldObject().setType("MFNode").setName("myShape").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new ShapeObject()
-                .setGeometry(new SphereObject().setRadius(1f).setSolid(true)))))
+                .setGeometry(new SphereObject()))))
           .setProtoBody(new ProtoBodyObject()
             .addChild(new TransformObject()
               .setIS(new ISObject()

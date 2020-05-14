@@ -43,7 +43,7 @@ var ProtoInstance6 = null;
                 .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(1)]))
                   .addChild((new autoclass.Shape())
                     .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["Node"]))
-                      .setFontStyle((new autoclass.FontStyle()).setFamily(java.newArray("java.lang.String", ["SERIF"])).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(java.newFloat(5))))
+                      .setFontStyle((new autoclass.FontStyle()).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(java.newFloat(5))))
                     .setAppearance((new autoclass.Appearance())
                       .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1)])))))))
               .addChild((new autoclass.PositionInterpolator()).setDEF("NodePosition").setKey(java.newArray("float", [java.newFloat(0), java.newFloat(1)])).setKeyValue(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(5), java.newFloat(0)])))
@@ -90,7 +90,7 @@ var ProtoInstance6 = null;
 "		        spine = new MFVec3f([value, spine[1]]);\n"+
 "		    }\n"+
 "                }\n"+
-"                \n"+
+"\n"+
 "                function set_endB(value) {\n"+
 "		    if (typeof spine === 'undefined') {\n"+
 "		        spine = new MFVec3f([value, value]);\n"+
@@ -98,29 +98,25 @@ var ProtoInstance6 = null;
 "		        spine = new MFVec3f([spine[0], value]);\n"+
 "		    }\n"+
 "                }\n"+
-"                \n"+
+"\n"+
 "                function set_spine(value) {\n"+
 "                    spine = value;\n"+
 "                }"))
               .addChild((new autoclass.ROUTE()).setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine")))))
         .addChild((new autoclass.Transform()).setDEF("HoldsContent").setScale(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.1), java.newFloat(0.1)]))
-          .addChild((new autoclass.PlaneSensor()).setDEF("clickGenerator").setEnabled(true).setMinPosition(java.newArray("float", [java.newFloat(-50), java.newFloat(-50)])).setMaxPosition(java.newArray("float", [java.newFloat(50), java.newFloat(50)])).setDescription("click on background to add nodes, click on nodes to add links"))
-          .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setDEF("nodeA").setName("node"))
-          .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setDEF("nodeB").setName("node"))
-          .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setDEF("nodeC").setName("node"))
-          .addChild(ProtoInstance3 = (new autoclass.ProtoInstance()).setDEF("nodeD").setName("node"))
-          .addChild(ProtoInstance4 = (new autoclass.ProtoInstance()).setDEF("linkA").setName("cylinder"))
-          .addChild(ProtoInstance5 = (new autoclass.ProtoInstance()).setDEF("linkB").setName("cylinder"))
-          .addChild(ProtoInstance6 = (new autoclass.ProtoInstance()).setDEF("linkC").setName("cylinder")))
+          .addChild((new autoclass.PlaneSensor()).setDEF("clickGenerator").setMinPosition(java.newArray("float", [java.newFloat(-50), java.newFloat(-50)])).setMaxPosition(java.newArray("float", [java.newFloat(50), java.newFloat(50)])).setDescription("click on background to add nodes, click on nodes to add links"))
+          .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeA"))
+          .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeB"))
+          .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeC"))
+          .addChild(ProtoInstance3 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeD"))
+          .addChild(ProtoInstance4 = (new autoclass.ProtoInstance()).setName("cylinder").setDEF("linkA"))
+          .addChild(ProtoInstance5 = (new autoclass.ProtoInstance()).setName("cylinder").setDEF("linkB"))
+          .addChild(ProtoInstance6 = (new autoclass.ProtoInstance()).setName("cylinder").setDEF("linkC")))
         .addChild((new autoclass.Script()).setDEF("clickHandler")
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFINT32).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("counter").setValue("0"))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY).setName("node_changed"))
-          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("add_node").setValue("false"))
-          .addComments((new autoclass.CommentsBlock("")))
-          .addComments((new autoclass.CommentsBlock("            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">")))
-          .addComments((new autoclass.CommentsBlock("                <Transform USE=\"HoldsContent\"/>")))
-          .addComments((new autoclass.CommentsBlock("            </field>")))
-          .addComments((new autoclass.CommentsBlock("	    ")))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFINT32).setName("counter").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("node_changed").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+          .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("add_node").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setValue("false"))
+          .addComments((new autoclass.CommentsBlock("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>")))
           .setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
@@ -137,7 +133,7 @@ var ProtoInstance6 = null;
 "				  ]\n"+
 "				}\n"+
 "			});\n"+
-"                \n"+
+"\n"+
 "        }"))
         .addChild((new autoclass.ROUTE()).setFromNode("clickGenerator").setFromField("isActive").setToNode("clickHandler").setToField("add_node"))
         .addChild((new autoclass.ROUTE()).setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))

@@ -9,7 +9,6 @@ GeoViewpoint2.DEF = "Tour";
 GeoViewpoint2.position = new SFVec3d(new double[0,0,4]);
 GeoViewpoint2.orientation = new SFRotation(new float[1,0,0,0]);
 GeoViewpoint2.description = "Tour Views";
-GeoViewpoint2.retainUserOffsets = False;
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = GeoViewpoint2;

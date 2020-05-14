@@ -18,7 +18,7 @@ var ProtoInstance2 = null;
 var ProtoInstance3 = null;
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
-        .addComponent((new autoclass.component()).setLevel(1).setName("Scripting"))
+        .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
         .addMeta((new autoclass.meta()).setName("title").setContent("bubs.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Tour around a prismatic sphere"))

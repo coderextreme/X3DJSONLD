@@ -15,7 +15,6 @@ browser.currentScene.children[1] = Background3;
 
 let Transform4 = browser.currentScene.createNode("Transform");
 Transform4.DEF = "DECLpoint_G1_node";
-Transform4.translation = new SFVec3f(new float[0,0,0]);
 let Shape5 = browser.currentScene.createNode("Shape");
 let Sphere6 = browser.currentScene.createNode("Sphere");
 Sphere6.radius = 0.1;
@@ -117,7 +116,6 @@ browser.currentScene.children[2] = Transform4;
 
 let Transform20 = browser.currentScene.createNode("Transform");
 Transform20.DEF = "DECLpoint_G2_node";
-Transform20.translation = new SFVec3f(new float[0,0,0]);
 let Shape21 = browser.currentScene.createNode("Shape");
 let Sphere22 = browser.currentScene.createNode("Sphere");
 Sphere22.radius = 0.1;

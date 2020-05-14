@@ -5,7 +5,6 @@ X3D0.version = "3.3";
 let Viewpoint2 = browser.currentScene.createNode("Viewpoint");
 Viewpoint2.position = new SFVec3f(new float[0,0,5]);
 Viewpoint2.description = "Only Viewpoint";
-Viewpoint2.orientation = new SFRotation(new float[0,0,1,0]);
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Viewpoint2;
@@ -16,7 +15,7 @@ browser.currentScene.children[1] = Background3;
 
 let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="point" ><ProtoInterface><field accessType="inputOutput" name="translation" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="point" ><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
@@ -47,8 +46,8 @@ let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 ProtoDeclare4.name = "point";
 let ProtoInterface5 = browser.currentScene.createNode("ProtoInterface");
 let field6 = browser.currentScene.createNode("field");
-field6.accessType = "inputOutput";
 field6.name = "translation";
+field6.accessType = "inputOutput";
 field6.type = "SFVec3f";
 field6.value = "0 0 0";
 ProtoInterface5.field = new MFNode();
@@ -177,25 +176,25 @@ browser.currentScene.children[2] = ProtoDeclare4;
 
 let ProtoDeclare26 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="x3dconnector" ><ProtoInterface><field accessType="initializeOnly" name="startnode" type="SFNode"></field>
-<field accessType="initializeOnly" name="endnode" type="SFNode"></field>
-<field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
-<field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
+<ProtoDeclare name="x3dconnector" ><ProtoInterface><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
+<field name="endnode" accessType="initializeOnly" type="SFNode"></field>
+<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
+<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Group><Transform DEF="trans" translation="0 0 0"><Transform DEF="rotscale"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+<ProtoBody><Group><Transform DEF="trans"><Transform DEF="rotscale"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
 <Cylinder containerField="geometry" radius="0.05"></Cylinder>
 </Shape>
 </Transform>
 </Transform>
-<Script DEF="S1"><field accessType="initializeOnly" name="startnode" type="SFNode"></field>
-<field accessType="initializeOnly" name="endnode" type="SFNode"></field>
-<field accessType="inputOutput" name="position" type="SFNode"><Transform USE="trans"></Transform>
+<Script DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
+<field name="endnode" accessType="initializeOnly" type="SFNode"></field>
+<field name="position" accessType="inputOutput" type="SFNode"><Transform USE="trans"></Transform>
 </field>
-<field accessType="inputOutput" name="rotscale" type="SFNode"><Transform USE="rotscale"></Transform>
+<field name="rotscale" accessType="inputOutput" type="SFNode"><Transform USE="rotscale"></Transform>
 </field>
-<field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
-<field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
+<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
+<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 <IS><connect nodeField="startnode" protoField="startnode"></connect>
 <connect nodeField="endnode" protoField="endnode"></connect>
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
@@ -253,28 +252,28 @@ let ProtoDeclare26 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 ProtoDeclare26.name = "x3dconnector";
 let ProtoInterface27 = browser.currentScene.createNode("ProtoInterface");
 let field28 = browser.currentScene.createNode("field");
-field28.accessType = "initializeOnly";
 field28.name = "startnode";
+field28.accessType = "initializeOnly";
 field28.type = "SFNode";
 ProtoInterface27.field = new MFNode();
 
 ProtoInterface27.field[0] = field28;
 
 let field29 = browser.currentScene.createNode("field");
-field29.accessType = "initializeOnly";
 field29.name = "endnode";
+field29.accessType = "initializeOnly";
 field29.type = "SFNode";
 ProtoInterface27.field[1] = field29;
 
 let field30 = browser.currentScene.createNode("field");
-field30.accessType = "inputOnly";
 field30.name = "set_startpoint";
+field30.accessType = "inputOnly";
 field30.type = "SFVec3f";
 ProtoInterface27.field[2] = field30;
 
 let field31 = browser.currentScene.createNode("field");
-field31.accessType = "inputOnly";
 field31.name = "set_endpoint";
+field31.accessType = "inputOnly";
 field31.type = "SFVec3f";
 ProtoInterface27.field[3] = field31;
 
@@ -284,7 +283,6 @@ let ProtoBody32 = browser.currentScene.createNode("ProtoBody");
 let Group33 = browser.currentScene.createNode("Group");
 let Transform34 = browser.currentScene.createNode("Transform");
 Transform34.DEF = "trans";
-Transform34.translation = new SFVec3f(new float[0,0,0]);
 let Transform35 = browser.currentScene.createNode("Transform");
 Transform35.DEF = "rotscale";
 let Shape36 = browser.currentScene.createNode("Shape");
@@ -315,22 +313,22 @@ Group33.children[0] = Transform34;
 let Script40 = browser.currentScene.createNode("Script");
 Script40.DEF = "S1";
 let field41 = browser.currentScene.createNode("field");
-field41.accessType = "initializeOnly";
 field41.name = "startnode";
+field41.accessType = "initializeOnly";
 field41.type = "SFNode";
 Script40.field = new MFNode();
 
 Script40.field[0] = field41;
 
 let field42 = browser.currentScene.createNode("field");
-field42.accessType = "initializeOnly";
 field42.name = "endnode";
+field42.accessType = "initializeOnly";
 field42.type = "SFNode";
 Script40.field[1] = field42;
 
 let field43 = browser.currentScene.createNode("field");
-field43.accessType = "inputOutput";
 field43.name = "position";
+field43.accessType = "inputOutput";
 field43.type = "SFNode";
 let Transform44 = browser.currentScene.createNode("Transform");
 Transform44.USE = "trans";
@@ -341,8 +339,8 @@ field43.children[0] = Transform44;
 Script40.field[2] = field43;
 
 let field45 = browser.currentScene.createNode("field");
-field45.accessType = "inputOutput";
 field45.name = "rotscale";
+field45.accessType = "inputOutput";
 field45.type = "SFNode";
 let Transform46 = browser.currentScene.createNode("Transform");
 Transform46.USE = "rotscale";
@@ -353,14 +351,14 @@ field45.children[0] = Transform46;
 Script40.field[3] = field45;
 
 let field47 = browser.currentScene.createNode("field");
-field47.accessType = "inputOnly";
 field47.name = "set_startpoint";
+field47.accessType = "inputOnly";
 field47.type = "SFVec3f";
 Script40.field[4] = field47;
 
 let field48 = browser.currentScene.createNode("field");
-field48.accessType = "inputOnly";
 field48.name = "set_endpoint";
+field48.accessType = "inputOnly";
 field48.type = "SFVec3f";
 Script40.field[5] = field48;
 
@@ -447,23 +445,23 @@ ProtoDeclare26.protoBody = ProtoBody32;
 browser.currentScene.children[3] = ProtoDeclare26;
 
 let ProtoInstance54 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance54.DEF = "G1";
 ProtoInstance54.name = "point";
+ProtoInstance54.DEF = "G1";
 browser.currentScene.children[4] = ProtoInstance54;
 
 let ProtoInstance55 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance55.DEF = "G2";
 ProtoInstance55.name = "point";
+ProtoInstance55.DEF = "G2";
 browser.currentScene.children[5] = ProtoInstance55;
 
 let ProtoInstance56 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance56.DEF = "G3";
 ProtoInstance56.name = "point";
+ProtoInstance56.DEF = "G3";
 browser.currentScene.children[6] = ProtoInstance56;
 
 let ProtoInstance57 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance57.DEF = "G4";
 ProtoInstance57.name = "point";
+ProtoInstance57.DEF = "G4";
 browser.currentScene.children[7] = ProtoInstance57;
 
 let ProtoInstance58 = browser.currentScene.createNode("ProtoInstance");

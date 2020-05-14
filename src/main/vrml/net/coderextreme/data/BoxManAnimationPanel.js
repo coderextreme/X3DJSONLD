@@ -15,19 +15,19 @@ Background3.skyColor = new MFColor(new float[0.75,0.75,0.75]);
 browser.currentScene.children[1] = Background3;
 
 let HAnimHumanoid4 = browser.currentScene.createNode("HAnimHumanoid");
+HAnimHumanoid4.name = "Humanoid";
 HAnimHumanoid4.DEF = "boxman_Humanoid";
 HAnimHumanoid4.info = new MFString(new java.lang.String["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"]);
-HAnimHumanoid4.name = "Humanoid";
 HAnimHumanoid4.version = "2.0";
 let HAnimJoint5 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint5.name = "humanoid_root";
 HAnimJoint5.DEF = "boxman_HumanoidRoot";
 HAnimJoint5.center = new SFVec3f(new float[0,0.9723,-0.0728]);
-HAnimJoint5.name = "humanoid_root";
 HAnimJoint5.skinCoordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9,10,11]);
 HAnimJoint5.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1]);
 let HAnimSegment6 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment6.DEF = "boxman_sacrum";
 HAnimSegment6.name = "sacrum";
+HAnimSegment6.DEF = "boxman_sacrum";
 let Transform7 = browser.currentScene.createNode("Transform");
 Transform7.translation = new SFVec3f(new float[0,0.9723,-0.0728]);
 let Shape8 = browser.currentScene.createNode("Shape");
@@ -56,14 +56,14 @@ HAnimJoint5.children = new MFNode();
 HAnimJoint5.children[0] = HAnimSegment6;
 
 let HAnimJoint12 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint12.name = "l_hip";
 HAnimJoint12.DEF = "boxman_l_hip";
 HAnimJoint12.center = new SFVec3f(new float[0.0956,0.9364,0]);
-HAnimJoint12.name = "l_hip";
 HAnimJoint12.skinCoordIndex = new MFInt32(new int[12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]);
 HAnimJoint12.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]);
 let HAnimSegment13 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment13.DEF = "boxman_l_thigh";
 HAnimSegment13.name = "l_thigh";
+HAnimSegment13.DEF = "boxman_l_thigh";
 let Transform14 = browser.currentScene.createNode("Transform");
 Transform14.translation = new SFVec3f(new float[0.0956,0.9364,0]);
 let Shape15 = browser.currentScene.createNode("Shape");
@@ -81,14 +81,14 @@ HAnimJoint12.children = new MFNode();
 HAnimJoint12.children[0] = HAnimSegment13;
 
 let HAnimJoint16 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint16.name = "l_knee";
 HAnimJoint16.DEF = "boxman_l_knee";
 HAnimJoint16.center = new SFVec3f(new float[0.0956,0.5095,-0.0036]);
-HAnimJoint16.name = "l_knee";
 HAnimJoint16.skinCoordIndex = new MFInt32(new int[36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63]);
 HAnimJoint16.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
 let HAnimSegment17 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment17.DEF = "boxman_l_calf";
 HAnimSegment17.name = "l_calf";
+HAnimSegment17.DEF = "boxman_l_calf";
 let Transform18 = browser.currentScene.createNode("Transform");
 Transform18.translation = new SFVec3f(new float[0.0956,0.5095,-0.0036]);
 let Shape19 = browser.currentScene.createNode("Shape");
@@ -106,14 +106,14 @@ HAnimJoint16.children = new MFNode();
 HAnimJoint16.children[0] = HAnimSegment17;
 
 let HAnimJoint20 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint20.name = "l_ankle";
 HAnimJoint20.DEF = "boxman_l_ankle";
 HAnimJoint20.center = new SFVec3f(new float[0.0946,0.0762,-0.0261]);
-HAnimJoint20.name = "l_ankle";
 HAnimJoint20.skinCoordIndex = new MFInt32(new int[64,65,66,67,68,69,70,71]);
 HAnimJoint20.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment21 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment21.DEF = "boxman_l_hindfoot";
 HAnimSegment21.name = "l_hindfoot";
+HAnimSegment21.DEF = "boxman_l_hindfoot";
 let Transform22 = browser.currentScene.createNode("Transform");
 Transform22.translation = new SFVec3f(new float[0.0946,0.0762,-0.0261]);
 let Shape23 = browser.currentScene.createNode("Shape");
@@ -131,14 +131,14 @@ HAnimJoint20.children = new MFNode();
 HAnimJoint20.children[0] = HAnimSegment21;
 
 let HAnimJoint24 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint24.name = "l_midtarsal";
 HAnimJoint24.DEF = "boxman_l_midtarsal";
 HAnimJoint24.center = new SFVec3f(new float[0.1079,0.0317,0.067]);
-HAnimJoint24.name = "l_midtarsal";
 HAnimJoint24.skinCoordIndex = new MFInt32(new int[72,73,74,75,76,77,78,79]);
 HAnimJoint24.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment25 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment25.DEF = "boxman_l_middistal";
 HAnimSegment25.name = "l_middistal";
+HAnimSegment25.DEF = "boxman_l_middistal";
 let Transform26 = browser.currentScene.createNode("Transform");
 Transform26.translation = new SFVec3f(new float[0.1079,0.0317,0.067]);
 let Shape27 = browser.currentScene.createNode("Shape");
@@ -152,8 +152,8 @@ HAnimSegment25.children = new MFNode();
 HAnimSegment25.children[0] = Transform26;
 
 let HAnimSite28 = browser.currentScene.createNode("HAnimSite");
-HAnimSite28.DEF = "boxman_l_middistal_tip";
 HAnimSite28.name = "l_middistal_tip";
+HAnimSite28.DEF = "boxman_l_middistal_tip";
 HAnimSite28.translation = new SFVec3f(new float[0.095,0.0005,0.1924]);
 let Shape29 = browser.currentScene.createNode("Shape");
 Shape29.DEF = "SphereRed";
@@ -187,14 +187,14 @@ HAnimJoint12.children[1] = HAnimJoint16;
 HAnimJoint5.children[1] = HAnimJoint12;
 
 let HAnimJoint33 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint33.name = "r_hip";
 HAnimJoint33.DEF = "boxman_r_hip";
 HAnimJoint33.center = new SFVec3f(new float[-0.0956,0.9364,0]);
-HAnimJoint33.name = "r_hip";
 HAnimJoint33.skinCoordIndex = new MFInt32(new int[80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111]);
 HAnimJoint33.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]);
 let HAnimSegment34 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment34.DEF = "boxman_r_thigh";
 HAnimSegment34.name = "r_thigh";
+HAnimSegment34.DEF = "boxman_r_thigh";
 let Transform35 = browser.currentScene.createNode("Transform");
 Transform35.translation = new SFVec3f(new float[-0.0956,0.9364,0]);
 let Shape36 = browser.currentScene.createNode("Shape");
@@ -212,14 +212,14 @@ HAnimJoint33.children = new MFNode();
 HAnimJoint33.children[0] = HAnimSegment34;
 
 let HAnimJoint37 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint37.name = "r_knee";
 HAnimJoint37.DEF = "boxman_r_knee";
 HAnimJoint37.center = new SFVec3f(new float[-0.0956,0.5095,-0.0036]);
-HAnimJoint37.name = "r_knee";
 HAnimJoint37.skinCoordIndex = new MFInt32(new int[104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131]);
 HAnimJoint37.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
 let HAnimSegment38 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment38.DEF = "boxman_r_calf";
 HAnimSegment38.name = "r_calf";
+HAnimSegment38.DEF = "boxman_r_calf";
 let Transform39 = browser.currentScene.createNode("Transform");
 Transform39.translation = new SFVec3f(new float[-0.0956,0.5095,-0.0036]);
 let Shape40 = browser.currentScene.createNode("Shape");
@@ -237,14 +237,14 @@ HAnimJoint37.children = new MFNode();
 HAnimJoint37.children[0] = HAnimSegment38;
 
 let HAnimJoint41 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint41.name = "r_ankle";
 HAnimJoint41.DEF = "boxman_r_ankle";
 HAnimJoint41.center = new SFVec3f(new float[-0.0946,0.0762,-0.0261]);
-HAnimJoint41.name = "r_ankle";
 HAnimJoint41.skinCoordIndex = new MFInt32(new int[132,133,134,135,136,137,138,139]);
 HAnimJoint41.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment42 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment42.DEF = "boxman_r_hindfoot";
 HAnimSegment42.name = "r_hindfoot";
+HAnimSegment42.DEF = "boxman_r_hindfoot";
 let Transform43 = browser.currentScene.createNode("Transform");
 Transform43.translation = new SFVec3f(new float[-0.0946,0.0762,-0.0261]);
 let Shape44 = browser.currentScene.createNode("Shape");
@@ -262,14 +262,14 @@ HAnimJoint41.children = new MFNode();
 HAnimJoint41.children[0] = HAnimSegment42;
 
 let HAnimJoint45 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint45.name = "r_midtarsal";
 HAnimJoint45.DEF = "boxman_r_midtarsal";
 HAnimJoint45.center = new SFVec3f(new float[-0.1079,0.0317,0.067]);
-HAnimJoint45.name = "r_midtarsal";
 HAnimJoint45.skinCoordIndex = new MFInt32(new int[140,141,142,143,144,145,146,147]);
 HAnimJoint45.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment46 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment46.DEF = "boxman_r_middistal";
 HAnimSegment46.name = "r_middistal";
+HAnimSegment46.DEF = "boxman_r_middistal";
 let Transform47 = browser.currentScene.createNode("Transform");
 Transform47.translation = new SFVec3f(new float[-0.1079,0.0317,0.067]);
 let Shape48 = browser.currentScene.createNode("Shape");
@@ -283,8 +283,8 @@ HAnimSegment46.children = new MFNode();
 HAnimSegment46.children[0] = Transform47;
 
 let HAnimSite49 = browser.currentScene.createNode("HAnimSite");
-HAnimSite49.DEF = "boxman_r_middistal_tip";
 HAnimSite49.name = "r_middistal_tip";
+HAnimSite49.DEF = "boxman_r_middistal_tip";
 HAnimSite49.translation = new SFVec3f(new float[-0.095,0.0005,0.1924]);
 let Shape50 = browser.currentScene.createNode("Shape");
 Shape50.USE = "SphereRed";
@@ -307,14 +307,14 @@ HAnimJoint33.children[1] = HAnimJoint37;
 HAnimJoint5.children[2] = HAnimJoint33;
 
 let HAnimJoint51 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint51.name = "vl5";
 HAnimJoint51.DEF = "boxman_vl5";
 HAnimJoint51.center = new SFVec3f(new float[0,1.0817,-0.0728]);
-HAnimJoint51.name = "vl5";
 HAnimJoint51.skinCoordIndex = new MFInt32(new int[148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167]);
 HAnimJoint51.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
 let HAnimSegment52 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment52.DEF = "boxman_l5";
 HAnimSegment52.name = "l5";
+HAnimSegment52.DEF = "boxman_l5";
 let Transform53 = browser.currentScene.createNode("Transform");
 Transform53.translation = new SFVec3f(new float[0,1.0817,-0.0728]);
 let Shape54 = browser.currentScene.createNode("Shape");
@@ -332,14 +332,14 @@ HAnimJoint51.children = new MFNode();
 HAnimJoint51.children[0] = HAnimSegment52;
 
 let HAnimJoint55 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint55.name = "skullbase";
 HAnimJoint55.DEF = "boxman_skullbase";
 HAnimJoint55.center = new SFVec3f(new float[0,1.644,0.036]);
-HAnimJoint55.name = "skullbase";
 HAnimJoint55.skinCoordIndex = new MFInt32(new int[168,169,170,171,172,173,174,175]);
 HAnimJoint55.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment56 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment56.DEF = "boxman_skull";
 HAnimSegment56.name = "skull";
+HAnimSegment56.DEF = "boxman_skull";
 let Transform57 = browser.currentScene.createNode("Transform");
 Transform57.translation = new SFVec3f(new float[0,1.644,0.036]);
 let Shape58 = browser.currentScene.createNode("Shape");
@@ -353,8 +353,8 @@ HAnimSegment56.children = new MFNode();
 HAnimSegment56.children[0] = Transform57;
 
 let HAnimSite59 = browser.currentScene.createNode("HAnimSite");
-HAnimSite59.DEF = "boxman_skull_tip";
 HAnimSite59.name = "skull_tip";
+HAnimSite59.DEF = "boxman_skull_tip";
 HAnimSite59.translation = new SFVec3f(new float[-0.0029,1.7771,0.0274]);
 let Shape60 = browser.currentScene.createNode("Shape");
 Shape60.USE = "SphereYellow";
@@ -371,14 +371,14 @@ HAnimJoint55.children[0] = HAnimSegment56;
 HAnimJoint51.children[1] = HAnimJoint55;
 
 let HAnimJoint61 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint61.name = "l_shoulder";
 HAnimJoint61.DEF = "boxman_l_shoulder";
 HAnimJoint61.center = new SFVec3f(new float[0.1968,1.4642,-0.0265]);
-HAnimJoint61.name = "l_shoulder";
 HAnimJoint61.skinCoordIndex = new MFInt32(new int[176,177,178,179,180,181,182,183]);
 HAnimJoint61.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment62 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment62.DEF = "boxman_l_upperarm";
 HAnimSegment62.name = "l_upperarm";
+HAnimSegment62.DEF = "boxman_l_upperarm";
 let Transform63 = browser.currentScene.createNode("Transform");
 Transform63.translation = new SFVec3f(new float[0.1968,1.4642,-0.0265]);
 let Shape64 = browser.currentScene.createNode("Shape");
@@ -396,14 +396,14 @@ HAnimJoint61.children = new MFNode();
 HAnimJoint61.children[0] = HAnimSegment62;
 
 let HAnimJoint65 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint65.name = "l_elbow";
 HAnimJoint65.DEF = "boxman_l_elbow";
 HAnimJoint65.center = new SFVec3f(new float[0.1982,1.1622,-0.0557]);
-HAnimJoint65.name = "l_elbow";
 HAnimJoint65.skinCoordIndex = new MFInt32(new int[184,185,186,187,188,189,190,191]);
 HAnimJoint65.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment66 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment66.DEF = "boxman_l_forearm";
 HAnimSegment66.name = "l_forearm";
+HAnimSegment66.DEF = "boxman_l_forearm";
 let Transform67 = browser.currentScene.createNode("Transform");
 Transform67.translation = new SFVec3f(new float[0.1982,1.1622,-0.0557]);
 let Shape68 = browser.currentScene.createNode("Shape");
@@ -421,14 +421,14 @@ HAnimJoint65.children = new MFNode();
 HAnimJoint65.children[0] = HAnimSegment66;
 
 let HAnimJoint69 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint69.name = "l_wrist";
 HAnimJoint69.DEF = "boxman_l_wrist";
 HAnimJoint69.center = new SFVec3f(new float[0.1972,0.8929,-0.069]);
-HAnimJoint69.name = "l_wrist";
 HAnimJoint69.skinCoordIndex = new MFInt32(new int[192,193,194,195,196,197,198,199]);
 HAnimJoint69.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment70 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment70.DEF = "boxman_l_hand";
 HAnimSegment70.name = "l_hand";
+HAnimSegment70.DEF = "boxman_l_hand";
 let Transform71 = browser.currentScene.createNode("Transform");
 Transform71.translation = new SFVec3f(new float[0.1972,0.8929,-0.069]);
 let Shape72 = browser.currentScene.createNode("Shape");
@@ -442,8 +442,8 @@ HAnimSegment70.children = new MFNode();
 HAnimSegment70.children[0] = Transform71;
 
 let HAnimSite73 = browser.currentScene.createNode("HAnimSite");
-HAnimSite73.DEF = "boxman_l_hand_tip";
 HAnimSite73.name = "l_hand_tip";
+HAnimSite73.DEF = "boxman_l_hand_tip";
 HAnimSite73.translation = new SFVec3f(new float[0.1912,0.6976,-0.071]);
 let Shape74 = browser.currentScene.createNode("Shape");
 Shape74.USE = "SphereRed";
@@ -464,14 +464,14 @@ HAnimJoint61.children[1] = HAnimJoint65;
 HAnimJoint51.children[2] = HAnimJoint61;
 
 let HAnimJoint75 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint75.name = "r_shoulder";
 HAnimJoint75.DEF = "boxman_r_shoulder";
 HAnimJoint75.center = new SFVec3f(new float[-0.1968,1.4642,-0.0265]);
-HAnimJoint75.name = "r_shoulder";
 HAnimJoint75.skinCoordIndex = new MFInt32(new int[200,201,202,203,204,205,206,207]);
 HAnimJoint75.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment76 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment76.DEF = "boxman_r_upperarm";
 HAnimSegment76.name = "r_upperarm";
+HAnimSegment76.DEF = "boxman_r_upperarm";
 let Transform77 = browser.currentScene.createNode("Transform");
 Transform77.translation = new SFVec3f(new float[-0.1968,1.4642,-0.0265]);
 let Shape78 = browser.currentScene.createNode("Shape");
@@ -489,14 +489,14 @@ HAnimJoint75.children = new MFNode();
 HAnimJoint75.children[0] = HAnimSegment76;
 
 let HAnimJoint79 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint79.name = "r_elbow";
 HAnimJoint79.DEF = "boxman_r_elbow";
 HAnimJoint79.center = new SFVec3f(new float[-0.1982,1.1622,-0.0557]);
-HAnimJoint79.name = "r_elbow";
 HAnimJoint79.skinCoordIndex = new MFInt32(new int[208,209,210,211,212,213,214,215]);
 HAnimJoint79.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment80 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment80.DEF = "boxman_r_forearm";
 HAnimSegment80.name = "r_forearm";
+HAnimSegment80.DEF = "boxman_r_forearm";
 let Transform81 = browser.currentScene.createNode("Transform");
 Transform81.translation = new SFVec3f(new float[-0.1982,1.1622,-0.0557]);
 let Shape82 = browser.currentScene.createNode("Shape");
@@ -514,14 +514,14 @@ HAnimJoint79.children = new MFNode();
 HAnimJoint79.children[0] = HAnimSegment80;
 
 let HAnimJoint83 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint83.name = "r_wrist";
 HAnimJoint83.DEF = "boxman_r_wrist";
 HAnimJoint83.center = new SFVec3f(new float[-0.1972,0.8929,-0.069]);
-HAnimJoint83.name = "r_wrist";
 HAnimJoint83.skinCoordIndex = new MFInt32(new int[216,217,218,219,220,221,222,223]);
 HAnimJoint83.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimSegment84 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment84.DEF = "boxman_r_hand";
 HAnimSegment84.name = "r_hand";
+HAnimSegment84.DEF = "boxman_r_hand";
 let Transform85 = browser.currentScene.createNode("Transform");
 Transform85.translation = new SFVec3f(new float[-0.1972,0.8929,-0.069]);
 let Shape86 = browser.currentScene.createNode("Shape");
@@ -535,8 +535,8 @@ HAnimSegment84.children = new MFNode();
 HAnimSegment84.children[0] = Transform85;
 
 let HAnimSite87 = browser.currentScene.createNode("HAnimSite");
-HAnimSite87.DEF = "boxman_r_hand_tip";
 HAnimSite87.name = "r_hand_tip";
+HAnimSite87.DEF = "boxman_r_hand_tip";
 HAnimSite87.translation = new SFVec3f(new float[-0.1912,0.6976,-0.071]);
 let Shape88 = browser.currentScene.createNode("Shape");
 Shape88.USE = "SphereRed";
@@ -562,11 +562,11 @@ HAnimHumanoid4.joints = new MFNode();
 
 HAnimHumanoid4.joints[0] = HAnimJoint5;
 
-// # sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8) 
-// Coordinate DEF='SKINCOORD2' containerField='skinCoord' point='-0.05 1 0.05 0.05 1 0.05 0.03 0.97 -0.1 -0.03 0.97 -0.1 0.03 0.94 -0.075 -0.03 0.94 -0.075 0 0.92 0 0 0.94 0.03 -0.12 1.06 0.05 0.12 1.06 0.05 0.12 1.06 -0.1 -0.12 1.06 -0.1 0.0456 0.9364 0.05 0.1456 0.9364 0.05 0.1456 0.9364 -0.05 0.0456 0.9364 -0.05 0.0456 0.9 0.05 0.1456 0.9 0.05 0.1456 0.9 -0.05 0.0456 0.9 -0.05 0.0456 0.8 0.05 0.1456 0.8 0.05 0.1456 0.8 -0.05 0.0456 0.8 -0.05 0.0456 0.7 0.05 0.1456 0.7 0.05 0.1456 0.7 -0.05 0.0456 0.7 -0.05 0.0456 0.6 0.05 0.1456 0.6 0.05 0.1456 0.6 -0.05 0.0456 0.6 -0.05 0.0456 0.55 0.05 0.1456 0.55 0.05 0.1456 0.55 -0.05 0.0456 0.55 -0.05 0.0456 0.52 0.05 0.1456 0.52 0.05 0.1456 0.52 -0.05 0.0456 0.52 -0.05 0.0456 0.5 0.05 0.1456 0.5 0.05 0.1456 0.5 -0.05 0.0456 0.5 -0.05 0.0454 0.43 0.045 0.1454 0.43 0.045 0.1454 0.43 -0.055 0.0454 0.43 -0.055 0.0452 0.36 0.04 0.1452 0.36 0.04 0.1452 0.36 -0.06 0.0452 0.36 -0.06 0.045 0.29 0.035 0.145 0.29 0.035 0.145 0.29 -0.065 0.045 0.29 -0.065 0.0448 0.21 0.03 0.1448 0.21 0.03 0.1448 0.21 -0.07 0.0448 0.21 -0.07 0.0446 0.1262 0.025 0.1446 0.1262 0.025 0.1446 0.1262 -0.075 0.0446 0.1262 -0.075 0.0446 0.0702038 0.02464698 0.1446 0.0702038 0.02464698 0.1446 0.006264479 -0.08360368 0.0446 0.006264479 -0.08360368 0.0446 0.046587 0.05407905 0.1446 0.046587 0.05407905 0.1446 -0.009224742 0.0474844 0.0446 -0.009224742 0.0474844 0.0446 0.04306673 0.0838718 0.1446 0.04306673 0.0838718 0.1446 -0.01274502 0.07727715 0.0446 -0.01274502 0.07727715 0.0446 0.03069882 0.1885436 0.1446 0.03069882 0.1885436 0.1446 -0.02511293 0.181949 0.0446 -0.02511293 0.181949 -0.0456 0.9861611 0.004881433 -0.1456 0.9861611 0.004881433 -0.1456 0.8866388 -0.004881474 -0.0456 0.8866388 -0.004881474 -0.0456 0.9826074 0.04110757 -0.1456 0.9826074 0.04110757 -0.1456 0.8830851 0.03134466 -0.0456 0.8830851 0.03134466 -0.0456 0.9728445 0.1406298 -0.1456 0.9728445 0.1406298 -0.1456 0.8733222 0.1308669 -0.0456 0.8733222 0.1308669 -0.0456 0.9630816 0.2401521 -0.1456 0.9630816 0.2401521 -0.1456 0.8635593 0.2303892 -0.0456 0.8635593 0.2303892 -0.0456 0.9533187 0.3396744 -0.1456 0.9533187 0.3396744 -0.1456 0.8537964 0.3299115 -0.0456 0.8537964 0.3299115 -0.0456 0.9484373 0.3894355 -0.1456 0.9484373 0.3894355 -0.1456 0.848915 0.3796726 -0.0456 0.848915 0.3796726 -0.0456 0.94468 0.4147483 -0.1456 0.94468 0.4147483 -0.1456 0.8450468 0.4134411 -0.0456 0.8450468 0.4134411 -0.0456 0.9444185 0.4346749 -0.1456 0.9444185 0.4346749 -0.1456 0.8447853 0.4333678 -0.0456 0.8447853 0.4333678 -0.0454 0.9452982 0.5003315 -0.1454 0.9452982 0.5003315 -0.1454 0.8455541 0.5074801 -0.0454 0.8455541 0.5074801 -0.0452 0.945315 0.5705098 -0.1452 0.945315 0.5705098 -0.1452 0.8455709 0.5776584 -0.0452 0.8455709 0.5776584 -0.045 0.9453319 0.6406881 -0.145 0.9453319 0.6406881 -0.145 0.8455877 0.6478368 -0.045 0.8455877 0.6478368 -0.0448 0.9460636 0.7208409 -0.1448 0.9460636 0.7208409 -0.1448 0.8463194 0.7279896 -0.0448 0.8463194 0.7279896 -0.0446 0.947067 0.8047839 -0.1446 0.947067 0.8047839 -0.1446 0.8473228 0.8119326 -0.0446 0.8473228 0.8119326 -0.0446 0.9507178 0.8606621 -0.1446 0.9507178 0.8606621 -0.1446 0.847315 0.9321763 -0.0446 0.847315 0.9321763 -0.0446 0.9817629 0.8821145 -0.1446 0.9817629 0.8821145 -0.1446 0.9791749 0.9382548 -0.0446 0.9791749 0.9382548 -0.0446 1.011731 0.883496 -0.1446 1.011731 0.883496 -0.1446 1.009143 0.9396363 -0.0446 1.009143 0.9396363 -0.0446 1.117019 0.8883496 -0.1446 1.117019 0.8883496 -0.1446 1.114431 0.94449 -0.0446 1.114431 0.94449 -0.12 1.1 0.05 0.12 1.1 0.05 0.12 1.1 -0.1 -0.12 1.1 -0.1 -0.14 1.42 0.045 0.14 1.42 0.045 0.14 1.42 -0.09 -0.14 1.42 -0.09 -0.24 1.52 0.035 0.24 1.52 0.035 0.24 1.52 -0.09 -0.24 1.52 -0.09 -0.05 1.56 0.03 0.05 1.56 0.03 0.05 1.56 -0.06 -0.05 1.56 -0.06 -0.05 1.6 0.06 0.05 1.6 0.06 0.05 1.62 -0.03 -0.05 1.62 -0.03 -0.07 1.781247 0.1236818 0.07 1.781247 0.1236818 0.07 1.77377 -0.03614335 -0.07 1.77377 -0.03614335 -0.07 1.604441 0.1319535 0.07 1.604441 0.1319535 0.07 1.656898 -0.03067561 -0.07 1.656898 -0.03067561 0.2016854 1.406894 0.015 0.2023709 1.520029 0.015 0.2023709 1.520029 -0.075 0.2016854 1.406894 -0.075 0.3774735 1.243191 -0.025 0.4201562 1.28536 -0.025 0.4201562 1.28536 -0.085 0.3774735 1.243191 -0.085 0.4055858 1.214736 -0.025 0.4482685 1.256904 -0.025 0.4482685 1.256904 -0.085 0.4055858 1.214736 -0.085 0.5743457 1.058147 -0.05 0.6028008 1.086259 -0.05 0.6028008 1.086259 -0.09 0.5743457 1.058147 -0.09 0.6024581 1.029692 -0.02 0.6309132 1.057804 -0.02 0.6309132 1.057804 -0.1 0.6024581 1.029692 -0.1 0.7236224 0.9070502 -0.02 0.7520775 0.9351625 -0.02 0.7520775 0.9351625 -0.1 0.7236224 0.9070502 -0.1 -0.2016854 1.406894 0.015 -0.2023709 1.520029 0.015 -0.2023709 1.520029 -0.075 -0.2016854 1.406894 -0.075 -0.3774735 1.243191 -0.025 -0.4201562 1.28536 -0.025 -0.4201562 1.28536 -0.085 -0.3774735 1.243191 -0.085 -0.4055858 1.214736 -0.025 -0.4482685 1.256904 -0.025 -0.4482685 1.256904 -0.085 -0.4055858 1.214736 -0.085 -0.5743457 1.058147 -0.05 -0.6028008 1.086259 -0.05 -0.6028008 1.086259 -0.09 -0.5743457 1.058147 -0.09 -0.6024581 1.029692 -0.02 -0.6309132 1.057804 -0.02 -0.6309132 1.057804 -0.1 -0.6024581 1.029692 -0.1 -0.7236224 0.9070502 -0.02 -0.7520775 0.9351625 -0.02 -0.7520775 0.9351625 -0.1 -0.7236224 0.9070502 -0.1'/ 
-// top-level joint references 
-// top-level segment references 
-// top-level site references 
+//# sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8)
+//Coordinate DEF='SKINCOORD2' containerField='skinCoord' point='-0.05 1 0.05 0.05 1 0.05 0.03 0.97 -0.1 -0.03 0.97 -0.1 0.03 0.94 -0.075 -0.03 0.94 -0.075 0 0.92 0 0 0.94 0.03 -0.12 1.06 0.05 0.12 1.06 0.05 0.12 1.06 -0.1 -0.12 1.06 -0.1 0.0456 0.9364 0.05 0.1456 0.9364 0.05 0.1456 0.9364 -0.05 0.0456 0.9364 -0.05 0.0456 0.9 0.05 0.1456 0.9 0.05 0.1456 0.9 -0.05 0.0456 0.9 -0.05 0.0456 0.8 0.05 0.1456 0.8 0.05 0.1456 0.8 -0.05 0.0456 0.8 -0.05 0.0456 0.7 0.05 0.1456 0.7 0.05 0.1456 0.7 -0.05 0.0456 0.7 -0.05 0.0456 0.6 0.05 0.1456 0.6 0.05 0.1456 0.6 -0.05 0.0456 0.6 -0.05 0.0456 0.55 0.05 0.1456 0.55 0.05 0.1456 0.55 -0.05 0.0456 0.55 -0.05 0.0456 0.52 0.05 0.1456 0.52 0.05 0.1456 0.52 -0.05 0.0456 0.52 -0.05 0.0456 0.5 0.05 0.1456 0.5 0.05 0.1456 0.5 -0.05 0.0456 0.5 -0.05 0.0454 0.43 0.045 0.1454 0.43 0.045 0.1454 0.43 -0.055 0.0454 0.43 -0.055 0.0452 0.36 0.04 0.1452 0.36 0.04 0.1452 0.36 -0.06 0.0452 0.36 -0.06 0.045 0.29 0.035 0.145 0.29 0.035 0.145 0.29 -0.065 0.045 0.29 -0.065 0.0448 0.21 0.03 0.1448 0.21 0.03 0.1448 0.21 -0.07 0.0448 0.21 -0.07 0.0446 0.1262 0.025 0.1446 0.1262 0.025 0.1446 0.1262 -0.075 0.0446 0.1262 -0.075 0.0446 0.0702038 0.02464698 0.1446 0.0702038 0.02464698 0.1446 0.006264479 -0.08360368 0.0446 0.006264479 -0.08360368 0.0446 0.046587 0.05407905 0.1446 0.046587 0.05407905 0.1446 -0.009224742 0.0474844 0.0446 -0.009224742 0.0474844 0.0446 0.04306673 0.0838718 0.1446 0.04306673 0.0838718 0.1446 -0.01274502 0.07727715 0.0446 -0.01274502 0.07727715 0.0446 0.03069882 0.1885436 0.1446 0.03069882 0.1885436 0.1446 -0.02511293 0.181949 0.0446 -0.02511293 0.181949 -0.0456 0.9861611 0.004881433 -0.1456 0.9861611 0.004881433 -0.1456 0.8866388 -0.004881474 -0.0456 0.8866388 -0.004881474 -0.0456 0.9826074 0.04110757 -0.1456 0.9826074 0.04110757 -0.1456 0.8830851 0.03134466 -0.0456 0.8830851 0.03134466 -0.0456 0.9728445 0.1406298 -0.1456 0.9728445 0.1406298 -0.1456 0.8733222 0.1308669 -0.0456 0.8733222 0.1308669 -0.0456 0.9630816 0.2401521 -0.1456 0.9630816 0.2401521 -0.1456 0.8635593 0.2303892 -0.0456 0.8635593 0.2303892 -0.0456 0.9533187 0.3396744 -0.1456 0.9533187 0.3396744 -0.1456 0.8537964 0.3299115 -0.0456 0.8537964 0.3299115 -0.0456 0.9484373 0.3894355 -0.1456 0.9484373 0.3894355 -0.1456 0.848915 0.3796726 -0.0456 0.848915 0.3796726 -0.0456 0.94468 0.4147483 -0.1456 0.94468 0.4147483 -0.1456 0.8450468 0.4134411 -0.0456 0.8450468 0.4134411 -0.0456 0.9444185 0.4346749 -0.1456 0.9444185 0.4346749 -0.1456 0.8447853 0.4333678 -0.0456 0.8447853 0.4333678 -0.0454 0.9452982 0.5003315 -0.1454 0.9452982 0.5003315 -0.1454 0.8455541 0.5074801 -0.0454 0.8455541 0.5074801 -0.0452 0.945315 0.5705098 -0.1452 0.945315 0.5705098 -0.1452 0.8455709 0.5776584 -0.0452 0.8455709 0.5776584 -0.045 0.9453319 0.6406881 -0.145 0.9453319 0.6406881 -0.145 0.8455877 0.6478368 -0.045 0.8455877 0.6478368 -0.0448 0.9460636 0.7208409 -0.1448 0.9460636 0.7208409 -0.1448 0.8463194 0.7279896 -0.0448 0.8463194 0.7279896 -0.0446 0.947067 0.8047839 -0.1446 0.947067 0.8047839 -0.1446 0.8473228 0.8119326 -0.0446 0.8473228 0.8119326 -0.0446 0.9507178 0.8606621 -0.1446 0.9507178 0.8606621 -0.1446 0.847315 0.9321763 -0.0446 0.847315 0.9321763 -0.0446 0.9817629 0.8821145 -0.1446 0.9817629 0.8821145 -0.1446 0.9791749 0.9382548 -0.0446 0.9791749 0.9382548 -0.0446 1.011731 0.883496 -0.1446 1.011731 0.883496 -0.1446 1.009143 0.9396363 -0.0446 1.009143 0.9396363 -0.0446 1.117019 0.8883496 -0.1446 1.117019 0.8883496 -0.1446 1.114431 0.94449 -0.0446 1.114431 0.94449 -0.12 1.1 0.05 0.12 1.1 0.05 0.12 1.1 -0.1 -0.12 1.1 -0.1 -0.14 1.42 0.045 0.14 1.42 0.045 0.14 1.42 -0.09 -0.14 1.42 -0.09 -0.24 1.52 0.035 0.24 1.52 0.035 0.24 1.52 -0.09 -0.24 1.52 -0.09 -0.05 1.56 0.03 0.05 1.56 0.03 0.05 1.56 -0.06 -0.05 1.56 -0.06 -0.05 1.6 0.06 0.05 1.6 0.06 0.05 1.62 -0.03 -0.05 1.62 -0.03 -0.07 1.781247 0.1236818 0.07 1.781247 0.1236818 0.07 1.77377 -0.03614335 -0.07 1.77377 -0.03614335 -0.07 1.604441 0.1319535 0.07 1.604441 0.1319535 0.07 1.656898 -0.03067561 -0.07 1.656898 -0.03067561 0.2016854 1.406894 0.015 0.2023709 1.520029 0.015 0.2023709 1.520029 -0.075 0.2016854 1.406894 -0.075 0.3774735 1.243191 -0.025 0.4201562 1.28536 -0.025 0.4201562 1.28536 -0.085 0.3774735 1.243191 -0.085 0.4055858 1.214736 -0.025 0.4482685 1.256904 -0.025 0.4482685 1.256904 -0.085 0.4055858 1.214736 -0.085 0.5743457 1.058147 -0.05 0.6028008 1.086259 -0.05 0.6028008 1.086259 -0.09 0.5743457 1.058147 -0.09 0.6024581 1.029692 -0.02 0.6309132 1.057804 -0.02 0.6309132 1.057804 -0.1 0.6024581 1.029692 -0.1 0.7236224 0.9070502 -0.02 0.7520775 0.9351625 -0.02 0.7520775 0.9351625 -0.1 0.7236224 0.9070502 -0.1 -0.2016854 1.406894 0.015 -0.2023709 1.520029 0.015 -0.2023709 1.520029 -0.075 -0.2016854 1.406894 -0.075 -0.3774735 1.243191 -0.025 -0.4201562 1.28536 -0.025 -0.4201562 1.28536 -0.085 -0.3774735 1.243191 -0.085 -0.4055858 1.214736 -0.025 -0.4482685 1.256904 -0.025 -0.4482685 1.256904 -0.085 -0.4055858 1.214736 -0.085 -0.5743457 1.058147 -0.05 -0.6028008 1.086259 -0.05 -0.6028008 1.086259 -0.09 -0.5743457 1.058147 -0.09 -0.6024581 1.029692 -0.02 -0.6309132 1.057804 -0.02 -0.6309132 1.057804 -0.1 -0.6024581 1.029692 -0.1 -0.7236224 0.9070502 -0.02 -0.7520775 0.9351625 -0.02 -0.7520775 0.9351625 -0.1 -0.7236224 0.9070502 -0.1'/
+//top-level joint references
+//top-level segment references
+//top-level site references
 let Coordinate89 = browser.currentScene.createNode("Coordinate");
 Coordinate89.DEF = "SKINCOORD";
 Coordinate89.point = new MFVec3f(new float[-0.05,1,0.05,0.05,1,0.05,0.03,0.97,-0.1,-0.03,0.97,-0.1,0.03,0.94,-0.075,-0.03,0.94,-0.075,0,0.92,0,0,0.94,0.03,-0.12,1.06,0.05,0.12,1.06,0.05,0.12,1.06,-0.1,-0.12,1.06,-0.1,0.0456,0.9364,0.05,0.1456,0.9364,0.05,0.1456,0.9364,-0.05,0.0456,0.9364,-0.05,0.0456,0.9,0.05,0.1456,0.9,0.05,0.1456,0.9,-0.05,0.0456,0.9,-0.05,0.0456,0.8,0.05,0.1456,0.8,0.05,0.1456,0.8,-0.05,0.0456,0.8,-0.05,0.0456,0.7,0.05,0.1456,0.7,0.05,0.1456,0.7,-0.05,0.0456,0.7,-0.05,0.0456,0.6,0.05,0.1456,0.6,0.05,0.1456,0.6,-0.05,0.0456,0.6,-0.05,0.0456,0.55,0.05,0.1456,0.55,0.05,0.1456,0.55,-0.05,0.0456,0.55,-0.05,0.0456,0.52,0.05,0.1456,0.52,0.05,0.1456,0.52,-0.05,0.0456,0.52,-0.05,0.0456,0.5,0.05,0.1456,0.5,0.05,0.1456,0.5,-0.05,0.0456,0.5,-0.05,0.0454,0.43,0.045,0.1454,0.43,0.045,0.1454,0.43,-0.055,0.0454,0.43,-0.055,0.0452,0.36,0.04,0.1452,0.36,0.04,0.1452,0.36,-0.06,0.0452,0.36,-0.06,0.045,0.29,0.035,0.145,0.29,0.035,0.145,0.29,-0.065,0.045,0.29,-0.065,0.0448,0.21,0.03,0.1448,0.21,0.03,0.1448,0.21,-0.07,0.0448,0.21,-0.07,0.0446,0.1262,0.025,0.1446,0.1262,0.025,0.1446,0.1262,-0.075,0.0446,0.1262,-0.075,0.0446,0.0762,0.025,0.1446,0.0762,0.025,0.1446,0,-0.075,0.0446,0,-0.075,0.0446,0.0562,0.057,0.1446,0.0562,0.057,0.1446,0,0.057,0.0446,0,0.057,0.0446,0.0562,0.087,0.1446,0.0562,0.087,0.1446,0,0.087,0.0446,0,0.087,0.0446,0.0562,0.1924,0.1446,0.0562,0.1924,0.1446,0,0.1924,0.0446,0,0.1924,-0.0456,0.9364,0.05,-0.1456,0.9364,0.05,-0.1456,0.9364,-0.05,-0.0456,0.9364,-0.05,-0.0456,0.9,0.05,-0.1456,0.9,0.05,-0.1456,0.9,-0.05,-0.0456,0.9,-0.05,-0.0456,0.8,0.05,-0.1456,0.8,0.05,-0.1456,0.8,-0.05,-0.0456,0.8,-0.05,-0.0456,0.7,0.05,-0.1456,0.7,0.05,-0.1456,0.7,-0.05,-0.0456,0.7,-0.05,-0.0456,0.6,0.05,-0.1456,0.6,0.05,-0.1456,0.6,-0.05,-0.0456,0.6,-0.05,-0.0456,0.55,0.05,-0.1456,0.55,0.05,-0.1456,0.55,-0.05,-0.0456,0.55,-0.05,-0.0456,0.52,0.05,-0.1456,0.52,0.05,-0.1456,0.52,-0.05,-0.0456,0.52,-0.05,-0.0456,0.5,0.05,-0.1456,0.5,0.05,-0.1456,0.5,-0.05,-0.0456,0.5,-0.05,-0.0454,0.43,0.045,-0.1454,0.43,0.045,-0.1454,0.43,-0.055,-0.0454,0.43,-0.055,-0.0452,0.36,0.04,-0.1452,0.36,0.04,-0.1452,0.36,-0.06,-0.0452,0.36,-0.06,-0.045,0.29,0.035,-0.145,0.29,0.035,-0.145,0.29,-0.065,-0.045,0.29,-0.065,-0.0448,0.21,0.03,-0.1448,0.21,0.03,-0.1448,0.21,-0.07,-0.0448,0.21,-0.07,-0.0446,0.1262,0.025,-0.1446,0.1262,0.025,-0.1446,0.1262,-0.075,-0.0446,0.1262,-0.075,-0.0446,0.0762,0.025,-0.1446,0.0762,0.025,-0.1446,0,-0.075,-0.0446,0,-0.075,-0.0446,0.0562,0.057,-0.1446,0.0562,0.057,-0.1446,0,0.057,-0.0446,0,0.057,-0.0446,0.0562,0.087,-0.1446,0.0562,0.087,-0.1446,0,0.087,-0.0446,0,0.087,-0.0446,0.0562,0.1924,-0.1446,0.0562,0.1924,-0.1446,0,0.1924,-0.0446,0,0.1924,-0.12,1.1,0.05,0.12,1.1,0.05,0.12,1.1,-0.1,-0.12,1.1,-0.1,-0.14,1.42,0.045,0.14,1.42,0.045,0.14,1.42,-0.09,-0.14,1.42,-0.09,-0.24,1.52,0.035,0.24,1.52,0.035,0.24,1.52,-0.09,-0.24,1.52,-0.09,-0.05,1.56,0.03,0.05,1.56,0.03,0.05,1.56,-0.06,-0.05,1.56,-0.06,-0.05,1.6,0.06,0.05,1.6,0.06,0.05,1.62,-0.03,-0.05,1.62,-0.03,-0.07,1.777,0.13,0.07,1.777,0.13,0.07,1.777,-0.03,-0.07,1.777,-0.03,-0.07,1.6,0.13,0.07,1.6,0.13,0.07,1.66,-0.03,-0.07,1.66,-0.03,0.16,1.42,0.015,0.24,1.5,0.015,0.24,1.5,-0.075,0.16,1.42,-0.075,0.17,1.18,-0.025,0.23,1.18,-0.025,0.23,1.18,-0.085,0.17,1.18,-0.085,0.17,1.14,-0.025,0.23,1.14,-0.025,0.23,1.14,-0.085,0.17,1.14,-0.085,0.18,0.91,-0.05,0.22,0.91,-0.05,0.22,0.91,-0.09,0.18,0.91,-0.09,0.18,0.87,-0.02,0.22,0.87,-0.02,0.22,0.87,-0.1,0.18,0.87,-0.1,0.18,0.6976,-0.02,0.22,0.6976,-0.02,0.22,0.6976,-0.1,0.18,0.6976,-0.1,-0.16,1.42,0.015,-0.24,1.5,0.015,-0.24,1.5,-0.075,-0.16,1.42,-0.075,-0.17,1.18,-0.025,-0.23,1.18,-0.025,-0.23,1.18,-0.085,-0.17,1.18,-0.085,-0.17,1.14,-0.025,-0.23,1.14,-0.025,-0.23,1.14,-0.085,-0.17,1.14,-0.085,-0.18,0.91,-0.05,-0.22,0.91,-0.05,-0.22,0.91,-0.09,-0.18,0.91,-0.09,-0.18,0.87,-0.02,-0.22,0.87,-0.02,-0.22,0.87,-0.1,-0.18,0.87,-0.1,-0.18,0.6976,-0.02,-0.22,0.6976,-0.02,-0.22,0.6976,-0.1,-0.18,0.6976,-0.1]);
@@ -583,7 +583,7 @@ Appearance92.material = Material93;
 
 Shape91.appearance = Appearance92;
 
-// # 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40) 
+//# 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40)
 let IndexedFaceSet94 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet94.coordIndex = new MFInt32(new int[0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1,123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1]);
 let Coordinate95 = browser.currentScene.createNode("Coordinate");
@@ -606,7 +606,7 @@ Appearance97.material = Material98;
 
 Shape96.appearance = Appearance97;
 
-// # 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10) 
+//# 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10)
 let IndexedFaceSet99 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet99.coordIndex = new MFInt32(new int[60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1]);
 let Coordinate100 = browser.currentScene.createNode("Coordinate");
@@ -627,7 +627,7 @@ Appearance102.material = Material103;
 
 Shape101.appearance = Appearance102;
 
-// # 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8) 
+//# 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8)
 let IndexedFaceSet104 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet104.coordIndex = new MFInt32(new int[148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1]);
 let Coordinate105 = browser.currentScene.createNode("Coordinate");
@@ -648,7 +648,7 @@ Appearance107.material = Material108;
 
 Shape106.appearance = Appearance107;
 
-// # 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10) 
+//# 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10)
 let IndexedFaceSet109 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet109.coordIndex = new MFInt32(new int[172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1]);
 let Coordinate110 = browser.currentScene.createNode("Coordinate");
@@ -668,7 +668,7 @@ Appearance112.material = Material113;
 
 Shape111.appearance = Appearance112;
 
-// Combined set of prior IFS coordIndex values 
+//Combined set of prior IFS coordIndex values
 let IndexedLineSet114 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet114.coordIndex = new MFInt32(new int[0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1,123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1,60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1,148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1,172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1]);
 let Coordinate115 = browser.currentScene.createNode("Coordinate");
@@ -2896,7 +2896,7 @@ Transform497.DEF = "CoordinateSystemFloor";
 Transform497.scale = new SFVec3f(new float[0.1,0.1,0.1]);
 let Shape498 = browser.currentScene.createNode("Shape");
 Shape498.DEF = "AxisLinesShape";
-// RGB lines showing XYZ axes 
+//RGB lines showing XYZ axes
 let IndexedLineSet499 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet499.colorIndex = new MFInt32(new int[0,1,2]);
 IndexedLineSet499.colorPerVertex = False;

@@ -65,15 +65,15 @@ ProtoDeclare14 = x3d.ProtoDeclare()
 ProtoDeclare14.setName("FlowerProto")
 ProtoInterface15 = x3d.ProtoInterface()
 field16 = x3d.field()
-field16.setAccessType("inputOutput")
 field16.setName("vertex")
+field16.setAccessType("inputOutput")
 field16.setType("MFString")
 field16.setValue("\"../shaders/gl_flowers_chromatic.vs\"")
 
 ProtoInterface15.addField(field16)
 field17 = x3d.field()
-field17.setAccessType("inputOutput")
 field17.setName("fragment")
+field17.setAccessType("inputOutput")
 field17.setType("MFString")
 field17.setValue("\"../shaders/pc_flowers.fs\"")
 
@@ -83,7 +83,6 @@ ProtoDeclare14.setProtoInterface(ProtoInterface15)
 ProtoBody18 = x3d.ProtoBody()
 Transform19 = x3d.Transform()
 Transform19.setDEF("transform")
-Transform19.setTranslation([0,0,0])
 Shape20 = x3d.Shape()
 Appearance21 = x3d.Appearance()
 Material22 = x3d.Material()
@@ -199,11 +198,7 @@ field41.setAccessType("inputOutput")
 field41.setValue("0")
 
 ComposedShader30.addField(field41)
-# 
-#		       <field name='cube' type='SFNode' accessType=\"inputOutput\">
-#			  <ComposedCubeMapTexture USE=\"texture\"/>
-#		  </field>
-#		  
+#<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
 ShaderPart42 = x3d.ShaderPart()
 ShaderPart42.setType("VERTEX")
 IS43 = x3d.IS()
