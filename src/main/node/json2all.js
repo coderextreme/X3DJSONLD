@@ -5,7 +5,6 @@
 process.argv.shift();
 process.argv.shift();
 
-process.argv.unshift("../data/JoeSkinTexcoordDisplacerKick.json");
 var convertJSON = require('./convertJSON.js').convertJSON;
 
 convertJSON([
