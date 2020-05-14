@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 May 2020"
+          "@content": "13 May 2020"
         },
         {
           "@name": "generator",
@@ -48,13 +48,7 @@
               0,
               5
             ],
-            "@description": "Only Viewpoint",
-            "@orientation": [
-              0,
-              0,
-              1,
-              0
-            ]
+            "@description": "Only Viewpoint"
           }
         },
         {
@@ -72,8 +66,8 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@accessType": "inputOutput",
                   "@name": "translation",
+                  "@accessType": "inputOutput",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -242,23 +236,23 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@accessType": "initializeOnly",
                   "@name": "startnode",
-                  "@type": "SFNode"
-                },
-                {
                   "@accessType": "initializeOnly",
-                  "@name": "endnode",
                   "@type": "SFNode"
                 },
                 {
-                  "@accessType": "inputOnly",
+                  "@name": "endnode",
+                  "@accessType": "initializeOnly",
+                  "@type": "SFNode"
+                },
+                {
                   "@name": "set_startpoint",
+                  "@accessType": "inputOnly",
                   "@type": "SFVec3f"
                 },
                 {
-                  "@accessType": "inputOnly",
                   "@name": "set_endpoint",
+                  "@accessType": "inputOnly",
                   "@type": "SFVec3f"
                 }
               ]
@@ -271,11 +265,6 @@
                       {
                         "Transform": {
                           "@DEF": "trans",
-                          "@translation": [
-                            0,
-                            0,
-                            0
-                          ],
                           "-children": [
                             {
                               "Transform": {
@@ -315,18 +304,18 @@
                           "@DEF": "S1",
                           "field": [
                             {
-                              "@accessType": "initializeOnly",
                               "@name": "startnode",
-                              "@type": "SFNode"
-                            },
-                            {
                               "@accessType": "initializeOnly",
-                              "@name": "endnode",
                               "@type": "SFNode"
                             },
                             {
-                              "@accessType": "inputOutput",
+                              "@name": "endnode",
+                              "@accessType": "initializeOnly",
+                              "@type": "SFNode"
+                            },
+                            {
                               "@name": "position",
+                              "@accessType": "inputOutput",
                               "@type": "SFNode",
                               "-children": [
                                 {
@@ -337,8 +326,8 @@
                               ]
                             },
                             {
-                              "@accessType": "inputOutput",
                               "@name": "rotscale",
+                              "@accessType": "inputOutput",
                               "@type": "SFNode",
                               "-children": [
                                 {
@@ -349,13 +338,13 @@
                               ]
                             },
                             {
-                              "@accessType": "inputOnly",
                               "@name": "set_startpoint",
+                              "@accessType": "inputOnly",
                               "@type": "SFVec3f"
                             },
                             {
-                              "@accessType": "inputOnly",
                               "@name": "set_endpoint",
+                              "@accessType": "inputOnly",
                               "@type": "SFVec3f"
                             }
                           ],
@@ -438,26 +427,26 @@
         },
         {
           "ProtoInstance": {
-            "@DEF": "G1",
-            "@name": "point"
+            "@name": "point",
+            "@DEF": "G1"
           }
         },
         {
           "ProtoInstance": {
-            "@DEF": "G2",
-            "@name": "point"
+            "@name": "point",
+            "@DEF": "G2"
           }
         },
         {
           "ProtoInstance": {
-            "@DEF": "G3",
-            "@name": "point"
+            "@name": "point",
+            "@DEF": "G3"
           }
         },
         {
           "ProtoInstance": {
-            "@DEF": "G4",
-            "@name": "point"
+            "@name": "point",
+            "@DEF": "G4"
           }
         },
         {

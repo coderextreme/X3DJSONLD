@@ -53,7 +53,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 May 2020"
+          "@content": "13 May 2020"
         },
         {
           "@name": "generator",
@@ -73,16 +73,16 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@accessType": "inputOutput",
                   "@name": "vertex",
+                  "@accessType": "inputOutput",
                   "@type": "MFString",
                   "@value": [
                     "../shaders/gl_flowers_chromatic.vs"
                   ]
                 },
                 {
-                  "@accessType": "inputOutput",
                   "@name": "fragment",
+                  "@accessType": "inputOutput",
                   "@type": "MFString",
                   "@value": [
                     "../shaders/pc_flowers.fs"
@@ -95,11 +95,6 @@
                 {
                   "Transform": {
                     "@DEF": "transform",
-                    "@translation": [
-                      0,
-                      0,
-                      0
-                    ],
                     "-children": [
                       {
                         "Shape": {
@@ -251,19 +246,7 @@
                                     ],
                                     "-children": [
                                       {
-                                        "#comment": " "
-                                      },
-                                      {
-                                        "#comment": "\t\t       <field name='cube' type='SFNode' accessType=\"inputOutput\">"
-                                      },
-                                      {
-                                        "#comment": "\t\t\t  <ComposedCubeMapTexture USE=\"texture\"/>"
-                                      },
-                                      {
-                                        "#comment": "\t\t  </field>"
-                                      },
-                                      {
-                                        "#comment": "\t\t  "
+                                        "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                                       }
                                     ],
                                     "-parts": [

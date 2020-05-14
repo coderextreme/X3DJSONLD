@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 May 2020"
+          "@content": "13 May 2020"
         },
         {
           "@name": "generator",
@@ -48,13 +48,7 @@
               0,
               5
             ],
-            "@description": "Only Viewpoint",
-            "@orientation": [
-              0,
-              0,
-              1,
-              0
-            ]
+            "@description": "Only Viewpoint"
           }
         },
         {
@@ -72,8 +66,8 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@accessType": "inputOutput",
                   "@name": "translation",
+                  "@accessType": "inputOutput",
                   "@type": "SFVec3f",
                   "@value": [
                     0,
@@ -310,33 +304,33 @@
             "ProtoInterface": {
               "field": [
                 {
-                  "@accessType": "initializeOnly",
                   "@name": "startnode",
-                  "@type": "SFNode"
-                },
-                {
                   "@accessType": "initializeOnly",
+                  "@type": "SFNode"
+                },
+                {
                   "@name": "endnode",
+                  "@accessType": "initializeOnly",
                   "@type": "SFNode"
                 },
                 {
-                  "@accessType": "inputOutput",
                   "@name": "transnode",
-                  "@type": "SFNode"
-                },
-                {
                   "@accessType": "inputOutput",
-                  "@name": "rotscalenode",
                   "@type": "SFNode"
                 },
                 {
-                  "@accessType": "inputOnly",
+                  "@name": "rotscalenode",
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode"
+                },
+                {
                   "@name": "set_startpoint",
+                  "@accessType": "inputOnly",
                   "@type": "SFVec3f"
                 },
                 {
-                  "@accessType": "inputOnly",
                   "@name": "set_endpoint",
+                  "@accessType": "inputOnly",
                   "@type": "SFVec3f"
                 }
               ]
@@ -348,33 +342,33 @@
                     "@DEF": "S1",
                     "field": [
                       {
-                        "@accessType": "initializeOnly",
                         "@name": "startnode",
+                        "@accessType": "initializeOnly",
                         "@type": "SFNode"
                       },
                       {
-                        "@accessType": "initializeOnly",
                         "@name": "endnode",
+                        "@accessType": "initializeOnly",
                         "@type": "SFNode"
                       },
                       {
-                        "@accessType": "initializeOnly",
                         "@name": "transnode",
-                        "@type": "SFNode"
-                      },
-                      {
                         "@accessType": "initializeOnly",
-                        "@name": "rotscalenode",
                         "@type": "SFNode"
                       },
                       {
-                        "@accessType": "inputOnly",
+                        "@name": "rotscalenode",
+                        "@accessType": "initializeOnly",
+                        "@type": "SFNode"
+                      },
+                      {
                         "@name": "set_startpoint",
+                        "@accessType": "inputOnly",
                         "@type": "SFVec3f"
                       },
                       {
-                        "@accessType": "inputOnly",
                         "@name": "set_endpoint",
+                        "@accessType": "inputOnly",
                         "@type": "SFVec3f"
                       }
                     ],

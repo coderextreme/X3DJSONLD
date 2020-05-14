@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd" ><head><component level="1" name="Scripting"></component>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd" ><head><component name="Scripting" level="1"></component>
 <meta name="title" content="flowers2.x3d"></meta>
-<meta content="John Carlson" name="creator"></meta>
-<meta content="John Carlson" name="transcriber"></meta>
-<meta content="23 January 2005" name="created"></meta>
-<meta content="21 March 2018" name="modified"></meta>
-<meta content="2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)" name="description"></meta>
-<meta content="https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d" name="identifier"></meta>
-<meta content="manually written" name="generator"></meta>
-<meta content="http://www.web3d.org/x3d/content/examples/license.html" name="license"></meta>
+<meta name="creator" content="John Carlson"></meta>
+<meta name="transcriber" content="John Carlson"></meta>
+<meta name="created" content="23 January 2005"></meta>
+<meta name="modified" content="21 March 2018"></meta>
+<meta name="description" content="2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"></meta>
+<meta name="generator" content="manually written"></meta>
+<meta name="license" content="http://www.web3d.org/x3d/content/examples/license.html"></meta>
 </head>
-<Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
+<Scene><NavigationInfo></NavigationInfo>
 <Viewpoint description="Two mathematical orbitals" position="0 0 50"></Viewpoint>
 <Group><DirectionalLight direction="1 1 1"></DirectionalLight>
 <ProtoDeclare name="orbit"><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="-8 0 0"></field>
@@ -29,18 +29,18 @@
 </IS>
 </Material>
 </Appearance>
-<!----><!--				  <IndexedFaceSet DEF="Orbit" creaseAngle="0">--><!--				    <Coordinate DEF="OrbitCoordinates"></Coordinate>--><!--				  </IndexedFaceSet>--><!--				  --><IndexedFaceSet containerField="geometry" ccw="false" convex="false" coordIndex="0 1 2 -1" creaseAngle="0" DEF="Orbit" solid="true"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
+<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet containerField="geometry" ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Script DEF="OrbitScript"><field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
-<field accessType="outputOnly" name="coordinates" type="MFVec3f"></field>
-<field accessType="outputOnly" name="coordIndexes" type="MFInt32"></field>
-<field accessType="inputOutput" name="e" type="SFFloat" value="5"></field>
-<field accessType="inputOutput" name="f" type="SFFloat" value="5"></field>
-<field accessType="inputOutput" name="g" type="SFFloat" value="5"></field>
-<field accessType="inputOutput" name="h" type="SFFloat" value="5"></field>
-<field accessType="inputOutput" name="resolution" type="SFInt32" value="50"></field>
+<Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
+<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
+<field name="e" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="f" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="g" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="h" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="resolution" accessType="inputOutput" type="SFInt32" value="50"></field>
 <![CDATA[ecmascript:
 
 			var e = 5;

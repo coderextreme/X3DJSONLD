@@ -6,44 +6,44 @@
     "head": {
       "meta": [
         {
-          "@content": "CloudsProcedural4.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "CloudsProcedural4.x3d"
         },
         {
-          "@content": "X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."
         },
         {
-          "@content": "Capt Darren W. Murphy",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Capt Darren W. Murphy"
         },
         {
-          "@content": "1 November 2007",
-          "@name": "created"
+          "@name": "created",
+          "@content": "1 November 2007"
         },
         {
-          "@content": "14 January 2014",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "14 January 2014"
         },
         {
-          "@content": "https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d",
-          "@name": "identifier"
+          "@name": "identifier",
+          "@content": "https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"
         },
         {
-          "@content": "X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html",
-          "@name": "generator"
+          "@name": "generator",
+          "@content": "X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"
         },
         {
-          "@content": "../../license.html",
-          "@name": "license"
+          "@name": "license",
+          "@content": "../../license.html"
         },
         {
-          "@content": "fix links",
-          "@name": "TODO"
+          "@name": "TODO",
+          "@content": "fix links"
         },
         {
           "@name": "translated",
-          "@content": "6 May 2020"
+          "@content": "13 May 2020"
         },
         {
           "@name": "generator",
@@ -58,7 +58,7 @@
     "Scene": {
       "-children": [
         {
-          "#comment": " A png image file for the cloud texture must be designated in the ecmascript node. "
+          "#comment": "A png image file for the cloud texture must be designated in the ecmascript node."
         },
         {
           "Viewpoint": {
@@ -268,8 +268,8 @@
                   "@directOutput": true,
                   "field": [
                     {
-                      "@accessType": "initializeOnly",
                       "@name": "Cumulus",
+                      "@accessType": "initializeOnly",
                       "@type": "SFNode",
                       "-children": [
                         {
@@ -280,8 +280,8 @@
                       ]
                     },
                     {
-                      "@accessType": "initializeOnly",
                       "@name": "Cirrus",
+                      "@accessType": "initializeOnly",
                       "@type": "SFNode",
                       "-children": [
                         {
@@ -292,8 +292,8 @@
                       ]
                     },
                     {
-                      "@accessType": "initializeOnly",
                       "@name": "Fog",
+                      "@accessType": "initializeOnly",
                       "@type": "SFNode"
                     }
                   ],
@@ -470,12 +470,12 @@
                     "",
                     "\t\tif (Y <= 30) //cloud shading and lighting control",
                     "  \t{\t",
-                    "\timage = ' \\\"CloudTexture1_5.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \n';",
+                    "\timage = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \n';",
                     "  \t}",
                     "",
                     "  \t\telse",
                     "  \t{\t",
-                    "\timage = ' \\\"CloudTexture1_4.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \n';",
+                    "\timage = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \n';",
                     "  \t}",
                     "",
                     "\t",
@@ -619,7 +619,7 @@
                     "\t\t'\t\t\t    material Material {\t\t\t\n' +",
                     "\t\t'\t\t\t    }\t\t\t\t\t\n' +",
                     " \t\t'\t                      texture ImageTexture {\t        \n' +",
-                    "\t\t'\t                        url [\\\"cloudtexture3.png\\\" \\\"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\\\" ] \n' +",
+                    "\t\t'\t                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] \n' +",
                     "\t\t'\t                      }\t                                \n' +",
                     "\t\t'\t                    }\t                                \n' +",
                     "\t\t'\t                    geometry IndexedFaceSet {\t        \n' +     // define type of geometry to texture",

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "http://www.web3d.org/specifications/x3d-3.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.1" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.1.xsd" ><head><meta content="IcosahedronSubdivisionLevel5.x3d" name="title"></meta>
-<meta content="IcosahedronSubdivisionLevel5.ply" name="reference"></meta>
-<meta content="Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles." name="description"></meta>
-<meta content="13 September 2014" name="created"></meta>
-<meta content="27 September 2014" name="modified"></meta>
-<meta content="Don Brutzman" name="creator"></meta>
-<meta content="Icosahedron.x3d" name="reference"></meta>
-<meta content="https://en.wikipedia.org/wiki/Icosahedron" name="reference"></meta>
-<meta content="https://en.wiktionary.org/wiki/icosahedron" name="reference"></meta>
-<meta content="https://en.wikipedia.org/wiki/Platonic_solid" name="reference"></meta>
-<meta content="https://en.wikipedia.org/wiki/Geodesic_grid" name="reference"></meta>
-<meta content="http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d" name="identifier"></meta>
-<meta content="Meshlab X3D Exported, http://meshlab.sourceforge.net" name="generator"></meta>
-<meta content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit" name="generator"></meta>
-<meta content="../license.html" name="license"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="3.1" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.1.xsd" ><head><meta name="title" content="IcosahedronSubdivisionLevel5.x3d"></meta>
+<meta name="reference" content="IcosahedronSubdivisionLevel5.ply"></meta>
+<meta name="description" content="Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles."></meta>
+<meta name="created" content="13 September 2014"></meta>
+<meta name="modified" content="27 September 2014"></meta>
+<meta name="creator" content="Don Brutzman"></meta>
+<meta name="reference" content="Icosahedron.x3d"></meta>
+<meta name="reference" content="https://en.wikipedia.org/wiki/Icosahedron"></meta>
+<meta name="reference" content="https://en.wiktionary.org/wiki/icosahedron"></meta>
+<meta name="reference" content="https://en.wikipedia.org/wiki/Platonic_solid"></meta>
+<meta name="reference" content="https://en.wikipedia.org/wiki/Geodesic_grid"></meta>
+<meta name="identifier" content="http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d"></meta>
+<meta name="generator" content="Meshlab X3D Exported, http://meshlab.sourceforge.net"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
 </head>
 <Scene><Background skyColor="0.5 1 0.9"></Background>
 <Viewpoint description="Icosahedron, subdivision level 5" position="0 0 6"></Viewpoint>

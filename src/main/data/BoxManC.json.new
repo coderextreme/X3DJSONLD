@@ -6,106 +6,106 @@
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "H-Anim"
+          "@name": "H-Anim",
+          "@level": 1
         }
       ],
       "meta": [
         {
-          "@content": "BoxMan.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "BoxMan.x3d"
         },
         {
-          "@content": "A Seamless VRML Human, demonstrating the H-Anim 2001 Specification. Animation scripting via EcmaScript.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "A Seamless VRML Human, demonstrating the H-Anim 2001 Specification. Animation scripting via EcmaScript."
         },
         {
-          "@content": "James Smith - james@vapourtech.com",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "James Smith - james@vapourtech.com"
         },
         {
-          "@content": "Don Brutzman and Matt Beitler",
-          "@name": "translator"
+          "@name": "translator",
+          "@content": "Don Brutzman and Matt Beitler"
         },
         {
-          "@content": "1 March 2001",
-          "@name": "created"
-        },
-        {
-          "@content": "19 October 2001",
-          "@name": "translated"
-        },
-        {
-          "@content": "17 November 2014",
-          "@name": "modified"
-        },
-        {
-          "@content": "http://h-anim.org",
-          "@name": "reference"
-        },
-        {
-          "@content": "boxman.original.wrl",
-          "@name": "reference"
-        },
-        {
-          "@content": "reconcile z-coordinate mismatches using source anthropometry, see source for details",
-          "@name": "TODO"
-        },
-        {
-          "@content": "http://h-anim.org/Models/H-Anim2001/boxman",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://h-anim.org/Models/H-Anim2001/boxman/boxman.wrl",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://www.vapourtech.com/team/james/boxman.wrl",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://h-anim.org/Specifications/H-Anim2001",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://h-anim.org/Models",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://h-anim.org/Nodes",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://www.web3d.org/x3d/content/X3dToVrml97.xslt",
-          "@name": "reference"
-        },
-        {
-          "@content": "(C) 2000 James Smith - james@vapourtech.com",
-          "@name": "rights"
-        },
-        {
-          "@content": "http://www.vapourtech.com",
-          "@name": "reference"
-        },
-        {
-          "@content": "BoxMan H-Anim 2.0",
-          "@name": "subject"
-        },
-        {
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
+          "@name": "created",
+          "@content": "1 March 2001"
         },
         {
           "@name": "translated",
-          "@content": "10 May 2020"
+          "@content": "19 October 2001"
+        },
+        {
+          "@name": "modified",
+          "@content": "17 November 2014"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://h-anim.org"
+        },
+        {
+          "@name": "reference",
+          "@content": "boxman.original.wrl"
+        },
+        {
+          "@name": "TODO",
+          "@content": "reconcile z-coordinate mismatches using source anthropometry, see source for details"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://h-anim.org/Models/H-Anim2001/boxman"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://h-anim.org/Models/H-Anim2001/boxman/boxman.wrl"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.vapourtech.com/team/james/boxman.wrl"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://h-anim.org/Specifications/H-Anim2001"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://h-anim.org/Models"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://h-anim.org/Nodes"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.web3d.org/x3d/content/X3dToVrml97.xslt"
+        },
+        {
+          "@name": "rights",
+          "@content": "(C) 2000 James Smith - james@vapourtech.com"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.vapourtech.com"
+        },
+        {
+          "@name": "subject",
+          "@content": "BoxMan H-Anim 2.0"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "13 May 2020"
         },
         {
           "@name": "generator",
@@ -144,10 +144,11 @@
           }
         },
         {
-          "#comment": " H-Anim node prototypes are provided automatically by the X3dToVrml97.xsl translation stylesheet when converting to VRML97 (which didn't include H-Anim) "
+          "#comment": "H-Anim node prototypes are provided automatically by the X3dToVrml97.xsl translation stylesheet when converting to VRML97 (which didn't include H-Anim)"
         },
         {
           "HAnimHumanoid": {
+            "@name": "Humanoid",
             "@DEF": "HUMANOID",
             "@info": [
               "authorName=James Smith",
@@ -155,18 +156,17 @@
               "copyright=(C) 2000 James Smith - james@vapourtech.com",
               "humanoidVersion=2.0"
             ],
-            "@name": "Humanoid",
             "@version": "2.0",
             "-joints": [
               {
                 "HAnimJoint": {
+                  "@name": "HumanoidRoot",
                   "@DEF": "hanim_HumanoidRoot",
                   "@center": [
                     0,
                     0.9723,
                     -0.0728
                   ],
-                  "@name": "HumanoidRoot",
                   "@skinCoordIndex": [
                     0,
                     1,
@@ -198,8 +198,8 @@
                   "-children": [
                     {
                       "HAnimSegment": {
-                        "@DEF": "hanim_sacrum",
                         "@name": "sacrum",
+                        "@DEF": "hanim_sacrum",
                         "-children": [
                           {
                             "Transform": {
@@ -240,13 +240,13 @@
                     },
                     {
                       "HAnimJoint": {
+                        "@name": "l_hip",
                         "@DEF": "hanim_l_hip",
                         "@center": [
                           0.0956,
                           0.9364,
                           0
                         ],
-                        "@name": "l_hip",
                         "@skinCoordIndex": [
                           12,
                           13,
@@ -318,11 +318,11 @@
                         "-children": [
                           {
                             "HAnimSegment": {
-                              "@DEF": "hanim_l_thigh",
                               "@name": "l_thigh",
+                              "@DEF": "hanim_l_thigh",
                               "-children": [
                                 {
-                                  "#comment": " TODO reconcile z-coordinate mismatch using source anthropometry "
+                                  "#comment": "TODO reconcile z-coordinate mismatch using source anthropometry"
                                 },
                                 {
                                   "Transform": {
@@ -345,13 +345,13 @@
                           },
                           {
                             "HAnimJoint": {
+                              "@name": "l_knee",
                               "@DEF": "hanim_l_knee",
                               "@center": [
                                 0.0956,
                                 0.5095,
                                 -0.0036
                               ],
-                              "@name": "l_knee",
                               "@skinCoordIndex": [
                                 36,
                                 37,
@@ -415,8 +415,8 @@
                               "-children": [
                                 {
                                   "HAnimSegment": {
-                                    "@DEF": "hanim_l_calf",
                                     "@name": "l_calf",
+                                    "@DEF": "hanim_l_calf",
                                     "-children": [
                                       {
                                         "Transform": {
@@ -439,13 +439,13 @@
                                 },
                                 {
                                   "HAnimJoint": {
+                                    "@name": "l_ankle",
                                     "@DEF": "hanim_l_ankle",
                                     "@center": [
                                       0.0946,
                                       0.0762,
                                       -0.0261
                                     ],
-                                    "@name": "l_ankle",
                                     "@skinCoordIndex": [
                                       64,
                                       65,
@@ -469,8 +469,8 @@
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@DEF": "hanim_l_hindfoot",
                                           "@name": "l_hindfoot",
+                                          "@DEF": "hanim_l_hindfoot",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -493,13 +493,13 @@
                                       },
                                       {
                                         "HAnimJoint": {
+                                          "@name": "l_midtarsal",
                                           "@DEF": "hanim_l_midtarsal",
                                           "@center": [
                                             0.1079,
                                             0.0317,
                                             0.067
                                           ],
-                                          "@name": "l_midtarsal",
                                           "@skinCoordIndex": [
                                             72,
                                             73,
@@ -523,8 +523,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@DEF": "hanim_l_middistal",
                                                 "@name": "l_middistal",
+                                                "@DEF": "hanim_l_middistal",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -544,8 +544,8 @@
                                                   },
                                                   {
                                                     "HAnimSite": {
-                                                      "@DEF": "hanim_l_middle_distal_tip",
                                                       "@name": "l_middle_distal_tip",
+                                                      "@DEF": "hanim_l_middle_distal_tip",
                                                       "@translation": [
                                                         0.095,
                                                         0.0005,
@@ -604,13 +604,13 @@
                     },
                     {
                       "HAnimJoint": {
+                        "@name": "r_hip",
                         "@DEF": "hanim_r_hip",
                         "@center": [
                           -0.0956,
                           0.9364,
                           0
                         ],
-                        "@name": "r_hip",
                         "@skinCoordIndex": [
                           80,
                           81,
@@ -682,11 +682,11 @@
                         "-children": [
                           {
                             "HAnimSegment": {
-                              "@DEF": "hanim_r_thigh",
                               "@name": "r_thigh",
+                              "@DEF": "hanim_r_thigh",
                               "-children": [
                                 {
-                                  "#comment": " TODO reconcile z-coordinate mismatch using source anthropometry "
+                                  "#comment": "TODO reconcile z-coordinate mismatch using source anthropometry"
                                 },
                                 {
                                   "Transform": {
@@ -709,13 +709,13 @@
                           },
                           {
                             "HAnimJoint": {
+                              "@name": "r_knee",
                               "@DEF": "hanim_r_knee",
                               "@center": [
                                 -0.0956,
                                 0.5095,
                                 -0.0036
                               ],
-                              "@name": "r_knee",
                               "@skinCoordIndex": [
                                 104,
                                 105,
@@ -779,8 +779,8 @@
                               "-children": [
                                 {
                                   "HAnimSegment": {
-                                    "@DEF": "hanim_r_calf",
                                     "@name": "r_calf",
+                                    "@DEF": "hanim_r_calf",
                                     "-children": [
                                       {
                                         "Transform": {
@@ -803,13 +803,13 @@
                                 },
                                 {
                                   "HAnimJoint": {
+                                    "@name": "r_ankle",
                                     "@DEF": "hanim_r_ankle",
                                     "@center": [
                                       -0.0946,
                                       0.0762,
                                       -0.0261
                                     ],
-                                    "@name": "r_ankle",
                                     "@skinCoordIndex": [
                                       132,
                                       133,
@@ -833,8 +833,8 @@
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@DEF": "hanim_r_hindfoot",
                                           "@name": "r_hindfoot",
+                                          "@DEF": "hanim_r_hindfoot",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -857,13 +857,13 @@
                                       },
                                       {
                                         "HAnimJoint": {
+                                          "@name": "r_midtarsal",
                                           "@DEF": "hanim_r_midtarsal",
                                           "@center": [
                                             -0.1079,
                                             0.0317,
                                             0.067
                                           ],
-                                          "@name": "r_midtarsal",
                                           "@skinCoordIndex": [
                                             140,
                                             141,
@@ -887,8 +887,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@DEF": "hanim_r_middistal",
                                                 "@name": "r_middistal",
+                                                "@DEF": "hanim_r_middistal",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -908,8 +908,8 @@
                                                   },
                                                   {
                                                     "HAnimSite": {
-                                                      "@DEF": "hanim_r_middle_distal_tip",
                                                       "@name": "r_middle_distal_tip",
+                                                      "@DEF": "hanim_r_middle_distal_tip",
                                                       "@translation": [
                                                         -0.095,
                                                         0.0005,
@@ -950,13 +950,13 @@
                     },
                     {
                       "HAnimJoint": {
+                        "@name": "vl5",
                         "@DEF": "hanim_vl5",
                         "@center": [
                           0,
                           1.0817,
                           -0.0728
                         ],
-                        "@name": "vl5",
                         "@skinCoordIndex": [
                           148,
                           149,
@@ -1004,8 +1004,8 @@
                         "-children": [
                           {
                             "HAnimSegment": {
-                              "@DEF": "hanim_l5",
                               "@name": "l5",
+                              "@DEF": "hanim_l5",
                               "-children": [
                                 {
                                   "Transform": {
@@ -1028,13 +1028,13 @@
                           },
                           {
                             "HAnimJoint": {
+                              "@name": "skullbase",
                               "@DEF": "hanim_skullbase",
                               "@center": [
                                 0,
                                 1.644,
                                 0.036
                               ],
-                              "@name": "skullbase",
                               "@skinCoordIndex": [
                                 168,
                                 169,
@@ -1072,11 +1072,11 @@
                               "-children": [
                                 {
                                   "HAnimSegment": {
-                                    "@DEF": "hanim_skull",
                                     "@name": "skull",
+                                    "@DEF": "hanim_skull",
                                     "-children": [
                                       {
-                                        "#comment": " TODO reconcile z-coordinate mismatch using source anthropometry "
+                                        "#comment": "TODO reconcile z-coordinate mismatch using source anthropometry"
                                       },
                                       {
                                         "Transform": {
@@ -1096,8 +1096,8 @@
                                       },
                                       {
                                         "HAnimSite": {
-                                          "@DEF": "hanim_skull_tip",
                                           "@name": "skull_tip",
+                                          "@DEF": "hanim_skull_tip",
                                           "@translation": [
                                             -0.0029,
                                             1.7771,
@@ -1129,13 +1129,13 @@
                           },
                           {
                             "HAnimJoint": {
+                              "@name": "l_shoulder",
                               "@DEF": "hanim_l_shoulder",
                               "@center": [
                                 0.1968,
                                 1.4642,
                                 -0.0265
                               ],
-                              "@name": "l_shoulder",
                               "@skinCoordIndex": [
                                 176,
                                 177,
@@ -1159,8 +1159,8 @@
                               "-children": [
                                 {
                                   "HAnimSegment": {
-                                    "@DEF": "hanim_l_upperarm",
                                     "@name": "l_upperarm",
+                                    "@DEF": "hanim_l_upperarm",
                                     "-children": [
                                       {
                                         "Transform": {
@@ -1183,13 +1183,13 @@
                                 },
                                 {
                                   "HAnimJoint": {
+                                    "@name": "l_elbow",
                                     "@DEF": "hanim_l_elbow",
                                     "@center": [
                                       0.1982,
                                       1.1622,
                                       -0.0557
                                     ],
-                                    "@name": "l_elbow",
                                     "@skinCoordIndex": [
                                       184,
                                       185,
@@ -1213,8 +1213,8 @@
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@DEF": "hanim_l_forearm",
                                           "@name": "l_forearm",
+                                          "@DEF": "hanim_l_forearm",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -1237,13 +1237,13 @@
                                       },
                                       {
                                         "HAnimJoint": {
+                                          "@name": "l_wrist",
                                           "@DEF": "hanim_l_wrist",
                                           "@center": [
                                             0.1972,
                                             0.8929,
                                             -0.069
                                           ],
-                                          "@name": "l_wrist",
                                           "@skinCoordIndex": [
                                             192,
                                             193,
@@ -1267,8 +1267,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@DEF": "hanim_l_hand",
                                                 "@name": "l_hand",
+                                                "@DEF": "hanim_l_hand",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -1288,8 +1288,8 @@
                                                   },
                                                   {
                                                     "HAnimSite": {
-                                                      "@DEF": "hanim_l_hand_tip",
                                                       "@name": "l_hand_tip",
+                                                      "@DEF": "hanim_l_hand_tip",
                                                       "@translation": [
                                                         0.1912,
                                                         0.6976,
@@ -1327,13 +1327,13 @@
                           },
                           {
                             "HAnimJoint": {
+                              "@name": "r_shoulder",
                               "@DEF": "hanim_r_shoulder",
                               "@center": [
                                 -0.1968,
                                 1.4642,
                                 -0.0265
                               ],
-                              "@name": "r_shoulder",
                               "@skinCoordIndex": [
                                 200,
                                 201,
@@ -1357,8 +1357,8 @@
                               "-children": [
                                 {
                                   "HAnimSegment": {
-                                    "@DEF": "hanim_r_upperarm",
                                     "@name": "r_upperarm",
+                                    "@DEF": "hanim_r_upperarm",
                                     "-children": [
                                       {
                                         "Transform": {
@@ -1381,13 +1381,13 @@
                                 },
                                 {
                                   "HAnimJoint": {
+                                    "@name": "r_elbow",
                                     "@DEF": "hanim_r_elbow",
                                     "@center": [
                                       -0.1982,
                                       1.1622,
                                       -0.0557
                                     ],
-                                    "@name": "r_elbow",
                                     "@skinCoordIndex": [
                                       208,
                                       209,
@@ -1411,8 +1411,8 @@
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@DEF": "hanim_r_forearm",
                                           "@name": "r_forearm",
+                                          "@DEF": "hanim_r_forearm",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -1435,13 +1435,13 @@
                                       },
                                       {
                                         "HAnimJoint": {
+                                          "@name": "r_wrist",
                                           "@DEF": "hanim_r_wrist",
                                           "@center": [
                                             -0.1972,
                                             0.8929,
                                             -0.069
                                           ],
-                                          "@name": "r_wrist",
                                           "@skinCoordIndex": [
                                             216,
                                             217,
@@ -1465,8 +1465,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@DEF": "hanim_r_hand",
                                                 "@name": "r_hand",
+                                                "@DEF": "hanim_r_hand",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -1486,8 +1486,8 @@
                                                   },
                                                   {
                                                     "HAnimSite": {
-                                                      "@DEF": "hanim_r_hand_tip",
                                                       "@name": "r_hand_tip",
+                                                      "@DEF": "hanim_r_hand_tip",
                                                       "@translation": [
                                                         -0.1912,
                                                         0.6976,
@@ -1617,19 +1617,19 @@
             ],
             "-children": [
               {
-                "#comment": " # sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8) "
+                "#comment": "# sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8)"
               },
               {
-                "#comment": " top-level joint references "
+                "#comment": "top-level joint references"
               },
               {
-                "#comment": " top-level site references "
+                "#comment": "top-level site references"
               },
               {
-                "#comment": " top-level segment references "
+                "#comment": "top-level segment references"
               },
               {
-                "#comment": " top-level viewpoint references "
+                "#comment": "top-level viewpoint references"
               },
               {
                 "Viewpoint": {
@@ -2412,7 +2412,7 @@
                       },
                       "-children": [
                         {
-                          "#comment": " # 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40) "
+                          "#comment": "# 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40)"
                         }
                       ],
                       "-geometry": {
@@ -3335,7 +3335,7 @@
                       },
                       "-children": [
                         {
-                          "#comment": " # 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10) "
+                          "#comment": "# 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10)"
                         }
                       ],
                       "-geometry": {
@@ -3642,7 +3642,7 @@
                       },
                       "-children": [
                         {
-                          "#comment": " # 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8) "
+                          "#comment": "# 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8)"
                         }
                       ],
                       "-geometry": {
@@ -4077,7 +4077,7 @@
                       },
                       "-children": [
                         {
-                          "#comment": " # 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10) "
+                          "#comment": "# 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10)"
                         }
                       ],
                       "-geometry": {
@@ -4327,7 +4327,7 @@
                       },
                       "-children": [
                         {
-                          "#comment": " Combined set of prior IFS coordIndex values "
+                          "#comment": "Combined set of prior IFS coordIndex values"
                         }
                       ],
                       "-geometry": {
@@ -6239,94 +6239,13 @@
           }
         },
         {
-          "#comment": "ExternProtoDeclare name='LOA1_WalkAnimation' url='\"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation\" \"LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation\"'>"
-        },
-        {
-          "#comment": "      <field accessType='inputOutput' name='cycleInterval' type='SFTime'/>"
-        },
-        {
-          "#comment": "      <field accessType='inputOutput' name='enabled' type='SFBool'/>"
-        },
-        {
-          "#comment": "      <field accessType='inputOutput' name='loop' type='SFBool'/>"
-        },
-        {
-          "#comment": "      <field accessType='inputOutput' name='startTime' type='SFTime'/>"
-        },
-        {
-          "#comment": "      <field accessType='inputOutput' name='stopTime' type='SFTime'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='fraction_changed' type='SFFloat'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='HumanoidRoot_translation_changed' type='SFVec3f'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='HumanoidRoot_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='l_hip_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='l_knee_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='l_ankle_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='l_midtarsal_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='r_hip_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='r_knee_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='r_ankle_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='r_midtarsal_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='vl5_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='skullbase_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='l_shoulder_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='l_elbow_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='l_wrist_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='r_shoulder_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='r_elbow_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='r_wrist_rotation_changed' type='SFRotation'/>"
-        },
-        {
-          "#comment": "      <field accessType='outputOnly' name='isActive' type='SFBool'/>"
-        },
-        {
-          "#comment": "    </ExternProtoDeclare>"
-        },
-        {
-          "#comment": "    <ProtoInstance DEF='ANIMATOR' name='LOA1_WalkAnimation'/"
+          "#comment": "ExternProtoDeclare name='LOA1_WalkAnimation' url='\"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation\" \"LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation\"'> <field accessType='inputOutput' name='cycleInterval' type='SFTime'/> <field accessType='inputOutput' name='enabled' type='SFBool'/> <field accessType='inputOutput' name='loop' type='SFBool'/> <field accessType='inputOutput' name='startTime' type='SFTime'/> <field accessType='inputOutput' name='stopTime' type='SFTime'/> <field accessType='outputOnly' name='fraction_changed' type='SFFloat'/> <field accessType='outputOnly' name='HumanoidRoot_translation_changed' type='SFVec3f'/> <field accessType='outputOnly' name='HumanoidRoot_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='l_hip_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='l_knee_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='l_ankle_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='l_midtarsal_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='r_hip_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='r_knee_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='r_ankle_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='r_midtarsal_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='vl5_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='skullbase_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='l_shoulder_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='l_elbow_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='l_wrist_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='r_shoulder_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='r_elbow_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='r_wrist_rotation_changed' type='SFRotation'/> <field accessType='outputOnly' name='isActive' type='SFBool'/> </ExternProtoDeclare> <ProtoInstance DEF='ANIMATOR' name='LOA1_WalkAnimation'/"
         },
         {
           "Group": {
             "-children": [
               {
-                "#comment": " ROUTE information for TIMER node:  [from fraction_changed to HUMANOIDROOT_POSITION_ANIMATOR.set_fraction ] [from fraction_changed to HUMANOIDROOT_ANIMATOR.set_fraction ] [from fraction_changed to SACROILIAC_ANIMATOR.set_fraction ] [from fraction_changed to L_HIP_ANIMATOR.set_fraction ] [from fraction_changed to L_KNEE_ANIMATOR.set_fraction ] [from fraction_changed to L_ANKLE_ANIMATOR.set_fraction ] [from fraction_changed to L_MIDTARSAL_ANIMATOR.set_fraction ] [from fraction_changed to R_HIP_ANIMATOR.set_fraction ] [from fraction_changed to R_KNEE_ANIMATOR.set_fraction ] [from fraction_changed to R_ANKLE_ANIMATOR.set_fraction ] [from fraction_changed to R_MIDTARSAL_ANIMATOR.set_fraction ] [from fraction_changed to VL5_ANIMATOR.set_fraction ] [from fraction_changed to SKULLBASE_ANIMATOR.set_fraction ] [from fraction_changed to L_SHOULDER_ANIMATOR.set_fraction ] [from fraction_changed to L_ELBOW_ANIMATOR.set_fraction ] [from fraction_changed to L_WRIST_ANIMATOR.set_fraction ] [from fraction_changed to R_SHOULDER_ANIMATOR.set_fraction ] [from fraction_changed to R_ELBOW_ANIMATOR.set_fraction ] [from fraction_changed to R_WRIST_ANIMATOR.set_fraction ] "
+                "#comment": "ROUTE information for TIMER node: [from fraction_changed to HUMANOIDROOT_POSITION_ANIMATOR.set_fraction ] [from fraction_changed to HUMANOIDROOT_ANIMATOR.set_fraction ] [from fraction_changed to SACROILIAC_ANIMATOR.set_fraction ] [from fraction_changed to L_HIP_ANIMATOR.set_fraction ] [from fraction_changed to L_KNEE_ANIMATOR.set_fraction ] [from fraction_changed to L_ANKLE_ANIMATOR.set_fraction ] [from fraction_changed to L_MIDTARSAL_ANIMATOR.set_fraction ] [from fraction_changed to R_HIP_ANIMATOR.set_fraction ] [from fraction_changed to R_KNEE_ANIMATOR.set_fraction ] [from fraction_changed to R_ANKLE_ANIMATOR.set_fraction ] [from fraction_changed to R_MIDTARSAL_ANIMATOR.set_fraction ] [from fraction_changed to VL5_ANIMATOR.set_fraction ] [from fraction_changed to SKULLBASE_ANIMATOR.set_fraction ] [from fraction_changed to L_SHOULDER_ANIMATOR.set_fraction ] [from fraction_changed to L_ELBOW_ANIMATOR.set_fraction ] [from fraction_changed to L_WRIST_ANIMATOR.set_fraction ] [from fraction_changed to R_SHOULDER_ANIMATOR.set_fraction ] [from fraction_changed to R_ELBOW_ANIMATOR.set_fraction ] [from fraction_changed to R_WRIST_ANIMATOR.set_fraction ]"
               },
               {
                 "TimeSensor": {
@@ -6335,52 +6254,16 @@
                   "@loop": true,
                   "-children": [
                     {
-                      "#comment": "field name='cycleInterval' type='SFTime' value='2' accessType='inputOutput'/> "
+                      "#comment": "field name='cycleInterval' type='SFTime' value='2' accessType='inputOutput'/> <field name='enabled' type='SFBool' value='true' accessType='inputOutput'/> <field name='loop' type='SFBool' value='true' accessType='inputOutput'/> <field name='startTime' type='SFTime' value='0' accessType='inputOutput'/> <field name='stopTime' type='SFTime' value='-1' accessType='inputOutput'/!"
                     },
                     {
-                      "#comment": "<field name='enabled' type='SFBool' value='true' accessType='inputOutput'/> "
-                    },
-                    {
-                      "#comment": "<field name='loop' type='SFBool' value='true' accessType='inputOutput'/> "
-                    },
-                    {
-                      "#comment": "<field name='startTime' type='SFTime' value='0' accessType='inputOutput'/> "
-                    },
-                    {
-                      "#comment": "<field name='stopTime' type='SFTime' value='-1' accessType='inputOutput'/!"
-                    },
-                    {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='cycleInterval' protoField='cycleInterval'/> "
-                    },
-                    {
-                      "#comment": "<connect nodeField='enabled' protoField='enabled'/> "
-                    },
-                    {
-                      "#comment": "<connect nodeField='loop' protoField='loop'/> "
-                    },
-                    {
-                      "#comment": "<connect nodeField='startTime' protoField='startTime'/> "
-                    },
-                    {
-                      "#comment": "<connect nodeField='stopTime' protoField='stopTime'/> "
-                    },
-                    {
-                      "#comment": "<connect nodeField='fraction_changed' protoField='fraction_changed'/> "
-                    },
-                    {
-                      "#comment": "<connect nodeField='isActive' protoField='isActive'/>"
-                    },
-                    {
-                      "#comment": "</IS"
+                      "#comment": "IS> <connect nodeField='cycleInterval' protoField='cycleInterval'/> <connect nodeField='enabled' protoField='enabled'/> <connect nodeField='loop' protoField='loop'/> <connect nodeField='startTime' protoField='startTime'/> <connect nodeField='stopTime' protoField='stopTime'/> <connect nodeField='fraction_changed' protoField='fraction_changed'/> <connect nodeField='isActive' protoField='isActive'/> </IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for HUMANOIDROOT_POSITION_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for HUMANOIDROOT_POSITION_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "PositionInterpolator": {
@@ -6467,19 +6350,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='HumanoidRoot_translation_changed'/>"
-                    },
-                    {
-                      "#comment": "</IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='HumanoidRoot_translation_changed'/> </IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for HUMANOIDROOT_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for HUMANOIDROOT_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -6500,19 +6377,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='HumanoidRoot_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "</IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='HumanoidRoot_rotation_changed'/> </IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for SACROILIAC_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for SACROILIAC_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -6538,19 +6409,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='lower_body_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "</IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='lower_body_rotation_changed'/> </IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for L_HIP_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for L_HIP_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -6601,19 +6466,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='l_hip_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "</IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='l_hip_rotation_changed'/> </IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for L_KNEE_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for L_KNEE_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -6664,19 +6523,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='l_knee_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "</IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='l_knee_rotation_changed'/> </IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for L_ANKLE_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for L_ANKLE_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -6722,19 +6575,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='l_ankle_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "</IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='l_ankle_rotation_changed'/> </IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for L_MIDTARSAL_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for L_MIDTARSAL_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -6760,19 +6607,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='l_midtarsal_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "</IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='l_midtarsal_rotation_changed'/> </IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for R_HIP_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for R_HIP_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -6833,19 +6674,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='r_hip_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "</IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='r_hip_rotation_changed'/> </IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for R_KNEE_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for R_KNEE_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -6906,19 +6741,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='r_knee_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='r_knee_rotation_changed'/> <IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for R_ANKLE_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for R_ANKLE_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -6984,19 +6813,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='r_ankle_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='r_ankle_rotation_changed'/> <IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for R_MIDTARSAL_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for R_MIDTARSAL_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -7022,19 +6845,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='r_midtarsal_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='r_midtarsal_rotation_changed'/> <IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for VL5_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for VL5_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -7075,19 +6892,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='vl5_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='vl5_rotation_changed'/> <IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for SKULLBASE_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for SKULLBASE_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -7148,19 +6959,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='skullbase_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='skullbase_rotation_changed'/> <IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for L_SHOULDER_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for L_SHOULDER_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -7191,19 +6996,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='l_shoulder_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='l_shoulder_rotation_changed'/> <IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for L_ELBOW_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for L_ELBOW_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -7234,19 +7033,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='l_elbow_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='l_elbow_rotation_changed'/> <IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for L_WRIST_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for L_WRIST_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -7277,19 +7070,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='l_wrist_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='l_wrist_rotation_changed'/> <IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for R_SHOULDER_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for R_SHOULDER_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -7320,19 +7107,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='r_shoulder_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='r_shoulder_rotation_changed'/> <IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for R_ELBOW_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for R_ELBOW_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -7363,19 +7144,13 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='r_elbow_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='r_elbow_rotation_changed'/> <IS"
                     }
                   ]
                 }
               },
               {
-                "#comment": " ROUTE information for R_WRIST_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] "
+                "#comment": "ROUTE information for R_WRIST_ANIMATOR node: [from TIMER.fraction_changed to set_fraction ]"
               },
               {
                 "OrientationInterpolator": {
@@ -7406,13 +7181,7 @@
                   ],
                   "-children": [
                     {
-                      "#comment": "IS>"
-                    },
-                    {
-                      "#comment": "<connect nodeField='value_changed' protoField='r_wrist_rotation_changed'/>"
-                    },
-                    {
-                      "#comment": "<IS"
+                      "#comment": "IS> <connect nodeField='value_changed' protoField='r_wrist_rotation_changed'/> <IS"
                     }
                   ]
                 }
@@ -7573,7 +7342,7 @@
           }
         },
         {
-          "#comment": " Animation ROUTEs "
+          "#comment": "Animation ROUTEs"
         },
         {
           "ROUTE": {

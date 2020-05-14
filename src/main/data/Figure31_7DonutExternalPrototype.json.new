@@ -6,48 +6,48 @@
     "head": {
       "meta": [
         {
-          "@content": "Figure31_7DonutExternalPrototype.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "Figure31_7DonutExternalPrototype.x3d"
         },
         {
-          "@content": "Figure 31.7, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Figure 31.7, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland"
         },
         {
-          "@content": "http://www.wiley.com/legacy/compbooks/vrml2sbk/ch31/31fig07.htm",
-          "@name": "reference"
+          "@name": "reference",
+          "@content": "http://www.wiley.com/legacy/compbooks/vrml2sbk/ch31/31fig07.htm"
         },
         {
-          "@content": "Don Brutzman",
-          "@name": "translator"
+          "@name": "translator",
+          "@content": "Don Brutzman"
         },
         {
-          "@content": "22 November 2000",
-          "@name": "created"
+          "@name": "created",
+          "@content": "22 November 2000"
         },
         {
-          "@content": "20 October 2019",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "20 October 2019"
         },
         {
-          "@content": "A donut shape built using prototypes: the Donut geometry node and the LightOak appearance node. Also see Figures 30.5 and 31.6 for comparison.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "A donut shape built using prototypes: the Donut geometry node and the LightOak appearance node. Also see Figures 30.5 and 31.6 for comparison."
         },
         {
-          "@content": "https://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_7DonutExternalPrototype.x3d",
-          "@name": "identifier"
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_7DonutExternalPrototype.x3d"
         },
         {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
         },
         {
-          "@content": "../../license.html",
-          "@name": "license"
+          "@name": "license",
+          "@content": "../../license.html"
         },
         {
           "@name": "translated",
-          "@content": "6 May 2020"
+          "@content": "13 May 2020"
         },
         {
           "@name": "generator",
@@ -77,33 +77,33 @@
             ],
             "field": [
               {
-                "@accessType": "initializeOnly",
                 "@name": "crossSectionRadius",
+                "@accessType": "initializeOnly",
                 "@type": "SFFloat"
               },
               {
-                "@accessType": "initializeOnly",
                 "@name": "spineRadius",
+                "@accessType": "initializeOnly",
                 "@type": "SFFloat"
               },
               {
-                "@accessType": "initializeOnly",
                 "@name": "crossSectionResolution",
-                "@type": "SFInt32"
-              },
-              {
                 "@accessType": "initializeOnly",
-                "@name": "spineResolution",
                 "@type": "SFInt32"
               },
               {
-                "@accessType": "inputOnly",
+                "@name": "spineResolution",
+                "@accessType": "initializeOnly",
+                "@type": "SFInt32"
+              },
+              {
                 "@name": "set_crossSectionRadius",
+                "@accessType": "inputOnly",
                 "@type": "SFFloat"
               },
               {
-                "@accessType": "inputOnly",
                 "@name": "set_spineRadius",
+                "@accessType": "inputOnly",
                 "@type": "SFFloat"
               }
             ]
@@ -120,8 +120,8 @@
             ],
             "field": [
               {
-                "@accessType": "inputOutput",
                 "@name": "textureTransform",
+                "@accessType": "inputOutput",
                 "@type": "SFNode"
               }
             ]
@@ -144,7 +144,7 @@
           }
         },
         {
-          "#comment": " Donut instances from prototypes "
+          "#comment": "Donut instances from prototypes"
         },
         {
           "Transform": {
@@ -206,7 +206,7 @@
           }
         },
         {
-          "#comment": " Hmmm, what size donut do you really want? "
+          "#comment": "Hmmm, what size donut do you really want?"
         },
         {
           "TimeSensor": {
@@ -246,8 +246,8 @@
                 "Shape": {
                   "-geometry": {
                     "ProtoInstance": {
-                      "@DEF": "SpecialtyOfTheHouse",
                       "@name": "Donut",
+                      "@DEF": "SpecialtyOfTheHouse",
                       "fieldValue": [
                         {
                           "@name": "crossSectionRadius",

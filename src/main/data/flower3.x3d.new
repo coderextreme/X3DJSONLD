@@ -6,21 +6,21 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"></meta>
 <meta name="description" content="a flower"></meta>
 </head>
-<Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;ANY&quot;"></NavigationInfo>
+<Scene><NavigationInfo></NavigationInfo>
 <DirectionalLight direction="0 -0.8 -0.2" intensity="0.5"></DirectionalLight>
 <Background skyColor="1 1 1"></Background>
 <Viewpoint description="One mathematical orbital" position="0 0 50"></Viewpoint>
 <Transform DEF="OrbitTransform" translation="8 0 0"><Shape><Appearance><Material diffuseColor="0 0.5 1" specularColor="0 0.5 1"></Material>
 </Appearance>
-<IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit" creaseAngle="0"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
+<IndexedFaceSet containerField="geometry" convex="false" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Script DEF="OrbitScript"><field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
-<field accessType="outputOnly" name="coordinates" type="MFVec3f"></field>
-<field accessType="outputOnly" name="coordIndexes" type="MFInt32"></field>
-<!----><!--        <field accessType="inputOutput" name="e" type="SFFloat" value="5"></field>--><!--        <field accessType="inputOutput" name="f" type="SFFloat" value="5"></field>--><!--        <field accessType="inputOutput" name="g" type="SFFloat" value="5"></field>--><!--        <field accessType="inputOutput" name="h" type="SFFloat" value="5"></field>--><!--        <field accessType="inputOutput" name="t" type="SFFloat" value="0"></field>--><!--        <field accessType="inputOutput" name="p" type="SFFloat" value="0"></field>--><!--        <field accessType="initializeOnly" name="resolution" type="SFInt32" value="100"></field>--><!--	--><![CDATA[ecmascript:
-    
+<Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
+<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
+<!--<field accessType="inputOutput" name="e" type="SFFloat" value="5"></field> <field accessType="inputOutput" name="f" type="SFFloat" value="5"></field> <field accessType="inputOutput" name="g" type="SFFloat" value="5"></field> <field accessType="inputOutput" name="h" type="SFFloat" value="5"></field> <field accessType="inputOutput" name="t" type="SFFloat" value="0"></field> <field accessType="inputOutput" name="p" type="SFFloat" value="0"></field> <field accessType="initializeOnly" name="resolution" type="SFInt32" value="100"></field>--><![CDATA[ecmascript:
+
 var e = 5;
 var f = 5;
 var g = 5;

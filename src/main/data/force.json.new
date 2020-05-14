@@ -6,8 +6,8 @@
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "Scripting"
+          "@name": "Scripting",
+          "@level": 1
         }
       ],
       "meta": [
@@ -37,7 +37,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 May 2020"
+          "@content": "13 May 2020"
         },
         {
           "@name": "generator",
@@ -122,9 +122,6 @@
                                           ],
                                           "-fontStyle": {
                                             "FontStyle": {
-                                              "@family": [
-                                                "SERIF"
-                                              ],
                                               "@justify": [
                                                 "MIDDLE",
                                                 "MIDDLE"
@@ -403,7 +400,7 @@
                             "\t\t        spine = new MFVec3f([value, spine[1]]);",
                             "\t\t    }",
                             "                }",
-                            "                ",
+                            "",
                             "                function set_endB(value) {",
                             "\t\t    if (typeof spine === 'undefined') {",
                             "\t\t        spine = new MFVec3f([value, value]);",
@@ -411,7 +408,7 @@
                             "\t\t        spine = new MFVec3f([spine[0], value]);",
                             "\t\t    }",
                             "                }",
-                            "                ",
+                            "",
                             "                function set_spine(value) {",
                             "                    spine = value;",
                             "                }"
@@ -445,7 +442,6 @@
               {
                 "PlaneSensor": {
                   "@DEF": "clickGenerator",
-                  "@enabled": true,
                   "@minPosition": [
                     -50,
                     -50
@@ -459,8 +455,8 @@
               },
               {
                 "ProtoInstance": {
+                  "@name": "node",
                   "@DEF": "nodeA",
-                  "@name": "node",
                   "fieldValue": [
                     {
                       "@name": "position",
@@ -475,8 +471,8 @@
               },
               {
                 "ProtoInstance": {
+                  "@name": "node",
                   "@DEF": "nodeB",
-                  "@name": "node",
                   "fieldValue": [
                     {
                       "@name": "position",
@@ -491,8 +487,8 @@
               },
               {
                 "ProtoInstance": {
+                  "@name": "node",
                   "@DEF": "nodeC",
-                  "@name": "node",
                   "fieldValue": [
                     {
                       "@name": "position",
@@ -507,8 +503,8 @@
               },
               {
                 "ProtoInstance": {
+                  "@name": "node",
                   "@DEF": "nodeD",
-                  "@name": "node",
                   "fieldValue": [
                     {
                       "@name": "position",
@@ -523,8 +519,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@DEF": "linkA",
                   "@name": "cylinder",
+                  "@DEF": "linkA",
                   "fieldValue": [
                     {
                       "@name": "set_positionA",
@@ -547,8 +543,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@DEF": "linkB",
                   "@name": "cylinder",
+                  "@DEF": "linkB",
                   "fieldValue": [
                     {
                       "@name": "set_positionA",
@@ -571,8 +567,8 @@
               },
               {
                 "ProtoInstance": {
-                  "@DEF": "linkC",
                   "@name": "cylinder",
+                  "@DEF": "linkC",
                   "fieldValue": [
                     {
                       "@name": "set_positionA",
@@ -601,38 +597,26 @@
             "@DEF": "clickHandler",
             "field": [
               {
-                "@accessType": "inputOutput",
                 "@name": "counter",
+                "@accessType": "inputOutput",
                 "@value": 0,
                 "@type": "SFInt32"
               },
               {
-                "@accessType": "outputOnly",
                 "@name": "node_changed",
+                "@accessType": "outputOnly",
                 "@type": "SFNode"
               },
               {
-                "@accessType": "inputOnly",
                 "@name": "add_node",
+                "@accessType": "inputOnly",
                 "@value": false,
                 "@type": "SFBool"
               }
             ],
             "-children": [
               {
-                "#comment": ""
-              },
-              {
-                "#comment": "            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"
-              },
-              {
-                "#comment": "                <Transform USE=\"HoldsContent\"/>"
-              },
-              {
-                "#comment": "            </field>"
-              },
-              {
-                "#comment": "\t    "
+                "#comment": "<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
               }
             ],
             "#sourceText": [
@@ -652,7 +636,7 @@
               "\t\t\t\t  ]",
               "\t\t\t\t}",
               "\t\t\t});",
-              "                ",
+              "",
               "        }"
             ]
           }
