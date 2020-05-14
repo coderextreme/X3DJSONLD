@@ -135,9 +135,11 @@ public class x3dconnector
 "	}" + "\n" + 
 "	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
 "	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
-"	      transnode.translation = trafo.translation;" + "\n" + 
-"	      rotscalenode.rotation = trafo.rotation;" + "\n" + 
-"	      rotscalenode.scale = trafo.scale;" + "\n" + 
+"	      if (trafo) {" + "\n" + 
+"		      transnode.translation = trafo.translation;" + "\n" + 
+"		      rotscalenode.rotation = trafo.rotation;" + "\n" + 
+"		      rotscalenode.scale = trafo.scale;" + "\n" + 
+"	      }" + "\n" + 
 "	}" + "\n" + 
 "        function initialize(){" + "\n" + 
 "            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
