@@ -3,7 +3,6 @@ let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.0";
 let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE","ANY"]);
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
@@ -37,18 +36,18 @@ let ProtoDeclare6 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 </IS>
 </Material>
 </Appearance>
-<!----><!--				  <IndexedFaceSet DEF="Orbit" creaseAngle="0">--><!--				    <Coordinate DEF="OrbitCoordinates"></Coordinate>--><!--				  </IndexedFaceSet>--><!--				  --><IndexedFaceSet containerField="geometry" ccw="false" convex="false" coordIndex="0 1 2 -1" creaseAngle="0" DEF="Orbit" solid="true"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
+<!--<IndexedFaceSet DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"></Coordinate> </IndexedFaceSet>--><IndexedFaceSet containerField="geometry" ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate containerField="coord" DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Script DEF="OrbitScript"><field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
-<field accessType="outputOnly" name="coordinates" type="MFVec3f"></field>
-<field accessType="outputOnly" name="coordIndexes" type="MFInt32"></field>
-<field accessType="inputOutput" name="e" type="SFFloat" value="5"></field>
-<field accessType="inputOutput" name="f" type="SFFloat" value="5"></field>
-<field accessType="inputOutput" name="g" type="SFFloat" value="5"></field>
-<field accessType="inputOutput" name="h" type="SFFloat" value="5"></field>
-<field accessType="inputOutput" name="resolution" type="SFInt32" value="50"></field>
+<Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
+<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
+<field name="e" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="f" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="g" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="h" accessType="inputOutput" type="SFFloat" value="5"></field>
+<field name="resolution" accessType="inputOutput" type="SFInt32" value="50"></field>
 <![CDATA[ecmascript:
 
 			var e = 5;
@@ -220,18 +219,12 @@ Appearance20.material = Material21;
 
 Shape19.appearance = Appearance20;
 
-//
-//				  <IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\">
-//				    <Coordinate DEF=\"OrbitCoordinates\"/>
-//				  </IndexedFaceSet>
-//				  
+//<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
 let IndexedFaceSet26 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet26.ccw = False;
 IndexedFaceSet26.convex = False;
 IndexedFaceSet26.coordIndex = new MFInt32(new int[0,1,2,-1]);
-IndexedFaceSet26.creaseAngle = 0;
 IndexedFaceSet26.DEF = "Orbit";
-IndexedFaceSet26.solid = True;
 let Coordinate27 = browser.currentScene.createNode("Coordinate");
 Coordinate27.DEF = "OrbitCoordinates";
 Coordinate27.point = new MFVec3f(new float[0,0,1,0,1,0,1,0,0]);
@@ -248,56 +241,56 @@ Group13.children[2] = Transform16;
 let Script28 = browser.currentScene.createNode("Script");
 Script28.DEF = "OrbitScript";
 let field29 = browser.currentScene.createNode("field");
-field29.accessType = "inputOnly";
 field29.name = "set_fraction";
+field29.accessType = "inputOnly";
 field29.type = "SFFloat";
 Script28.field = new MFNode();
 
 Script28.field[0] = field29;
 
 let field30 = browser.currentScene.createNode("field");
-field30.accessType = "outputOnly";
 field30.name = "coordinates";
+field30.accessType = "outputOnly";
 field30.type = "MFVec3f";
 Script28.field[1] = field30;
 
 let field31 = browser.currentScene.createNode("field");
-field31.accessType = "outputOnly";
 field31.name = "coordIndexes";
+field31.accessType = "outputOnly";
 field31.type = "MFInt32";
 Script28.field[2] = field31;
 
 let field32 = browser.currentScene.createNode("field");
-field32.accessType = "inputOutput";
 field32.name = "e";
+field32.accessType = "inputOutput";
 field32.type = "SFFloat";
 field32.value = "5";
 Script28.field[3] = field32;
 
 let field33 = browser.currentScene.createNode("field");
-field33.accessType = "inputOutput";
 field33.name = "f";
+field33.accessType = "inputOutput";
 field33.type = "SFFloat";
 field33.value = "5";
 Script28.field[4] = field33;
 
 let field34 = browser.currentScene.createNode("field");
-field34.accessType = "inputOutput";
 field34.name = "g";
+field34.accessType = "inputOutput";
 field34.type = "SFFloat";
 field34.value = "5";
 Script28.field[5] = field34;
 
 let field35 = browser.currentScene.createNode("field");
-field35.accessType = "inputOutput";
 field35.name = "h";
+field35.accessType = "inputOutput";
 field35.type = "SFFloat";
 field35.value = "5";
 Script28.field[6] = field35;
 
 let field36 = browser.currentScene.createNode("field");
-field36.accessType = "inputOutput";
 field36.name = "resolution";
+field36.accessType = "inputOutput";
 field36.type = "SFInt32";
 field36.value = "50";
 Script28.field[7] = field36;

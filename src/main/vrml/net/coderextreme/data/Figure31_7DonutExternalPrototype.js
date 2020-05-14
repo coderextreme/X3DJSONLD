@@ -12,40 +12,40 @@ let ExternProtoDeclare3 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare3.name = "Donut";
 ExternProtoDeclare3.url = new MFString(new java.lang.String["Figure31_6DonutPrototype.wrl#Donut","https://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_6DonutPrototype.wrl#Donut","Figure31_6DonutPrototype.x3d#Donut","https://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_6DonutPrototype.x3d#Donut"]);
 let field4 = browser.currentScene.createNode("field");
-field4.accessType = "initializeOnly";
 field4.name = "crossSectionRadius";
+field4.accessType = "initializeOnly";
 field4.type = "SFFloat";
 ExternProtoDeclare3.field = new MFNode();
 
 ExternProtoDeclare3.field[0] = field4;
 
 let field5 = browser.currentScene.createNode("field");
-field5.accessType = "initializeOnly";
 field5.name = "spineRadius";
+field5.accessType = "initializeOnly";
 field5.type = "SFFloat";
 ExternProtoDeclare3.field[1] = field5;
 
 let field6 = browser.currentScene.createNode("field");
-field6.accessType = "initializeOnly";
 field6.name = "crossSectionResolution";
+field6.accessType = "initializeOnly";
 field6.type = "SFInt32";
 ExternProtoDeclare3.field[2] = field6;
 
 let field7 = browser.currentScene.createNode("field");
-field7.accessType = "initializeOnly";
 field7.name = "spineResolution";
+field7.accessType = "initializeOnly";
 field7.type = "SFInt32";
 ExternProtoDeclare3.field[3] = field7;
 
 let field8 = browser.currentScene.createNode("field");
-field8.accessType = "inputOnly";
 field8.name = "set_crossSectionRadius";
+field8.accessType = "inputOnly";
 field8.type = "SFFloat";
 ExternProtoDeclare3.field[4] = field8;
 
 let field9 = browser.currentScene.createNode("field");
-field9.accessType = "inputOnly";
 field9.name = "set_spineRadius";
+field9.accessType = "inputOnly";
 field9.type = "SFFloat";
 ExternProtoDeclare3.field[5] = field9;
 
@@ -55,8 +55,8 @@ let ExternProtoDeclare10 = browser.currentScene.createNode("ExternProtoDeclare")
 ExternProtoDeclare10.name = "LightOak";
 ExternProtoDeclare10.url = new MFString(new java.lang.String["Figure31_4WoodAppearancePrototypesLibrary.wrl#LightOak","https://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_4WoodAppearancePrototypesLibrary.wrl#LightOak","Figure31_4WoodAppearancePrototypesLibrary.x3d#LightOak","https://www.web3d.org/x3d/content/examples/Vrml2Sourcebook/Chapter31Prototypes/Figure31_4WoodAppearancePrototypesLibrary.x3d#LightOak"]);
 let field11 = browser.currentScene.createNode("field");
-field11.accessType = "inputOutput";
 field11.name = "textureTransform";
+field11.accessType = "inputOutput";
 field11.type = "SFNode";
 ExternProtoDeclare10.field = new MFNode();
 
@@ -70,7 +70,7 @@ Viewpoint12.orientation = new SFRotation(new float[1,0,0,-0.52]);
 Viewpoint12.position = new SFVec3f(new float[0,7,12]);
 browser.currentScene.children[3] = Viewpoint12;
 
-// Donut instances from prototypes 
+//Donut instances from prototypes
 let Transform13 = browser.currentScene.createNode("Transform");
 Transform13.translation = new SFVec3f(new float[0,2,0]);
 let Shape14 = browser.currentScene.createNode("Shape");
@@ -115,7 +115,7 @@ Transform13.children[0] = Shape14;
 
 browser.currentScene.children[4] = Transform13;
 
-// Hmmm, what size donut do you really want? 
+//Hmmm, what size donut do you really want?
 let TimeSensor21 = browser.currentScene.createNode("TimeSensor");
 TimeSensor21.DEF = "Clock";
 TimeSensor21.cycleInterval = 10;
@@ -132,8 +132,8 @@ let Transform23 = browser.currentScene.createNode("Transform");
 Transform23.translation = new SFVec3f(new float[0,-2,0]);
 let Shape24 = browser.currentScene.createNode("Shape");
 let ProtoInstance25 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance25.DEF = "SpecialtyOfTheHouse";
 ProtoInstance25.name = "Donut";
+ProtoInstance25.DEF = "SpecialtyOfTheHouse";
 let fieldValue26 = browser.currentScene.createNode("fieldValue");
 fieldValue26.name = "crossSectionRadius";
 fieldValue26.value = "0.5";

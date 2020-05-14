@@ -81,17 +81,17 @@ public class CloudsProcedural4 {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.2")
       .setHead(new headObject()
-        .addMeta(new metaObject().setContent("CloudsProcedural4.x3d").setName("title"))
-        .addMeta(new metaObject().setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes.").setName("description"))
-        .addMeta(new metaObject().setContent("Capt Darren W. Murphy").setName("creator"))
-        .addMeta(new metaObject().setContent("1 November 2007").setName("created"))
-        .addMeta(new metaObject().setContent("14 January 2014").setName("modified"))
-        .addMeta(new metaObject().setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d").setName("identifier"))
-        .addMeta(new metaObject().setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html").setName("generator"))
-        .addMeta(new metaObject().setContent("../../license.html").setName("license"))
-        .addMeta(new metaObject().setContent("fix links").setName("TODO")))
+        .addMeta(new metaObject().setName("title").setContent("CloudsProcedural4.x3d"))
+        .addMeta(new metaObject().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
+        .addMeta(new metaObject().setName("creator").setContent("Capt Darren W. Murphy"))
+        .addMeta(new metaObject().setName("created").setContent("1 November 2007"))
+        .addMeta(new metaObject().setName("modified").setContent("14 January 2014"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
+        .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
+        .addMeta(new metaObject().setName("license").setContent("../../license.html"))
+        .addMeta(new metaObject().setName("TODO").setContent("fix links")))
       .setScene(new SceneObject()
-        .addComments(new CommentsBlock(" A png image file for the cloud texture must be designated in the ecmascript node. "))
+        .addComments(new CommentsBlock("A png image file for the cloud texture must be designated in the ecmascript node."))
         .addChild(new ViewpointObject().setDescription("Main").setJump(false).setOrientation(new float[] {0f,1f,0f,1.57f}).setPosition(new float[] {50000f,1000f,42000f}))
         .addChild(new ViewpointObject().setDescription("Light House Tower").setJump(false).setOrientation(new float[] {0f,1f,0f,1.3f}).setPosition(new float[] {45000f,1290f,44000f}))
         .addChild(new ViewpointObject().setDescription("centerWest").setJump(false).setOrientation(new float[] {0f,1f,0f,2.5f}).setPosition(new float[] {48000f,1000f,20000f}))
@@ -113,11 +113,11 @@ public class CloudsProcedural4 {
           .addChild(new TransformObject().setDEF("Cirrus"))
           .addChild(new TransformObject().setDEF("Fog"))
           .addChild(new ScriptObject().setDEF("PixelScript").setDirectOutput(true)
-            .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("Cumulus")
+            .addField(new fieldObject().setType("SFNode").setName("Cumulus").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
               .addChild(new TransformObject().setUSE("Cumulus")))
-            .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("Cirrus")
+            .addField(new fieldObject().setType("SFNode").setName("Cirrus").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
               .addChild(new TransformObject().setUSE("Cirrus")))
-            .addField(new fieldObject().setType("SFNode").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setName("Fog"))
+            .addField(new fieldObject().setType("SFNode").setName("Fog").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
             .setSourceCode("ecmascript:\n"+
 "\n"+
 "\n"+
@@ -290,12 +290,12 @@ public class CloudsProcedural4 {
 "\n"+
 "		if (Y <= 30) //cloud shading and lighting control\n"+
 "  	{	\n"+
-"	image = ' \\\"CloudTexture1_5.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \\n';\n"+
+"	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
 "  	}\n"+
 "\n"+
 "  		else\n"+
 "  	{	\n"+
-"	image = ' \\\"CloudTexture1_4.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \\n';\n"+
+"	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
 "  	}\n"+
 "\n"+
 "	\n"+
@@ -439,7 +439,7 @@ public class CloudsProcedural4 {
 "		'			    material Material {			\\n' +\n"+
 "		'			    }					\\n' +\n"+
 " 		'	                      texture ImageTexture {	        \\n' +\n"+
-"		'	                        url [\\\"cloudtexture3.png\\\" \\\"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\\\" ] \\n' +\n"+
+"		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] \\n' +\n"+
 "		'	                      }	                                \\n' +\n"+
 "		'	                    }	                                \\n' +\n"+
 "		'	                    geometry IndexedFaceSet {	        \\n' +     // define type of geometry to texture\n"+

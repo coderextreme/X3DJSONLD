@@ -62,7 +62,6 @@ head1.addMeta(meta12)
 X3D0.setHead(head1)
 Scene13 = x3d.Scene()
 NavigationInfo14 = x3d.NavigationInfo()
-NavigationInfo14.setType(["EXAMINE","ANY"])
 
 Scene13.addChildren(NavigationInfo14)
 Background15 = x3d.Background()
@@ -162,13 +161,10 @@ ComposedShader27.addParts(ShaderPart34)
 Appearance18.addShaders(ComposedShader27)
 
 Shape17.setAppearance(Appearance18)
-#
-#                <Sphere>
-#		
+#<Sphere>
 IndexedFaceSet35 = x3d.IndexedFaceSet()
 IndexedFaceSet35.setConvex(False)
 IndexedFaceSet35.setDEF("Orbit")
-IndexedFaceSet35.setCreaseAngle(0)
 Coordinate36 = x3d.Coordinate()
 Coordinate36.setDEF("OrbitCoordinates")
 
@@ -182,20 +178,20 @@ Scene13.addChildren(Transform16)
 Script37 = x3d.Script()
 Script37.setDEF("OrbitScript")
 field38 = x3d.field()
-field38.setAccessType("inputOnly")
 field38.setName("set_fraction")
+field38.setAccessType("inputOnly")
 field38.setType("SFFloat")
 
 Script37.addField(field38)
 field39 = x3d.field()
-field39.setAccessType("inputOutput")
 field39.setName("coordinates")
+field39.setAccessType("inputOutput")
 field39.setType("MFVec3f")
 
 Script37.addField(field39)
 field40 = x3d.field()
-field40.setAccessType("outputOnly")
 field40.setName("coordIndexes")
+field40.setAccessType("outputOnly")
 field40.setType("MFInt32")
 
 Script37.addField(field40)

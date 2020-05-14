@@ -3,7 +3,6 @@ let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE","ANY"]);
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
@@ -109,13 +108,10 @@ Appearance6.shaders[0] = ComposedShader15;
 
 Shape5.appearance = Appearance6;
 
-//
-//                <Sphere>
-//		
+//<Sphere>
 let IndexedFaceSet23 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet23.convex = False;
 IndexedFaceSet23.DEF = "Orbit";
-IndexedFaceSet23.creaseAngle = 0;
 let Coordinate24 = browser.currentScene.createNode("Coordinate");
 Coordinate24.DEF = "OrbitCoordinates";
 IndexedFaceSet23.coord = Coordinate24;
@@ -131,22 +127,22 @@ browser.currentScene.children[2] = Transform4;
 let Script25 = browser.currentScene.createNode("Script");
 Script25.DEF = "OrbitScript";
 let field26 = browser.currentScene.createNode("field");
-field26.accessType = "inputOnly";
 field26.name = "set_fraction";
+field26.accessType = "inputOnly";
 field26.type = "SFFloat";
 Script25.field = new MFNode();
 
 Script25.field[0] = field26;
 
 let field27 = browser.currentScene.createNode("field");
-field27.accessType = "inputOutput";
 field27.name = "coordinates";
+field27.accessType = "inputOutput";
 field27.type = "MFVec3f";
 Script25.field[1] = field27;
 
 let field28 = browser.currentScene.createNode("field");
-field28.accessType = "outputOnly";
 field28.name = "coordIndexes";
+field28.accessType = "outputOnly";
 field28.type = "MFInt32";
 Script25.field[2] = field28;
 

@@ -2,7 +2,7 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.2";
-// A png image file for the cloud texture must be designated in the ecmascript node. 
+//A png image file for the cloud texture must be designated in the ecmascript node.
 let Viewpoint2 = browser.currentScene.createNode("Viewpoint");
 Viewpoint2.description = "Main";
 Viewpoint2.jump = False;
@@ -112,8 +112,8 @@ let Script22 = browser.currentScene.createNode("Script");
 Script22.DEF = "PixelScript";
 Script22.directOutput = True;
 let field23 = browser.currentScene.createNode("field");
-field23.accessType = "initializeOnly";
 field23.name = "Cumulus";
+field23.accessType = "initializeOnly";
 field23.type = "SFNode";
 let Transform24 = browser.currentScene.createNode("Transform");
 Transform24.USE = "Cumulus";
@@ -126,8 +126,8 @@ Script22.field = new MFNode();
 Script22.field[0] = field23;
 
 let field25 = browser.currentScene.createNode("field");
-field25.accessType = "initializeOnly";
 field25.name = "Cirrus";
+field25.accessType = "initializeOnly";
 field25.type = "SFNode";
 let Transform26 = browser.currentScene.createNode("Transform");
 Transform26.USE = "Cirrus";
@@ -138,8 +138,8 @@ field25.children[0] = Transform26;
 Script22.field[1] = field25;
 
 let field27 = browser.currentScene.createNode("field");
-field27.accessType = "initializeOnly";
 field27.name = "Fog";
+field27.accessType = "initializeOnly";
 field27.type = "SFNode";
 Script22.field[2] = field27;
 
@@ -316,12 +316,12 @@ Script22.setSourceCode(`ecmascript:\n"+
 "\n"+
 "		if (Y <= 30) //cloud shading and lighting control\n"+
 "  	{	\n"+
-"	image = ' \\\"CloudTexture1_5.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \\n';\n"+
+"	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
 "  	}\n"+
 "\n"+
 "  		else\n"+
 "  	{	\n"+
-"	image = ' \\\"CloudTexture1_4.png\\\" \\\"https://savage.nps.edu/Savage/Environment/Spheretexture.png\\\" \\n';\n"+
+"	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \\n';\n"+
 "  	}\n"+
 "\n"+
 "	\n"+
@@ -465,7 +465,7 @@ Script22.setSourceCode(`ecmascript:\n"+
 "		'			    material Material {			\\n' +\n"+
 "		'			    }					\\n' +\n"+
 " 		'	                      texture ImageTexture {	        \\n' +\n"+
-"		'	                        url [\\\"cloudtexture3.png\\\" \\\"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\\\" ] \\n' +\n"+
+"		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] \\n' +\n"+
 "		'	                      }	                                \\n' +\n"+
 "		'	                    }	                                \\n' +\n"+
 "		'	                    geometry IndexedFaceSet {	        \\n' +     // define type of geometry to texture\n"+

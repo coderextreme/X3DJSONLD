@@ -3,12 +3,11 @@ let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE","ANY"]);
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
-// Images courtesy of Paul Debevec's Light Probe Image Gallery 
+//Images courtesy of Paul Debevec's Light Probe Image Gallery
 let Background3 = browser.currentScene.createNode("Background");
 Background3.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"]);
 Background3.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
@@ -20,7 +19,7 @@ browser.currentScene.children[1] = Background3;
 
 let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="flower" ><ProtoBody><Transform DEF="animate_transform" translation="0 0 0"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<ProtoDeclare name="flower" ><ProtoBody><Transform DEF="animate_transform"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottom" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
 <ImageTexture containerField="front" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
@@ -39,7 +38,7 @@ let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <field name="d" type="SFFloat" accessType="inputOutput" value="20"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
-<!-- --><!--		       <field name='cube' type='SFNode' accessType="inputOutput">--><!--			  <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>--><!--		  </field>--><!--		  --><ShaderPart url="&quot;../shaders/x3dom_flowers_chromatic.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs&quot;" type="VERTEX"></ShaderPart>
+<!--<field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field>--><ShaderPart url="&quot;../shaders/x3dom_flowers_chromatic.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs&quot;" type="VERTEX"></ShaderPart>
 <ShaderPart url="&quot;../shaders/common.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 <ComposedShader DEF="x_ite" language="GLSL"><field name="cube" type="SFNode" accessType="inputOutput"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
@@ -158,7 +157,6 @@ ProtoDeclare4.name = "flower";
 let ProtoBody5 = browser.currentScene.createNode("ProtoBody");
 let Transform6 = browser.currentScene.createNode("Transform");
 Transform6.DEF = "animate_transform";
-Transform6.translation = new SFVec3f(new float[0,0,0]);
 let Shape7 = browser.currentScene.createNode("Shape");
 let Appearance8 = browser.currentScene.createNode("Appearance");
 let Material9 = browser.currentScene.createNode("Material");
@@ -276,11 +274,7 @@ field28.accessType = "inputOutput";
 field28.value = "0";
 ComposedShader17.field[10] = field28;
 
-// 
-//		       <field name='cube' type='SFNode' accessType=\"inputOutput\">
-//			  <ComposedCubeMapTexture USE=\"texture\"/>
-//		  </field>
-//		  
+//<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
 let ShaderPart29 = browser.currentScene.createNode("ShaderPart");
 ShaderPart29.url = new MFString(new java.lang.String["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]);
 ShaderPart29.type = "VERTEX";
