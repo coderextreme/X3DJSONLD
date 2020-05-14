@@ -6,7 +6,7 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/abox.x3d"></meta>
 <meta name="description" content="a box"></meta>
 </head>
-<Scene><ProtoDeclare name="anyShape"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry" radius="1" solid="true"></Sphere>
+<Scene><ProtoDeclare name="anyShape"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
 </Shape>
 </field>
 </ProtoInterface>

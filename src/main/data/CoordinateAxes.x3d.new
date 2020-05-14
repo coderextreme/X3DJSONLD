@@ -6,7 +6,7 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d"></meta>
 <meta name="description" content="a box"></meta>
 </head>
-<Scene><Collision DEF="DoNotCollideWithVisualizationWidget" enabled="true"><!-- Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. --><!-- This NavigationInfo allows examine mode and will be overridden by any parent scene. --><!-- Each arrow goes from +1m to -1m to allow linear scaling to fit a scene --><!-- Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user --><Group><!-- Vertical Y arrow and label --><Group DEF="ArrowGreen"><Shape><Cylinder containerField="geometry" DEF="ArrowCylinder" radius="0.025" top="false"></Cylinder>
+<Scene><Collision DEF="DoNotCollideWithVisualizationWidget"><!--Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.--><!--This NavigationInfo allows examine mode and will be overridden by any parent scene.--><!--Each arrow goes from +1m to -1m to allow linear scaling to fit a scene--><!--Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user--><Group><!--Vertical Y arrow and label--><Group DEF="ArrowGreen"><Shape><Cylinder containerField="geometry" DEF="ArrowCylinder" radius="0.025" top="false"></Cylinder>
 <Appearance DEF="Green"><Material diffuseColor="0.1 0.6 0.1" emissiveColor="0.05 0.2 0.05"></Material>
 </Appearance>
 </Shape>
@@ -23,7 +23,7 @@
 </Billboard>
 </Transform>
 </Group>
-<Transform rotation="0 0 1 -1.57079"><!-- Horizontal X arrow and label --><Group><Group DEF="ArrowRed"><Shape><Cylinder containerField="geometry" USE="ArrowCylinder"></Cylinder>
+<Transform rotation="0 0 1 -1.57079"><!--Horizontal X arrow and label--><Group><Group DEF="ArrowRed"><Shape><Cylinder containerField="geometry" USE="ArrowCylinder"></Cylinder>
 <Appearance DEF="Red"><Material diffuseColor="0.7 0.1 0.1" emissiveColor="0.33 0 0"></Material>
 </Appearance>
 </Shape>
@@ -32,7 +32,7 @@
 </Shape>
 </Transform>
 </Group>
-<Transform rotation="0 0 1 1.57079" translation="0.072 1.1 0"><!-- note label rotated back to original coordinate frame --><Billboard><Shape><Appearance USE="LABEL_APPEARANCE"></Appearance>
+<Transform rotation="0 0 1 1.57079" translation="0.072 1.1 0"><!--note label rotated back to original coordinate frame--><Billboard><Shape><Appearance USE="LABEL_APPEARANCE"></Appearance>
 <Text containerField="geometry" string="&quot;X&quot;"><FontStyle USE="LABEL_FONT"></FontStyle>
 </Text>
 </Shape>
@@ -40,7 +40,7 @@
 </Transform>
 </Group>
 </Transform>
-<Transform rotation="1 0 0 1.57079"><!-- Perpendicular Z arrow and label, note right-hand rule --><Group><Group DEF="ArrowBlue"><Shape><Cylinder containerField="geometry" USE="ArrowCylinder"></Cylinder>
+<Transform rotation="1 0 0 1.57079"><!--Perpendicular Z arrow and label, note right-hand rule--><Group><Group DEF="ArrowBlue"><Shape><Cylinder containerField="geometry" USE="ArrowCylinder"></Cylinder>
 <Appearance DEF="Blue"><Material diffuseColor="0.3 0.3 1" emissiveColor="0.1 0.1 0.33"></Material>
 </Appearance>
 </Shape>
@@ -49,7 +49,7 @@
 </Shape>
 </Transform>
 </Group>
-<Transform rotation="1 0 0 -1.57079" translation="0 1.1 0.072"><!-- note label rotated back to original coordinate frame --><Billboard><Shape><Appearance USE="LABEL_APPEARANCE"></Appearance>
+<Transform rotation="1 0 0 -1.57079" translation="0 1.1 0.072"><!--note label rotated back to original coordinate frame--><Billboard><Shape><Appearance USE="LABEL_APPEARANCE"></Appearance>
 <Text containerField="geometry" string="&quot;Z&quot;"><FontStyle USE="LABEL_FONT"></FontStyle>
 </Text>
 </Shape>

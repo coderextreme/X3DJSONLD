@@ -6,8 +6,8 @@
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "Scripting"
+          "@name": "Scripting",
+          "@level": 1
         },
         {
           "@name": "Shaders",
@@ -57,7 +57,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 May 2020"
+          "@content": "13 May 2020"
         },
         {
           "@name": "generator",
@@ -72,15 +72,10 @@
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
-          "#comment": " Images courtesy of Paul Debevec's Light Probe Image Gallery "
+          "#comment": "Images courtesy of Paul Debevec's Light Probe Image Gallery"
         },
         {
           "Background": {
@@ -118,11 +113,6 @@
                 {
                   "Transform": {
                     "@DEF": "animate_transform",
-                    "@translation": [
-                      0,
-                      0,
-                      0
-                    ],
                     "-children": [
                       {
                         "Shape": {
@@ -274,19 +264,7 @@
                                     ],
                                     "-children": [
                                       {
-                                        "#comment": " "
-                                      },
-                                      {
-                                        "#comment": "\t\t       <field name='cube' type='SFNode' accessType=\"inputOutput\">"
-                                      },
-                                      {
-                                        "#comment": "\t\t\t  <ComposedCubeMapTexture USE=\"texture\"/>"
-                                      },
-                                      {
-                                        "#comment": "\t\t  </field>"
-                                      },
-                                      {
-                                        "#comment": "\t\t  "
+                                        "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                                       }
                                     ],
                                     "-parts": [

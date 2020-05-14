@@ -1,159 +1,159 @@
-{
-  "X3D": {
-    "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+{ "X3D": {
+    "encoding":"UTF-8",
+    "@profile":"Immersive",
+    "@version":"3.3",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
-      "meta": [
-        {
-          "@name": "title",
-          "@content": "abox.x3d"
-        },
-        {
-          "@name": "creator",
-          "@content": "John Carlson"
-        },
-        {
-          "@name": "generator",
-          "@content": "manual"
-        },
-        {
-          "@name": "identifier",
-          "@content": "https://coderextreme.net/X3DJSONLD/abox.x3d"
-        },
-        {
-          "@name": "description",
-          "@content": "a box"
-        },
-        {
-          "@name": "translated",
-          "@content": "6 May 2020"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
-        },
-        {
-          "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-        }
-      ]
+        "meta": [
+          {
+            "@name":"title",
+            "@content":"abox.x3d"
+          },
+          {
+            "@name":"creator",
+            "@content":"John Carlson"
+          },
+          {
+            "@name":"generator",
+            "@content":"manual"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://coderextreme.net/X3DJSONLD/abox.x3d"
+          },
+          {
+            "@name":"description",
+            "@content":"a box"
+          },
+          {
+            "@name":"translated",
+            "@content":"14 May 2020"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ]
     },
     "Scene": {
-      "-children": [
-        {
-          "ProtoDeclare": {
-            "@name": "anyShape",
-            "ProtoInterface": {
-              "field": [
-                {
-                  "@name": "myShape",
-                  "@accessType": "inputOutput",
-                  "@type": "MFNode",
-                  "-children": [
+        "-children":[
+          { "ProtoDeclare":
+            {
+              "@name":"anyShape",
+              "ProtoInterface": {
+                  "field": [
                     {
-                      "Shape": {
-                        "-geometry": {
-                          "Sphere": {}
-                        }
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            "ProtoBody": {
-              "-children": [
-                {
-                  "Transform": {
-                    "IS": {
-                      "connect": [
-                        {
-                          "@nodeField": "children",
-                          "@protoField": "myShape"
+                      "@name":"myShape",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode",
+                      "-children":[
+                        { "Shape":
+                          {
+                            "-geometry":
+                              { "Sphere":
+                                {
+                                }
+                              }
+                          }
                         }
                       ]
                     }
-                  }
-                }
-              ]
-            }
-          }
-        },
-        {
-          "ProtoDeclare": {
-            "@name": "one",
-            "ProtoInterface": {
-              "field": [
-                {
-                  "@name": "myShape",
-                  "@accessType": "inputOutput",
-                  "@type": "MFNode",
-                  "-children": [
-                    {
-                      "Shape": {
-                        "-geometry": {
-                          "Cylinder": {}
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "IS": {
+                            "connect": [
+                              {
+                                "@nodeField":"children",
+                                "@protoField":"myShape"
+                              }
+                            ]
                         }
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoDeclare":
+            {
+              "@name":"one",
+              "ProtoInterface": {
+                  "field": [
+                    {
+                      "@name":"myShape",
+                      "@accessType":"inputOutput",
+                      "@type":"MFNode",
+                      "-children":[
+                        { "Shape":
+                          {
+                            "-geometry":
+                              { "Cylinder":
+                                {
+                                }
+                              }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+              },
+              "ProtoBody": {
+                  "-children":[
+                    { "Transform":
+                      {
+                        "-children":[
+                          { "ProtoInstance":
+                            {
+                              "@name":"anyShape",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"myShape",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+              }
+            }
+          },
+          { "ProtoInstance":
+            {
+              "@name":"one",
+              "fieldValue": [
+                {
+                  "@name":"myShape",
+                  "-children":[
+                    { "Shape":
+                      {
+                        "-geometry":
+                          { "Box":
+                            {
+                              "@size":[140,140,140]
+                            }
+                          }
                       }
                     }
                   ]
                 }
               ]
-            },
-            "ProtoBody": {
-              "-children": [
-                {
-                  "Transform": {
-                    "-children": [
-                      {
-                        "ProtoInstance": {
-                          "@name": "anyShape",
-                          "IS": {
-                            "connect": [
-                              {
-                                "@nodeField": "myShape",
-                                "@protoField": "myShape"
-                              }
-                            ]
-                          }
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
             }
           }
-        },
-        {
-          "ProtoInstance": {
-            "@name": "one",
-            "fieldValue": [
-              {
-                "@name": "myShape",
-                "-children": [
-                  {
-                    "Shape": {
-                      "-geometry": {
-                        "Box": {
-                          "@size": [
-                            140,
-                            140,
-                            140
-                          ]
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+        ]
+    }
   }
 }

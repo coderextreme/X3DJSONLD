@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "6 May 2020"
+          "@content": "13 May 2020"
         },
         {
           "@name": "generator",
@@ -63,11 +63,6 @@
         {
           "Transform": {
             "@DEF": "DECLpoint_G1_node",
-            "@translation": [
-              0,
-              0,
-              0
-            ],
             "-children": [
               {
                 "Shape": {
@@ -207,11 +202,6 @@
         {
           "Transform": {
             "@DEF": "DECLpoint_G2_node",
-            "@translation": [
-              0,
-              0,
-              0
-            ],
             "-children": [
               {
                 "Shape": {

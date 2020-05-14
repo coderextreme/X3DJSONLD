@@ -6,78 +6,78 @@
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "HAnim"
+          "@name": "HAnim",
+          "@level": 1
         }
       ],
       "meta": [
         {
-          "@content": "KoreanCharacterAnnexD01Jin.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "KoreanCharacterAnnexD01Jin.x3d"
         },
         {
-          "@content": "Jin Hoon Lee and Min Joo Lee",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Jin Hoon Lee and Min Joo Lee"
         },
         {
-          "@content": "Chul Hee Jung and Myeong Won Lee",
-          "@name": "translator"
+          "@name": "translator",
+          "@content": "Chul Hee Jung and Myeong Won Lee"
         },
         {
-          "@content": "31 March 2011",
-          "@name": "created"
-        },
-        {
-          "@content": "1 November 2014",
-          "@name": "translated"
-        },
-        {
-          "@content": "28 May 2018",
-          "@name": "modified"
-        },
-        {
-          "@content": "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.",
-          "@name": "description"
-        },
-        {
-          "@content": "KoreanCharacter00ReadMe.txt",
-          "@name": "reference"
-        },
-        {
-          "@content": "KoreanCharacterHumanMotion_Infotech2014_140706.pdf",
-          "@name": "reference"
-        },
-        {
-          "@content": "KoreanCharactersIllustrated.pdf",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/KoreanCharacterAnnexD01Jin.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview",
-          "@name": "generator"
-        },
-        {
-          "@content": "Suwon HAnim Converter",
-          "@name": "generator"
-        },
-        {
-          "@content": "Gnu Image Manipulation Program, http://www.gimp.org",
-          "@name": "generator"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
+          "@name": "created",
+          "@content": "31 March 2011"
         },
         {
           "@name": "translated",
-          "@content": "6 May 2020"
+          "@content": "1 November 2014"
+        },
+        {
+          "@name": "modified",
+          "@content": "28 May 2018"
+        },
+        {
+          "@name": "description",
+          "@content": "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."
+        },
+        {
+          "@name": "reference",
+          "@content": "KoreanCharacter00ReadMe.txt"
+        },
+        {
+          "@name": "reference",
+          "@content": "KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
+        },
+        {
+          "@name": "reference",
+          "@content": "KoreanCharactersIllustrated.pdf"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/KoreanCharacterAnnexD01Jin.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"
+        },
+        {
+          "@name": "generator",
+          "@content": "Suwon HAnim Converter"
+        },
+        {
+          "@name": "generator",
+          "@content": "Gnu Image Manipulation Program, http://www.gimp.org"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "13 May 2020"
         },
         {
           "@name": "generator",
@@ -93,11 +93,7 @@
       "-children": [
         {
           "NavigationInfo": {
-            "@speed": 1.5,
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
+            "@speed": 1.5
           }
         },
         {
@@ -120,31 +116,52 @@
         },
         {
           "HAnimHumanoid": {
+            "@name": "AnnexD01Jin",
             "@DEF": "hanim_AnnexD01Jin",
             "@info": [
               "humanoidVersion=2.0"
             ],
-            "@name": "AnnexD01Jin",
             "@scale": [
               0.0225,
               0.0225,
               0.0225
             ],
             "@version": "2.0",
+            "@displayBBox": false,
+            "@jointBindingPositions": [
+              0,
+              0,
+              0
+            ],
+            "@jointBindingRotations": [
+              0,
+              0,
+              1,
+              0
+            ],
+            "@jointBindingScales": [
+              1,
+              1,
+              1
+            ],
+            "@loa": -1,
+            "@skeletalConfiguration": "BASIC",
             "-joints": {
               "HAnimJoint": {
+                "@name": "HumanoidRoot",
                 "@DEF": "hanim_HumanoidRoot",
                 "@center": [
                   0,
                   30.53,
                   -0.7076
                 ],
-                "@name": "HumanoidRoot",
+                "@displayBBox": false,
                 "-children": [
                   {
                     "HAnimSegment": {
-                      "@DEF": "hanim_sacrum",
                       "@name": "sacrum",
+                      "@DEF": "hanim_sacrum",
+                      "@displayBBox": false,
                       "-children": [
                         {
                           "Transform": {
@@ -153,9 +170,11 @@
                               30.53,
                               -0.7076
                             ],
+                            "@displayBBox": false,
                             "-children": [
                               {
                                 "Shape": {
+                                  "@displayBBox": false,
                                   "-appearance": {
                                     "Appearance": {
                                       "-material": {
@@ -1479,18 +1498,20 @@
                   },
                   {
                     "HAnimJoint": {
+                      "@name": "sacroiliac",
                       "@DEF": "hanim_sacroiliac",
                       "@center": [
                         0,
                         35.8,
                         -0.7076
                       ],
-                      "@name": "sacroiliac",
+                      "@displayBBox": false,
                       "-children": [
                         {
                           "HAnimSegment": {
-                            "@DEF": "hanim_pelvis",
                             "@name": "pelvis",
+                            "@DEF": "hanim_pelvis",
+                            "@displayBBox": false,
                             "-children": [
                               {
                                 "Transform": {
@@ -1499,9 +1520,11 @@
                                     35.8,
                                     -0.7076
                                   ],
+                                  "@displayBBox": false,
                                   "-children": [
                                     {
                                       "Shape": {
+                                        "@displayBBox": false,
                                         "-appearance": {
                                           "Appearance": {
                                             "-material": {
@@ -2821,18 +2844,20 @@
                         },
                         {
                           "HAnimJoint": {
+                            "@name": "l_hip",
                             "@DEF": "hanim_l_hip",
                             "@center": [
                               4.207,
                               32.02,
                               -0.8155
                             ],
-                            "@name": "l_hip",
+                            "@displayBBox": false,
                             "-children": [
                               {
                                 "HAnimSegment": {
-                                  "@DEF": "hanim_l_thigh",
                                   "@name": "l_thigh",
+                                  "@DEF": "hanim_l_thigh",
+                                  "@displayBBox": false,
                                   "-children": [
                                     {
                                       "Transform": {
@@ -2841,9 +2866,11 @@
                                           32.02,
                                           -0.8155
                                         ],
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "Shape": {
+                                              "@displayBBox": false,
                                               "-appearance": {
                                                 "Appearance": {
                                                   "-material": {
@@ -4198,18 +4225,20 @@
                               },
                               {
                                 "HAnimJoint": {
+                                  "@name": "l_knee",
                                   "@DEF": "hanim_l_knee",
                                   "@center": [
                                     4.116,
                                     17.26,
                                     -0.8639
                                   ],
-                                  "@name": "l_knee",
+                                  "@displayBBox": false,
                                   "-children": [
                                     {
                                       "HAnimSegment": {
-                                        "@DEF": "hanim_l_calf",
                                         "@name": "l_calf",
+                                        "@DEF": "hanim_l_calf",
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "Transform": {
@@ -4218,9 +4247,11 @@
                                                 17.26,
                                                 -0.8639
                                               ],
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "Shape": {
+                                                    "@displayBBox": false,
                                                     "-appearance": {
                                                       "Appearance": {
                                                         "-material": {
@@ -5080,18 +5111,20 @@
                                     },
                                     {
                                       "HAnimJoint": {
+                                        "@name": "l_talocrural",
                                         "@DEF": "hanim_l_talocrural",
                                         "@center": [
                                           3.854,
                                           3.939,
                                           -0.7038
                                         ],
-                                        "@name": "l_talocrural",
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "HAnimSegment": {
-                                              "@DEF": "hanim_l_hindfoot",
                                               "@name": "l_hindfoot",
+                                              "@DEF": "hanim_l_hindfoot",
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "Transform": {
@@ -5100,9 +5133,11 @@
                                                       3.939,
                                                       -0.7038
                                                     ],
+                                                    "@displayBBox": false,
                                                     "-children": [
                                                       {
                                                         "Shape": {
+                                                          "@displayBBox": false,
                                                           "-appearance": {
                                                             "Appearance": {
                                                               "-material": {
@@ -6265,18 +6300,20 @@
                                           },
                                           {
                                             "HAnimJoint": {
+                                              "@name": "l_metatarsophalangeal",
                                               "@DEF": "hanim_l_metatarsophalangeal",
                                               "@center": [
                                                 3.854,
                                                 3.64,
                                                 0.7402
                                               ],
-                                              "@name": "l_metatarsophalangeal",
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "HAnimSegment": {
-                                                    "@DEF": "hanim_l_middistal",
                                                     "@name": "l_middistal",
+                                                    "@DEF": "hanim_l_middistal",
+                                                    "@displayBBox": false,
                                                     "-children": [
                                                       {
                                                         "Transform": {
@@ -6285,9 +6322,11 @@
                                                             3.64,
                                                             0.7402
                                                           ],
+                                                          "@displayBBox": false,
                                                           "-children": [
                                                             {
                                                               "Shape": {
+                                                                "@displayBBox": false,
                                                                 "-appearance": {
                                                                   "Appearance": {
                                                                     "-material": {
@@ -7112,18 +7151,20 @@
                         },
                         {
                           "HAnimJoint": {
+                            "@name": "r_hip",
                             "@DEF": "hanim_r_hip",
                             "@center": [
                               -4.207,
                               32.02,
                               -0.8155
                             ],
-                            "@name": "r_hip",
+                            "@displayBBox": false,
                             "-children": [
                               {
                                 "HAnimSegment": {
-                                  "@DEF": "hanim_r_thigh",
                                   "@name": "r_thigh",
+                                  "@DEF": "hanim_r_thigh",
+                                  "@displayBBox": false,
                                   "-children": [
                                     {
                                       "Transform": {
@@ -7132,9 +7173,11 @@
                                           32.02,
                                           -0.8155
                                         ],
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "Shape": {
+                                              "@displayBBox": false,
                                               "-appearance": {
                                                 "Appearance": {
                                                   "-material": {
@@ -8489,18 +8532,20 @@
                               },
                               {
                                 "HAnimJoint": {
+                                  "@name": "r_knee",
                                   "@DEF": "hanim_r_knee",
                                   "@center": [
                                     -4.116,
                                     17.26,
                                     -0.8639
                                   ],
-                                  "@name": "r_knee",
+                                  "@displayBBox": false,
                                   "-children": [
                                     {
                                       "HAnimSegment": {
-                                        "@DEF": "hanim_r_calf",
                                         "@name": "r_calf",
+                                        "@DEF": "hanim_r_calf",
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "Transform": {
@@ -8509,9 +8554,11 @@
                                                 17.26,
                                                 -0.8639
                                               ],
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "Shape": {
+                                                    "@displayBBox": false,
                                                     "-appearance": {
                                                       "Appearance": {
                                                         "-material": {
@@ -9371,18 +9418,20 @@
                                     },
                                     {
                                       "HAnimJoint": {
+                                        "@name": "r_talocrural",
                                         "@DEF": "hanim_r_talocrural",
                                         "@center": [
                                           -3.854,
                                           3.939,
                                           -0.7038
                                         ],
-                                        "@name": "r_talocrural",
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "HAnimSegment": {
-                                              "@DEF": "hanim_r_hindfoot",
                                               "@name": "r_hindfoot",
+                                              "@DEF": "hanim_r_hindfoot",
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "Transform": {
@@ -9391,9 +9440,11 @@
                                                       3.939,
                                                       -0.7038
                                                     ],
+                                                    "@displayBBox": false,
                                                     "-children": [
                                                       {
                                                         "Shape": {
+                                                          "@displayBBox": false,
                                                           "-appearance": {
                                                             "Appearance": {
                                                               "-material": {
@@ -10556,18 +10607,20 @@
                                           },
                                           {
                                             "HAnimJoint": {
+                                              "@name": "r_metatarsophalangeal",
                                               "@DEF": "hanim_r_metatarsophalangeal",
                                               "@center": [
                                                 -3.854,
                                                 3.64,
                                                 0.7402
                                               ],
-                                              "@name": "r_metatarsophalangeal",
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "HAnimSegment": {
-                                                    "@DEF": "hanim_r_middistal",
                                                     "@name": "r_middistal",
+                                                    "@DEF": "hanim_r_middistal",
+                                                    "@displayBBox": false,
                                                     "-children": [
                                                       {
                                                         "Transform": {
@@ -10576,9 +10629,11 @@
                                                             3.64,
                                                             0.7402
                                                           ],
+                                                          "@displayBBox": false,
                                                           "-children": [
                                                             {
                                                               "Shape": {
+                                                                "@displayBBox": false,
                                                                 "-appearance": {
                                                                   "Appearance": {
                                                                     "-material": {
@@ -11403,18 +11458,20 @@
                         },
                         {
                           "HAnimJoint": {
+                            "@name": "vl5",
                             "@DEF": "hanim_vl5",
                             "@center": [
                               0,
                               40.23,
                               -0.8527
                             ],
-                            "@name": "vl5",
+                            "@displayBBox": false,
                             "-children": [
                               {
                                 "HAnimSegment": {
-                                  "@DEF": "hanim_l5",
                                   "@name": "l5",
+                                  "@DEF": "hanim_l5",
+                                  "@displayBBox": false,
                                   "-children": [
                                     {
                                       "Transform": {
@@ -11423,9 +11480,11 @@
                                           40.23,
                                           -0.8527
                                         ],
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "Shape": {
+                                              "@displayBBox": false,
                                               "-appearance": {
                                                 "Appearance": {
                                                   "-material": {
@@ -15089,18 +15148,20 @@
                               },
                               {
                                 "HAnimJoint": {
+                                  "@name": "skullbase",
                                   "@DEF": "hanim_skullbase",
                                   "@center": [
                                     0,
                                     57.43,
                                     -0.6863
                                   ],
-                                  "@name": "skullbase",
+                                  "@displayBBox": false,
                                   "-children": [
                                     {
                                       "HAnimSegment": {
-                                        "@DEF": "hanim_skull",
                                         "@name": "skull",
+                                        "@DEF": "hanim_skull",
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "Transform": {
@@ -15109,9 +15170,11 @@
                                                 57.43,
                                                 -0.6863
                                               ],
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "Shape": {
+                                                    "@displayBBox": false,
                                                     "-appearance": {
                                                       "Appearance": {
                                                         "-material": {
@@ -21740,18 +21803,20 @@
                               },
                               {
                                 "HAnimJoint": {
+                                  "@name": "l_shoulder",
                                   "@DEF": "hanim_l_shoulder",
                                   "@center": [
                                     5.975,
                                     52,
                                     -0.1452
                                   ],
-                                  "@name": "l_shoulder",
+                                  "@displayBBox": false,
                                   "-children": [
                                     {
                                       "HAnimSegment": {
-                                        "@DEF": "hanim_l_upperarm",
                                         "@name": "l_upperarm",
+                                        "@DEF": "hanim_l_upperarm",
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "Transform": {
@@ -21760,9 +21825,11 @@
                                                 52,
                                                 -0.1452
                                               ],
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "Shape": {
+                                                    "@displayBBox": false,
                                                     "-appearance": {
                                                       "Appearance": {
                                                         "-material": {
@@ -22664,18 +22731,20 @@
                                     },
                                     {
                                       "HAnimJoint": {
+                                        "@name": "l_elbow",
                                         "@DEF": "hanim_l_elbow",
                                         "@center": [
                                           8.093,
                                           40.38,
                                           -0.2502
                                         ],
-                                        "@name": "l_elbow",
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "HAnimSegment": {
-                                              "@DEF": "hanim_l_forearm",
                                               "@name": "l_forearm",
+                                              "@DEF": "hanim_l_forearm",
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "Transform": {
@@ -22684,9 +22753,11 @@
                                                       40.38,
                                                       -0.2502
                                                     ],
+                                                    "@displayBBox": false,
                                                     "-children": [
                                                       {
                                                         "Shape": {
+                                                          "@displayBBox": false,
                                                           "-appearance": {
                                                             "Appearance": {
                                                               "-material": {
@@ -23253,18 +23324,20 @@
                                           },
                                           {
                                             "HAnimJoint": {
+                                              "@name": "l_radiocarpal",
                                               "@DEF": "hanim_l_radiocarpal",
                                               "@center": [
                                                 7.808,
                                                 31.46,
                                                 -0.05849
                                               ],
-                                              "@name": "l_radiocarpal",
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "HAnimSegment": {
-                                                    "@DEF": "hanim_l_hand",
                                                     "@name": "l_hand",
+                                                    "@DEF": "hanim_l_hand",
+                                                    "@displayBBox": false,
                                                     "-children": [
                                                       {
                                                         "Transform": {
@@ -23273,9 +23346,11 @@
                                                             31.46,
                                                             -0.05849
                                                           ],
+                                                          "@displayBBox": false,
                                                           "-children": [
                                                             {
                                                               "Shape": {
+                                                                "@displayBBox": false,
                                                                 "-appearance": {
                                                                   "Appearance": {
                                                                     "-material": {
@@ -23826,18 +23901,20 @@
                               },
                               {
                                 "HAnimJoint": {
+                                  "@name": "r_shoulder",
                                   "@DEF": "hanim_r_shoulder",
                                   "@center": [
                                     -5.975,
                                     52,
                                     -0.1452
                                   ],
-                                  "@name": "r_shoulder",
+                                  "@displayBBox": false,
                                   "-children": [
                                     {
                                       "HAnimSegment": {
-                                        "@DEF": "hanim_r_upperarm",
                                         "@name": "r_upperarm",
+                                        "@DEF": "hanim_r_upperarm",
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "Transform": {
@@ -23846,9 +23923,11 @@
                                                 52,
                                                 -0.1452
                                               ],
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "Shape": {
+                                                    "@displayBBox": false,
                                                     "-appearance": {
                                                       "Appearance": {
                                                         "-material": {
@@ -24750,18 +24829,20 @@
                                     },
                                     {
                                       "HAnimJoint": {
+                                        "@name": "r_elbow",
                                         "@DEF": "hanim_r_elbow",
                                         "@center": [
                                           -8.093,
                                           40.38,
                                           -0.2502
                                         ],
-                                        "@name": "r_elbow",
+                                        "@displayBBox": false,
                                         "-children": [
                                           {
                                             "HAnimSegment": {
-                                              "@DEF": "hanim_r_forearm",
                                               "@name": "r_forearm",
+                                              "@DEF": "hanim_r_forearm",
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "Transform": {
@@ -24770,9 +24851,11 @@
                                                       40.38,
                                                       -0.2502
                                                     ],
+                                                    "@displayBBox": false,
                                                     "-children": [
                                                       {
                                                         "Shape": {
+                                                          "@displayBBox": false,
                                                           "-appearance": {
                                                             "Appearance": {
                                                               "-material": {
@@ -25339,18 +25422,20 @@
                                           },
                                           {
                                             "HAnimJoint": {
+                                              "@name": "r_radiocarpal",
                                               "@DEF": "hanim_r_radiocarpal",
                                               "@center": [
                                                 -7.808,
                                                 31.46,
                                                 -0.05849
                                               ],
-                                              "@name": "r_radiocarpal",
+                                              "@displayBBox": false,
                                               "-children": [
                                                 {
                                                   "HAnimSegment": {
-                                                    "@DEF": "hanim_r_hand",
                                                     "@name": "r_hand",
+                                                    "@DEF": "hanim_r_hand",
+                                                    "@displayBBox": false,
                                                     "-children": [
                                                       {
                                                         "Transform": {
@@ -25359,9 +25444,11 @@
                                                             31.46,
                                                             -0.05849
                                                           ],
+                                                          "@displayBBox": false,
                                                           "-children": [
                                                             {
                                                               "Shape": {
+                                                                "@displayBBox": false,
                                                                 "-appearance": {
                                                                   "Appearance": {
                                                                     "-material": {
@@ -25926,8 +26013,12 @@
                 "@loop": true,
                 "@frameTime": "0.033333",
                 "@frameDuration": 0.033333,
-                "@joints": "\"HumanoidRoot, l_hip, l_knee, l_talocrural, r_hip,\r\n                   r_knee, r_talocrural, vl5, IGNORED, l_shoulder,\r\n                   l_elbow, l_radiocarpal, IGNORED, r_shoulder, r_elbow,\r\n                   r_radiocarpal, IGNORED, skullbase\"",
-                "@channels": "\"6 Xposition Yposition Zposition Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\r\n                     3 Zrotation Xrotation Yrotation\"",
+                "@joints": [
+                  "HumanoidRoot, l_hip, l_knee, l_talocrural, r_hip, r_knee, r_talocrural, vl5, IGNORED, l_shoulder, l_elbow, l_radiocarpal, IGNORED, r_shoulder, r_elbow, r_radiocarpal, IGNORED, skullbase"
+                ],
+                "@channels": [
+                  "6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation"
+                ],
                 "@values": [
                   102.2373,
                   37.3864,
@@ -48273,7 +48364,12 @@
                   8.51,
                   13.49,
                   -10.77
-                ]
+                ],
+                "@frameIncrement": 1,
+                "@frameIndex": 0,
+                "@loa": -1,
+                "@startFrame": 0,
+                "@endFrame": 0
               }
             }
           }

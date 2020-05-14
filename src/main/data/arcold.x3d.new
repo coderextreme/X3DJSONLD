@@ -6,7 +6,7 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/arc.x3d"></meta>
 <meta name="description" content="an attempt to implement an arc in a graph"></meta>
 </head>
-<Scene><Viewpoint position="0 0 5" orientation="0 0 1 0" description="a moving graph"></Viewpoint>
+<Scene><Viewpoint position="0 0 5" description="a moving graph"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
 <Transform DEF="trans1"><Transform DEF="rotscale1"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7"></Material>
 </Appearance>
@@ -26,7 +26,7 @@
 </Shape>
 </Transform>
 </Transform>
-<ProtoDeclare name="point"><ProtoInterface><field accessType="inputOutput" name="translation" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="point"><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
@@ -54,19 +54,19 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<!-- from doug sanden --><ProtoDeclare name="x3dconnector"><ProtoInterface><field accessType="inputOutput" name="startnode" type="SFNode"></field>
-<field accessType="inputOutput" name="endnode" type="SFNode"></field>
-<field accessType="inputOutput" name="transnode" type="SFNode"></field>
-<field accessType="inputOutput" name="rotscalenode" type="SFNode"></field>
-<field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
-<field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
+<!--from doug sanden--><ProtoDeclare name="x3dconnector"><ProtoInterface><field name="startnode" accessType="inputOutput" type="SFNode"></field>
+<field name="endnode" accessType="inputOutput" type="SFNode"></field>
+<field name="transnode" accessType="inputOutput" type="SFNode"></field>
+<field name="rotscalenode" accessType="inputOutput" type="SFNode"></field>
+<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
+<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Script DEF="S1"><field accessType="inputOutput" name="startnode" type="SFNode"></field>
-<field accessType="inputOutput" name="endnode" type="SFNode"></field>
-<field accessType="inputOutput" name="transnode" type="SFNode"></field>
-<field accessType="inputOutput" name="rotscalenode" type="SFNode"></field>
-<field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
-<field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
+<ProtoBody><Script DEF="S1"><field name="startnode" accessType="inputOutput" type="SFNode"></field>
+<field name="endnode" accessType="inputOutput" type="SFNode"></field>
+<field name="transnode" accessType="inputOutput" type="SFNode"></field>
+<field name="rotscalenode" accessType="inputOutput" type="SFNode"></field>
+<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
+<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 <IS><connect nodeField="startnode" protoField="startnode"></connect>
 <connect nodeField="endnode" protoField="endnode"></connect>
 <connect nodeField="transnode" protoField="transnode"></connect>
@@ -119,10 +119,10 @@
         }]]></Script>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoInstance DEF="G1" name="point"></ProtoInstance>
-<ProtoInstance DEF="G2" name="point"></ProtoInstance>
-<ProtoInstance DEF="G3" name="point"></ProtoInstance>
-<ProtoInstance DEF="G4" name="point"></ProtoInstance>
+<ProtoInstance name="point" DEF="G1"></ProtoInstance>
+<ProtoInstance name="point" DEF="G2"></ProtoInstance>
+<ProtoInstance name="point" DEF="G3"></ProtoInstance>
+<ProtoInstance name="point" DEF="G4"></ProtoInstance>
 <ProtoInstance name="x3dconnector" DEF="connector1"><fieldValue name="startnode"><ProtoInstance USE="G1"></ProtoInstance>
 </fieldValue>
 <fieldValue name="endnode"><ProtoInstance USE="G2"></ProtoInstance>

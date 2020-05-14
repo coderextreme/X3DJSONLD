@@ -12,10 +12,10 @@
 <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/flowerproto.x3d"></meta>
 </head>
-<Scene><ProtoDeclare name="FlowerProto"><ProtoInterface><field accessType="inputOutput" name="vertex" type="MFString" value="&quot;../shaders/gl_flowers_chromatic.vs&quot;"></field>
-<field accessType="inputOutput" name="fragment" type="MFString" value="&quot;../shaders/pc_flowers.fs&quot;"></field>
+<Scene><ProtoDeclare name="FlowerProto"><ProtoInterface><field name="vertex" accessType="inputOutput" type="MFString" value="&quot;../shaders/gl_flowers_chromatic.vs&quot;"></field>
+<field name="fragment" accessType="inputOutput" type="MFString" value="&quot;../shaders/pc_flowers.fs&quot;"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="transform" translation="0 0 0"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<ProtoBody><Transform DEF="transform"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottom" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
 <ImageTexture containerField="front" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
@@ -34,7 +34,7 @@
 <field name="d" type="SFFloat" accessType="inputOutput" value="20"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
-<!-- --><!--		       <field name='cube' type='SFNode' accessType="inputOutput">--><!--			  <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>--><!--		  </field>--><!--		  --><ShaderPart type="VERTEX"><IS><connect nodeField="url" protoField="vertex"></connect>
+<!--<field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field>--><ShaderPart type="VERTEX"><IS><connect nodeField="url" protoField="vertex"></connect>
 </IS>
 </ShaderPart>
 <ShaderPart type="FRAGMENT"><IS><connect nodeField="url" protoField="fragment"></connect>
