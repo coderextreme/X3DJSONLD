@@ -133,632 +133,296 @@ public class HAnimModelHandRight
     .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new WorldInfoObject().setTitle("HAnimModelHandRight.x3d"))
-    .addChild(new HAnimHumanoidObject("Humanoid_Right_hand").setName("Humanoid_Right_hand").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimHumanoid displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setJointBindingPositions(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f})).setJointBindingRotations(new MFRotationObject(new float[] {0.0f,0.0f,1.0f,0.0f})).setJointBindingScales(new MFVec3fObject(new float[] {1.0f,1.0f,1.0f})).setLoa(-1).setSkeletalConfiguration("BASIC").setVersion("2.0")
-      .addSkeleton(new HAnimJointObject("hanim_HumanoidRoot").setName("humanoid_root").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-        .addChild(new HAnimJointObject("r_radiocarpal_joint").setName("r_radiocarpal_joint").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-          .addChild(new HAnimSegmentObject("r_wrist").setName("r_wrist").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-            .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new ShapeObject("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+    .addChild(new HAnimHumanoidObject("Humanoid_Right_hand").setName("Humanoid_Right_hand").setJointBindingPositions(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f})).setJointBindingRotations(new MFRotationObject(new float[] {0.0f,0.0f,1.0f,0.0f})).setJointBindingScales(new MFVec3fObject(new float[] {1.0f,1.0f,1.0f})).setLoa(-1).setSkeletalConfiguration("BASIC").setVersion("2.0")
+      .addSkeleton(new HAnimJointObject("hanim_HumanoidRoot").setName("humanoid_root")
+        .addChild(new HAnimJointObject("r_radiocarpal_joint").setName("r_radiocarpal_joint")
+          .addChild(new HAnimSegmentObject("r_wrist").setName("r_wrist")
+            .addChild(new TransformObject()
+              .addChild(new ShapeObject("HAnimJointShape")
                 .setGeometry(new SphereObject().setRadius(0.025f))
                 .setAppearance(new AppearanceObject("HAnimJointAppearanceBlue")
                   .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.0f,1.0f)))))
-            .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
               .setGeometry(new IndexedLineSetObject("RCToMC12").setDEF("RCToMC12").setCoordIndex(new int[] {0,1})
                 .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,-0.1f,0.1f,0.0f})))))
-            .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
               .setGeometry(new IndexedLineSetObject("RCToMC3").setDEF("RCToMC3").setCoordIndex(new int[] {0,1})
                 .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,0.07f,0.0f})))))
-            .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
               .setGeometry(new IndexedLineSetObject("RCToMC45").setDEF("RCToMC45").setCoordIndex(new int[] {0,1})
                 .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.1f,0.1f,0.0f}))))))
           .addComments(" MC12 ")
-          .addChild(new HAnimJointObject("r_midcarpal_joint_12").setName("r_midcarpal_joint_12").setCenter(-0.1f,0.1f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-            .addChild(new HAnimSegmentObject("r_trapezoid").setName("r_trapezoid").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.1f,0.1f,0.0f)
-                .addChild(new ShapeObject("HAnimNewJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+          .addChild(new HAnimJointObject("r_midcarpal_joint_12").setName("r_midcarpal_joint_12").setCenter(-0.1f,0.1f,0.0f)
+            .addChild(new HAnimSegmentObject("r_trapezoid").setName("r_trapezoid")
+              .addChild(new TransformObject().setTranslation(-0.1f,0.1f,0.0f)
+                .addChild(new ShapeObject("HAnimNewJointShape")
                   .setGeometry(new SphereObject().setRadius(0.025f))
                   .setAppearance(new AppearanceObject("HAnimJointAppearanceRed")
                     .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f)))))
-              .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                 .setGeometry(new IndexedLineSetObject("MC12toCMC1").setDEF("MC12toCMC1").setCoordIndex(new int[] {0,1})
                   .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.1f,0.1f,0.0f,-0.2f,0.15f,0.0f})))))
-              .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                 .setGeometry(new IndexedLineSetObject("MC12toCMC2").setDEF("MC12toCMC2").setCoordIndex(new int[] {0,1})
                   .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.1f,0.1f,0.0f,-0.1f,0.2f,0.0f}))))))
             .addComments(" thumb finger ")
-            .addChild(new HAnimJointObject("r_carpometacarpal_joint_1").setName("r_carpometacarpal_joint_1").setCenter(-0.2f,0.15f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new HAnimSegmentObject("r_metacarpal_1").setName("r_metacarpal_1").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.2f,0.15f,0.0f)
-                  .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new HAnimJointObject("r_carpometacarpal_joint_1").setName("r_carpometacarpal_joint_1").setCenter(-0.2f,0.15f,0.0f)
+              .addChild(new HAnimSegmentObject("r_metacarpal_1").setName("r_metacarpal_1")
+                .addChild(new TransformObject().setTranslation(-0.2f,0.15f,0.0f)
+                  .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                   .setGeometry(new IndexedLineSetObject("CMC1toMCP1").setDEF("CMC1toMCP1").setCoordIndex(new int[] {0,1})
                     .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.2f,0.15f,0.0f,-0.3f,0.3f,0.0f}))))))
-              .addChild(new HAnimJointObject("r_metacarpophalangeal_joint_1").setName("r_metacarpophalangeal_joint_1").setCenter(-0.3f,0.3f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new HAnimSegmentObject("r_proximal_phalanges1").setName("r_proximal_phalanges1").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.3f,0.3f,0.0f)
-                    .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                  .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new HAnimJointObject("r_metacarpophalangeal_joint_1").setName("r_metacarpophalangeal_joint_1").setCenter(-0.3f,0.3f,0.0f)
+                .addChild(new HAnimSegmentObject("r_proximal_phalanges1").setName("r_proximal_phalanges1")
+                  .addChild(new TransformObject().setTranslation(-0.3f,0.3f,0.0f)
+                    .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                  .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                     .setGeometry(new IndexedLineSetObject("MCP11toIP1").setDEF("MCP11toIP1").setCoordIndex(new int[] {0,1})
                       .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.3f,0.3f,0.0f,-0.35f,0.4f,0.0f}))))))
-                .addChild(new HAnimJointObject("r_interphalangeal_joint_1").setName("r_interphalangeal_joint_1").setCenter(-0.35f,0.4f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new HAnimSegmentObject("r_distal_phalanges1").setName("r_distal_phalanges1").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.35f,0.4f,0.0f)
-                      .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                    .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                .addChild(new HAnimJointObject("r_interphalangeal_joint_1").setName("r_interphalangeal_joint_1").setCenter(-0.35f,0.4f,0.0f)
+                  .addChild(new HAnimSegmentObject("r_distal_phalanges1").setName("r_distal_phalanges1")
+                    .addChild(new TransformObject().setTranslation(-0.35f,0.4f,0.0f)
+                      .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                    .addChild(new ShapeObject()
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                       .setGeometry(new IndexedLineSetObject("fingertip_r_interphalangeal_joint_1").setDEF("fingertip_r_interphalangeal_joint_1").setCoordIndex(new int[] {0,1})
                         .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.35f,0.4f,0.0f,-0.36f,0.45f,0.0f})))))))))
             .addComments(" index finger ")
-            .addChild(new HAnimJointObject("r_carpometacarpal_joint_2").setName("r_carpometacarpal_joint_2").setCenter(-0.1f,0.2f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new HAnimSegmentObject("r_metacarpal_2").setName("r_metacarpal_2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.1f,0.2f,0.0f)
-                  .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new HAnimJointObject("r_carpometacarpal_joint_2").setName("r_carpometacarpal_joint_2").setCenter(-0.1f,0.2f,0.0f)
+              .addChild(new HAnimSegmentObject("r_metacarpal_2").setName("r_metacarpal_2")
+                .addChild(new TransformObject().setTranslation(-0.1f,0.2f,0.0f)
+                  .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                   .setGeometry(new IndexedLineSetObject("CMC2toMCP2").setDEF("CMC2toMCP2").setCoordIndex(new int[] {0,1})
                     .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.1f,0.2f,0.0f,-0.15f,0.5f,0.0f}))))))
-              .addChild(new HAnimJointObject("r_metacarpophalangeal_joint_2").setName("r_metacarpophalangeal_joint_2").setCenter(-0.15f,0.5f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new HAnimSegmentObject("r_proximal_phalanges2").setName("r_proximal_phalanges2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.15f,0.5f,0.0f)
-                    .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                  .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new HAnimJointObject("r_metacarpophalangeal_joint_2").setName("r_metacarpophalangeal_joint_2").setCenter(-0.15f,0.5f,0.0f)
+                .addChild(new HAnimSegmentObject("r_proximal_phalanges2").setName("r_proximal_phalanges2")
+                  .addChild(new TransformObject().setTranslation(-0.15f,0.5f,0.0f)
+                    .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                  .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                     .setGeometry(new IndexedLineSetObject("MCP2toPIP2").setDEF("MCP2toPIP2").setCoordIndex(new int[] {0,1})
                       .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.15f,0.5f,0.0f,-0.2f,0.7f,0.0f}))))))
-                .addChild(new HAnimJointObject("r_proximal_interphalangeal_joint_2").setName("r_proximal_interphalangeal_joint_2").setCenter(-0.2f,0.7f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new HAnimSegmentObject("r_middle_phalanges2").setName("r_middle_phalanges2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.2f,0.7f,0.0f)
-                      .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                    .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                .addChild(new HAnimJointObject("r_proximal_interphalangeal_joint_2").setName("r_proximal_interphalangeal_joint_2").setCenter(-0.2f,0.7f,0.0f)
+                  .addChild(new HAnimSegmentObject("r_middle_phalanges2").setName("r_middle_phalanges2")
+                    .addChild(new TransformObject().setTranslation(-0.2f,0.7f,0.0f)
+                      .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                    .addChild(new ShapeObject()
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                       .setGeometry(new IndexedLineSetObject("PIP2toDIP2").setDEF("PIP2toDIP2").setCoordIndex(new int[] {0,1})
                         .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.2f,0.7f,0.0f,-0.24f,0.87f,0.0f}))))))
-                  .addChild(new HAnimJointObject("r_distal_interphalangeal_joint_2").setName("r_distal_interphalangeal_joint_2").setCenter(-0.24f,0.87f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new HAnimSegmentObject("r_distal_phalanges2").setName("r_distal_phalanges2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                      .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.24f,0.87f,0.0f)
-                        .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                      .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                  .addChild(new HAnimJointObject("r_distal_interphalangeal_joint_2").setName("r_distal_interphalangeal_joint_2").setCenter(-0.24f,0.87f,0.0f)
+                    .addChild(new HAnimSegmentObject("r_distal_phalanges2").setName("r_distal_phalanges2")
+                      .addChild(new TransformObject().setTranslation(-0.24f,0.87f,0.0f)
+                        .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                      .addChild(new ShapeObject()
                         .setAppearance(new AppearanceObject()
                           .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                         .setGeometry(new IndexedLineSetObject("fingertip_r_distal_interphalangeal_joint_2").setDEF("fingertip_r_distal_interphalangeal_joint_2").setCoordIndex(new int[] {0,1})
                           .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.24f,0.87f,0.0f,-0.26f,0.93f,0.0f})))))))))))
           .addComments(" MC3 ")
-          .addChild(new HAnimJointObject("r_midcarpal_joint_3").setName("r_midcarpal_joint_3").setCenter(0.0f,0.07f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-            .addChild(new HAnimSegmentObject("r_capitate").setName("r_capitate").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.0f,0.07f,0.0f)
-                .addChild(new ShapeObject().setUSE("HAnimNewJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-              .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+          .addChild(new HAnimJointObject("r_midcarpal_joint_3").setName("r_midcarpal_joint_3").setCenter(0.0f,0.07f,0.0f)
+            .addChild(new HAnimSegmentObject("r_capitate").setName("r_capitate")
+              .addChild(new TransformObject().setTranslation(0.0f,0.07f,0.0f)
+                .addChild(new ShapeObject().setUSE("HAnimNewJointShape")))
+              .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                 .setGeometry(new IndexedLineSetObject("MC3toCMC3").setDEF("MC3toCMC3").setCoordIndex(new int[] {0,1})
                   .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.0f,0.07f,0.0f,0.0f,0.2f,0.0f}))))))
             .addComments(" Middle fingle ")
-            .addChild(new HAnimJointObject("r_carpometacarpal_joint_3").setName("r_carpometacarpal_joint_3").setCenter(0.0f,0.2f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new HAnimSegmentObject("r_metacarpal_3").setName("r_metacarpal_3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.0f,0.2f,0.0f)
-                  .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new HAnimJointObject("r_carpometacarpal_joint_3").setName("r_carpometacarpal_joint_3").setCenter(0.0f,0.2f,0.0f)
+              .addChild(new HAnimSegmentObject("r_metacarpal_3").setName("r_metacarpal_3")
+                .addChild(new TransformObject().setTranslation(0.0f,0.2f,0.0f)
+                  .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                   .setGeometry(new IndexedLineSetObject("CMC3toMCP3").setDEF("CMC3toMCP3").setCoordIndex(new int[] {0,1})
                     .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.0f,0.2f,0.0f,-0.03f,0.5f,0.0f}))))))
-              .addChild(new HAnimJointObject("r_metacarpophalangeal_joint_3").setName("r_metacarpophalangeal_joint_3").setCenter(-0.03f,0.5f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new HAnimSegmentObject("r_proximal_phalanges3").setName("r_proximal_phalanges3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.03f,0.5f,0.0f)
-                    .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                  .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new HAnimJointObject("r_metacarpophalangeal_joint_3").setName("r_metacarpophalangeal_joint_3").setCenter(-0.03f,0.5f,0.0f)
+                .addChild(new HAnimSegmentObject("r_proximal_phalanges3").setName("r_proximal_phalanges3")
+                  .addChild(new TransformObject().setTranslation(-0.03f,0.5f,0.0f)
+                    .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                  .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                     .setGeometry(new IndexedLineSetObject("MCP3toPIP3").setDEF("MCP3toPIP3").setCoordIndex(new int[] {0,1})
                       .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.03f,0.5f,0.0f,-0.05f,0.75f,0.0f}))))))
-                .addChild(new HAnimJointObject("r_proximal_interphalangeal_joint_3").setName("r_proximal_interphalangeal_joint_3").setCenter(-0.05f,0.75f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new HAnimSegmentObject("r_middle_phalanges3").setName("r_middle_phalanges3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.05f,0.75f,0.0f)
-                      .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                    .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                .addChild(new HAnimJointObject("r_proximal_interphalangeal_joint_3").setName("r_proximal_interphalangeal_joint_3").setCenter(-0.05f,0.75f,0.0f)
+                  .addChild(new HAnimSegmentObject("r_middle_phalanges3").setName("r_middle_phalanges3")
+                    .addChild(new TransformObject().setTranslation(-0.05f,0.75f,0.0f)
+                      .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                    .addChild(new ShapeObject()
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                       .setGeometry(new IndexedLineSetObject("PIP3toDIP3").setDEF("PIP3toDIP3").setCoordIndex(new int[] {0,1})
                         .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.05f,0.75f,0.0f,-0.08f,0.96f,0.0f}))))))
-                  .addChild(new HAnimJointObject("r_distal_interphalangeal_joint_3").setName("r_distal_interphalangeal_joint_3").setCenter(-0.08f,0.96f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new HAnimSegmentObject("r_distal_phalanges3").setName("r_distal_phalanges3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                      .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-0.08f,0.96f,0.0f)
-                        .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                      .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                  .addChild(new HAnimJointObject("r_distal_interphalangeal_joint_3").setName("r_distal_interphalangeal_joint_3").setCenter(-0.08f,0.96f,0.0f)
+                    .addChild(new HAnimSegmentObject("r_distal_phalanges3").setName("r_distal_phalanges3")
+                      .addChild(new TransformObject().setTranslation(-0.08f,0.96f,0.0f)
+                        .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                      .addChild(new ShapeObject()
                         .setAppearance(new AppearanceObject()
                           .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                         .setGeometry(new IndexedLineSetObject("fingertip_r_distal_interphalangeal_joint_3").setDEF("fingertip_r_distal_interphalangeal_joint_3").setCoordIndex(new int[] {0,1})
                           .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.08f,0.96f,0.0f,-0.09f,1.05f,0.0f})))))))))))
           .addComments(" MC45 ")
-          .addChild(new HAnimJointObject("r_midcarpal_joint_45").setName("r_midcarpal_joint_45").setCenter(0.1f,0.1f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-            .addChild(new HAnimSegmentObject("r_hamate").setName("r_hamate").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.1f,0.1f,0.0f)
-                .addChild(new ShapeObject().setUSE("HAnimNewJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-              .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+          .addChild(new HAnimJointObject("r_midcarpal_joint_45").setName("r_midcarpal_joint_45").setCenter(0.1f,0.1f,0.0f)
+            .addChild(new HAnimSegmentObject("r_hamate").setName("r_hamate")
+              .addChild(new TransformObject().setTranslation(0.1f,0.1f,0.0f)
+                .addChild(new ShapeObject().setUSE("HAnimNewJointShape")))
+              .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                 .setGeometry(new IndexedLineSetObject("MC45toCMC4").setDEF("MC45toCMC4").setCoordIndex(new int[] {0,1})
                   .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.1f,0.1f,0.0f,0.1f,0.2f,0.0f})))))
-              .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                 .setGeometry(new IndexedLineSetObject("MC45toCMC5").setDEF("MC45toCMC5").setCoordIndex(new int[] {0,1})
                   .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.1f,0.1f,0.0f,0.15f,0.17f,0.0f}))))))
             .addComments(" ring finger ")
-            .addChild(new HAnimJointObject("r_carpometacarpal_joint_4").setName("r_carpometacarpal_joint_4").setCenter(0.1f,0.2f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new HAnimSegmentObject("r_metacarpal_4").setName("r_metacarpal_4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.1f,0.2f,0.0f)
-                  .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new HAnimJointObject("r_carpometacarpal_joint_4").setName("r_carpometacarpal_joint_4").setCenter(0.1f,0.2f,0.0f)
+              .addChild(new HAnimSegmentObject("r_metacarpal_4").setName("r_metacarpal_4")
+                .addChild(new TransformObject().setTranslation(0.1f,0.2f,0.0f)
+                  .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                   .setGeometry(new IndexedLineSetObject("CMC4toMCP4").setDEF("CMC4toMCP4").setCoordIndex(new int[] {0,1})
                     .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.1f,0.2f,0.0f,0.1f,0.47f,0.0f}))))))
-              .addChild(new HAnimJointObject("r_metacarpophalangeal_joint_4").setName("r_metacarpophalangeal_joint_4").setCenter(0.1f,0.47f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new HAnimSegmentObject("r_proximal_phalanges4").setName("r_proximal_phalanges4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.1f,0.47f,0.0f)
-                    .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                  .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new HAnimJointObject("r_metacarpophalangeal_joint_4").setName("r_metacarpophalangeal_joint_4").setCenter(0.1f,0.47f,0.0f)
+                .addChild(new HAnimSegmentObject("r_proximal_phalanges4").setName("r_proximal_phalanges4")
+                  .addChild(new TransformObject().setTranslation(0.1f,0.47f,0.0f)
+                    .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                  .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                     .setGeometry(new IndexedLineSetObject("MCP4toPIP4").setDEF("MCP4toPIP4").setCoordIndex(new int[] {0,1})
                       .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.1f,0.47f,0.0f,0.1f,0.7f,0.0f}))))))
-                .addChild(new HAnimJointObject("r_proximal_interphalangeal_joint_4").setName("r_proximal_interphalangeal_joint_4").setCenter(0.1f,0.7f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new HAnimSegmentObject("r_middle_phalanges4").setName("r_middle_phalanges4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.1f,0.7f,0.0f)
-                      .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                    .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                .addChild(new HAnimJointObject("r_proximal_interphalangeal_joint_4").setName("r_proximal_interphalangeal_joint_4").setCenter(0.1f,0.7f,0.0f)
+                  .addChild(new HAnimSegmentObject("r_middle_phalanges4").setName("r_middle_phalanges4")
+                    .addChild(new TransformObject().setTranslation(0.1f,0.7f,0.0f)
+                      .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                    .addChild(new ShapeObject()
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                       .setGeometry(new IndexedLineSetObject("PIP4toDIP4").setDEF("PIP4toDIP4").setCoordIndex(new int[] {0,1})
                         .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.1f,0.7f,0.0f,0.1f,0.93f,0.0f}))))))
-                  .addChild(new HAnimJointObject("r_distal_interphalangeal_joint_4").setName("r_distal_interphalangeal_joint_4").setCenter(0.1f,0.93f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new HAnimSegmentObject("r_distal_phalanx4").setName("r_distal_phalanx4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                      .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.1f,0.93f,0.0f)
-                        .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                      .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                  .addChild(new HAnimJointObject("r_distal_interphalangeal_joint_4").setName("r_distal_interphalangeal_joint_4").setCenter(0.1f,0.93f,0.0f)
+                    .addChild(new HAnimSegmentObject("r_distal_phalanx4").setName("r_distal_phalanx4")
+                      .addChild(new TransformObject().setTranslation(0.1f,0.93f,0.0f)
+                        .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                      .addChild(new ShapeObject()
                         .setAppearance(new AppearanceObject()
                           .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                         .setGeometry(new IndexedLineSetObject("fingertip_r_distal_interphalangeal_joint_4").setDEF("fingertip_r_distal_interphalangeal_joint_4").setCoordIndex(new int[] {0,1})
                           .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.1f,0.93f,0.0f,0.1f,1.0f,0.0f}))))))))))
             .addComments(" pinky finger ")
-            .addChild(new HAnimJointObject("r_carpometacarpal_joint_5").setName("r_carpometacarpal_joint_5").setCenter(0.15f,0.17f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new HAnimSegmentObject("r_metacarpal_5").setName("r_metacarpal_5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.15f,0.17f,0.0f)
-                  .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new HAnimJointObject("r_carpometacarpal_joint_5").setName("r_carpometacarpal_joint_5").setCenter(0.15f,0.17f,0.0f)
+              .addChild(new HAnimSegmentObject("r_metacarpal_5").setName("r_metacarpal_5")
+                .addChild(new TransformObject().setTranslation(0.15f,0.17f,0.0f)
+                  .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                   .setGeometry(new IndexedLineSetObject("CMC5toMCP5").setDEF("CMC5toMCP5").setCoordIndex(new int[] {0,1})
                     .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.15f,0.17f,0.0f,0.2f,0.4f,0.0f}))))))
-              .addChild(new HAnimJointObject("r_metacarpophalangeal_joint_5").setName("r_metacarpophalangeal_joint_5").setCenter(0.2f,0.4f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new HAnimSegmentObject("r_proximal_phalanges5").setName("r_proximal_phalanges2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.2f,0.4f,0.0f)
-                    .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                  .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new HAnimJointObject("r_metacarpophalangeal_joint_5").setName("r_metacarpophalangeal_joint_5").setCenter(0.2f,0.4f,0.0f)
+                .addChild(new HAnimSegmentObject("r_proximal_phalanges5").setName("r_proximal_phalanges2")
+                  .addChild(new TransformObject().setTranslation(0.2f,0.4f,0.0f)
+                    .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                  .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                     .setGeometry(new IndexedLineSetObject("MCP5toPIP5").setDEF("MCP5toPIP5").setCoordIndex(new int[] {0,1})
                       .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.2f,0.4f,0.0f,0.23f,0.63f,0.0f}))))))
-                .addChild(new HAnimJointObject("r_proximal_interphalangeal_joint_5").setName("r_proximal_interphalangeal_joint_5").setCenter(0.23f,0.63f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new HAnimSegmentObject("r_middle_phalanges5").setName("r_middle_phalanges5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.23f,0.63f,0.0f)
-                      .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                    .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                .addChild(new HAnimJointObject("r_proximal_interphalangeal_joint_5").setName("r_proximal_interphalangeal_joint_5").setCenter(0.23f,0.63f,0.0f)
+                  .addChild(new HAnimSegmentObject("r_middle_phalanges5").setName("r_middle_phalanges5")
+                    .addChild(new TransformObject().setTranslation(0.23f,0.63f,0.0f)
+                      .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                    .addChild(new ShapeObject()
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                       .setGeometry(new IndexedLineSetObject("PIP5toDIP5").setDEF("PIP5toDIP5").setCoordIndex(new int[] {0,1})
                         .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.23f,0.63f,0.0f,0.25f,0.79f,0.0f}))))))
-                  .addChild(new HAnimJointObject("r_distal_interphalangeal_joint_5").setName("r_distal_interphalangeal_joint_5").setCenter(0.25f,0.79f,0.0f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new HAnimSegmentObject("r_distal_phalanges5").setName("r_distal_phalanges5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                      .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.25f,0.79f,0.0f)
-                        .addChild(new ShapeObject().setUSE("HAnimJointShape").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-                      .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                  .addChild(new HAnimJointObject("r_distal_interphalangeal_joint_5").setName("r_distal_interphalangeal_joint_5").setCenter(0.25f,0.79f,0.0f)
+                    .addChild(new HAnimSegmentObject("r_distal_phalanges5").setName("r_distal_phalanges5")
+                      .addChild(new TransformObject().setTranslation(0.25f,0.79f,0.0f)
+                        .addChild(new ShapeObject().setUSE("HAnimJointShape")))
+                      .addChild(new ShapeObject()
                         .setAppearance(new AppearanceObject()
                           .setMaterial(new MaterialObject().setEmissiveColor(1.0f,1.0f,1.0f)))
                         .setGeometry(new IndexedLineSetObject("fingertip_r_distal_interphalangeal_joint_5").setDEF("fingertip_r_distal_interphalangeal_joint_5").setCoordIndex(new int[] {0,1})
                           .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.25f,0.79f,0.0f,0.26f,0.85f,0.0f})))))))))))))
-      .addJoints(new HAnimJointObject().setUSE("hanim_HumanoidRoot").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_radiocarpal_joint").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_midcarpal_joint_12").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_carpometacarpal_joint_1").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_metacarpophalangeal_joint_1").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_interphalangeal_joint_1").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_carpometacarpal_joint_2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_metacarpophalangeal_joint_2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_proximal_interphalangeal_joint_2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_distal_interphalangeal_joint_2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_midcarpal_joint_3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_carpometacarpal_joint_3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_metacarpophalangeal_joint_3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_proximal_interphalangeal_joint_3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_distal_interphalangeal_joint_3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_midcarpal_joint_45").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_carpometacarpal_joint_4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_metacarpophalangeal_joint_4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_proximal_interphalangeal_joint_4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_distal_interphalangeal_joint_4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_carpometacarpal_joint_5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_metacarpophalangeal_joint_5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_proximal_interphalangeal_joint_5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addJoints(new HAnimJointObject().setUSE("r_distal_interphalangeal_joint_5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_wrist").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_trapezoid").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_metacarpal_1").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_proximal_phalanges1").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_distal_phalanges1").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_metacarpal_2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_proximal_phalanges2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_middle_phalanges2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_distal_phalanges2").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_capitate").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_metacarpal_3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_proximal_phalanges3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_middle_phalanges3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_distal_phalanges3").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_hamate").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_metacarpal_4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_proximal_phalanges4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_middle_phalanges4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_distal_phalanx4").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_metacarpal_5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_proximal_phalanges5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_middle_phalanges5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))
-      .addSegments(new HAnimSegmentObject().setUSE("r_distal_phalanges5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-))));
+      .addJoints(new HAnimJointObject().setUSE("hanim_HumanoidRoot"))
+      .addJoints(new HAnimJointObject().setUSE("r_radiocarpal_joint"))
+      .addJoints(new HAnimJointObject().setUSE("r_midcarpal_joint_12"))
+      .addJoints(new HAnimJointObject().setUSE("r_carpometacarpal_joint_1"))
+      .addJoints(new HAnimJointObject().setUSE("r_metacarpophalangeal_joint_1"))
+      .addJoints(new HAnimJointObject().setUSE("r_interphalangeal_joint_1"))
+      .addJoints(new HAnimJointObject().setUSE("r_carpometacarpal_joint_2"))
+      .addJoints(new HAnimJointObject().setUSE("r_metacarpophalangeal_joint_2"))
+      .addJoints(new HAnimJointObject().setUSE("r_proximal_interphalangeal_joint_2"))
+      .addJoints(new HAnimJointObject().setUSE("r_distal_interphalangeal_joint_2"))
+      .addJoints(new HAnimJointObject().setUSE("r_midcarpal_joint_3"))
+      .addJoints(new HAnimJointObject().setUSE("r_carpometacarpal_joint_3"))
+      .addJoints(new HAnimJointObject().setUSE("r_metacarpophalangeal_joint_3"))
+      .addJoints(new HAnimJointObject().setUSE("r_proximal_interphalangeal_joint_3"))
+      .addJoints(new HAnimJointObject().setUSE("r_distal_interphalangeal_joint_3"))
+      .addJoints(new HAnimJointObject().setUSE("r_midcarpal_joint_45"))
+      .addJoints(new HAnimJointObject().setUSE("r_carpometacarpal_joint_4"))
+      .addJoints(new HAnimJointObject().setUSE("r_metacarpophalangeal_joint_4"))
+      .addJoints(new HAnimJointObject().setUSE("r_proximal_interphalangeal_joint_4"))
+      .addJoints(new HAnimJointObject().setUSE("r_distal_interphalangeal_joint_4"))
+      .addJoints(new HAnimJointObject().setUSE("r_carpometacarpal_joint_5"))
+      .addJoints(new HAnimJointObject().setUSE("r_metacarpophalangeal_joint_5"))
+      .addJoints(new HAnimJointObject().setUSE("r_proximal_interphalangeal_joint_5"))
+      .addJoints(new HAnimJointObject().setUSE("r_distal_interphalangeal_joint_5"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_wrist"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_trapezoid"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_metacarpal_1"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_proximal_phalanges1"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_distal_phalanges1"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_metacarpal_2"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_proximal_phalanges2"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_middle_phalanges2"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_distal_phalanges2"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_capitate"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_metacarpal_3"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_proximal_phalanges3"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_middle_phalanges3"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_distal_phalanges3"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_hamate"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_metacarpal_4"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_proximal_phalanges4"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_middle_phalanges4"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_distal_phalanx4"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_metacarpal_5"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_proximal_phalanges5"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_middle_phalanges5"))
+      .addSegments(new HAnimSegmentObject().setUSE("r_distal_phalanges5"))));
     }
 	// end of initialize() method
 

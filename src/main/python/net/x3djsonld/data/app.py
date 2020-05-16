@@ -30,13 +30,13 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='Carlson, III',name='John R')]),
   Scene=Scene(
     children=[
-    Group(displayBBox=false,
+    Group(
       children=[
-      Shape(displayBBox=false,
+      Shape(
         appearance=Appearance(
           material=Material(diffuseColor=(1,0,0))),
-        Box(),])]),
-    Transform(displayBBox=false,rotation=(7,8,9,3.14),scale=(4,5,6),translation=(1,2,3))])
+        geometry=Box(),)]),
+    Transform(rotation=(7,8,9,3.14),scale=(4,5,6),translation=(1,2,3))])
 ) # X3D model complete
 
 ###############################################

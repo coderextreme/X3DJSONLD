@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Left foot, using high-fidelity definitions for H-Anim version 2.2. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/HAnimModelFootLeft.java">HAnimModelFootLeft.java</a> source, <a href="../../../HumanoidAnimation/HAnimModelFootLeftIndex.html" target="_top">HAnimModelFootLeft catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../HumanoidAnimation/HAnimModelFootLeftIndex.html" target="_top">HAnimModelFootLeft catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -98,7 +98,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author YOO Kwan Hee and Don Brutzman
  */
 
-function HAnimModelFootLeft
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -107,7 +107,7 @@ function HAnimModelFootLeft
     this.initialize();
     return this;
   }
-HAnimModelFootLeft.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -132,4 +132,395 @@ HAnimModelFootLeft.prototype = {
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.WorldInfo()).setTitle("HAnimModelFootLeft.x3d"))
-    .addChild((new autoclass.HAnimHumanoid("Humanoid_Left_Foot")).setName("Humanoid_Left_Foot").setInfo(new autoclass.MFString("\"humanoidVersion=2.0\"")).setLoa(-1).setJointBindingPo
+    .addChild((new autoclass.HAnimHumanoid("Humanoid_Left_Foot")).setName("Humanoid_Left_Foot").setInfo(new autoclass.MFString("\"humanoidVersion=2.0\"")).setLoa(-1).setJointBindingPositions(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0]))).setJointBindingRotations(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0]))).setJointBindingScales(new autoclass.MFVec3f(java.newArray("float", [1.0,1.0,1.0]))).setVersion("2.0").setSkeletalConfiguration("BASIC")
+      .addSkeleton((new autoclass.HAnimJoint("hanim_HumanoidRoot")).setName("humanoid_root")
+        .addChild((new autoclass.HAnimJoint("l_talocrural_joint")).setName("l_talocrural_joint")
+          .addChild((new autoclass.HAnimSegment("l_talus")).setName("l_talus")
+            .addChild((new autoclass.Transform())
+              .addChild((new autoclass.Shape("HAnimJointShape"))
+                .setGeometry((new autoclass.Sphere()).setRadius(0.025))
+                .setAppearance((new autoclass.Appearance("HAnimJointAppearance"))
+                  .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,0.0,1.0)))))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+              .setGeometry((new autoclass.IndexedLineSet("TCtoTCN")).setDEF("TCtoTCN").setCoordIndex(java.newArray("int", [0,1]))
+                .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,-0.3,0.0]))))))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+              .setGeometry((new autoclass.IndexedLineSet("TCtoCC")).setDEF("TCtoCC").setCoordIndex(java.newArray("int", [0,1]))
+                .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.2,0.3,0.0])))))))
+          .addComments(" TCN ")
+          .addChild((new autoclass.HAnimJoint("l_talocalcaneonavicular_joint")).setName("l_talocalcaneonavicular_joint").setCenter(0.0,-0.3,0.0)
+            .addChild((new autoclass.HAnimSegment("l_navicular")).setName("l_navicular")
+              .addChild((new autoclass.Transform()).setTranslation(0.0,-0.3,0.0)
+                .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                .setGeometry((new autoclass.IndexedLineSet("TCNtoCN1")).setDEF("TCNtoCN1").setCoordIndex(java.newArray("int", [0,1]))
+                  .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.3,0.0,-0.1,-0.45,0.0]))))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                .setGeometry((new autoclass.IndexedLineSet("TCNtoCN2")).setDEF("TCNtoCN2").setCoordIndex(java.newArray("int", [0,1]))
+                  .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.3,0.0,0.0,-0.45,0.0]))))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                .setGeometry((new autoclass.IndexedLineSet("TCNtoCN3")).setDEF("TCNtoCN3").setCoordIndex(java.newArray("int", [0,1]))
+                  .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.3,0.0,0.1,-0.4,0.0])))))))
+            .addComments(" CN1 ")
+            .addChild((new autoclass.HAnimJoint("l_cuneonavicular_joint1")).setName("l_cuneonavicular_joint1").setCenter(-0.1,-0.45,0.0)
+              .addChild((new autoclass.HAnimSegment("l_cuneiform1")).setName("l_cuneiform1")
+                .addChild((new autoclass.Transform()).setTranslation(-0.1,-0.45,0.0)
+                  .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                .addChild((new autoclass.Shape())
+                  .setAppearance((new autoclass.Appearance())
+                    .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                  .setGeometry((new autoclass.IndexedLineSet("CN1toTMT1")).setDEF("CN1toTMT1").setCoordIndex(java.newArray("int", [0,1]))
+                    .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1,-0.45,0.0,-0.1,-0.6,0.0])))))))
+              .addChild((new autoclass.HAnimJoint("l_tarsometatarsal_joint1")).setName("l_tarsometatarsal_joint1").setCenter(-0.1,-0.6,0.0)
+                .addChild((new autoclass.HAnimSegment("l_metatarsal1")).setName("l_metatarsal1")
+                  .addChild((new autoclass.Transform()).setTranslation(-0.1,-0.6,0.0)
+                    .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                  .addChild((new autoclass.Shape())
+                    .setAppearance((new autoclass.Appearance())
+                      .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                    .setGeometry((new autoclass.IndexedLineSet("TMT1toMTP1")).setDEF("TMT1toMTP1").setCoordIndex(java.newArray("int", [0,1]))
+                      .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1,-0.6,0.0,-0.1,-0.9,0.0])))))))
+                .addChild((new autoclass.HAnimJoint("l_metatarsophalangeal_joint1")).setName("l_metatarsophalangeal_joint1").setCenter(-0.1,-0.9,0.0)
+                  .addChild((new autoclass.HAnimSegment("l_proximal_phalanges1")).setName("l_proximal_phalanges1")
+                    .addChild((new autoclass.Transform()).setTranslation(-0.1,-0.9,0.0)
+                      .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                    .addChild((new autoclass.Shape())
+                      .setAppearance((new autoclass.Appearance())
+                        .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                      .setGeometry((new autoclass.IndexedLineSet("MTP1toIP1")).setDEF("MTP1toIP1").setCoordIndex(java.newArray("int", [0,1]))
+                        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1,-0.9,0.0,-0.1,-1.05,0.0])))))))
+                  .addChild((new autoclass.HAnimJoint("l_f_Interphalangeal_joint")).setName("l_f_Interphalangeal_joint").setCenter(-0.1,-1.05,0.0)
+                    .addChild((new autoclass.HAnimSegment("l_distal_phalanges1")).setName("l_distal_phalanges1")
+                      .addChild((new autoclass.Transform()).setTranslation(-0.1,-1.05,0.0)
+                        .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                      .addChild((new autoclass.Shape())
+                        .setAppearance((new autoclass.Appearance())
+                          .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                        .setGeometry((new autoclass.IndexedLineSet("tiptoe_l_distal_phalanges1")).setDEF("tiptoe_l_distal_phalanges1").setCoordIndex(java.newArray("int", [0,1]))
+                          .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-0.1,-1.05,0.0,-0.1,-1.1,0.0])))))))))))
+            .addComments(" CN2 ")
+            .addChild((new autoclass.HAnimJoint("l_cuneonavicular_joint2")).setName("l_cuneonavicular_joint2").setCenter(0.0,-0.45,0.0)
+              .addChild((new autoclass.HAnimSegment("l_cuneiform2")).setName("l_cuneiform2")
+                .addChild((new autoclass.Transform()).setTranslation(0.0,-0.45,0.0)
+                  .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                .addChild((new autoclass.Shape())
+                  .setAppearance((new autoclass.Appearance())
+                    .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                  .setGeometry((new autoclass.IndexedLineSet("CN2toTMT2")).setDEF("CN2toTMT2").setCoordIndex(java.newArray("int", [0,1]))
+                    .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,-0.45,0.0,0.05,-0.6,0.0])))))))
+              .addChild((new autoclass.HAnimJoint("l_tarsometatarsal_joint2")).setName("l_tarsometatarsal_joint2").setCenter(0.05,-0.6,0.0)
+                .addChild((new autoclass.HAnimSegment("l_metatarsal2")).setName("l_metatarsal2")
+                  .addChild((new autoclass.Transform()).setTranslation(0.05,-0.6,0.0)
+                    .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                  .addChild((new autoclass.Shape())
+                    .setAppearance((new autoclass.Appearance())
+                      .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                    .setGeometry((new autoclass.IndexedLineSet("TMT2toMTP2")).setDEF("TMT2toMTP2").setCoordIndex(java.newArray("int", [0,1]))
+                      .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.05,-0.6,0.0,0.05,-0.9,0.0])))))))
+                .addChild((new autoclass.HAnimJoint("l_metatarsophalangeal_joint2")).setName("l_metatarsophalangeal_joint2").setCenter(0.05,-0.9,0.0)
+                  .addChild((new autoclass.HAnimSegment("l_proximal_phalanges2")).setName("l_proximal_phalanges2")
+                    .addChild((new autoclass.Transform()).setTranslation(0.05,-0.9,0.0)
+                      .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                    .addChild((new autoclass.Shape())
+                      .setAppearance((new autoclass.Appearance())
+                        .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                      .setGeometry((new autoclass.IndexedLineSet("MTP2toPIP2")).setDEF("MTP2toPIP2").setCoordIndex(java.newArray("int", [0,1]))
+                        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.05,-0.9,0.0,0.05,-1.05,0.0])))))))
+                  .addChild((new autoclass.HAnimJoint("l_f_proximal_Interphalangeal_joint2")).setName("l_f_proximal_Interphalangeal_joint2").setCenter(0.05,-1.05,0.0)
+                    .addChild((new autoclass.HAnimSegment("l_middle_phalanges2")).setName("l_middle_phalanges2")
+                      .addChild((new autoclass.Transform()).setTranslation(0.05,-1.05,0.0)
+                        .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                      .addChild((new autoclass.Shape())
+                        .setAppearance((new autoclass.Appearance())
+                          .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                        .setGeometry((new autoclass.IndexedLineSet("PIP2toDIP2")).setDEF("PIP2toDIP2").setCoordIndex(java.newArray("int", [0,1]))
+                          .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.05,-1.05,0.0,0.05,-1.12,0.0])))))))
+                    .addChild((new autoclass.HAnimJoint("l_f_distal_Interphalangeal_joint2")).setName("l_f_distal_Interphalangeal_joint2").setCenter(0.05,-1.12,0.0)
+                      .addChild((new autoclass.HAnimSegment("l_distal_phalanges2")).setName("l_distal_phalanges2")
+                        .addChild((new autoclass.Transform()).setTranslation(0.05,-1.12,0.0)
+                          .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                        .addChild((new autoclass.Shape())
+                          .setAppearance((new autoclass.Appearance())
+                            .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                          .setGeometry((new autoclass.IndexedLineSet("tiptoe_l_f_distal_Interphalangeal_joint2")).setDEF("tiptoe_l_f_distal_Interphalangeal_joint2").setCoordIndex(java.newArray("int", [0,1]))
+                            .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.05,-1.12,0.0,0.05,-1.16,0.0]))))))))))))
+            .addComments(" CN3 ")
+            .addChild((new autoclass.HAnimJoint("l_cuneonavicular_joint3")).setName("l_cuneonavicular_joint3").setCenter(0.1,-0.4,0.0)
+              .addChild((new autoclass.HAnimSegment("l_cuneiform3")).setName("l_cuneiform3")
+                .addChild((new autoclass.Transform()).setTranslation(0.1,-0.4,0.0)
+                  .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                .addChild((new autoclass.Shape())
+                  .setAppearance((new autoclass.Appearance())
+                    .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                  .setGeometry((new autoclass.IndexedLineSet("CN3toTMT3")).setDEF("CN3toTMT3").setCoordIndex(java.newArray("int", [0,1]))
+                    .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.1,-0.4,0.0,0.15,-0.6,0.0])))))))
+              .addChild((new autoclass.HAnimJoint("l_tarsometatarsal_joint3")).setName("l_tarsometatarsal_joint3").setCenter(0.15,-0.6,0.0)
+                .addChild((new autoclass.HAnimSegment("l_metatarsal3")).setName("l_metatarsal3")
+                  .addChild((new autoclass.Transform()).setTranslation(0.15,-0.6,0.0)
+                    .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                  .addChild((new autoclass.Shape())
+                    .setAppearance((new autoclass.Appearance())
+                      .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                    .setGeometry((new autoclass.IndexedLineSet("TMT3toMTP3")).setDEF("TMT3toMTP3").setCoordIndex(java.newArray("int", [0,1]))
+                      .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.15,-0.6,0.0,0.15,-0.9,0.0])))))))
+                .addChild((new autoclass.HAnimJoint("l_metatarsophalangeal_joint3")).setName("l_metatarsophalangeal_joint3").setCenter(0.15,-0.9,0.0)
+                  .addChild((new autoclass.HAnimSegment("l_proximal_phalanges3")).setName("l_proximal_phalanges3")
+                    .addChild((new autoclass.Transform()).setTranslation(0.15,-0.9,0.0)
+                      .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                    .addChild((new autoclass.Shape())
+                      .setAppearance((new autoclass.Appearance())
+                        .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                      .setGeometry((new autoclass.IndexedLineSet("MTP3toPIP3")).setDEF("MTP3toPIP3").setCoordIndex(java.newArray("int", [0,1]))
+                        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.15,-0.9,0.0,0.15,-1.05,0.0])))))))
+                  .addChild((new autoclass.HAnimJoint("l_f_proximal_Interphalangeal_joint3")).setName("l_f_proximal_Interphalangeal_joint3").setCenter(0.15,-1.05,0.0)
+                    .addChild((new autoclass.HAnimSegment("l_middle_phalanges3")).setName("l_middle_phalanges3")
+                      .addChild((new autoclass.Transform()).setTranslation(0.15,-1.05,0.0)
+                        .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                      .addChild((new autoclass.Shape())
+                        .setAppearance((new autoclass.Appearance())
+                          .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                        .setGeometry((new autoclass.IndexedLineSet("PIP3toDIP3")).setDEF("PIP3toDIP3").setCoordIndex(java.newArray("int", [0,1]))
+                          .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.15,-1.05,0.0,0.15,-1.13,0.0])))))))
+                    .addChild((new autoclass.HAnimJoint("l_f_distal_Interphalangeal_joint3")).setName("l_f_distal_Interphalangeal_joint3").setCenter(0.15,-1.13,0.0)
+                      .addChild((new autoclass.HAnimSegment("l_distal_phalanges3")).setName("l_distal_phalanges3")
+                        .addChild((new autoclass.Transform()).setTranslation(0.15,-1.13,0.0)
+                          .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                        .addChild((new autoclass.Shape())
+                          .setAppearance((new autoclass.Appearance())
+                            .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                          .setGeometry((new autoclass.IndexedLineSet("tiptoe_l_f_distal_Interphalangeal_joint3")).setDEF("tiptoe_l_f_distal_Interphalangeal_joint3").setCoordIndex(java.newArray("int", [0,1]))
+                            .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.15,-1.13,0.0,0.15,-1.16,0.0])))))))))))))
+          .addComments(" CC ")
+          .addChild((new autoclass.HAnimJoint("l_calcaneuscuboid_joint")).setName("l_calcaneuscuboid_joint").setCenter(0.2,0.3,0.0)
+            .addChild((new autoclass.HAnimSegment("l_calcaneus")).setName("l_calcaneus")
+              .addChild((new autoclass.Transform()).setTranslation(0.2,0.3,0.0)
+                .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                .setGeometry((new autoclass.IndexedLineSet("CCtoTT")).setDEF("CCtoTT").setCoordIndex(java.newArray("int", [0,1]))
+                  .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.2,0.3,0.0,0.21,-0.3,0.0])))))))
+            .addComments(" TT ")
+            .addChild((new autoclass.HAnimJoint("l_transverse_tarsal_joint")).setName("l_transverse_tarsal_joint").setCenter(0.21,-0.3,0.0)
+              .addChild((new autoclass.HAnimSegment("l_cuboid")).setName("l_cuboid")
+                .addChild((new autoclass.Transform()).setTranslation(0.21,-0.3,0.0)
+                  .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                .addChild((new autoclass.Shape())
+                  .setAppearance((new autoclass.Appearance())
+                    .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                  .setGeometry((new autoclass.IndexedLineSet("TTtoTMT4")).setDEF("TTtoTMT4").setCoordIndex(java.newArray("int", [0,1]))
+                    .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.21,-0.3,0.0,0.25,-0.58,0.0]))))))
+                .addChild((new autoclass.Shape())
+                  .setAppearance((new autoclass.Appearance())
+                    .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                  .setGeometry((new autoclass.IndexedLineSet("TTtoTMT5")).setDEF("TTtoTMT5").setCoordIndex(java.newArray("int", [0,1]))
+                    .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.21,-0.3,0.0,0.33,-0.52,0.0])))))))
+              .addComments(" TMT4 ")
+              .addChild((new autoclass.HAnimJoint("l_tarsometatarsal_joint4")).setName("l_tarsometatarsal_joint4").setCenter(0.25,-0.58,0.0)
+                .addChild((new autoclass.HAnimSegment("l_metatarsal4")).setName("l_metatarsal4")
+                  .addChild((new autoclass.Transform()).setTranslation(0.25,-0.58,0.0)
+                    .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                  .addChild((new autoclass.Shape())
+                    .setAppearance((new autoclass.Appearance())
+                      .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                    .setGeometry((new autoclass.IndexedLineSet("TMT4toMTP4")).setDEF("TMT4toMTP4").setCoordIndex(java.newArray("int", [0,1]))
+                      .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.25,-0.58,0.0,0.25,-0.87,0.0])))))))
+                .addChild((new autoclass.HAnimJoint("l_metatarsophalangeal_joint4")).setName("l_metatarsophalangeal_joint4").setCenter(0.25,-0.87,0.0)
+                  .addChild((new autoclass.HAnimSegment("l_proximal_phalanges4")).setName("l_proximal_phalanges4")
+                    .addChild((new autoclass.Transform()).setTranslation(0.25,-0.87,0.0)
+                      .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                    .addChild((new autoclass.Shape())
+                      .setAppearance((new autoclass.Appearance())
+                        .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                      .setGeometry((new autoclass.IndexedLineSet("MTP4toPIP4")).setDEF("MTP4toPIP4").setCoordIndex(java.newArray("int", [0,1]))
+                        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.25,-0.87,0.0,0.25,-1.0,0.0])))))))
+                  .addChild((new autoclass.HAnimJoint("l_f_proximal_Interphalangeal_joint4")).setName("l_f_proximal_Interphalangeal_joint4").setCenter(0.25,-1.0,0.0)
+                    .addChild((new autoclass.HAnimSegment("l_middle_phalanges4")).setName("l_middle_phalanges4")
+                      .addChild((new autoclass.Transform()).setTranslation(0.25,-1.0,0.0)
+                        .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                      .addChild((new autoclass.Shape())
+                        .setAppearance((new autoclass.Appearance())
+                          .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                        .setGeometry((new autoclass.IndexedLineSet("PIP4toDIP4")).setDEF("PIP4toDIP4").setCoordIndex(java.newArray("int", [0,1]))
+                          .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.25,-1.0,0.0,0.25,-1.1,0.0])))))))
+                    .addChild((new autoclass.HAnimJoint("l_f_distal_Interphalangeal_joint4")).setName("l_f_distal_Interphalangeal_joint4").setCenter(0.25,-1.1,0.0)
+                      .addChild((new autoclass.HAnimSegment("l_distal_phalanges4")).setName("l_distal_phalanges4")
+                        .addChild((new autoclass.Transform()).setTranslation(0.25,-1.1,0.0)
+                          .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                        .addChild((new autoclass.Shape())
+                          .setAppearance((new autoclass.Appearance())
+                            .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                          .setGeometry((new autoclass.IndexedLineSet("tiptoe_l_f_distal_Interphalangeal_joint4")).setDEF("tiptoe_l_f_distal_Interphalangeal_joint4").setCoordIndex(java.newArray("int", [0,1]))
+                            .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.25,-1.1,0.0,0.25,-1.15,0.0])))))))))))
+              .addComments(" TMT5 ")
+              .addChild((new autoclass.HAnimJoint("l_tarsometatarsal_joint5")).setName("l_tarsometatarsal_joint5").setCenter(0.33,-0.52,0.0)
+                .addChild((new autoclass.HAnimSegment("l_metatarsal5")).setName("l_metatarsal5")
+                  .addChild((new autoclass.Transform()).setTranslation(0.33,-0.52,0.0)
+                    .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                  .addChild((new autoclass.Shape())
+                    .setAppearance((new autoclass.Appearance())
+                      .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                    .setGeometry((new autoclass.IndexedLineSet("TMT5toMTP5")).setDEF("TMT5toMTP5").setCoordIndex(java.newArray("int", [0,1]))
+                      .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.33,-0.52,0.0,0.34,-0.8,0.0])))))))
+                .addChild((new autoclass.HAnimJoint("l_metatarsophalangeal_joint5")).setName("l_metatarsophalangeal_joint5").setCenter(0.34,-0.8,0.0)
+                  .addChild((new autoclass.HAnimSegment("l_proximal_phalanges5")).setName("l_proximal_phalanges5")
+                    .addChild((new autoclass.Transform()).setTranslation(0.34,-0.8,0.0)
+                      .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                    .addChild((new autoclass.Shape())
+                      .setAppearance((new autoclass.Appearance())
+                        .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                      .setGeometry((new autoclass.IndexedLineSet("MTP5toPIP5")).setDEF("MTP5toPIP5").setCoordIndex(java.newArray("int", [0,1]))
+                        .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.34,-0.8,0.0,0.34,-0.95,0.0])))))))
+                  .addChild((new autoclass.HAnimJoint("l_f_proximal_Interphalangeal_joint5")).setName("l_f_proximal_Interphalangeal_joint5").setCenter(0.34,-0.95,0.0)
+                    .addChild((new autoclass.HAnimSegment("l_middle_phalanges5")).setName("l_middle_phalanges5")
+                      .addChild((new autoclass.Transform()).setTranslation(0.34,-0.95,0.0)
+                        .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                      .addChild((new autoclass.Shape())
+                        .setAppearance((new autoclass.Appearance())
+                          .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                        .setGeometry((new autoclass.IndexedLineSet("PIP5toDIP5")).setDEF("PIP5toDIP5").setCoordIndex(java.newArray("int", [0,1]))
+                          .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.34,-0.95,0.0,0.34,-1.05,0.0])))))))
+                    .addChild((new autoclass.HAnimJoint("l_f_distal_Interphalangeal_joint5")).setName("l_f_distal_Interphalangeal_joint5").setCenter(0.34,-1.05,0.0)
+                      .addChild((new autoclass.HAnimSegment("l_distal_phalanges5")).setName("l_distal_phalanges5")
+                        .addChild((new autoclass.Transform()).setTranslation(0.34,-1.05,0.0)
+                          .addChild((new autoclass.Shape()).setUSE("HAnimJointShape")))
+                        .addChild((new autoclass.Shape())
+                          .setAppearance((new autoclass.Appearance())
+                            .setMaterial((new autoclass.Material()).setEmissiveColor(1.0,1.0,1.0)))
+                          .setGeometry((new autoclass.IndexedLineSet("tiptoe_l_f_distal_Interphalangeal_joint5")).setDEF("tiptoe_l_f_distal_Interphalangeal_joint5").setCoordIndex(java.newArray("int", [0,1]))
+                            .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.34,-1.05,0.0,0.34,-1.08,0.0])))))))))))))))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_HumanoidRoot"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_talocrural_joint"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_talocalcaneonavicular_joint"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_cuneonavicular_joint1"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_tarsometatarsal_joint1"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_metatarsophalangeal_joint1"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_f_Interphalangeal_joint"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_cuneonavicular_joint2"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_tarsometatarsal_joint2"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_metatarsophalangeal_joint2"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_f_proximal_Interphalangeal_joint2"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_f_distal_Interphalangeal_joint2"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_cuneonavicular_joint3"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_tarsometatarsal_joint3"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_metatarsophalangeal_joint3"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_f_proximal_Interphalangeal_joint3"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_f_distal_Interphalangeal_joint3"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_calcaneuscuboid_joint"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_transverse_tarsal_joint"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_tarsometatarsal_joint4"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_metatarsophalangeal_joint4"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_f_proximal_Interphalangeal_joint4"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_f_distal_Interphalangeal_joint4"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_tarsometatarsal_joint5"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_metatarsophalangeal_joint5"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_f_proximal_Interphalangeal_joint5"))
+      .addJoints((new autoclass.HAnimJoint()).setUSE("l_f_distal_Interphalangeal_joint5"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_talus"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_navicular"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_cuneiform1"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_metatarsal1"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_proximal_phalanges1"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_distal_phalanges1"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_cuneiform2"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_metatarsal2"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_proximal_phalanges2"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_middle_phalanges2"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_distal_phalanges2"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_cuneiform3"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_metatarsal3"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_proximal_phalanges3"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_middle_phalanges3"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_distal_phalanges3"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_calcaneus"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_cuboid"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_metatarsal4"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_proximal_phalanges4"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_middle_phalanges4"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_distal_phalanges4"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_metatarsal5"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_proximal_phalanges5"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_middle_phalanges5"))
+      .addSegments((new autoclass.HAnimSegment()).setUSE("l_distal_phalanges5"))));
+  },
+  // end of initialize() method
+
+
+  /** Provide a shallow copy of the X3D model.
+   * @return NeedClassName model
+   */
+  getX3dModel : function()
+  {	  
+	  return this.x3dModel;
+  },
+  
+  /** Indicate X3DJSAIL validation results for this X3D model.
+   * @return validation results plus exception information, if any
+   */
+  validateSelf : function()
+  {
+	var       metaResult = "";
+	var validationResult = "";
+	var  exceptionResult = "";
+	try
+	{
+		this.initialize();
+		
+		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null))
+		{
+			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
+			return validationResult;
+		}
+		// first list informational meta elements of interest
+		var metaList = this.getX3dModel().getHead().getMetaList();
+		for (var m in metaList) {
+			meta = metaList[m];
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
+			{
+				metaResult += meta.toStringX3D();
+			}
+		}
+		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
+	}
+	catch (e)
+	{
+		exceptionResult = e; // report exception failures, if any
+	}
+	if  (metaResult === "" && exceptionResult === "" && validationResult === "")
+	     return "success";
+	else
+	{
+		var returnMessage = metaResult;
+		if  (exceptionResult !== "" && validationResult !== "")
+			returnMessage += "\n*** ";
+		returnMessage += exceptionResult;
+		if  (exceptionResult === "" && validationResult !== "")
+			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
+		returnMessage += validationResult;
+		return returnMessage;
+	}
+  },
+    /** Default main() method provided for test purposes.
+     * @param argv input parameters
+     */
+    main : function (argv)
+    {
+		var testObject = new NeedClassName();
+		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
+	}
+}
+new NeedClassName().main();

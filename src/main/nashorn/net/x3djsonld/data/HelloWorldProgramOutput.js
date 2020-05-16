@@ -3,11 +3,11 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL). </p>
- <p> Related links: HelloWorldProgramOutput.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.HelloWorldProgramOutput&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -106,7 +106,7 @@ load('X3Dautoclass.js');
 	* @author Don Brutzman
  */
 
-function HelloWorldProgramOutput
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -115,7 +115,7 @@ function HelloWorldProgramOutput
     this.initialize();
     return this;
   }
-HelloWorldProgramOutput.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -407,7 +407,7 @@ HelloWorldProgramOutput.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return HelloWorldProgramOutput model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -469,8 +469,8 @@ HelloWorldProgramOutput.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new HelloWorldProgramOutput();
-		print ("HelloWorldProgramOutput execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new HelloWorldProgramOutput().main();
+new NeedClassName().main();

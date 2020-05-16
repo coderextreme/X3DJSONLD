@@ -9,8 +9,8 @@ import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Example scene app. </p>
- <p> Related links: app.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Example scene . </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -45,10 +45,10 @@ import org.web3d.x3d.jsail.Shape.*;
 
  */
 
-public class app
+public class NeedClassName
 {
 	/** Default constructor to create this object. */
-	public app ()
+	public NeedClassName ()
 	{
 	  initialize();
 	}
@@ -62,18 +62,12 @@ public class app
     .addMeta(new metaObject().setName("John A").setContent("Carlson, II"))
     .addMeta(new metaObject().setName("John R").setContent("Carlson, III")))
   .setScene(new SceneObject()
-    .addChild(new GroupObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Group displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-      .setShape(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+    .addChild(new GroupObject()
+      .addChild(new ShapeObject()
         .setAppearance(new AppearanceObject()
           .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f)))
-        .setBox(new BoxObject())))
-    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setRotation(7.0f,8.0f,9.0f,3.14f).setScale(4.0f,5.0f,6.0f).setTranslation(1.0f,2.0f,3.0f)));
+        .setGeometry(new BoxObject())))
+    .addChild(new TransformObject().setRotation(7.0f,8.0f,9.0f,3.14f).setScale(4.0f,5.0f,6.0f).setTranslation(1.0f,2.0f,3.0f)));
     }
 	// end of initialize() method
 
@@ -84,7 +78,7 @@ public class app
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-	 * @return app model
+	 * @return NeedClassName model
 	 */
 	public X3DObject getX3dModel()
 	{	  
@@ -101,7 +95,7 @@ public class app
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new app().getX3dModel();
+        X3DObject thisExampleX3dObject = new NeedClassName().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -132,13 +126,13 @@ public class app
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"app\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"NeedClassName\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dObject.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"app\" self-validation test results: ");
+			System.out.print("Java program \"NeedClassName\" self-validation test results: ");
 			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}

@@ -137,48 +137,22 @@ public class HAnimModelsHandsFeet
     .addChild(new WorldInfoObject().setTitle("HAnimModelsHandsFeet.x3d"))
     .addChild(new ViewpointObject().setDescription("Hands and feet 10m"))
     .addChild(new ViewpointObject().setDescription("Hands and feet 1.7m").setPosition(0.0f,0.0f,1.7f))
-    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-1.0f,1.0f,0.0f)
-      .addChild(new InlineObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Inline displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setUrl(new String[] {"HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"}))
+    .addChild(new TransformObject().setTranslation(-1.0f,1.0f,0.0f)
+      .addChild(new InlineObject().setUrl(new String[] {"HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"}))
       .addComments(" Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model ")
-      .addChild(new TransformObject("GridXY_20x20Fixed_AdjustScale").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setScale(.1f,.1f,.1f)
-        .addChild(new InlineObject("GridXY_20x20Fixed").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Inline displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setUrl(new String[] {"GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"}))))
-    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(1.0f,1.0f,0.0f)
-      .addChild(new InlineObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Inline displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setUrl(new String[] {"HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"}))
-      .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-1.0f,-1.0f,0.0f)
+      .addChild(new TransformObject("GridXY_20x20Fixed_AdjustScale").setScale(.1f,.1f,.1f)
+        .addChild(new InlineObject("GridXY_20x20Fixed").setUrl(new String[] {"GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"}))))
+    .addChild(new TransformObject().setTranslation(1.0f,1.0f,0.0f)
+      .addChild(new InlineObject().setUrl(new String[] {"HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"}))
+      .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale")))
+    .addChild(new TransformObject().setTranslation(-1.0f,-1.0f,0.0f)
       .addComments(" rotation='0 0 1 3.141593' ")
-      .addChild(new InlineObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Inline displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setUrl(new String[] {"HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"}))
-      .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-)))
-    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(1.0f,-1.0f,0.0f)
+      .addChild(new InlineObject().setUrl(new String[] {"HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"}))
+      .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale")))
+    .addChild(new TransformObject().setTranslation(1.0f,-1.0f,0.0f)
       .addComments(" rotation='0 0 1 3.141593' ")
-      .addChild(new InlineObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Inline displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setUrl(new String[] {"HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"}))
-      .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-))));
+      .addChild(new InlineObject().setUrl(new String[] {"HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"}))
+      .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale"))));
     }
 	// end of initialize() method
 

@@ -45,369 +45,369 @@ newModel=X3D(profile='Immersive',version='4.0',
   Scene=Scene(
     children=[
     WorldInfo(title='HAnimModelHandRight.x3d'),
-    HAnimHumanoid(DEF='Humanoid_Right_hand',jointBindingPositions=[(0,0,0)],jointBindingRotations=[(0,0,1,0)],jointBindingScales=[(1,1,1)],loa=-1,name='Humanoid_Right_hand',skeletalConfiguration='BASIC',version='2.0',displayBBox=false,
+    HAnimHumanoid(DEF='Humanoid_Right_hand',jointBindingPositions=[(0,0,0)],jointBindingRotations=[(0,0,1,0)],jointBindingScales=[(1,1,1)],loa=-1,name='Humanoid_Right_hand',skeletalConfiguration='BASIC',version='2.0',
       skeleton=[
-      HAnimJoint(DEF='hanim_HumanoidRoot',name='humanoid_root',displayBBox=false,
+      HAnimJoint(DEF='hanim_HumanoidRoot',name='humanoid_root',
         children=[
-        HAnimJoint(DEF='r_radiocarpal_joint',name='r_radiocarpal_joint',displayBBox=false,
+        HAnimJoint(DEF='r_radiocarpal_joint',name='r_radiocarpal_joint',
           children=[
-          HAnimSegment(DEF='r_wrist',name='r_wrist',displayBBox=false,
+          HAnimSegment(DEF='r_wrist',name='r_wrist',
             children=[
-            Transform(displayBBox=false,
+            Transform(
               children=[
-              Shape(DEF='HAnimJointShape',displayBBox=false,
+              Shape(DEF='HAnimJointShape',
                 geometry=Sphere(radius=0.025),
                 appearance=Appearance(DEF='HAnimJointAppearanceBlue',
                   material=Material(diffuseColor=(0,0,1))))]),
-            Shape(displayBBox=false,
+            Shape(
               appearance=Appearance(
                 material=Material(emissiveColor=(1,1,1))),
               geometry=IndexedLineSet(DEF='RCToMC12',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(-0.1,0.1,0)]))),
-            Shape(displayBBox=false,
+            Shape(
               appearance=Appearance(
                 material=Material(emissiveColor=(1,1,1))),
               geometry=IndexedLineSet(DEF='RCToMC3',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(0.0,0.07,0)]))),
-            Shape(displayBBox=false,
+            Shape(
               appearance=Appearance(
                 material=Material(emissiveColor=(1,1,1))),
               geometry=IndexedLineSet(DEF='RCToMC45',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(0.1,0.1,0)])))]),
           #  MC12 
-          HAnimJoint(DEF='r_midcarpal_joint_12',center=(-0.1,0.1,0),name='r_midcarpal_joint_12',displayBBox=false,
+          HAnimJoint(DEF='r_midcarpal_joint_12',center=(-0.1,0.1,0),name='r_midcarpal_joint_12',
             children=[
-            HAnimSegment(DEF='r_trapezoid',name='r_trapezoid',displayBBox=false,
+            HAnimSegment(DEF='r_trapezoid',name='r_trapezoid',
               children=[
-              Transform(translation=(-0.1,0.1,0),displayBBox=false,
+              Transform(translation=(-0.1,0.1,0),
                 children=[
-                Shape(DEF='HAnimNewJointShape',displayBBox=false,
+                Shape(DEF='HAnimNewJointShape',
                   geometry=Sphere(radius=0.025),
                   appearance=Appearance(DEF='HAnimJointAppearanceRed',
                     material=Material(diffuseColor=(1,0,0))))]),
-              Shape(displayBBox=false,
+              Shape(
                 appearance=Appearance(
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC12toCMC1',coordIndex=[0,1],
                   coord=Coordinate(point=[(-0.1,0.1,0),(-0.2,0.15,0)]))),
-              Shape(displayBBox=false,
+              Shape(
                 appearance=Appearance(
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC12toCMC2',coordIndex=[0,1],
                   coord=Coordinate(point=[(-0.1,0.1,0),(-0.1,0.2,0)])))]),
             #  thumb finger 
-            HAnimJoint(DEF='r_carpometacarpal_joint_1',center=(-0.2,0.15,0),name='r_carpometacarpal_joint_1',displayBBox=false,
+            HAnimJoint(DEF='r_carpometacarpal_joint_1',center=(-0.2,0.15,0),name='r_carpometacarpal_joint_1',
               children=[
-              HAnimSegment(DEF='r_metacarpal_1',name='r_metacarpal_1',displayBBox=false,
+              HAnimSegment(DEF='r_metacarpal_1',name='r_metacarpal_1',
                 children=[
-                Transform(translation=(-0.2,0.15,0),displayBBox=false,
+                Transform(translation=(-0.2,0.15,0),
                   children=[
-                  Shape(USE='HAnimJointShape',displayBBox=false)]),
-                Shape(displayBBox=false,
+                  Shape(USE='HAnimJointShape')]),
+                Shape(
                   appearance=Appearance(
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC1toMCP1',coordIndex=[0,1],
                     coord=Coordinate(point=[(-0.2,0.15,0),(-0.3,0.3,0)])))]),
-              HAnimJoint(DEF='r_metacarpophalangeal_joint_1',center=(-0.3,0.3,0),name='r_metacarpophalangeal_joint_1',displayBBox=false,
+              HAnimJoint(DEF='r_metacarpophalangeal_joint_1',center=(-0.3,0.3,0),name='r_metacarpophalangeal_joint_1',
                 children=[
-                HAnimSegment(DEF='r_proximal_phalanges1',name='r_proximal_phalanges1',displayBBox=false,
+                HAnimSegment(DEF='r_proximal_phalanges1',name='r_proximal_phalanges1',
                   children=[
-                  Transform(translation=(-0.3,0.3,0),displayBBox=false,
+                  Transform(translation=(-0.3,0.3,0),
                     children=[
-                    Shape(USE='HAnimJointShape',displayBBox=false)]),
-                  Shape(displayBBox=false,
+                    Shape(USE='HAnimJointShape')]),
+                  Shape(
                     appearance=Appearance(
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP11toIP1',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.3,0.3,0),(-0.35,0.4,0)])))]),
-                HAnimJoint(DEF='r_interphalangeal_joint_1',center=(-0.35,0.4,0),name='r_interphalangeal_joint_1',displayBBox=false,
+                HAnimJoint(DEF='r_interphalangeal_joint_1',center=(-0.35,0.4,0),name='r_interphalangeal_joint_1',
                   children=[
-                  HAnimSegment(DEF='r_distal_phalanges1',name='r_distal_phalanges1',displayBBox=false,
+                  HAnimSegment(DEF='r_distal_phalanges1',name='r_distal_phalanges1',
                     children=[
-                    Transform(translation=(-0.35,0.4,0),displayBBox=false,
+                    Transform(translation=(-0.35,0.4,0),
                       children=[
-                      Shape(USE='HAnimJointShape',displayBBox=false)]),
-                    Shape(displayBBox=false,
+                      Shape(USE='HAnimJointShape')]),
+                    Shape(
                       appearance=Appearance(
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='fingertip_r_interphalangeal_joint_1',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.35,0.4,0),(-0.36,0.45,0)])))])])])]),
             #  index finger 
-            HAnimJoint(DEF='r_carpometacarpal_joint_2',center=(-0.1,0.2,0),name='r_carpometacarpal_joint_2',displayBBox=false,
+            HAnimJoint(DEF='r_carpometacarpal_joint_2',center=(-0.1,0.2,0),name='r_carpometacarpal_joint_2',
               children=[
-              HAnimSegment(DEF='r_metacarpal_2',name='r_metacarpal_2',displayBBox=false,
+              HAnimSegment(DEF='r_metacarpal_2',name='r_metacarpal_2',
                 children=[
-                Transform(translation=(-0.1,0.2,0),displayBBox=false,
+                Transform(translation=(-0.1,0.2,0),
                   children=[
-                  Shape(USE='HAnimJointShape',displayBBox=false)]),
-                Shape(displayBBox=false,
+                  Shape(USE='HAnimJointShape')]),
+                Shape(
                   appearance=Appearance(
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC2toMCP2',coordIndex=[0,1],
                     coord=Coordinate(point=[(-0.1,0.2,0),(-0.15,0.5,0)])))]),
-              HAnimJoint(DEF='r_metacarpophalangeal_joint_2',center=(-0.15,0.5,0),name='r_metacarpophalangeal_joint_2',displayBBox=false,
+              HAnimJoint(DEF='r_metacarpophalangeal_joint_2',center=(-0.15,0.5,0),name='r_metacarpophalangeal_joint_2',
                 children=[
-                HAnimSegment(DEF='r_proximal_phalanges2',name='r_proximal_phalanges2',displayBBox=false,
+                HAnimSegment(DEF='r_proximal_phalanges2',name='r_proximal_phalanges2',
                   children=[
-                  Transform(translation=(-0.15,0.5,0),displayBBox=false,
+                  Transform(translation=(-0.15,0.5,0),
                     children=[
-                    Shape(USE='HAnimJointShape',displayBBox=false)]),
-                  Shape(displayBBox=false,
+                    Shape(USE='HAnimJointShape')]),
+                  Shape(
                     appearance=Appearance(
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP2toPIP2',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.15,0.5,0),(-0.2,0.7,0)])))]),
-                HAnimJoint(DEF='r_proximal_interphalangeal_joint_2',center=(-0.2,0.7,0),name='r_proximal_interphalangeal_joint_2',displayBBox=false,
+                HAnimJoint(DEF='r_proximal_interphalangeal_joint_2',center=(-0.2,0.7,0),name='r_proximal_interphalangeal_joint_2',
                   children=[
-                  HAnimSegment(DEF='r_middle_phalanges2',name='r_middle_phalanges2',displayBBox=false,
+                  HAnimSegment(DEF='r_middle_phalanges2',name='r_middle_phalanges2',
                     children=[
-                    Transform(translation=(-0.2,0.7,0),displayBBox=false,
+                    Transform(translation=(-0.2,0.7,0),
                       children=[
-                      Shape(USE='HAnimJointShape',displayBBox=false)]),
-                    Shape(displayBBox=false,
+                      Shape(USE='HAnimJointShape')]),
+                    Shape(
                       appearance=Appearance(
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP2toDIP2',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.2,0.7,0),(-0.24,0.87,0)])))]),
-                  HAnimJoint(DEF='r_distal_interphalangeal_joint_2',center=(-0.24,0.87,0),name='r_distal_interphalangeal_joint_2',displayBBox=false,
+                  HAnimJoint(DEF='r_distal_interphalangeal_joint_2',center=(-0.24,0.87,0),name='r_distal_interphalangeal_joint_2',
                     children=[
-                    HAnimSegment(DEF='r_distal_phalanges2',name='r_distal_phalanges2',displayBBox=false,
+                    HAnimSegment(DEF='r_distal_phalanges2',name='r_distal_phalanges2',
                       children=[
-                      Transform(translation=(-0.24,0.87,0),displayBBox=false,
+                      Transform(translation=(-0.24,0.87,0),
                         children=[
-                        Shape(USE='HAnimJointShape',displayBBox=false)]),
-                      Shape(displayBBox=false,
+                        Shape(USE='HAnimJointShape')]),
+                      Shape(
                         appearance=Appearance(
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_r_distal_interphalangeal_joint_2',coordIndex=[0,1],
                           coord=Coordinate(point=[(-0.24,0.87,0),(-0.26,0.93,0)])))])])])])])]),
           #  MC3 
-          HAnimJoint(DEF='r_midcarpal_joint_3',center=(0.0,0.07,0),name='r_midcarpal_joint_3',displayBBox=false,
+          HAnimJoint(DEF='r_midcarpal_joint_3',center=(0.0,0.07,0),name='r_midcarpal_joint_3',
             children=[
-            HAnimSegment(DEF='r_capitate',name='r_capitate',displayBBox=false,
+            HAnimSegment(DEF='r_capitate',name='r_capitate',
               children=[
-              Transform(translation=(0.0,0.07,0),displayBBox=false,
+              Transform(translation=(0.0,0.07,0),
                 children=[
-                Shape(USE='HAnimNewJointShape',displayBBox=false)]),
-              Shape(displayBBox=false,
+                Shape(USE='HAnimNewJointShape')]),
+              Shape(
                 appearance=Appearance(
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC3toCMC3',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.0,0.07,0),(0.0,0.2,0)])))]),
             #  Middle fingle 
-            HAnimJoint(DEF='r_carpometacarpal_joint_3',center=(0.0,0.2,0),name='r_carpometacarpal_joint_3',displayBBox=false,
+            HAnimJoint(DEF='r_carpometacarpal_joint_3',center=(0.0,0.2,0),name='r_carpometacarpal_joint_3',
               children=[
-              HAnimSegment(DEF='r_metacarpal_3',name='r_metacarpal_3',displayBBox=false,
+              HAnimSegment(DEF='r_metacarpal_3',name='r_metacarpal_3',
                 children=[
-                Transform(translation=(0.0,0.2,0),displayBBox=false,
+                Transform(translation=(0.0,0.2,0),
                   children=[
-                  Shape(USE='HAnimJointShape',displayBBox=false)]),
-                Shape(displayBBox=false,
+                  Shape(USE='HAnimJointShape')]),
+                Shape(
                   appearance=Appearance(
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC3toMCP3',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.0,0.2,0),(-0.03,0.5,0)])))]),
-              HAnimJoint(DEF='r_metacarpophalangeal_joint_3',center=(-0.03,0.5,0),name='r_metacarpophalangeal_joint_3',displayBBox=false,
+              HAnimJoint(DEF='r_metacarpophalangeal_joint_3',center=(-0.03,0.5,0),name='r_metacarpophalangeal_joint_3',
                 children=[
-                HAnimSegment(DEF='r_proximal_phalanges3',name='r_proximal_phalanges3',displayBBox=false,
+                HAnimSegment(DEF='r_proximal_phalanges3',name='r_proximal_phalanges3',
                   children=[
-                  Transform(translation=(-0.03,0.5,0),displayBBox=false,
+                  Transform(translation=(-0.03,0.5,0),
                     children=[
-                    Shape(USE='HAnimJointShape',displayBBox=false)]),
-                  Shape(displayBBox=false,
+                    Shape(USE='HAnimJointShape')]),
+                  Shape(
                     appearance=Appearance(
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP3toPIP3',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.03,0.5,0),(-0.05,0.75,0)])))]),
-                HAnimJoint(DEF='r_proximal_interphalangeal_joint_3',center=(-0.05,0.75,0),name='r_proximal_interphalangeal_joint_3',displayBBox=false,
+                HAnimJoint(DEF='r_proximal_interphalangeal_joint_3',center=(-0.05,0.75,0),name='r_proximal_interphalangeal_joint_3',
                   children=[
-                  HAnimSegment(DEF='r_middle_phalanges3',name='r_middle_phalanges3',displayBBox=false,
+                  HAnimSegment(DEF='r_middle_phalanges3',name='r_middle_phalanges3',
                     children=[
-                    Transform(translation=(-0.05,0.75,0),displayBBox=false,
+                    Transform(translation=(-0.05,0.75,0),
                       children=[
-                      Shape(USE='HAnimJointShape',displayBBox=false)]),
-                    Shape(displayBBox=false,
+                      Shape(USE='HAnimJointShape')]),
+                    Shape(
                       appearance=Appearance(
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP3toDIP3',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.05,0.75,0),(-0.08,0.96,0)])))]),
-                  HAnimJoint(DEF='r_distal_interphalangeal_joint_3',center=(-0.08,0.96,0),name='r_distal_interphalangeal_joint_3',displayBBox=false,
+                  HAnimJoint(DEF='r_distal_interphalangeal_joint_3',center=(-0.08,0.96,0),name='r_distal_interphalangeal_joint_3',
                     children=[
-                    HAnimSegment(DEF='r_distal_phalanges3',name='r_distal_phalanges3',displayBBox=false,
+                    HAnimSegment(DEF='r_distal_phalanges3',name='r_distal_phalanges3',
                       children=[
-                      Transform(translation=(-0.08,0.96,0),displayBBox=false,
+                      Transform(translation=(-0.08,0.96,0),
                         children=[
-                        Shape(USE='HAnimJointShape',displayBBox=false)]),
-                      Shape(displayBBox=false,
+                        Shape(USE='HAnimJointShape')]),
+                      Shape(
                         appearance=Appearance(
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_r_distal_interphalangeal_joint_3',coordIndex=[0,1],
                           coord=Coordinate(point=[(-0.08,0.96,0),(-0.09,1.05,0)])))])])])])])]),
           #  MC45 
-          HAnimJoint(DEF='r_midcarpal_joint_45',center=(0.1,0.1,0),name='r_midcarpal_joint_45',displayBBox=false,
+          HAnimJoint(DEF='r_midcarpal_joint_45',center=(0.1,0.1,0),name='r_midcarpal_joint_45',
             children=[
-            HAnimSegment(DEF='r_hamate',name='r_hamate',displayBBox=false,
+            HAnimSegment(DEF='r_hamate',name='r_hamate',
               children=[
-              Transform(translation=(0.1,0.1,0),displayBBox=false,
+              Transform(translation=(0.1,0.1,0),
                 children=[
-                Shape(USE='HAnimNewJointShape',displayBBox=false)]),
-              Shape(displayBBox=false,
+                Shape(USE='HAnimNewJointShape')]),
+              Shape(
                 appearance=Appearance(
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC45toCMC4',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.1,0.1,0),(0.1,0.2,0)]))),
-              Shape(displayBBox=false,
+              Shape(
                 appearance=Appearance(
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC45toCMC5',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.1,0.1,0),(0.15,0.17,0)])))]),
             #  ring finger 
-            HAnimJoint(DEF='r_carpometacarpal_joint_4',center=(0.1,0.2,0),name='r_carpometacarpal_joint_4',displayBBox=false,
+            HAnimJoint(DEF='r_carpometacarpal_joint_4',center=(0.1,0.2,0),name='r_carpometacarpal_joint_4',
               children=[
-              HAnimSegment(DEF='r_metacarpal_4',name='r_metacarpal_4',displayBBox=false,
+              HAnimSegment(DEF='r_metacarpal_4',name='r_metacarpal_4',
                 children=[
-                Transform(translation=(0.1,0.2,0),displayBBox=false,
+                Transform(translation=(0.1,0.2,0),
                   children=[
-                  Shape(USE='HAnimJointShape',displayBBox=false)]),
-                Shape(displayBBox=false,
+                  Shape(USE='HAnimJointShape')]),
+                Shape(
                   appearance=Appearance(
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC4toMCP4',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.1,0.2,0),(0.1,0.47,0)])))]),
-              HAnimJoint(DEF='r_metacarpophalangeal_joint_4',center=(0.1,0.47,0),name='r_metacarpophalangeal_joint_4',displayBBox=false,
+              HAnimJoint(DEF='r_metacarpophalangeal_joint_4',center=(0.1,0.47,0),name='r_metacarpophalangeal_joint_4',
                 children=[
-                HAnimSegment(DEF='r_proximal_phalanges4',name='r_proximal_phalanges4',displayBBox=false,
+                HAnimSegment(DEF='r_proximal_phalanges4',name='r_proximal_phalanges4',
                   children=[
-                  Transform(translation=(0.1,0.47,0),displayBBox=false,
+                  Transform(translation=(0.1,0.47,0),
                     children=[
-                    Shape(USE='HAnimJointShape',displayBBox=false)]),
-                  Shape(displayBBox=false,
+                    Shape(USE='HAnimJointShape')]),
+                  Shape(
                     appearance=Appearance(
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP4toPIP4',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.1,0.47,0),(0.1,0.7,0)])))]),
-                HAnimJoint(DEF='r_proximal_interphalangeal_joint_4',center=(0.1,0.7,0),name='r_proximal_interphalangeal_joint_4',displayBBox=false,
+                HAnimJoint(DEF='r_proximal_interphalangeal_joint_4',center=(0.1,0.7,0),name='r_proximal_interphalangeal_joint_4',
                   children=[
-                  HAnimSegment(DEF='r_middle_phalanges4',name='r_middle_phalanges4',displayBBox=false,
+                  HAnimSegment(DEF='r_middle_phalanges4',name='r_middle_phalanges4',
                     children=[
-                    Transform(translation=(0.1,0.7,0),displayBBox=false,
+                    Transform(translation=(0.1,0.7,0),
                       children=[
-                      Shape(USE='HAnimJointShape',displayBBox=false)]),
-                    Shape(displayBBox=false,
+                      Shape(USE='HAnimJointShape')]),
+                    Shape(
                       appearance=Appearance(
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP4toDIP4',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.1,0.7,0),(0.1,0.93,0)])))]),
-                  HAnimJoint(DEF='r_distal_interphalangeal_joint_4',center=(0.1,0.93,0),name='r_distal_interphalangeal_joint_4',displayBBox=false,
+                  HAnimJoint(DEF='r_distal_interphalangeal_joint_4',center=(0.1,0.93,0),name='r_distal_interphalangeal_joint_4',
                     children=[
-                    HAnimSegment(DEF='r_distal_phalanx4',name='r_distal_phalanx4',displayBBox=false,
+                    HAnimSegment(DEF='r_distal_phalanx4',name='r_distal_phalanx4',
                       children=[
-                      Transform(translation=(0.1,0.93,0),displayBBox=false,
+                      Transform(translation=(0.1,0.93,0),
                         children=[
-                        Shape(USE='HAnimJointShape',displayBBox=false)]),
-                      Shape(displayBBox=false,
+                        Shape(USE='HAnimJointShape')]),
+                      Shape(
                         appearance=Appearance(
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_r_distal_interphalangeal_joint_4',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.1,0.93,0),(0.1,1.0,0)])))])])])])]),
             #  pinky finger 
-            HAnimJoint(DEF='r_carpometacarpal_joint_5',center=(0.15,0.17,0),name='r_carpometacarpal_joint_5',displayBBox=false,
+            HAnimJoint(DEF='r_carpometacarpal_joint_5',center=(0.15,0.17,0),name='r_carpometacarpal_joint_5',
               children=[
-              HAnimSegment(DEF='r_metacarpal_5',name='r_metacarpal_5',displayBBox=false,
+              HAnimSegment(DEF='r_metacarpal_5',name='r_metacarpal_5',
                 children=[
-                Transform(translation=(0.15,0.17,0),displayBBox=false,
+                Transform(translation=(0.15,0.17,0),
                   children=[
-                  Shape(USE='HAnimJointShape',displayBBox=false)]),
-                Shape(displayBBox=false,
+                  Shape(USE='HAnimJointShape')]),
+                Shape(
                   appearance=Appearance(
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC5toMCP5',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.15,0.17,0),(0.2,0.4,0)])))]),
-              HAnimJoint(DEF='r_metacarpophalangeal_joint_5',center=(0.2,0.4,0),name='r_metacarpophalangeal_joint_5',displayBBox=false,
+              HAnimJoint(DEF='r_metacarpophalangeal_joint_5',center=(0.2,0.4,0),name='r_metacarpophalangeal_joint_5',
                 children=[
-                HAnimSegment(DEF='r_proximal_phalanges5',name='r_proximal_phalanges2',displayBBox=false,
+                HAnimSegment(DEF='r_proximal_phalanges5',name='r_proximal_phalanges2',
                   children=[
-                  Transform(translation=(0.2,0.4,0),displayBBox=false,
+                  Transform(translation=(0.2,0.4,0),
                     children=[
-                    Shape(USE='HAnimJointShape',displayBBox=false)]),
-                  Shape(displayBBox=false,
+                    Shape(USE='HAnimJointShape')]),
+                  Shape(
                     appearance=Appearance(
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP5toPIP5',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.2,0.4,0),(0.23,0.63,0)])))]),
-                HAnimJoint(DEF='r_proximal_interphalangeal_joint_5',center=(0.23,0.63,0),name='r_proximal_interphalangeal_joint_5',displayBBox=false,
+                HAnimJoint(DEF='r_proximal_interphalangeal_joint_5',center=(0.23,0.63,0),name='r_proximal_interphalangeal_joint_5',
                   children=[
-                  HAnimSegment(DEF='r_middle_phalanges5',name='r_middle_phalanges5',displayBBox=false,
+                  HAnimSegment(DEF='r_middle_phalanges5',name='r_middle_phalanges5',
                     children=[
-                    Transform(translation=(0.23,0.63,0),displayBBox=false,
+                    Transform(translation=(0.23,0.63,0),
                       children=[
-                      Shape(USE='HAnimJointShape',displayBBox=false)]),
-                    Shape(displayBBox=false,
+                      Shape(USE='HAnimJointShape')]),
+                    Shape(
                       appearance=Appearance(
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP5toDIP5',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.23,0.63,0),(0.25,0.79,0)])))]),
-                  HAnimJoint(DEF='r_distal_interphalangeal_joint_5',center=(0.25,0.79,0),name='r_distal_interphalangeal_joint_5',displayBBox=false,
+                  HAnimJoint(DEF='r_distal_interphalangeal_joint_5',center=(0.25,0.79,0),name='r_distal_interphalangeal_joint_5',
                     children=[
-                    HAnimSegment(DEF='r_distal_phalanges5',name='r_distal_phalanges5',displayBBox=false,
+                    HAnimSegment(DEF='r_distal_phalanges5',name='r_distal_phalanges5',
                       children=[
-                      Transform(translation=(0.25,0.79,0),displayBBox=false,
+                      Transform(translation=(0.25,0.79,0),
                         children=[
-                        Shape(USE='HAnimJointShape',displayBBox=false)]),
-                      Shape(displayBBox=false,
+                        Shape(USE='HAnimJointShape')]),
+                      Shape(
                         appearance=Appearance(
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_r_distal_interphalangeal_joint_5',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.25,0.79,0),(0.26,0.85,0)])))])])])])])])])]),],
       joints=[
-      HAnimJoint(USE='hanim_HumanoidRoot',displayBBox=false),
-      HAnimJoint(USE='r_radiocarpal_joint',displayBBox=false),
-      HAnimJoint(USE='r_midcarpal_joint_12',displayBBox=false),
-      HAnimJoint(USE='r_carpometacarpal_joint_1',displayBBox=false),
-      HAnimJoint(USE='r_metacarpophalangeal_joint_1',displayBBox=false),
-      HAnimJoint(USE='r_interphalangeal_joint_1',displayBBox=false),
-      HAnimJoint(USE='r_carpometacarpal_joint_2',displayBBox=false),
-      HAnimJoint(USE='r_metacarpophalangeal_joint_2',displayBBox=false),
-      HAnimJoint(USE='r_proximal_interphalangeal_joint_2',displayBBox=false),
-      HAnimJoint(USE='r_distal_interphalangeal_joint_2',displayBBox=false),
-      HAnimJoint(USE='r_midcarpal_joint_3',displayBBox=false),
-      HAnimJoint(USE='r_carpometacarpal_joint_3',displayBBox=false),
-      HAnimJoint(USE='r_metacarpophalangeal_joint_3',displayBBox=false),
-      HAnimJoint(USE='r_proximal_interphalangeal_joint_3',displayBBox=false),
-      HAnimJoint(USE='r_distal_interphalangeal_joint_3',displayBBox=false),
-      HAnimJoint(USE='r_midcarpal_joint_45',displayBBox=false),
-      HAnimJoint(USE='r_carpometacarpal_joint_4',displayBBox=false),
-      HAnimJoint(USE='r_metacarpophalangeal_joint_4',displayBBox=false),
-      HAnimJoint(USE='r_proximal_interphalangeal_joint_4',displayBBox=false),
-      HAnimJoint(USE='r_distal_interphalangeal_joint_4',displayBBox=false),
-      HAnimJoint(USE='r_carpometacarpal_joint_5',displayBBox=false),
-      HAnimJoint(USE='r_metacarpophalangeal_joint_5',displayBBox=false),
-      HAnimJoint(USE='r_proximal_interphalangeal_joint_5',displayBBox=false),
-      HAnimJoint(USE='r_distal_interphalangeal_joint_5',displayBBox=false)],
+      HAnimJoint(USE='hanim_HumanoidRoot'),
+      HAnimJoint(USE='r_radiocarpal_joint'),
+      HAnimJoint(USE='r_midcarpal_joint_12'),
+      HAnimJoint(USE='r_carpometacarpal_joint_1'),
+      HAnimJoint(USE='r_metacarpophalangeal_joint_1'),
+      HAnimJoint(USE='r_interphalangeal_joint_1'),
+      HAnimJoint(USE='r_carpometacarpal_joint_2'),
+      HAnimJoint(USE='r_metacarpophalangeal_joint_2'),
+      HAnimJoint(USE='r_proximal_interphalangeal_joint_2'),
+      HAnimJoint(USE='r_distal_interphalangeal_joint_2'),
+      HAnimJoint(USE='r_midcarpal_joint_3'),
+      HAnimJoint(USE='r_carpometacarpal_joint_3'),
+      HAnimJoint(USE='r_metacarpophalangeal_joint_3'),
+      HAnimJoint(USE='r_proximal_interphalangeal_joint_3'),
+      HAnimJoint(USE='r_distal_interphalangeal_joint_3'),
+      HAnimJoint(USE='r_midcarpal_joint_45'),
+      HAnimJoint(USE='r_carpometacarpal_joint_4'),
+      HAnimJoint(USE='r_metacarpophalangeal_joint_4'),
+      HAnimJoint(USE='r_proximal_interphalangeal_joint_4'),
+      HAnimJoint(USE='r_distal_interphalangeal_joint_4'),
+      HAnimJoint(USE='r_carpometacarpal_joint_5'),
+      HAnimJoint(USE='r_metacarpophalangeal_joint_5'),
+      HAnimJoint(USE='r_proximal_interphalangeal_joint_5'),
+      HAnimJoint(USE='r_distal_interphalangeal_joint_5')],
       segments=[
-      HAnimSegment(USE='r_wrist',displayBBox=false),
-      HAnimSegment(USE='r_trapezoid',displayBBox=false),
-      HAnimSegment(USE='r_metacarpal_1',displayBBox=false),
-      HAnimSegment(USE='r_proximal_phalanges1',displayBBox=false),
-      HAnimSegment(USE='r_distal_phalanges1',displayBBox=false),
-      HAnimSegment(USE='r_metacarpal_2',displayBBox=false),
-      HAnimSegment(USE='r_proximal_phalanges2',displayBBox=false),
-      HAnimSegment(USE='r_middle_phalanges2',displayBBox=false),
-      HAnimSegment(USE='r_distal_phalanges2',displayBBox=false),
-      HAnimSegment(USE='r_capitate',displayBBox=false),
-      HAnimSegment(USE='r_metacarpal_3',displayBBox=false),
-      HAnimSegment(USE='r_proximal_phalanges3',displayBBox=false),
-      HAnimSegment(USE='r_middle_phalanges3',displayBBox=false),
-      HAnimSegment(USE='r_distal_phalanges3',displayBBox=false),
-      HAnimSegment(USE='r_hamate',displayBBox=false),
-      HAnimSegment(USE='r_metacarpal_4',displayBBox=false),
-      HAnimSegment(USE='r_proximal_phalanges4',displayBBox=false),
-      HAnimSegment(USE='r_middle_phalanges4',displayBBox=false),
-      HAnimSegment(USE='r_distal_phalanx4',displayBBox=false),
-      HAnimSegment(USE='r_metacarpal_5',displayBBox=false),
-      HAnimSegment(USE='r_proximal_phalanges5',displayBBox=false),
-      HAnimSegment(USE='r_middle_phalanges5',displayBBox=false),
-      HAnimSegment(USE='r_distal_phalanges5',displayBBox=false)])])
+      HAnimSegment(USE='r_wrist'),
+      HAnimSegment(USE='r_trapezoid'),
+      HAnimSegment(USE='r_metacarpal_1'),
+      HAnimSegment(USE='r_proximal_phalanges1'),
+      HAnimSegment(USE='r_distal_phalanges1'),
+      HAnimSegment(USE='r_metacarpal_2'),
+      HAnimSegment(USE='r_proximal_phalanges2'),
+      HAnimSegment(USE='r_middle_phalanges2'),
+      HAnimSegment(USE='r_distal_phalanges2'),
+      HAnimSegment(USE='r_capitate'),
+      HAnimSegment(USE='r_metacarpal_3'),
+      HAnimSegment(USE='r_proximal_phalanges3'),
+      HAnimSegment(USE='r_middle_phalanges3'),
+      HAnimSegment(USE='r_distal_phalanges3'),
+      HAnimSegment(USE='r_hamate'),
+      HAnimSegment(USE='r_metacarpal_4'),
+      HAnimSegment(USE='r_proximal_phalanges4'),
+      HAnimSegment(USE='r_middle_phalanges4'),
+      HAnimSegment(USE='r_distal_phalanx4'),
+      HAnimSegment(USE='r_metacarpal_5'),
+      HAnimSegment(USE='r_proximal_phalanges5'),
+      HAnimSegment(USE='r_middle_phalanges5'),
+      HAnimSegment(USE='r_distal_phalanges5')])])
 ) # X3D model complete
 
 ###############################################
