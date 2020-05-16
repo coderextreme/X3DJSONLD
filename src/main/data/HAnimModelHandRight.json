@@ -107,34 +107,28 @@
               "@loa":-1,
               "@skeletalConfiguration":"BASIC",
               "@version":"2.0",
-              "@displayBBox":false,
               "-skeleton":[
                 { "HAnimJoint":
                   {
                     "@name":"humanoid_root",
                     "@DEF":"hanim_HumanoidRoot",
-                    "@displayBBox":false,
                     "-children":[
                       { "HAnimJoint":
                         {
                           "@name":"r_radiocarpal_joint",
                           "@DEF":"r_radiocarpal_joint",
-                          "@displayBBox":false,
                           "-children":[
                             { "HAnimSegment":
                               {
                                 "@name":"r_wrist",
                                 "@DEF":"r_wrist",
-                                "@displayBBox":false,
                                 "-children":[
                                   { "Transform":
                                     {
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "Shape":
                                           {
                                             "@DEF":"HAnimJointShape",
-                                            "@displayBBox":false,
                                             "-geometry":
                                               { "Sphere":
                                                 {
@@ -160,7 +154,6 @@
                                   },
                                   { "Shape":
                                     {
-                                      "@displayBBox":false,
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -189,7 +182,6 @@
                                   },
                                   { "Shape":
                                     {
-                                      "@displayBBox":false,
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -218,7 +210,6 @@
                                   },
                                   { "Shape":
                                     {
-                                      "@displayBBox":false,
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -256,23 +247,19 @@
                                 "@name":"r_midcarpal_joint_12",
                                 "@DEF":"r_midcarpal_joint_12",
                                 "@center":[-0.1,0.1,0],
-                                "@displayBBox":false,
                                 "-children":[
                                   { "HAnimSegment":
                                     {
                                       "@name":"r_trapezoid",
                                       "@DEF":"r_trapezoid",
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "Transform":
                                           {
                                             "@translation":[-0.1,0.1,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Shape":
                                                 {
                                                   "@DEF":"HAnimNewJointShape",
-                                                  "@displayBBox":false,
                                                   "-geometry":
                                                     { "Sphere":
                                                       {
@@ -298,7 +285,6 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@displayBBox":false,
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -327,7 +313,6 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@displayBBox":false,
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -365,18 +350,15 @@
                                       "@name":"r_carpometacarpal_joint_1",
                                       "@DEF":"r_carpometacarpal_joint_1",
                                       "@center":[-0.2,0.15,0],
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_metacarpal_1",
                                             "@DEF":"r_metacarpal_1",
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[-0.2,0.15,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -388,7 +370,6 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@displayBBox":false,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -423,18 +404,15 @@
                                             "@name":"r_metacarpophalangeal_joint_1",
                                             "@DEF":"r_metacarpophalangeal_joint_1",
                                             "@center":[-0.3,0.3,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_proximal_phalanges1",
                                                   "@DEF":"r_proximal_phalanges1",
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.3,0.3,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -446,7 +424,6 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@displayBBox":false,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
@@ -481,18 +458,15 @@
                                                   "@name":"r_interphalangeal_joint_1",
                                                   "@DEF":"r_interphalangeal_joint_1",
                                                   "@center":[-0.35,0.4,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_distal_phalanges1",
                                                         "@DEF":"r_distal_phalanges1",
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[-0.35,0.4,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -504,7 +478,6 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@displayBBox":false,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -551,18 +524,15 @@
                                       "@name":"r_carpometacarpal_joint_2",
                                       "@DEF":"r_carpometacarpal_joint_2",
                                       "@center":[-0.1,0.2,0],
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_metacarpal_2",
                                             "@DEF":"r_metacarpal_2",
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[-0.1,0.2,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -574,7 +544,6 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@displayBBox":false,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -609,18 +578,15 @@
                                             "@name":"r_metacarpophalangeal_joint_2",
                                             "@DEF":"r_metacarpophalangeal_joint_2",
                                             "@center":[-0.15,0.5,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_proximal_phalanges2",
                                                   "@DEF":"r_proximal_phalanges2",
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.15,0.5,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -632,7 +598,6 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@displayBBox":false,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
@@ -667,18 +632,15 @@
                                                   "@name":"r_proximal_interphalangeal_joint_2",
                                                   "@DEF":"r_proximal_interphalangeal_joint_2",
                                                   "@center":[-0.2,0.7,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_middle_phalanges2",
                                                         "@DEF":"r_middle_phalanges2",
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[-0.2,0.7,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -690,7 +652,6 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@displayBBox":false,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -725,18 +686,15 @@
                                                         "@name":"r_distal_interphalangeal_joint_2",
                                                         "@DEF":"r_distal_interphalangeal_joint_2",
                                                         "@center":[-0.24,0.87,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"r_distal_phalanges2",
                                                               "@DEF":"r_distal_phalanges2",
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[-0.24,0.87,0],
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -748,7 +706,6 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@displayBBox":false,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
@@ -801,18 +758,15 @@
                                 "@name":"r_midcarpal_joint_3",
                                 "@DEF":"r_midcarpal_joint_3",
                                 "@center":[0.0,0.07,0],
-                                "@displayBBox":false,
                                 "-children":[
                                   { "HAnimSegment":
                                     {
                                       "@name":"r_capitate",
                                       "@DEF":"r_capitate",
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "Transform":
                                           {
                                             "@translation":[0.0,0.07,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -824,7 +778,6 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@displayBBox":false,
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -862,18 +815,15 @@
                                       "@name":"r_carpometacarpal_joint_3",
                                       "@DEF":"r_carpometacarpal_joint_3",
                                       "@center":[0.0,0.2,0],
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_metacarpal_3",
                                             "@DEF":"r_metacarpal_3",
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[0.0,0.2,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -885,7 +835,6 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@displayBBox":false,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -920,18 +869,15 @@
                                             "@name":"r_metacarpophalangeal_joint_3",
                                             "@DEF":"r_metacarpophalangeal_joint_3",
                                             "@center":[-0.03,0.5,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_proximal_phalanges3",
                                                   "@DEF":"r_proximal_phalanges3",
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.03,0.5,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -943,7 +889,6 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@displayBBox":false,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
@@ -978,18 +923,15 @@
                                                   "@name":"r_proximal_interphalangeal_joint_3",
                                                   "@DEF":"r_proximal_interphalangeal_joint_3",
                                                   "@center":[-0.05,0.75,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_middle_phalanges3",
                                                         "@DEF":"r_middle_phalanges3",
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[-0.05,0.75,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -1001,7 +943,6 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@displayBBox":false,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -1036,18 +977,15 @@
                                                         "@name":"r_distal_interphalangeal_joint_3",
                                                         "@DEF":"r_distal_interphalangeal_joint_3",
                                                         "@center":[-0.08,0.96,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"r_distal_phalanges3",
                                                               "@DEF":"r_distal_phalanges3",
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[-0.08,0.96,0],
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -1059,7 +997,6 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@displayBBox":false,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
@@ -1112,18 +1049,15 @@
                                 "@name":"r_midcarpal_joint_45",
                                 "@DEF":"r_midcarpal_joint_45",
                                 "@center":[0.1,0.1,0],
-                                "@displayBBox":false,
                                 "-children":[
                                   { "HAnimSegment":
                                     {
                                       "@name":"r_hamate",
                                       "@DEF":"r_hamate",
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "Transform":
                                           {
                                             "@translation":[0.1,0.1,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -1135,7 +1069,6 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@displayBBox":false,
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -1164,7 +1097,6 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@displayBBox":false,
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -1202,18 +1134,15 @@
                                       "@name":"r_carpometacarpal_joint_4",
                                       "@DEF":"r_carpometacarpal_joint_4",
                                       "@center":[0.1,0.2,0],
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_metacarpal_4",
                                             "@DEF":"r_metacarpal_4",
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[0.1,0.2,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -1225,7 +1154,6 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@displayBBox":false,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -1260,18 +1188,15 @@
                                             "@name":"r_metacarpophalangeal_joint_4",
                                             "@DEF":"r_metacarpophalangeal_joint_4",
                                             "@center":[0.1,0.47,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_proximal_phalanges4",
                                                   "@DEF":"r_proximal_phalanges4",
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.1,0.47,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -1283,7 +1208,6 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@displayBBox":false,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
@@ -1318,18 +1242,15 @@
                                                   "@name":"r_proximal_interphalangeal_joint_4",
                                                   "@DEF":"r_proximal_interphalangeal_joint_4",
                                                   "@center":[0.1,0.7,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_middle_phalanges4",
                                                         "@DEF":"r_middle_phalanges4",
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[0.1,0.7,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -1341,7 +1262,6 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@displayBBox":false,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -1376,18 +1296,15 @@
                                                         "@name":"r_distal_interphalangeal_joint_4",
                                                         "@DEF":"r_distal_interphalangeal_joint_4",
                                                         "@center":[0.1,0.93,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"r_distal_phalanx4",
                                                               "@DEF":"r_distal_phalanx4",
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[0.1,0.93,0],
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -1399,7 +1316,6 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@displayBBox":false,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
@@ -1449,18 +1365,15 @@
                                       "@name":"r_carpometacarpal_joint_5",
                                       "@DEF":"r_carpometacarpal_joint_5",
                                       "@center":[0.15,0.17,0],
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_metacarpal_5",
                                             "@DEF":"r_metacarpal_5",
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[0.15,0.17,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -1472,7 +1385,6 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@displayBBox":false,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -1507,18 +1419,15 @@
                                             "@name":"r_metacarpophalangeal_joint_5",
                                             "@DEF":"r_metacarpophalangeal_joint_5",
                                             "@center":[0.2,0.4,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_proximal_phalanges2",
                                                   "@DEF":"r_proximal_phalanges5",
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.2,0.4,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -1530,7 +1439,6 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@displayBBox":false,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
@@ -1565,18 +1473,15 @@
                                                   "@name":"r_proximal_interphalangeal_joint_5",
                                                   "@DEF":"r_proximal_interphalangeal_joint_5",
                                                   "@center":[0.23,0.63,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_middle_phalanges5",
                                                         "@DEF":"r_middle_phalanges5",
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[0.23,0.63,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -1588,7 +1493,6 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@displayBBox":false,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -1623,18 +1527,15 @@
                                                         "@name":"r_distal_interphalangeal_joint_5",
                                                         "@DEF":"r_distal_interphalangeal_joint_5",
                                                         "@center":[0.25,0.79,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"r_distal_phalanges5",
                                                               "@DEF":"r_distal_phalanges5",
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[0.25,0.79,0],
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -1646,7 +1547,6 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@displayBBox":false,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {

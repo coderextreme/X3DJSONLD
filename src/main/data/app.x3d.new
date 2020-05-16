@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" ><head><meta content="Carlson, I" name="John W"></meta>
-<meta content="Carlson, II" name="John A"></meta>
-<meta content="Carlson, III" name="John R"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="John W" content="Carlson, I"></meta>
+<meta name="John A" content="Carlson, II"></meta>
+<meta name="John R" content="Carlson, III"></meta>
 </head>
-<Scene><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1" displayBBox="false" visible="true"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1" displayBBox="false" visible="true"><Appearance><Material ambientIntensity="0.2" diffuseColor="1 0 0" emissiveColor="0 0 0" shininess="0.2" specularColor="0 0 0" transparency="0"></Material>
+<Scene><Group><Shape><Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
-<Box containerField="geometry" size="2 2 2" solid="true"></Box>
+<Box containerField="geometry"></Box>
 </Shape>
 </Group>
-<Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1" center="0 0 0" displayBBox="false" rotation="7 8 9 3.14" scale="4 5 6" scaleOrientation="0 0 1 0" translation="1 2 3" visible="true"></Transform>
+<Transform rotation="7 8 9 3.14" scale="4 5 6" translation="1 2 3"></Transform>
 </Scene>
 </X3D>

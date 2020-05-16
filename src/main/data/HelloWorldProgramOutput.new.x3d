@@ -47,6 +47,8 @@
     <WorldInfo DEF='WorldInfoDEF' title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'/>
     <WorldInfo USE='WorldInfoDEF'/>
     <WorldInfo USE='WorldInfoDEF'/>
+    <MetadataString DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
+    <LayerSet DEF='scene.addChildLayerSetTest' order='0'/>
     <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
       <Anchor description='select for X3D Java SAI Library (X3DJSAIL) description' url='"../X3DJSAIL.html" "https://www.web3d.org/specifications/java/X3DJSAIL.html"'>
         <Shape DEF='BoxShape'>
@@ -91,9 +93,9 @@
         <Shape DEF='ProxyShape' containerField='proxy'>
           <!-- alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;"' -->
           <!-- alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;" ""' -->
-          <!-- alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \"Immel did it!\""}) -->
+          <!-- alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \""Immel did it!\"""}) -->
           <!-- reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html -->
-          <Text string='"One, Two, Text" "" "He said, \"Immel did it!" \"'/>
+          <Text string='"One, Two, Text" "" "He said, \"Immel did it!\" \"\""'/>
         </Shape>
       </Collision>
       <!-- It's a beautiful world -->
@@ -228,7 +230,7 @@ function clockTrigger (timeValue)
     red   = newColor.r;
     green = newColor.g;
     blue  = newColor.b;
-    
+
     // note different modulation rates for each color component, % is modulus operator
     newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
 	if (enabled)
@@ -326,7 +328,13 @@ function clockTrigger (timeValue)
       <Appearance>
         <!-- Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes -->
         <!-- Test satisfactorily creates MFNode shaders array as an ordered list with mixed content -->
+        <ProgramShader DEF='TestShader1'>
+          <ShaderProgram DEF='TestShader2'/>
+        </ProgramShader>
         <ProtoInstance DEF='TestShader3' name='ShaderProto' containerField='shaders'/>
+        <ComposedShader DEF='TestShader4'>
+          <ShaderPart DEF='TestShader5'/>
+        </ComposedShader>
       </Appearance>
     </Shape>
     <Transform DEF='SpecialtyNodes'>
@@ -341,8 +349,9 @@ function clockTrigger (timeValue)
       <ReceiverPdu geoSystem='"GD" "WE"'/>
       <SignalPdu geoSystem='"GD" "WE"'/>
       <TransmitterPdu geoSystem='"GD" "WE"'/>
+      <DISEntityManager>
+        <DISEntityTypeMapping/>
+      </DISEntityManager>
     </Transform>
-    <MetadataString DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
-    <LayerSet DEF='scene.addChildLayerSetTest' order='0'/>
   </Scene>
 </X3D>

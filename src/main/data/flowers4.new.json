@@ -54,7 +54,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2020"
+            "@content":"14 May 2020"
           },
           {
             "@name":"generator",
@@ -90,13 +90,7 @@
                   {
                     "-children":[
                       {
-                        "#comment":""
-                      },
-                      {
                         "#comment":"<Sphere>"
-                      },
-                      {
-                        "#comment":""
                       }
                     ],
                     "-appearance":

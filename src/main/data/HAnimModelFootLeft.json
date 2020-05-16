@@ -108,34 +108,28 @@
               "@loa":-1,
               "@skeletalConfiguration":"BASIC",
               "@version":"2.0",
-              "@displayBBox":false,
               "-skeleton":[
                 { "HAnimJoint":
                   {
                     "@name":"humanoid_root",
                     "@DEF":"hanim_HumanoidRoot",
-                    "@displayBBox":false,
                     "-children":[
                       { "HAnimJoint":
                         {
                           "@name":"l_talocrural_joint",
                           "@DEF":"l_talocrural_joint",
-                          "@displayBBox":false,
                           "-children":[
                             { "HAnimSegment":
                               {
                                 "@name":"l_talus",
                                 "@DEF":"l_talus",
-                                "@displayBBox":false,
                                 "-children":[
                                   { "Transform":
                                     {
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "Shape":
                                           {
                                             "@DEF":"HAnimJointShape",
-                                            "@displayBBox":false,
                                             "-geometry":
                                               { "Sphere":
                                                 {
@@ -161,7 +155,6 @@
                                   },
                                   { "Shape":
                                     {
-                                      "@displayBBox":false,
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -190,7 +183,6 @@
                                   },
                                   { "Shape":
                                     {
-                                      "@displayBBox":false,
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -228,18 +220,15 @@
                                 "@name":"l_talocalcaneonavicular_joint",
                                 "@DEF":"l_talocalcaneonavicular_joint",
                                 "@center":[0.0,-0.3,0],
-                                "@displayBBox":false,
                                 "-children":[
                                   { "HAnimSegment":
                                     {
                                       "@name":"l_navicular",
                                       "@DEF":"l_navicular",
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "Transform":
                                           {
                                             "@translation":[0.0,-0.3,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -251,7 +240,6 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@displayBBox":false,
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -280,7 +268,6 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@displayBBox":false,
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -309,7 +296,6 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@displayBBox":false,
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -347,18 +333,15 @@
                                       "@name":"l_cuneonavicular_joint1",
                                       "@DEF":"l_cuneonavicular_joint1",
                                       "@center":[-0.1,-0.45,0],
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"l_cuneiform1",
                                             "@DEF":"l_cuneiform1",
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[-0.1,-0.45,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -370,7 +353,6 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@displayBBox":false,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -405,18 +387,15 @@
                                             "@name":"l_tarsometatarsal_joint1",
                                             "@DEF":"l_tarsometatarsal_joint1",
                                             "@center":[-0.1,-0.6,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"l_metatarsal1",
                                                   "@DEF":"l_metatarsal1",
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.1,-0.6,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -428,7 +407,6 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@displayBBox":false,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
@@ -463,18 +441,15 @@
                                                   "@name":"l_metatarsophalangeal_joint1",
                                                   "@DEF":"l_metatarsophalangeal_joint1",
                                                   "@center":[-0.1,-0.9,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"l_proximal_phalanges1",
                                                         "@DEF":"l_proximal_phalanges1",
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[-0.1,-0.9,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -486,7 +461,6 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@displayBBox":false,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -521,18 +495,15 @@
                                                         "@name":"l_f_Interphalangeal_joint",
                                                         "@DEF":"l_f_Interphalangeal_joint",
                                                         "@center":[-0.1,-1.05,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"l_distal_phalanges1",
                                                               "@DEF":"l_distal_phalanges1",
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[-0.1,-1.05,0],
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -544,7 +515,6 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@displayBBox":false,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
@@ -594,18 +564,15 @@
                                       "@name":"l_cuneonavicular_joint2",
                                       "@DEF":"l_cuneonavicular_joint2",
                                       "@center":[0.0,-0.45,0],
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"l_cuneiform2",
                                             "@DEF":"l_cuneiform2",
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[0.0,-0.45,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -617,7 +584,6 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@displayBBox":false,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -652,18 +618,15 @@
                                             "@name":"l_tarsometatarsal_joint2",
                                             "@DEF":"l_tarsometatarsal_joint2",
                                             "@center":[0.05,-0.6,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"l_metatarsal2",
                                                   "@DEF":"l_metatarsal2",
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.05,-0.6,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -675,7 +638,6 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@displayBBox":false,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
@@ -710,18 +672,15 @@
                                                   "@name":"l_metatarsophalangeal_joint2",
                                                   "@DEF":"l_metatarsophalangeal_joint2",
                                                   "@center":[0.05,-0.9,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"l_proximal_phalanges2",
                                                         "@DEF":"l_proximal_phalanges2",
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[0.05,-0.9,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -733,7 +692,6 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@displayBBox":false,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -768,18 +726,15 @@
                                                         "@name":"l_f_proximal_Interphalangeal_joint2",
                                                         "@DEF":"l_f_proximal_Interphalangeal_joint2",
                                                         "@center":[0.05,-1.05,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"l_middle_phalanges2",
                                                               "@DEF":"l_middle_phalanges2",
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[0.05,-1.05,0],
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -791,7 +746,6 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@displayBBox":false,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
@@ -826,18 +780,15 @@
                                                               "@name":"l_f_distal_Interphalangeal_joint2",
                                                               "@DEF":"l_f_distal_Interphalangeal_joint2",
                                                               "@center":[0.05,-1.12,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
                                                                     "@name":"l_distal_phalanges2",
                                                                     "@DEF":"l_distal_phalanges2",
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Transform":
                                                                         {
                                                                           "@translation":[0.05,-1.12,0],
-                                                                          "@displayBBox":false,
                                                                           "-children":[
                                                                             { "Shape":
                                                                               {
@@ -849,7 +800,6 @@
                                                                       },
                                                                       { "Shape":
                                                                         {
-                                                                          "@displayBBox":false,
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
@@ -902,18 +852,15 @@
                                       "@name":"l_cuneonavicular_joint3",
                                       "@DEF":"l_cuneonavicular_joint3",
                                       "@center":[0.1,-0.4,0],
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"l_cuneiform3",
                                             "@DEF":"l_cuneiform3",
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[0.1,-0.4,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -925,7 +872,6 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@displayBBox":false,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -960,18 +906,15 @@
                                             "@name":"l_tarsometatarsal_joint3",
                                             "@DEF":"l_tarsometatarsal_joint3",
                                             "@center":[0.15,-0.6,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"l_metatarsal3",
                                                   "@DEF":"l_metatarsal3",
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.15,-0.6,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -983,7 +926,6 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@displayBBox":false,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
@@ -1018,18 +960,15 @@
                                                   "@name":"l_metatarsophalangeal_joint3",
                                                   "@DEF":"l_metatarsophalangeal_joint3",
                                                   "@center":[0.15,-0.9,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"l_proximal_phalanges3",
                                                         "@DEF":"l_proximal_phalanges3",
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[0.15,-0.9,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -1041,7 +980,6 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@displayBBox":false,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -1076,18 +1014,15 @@
                                                         "@name":"l_f_proximal_Interphalangeal_joint3",
                                                         "@DEF":"l_f_proximal_Interphalangeal_joint3",
                                                         "@center":[0.15,-1.05,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"l_middle_phalanges3",
                                                               "@DEF":"l_middle_phalanges3",
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[0.15,-1.05,0],
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -1099,7 +1034,6 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@displayBBox":false,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
@@ -1134,18 +1068,15 @@
                                                               "@name":"l_f_distal_Interphalangeal_joint3",
                                                               "@DEF":"l_f_distal_Interphalangeal_joint3",
                                                               "@center":[0.15,-1.13,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
                                                                     "@name":"l_distal_phalanges3",
                                                                     "@DEF":"l_distal_phalanges3",
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Transform":
                                                                         {
                                                                           "@translation":[0.15,-1.13,0],
-                                                                          "@displayBBox":false,
                                                                           "-children":[
                                                                             { "Shape":
                                                                               {
@@ -1157,7 +1088,6 @@
                                                                       },
                                                                       { "Shape":
                                                                         {
-                                                                          "@displayBBox":false,
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
@@ -1213,18 +1143,15 @@
                                 "@name":"l_calcaneuscuboid_joint",
                                 "@DEF":"l_calcaneuscuboid_joint",
                                 "@center":[0.2,0.3,0],
-                                "@displayBBox":false,
                                 "-children":[
                                   { "HAnimSegment":
                                     {
                                       "@name":"l_calcaneus",
                                       "@DEF":"l_calcaneus",
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "Transform":
                                           {
                                             "@translation":[0.2,0.3,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -1236,7 +1163,6 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@displayBBox":false,
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -1274,18 +1200,15 @@
                                       "@name":"l_transverse_tarsal_joint",
                                       "@DEF":"l_transverse_tarsal_joint",
                                       "@center":[0.21,-0.3,0],
-                                      "@displayBBox":false,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"l_cuboid",
                                             "@DEF":"l_cuboid",
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[0.21,-0.3,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -1297,7 +1220,6 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@displayBBox":false,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -1326,7 +1248,6 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@displayBBox":false,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -1364,18 +1285,15 @@
                                             "@name":"l_tarsometatarsal_joint4",
                                             "@DEF":"l_tarsometatarsal_joint4",
                                             "@center":[0.25,-0.58,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"l_metatarsal4",
                                                   "@DEF":"l_metatarsal4",
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.25,-0.58,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -1387,7 +1305,6 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@displayBBox":false,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
@@ -1422,18 +1339,15 @@
                                                   "@name":"l_metatarsophalangeal_joint4",
                                                   "@DEF":"l_metatarsophalangeal_joint4",
                                                   "@center":[0.25,-0.87,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"l_proximal_phalanges4",
                                                         "@DEF":"l_proximal_phalanges4",
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[0.25,-0.87,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -1445,7 +1359,6 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@displayBBox":false,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -1480,18 +1393,15 @@
                                                         "@name":"l_f_proximal_Interphalangeal_joint4",
                                                         "@DEF":"l_f_proximal_Interphalangeal_joint4",
                                                         "@center":[0.25,-1.0,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"l_middle_phalanges4",
                                                               "@DEF":"l_middle_phalanges4",
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[0.25,-1.0,0],
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -1503,7 +1413,6 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@displayBBox":false,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
@@ -1538,18 +1447,15 @@
                                                               "@name":"l_f_distal_Interphalangeal_joint4",
                                                               "@DEF":"l_f_distal_Interphalangeal_joint4",
                                                               "@center":[0.25,-1.1,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
                                                                     "@name":"l_distal_phalanges4",
                                                                     "@DEF":"l_distal_phalanges4",
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Transform":
                                                                         {
                                                                           "@translation":[0.25,-1.1,0],
-                                                                          "@displayBBox":false,
                                                                           "-children":[
                                                                             { "Shape":
                                                                               {
@@ -1561,7 +1467,6 @@
                                                                       },
                                                                       { "Shape":
                                                                         {
-                                                                          "@displayBBox":false,
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
@@ -1611,18 +1516,15 @@
                                             "@name":"l_tarsometatarsal_joint5",
                                             "@DEF":"l_tarsometatarsal_joint5",
                                             "@center":[0.33,-0.52,0],
-                                            "@displayBBox":false,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"l_metatarsal5",
                                                   "@DEF":"l_metatarsal5",
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.33,-0.52,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -1634,7 +1536,6 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@displayBBox":false,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
@@ -1669,18 +1570,15 @@
                                                   "@name":"l_metatarsophalangeal_joint5",
                                                   "@DEF":"l_metatarsophalangeal_joint5",
                                                   "@center":[0.34,-0.8,0],
-                                                  "@displayBBox":false,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"l_proximal_phalanges5",
                                                         "@DEF":"l_proximal_phalanges5",
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[0.34,-0.8,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -1692,7 +1590,6 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@displayBBox":false,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -1727,18 +1624,15 @@
                                                         "@name":"l_f_proximal_Interphalangeal_joint5",
                                                         "@DEF":"l_f_proximal_Interphalangeal_joint5",
                                                         "@center":[0.34,-0.95,0],
-                                                        "@displayBBox":false,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"l_middle_phalanges5",
                                                               "@DEF":"l_middle_phalanges5",
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[0.34,-0.95,0],
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -1750,7 +1644,6 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@displayBBox":false,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
@@ -1785,18 +1678,15 @@
                                                               "@name":"l_f_distal_Interphalangeal_joint5",
                                                               "@DEF":"l_f_distal_Interphalangeal_joint5",
                                                               "@center":[0.34,-1.05,0],
-                                                              "@displayBBox":false,
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
                                                                     "@name":"l_distal_phalanges5",
                                                                     "@DEF":"l_distal_phalanges5",
-                                                                    "@displayBBox":false,
                                                                     "-children":[
                                                                       { "Transform":
                                                                         {
                                                                           "@translation":[0.34,-1.05,0],
-                                                                          "@displayBBox":false,
                                                                           "-children":[
                                                                             { "Shape":
                                                                               {
@@ -1808,7 +1698,6 @@
                                                                       },
                                                                       { "Shape":
                                                                         {
-                                                                          "@displayBBox":false,
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
