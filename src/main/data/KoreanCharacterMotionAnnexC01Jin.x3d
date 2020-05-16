@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
+	  <!--
     <component level='1' name='HAnim'/>
+	  -->
     <meta content='KoreanCharacterMotionAnnexC01Jin.x3d' name='title'/>
     <meta content='Jin Hoon Lee and Min Joo Lee' name='creator'/>
     <meta content='Chul Hee Jung and Myeong Won Lee' name='translator'/>
@@ -312,6 +314,42 @@
           </HAnimJoint>
         </HAnimJoint>
       </HAnimJoint>
+<HAnimJoint USE='hanim_HumanoidRoot' containerField='joints'/>
+<HAnimJoint USE='hanim_sacroiliac' containerField='joints'/>
+<HAnimJoint USE='hanim_l_hip' containerField='joints'/>
+<HAnimJoint USE='hanim_l_knee' containerField='joints'/>
+<HAnimJoint USE='hanim_l_talocrural' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metatarsophalangeal' containerField='joints'/>
+<HAnimJoint USE='hanim_r_hip' containerField='joints'/>
+<HAnimJoint USE='hanim_r_knee' containerField='joints'/>
+<HAnimJoint USE='hanim_r_talocrural' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metatarsophalangeal' containerField='joints'/>
+<HAnimJoint USE='hanim_vl5' containerField='joints'/>
+<HAnimJoint USE='hanim_skullbase' containerField='joints'/>
+<HAnimJoint USE='hanim_l_shoulder' containerField='joints'/>
+<HAnimJoint USE='hanim_l_elbow' containerField='joints'/>
+<HAnimJoint USE='hanim_l_radiocarpal' containerField='joints'/>
+<HAnimJoint USE='hanim_r_shoulder' containerField='joints'/>
+<HAnimJoint USE='hanim_r_elbow' containerField='joints'/>
+<HAnimJoint USE='hanim_r_radiocarpal' containerField='joints'/>
+<HAnimSegment USE='hanim_sacrum' containerField='segments'/>
+<HAnimSegment USE='hanim_pelvis' containerField='segments'/>
+<HAnimSegment USE='hanim_l_thigh' containerField='segments'/>
+<HAnimSegment USE='hanim_l_calf' containerField='segments'/>
+<HAnimSegment USE='hanim_l_hindfoot' containerField='segments'/>
+<HAnimSegment USE='hanim_l_middistal' containerField='segments'/>
+<HAnimSegment USE='hanim_r_thigh' containerField='segments'/>
+<HAnimSegment USE='hanim_r_calf' containerField='segments'/>
+<HAnimSegment USE='hanim_r_hindfoot' containerField='segments'/>
+<HAnimSegment USE='hanim_r_middistal' containerField='segments'/>
+<HAnimSegment USE='hanim_l5' containerField='segments'/>
+<HAnimSegment USE='hanim_skull' containerField='segments'/>
+<HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>
+<HAnimSegment USE='hanim_l_forearm' containerField='segments'/>
+<HAnimSegment USE='hanim_l_hand' containerField='segments'/>
+<HAnimSegment USE='hanim_r_upperarm' containerField='segments'/>
+<HAnimSegment USE='hanim_r_forearm' containerField='segments'/>
+<HAnimSegment USE='hanim_r_hand' containerField='segments'/>
     </HAnimHumanoid>
     <Group DEF='KeyframeAnimation'>
       <TimeSensor DEF='KeyframeTimer' cycleInterval='8.033494' enabled='true' loop='true'/>

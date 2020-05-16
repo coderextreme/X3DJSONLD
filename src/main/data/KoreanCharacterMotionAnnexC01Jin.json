@@ -1,14 +1,13 @@
 { "X3D": {
     "encoding":"UTF-8",
-    "@profile":"Immersive",
+    "@profile":"Full",
     "@version":"4.0",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
-        "component": [
+        "-children":[
           {
-            "@name":"HAnim",
-            "@level":1
+            "#comment":"<component level='1' name='HAnim'/>"
           }
         ],
         "meta": [
@@ -1286,6 +1285,190 @@
                         }
                       }
                     ]
+                  }
+                }
+              ],
+              "-joints":[
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_HumanoidRoot"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_sacroiliac"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_hip"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_talocrural"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_metatarsophalangeal"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_hip"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_knee"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_talocrural"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_metatarsophalangeal"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_vl5"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_skullbase"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_shoulder"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_elbow"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_l_radiocarpal"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_shoulder"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_elbow"
+                  }
+                },
+                { "HAnimJoint":
+                  {
+                    "@USE":"hanim_r_radiocarpal"
+                  }
+                }
+              ],
+              "-segments":[
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_sacrum"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_pelvis"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_thigh"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_calf"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_hindfoot"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_middistal"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_thigh"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_calf"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_hindfoot"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_middistal"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l5"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_skull"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_upperarm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_forearm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_l_hand"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_upperarm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_forearm"
+                  }
+                },
+                { "HAnimSegment":
+                  {
+                    "@USE":"hanim_r_hand"
                   }
                 }
               ]
