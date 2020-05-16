@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2020"
+            "@content":"14 May 2020"
           },
           {
             "@name":"generator",
@@ -96,7 +96,7 @@
                   "#comment":"quotation \" is &quot; and isn't needed if single-quote delimiters used for string='value' attribute"
                 },
                 {
-                  "#comment":"quotation \" can be used within an X3D string if escaped with backslash \\ as \\\"\""
+                  "#comment":"quotation \" can be used within an X3D string if escaped with backslash \\ as \\\"\"\""
                 },
                 {
                   "#comment":"backslash \\ is used as escape character for \" (and itself) in X3D"

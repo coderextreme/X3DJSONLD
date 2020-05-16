@@ -15,7 +15,7 @@
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="xtranslation"></connect>
+<ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
 <connect nodeField="children" protoField="myShape"></connect>
 </IS>
 </Transform>
@@ -28,7 +28,7 @@
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="ytranslation"></connect>
+<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
 </IS>
 <ProtoInstance name="anyShape"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
 <IS><connect nodeField="myShape" protoField="myShape"></connect>
@@ -52,7 +52,7 @@
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="ztranslation"></connect>
+<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ztranslation"></connect>
 </IS>
 <ProtoInstance name="three"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
 <IS><connect nodeField="myShape" protoField="myShape"></connect>
@@ -76,7 +76,7 @@
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform translation="0 0 0"><IS><connect nodeField="translation" protoField="ttranslation"></connect>
+<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ttranslation"></connect>
 </IS>
 <ProtoInstance name="nine"><fieldValue name="ztranslation" value="0 0 0"></fieldValue>
 <IS><connect nodeField="myShape" protoField="myShape"></connect>

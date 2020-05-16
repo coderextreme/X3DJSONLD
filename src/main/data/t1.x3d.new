@@ -8,7 +8,7 @@
 <Viewpoint description="looking North" position="0 60 110" orientation="1 0 0 -0.699999988079071" fieldOfView="0.785398125648499"></Viewpoint>
 <Viewpoint description="looking East" position="-140 30 0" orientation="0 0.400000005960464 0 -1.39999997615814" fieldOfView="0.785398125648499"></Viewpoint>
 <Viewpoint description="Overhead" position="0 150 0" orientation="1 0 0 -1.57000005245209" fieldOfView="0.785398125648499"></Viewpoint>
-<ProtoDeclare name="school"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="school"><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material transparency="0.200000002980232" diffuseColor="0.5 0 1"></Material>
 </Appearance>
@@ -20,7 +20,7 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="institute"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="institute"><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material transparency="0.200000002980232" diffuseColor="1 1 0"></Material>
 </Appearance>
@@ -31,7 +31,7 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="disart_org"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="disart_org"><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material diffuseColor="1 1 0"></Material>
 </Appearance>
@@ -42,8 +42,8 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="org"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="posi" value="0 0 0"></field>
-<field accessType="initializeOnly" type="SFColor" name="col" value="0 0 0"></field>
+<ProtoDeclare name="org"><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material transparency="0.400000005960464"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
 </IS>
@@ -56,7 +56,7 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="l"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="l"><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.600000023841858 0"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
@@ -64,7 +64,7 @@
 </ProtoInstance>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="r"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="r"><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.300000011920929 1"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
@@ -72,7 +72,7 @@
 </ProtoInstance>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="n"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="n"><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="1 0 0.200000002980232"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
@@ -80,7 +80,7 @@
 </ProtoInstance>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="i"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="i"><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0.600000023841858 0 0.600000023841858"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>

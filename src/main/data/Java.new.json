@@ -136,7 +136,7 @@
           },
           {
             "@name":"translated",
-            "@content":"06 May 2020"
+            "@content":"14 May 2020"
           },
           {
             "@name":"generator",
@@ -169,6 +169,18 @@
           { "WorldInfo":
             {
               "@USE":"WorldInfoDEF"
+            }
+          },
+          { "MetadataString":
+            {
+              "@name":"test",
+              "@DEF":"scene.addChildMetadata",
+              "@value":["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]
+            }
+          },
+          { "LayerSet":
+            {
+              "@DEF":"scene.addChildLayerSetTest"
             }
           },
           { "Transform":
@@ -361,7 +373,7 @@
                               "#comment":"alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'"
                             },
                             {
-                              "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"
+                              "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"\"Immel did it!\\\"\"\"\"})"
                             },
                             {
                               "#comment":"reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
@@ -370,7 +382,7 @@
                           "-geometry":
                             { "Text":
                               {
-                                "@string":[One, Two, Text"," ,"",He said, \"," \","Immel did it!]
+                                "@string":["One, Two, Text","","He said, \"Immel did it!\" \"\""]
                               }
                             }
                         }
@@ -1071,18 +1083,6 @@
                     "@DEF":"ExampleExtrusion"
                   }
                 }
-            }
-          },
-          { "MetadataString":
-            {
-              "@name":"test",
-              "@DEF":"scene.addChildMetadata",
-              "@value":["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]
-            }
-          },
-          { "LayerSet":
-            {
-              "@DEF":"scene.addChildLayerSetTest"
             }
           }
         ]
