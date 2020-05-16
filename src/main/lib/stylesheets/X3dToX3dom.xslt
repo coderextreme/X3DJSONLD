@@ -1039,6 +1039,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
+                      not( local-name()='displayBBox' and .='false') and
                       not( local-name()='visible'     and .='true') or
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or

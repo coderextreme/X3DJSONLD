@@ -71,7 +71,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="conversionRequired"          ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="title"                       ><xsl:text><!-- default title value for file name is empty --></xsl:text></xsl:param>
     <xsl:param name="modifyX3dVersion"            ><xsl:text>false</xsl:text></xsl:param>
-    <xsl:param name="revisedX3dVersion"           ><xsl:text>3.3</xsl:text></xsl:param>
+    <xsl:param name="revisedX3dVersion"           ><xsl:text></xsl:text></xsl:param><!-- empty for no change, otherwise 3.0 3.1 3.2 3.3 4.0 -->
     <xsl:param name="reviseCurrentDate"           ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="fixDateFormats"              ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="fixMFStringQuotes"           ><xsl:text>true</xsl:text></xsl:param>
@@ -231,7 +231,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>')</xsl:text>
                 </xsl:message>
             </xsl:when>
-			<xsl:when test="($modifyX3dVersion = 'true') and ($revisedX3dVersion != //X3D/@version)">
+            <xsl:when test="($modifyX3dVersion = 'true') and ($revisedX3dVersion != //X3D/@version) and (starts-with($revisedX3dVersion,'3') or starts-with($revisedX3dVersion,'4'))">
                 <xsl:value-of select="$revisedX3dVersion"/>
                 <xsl:message>
                     <xsl:text>*** modifyX3dVersion: change version to </xsl:text>
@@ -799,7 +799,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                                             <xsl:text>' containerField='</xsl:text>
                                                             <xsl:value-of select="$expectedContainerField"/>
                                                             <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-                                                            <xsl:text> was found, adding it to ancestor </xsl:text>
+                                                            <xsl:text> was found, need to add it to ancestor </xsl:text>
                                                             <xsl:text disable-output-escaping="yes">&lt;HAnimHumanoid name='</xsl:text>
                                                             <xsl:value-of select="$hanimHumanoidName"/>
                                                             <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
@@ -1834,6 +1834,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
+                      not( local-name()='displayBBox' and .='false') and
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or

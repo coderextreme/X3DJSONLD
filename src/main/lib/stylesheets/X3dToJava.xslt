@@ -1490,6 +1490,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
+                      not( local-name()='displayBBox' and .='false') and
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and string(.)='false') or
@@ -3524,6 +3525,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='closed')   or
 					($attributeName='convex')   or
 					($attributeName='colorPerVertex') or
+                                        ($attributeName='displayBBox')  or
 					($attributeName='enabled')  or
 					($attributeName='global')   or
 					($attributeName='normalPerVertex') or

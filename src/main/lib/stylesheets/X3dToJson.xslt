@@ -2476,8 +2476,9 @@ POSSIBILITY OF SUCH DAMAGE.
                       not(local-name(..)='IntegerTrigger'	and	(local-name()='set_boolean' or local-name()='triggerValue'))
                       " />
         <xsl:variable name="notDefaultFieldValue1"
-                      select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
+              select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
+                      not( local-name()='displayBBox' and .='false') and
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -3362,6 +3363,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='closed')   or
 					($attributeName='convex')   or
 					($attributeName='colorPerVertex') or
+                                        ($attributeName='displayBBox')  or
 					($attributeName='enabled')  or
 					($attributeName='global')   or
 					($attributeName='normalPerVertex') or
