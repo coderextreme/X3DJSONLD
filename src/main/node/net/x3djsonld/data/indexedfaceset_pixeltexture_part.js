@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Test of browser ability to map a partial portion of an PixelTexture onto an IndexedFaceSet geometry. Only the yellow portion of four equal sized red, green, yellow and white squares in the pixel texture map all the faces of the cube. </p>
- <p> Related links: <a href="../../../../GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_part.java">indexedfaceset_pixeltexture_part.java</a> source, <a href="../../../../GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_partIndex.html" target="_top">indexedfaceset_pixeltexture_part catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../../GeometricProperties/TextureCoordinate/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../../GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_partIndex.html" target="_top">indexedfaceset_pixeltexture_part catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -114,7 +114,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author http://www.itl.nist.gov/div897/ctg/vrml/members.html
  */
 
-function indexedfaceset_pixeltexture_part
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -123,7 +123,7 @@ function indexedfaceset_pixeltexture_part
     this.initialize();
     return this;
   }
-indexedfaceset_pixeltexture_part.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -170,7 +170,7 @@ indexedfaceset_pixeltexture_part.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return indexedfaceset_pixeltexture_part model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -232,8 +232,8 @@ indexedfaceset_pixeltexture_part.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new indexedfaceset_pixeltexture_part();
-		console.log ("indexedfaceset_pixeltexture_part execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new indexedfaceset_pixeltexture_part().main();
+new NeedClassName().main();

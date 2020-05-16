@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/KoreanCharacterAnnexC01Jin.java">KoreanCharacterAnnexC01Jin.java</a> source, <a href="../../../HumanoidAnimation/KoreanCharacterAnnexC01JinIndex.html" target="_top">KoreanCharacterAnnexC01Jin catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../HumanoidAnimation/KoreanCharacterAnnexC01JinIndex.html" target="_top">KoreanCharacterAnnexC01Jin catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -90,7 +90,7 @@ load('X3Dautoclass.js');
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-function KoreanCharacterAnnexC01Jin
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -99,7 +99,7 @@ function KoreanCharacterAnnexC01Jin
     this.initialize();
     return this;
   }
-KoreanCharacterAnnexC01Jin.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -1652,4 +1652,339 @@ KoreanCharacterAnnexC01Jin.prototype = {
 	.append(new MFRotationObject(Java.to([0.1663932,0.2250587,-1.0,0.07401191,0.08148881,0.2172383,-1.0,0.07675231,0.04646268,0.2154773,-1.0,0.08438173,0.06941913,0.2203956,-1.0,0.09817158,0.1151732,0.2288835,-1.0,0.1177602,0.1469322,0.2365259,-1.0,0.1398442,0.1543908,0.2409468,-1.0,0.158228,0.1494613,0.2422291,-1.0,0.1667773,0.1499056,0.2414701,-1.0,0.162888,0.1667167,0.2402105,-1.0,0.1487738], Java.type("float[]"))))
 	.append(new MFRotationObject(Java.to([0.1980389,0.23947,-1.0,0.1300438,0.2297157,0.2391188,-1.0,0.1130357,0.2444448,0.2383934,-1.0,0.1021961,0.2360792,0.2369252,-1.0,0.09906267,0.2154668,0.2356312,-1.0,0.1024172,0.1963275,0.2351299,-1.0,0.1090399,0.182331,0.234905,-1.0,0.1150848,0.169037,0.2342586,-1.0,0.1181586,0.1504276,0.2323608,-1.0,0.1180702,0.1235105,0.2294358,-1.0,0.116361], Java.type("float[]"))))
 	.append(new MFRotationObject(Java.to([0.09164876,0.2259355,-1.0,0.1150581,0.06364281,0.2234421,-1.0,0.1157719,0.04606523,0.2221936,-1.0,0.1188063,0.03895338,0.2224283,-1.0,0.1230482,0.03904162,0.2232176,-1.0,0.126988,0.04159119,0.2239457,-1.0,0.1298376,0.0431322,0.2245319,-1.0,0.1317492,0.04227187,0.2247432,-1.0,0.1330601,0.03883677,0.2246033,-1.0,0.1340156,0.03392765,0.2241695,-1.0,0.1347331], Java.type("float[]"))))
-	.append(new MFRotationObject(Java.to([0.02856075,0.2238131,-1.0,0.1354526,0.02434459,0.2235819,-1.0,0.1363251,0.02100364,0.2233804,-1.0,0.1373515,0.01829584,0.2234239,-1.0,0.1384972,0.01591124,0.2234213,-1.0,0.1397297,0.01357538,0.2233965,-1.0,0.1409798,0.0112829,0.2234047,-1.0,0.1422128,0.00903465,0.22
+	.append(new MFRotationObject(Java.to([0.02856075,0.2238131,-1.0,0.1354526,0.02434459,0.2235819,-1.0,0.1363251,0.02100364,0.2233804,-1.0,0.1373515,0.01829584,0.2234239,-1.0,0.1384972,0.01591124,0.2234213,-1.0,0.1397297,0.01357538,0.2233965,-1.0,0.1409798,0.0112829,0.2234047,-1.0,0.1422128,0.00903465,0.2234193,-1.0,0.1434453,0.006945681,0.2234483,-1.0,0.1446608,0.00489614,0.2234827,-1.0,0.1458757], Java.type("float[]"))))
+	.append(new MFRotationObject(Java.to([0.002881484,0.2235476,-1.0,0.1470736,0.001016425,0.2236256,-1.0,0.1482539], Java.type("float[]"))));
+  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("4.0")
+  .setHead(new headObject()
+    .addComponent(new componentObject().setName("HAnim").setLevel(1))
+    .addMeta(new metaObject().setName("title").setContent("KoreanCharacterAnnexC01Jin.x3d"))
+    .addMeta(new metaObject().setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
+    .addMeta(new metaObject().setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
+    .addMeta(new metaObject().setName("created").setContent("31 March 2011"))
+    .addMeta(new metaObject().setName("translated").setContent("1 November 2014"))
+    .addMeta(new metaObject().setName("modified").setContent("29 December 2014"))
+    .addMeta(new metaObject().setName("description").setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
+    .addMeta(new metaObject().setName("reference").setContent("KoreanCharacter00ReadMe.txt"))
+    .addMeta(new metaObject().setName("reference").setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
+    .addMeta(new metaObject().setName("reference").setContent("KoreanCharactersIllustrated.pdf"))
+    .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/KoreanCharacterAnnexC01Jin.x3d"))
+    .addMeta(new metaObject().setName("generator").setContent("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"))
+    .addMeta(new metaObject().setName("generator").setContent("Suwon HAnim Converter"))
+    .addMeta(new metaObject().setName("generator").setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
+    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName("license").setContent("../license.html")))
+  .setScene(new SceneObject()
+    .addChild(new NavigationInfoObject().setSpeed(1.5))
+    .addChild(new ViewpointObject().setDescription("AnnexC01Jin").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
+    .addChild(new HAnimHumanoidObject("hanim_AnnexC01Jin").setName("AnnexC01Jin").setInfo(new MFStringObject("\"humanoidVersion=2.0\"")).setLoa(-1).setJointBindingPositions(new MFVec3fObject(Java.to([0.0,0.0,0.0], Java.type("float[]")))).setJointBindingRotations(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0], Java.type("float[]")))).setScale(0.0225,0.0225,0.0225).setJointBindingScales(new MFVec3fObject(Java.to([1.0,1.0,1.0], Java.type("float[]")))).setVersion("2.0").setSkeletalConfiguration("BASIC")
+      .addSkeleton(new HAnimJointObject("hanim_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0,30.53,-0.7076)
+        .addChild(new HAnimSegmentObject("hanim_sacrum").setName("sacrum")
+          .addChild(new TransformObject().setTranslation(0.0,30.53,-0.7076)
+            .addChild(new ShapeObject()
+              .setAppearance(new AppearanceObject()
+                .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                .setTexture(new ImageTextureObject("AnnexC01JinTextureAtlas").setUrl(new MFStringObject("\"Jin.png\" \"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/Jin.png\""))))
+              .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_8_24_coordIndex).setTexCoordIndex(this.IndexedFaceSet_8_24_texCoordIndex)
+                .setCoord(new CoordinateObject().setPoint(this.Coordinate_9_24_point))
+                .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_9_25_point))))))
+        .addChild(new HAnimJointObject("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,35.8,-0.7076)
+          .addChild(new HAnimSegmentObject("hanim_pelvis").setName("pelvis")
+            .addChild(new TransformObject().setTranslation(0.0,35.8,-0.7076)
+              .addChild(new ShapeObject()
+                .setAppearance(new AppearanceObject()
+                  .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                  .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_9_33_coordIndex).setTexCoordIndex(this.IndexedFaceSet_9_33_texCoordIndex)
+                  .setCoord(new CoordinateObject().setPoint(this.Coordinate_10_33_point))
+                  .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_10_34_point))))))
+          .addChild(new HAnimJointObject("hanim_l_hip").setName("l_hip").setCenter(4.207,32.02,-0.8155)
+            .addChild(new HAnimSegmentObject("hanim_l_thigh").setName("l_thigh")
+              .addChild(new TransformObject().setTranslation(4.207,32.02,-0.8155)
+                .addChild(new ShapeObject()
+                  .setAppearance(new AppearanceObject()
+                    .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                    .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                  .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_10_42_coordIndex).setTexCoordIndex(this.IndexedFaceSet_10_42_texCoordIndex)
+                    .setCoord(new CoordinateObject().setPoint(this.Coordinate_11_42_point))
+                    .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_11_43_point))))))
+            .addChild(new HAnimJointObject("hanim_l_knee").setName("l_knee").setCenter(4.116,17.26,-0.8639)
+              .addChild(new HAnimSegmentObject("hanim_l_calf").setName("l_calf")
+                .addChild(new TransformObject().setTranslation(4.116,17.26,-0.8639)
+                  .addChild(new ShapeObject()
+                    .setAppearance(new AppearanceObject()
+                      .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                      .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                    .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_11_51_coordIndex).setTexCoordIndex(this.IndexedFaceSet_11_51_texCoordIndex)
+                      .setCoord(new CoordinateObject().setPoint(this.Coordinate_12_51_point))
+                      .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_12_52_point))))))
+              .addChild(new HAnimJointObject("hanim_l_talocrural").setName("l_talocrural").setCenter(3.854,3.939,-0.7038)
+                .addChild(new HAnimSegmentObject("hanim_l_hindfoot").setName("l_hindfoot")
+                  .addChild(new TransformObject().setTranslation(3.854,3.939,-0.7038)
+                    .addChild(new ShapeObject()
+                      .setAppearance(new AppearanceObject()
+                        .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                        .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                      .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_12_60_coordIndex).setTexCoordIndex(this.IndexedFaceSet_12_60_texCoordIndex)
+                        .setCoord(new CoordinateObject().setPoint(this.Coordinate_13_60_point))
+                        .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_13_61_point))))))
+                .addChild(new HAnimJointObject("hanim_l_metatarsophalangeal").setName("l_metatarsophalangeal").setCenter(3.854,3.64,0.7402)
+                  .addChild(new HAnimSegmentObject("hanim_l_middistal").setName("l_middistal")
+                    .addChild(new TransformObject().setTranslation(3.854,3.64,0.7402)
+                      .addChild(new ShapeObject()
+                        .setAppearance(new AppearanceObject()
+                          .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                          .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                        .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_13_69_coordIndex).setTexCoordIndex(this.IndexedFaceSet_13_69_texCoordIndex)
+                          .setCoord(new CoordinateObject().setPoint(this.Coordinate_14_69_point))
+                          .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_14_70_point))))))))))
+          .addChild(new HAnimJointObject("hanim_r_hip").setName("r_hip").setCenter(-4.207,32.02,-0.8155)
+            .addChild(new HAnimSegmentObject("hanim_r_thigh").setName("r_thigh")
+              .addChild(new TransformObject().setTranslation(-4.207,32.02,-0.8155)
+                .addChild(new ShapeObject()
+                  .setAppearance(new AppearanceObject()
+                    .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                    .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                  .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setTexCoordIndex(this.IndexedFaceSet_10_82_texCoordIndex).setCoordIndex(this.IndexedFaceSet_10_82_coordIndex)
+                    .setCoord(new CoordinateObject().setPoint(this.Coordinate_11_82_point))
+                    .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_11_83_point))))))
+            .addChild(new HAnimJointObject("hanim_r_knee").setName("r_knee").setCenter(-4.116,17.26,-0.8639)
+              .addChild(new HAnimSegmentObject("hanim_r_calf").setName("r_calf")
+                .addChild(new TransformObject().setTranslation(-4.116,17.26,-0.8639)
+                  .addChild(new ShapeObject()
+                    .setAppearance(new AppearanceObject()
+                      .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                      .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                    .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_11_91_coordIndex).setTexCoordIndex(this.IndexedFaceSet_11_91_texCoordIndex)
+                      .setCoord(new CoordinateObject().setPoint(this.Coordinate_12_91_point))
+                      .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_12_92_point))))))
+              .addChild(new HAnimJointObject("hanim_r_talocrural").setName("r_talocrural").setCenter(-3.854,3.939,-0.7038)
+                .addChild(new HAnimSegmentObject("hanim_r_hindfoot").setName("r_hindfoot")
+                  .addChild(new TransformObject().setTranslation(-3.854,3.939,-0.7038)
+                    .addChild(new ShapeObject()
+                      .setAppearance(new AppearanceObject()
+                        .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                        .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                      .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_12_100_coordIndex).setTexCoordIndex(this.IndexedFaceSet_12_100_texCoordIndex)
+                        .setCoord(new CoordinateObject().setPoint(this.Coordinate_13_100_point))
+                        .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_13_101_point))))))
+                .addChild(new HAnimJointObject("hanim_r_metatarsophalangeal").setName("r_metatarsophalangeal").setCenter(-3.854,3.64,0.7402)
+                  .addChild(new HAnimSegmentObject("hanim_r_middistal").setName("r_middistal")
+                    .addChild(new TransformObject().setTranslation(-3.854,3.64,0.7402)
+                      .addChild(new ShapeObject()
+                        .setAppearance(new AppearanceObject()
+                          .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                          .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                        .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_13_109_coordIndex).setTexCoordIndex(this.IndexedFaceSet_13_109_texCoordIndex)
+                          .setCoord(new CoordinateObject().setPoint(this.Coordinate_14_109_point))
+                          .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_14_110_point))))))))))
+          .addChild(new HAnimJointObject("hanim_vl5").setName("vl5").setCenter(0.0,40.23,-0.8527)
+            .addChild(new HAnimSegmentObject("hanim_l5").setName("l5")
+              .addChild(new TransformObject().setTranslation(0.0,40.23,-0.8527)
+                .addChild(new ShapeObject()
+                  .setAppearance(new AppearanceObject()
+                    .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                    .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                  .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setTexCoordIndex(this.IndexedFaceSet_10_122_texCoordIndex).setCoordIndex(this.IndexedFaceSet_10_122_coordIndex)
+                    .setCoord(new CoordinateObject().setPoint(this.Coordinate_11_122_point))
+                    .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_11_123_point))))))
+            .addChild(new HAnimJointObject("hanim_skullbase").setName("skullbase").setCenter(0.0,57.43,-0.6863)
+              .addChild(new HAnimSegmentObject("hanim_skull").setName("skull")
+                .addChild(new TransformObject().setTranslation(0.0,57.43,-0.6863)
+                  .addChild(new ShapeObject()
+                    .setAppearance(new AppearanceObject()
+                      .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                      .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                    .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setTexCoordIndex(this.IndexedFaceSet_11_131_texCoordIndex).setCoordIndex(this.IndexedFaceSet_11_131_coordIndex)
+                      .setCoord(new CoordinateObject().setPoint(this.Coordinate_12_131_point))
+                      .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_12_132_point)))))))
+            .addChild(new HAnimJointObject("hanim_l_shoulder").setName("l_shoulder").setCenter(5.975,52.0,-0.1452)
+              .addChild(new HAnimSegmentObject("hanim_l_upperarm").setName("l_upperarm")
+                .addChild(new TransformObject().setTranslation(5.975,52.0,-0.1452)
+                  .addChild(new ShapeObject()
+                    .setAppearance(new AppearanceObject()
+                      .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                      .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                    .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setTexCoordIndex(this.IndexedFaceSet_11_141_texCoordIndex).setCoordIndex(this.IndexedFaceSet_11_141_coordIndex)
+                      .setCoord(new CoordinateObject().setPoint(this.Coordinate_12_141_point))
+                      .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_12_142_point))))))
+              .addChild(new HAnimJointObject("hanim_l_elbow").setName("l_elbow").setCenter(8.093,40.38,-0.2502)
+                .addChild(new HAnimSegmentObject("hanim_l_forearm").setName("l_forearm")
+                  .addChild(new TransformObject().setTranslation(8.093,40.38,-0.2502)
+                    .addChild(new ShapeObject()
+                      .setAppearance(new AppearanceObject()
+                        .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                        .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                      .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_12_150_coordIndex).setTexCoordIndex(this.IndexedFaceSet_12_150_texCoordIndex)
+                        .setCoord(new CoordinateObject().setPoint(this.Coordinate_13_150_point))
+                        .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_13_151_point))))))
+                .addChild(new HAnimJointObject("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(7.808,31.46,-0.05849)
+                  .addChild(new HAnimSegmentObject("hanim_l_hand").setName("l_hand")
+                    .addChild(new TransformObject().setTranslation(7.808,31.46,-0.05849)
+                      .addChild(new ShapeObject()
+                        .setAppearance(new AppearanceObject()
+                          .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                          .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                        .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_13_159_coordIndex).setTexCoordIndex(this.IndexedFaceSet_13_159_texCoordIndex)
+                          .setCoord(new CoordinateObject().setPoint(this.Coordinate_14_159_point))
+                          .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_14_160_point)))))))))
+            .addChild(new HAnimJointObject("hanim_r_shoulder").setName("r_shoulder").setCenter(-5.975,52.0,-0.1452)
+              .addChild(new HAnimSegmentObject("hanim_r_upperarm").setName("r_upperarm")
+                .addChild(new TransformObject().setTranslation(-5.975,52.0,-0.1452)
+                  .addChild(new ShapeObject()
+                    .setAppearance(new AppearanceObject()
+                      .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                      .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                    .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_11_171_coordIndex).setTexCoordIndex(this.IndexedFaceSet_11_171_texCoordIndex)
+                      .setCoord(new CoordinateObject().setPoint(this.Coordinate_12_171_point))
+                      .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_12_172_point))))))
+              .addChild(new HAnimJointObject("hanim_r_elbow").setName("r_elbow").setCenter(-8.093,40.38,-0.2502)
+                .addChild(new HAnimSegmentObject("hanim_r_forearm").setName("r_forearm")
+                  .addChild(new TransformObject().setTranslation(-8.093,40.38,-0.2502)
+                    .addChild(new ShapeObject()
+                      .setAppearance(new AppearanceObject()
+                        .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                        .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                      .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_12_180_coordIndex).setTexCoordIndex(this.IndexedFaceSet_12_180_texCoordIndex)
+                        .setCoord(new CoordinateObject().setPoint(this.Coordinate_13_180_point))
+                        .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_13_181_point))))))
+                .addChild(new HAnimJointObject("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-7.808,31.46,-0.05849)
+                  .addChild(new HAnimSegmentObject("hanim_r_hand").setName("r_hand")
+                    .addChild(new TransformObject().setTranslation(-7.808,31.46,-0.05849)
+                      .addChild(new ShapeObject()
+                        .setAppearance(new AppearanceObject()
+                          .setMaterial(new MaterialObject().setDiffuseColor(0.588,0.588,0.588))
+                          .setTexture(new ImageTextureObject().setUSE("AnnexC01JinTextureAtlas")))
+                        .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_13_189_coordIndex).setTexCoordIndex(this.IndexedFaceSet_13_189_texCoordIndex)
+                          .setCoord(new CoordinateObject().setPoint(this.Coordinate_14_189_point))
+                          .setTexCoord(new TextureCoordinateObject().setPoint(this.TextureCoordinate_14_190_point)))))))))))))
+    .addChild(new GroupObject("KeyframeAnimation")
+      .addChild(new TimeSensorObject("KeyframeTimer").setCycleInterval(8.033494).setLoop(true))
+      .addChild(new PositionInterpolatorObject("Keyframe_HumanoidRoot").setKey(this.Keyframe_HumanoidRoot_4_203_key).setKeyValue(this.Keyframe_HumanoidRoot_4_203_keyValue))
+      .addChild(new OrientationInterpolatorObject("Keyframe_HumanoidRoot").setKeyValue(this.Keyframe_HumanoidRoot_4_204_keyValue).setKey(this.Keyframe_HumanoidRoot_4_204_key))
+      .addChild(new OrientationInterpolatorObject("Keyframe_sacroiliac").setKey(this.Keyframe_sacroiliac_4_205_key).setKeyValue(this.Keyframe_sacroiliac_4_205_keyValue))
+      .addChild(new OrientationInterpolatorObject("Keyframe_l_shoulder").setKey(this.Keyframe_l_shoulder_4_206_key).setKeyValue(this.Keyframe_l_shoulder_4_206_keyValue))
+      .addChild(new OrientationInterpolatorObject("Keyframe_l_elbow").setKeyValue(this.Keyframe_l_elbow_4_207_keyValue).setKey(this.Keyframe_l_elbow_4_207_key))
+      .addChild(new OrientationInterpolatorObject("Keyframe_l_radiocarpal").setKeyValue(this.Keyframe_l_radiocarpal_4_208_keyValue).setKey(this.Keyframe_l_radiocarpal_4_208_key))
+      .addChild(new OrientationInterpolatorObject("Keyframe_r_shoulder").setKey(this.Keyframe_r_shoulder_4_209_key).setKeyValue(this.Keyframe_r_shoulder_4_209_keyValue))
+      .addChild(new OrientationInterpolatorObject("Keyframe_r_elbow").setKey(this.Keyframe_r_elbow_4_210_key).setKeyValue(this.Keyframe_r_elbow_4_210_keyValue))
+      .addChild(new OrientationInterpolatorObject("Keyframe_r_radiocarpal").setKeyValue(this.Keyframe_r_radiocarpal_4_211_keyValue).setKey(this.Keyframe_r_radiocarpal_4_211_key))
+      .addChild(new OrientationInterpolatorObject("Keyframe_vl5").setKeyValue(this.Keyframe_vl5_4_212_keyValue).setKey(this.Keyframe_vl5_4_212_key))
+      .addChild(new OrientationInterpolatorObject("Keyframe_skullbase").setKeyValue(this.Keyframe_skullbase_4_213_keyValue).setKey(this.Keyframe_skullbase_4_213_key))
+      .addChild(new OrientationInterpolatorObject("Keyframe_l_hip").setKey(this.Keyframe_l_hip_4_214_key).setKeyValue(this.Keyframe_l_hip_4_214_keyValue))
+      .addChild(new OrientationInterpolatorObject("Keyframe_l_knee").setKey(this.Keyframe_l_knee_4_215_key).setKeyValue(this.Keyframe_l_knee_4_215_keyValue))
+      .addChild(new OrientationInterpolatorObject("Keyframe_l_talocrural").setKeyValue(this.Keyframe_l_talocrural_4_216_keyValue).setKey(this.Keyframe_l_talocrural_4_216_key))
+      .addChild(new OrientationInterpolatorObject("Keyframe_l_metatarsophalangeal").setKeyValue(this.Keyframe_l_metatarsophalangeal_4_217_keyValue).setKey(this.Keyframe_l_metatarsophalangeal_4_217_key))
+      .addChild(new OrientationInterpolatorObject("Keyframe_r_hip").setKey(this.Keyframe_r_hip_4_218_key).setKeyValue(this.Keyframe_r_hip_4_218_keyValue))
+      .addChild(new OrientationInterpolatorObject("Keyframe_r_knee").setKey(this.Keyframe_r_knee_4_219_key).setKeyValue(this.Keyframe_r_knee_4_219_keyValue))
+      .addChild(new OrientationInterpolatorObject("Keyframe_r_talocrural").setKeyValue(this.Keyframe_r_talocrural_4_220_keyValue).setKey(this.Keyframe_r_talocrural_4_220_key))
+      .addChild(new OrientationInterpolatorObject("Keyframe_r_metatarsophalangeal").setKeyValue(this.Keyframe_r_metatarsophalangeal_4_221_keyValue).setKey(this.Keyframe_r_metatarsophalangeal_4_221_key))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_HumanoidRoot").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_HumanoidRoot").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_sacroiliac").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_shoulder").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_elbow").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_radiocarpal").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_shoulder").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_elbow").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_radiocarpal").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_vl5").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_skullbase").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_hip").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_knee").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_talocrural").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_l_metatarsophalangeal").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_hip").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_knee").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_talocrural").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("KeyframeTimer").setFromField("fraction_changed").setToNode("Keyframe_r_metatarsophalangeal").setToField("set_fraction"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_HumanoidRoot").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("translation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_HumanoidRoot").setFromField("value_changed").setToNode("hanim_HumanoidRoot").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_sacroiliac").setFromField("value_changed").setToNode("hanim_sacroiliac").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_l_shoulder").setFromField("value_changed").setToNode("hanim_l_shoulder").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_l_elbow").setFromField("value_changed").setToNode("hanim_l_elbow").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_l_radiocarpal").setFromField("value_changed").setToNode("hanim_l_radiocarpal").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_r_shoulder").setFromField("value_changed").setToNode("hanim_r_shoulder").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_r_elbow").setFromField("value_changed").setToNode("hanim_r_elbow").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_r_radiocarpal").setFromField("value_changed").setToNode("hanim_r_radiocarpal").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_vl5").setFromField("value_changed").setToNode("hanim_vl5").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_skullbase").setFromField("value_changed").setToNode("hanim_skullbase").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_l_hip").setFromField("value_changed").setToNode("hanim_l_hip").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_l_knee").setFromField("value_changed").setToNode("hanim_l_knee").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_l_talocrural").setFromField("value_changed").setToNode("hanim_l_talocrural").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_l_talocrural").setFromField("value_changed").setToNode("hanim_l_metatarsophalangeal").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_r_hip").setFromField("value_changed").setToNode("hanim_r_hip").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_r_knee").setFromField("value_changed").setToNode("hanim_r_knee").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_l_talocrural").setFromField("value_changed").setToNode("hanim_r_talocrural").setToField("rotation"))
+      .addChild(new ROUTEObject().setFromNode("Keyframe_l_talocrural").setFromField("value_changed").setToNode("hanim_r_metatarsophalangeal").setToField("rotation"))));
+  },
+  // end of initialize() method
+
+
+  /** Provide a shallow copy of the X3D model.
+   * @return NeedClassName model
+   */
+  getX3dModel : function()
+  {	  
+	  return this.x3dModel;
+  },
+  
+  /** Indicate X3DJSAIL validation results for this X3D model.
+   * @return validation results plus exception information, if any
+   */
+  validateSelf : function()
+  {
+	var       metaResult = "";
+	var validationResult = "";
+	var  exceptionResult = "";
+	try
+	{
+		this.initialize();
+		
+		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null))
+		{
+			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
+			return validationResult;
+		}
+		// first list informational meta elements of interest
+		var metaList = this.getX3dModel().getHead().getMetaList();
+		for (var m in metaList) {
+			meta = metaList[m];
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
+			{
+				metaResult += meta.toStringX3D();
+			}
+		}
+		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
+	}
+	catch (e)
+	{
+		exceptionResult = e; // report exception failures, if any
+	}
+	if  (metaResult === "" && exceptionResult === "" && validationResult === "")
+	     return "success";
+	else
+	{
+		var returnMessage = metaResult;
+		if  (exceptionResult !== "" && validationResult !== "")
+			returnMessage += "\n*** ";
+		returnMessage += exceptionResult;
+		if  (exceptionResult === "" && validationResult !== "")
+			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
+		returnMessage += validationResult;
+		return returnMessage;
+	}
+  },
+    /** Default main() method provided for test purposes.
+     * @param argv input parameters
+     */
+    main : function (argv)
+    {
+		var testObject = new NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
+	}
+}
+new NeedClassName().main();

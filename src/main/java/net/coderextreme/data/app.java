@@ -81,16 +81,16 @@ public class app {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("4.0")
       .setHead(new headObject()
-        .addMeta(new metaObject().setContent("Carlson, I").setName("John W"))
-        .addMeta(new metaObject().setContent("Carlson, II").setName("John A"))
-        .addMeta(new metaObject().setContent("Carlson, III").setName("John R")))
+        .addMeta(new metaObject().setName("John W").setContent("Carlson, I"))
+        .addMeta(new metaObject().setName("John A").setContent("Carlson, II"))
+        .addMeta(new metaObject().setName("John R").setContent("Carlson, III")))
       .setScene(new SceneObject()
-        .addChild(new GroupObject().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setDisplayBBox(false).setVisible(true)
-          .addChild(new ShapeObject().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setDisplayBBox(false).setVisible(true)
+        .addChild(new GroupObject()
+          .addChild(new ShapeObject()
             .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setAmbientIntensity(0.2f).setDiffuseColor(new float[] {1f,0f,0f}).setEmissiveColor(new float[] {0f,0f,0f}).setShininess(0.2f).setSpecularColor(new float[] {0f,0f,0f}).setTransparency(0f)))
-            .setGeometry(new BoxObject().setSize(new float[] {2f,2f,2f}).setSolid(true))))
-        .addChild(new TransformObject().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setCenter(new float[] {0f,0f,0f}).setDisplayBBox(false).setRotation(new float[] {7f,8f,9f,3.14f}).setScale(new float[] {4f,5f,6f}).setScaleOrientation(new float[] {0f,0f,1f,0f}).setTranslation(new float[] {1f,2f,3f}).setVisible(true)))      ;
+              .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,0f,0f})))
+            .setGeometry(new BoxObject())))
+        .addChild(new TransformObject().setRotation(new float[] {7f,8f,9f,3.14f}).setScale(new float[] {4f,5f,6f}).setTranslation(new float[] {1f,2f,3f})))      ;
     return X3D0;
     }
 }

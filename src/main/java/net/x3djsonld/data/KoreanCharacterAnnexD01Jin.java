@@ -136,327 +136,181 @@ public class KoreanCharacterAnnexD01Jin
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setSpeed(1.5f))
     .addChild(new ViewpointObject().setDescription("AnnexD01Jin").setCenterOfRotation(0.0f,1.0f,0.0f).setPosition(0.0f,1.0f,3.0f))
-    .addChild(new HAnimHumanoidObject("hanim_AnnexD01Jin").setName("AnnexD01Jin").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimHumanoid displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setInfo(new String[] {"humanoidVersion=2.0"}).setJointBindingPositions(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f})).setJointBindingRotations(new MFRotationObject(new float[] {0.0f,0.0f,1.0f,0.0f})).setJointBindingScales(new MFVec3fObject(new float[] {1.0f,1.0f,1.0f})).setLoa(-1).setScale(0.0225f,0.0225f,0.0225f).setSkeletalConfiguration("BASIC").setVersion("2.0")
-      .addSkeleton(new HAnimJointObject("hanim_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0f,30.53f,-0.7076f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-        .addChild(new HAnimSegmentObject("hanim_sacrum").setName("sacrum").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-          .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.0f,30.53f,-0.7076f)
-            .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+    .addChild(new HAnimHumanoidObject("hanim_AnnexD01Jin").setName("AnnexD01Jin").setInfo(new String[] {"humanoidVersion=2.0"}).setJointBindingPositions(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f})).setJointBindingRotations(new MFRotationObject(new float[] {0.0f,0.0f,1.0f,0.0f})).setJointBindingScales(new MFVec3fObject(new float[] {1.0f,1.0f,1.0f})).setLoa(-1).setScale(0.0225f,0.0225f,0.0225f).setSkeletalConfiguration("BASIC").setVersion("2.0")
+      .addSkeleton(new HAnimJointObject("hanim_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0f,30.53f,-0.7076f)
+        .addChild(new HAnimSegmentObject("hanim_sacrum").setName("sacrum")
+          .addChild(new TransformObject().setTranslation(0.0f,30.53f,-0.7076f)
+            .addChild(new ShapeObject()
               .setAppearance(new AppearanceObject()
                 .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                 .setTexture(new ImageTextureObject("Annex01JinTextureAtlas").setUrl(new String[] {"Jin.png","http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/Jin.png"})))
               .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_8_24_coordIndex()).setTexCoordIndex(getIndexedFaceSet_8_24_texCoordIndex())
                 .setCoord(new CoordinateObject().setPoint(getCoordinate_9_24_point()))
                 .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.6211f,0.5754f,0.7851f,0.572f,0.7614f,0.572f,0.6907f,0.5698f,0.62f,0.5698f,0.6158f,0.5702f,0.5451f,0.5702f,0.4167f,0.5698f,0.5451f,0.5702f,0.6158f,0.5702f,0.62f,0.5698f,0.6907f,0.5698f,0.7614f,0.572f,0.8036f,0.5346f,0.7761f,0.5346f,0.6989f,0.4838f,0.6219f,0.4428f,0.6154f,0.4438f,0.5492f,0.4639f,0.4166f,0.5346f,0.5492f,0.4639f,0.6154f,0.4438f,0.6219f,0.4428f,0.6989f,0.4838f,0.7761f,0.5346f,0.7912f,0.4044f,0.7635f,0.4044f,0.7042f,0.3925f,0.6194f,0.3907f,0.6148f,0.3907f,0.545f,0.3974f,0.4163f,0.4938f,0.545f,0.3974f,0.6148f,0.3907f,0.6194f,0.3907f,0.7042f,0.3925f,0.7635f,0.4044f,0.795f,0.3772f,0.7662f,0.3772f,0.6945f,0.3645f,0.6236f,0.3695f,0.616f,0.3695f,0.5438f,0.378f,0.416f,0.453f,0.5438f,0.378f,0.616f,0.3695f,0.6236f,0.3695f,0.6945f,0.3645f,0.7662f,0.3772f,0.7887f,0.3451f,0.7635f,0.3451f,0.698f,0.3508f,0.6262f,0.3508f,0.6297f,0.3503f,0.5389f,0.3503f,0.4181f,0.3884f,0.5389f,0.3503f,0.6297f,0.3503f,0.6262f,0.3508f,0.698f,0.3508f,0.7635f,0.3451f,0.6237f,0.3398f})))))))
-        .addChild(new HAnimJointObject("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0f,35.8f,-0.7076f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-          .addChild(new HAnimSegmentObject("hanim_pelvis").setName("pelvis").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-            .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.0f,35.8f,-0.7076f)
-              .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+        .addChild(new HAnimJointObject("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0f,35.8f,-0.7076f)
+          .addChild(new HAnimSegmentObject("hanim_pelvis").setName("pelvis")
+            .addChild(new TransformObject().setTranslation(0.0f,35.8f,-0.7076f)
+              .addChild(new ShapeObject()
                 .setAppearance(new AppearanceObject()
                   .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                   .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                 .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_9_33_coordIndex()).setTexCoordIndex(getIndexedFaceSet_9_33_texCoordIndex())
                   .setCoord(new CoordinateObject().setPoint(getCoordinate_10_33_point()))
                   .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.6211f,0.5754f,0.7851f,0.572f,0.7614f,0.572f,0.6907f,0.5698f,0.62f,0.5698f,0.6158f,0.5702f,0.5451f,0.5702f,0.4167f,0.5698f,0.5451f,0.5702f,0.6158f,0.5702f,0.62f,0.5698f,0.6907f,0.5698f,0.7614f,0.572f,0.8036f,0.5346f,0.7761f,0.5346f,0.6989f,0.4838f,0.6219f,0.4428f,0.6154f,0.4438f,0.5492f,0.4639f,0.4166f,0.5346f,0.5492f,0.4639f,0.6154f,0.4438f,0.6219f,0.4428f,0.6989f,0.4838f,0.7761f,0.5346f,0.7912f,0.4044f,0.7635f,0.4044f,0.7042f,0.3925f,0.6194f,0.3907f,0.6148f,0.3907f,0.545f,0.3974f,0.4163f,0.4938f,0.545f,0.3974f,0.6148f,0.3907f,0.6194f,0.3907f,0.7042f,0.3925f,0.7635f,0.4044f,0.795f,0.3772f,0.7662f,0.3772f,0.6945f,0.3645f,0.6236f,0.3695f,0.616f,0.3695f,0.5438f,0.378f,0.416f,0.453f,0.5438f,0.378f,0.616f,0.3695f,0.6236f,0.3695f,0.6945f,0.3645f,0.7662f,0.3772f,0.7887f,0.3451f,0.7635f,0.3451f,0.698f,0.3508f,0.6262f,0.3508f,0.6297f,0.3503f,0.5389f,0.3503f,0.4181f,0.3884f,0.5389f,0.3503f,0.6297f,0.3503f,0.6262f,0.3508f,0.698f,0.3508f,0.7635f,0.3451f,0.6237f,0.3398f})))))))
-          .addChild(new HAnimJointObject("hanim_l_hip").setName("l_hip").setCenter(4.207f,32.02f,-0.8155f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-            .addChild(new HAnimSegmentObject("hanim_l_thigh").setName("l_thigh").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(4.207f,32.02f,-0.8155f)
-                .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+          .addChild(new HAnimJointObject("hanim_l_hip").setName("l_hip").setCenter(4.207f,32.02f,-0.8155f)
+            .addChild(new HAnimSegmentObject("hanim_l_thigh").setName("l_thigh")
+              .addChild(new TransformObject().setTranslation(4.207f,32.02f,-0.8155f)
+                .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                     .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                   .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_10_42_coordIndex()).setTexCoordIndex(getIndexedFaceSet_10_42_texCoordIndex())
                     .setCoord(new CoordinateObject().setPoint(getCoordinate_11_42_point()))
                     .setTexCoord(new TextureCoordinateObject().setPoint(getTextureCoordinate_11_43_point()))))))
-            .addChild(new HAnimJointObject("hanim_l_knee").setName("l_knee").setCenter(4.116f,17.26f,-0.8639f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new HAnimSegmentObject("hanim_l_calf").setName("l_calf").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(4.116f,17.26f,-0.8639f)
-                  .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new HAnimJointObject("hanim_l_knee").setName("l_knee").setCenter(4.116f,17.26f,-0.8639f)
+              .addChild(new HAnimSegmentObject("hanim_l_calf").setName("l_calf")
+                .addChild(new TransformObject().setTranslation(4.116f,17.26f,-0.8639f)
+                  .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                       .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                     .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_11_51_coordIndex()).setTexCoordIndex(getIndexedFaceSet_11_51_texCoordIndex())
                       .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.7186f,0.9688f,0.0234f,0.3632f,0.9688f,0.9354f,-0.4353f,0.9688f,1.12f,-1.076f,0.9688f,0.603f,-1.076f,0.9688f,-0.3911f,-0.4353f,0.9688f,-0.9079f,0.3632f,0.9688f,-0.7235f,2.337f,-4.613f,0.0234f,1.46f,-3.622f,2.019f,1.236f,-1.628f,2.42f,2.118f,-1.912f,0.0234f,-0.8111f,-3.622f,2.567f,-0.7468f,-1.628f,2.903f,-2.254f,-4.613f,1.255f,-2.337f,-1.912f,0.9793f,-2.254f,-5.383f,-1.368f,-2.337f,-1.912f,-0.9325f,-0.8111f,-5.383f,-2.903f,-0.7468f,-1.912f,-2.368f,1.46f,-5.383f,-2.355f,1.236f,-1.912f,-1.885f,1.121f,-0.0032f,1.896f,1.933f,-0.0032f,0.0234f,-0.7056f,-0.0032f,2.318f,-2.17f,-0.0032f,1.136f,-2.17f,-0.0032f,-0.9244f,-0.7056f,-0.0032f,-2.061f,1.121f,-0.0032f,-1.64f,1.607f,-12.92f,0.0032f,0.9216f,-12.91f,1.565f,-0.619f,-12.91f,1.951f,-1.854f,-12.92f,0.8701f,-1.854f,-12.94f,-0.9762f,-0.619f,-12.94f,-1.742f,0.9216f,-12.94f,-1.356f,0.7072f,-14.53f,0.0239f,0.3604f,-14.53f,0.814f,-0.4188f,-14.53f,1.009f,-1.044f,-14.53f,0.4624f,-1.044f,-14.54f,-0.4714f,-0.4188f,-14.54f,-0.8587f,0.3604f,-14.54f,-0.6635f})))
                       .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.9309f,0.5848f,0.919f,0.5848f,0.8921f,0.5848f,0.8706f,0.5848f,0.8706f,0.5848f,0.8921f,0.5848f,0.919f,0.5848f,0.9845f,0.5321f,0.955f,0.5475f,0.9491f,0.5599f,0.9788f,0.5571f,0.8787f,0.5475f,0.8825f,0.5599f,0.8302f,0.5321f,0.8291f,0.5571f,0.8302f,0.52f,0.8291f,0.5571f,0.8787f,0.52f,0.8825f,0.5571f,0.955f,0.52f,0.9491f,0.5571f,0.9444f,0.5755f,0.9717f,0.5755f,0.8831f,0.5755f,0.8339f,0.5755f,0.8339f,0.5755f,0.8831f,0.5755f,0.9444f,0.5755f,0.9679f,0.2444f,0.9449f,0.2445f,0.8931f,0.2445f,0.8516f,0.2444f,0.8516f,0.2442f,0.8931f,0.2442f,0.9449f,0.2442f,0.9372f,0.2243f,0.9255f,0.2244f,0.8993f,0.2244f,0.8783f,0.2243f,0.8783f,0.2243f,0.8993f,0.2243f,0.9255f,0.2243f})))))))
-              .addChild(new HAnimJointObject("hanim_l_talocrural").setName("l_talocrural").setCenter(3.854f,3.939f,-0.7038f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new HAnimSegmentObject("hanim_l_hindfoot").setName("l_hindfoot").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(3.854f,3.939f,-0.7038f)
-                    .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new HAnimJointObject("hanim_l_talocrural").setName("l_talocrural").setCenter(3.854f,3.939f,-0.7038f)
+                .addChild(new HAnimSegmentObject("hanim_l_hindfoot").setName("l_hindfoot")
+                  .addChild(new TransformObject().setTranslation(3.854f,3.939f,-0.7038f)
+                    .addChild(new ShapeObject()
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                         .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                       .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_12_60_coordIndex()).setTexCoordIndex(getIndexedFaceSet_12_60_texCoordIndex())
                         .setCoord(new CoordinateObject().setPoint(getCoordinate_13_60_point()))
                         .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.3819f,0.171f,0.4216f,0.1651f,0.3819f,0.171f,0.4216f,0.1651f,0.3819f,0.171f,0.3819f,0.171f,0.4637f,0.1714f,0.4216f,0.1651f,0.4637f,0.1714f,0.4216f,0.1651f,0.3819f,0.171f,0.3819f,0.171f,0.3819f,0.171f,0.3819f,0.171f,0.4637f,0.1714f,0.4637f,0.1714f,0.3861f,0.1398f,0.4244f,0.1312f,0.4394f,0.1472f,0.3836f,0.1404f,0.3836f,0.1404f,0.3861f,0.1398f,0.4244f,0.1312f,0.4394f,0.1472f,0.3836f,0.1404f,0.3861f,0.1398f,0.4244f,0.1312f,0.4394f,0.1472f,0.4637f,0.1714f,0.4394f,0.1472f,0.4244f,0.1312f,0.3861f,0.1398f,0.3873f,0.0706f,0.3871f,0.0221f,0.3873f,0.0706f,0.3871f,0.0221f,0.3871f,0.0221f,0.3861f,0.1398f,0.3836f,0.1404f,0.3873f,0.0706f,0.3873f,0.0706f,0.3836f,0.1404f,0.3861f,0.1398f,0.3871f,0.0221f,0.3871f,0.0221f,0.3871f,0.0221f,0.433f,0.0595f,0.4411f,0.0186f,0.4244f,0.1312f,0.433f,0.0595f,0.4244f,0.1312f,0.4411f,0.0186f,0.4411f,0.0186f,0.4411f,0.0186f,0.3861f,0.1398f,0.3836f,0.1404f,0.3861f,0.1398f,0.4244f,0.1312f,0.4244f,0.1312f,0.4411f,0.0186f,0.433f,0.0595f,0.4244f,0.1312f,0.4244f,0.1312f,0.433f,0.0595f,0.4411f,0.0186f,0.4411f,0.0186f})))))))
-                .addChild(new HAnimJointObject("hanim_l_metatarsophalangeal").setName("l_metatarsophalangeal").setCenter(3.854f,3.64f,0.7402f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new HAnimSegmentObject("hanim_l_middistal").setName("l_middistal").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(3.854f,3.64f,0.7402f)
-                      .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                .addChild(new HAnimJointObject("hanim_l_metatarsophalangeal").setName("l_metatarsophalangeal").setCenter(3.854f,3.64f,0.7402f)
+                  .addChild(new HAnimSegmentObject("hanim_l_middistal").setName("l_middistal")
+                    .addChild(new TransformObject().setTranslation(3.854f,3.64f,0.7402f)
+                      .addChild(new ShapeObject()
                         .setAppearance(new AppearanceObject()
                           .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                           .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                         .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(new int[] {3,,4,,10,,-1,,3,,10,,11,,-1,,0,,3,,11,,-1,,1,,0,,11,,-1,,11,,12,,1,,-1,,1,,12,,16,,-1,,16,,9,,1,,-1,,2,,17,,10,,-1,,10,,4,,2,,-1,,13,,8,,6,,-1,,14,,13,,6,,-1,,5,,14,,6,,-1,,7,,15,,14,,-1,,14,,5,,7,,-1,,7,,9,,16,,-1,,16,,15,,7,,-1,,2,,8,,13,,-1,,13,,17,,2,,-1,,20,,21,,22,,-1,,20,,22,,23,,-1,,20,,23,,24,,-1,,19,,20,,24,,-1,,19,,24,,18,,-1,,0,,1,,19,,-1,,19,,18,,0,,-1,,1,,9,,20,,-1,,20,,19,,1,,-1,,9,,7,,21,,-1,,21,,20,,9,,-1,,7,,5,,22,,-1,,22,,21,,7,,-1,,5,,6,,23,,-1,,23,,22,,5,,-1,,6,,3,,24,,-1,,24,,23,,6,,-1,,3,,0,,18,,-1,,18,,24,,3,,-1,,6,,8,,2,,-1,,3,,6,,2,,-1,,4,,3,,2,,-1,,28,,26,,25,,-1,,25,,29,,28,,-1,,35,,27,,26,,-1,,26,,28,,35,,-1,,27,,35,,40,,-1,,25,,26,,31,,-1,,31,,30,,25,,-1,,31,,26,,27,,-1,,27,,32,,31,,-1,,32,,27,,40,,-1,,40,,41,,32,,-1,,42,,29,,25,,-1,,25,,30,,42,,-1,,28,,29,,34,,-1,,34,,33,,28,,-1,,35,,28,,33,,-1,,33,,36,,35,,-1,,36,,40,,35,,-1,,34,,37,,38,,-1,,38,,33,,34,,-1,,38,,39,,36,,-1,,36,,33,,38,,-1,,39,,41,,40,,-1,,40,,36,,39,,-1,,42,,37,,34,,-1,,34,,29,,42,,-1}).setTexCoordIndex(getIndexedFaceSet_13_69_texCoordIndex())
                           .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {2.927f,-1.627f,-1.013f,2.089f,-3.648f,-1.013f,0.0f,0.2797f,0.3064f,2.045f,-0.3017f,-1.013f,1.695f,0.0029f,-0.0151f,-2.927f,-1.627f,-1.013f,-2.045f,-0.3017f,-1.013f,-2.089f,-3.648f,-1.013f,-1.695f,0.0029f,-0.0151f,0.0f,-3.648f,-1.013f,1.74f,-0.3226f,1.158f,2.661f,-1.866f,0.9192f,2.14f,-3.648f,0.9192f,-1.74f,-0.3226f,1.158f,-2.661f,-1.866f,0.9192f,-2.14f,-3.648f,0.9192f,0.0f,-3.648f,0.9192f,0.0f,-0.0274f,1.661f,2.405f,-1.656f,-1.915f,1.75f,-2.942f,-1.915f,0.0f,-2.942f,-1.915f,-1.75f,-2.942f,-1.915f,-2.405f,-1.656f,-1.915f,-1.742f,-0.5681f,-1.915f,1.742f,-0.5681f,-1.915f,1.784f,-0.648f,2.332f,2.216f,-2.267f,4.144f,2.216f,-3.648f,3.776f,0.0f,-2.267f,5.463f,0.0f,-0.5463f,3.95f,1.74f,-0.3226f,1.158f,2.661f,-1.866f,0.9192f,2.14f,-3.648f,0.9192f,-2.216f,-2.267f,4.144f,-1.784f,-0.648f,2.332f,0.0f,-3.648f,5.096f,-2.216f,-3.648f,3.776f,-1.74f,-0.3226f,1.158f,-2.661f,-1.866f,0.9192f,-2.14f,-3.648f,0.9192f,0.0f,-3.648f,3.776f,0.0f,-3.648f,0.9192f,0.0f,-0.0274f,1.661f})))
                           .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.433f,0.0595f,0.4411f,0.0186f,0.4637f,0.1714f,0.4411f,0.0186f,0.4244f,0.1312f,0.4394f,0.1472f,0.433f,0.0595f,0.4244f,0.1312f,0.4411f,0.0186f,0.4637f,0.1714f,0.4394f,0.1472f,0.4411f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.4949f,0.0186f,0.4949f,0.0186f,0.4868f,0.1432f,0.4868f,0.1432f,0.433f,0.0595f,0.4411f,0.0186f,0.4411f,0.0186f,0.4411f,0.0186f,0.433f,0.0595f,0.4244f,0.1312f,0.4244f,0.1312f,0.532f,0.098f,0.5645f,0.0707f,0.4885f,0.102f,0.5026f,0.044f,0.5945f,0.0186f,0.5487f,0.0186f,0.5487f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.4949f,0.0186f,0.4868f,0.1432f,0.5645f,0.0707f,0.5026f,0.044f,0.4885f,0.102f,0.532f,0.098f,0.5945f,0.0186f,0.5487f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.5487f,0.0186f,0.4949f,0.0186f,0.4868f,0.1432f})))))))))))
-          .addChild(new HAnimJointObject("hanim_r_hip").setName("r_hip").setCenter(-4.207f,32.02f,-0.8155f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-            .addChild(new HAnimSegmentObject("hanim_r_thigh").setName("r_thigh").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-4.207f,32.02f,-0.8155f)
-                .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+          .addChild(new HAnimJointObject("hanim_r_hip").setName("r_hip").setCenter(-4.207f,32.02f,-0.8155f)
+            .addChild(new HAnimSegmentObject("hanim_r_thigh").setName("r_thigh")
+              .addChild(new TransformObject().setTranslation(-4.207f,32.02f,-0.8155f)
+                .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                     .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                   .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_10_82_coordIndex()).setTexCoordIndex(getIndexedFaceSet_10_82_texCoordIndex())
                     .setCoord(new CoordinateObject().setPoint(getCoordinate_11_82_point()))
                     .setTexCoord(new TextureCoordinateObject().setPoint(getTextureCoordinate_11_83_point()))))))
-            .addChild(new HAnimJointObject("hanim_r_knee").setName("r_knee").setCenter(-4.116f,17.26f,-0.8639f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new HAnimSegmentObject("hanim_r_calf").setName("r_calf").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-4.116f,17.26f,-0.8639f)
-                  .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new HAnimJointObject("hanim_r_knee").setName("r_knee").setCenter(-4.116f,17.26f,-0.8639f)
+              .addChild(new HAnimSegmentObject("hanim_r_calf").setName("r_calf")
+                .addChild(new TransformObject().setTranslation(-4.116f,17.26f,-0.8639f)
+                  .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                       .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                     .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_11_91_coordIndex()).setTexCoordIndex(getIndexedFaceSet_11_91_texCoordIndex())
                       .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.7186f,0.9688f,0.0234f,-0.3632f,0.9688f,0.9354f,0.4353f,0.9688f,1.12f,1.076f,0.9688f,0.603f,1.076f,0.9688f,-0.3911f,0.4353f,0.9688f,-0.9079f,-0.3632f,0.9688f,-0.7235f,-2.337f,-4.613f,0.0234f,-1.46f,-3.622f,2.019f,-1.236f,-1.628f,2.42f,-2.118f,-1.912f,0.0234f,0.8111f,-3.622f,2.567f,0.7468f,-1.628f,2.903f,2.254f,-4.613f,1.255f,2.337f,-1.912f,0.9793f,2.254f,-5.383f,-1.368f,2.337f,-1.912f,-0.9325f,0.8111f,-5.383f,-2.903f,0.7468f,-1.912f,-2.368f,-1.46f,-5.383f,-2.355f,-1.236f,-1.912f,-1.885f,-1.121f,-0.0032f,1.896f,-1.933f,-0.0032f,0.0234f,0.7056f,-0.0032f,2.318f,2.17f,-0.0032f,1.136f,2.17f,-0.0032f,-0.9244f,0.7056f,-0.0032f,-2.061f,-1.121f,-0.0032f,-1.64f,-1.607f,-12.92f,0.0032f,-0.9216f,-12.91f,1.565f,0.619f,-12.91f,1.951f,1.854f,-12.92f,0.8701f,1.854f,-12.94f,-0.9762f,0.619f,-12.94f,-1.742f,-0.9216f,-12.94f,-1.356f,-0.7072f,-14.53f,0.0239f,-0.3604f,-14.53f,0.814f,0.4188f,-14.53f,1.009f,1.044f,-14.53f,0.4624f,1.044f,-14.54f,-0.4714f,0.4188f,-14.54f,-0.8587f,-0.3604f,-14.54f,-0.6635f})))
                       .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.9309f,0.5848f,0.919f,0.5848f,0.8921f,0.5848f,0.8706f,0.5848f,0.8706f,0.5848f,0.8921f,0.5848f,0.919f,0.5848f,0.9845f,0.5321f,0.955f,0.5475f,0.9491f,0.5599f,0.9788f,0.5571f,0.8787f,0.5475f,0.8825f,0.5599f,0.8302f,0.5321f,0.8291f,0.5571f,0.8302f,0.52f,0.8291f,0.5571f,0.8787f,0.52f,0.8825f,0.5571f,0.955f,0.52f,0.9491f,0.5571f,0.9444f,0.5755f,0.9717f,0.5755f,0.8831f,0.5755f,0.8339f,0.5755f,0.8339f,0.5755f,0.8831f,0.5755f,0.9444f,0.5755f,0.9679f,0.2444f,0.9449f,0.2445f,0.8931f,0.2445f,0.8516f,0.2444f,0.8516f,0.2442f,0.8931f,0.2442f,0.9449f,0.2442f,0.9372f,0.2243f,0.9255f,0.2244f,0.8993f,0.2244f,0.8783f,0.2243f,0.8783f,0.2243f,0.8993f,0.2243f,0.9255f,0.2243f})))))))
-              .addChild(new HAnimJointObject("hanim_r_talocrural").setName("r_talocrural").setCenter(-3.854f,3.939f,-0.7038f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new HAnimSegmentObject("hanim_r_hindfoot").setName("r_hindfoot").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-3.854f,3.939f,-0.7038f)
-                    .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new HAnimJointObject("hanim_r_talocrural").setName("r_talocrural").setCenter(-3.854f,3.939f,-0.7038f)
+                .addChild(new HAnimSegmentObject("hanim_r_hindfoot").setName("r_hindfoot")
+                  .addChild(new TransformObject().setTranslation(-3.854f,3.939f,-0.7038f)
+                    .addChild(new ShapeObject()
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                         .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                       .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_12_100_coordIndex()).setTexCoordIndex(getIndexedFaceSet_12_100_texCoordIndex())
                         .setCoord(new CoordinateObject().setPoint(getCoordinate_13_100_point()))
                         .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.3819f,0.171f,0.4216f,0.1651f,0.3819f,0.171f,0.4216f,0.1651f,0.3819f,0.171f,0.3819f,0.171f,0.4637f,0.1714f,0.4216f,0.1651f,0.4637f,0.1714f,0.4216f,0.1651f,0.3819f,0.171f,0.3819f,0.171f,0.3819f,0.171f,0.3819f,0.171f,0.4637f,0.1714f,0.4637f,0.1714f,0.3861f,0.1398f,0.4244f,0.1312f,0.4394f,0.1472f,0.3836f,0.1404f,0.3836f,0.1404f,0.3861f,0.1398f,0.4244f,0.1312f,0.4394f,0.1472f,0.3836f,0.1404f,0.3861f,0.1398f,0.4244f,0.1312f,0.4394f,0.1472f,0.4637f,0.1714f,0.4394f,0.1472f,0.4244f,0.1312f,0.3861f,0.1398f,0.3873f,0.0706f,0.3871f,0.0221f,0.3873f,0.0706f,0.3871f,0.0221f,0.3871f,0.0221f,0.3861f,0.1398f,0.3836f,0.1404f,0.3873f,0.0706f,0.3873f,0.0706f,0.3836f,0.1404f,0.3861f,0.1398f,0.3871f,0.0221f,0.3871f,0.0221f,0.3871f,0.0221f,0.433f,0.0595f,0.4411f,0.0186f,0.4244f,0.1312f,0.433f,0.0595f,0.4244f,0.1312f,0.4411f,0.0186f,0.4411f,0.0186f,0.4411f,0.0186f,0.3861f,0.1398f,0.3836f,0.1404f,0.3861f,0.1398f,0.4244f,0.1312f,0.4244f,0.1312f,0.4411f,0.0186f,0.433f,0.0595f,0.4244f,0.1312f,0.4244f,0.1312f,0.433f,0.0595f,0.4411f,0.0186f,0.4411f,0.0186f})))))))
-                .addChild(new HAnimJointObject("hanim_r_metatarsophalangeal").setName("r_metatarsophalangeal").setCenter(-3.854f,3.64f,0.7402f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new HAnimSegmentObject("hanim_r_middistal").setName("r_middistal").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-3.854f,3.64f,0.7402f)
-                      .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                .addChild(new HAnimJointObject("hanim_r_metatarsophalangeal").setName("r_metatarsophalangeal").setCenter(-3.854f,3.64f,0.7402f)
+                  .addChild(new HAnimSegmentObject("hanim_r_middistal").setName("r_middistal")
+                    .addChild(new TransformObject().setTranslation(-3.854f,3.64f,0.7402f)
+                      .addChild(new ShapeObject()
                         .setAppearance(new AppearanceObject()
                           .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                           .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                         .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(new int[] {10,,4,,3,,-1,,11,,10,,3,,-1,,0,,11,,3,,-1,,1,,12,,11,,-1,,11,,0,,1,,-1,,1,,9,,16,,-1,,16,,12,,1,,-1,,2,,4,,10,,-1,,10,,17,,2,,-1,,6,,8,,13,,-1,,6,,13,,14,,-1,,5,,6,,14,,-1,,7,,5,,14,,-1,,14,,15,,7,,-1,,7,,15,,16,,-1,,16,,9,,7,,-1,,2,,17,,13,,-1,,13,,8,,2,,-1,,19,,18,,24,,-1,,22,,21,,20,,-1,,23,,22,,20,,-1,,24,,23,,20,,-1,,19,,24,,20,,-1,,0,,18,,19,,-1,,19,,1,,0,,-1,,1,,19,,20,,-1,,20,,9,,1,,-1,,9,,20,,21,,-1,,21,,7,,9,,-1,,7,,21,,22,,-1,,22,,5,,7,,-1,,5,,22,,23,,-1,,23,,6,,5,,-1,,6,,23,,24,,-1,,24,,3,,6,,-1,,3,,24,,18,,-1,,18,,0,,3,,-1,,2,,8,,6,,-1,,2,,6,,3,,-1,,4,,2,,3,,-1,,28,,29,,25,,-1,,25,,26,,28,,-1,,35,,28,,26,,-1,,26,,27,,35,,-1,,27,,40,,35,,-1,,25,,30,,31,,-1,,31,,26,,25,,-1,,31,,32,,27,,-1,,27,,26,,31,,-1,,32,,41,,40,,-1,,40,,27,,32,,-1,,42,,30,,25,,-1,,25,,29,,42,,-1,,28,,33,,34,,-1,,34,,29,,28,,-1,,35,,36,,33,,-1,,33,,28,,35,,-1,,36,,35,,40,,-1,,34,,33,,38,,-1,,38,,37,,34,,-1,,38,,33,,36,,-1,,36,,39,,38,,-1,,39,,36,,40,,-1,,40,,41,,39,,-1,,42,,29,,34,,-1,,34,,37,,42,,-1}).setTexCoordIndex(getIndexedFaceSet_13_109_texCoordIndex())
                           .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-2.927f,-1.627f,-1.013f,-2.089f,-3.648f,-1.013f,0.0f,0.2797f,0.3064f,-2.045f,-0.3017f,-1.013f,-1.695f,0.0029f,-0.0151f,2.927f,-1.627f,-1.013f,2.045f,-0.3017f,-1.013f,2.089f,-3.648f,-1.013f,1.695f,0.0029f,-0.0151f,0.0f,-3.648f,-1.013f,-1.74f,-0.3226f,1.158f,-2.661f,-1.866f,0.9192f,-2.14f,-3.648f,0.9192f,1.74f,-0.3226f,1.158f,2.661f,-1.866f,0.9192f,2.14f,-3.648f,0.9192f,0.0f,-3.648f,0.9192f,0.0f,-0.0274f,1.661f,-2.405f,-1.656f,-1.915f,-1.75f,-2.942f,-1.915f,0.0f,-2.942f,-1.915f,1.75f,-2.942f,-1.915f,2.405f,-1.656f,-1.915f,1.742f,-0.5681f,-1.915f,-1.742f,-0.5681f,-1.915f,-1.784f,-0.648f,2.332f,-2.216f,-2.267f,4.144f,-2.216f,-3.648f,3.776f,0.0f,-2.267f,5.463f,0.0f,-0.5463f,3.95f,-1.74f,-0.3226f,1.158f,-2.661f,-1.866f,0.9192f,-2.14f,-3.648f,0.9192f,2.216f,-2.267f,4.144f,1.784f,-0.648f,2.332f,0.0f,-3.648f,5.096f,2.216f,-3.648f,3.776f,1.74f,-0.3226f,1.158f,2.661f,-1.866f,0.9192f,2.14f,-3.648f,0.9192f,0.0f,-3.648f,3.776f,0.0f,-3.648f,0.9192f,0.0f,-0.0274f,1.661f})))
                           .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.433f,0.0595f,0.4411f,0.0186f,0.4637f,0.1714f,0.4411f,0.0186f,0.4244f,0.1312f,0.4394f,0.1472f,0.433f,0.0595f,0.4244f,0.1312f,0.4411f,0.0186f,0.4637f,0.1714f,0.4394f,0.1472f,0.4411f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.4949f,0.0186f,0.4949f,0.0186f,0.4868f,0.1432f,0.4868f,0.1432f,0.433f,0.0595f,0.4411f,0.0186f,0.4411f,0.0186f,0.4411f,0.0186f,0.433f,0.0595f,0.4244f,0.1312f,0.4244f,0.1312f,0.532f,0.098f,0.5645f,0.0707f,0.4885f,0.102f,0.5026f,0.044f,0.5945f,0.0186f,0.5487f,0.0186f,0.5487f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.4949f,0.0186f,0.4868f,0.1432f,0.5645f,0.0707f,0.5026f,0.044f,0.4885f,0.102f,0.532f,0.098f,0.5945f,0.0186f,0.5487f,0.0186f,0.464f,0.1246f,0.4607f,0.0558f,0.4904f,0.0166f,0.5487f,0.0186f,0.4949f,0.0186f,0.4868f,0.1432f})))))))))))
-          .addChild(new HAnimJointObject("hanim_vl5").setName("vl5").setCenter(0.0f,40.23f,-0.8527f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-            .addChild(new HAnimSegmentObject("hanim_l5").setName("l5").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.0f,40.23f,-0.8527f)
-                .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+          .addChild(new HAnimJointObject("hanim_vl5").setName("vl5").setCenter(0.0f,40.23f,-0.8527f)
+            .addChild(new HAnimSegmentObject("hanim_l5").setName("l5")
+              .addChild(new TransformObject().setTranslation(0.0f,40.23f,-0.8527f)
+                .addChild(new ShapeObject()
                   .setAppearance(new AppearanceObject()
                     .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                     .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                   .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_10_122_coordIndex()).setTexCoordIndex(getIndexedFaceSet_10_122_texCoordIndex())
                     .setCoord(new CoordinateObject().setPoint(getCoordinate_11_122_point()))
                     .setTexCoord(new TextureCoordinateObject().setPoint(getTextureCoordinate_11_123_point()))))))
-            .addChild(new HAnimJointObject("hanim_skullbase").setName("skullbase").setCenter(0.0f,57.43f,-0.6863f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new HAnimSegmentObject("hanim_skull").setName("skull").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(0.0f,57.43f,-0.6863f)
-                  .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new HAnimJointObject("hanim_skullbase").setName("skullbase").setCenter(0.0f,57.43f,-0.6863f)
+              .addChild(new HAnimSegmentObject("hanim_skull").setName("skull")
+                .addChild(new TransformObject().setTranslation(0.0f,57.43f,-0.6863f)
+                  .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                       .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                     .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_11_131_coordIndex()).setTexCoordIndex(getIndexedFaceSet_11_131_texCoordIndex())
                       .setCoord(new CoordinateObject().setPoint(getCoordinate_12_131_point()))
                       .setTexCoord(new TextureCoordinateObject().setPoint(getTextureCoordinate_12_132_point())))))))
-            .addChild(new HAnimJointObject("hanim_l_shoulder").setName("l_shoulder").setCenter(5.975f,52.0f,-0.1452f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new HAnimSegmentObject("hanim_l_upperarm").setName("l_upperarm").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(5.975f,52.0f,-0.1452f)
-                  .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new HAnimJointObject("hanim_l_shoulder").setName("l_shoulder").setCenter(5.975f,52.0f,-0.1452f)
+              .addChild(new HAnimSegmentObject("hanim_l_upperarm").setName("l_upperarm")
+                .addChild(new TransformObject().setTranslation(5.975f,52.0f,-0.1452f)
+                  .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                       .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                     .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_11_141_coordIndex()).setTexCoordIndex(getIndexedFaceSet_11_141_texCoordIndex())
                       .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {2.525f,1.246f,-1.68f,3.681f,1.236f,0.0337f,2.408f,1.247f,1.663f,0.4657f,1.264f,0.9556f,0.5379f,1.264f,-1.11f,2.743f,-0.0209f,-2.31f,4.339f,-0.0351f,0.057f,2.581f,-0.0195f,2.307f,-0.1009f,0.0044f,1.33f,-0.0013f,0.0035f,-1.523f,2.72f,-2.534f,-2.31f,4.317f,-2.548f,0.057f,2.559f,-2.533f,2.307f,-0.1233f,-2.509f,1.33f,-0.0237f,-2.51f,-1.523f,2.759f,-3.609f,-2.442f,4.448f,-3.624f,0.0619f,2.588f,-3.608f,2.442f,-0.2497f,-3.583f,1.409f,-0.1443f,-3.583f,-1.61f,2.245f,-1.758f,-1.939f,3.465f,-1.769f,-0.4543f,2.834f,-1.763f,1.629f,1.223f,-1.749f,1.432f,0.8596f,-1.746f,-0.7734f,2.263f,-7.566f,-1.569f,3.531f,-7.577f,-0.378f,2.875f,-7.571f,1.293f,1.202f,-7.556f,1.135f,0.8242f,-7.553f,-0.6339f,2.267f,-11.62f,-1.511f,3.487f,-11.63f,-0.3651f,2.856f,-11.62f,1.243f,1.245f,-11.61f,1.091f,0.8817f,-11.6f,-0.6115f,2.213f,-12.17f,-0.8985f,2.928f,-12.17f,-0.2266f,2.558f,-12.17f,0.7161f,1.614f,-12.16f,0.6268f,1.401f,-12.16f,-0.3711f})))
                       .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.2986f,0.2114f,0.2726f,0.2114f,0.3201f,0.2114f,0.3415f,0.2114f,0.2466f,0.2114f,0.2979f,0.2417f,0.2726f,0.2417f,0.3197f,0.2417f,0.3418f,0.2417f,0.2473f,0.2417f,0.2979f,0.3018f,0.2726f,0.3018f,0.3197f,0.3018f,0.3418f,0.3018f,0.2473f,0.3018f,0.2978f,0.3276f,0.2726f,0.3276f,0.3197f,0.3276f,0.3419f,0.3276f,0.2474f,0.3276f,0.2932f,0.2834f,0.2689f,0.2834f,0.316f,0.2834f,0.3322f,0.2834f,0.245f,0.2834f,0.2251f,0.2114f,0.2255f,0.2417f,0.2255f,0.2417f,0.2255f,0.3018f,0.2255f,0.3018f,0.2255f,0.3276f,0.2255f,0.3276f,0.2159f,0.2834f,0.4315f,0.6736f,0.442f,0.6736f,0.3947f,0.6736f,0.4041f,0.6736f,0.418f,0.6736f,0.4296f,0.6167f,0.4409f,0.6167f,0.4415f,0.6485f,0.4303f,0.6485f,0.3965f,0.6167f,0.3953f,0.6485f,0.4047f,0.6167f,0.4053f,0.6485f,0.4189f,0.6167f,0.418f,0.6485f,0.4415f,0.6706f,0.4306f,0.6706f,0.395f,0.6706f,0.4051f,0.6706f,0.4182f,0.6706f,0.3746f,0.6736f,0.3851f,0.6736f,0.384f,0.6167f,0.3845f,0.6485f,0.3845f,0.6485f,0.3846f,0.6706f,0.3846f,0.6706f,0.3851f,0.6736f,0.3481f,0.2114f})))))))
-              .addChild(new HAnimJointObject("hanim_l_elbow").setName("l_elbow").setCenter(8.093f,40.38f,-0.2502f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new HAnimSegmentObject("hanim_l_forearm").setName("l_forearm").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(8.093f,40.38f,-0.2502f)
-                    .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new HAnimJointObject("hanim_l_elbow").setName("l_elbow").setCenter(8.093f,40.38f,-0.2502f)
+                .addChild(new HAnimSegmentObject("hanim_l_forearm").setName("l_forearm")
+                  .addChild(new TransformObject().setTranslation(8.093f,40.38f,-0.2502f)
+                    .addChild(new ShapeObject()
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                         .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                       .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(new int[] {2,,1,,0,,-1,,3,,2,,0,,-1,,4,,3,,0,,-1,,0,,1,,6,,-1,,6,,5,,0,,-1,,1,,2,,7,,-1,,7,,6,,1,,-1,,2,,3,,8,,-1,,8,,7,,2,,-1,,3,,4,,9,,-1,,9,,8,,3,,-1,,4,,0,,5,,-1,,5,,9,,4,,-1,,5,,6,,11,,-1,,11,,10,,5,,-1,,6,,7,,12,,-1,,12,,11,,6,,-1,,7,,8,,13,,-1,,13,,12,,7,,-1,,8,,9,,14,,-1,,14,,13,,8,,-1,,9,,5,,10,,-1,,10,,14,,9,,-1,,10,,11,,16,,-1,,16,,15,,10,,-1,,11,,12,,17,,-1,,17,,16,,11,,-1,,12,,13,,18,,-1,,18,,17,,12,,-1,,13,,14,,19,,-1,,19,,18,,13,,-1,,14,,10,,15,,-1,,15,,19,,14,,-1,,21,,22,,23,,-1,,20,,21,,23,,-1,,24,,20,,23,,-1,,21,,20,,15,,-1,,15,,16,,21,,-1,,22,,21,,16,,-1,,16,,17,,22,,-1,,23,,22,,17,,-1,,17,,18,,23,,-1,,24,,23,,18,,-1,,18,,19,,24,,-1,,20,,24,,19,,-1,,19,,15,,20,,-1}).setTexCoordIndex(new int[] {2,,25,,26,,-1,,3,,2,,26,,-1,,4,,3,,26,,-1,,0,,1,,6,,-1,,6,,5,,0,,-1,,27,,2,,7,,-1,,7,,28,,27,,-1,,2,,3,,8,,-1,,8,,7,,2,,-1,,3,,4,,9,,-1,,9,,8,,3,,-1,,4,,0,,5,,-1,,5,,9,,4,,-1,,5,,6,,11,,-1,,11,,10,,5,,-1,,29,,7,,12,,-1,,12,,30,,29,,-1,,7,,8,,13,,-1,,13,,12,,7,,-1,,8,,9,,14,,-1,,14,,13,,8,,-1,,9,,5,,10,,-1,,10,,14,,9,,-1,,10,,11,,16,,-1,,16,,15,,10,,-1,,31,,12,,17,,-1,,17,,32,,31,,-1,,12,,13,,18,,-1,,18,,17,,12,,-1,,13,,14,,19,,-1,,19,,18,,13,,-1,,14,,10,,15,,-1,,15,,19,,14,,-1,,34,,22,,23,,-1,,33,,34,,23,,-1,,24,,33,,23,,-1,,21,,20,,15,,-1,,15,,16,,21,,-1,,22,,36,,35,,-1,,35,,17,,22,,-1,,23,,22,,17,,-1,,17,,18,,23,,-1,,24,,23,,18,,-1,,18,,19,,24,,-1,,20,,24,,19,,-1,,19,,15,,20,,-1})
                         .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.215f,0.3047f,-1.152f,1.155f,0.2966f,-0.2588f,0.6199f,0.3013f,1.04f,-0.6505f,0.3122f,0.9491f,-0.9008f,0.3143f,-0.4054f,0.1442f,-0.8448f,-1.625f,1.472f,-0.8561f,-0.4271f,0.7164f,-0.8496f,1.625f,-1.079f,-0.8342f,1.482f,-1.433f,-0.8312f,-0.6588f,0.1328f,-3.5f,-1.607f,1.551f,-3.513f,-0.4225f,0.781f,-2.925f,1.61f,-1.136f,-2.909f,1.468f,-1.551f,-3.486f,-0.6519f,0.0592f,-8.713f,-1.437f,1.093f,-8.722f,-0.1279f,0.5047f,-8.716f,1.51f,-0.8932f,-8.704f,1.377f,-1.169f,-8.702f,-0.3428f,0.0092f,-9.336f,-0.8855f,0.7154f,-9.342f,0.0084f,0.3135f,-9.339f,1.043f,-0.6412f,-9.331f,0.9519f,-0.8292f,-9.329f,-0.1383f})))
                         .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.4222f,0.6201f,0.4327f,0.6201f,0.3884f,0.6201f,0.3987f,0.6201f,0.4103f,0.6201f,0.4213f,0.6265f,0.4321f,0.6265f,0.3894f,0.6265f,0.399f,0.6265f,0.4105f,0.6265f,0.4214f,0.6413f,0.4323f,0.6413f,0.389f,0.6381f,0.3992f,0.6381f,0.4103f,0.6413f,0.4213f,0.6705f,0.4336f,0.6705f,0.3899f,0.6705f,0.3981f,0.6705f,0.4094f,0.6705f,0.4215f,0.674f,0.4346f,0.674f,0.3899f,0.674f,0.398f,0.674f,0.4083f,0.674f,0.3787f,0.6201f,0.3682f,0.6201f,0.3787f,0.6201f,0.3782f,0.6265f,0.3782f,0.6265f,0.3783f,0.6413f,0.3783f,0.6413f,0.3796f,0.6705f,0.3676f,0.674f,0.3806f,0.674f,0.3796f,0.6705f,0.3806f,0.674f})))))))
-                .addChild(new HAnimJointObject("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(7.808f,31.46f,-0.05849f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new HAnimSegmentObject("hanim_l_hand").setName("l_hand").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(7.808f,31.46f,-0.05849f)
-                      .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                .addChild(new HAnimJointObject("hanim_l_radiocarpal").setName("l_radiocarpal").setCenter(7.808f,31.46f,-0.05849f)
+                  .addChild(new HAnimSegmentObject("hanim_l_hand").setName("l_hand")
+                    .addChild(new TransformObject().setTranslation(7.808f,31.46f,-0.05849f)
+                      .addChild(new ShapeObject()
                         .setAppearance(new AppearanceObject()
                           .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                           .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                         .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(new int[] {4,,5,,0,,-1,,0,,2,,4,,-1,,6,,7,,3,,-1,,3,,1,,6,,-1,,1,,0,,5,,-1,,5,,6,,1,,-1,,8,,9,,5,,-1,,5,,4,,8,,-1,,10,,11,,7,,-1,,7,,6,,10,,-1,,9,,10,,6,,-1,,6,,5,,9,,-1,,12,,13,,9,,-1,,9,,8,,12,,-1,,14,,15,,11,,-1,,11,,10,,14,,-1,,13,,14,,10,,-1,,10,,9,,13,,-1,,4,,2,,16,,-1,,2,,3,,7,,-1,,7,,16,,2,,-1,,17,,19,,18,,-1,,18,,20,,17,,-1,,21,,16,,7,,-1,,7,,11,,21,,-1,,8,,21,,12,,-1,,12,,21,,11,,-1,,11,,15,,12,,-1,,13,,12,,15,,-1,,15,,14,,13,,-1,,8,,4,,19,,-1,,19,,17,,8,,-1,,4,,16,,18,,-1,,18,,19,,4,,-1,,16,,21,,20,,-1,,20,,18,,16,,-1,,21,,8,,17,,-1,,17,,20,,21,,-1,,22,,27,,23,,-1,,26,,25,,24,,-1}).setTexCoordIndex(new int[] {4,,6,,5,,-1,,5,,7,,4,,-1,,2,,3,,1,,-1,,1,,0,,2,,-1,,14,,16,,15,,-1,,15,,17,,14,,-1,,8,,9,,6,,-1,,6,,4,,8,,-1,,38,,40,,39,,-1,,39,,41,,38,,-1,,18,,19,,36,,-1,,36,,37,,18,,-1,,10,,11,,9,,-1,,9,,8,,10,,-1,,42,,43,,40,,-1,,40,,38,,42,,-1,,20,,21,,19,,-1,,19,,18,,20,,-1,,22,,24,,23,,-1,,24,,26,,25,,-1,,25,,23,,24,,-1,,27,,29,,28,,-1,,28,,30,,27,,-1,,31,,23,,25,,-1,,25,,32,,31,,-1,,33,,31,,34,,-1,,34,,31,,32,,-1,,32,,35,,34,,-1,,20,,34,,35,,-1,,35,,21,,20,,-1,,8,,4,,12,,-1,,12,,13,,8,,-1,,22,,23,,28,,-1,,28,,29,,22,,-1,,23,,31,,30,,-1,,30,,28,,23,,-1,,31,,33,,27,,-1,,27,,30,,31,,-1,,14,,24,,26,,-1,,14,,16,,24,,-1})
                           .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {1.247f,0.07f,0.7975f,1.209f,0.0872f,-1.349f,-0.7098f,-0.0015f,0.8912f,-0.7183f,0.0002f,-1.283f,-0.9295f,-0.613f,1.478f,1.647f,-0.4252f,1.388f,1.589f,-0.3921f,-1.989f,-1.044f,-0.5947f,-1.984f,-0.8227f,-2.521f,2.408f,1.951f,-2.334f,2.08f,1.892f,-2.301f,-2.409f,-1.192f,-2.614f,-2.248f,-0.5703f,-3.958f,1.694f,0.8836f,-4.2f,1.75f,0.8251f,-4.167f,-2.071f,-0.7842f,-3.968f,-1.934f,-1.037f,-0.5968f,-0.1872f,-1.642f,-2.561f,1.941f,-1.951f,-0.9492f,0.058f,-1.914f,-1.016f,1.885f,-1.649f,-2.56f,0.1377f,-1.066f,-2.61f,-0.2014f,1.209f,0.0872f,-1.349f,-0.7183f,0.0002f,-1.283f,-0.7098f,-0.0015f,0.8912f,1.247f,0.07f,0.7975f,1.209f,0.0872f,-1.349f,-0.7098f,-0.0015f,0.8912f})))
                           .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.8107f,0.9924f,0.8122f,0.9033f,0.7694f,0.9912f,0.7683f,0.9026f,0.1329f,0.0347f,0.0307f,0.0051f,0.0134f,0.0353f,0.1366f,0.0058f,0.1249f,0.1081f,0.0147f,0.117f,0.1349f,0.1856f,0.0462f,0.1842f,0.1559f,0.0454f,0.148f,0.1033f,0.3244f,0.0096f,0.1758f,0.0039f,0.1759f,0.011f,0.3241f,0.0033f,0.173f,0.1764f,0.3074f,0.1757f,0.1732f,0.1519f,0.3074f,0.1513f,0.1756f,0.032f,0.2159f,0.0368f,0.1791f,0.0165f,0.3169f,0.0458f,0.3158f,0.0193f,0.172f,0.0594f,0.2087f,0.0476f,0.1736f,0.0504f,0.2073f,0.064f,0.2362f,0.0821f,0.3267f,0.0796f,0.1717f,0.0822f,0.1726f,0.1297f,0.3077f,0.1289f,0.3074f,0.1865f,0.1742f,0.184f,0.0061f,0.1086f,0.1366f,0.0368f,0.1241f,0.1189f,0.0168f,0.0309f,0.0211f,0.1882f,0.14f,0.1857f}))))))))))
-            .addChild(new HAnimJointObject("hanim_r_shoulder").setName("r_shoulder").setCenter(-5.975f,52.0f,-0.1452f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-              .addChild(new HAnimSegmentObject("hanim_r_upperarm").setName("r_upperarm").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-5.975f,52.0f,-0.1452f)
-                  .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+            .addChild(new HAnimJointObject("hanim_r_shoulder").setName("r_shoulder").setCenter(-5.975f,52.0f,-0.1452f)
+              .addChild(new HAnimSegmentObject("hanim_r_upperarm").setName("r_upperarm")
+                .addChild(new TransformObject().setTranslation(-5.975f,52.0f,-0.1452f)
+                  .addChild(new ShapeObject()
                     .setAppearance(new AppearanceObject()
                       .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                       .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                     .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(getIndexedFaceSet_11_171_coordIndex()).setTexCoordIndex(getIndexedFaceSet_11_171_texCoordIndex())
                       .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-2.525f,1.246f,-1.68f,-3.681f,1.236f,0.0337f,-2.408f,1.247f,1.663f,-0.4657f,1.264f,0.9556f,-0.5379f,1.264f,-1.11f,-2.743f,-0.0209f,-2.31f,-4.339f,-0.0351f,0.057f,-2.581f,-0.0195f,2.307f,0.1009f,0.0044f,1.33f,0.0013f,0.0035f,-1.523f,-2.72f,-2.534f,-2.31f,-4.317f,-2.548f,0.057f,-2.559f,-2.533f,2.307f,0.1233f,-2.509f,1.33f,0.0237f,-2.51f,-1.523f,-2.759f,-3.609f,-2.442f,-4.448f,-3.624f,0.0619f,-2.588f,-3.608f,2.442f,0.2497f,-3.583f,1.409f,0.1443f,-3.583f,-1.61f,-2.245f,-1.758f,-1.939f,-3.465f,-1.769f,-0.4543f,-2.834f,-1.763f,1.629f,-1.223f,-1.749f,1.432f,-0.8596f,-1.746f,-0.7734f,-2.263f,-7.566f,-1.569f,-3.531f,-7.577f,-0.378f,-2.875f,-7.571f,1.293f,-1.202f,-7.556f,1.135f,-0.8242f,-7.553f,-0.6339f,-2.267f,-11.62f,-1.511f,-3.487f,-11.63f,-0.3651f,-2.856f,-11.62f,1.243f,-1.245f,-11.61f,1.091f,-0.8817f,-11.6f,-0.6115f,-2.213f,-12.17f,-0.8985f,-2.928f,-12.17f,-0.2266f,-2.558f,-12.17f,0.7161f,-1.614f,-12.16f,0.6268f,-1.401f,-12.16f,-0.3711f})))
                       .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.2986f,0.2114f,0.2726f,0.2114f,0.3201f,0.2114f,0.3415f,0.2114f,0.2466f,0.2114f,0.2979f,0.2417f,0.2726f,0.2417f,0.3197f,0.2417f,0.3418f,0.2417f,0.2473f,0.2417f,0.2979f,0.3018f,0.2726f,0.3018f,0.3197f,0.3018f,0.3418f,0.3018f,0.2473f,0.3018f,0.2978f,0.3276f,0.2726f,0.3276f,0.3197f,0.3276f,0.3419f,0.3276f,0.2474f,0.3276f,0.2932f,0.2834f,0.2689f,0.2834f,0.316f,0.2834f,0.3322f,0.2834f,0.245f,0.2834f,0.2251f,0.2114f,0.2255f,0.2417f,0.2255f,0.2417f,0.2255f,0.3018f,0.2255f,0.3018f,0.2255f,0.3276f,0.2255f,0.3276f,0.2159f,0.2834f,0.4315f,0.6736f,0.442f,0.6736f,0.3947f,0.6736f,0.4041f,0.6736f,0.418f,0.6736f,0.4296f,0.6167f,0.4409f,0.6167f,0.4415f,0.6485f,0.4303f,0.6485f,0.3965f,0.6167f,0.3953f,0.6485f,0.4047f,0.6167f,0.4053f,0.6485f,0.4189f,0.6167f,0.418f,0.6485f,0.4415f,0.6706f,0.4306f,0.6706f,0.395f,0.6706f,0.4051f,0.6706f,0.4182f,0.6706f,0.3746f,0.6736f,0.3851f,0.6736f,0.384f,0.6167f,0.3845f,0.6485f,0.3845f,0.6485f,0.3846f,0.6706f,0.3846f,0.6706f,0.3851f,0.6736f,0.3481f,0.2114f})))))))
-              .addChild(new HAnimJointObject("hanim_r_elbow").setName("r_elbow").setCenter(-8.093f,40.38f,-0.2502f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                .addChild(new HAnimSegmentObject("hanim_r_forearm").setName("r_forearm").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-8.093f,40.38f,-0.2502f)
-                    .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+              .addChild(new HAnimJointObject("hanim_r_elbow").setName("r_elbow").setCenter(-8.093f,40.38f,-0.2502f)
+                .addChild(new HAnimSegmentObject("hanim_r_forearm").setName("r_forearm")
+                  .addChild(new TransformObject().setTranslation(-8.093f,40.38f,-0.2502f)
+                    .addChild(new ShapeObject()
                       .setAppearance(new AppearanceObject()
                         .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                         .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))
                       .setGeometry(new IndexedFaceSetObject().setCreaseAngle(3.14159f).setCoordIndex(new int[] {0,,1,,2,,-1,,0,,2,,3,,-1,,4,,0,,3,,-1,,0,,5,,6,,-1,,6,,1,,0,,-1,,1,,6,,7,,-1,,7,,2,,1,,-1,,2,,7,,8,,-1,,8,,3,,2,,-1,,3,,8,,9,,-1,,9,,4,,3,,-1,,4,,9,,5,,-1,,5,,0,,4,,-1,,5,,10,,11,,-1,,11,,6,,5,,-1,,6,,11,,12,,-1,,12,,7,,6,,-1,,7,,12,,13,,-1,,13,,8,,7,,-1,,8,,13,,14,,-1,,14,,9,,8,,-1,,9,,14,,10,,-1,,10,,5,,9,,-1,,10,,15,,16,,-1,,16,,11,,10,,-1,,11,,16,,17,,-1,,17,,12,,11,,-1,,12,,17,,18,,-1,,18,,13,,12,,-1,,13,,18,,19,,-1,,19,,14,,13,,-1,,14,,19,,15,,-1,,15,,10,,14,,-1,,23,,22,,21,,-1,,23,,21,,20,,-1,,24,,23,,20,,-1,,21,,16,,15,,-1,,15,,20,,21,,-1,,22,,17,,16,,-1,,16,,21,,22,,-1,,23,,18,,17,,-1,,17,,22,,23,,-1,,24,,19,,18,,-1,,18,,23,,24,,-1,,20,,15,,19,,-1,,19,,24,,20,,-1}).setTexCoordIndex(new int[] {26,,25,,2,,-1,,26,,2,,3,,-1,,4,,26,,3,,-1,,0,,5,,6,,-1,,6,,1,,0,,-1,,27,,28,,7,,-1,,7,,2,,27,,-1,,2,,7,,8,,-1,,8,,3,,2,,-1,,3,,8,,9,,-1,,9,,4,,3,,-1,,4,,9,,5,,-1,,5,,0,,4,,-1,,5,,10,,11,,-1,,11,,6,,5,,-1,,29,,30,,12,,-1,,12,,7,,29,,-1,,7,,12,,13,,-1,,13,,8,,7,,-1,,8,,13,,14,,-1,,14,,9,,8,,-1,,9,,14,,10,,-1,,10,,5,,9,,-1,,10,,15,,16,,-1,,16,,11,,10,,-1,,31,,32,,17,,-1,,17,,12,,31,,-1,,12,,17,,18,,-1,,18,,13,,12,,-1,,13,,18,,19,,-1,,19,,14,,13,,-1,,14,,19,,15,,-1,,15,,10,,14,,-1,,23,,22,,34,,-1,,23,,34,,33,,-1,,24,,23,,33,,-1,,21,,16,,15,,-1,,15,,20,,21,,-1,,22,,17,,35,,-1,,35,,36,,22,,-1,,23,,18,,17,,-1,,17,,22,,23,,-1,,24,,19,,18,,-1,,18,,23,,24,,-1,,20,,15,,19,,-1,,19,,24,,20,,-1})
                         .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-0.215f,0.3047f,-1.152f,-1.155f,0.2966f,-0.2588f,-0.6199f,0.3013f,1.04f,0.6505f,0.3122f,0.9491f,0.9008f,0.3143f,-0.4054f,-0.1442f,-0.8448f,-1.625f,-1.472f,-0.8561f,-0.4271f,-0.7164f,-0.8496f,1.625f,1.079f,-0.8342f,1.482f,1.433f,-0.8312f,-0.6588f,-0.1328f,-3.5f,-1.607f,-1.551f,-3.513f,-0.4225f,-0.781f,-2.925f,1.61f,1.136f,-2.909f,1.468f,1.551f,-3.486f,-0.6519f,-0.0592f,-8.713f,-1.437f,-1.093f,-8.722f,-0.1279f,-0.5047f,-8.716f,1.51f,0.8932f,-8.704f,1.377f,1.169f,-8.702f,-0.3428f,-0.0092f,-9.336f,-0.8855f,-0.7154f,-9.342f,0.0084f,-0.3135f,-9.339f,1.043f,0.6412f,-9.331f,0.9519f,0.8292f,-9.329f,-0.1383f})))
                         .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.4222f,0.6201f,0.4327f,0.6201f,0.3884f,0.6201f,0.3987f,0.6201f,0.4103f,0.6201f,0.4213f,0.6265f,0.4321f,0.6265f,0.3894f,0.6265f,0.399f,0.6265f,0.4105f,0.6265f,0.4214f,0.6413f,0.4323f,0.6413f,0.389f,0.6381f,0.3992f,0.6381f,0.4103f,0.6413f,0.4213f,0.6705f,0.4336f,0.6705f,0.3899f,0.6705f,0.3981f,0.6705f,0.4094f,0.6705f,0.4215f,0.674f,0.4346f,0.674f,0.3899f,0.674f,0.398f,0.674f,0.4083f,0.674f,0.3787f,0.6201f,0.3682f,0.6201f,0.3787f,0.6201f,0.3782f,0.6265f,0.3782f,0.6265f,0.3783f,0.6413f,0.3783f,0.6413f,0.3796f,0.6705f,0.3676f,0.674f,0.3806f,0.674f,0.3796f,0.6705f,0.3806f,0.674f})))))))
-                .addChild(new HAnimJointObject("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-7.808f,31.46f,-0.05849f).setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimJoint displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                  .addChild(new HAnimSegmentObject("hanim_r_hand").setName("r_hand").setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, HAnimSegment displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
-                    .addChild(new TransformObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Transform displayBBox: $isNumeric=false, $attributeType=, value='false']
-).setTranslation(-7.808f,31.46f,-0.05849f)
-                      .addChild(new ShapeObject().setDisplayBBox("false"
-// [*** X3dToJava.xslt error: encountered incorrect type, Shape displayBBox: $isNumeric=false, $attributeType=, value='false']
-)
+                .addChild(new HAnimJointObject("hanim_r_radiocarpal").setName("r_radiocarpal").setCenter(-7.808f,31.46f,-0.05849f)
+                  .addChild(new HAnimSegmentObject("hanim_r_hand").setName("r_hand")
+                    .addChild(new TransformObject().setTranslation(-7.808f,31.46f,-0.05849f)
+                      .addChild(new ShapeObject()
                         .setAppearance(new AppearanceObject()
                           .setMaterial(new MaterialObject().setDiffuseColor(0.588f,0.588f,0.588f))
                           .setTexture(new ImageTextureObject().setUSE("Annex01JinTextureAtlas")))

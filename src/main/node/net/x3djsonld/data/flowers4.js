@@ -11,11 +11,11 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> an animated flower. </p>
- <p> Related links: flowers4.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.flowers4&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -54,7 +54,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author John Carlson
  */
 
-function flowers4
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -63,7 +63,7 @@ function flowers4
     this.initialize();
     return this;
   }
-flowers4.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -192,7 +192,7 @@ flowers4.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return flowers4 model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -254,8 +254,8 @@ flowers4.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new flowers4();
-		console.log ("flowers4 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new flowers4().main();
+new NeedClassName().main();

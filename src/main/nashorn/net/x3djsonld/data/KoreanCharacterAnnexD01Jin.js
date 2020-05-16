@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01Jin.java">KoreanCharacterAnnexD01Jin.java</a> source, <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01JinIndex.html" target="_top">KoreanCharacterAnnexD01Jin catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../HumanoidAnimation/KoreanCharacterAnnexD01JinIndex.html" target="_top">KoreanCharacterAnnexD01Jin catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -90,7 +90,7 @@ load('X3Dautoclass.js');
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-function KoreanCharacterAnnexD01Jin
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -99,7 +99,7 @@ function KoreanCharacterAnnexD01Jin
     this.initialize();
     return this;
   }
-KoreanCharacterAnnexD01Jin.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -602,4 +602,4 @@ KoreanCharacterAnnexD01Jin.prototype = {
 	.append(new MFVec3fObject(Java.to([-1.892,-2.301,-2.409,1.192,-2.614,-2.248,0.5703,-3.958,1.694,-0.8836,-4.2,1.75,-0.8251,-4.167,-2.071,0.7842,-3.968,-1.934,1.037,-0.5968,-0.1872,1.642,-2.561,1.941,1.951,-0.9492,0.058,1.914,-1.016,1.885], Java.type("float[]"))))
 	.append(new MFVec3fObject(Java.to([1.649,-2.56,0.1377,1.066,-2.61,-0.2014,-1.209,0.0872,-1.349,0.7183,0.0002,-1.283,0.7098,-0.0015,0.8912,-1.247,0.07,0.7975,-1.209,0.0872,-1.349,0.7098,-0.0015,0.8912], Java.type("float[]"))));
 
-	/** Large
+	/** Large attribute array: TextureCoordinate point field, sce

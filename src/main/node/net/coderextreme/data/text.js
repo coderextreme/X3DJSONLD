@@ -40,5 +40,5 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.Script())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setName("frontUrls").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
             .setSourceCode("ecmascript:\n"+
-"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';"))))      ;
+"			    var me = '\"1\" \"\"2\" \"\\n3\"';"))))      ;
     X3D0.toFileX3D("../data/text.new.x3d");

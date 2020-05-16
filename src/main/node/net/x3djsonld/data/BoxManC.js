@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> A Seamless VRML Human, demonstrating the H-Anim 2001 Specification. Animation scripting via EcmaScript. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/BoxManC.java">BoxManC.java</a> source, <a href="../../../HumanoidAnimation/BoxManIndex.html" target="_top">BoxMan catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../HumanoidAnimation/BoxManIndex.html" target="_top">BoxMan catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -126,7 +126,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author James Smith - james@vapourtech.com
  */
 
-function BoxManC
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -135,7 +135,7 @@ function BoxManC
     this.initialize();
     return this;
   }
-BoxManC.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -627,7 +627,7 @@ BoxManC.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return BoxManC model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -689,8 +689,8 @@ BoxManC.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new BoxManC();
-		console.log ("BoxManC execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new BoxManC().main();
+new NeedClassName().main();
