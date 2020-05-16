@@ -280,6 +280,8 @@
                     </xsl:for-each>
                     <xsl:text> ) ]</xsl:text>
                     <xsl:text> .</xsl:text>
+                    <xsl:text> # </xsl:text>
+                    <xsl:value-of select="@baseType"/>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:for-each select="enumeration[string-length(@appinfo) > 0]">
                         <xsl:text># </xsl:text>

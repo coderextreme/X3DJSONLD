@@ -230,6 +230,7 @@
                     <xsl:variable name="notDefaultFieldValue1"
                                   select="not( local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) and
                                   not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
+                                  not( local-name()='displayBBox' and .='false') and
                                   not( local-name()='visible' and .='true') and
                                   not( local-name(..)='AudioClip'	and
                                   ((local-name()='loop' and string(.)='false') or
@@ -1243,64 +1244,64 @@
 		<xsl:choose>
 		  <!-- SFString -->
 		  <xsl:when test="($localFieldType='SFString')          or
-                          ($attributeName='DEF')                or ($attributeName='USE') or
-                          ($attributeName='name')               or
-                          ($attributeName='class')              or
-                          ($attributeName='description')        or
-                          ($attributeName='address')            or
-                          ($attributeName='language')           or
-                          ($attributeName='marking')            or
-                          ($attributeName='multicastAddress')   or
-                          ($attributeName='networkMode')        or
-                          ($attributeName='reference')          or
-					      (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
-					      (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
-                          (($parentElementName='component')                and not($attributeName='level')) or
-                          (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
-					      ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
-					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
-                          (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
-					      ($parentElementName='IMPORT'                     and (($attributeName='AS') or ($attributeName='importedDEF') or ($attributeName='inlineDEF'))) or
-					      ($parentElementName='HAnimHumanoid'              and $attributeName='skeletalConfiguration') or
-					      ($parentElementName='HAnimHumanoid'              and $attributeName='version') or
-					      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
-						  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
-						  ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
-						  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
-						  ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
-						  ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
-					      ($parentElementName='ShaderPart'                 and $attributeName='type') or
-					      ($parentElementName='ShaderProgram'              and $attributeName='type') or
-					      ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
-					      ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
-                          ($parentElementName='WorldInfo'                  and $attributeName='title') or
-						  ($parentElementName='X3D'                        and (($attributeName='profile') or ($attributeName='version') or ($attributeName='noNamespaceSchemaLocation'))) or
-                          ($parentElementName='XvlShell'                   and $attributeName='shellType')">
+                            ($attributeName='DEF')                or ($attributeName='USE') or
+                            ($attributeName='name')               or
+                            ($attributeName='class')              or
+                            ($attributeName='description')        or
+                            ($attributeName='address')            or
+                            ($attributeName='language')           or
+                            ($attributeName='marking')            or
+                            ($attributeName='multicastAddress')   or
+                            ($attributeName='networkMode')        or
+                            ($attributeName='reference')          or
+                            (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
+                            (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
+                            (($parentElementName='component')                and not($attributeName='level')) or
+                            (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
+                            ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
+                            ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+                            (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
+                            ($parentElementName='IMPORT'                     and (($attributeName='AS') or ($attributeName='importedDEF') or ($attributeName='inlineDEF'))) or
+                            ($parentElementName='HAnimHumanoid'              and $attributeName='skeletalConfiguration') or
+                            ($parentElementName='HAnimHumanoid'              and $attributeName='version') or
+                            (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
+                            ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
+                            ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
+                            (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
+                            ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
+                            ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
+                            ($parentElementName='ShaderPart'                 and $attributeName='type') or
+                            ($parentElementName='ShaderProgram'              and $attributeName='type') or
+                            ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
+                            ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+                            ($parentElementName='WorldInfo'                  and $attributeName='title') or
+                            ($parentElementName='X3D'                        and (($attributeName='profile') or ($attributeName='version') or ($attributeName='noNamespaceSchemaLocation'))) or
+                            ($parentElementName='XvlShell'                   and $attributeName='shellType')">
 			  <xsl:text>SFString</xsl:text>
 		  </xsl:when>
 		  <!-- Statements: xs:integer as SFInt32 - TODO schema/spec change? -->
 		  <!-- SFInt32 -->
 		  <xsl:when test="($localFieldType='SFInt32')           or 
-					      ($parentElementName='HAnimHumanoid'              and $attributeName='loa') or
-                          (($parentElementName='component')                and $attributeName='level')">
+                                        ($parentElementName='HAnimHumanoid'              and $attributeName='loa') or
+                                        (($parentElementName='component')                and $attributeName='level')">
 			  <xsl:text>SFInt32</xsl:text>
 		  </xsl:when>
 		  <!-- SFDouble -->
 		  <xsl:when test="($localFieldType='SFDouble')          or 
-                          ($parentElementName='unit'      and $attributeName='conversionFactor')">
+                                        ($parentElementName='unit'      and $attributeName='conversionFactor')">
 			  <xsl:text>SFDouble</xsl:text>
 		  </xsl:when>
 		  <!-- X3D statements (i.e. not nodes): SFString according to Object Model for X3D (OM4X3D), not xs:string (including X3D version attribute) -->
 		  <xsl:when test="($attributeName='class')       or
-                          ($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
-					      ($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
+                                        ($parentElementName='X3D')     or ($parentElementName='ROUTE')   or ($parentElementName='meta')    or
+					($parentElementName='EXPORT')  or ($parentElementName='IMPORT')  or ($parentElementName='connect')">
 			  <!-- includes X3D version. field/fieldValue type logic handled separately -->
 			  <xsl:text>SFString</xsl:text> 
 		  </xsl:when>
 		  <!-- MFString (some are also enumerations) -->
 		  <xsl:when test="
 					($localFieldType='MFString')   or 
-                    ($attributeName='url') or contains($attributeName,'Url') or
+                                        ($attributeName='url') or contains($attributeName,'Url') or
 					($attributeName='forceOutput') or
 					($attributeName='objectType')  or
 					($parentElementName='Anchor' and $attributeName='parameter') or
@@ -1328,6 +1329,7 @@
 					($attributeName='closed')   or
 					($attributeName='convex')   or
 					($attributeName='colorPerVertex') or
+					($attributeName='displayBBox')  or
 					($attributeName='enabled')  or
 					($attributeName='global')   or
 					($attributeName='normalPerVertex') or
@@ -1384,7 +1386,7 @@
 		  <!-- MFBool -->
 		  <xsl:when test="
 					($localFieldType='MFBool')  or 
-                    (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
+                                        (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
 					($parentElementName='CADLayer'                   and ($attributeName='visible') and starts-with(//X3D/@version,'3')) or
 					($parentElementName='HAnimHumanoid'              and $attributeName='motionsEnabled') or
 					($parentElementName='MetadataBoolean'            and $attributeName='value') or
@@ -1395,7 +1397,7 @@
 		  <!-- SFColor -->
 		  <xsl:when test="
 					($localFieldType='SFColor')  or 
-                    ($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
+                                        ($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
 					($parentElementName='ColorChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='ColorDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					(contains($parentElementName,'Light') and $attributeName='color') or
@@ -1408,7 +1410,7 @@
 		  <!-- SFColorRGBA -->
 		  <xsl:when test="
 					($localFieldType='SFColorRGBA')  or 
-                    ($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='edgeColor') or
+                                        ($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='edgeColor') or
 					($parentElementName='TextureProperties' and $attributeName='borderColor') or
 					($parentElementName='ToneMappedVolumeStyle' and ($attributeName='coolColor' or $attributeName='warmColor'))">
 			  <xsl:text>SFColorRGBA</xsl:text>
@@ -1416,7 +1418,7 @@
 		  <!-- MFColor -->
 		  <xsl:when test="
 					($localFieldType='MFColor')  or 
-                    ($parentElementName='Color' and $attributeName='color') or
+                                        ($parentElementName='Color' and $attributeName='color') or
 					($parentElementName='ColorInterpolator' and $attributeName='keyValue') or
 					(ends-with($parentElementName,'Background') and ($attributeName='groundColor' or $attributeName='skyColor'))">
 			  <xsl:text>MFColor</xsl:text>
@@ -1424,13 +1426,13 @@
 		  <!-- MFColorRGBA -->
 		  <xsl:when test="
 					($localFieldType='MFColorRGBA')  or 
-                    ($parentElementName='ColorRGBA' and $attributeName='color')">
+                                        ($parentElementName='ColorRGBA' and $attributeName='color')">
 			  <xsl:text>MFColorRGBA</xsl:text>
 		  </xsl:when>
 		  <!-- SFImage -->
 		  <xsl:when test="
 					($localFieldType='SFImage')  or 
-                    ($parentElementName='PixelTexture' and $attributeName='image')">
+                                        ($parentElementName='PixelTexture' and $attributeName='image')">
 			  <xsl:text>SFImage</xsl:text>
 		  </xsl:when>
 		  <!-- no MFImage attributes -->
@@ -1443,7 +1445,7 @@
 		  <!-- MFDouble -->
 		  <xsl:when test="
 					($localFieldType='MFDouble')  or 
-                    ($parentElementName='GeoElevationGrid'   and $attributeName='height') or
+                                        ($parentElementName='GeoElevationGrid'   and $attributeName='height') or
 					($parentElementName='MetadataDouble'     and $attributeName='value')  or
 					(starts-with($parentElementName,'Nurbs') and (($attributeName='knot') or ($attributeName='weight') or contains($attributeName,'Knot')))">
 			  <xsl:text>MFDouble</xsl:text>
@@ -1451,12 +1453,12 @@
 		  <!-- SFFloat -->
 		  <xsl:when test="
 					($localFieldType='SFFloat')  or 
-                    ($attributeName='ambientIntensity') or
+                                        ($attributeName='ambientIntensity') or
 					($attributeName='intensity')        or
 					($attributeName='creaseAngle')      or
-                    ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
-                    ($attributeName='startAngle')       or ($attributeName='endAngle') or
-                    ($attributeName='tolerance')        or
+                                        ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
+                                        ($attributeName='startAngle')       or ($attributeName='endAngle') or
+                                        ($attributeName='tolerance')        or
 					($attributeName='transparency')     or
 					(starts-with($parentElementName,'Arc') and (contains($attributeName,'Angle') or $attributeName='radius')) or
 					($parentElementName='AudioClip' and $attributeName='pitch') or
@@ -1516,8 +1518,8 @@
 		  </xsl:when>
 		  <!-- MFFloat -->
 		  <xsl:when test="
-					($localFieldType='MFFloat')  or 
-                    ($attributeName='key')       or
+					($localFieldType='MFFloat')  or
+					($attributeName='key')       or
 					(contains($parentElementName,'ElevationGrid') and $attributeName='height') or
 					(contains($parentElementName,'LOD') and $attributeName='range') or
 					(ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
@@ -1544,16 +1546,16 @@
 		  <!-- SFTime -->
 		  <xsl:when test="
 					($localFieldType='SFTime')        or 
-                    ($parentElementName='TimeSensor') or
-                    ($attributeName='duration')       or
-                    ($attributeName='tau')            or
-                    ($attributeName='timestamp')      or
-                    ($attributeName='readInterval')   or
-                    ($attributeName='writeInterval')  or
-                    ($parentElementName='LoadSensor'     and $attributeName='timeOut')  or
-                    ($parentElementName='AudioClip'      and ends-with($attributeName,'Time'))  or
-                    ($parentElementName='EspduTransform' and ends-with($attributeName,'Time'))  or
-                    ($parentElementName='MovieTexture'   and ends-with($attributeName,'Time'))"> 
+                                        ($parentElementName='TimeSensor') or
+                                        ($attributeName='duration')       or
+                                        ($attributeName='tau')            or
+                                        ($attributeName='timestamp')      or
+                                        ($attributeName='readInterval')   or
+                                        ($attributeName='writeInterval')  or
+                                        ($parentElementName='LoadSensor'     and $attributeName='timeOut')  or
+                                        ($parentElementName='AudioClip'      and ends-with($attributeName,'Time'))  or
+                                        ($parentElementName='EspduTransform' and ends-with($attributeName,'Time'))  or
+                                        ($parentElementName='MovieTexture'   and ends-with($attributeName,'Time'))"> 
 			  <!-- TimeSensor loop & enabled are caught by SFBool tests, all other TimeSensorfields are SFTime -->
 			  <xsl:text>SFTime</xsl:text>
 		  </xsl:when>
@@ -1561,7 +1563,7 @@
 		  <!-- SFVec2f -->
 		  <xsl:when test="
 					($localFieldType='SFVec2f')  or 
-                    ($parentElementName='CollisionCollection' and ($attributeName='frictionCoefficients' or $attributeName='slipFactors' or $attributeName='surfaceSpeed')) or
+                                        ($parentElementName='CollisionCollection' and ($attributeName='frictionCoefficients' or $attributeName='slipFactors' or $attributeName='surfaceSpeed')) or
 					($parentElementName='Contact' and ($attributeName='frictionCoefficients' or $attributeName='slipCoefficients' or $attributeName='surfaceSpeed')) or
 					($parentElementName='ParticleSystem' and $attributeName='particleSize') or
 					($parentElementName='PlaneSensor' and ($attributeName='maxPosition' or $attributeName='minPosition')) or
@@ -1574,7 +1576,7 @@
 		  <!-- MFVec2f -->
 		  <xsl:when test="
 					($localFieldType='MFVec2f')  or 
-                    ($parentElementName='EaseInEaseOut' and $attributeName='easeInEaseOut') or
+                                        ($parentElementName='EaseInEaseOut' and $attributeName='easeInEaseOut') or
 					($parentElementName='Extrusion' and ($attributeName='crossSection' or $attributeName='scale')) or
 					(($parentElementName='CoordinateInterpolator2D' or $parentElementName='PositionInterpolator2D') and $attributeName='keyValue') or
 					(($parentElementName='ContourPolyline2D' or $parentElementName='Polypoint2D' or $parentElementName='TextureCoordinate') and $attributeName='point') or
@@ -1589,7 +1591,7 @@
 		  <!-- SFVec3d -->
 		  <xsl:when test="
 					($localFieldType='SFVec3d')  or 
-                    ($attributeName='geoCenter') or
+                                        ($attributeName='geoCenter') or
 					($attributeName='geoCoords') or
 					($parentElementName='GeoElevationGrid'   and $attributeName='geoGridOrigin') or
 					($parentElementName='GeoLOD'             and $attributeName='center') or
@@ -1600,7 +1602,7 @@
 		  <!-- MFVec3d -->
 		  <xsl:when test="
 					($localFieldType='MFVec3d')  or 
-                    ($parentElementName='ContourPolyline2D'       and $attributeName='controlPoint') or
+                                        ($parentElementName='ContourPolyline2D'       and $attributeName='controlPoint') or
 					($parentElementName='CoordinateDouble'        and $attributeName='point') or
 					($parentElementName='GeoCoordinate'           and $attributeName='point') or
 					($parentElementName='GeoPositionInterpolator' and $attributeName='keyValue') or
@@ -1611,7 +1613,7 @@
 		  <!-- note TextureTransform tests must precede these default checks -->
 		  <xsl:when test="
 					($localFieldType='SFVec3f')    or 
-                    ($attributeName='anchorPoint') or
+					($attributeName='anchorPoint') or
 					($attributeName='bboxCenter')  or
 					($attributeName='bboxSize')    or
 					($attributeName='center')      or
@@ -1655,11 +1657,11 @@
 		  <!-- MFVec3f -->
 		  <xsl:when test="
 					($localFieldType='MFVec3f')    or 
-                    ($parentElementName='CoordinateChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
+                                        ($parentElementName='CoordinateChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='CoordinateDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='CoordinateInterpolator'     and $attributeName='keyValue') or
-                    ($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingPositions') or
-                    ($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingScales') or
+                                        ($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingPositions') or
+                                        ($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingScales') or
 					($parentElementName='NormalInterpolator'         and $attributeName='keyValue') or
 					($parentElementName='PositionInterpolator'       and $attributeName='keyValue') or
 					($parentElementName='SplinePositionInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
@@ -1680,7 +1682,7 @@
 		  <!-- note TextureTransform tests must precede these default checks -->
 		  <xsl:when test="
 					($localFieldType='SFRotation')    or 
-                    ($attributeName='rotation') or
+                                        ($attributeName='rotation') or
 					($attributeName='scaleOrientation') or
 					(($parentElementName='CylinderSensor' or $parentElementName='PlaneSensor') and $attributeName='axisRotation') or
 					($parentElementName='OrientationChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
@@ -1696,7 +1698,7 @@
 		  <!-- MFRotation -->
 		  <xsl:when test="
 					($localFieldType='MFRotation')    or 
-                    ($parentElementName='Extrusion' and $attributeName='orientation') or
+                                        ($parentElementName='Extrusion' and $attributeName='orientation') or
 					($parentElementName='HAnimHumanoid'              and $attributeName='jointBindingRotations') or
 					(ends-with($parentElementName,'OrientationInterpolator') and $attributeName='keyValue')">
 			  <xsl:text>MFRotation</xsl:text>
@@ -1710,13 +1712,13 @@
 		  <!-- MFMatrix3f -->
 		  <xsl:when test="
 					($localFieldType='MFMatrix3f')    or 
-                    ($parentElementName='Matrix3VertexAttribute' and $attributeName='value')">
+                                        ($parentElementName='Matrix3VertexAttribute' and $attributeName='value')">
 			  <xsl:text>MFMatrix3f</xsl:text>
 		  </xsl:when>
 		  <!-- SFMatrix4f -->
 		  <xsl:when test="
 					($localFieldType='SFMatrix4f')    or 
-                    ($parentElementName='TextureTransformMatrix3D' and $attributeName='matrix')">
+                                        ($parentElementName='TextureTransformMatrix3D' and $attributeName='matrix')">
 			  <xsl:text>SFMatrix4f</xsl:text>
 		  </xsl:when>
 		  <!-- MFMatrix4f -->
@@ -1728,7 +1730,7 @@
 		  <!-- MFInt32 --> <!-- must precede MFInt32 -->
 		  <xsl:when test="
 					($localFieldType='MFInt32')    or 
-                    ($attributeName='colorIndex') or
+                                        ($attributeName='colorIndex') or
 					($attributeName='coordIndex') or
 					($attributeName='normalIndex') or
 					($attributeName='texCoordIndex') or
@@ -1753,9 +1755,9 @@
 		  </xsl:when>
 		  <!-- SFInt32 --> <!-- Note that other DIS attibutes must get tested before this, including MFInt32 -->
 		  <xsl:when test="
-                    ($localFieldType='SFInt32')    or 
-                     ends-with($attributeName,'ID')             or
-                    ($attributeName='order')                    or
+                                        ($localFieldType='SFInt32')    or 
+                                         ends-with($attributeName,'ID')             or
+                                        ($attributeName='order')                    or
 					($attributeName='uOrder')                   or
 					($attributeName='vOrder')                   or
 					($attributeName='uDimension')               or

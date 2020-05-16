@@ -1080,7 +1080,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="-t" description="timing information"/>
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
-            <arg value="-s:${specifications.dir}/${X3dSchemaSource}" description="source-doc"/>
+            <arg value="-s:${specifications.dir}/${X3dSchemaSource3.3}" description="source-doc"/>
             <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
         </java>
         <copy file="${X3dUnifiedObjectModel3.3}"    todir="../../specifications/" verbose="true"/>
