@@ -82,7 +82,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 May 2020"
+            "@content":"17 May 2020"
           },
           {
             "@name":"generator",
@@ -114,12 +114,10 @@
           },
           { "Transform":
             {
-              "@displayBBox":false,
               "@translation":[-1,1,0],
               "-children":[
                 { "Inline":
                   {
-                    "@displayBBox":false,
                     "@url":["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"]
                   }
                 },
@@ -129,13 +127,11 @@
                 { "Transform":
                   {
                     "@DEF":"GridXY_20x20Fixed_AdjustScale",
-                    "@displayBBox":false,
                     "@scale":[0.1,0.1,0.1],
                     "-children":[
                       { "Inline":
                         {
                           "@DEF":"GridXY_20x20Fixed",
-                          "@displayBBox":false,
                           "@url":["GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"]
                         }
                       }
@@ -147,12 +143,10 @@
           },
           { "Transform":
             {
-              "@displayBBox":false,
               "@translation":[1,1,0],
               "-children":[
                 { "Inline":
                   {
-                    "@displayBBox":false,
                     "@url":["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"]
                   }
                 },
@@ -166,7 +160,6 @@
           },
           { "Transform":
             {
-              "@displayBBox":false,
               "@translation":[-1,-1,0],
               "-children":[
                 {
@@ -174,7 +167,6 @@
                 },
                 { "Inline":
                   {
-                    "@displayBBox":false,
                     "@url":["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"]
                   }
                 },
@@ -188,7 +180,6 @@
           },
           { "Transform":
             {
-              "@displayBBox":false,
               "@translation":[1,-1,0],
               "-children":[
                 {
@@ -196,7 +187,6 @@
                 },
                 { "Inline":
                   {
-                    "@displayBBox":false,
                     "@url":["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"]
                   }
                 },
