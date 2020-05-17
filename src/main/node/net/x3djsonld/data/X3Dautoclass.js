@@ -2,16 +2,15 @@ var java = require('java');
 java.options.push("-Djava.awt.headless=true");
 java.options.push("-Xmx1000m");
 //java.options.push("-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005");
-java.classpath.push("C:/Users/coderextreme/X3DJSONLD/pythonSAI/X3DJSAIL.4.0.full.jar");
 java.classpath.push("X3DJSAIL.4.0.full.jar");
 java.classpath.push("pythonSAI/X3DJSAIL.4.0.full.jar");
 java.classpath.push("../pythonSAI/X3DJSAIL.4.0.full.jar");
 java.classpath.push("../../pythonSAI/X3DJSAIL.4.0.full.jar");
 java.classpath.push("../../../pythonSAI/X3DJSAIL.4.0.full.jar");
 java.classpath.push("../../../../pythonSAI/X3DJSAIL.4.0.full.jar");
+java.classpath.push("../../../../../pythonSAI/X3DJSAIL.4.0.full.jar");
+java.classpath.push("../../../../../../pythonSAI/X3DJSAIL.4.0.full.jar");
 java.classpath.push("../../../../../../../pythonSAI/X3DJSAIL.4.0.full.jar");
-java.classpath.push("../java/jars/X3DJSAIL.4.0.full.jar");
-java.classpath.push("../../java/jars/X3DJSAIL.4.0.full.jar");
 module.exports = {
 Anchor : java.import('org.web3d.x3d.jsail.Networking.AnchorObject'),
 Appearance : java.import('org.web3d.x3d.jsail.Shape.AppearanceObject'),
@@ -97,6 +96,7 @@ Group : java.import('org.web3d.x3d.jsail.Grouping.GroupObject'),
 HAnimDisplacer : java.import('org.web3d.x3d.jsail.HAnim.HAnimDisplacerObject'),
 HAnimHumanoid : java.import('org.web3d.x3d.jsail.HAnim.HAnimHumanoidObject'),
 HAnimJoint : java.import('org.web3d.x3d.jsail.HAnim.HAnimJointObject'),
+HAnimMotion : java.import('org.web3d.x3d.jsail.HAnim.HAnimMotionObject'),
 HAnimSegment : java.import('org.web3d.x3d.jsail.HAnim.HAnimSegmentObject'),
 HAnimSite : java.import('org.web3d.x3d.jsail.HAnim.HAnimSiteObject'),
 ImageCubeMapTexture : java.import('org.web3d.x3d.jsail.CubeMapTexturing.ImageCubeMapTextureObject'),
@@ -166,6 +166,7 @@ PlaneSensor : java.import('org.web3d.x3d.jsail.PointingDeviceSensor.PlaneSensorO
 PointEmitter : java.import('org.web3d.x3d.jsail.ParticleSystems.PointEmitterObject'),
 PointLight : java.import('org.web3d.x3d.jsail.Lighting.PointLightObject'),
 PointPickSensor : java.import('org.web3d.x3d.jsail.Picking.PointPickSensorObject'),
+PointProperties : java.import('org.web3d.x3d.jsail.Shape.PointPropertiesObject'),
 PointSet : java.import('org.web3d.x3d.jsail.Rendering.PointSetObject'),
 Polyline2D : java.import('org.web3d.x3d.jsail.Geometry2D.Polyline2DObject'),
 PolylineEmitter : java.import('org.web3d.x3d.jsail.ParticleSystems.PolylineEmitterObject'),
@@ -286,11 +287,11 @@ SFMatrix4d : java.import('org.web3d.x3d.jsail.fields.SFMatrix4dObject'),
 MFMatrix4d : java.import('org.web3d.x3d.jsail.fields.MFMatrix4dObject'),
 SFMatrix4f : java.import('org.web3d.x3d.jsail.fields.SFMatrix4fObject'),
 MFMatrix4f : java.import('org.web3d.x3d.jsail.fields.MFMatrix4fObject'),
+SFString : java.import('org.web3d.x3d.jsail.fields.SFStringObject'),
 SFNode : java.import('org.web3d.x3d.jsail.fields.SFNodeObject'),
 MFNode : java.import('org.web3d.x3d.jsail.fields.MFNodeObject'),
 SFRotation : java.import('org.web3d.x3d.jsail.fields.SFRotationObject'),
 MFRotation : java.import('org.web3d.x3d.jsail.fields.MFRotationObject'),
-SFString : java.import('org.web3d.x3d.jsail.fields.SFStringObject'),
 MFString : java.import('org.web3d.x3d.jsail.fields.MFStringObject'),
 SFTime : java.import('org.web3d.x3d.jsail.fields.SFTimeObject'),
 MFTime : java.import('org.web3d.x3d.jsail.fields.MFTimeObject'),
