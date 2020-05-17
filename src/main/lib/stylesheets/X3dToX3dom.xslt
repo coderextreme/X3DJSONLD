@@ -64,7 +64,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- X3DOM parameters -->
     <xsl:param name="showStatistics"           >false</xsl:param>
     <xsl:param name="showDebugLog"             >true</xsl:param>
-    <xsl:param name="urlX3DOM"                 >https://x3dom.org/release</xsl:param> <!-- no trailing / -->
+    <xsl:param name="urlX3DOM"                 >https://x3dom.org/download/dev</xsl:param> <!-- no trailing / -->
     <!-- X_ITE parameters -->
     <xsl:param name="cache"                    >true</xsl:param>
 	<!-- also in CreateContentCatalogPages.xslt -->
@@ -97,6 +97,9 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <xsl:variable name="apos">'</xsl:variable>
     <xsl:variable name="quot">"</xsl:variable>
+    
+    <xsl:variable name="urlX3DOM.dev"             >https://x3dom.org/download/dev</xsl:variable> <!-- no trailing / -->
+    <xsl:variable name="urlX3DOM.release"         >https://x3dom.org/release</xsl:variable>      <!-- no trailing / -->
     
     <xsl:variable name="urlSceneQuoted">
         <xsl:choose>
@@ -160,6 +163,17 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="$showDebugLog"/>
                 <xsl:text>, $urlX3DOM=</xsl:text>
                 <xsl:value-of select="$urlX3DOM"/>
+                <xsl:choose>
+                    <xsl:when test="($urlX3DOM = $urlX3DOM.dev)">
+                        <xsl:text> (developers release)</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($urlX3DOM = $urlX3DOM.release)">
+                        <xsl:text> (official release)</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text> (warning: unofficial version)</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:message>
             <xsl:message>
                 <xsl:text>X_ITE parameters: </xsl:text>

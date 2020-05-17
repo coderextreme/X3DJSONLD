@@ -674,7 +674,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                 <xsl:variable name="hanimHumanoidName" select="@name"/>
                                 <!-- find and add any missing joints, segments, sites USE nodes at top level of this HAnimHumanoid -->
                                 <xsl:for-each select="//*[(local-name() = 'HAnimJoint') or (local-name() = 'HAnimSegment') or (local-name() = 'HAnimSite')]">
-                                    <xsl:sort select="local-name()" order="ascending"/>
+                                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                                     <!--
                                     <xsl:message>
                                         <xsl:text>*** trace: </xsl:text>
@@ -901,7 +901,9 @@ POSSIBILITY OF SUCH DAMAGE.
                                 <xsl:text disable-output-escaping="yes">' name='</xsl:text>
                                 <xsl:value-of select="$firstHAnimSegmentName"/>
                                 <xsl:text disable-output-escaping="yes">'</xsl:text>
-                                <xsl:apply-templates select="HAnimSegment[1]/@*[not(local-name()='DEF')][not(local-name()='name')]"/>
+                                <xsl:apply-templates select="HAnimSegment[1]/@*[not(local-name()='DEF')][not(local-name()='name')]">
+                                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
+                                </xsl:apply-templates>
                                 <xsl:text disable-output-escaping="yes">&gt; </xsl:text>
                                 <xsl:apply-templates select="Transform"/><!-- move current too-high child Transform into subtree -->
                                 <xsl:apply-templates select="HAnimSegment[1]/Transform"/><!-- plus any other contained Transform nodes go here, side by side -->
@@ -1196,7 +1198,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:apply-templates select="@DEF"/>
                 <xsl:apply-templates select="@USE"/>
                 <xsl:apply-templates select="@containerField"/>
-                <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='USE') and (local-name()!='containerField')]" />
+                <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='USE') and (local-name()!='containerField')]">
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
+                </xsl:apply-templates>
                 <!-- TODO: X3D specification clarification to require this field for ProtoInstance
                 <xsl:if test="(local-name()='ProtoInstance')">
                     <xsl:apply-templates select="@name"/>
@@ -1222,7 +1226,9 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:when test="(local-name()='X3D')">
                 <xsl:apply-templates select="@profile" />
                 <xsl:apply-templates select="@version" />
-                <xsl:apply-templates select="@*[(local-name()!='profile') and (local-name()!='version')]" />
+                <xsl:apply-templates select="@*[(local-name()!='profile') and (local-name()!='version')]">
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
+                </xsl:apply-templates>
                 <!-- handle namespace attributes -->
                 <!-- xsl:apply-templates select="@xsd:noNamespaceSchemaLocation" />
                 <xsl:apply-templates select="@noNamespaceSchemaLocation" />-->
@@ -1233,7 +1239,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:apply-templates select="@content" />
                 <xsl:apply-templates select="@name" />
                 <xsl:apply-templates select="@*[(local-name()!='name') and (local-name()!='content')]">
-                    <xsl:sort select="." order="ascending" data-type="text"/>
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                 </xsl:apply-templates>
             </xsl:when>
             <xsl:when test="local-name()='ROUTE'">
@@ -1246,7 +1252,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:apply-templates select="@DEF | @containerField "/>
                 <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='containerField') and
                                                 (local-name()!='height') and (local-name()!='colorIndex')]">
-                    <xsl:sort select="." order="ascending" data-type="text"/>
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                 </xsl:apply-templates>
                 <xsl:apply-templates select="@colorIndex"/>
                 <xsl:apply-templates select="@height"/>
@@ -1255,10 +1261,10 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:apply-templates select="@DEF | @containerField "/>
                 <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='containerField') and
                                                 not(contains(local-name(), 'Index'))]">
-                    <xsl:sort select="." order="ascending" data-type="text"/>
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                 </xsl:apply-templates>
                 <xsl:apply-templates select="@*[contains(local-name(), 'Index')]">
-                    <xsl:sort select="." order="ascending" data-type="text"/>
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                 </xsl:apply-templates>
             </xsl:when>
             <!-- X3dTidy checks to insert additional attributes go here -->
@@ -1280,7 +1286,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:value-of select="@diffuseColor"/>
                         <xsl:text>'</xsl:text>
                         <xsl:apply-templates select="@*[not(local-name()='DEF') and not(local-name()='containerField') and not(local-name()='diffuseColor') and not(local-name()='emissiveColor')]">
-                            <xsl:sort select="." order="ascending" data-type="text"/>
+                            <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                         </xsl:apply-templates>
                         <xsl:message>
                             <xsl:text>*** fix emissiveColor for </xsl:text>
@@ -1299,7 +1305,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:apply-templates select="@*[not(local-name()='DEF') and not(local-name()='containerField')]">
-                            <xsl:sort select="." order="ascending" data-type="text"/>
+                            <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                         </xsl:apply-templates>
                     </xsl:otherwise>
                 </xsl:choose>
@@ -1318,7 +1324,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:apply-templates select="@DEF"/>
                 <xsl:apply-templates select="@name"/>
                 <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='appinfo') and (local-name()!='name')]">
-                    <xsl:sort select="." order="ascending" data-type="text"/>
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                 </xsl:apply-templates>
             </xsl:when>
             <xsl:when test="local-name()='field' or local-name()='fieldValue'">
@@ -1329,7 +1335,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:apply-templates select="@type"/>
                 <xsl:apply-templates select="@value"/>
                 <xsl:apply-templates select="@*[(local-name()!='name') and (local-name()!='type') and (local-name()!='value') and (local-name()!='accessType') and (local-name()!='appinfo') and (local-name()!='documentation')]">
-                    <xsl:sort select="." order="ascending" data-type="text"/>
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                 </xsl:apply-templates>
             </xsl:when>
             <xsl:when test="contains(local-name(),'connect')">
@@ -1341,10 +1347,10 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:otherwise>
                 <xsl:apply-templates select="@DEF"/>
                 <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='containerField') and not(contains(local-name(), 'url') or contains(local-name(), 'Url'))]">
-                    <xsl:sort select="." order="ascending" data-type="text"/>
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                 </xsl:apply-templates>
                 <xsl:apply-templates select="@*[contains(local-name(), 'url') or contains(local-name(), 'Url')]">
-                    <xsl:sort select="." order="ascending" data-type="text"/>
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                 </xsl:apply-templates>
                 <xsl:apply-templates select="@containerField"/>
             </xsl:otherwise>
@@ -2314,8 +2320,7 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='centerOfMass' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='mass' and (.='0' or .='0.0')) or
-                       (local-name()='momentsOfInertia' and
-                        (.='0 0 0 0 0 0 0 0 0' or .='0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0')))) and
+                       (local-name()='momentsOfInertia' and (.='0 0 0 0 0 0 0 0 0' or .='0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSite' and
                       ((local-name()='containerField' and (.='children')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
