@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Text scripting and animation example using Oblique Strategies card set by Brian Eno. </p>
- <p> Related links: <a href="../../../Inspiration/ObliqueStrategies.java">ObliqueStrategies.java</a> source, <a href="../../../Inspiration/ObliqueStrategiesIndex.html" target="_top">ObliqueStrategies catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../Inspiration/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../Inspiration/ObliqueStrategiesIndex.html" target="_top">ObliqueStrategies catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -158,7 +158,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author Don Brutzman, John Kelly, Ben Cheng
  */
 
-function ObliqueStrategies
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -167,7 +167,7 @@ function ObliqueStrategies
     this.initialize();
     return this;
   }
-ObliqueStrategies.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -294,7 +294,7 @@ ObliqueStrategies.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return ObliqueStrategies model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -356,8 +356,8 @@ ObliqueStrategies.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new ObliqueStrategies();
-		console.log ("ObliqueStrategies execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new ObliqueStrategies().main();
+new NeedClassName().main();
