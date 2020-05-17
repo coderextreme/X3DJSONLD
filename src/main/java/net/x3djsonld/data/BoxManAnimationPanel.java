@@ -20,17 +20,17 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> A Seamless VRML Human, demonstrating the H-Anim 2001 Specification, animation panel shows multiple behaviors. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/BoxManAnimationPanel.java">BoxManAnimationPanel.java</a> source, <a href="../../../HumanoidAnimation/BoxManAnimationPanelIndex.html" target="_top">BoxManAnimationPanel catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: BoxManAnimationPanel.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.BoxManAnimationPanel&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxManAnimationPanel.x3d">BoxManAnimationPanel.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManAnimationPanel.x3d">BoxManAnimationPanel.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -62,15 +62,15 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 October 2019 </td>
+			<td> 9 May 2020 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxManAnimationPanelInclined.png">BoxManAnimationPanelInclined.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManAnimationPanelInclined.png">BoxManAnimationPanelInclined.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> MovingImage </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxManAnimationPanel.mp4">BoxManAnimationPanel.mp4</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManAnimationPanel.mp4">BoxManAnimationPanel.mp4</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> MovingImage </i> </td>
@@ -98,7 +98,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxMan.x3d">BoxMan.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.x3d">BoxMan.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -142,7 +142,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManAnimationPanel.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManAnimationPanel.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManAnimationPanel.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManAnimationPanel.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -150,7 +150,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../HumanoidAnimation/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -190,7 +190,7 @@ public class BoxManAnimationPanel
     .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("1 March 2001"))
     .addMeta(new metaObject().setName("revision").setContent("12 January 2017"))
     .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED ).setContent("14 January 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("20 October 2019"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("9 May 2020"))
     .addMeta(new metaObject().setName(metaObject.NAME_IMAGE      ).setContent("BoxManAnimationPanelInclined.png"))
     .addMeta(new metaObject().setName(metaObject.NAME_MOVINGIMAGE).setContent("BoxManAnimationPanel.mp4"))
     .addMeta(new metaObject().setName(metaObject.NAME_MOVINGIMAGE).setContent("https://www.youtube.com/watch?v=8tI83Rtg_DU"))
@@ -210,7 +210,7 @@ public class BoxManAnimationPanel
     .addMeta(new metaObject().setName(metaObject.NAME_RIGHTS     ).setContent("(C) 2000 James Smith - james@vapourtech.com"))
     .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.vapourtech.com"))
     .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT    ).setContent("BoxMan H-Anim 2.0"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManAnimationPanel.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManAnimationPanel.x3d"))
     .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new SceneObject()
