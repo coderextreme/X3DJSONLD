@@ -9063,7 +9063,7 @@
                 "1.0",
                 "2.0"
               ],
-              "default": "2.0",
+              "default": "1.0",
               "type": "string"
             },
             "-viewpoints": {

@@ -972,6 +972,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -986,10 +990,6 @@
             },
             "@description": {
               "type": "string"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -1656,6 +1656,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -1667,10 +1671,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -2283,6 +2283,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -2294,10 +2298,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -2366,6 +2366,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -2374,10 +2378,6 @@
                 "default": -1,
                 "type": "number"
               }
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -2446,6 +2446,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -2457,10 +2461,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -2526,6 +2526,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -2546,10 +2550,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-CADFaceMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -2940,6 +2940,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -2951,10 +2955,6 @@
             },
             "-collidable": {
               "$ref": "#/definitions/-X3DNBodyCollidableNodeSFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@enabled": {
               "default": true,
@@ -3057,6 +3057,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -3065,10 +3069,6 @@
                 "default": -1,
                 "type": "number"
               }
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@enabled": {
               "default": true,
@@ -3171,6 +3171,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -3185,10 +3189,6 @@
             },
             "@collideTime": {
               "type": "number"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@enabled": {
               "default": true,
@@ -3282,6 +3282,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -3299,10 +3303,6 @@
             },
             "-collidables": {
               "$ref": "#/definitions/-X3DNBodyCollisionSpaceNode-X3DNBodyCollidableNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@enabled": {
               "default": true,
@@ -3485,6 +3485,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -3496,10 +3500,6 @@
             },
             "-collidables": {
               "$ref": "#/definitions/-X3DNBodyCollisionSpaceNode-X3DNBodyCollidableNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@enabled": {
               "default": true,
@@ -6339,6 +6339,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -6395,10 +6399,6 @@
             "@detonationResult": {
               "default": 0,
               "type": "integer"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@enabled": {
               "default": true,
@@ -7829,6 +7829,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -7840,10 +7844,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@geoCoords": {
               "type": "array",
@@ -7921,6 +7921,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -7973,10 +7977,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-geoOrigin": {
               "$ref": "#/definitions/-GeoOriginSFNode"
@@ -8526,6 +8526,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -8537,10 +8541,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@geoCenter": {
               "type": "array",
@@ -8827,6 +8827,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -8838,10 +8842,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -9109,6 +9109,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -9129,10 +9133,6 @@
             },
             "@description": {
               "type": "string"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@info": {
               "type": "array",
@@ -9364,6 +9364,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -9390,10 +9394,6 @@
             },
             "-displacers": {
               "$ref": "#/definitions/-HAnimDisplacerMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@limitOrientation": {
               "type": "array",
@@ -9879,6 +9879,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -9908,10 +9912,6 @@
             },
             "-displacers": {
               "$ref": "#/definitions/-HAnimDisplacerMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@mass": {
               "minimum": 0,
@@ -10145,6 +10145,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -10168,10 +10172,6 @@
             },
             "@description": {
               "type": "string"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -11282,6 +11282,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -11290,10 +11294,6 @@
                 "default": -1,
                 "type": "number"
               }
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@load": {
               "default": true,
@@ -11507,6 +11507,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -11530,10 +11534,6 @@
                 "exclusiveMinimum": 0,
                 "type": "number"
               }
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-gradients": {
               "$ref": "#/definitions/-X3DTexture3DNodeSFNode"
@@ -11987,6 +11987,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -11998,10 +12002,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-layout": {
               "$ref": "#/definitions/-X3DLayoutNodeSFNode"
@@ -12592,6 +12592,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -12612,10 +12616,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@forceTransitions": {
               "default": false,
@@ -14582,6 +14582,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -14590,10 +14594,6 @@
                 "default": -1,
                 "type": "number"
               }
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-geometry": {
               "$ref": "#/definitions/-X3DNurbsSurfaceGeometryNodeMFNode"
@@ -15771,6 +15771,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -15792,10 +15796,6 @@
             },
             "@createParticles": {
               "default": true,
-              "type": "boolean"
-            },
-            "@displayBBox": {
-              "default": false,
               "type": "boolean"
             },
             "-emitter": {
@@ -15931,6 +15931,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -15942,10 +15946,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -18175,6 +18175,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -18183,10 +18187,6 @@
                 "default": -1,
                 "type": "number"
               }
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@enabled": {
               "default": true,
@@ -19159,6 +19159,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -19170,10 +19174,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -19316,6 +19316,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -19335,10 +19339,6 @@
                 "exclusiveMinimum": 0,
                 "type": "number"
               }
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -19671,6 +19671,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -19679,10 +19683,6 @@
                 "default": -1,
                 "type": "number"
               }
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-geometry": {
               "$ref": "#/definitions/-X3DGeometryNodeSFNode"
@@ -19759,6 +19759,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -19777,10 +19781,6 @@
             "@dataLength": {
               "default": 0,
               "type": "integer"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@enabled": {
               "default": true,
@@ -21054,6 +21054,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -21065,10 +21069,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -21288,6 +21288,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -21299,10 +21303,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -22869,6 +22869,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -22889,10 +22893,6 @@
             },
             "-children": {
               "$ref": "#/definitions/-X3DChildNodeMFNode"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -23152,6 +23152,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -23168,10 +23172,6 @@
             "@cryptoSystem": {
               "default": 0,
               "type": "integer"
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "@enabled": {
               "default": true,
@@ -24255,6 +24255,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -24300,10 +24304,6 @@
                 "minimum": 0,
                 "type": "number"
               }
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -24453,6 +24453,10 @@
                 "type": "number"
               }
             },
+            "@bboxDisplay": {
+              "default": false,
+              "type": "boolean"
+            },
             "@bboxSize": {
               "type": "array",
               "minItems": 3,
@@ -24472,10 +24476,6 @@
                 "exclusiveMinimum": 0,
                 "type": "number"
               }
-            },
-            "@displayBBox": {
-              "default": false,
-              "type": "boolean"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
