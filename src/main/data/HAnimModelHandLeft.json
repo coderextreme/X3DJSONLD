@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"17 May 2020"
+            "@content":"27 May 2020"
           },
           {
             "@name":"generator",
@@ -104,8 +104,6 @@
               "@jointBindingPositions":[0,0,0],
               "@jointBindingRotations":[0,0,1,0],
               "@jointBindingScales":[1,1,1],
-              "@loa":-1,
-              "@skeletalConfiguration":"BASIC",
               "@version":"2.0",
               "-skeleton":[
                 { "HAnimJoint":
