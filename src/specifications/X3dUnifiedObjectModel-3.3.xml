@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.3.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.3.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2020-05-10-07:00 23:00:49.742-07:00 -->
+<!-- Generated 2020-05-25-07:00 10:39:33.84-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.3"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -901,13 +901,13 @@
       </SimpleType>
       <SimpleType name="hanimVersionChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node."
+                  appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node. Note that default HAnimHumanoid version is 2.0 for X3D version 4, and default is 1.0 for X3D version 3."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimHumanoid">
          <enumeration value="1.0"
-                      appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since it was never formally approved, version 1.1 is no longer an allowed value."
+                      appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since no other versions were formally approved, no other values are allowed for earlier HAnim versions."
                       documentation="https://www.web3d.org/documents/specifications/19774/V1.0"/>
          <enumeration value="2.0"
-                      appinfo="Revised standard HAnim 19774 version 2 parts 1 and 2 were approved by ISO in Novemer 2019, published by Web3D Consortium May 2020."
+                      appinfo="Revised standard HAnim 19774 version 2 (parts 1 and 2) were approved by ISO in November 2019, published by Web3D Consortium May 2020."
                       documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
       </SimpleType>
       <SimpleType name="initializeOnlyAccessTypes"
@@ -9994,7 +9994,7 @@
             <field name="creaseAngle"
                    type="SFFloat"
                    accessType="initializeOnly"
-                   default="0.0"
+                   default="0"
                    minInclusive="0"/>
             <field name="crossSection"
                    type="MFVec2f"
@@ -11756,15 +11756,15 @@
             <field name="version"
                    type="SFString"
                    accessType="inputOutput"
-                   default="2.0"
+                   default="1.0"
                    additionalEnumerationValuesAllowed="false"
                    simpleType="hanimVersionChoices"
                    baseType="xs:NMTOKEN">
                <enumeration value="1.0"
-                            appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since it was never formally approved, version 1.1 is no longer an allowed value."
+                            appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since no other versions were formally approved, no other values are allowed for earlier HAnim versions."
                             documentation="https://www.web3d.org/documents/specifications/19774/V1.0"/>
                <enumeration value="2.0"
-                            appinfo="Revised standard HAnim 19774 version 2 parts 1 and 2 were approved by ISO in Novemer 2019, published by Web3D Consortium May 2020."
+                            appinfo="Revised standard HAnim 19774 version 2 (parts 1 and 2) were approved by ISO in November 2019, published by Web3D Consortium May 2020."
                             documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
             </field>
             <field name="viewpoints"
