@@ -66,7 +66,7 @@
       <DirectionalLight direction='0.0 1.0 -0.5' intensity='0.5'/>
       <Anchor description='Back to front view' url='"#Front"'>
         <Transform translation='0.0 0.0 -0.5'>
-          <Inline url='"gridBack.json" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json" "gridBack.json" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"'/>
+		<Inline url='"gridBack.json" "../data/gridBack.json"'/>
         </Transform>
       </Anchor>
       <Viewpoint DEF='View00' description='ArtDeco00' position='-3.75 3.75 3.0'/>
