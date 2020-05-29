@@ -193,7 +193,7 @@
         <Material ambientIntensity='0.25' shininess='0.0' specularColor='0.2 0.2 0.2'/>
       </ProtoBody>
     </ProtoDeclare>
-    <Anchor description='ArtDecoPrototypeExample' parameter='"target=_blank"' url='"ArtDecoExamples.x3d" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d" "ArtDecoExamples.wrl" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.wrl"'>
+    <Anchor description='ArtDecoPrototypeExample' parameter='"target=_blank"' url='"../data/ArtDecoExamples.json" "../data/ArtDecoExamples.x3d" "ArtDecoExamples.json" "ArtDecoExamples.x3d" '>
       <Shape>
         <Appearance>
           <Material diffuseColor='0.8 0.4 0'/>
