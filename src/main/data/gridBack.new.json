@@ -8,7 +8,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"gridBack.x3d"
+            "@content":"gridBack.json"
           },
           {
             "@name":"description",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"
           },
           {
             "@name":"generator",
@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 May 2020"
+            "@content":"28 May 2020"
           },
           {
             "@name":"generator",
