@@ -59,7 +59,7 @@
 </Transform>
 <DirectionalLight direction="1 -1 -1"></DirectionalLight>
 <DirectionalLight direction="0 1 -0.5" intensity="0.5"></DirectionalLight>
-<Anchor description="Back to front view" url="&quot;#Front&quot;"><Transform translation="0 0 -0.5"><Inline url="&quot;gridBack.x3d&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d&quot; &quot;gridBack.wrl&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl&quot;"></Inline>
+<Anchor description="Back to front view" url="&quot;#Front&quot;"><Transform translation="0 0 -0.5"><Inline url="&quot;gridBack.json&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json&quot; &quot;gridBack.json&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json&quot;"></Inline>
 </Transform>
 </Anchor>
 <Viewpoint DEF="View00" description="ArtDeco00" position="-3.75 3.75 3"></Viewpoint>
