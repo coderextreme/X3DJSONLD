@@ -2478,7 +2478,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="notDefaultFieldValue1"
               select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
-                      not( local-name()='displayBBox' and .='false') and
+                      not( local-name()='bboxDisplay' and .='false') and
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -2971,13 +2971,21 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='loa' and (string(.)='-1')) or
+                       (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimDisplacer' and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='weight' and (.='0' or .='0.0'))))" />
+                      ((local-name()='containerField' and (.='displacers')) or
+                       (local-name()='weight' and (.='0' or .='0.0')))) and
+                      not( local-name(..)='HAnimMotion' and
+                      ((local-name()='containerField' and (string(.)='motions')) or
+                       (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
+                       (local-name()='frameIncrement' and (string(.)='1')) or
+                       (local-name()='frameIndex' and (string(.)='0')) or
+                       (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
                       ((local-name()='tessellation' and (.='0')) or
@@ -3197,7 +3205,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- note that if digital signature is present, all attributes are included (including default values) and
                        order of attributes may change, but that should be OK according to Post Schema Validation Infoset (PSVI) -->
                 <xsl:variable name="notDefaultValue" select="
-                (count(Signature) > 0) or (count(//ds:Signature) > 0) or
+                (count(//ds:Signature) > 0) or
+                (local-name(..)='HAnimHumanoid' and local-name()='version') or(count(//ds:Signature) > 0) or
                 (
                 $notImplicitEvent1 and
                 $notImplicitEvent2 and
@@ -3296,8 +3305,8 @@ POSSIBILITY OF SUCH DAMAGE.
 					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
 					      ($parentElementName='IMPORT'                     and (($attributeName='AS') or ($attributeName='importedDEF') or ($attributeName='inlineDEF'))) or
-					      ($parentElementName='HAnimHumanoid'              and $attributeName='skeletalConfiguration') or
-					      ($parentElementName='HAnimHumanoid'              and $attributeName='version') or
+                          ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
+                          ($parentElementName='HAnimMotion'                and $attributeName='channels') or
 					      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
 						  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
 						  ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
@@ -3363,7 +3372,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='closed')   or
 					($attributeName='convex')   or
 					($attributeName='colorPerVertex') or
-                                        ($attributeName='displayBBox')  or
+                    ($attributeName='bboxDisplay')  or
 					($attributeName='enabled')  or
 					($attributeName='global')   or
 					($attributeName='normalPerVertex') or
@@ -3423,6 +3432,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
 					($parentElementName='CADLayer'                   and ($attributeName='visible') and starts-with(//X3D/@version,'3')) or
 					($parentElementName='HAnimHumanoid'              and $attributeName='motionsEnabled') or
+					($parentElementName='HAnimMotion'                and $attributeName='channelsEnabled') or
 					($parentElementName='MetadataBoolean'            and $attributeName='value') or
 					($parentElementName='SegmentedVolumeData'        and $attributeName='segmentEnabled') or
 					($parentElementName='XvlShell'                   and ($attributeName='faceEmpty' or $attributeName='faceHidden'))">
@@ -3562,6 +3572,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='FogCoordinate' and $attributeName='depth') or
 					($parentElementName='HAnimSisplacer' and $attributeName='weight') or
 					($parentElementName='HAnimJoint' and ($attributeName='llimit' or $attributeName='ulimit' or $attributeName='skinCoordWeight' or $attributeName='stiffness')) or
+					($parentElementName='HAnimMotion' and $attributeName='values') or
 					($parentElementName='HAnimSegment' and $attributeName='momentsOfInertia') or
 					($parentElementName='IsoSurfaceVolumeData' and $attributeName='surfaceValues') or
 					($parentElementName='Layout' and ($attributeName='offset' or $attributeName='size')) or
@@ -3589,6 +3600,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='LoadSensor'     and $attributeName='timeOut')  or
                     ($parentElementName='AudioClip'      and ends-with($attributeName,'Time'))  or
                     ($parentElementName='EspduTransform' and ends-with($attributeName,'Time'))  or
+					($parentElementName='HAnimMotion'    and $attributeName='frameDuration') or
                     ($parentElementName='MovieTexture'   and ends-with($attributeName,'Time'))"> 
 			  <!-- TimeSensor loop & enabled are caught by SFBool tests, all other TimeSensorfields are SFTime -->
 			  <xsl:text>SFTime</xsl:text>
@@ -3808,6 +3820,9 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='FillProperties' and ($attributeName='hatchStyle')) or
 					($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
 					($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
+					(starts-with($parentElementName,'HAnim') and $attributeName='loa') or
+                    ($parentElementName='HAnimMotion' and (($attributeName='frameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex'))) or
+                    ($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
 					($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
 					($parentElementName='LineProperties' and ($attributeName='linetype')) or
 					($parentElementName='MotorJoint' and $attributeName='enabledAxe') or

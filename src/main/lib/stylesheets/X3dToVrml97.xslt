@@ -3975,7 +3975,7 @@ EXTERNPROTO TransmitterPdu [
             <xsl:with-param name="DEF"  select="@DEF"/>
           </xsl:call-template>
         </xsl:for-each>
-        <xsl:for-each select="*[local-name()!='Coordinate' and local-name()!='Normal' and local-name()!='Viewpoint'
+        <xsl:for-each select="*[local-name()!='Coordinate' and local-name()!='Normal' and local-name()!='Viewpoint' and not(starts-with(local-name(),'Metadata'))
         			and not(starts-with(local-name(),'HAnim'))][not(@containerField='skin')]">
           <xsl:call-template name="output-error">
             <xsl:with-param name="errorString">
@@ -5592,7 +5592,7 @@ EXTERNPROTO TransmitterPdu [
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
-                      not( local-name()='displayBBox' and .='false') and
+                      not( local-name()='bboxDisplay' and .='false') and
                       not( local-name()='visible'       and .='true') or
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -6087,13 +6087,22 @@ EXTERNPROTO TransmitterPdu [
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='loa' and (string(.)='-1')) or
+                       (local-name()='version' and (string(.)='2.0')) or
+                       (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimDisplacer' and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='weight' and (.='0' or .='0.0'))))" />
+                      ((local-name()='containerField' and (.='displacers')) or
+                       (local-name()='weight' and (.='0' or .='0.0')))) and
+                      not( local-name(..)='HAnimMotion' and
+                      ((local-name()='containerField' and (string(.)='motions')) or
+                       (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
+                       (local-name()='frameIncrement' and (string(.)='1')) or
+                       (local-name()='frameIndex' and (string(.)='0')) or
+                       (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
                       ((local-name()='tessellation' and (.='0')) or
@@ -7078,7 +7087,7 @@ EXTERNPROTO TransmitterPdu [
       <xsl:when test="	($attributeName='ccw') or
       			($attributeName='convex') or
       			($attributeName='colorPerVertex') or
-                        ($attributeName='displayBBox')  or
+                ($attributeName='bboxDisplay')  or
       			($attributeName='enabled') or
       			($attributeName='global') or
       			($attributeName='normalPerVertex') or
@@ -7692,6 +7701,7 @@ EXTERNPROTO TransmitterPdu [
       			($parentElementName='Text' and $attributeName='length') or
       			($parentElementName='Background' and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
       			($parentElementName='HAnimJoint' and ($attributeName='llimit' or $attributeName='ulimit' or $attributeName='stiffness')) or
+				($parentElementName='HAnimMotion' and $attributeName='values') or
       			($parentElementName='HAnimSegment' and $attributeName='momentsOfInertia') or
       			($parentElementName='MetadataFloat' and $attributeName='value') or
       			($parentElementName='NurbsTextureSurface' and $attributeName='weight') or
@@ -13769,6 +13779,7 @@ EXTERNPROTO TransmitterPdu [
             <xsl:when test="local-name()='HAnimJoint'">						<xsl:text>Full.HAnim=1</xsl:text></xsl:when>
             <xsl:when test="local-name()='HAnimSegment'">					<xsl:text>Full.HAnim=1</xsl:text></xsl:when>
             <xsl:when test="local-name()='HAnimSite'">						<xsl:text>Full.HAnim=1</xsl:text></xsl:when>
+            <xsl:when test="local-name()='HAnimMotion'">                    <xsl:text>Full.HAnim=2</xsl:text></xsl:when>
             <xsl:when test="local-name()='NurbsCurve'">						<xsl:text>Full.NURBS=1</xsl:text></xsl:when>
             <xsl:when test="local-name()='NurbsCurve2D'">					<xsl:text>Full.NURBS=3</xsl:text></xsl:when>
             <xsl:when test="local-name()='NurbsOrientationInterpolator'">			<xsl:text>Full.NURBS=1</xsl:text></xsl:when>
@@ -13954,7 +13965,7 @@ EXTERNPROTO TransmitterPdu [
       <xsl:variable name="neededProfile">  <xsl:value-of select="substring-before($neededProfileComponentLevel,'.')"/></xsl:variable>
       <xsl:variable name="neededLevel">    <xsl:value-of select="substring-after ($neededProfileComponentLevel,'=')"/></xsl:variable>
       <xsl:variable name="neededComponent"><xsl:value-of select="substring-after (substring-before($neededProfileComponentLevel,'='),'.')"/></xsl:variable>
-      <xsl:if test="$neededComponent and not($neededComponent='') and not(/X3D/head/component[@name=$neededComponent and ($neededLevel &lt;= @level)])
+      <xsl:if test="$neededComponent and not($neededComponent='') and not(/X3D/head/component[translate(@name,'-','')=$neededComponent and ($neededLevel &lt;= @level)])
       		    and count(preceding::*[local-name()=$nodeName]) = 0"><!-- only report first node -->
         <xsl:choose>
           <xsl:when test="/X3D/head/component[translate(@name,'-','')=$neededComponent]"><!-- H-Anim component renamed to HAnim in X3D4 -->

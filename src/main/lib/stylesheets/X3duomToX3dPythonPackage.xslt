@@ -2545,7 +2545,6 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>: # walk each child in MFNode list, if any
             for each in </xsl:text>
-                        <xsl:text>__</xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>:
                 assertValidFieldInitializationValue(each.name, </xsl:text>
@@ -2837,7 +2836,15 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:text>='" + </xsl:text>
                         <xsl:choose>
                             <!-- always stringify value in field/fieldValue since it is arbitrary type -->
-                            <xsl:when test="not(@type='SFString') or (starts-with($elementName,'field') and ($fieldName = 'value'))">
+                            <xsl:when test="(starts-with($elementName,'field') and ($fieldName = 'value'))">
+                                <xsl:text>str</xsl:text>
+                                <xsl:text>(</xsl:text>
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text>)</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="not(@type='SFString')">
+                                <!-- Use field type for value conversion -->
                                 <xsl:value-of select="@type"/>
                                 <xsl:text>(</xsl:text>
                                 <xsl:text>self.</xsl:text>
@@ -3078,7 +3085,15 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                                 <xsl:text> + '"'</xsl:text>
                             </xsl:when>
                             <!-- always stringify value in field/fieldValue since it is arbitrary type -->
-                            <xsl:when test="not(@type='SFString') or (starts-with($elementName,'field') and ($fieldName = 'value'))">
+                            <xsl:when test="(starts-with($elementName,'field') and ($fieldName = 'value'))">
+                                <xsl:text>str</xsl:text>
+                                <xsl:text>(</xsl:text>
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text>)</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="not(@type='SFString')">
+                                <!-- Use field type for value conversion -->
                                 <xsl:value-of select="@type"/>
                                 <xsl:text>(</xsl:text>
                                 <xsl:text>self.</xsl:text>

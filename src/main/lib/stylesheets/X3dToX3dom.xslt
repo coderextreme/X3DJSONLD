@@ -1053,7 +1053,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
-                      not( local-name()='displayBBox' and .='false') and
+                      not( local-name()='bboxDisplay' and .='false') and
                       not( local-name()='visible'     and .='true') or
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -1548,13 +1548,21 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='loa' and (string(.)='-1')) or
+                       (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimDisplacer' and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='weight' and (.='0' or .='0.0'))))" />
+                      ((local-name()='containerField' and (.='displacers')) or
+                       (local-name()='weight' and (.='0' or .='0.0')))) and
+                      not( local-name(..)='HAnimMotion' and
+                      ((local-name()='containerField' and (string(.)='motions')) or
+                       (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
+                       (local-name()='frameIncrement' and (string(.)='1')) or
+                       (local-name()='frameIndex' and (string(.)='0')) or
+                       (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
                       ((local-name()='tessellation' and (.='0')) or

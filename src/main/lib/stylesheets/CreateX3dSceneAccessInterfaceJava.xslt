@@ -3711,6 +3711,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
          fileName.toUpperCase().contains(".EXI")     ||
          fileName.toUpperCase().contains(".OPENEXI") ||
          fileName.toUpperCase().contains(".NASHORN") ||
+         fileName.toUpperCase().contains(".JS")      ||
          fileName.toUpperCase().contains(".JAVA")    ||
          fileName.toUpperCase().contains(".JSON")    ||
          fileName.toUpperCase().contains(".PY")      ||
@@ -4535,150 +4536,45 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 */
     public File toFileJavaScript(String fileName)
     {
-                if ((fileName == null || fileName.isEmpty()))
-                {
-                       throw new X3DException("toFileJavaScript(fileName) fileName not provided;" +
-                               " be sure to end with extension \"" + X3DObject.FILE_EXTENSION_JAVASCRIPT + "\"");
-                }
-                if (!fileName.endsWith(X3DObject.FILE_EXTENSION_JAVASCRIPT))
-                {
-                       throw new X3DException("fileName " + fileName + " does not end with extension \"" + X3DObject.FILE_EXTENSION_JAVASCRIPT + "\"");
-                }
-		if      (!fileNameMeetsX3dNamingConventions(fileName))
-                    System.out.println ("Warning: " + fileName + " does not meet suggested X3D naming conventions, continuing...");
-                else if (!isFileNameNMTOKEN(fileName)) // less strict
-                    System.out.println ("Warning: " + fileName + " is not a valid NMTOKEN, continuing...");
-
-                Path outputFilePath = Paths.get(fileName);
-
-                String intermediateJSFileName = fileName + ".intermediate.js";
-                Path   intermediateJSFilePath = Paths.get(intermediateJSFileName);
-
-                // http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-                // http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
-                Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
-
-                try
-                {
-                       validate(); // strict checks before serializing scene and saving file
-                }
-                catch (Exception e)
-                {
-                       System.out.println (e); // output exception but allow serialization to continue, file may be editable
-                       e.printStackTrace();
-                       if (ConfigurationProperties.isValidationExceptionAllowed())
-                                System.out.println ("Output serialization allowed to continue, file may be editable...");
-                       else throw (e);
-                }
-
-                String errorNotice = new String();
-                outputFilePath.toAbsolutePath(); // debug check, defaults to local directory
-                File outputFile = outputFilePath.toFile();
-//              if (!outputFile.canWrite())
-//                  errorNotice += "outputFile not writable: " + outputFile.getAbsolutePath() + ", ";
-                                        
-				File priorFile = new File(fileName);
-				if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
-				{
-					System.out.println ("Warning: toFileJavaScript() is overwriting prior file " + fileName);
-				}
-				else if  (priorFile.exists())
-				{
-					System.out.println ("Warning: toFileJavaScript() is not allowed to overwrite prior file: " + fileName);
-					System.out.println ("  see X3DJSAIL.properties file, or ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles(), to get/set permissions");
-					return null;
-				}
-
-                ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA); // built-in version avoids unwanted line breaks
-                String outputSceneText = toStringJSON();
-                try
-                {
-					// patches by John Carlson
-                    bufferedWriter = Files.newBufferedWriter(intermediateJSFilePath, charset);
-					String nodeFolder = "..";
-					String tmpStr = "";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "require('java');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var xmldom = require('xmldom');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var DOMParser = xmldom.DOMParser;\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var XMLSerializer = new xmldom.XMLSerializer();\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var DOMImplementation = new xmldom.DOMImplementation();\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var json = "+outputSceneText+";\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var version = json['X3D']['@version'];\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var docType = DOMImplementation.createDocumentType('X3D', 'ISO//Web3D//DTD X3D '+version+'//EN', 'http://www.web3d.org/specifications/x3d-'+version+'.dtd', null);\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var document = DOMImplementation.createDocument(null, 'X3D', docType);\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var mapToMethod = require('"+nodeFolder+"/node/mapToMethod.js');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var mapToMethod2 = require('"+nodeFolder+"/node/mapToMethod2.js');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "for (var par in mapToMethod2) {\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "        for (var child in mapToMethod2[par]) {\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "                mapToMethod[par][child] = mapToMethod2[par][child];\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "        }\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "}\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var fieldTypes = require('"+nodeFolder+"/node/fieldTypes.js');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "require('"+nodeFolder+"/node/X3DJSONLD.js');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var NodeSerializer = require('"+nodeFolder+"/node/NodeSerializer.js');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var child = CreateElement('X3D');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "ConvertToX3DOM(json, '', child, 'flipper.json');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "print('Returning with', child);\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var output = new NodeSerializer().serializeToString(json, child, '"+fileName+"', mapToMethod, fieldTypes);\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var FileWriter = java.type('java.io.FileWriter');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "var fw = new FileWriter('"+fileName+"');\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "fw.write(output);\n";
-					bufferedWriter.write(tmpStr, 0, tmpStr.length());
-					tmpStr = "fw.close();\n";
-                    bufferedWriter.write(tmpStr, 0, tmpStr.length());
-                    bufferedWriter.close(); // ensure file writing is complete
-                }
-                catch (IOException exception)
-                {
-					exception.printStackTrace();
-                    throw new X3DException("IOException when creating intermediateJSFileName " + intermediateJSFileName +
-                               ", unable to save file: " + exception);
-                }
-                try {
-					String[] cmd = { "node.exe", "intermediateJSFileName"};
-					Runtime r = Runtime.getRuntime();
-					Process p = r.exec(cmd);
-					p.waitFor();
-					if (ConfigurationProperties.isDeleteIntermediateFiles()) // clean up when done
-						intermediateJSFilePath.toFile().deleteOnExit();
-                }
-                catch (InterruptedException exception)
-                {
-					throw new X3DException(errorNotice + "InterruptedException when processing fileName " + intermediateJSFilePath +
-							", unable to save result: " + exception);
+		return toFileJavaScript(fileName, false); // no license
+    }
+    public File toFileJavaScript(String fileName, boolean includeWeb3dLicense)
+    {
+		String errorNotice = new String();
+		if ((fileName == null || fileName.isEmpty()))
+		{
+			throw new X3DException("toFileJavaScript(fileName, includeWeb3dLicense) fileName not provided;" +
+				" be sure to end with extension \"" + FILE_EXTENSION_X3D + "\"");
 		}
-                catch (IOException exception)
-                {
-					throw new X3DException(errorNotice + "IOException when processing fileName " + intermediateJSFilePath +
-							", unable to save result: " + exception);
-                }
-                return outputFilePath.toFile(); // success
+		if (!fileName.endsWith(FILE_EXTENSION_JAVASCRIPT))
+		{
+			throw new X3DException("fileName " + fileName + " does not end with extension " +
+                            "\"" + FILE_EXTENSION_JAVASCRIPT + "\"");
+		}
+		Path outputFilePath = Paths.get(fileName);
+		if (ConfigurationProperties.isDebugModeActive()) // debug check, defaults to local directory
+		{
+			errorNotice += "[diagnostic] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
+			System.out.println (errorNotice);
+		}
+		String className = fileName.substring(0,fileName.indexOf(".js"));
+		if (className.contains("/"))
+			className = className.substring(fileName.lastIndexOf("/")  + 1); // strip path
+		if (className.contains("\\/"))
+			className = className.substring(fileName.lastIndexOf("\\") + 1); // strip path
+
+		// XSLT stylesheet parameter names and values
+		String parameterName1  = "className";
+		String parameterValue1 =  className;
+		String parameterName2  = "";
+		String parameterValue2 = "";
+		if (includeWeb3dLicense)
+		{
+				parameterName2  = "includeLicenseoriginals";
+				parameterValue2 = Boolean.toString(includeWeb3dLicense);
+		}
+		return toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_JAVASCRIPT, fileName,
+					parameterName1, parameterValue1, parameterName2, parameterValue2);
 	}
 
 	/**
@@ -32481,6 +32377,7 @@ showing default attribute values, and other custom settings.</p>
 	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.java" target="_blank">examples/HelloWorldProgramOutput.java</a>
 	 */
 	public static final String STYLESHEET_JAVA   = "X3dToJava.xslt";
+	public static final String STYLESHEET_JAVASCRIPT   = "X3dToNodeJS.xslt";
 				
 	/** XSLT stylesheet to create JSON encoding from X3D scene: <i>../lib/stylesheets/X3dToJson.xslt</i>
 	 * @see <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding">X3D JSON Encoding</a>
@@ -32505,6 +32402,7 @@ showing default attribute values, and other custom settings.</p>
     {
         return stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_HTML_DOCUMENTATION) ||
                stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_JAVA) ||
+               stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_JAVASCRIPT) ||
                stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_JSON) ||
                stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_PYTHON) ||
                stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_MODEL_META_TO_MARKDOWN) ||
@@ -32542,6 +32440,10 @@ showing default attribute values, and other custom settings.</p>
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_X3DV_CLASSICVRML))
         {
             expectedFileNameExtension = X3DObject.FILE_EXTENSION_CLASSICVRML;
+        }
+        else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_JAVASCRIPT))
+        {
+            expectedFileNameExtension = X3DObject.FILE_EXTENSION_JAVASCRIPT;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_JAVA))
         {
