@@ -62,7 +62,7 @@ POSSIBILITY OF SUCH DAMAGE.
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-                xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
+				xmlns:saxon="http://saxon.sf.net/"><!-- http://www.saxonica.com/documentation9.5/extensions/attributes -->
     <!--        
                 xmlns="http://www.w3.org/TR/xhtml1/strict"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
@@ -221,7 +221,8 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:when>
 			<!-- first HAnim hands, feet.  TODO not working properly yet. -->
             <xsl:when test="($modifyX3dVersion = 'true') and not(starts-with(//X3D/@version,'4')) and
-							((//HAnimHumanoid//*[contains(@name,'midcarpal') or contains(@name,'talus')]) or
+							((//HAnimHumanoid[starts-with(@version, '2') or (number(@loa) > -1)]) or
+							 (//HAnimHumanoid//*[contains(@name,'midcarpal') or contains(@name,'talus')]) or
 							 (//meta[(@name = 'title')][contains(lower-case(@content),'hand') or contains(lower-case(@content),'foot')] and count(//HAnimHumanoid) > 0))">
 				<!-- TODO Projective Texture Modeling (PTM) and other X3D v4 extensions -->
                 <xsl:text>4.0</xsl:text>
@@ -494,6 +495,15 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:text>  </xsl:text>
         </xsl:for-each>
         
+        <!-- diagnostic
+        <xsl:variable name="hanimVersion" select="ancestor-or-self::HAnimHumanoid/@version"/>
+        <xsl:if test="(string-length($hanimVersion) > 0) and (local-name() = 'HAnimHumanoid')">
+            <xsl:message>
+                <xsl:text>*** $hanimVersion=</xsl:text>
+                <xsl:value-of select="$hanimVersion"/>
+            </xsl:message>
+        </xsl:if> -->
+        
         <xsl:if test="(local-name(..)='Scene') and (count(preceding-sibling::*) = 0) and 
                       ((count(//WorldInfo) = 0) or (local-name() = 'WorldInfo')) and 
                       (string-length($prependWorldInfoIfMissing) > 0) and not($prependWorldInfoIfMissing = 'false') ">
@@ -549,6 +559,26 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:call-template name="process-attributes-in-order"/>
                         <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
                         <xsl:text>&#10;</xsl:text>
+                        
+                        <!-- warn regarding atypical programming language code -->
+                        <xsl:choose>
+                            <xsl:when test="(local-name()='Script') and (contains(@url,'.class&quot;') or contains(@url,'.java&quot;') or contains(@url,'.jar&quot;'))">
+                                <xsl:message>
+                                    <xsl:text>*** warning: Script </xsl:text>
+                                    <xsl:text> contains reference to Java code in url='</xsl:text>
+                                    <xsl:value-of select="@url"/>
+                                    <xsl:text>'</xsl:text>
+                                </xsl:message>
+                            </xsl:when>
+                            <xsl:when test="(local-name()='Script') and (contains(@url,'.py&quot;'))">
+                                <xsl:message>
+                                    <xsl:text>*** warning: Script </xsl:text>
+                                    <xsl:text> contains reference to Python code in url='</xsl:text>
+                                    <xsl:value-of select="@url"/>
+                                    <xsl:text>'</xsl:text>
+                                </xsl:message>
+                            </xsl:when>
+                        </xsl:choose>
 
                         <!-- handle current node and its children, if any -->
                         <xsl:choose>
@@ -778,7 +808,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                                             <xsl:value-of select="local-name()"/>
                                                             <xsl:text> name='</xsl:text>
                                                             <xsl:value-of select="@name"/>
-                                                            <xsl:text> DEF='</xsl:text>
+                                                            <xsl:text>' DEF='</xsl:text>
                                                             <xsl:value-of select="@DEF"/><!-- in case it is there -->
                                                             <xsl:text>' containerField='</xsl:text>
                                                             <xsl:value-of select="@containerField"/>
@@ -788,6 +818,37 @@ POSSIBILITY OF SUCH DAMAGE.
                                                             <xsl:value-of select="$hanimHumanoidName"/>
                                                             <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
                                                         </xsl:message>
+                                                    </xsl:when>
+                                                    <xsl:when test="(string-length(@DEF) = 0)">
+                                                        <!-- no top-level USE node found for this skeleton node, but no DEF found either so can't add it -->
+                                                        <xsl:message>
+                                                            <xsl:text disable-output-escaping="yes">*** error: no top-level &lt;</xsl:text>
+                                                            <xsl:value-of select="local-name()"/>
+                                                            <xsl:text> USE='</xsl:text>
+                                                            <xsl:value-of select="@DEF"/>
+                                                            <xsl:text>' containerField='</xsl:text>
+                                                            <xsl:value-of select="$expectedContainerField"/>
+                                                            <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                                            <xsl:text> was found for name='</xsl:text>
+                                                            <xsl:value-of select="@name"/>
+                                                            <xsl:text>' was found, but cannot add it to ancestor </xsl:text>
+                                                            <xsl:text disable-output-escaping="yes">&lt;HAnimHumanoid name='</xsl:text>
+                                                            <xsl:value-of select="$hanimHumanoidName"/>
+                                                            <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                                            <xsl:text> since no DEF found either </xsl:text>
+                                                            <!-- fix both DEF and USE if name found -->
+                                                        </xsl:message>
+                                                        <xsl:text>        </xsl:text>
+                                                        <xsl:comment>
+                                                            <xsl:text disable-output-escaping="yes"> missing USE </xsl:text>
+                                                            <xsl:value-of select="local-name()"/>
+                                                            <xsl:text> USE='</xsl:text>
+                                                            <xsl:value-of select="@DEF"/>
+                                                            <xsl:text>' containerField='</xsl:text>
+                                                            <xsl:value-of select="$expectedContainerField"/>
+                                                            <xsl:text disable-output-escaping="yes">'/&gt; </xsl:text>
+                                                        </xsl:comment>
+                                                        <xsl:text>&#10;</xsl:text>
                                                     </xsl:when>
                                                     <xsl:otherwise>
                                                         <!-- no top-level USE node found for this skeleton node, so add it -->
@@ -1196,7 +1257,55 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:when test="(string-length(@USE) > 0)">
                 <!-- no other attributes allowed with USE except containerField; show DEF to propagate error if there -->
                 <xsl:apply-templates select="@DEF"/>
-                <xsl:apply-templates select="@USE"/>
+                
+                <xsl:choose>
+                    <xsl:when test="starts-with(local-name(),'HAnim')">
+                        <xsl:variable name="USE" select="@USE"/>
+                        <xsl:variable name="nodeName" select="//*[@DEF=$USE]/@name"/>
+                        <xsl:variable name="rootDEF"  select="ancestor-or-self::HAnimHumanoid/HAnimJoint/@DEF"/>
+                        <xsl:variable name="rootName" select="ancestor-or-self::HAnimHumanoid/HAnimJoint/@name"/>
+                        <xsl:choose>
+                            <xsl:when test="not(ends-with(@USE,$nodeName)) or (@USE = $nodeName) or (@DEF = concat('_',$nodeName))">
+                                <xsl:variable name="DEFprefix">
+                                    <xsl:choose>
+                                        <xsl:when test="ends-with($rootDEF,$rootName)">
+                                            <xsl:value-of select="substring-before($rootDEF,$rootName)"/>
+                                            <xsl:if test="not(ends-with(substring-before($rootDEF,$rootName),'_'))">
+                                                <xsl:text>_</xsl:text>
+                                            </xsl:if>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:text>hanim_</xsl:text>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <xsl:message>
+                                    <xsl:text>*** </xsl:text>
+                                    <xsl:value-of select="local-name()"/>
+                                    <xsl:text> mismatched pair USE='</xsl:text>
+                                    <xsl:value-of select="@USE"/>
+                                    <xsl:text>' for original name='</xsl:text>
+                                    <xsl:value-of select="$nodeName"/>
+                                    <xsl:text>', resetting USE='</xsl:text>
+                                    <xsl:value-of select="$DEFprefix"/>
+                                    <xsl:value-of select="$nodeName"/>
+                                    <xsl:text>'</xsl:text>
+                                </xsl:message>
+                                <xsl:text> USE='</xsl:text>
+                                <xsl:value-of select="$DEFprefix"/>
+                                <xsl:value-of select="$nodeName"/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates select="@USE"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="@USE"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+                
                 <xsl:apply-templates select="@containerField"/>
                 <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='USE') and (local-name()!='containerField')]">
                     <xsl:sort select="local-name()" order="ascending" data-type="text"/>
@@ -1233,6 +1342,98 @@ POSSIBILITY OF SUCH DAMAGE.
                 <!-- xsl:apply-templates select="@xsd:noNamespaceSchemaLocation" />
                 <xsl:apply-templates select="@noNamespaceSchemaLocation" />-->
             </xsl:when>
+            <xsl:when test="starts-with(local-name(),'HAnim')">
+                <xsl:variable name="rootDEF"  select="ancestor-or-self::HAnimHumanoid/HAnimJoint/@DEF"/>
+                <xsl:variable name="rootName" select="ancestor-or-self::HAnimHumanoid/HAnimJoint/@name"/>
+                <!-- debug
+                <xsl:message>
+                    <xsl:text>*** [</xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> DEF naming rules] @DEF='</xsl:text>
+                    <xsl:value-of select="@DEF"/>
+                    <xsl:text>' $rootDEF='</xsl:text>
+                    <xsl:value-of select="$rootDEF"/>
+                    <xsl:text>' @name='</xsl:text>
+                    <xsl:value-of select="@name"/>
+                    <xsl:text>' $rootName='</xsl:text>
+                    <xsl:value-of select="$rootName"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:message> -->
+                <xsl:choose>
+                    <xsl:when test="not(ends-with(@DEF,@name)) or (@DEF = @name) or (@DEF = concat('_',@name))">
+                        <xsl:variable name="DEFprefix">
+                            <xsl:choose>
+                                <xsl:when test="ends-with($rootDEF,$rootName)">
+                                    <xsl:value-of select="substring-before($rootDEF,$rootName)"/>
+                                    <xsl:if test="not(ends-with(substring-before($rootDEF,$rootName),'_'))">
+                                        <xsl:text>_</xsl:text>
+                                    </xsl:if>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:text>hanim_</xsl:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>
+                        <xsl:message>
+                            <xsl:text>*** </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> mismatched pair DEF='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>' for name='</xsl:text>
+                            <xsl:value-of select="@name"/>
+                            <xsl:text>', resetting DEF='</xsl:text>
+                            <xsl:value-of select="$DEFprefix"/>
+                            <xsl:value-of select="@name"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:message>
+                        <xsl:text> DEF='</xsl:text>
+                        <xsl:value-of select="$DEFprefix"/>
+                        <xsl:value-of select="@name"/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="@DEF"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <!-- remainder of HAnim node attributes -->
+                <xsl:choose>
+                    <xsl:when test="(local-name()='HAnimHumanoid')">
+                        <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='version')]">
+                            <xsl:sort select="local-name()" order="ascending" data-type="text"/>
+                        </xsl:apply-templates>
+                        <xsl:choose>
+                            <xsl:when test="//X3D[starts-with(@version,'3')] and starts-with(@version,'2')">
+                                <xsl:message>
+                                    <xsl:text>*** fix HAnimHumanoid from version='</xsl:text>
+                                     <xsl:value-of select="@version"/>
+                                    <xsl:text>' to version='1.0' (matching X3D version='</xsl:text>
+                                     <xsl:value-of select="//X3D/@version"/>
+                                    <xsl:text>')</xsl:text>
+                                </xsl:message>
+                                <xsl:text> version='1.0'</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="//X3D[starts-with(@version,'4')] and starts-with(@version,'1')">
+                                <xsl:message>
+                                    <xsl:text>*** fix HAnimHumanoid from version='</xsl:text>
+                                     <xsl:value-of select="@version"/>
+                                    <xsl:text>' to version='2.0' (matching X3D version='</xsl:text>
+                                     <xsl:value-of select="//X3D/@version"/>
+                                    <xsl:text>')</xsl:text>
+                                </xsl:message>
+                                <xsl:text> version='2.0'</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates select="@version" />
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="@*[(local-name()!='DEF')]">
+                            <xsl:sort select="local-name()" order="ascending" data-type="text"/>
+                        </xsl:apply-templates>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <!-- handle specially ordered cases next -->
             <!-- stick with canonical form to support version-control diffing-->
             <xsl:when test="local-name()='meta'">
@@ -1259,11 +1460,7 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:when>
             <xsl:when test="local-name()='IndexedFaceSet' or local-name()='IndexedLineSet'">
                 <xsl:apply-templates select="@DEF | @containerField "/>
-                <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='containerField') and
-                                                not(contains(local-name(), 'Index'))]">
-                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
-                </xsl:apply-templates>
-                <xsl:apply-templates select="@*[contains(local-name(), 'Index')]">
+                <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='containerField')]">
                     <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                 </xsl:apply-templates>
             </xsl:when>
@@ -1840,7 +2037,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="notDefaultFieldValue1"
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
-                      not( local-name()='displayBBox' and .='false') and
+                      not( local-name()='bboxDisplay' and .='false') and
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -2334,13 +2531,22 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='loa' and (string(.)='-1')) or
+                       (local-name()='version' and (string(.)='2.0')) or
+                       (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                        (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimDisplacer' and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='weight' and (.='0' or .='0.0'))))" />
+                      ((local-name()='containerField' and (.='displacers')) or
+                       (local-name()='weight' and (.='0' or .='0.0')))) and
+                      not( local-name(..)='HAnimMotion' and
+                      ((local-name()='containerField' and (string(.)='motions')) or
+                       (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
+                       (local-name()='frameIncrement' and (string(.)='1')) or
+                       (local-name()='frameIndex' and (string(.)='0')) or
+                       (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
                       ((local-name()='tessellation' and (.='0')) or
@@ -2555,12 +2761,42 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="notFieldSpace"
                       select="not(local-name(..)='field'  and	(local-name()='space' or local-name()='xml:space')) and
                       not(local-name(..)='Script' and	(local-name()='space' or local-name()='xml:space'))" />
+        
+        <!-- debug
+        <xsl:if test="starts-with(local-name(), 'bbox')">
+            <xsl:message>
+                <xsl:text>### @* attribute of interest found: [</xsl:text>
+                <xsl:value-of select="local-name(..)"/>
+                <xsl:if test="(local-name(.) = 'value')">
+                    <xsl:text> </xsl:text>
+                    <xsl:text>name='</xsl:text>
+                    <xsl:value-of select="../@name"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:if>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="local-name(.)"/>
+                <xsl:text>='</xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text>'</xsl:text>
+                <xsl:text>]</xsl:text>
+            </xsl:message>
+            <xsl:message>
+                <xsl:text>notDefaultFieldValue1='</xsl:text>
+                <xsl:value-of select="$notDefaultFieldValue1"/>
+                <xsl:text>', notDefaultFieldValue1a='</xsl:text>
+                <xsl:value-of select="$notDefaultFieldValue1a"/>
+                <xsl:text>'</xsl:text>
+            </xsl:message>
+        </xsl:if>
+        -->
+                    
         <!-- provide attribute output only if it is not a default value, or if scene has a digital signature -->
         <!-- note that if digital signature is present, all attributes are included (including default values) and
                        order of attributes may change, but that should be OK according to Post Schema Validation Infoset (PSVI) -->
         <xsl:if test="
                 (count(//ds:Signature) > 0) or
-                (
+                (local-name(..)='HAnimHumanoid' and local-name()='version') or
+               (
                 $notImplicitEvent1 and
                 $notImplicitEvent2 and
                 $notImplicitEvent3 and
@@ -2729,6 +2965,22 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text>'</xsl:text>
                         </xsl:message>
                     </xsl:if>
+                </xsl:when>
+                <xsl:when test="(local-name(..)='component') and (local-name(.)='name') and (.='HAnim' and //X3D[starts-with(@version,'3')])">
+                    <xsl:text>H-Anim</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** fix component name for X3D4: change componet name='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' to name='H-Anim'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <xsl:when test="(local-name(..)='component') and (local-name(.)='name') and (.='H-Anim' and //X3D[starts-with(@version,'4')])">
+                    <xsl:text>HAnim</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** fix component name for X3D4: change componet name='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' to name='HAnim'</xsl:text>
+                    </xsl:message>
                 </xsl:when>
                 <!-- fix common meta-name misnomers -->
                 <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and 
