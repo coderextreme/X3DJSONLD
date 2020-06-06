@@ -38,7 +38,7 @@
           },
           {
             "@name":"modified",
-            "@content":"9 May 2020"
+            "@content":"20 October 2019"
           },
           {
             "@name":"reference",
@@ -126,7 +126,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"
           },
           {
             "@name":"generator",
@@ -138,7 +138,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 May 2020"
+            "@content":"30 May 2020"
           },
           {
             "@name":"generator",
@@ -1258,7 +1258,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"LOA1_WalkAnimation",
-              "@url":["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"],
+              "@url":["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"],
               "field": [
                 {
                   "@name":"cycleInterval",
@@ -1545,7 +1545,7 @@
             {
               "@DEF":"ENGINE",
               "@directOutput":true,
-              "@url":["BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.js"],
+              "@url":["BoxMan.js","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.js"],
               "field": [
                 {
                   "@name":"update",

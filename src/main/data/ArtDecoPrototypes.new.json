@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 May 2020"
+            "@content":"30 May 2020"
           },
           {
             "@name":"generator",
@@ -750,7 +750,7 @@
             {
               "@description":"ArtDecoPrototypeExample",
               "@parameter":["target=_blank"],
-              "@url":["ArtDecoExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d","ArtDecoExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.wrl"],
+              "@url":["../data/ArtDecoExamples.json","../data/ArtDecoExamples.x3d","ArtDecoExamples.json","ArtDecoExamples.x3d"],
               "-children":[
                 { "Shape":
                   {
