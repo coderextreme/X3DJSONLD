@@ -19,7 +19,7 @@
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="HAnimModelHandLeft.x3d"></WorldInfo>
-<HAnimHumanoid name="Humanoid_Left_hand" DEF="Humanoid_Left_hand" jointBindingPositions="0 0 0" jointBindingRotations="0 0 1 0" jointBindingScales="1 1 1" loa="-1" skeletalConfiguration="BASIC" version="2.0"><HAnimJoint name="humanoid_root" DEF="hanim_HumanoidRoot"><HAnimJoint name="l_radiocarpal_joint" DEF="l_radiocarpal_joint"><HAnimSegment name="l_wrist" DEF="l_wrist"><Transform><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
+<HAnimHumanoid name="Humanoid_Left_hand" DEF="Humanoid_Left_hand" jointBindingPositions="0 0 0" jointBindingRotations="0 0 1 0" jointBindingScales="1 1 1" version="2.0"><HAnimJoint name="humanoid_root" DEF="hanim_HumanoidRoot"><HAnimJoint name="l_radiocarpal_joint" DEF="l_radiocarpal_joint"><HAnimSegment name="l_wrist" DEF="l_wrist"><Transform><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
 <Appearance DEF="HAnimJointAppearanceBlue"><Material diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>
