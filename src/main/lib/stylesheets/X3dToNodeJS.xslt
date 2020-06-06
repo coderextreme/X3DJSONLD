@@ -751,6 +751,107 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:variable>
 			<xsl:text>&#10;</xsl:text>
 			<xsl:value-of select="$indent"/>
+            <xsl:variable name="containerField">
+                <xsl:choose>
+                    <!-- use provided value first -->
+                    <xsl:when test="(string-length(@containerField) > 0)">
+                        <xsl:value-of select="@containerField"/>
+                    </xsl:when>
+                    <!-- if not already provided, attempt to robustly determine containerField from ProtoDeclare -->
+                    <xsl:when test="($nodeName = 'ProtoInstance')">
+                        <xsl:variable name="protoInstanceUSE" select="@USE"/>
+                        <xsl:variable name="protoInstanceName">
+                            <xsl:choose>
+                                <xsl:when test="(string-length(@name) > 0)">
+                                    <xsl:value-of select="@name"/>
+                                </xsl:when>
+                                <xsl:when test="(string-length($protoInstanceUSE) > 0) and //ProtoInstance[@DEF = $protoInstanceUSE]">
+                                    <xsl:value-of select="//ProtoInstance[@DEF = $protoInstanceUSE]/@name"/>
+                                </xsl:when>
+                                <xsl:when test="(string-length($protoInstanceUSE) > 0)">
+                                    <xsl:message>
+                                        <xsl:text>*** Error: ProtoInstance USE='</xsl:text>
+                                        <xsl:value-of select="$protoInstanceUSE"/>
+                                        <xsl:text>' has no corresponding ProtoInstance DEF='</xsl:text>
+                                        <xsl:value-of select="$protoInstanceUSE"/>
+                                        <xsl:text>' node, cannot determine ProtoInstance name</xsl:text>
+                                    </xsl:message>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:message>
+                                        <xsl:text>*** Error: ProtoInstance name='</xsl:text>
+                                        <xsl:value-of select="@name"/><!-- blank -->
+                                        <xsl:text>' USE='</xsl:text>
+                                        <xsl:value-of select="$protoInstanceUSE"/><!-- blank -->
+                                        <xsl:text>' is underdefined and erroneous</xsl:text>
+                                    </xsl:message>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>
+                        <!-- now protoInstanceContainerField -->
+                        <xsl:choose>
+                            <xsl:when test="(string-length(@containerField) > 0)">
+                                <xsl:value-of select="@containerField"/>
+                            </xsl:when>
+                            <xsl:when test="//ProtoDeclare[@name = $protoInstanceName]">
+                                <xsl:if test="(string-length(//ProtoDeclare[@name = $protoInstanceName]/ProtoBody/*[1]/@containerField) > 0)">
+                                    <xsl:message>
+                                        <xsl:text>*** Error: ProtoInstance missing containerField value, using corresponding vale from ProtoDeclare'</xsl:text>
+                                   </xsl:message>
+                                    <xsl:value-of select="//ProtoDeclare[@name = $protoInstanceName]/ProtoBody/*[1]/@containerField"/>
+                                </xsl:if>
+                            </xsl:when>
+                            <!-- TODO ExternProtoDeclare nodeType annotation convention using contained comment of metadata? possible but perhaps unlikely/error-prone -->
+                            <xsl:otherwise>
+                               <xsl:text>children</xsl:text><!-- default -->
+                            </xsl:otherwise>
+                        </xsl:choose>
+						<!-- debug -->
+						<xsl:message>
+							<xsl:text>*** found ProtoInstance @name='</xsl:text>
+							<xsl:value-of select="@name"/>
+							<xsl:text>' @DEF='</xsl:text>
+							<xsl:value-of select="@DEF"/>
+							<xsl:text>' @USE='</xsl:text>
+							<xsl:value-of select="@USE"/>
+							<xsl:text>' @containerField='</xsl:text>
+							<xsl:value-of select="@containerField"/>
+							<xsl:text>' $protoInstanceName='</xsl:text>
+							<xsl:value-of select="$protoInstanceName"/>
+							<xsl:text>'</xsl:text>
+						</xsl:message>
+                    </xsl:when>
+               </xsl:choose>
+            </xsl:variable>
+            
+            <!-- check some special cases that are unambiguously fixable -->
+            <xsl:variable name="expectedContainerField">
+                <xsl:choose>
+                    <xsl:when test="(local-name(..) = 'GeoLOD') and not(local-name() = 'GeoOrigin') and not(starts-with(local-name(), 'Metadata'))">
+                        <xsl:text>rootNode</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
+                        <xsl:text>segments</xsl:text>
+                    </xsl:when>
+                    <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
+                    <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
+                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
+                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:if test="(string-length($expectedContainerField) > 0) and not($containerField = $expectedContainerField)">
+                <xsl:message>
+                    <xsl:text>... containerField mismatch for </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> DEF='</xsl:text>
+                    <xsl:value-of select="@DEF"/>
+                    <xsl:text>', found containerField='</xsl:text>
+                    <xsl:value-of select="$containerField"/>
+                    <xsl:text>' but expected containerField='</xsl:text>
+                    <xsl:value-of select="$expectedContainerField"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:message>
+            </xsl:if>
 			
 			<xsl:choose>
 				<xsl:when test="self::comment()">
@@ -759,6 +860,21 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:when test="starts-with($fieldName,'ds:')">
 					<!-- TODO fix: process digital signature element as a CommentsBlock
 					<xsl:apply-templates select="."/> -->
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'Appearance') and ($containerField = 'material')">
+					<xsl:text>.setMaterial(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'Appearance') and ($containerField = 'fillProperties')">
+					<xsl:text>.setFillProperties(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'Appearance') and ($containerField = 'lineProperties')">
+					<xsl:text>.setLineProperties(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
 				</xsl:when>
 				<xsl:when test="(local-name(..) = 'Appearance') and (@containerField = 'shaders')">
 					<xsl:text>.addShaders(</xsl:text>
@@ -844,6 +960,12 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:when test="(local-name(..) = 'Scene') and starts-with(local-name(), 'Metadata')">
 					<!-- addChild() method didn't work because of NodeJS disambiguation difficulty between X3DChildNode and X3DMetadataNode -->
 					<xsl:text>.addMetadata(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'Scene') and (local-name() = 'LayerSet')">
+					<!-- special handling for Scene.addLayerSet -->
+					<xsl:text>.addLayerSet(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
