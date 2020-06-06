@@ -19,7 +19,7 @@
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="HAnimModelFootRight.x3d"></WorldInfo>
-<HAnimHumanoid name="Humanoid_Right_Foot" DEF="Humanoid_Right_Foot" jointBindingPositions="0 0 0" jointBindingRotations="0 0 1 0" jointBindingScales="1 1 1" loa="-1" skeletalConfiguration="BASIC" version="2.0"><HAnimJoint name="humanoid_root" DEF="hanim_HumanoidRoot"><HAnimJoint name="r_talocrural_joint" DEF="r_talocrural_joint"><HAnimSegment name="r_talus" DEF="r_talus"><Transform><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
+<HAnimHumanoid name="Humanoid_Right_Foot" DEF="Humanoid_Right_Foot" jointBindingPositions="0 0 0" jointBindingRotations="0 0 1 0" jointBindingScales="1 1 1" version="2.0"><HAnimJoint name="humanoid_root" DEF="hanim_HumanoidRoot"><HAnimJoint name="r_talocrural_joint" DEF="r_talocrural_joint"><HAnimSegment name="r_talus" DEF="r_talus"><Transform><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
 <Appearance DEF="HAnimJointAppearance"><Material diffuseColor="0 0 1"></Material>
 </Appearance>
 </Shape>

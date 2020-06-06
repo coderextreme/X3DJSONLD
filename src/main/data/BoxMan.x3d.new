@@ -7,7 +7,7 @@
 <meta name="translator" content="Don Brutzman and Matt Beitler"></meta>
 <meta name="created" content="1 March 2001"></meta>
 <meta name="translated" content="19 October 2001"></meta>
-<meta name="modified" content="9 May 2020"></meta>
+<meta name="modified" content="20 October 2019"></meta>
 <meta name="reference" content="http://h-anim.org"></meta>
 <meta name="reference" content="boxman.original.wrl"></meta>
 <meta name="reference" content="BoxMan.js"></meta>
@@ -29,7 +29,7 @@
 <meta name="rights" content="(C) 2000 James Smith - james@vapourtech.com"></meta>
 <meta name="reference" content="http://www.vapourtech.com"></meta>
 <meta name="subject" content="BoxMan H-Anim 2.0"></meta>
-<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.x3d"></meta>
+<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>
@@ -192,7 +192,7 @@
 <Viewpoint DEF="Top_View" description="Top View" orientation="1 0 0 -1.57" position="0 3 0"></Viewpoint>
 </HAnimSite>
 </HAnimHumanoid>
-<ExternProtoDeclare name="LOA1_WalkAnimation" url="&quot;LOA1_WalkAnimation.wrl#LOA1_WalkAnimation&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation&quot; &quot;http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation&quot; &quot;LOA1_WalkAnimation.x3d#LOA1_WalkAnimation&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation&quot; &quot;http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation&quot;"><field name="cycleInterval" accessType="inputOutput" type="SFTime"></field>
+<ExternProtoDeclare name="LOA1_WalkAnimation" url="&quot;LOA1_WalkAnimation.wrl#LOA1_WalkAnimation&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation&quot; &quot;http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation&quot; &quot;LOA1_WalkAnimation.x3d#LOA1_WalkAnimation&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation&quot; &quot;http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation&quot;"><field name="cycleInterval" accessType="inputOutput" type="SFTime"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool"></field>
 <field name="loop" accessType="inputOutput" type="SFBool"></field>
 <field name="startTime" accessType="inputOutput" type="SFTime"></field>
@@ -237,7 +237,7 @@
 <ROUTE fromField="r_shoulder_rotation_changed" fromNode="ANIMATOR" toField="set_rotation" toNode="boxman_r_shoulder"></ROUTE>
 <ROUTE fromField="r_elbow_rotation_changed" fromNode="ANIMATOR" toField="set_rotation" toNode="boxman_r_elbow"></ROUTE>
 <ROUTE fromField="r_wrist_rotation_changed" fromNode="ANIMATOR" toField="set_rotation" toNode="boxman_r_wrist"></ROUTE>
-<Script DEF="ENGINE" directOutput="true" url="&quot;BoxMan.js&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.js&quot;"><field name="update" accessType="inputOnly" type="SFRotation"></field>
+<Script DEF="ENGINE" directOutput="true" url="&quot;BoxMan.js&quot; &quot;https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.js&quot;"><field name="update" accessType="inputOnly" type="SFRotation"></field>
 <field name="humanoid" accessType="initializeOnly" type="SFNode"><HAnimHumanoid USE="boxman_Humanoid"></HAnimHumanoid>
 </field>
 <field name="coordList" accessType="initializeOnly" type="MFVec3f"></field>
