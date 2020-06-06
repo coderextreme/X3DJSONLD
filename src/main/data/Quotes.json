@@ -4,11 +4,6 @@
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
-    "-children":[
-      {
-        "#comment":"x3dVersionComparisonTest for this model: supportsX3dVersion(X3DObject.VERSION_3_0)=true"
-      }
-    ],
     "head": {
         "-children":[
           {
@@ -30,26 +25,6 @@
             "@level":3
           },
           {
-            "@name":"Shaders",
-            "@level":1
-          },
-          {
-            "@name":"CADGeometry",
-            "@level":2
-          },
-          {
-            "@name":"DIS",
-            "@level":2
-          },
-          {
-            "@name":"H-Anim",
-            "@level":1
-          },
-          {
-            "@name":"Grouping",
-            "@level":1
-          },
-          {
             "@name":"Layering",
             "@level":1
           }
@@ -64,11 +39,6 @@
             "@name":"LengthUnitConversion",
             "@category":"length",
             "@conversionFactor":1.0
-          },
-          {
-            "@name":"ForceFromPoundsToNewtons",
-            "@category":"force",
-            "@conversionFactor":4.4482
           }
         ],
         "meta": [
@@ -77,16 +47,12 @@
             "@content":"HelloWorldProgramOutput.x3d"
           },
           {
-            "@name":"info",
-            "@content":"continued development and testing in progress"
-          },
-          {
             "@name":"description",
-            "@content":"Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"
+            "@content":"Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library"
           },
           {
             "@name":"reference",
-            "@content":"https://www.web3d.org/specifications/java/X3DJSAIL.html"
+            "@content":"http://www.web3d.org/specifications/java/X3DJSAIL.html"
           },
           {
             "@name":"generator",
@@ -98,7 +64,7 @@
           },
           {
             "@name":"modified",
-            "@content":"4 April 2020"
+            "@content":"7 April 2018"
           },
           {
             "@name":"generator",
@@ -106,7 +72,7 @@
           },
           {
             "@name":"generator",
-            "@content":"https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
+            "@content":"http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"
           },
           {
             "@name":"generator",
@@ -142,15 +108,31 @@
           },
           {
             "@name":"reference",
-            "@content":"https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+            "@content":"X3dValidator https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
+            "@content":"http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"
           },
           {
             "@name":"license",
             "@content":"../license.html"
+          },
+          {
+            "@name":"info",
+            "@content":"tested sat: name value cannot contain embedded space character"
+          },
+          {
+            "@name":"translated",
+            "@content":"30 April 2018"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           },
           {
             "@name":"translated",
@@ -189,11 +171,6 @@
               ]
             }
           },
-          { "NavigationInfo":
-            {
-              "@type":["EXAMINE","FLY","ANY"]
-            }
-          },
           { "WorldInfo":
             {
               "@DEF":"WorldInfoDEF",
@@ -230,7 +207,7 @@
                 { "Anchor":
                   {
                     "@description":"select for X3D Java SAI Library (X3DJSAIL) description",
-                    "@url":["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"],
+                    "@url":["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"],
                     "-children":[
                       { "Shape":
                         {
@@ -250,7 +227,7 @@
                                 "-texture":
                                   { "ImageTexture":
                                     {
-                                      "@url":["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]
+                                      "@url":["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]
                                     }
                                   }
                               }
@@ -412,10 +389,10 @@
                               "#comment":"alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'"
                             },
                             {
-                              "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"
+                              "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"\"Immel did it!\\\"\"\\\"\"})"
                             },
                             {
-                              "#comment":"reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
+                              "#comment":"reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
                             }
                           ],
                           "-geometry":
@@ -500,6 +477,8 @@
                     "#sourceText":[
 "",
 "",
+"",
+"",
 "ecmascript:",
 "",
 "function colorInput (eventValue) // Example source code",
@@ -507,6 +486,9 @@
 "   colorsOutput = new MFColor(eventValue); // assigning value sends output event",
 "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');",
 "}",
+"",
+"",
+"",
 "",
 ""
 ]
@@ -593,7 +575,7 @@
                       }
                     },
                     {
-                      "#comment":"[HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()=\"Material\""
+                      "#comment":"[HelloWorldProgram diagnostic] should be connected to scene graph: ArtDeco01ProtoDeclare.getNodeType()=\"Material\""
                     },
                     {
                       "#comment":"presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types"
@@ -626,7 +608,7 @@
               "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
               "-children":[
                 {
-                  "#comment":"[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\""
+                  "#comment":"[HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""
                 }
               ],
               "field": [
@@ -700,7 +682,7 @@
                           "@DEF":"ArtDeco02MaterialDEF",
                           "-children":[
                             {
-                              "#comment":"[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\""
+                              "#comment":"[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""
                             }
                           ],
                           "fieldValue": [
@@ -731,7 +713,7 @@
                     "@DEF":"TestAppearance3",
                     "-children":[
                       {
-                        "#comment":"ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE."
+                        "#comment":"ArtDeco02Material ProtoInstance USE goes here..."
                       }
                     ],
                     "-material":
@@ -754,7 +736,7 @@
           { "Inline":
             {
               "@DEF":"inlineSceneDef",
-              "@url":["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]
+              "@url":["someOtherScene.x3d"]
             }
           },
           { "IMPORT":
@@ -899,6 +881,8 @@
                         "#sourceText":[
 "",
 "",
+"",
+"",
 "ecmascript:",
 "function initialize ()",
 "{",
@@ -922,6 +906,9 @@
 "\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');",
 "\t}",
 "}",
+"",
+"",
+"",
 "",
 ""
 ]
@@ -1023,10 +1010,7 @@
                   "#comment":"... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear="
                 },
                 {
-                  "#comment":"SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true"
-                },
-                {
-                  "#comment":"regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value"
+                  "#comment":"SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344"
                 }
               ]
             }
@@ -1043,10 +1027,10 @@
                 { "AudioClip":
                   {
                     "@description":"chimes",
-                    "@url":["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
+                    "@url":["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
                     "-children":[
                       {
-                        "#comment":"Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
+                        "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
                       }
                     ]
                   }
@@ -1065,13 +1049,13 @@
                 { "MovieTexture":
                   {
                     "@description":"mpgsys.mpg from ConformanceNist suite",
-                    "@url":["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
+                    "@url":["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
                     "-children":[
                       {
-                        "#comment":"Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
+                        "#comment":"Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
                       },
                       {
-                        "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\""
+                        "#comment":"Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""
                       }
                     ]
                   }
@@ -1125,197 +1109,6 @@
                     "@DEF":"ExampleExtrusion"
                   }
                 }
-            }
-          },
-          { "Group":
-            {
-              "-children":[
-                {
-                  "#comment":"Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes"
-                },
-                { "ProtoDeclare":
-                  {
-                    "@name":"NewWorldInfo",
-                    "ProtoInterface": {
-                        "field": [
-                          {
-                            "@name":"description",
-                            "@accessType":"initializeOnly",
-                            "@type":"SFString"
-                          }
-                        ]
-                    },
-                    "ProtoBody": {
-                        "-children":[
-                          { "WorldInfo":
-                            {
-                            }
-                          }
-                        ]
-                    }
-                  }
-                },
-                { "ProtoInstance":
-                  {
-                    "@name":"NewWorldInfo",
-                    "@DEF":"Proto1",
-                    "fieldValue": [
-                      {
-                        "@name":"description",
-                        "@value":"testing 1 2 3"
-                      }
-                    ]
-                  }
-                },
-                { "Group":
-                  {
-                    "@DEF":"Node2",
-                    "-children":[
-                      {
-                        "#comment":"intentionally empty"
-                      }
-                    ]
-                  }
-                },
-                { "ProtoInstance":
-                  {
-                    "@name":"NewWorldInfo",
-                    "@DEF":"Proto3"
-                  }
-                },
-                { "Transform":
-                  {
-                    "@DEF":"Node4",
-                    "-children":[
-                      {
-                        "#comment":"intentionally empty"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "#comment":"Test satisfactorily creates MFNode children array as an ordered list with mixed content"
-                }
-              ]
-            }
-          },
-          { "ProtoDeclare":
-            {
-              "@name":"ShaderProto",
-              "ProtoBody": {
-                  "-children":[
-                    { "ProgramShader":
-                      {
-                      }
-                    }
-                  ]
-              }
-            }
-          },
-          { "Shape":
-            {
-              "-appearance":
-                { "Appearance":
-                  {
-                    "-children":[
-                      {
-                        "#comment":"Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes"
-                      },
-                      {
-                        "#comment":"Test satisfactorily creates MFNode shaders array as an ordered list with mixed content"
-                      }
-                    ],
-                    "-shaders":[
-                      { "ProgramShader":
-                        {
-                          "@DEF":"TestShader1",
-                          "-programs":[
-                            { "ShaderProgram":
-                              {
-                                "@DEF":"TestShader2",
-                                "@type":"VERTEX"
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      { "ProtoInstance":
-                        {
-                          "@name":"ShaderProto",
-                          "@DEF":"TestShader3"
-                        }
-                      },
-                      { "ComposedShader":
-                        {
-                          "@DEF":"TestShader4",
-                          "-parts":[
-                            { "ShaderPart":
-                              {
-                                "@DEF":"TestShader5",
-                                "@type":"VERTEX"
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                }
-            }
-          },
-          { "Transform":
-            {
-              "@DEF":"SpecialtyNodes",
-              "-children":[
-                { "CADLayer":
-                  {
-                    "-children":[
-                      { "CADAssembly":
-                        {
-                          "-children":[
-                            { "CADPart":
-                              {
-                                "-children":[
-                                  { "CADFace":
-                                    {
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "EspduTransform":
-                  {
-                  }
-                },
-                { "ReceiverPdu":
-                  {
-                  }
-                },
-                { "SignalPdu":
-                  {
-                  }
-                },
-                { "TransmitterPdu":
-                  {
-                  }
-                },
-                { "DISEntityManager":
-                  {
-                    "-mapping":[
-                      { "DISEntityTypeMapping":
-                        {
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
             }
           }
         ]
