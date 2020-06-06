@@ -25,7 +25,7 @@ from x3d import *
 newModel=X3D(profile='Interchange',version='3.0',
   head=head(
     children=[
-    meta(content='gridBack.x3d',name='title'),
+    meta(content='gridBack.json',name='title'),
     meta(content='Checkerboard grid background for X3D/VRML materials selection.',name='description'),
     meta(content='David Roussel',name='creator'),
     meta(content='James Harney, Don Brutzman NPS',name='translator'),
@@ -33,7 +33,7 @@ newModel=X3D(profile='Interchange',version='3.0',
     meta(content='12 January 2014',name='modified'),
     meta(content='http://vrmlstuff.free.fr/materials',name='reference'),
     meta(content='Universal Media Material Library',name='subject'),
-    meta(content='http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d',name='identifier'),
+    meta(content='http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json',name='identifier'),
     meta(content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(

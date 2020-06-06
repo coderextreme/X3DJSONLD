@@ -81,7 +81,7 @@ public class gridBack {
     public X3DObject initialize() {
       X3DObject X3D0 =  new X3DObject().setProfile("Interchange").setVersion("3.0")
       .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("gridBack.x3d"))
+        .addMeta(new metaObject().setName("title").setContent("gridBack.json"))
         .addMeta(new metaObject().setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))
         .addMeta(new metaObject().setName("creator").setContent("David Roussel"))
         .addMeta(new metaObject().setName("translator").setContent("James Harney, Don Brutzman NPS"))
@@ -89,7 +89,7 @@ public class gridBack {
         .addMeta(new metaObject().setName("modified").setContent("12 January 2014"))
         .addMeta(new metaObject().setName("reference").setContent("http://vrmlstuff.free.fr/materials"))
         .addMeta(new metaObject().setName("subject").setContent("Universal Media Material Library"))
-        .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
         .addMeta(new metaObject().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()

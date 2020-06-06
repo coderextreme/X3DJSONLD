@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Checkerboard grid background for X3D/VRML materials selection. </p>
- <p> Related links: <a href="../../../UniversalMediaMaterials/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../UniversalMediaMaterials/gridBackIndex.html" target="_top">gridBack catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../UniversalMediaMaterials/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../UniversalMediaMaterials/Index.html" target="_top"> catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../UniversalMediaMaterials/gridBack.x3d">gridBack.x3d</a> </td>
+			<td> <a href="../../../UniversalMediaMaterials/gridBack.json">gridBack.json</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -52,7 +52,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -106,7 +106,7 @@ NeedClassName.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.75,-5.25,0.0,2.25,-5.25,0.0,3.75,-5.25,0.0,5.25,-5.25,0.0])));
   this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
   .setHead((new autoclass.head())
-    .addMeta((new autoclass.meta()).setName("title").setContent("gridBack.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("gridBack.json"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("David Roussel"))
     .addMeta((new autoclass.meta()).setName("translator").setContent("James Harney, Don Brutzman NPS"))
@@ -114,7 +114,7 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("modified").setContent("12 January 2014"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://vrmlstuff.free.fr/materials"))
     .addMeta((new autoclass.meta()).setName("subject").setContent("Universal Media Material Library"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())

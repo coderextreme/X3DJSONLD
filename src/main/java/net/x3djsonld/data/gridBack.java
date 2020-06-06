@@ -10,7 +10,7 @@ import org.web3d.x3d.jsail.Shape.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Checkerboard grid background for X3D/VRML materials selection. </p>
- <p> Related links: <a href="../../../UniversalMediaMaterials/gridBack.java">gridBack.java</a> source, <a href="../../../UniversalMediaMaterials/gridBackIndex.html" target="_top">gridBack catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../UniversalMediaMaterials/gridBack_json.java">gridBack_json.java</a> source, <a href="../../../UniversalMediaMaterials/Index.html" target="_top"> catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -20,7 +20,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../UniversalMediaMaterials/gridBack.x3d">gridBack.x3d</a> </td>
+			<td> <a href="../../../UniversalMediaMaterials/gridBack.json">gridBack.json</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -52,7 +52,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -78,10 +78,10 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author David Roussel
  */
 
-public class gridBack
+public class gridBack_json
 {
 	/** Default constructor to create this object. */
-	public gridBack ()
+	public gridBack_json ()
 	{
 	  initialize();
 	}
@@ -91,7 +91,7 @@ public class gridBack
 	{
   x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_0)
   .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("gridBack.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("gridBack.json"))
     .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Checkerboard grid background for X3D/VRML materials selection."))
     .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("David Roussel"))
     .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATOR ).setContent("James Harney, Don Brutzman NPS"))
@@ -99,7 +99,7 @@ public class gridBack
     .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("12 January 2014"))
     .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://vrmlstuff.free.fr/materials"))
     .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT    ).setContent("Universal Media Material Library"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
     .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
     .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new SceneObject()
@@ -119,7 +119,7 @@ public class gridBack
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
-	 * @return gridBack model
+	 * @return gridBack_json model
 	 */
 	public X3DObject getX3dModel()
 	{	  
@@ -136,7 +136,7 @@ public class gridBack
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new gridBack().getX3dModel();
+        X3DObject thisExampleX3dObject = new gridBack_json().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -167,13 +167,13 @@ public class gridBack
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"gridBack\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"gridBack_json\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dObject.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"gridBack\" self-validation test results: ");
+			System.out.print("Java program \"gridBack_json\" self-validation test results: ");
 			String validationResults = thisExampleX3dObject.validationReport();
 			System.out.println(validationResults);
 		}

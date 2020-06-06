@@ -33,7 +33,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.WorldInfo()).setTitle("HAnimModelFootLeft.x3d"))
-        .addChild((new autoclass.HAnimHumanoid()).setName("Humanoid_Left_Foot").setDEF("Humanoid_Left_Foot").setInfo(java.newArray("java.lang.String", ["humanoidVersion=2.0"])).setJointBindingPositions(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setJointBindingRotations(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0)])).setJointBindingScales(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])).setLoa(-1).setSkeletalConfiguration("BASIC").setVersion("2.0")
+        .addChild((new autoclass.HAnimHumanoid()).setName("Humanoid_Left_Foot").setDEF("Humanoid_Left_Foot").setInfo(java.newArray("java.lang.String", ["humanoidVersion=2.0"])).setJointBindingPositions(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setJointBindingRotations(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0)])).setJointBindingScales(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])).setVersion("2.0")
           .addJoints((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_HumanoidRoot")
             .addChild((new autoclass.HAnimJoint()).setName("l_talocrural_joint").setDEF("l_talocrural_joint")
               .addChild((new autoclass.HAnimSegment()).setName("l_talus").setDEF("l_talus")

@@ -132,7 +132,7 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.WorldInfo()).setTitle("HAnimModelHandLeft.x3d"))
-    .addChild((new autoclass.HAnimHumanoid("Humanoid_Left_hand")).setName("Humanoid_Left_hand").setLoa(-1).setJointBindingPositions(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0]))).setJointBindingRotations(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0]))).setJointBindingScales(new autoclass.MFVec3f(java.newArray("float", [1.0,1.0,1.0]))).setVersion("2.0").setSkeletalConfiguration("BASIC")
+    .addChild((new autoclass.HAnimHumanoid("Humanoid_Left_hand")).setName("Humanoid_Left_hand").setJointBindingPositions(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0]))).setJointBindingRotations(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0]))).setJointBindingScales(new autoclass.MFVec3f(java.newArray("float", [1.0,1.0,1.0]))).setVersion("2.0")
       .addSkeleton((new autoclass.HAnimJoint("hanim_HumanoidRoot")).setName("humanoid_root")
         .addChild((new autoclass.HAnimJoint("l_radiocarpal_joint")).setName("l_radiocarpal_joint")
           .addChild((new autoclass.HAnimSegment("l_wrist")).setName("l_wrist")

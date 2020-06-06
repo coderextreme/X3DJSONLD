@@ -132,7 +132,7 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.WorldInfo()).setTitle("HAnimModelFootLeft.x3d"))
-    .addChild((new autoclass.HAnimHumanoid("Humanoid_Left_Foot")).setName("Humanoid_Left_Foot").setInfo(new autoclass.MFString("\"humanoidVersion=2.0\"")).setLoa(-1).setJointBindingPositions(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0]))).setJointBindingRotations(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0]))).setJointBindingScales(new autoclass.MFVec3f(java.newArray("float", [1.0,1.0,1.0]))).setVersion("2.0").setSkeletalConfiguration("BASIC")
+    .addChild((new autoclass.HAnimHumanoid("Humanoid_Left_Foot")).setName("Humanoid_Left_Foot").setInfo(new autoclass.MFString("\"humanoidVersion=2.0\"")).setJointBindingPositions(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0]))).setJointBindingRotations(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0]))).setJointBindingScales(new autoclass.MFVec3f(java.newArray("float", [1.0,1.0,1.0]))).setVersion("2.0")
       .addSkeleton((new autoclass.HAnimJoint("hanim_HumanoidRoot")).setName("humanoid_root")
         .addChild((new autoclass.HAnimJoint("l_talocrural_joint")).setName("l_talocrural_joint")
           .addChild((new autoclass.HAnimSegment("l_talus")).setName("l_talus")

@@ -45,7 +45,7 @@ newModel=X3D(profile='Immersive',version='4.0',
   Scene=Scene(
     children=[
     WorldInfo(title='HAnimModelFootLeft.x3d'),
-    HAnimHumanoid(DEF='Humanoid_Left_Foot',info=["humanoidVersion=2.0"],jointBindingPositions=[(0,0,0)],jointBindingRotations=[(0,0,1,0)],jointBindingScales=[(1,1,1)],loa=-1,name='Humanoid_Left_Foot',skeletalConfiguration='BASIC',version='2.0',
+    HAnimHumanoid(DEF='Humanoid_Left_Foot',info=["humanoidVersion=2.0"],jointBindingPositions=[(0,0,0)],jointBindingRotations=[(0,0,1,0)],jointBindingScales=[(1,1,1)],name='Humanoid_Left_Foot',version='2.0',
       skeleton=[
       HAnimJoint(DEF='hanim_HumanoidRoot',name='humanoid_root',
         children=[
