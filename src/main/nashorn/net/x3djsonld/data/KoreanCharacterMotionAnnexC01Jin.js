@@ -3,11 +3,11 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
- <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: KoreanCharacterMotionAnnexC01Jin.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.KoreanCharacterMotionAnnexC01Jin&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -90,7 +90,7 @@ load('X3Dautoclass.js');
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-function NeedClassName
+function KoreanCharacterMotionAnnexC01Jin
   /** Default constructor to create this object. */
   ()
   {
@@ -99,7 +99,7 @@ function NeedClassName
     this.initialize();
     return this;
   }
-NeedClassName.prototype = {
+KoreanCharacterMotionAnnexC01Jin.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -1677,7 +1677,7 @@ NeedClassName.prototype = {
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setSpeed(1.5))
     .addChild(new ViewpointObject().setDescription("AnnexC01Jin").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
-    .addChild(new HAnimHumanoidObject("hanim_AnnexC01Jin").setName("AnnexC01Jin").setInfo(new MFStringObject("\"humanoidVersion=2.0\"")).setLoa(-1).setJointBindingPositions(new MFVec3fObject(Java.to([0.0,0.0,0.0], Java.type("float[]")))).setJointBindingRotations(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0], Java.type("float[]")))).setScale(0.0225,0.0225,0.0225).setJointBindingScales(new MFVec3fObject(Java.to([1.0,1.0,1.0], Java.type("float[]")))).setVersion("2.0").setSkeletalConfiguration("BASIC")
+    .addChild(new HAnimHumanoidObject("hanim_AnnexC01Jin").setName("AnnexC01Jin").setInfo(new MFStringObject("\"humanoidVersion=2.0\"")).setJointBindingPositions(new MFVec3fObject(Java.to([0.0,0.0,0.0], Java.type("float[]")))).setJointBindingRotations(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0], Java.type("float[]")))).setScale(0.0225,0.0225,0.0225).setJointBindingScales(new MFVec3fObject(Java.to([1.0,1.0,1.0], Java.type("float[]")))).setVersion("2.0")
       .addSkeleton(new HAnimJointObject("hanim_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0,30.53,-0.7076)
         .addChild(new HAnimSegmentObject("hanim_sacrum").setName("sacrum")
           .addChild(new TransformObject().setTranslation(0.0,30.53,-0.7076)
@@ -1958,7 +1958,7 @@ NeedClassName.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return NeedClassName model
+   * @return KoreanCharacterMotionAnnexC01Jin model
    */
   getX3dModel : function()
   {	  
@@ -2020,8 +2020,8 @@ NeedClassName.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new NeedClassName();
-		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new KoreanCharacterMotionAnnexC01Jin();
+		print ("KoreanCharacterMotionAnnexC01Jin execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new NeedClassName().main();
+new KoreanCharacterMotionAnnexC01Jin().main();

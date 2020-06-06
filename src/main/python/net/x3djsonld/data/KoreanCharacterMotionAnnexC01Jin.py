@@ -48,7 +48,7 @@ newModel=X3D(profile='Full',version='4.0',
     children=[
     NavigationInfo(speed=1.5),
     Viewpoint(centerOfRotation=(0,1,0),description='AnnexC01Jin',position=(0,1,3)),
-    HAnimHumanoid(DEF='hanim_AnnexC01Jin',info=["humanoidVersion=2.0"],name='AnnexC01Jin',scale=(0.0225,0.0225,0.0225),version='2.0',jointBindingPositions=[(0,0,0)],jointBindingRotations=[(0,0,1,0)],jointBindingScales=[(1,1,1)],loa=-1,skeletalConfiguration='BASIC',
+    HAnimHumanoid(DEF='hanim_AnnexC01Jin',info=["humanoidVersion=2.0"],name='AnnexC01Jin',scale=(0.0225,0.0225,0.0225),version='2.0',jointBindingPositions=[(0,0,0)],jointBindingRotations=[(0,0,1,0)],jointBindingScales=[(1,1,1)],
       skeleton=[
       HAnimJoint(DEF='hanim_HumanoidRoot',center=(0,30.53,-0.7076),name='HumanoidRoot',
         children=[

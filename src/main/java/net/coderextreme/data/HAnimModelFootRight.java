@@ -100,7 +100,7 @@ public class HAnimModelFootRight {
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
         .addChild(new WorldInfoObject().setTitle("HAnimModelFootRight.x3d"))
-        .addChild(new HAnimHumanoidObject().setName("Humanoid_Right_Foot").setDEF("Humanoid_Right_Foot").setJointBindingPositions(new MFVec3fObject(new MFVec3f0().getArray())).setJointBindingRotations(new MFRotationObject(new MFRotation1().getArray())).setJointBindingScales(new MFVec3fObject(new MFVec3f2().getArray())).setLoa(-1).setSkeletalConfiguration("BASIC").setVersion("2.0")
+        .addChild(new HAnimHumanoidObject().setName("Humanoid_Right_Foot").setDEF("Humanoid_Right_Foot").setJointBindingPositions(new MFVec3fObject(new MFVec3f0().getArray())).setJointBindingRotations(new MFRotationObject(new MFRotation1().getArray())).setJointBindingScales(new MFVec3fObject(new MFVec3f2().getArray())).setVersion("2.0")
           .addJoints(new HAnimJointObject().setName("humanoid_root").setDEF("hanim_HumanoidRoot")
             .addChild(new HAnimJointObject().setName("r_talocrural_joint").setDEF("r_talocrural_joint")
               .addChild(new HAnimSegmentObject().setName("r_talus").setDEF("r_talus")

@@ -89,7 +89,7 @@ ProtoInstanceObject ProtoInstance0 = null;
         .addMeta(new metaObject().setName("translator").setContent("Don Brutzman and Matt Beitler"))
         .addMeta(new metaObject().setName("created").setContent("1 March 2001"))
         .addMeta(new metaObject().setName("translated").setContent("19 October 2001"))
-        .addMeta(new metaObject().setName("modified").setContent("9 May 2020"))
+        .addMeta(new metaObject().setName("modified").setContent("20 October 2019"))
         .addMeta(new metaObject().setName("reference").setContent("http://h-anim.org"))
         .addMeta(new metaObject().setName("reference").setContent("boxman.original.wrl"))
         .addMeta(new metaObject().setName("reference").setContent("BoxMan.js"))
@@ -111,7 +111,7 @@ ProtoInstanceObject ProtoInstance0 = null;
         .addMeta(new metaObject().setName("rights").setContent("(C) 2000 James Smith - james@vapourtech.com"))
         .addMeta(new metaObject().setName("reference").setContent("http://www.vapourtech.com"))
         .addMeta(new metaObject().setName("subject").setContent("BoxMan H-Anim 2.0"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.x3d"))
+        .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"))
         .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
@@ -581,12 +581,12 @@ protected class MFInt3246 {
 }
 protected class MFString47 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"});
+    return new MFStringObject(new java.lang.String[] {"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"});
   }
 }
 protected class MFString48 {
   protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.js"});
+    return new MFStringObject(new java.lang.String[] {"BoxMan.js","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.js"});
   }
 }
 }

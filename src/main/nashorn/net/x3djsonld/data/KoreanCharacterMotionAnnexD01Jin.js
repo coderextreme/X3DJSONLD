@@ -3,11 +3,11 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
- <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: KoreanCharacterMotionAnnexD01Jin.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.KoreanCharacterMotionAnnexD01Jin&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -90,7 +90,7 @@ load('X3Dautoclass.js');
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-function NeedClassName
+function KoreanCharacterMotionAnnexD01Jin
   /** Default constructor to create this object. */
   ()
   {
@@ -99,7 +99,7 @@ function NeedClassName
     this.initialize();
     return this;
   }
-NeedClassName.prototype = {
+KoreanCharacterMotionAnnexD01Jin.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -590,4 +590,25 @@ NeedClassName.prototype = {
 	.append(new MFVec2fObject(Java.to([0.4215,0.674,0.4346,0.674,0.3899,0.674,0.398,0.674,0.4083,0.674,0.3787,0.6201,0.3682,0.6201,0.3787,0.6201,0.3782,0.6265,0.3782,0.6265], Java.type("float[]"))))
 	.append(new MFVec2fObject(Java.to([0.3783,0.6413,0.3783,0.6413,0.3796,0.6705,0.3676,0.674,0.3806,0.674,0.3796,0.6705,0.3806,0.674], Java.type("float[]"))));
 
-	/** Large attribute array: IndexedFaceSet
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=13, element #189, 160 total numbers */
+	this.IndexedFaceSet_13_189_coordIndex = new MFInt32Object(Java.to([4,2,0,-1,0,5,4,-1,6,1,3,-1,3,7,6,-1,1,6,5,-1,5,0,1,-1,8,4,5,-1,5,9,8,-1,10,6,7,-1,7,11,10,-1,9,5,6,-1,6,10,9,-1,12,8,9,-1,9,13,12,-1,14,10,11,-1,11,15,14,-1,13,9,10,-1,10,14,13,-1,4,16,2,-1,2,16,7,-1,7,3,2,-1,17,20,18,-1,18,19,17,-1,21,11,7,-1,7,16,21,-1,8,12,21,-1,12,15,11,-1,11,21,12,-1,13,14,15,-1,15,12,13,-1,8,17,19,-1,19,4,8,-1,4,19,18,-1,18,16,4,-1,16,18,20,-1,20,21,16,-1,21,20,17,-1,17,8,21,-1,22,23,27,-1,26,24,25,-1], Java.type("int[]")));
+
+	/** Large attribute array: IndexedFaceSet texCoordIndex field, scene-graph level=13, element #189, 160 total numbers */
+	this.IndexedFaceSet_13_189_texCoordIndex = new MFInt32Object(Java.to([4,7,5,-1,5,6,4,-1,2,0,1,-1,1,3,2,-1,14,17,15,-1,15,16,14,-1,8,4,6,-1,6,9,8,-1,38,41,39,-1,39,40,38,-1,18,37,36,-1,36,19,18,-1,10,8,9,-1,9,11,10,-1,42,38,40,-1,40,43,42,-1,20,18,19,-1,19,21,20,-1,22,23,24,-1,24,23,25,-1,25,26,24,-1,27,30,28,-1,28,29,27,-1,31,32,25,-1,25,23,31,-1,33,34,31,-1,34,35,32,-1,32,31,34,-1,20,21,35,-1,35,34,20,-1,8,13,12,-1,12,4,8,-1,22,29,28,-1,28,23,22,-1,23,28,30,-1,30,31,23,-1,31,30,27,-1,27,33,31,-1,14,26,24,-1,14,24,16,-1], Java.type("int[]")));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=14, element #189, 84 total numbers made up of 28 3-tuple values */
+	this.Coordinate_14_189_point = new MFVec3fObject() /* splitting up long array to improve readability */
+	.append(new MFVec3fObject(Java.to([-1.247,0.07,0.7975,-1.209,0.0872,-1.349,0.7098,-0.0015,0.8912,0.7183,0.0002,-1.283,0.9295,-0.613,1.478,-1.647,-0.4252,1.388,-1.589,-0.3921,-1.989,1.044,-0.5947,-1.984,0.8227,-2.521,2.408,-1.951,-2.334,2.08], Java.type("float[]"))))
+	.append(new MFVec3fObject(Java.to([-1.892,-2.301,-2.409,1.192,-2.614,-2.248,0.5703,-3.958,1.694,-0.8836,-4.2,1.75,-0.8251,-4.167,-2.071,0.7842,-3.968,-1.934,1.037,-0.5968,-0.1872,1.642,-2.561,1.941,1.951,-0.9492,0.058,1.914,-1.016,1.885], Java.type("float[]"))))
+	.append(new MFVec3fObject(Java.to([1.649,-2.56,0.1377,1.066,-2.61,-0.2014,-1.209,0.0872,-1.349,0.7183,0.0002,-1.283,0.7098,-0.0015,0.8912,-1.247,0.07,0.7975,-1.209,0.0872,-1.349,0.7098,-0.0015,0.8912], Java.type("float[]"))));
+
+	/** Large attribute array: TextureCoordinate point field, scene-graph level=14, element #190, 88 total numbers made up of 44 2-tuple values */
+	this.TextureCoordinate_14_190_point = new MFVec2fObject() /* splitting up long array to improve readability */
+	.append(new MFVec2fObject(Java.to([0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117], Java.type("float[]"))))
+	.append(new MFVec2fObject(Java.to([0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757], Java.type("float[]"))))
+	.append(new MFVec2fObject(Java.to([0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504], Java.type("float[]"))))
+	.append(new MFVec2fObject(Java.to([0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368], Java.type("float[]"))))
+	.append(new MFVec2fObject(Java.to([0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857], Java.type("float[]"))));
+
+	/** Large attribute array: HAnimMotion channels field, scene-graph level=3, element #202, 75 total values */
+	this.HAnimMotion_3_202_channels = new SFStringObject("6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation 

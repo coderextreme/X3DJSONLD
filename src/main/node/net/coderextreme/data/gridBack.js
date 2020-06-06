@@ -14,7 +14,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
       .setHead((new autoclass.head())
-        .addMeta((new autoclass.meta()).setName("title").setContent("gridBack.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("gridBack.json"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))
         .addMeta((new autoclass.meta()).setName("creator").setContent("David Roussel"))
         .addMeta((new autoclass.meta()).setName("translator").setContent("James Harney, Don Brutzman NPS"))
@@ -22,7 +22,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("modified").setContent("12 January 2014"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("http://vrmlstuff.free.fr/materials"))
         .addMeta((new autoclass.meta()).setName("subject").setContent("Universal Media Material Library"))
-        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"))
+        .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
         .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
       .setScene((new autoclass.Scene())

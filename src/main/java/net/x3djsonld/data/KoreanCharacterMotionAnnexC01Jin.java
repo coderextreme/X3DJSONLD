@@ -139,7 +139,7 @@ public class KoreanCharacterMotionAnnexC01Jin
   .setScene(new SceneObject()
     .addChild(new NavigationInfoObject().setSpeed(1.5f))
     .addChild(new ViewpointObject().setDescription("AnnexC01Jin").setCenterOfRotation(0.0f,1.0f,0.0f).setPosition(0.0f,1.0f,3.0f))
-    .addChild(new HAnimHumanoidObject("hanim_AnnexC01Jin").setName("AnnexC01Jin").setInfo(new String[] {"humanoidVersion=2.0"}).setJointBindingPositions(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f})).setJointBindingRotations(new MFRotationObject(new float[] {0.0f,0.0f,1.0f,0.0f})).setJointBindingScales(new MFVec3fObject(new float[] {1.0f,1.0f,1.0f})).setLoa(-1).setScale(0.0225f,0.0225f,0.0225f).setSkeletalConfiguration("BASIC").setVersion("2.0")
+    .addChild(new HAnimHumanoidObject("hanim_AnnexC01Jin").setName("AnnexC01Jin").setInfo(new String[] {"humanoidVersion=2.0"}).setJointBindingPositions(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f})).setJointBindingRotations(new MFRotationObject(new float[] {0.0f,0.0f,1.0f,0.0f})).setJointBindingScales(new MFVec3fObject(new float[] {1.0f,1.0f,1.0f})).setScale(0.0225f,0.0225f,0.0225f).setVersion("2.0")
       .addSkeleton(new HAnimJointObject("hanim_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0f,30.53f,-0.7076f)
         .addChild(new HAnimSegmentObject("hanim_sacrum").setName("sacrum")
           .addChild(new TransformObject().setTranslation(0.0f,30.53f,-0.7076f)

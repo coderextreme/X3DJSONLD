@@ -101,7 +101,7 @@ public class KoreanCharacterMotionAnnexC01Jin {
       .setScene(new SceneObject()
         .addChild(new NavigationInfoObject().setSpeed(1.5f))
         .addChild(new ViewpointObject().setCenterOfRotation(new float[] {0f,1f,0f}).setDescription("AnnexC01Jin").setPosition(new float[] {0f,1f,3f}))
-        .addChild(new HAnimHumanoidObject().setName("AnnexC01Jin").setDEF("hanim_AnnexC01Jin").setInfo(new MFStringObject(new MFString0().getArray())).setScale(new float[] {0.0225f,0.0225f,0.0225f}).setVersion("2.0").setJointBindingPositions(new MFVec3fObject(new MFVec3f1().getArray())).setJointBindingRotations(new MFRotationObject(new MFRotation2().getArray())).setJointBindingScales(new MFVec3fObject(new MFVec3f3().getArray())).setLoa(-1).setSkeletalConfiguration("BASIC")
+        .addChild(new HAnimHumanoidObject().setName("AnnexC01Jin").setDEF("hanim_AnnexC01Jin").setInfo(new MFStringObject(new MFString0().getArray())).setScale(new float[] {0.0225f,0.0225f,0.0225f}).setVersion("2.0").setJointBindingPositions(new MFVec3fObject(new MFVec3f1().getArray())).setJointBindingRotations(new MFRotationObject(new MFRotation2().getArray())).setJointBindingScales(new MFVec3fObject(new MFVec3f3().getArray()))
           .addJoints(new HAnimJointObject().setName("HumanoidRoot").setDEF("hanim_HumanoidRoot").setCenter(new float[] {0f,30.53f,-0.7076f})
             .addChild(new HAnimSegmentObject().setName("sacrum").setDEF("hanim_sacrum")
               .addChild(new TransformObject().setTranslation(new float[] {0f,30.53f,-0.7076f})

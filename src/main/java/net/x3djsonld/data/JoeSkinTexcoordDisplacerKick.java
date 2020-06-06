@@ -19,17 +19,17 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> The Joe model is a Humanoid with textured skin. </p>
- <p> Related links: JoeSkinTexcoordDisplacerKick.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/JoeSkinTexcoordDisplacerKick.java">JoeSkinTexcoordDisplacerKick.java</a> source, <a href="../../../HumanoidAnimation/JoeSkinTexcoordDisplacerKickIndex.html" target="_top">JoeSkinTexcoordDisplacerKick catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JoeSkinTexcoordDisplacerKick&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/JoeSkinTexcoordDisplacerKick.x3d">JoeSkinTexcoordDisplacerKick.x3d</a> </td>
+			<td> <a href="../../../HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d">JoeSkinTexcoordDisplacerKick.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
@@ -53,7 +53,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 14 May 2020 </td>
+			<td> 19 October 2018 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
@@ -65,7 +65,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/JoeSkinTexcoordDisplacerKick.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/JoeSkinTexcoordDisplacerKick.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -73,7 +73,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/../license.html">../license.html</a> </td>
+			<td> <a href="../../../HumanoidAnimation/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -111,11 +111,11 @@ public class JoeSkinTexcoordDisplacerKick
     .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Joe Williams"))
     .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("9 January 2014"))
     .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED ).setContent("12 January 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("14 May 2020"))
+    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("19 October 2018"))
     .addMeta(new metaObject().setName(metaObject.NAME_TODO       ).setContent("Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes"))
     .addComments(" BS studio translation from .x3dv by Joe using BS Contact ")
     .addMeta(new metaObject().setName("translators").setContent("Roy Walmsley and Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/JoeSkinTexcoordDisplacerKick.x3d"))
+    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d"))
     .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new SceneObject()
@@ -132,9 +132,9 @@ public class JoeSkinTexcoordDisplacerKick
     .addChild(new ViewpointObject("Scene_TopView").setDescription("Scene_Top View").setCenterOfRotation(0.0f,1.5f,0.0f).setOrientation(1.0f,0.0f,0.0f,-1.5708f).setPosition(0.0f,3.5f,0.0f))
     .addChild(new GroupObject("Joe_Humanoid")
       .addChild(new HAnimHumanoidObject("Joe_Human").setName("Human").setVersion("2.0")
-        .addSkeleton(new HAnimJointObject("Joe_humanoid_root").setName("humanoid_root").setCenter(0.0f,0.875f,0.0f)
+        .addSkeleton(new HAnimJointObject("Joe_HumanoidRoot").setName("humanoid_root").setCenter(0.0f,0.875f,0.0f)
           .addChild(new HAnimSegmentObject("Joe_sacrum").setName("sacrum")
-            .addChild(new HAnimSiteObject("Joe_RootFront_view").setName("RootFront_view")
+            .addChild(new HAnimSiteObject("Joe_RootFront").setName("RootFront")
               .addChild(new TransformObject("hanimcordsys").setScale(0.175f,0.175f,0.175f)
                 .addChild(new ViewpointObject("ViewBodyRootAxes").setDescription("Joe_HAnim Root Coordinate Axes View"))
                 .addChild(new ShapeObject("AxisLinesShape")
@@ -239,108 +239,12 @@ public class JoeSkinTexcoordDisplacerKick
         .addSkin(new ShapeObject("Joe_Shape")
           .setAppearance(new AppearanceObject("Joe_skin_Appearance")
             .setMaterial(new MaterialObject("Joe_skin_Material").setDiffuseColor(0.3f,0.3f,0.6f).setEmissiveColor(0.3f,0.3f,0.6f))
-            .setTexture(new ImageTextureObject("JoeSkinImageTexture").setUrl(new String[] {"JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/JoeBodyTexture29.png"}))
+            .setTexture(new ImageTextureObject("JoeSkinImageTexture").setUrl(new String[] {"JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeBodyTexture29.png"}))
             .setTextureTransform(new TextureTransformObject("kicktextrans")))
           .setGeometry(new IndexedFaceSetObject("Joe_skin_IndexedFaceSet").setDEF("Joe_skin_IndexedFaceSet").setCreaseAngle(3.14f).setCoordIndex(getJoe_skin_IndexedFaceSet_6_132_coordIndex())
             .setCoord(new CoordinateObject("Joe_SkinCoord").setPoint(getJoe_SkinCoord_7_132_point()))
             .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.0f,0.0f,0.5f,0.5f,0.5f,0.0f,0.0f,0.5f})))))
-        .setSkinCoord(new CoordinateObject().setUSE("Joe_SkinCoord"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_humanoid_root"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_sacroiliac"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_hip"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_knee"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_ankle"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_subtalar"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_midtarsal"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_metatarsal"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_hip"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_knee"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_ankle"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_subtalar"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_midtarsal"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_metatarsal"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vl5"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vl4"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vl3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vl2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vl1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt12"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt11"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt10"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt9"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt8"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt7"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt6"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt5"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt4"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vt1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vc7"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vc6"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vc5"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vc4"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vc3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vc2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_vc1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_skullbase"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_eyelid_joint"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_eyeball_joint"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_eyebrow_joint"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_eyelid_joint"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_eyeball_joint"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_eyebrow_joint"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_temporomandibular"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_sternoclavicular"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_acromioclavicular"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_shoulder"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_elbow"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_wrist"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_thumb1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_thumb2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_thumb3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_index0"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_index1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_index2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_index3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_middle0"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_middle1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_middle2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_middle3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_ring0"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_ring1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_ring2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_ring3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_pinky0"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_pinky1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_pinky2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_l_pinky3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_sternoclavicular"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_acromioclavicular"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_shoulder"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_elbow"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_wrist"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_thumb1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_thumb2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_thumb3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_index0"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_index1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_index2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_index3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_middle0"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_middle1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_middle2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_middle3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_ring0"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_ring1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_ring2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_ring3"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_pinky0"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_pinky1"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_pinky2"))
-        .addJoints(new HAnimJointObject().setUSE("Joe_r_pinky3"))
-        .addSegments(new HAnimSegmentObject().setUSE("Joe_sacrum"))
-        .addSites(new HAnimSiteObject().setUSE("Joe_RootFront_view"))))
+        .setSkinCoord(new CoordinateObject().setUSE("Joe_SkinCoord"))))
     .addChild(new GroupObject()
       .addChild(new TimeSensorObject("KickTimer").setCycleInterval(3.73).setLoop(true))
       .addComments(" Interpolators ")
@@ -536,8 +440,8 @@ public class JoeSkinTexcoordDisplacerKick
     .addChild(new ROUTEObject().setFromNode("KickTimer").setFromField("fraction_changed").setToNode("r_pinky2RotInterp").setToField("set_fraction"))
     .addChild(new ROUTEObject().setFromNode("KickTimer").setFromField("fraction_changed").setToNode("r_pinky3RotInterp").setToField("set_fraction"))
     .addComments(" Routes from Interpolators to Joe_ model Joints ")
-    .addChild(new ROUTEObject().setFromNode("HumanoidRootRotInterp").setFromField("value_changed").setToNode("Joe_humanoid_root").setToField("set_rotation"))
-    .addChild(new ROUTEObject().setFromNode("HumanoidRootTransInterp").setFromField("value_changed").setToNode("Joe_humanoid_root").setToField("set_translation"))
+    .addChild(new ROUTEObject().setFromNode("HumanoidRootRotInterp").setFromField("value_changed").setToNode("Joe_HumanoidRoot").setToField("set_rotation"))
+    .addChild(new ROUTEObject().setFromNode("HumanoidRootTransInterp").setFromField("value_changed").setToNode("Joe_HumanoidRoot").setToField("set_translation"))
     .addChild(new ROUTEObject().setFromNode("sacroiliacRotInterp").setFromField("value_changed").setToNode("Joe_sacroiliac").setToField("set_rotation"))
     .addChild(new ROUTEObject().setFromNode("l_hipRotInterp").setFromField("value_changed").setToNode("Joe_l_hip").setToField("set_rotation"))
     .addChild(new ROUTEObject().setFromNode("l_kneeRotInterp").setFromField("value_changed").setToNode("Joe_l_knee").setToField("set_rotation"))
@@ -646,8 +550,8 @@ public class JoeSkinTexcoordDisplacerKick
           .setAppearance(new AppearanceObject("ball_Appearance")
             .setMaterial(new MaterialObject("ball_Material").setDiffuseColor(0.3f,0.3f,1.0f).setEmissiveColor(0.3f,0.3f,0.33f))
             .setTexture(new ImageTextureObject().setUSE("JoeSkinImageTexture")))
-          .setGeometry(new IndexedFaceSetObject("ball_IndexedFaceSet").setDEF("ball_IndexedFaceSet").setCoordIndex(getball_IndexedFaceSet_6_533_coordIndex())
-            .setCoord(new CoordinateObject("Ball_Coordinates").setPoint(getBall_Coordinates_7_533_point()))))
+          .setGeometry(new IndexedFaceSetObject("ball_IndexedFaceSet").setDEF("ball_IndexedFaceSet").setCoordIndex(getball_IndexedFaceSet_6_437_coordIndex())
+            .setCoord(new CoordinateObject("Ball_Coordinates").setPoint(getBall_Coordinates_7_437_point()))))
         .addChild(new ViewpointObject("ballView_1").setDescription("Ball View")))
       .addComments(" Ball Animation interpolators ")
       .addChild(new PositionInterpolatorObject("ballTransInterp").setKey(new float[] {0.0f,0.4f,0.409f,1.0f}).setKeyValue(new MFVec3fObject(new float[] {-1.0f,0.4f,-1.0f,0.0f,0.07f,0.0f,0.05f,0.06f,0.05f,2.0f,4.0f,10.0f})))
@@ -721,7 +625,7 @@ public class JoeSkinTexcoordDisplacerKick
 
 
 		/** Define subarrays using type int[] */
-		private int[] getball_IndexedFaceSet_6_533_coordIndex_1()
+		private int[] getball_IndexedFaceSet_6_437_coordIndex_1()
 		{
 			int[] value = {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1};
 			return value;
@@ -759,30 +663,30 @@ public class JoeSkinTexcoordDisplacerKick
 				.append(new MFVec3fObject(getJoe_SkinCoord_7_132_point_4()));
 			return Joe_SkinCoord_7_132_point;
 		}
-		/** Large attribute array: IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex field, scene-graph level=6, element #533, 480 total numbers.
+		/** Large attribute array: IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex field, scene-graph level=6, element #437, 480 total numbers.
 		 * Reassemble split array as single method to improve readability and runnability.
 		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
 		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getball_IndexedFaceSet_6_533_coordIndex()
+		private MFInt32Object getball_IndexedFaceSet_6_437_coordIndex()
 		{
-			MFInt32Object ball_IndexedFaceSet_6_533_coordIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getball_IndexedFaceSet_6_533_coordIndex_1()));
-			return ball_IndexedFaceSet_6_533_coordIndex;
+			MFInt32Object ball_IndexedFaceSet_6_437_coordIndex = new MFInt32Object()/*2.finalize*/
+				.append(new MFInt32Object(getball_IndexedFaceSet_6_437_coordIndex_1()));
+			return ball_IndexedFaceSet_6_437_coordIndex;
 		}
-		/** Large attribute array: Coordinate DEF='Ball_Coordinates' point field, scene-graph level=7, element #533, 186 total numbers made up of 62 3-tuple values.
+		/** Large attribute array: Coordinate DEF='Ball_Coordinates' point field, scene-graph level=7, element #437, 186 total numbers made up of 62 3-tuple values.
 		 * Reassemble split array as single method to improve readability and runnability.
 		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
 		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getBall_Coordinates_7_533_point()
+		private MFVec3fObject getBall_Coordinates_7_437_point()
 		{
-			MFVec3fObject Ball_Coordinates_7_533_point = new MFVec3fObject(new float[] {0.0f,0.4675f,0.0f,0.0f,0.4049f,-0.2338f,-0.1169f,0.4049f,-0.2024f,-0.2024f,0.4049f,-0.1169f,-0.2338f,0.4049f,0.0f,-0.2024f,0.4049f,0.1169f,-0.1169f,0.4049f,0.2024f,0.0f,0.4049f,0.2338f,0.1169f,0.4049f,0.2024f,0.2024f,0.4049f,0.1169f,0.2338f,0.4049f,0.0f,0.2024f,0.4049f,-0.1169f,0.1169f,0.4049f,-0.2024f,0.0f,0.2338f,-0.4049f,-0.2024f,0.2338f,-0.3506f,-0.3506f,0.2338f,-0.2024f,-0.4049f,0.2338f,0.0f,-0.3506f,0.2338f,0.2024f,-0.2024f,0.2338f,0.3506f,0.0f,0.2338f,0.4049f,0.2024f,0.2338f,0.3506f,0.3506f,0.2338f,0.2024f,0.4049f,0.2338f,0.0f,0.3506f,0.2338f,-0.2024f,0.2024f,0.2338f,-0.3506f,0.0f,0.0f,-0.4675f,-0.2338f,0.0f,-0.4049f,-0.4049f,0.0f,-0.2338f,-0.4675f,0.0f,0.0f,-0.4049f,0.0f,0.2338f,-0.2338f,0.0f,0.4049f,0.0f,0.0f,0.4675f,0.2338f,0.0f,0.4049f,0.4049f,0.0f,0.2338f,0.4675f,0.0f,0.0f,0.4049f,0.0f,-0.2338f,0.2338f,0.0f,-0.4049f,0.0f,-0.2338f,-0.4049f,-0.2024f,-0.2338f,-0.3506f,-0.3506f,-0.2338f,-0.2024f,-0.4049f,-0.2338f,0.0f,-0.3506f,-0.2338f,0.2024f,-0.2024f,-0.2338f,0.3506f,0.0f,-0.2338f,0.4049f,0.2024f,-0.2338f,0.3506f,0.3506f,-0.2338f,0.2024f,0.4049f,-0.2338f,0.0f,0.3506f,-0.2338f,-0.2024f,0.2024f,-0.2338f,-0.3506f,0.0f,-0.4049f,-0.2338f,-0.1169f,-0.4049f,-0.2024f,-0.2024f,-0.4049f,-0.1169f,-0.2338f,-0.4049f,0.0f,-0.2024f,-0.4049f,0.1169f,-0.1169f,-0.4049f,0.2024f,0.0f,-0.4049f,0.2338f,0.1169f,-0.4049f,0.2024f,0.2024f,-0.4049f,0.1169f,0.2338f,-0.4049f,0.0f,0.2024f,-0.4049f,-0.1169f,0.1169f,-0.4049f,-0.2024f,0.0f,-0.4675f,0.0f});
-			return Ball_Coordinates_7_533_point;
+			MFVec3fObject Ball_Coordinates_7_437_point = new MFVec3fObject(new float[] {0.0f,0.4675f,0.0f,0.0f,0.4049f,-0.2338f,-0.1169f,0.4049f,-0.2024f,-0.2024f,0.4049f,-0.1169f,-0.2338f,0.4049f,0.0f,-0.2024f,0.4049f,0.1169f,-0.1169f,0.4049f,0.2024f,0.0f,0.4049f,0.2338f,0.1169f,0.4049f,0.2024f,0.2024f,0.4049f,0.1169f,0.2338f,0.4049f,0.0f,0.2024f,0.4049f,-0.1169f,0.1169f,0.4049f,-0.2024f,0.0f,0.2338f,-0.4049f,-0.2024f,0.2338f,-0.3506f,-0.3506f,0.2338f,-0.2024f,-0.4049f,0.2338f,0.0f,-0.3506f,0.2338f,0.2024f,-0.2024f,0.2338f,0.3506f,0.0f,0.2338f,0.4049f,0.2024f,0.2338f,0.3506f,0.3506f,0.2338f,0.2024f,0.4049f,0.2338f,0.0f,0.3506f,0.2338f,-0.2024f,0.2024f,0.2338f,-0.3506f,0.0f,0.0f,-0.4675f,-0.2338f,0.0f,-0.4049f,-0.4049f,0.0f,-0.2338f,-0.4675f,0.0f,0.0f,-0.4049f,0.0f,0.2338f,-0.2338f,0.0f,0.4049f,0.0f,0.0f,0.4675f,0.2338f,0.0f,0.4049f,0.4049f,0.0f,0.2338f,0.4675f,0.0f,0.0f,0.4049f,0.0f,-0.2338f,0.2338f,0.0f,-0.4049f,0.0f,-0.2338f,-0.4049f,-0.2024f,-0.2338f,-0.3506f,-0.3506f,-0.2338f,-0.2024f,-0.4049f,-0.2338f,0.0f,-0.3506f,-0.2338f,0.2024f,-0.2024f,-0.2338f,0.3506f,0.0f,-0.2338f,0.4049f,0.2024f,-0.2338f,0.3506f,0.3506f,-0.2338f,0.2024f,0.4049f,-0.2338f,0.0f,0.3506f,-0.2338f,-0.2024f,0.2024f,-0.2338f,-0.3506f,0.0f,-0.4049f,-0.2338f,-0.1169f,-0.4049f,-0.2024f,-0.2024f,-0.4049f,-0.1169f,-0.2338f,-0.4049f,0.0f,-0.2024f,-0.4049f,0.1169f,-0.1169f,-0.4049f,0.2024f,0.0f,-0.4049f,0.2338f,0.1169f,-0.4049f,0.2024f,0.2024f,-0.4049f,0.1169f,0.2338f,-0.4049f,0.0f,0.2024f,-0.4049f,-0.1169f,0.1169f,-0.4049f,-0.2024f,0.0f,-0.4675f,0.0f});
+			return Ball_Coordinates_7_437_point;
 		}
 
 	/** The initialized model object, created within initialize() method. */

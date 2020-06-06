@@ -11,16 +11,16 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> A Seamless VRML Human, demonstrating the H-Anim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare). </p>
- <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../HumanoidAnimation/BoxManIndex.html" target="_top">BoxMan catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.x3d">BoxMan.x3d</a> </td>
+			<td> <a href="../../../HumanoidAnimation/BoxMan.x3d">BoxMan.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -44,7 +44,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 9 May 2020 </td>
+			<td> 20 October 2019 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -56,7 +56,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.js">BoxMan.js</a> </td>
+			<td> <a href="../../../HumanoidAnimation/BoxMan.js">BoxMan.js</a> </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -72,27 +72,27 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManViewInclined.png">BoxManViewInclined.png</a> </td>
+			<td> <a href="../../../HumanoidAnimation/BoxManViewInclined.png">BoxManViewInclined.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManViewFront.png">BoxManViewFront.png</a> </td>
+			<td> <a href="../../../HumanoidAnimation/BoxManViewFront.png">BoxManViewFront.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManViewRight.png">BoxManViewRight.png</a> </td>
+			<td> <a href="../../../HumanoidAnimation/BoxManViewRight.png">BoxManViewRight.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManViewLeft.png">BoxManViewLeft.png</a> </td>
+			<td> <a href="../../../HumanoidAnimation/BoxManViewLeft.png">BoxManViewLeft.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManViewTop.png">BoxManViewTop.png</a> </td>
+			<td> <a href="../../../HumanoidAnimation/BoxManViewTop.png">BoxManViewTop.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxManAnimationPanel.x3d">BoxManAnimationPanel.x3d</a> </td>
+			<td> <a href="../../../HumanoidAnimation/BoxManAnimationPanel.x3d">BoxManAnimationPanel.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -132,7 +132,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -140,7 +140,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/../license.html">../license.html</a> </td>
+			<td> <a href="../../../HumanoidAnimation/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -233,7 +233,7 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("translator").setContent("Don Brutzman and Matt Beitler"))
     .addMeta((new autoclass.meta()).setName("created").setContent("1 March 2001"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("19 October 2001"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("9 May 2020"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://h-anim.org"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("boxman.original.wrl"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("BoxMan.js"))
@@ -255,7 +255,7 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("rights").setContent("(C) 2000 James Smith - james@vapourtech.com"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.vapourtech.com"))
     .addMeta((new autoclass.meta()).setName("subject").setContent("BoxMan H-Anim 2.0"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
@@ -428,7 +428,7 @@ NeedClassName.prototype = {
         .addChild((new autoclass.Viewpoint("Right_View")).setDescription("Right-side View").setPosition(-3.0,1.0,0.0).setOrientation(0.0,1.0,0.0,-1.57))
         .addChild((new autoclass.Viewpoint("Left_View")).setDescription("Left-side View").setOrientation(0.0,1.0,0.0,1.57).setPosition(3.0,1.0,0.0))
         .addChild((new autoclass.Viewpoint("Top_View")).setDescription("Top View").setPosition(0.0,3.0,0.0).setOrientation(1.0,0.0,0.0,-1.57))))
-    .addChild((new autoclass.ExternProtoDeclare()).setName("LOA1_WalkAnimation").setUrl(new autoclass.MFString("\"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation\" \"LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation\""))
+    .addChild((new autoclass.ExternProtoDeclare()).setName("LOA1_WalkAnimation").setUrl(new autoclass.MFString("\"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation\" \"LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation\""))
       .addField((new autoclass.field()).setAccessType("inputOutput").setName("cycleInterval").setType("SFTime"))
       .addField((new autoclass.field()).setAccessType("inputOutput").setName("enabled").setType("SFBool"))
       .addField((new autoclass.field()).setAccessType("inputOutput").setName("loop").setType("SFBool"))
@@ -474,7 +474,7 @@ NeedClassName.prototype = {
     .addChild((new autoclass.ROUTE()).setFromNode("ANIMATOR").setFromField("r_shoulder_rotation_changed").setToNode("boxman_r_shoulder").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("ANIMATOR").setFromField("r_elbow_rotation_changed").setToNode("boxman_r_elbow").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("ANIMATOR").setFromField("r_wrist_rotation_changed").setToNode("boxman_r_wrist").setToField("set_rotation"))
-    .addChild((new autoclass.Script("ENGINE")).setDirectOutput(true).setUrl(new autoclass.MFString("\"BoxMan.js\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/BoxMan.js\""))
+    .addChild((new autoclass.Script("ENGINE")).setDirectOutput(true).setUrl(new autoclass.MFString("\"BoxMan.js\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.js\""))
       .addField((new autoclass.field()).setAccessType("inputOnly").setName("update").setType("SFRotation"))
       .addField((new autoclass.field()).setAccessType("initializeOnly").setName("humanoid").setType("SFNode")
         .addChild((new autoclass.HAnimHumanoid()).setUSE("boxman_Humanoid").setVersion("2.0")))

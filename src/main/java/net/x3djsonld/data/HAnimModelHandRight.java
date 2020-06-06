@@ -133,7 +133,7 @@ public class HAnimModelHandRight
     .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new WorldInfoObject().setTitle("HAnimModelHandRight.x3d"))
-    .addChild(new HAnimHumanoidObject("Humanoid_Right_hand").setName("Humanoid_Right_hand").setJointBindingPositions(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f})).setJointBindingRotations(new MFRotationObject(new float[] {0.0f,0.0f,1.0f,0.0f})).setJointBindingScales(new MFVec3fObject(new float[] {1.0f,1.0f,1.0f})).setLoa(-1).setSkeletalConfiguration("BASIC").setVersion("2.0")
+    .addChild(new HAnimHumanoidObject("Humanoid_Right_hand").setName("Humanoid_Right_hand").setJointBindingPositions(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f})).setJointBindingRotations(new MFRotationObject(new float[] {0.0f,0.0f,1.0f,0.0f})).setJointBindingScales(new MFVec3fObject(new float[] {1.0f,1.0f,1.0f})).setVersion("2.0")
       .addSkeleton(new HAnimJointObject("hanim_HumanoidRoot").setName("humanoid_root")
         .addChild(new HAnimJointObject("r_radiocarpal_joint").setName("r_radiocarpal_joint")
           .addChild(new HAnimSegmentObject("r_wrist").setName("r_wrist")

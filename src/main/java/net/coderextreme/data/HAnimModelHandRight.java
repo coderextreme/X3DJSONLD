@@ -100,7 +100,7 @@ public class HAnimModelHandRight {
         .addMeta(new metaObject().setName("license").setContent("../license.html")))
       .setScene(new SceneObject()
         .addChild(new WorldInfoObject().setTitle("HAnimModelHandRight.x3d"))
-        .addChild(new HAnimHumanoidObject().setName("Humanoid_Right_hand").setDEF("Humanoid_Right_hand").setJointBindingPositions(new MFVec3fObject(new MFVec3f0().getArray())).setJointBindingRotations(new MFRotationObject(new MFRotation1().getArray())).setJointBindingScales(new MFVec3fObject(new MFVec3f2().getArray())).setLoa(-1).setSkeletalConfiguration("BASIC").setVersion("2.0")
+        .addChild(new HAnimHumanoidObject().setName("Humanoid_Right_hand").setDEF("Humanoid_Right_hand").setJointBindingPositions(new MFVec3fObject(new MFVec3f0().getArray())).setJointBindingRotations(new MFRotationObject(new MFRotation1().getArray())).setJointBindingScales(new MFVec3fObject(new MFVec3f2().getArray())).setVersion("2.0")
           .addJoints(new HAnimJointObject().setName("humanoid_root").setDEF("hanim_HumanoidRoot")
             .addChild(new HAnimJointObject().setName("r_radiocarpal_joint").setDEF("r_radiocarpal_joint")
               .addChild(new HAnimSegmentObject().setName("r_wrist").setDEF("r_wrist")

@@ -1685,7 +1685,7 @@ NeedClassName.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.NavigationInfo()).setSpeed(1.5))
     .addChild((new autoclass.Viewpoint()).setDescription("AnnexC01Jin").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
-    .addChild((new autoclass.HAnimHumanoid("hanim_AnnexC01Jin")).setName("AnnexC01Jin").setInfo(new autoclass.MFString("\"humanoidVersion=2.0\"")).setLoa(-1).setJointBindingPositions(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0]))).setJointBindingRotations(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0]))).setScale(0.0225,0.0225,0.0225).setJointBindingScales(new autoclass.MFVec3f(java.newArray("float", [1.0,1.0,1.0]))).setVersion("2.0").setSkeletalConfiguration("BASIC")
+    .addChild((new autoclass.HAnimHumanoid("hanim_AnnexC01Jin")).setName("AnnexC01Jin").setInfo(new autoclass.MFString("\"humanoidVersion=2.0\"")).setJointBindingPositions(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0]))).setJointBindingRotations(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0]))).setScale(0.0225,0.0225,0.0225).setJointBindingScales(new autoclass.MFVec3f(java.newArray("float", [1.0,1.0,1.0]))).setVersion("2.0")
       .addSkeleton((new autoclass.HAnimJoint("hanim_HumanoidRoot")).setName("HumanoidRoot").setCenter(0.0,30.53,-0.7076)
         .addChild((new autoclass.HAnimSegment("hanim_sacrum")).setName("sacrum")
           .addChild((new autoclass.Transform()).setTranslation(0.0,30.53,-0.7076)

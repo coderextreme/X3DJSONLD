@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Left foot, using high-fidelity definitions for H-Anim version 2.2. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../HumanoidAnimation/HAnimModelFootLeftIndex.html" target="_top">HAnimModelFootLeft catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/HAnimModelFootLeft.java">HAnimModelFootLeft.java</a> source, <a href="../../../HumanoidAnimation/HAnimModelFootLeftIndex.html" target="_top">HAnimModelFootLeft catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -90,7 +90,7 @@ load('X3Dautoclass.js');
 	* @author YOO Kwan Hee and Don Brutzman
  */
 
-function NeedClassName
+function HAnimModelFootLeft
   /** Default constructor to create this object. */
   ()
   {
@@ -99,7 +99,7 @@ function NeedClassName
     this.initialize();
     return this;
   }
-NeedClassName.prototype = {
+HAnimModelFootLeft.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -124,7 +124,7 @@ NeedClassName.prototype = {
     .addMeta(new metaObject().setName("license").setContent("../license.html")))
   .setScene(new SceneObject()
     .addChild(new WorldInfoObject().setTitle("HAnimModelFootLeft.x3d"))
-    .addChild(new HAnimHumanoidObject("Humanoid_Left_Foot").setName("Humanoid_Left_Foot").setInfo(new MFStringObject("\"humanoidVersion=2.0\"")).setLoa(-1).setJointBindingPositions(new MFVec3fObject(Java.to([0.0,0.0,0.0], Java.type("float[]")))).setJointBindingRotations(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0], Java.type("float[]")))).setJointBindingScales(new MFVec3fObject(Java.to([1.0,1.0,1.0], Java.type("float[]")))).setVersion("2.0").setSkeletalConfiguration("BASIC")
+    .addChild(new HAnimHumanoidObject("Humanoid_Left_Foot").setName("Humanoid_Left_Foot").setInfo(new MFStringObject("\"humanoidVersion=2.0\"")).setJointBindingPositions(new MFVec3fObject(Java.to([0.0,0.0,0.0], Java.type("float[]")))).setJointBindingRotations(new MFRotationObject(Java.to([0.0,0.0,1.0,0.0], Java.type("float[]")))).setJointBindingScales(new MFVec3fObject(Java.to([1.0,1.0,1.0], Java.type("float[]")))).setVersion("2.0")
       .addSkeleton(new HAnimJointObject("hanim_HumanoidRoot").setName("humanoid_root")
         .addChild(new HAnimJointObject("l_talocrural_joint").setName("l_talocrural_joint")
           .addChild(new HAnimSegmentObject("l_talus").setName("l_talus")
@@ -449,7 +449,7 @@ NeedClassName.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return NeedClassName model
+   * @return HAnimModelFootLeft model
    */
   getX3dModel : function()
   {	  
@@ -511,8 +511,8 @@ NeedClassName.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new NeedClassName();
-		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new HAnimModelFootLeft();
+		print ("HAnimModelFootLeft execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new NeedClassName().main();
+new HAnimModelFootLeft().main();
