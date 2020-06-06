@@ -577,6 +577,11 @@
                     <xsl:text> ;</xsl:text>
                     <xsl:text>&#10;</xsl:text>
 
+                    <xsl:text> </xsl:text>
+                    <xsl:text> # accessType=</xsl:text>
+                    <xsl:value-of select="@accessType"/>
+                    <xsl:text>&#10;</xsl:text>
+
                     <xsl:variable name="rangePrefix">
                         <xsl:choose>
                             <xsl:when test="((ancestor::*[local-name()='AbstractNodeTypes'] or ancestor::*[local-name()='AbstractObjectTypes']) and $isNodeType)">
