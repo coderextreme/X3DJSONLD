@@ -121,11 +121,11 @@ class ClassPrinter:
 '''
             return str
         str = '\t\t\t\t\t"@' + field.get("name") + '" : {\n'
-#        try:
-#            if regex[field.get("type")] is not None:
-#                str += '\t\t\t\t\t\t"pattern" : "/' + regex[field.get("type")].replace("\\", "\\\\") + '/",\n'
-#        except KeyError:
-#            pass
+        try:
+            if regex[field.get("type")] is not None:
+                str += '\t\t\t\t\t\t"pattern" : "^' + regex[field.get("type")].replace("\\", "\\\\") + '$",\n'
+        except KeyError:
+            pass
 
         if field.get("name") != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
             if not field.get("type").startswith("MF"):
