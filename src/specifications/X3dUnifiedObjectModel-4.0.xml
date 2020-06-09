@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2020-05-25-07:00 10:34:48.443-07:00 -->
+<!-- Generated 2020-06-06-07:00 18:43:47.802-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -2787,7 +2787,6 @@
          <enumeration value="bboxCenter"/>
          <enumeration value="bboxSize"/>
          <enumeration value="beginCap"/>
-         <enumeration value="bottom"/>
          <enumeration value="bottomRadius"/>
          <enumeration value="category"/>
          <enumeration value="ccw"/>
@@ -2832,7 +2831,6 @@
          <enumeration value="leftToRight"/>
          <enumeration value="lineSegments"/>
          <enumeration value="mustEvaluate"/>
-         <enumeration value="name"/>
          <enumeration value="normalIndex"/>
          <enumeration value="normalPerVertex"/>
          <enumeration value="numComponents"/>
@@ -2848,7 +2846,6 @@
          <enumeration value="rootUrl"/>
          <enumeration value="rotateYUp"/>
          <enumeration value="rtpHeaderExpected"/>
-         <enumeration value="side"/>
          <enumeration value="size"/>
          <enumeration value="solid"/>
          <enumeration value="sortOrder"/>
@@ -2863,7 +2860,6 @@
          <enumeration value="surfaceArea"/>
          <enumeration value="texCoordIndex"/>
          <enumeration value="texCoordKey"/>
-         <enumeration value="top"/>
          <enumeration value="topToBottom"/>
          <enumeration value="type"/>
          <enumeration value="uClosed"/>
@@ -2919,6 +2915,7 @@
          <enumeration value="alpha"/>
          <enumeration value="ambientIntensity"/>
          <enumeration value="anchorPoint"/>
+         <enumeration value="angle"/>
          <enumeration value="angularDampingFactor"/>
          <enumeration value="angularVelocity"/>
          <enumeration value="anisotropicDegree"/>
@@ -3076,7 +3073,6 @@
          <enumeration value="intensity"/>
          <enumeration value="intensityThreshold"/>
          <enumeration value="iterations"/>
-         <enumeration value="pickable"/>
          <enumeration value="jointBindingPositions"/>
          <enumeration value="jointBindingRotations"/>
          <enumeration value="jointBindingScales"/>
@@ -3198,6 +3194,7 @@
          <enumeration value="separateBackColor"/>
          <enumeration value="shininess"/>
          <enumeration value="shadows"/>
+         <enumeration value="side"/>
          <enumeration value="silhouetteBoundaryOpacity"/>
          <enumeration value="silhouetteRetainedOpacity"/>
          <enumeration value="silhouetteSharpness"/>
@@ -3221,7 +3218,6 @@
          <enumeration value="stiffness"/>
          <enumeration value="stopBounce"/>
          <enumeration value="stopErrorCorrection"/>
-         <enumeration value="stop1ErrorCorrection"/>
          <enumeration value="stop1ConstantForceMix"/>
          <enumeration value="stop1Bounce"/>
          <enumeration value="stop2Bounce"/>
@@ -10179,7 +10175,7 @@
             <Inheritance baseType="X3DGeometryNode"/>
             <field name="bottom"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"/>
             <field name="bottomRadius"
                    type="SFFloat"
@@ -10205,7 +10201,7 @@
                    inheritedFrom="X3DNode"/>
             <field name="side"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"/>
             <field name="solid"
                    type="SFBool"
@@ -10853,7 +10849,7 @@
             <Inheritance baseType="X3DGeometryNode"/>
             <field name="bottom"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"/>
             <field name="height"
                    type="SFFloat"
@@ -10879,7 +10875,7 @@
                    minExclusive="0"/>
             <field name="side"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"/>
             <field name="solid"
                    type="SFBool"
@@ -24475,7 +24471,7 @@
                    inheritedFrom="X3DNode"/>
             <field name="type"
                    type="SFString"
-                   accessType="inputOutput"
+                   accessType="initializeOnly"
                    default="VERTEX"
                    additionalEnumerationValuesAllowed="true"
                    simpleType="shaderPartTypeValues"
@@ -24536,7 +24532,7 @@
                    inheritedFrom="X3DNode"/>
             <field name="type"
                    type="SFString"
-                   accessType="inputOutput"
+                   accessType="initializeOnly"
                    default="VERTEX"
                    additionalEnumerationValuesAllowed="true"
                    simpleType="shaderPartTypeValues"
