@@ -2,7 +2,7 @@ import x3dpsail as x3d
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("3.3")
-#x3dVersionComparisonTest for this model: supportsX3dVersion(X3DObject.VERSION_3_0)=true
+#x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true
 head1 = x3d.head()
 #comment #1
 #comment #2
@@ -93,7 +93,7 @@ meta17.setContent("6 September 2016")
 head1.addMeta(meta17)
 meta18 = x3d.meta()
 meta18.setName("modified")
-meta18.setContent("4 April 2020")
+meta18.setContent("9 June 2020")
 
 head1.addMeta(meta18)
 meta19 = x3d.meta()
@@ -310,7 +310,7 @@ MetadataString64.setValue(["MFString example C, backslash-escaped quotes: He sai
 MetadataSet63.addValue(MetadataString64)
 MetadataString65 = x3d.MetadataString()
 MetadataString65.setName("extraChildTest")
-MetadataString65.setValue(["checks MetadataSetObject addValue() method"])
+MetadataString65.setValue(["checks MetadataSet addValue() method"])
 
 MetadataSet63.addValue(MetadataString65)
 
@@ -797,7 +797,7 @@ Group145.setDEF("TestFieldObjectsGroup")
 #MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7
 #... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=
 #SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true
-#regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value
+#regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotation.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value
 
 Scene32.addChildren(Group145)
 Sound146 = x3d.Sound()
@@ -823,10 +823,10 @@ MovieTexture149.setUrl(["mpgsys.mpg","https://www.web3d.org/x3d/content/examples
 Sound148.setSource(MovieTexture149)
 
 Scene32.addChildren(Sound148)
-#Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true
-#Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false
-#Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false
-#Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
+#Test success: Anchor.isNode()=true, siteAnchor.isNode()=true
+#Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false
+#Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false
+#Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true
 #Test success: CommentsBlock.isNode()=false, testComments.isNode()=false
 #Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true
 Shape150 = x3d.Shape()
