@@ -11,11 +11,11 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library. </p>
- <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: Java.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.Java&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -126,7 +126,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author Don Brutzman
  */
 
-function NeedClassName
+function Java
   /** Default constructor to create this object. */
   ()
   {
@@ -135,7 +135,7 @@ function NeedClassName
     this.initialize();
     return this;
   }
-NeedClassName.prototype = {
+Java.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -178,7 +178,7 @@ NeedClassName.prototype = {
     .addChild((new autoclass.WorldInfo()).setUSE("WorldInfoDEF"))
     .addChild((new autoclass.WorldInfo()).setUSE("WorldInfoDEF"))
     .addMetadata((new autoclass.MetadataString("scene.addChildMetadata")).setName("test").setValue(new autoclass.MFString("\"Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding\"")))
-    .addChild((new autoclass.LayerSet("scene.addChildLayerSetTest")))
+    .addLayerSet((new autoclass.LayerSet("scene.addChildLayerSetTest")))
     .addChild((new autoclass.Transform("LogoGeometryTransform")).setTranslation(0.0,1.5,0.0)
       .addChild((new autoclass.Anchor()).setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new autoclass.MFString("\"../X3DJSAIL.html\" \"http://www.web3d.org/specifications/java/X3DJSAIL.html\""))
         .addChild((new autoclass.Shape("BoxShape"))
@@ -381,7 +381,7 @@ NeedClassName.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return NeedClassName model
+   * @return Java model
    */
   getX3dModel : function()
   {	  
@@ -393,7 +393,6 @@ NeedClassName.prototype = {
    */
   validateSelf : function()
   {
-	var       metaResult = "";
 	var validationResult = "";
 	var  exceptionResult = "";
 	try
@@ -405,30 +404,17 @@ NeedClassName.prototype = {
 			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
 			return validationResult;
 		}
-		// first list informational meta elements of interest
-		var metaList = this.getX3dModel().getHead().getMetaList();
-		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
-			{
-				metaResult += meta.toStringX3D();
-			}
-		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
 	}
 	catch (e)
 	{
 		exceptionResult = e; // report exception failures, if any
 	}
-	if  (metaResult === "" && exceptionResult === "" && validationResult === "")
+	if  (exceptionResult === "" && validationResult === "")
 	     return "success";
 	else
 	{
-		var returnMessage = metaResult;
+		var returnMessage = "";
 		if  (exceptionResult !== "" && validationResult !== "")
 			returnMessage += "\n*** ";
 		returnMessage += exceptionResult;
@@ -443,8 +429,8 @@ NeedClassName.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new NeedClassName();
-		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new Java();
+		console.log ("Java execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new NeedClassName().main();
+new Java().main();
