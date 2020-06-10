@@ -49,7 +49,7 @@ Additional references of interest:
 	<xsl:variable name="concretePackage"               >           <xsl:text>org.web3d.x3d.jsail</xsl:text></xsl:variable>
 	<xsl:variable name="concretePackageDirectorySource">    <xsl:text>src/org/web3d/x3d/jsail</xsl:text></xsl:variable>
 	<xsl:variable name="concretePackageDirectoryBuild" >  <xsl:text>build/org/web3d/x3d/jsail</xsl:text></xsl:variable>
-	<xsl:variable name="jsaiClassSuffix"    ><xsl:text>Object</xsl:text></xsl:variable>
+	<xsl:variable name="jsaiClassSuffix"    ><xsl:text>Object</xsl:text></xsl:variable><!-- originally Object -->
 	<xsl:variable name="jsaiInterfaceSuffix"><xsl:text>Interface</xsl:text></xsl:variable>
     
 	<xsl:variable name="x3duomPackage"                 >           <xsl:text>org.web3d.x3d.util.x3duom</xsl:text></xsl:variable>
@@ -57,7 +57,7 @@ Additional references of interest:
 
 	<xsl:variable name="saiJavaSpecificationRootUrl"><xsl:text>https://www.web3d.org/documents/specifications/19777-2/V3.3/Part2</xsl:text></xsl:variable>
 	<xsl:variable name="saiAbstractSpecificationRootUrl"><xsl:text>https://www.web3d.org/documents/specifications/19775-2/V3.3/Part02</xsl:text></xsl:variable>
-	<xsl:variable name="x3dAbstractSpecificationRootUrl"><xsl:text>https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01</xsl:text></xsl:variable>
+	<xsl:variable name="x3dAbstractSpecificationRootUrl"><xsl:text>https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01</xsl:text></xsl:variable><!-- TODO X3D4 -->
 	
 	<xsl:variable name="newValue"><xsl:text>newValue</xsl:text></xsl:variable><!-- default parameter name -->
 	<xsl:variable name="x3d.tooltips.path">
@@ -529,7 +529,7 @@ Additional references of interest:
     <!-- ===================================================== -->
     
     <xsl:template name="tupleSize">
-	<xsl:param name="x3dType"/>
+        <xsl:param name="x3dType"/>
 		
         <xsl:variable name="tupleSizeComputed">
             <xsl:choose>
@@ -587,6 +587,133 @@ Additional references of interest:
         </xsl:if>
         <!-- return value -->
         <xsl:value-of select="$tupleSizeComputed"/>
+    </xsl:template>
+
+    <!-- ===================================================== -->
+    
+    <xsl:template name="saiPackage">
+        <xsl:param name="nodeType"/>
+		
+        <xsl:variable name="saiPackageComputed">
+            <xsl:choose>
+                <xsl:when test="($nodeType = 'X3DNode')       or ($nodeType = 'X3DChildNode')    or 
+                                ($nodeType = 'X3DSensorNode') or ($nodeType = 'X3DBindableNode') or ($nodeType = 'X3DMetadataObject')">
+                    <xsl:text>Core</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DProductStructureChildNode)')">
+                    <xsl:text>CADGeometry</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DEnvironmentTextureNode')">
+                    <xsl:text>CubeMapTexturing</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DBackgroundNode') or ($nodeType = 'FogCoordinate')">
+                    <xsl:text>EnvironmentalEffects</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DEnvironmentalSensorNode')">
+                    <xsl:text>EnvironmentalSensor</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DSequencerNode') or ($nodeType = 'X3DTriggerNode')">
+                    <xsl:text>EventUtilities</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DFollowerNode') or ($nodeType = 'X3DChaserNode') or ($nodeType = 'X3DDamperNode')">
+                    <xsl:text>Followers</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DGroupingNode') or ($nodeType = 'X3DBoundedObject')">
+                    <xsl:text>Grouping</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DInterpolatorNode')">
+                    <xsl:text>Interpolation</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DLayerNode') or ($nodeType = 'X3DViewportNode')">
+                    <xsl:text>Layering</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DLightNode')">
+                    <xsl:text>Lighting</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DViewpointNode')">
+                    <xsl:text>Navigation</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DNetworkSensorNode') or ($nodeType = 'X3DUrlObject')">
+                    <xsl:text>Networking</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DNurbsControlCurveNode') or ($nodeType = 'X3DParametricGeometryNode') or ($nodeType = 'X3DNurbsSurfaceGeometryNode')">
+                    <xsl:text>NURBS</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DParticleEmitterNode') or ($nodeType = 'X3DParticlePhysicsModelNode')">
+                    <xsl:text>ParticleSystems</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DPickableObject')">
+                    <xsl:text>Picking</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DPointingDeviceSensorNode') or ($nodeType = 'X3DDragSensorNode') or ($nodeType = 'X3DTouchSensorNode')">
+                    <xsl:text>PointingDeviceSensor</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DColorNode')    or ($nodeType = 'X3DCoordinateNode')        or ($nodeType = 'X3DNormalNode') or
+                                ($nodeType = 'X3DGeometryNode') or ($nodeType = 'X3DGeometricPropertyNode') or  ($nodeType = 'X3DComposedGeometryNode')">
+                    <xsl:text>Rendering</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DNBodyCollidableNode') or ($nodeType = 'X3DNBodyCollisionSpaceNode')">
+                    <xsl:text>RigidBodyPhysics</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DScriptNode')">
+                    <xsl:text>Scripting</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DProgrammableShaderObject') or ($nodeType = 'X3DShaderNode') or ($nodeType = 'X3DVertexAttributeNode')">
+                    <xsl:text>Shaders</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DShapeNode') or ($nodeType = 'X3DAppearanceChildNode') or ($nodeType = 'X3DMaterialNode') or 
+                                ($nodeType = 'X3DAppearanceNode') or ($nodeType = 'Shape')">
+                    <xsl:text>Shape</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DSoundNode') or ($nodeType = 'X3DSoundSourceNode')">
+                    <xsl:text>Sound</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DFontStyleNode')">
+                    <xsl:text>Text</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DTextureNode') or ($nodeType = 'X3DTexture2DNode') or ($nodeType = 'X3DTextureTransformNode') or
+                                ($nodeType = 'X3DTextureCoordinateNode') or ($nodeType = 'TextureCoordinate') or ($nodeType = 'TextureProperties')">
+                    <xsl:text>Texturing</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DTexture3DNode')">
+                    <xsl:text>Texturing3D</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DTimeDependentNode')">
+                    <xsl:text>Time</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeType = 'X3DVolumeDataNode')">
+                    <xsl:text>VolumeRendering</xsl:text>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <!-- return value -->
+        <xsl:choose>
+            <xsl:when test="starts-with($nodeType,'MF') or starts-with($nodeType,'SF')">
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$saiPackage"/><!-- field type in root directory -->
+            </xsl:when>
+            <xsl:when test="(string-length($saiPackageComputed) > 0)">
+                <!-- debug
+                <xsl:message>
+                    <xsl:text>*** $saiPackageComputed=</xsl:text>
+                    <xsl:value-of select="$saiPackageComputed"/>
+                    <xsl:text> for $nodeType=</xsl:text>
+                    <xsl:value-of select="$nodeType"/>
+                </xsl:message>
+                -->
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$saiPackage"/>
+                <xsl:text>.</xsl:text>
+                <xsl:value-of select="$saiPackageComputed"/>
+            </xsl:when>
+            <xsl:otherwise> 
+                <!-- debug: report problem
+                <xsl:message>
+                    <xsl:text>*** saiPackage not found for type=</xsl:text>
+                    <xsl:value-of select="$nodeType"/>
+                </xsl:message> -->
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <!-- ===================================================== -->
@@ -806,7 +933,9 @@ Additional references of interest:
 							<xsl:when test="(($hasFieldInterface or $hasException or $hasServiceInterface or $canThrowFieldValueException) and (string-length($subPackage) > 0))
 											 and not(starts-with($name,'SF')) and not(starts-with($name,'MF'))">
 								<!-- TODO stronger filtering many be needed to avoid superfluous declaration -->
-								<xsl:text>import org.web3d.x3d.sai.*;  // making sure #2</xsl:text>
+								<xsl:text>import org.web3d.x3d.sai.*;      // making sure #2</xsl:text>
+								<xsl:text>&#10;</xsl:text>
+								<xsl:text>import org.web3d.x3d.sai.Core.*;  // making sure #2</xsl:text>
 								<xsl:text>&#10;</xsl:text>
 								<xsl:if test="($inConcretePackage = 'true')">
 									<xsl:text>import org.web3d.x3d.jsail.*; // again making sure #2</xsl:text>
@@ -820,7 +949,7 @@ Additional references of interest:
 					<xsl:if test="($name = 'X3D')">
 						<!-- X3D imports -->
 						<xsl:text>
-// X3DObject imports ========================
+// X3D object imports ========================
 // Base classes and SAX reader for EXIFICIENT
 import com.siemens.ct.exi.CodingMode;
 import com.siemens.ct.exi.EXIFactory;
@@ -1555,7 +1684,23 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 						<xsl:value-of select="$extends"/>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:value-of select="$extends"/>
+                        <xsl:variable name="saiPackagePath"> 
+                            <xsl:call-template name="saiPackage">
+                                <xsl:with-param name="nodeType" select="$extends"/>
+                            </xsl:call-template>
+                        </xsl:variable>
+                        <xsl:choose>
+                            <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                <xsl:text>/* here 1a */</xsl:text>
+                                <xsl:value-of select="$saiPackagePath"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="$extends"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>/* here 1b, saiPackage not found */</xsl:text>
+                                <xsl:value-of select="$extends"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:if>
@@ -1868,7 +2013,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                      -->
 									<xsl:if test="(@type = 'SFNode') and not($isX3dStatement = 'true')">
 										<!-- add corresponding member variable for SFNode ProtoInstance substitution -->
-                                        <xsl:text>	private ProtoInstanceObject </xsl:text>
+                                        <xsl:text>	private ProtoInstance</xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> </xsl:text>
                                         <xsl:value-of select="$normalizedMemberObjectName"/>
                                         <xsl:text>ProtoInstance; // allowed alternative for </xsl:text>
                                         <xsl:value-of select="$normalizedMemberObjectName"/>
@@ -1880,8 +2025,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 							
 							<xsl:if test="($name = 'ProtoInstance')">
 								<xsl:text>
-					      ProtoDeclareObject referenceProtoDeclare;
-					ExternProtoDeclareObject referenceExternProtoDeclare;
+					      ProtoDeclare</xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> referenceProtoDeclare;
+					ExternProtoDeclare</xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> referenceExternProtoDeclare;
 								</xsl:text>
 							</xsl:if>
 							<xsl:if test="($name = 'field') or ($name = 'fieldValue')">
@@ -2115,7 +2260,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 							<xsl:if test="not($isInterface = 'true') and (not($isX3dStatement = 'true') or ($name = 'ProtoInstance'))">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	/** IS/connect statements can be added if this node is within a ProtoBody and connections are defined between prototype fields and built-in node fields */
-	private ISObject IS;
+	private IS</xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> IS;
 ]]></xsl:text>
 							</xsl:if>
 -->
@@ -2992,14 +3137,14 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:when test="($name = 'ProtoDeclare')  or ($name = 'ExternProtoDeclare') or ($name = 'Script') or 
 													($name = 'ShaderProgram') or ($name = 'ComposedShader')     or ($name = 'PackagedShader')">
 										<xsl:text>		// now check author-defined fields
-		fieldObject fieldDeclaration = this.findFieldByName(fieldName);
+		field</xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> fieldDeclaration = this.findFieldByName(fieldName);
 		if (fieldDeclaration != null)
 			result = fieldDeclaration.getType(); // found it!
 </xsl:text>
 									</xsl:when>
 									<xsl:when test="($name = 'ProtoInstance')">
 										<xsl:text>		// now check author-defined fields
-		fieldObject fieldDeclaration = null;
+		field</xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> fieldDeclaration = null;
 		if      (      hasProtoDeclare())
 			fieldDeclaration =       referenceProtoDeclare.findFieldByName(fieldName);
 		else if (hasExternProtoDeclare())
@@ -3070,14 +3215,14 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:when test="($name = 'ProtoDeclare')  or ($name = 'ExternProtoDeclare') or ($name = 'Script') or 
 													($name = 'ShaderProgram') or ($name = 'ComposedShader')     or ($name = 'PackagedShader')">
 										<xsl:text>		// now check author-defined fields
-		fieldObject fieldDeclaration = this.findFieldByName(fieldName);
+		field</xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> fieldDeclaration = this.findFieldByName(fieldName);
 		if (fieldDeclaration != null)
 			result = fieldDeclaration.getAccessType(); // found it!
 </xsl:text>
 									</xsl:when>
 									<xsl:when test="($name = 'ProtoInstance')">
 										<xsl:text>		// now check author-defined fields
-		fieldObject fieldDeclaration = null;
+		field</xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> fieldDeclaration = null;
 		if      (       hasProtoDeclare())
 			fieldDeclaration =       referenceProtoDeclare.findFieldByName(fieldName);
 		else if (hasExternProtoDeclare())
@@ -3626,11 +3771,11 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 	/**
 	 * Provide XML string serialization of this model subgraph, utilizing X3D XML encoding and conforming to X3D Canonical Form.
-	 * @see X3DObject#FILE_EXTENSION_X3D
-	 * @see X3DObject#FILE_EXTENSION_XML
-	 * @see X3DObject#toStringXML()
-	 * @see X3DObject#toFileXML(String)
-	 * @see X3DObject#toFileX3D(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#FILE_EXTENSION_X3D
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#FILE_EXTENSION_XML
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringXML()
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileXML(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileX3D(String)
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="blank">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @see <a href="https://www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm">X3D Canonicalization (C14N) Tool</a>
@@ -3643,11 +3788,11 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	/**
 	 * Provide XML string serialization of this model subgraph, utilizing X3D XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
-	 * @see X3DObject#FILE_EXTENSION_X3D
-	 * @see X3DObject#FILE_EXTENSION_XML
-	 * @see X3DObject#toStringXML()
-	 * @see X3DObject#toFileXML(String)
-	 * @see X3DObject#toFileX3D(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#FILE_EXTENSION_X3D
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#FILE_EXTENSION_XML
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringXML()
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileXML(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileX3D(String)
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="blank">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @see <a href="https://www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm">X3D Canonicalization (C14N) Tool</a>
@@ -3660,9 +3805,9 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 	/**
 	 * Serialize scene graph using <i>toStringX3D()</i> to create a new XML-encoding X3D file with extension <i>x3d</i> or <i>xml</i>.
-	 * @see X3DObject#toStringXML()
-	 * @see X3DObject#toFileXML(String)
-	 * @see X3DObject#toFileX3D(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringXML()
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileXML(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileX3D(String)
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
 	 * @param fileName name of file to create and save, can include local directory path, must end with .x3d
 	 * @return File containing result (if operation succeeds), null otherwise
@@ -3691,7 +3836,7 @@ public static boolean isFileNameNMTOKEN(String fileName)
 /**
  * Check whether fileName ending in .x3d meets X3D naming conventions, ignoring prior path (if any).
  * Not observing these conventions can cause errors when converting to a Java file name.
- * @see X3DObject#FILE_EXTENSION_X3D
+ * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#FILE_EXTENSION_X3D
  * @see SFStringObject#isNMTOKEN(String)
  * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
  * @param fileName name of file to check
@@ -3722,9 +3867,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 }
 	/**
 	 * Serialize scene graph using <i>toStringX3D()</i> to create a new XML-encoding X3D file with extension <i>x3d</i> or <i>xml</i>.
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toStringXML()
-	 * @see X3DObject#toFileXML(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringX3D()
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringXML()
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileXML(String)
 	 * @see SFStringObject#isNMTOKEN(String)
 	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -3804,7 +3949,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	}
 	/**
 	 * Serialize scene graph using <i>toStringClassicVRML()</i> to create a new X3D file with extension <i>x3dv</i>.
-	 * @see X3DObject#toStringClassicVRML()
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringClassicVRML()
 	 * @see SFStringObject#isNMTOKEN(String)
 	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -3882,7 +4027,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	}
 	/**
 	 * Serialize scene graph using <i>toStringVRML97()</i> to create a new X3D file with extension <i>wrl</i>.
-	 * @see X3DObject#toStringVRML97()
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringVRML97()
 	 * @see SFStringObject#isNMTOKEN(String)
 	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -3982,15 +4127,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	}
 
 	/**
-	 * Serialize current X3DObject scene graph using <i>toFileX3D()</i> and then create a new file with corresponding filename extension (e.g. <i>.html</i>) using an embedded stylesheet.
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toFileX3D(String)
-	 * @see X3DObject#toFileJava(String)
-	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFilePython(String)
-	 * @see X3DObject#toFileX3DOM(String)
-	 * @see X3DObject#toFileX_ITE(String,String)
-	 * @see X3DObject#toFileCobweb(String,String)
+	 * Serialize current X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ scene graph using <i>toFileX3D()</i> and then create a new file with corresponding filename extension (e.g. <i>.html</i>) using an embedded stylesheet.
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringX3D()
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileX3D(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileJava(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileJSON(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFilePython(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileX3DOM(String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileX_ITE(String,String)
+	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileCobweb(String,String)
 	 * @see SFStringObject#isNMTOKEN(String)
 	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see ConfigurationProperties#X3DJSAIL_JAR_RELEASE_VERSIONS
@@ -4230,7 +4375,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (SaxonApiException saxonApiException)
 		{
-//			Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, saxonApiException);
+//			Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, saxonApiException);
 										
 			throw new X3DException(errorNotice + "SaxonApiException when transforming and creating fileName " + outputFilePath + 
 				", unable to save result: " + saxonApiException);
@@ -5230,7 +5375,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			X3DLoaderDOM x3dLoader = new X3DLoaderDOM();
 			boolean x3dLoaderSuccess = x3dLoader.loadModelFromFileX3D(modelFileName);
 			if (x3dLoaderSuccess)
-				replace((X3DObject) x3dLoader.getX3dObjectTree());
+				replace((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[) x3dLoader.getX3dObjectTree());
 		}
 		catch (IOException e)
 		{
@@ -5327,7 +5472,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			X3DLoaderDOM x3dLoader = new X3DLoaderDOM();
 			boolean x3dLoaderSuccess = x3dLoader.loadModelFromFileX3D(modelFileName);
 			if (x3dLoaderSuccess)
-				replace((X3DObject) x3dLoader.getX3dObjectTree());
+				replace((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[) x3dLoader.getX3dObjectTree());
 		}
 		catch (IOException e)
 		{
@@ -5427,7 +5572,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     
                     // TODO someday: efficiently parse as X3D, rather than using string-based methods
                 } catch (EXIException | TransformerException ex) {
-                    Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
                     return false;
                 }   
                 break;
@@ -5485,7 +5630,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                             schemaInputStream = getClass().getResourceAsStream("/specifications/x3d-4.0.xsd");
                             s.serializeEXISchema("/specifications/x3d-4.0.xsd", schemaInputStream, "examples/x3d-4.0.xsd.exig");
                         } catch (EXISchemaFactoryException | IOException ex) {
-                            Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
                             throw new IllegalArgumentException(ex);
                         } finally {
                             try {
@@ -5493,7 +5638,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                     schemaInputStream.close();
                                 }
                             } catch (IOException ex) {
-                                Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+                                Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
                             }
                         }
                     }
@@ -5533,7 +5678,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     out.write(reconstitutedString);
                     out.flush();
                 } catch (TransformerConfigurationException | EXIOptionsException | IOException | SAXException ex) {
-                    Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
                     return false;
                 }
                 
@@ -5547,7 +5692,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                             out.close();
                         }
                     } catch (IOException ex) {
-                        Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
                 break;
@@ -5574,7 +5719,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
             doc = new SAXBuilder().build(decompressedFile);
             xout.output(doc, new FileWriter(decompressedFile));
         } catch (IOException | JDOMException ex) {
-            Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
         }
 */
         System.out.println("EXI decompressed " + decompressedFile.getPath() + " size=" + decompressedFile.length() + " bytes");
@@ -5582,7 +5727,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         X3DLoaderDOM x3dLoader = new X3DLoaderDOM();
         boolean x3dLoaderSuccess = x3dLoader.loadModelFromFileX3D(xmlFileName);
         if (x3dLoaderSuccess) {
-            replace((X3DObject) x3dLoader.getX3dObjectTree());
+            replace((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[) x3dLoader.getX3dObjectTree());
         }
         return hasHead() || hasScene(); // success test
     }
@@ -5635,7 +5780,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
             X3DLoaderDOM x3dLoader = new X3DLoaderDOM();
             boolean x3dLoaderSuccess = x3dLoader.loadModelFromFileX3D(x3dFile);
             if (x3dLoaderSuccess)
-                return replace((X3DObject) x3dLoader.getX3dObjectTree());
+                return replace((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[) x3dLoader.getX3dObjectTree());
             else return false;
 	}
 										
@@ -5643,7 +5788,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @param newX3DObject replaces current X3DObject
 	 * @return true if replacement successful, false otherwise
 	 */
-	public boolean replace (X3DObject newX3DObject)
+	public boolean replace (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newX3DObject)
 	{
             if (newX3DObject == null)
                 return false;
@@ -5727,7 +5872,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                         // all done, close stream and file
                     }
                 } catch (SAXException | IOException | EXIException | ParserConfigurationException ex) {
-                    Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
                     // not rethrown
                 }
                 break;
@@ -5781,7 +5926,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                             schemaInputStream = getClass().getResourceAsStream("/specifications/x3d-4.0.xsd");
                             s.serializeEXISchema("/specifications/x3d-4.0.xsd", schemaInputStream, "examples/x3d-4.0.xsd.exig");
                         } catch (EXISchemaFactoryException | IOException ex) {
-                            Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
                             throw new IllegalArgumentException(ex);
                         } finally {
                             try {
@@ -5789,7 +5934,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                     schemaInputStream.close();
                                 }
                             } catch (IOException ex) {
-                                Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+                                Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
                             }
                         }
                     }
@@ -5818,7 +5963,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     // 6. Encode the input stream.
                     transmogrifier.encode(new InputSource(fileInputStream));
                 } catch (EXIOptionsException | TransmogrifierException | IOException ex) {
-                    Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
                 } finally {
                     
                     // 7.  Verify that the streams are closed.
@@ -5830,7 +5975,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                             out.close();
                         }
                     } catch (IOException ex) {
-                        Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
                 
@@ -5865,7 +6010,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 //            }
 //            catch (EXIOptionsException | TransmogrifierException | IOException ex)
 //            {
-//                Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+//                Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
 //            }
 //            finally
 //            {
@@ -5880,7 +6025,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 //                }
 //                catch (IOException ex)
 //                {
-//                    Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, ex);
+//                    Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, ex);
 //                }
 //             }
                 break;
@@ -6088,10 +6233,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3DConcreteElement#findAncestorX3DObject()
 	 * @return ancestor Scene child reference if attached, otherwise null
 	 */
-	public SceneObject findAncestorSceneObject()
+	public Scene]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ findAncestorSceneObject()
 	{
-		if ((this instanceof org.web3d.x3d.sai.Core.X3DNode) && ((X3DNode)this) instanceof org.web3d.x3d.jsail.Core.SceneObject)
-			return (SceneObject)((X3DNode)this);
+		if ((this instanceof org.web3d.x3d.sai.Core.X3DNode) && ((org.web3d.x3d.sai.Core.X3DNode)this) instanceof org.web3d.x3d.jsail.Core.SceneObject)
+			return (SceneObject)((org.web3d.x3d.sai.Core.X3DNode)this);
 		X3DConcreteElement element = this.getParentObject();
 		while (element != null)
 		{
@@ -6170,13 +6315,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 */	
 	public X3DObject findAncestorX3DObject()
 	{
-		if (((X3DNode)this) instanceof org.web3d.x3d.jsail.Core.X3DObject)
-			return (X3DObject)((X3DNode)this);
+		if (((org.web3d.x3d.sai.Core.X3DNode)this) instanceof org.web3d.x3d.jsail.Core.X3DObject)
+			return (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)((org.web3d.x3d.sai.Core.X3DNode)this);
 		X3DConcreteElement element = this.getParentObject();
 		while (element != null)
 		{
 			if (element instanceof org.web3d.x3d.jsail.Core.X3DObject)
-				 return (X3DObject)element;
+				 return (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)element;
 			else element = element.getParentObject(); // walk up the tree to top
 		}
 		return null; // not found
@@ -6289,7 +6434,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:value-of select="translate(InterfaceDefinition/componentInfo/@name,'-','')"/>
 										<xsl:text>.</xsl:text>
 										<xsl:value-of select="@name"/>
-										<xsl:text>Object";</xsl:text>
+										<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>";</xsl:text>
 									</xsl:for-each>
 									<xsl:text>
 			default:
@@ -6758,7 +6903,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:value-of select="translate($X3dUnifiedObjectModelTree//ConcreteNodes/ConcreteNode[@name = $acceptableNodeType]/InterfaceDefinition/componentInfo/@name,'-','')"/>
 													<xsl:text>.</xsl:text>
 													<xsl:value-of select="$acceptableNodeType"/>
-													<xsl:text>Object</xsl:text>
+													<xsl:value-of select="$jsaiClassSuffix"/>
 												</xsl:otherwise>
 											</xsl:choose>
 										</xsl:variable>
@@ -6816,7 +6961,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												 (($thisClassName = 'ProtoInstanceObject') and 
 												  (($CamelCaseName = 'Metadata') or ($CamelCaseName = 'Name') or ($CamelCaseName = 'DEF') or ($CamelCaseName = 'USE') or ($CamelCaseName = 'CssClass')) or
 												 (not($thisClassName = 'X3DNode') and ($CamelCaseName = 'Metadata')))">
-									<xsl:text>	@Override</xsl:text><!-- // here1? -->
+									<!--<xsl:text>	@Override</xsl:text>--><!-- // here1? -->
 									<xsl:text>&#10;</xsl:text>
 								</xsl:if>
 								<xsl:text>	public </xsl:text>
@@ -6830,7 +6975,23 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:value-of select="$javaType" disable-output-escaping="yes"/>
 									</xsl:when>
 									<xsl:otherwise>
-										<xsl:value-of select="$javaPrimitiveType"/>
+                                        <xsl:variable name="saiPackagePath"> 
+                                            <xsl:call-template name="saiPackage">
+                                                <xsl:with-param name="nodeType" select="$javaPrimitiveType"/>
+                                            </xsl:call-template>
+                                        </xsl:variable>
+                                        <xsl:choose>
+                                            <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                                <xsl:text>/* here 5a */</xsl:text>
+                                                <xsl:value-of select="$saiPackagePath"/>
+                                                <xsl:text>.</xsl:text>
+                                                <xsl:value-of select="$javaPrimitiveType"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:text>/* here 5b, saiPackage not found */</xsl:text>
+                                                <xsl:value-of select="$javaPrimitiveType"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
 									</xsl:otherwise>
 								</xsl:choose>
 								<xsl:text> get</xsl:text>
@@ -7193,7 +7354,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 																<xsl:value-of select="translate($X3dUnifiedObjectModelTree//ConcreteNodes/ConcreteNode[@name = $acceptableNodeType]/InterfaceDefinition/componentInfo/@name,'-','')"/>
 																<xsl:text>.</xsl:text>
 																<xsl:value-of select="$acceptableNodeType"/>
-																<xsl:text>Object</xsl:text>
+																<xsl:value-of select="$jsaiClassSuffix"/>
 															</xsl:otherwise>
 														</xsl:choose>
 													</xsl:variable>
@@ -7260,7 +7421,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:value-of select="translate($X3dUnifiedObjectModelTree//ConcreteNodes/ConcreteNode[@name = $acceptableNodeType]/InterfaceDefinition/componentInfo/@name,'-','')"/>
 													<xsl:text>.</xsl:text>
 													<xsl:value-of select="$acceptableNodeType"/>
-													<xsl:text>Object</xsl:text>
+													<xsl:value-of select="$jsaiClassSuffix"/>
 													<xsl:text>)</xsl:text>
 												</xsl:when>
 												<xsl:otherwise>
@@ -7701,7 +7862,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:if test="contains(@acceptableNodeTypes, '|')">
 										<xsl:text disable-output-escaping="yes"><![CDATA[
 		// newValueArrayListAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #3
-		for (X3DNode element : ]]></xsl:text>
+		for (org.web3d.x3d.sai.Core.X3DNode element : ]]></xsl:text>
 										<xsl:value-of select="$newValue"/>
 										<xsl:text>)
 		{
@@ -7730,7 +7891,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:value-of select="translate($X3dUnifiedObjectModelTree//ConcreteNodes/ConcreteNode[@name = $acceptableNodeType]/InterfaceDefinition/componentInfo/@name,'-','')"/>
 													<xsl:text>.</xsl:text>
 													<xsl:value-of select="$acceptableNodeType"/>
-													<xsl:text>Object</xsl:text>
+													<xsl:value-of select="$jsaiClassSuffix"/>
 													<xsl:text>)</xsl:text>
 												</xsl:when>
 												<xsl:otherwise>
@@ -7768,7 +7929,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												 (($thisClassName = 'ProtoInstanceObject') and 
 												  (($CamelCaseName = 'Metadata') or ($CamelCaseName = 'Name') or ($CamelCaseName = 'DEF') or ($CamelCaseName = 'USE') or ($CamelCaseName = 'CssClass')) or
 												 (not($thisClassName = 'X3DNode') and ($CamelCaseName = 'Metadata')))">
-									<xsl:text>	@Override</xsl:text>
+									<!--<xsl:text>	@Override</xsl:text>-->
 									<xsl:text>&#10;</xsl:text>
 								</xsl:if>
 								<xsl:text>	public </xsl:text>
@@ -7806,12 +7967,36 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									</xsl:otherwise>
 								</xsl:choose>
 								<xsl:text>(</xsl:text>
-								<xsl:choose>
+								<xsl:variable name="saiPackagePath"> 
+                                    <xsl:call-template name="saiPackage">
+                                        <xsl:with-param name="nodeType" select="$javaType"/>
+                                    </xsl:call-template>
+                                </xsl:variable>
+								<xsl:variable name="saiPackagePathPrimitive"> 
+                                    <xsl:call-template name="saiPackage">
+                                        <xsl:with-param name="nodeType" select="$javaPrimitiveType"/>
+                                    </xsl:call-template>
+                                </xsl:variable>
+                                <xsl:choose>
+                                    <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                        <xsl:text>/* here 6a */</xsl:text>
+                                        <xsl:value-of select="$saiPackagePath"/>
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="$javaType" disable-output-escaping="yes"/>
+                                    </xsl:when>
+                                    <xsl:when test="(string-length($saiPackagePathPrimitive) > 0)">
+                                        <xsl:text>/* here 6b */</xsl:text>
+                                        <xsl:value-of select="$saiPackagePathPrimitive"/>
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="$javaPrimitiveType" disable-output-escaping="yes"/>
+                                    </xsl:when>
 									<xsl:when test="(@type = 'MFNode') and (($isClassX3dStatement = 'true') or ($isX3dStatement = 'true') or (@name = 'addChildren') or (@name = 'removeChildren'))">
-										<xsl:value-of select="$javaType" disable-output-escaping="yes"/>
+                                        <xsl:text>/* here 6c, saiPackage not found */</xsl:text>
+                                        <xsl:value-of select="$javaType" disable-output-escaping="yes"/>
 									</xsl:when>
 									<xsl:otherwise>
-										<xsl:value-of select="$javaPrimitiveType"/>
+									    <xsl:text>/* here 6d, $javaPrimitiveType */</xsl:text>
+                                    	<xsl:value-of select="$javaPrimitiveType"/>
 									</xsl:otherwise>
 								</xsl:choose>
 								<xsl:text> </xsl:text>
@@ -9347,7 +9532,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
                                     <xsl:text>                newArray[i] = </xsl:text>
                                     <xsl:if test="($name = 'MetadataSet') or ($name = 'LoadSensor')">
-                                        <xsl:text>(X3DNode)</xsl:text><!-- cast -->
+                                        <xsl:text>(org.web3d.x3d.sai.Core.X3DNode)</xsl:text><!-- cast -->
                                     </xsl:if>
                                     <xsl:text>newValue.get(i);</xsl:text>
 									<xsl:text>&#10;</xsl:text>
@@ -9380,7 +9565,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                         <xsl:text>.add(</xsl:text>
                                         <!-- cast -->
                                         <xsl:if test="not(contains($javaType, 'X3DNode'))">
-                                            <xsl:text>(X3DNode) </xsl:text>
+                                            <xsl:text>(org.web3d.x3d.sai.Core.X3DNode) </xsl:text>
                                         </xsl:if>
                                         <xsl:text>element);</xsl:text>
 										<xsl:text>&#10;</xsl:text>
@@ -10005,7 +10190,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text>.add(</xsl:text>
 													<!--
 													<xsl:if test="(@type = 'MFNode')">
-														<xsl:text>(X3DNode)</xsl:text>
+														<xsl:text>(org.web3d.x3d.sai.Core.X3DNode)</xsl:text>
 													</xsl:if>
 													-->
 													<xsl:value-of select="$newValue"/>
@@ -10255,7 +10440,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text>		{</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 													<xsl:text>			</xsl:text>
-													<xsl:text>for (X3DNode</xsl:text>
+													<xsl:text>for (org.web3d.x3d.sai.Core.X3DNode</xsl:text>
 													<!-- <xsl:value-of select="$javaReferenceType" disable-output-escaping="yes"/> -->
 													<xsl:text> element : </xsl:text>
 													<xsl:value-of select="$normalizedMemberObjectName"/>
@@ -10328,7 +10513,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text>.add(</xsl:text>
 													<!--
 													<xsl:if test="(@type = 'MFNode')">
-														<xsl:text>(X3DNode)</xsl:text>
+														<xsl:text>(org.web3d.x3d.sai.Core.X3DNode)</xsl:text>
 													</xsl:if>
 													-->
 													<xsl:value-of select="$newValue"/>
@@ -10383,7 +10568,7 @@ setAttribute method invocations).
 	{
 		set</xsl:text>
         <xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
-        <xsl:text>((X3DNode) </xsl:text>
+        <xsl:text>((org.web3d.x3d.sai.Core.X3DNode) </xsl:text>
         <xsl:value-of select="@name"/>
         <xsl:text>);
 		((X3DConcreteElement) newValue).setParentObject(this);
@@ -10916,7 +11101,7 @@ setAttribute method invocations).
 								<xsl:if test="starts-with($type,'MF') and not($type = 'MFNode') and not($isX3dStatement = 'true') and not($isInterface = 'true')">
 									<xsl:text>
 	/**
-	 * Add singleton S</xsl:text><xsl:value-of select="substring($type,2)"/><xsl:text>Object value to </xsl:text><xsl:value-of select="$type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/><xsl:text> field.
+	 * Add singleton S</xsl:text><xsl:value-of select="substring($type,2)"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> value to </xsl:text><xsl:value-of select="$type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/><xsl:text> field.
 	 * @param newValue is new value to add to the </xsl:text><xsl:value-of select="@name"/><xsl:text> field.</xsl:text>
 									<xsl:if test="($type = 'MFString')">
 										<xsl:text>
@@ -10932,7 +11117,7 @@ setAttribute method invocations).
 									<!-- SF type -->
 									<xsl:text>(S</xsl:text>
 									<xsl:value-of select="substring($type,2)"/>
-									<xsl:text>Object newValue)
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text> newValue)
 	{
 		if (newValue == null)
 		{
@@ -11120,7 +11305,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(x, y));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(x, y));
 	}
 	/**
 	 * Utility method: double-precision set-array accessor for X3D floating-point type, similar to {@link #set</xsl:text>
@@ -11139,7 +11324,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(newArray));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(newArray));
 	}
 </xsl:text>
                                 </xsl:when>
@@ -11164,7 +11349,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(x, y, z));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(x, y, z));
 	}
 	/**
 	 * Utility method: double-precision set-array accessor for X3D floating-point type, similar to {@link #set</xsl:text>
@@ -11183,7 +11368,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(newArray));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(newArray));
 	}
 </xsl:text>
                                 </xsl:when>
@@ -11209,7 +11394,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(x, y, z, t));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(x, y, z, t));
 	}
 	/**
 	 * Utility method: double-precision set-array accessor for X3D floating-point type, similar to {@link #set</xsl:text>
@@ -11228,7 +11413,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(newArray));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(newArray));
 	}
 </xsl:text>
                                 </xsl:when>
@@ -11254,7 +11439,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(x, y, z, angleRadians));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(x, y, z, angleRadians));
 	}
 	/**
 	 * Utility method: double-precision set-array accessor for X3D floating-point type, similar to {@link #set</xsl:text>
@@ -11273,7 +11458,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(newArray));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(newArray));
 	}
 </xsl:text>
                                 </xsl:when>
@@ -11315,7 +11500,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(newArray));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(newArray));
 	}
 </xsl:text>
                                 </xsl:when>
@@ -11358,7 +11543,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(newArray));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(newArray));
 	}
 </xsl:text>
                                 </xsl:when>
@@ -11382,7 +11567,7 @@ setAttribute method invocations).
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(new </xsl:text>
 									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>Object(newArray));
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(newArray));
 	}
 </xsl:text>
                                 </xsl:when>
@@ -11733,7 +11918,7 @@ setAttribute method invocations).
 	 * @param prototypeName initial name for this </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text><![CDATA[ statement
 	 * @param DEFlabel unique DEF name for this X3D node
 	 */
-	public ProtoInstanceObject (String prototypeName, String DEFlabel)
+	public ProtoInstance]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (String prototypeName, String DEFlabel)
 	{
 		initialize();
 		setName(prototypeName); // apply checks
@@ -12262,7 +12447,7 @@ setAttribute method invocations).
 	{
 		if (children.isEmpty())
 			return false; // nothing found
-		for (X3DNode node : children)
+		for (org.web3d.x3d.sai.Core.X3DNode node : children)
 		{
 			if (!(node instanceof CommentsBlock))
 				return true;
@@ -13155,7 +13340,7 @@ setAttribute method invocations).
 			stringClassicVRML.append("\n").append(indent).append(indentCharacter).append(indentCharacter);
 			stringClassicVRML.append(ProtoBody.toStringClassicVRML(indentLevel + indentIncrement));
 			stringClassicVRML.append("\n").append(indent).append(indentCharacter).append(indentCharacter);
-			for (X3DNode element : ProtoBody.getChildren())
+			for (org.web3d.x3d.sai.Core.X3DNode element : ProtoBody.getChildren())
 			{
 				stringClassicVRML.append(((X3DConcreteElement) element).toStringClassicVRML(indentLevel + indentIncrement));
 			}
@@ -13864,7 +14049,7 @@ setAttribute method invocations).
 		for (fieldValueObject fieldInitialization : getFieldValueList()) // MFNode
 		{
 			// not yet found, continue with depth-first search of current fieldValueList
-			for (X3DNode child : fieldInitialization.getChildren())
+			for (org.web3d.x3d.sai.Core.X3DNode child : fieldInitialization.getChildren())
 			{
 				if (child instanceof X3DConcreteNode)
 				{
@@ -13981,7 +14166,7 @@ setAttribute method invocations).
 										<xsl:text>
 		for (</xsl:text>
 		<xsl:value-of select="@name"/>
-		<xsl:text>Object element : </xsl:text><xsl:value-of select="@name"/><xsl:text disable-output-escaping="yes"><![CDATA[List)
+		<xsl:value-of select="$jsaiClassSuffix"/><xsl:text> element : </xsl:text><xsl:value-of select="@name"/><xsl:text disable-output-escaping="yes"><![CDATA[List)
 		{
 			if (element instanceof X3DConcreteElement)
 			{
@@ -14916,7 +15101,7 @@ setAttribute method invocations).
          X3DConcreteElement parent = getParentObject();
          if (hasParentObject())
          {
-             if      (parent.getElementName().equals(</xsl:text><xsl:value-of select="$name"/><xsl:text>Object.NAME))
+             if      (parent.getElementName().equals(</xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text>.NAME))
              {
                  // now test for correct parent-child LOA4 relationship pair
                  if (!hasParentMatchingName(((HAnimJointObject)parent).getName()))
@@ -15682,14 +15867,14 @@ setAttribute method invocations).
 	 * @param newValue is new node value to be appended the children field.	 
 	 * @return {@link SceneObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	*/
-	public SceneObject addMetadata(X3DMetadataObject newValue)
+	public Scene]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ addMetadata(X3DMetadataObject newValue)
 	{
 		if (newValue == null)
 		{
 			return this; // nothing to do
 		}
                 // note Scene has no metadata field, add to children instead
-		children.add((X3DNode)newValue);
+		children.add((org.web3d.x3d.sai.Core.X3DNode)newValue);
 		((X3DConcreteElement) newValue).setParentObject(this);
 		return this;
 	}
@@ -15698,13 +15883,13 @@ setAttribute method invocations).
 	 * @param newValue is new node value to be appended the children field.	 
 	 * @return {@link SceneObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	*/
-	public SceneObject addLayerSet(LayerSetObject newValue)
+	public Scene]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ addLayerSet(LayerSetObject newValue)
 	{
 		if (newValue == null)
 		{
 			return this; // nothing to do
 		}
-		children.add((X3DNode)newValue);
+		children.add((org.web3d.x3d.sai.Core.X3DNode)newValue);
 		((X3DConcreteElement) newValue).setParentObject(this);
 		return this;
 	}
@@ -15836,7 +16021,7 @@ return isClosed;
 */
 public File toFileSvgCrossSection(String fileName)
 {
-if (!(fileName.endsWith(X3DObject.FILE_EXTENSION_SVG)))
+if (!(fileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_SVG)))
 {
 throw new X3DException("fileName " + fileName + " does not end with expected extension \"" + X3DObject.FILE_EXTENSION_SVG + "\"");
 }
@@ -17867,7 +18052,7 @@ shall not include the underlying field's values at that point in time.
 			<xsl:with-param name="name"><xsl:text>MField</xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>true</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DField</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DField</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text>Base interface for multiple-field (MF) array types.</xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.4.6 MField</xsl:text></xsl:with-param>
@@ -19056,11 +19241,11 @@ shall not include the underlying field's values at that point in time.
 			// verify DEFAULT_VALUE matches pattern OK, report if not
 			if ((new </xsl:text>
 				<xsl:value-of select="$fieldName"/>
-				<xsl:text>Object(DEFAULT_VALUE)).matches() == false)
+				<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(DEFAULT_VALUE)).matches() == false)
 			{
 				System.out.println("</xsl:text>
 				<xsl:value-of select="$fieldName"/>
-				<xsl:text>Object.initialize() problem: failed to match DEFAULT_VALUE=" + </xsl:text>
+				<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>.initialize() problem: failed to match DEFAULT_VALUE=" + </xsl:text>
                 <xsl:choose>
                     <xsl:when test="($isArrayType='true')">
                         <xsl:text>java.util.Arrays.toString(DEFAULT_VALUE)</xsl:text>
@@ -19215,7 +19400,7 @@ shall not include the underlying field's values at that point in time.
 	 * @return {@link MFStringObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 method invocations on the same node object).
 	 */
-	public MFStringObject cleanupEnumerationValues()
+	public MFString]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ cleanupEnumerationValues()
 	{
 		MFString = cleanupEnumerationValues(MFString);
 		return this;
@@ -19294,7 +19479,7 @@ method invocations on the same node object).
 	 * @return {@link MFStringObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 method invocations on the same node object).
 	 */
-	public MFStringObject cleanupUnescapedEnclosingQuotes()
+	public MFString]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ cleanupUnescapedEnclosingQuotes()
 	{
 		MFString = cleanupUnescapedEnclosingQuotes(MFString);
 		return this;
@@ -19373,10 +19558,10 @@ method invocations on the same node object).
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Determine whether two objects contain equal values.
-	 * @param comparison]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text>Object field type to compare
+	 * @param comparison]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> field type to compare
 	 * @return true if equivalent, false otherwise
 	 */
-	public boolean equals(</xsl:text><xsl:value-of select="$fieldName"/><xsl:text>Object comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:text>Object)
+	public boolean equals(</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text>)
 	{
         return (getPrimitiveValue() == comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[Object.getPrimitiveValue());
 	}
@@ -19416,9 +19601,9 @@ method invocations on the same node object).
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>// validation via get/set checks and comparison
-        </xsl:text><xsl:value-of select="$fieldName"/><xsl:text>Object tempHold = new </xsl:text><xsl:value-of select="$fieldName"/><xsl:text>Object(getPrimitiveValue());
+        </xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> tempHold = new </xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(getPrimitiveValue());
         if  (!this.equals(tempHold))
-             return "</xsl:text><xsl:value-of select="$fieldName"/><xsl:text>Object validate() error: failed get/set round-trip test";
+             return "</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> validate() error: failed get/set round-trip test";
         else return "";
         </xsl:text>
             </xsl:otherwise>
@@ -19535,7 +19720,7 @@ method invocations on the same node object).
 		java.util.regex.Matcher m = patternBboxValue.matcher(toString());
 		if (!m.matches())
 		{
-			String errorNotice = "*** Regular expression (regex) failure, new SFVec3fObject pattern mismatch (\"" + toString() + "\")";
+			String errorNotice = "*** Regular expression (regex) failure, new SFVec3f]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ pattern mismatch (\"" + toString() + "\")";
 			return errorNotice;
 		}
 		else return "";
@@ -19648,7 +19833,7 @@ method invocations on the same node object).
 		{
 			String errorNotice = "illegal boolean value, must be 'true' or 'false' (case sensitive), new ]]></xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
@@ -19693,7 +19878,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19706,7 +19891,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19719,7 +19904,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19733,7 +19918,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19747,7 +19932,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19761,7 +19946,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19776,7 +19961,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19791,7 +19976,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19806,7 +19991,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19821,7 +20006,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19841,7 +20026,7 @@ method invocations on the same node object).
 			{
 				String errorNotice = "illegal number of values in initialization string, new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -19918,7 +20103,7 @@ method invocations on the same node object).
 				{
 					String errorNotice = "illegal boolean value for ]]></xsl:text>
 					<xsl:value-of select="$fieldName"/>
-					<xsl:text>Object() initialization, newValue[" + i + "]='" + value + "' but must be 'true' or 'false' (case sensitive)";
+					<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>() initialization, newValue[" + i + "]='" + value + "' but must be 'true' or 'false' (case sensitive)";
  					validationResult.append(errorNotice).append("\n");
 					throw new InvalidFieldValueException(errorNotice);
 				}
@@ -19979,7 +20164,7 @@ method invocations on the same node object).
 					" in initialization string, must be multiple of </xsl:text>
 					<xsl:value-of select="$tupleSize"/><xsl:text> when declaring new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}
@@ -20023,7 +20208,7 @@ method invocations on the same node object).
 					" in initialization string, must be multiple of </xsl:text>
 					<xsl:value-of select="$tupleSize"/><xsl:text> when declaring new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ")";
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 				validationResult.append(errorNotice).append("\n");
 				throw new InvalidFieldValueException(errorNotice);
 			}</xsl:text>
@@ -20068,7 +20253,7 @@ method invocations on the same node object).
 		{
 			String errorNotice = "new </xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>Object(" + newValue + ") " + e.getMessage();
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ") " + e.getMessage();
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException (errorNotice);
 		}</xsl:text>
@@ -20111,7 +20296,7 @@ method invocations on the same node object).
 	<xsl:value-of select="$jsaiClassSuffix"/>
 	<xsl:text> using a corresponding S</xsl:text>
 	<xsl:value-of select="substring(@type, 2)"/>
-	<xsl:text>Object as new initial value (which must pass parsing validation checks).
+	<xsl:value-of select="$jsaiClassSuffix"/><xsl:text> as new initial value (which must pass parsing validation checks).
 	 * @param newValue is new value to assign
 	 */
 	public </xsl:text>
@@ -20329,33 +20514,33 @@ method invocations on the same node object).
 		<!-- Utility constructors for fields-->
 		<xsl:choose>
 			<xsl:when test="(@type='MFBool')">
-	<xsl:text>
+	<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Constructor for MFBoolObject using a single corresponding Java primitive boolean as new initial value.
+	 * Constructor for MFBool]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ using a single corresponding Java primitive boolean as new initial value.
 	 * @param newValue is new value to assign
 	 */
-	public MFBoolObject (boolean newValue)
+	public MFBool]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (boolean newValue)
 	{
 		MFBool = new boolean[1]; // fix array size
 		MFBool[0] = newValue;
 	}
-</xsl:text>
+]]></xsl:text>
 			</xsl:when>
 			<xsl:when test="(@type='MFTime')">
 	<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Constructor for MFTimeObject using a single float as new initial value.
+	 * Constructor for MFTime]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ using a single float as new initial value.
 	 * @param newValue is new value to assign
 	 */
-	public MFTimeObject (float newValue)
+	public MFTime]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (float newValue)
 	{
 		setValue(newValue); // apply checks
 	}
 	/**
-	 * Constructor for MFTimeObject using a float[] array as new initial value.
+	 * Constructor for MFTime]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ using a float[] array as new initial value.
 	 * @param newValue is new value to assign
 	 */
-	public MFTimeObject (float[] newValue)
+	public MFTime]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (float[] newValue)
 	{
 		setValue(newValue); // apply checks
 	}
@@ -20650,7 +20835,7 @@ TODO: also MFColor.
 	 */
 	public static String toStringHTML(float red, float green, float blue)
 	{
-        SFColorObject newValue = new SFColorObject(red, green, blue);
+        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColorObject(red, green, blue);
 		return newValue.toStringHTML();
 	}
 	/**
@@ -20665,7 +20850,7 @@ TODO: also MFColor.
 	 */
 	public static String toStringHTML(float[] colors)
 	{
-        SFColorObject newValue = new SFColorObject(colors);
+        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColorObject(colors);
 		return newValue.toStringHTML();
 	}
 	/**
@@ -20694,7 +20879,7 @@ TODO: also MFColor.
 	 */
 	public static String toStringCSS(float red, float green, float blue)
 	{
-        SFColorObject newValue = new SFColorObject(red, green, blue);
+        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColorObject(red, green, blue);
 		return newValue.toStringCSS();
 	}
 	/**
@@ -20707,7 +20892,7 @@ TODO: also MFColor.
 	 */
 	public static String toStringCSS(float[] colors)
 	{
-        SFColorObject newValue = new SFColorObject(colors);
+        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColorObject(colors);
 		return newValue.toStringCSS();
 	}
 ]]></xsl:text>
@@ -21232,7 +21417,7 @@ TODO: also MFColor.
 	 * @param y second component of axis
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
 	 */
-	public ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text>Object (</xsl:text>
+	public ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> (</xsl:text>
 	<xsl:value-of select="$typePrecision"/><xsl:text> x, </xsl:text>
 	<xsl:value-of select="$typePrecision"/><xsl:text> y)
 	{
@@ -21275,7 +21460,7 @@ TODO: also MFColor.
 	 * @param z third component
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
 	 */
-	public ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text>Object (</xsl:text>
+	public ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> (</xsl:text>
 	<xsl:value-of select="$typePrecision"/><xsl:text> x, </xsl:text>
 	<xsl:value-of select="$typePrecision"/><xsl:text> y, </xsl:text>
 	<xsl:value-of select="$typePrecision"/><xsl:text> z)
@@ -21323,7 +21508,7 @@ TODO: also MFColor.
 	 * @param w fourth component
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
 	 */
-	public ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text>Object (</xsl:text>
+	public ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> (</xsl:text>
 	<xsl:value-of select="$typePrecision"/><xsl:text> x, </xsl:text>
 	<xsl:value-of select="$typePrecision"/><xsl:text> y, </xsl:text>
 	<xsl:value-of select="$typePrecision"/><xsl:text> z, </xsl:text>
@@ -21543,10 +21728,10 @@ TODO: also MFColor.
 			<xsl:when test="($fieldName = 'MFFloat')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Utility constructor for MFFloatObject to assign a single double as new initial array value.
+	 * Utility constructor for MFFloat]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ to assign a single double as new initial array value.
 	 * @param newValue is new value to assign
 	 */
-	public MFFloatObject (double newValue)
+	public MFFloat]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (double newValue)
 	{
 		setValue(new SFFloatObject(newValue));
 	}
@@ -21555,10 +21740,10 @@ TODO: also MFColor.
 			<xsl:when test="($fieldName = 'MFDouble')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Utility constructor for MFDoubleObject to assign a single float as new initial array value.
+	 * Utility constructor for MFDouble]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ to assign a single float as new initial array value.
 	 * @param newValue is new value to assign
 	 */
-	public MFDoubleObject (float newValue)
+	public MFDouble]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (float newValue)
 	{
 		setValue(new SFDoubleObject(newValue));
 	}
@@ -21567,12 +21752,12 @@ TODO: also MFColor.
 			<xsl:when test="($fieldName = 'SFVec2f')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Utility constructor for SFVec2fObject using double values.
+	 * Utility constructor for SFVec2f]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ using double values.
 	 * @param x first component
 	 * @param y second component
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
 	 */
-	public SFVec2fObject (double x, double y)
+	public SFVec2f]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (double x, double y)
 	{
 		setValue((float) x, (float) y);
 	}
@@ -21581,13 +21766,13 @@ TODO: also MFColor.
 			<xsl:when test="($fieldName = 'SFVec3f')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Utility constructor for SFVec3fObject using double values.
+	 * Utility constructor for SFVec3f]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ using double values.
 	 * @param x first component
 	 * @param y second component
 	 * @param z third component
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
 	 */
-	public SFVec3fObject (double x, double y, double z)
+	public SFVec3f]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (double x, double y, double z)
 	{
 		setValue((float) x, (float) y, (float) z);
 	}
@@ -21596,14 +21781,14 @@ TODO: also MFColor.
 			<xsl:when test="($fieldName = 'SFVec4f')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Utility constructor for SFVec4fObject using double values.
+	 * Utility constructor for SFVec4f]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ using double values.
 	 * @param x first component
 	 * @param y second component
 	 * @param z third component
 	 * @param t fourth component
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
 	 */
-	public SFVec4fObject (double x, double y, double z, double t)
+	public SFVec4f]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (double x, double y, double z, double t)
 	{
 		setValue((float) x, (float) y, (float) z, (float) t);
 	}
@@ -21621,7 +21806,7 @@ TODO: also MFColor.
 	 * @param newValue The replacement value to assign.
 	 * @return {@link SFColorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public SFColorObject setValue(double[] newValue)
+	public SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double[] newValue)
 	{
 		float[] floatArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
@@ -21640,7 +21825,7 @@ TODO: also MFColor.
 	 * @param newValue The replacement value to assign.
 	 * @return {@link SFColorRGBAObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public SFColorRGBAObject setValue(double[] newValue)
+	public SFColorRGBA]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double[] newValue)
 	{
 		float[] floatArray = new float[newValue.length];
 		for (int i = 0; i < newValue.length; i++)
@@ -21661,7 +21846,7 @@ TODO: also MFColor.
 	 * @param angleRadians fourth component of rotation around axis
 	 * @return {@link SFRotationObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public SFRotationObject setValue(float x, float y, float z, float angleRadians)
+	public SFRotation]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(float x, float y, float z, float angleRadians)
 	{
 		float[] floatArray = new float[4];
 		floatArray[0] = x;
@@ -21681,7 +21866,7 @@ TODO: also MFColor.
 	 * @param angleRadians fourth component of rotation around axis
 	 * @return {@link SFRotationObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public SFRotationObject setValue(double x, double y, double z, double angleRadians)
+	public SFRotation]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double x, double y, double z, double angleRadians)
 	{
 		setValue((float) x, (float) y, (float) z, (float) angleRadians); // perform checks
         return this;
@@ -21693,7 +21878,7 @@ TODO: also MFColor.
 	 * @param newValue The replacement value to assign.
 	 * @return {@link SFRotationObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public SFRotationObject setValue(double[] newValue)
+	public SFRotation]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double[] newValue)
 	{
 		float            x = (float) newValue[0];
 		float            y = (float) newValue[1];
@@ -21714,7 +21899,7 @@ TODO: also MFColor.
 							(@type = 'SFRotation') or (@type = 'MFRotation')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Utility constructor for ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[Object using an alternatively typed Java double[] array as new initial value.
+	 * Utility constructor for ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ using an alternatively typed Java double[] array as new initial value.
 	 * @param newValue is new value to assign
 	 */
 	public ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
@@ -21728,7 +21913,7 @@ TODO: also MFColor.
 													(@type = 'SFVec2d') or (@type = 'SFVec3d') or (@type = 'SFVec4d')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Constructor for MFVec3fObject using an alternatively typed float[] array as new initial value.
+	 * Constructor for MFVec3f]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ using an alternatively typed float[] array as new initial value.
 	 * @param newValue is new value to assign
 	 */
 	public ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
@@ -22952,7 +23137,7 @@ public void append(]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl
 			" in initialization array, must be multiple of </xsl:text>
 					<xsl:value-of select="$tupleSize"/><xsl:text> when declaring new </xsl:text>
 					<xsl:value-of select="$fieldName"/>
-					<xsl:text>Object(" + newValue + ")";
+					<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
 		validationResult.append(errorNotice).append("\n");
 		throw new InvalidFieldValueException (errorNotice);
 	}
@@ -24133,7 +24318,7 @@ public void setValue(long[] newValue)
 ]]></xsl:text>
 	<xsl:value-of select="$newValueNullExceptionCheck"/>
 	<xsl:text><![CDATA[
-		SFImageObject newSFImage = new SFImageObject(newValue); // checks values
+		SFImage]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newSFImage = new SFImageObject(newValue); // checks values
 		// TODO if initial image is OK then proceed; need to improve checks to handle arrays
 		MFImage = newValue;
 	}
@@ -24142,7 +24327,7 @@ public void setValue(long[] newValue)
      * Assign a new value array; can be an SFImage primive array containing width, height, and components count, followed by array of pixels.
      * @param newValue the newValue to set
      */
-	public void setValue(SFImageObject newValue)
+	public void setValue(SFImage]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue)
 	{
 ]]></xsl:text>
 	<xsl:value-of select="$newValueNullExceptionCheck"/>
@@ -25363,7 +25548,7 @@ setAttribute method invocations).
 	 * @return {@link SFNodeObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public SFNodeObject clearChildren()
+	public SFNode]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ clearChildren()
 	{
 		SFNode = ]]></xsl:text><xsl:value-of select="$defaultValueExpression"/><xsl:text>
 		return this;
@@ -25377,7 +25562,7 @@ setAttribute method invocations).
 	 * @return {@link MFNodeObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public MFNodeObject clearChildren()
+	public MFNode]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ clearChildren()
 	{
 		MFNode = ]]></xsl:text><xsl:value-of select="$defaultValueExpression"/><xsl:text>
 		return this;
@@ -27285,13 +27470,13 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 	 *	Get the current value.
 	 * 	@return current value
 	 */	
-	public X3DNode getValue();
+	public org.web3d.x3d.sai.Core.X3DNode getValue();
 
 	/**
 	 * Assign a new value to this field.
 	 * @param newValue The new value to set
 	 */	
-	public void setValue(X3DNode newValue) throws InvalidNodeException;
+	public void setValue(org.web3d.x3d.sai.Core.X3DNode newValue) throws InvalidNodeException;
 ]]></xsl:text>
 					</xsl:when>
 					<xsl:when test="($name = 'MFNode')">
@@ -27302,7 +27487,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 	 * @param copiedNodes The array to be filled in with current field values.
 	 * @throws ArrayIndexOutOfBoundsException The provided copiedNodes array was too small
 	 */
-	public void getValue(X3DNode[] copiedNodes);
+	public void getValue(org.web3d.x3d.sai.Core.X3DNode[] copiedNodes);
 
 	/**
 	 * <p>
@@ -27316,14 +27501,14 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 	 * @return The selected value
 	 * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
 	 */
-	public X3DNode get1Value(int index);
+	public org.web3d.x3d.sai.Core.X3DNode get1Value(int index);
 
     /**
      * Assign an array subset to this field.
      * @param size indicates size of result to copy (i.e. the number of typed singleton values) from beginning of newValue array.
      * @param newValue The replacement value array to (potentially) slice and then assign.
      */	
-	public void setValue(int size, X3DNode[] newValue);
+	public void setValue(int size, org.web3d.x3d.sai.Core.X3DNode[] newValue);
 
     /**
      * Replace a single value at the appropriate location in the existing value array.
@@ -27331,20 +27516,20 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
      * @param imageIndex the index of the selected image
      * @param newValue provides new value to apply
      */
-	public void set1Value(int imageIndex, X3DNode newValue);
+	public void set1Value(int imageIndex, org.web3d.x3d.sai.Core.X3DNode newValue);
 
     /**
      * Places a new value at the end of the existing value array, increasing the field length accordingly.
      * @param newValue The newValue to append
      */
-	public void append(X3DNode newValue);
+	public void append(org.web3d.x3d.sai.Core.X3DNode newValue);
 
     /**
      * Insert a new value prior to the imageIndex location in the existing value array, increasing the field length accordingly.
      * @param imageIndex the index of the selected image
      * @param newValue The newValue to insert
      */
-	public void insertValue(int imageIndex, X3DNode newValue);
+	public void insertValue(int imageIndex, org.web3d.x3d.sai.Core.X3DNode newValue);
 ]]></xsl:text>
 					</xsl:when>
 					<xsl:when test="($name = 'SFRotation')">
@@ -28928,7 +29113,7 @@ UNIT statements define data conversion factors for a scene that can override def
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>RuntimeException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>java.lang.RuntimeException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.1 X3DException</xsl:text></xsl:with-param>
@@ -28972,7 +29157,7 @@ whether to catch the exception or not.
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.2 BrowserNotSharedException</xsl:text></xsl:with-param>
@@ -29012,7 +29197,7 @@ that require this browser to be shared.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.6.3 ConnectionException</xsl:text></xsl:with-param>
@@ -29053,7 +29238,7 @@ network connection stopping or similar problem.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.6.4 ImportedNodeException</xsl:text></xsl:with-param>
@@ -29093,7 +29278,7 @@ incorrectly in the scene graph.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.5 InsufficientCapabilitiesException</xsl:text></xsl:with-param>
@@ -29134,7 +29319,7 @@ added to that scene.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.6 InvalidBrowserException</xsl:text></xsl:with-param>
@@ -29175,7 +29360,7 @@ the Browser interface after the reference has had the dispose method called.]]><
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.7 InvalidDocumentException</xsl:text></xsl:with-param>
@@ -29216,7 +29401,7 @@ to make it into an X3DScene and the document is not correctly structured.]]></xs
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.8 InvalidExecutionContextException</xsl:text></xsl:with-param>
@@ -29257,7 +29442,7 @@ not valid.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.9 InvalidFieldException</xsl:text></xsl:with-param>
@@ -29307,7 +29492,7 @@ A field may be invalid for a number of reasons:
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.10 InvalidFieldValueException</xsl:text></xsl:with-param>
@@ -29349,7 +29534,7 @@ runtime as the user is trying to modify it.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.11 InvalidNodeException</xsl:text></xsl:with-param>
@@ -29389,7 +29574,7 @@ The exception that is thrown when a reference to a Node is not valid.]]></xsl:te
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.12 InvalidOperationTimingException</xsl:text></xsl:with-param>
@@ -29430,7 +29615,7 @@ outside of the predefined times when allowed.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.13 InvalidProtoException</xsl:text></xsl:with-param>
@@ -29471,7 +29656,7 @@ or ProtoInstance is not valid.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.14 InvalidRouteException</xsl:text></xsl:with-param>
@@ -29511,7 +29696,7 @@ The exception that is thrown when any reference used by a ROUTE is not valid.]]>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text></xsl:text>B.7.15 InvalidURLException</xsl:with-param>
@@ -29552,7 +29737,7 @@ invalid and cannot be parsed to form a proper URL/URN.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.16 InvalidX3DException</xsl:text></xsl:with-param>
@@ -29594,7 +29779,7 @@ UTF8 or XML syntax.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.17 NodeInUseException</xsl:text></xsl:with-param>
@@ -29634,7 +29819,7 @@ used when the user wants to add a new DEF, EXPORT or IMPORT definition.]]></xsl:
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.18 NodeUnavailableException</xsl:text></xsl:with-param>
@@ -29675,7 +29860,7 @@ Inline yet.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.19 NoSuchBrowserException</xsl:text></xsl:with-param>
@@ -29715,7 +29900,7 @@ a browser with the given arguments.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.20 NotSupportedException</xsl:text></xsl:with-param>
@@ -29755,7 +29940,7 @@ underlying implementation.]]></xsl:text>
 			<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
 			<xsl:with-param name="subPackage"><xsl:value-of select="$subPackage"/></xsl:with-param>
-			<xsl:with-param name="extends"><xsl:text>X3DException</xsl:text></xsl:with-param>
+			<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.sai.X3DException</xsl:text></xsl:with-param>
 			<xsl:with-param name="implements"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="description"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="saiJavaSpecificationSection"><xsl:text>B.7.21 URLUnavailableException</xsl:text></xsl:with-param>
@@ -29814,8 +29999,24 @@ browser instance or there is some other problem.]]></xsl:text>
 			
 			<xsl:variable name="additionalInheritances">
 				<xsl:for-each select="InterfaceDefinition/AdditionalInheritance">
+                    <xsl:variable name="saiPackagePath"> 
+                        <xsl:call-template name="saiPackage">
+                            <xsl:with-param name="nodeType" select="@baseType"/>
+                        </xsl:call-template>
+                    </xsl:variable>
 					<xsl:text>, </xsl:text>
-					<xsl:value-of select="@baseType"/>
+                    <xsl:choose>
+                        <xsl:when test="(string-length($saiPackagePath) > 0)">
+                            <xsl:text>/* here 2a */</xsl:text>
+                            <xsl:value-of select="$saiPackagePath"/>
+                            <xsl:text>.</xsl:text>
+                            <xsl:value-of select="@baseType"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>/* here 2b, saiPackage not found */</xsl:text>
+                            <xsl:value-of select="@baseType"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
 				</xsl:for-each>
 			</xsl:variable>
 			
@@ -30003,7 +30204,27 @@ browser instance or there is some other problem.]]></xsl:text>
 			<xsl:variable name="name"                                select="@name"/>
 			<xsl:variable name="description"                         select="InterfaceDefinition/@appinfo"/>
 			<xsl:variable name="x3dAbstractSpecificationRelativeUrl" select="substring-after(InterfaceDefinition/@specificationUrl,'Part01/')"/>
-			<xsl:variable name="extends"                             select="InterfaceDefinition/Inheritance/@baseType"/>
+			<xsl:variable name="baseType"                            select="InterfaceDefinition/Inheritance/@baseType"/>
+            <xsl:variable name="saiPackagePath"> 
+                <xsl:call-template name="saiPackage">
+                    <xsl:with-param name="nodeType" select="$baseType"/>
+                </xsl:call-template>
+            </xsl:variable>
+            
+            <xsl:variable name="extends">
+                <xsl:choose>
+                    <xsl:when test="(string-length($saiPackagePath) > 0)">
+                        <xsl:text>/* here 4a */</xsl:text>
+                        <xsl:value-of select="$saiPackagePath"/>
+                        <xsl:text>.</xsl:text>
+                        <xsl:value-of select="$baseType"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>/* here 4b, saiPackage not found */</xsl:text>
+                        <xsl:value-of select="$baseType"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>                            
 			<xsl:variable name="componentName"                       select="translate(InterfaceDefinition/componentInfo/@name,'-','')"/>
 			<xsl:variable name="componentLevel"                      select="InterfaceDefinition/componentInfo/@level"/>
 			<xsl:variable name="javadocBlock">
@@ -30012,8 +30233,24 @@ browser instance or there is some other problem.]]></xsl:text>
 				
 			<xsl:variable name="additionalInheritances">
 				<xsl:for-each select="InterfaceDefinition/AdditionalInheritance">
+                    <xsl:variable name="saiPackagePathInheritance"> 
+                        <xsl:call-template name="saiPackage">
+                            <xsl:with-param name="nodeType" select="@baseType"/>
+                        </xsl:call-template>
+                    </xsl:variable>
 					<xsl:text>, </xsl:text>
-					<xsl:value-of select="@baseType"/>
+                    <xsl:choose>
+                        <xsl:when test="(string-length($saiPackagePathInheritance) > 0)">
+                            <xsl:text>/* here 3a */</xsl:text>
+                            <xsl:value-of select="$saiPackagePathInheritance"/>
+                            <xsl:text>.</xsl:text>
+                            <xsl:value-of select="@baseType"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>/* here 3b, saiPackageInheritance not found */</xsl:text>
+                            <xsl:value-of select="@baseType"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
 				</xsl:for-each>
 			</xsl:variable>
 			
@@ -30021,6 +30258,7 @@ browser instance or there is some other problem.]]></xsl:text>
 				<!-- TODO do not import inherited (extends) interface if in same package -->
 				<xsl:variable name="baseType"   select="$extends"/>
 				<xsl:variable name="subPackage" select="//*[@name=$baseType]/InterfaceDefinition/componentInfo/@name"/><!-- corresponding subPackage name -->
+                
 				<xsl:if test="(string-length($extends) > 0) and (string-length($subPackage) > 0) and (string-length($baseType) > 0) and
                               ($componentName != $subPackage)">
 					<xsl:text>&#10;</xsl:text>
@@ -30464,7 +30702,7 @@ import javax.script.ScriptException;</xsl:text>
 	/** Set already-loaded X3D model of interest, useful for initialization and use of CommandLine by other X3D Java programs. 
 	 * @param newX3dModel already-loaded X3D model of interest
 	*/
-	public static void setLoadedX3dModel (X3DObject newX3dModel)
+	public static void setLoadedX3dModel (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newX3dModel)
 	{
 		loadedX3dModel = newX3dModel;
 	}
@@ -30686,15 +30924,15 @@ import javax.script.ScriptException;</xsl:text>
 							sourceFileLength = sourceFile.length();
 							System.out.println ("parameter: source file " + sourceFile.getName() + " filesize " + sourceFileLength + " bytes" + messageSuffix);
 						}
-                        if      (sourceFileName.endsWith(X3DObject.FILE_EXTENSION_EXI))
+                        if      (sourceFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_EXI))
                         {
                             convertFromEXI = true;
                         }
-                        else if (sourceFileName.endsWith(X3DObject.FILE_EXTENSION_GZIP))
+                        else if (sourceFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_GZIP))
                         {
                             convertFromGZIP = true;
                         }
-                        else if (sourceFileName.endsWith(X3DObject.FILE_EXTENSION_ZIP))
+                        else if (sourceFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_ZIP))
                         {
                             convertFromZIP = true;
                         }
@@ -30860,7 +31098,7 @@ import javax.script.ScriptException;</xsl:text>
 				// ==========================================
 				else  if (args[i].equalsIgnoreCase("-EXI") || args[i].equalsIgnoreCase("-toEXI"))
 				{
-					if (sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI))
+					if (sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_EXI))
 					{
 						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert an .exi file -toEXI");
 						System.out.println(USAGE);
@@ -30872,10 +31110,10 @@ import javax.script.ScriptException;</xsl:text>
 					conversionExtension = X3DObject.FILE_EXTENSION_EXI;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to compressed EXI containing model");
 				}
-				else  if ((args[i].equalsIgnoreCase("-EXI") &&  sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI)) || 
+				else  if ((args[i].equalsIgnoreCase("-EXI") &&  sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_EXI)) || 
 						   args[i].equalsIgnoreCase("-fromEXI"))
 				{
-					if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI))
+					if (!sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_EXI))
 					{
 						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert a non-exi file -toEXI");
 						System.out.println(USAGE);
@@ -30889,7 +31127,7 @@ import javax.script.ScriptException;</xsl:text>
 				// ==========================================
 				else  if (args[i].equalsIgnoreCase("-toGZ") || args[i].equalsIgnoreCase("-toGZIP"))
 				{
-					if (sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP))
+					if (sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_GZIP))
 					{
 						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert -toGZIP an already gzip .gz file " + sourceFileName);
 						System.out.println(USAGE);
@@ -30903,7 +31141,7 @@ import javax.script.ScriptException;</xsl:text>
 				}
 				else  if (args[i].equalsIgnoreCase("-fromGZ") || args[i].equalsIgnoreCase("-fromGZIP"))
 				{
-					if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP))
+					if (!sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_GZIP))
 					{
 							System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert -fromGZIP an non-gzip file " + sourceFileName);
 							System.out.println(USAGE);
@@ -30917,7 +31155,7 @@ import javax.script.ScriptException;</xsl:text>
 				// ==========================================
 				else  if (args[i].equalsIgnoreCase("-toZIP"))
 				{
-					if (sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP))
+					if (sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_ZIP))
 					{
 							System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert -toZIP a non-zip file " + sourceFileName);
 							System.out.println(USAGE);
@@ -30930,7 +31168,7 @@ import javax.script.ScriptException;</xsl:text>
 				}
 				else  if (args[i].equalsIgnoreCase("-fromZIP"))
 				{
-                                    if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP))
+                                    if (!sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_ZIP))
                                     {
                                         System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot convert -fromZIP a non-zip file " + sourceFileName);
                                         System.out.println(USAGE);
@@ -31066,23 +31304,23 @@ import javax.script.ScriptException;</xsl:text>
 			resultFileNameRoot = sourceFileNameRoot;
 			resultFileName     = resultFileNameRoot + conversionExtension;
 		}
-		if ((convertToX3D         &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_X3D))    ||
-			(convertToXML         &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_XML))    ||
-			(canonicalize         && (!conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_X3D) &&
-                                      !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_XML))) ||
-			(convertToHTML        && (!conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_HTML) &&
-                                      !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_XHTML)))   ||
-			(convertToMarkdown    &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_MARKDOWN)) ||
-			(convertToTidy        &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_X3D))      ||
-			(convertToClassicVRML &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_CLASSICVRML)) ||
-			(convertToVRML97      &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_VRML97)) ||
-			(convertToX3DOM       && (!conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_HTML) &&
-                                      !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_XHTML))) ||
-			(convertToX_ITE       && (!conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_HTML) &&
-                                      !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_XHTML))) ||
-			(convertToEXI         &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_EXI))    ||
-			(convertToGZIP        &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_GZIP))   ||
-			(convertToZIP         &&  !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_ZIP))    )
+		if ((convertToX3D         &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D))    ||
+			(convertToXML         &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XML))    ||
+			(canonicalize         && (!conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D) &&
+                                      !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XML))) ||
+			(convertToHTML        && (!conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_HTML) &&
+                                      !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XHTML)))   ||
+			(convertToMarkdown    &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_MARKDOWN)) ||
+			(convertToTidy        &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D))      ||
+			(convertToClassicVRML &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_CLASSICVRML)) ||
+			(convertToVRML97      &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_VRML97)) ||
+			(convertToX3DOM       && (!conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_HTML) &&
+                                      !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XHTML))) ||
+			(convertToX_ITE       && (!conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_HTML) &&
+                                      !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XHTML))) ||
+			(convertToEXI         &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_EXI))    ||
+			(convertToGZIP        &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_GZIP))   ||
+			(convertToZIP         &&  !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_ZIP))    )
 		{
 			System.out.println(WARNING+" [org.web3d.x3d.jsail.CommandLine] mismatched file extension \"" + conversionExtension + "\" for conversion");
 		}
@@ -31092,7 +31330,7 @@ import javax.script.ScriptException;</xsl:text>
         {
 			if (convertFromGZIP)
 			{
-				if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP))
+				if (!sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_GZIP))
 				{
 						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot -gunzip a non-gzip file " + sourceFileName);
 						System.out.println(USAGE);
@@ -31104,7 +31342,7 @@ import javax.script.ScriptException;</xsl:text>
 			}
 			else if (convertFromZIP)
 			{
-				if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP))
+				if (!sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_ZIP))
 				{
 						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot -gunzip a non-zip file " + sourceFileName);
 						System.out.println(USAGE);
@@ -31117,7 +31355,7 @@ import javax.script.ScriptException;</xsl:text>
 			}
 			else if (convertFromEXI)
 			{
-				if (!sourceFileName.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI))
+				if (!sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_EXI))
 				{
 						System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] cannot -fromEXI a non-EXI file " + sourceFileName);
 						System.out.println(USAGE);
@@ -31296,7 +31534,7 @@ import javax.script.ScriptException;</xsl:text>
 
                     if (x3dConcreteElement instanceof X3DObject)
                     {
-                        loadedX3dModel = (X3DObject)x3dConcreteElement;
+                        loadedX3dModel = (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)x3dConcreteElement;
                     }
                     else if (x3dConcreteElement == null)
                     {
@@ -31479,7 +31717,7 @@ import javax.script.ScriptException;</xsl:text>
                         }
                         else if (convertToFile)
                         {
-                            if (!resultFileName.endsWith(X3DObject.FILE_EXTENSION_TEXT))
+                            if (!resultFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_TEXT))
                             {
                                 resultFileName += X3DObject.FILE_EXTENSION_TEXT;
                             }
@@ -31906,8 +32144,8 @@ import javax.script.ScriptException;</xsl:text>
                                     outputFileName + ") outputFileName not provided");
 		}
 		if (!((outputFileName.endsWith(expectedFileNameExtension)) || // some variations allowed
-              (outputFileName.endsWith(X3DObject.FILE_EXTENSION_XHTML)      && expectedFileNameExtension.equals(X3DObject.FILE_EXTENSION_HTML)) ||
-              (outputFileName.endsWith(X3DObject.FILE_EXTENSION_JAVASCRIPT) && expectedFileNameExtension.equals(X3DObject.FILE_EXTENSION_JSON))))
+              (outputFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XHTML)      && expectedFileNameExtension.equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_HTML)) ||
+              (outputFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_JAVASCRIPT) && expectedFileNameExtension.equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_JSON))))
 		{
 			throw new X3DException("outputFileName " + outputFileName + " does not end with expected extension \"" + expectedFileNameExtension + "\"");
 		}
@@ -32033,7 +32271,7 @@ import javax.script.ScriptException;</xsl:text>
 		}
 		catch (SaxonApiException saxonApiException)
 		{
-//			Logger.getLogger(X3DObject.class.getName()).log(Level.SEVERE, null, saxonApiException);
+//			Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, saxonApiException);
 										
 			throw new X3DException(errorNotice + "SaxonApiException when transforming and creating string, unable to save result: " + saxonApiException);
 		}
@@ -33713,7 +33951,7 @@ import org.web3d.x3d.sai.X3DException;
 	*/	
 	public boolean loadModelFromFileX3D (String path, String fileName)
 	{
-		if (!fileName.endsWith(X3DObject.FILE_EXTENSION_X3D) && !fileName.endsWith(X3DObject.FILE_EXTENSION_XML))
+		if (!fileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D) && !fileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XML))
 		{
 			throw new X3DException("fileName " + fileName + " does not end with extension " +
                             "\"" + X3DObject.FILE_EXTENSION_X3D + "\" or " +
@@ -33745,7 +33983,7 @@ import org.web3d.x3d.sai.X3DException;
 			documentBuilder.setErrorHandler(new MyErrorHandler (new PrintWriter(errorWriter, true)));
 			document = documentBuilder.parse(x3dFile);
 			X3DConcreteElement concreteElement =  toX3dObjectTree(document);
-            if (!concreteElement.getElementName().equals(X3DObject.NAME))
+            if (!concreteElement.getElementName().equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.NAME))
             {
                 System.out.println ("*** Warning, loadModelFromFileX3D(\"" + x3dFile.getPath() + "\") has root element=" + concreteElement.getElementName());
             }
@@ -34026,7 +34264,7 @@ import org.web3d.x3d.sai.X3DException;
 					if ((elementObject instanceof org.web3d.x3d.jsail.Core.X3DObject) // remember root node of X3D model if found
 						|| ((loadedX3dObjectTree == null) && (elementObject instanceof org.web3d.x3d.jsail.X3DConcreteNode))) // found fragment
 					{
-						loadedX3dObjectTree = (X3DObject) elementObject; // remember X3D root
+						loadedX3dObjectTree = (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[) elementObject; // remember X3D root
 						// starting a new scene, reset hash maps
 						protoNameToNodeTypesHashMap.clear();
 						protoDEFtoNodeTypesHashMap.clear();
@@ -34252,7 +34490,7 @@ import org.web3d.x3d.sai.X3DException;
 							}
                             // parent-child node addition according to typed methods
 							if      (childElementName.equals("head"))
-									((X3DObject)elementObject).setHead ((headObject) childX3dElement);
+									((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)elementObject).setHead ((headObject) childX3dElement);
 							else if (childElementName.equals("component"))
 									((headObject)elementObject).addComponent ((componentObject) childX3dElement);
 							else if (childElementName.equals("meta"))
@@ -34271,7 +34509,7 @@ import org.web3d.x3d.sai.X3DException;
 							else if (childElementName.equals("unit"))
 									((headObject)elementObject).addUnit ((unitObject) childX3dElement);
 							else if (childElementName.equals("Scene"))
-									((X3DObject)elementObject).setScene ((SceneObject) childX3dElement);
+									((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)elementObject).setScene ((SceneObject) childX3dElement);
 							else if (nodeName.equals("Scene") && childElementName.startsWith("Metadata"))
 									((SceneObject)elementObject).addMetadata ((X3DMetadataObject) childX3dElement);
 							else if (nodeName.equals("Scene") && childElementName.equals("LayerSet"))
@@ -35663,8 +35901,8 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
         resultFile = new File(resultFileName);
     }
     // TODO confirm additional image, model formats
-    if ((modelImport         && !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_X3D)) ||
-        (createImageSnapshot && !conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_PNG)))
+    if ((modelImport         && !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D)) ||
+        (createImageSnapshot && !conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_PNG)))
     {
         System.out.println(WARNING+" [org.web3d.x3d.jsail.BlenderLauncher] resultFile " + resultFileName + " has mismatched file extension \"" + conversionExtension + "\" for conversion");
     }
@@ -35678,7 +35916,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 
                 // create temp file for BlenderX3dToPng.py so that it is invocable
                 if (BlenderX3dToPngPythonFile == null)
-                    BlenderX3dToPngPythonFile = X3DObject.getTempFileFromX3dJsailJar("python/blenderScripts", "BlenderX3dToPng.py");
+                    BlenderX3dToPngPythonFile = X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.getTempFileFromX3dJsailJar("python/blenderScripts", "BlenderX3dToPng.py");
                 
                 // blender --background --factory-startup --python -- ${example.model.x3d} ${products.subdir}
                 StringBuilder toImageCommand = new StringBuilder();
@@ -35871,7 +36109,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
      * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/arguments.html" target="_blank">Blender Manual: Command Line Arguments</a>
      * @see <a href="https://docs.blender.org/manual/en/dev/data_system/files/import_export.html" target="_blank">Blender Manual: Importing and Exporting Files</a>
      */
-    public static X3DObject importModel (String path, String fileName)
+    public static X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ importModel (String path, String fileName)
     {
             // use 
             // determine and metadata
@@ -35887,7 +36125,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
      * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/arguments.html" target="_blank">Blender Manual: Command Line Arguments</a>
      * @see <a href="https://docs.blender.org/manual/en/dev/data_system/files/import_export.html" target="_blank">Blender Manual: Importing and Exporting Files</a>
      */
-    public static X3DObject importSTL (String path, String fileName)
+    public static X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ importSTL (String path, String fileName)
     {
         // https://blender.stackexchange.com/questions/1365/how-can-i-run-blender-from-command-line-or-a-python-script-without-opening-a-gui
 
@@ -35913,7 +36151,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
      * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/arguments.html" target="_blank">Blender Manual: Command Line Arguments</a>
      * @see <a href="https://docs.blender.org/manual/en/dev/data_system/files/import_export.html" target="_blank">Blender Manual: Importing and Exporting Files</a>
      */
-    public static String exportSTL (X3DObject modelToExport)
+    public static String exportSTL (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelToExport)
     {
             // determine and metadata
             return "";
@@ -35931,7 +36169,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
      * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/arguments.html" target="_blank">Blender Manual: Command Line Arguments</a>
      * @see <a href="https://docs.blender.org/manual/en/dev/data_system/files/import_export.html" target="_blank">Blender Manual: Importing and Exporting Files</a>
      */
-    public static boolean exportSTLtoFile (X3DObject modelToExport, String path, String fileName)
+    public static boolean exportSTLtoFile (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelToExport, String path, String fileName)
     {
             String result = exportSTL (modelToExport);
             try
@@ -35953,7 +36191,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
      * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html" target="_blank">Blender Manual: Command Line</a>
      * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/arguments.html" target="_blank">Blender Manual: Command Line Arguments</a>
      */
-    public static String getBlenderAnalytics (X3DObject modelOfInterest)
+    public static String getBlenderAnalytics (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelOfInterest)
     {
             // add optional method to create X3DMetadataSet
             return "";
@@ -35965,7 +36203,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
      * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html" target="_blank">Blender Manual: Command Line</a>
      * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/arguments.html" target="_blank">Blender Manual: Command Line Arguments</a>
      */
-    public static MetadataSetObject getBlenderAnalyticsX3dMetadataSet (X3DObject modelOfInterest)
+    public static MetadataSetObject getBlenderAnalyticsX3dMetadataSet (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelOfInterest)
     {
             return null;
     }
@@ -36366,7 +36604,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
      */
-    public static X3DObject importModel (String fileName)
+    public static X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ importModel (String fileName)
     {
         return importModel ("", fileName);
     }
@@ -36378,7 +36616,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
      */
-    public static X3DObject importModel (String path, String fileName)
+    public static X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ importModel (String path, String fileName)
     {
         String separator = "";
         if (path == null)
@@ -36402,7 +36640,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
         // TODO option for X3D Tidy, X3D Canonical avoided for now since large-attribute STL files aren't loaded properly.
         X3DLoaderDOM x3dLoader = new X3DLoaderDOM();
         x3dLoader.loadModelFromFileX3D(path, fileNameX3dModel);
-        return (X3DObject) x3dLoader.getX3dObjectTree();
+        return (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[) x3dLoader.getX3dObjectTree();
     }
     /**
      * TODO: Use meshLab to import STL geometry as X3D model
@@ -36412,7 +36650,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
      */
-    public X3DObject importSTL (String path, String fileName)
+    public X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ importSTL (String path, String fileName)
     {              
         // test file extension, determine if binary stl, add any metadata
         return null;
@@ -36428,7 +36666,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
      */
-    public static boolean exportModelToFile (X3DObject modelToExport, String path, String fileName)
+    public static boolean exportModelToFile (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelToExport, String path, String fileName)
     {              
         // test file extension, determine if binary stl, add any metadata
         return false;
@@ -36444,7 +36682,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
      */
-    public static boolean exportSTLtoFile (X3DObject modelToExport, String path, String fileName)
+    public static boolean exportSTLtoFile (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelToExport, String path, String fileName)
     {
         // TODO test file extension
         boolean result = exportModelToFile (modelToExport, path, fileName);
@@ -36467,7 +36705,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
      */
-    public static String getMeshLabAnalytics (X3DObject modelOfInterest)
+    public static String getMeshLabAnalytics (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelOfInterest)
     {
         // add optional method to create X3DMetadataSet
         return "";
@@ -36479,7 +36717,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
      */
-    public static MetadataSetObject getMeshLabAnalyticsX3dMetadataSet (X3DObject modelOfInterest)
+    public static MetadataSetObject getMeshLabAnalyticsX3dMetadataSet (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelOfInterest)
     {
         return null;
     }
@@ -36612,7 +36850,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
     /** Default main() method provided for test and debugging purposes, invoking run() method.
      * @param args the command line arguments
      * @see #run(String[])
-     * @see X3DObject#handleArguments(String[])
+     * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#handleArguments(String[])
      */
     public static void main(String[] args)
     {
@@ -36634,7 +36872,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @param args the command line arguments
      * @see #main(String[])
      * @see ConfigurationProperties
-     * @see X3DObject#handleArguments(String[])
+     * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#handleArguments(String[])
      */
     public static void run(String[] args)
     {
@@ -36756,7 +36994,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
 //				{
 //                    initializeConfigurationSwitches();
 //					modelImport = true;
-//                    conversionExtension = X3DObject.FILE_EXTENSION_X3D; // default
+//                    conversionExtension = X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D; // default
 //					System.out.println ("MeshLabLauncher parameter: \"" + args[i] + "\" for model export");
 //				}
 				// ==========================================
@@ -36800,12 +37038,12 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
 		// compute/confirm resultFileName after all command-line switches are read
 		if (!sourceFileName.isEmpty() && resultFileName.isEmpty())
 		{
-            conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+            conversionExtension = X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D;
             resultFileName      = sourceFileNameRoot + conversionExtension;
             resultFileNameRoot  = sourceFileNameRoot;
             resultFile = new File(resultFileName);
 		}
-		if (modelImport && (!conversionExtension.equalsIgnoreCase(X3DObject.FILE_EXTENSION_X3D)))
+		if (modelImport && (!conversionExtension.equalsIgnoreCase(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D)))
 		{
 			System.out.println(WARNING+" [org.web3d.x3d.jsail.MeshLabLauncher] resultFile " + resultFileName + " has mismatched file extension \"" + conversionExtension + "\" for conversion");
 		}
@@ -37107,7 +37345,7 @@ import org.web3d.x3d.jsail.Core.X3DObject;</xsl:text>
     {
         try
         {
-            X3DObject x3dObject = new X3DObject(); // necessary for static object?  TODO visibility problems
+            X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ x3dObject = new X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[(); // necessary for static object?  TODO visibility problems
 
             File x3duomXmlFile = x3dObject.getTempFileFromX3dJsailJar("/specifications", X3dUnifiedObjectModel40_XML_FILE);
                 

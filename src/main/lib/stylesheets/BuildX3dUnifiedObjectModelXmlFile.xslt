@@ -450,6 +450,30 @@ Recommended tool:
 			</xsl:for-each>
 		</xsl:element>
         
+        <!-- check for duplicated field name within accessType enumeration lists -->
+        <xsl:for-each select="//xs:simpleType[ends-with(@name,'AccessTypes')]//xs:enumeration">
+            <xsl:sort select="@value"/>
+            <xsl:variable name="accessType" select="../../@name"/>
+            <xsl:variable name="fieldName" select="@value"/>
+                <!-- <xsl:message>
+                    <xsl:text>*** </xsl:text>
+                    <xsl:value-of select="$fieldName"/>
+                </xsl:message>
+                 and  (count(following-sibling::*[@value=$fieldName]) > 0) -->
+            <xsl:if test="(count(//xs:simpleType[ends-with(@name,'AccessTypes')]//xs:enumeration[@value=$fieldName]) > 1)">
+                <xsl:message>
+                    <xsl:text>*** </xsl:text>
+                    <xsl:value-of select="$fieldName"/>
+                    <xsl:text> field is defined with multiple accessType values: </xsl:text>
+                    <xsl:value-of select="substring-before($accessType,'AccessTypes')"/>
+                    <xsl:for-each select="following-sibling::*[@value=$fieldName]">
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="substring-before(../../@name,'AccessTypes')"/>
+                    </xsl:for-each>
+                </xsl:message>
+            </xsl:if>
+        </xsl:for-each>
+
         <xsl:element name="FieldTypes">
             <xsl:for-each select="//xs:schema/xs:simpleType[starts-with(@name, 'SF') or starts-with(@name, 'MF')]">
                 <xsl:sort select="substring(@name, 3)"/>
@@ -1420,13 +1444,16 @@ Recommended tool:
             <xsl:when test="@fixed">
                 <xsl:value-of select="substring-before(@fixed, 'Field')" />
             </xsl:when>
-            <!-- First choose instances where the Schema defined value does not match the specification -->
-            <xsl:when test="(($containerName='Cone') and ($fieldName='bottom'))">initializeOnly</xsl:when>
-            <xsl:when test="(($containerName='ConeEmitter') and ($fieldName='angle'))">inputOutput</xsl:when>
-            <xsl:when test="(($containerName='Cylinder') and ($fieldName='bottom'))">initializeOnly</xsl:when>
-            <xsl:when test="(($containerName='HAnimSegment') and ($fieldName='mass'))">inputOutput</xsl:when>
-            <xsl:when test="(($containerName='RigidBody') and ($fieldName='mass'))">inputOutput</xsl:when>
-            <!-- If there is an xs:annotation/xs:appinfo/attribute specifying the accessType use that preferentially -->
+            <!-- First choose instances where the Schema defined value does not match the specification.  Be explicit in these cases, avoid defaults. -->
+            <xsl:when test="(($containerName='ConeEmitter')           and ($fieldName='angle'))" >inputOutput</xsl:when>
+            <xsl:when test="(($containerName='SingleAxisHingeJoint')  and ($fieldName='angle'))" >outputOnly</xsl:when>
+            <xsl:when test="(($containerName='NavigationInfo')        and ($fieldName='type'))"  >inputOutput</xsl:when>
+            <xsl:when test="(($containerName='ProjectionVolumeStyle') and ($fieldName='type'))"  >inputOutput</xsl:when>
+            <xsl:when test="(($containerName='ShaderPart')            and ($fieldName='type'))"  >initializeOnly</xsl:when><!-- TODO Mantis 1306 -->
+            <xsl:when test="(($containerName='ShaderProgram')         and ($fieldName='type'))"  >initializeOnly</xsl:when><!-- TODO Mantis 1306 -->
+            <xsl:when test="(($containerName='HAnimSegment')          and ($fieldName='mass'))"  >inputOutput</xsl:when>   <!-- TODO Mantis 1307 -->
+            <xsl:when test="(($containerName='RigidBody')             and ($fieldName='mass'))"  >inputOutput</xsl:when>   <!-- TODO Mantis 1307 -->
+            <!-- TODO if there is an xs:annotation/xs:appinfo/attribute specifying the accessType use that preferentially -->
             <xsl:when test="xs:annotation/xs:appinfo/xs:attribute[@name='accessType']">
                 <xsl:value-of select="xs:annotation/xs:appinfo/xs:attribute[@name='accessType']/@fixed"/>
             </xsl:when>
