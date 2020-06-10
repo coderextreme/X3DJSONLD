@@ -1,28 +1,24 @@
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version":"4.0",
+    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
     "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
           {
-            "@name":"H-Anim",
+            "@name":"HAnim",
             "@level":1
           }
         ],
         "meta": [
           {
             "@name":"title",
-            "@content":"JoeSkinTexcoordDisplacerKick.x3d"
-          },
-          {
-            "@name":"info",
-            "@content":"Joe No Reservations 20161206 20161111 20160720 20121221 20040109 x3d/hanim"
+            "@content":"JoeKick.x3d"
           },
           {
             "@name":"description",
-            "@content":"The Joe model is a Humanoid with textured skin."
+            "@content":"This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models."
           },
           {
             "@name":"creator",
@@ -30,7 +26,7 @@
           },
           {
             "@name":"created",
-            "@content":"9 January 2014"
+            "@content":"9 January 2004"
           },
           {
             "@name":"translated",
@@ -38,7 +34,7 @@
           },
           {
             "@name":"modified",
-            "@content":"19 October 2018"
+            "@content":"22 May 2020"
           },
           {
             "@name":"TODO",
@@ -46,15 +42,23 @@
           },
           {
             "@name":"translators",
-            "@content":"Roy Walmsley and Don Brutzman"
+            "@content":"Roy Walmsley, Don Brutzman, John Carlson"
+          },
+          {
+            "@name":"reference",
+            "@content":"../CharactersLegacy/JoeSkinTexcoordDisplacerKick.x3d"
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/JoeKick.x3d"
           },
           {
             "@name":"generator",
             "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"generator",
+            "@content":"BS studio translation from .x3dv by Joe using BS Contact"
           },
           {
             "@name":"license",
@@ -71,11 +75,6 @@
           {
             "@name":"reference",
             "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
-          }
-        ],
-        "-children":[
-          {
-            "#comment":"BS studio translation from .x3dv by Joe using BS Contact"
           }
         ]
     },
@@ -145,7 +144,7 @@
               "@centerOfRotation":[0,0.8,0],
               "@description":"Scene_Side View",
               "@orientation":[0,1,0,1.5708],
-              "@position":[2.6,0.5,0]
+              "@position":[2.6,0.8,0]
             }
           },
           { "Viewpoint":
@@ -154,7 +153,7 @@
               "@centerOfRotation":[0,1.5,0],
               "@description":"Scene_Back View",
               "@orientation":[0,1,0,3.14],
-              "@position":[0,2.5,-3]
+              "@position":[0,1.5,-3]
             }
           },
           { "Viewpoint":
@@ -174,12 +173,32 @@
                   {
                     "@name":"Human",
                     "@DEF":"Joe_Human",
+                    "@loa":3,
                     "@version":"2.0",
+                    "@jointBindingPositions":[0,0,0],
+                    "@jointBindingRotations":[0,0,1,0],
+                    "@jointBindingScales":[1,1,1],
+                    "-metadata":
+                      { "MetadataSet":
+                        {
+                          "@name":"warnings",
+                          "@reference":"HAnim",
+                          "-value":[
+                            { "MetadataString":
+                              {
+                                "@name":"SymmetricalLeftRight",
+                                "@reference":"correction options: ignore, warn, average, left, right, largest, smallest",
+                                "@value":["ignore"]
+                              }
+                            }
+                          ]
+                        }
+                      },
                     "-skeleton":[
                       { "HAnimJoint":
                         {
                           "@name":"humanoid_root",
-                          "@DEF":"Joe_HumanoidRoot",
+                          "@DEF":"Joe_humanoid_root",
                           "@center":[0,0.875,0],
                           "-children":[
                             { "HAnimSegment":
@@ -189,8 +208,8 @@
                                 "-children":[
                                   { "HAnimSite":
                                     {
-                                      "@name":"RootFront",
-                                      "@DEF":"Joe_RootFront",
+                                      "@name":"RootFront_view",
+                                      "@DEF":"Joe_RootFront_view",
                                       "-children":[
                                         { "Transform":
                                           {
@@ -200,7 +219,7 @@
                                               { "Viewpoint":
                                                 {
                                                   "@DEF":"ViewBodyRootAxes",
-                                                  "@description":"Joe_HAnim Root Coordinate Axes View"
+                                                  "@description":"Joe_HAnim Root HAnimSite Coordinate Axes View"
                                                 }
                                               },
                                               { "Shape":
@@ -550,7 +569,7 @@
                                                                                                                                                                                   { "HAnimDisplacer":
                                                                                                                                                                                     {
                                                                                                                                                                                       "@name":"skull_tip_raiser_action",
-                                                                                                                                                                                      "@DEF":"Joe_skull_tipTest",
+                                                                                                                                                                                      "@DEF":"Joe_skull_tip_raiser_action",
                                                                                                                                                                                       "@coordIndex":[0,1,2,3,4,5,6,7,8,9],
                                                                                                                                                                                       "@displacements":[0,0.15,0,0,0,0.15,-0.1,0,0.15,0.1,0,0.05,0,-0.02,0.05,-0.15,0,0,-0.05,0,0,0.15,0,0,0.05,0,0,0,0,-0.15]
                                                                                                                                                                                     }
@@ -580,21 +599,21 @@
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"l_eyelid_joint",
+                                                                                                                                                                                      "@name":"r_eyelid_joint",
                                                                                                                                                                                       "@DEF":"Joe_r_eyelid_joint",
                                                                                                                                                                                       "@center":[-0.034,1.659,0.06]
                                                                                                                                                                                     }
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"l_eyeball_joint",
+                                                                                                                                                                                      "@name":"r_eyeball_joint",
                                                                                                                                                                                       "@DEF":"Joe_r_eyeball_joint",
                                                                                                                                                                                       "@center":[-0.034,1.659,0.06]
                                                                                                                                                                                     }
                                                                                                                                                                                   },
                                                                                                                                                                                   { "HAnimJoint":
                                                                                                                                                                                     {
-                                                                                                                                                                                      "@name":"l_eyebrow_joint",
+                                                                                                                                                                                      "@name":"r_eyebrow_joint",
                                                                                                                                                                                       "@DEF":"Joe_r_eyebrow_joint",
                                                                                                                                                                                       "@center":[-0.034,1.659,0.06]
                                                                                                                                                                                     }
@@ -1213,13 +1232,13 @@
                                   { "ImageTexture":
                                     {
                                       "@DEF":"JoeSkinImageTexture",
-                                      "@url":["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeBodyTexture29.png"]
+                                      "@url":["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/JoeBodyTexture29.png"]
                                     }
                                   },
                                 "-textureTransform":
                                   { "TextureTransform":
                                     {
-                                      "@DEF":"kicktextrans"
+                                      "@DEF":"KickTextureTransform"
                                     }
                                   }
                               }
@@ -1253,7 +1272,493 @@
                         {
                           "@USE":"Joe_SkinCoord"
                         }
+                      },
+                    "-joints":[
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_humanoid_root"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_sacroiliac"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_hip"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_knee"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_ankle"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_subtalar"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_midtarsal"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_metatarsal"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_hip"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_knee"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_ankle"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_subtalar"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_midtarsal"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_metatarsal"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vl1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt12"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt11"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt10"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt9"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt8"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt7"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt6"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vt1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc7"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc6"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc5"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc4"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_vc1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_skullbase"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_eyelid_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_eyeball_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_eyebrow_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_eyelid_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_eyeball_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_eyebrow_joint"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_temporomandibular"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_sternoclavicular"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_acromioclavicular"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_shoulder"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_elbow"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_wrist"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_thumb1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_thumb2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_thumb3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_index0"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_index1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_index2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_index3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_middle0"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_middle1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_middle2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_middle3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_ring0"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_ring1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_ring2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_ring3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_pinky0"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_pinky1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_pinky2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_l_pinky3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_sternoclavicular"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_acromioclavicular"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_shoulder"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_elbow"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_wrist"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_thumb1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_thumb2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_thumb3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_index0"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_index1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_index2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_index3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_middle0"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_middle1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_middle2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_middle3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_ring0"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_ring1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_ring2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_ring3"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_pinky0"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_pinky1"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_pinky2"
+                        }
+                      },
+                      { "HAnimJoint":
+                        {
+                          "@USE":"Joe_r_pinky3"
+                        }
                       }
+                    ],
+                    "-segments":[
+                      { "HAnimSegment":
+                        {
+                          "@USE":"Joe_sacrum"
+                        }
+                      }
+                    ],
+                    "-sites":[
+                      { "HAnimSite":
+                        {
+                          "@USE":"Joe_RootFront_view"
+                        }
+                      }
+                    ]
                   }
                 }
               ]
@@ -2711,7 +3216,7 @@
               "@fromField":"value_changed",
               "@fromNode":"HumanoidRootRotInterp",
               "@toField":"set_rotation",
-              "@toNode":"Joe_HumanoidRoot"
+              "@toNode":"Joe_humanoid_root"
             }
           },
           { "ROUTE":
@@ -2719,7 +3224,7 @@
               "@fromField":"value_changed",
               "@fromNode":"HumanoidRootTransInterp",
               "@toField":"set_translation",
-              "@toNode":"Joe_HumanoidRoot"
+              "@toNode":"Joe_humanoid_root"
             }
           },
           { "ROUTE":
@@ -3470,12 +3975,9 @@
             {
               "@DEF":"DisplacersAnimationGroup",
               "-children":[
-                {
-                  "#comment":"TimeSensor DEF='skull_tipTestTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor"
-                },
                 { "ScalarInterpolator":
                   {
-                    "@DEF":"skull_tipTest",
+                    "@DEF":"skull_tipInterpolator",
                     "@key":[0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1],
                     "@keyValue":[0,0,0,0,0.2,0.4,1,0,1,0.4,0]
                   }
@@ -3485,15 +3987,15 @@
                     "@fromField":"fraction_changed",
                     "@fromNode":"KickTimer",
                     "@toField":"set_fraction",
-                    "@toNode":"skull_tipTest"
+                    "@toNode":"skull_tipInterpolator"
                   }
                 },
                 { "ROUTE":
                   {
                     "@fromField":"value_changed",
-                    "@fromNode":"skull_tipTest",
+                    "@fromNode":"skull_tipInterpolator",
                     "@toField":"weight",
-                    "@toNode":"Joe_skull_tipTest"
+                    "@toNode":"Joe_skull_tip_raiser_action"
                   }
                 }
               ]
@@ -3501,11 +4003,11 @@
           },
           { "Group":
             {
-              "@DEF":"skintexturetransform_animation",
+              "@DEF":"SkinTextureTransformAnimationGroup",
               "-children":[
                 { "ScalarInterpolator":
                   {
-                    "@DEF":"skinTexTransTest",
+                    "@DEF":"SkinInterpolator",
                     "@key":[0,0.2,0.4,0.5,0.6,0.7,0.8,1],
                     "@keyValue":[0,0,0,0,0,1,2,0]
                   }
@@ -3515,15 +4017,15 @@
                     "@fromField":"fraction_changed",
                     "@fromNode":"KickTimer",
                     "@toField":"set_fraction",
-                    "@toNode":"skinTexTransTest"
+                    "@toNode":"SkinInterpolator"
                   }
                 },
                 { "ROUTE":
                   {
                     "@fromField":"value_changed",
-                    "@fromNode":"skinTexTransTest",
+                    "@fromNode":"SkinInterpolator",
                     "@toField":"rotation",
-                    "@toNode":"kicktextrans"
+                    "@toNode":"KickTextureTransform"
                   }
                 }
               ]
