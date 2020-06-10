@@ -239,6 +239,7 @@ X3DJSON['Script']['Scene']['../data/bubs2.json']['DECLBubble_bubbleA_bounce'] = 
 		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
+
 ecmascript:
 	this.initialize = function () {
     this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -423,6 +424,7 @@ X3DJSON['Script']['Scene']['../data/bubs2.json']['DECLBubble_bubbleB_bounce'] = 
 		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
+
 ecmascript:
 	this.initialize = function () {
     this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -607,6 +609,7 @@ X3DJSON['Script']['Scene']['../data/bubs2.json']['DECLBubble_bubbleC_bounce'] = 
 		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
+
 ecmascript:
 	this.initialize = function () {
     this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -791,6 +794,7 @@ X3DJSON['Script']['Scene']['../data/bubs2.json']['DECLBubble_bubbleD_bounce'] = 
 		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
+
 ecmascript:
 	this.initialize = function () {
     this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);

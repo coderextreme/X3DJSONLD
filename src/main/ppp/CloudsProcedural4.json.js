@@ -204,6 +204,7 @@ X3DJSON['Script']['Scene']['../data/CloudsProcedural4.json']['PixelScript'] = fu
 		console.error('Problems setting Fog',e);
 	}
 
+
 ecmascript:
 
 
@@ -383,12 +384,12 @@ CloudStringF = new Array();
 
 		if (Y <= 30) //cloud shading and lighting control
   	{	
-	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" ';
+	image = ' "CloudTexture1_5.png" "https://savage.nps.edu/Savage/Environment/Spheretexture.png" ';
   	}
 
   		else
   	{	
-	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" ';
+	image = ' "CloudTexture1_4.png" "https://savage.nps.edu/Savage/Environment/Spheretexture.png" ';
   	}
 
 	
@@ -533,7 +534,7 @@ CloudStringF = new Array();
 		'			    material Material {			' +
 		'			    }					' +
  		'	                      texture ImageTexture {	        ' +
-		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] ' +
+		'	                        url ["cloudtexture3.png" "https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png" ] ' +
 		'	                      }	                                ' +
 		'	                    }	                                ' +
 		'	                    geometry IndexedFaceSet {	        ' +     // define type of geometry to texture
@@ -593,7 +594,9 @@ X3DJSON.nodeUtil('Scene','Cirrus', 'children')[i] = newNode[0];
 this.cumulus();
 
 this.cirrus();
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

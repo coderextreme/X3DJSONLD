@@ -203,6 +203,7 @@ X3DJSON['Script']['Scene']['../data/flower.json']['OrbitScript'] = function() {
 		console.log('Problems setting coordIndexes '+e);
 		console.error('Problems setting coordIndexes',e);
 	}
+
 ecmascript:
 
 var e = 5;
@@ -278,7 +279,8 @@ var p = 0;
 		h = 4;
 	}
 	this.generateCoordinates(resolution);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

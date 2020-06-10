@@ -205,6 +205,7 @@ X3DJSON['Script']['Scene']['../data/flowers4.json']['OrbitScript'] = function() 
 	}
 
 
+
 ecmascript:
 
 var e = 5;
@@ -278,7 +279,7 @@ var h = 5;
 	var resolution = 100;
 	this.updateCoordinates(resolution);
 }
-      ;
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

@@ -1,80 +1,82 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "HeadsUpDisplayExample.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "HeadsUpDisplayExample.x3d"
         },
         {
-          "@content": "Prototype definition that demonstrates use of a simple HeadsUpDisplay (HUD) prototype that maintains a stable position for its children on the screen.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Prototype definition that demonstrates use of a simple HeadsUpDisplay (HUD) prototype that maintains a stable position for its children on the screen."
         },
         {
-          "@content": "Leonard Daly and Don Brutzman",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Leonard Daly and Don Brutzman"
         },
         {
-          "@content": "15 July 2006",
-          "@name": "created"
+          "@name": "created",
+          "@content": "15 July 2006"
         },
         {
-          "@content": "24 October 2016",
-          "@name": "modified"
-        },
-        {
-          "@content": "HeadsUpDisplayPrototype.x3d",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://X3dGraphics.com",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html",
-          "@name": "reference"
-        },
-        {
-          "@content": "Copyright 2006, Daly Realism and Don Brutzman",
-          "@name": "rights"
-        },
-        {
-          "@content": "X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com",
-          "@name": "subject"
-        },
-        {
-          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayExample.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "1 May 2020"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@name": "modified",
+          "@content": "24 October 2016"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "HeadsUpDisplayPrototype.x3d"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://X3dGraphics.com"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html"
+        },
+        {
+          "@name": "rights",
+          "@content": "Copyright 2006, Daly Realism and Don Brutzman"
+        },
+        {
+          "@name": "subject",
+          "@content": "X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayExample.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "10 June 2020"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "#comment": " Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n "
+          "#comment": "Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n"
         },
         {},
         {
@@ -138,7 +140,7 @@
           }
         },
         {
-          "#comment": " ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence "
+          "#comment": "ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"
         },
         {
           "Group": {
@@ -232,7 +234,7 @@
                                                 "@DEF": "DECLHeadsUpDisplay_HeadsUpDisplayInstance_DragGeometry",
                                                 "-children": [
                                                   {
-                                                    "#comment": " default is null array of nodes "
+                                                    "#comment": "default is null array of nodes"
                                                   }
                                                 ]
                                               }
@@ -258,20 +260,20 @@
                                                 "@DEF": "DECLHeadsUpDisplay_HeadsUpDisplayInstance_VisibilityControlScript",
                                                 "field": [
                                                   {
-                                                    "@accessType": "initializeOnly",
                                                     "@name": "traceEnabled",
+                                                    "@accessType": "initializeOnly",
                                                     "@type": "SFBool",
                                                     "@value": false
                                                   },
                                                   {
-                                                    "@accessType": "initializeOnly",
                                                     "@name": "isVisible",
+                                                    "@accessType": "initializeOnly",
                                                     "@type": "SFBool",
                                                     "@value": true
                                                   },
                                                   {
-                                                    "@accessType": "initializeOnly",
                                                     "@name": "planeSensorTranslation",
+                                                    "@accessType": "initializeOnly",
                                                     "@type": "SFVec3f",
                                                     "@value": [
                                                       0,
@@ -280,32 +282,33 @@
                                                     ]
                                                   },
                                                   {
-                                                    "@accessType": "inputOnly",
                                                     "@name": "setIsVisible",
+                                                    "@accessType": "inputOnly",
                                                     "@type": "SFBool"
                                                   },
                                                   {
-                                                    "@accessType": "inputOnly",
                                                     "@name": "setPlaneSensorIsActive",
+                                                    "@accessType": "inputOnly",
                                                     "@type": "SFBool"
                                                   },
                                                   {
-                                                    "@accessType": "inputOnly",
                                                     "@name": "setPlaneSensorTranslation",
+                                                    "@accessType": "inputOnly",
                                                     "@type": "SFVec3f"
                                                   },
                                                   {
-                                                    "@accessType": "outputOnly",
                                                     "@name": "translationChanged",
+                                                    "@accessType": "outputOnly",
                                                     "@type": "SFVec3f"
                                                   },
                                                   {
-                                                    "@accessType": "outputOnly",
                                                     "@name": "translationOffsetChanged",
+                                                    "@accessType": "outputOnly",
                                                     "@type": "SFVec3f"
                                                   }
                                                 ],
                                                 "#sourceText": [
+                                                  "",
                                                   "",
                                                   "ecmascript:",
                                                   "",
@@ -341,7 +344,9 @@
                                                   "{",
                                                   "\tplaneSensorTranslation = value;",
                                                   "\ttracePrint('planeSensorTranslation=' + value);",
-                                                  "}"
+                                                  "}",
+                                                  "",
+                                                  ""
                                                 ]
                                               }
                                             },
@@ -438,8 +443,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

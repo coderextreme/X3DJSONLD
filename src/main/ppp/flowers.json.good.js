@@ -312,6 +312,7 @@ X3DJSON['Script']['Scene']['../data/flowers.json']['DECLflower_INSTANCE_Animate'
 		console.error('Problems setting pdelta',e);
 	}
 
+
 ecmascript:
 
 		
@@ -383,7 +384,9 @@ ecmascript:
 				if (this.proxy.d > 10) {
 					this.proxy.d = 4;
 				}
-			};
+			}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -589,6 +592,7 @@ X3DJSON['Script']['Scene']['../data/flowers.json']['DECLflower_INSTANCE1000_Anim
 		console.error('Problems setting pdelta',e);
 	}
 
+
 ecmascript:
 
 		
@@ -660,7 +664,9 @@ ecmascript:
 				if (this.proxy.d > 10) {
 					this.proxy.d = 4;
 				}
-			};
+			}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -866,6 +872,7 @@ X3DJSON['Script']['Scene']['../data/flowers.json']['DECLflower_INSTANCE2000_Anim
 		console.error('Problems setting pdelta',e);
 	}
 
+
 ecmascript:
 
 		
@@ -937,7 +944,9 @@ ecmascript:
 				if (this.proxy.d > 10) {
 					this.proxy.d = 4;
 				}
-			};
+			}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

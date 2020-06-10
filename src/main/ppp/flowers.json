@@ -1,13 +1,15 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "Scripting"
+          "@name": "Scripting",
+          "@level": 1
         },
         {
           "@name": "Shaders",
@@ -57,30 +59,25 @@
         },
         {
           "@name": "translated",
-          "@content": "1 May 2020"
+          "@content": "10 June 2020"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
     "Scene": {
       "-children": [
         {
-          "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "ANY"
-            ]
-          }
+          "NavigationInfo": {}
         },
         {
-          "#comment": " Images courtesy of Paul Debevec's Light Probe Image Gallery "
+          "#comment": "Images courtesy of Paul Debevec's Light Probe Image Gallery"
         },
         {
           "Background": {
@@ -114,11 +111,6 @@
         {
           "Transform": {
             "@DEF": "DECLflower_INSTANCE_animate_transform",
-            "@translation": [
-              0,
-              0,
-              0
-            ],
             "-children": [
               {
                 "Shape": {
@@ -270,19 +262,7 @@
                             ],
                             "-children": [
                               {
-                                "#comment": " "
-                              },
-                              {
-                                "#comment": "\t\t       <field name='cube' type='SFNode' accessType=\"inputOutput\">"
-                              },
-                              {
-                                "#comment": "\t\t\t  <ComposedCubeMapTexture USE=\"texture\"/>"
-                              },
-                              {
-                                "#comment": "\t\t  </field>"
-                              },
-                              {
-                                "#comment": "\t\t  "
+                                "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                               }
                             ],
                             "-parts": [
@@ -490,6 +470,7 @@
             ],
             "#sourceText": [
               "",
+              "",
               "ecmascript:",
               "",
               "\t\t\tfunction initialize() {",
@@ -556,7 +537,9 @@
               "\t\t\t\tif (d > 10) {",
               "\t\t\t\t\td = 4;",
               "\t\t\t\t}",
-              "\t\t\t}"
+              "\t\t\t}",
+              "",
+              ""
             ]
           }
         },
@@ -682,11 +665,6 @@
         {
           "Transform": {
             "@DEF": "DECLflower_INSTANCE1000_animate_transform",
-            "@translation": [
-              0,
-              0,
-              0
-            ],
             "-children": [
               {
                 "Shape": {
@@ -838,19 +816,7 @@
                             ],
                             "-children": [
                               {
-                                "#comment": " "
-                              },
-                              {
-                                "#comment": "\t\t       <field name='cube' type='SFNode' accessType=\"inputOutput\">"
-                              },
-                              {
-                                "#comment": "\t\t\t  <ComposedCubeMapTexture USE=\"texture\"/>"
-                              },
-                              {
-                                "#comment": "\t\t  </field>"
-                              },
-                              {
-                                "#comment": "\t\t  "
+                                "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                               }
                             ],
                             "-parts": [
@@ -1058,6 +1024,7 @@
             ],
             "#sourceText": [
               "",
+              "",
               "ecmascript:",
               "",
               "\t\t\tfunction initialize() {",
@@ -1124,7 +1091,9 @@
               "\t\t\t\tif (d > 10) {",
               "\t\t\t\t\td = 4;",
               "\t\t\t\t}",
-              "\t\t\t}"
+              "\t\t\t}",
+              "",
+              ""
             ]
           }
         },
@@ -1250,11 +1219,6 @@
         {
           "Transform": {
             "@DEF": "DECLflower_INSTANCE2000_animate_transform",
-            "@translation": [
-              0,
-              0,
-              0
-            ],
             "-children": [
               {
                 "Shape": {
@@ -1406,19 +1370,7 @@
                             ],
                             "-children": [
                               {
-                                "#comment": " "
-                              },
-                              {
-                                "#comment": "\t\t       <field name='cube' type='SFNode' accessType=\"inputOutput\">"
-                              },
-                              {
-                                "#comment": "\t\t\t  <ComposedCubeMapTexture USE=\"texture\"/>"
-                              },
-                              {
-                                "#comment": "\t\t  </field>"
-                              },
-                              {
-                                "#comment": "\t\t  "
+                                "#comment": "<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                               }
                             ],
                             "-parts": [
@@ -1626,6 +1578,7 @@
             ],
             "#sourceText": [
               "",
+              "",
               "ecmascript:",
               "",
               "\t\t\tfunction initialize() {",
@@ -1692,7 +1645,9 @@
               "\t\t\t\tif (d > 10) {",
               "\t\t\t\t\td = 4;",
               "\t\t\t\t}",
-              "\t\t\t}"
+              "\t\t\t}",
+              "",
+              ""
             ]
           }
         },
@@ -1816,8 +1771,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

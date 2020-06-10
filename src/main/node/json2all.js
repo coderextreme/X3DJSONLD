@@ -26,28 +26,24 @@ convertJSON([
 	folder : "../",
 	extension : ".x3d.new",
 	},
-	/*
 	{ 
 	serializer : './VRMLScriptSerializer.js',
 	folder : "../vrml/net/coderextreme/",
 	extension : ".js",
 	codeOutput : "../",
 	},
-	*/
 	{ 
 	serializer : './NodeSerializer.js',
 	folder : "../node/net/coderextreme/",
 	extension : ".js",
 	codeOutput : "../",
 	},
-	/*
 	{ 
 	serializer : './JavaScriptSerializer.js',
 	folder : "../nashorn/net/coderextreme/",
 	extension : ".js",
 	codeOutput : "../",
 	},
-	*/
 	{ 
 	serializer : './PythonSerializer.js',
 	folder : "../python/net/coderextreme/",

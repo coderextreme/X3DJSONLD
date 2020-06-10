@@ -2,7 +2,7 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-//x3dVersionComparisonTest for this model: supportsX3dVersion(X3DObject.VERSION_3_0)=true
+//x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true
 let ViewpointGroup2 = browser.currentScene.createNode("ViewpointGroup");
 ViewpointGroup2.description = "Available viewpoints";
 let Viewpoint3 = browser.currentScene.createNode("Viewpoint");
@@ -159,7 +159,7 @@ MetadataSet32.value[0] = MetadataString33;
 
 let MetadataString34 = browser.currentScene.createNode("MetadataString");
 MetadataString34.name = "extraChildTest";
-MetadataString34.value = new MFString(new java.lang.String["checks MetadataSetObject addValue() method"]);
+MetadataString34.value = new MFString(new java.lang.String["checks MetadataSet addValue() method"]);
 MetadataSet32.value[1] = MetadataString34;
 
 Text31.metadata = MetadataSet32;
@@ -744,7 +744,7 @@ Group114.DEF = "TestFieldObjectsGroup";
 //MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7
 //... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=
 //SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true
-//regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value
+//regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotation.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value
 browser.currentScene.children[29] = Group114;
 
 let Sound115 = browser.currentScene.createNode("Sound");
@@ -770,10 +770,10 @@ Sound117.source = MovieTexture118;
 
 browser.currentScene.children[31] = Sound117;
 
-//Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true
-//Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false
-//Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false
-//Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
+//Test success: Anchor.isNode()=true, siteAnchor.isNode()=true
+//Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false
+//Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false
+//Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true
 //Test success: CommentsBlock.isNode()=false, testComments.isNode()=false
 //Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true
 let Shape119 = browser.currentScene.createNode("Shape");

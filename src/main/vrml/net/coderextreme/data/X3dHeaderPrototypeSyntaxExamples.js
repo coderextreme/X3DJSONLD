@@ -6,40 +6,40 @@ let ExternProtoDeclare2 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare2.name = "ViewPositionOrientation";
 ExternProtoDeclare2.url = new MFString(new java.lang.String["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"]);
 let field3 = browser.currentScene.createNode("field");
-field3.accessType = "inputOutput";
 field3.name = "enabled";
+field3.accessType = "inputOutput";
 field3.type = "SFBool";
 ExternProtoDeclare2.field = new MFNode();
 
 ExternProtoDeclare2.field[0] = field3;
 
 let field4 = browser.currentScene.createNode("field");
-field4.accessType = "initializeOnly";
 field4.name = "traceEnabled";
+field4.accessType = "initializeOnly";
 field4.type = "SFBool";
 ExternProtoDeclare2.field[1] = field4;
 
 let field5 = browser.currentScene.createNode("field");
-field5.accessType = "inputOnly";
 field5.name = "set_traceEnabled";
+field5.accessType = "inputOnly";
 field5.type = "SFBool";
 ExternProtoDeclare2.field[2] = field5;
 
 let field6 = browser.currentScene.createNode("field");
-field6.accessType = "outputOnly";
 field6.name = "position_changed";
+field6.accessType = "outputOnly";
 field6.type = "SFVec3f";
 ExternProtoDeclare2.field[3] = field6;
 
 let field7 = browser.currentScene.createNode("field");
-field7.accessType = "outputOnly";
 field7.name = "orientation_changed";
+field7.accessType = "outputOnly";
 field7.type = "SFRotation";
 ExternProtoDeclare2.field[4] = field7;
 
 let field8 = browser.currentScene.createNode("field");
-field8.accessType = "outputOnly";
 field8.name = "outputViewpointString";
+field8.accessType = "outputOnly";
 field8.type = "MFString";
 ExternProtoDeclare2.field[5] = field8;
 
@@ -70,9 +70,9 @@ browser.currentScene.children[2] = ProtoInstance12;
 
 let ProtoDeclare13 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="EmissiveMaterial" ><ProtoInterface><field accessType="inputOutput" name="onlyColor" type="SFColor" value="1 0 0"></field>
+<ProtoDeclare name="EmissiveMaterial" ><ProtoInterface><field name="onlyColor" accessType="inputOutput" type="SFColor" value="1 0 0"></field>
 </ProtoInterface>
-<ProtoBody><!-- Override default diffuseColor value 0.8 0.8 0.8 --><Material diffuseColor="0 0 0"><!-- Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. --><IS><connect nodeField="emissiveColor" protoField="onlyColor"></connect>
+<ProtoBody><!--Override default diffuseColor value 0.8 0.8 0.8--><Material diffuseColor="0 0 0"><!--Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare.--><IS><connect nodeField="emissiveColor" protoField="onlyColor"></connect>
 </IS>
 </Material>
 </ProtoBody>
@@ -80,8 +80,8 @@ let ProtoDeclare13 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 ProtoDeclare13.name = "EmissiveMaterial";
 let ProtoInterface14 = browser.currentScene.createNode("ProtoInterface");
 let field15 = browser.currentScene.createNode("field");
-field15.accessType = "inputOutput";
 field15.name = "onlyColor";
+field15.accessType = "inputOutput";
 field15.type = "SFColor";
 field15.value = "1 0 0";
 ProtoInterface14.field = new MFNode();
@@ -91,10 +91,10 @@ ProtoInterface14.field[0] = field15;
 ProtoDeclare13.protoInterface = ProtoInterface14;
 
 let ProtoBody16 = browser.currentScene.createNode("ProtoBody");
-// Override default diffuseColor value 0.8 0.8 0.8 
+//Override default diffuseColor value 0.8 0.8 0.8
 let Material17 = browser.currentScene.createNode("Material");
 Material17.diffuseColor = new SFColor(new float[0,0,0]);
-// Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. 
+//Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare.
 let IS18 = browser.currentScene.createNode("IS");
 let connect19 = browser.currentScene.createNode("connect");
 connect19.nodeField = "emissiveColor";
@@ -115,7 +115,7 @@ browser.currentScene.children[3] = ProtoDeclare13;
 
 let ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="ShiftGroupUp2m" ><ProtoInterface><field accessType="inputOutput" name="children" type="MFNode"><Group DEF="DefaultNodeValue" bboxSize="2 2 2"><!-- Authors need to override this node when creating the ProtoInstance fieldValue name="children" --></Group>
+<ProtoDeclare name="ShiftGroupUp2m" ><ProtoInterface><field name="children" accessType="inputOutput" type="MFNode"><Group DEF="DefaultNodeValue" bboxSize="2 2 2"><!--Authors need to override this node when creating the ProtoInstance fieldValue name="children"--></Group>
 </field>
 </ProtoInterface>
 <ProtoBody><Transform translation="0 2 0"><Group><IS><connect nodeField="children" protoField="children"></connect>
@@ -127,13 +127,13 @@ let ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 ProtoDeclare20.name = "ShiftGroupUp2m";
 let ProtoInterface21 = browser.currentScene.createNode("ProtoInterface");
 let field22 = browser.currentScene.createNode("field");
-field22.accessType = "inputOutput";
 field22.name = "children";
+field22.accessType = "inputOutput";
 field22.type = "MFNode";
 let Group23 = browser.currentScene.createNode("Group");
 Group23.DEF = "DefaultNodeValue";
 Group23.bboxSize = new SFVec3f(new float[2,2,2]);
-// Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\" 
+//Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\"
 field22.children = new MFNode();
 
 field22.children[0] = Group23;
@@ -174,7 +174,7 @@ let ProtoInstance29 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance29.name = "ShiftGroupUp2m";
 browser.currentScene.children[5] = ProtoInstance29;
 
-// ==================== 
+//====================
 let Viewpoint30 = browser.currentScene.createNode("Viewpoint");
 Viewpoint30.DEF = "ExampleSingleElement";
 Viewpoint30.description = "Hello syntax";
@@ -213,7 +213,7 @@ browser.currentScene.children[8] = Transform36;
 
 let Collision38 = browser.currentScene.createNode("Collision");
 let Shape39 = browser.currentScene.createNode("Shape");
-// note that Collision proxy Shape is not rendered 
+//note that Collision proxy Shape is not rendered
 let Sphere40 = browser.currentScene.createNode("Sphere");
 Shape39.geometry = Sphere40;
 

@@ -1,69 +1,71 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Interchange",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "Table5_18PixelTexture",
-          "@name": "title"
+          "@name": "title",
+          "@content": "Table5_18PixelTexture"
         },
         {
-          "@content": "PixelTexture example for Table 5.18",
-          "@name": "description"
+          "@name": "description",
+          "@content": "PixelTexture example for Table 5.18"
         },
         {
-          "@content": "Leonard Daly and Don Brutzman",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Leonard Daly and Don Brutzman"
         },
         {
-          "@content": "18 December 2006",
-          "@name": "created"
+          "@name": "created",
+          "@content": "18 December 2006"
         },
         {
-          "@content": "2 April 2017",
-          "@name": "modified"
-        },
-        {
-          "@content": "http://X3dGraphics.com",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html",
-          "@name": "reference"
-        },
-        {
-          "@content": "Copyright 2006, Daly Realism and Don Brutzman",
-          "@name": "rights"
-        },
-        {
-          "@content": "X3D, PixelTexture",
-          "@name": "subject"
-        },
-        {
-          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "1 May 2020"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@name": "modified",
+          "@content": "2 April 2017"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "http://X3dGraphics.com"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.web3d.org/x3d/content/examples/X3dResources.html"
+        },
+        {
+          "@name": "rights",
+          "@content": "Copyright 2006, Daly Realism and Don Brutzman"
+        },
+        {
+          "@name": "subject",
+          "@content": "X3D, PixelTexture"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "10 June 2020"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -401,8 +403,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

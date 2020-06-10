@@ -221,6 +221,7 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G1_MB1'] = function()
 		console.log('Problems setting keyValue '+e);
 		console.error('Problems setting keyValue',e);
 	}
+
 ecmascript:
 	
 	this.set_location = function (value) {
@@ -229,6 +230,7 @@ ecmascript:
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.keyValue);
 		}
+
 
 ;
 
@@ -345,6 +347,7 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLpoint_G2_MB1'] = function()
 		console.log('Problems setting keyValue '+e);
 		console.error('Problems setting keyValue',e);
 	}
+
 ecmascript:
 	
 	this.set_location = function (value) {
@@ -353,6 +356,7 @@ ecmascript:
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.keyValue);
 		}
+
 
 ;
 
@@ -505,6 +509,7 @@ X3DJSON['Script']['Scene']['../data/arc4.json']['DECLx3dconnector_connector1_S1'
 		console.log('Problems setting endpoint '+e);
 		console.error('Problems setting endpoint',e);
 	}
+
 ecmascript:
        
 	this.recompute = function (startpoint,endpoint){
@@ -574,7 +579,8 @@ ecmascript:
 
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(this.proxy.startnode.translation,val);
-        };
+        }
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

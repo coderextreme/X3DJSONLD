@@ -1,32 +1,35 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "Carlson, I",
-          "@name": "John W"
+          "@name": "John W",
+          "@content": "Carlson, I"
         },
         {
-          "@content": "Carlson, II",
-          "@name": "John A"
+          "@name": "John A",
+          "@content": "Carlson, II"
         },
         {
-          "@content": "Carlson, III",
-          "@name": "John R"
+          "@name": "John R",
+          "@content": "Carlson, III"
         },
         {
           "@name": "translated",
-          "@content": "1 May 2020"
+          "@content": "10 June 2020"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -34,68 +37,24 @@
       "-children": [
         {
           "Group": {
-            "@bboxCenter": [
-              0,
-              0,
-              0
-            ],
-            "@bboxSize": [
-              -1,
-              -1,
-              -1
-            ],
-            "@displayBBox": false,
-            "@visible": true,
             "-children": [
               {
                 "Shape": {
-                  "@bboxCenter": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "@bboxSize": [
-                    -1,
-                    -1,
-                    -1
-                  ],
-                  "@displayBBox": false,
-                  "@visible": true,
                   "-appearance": {
                     "Appearance": {
                       "-material": {
                         "Material": {
-                          "@ambientIntensity": 0.2,
                           "@diffuseColor": [
                             1,
                             0,
                             0
-                          ],
-                          "@emissiveColor": [
-                            0,
-                            0,
-                            0
-                          ],
-                          "@shininess": 0.2,
-                          "@specularColor": [
-                            0,
-                            0,
-                            0
-                          ],
-                          "@transparency": 0
+                          ]
                         }
                       }
                     }
                   },
                   "-geometry": {
-                    "Box": {
-                      "@size": [
-                        2,
-                        2,
-                        2
-                      ],
-                      "@solid": true
-                    }
+                    "Box": {}
                   }
                 }
               }
@@ -104,22 +63,6 @@
         },
         {
           "Transform": {
-            "@bboxCenter": [
-              0,
-              0,
-              0
-            ],
-            "@bboxSize": [
-              -1,
-              -1,
-              -1
-            ],
-            "@center": [
-              0,
-              0,
-              0
-            ],
-            "@displayBBox": false,
             "@rotation": [
               7,
               8,
@@ -131,23 +74,14 @@
               5,
               6
             ],
-            "@scaleOrientation": [
-              0,
-              0,
-              1,
-              0
-            ],
             "@translation": [
               1,
               2,
               3
-            ],
-            "@visible": true
+            ]
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

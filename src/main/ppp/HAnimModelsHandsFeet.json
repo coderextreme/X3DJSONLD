@@ -1,95 +1,97 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "4.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "H-Anim"
+          "@name": "H-Anim",
+          "@level": 1
         }
       ],
       "meta": [
         {
-          "@content": "HAnimModelsHandsFeet.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "HAnimModelsHandsFeet.x3d"
         },
         {
-          "@content": "Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2"
         },
         {
-          "@content": "YOO Kwan Hee and Don Brutzman",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "YOO Kwan Hee and Don Brutzman"
         },
         {
-          "@content": "8 February 2015",
-          "@name": "created"
+          "@name": "created",
+          "@content": "8 February 2015"
         },
         {
-          "@content": "20 October 2019",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "20 October 2019"
         },
         {
-          "@content": "not yet to scale",
-          "@name": "warning"
+          "@name": "warning",
+          "@content": "not yet to scale"
         },
         {
-          "@content": "TODO will X3D HAnim component add a new level to support LOA-4 functionality?",
-          "@name": "warning"
+          "@name": "warning",
+          "@content": "TODO will X3D HAnim component add a new level to support LOA-4 functionality?"
         },
         {
-          "@content": "HAnimModelsHandsFeet.png",
-          "@name": "Image"
+          "@name": "Image",
+          "@content": "HAnimModelsHandsFeet.png"
         },
         {
-          "@content": "HAnimModelsHandsFeetWithFour1mGrids.png",
-          "@name": "Image"
-        },
-        {
-          "@content": "https://www.web3d.org/working-groups/humanoid-animation-h-anim",
-          "@name": "reference"
-        },
-        {
-          "@content": "https://www.web3d.org/files/specifications/19774/V1.0",
-          "@name": "reference"
-        },
-        {
-          "@content": "https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html",
-          "@name": "reference"
-        },
-        {
-          "@content": "X3D H-Anim humanoid animation",
-          "@name": "subject"
-        },
-        {
-          "@content": "scene, DOCTYPE and Schema under development.",
-          "@name": "warning"
-        },
-        {
-          "@content": "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "5 May 2020"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@name": "Image",
+          "@content": "HAnimModelsHandsFeetWithFour1mGrids.png"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "https://www.web3d.org/working-groups/humanoid-animation-h-anim"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://www.web3d.org/files/specifications/19774/V1.0"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"
+        },
+        {
+          "@name": "subject",
+          "@content": "X3D H-Anim humanoid animation"
+        },
+        {
+          "@name": "warning",
+          "@content": "scene, DOCTYPE and Schema under development."
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "10 June 2020"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -134,7 +136,7 @@
                 }
               },
               {
-                "#comment": " Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model "
+                "#comment": "Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model"
               },
               {
                 "Transform": {
@@ -199,7 +201,7 @@
             ],
             "-children": [
               {
-                "#comment": " rotation='0 0 1 3.141593' "
+                "#comment": "rotation='0 0 1 3.141593'"
               },
               {
                 "Inline": {
@@ -228,7 +230,7 @@
             ],
             "-children": [
               {
-                "#comment": " rotation='0 0 1 3.141593' "
+                "#comment": "rotation='0 0 1 3.141593'"
               },
               {
                 "Inline": {
@@ -249,8 +251,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+    }
   }
 }

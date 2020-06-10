@@ -1,21 +1,23 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "-children": [
         {
-          "#comment": " comment #1 "
+          "#comment": "comment #1"
         },
         {
-          "#comment": " comment #2 "
+          "#comment": "comment #2"
         },
         {
-          "#comment": " comment #3 "
+          "#comment": "comment #3"
         },
         {
-          "#comment": " comment #4 "
+          "#comment": "comment #4"
         }
       ],
       "component": [
@@ -135,15 +137,15 @@
         },
         {
           "@name": "translated",
-          "@content": "1 May 2020"
+          "@content": "10 June 2020"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -168,6 +170,20 @@
         {
           "WorldInfo": {
             "@USE": "WorldInfoDEF"
+          }
+        },
+        {
+          "MetadataString": {
+            "@name": "test",
+            "@DEF": "scene.addChildMetadata",
+            "@value": [
+              "Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"
+            ]
+          }
+        },
+        {
+          "LayerSet": {
+            "@DEF": "scene.addChildLayerSetTest"
           }
         },
         {
@@ -260,7 +276,7 @@
                 ],
                 "-children": [
                   {
-                    "#comment": " Coordinate 3-tuple point count: 6 "
+                    "#comment": "Coordinate 3-tuple point count: 6"
                   }
                 ],
                 "-coord": {
@@ -376,10 +392,10 @@
                       ],
                       "-children": [
                         {
-                          "#comment": " Comment example A, plain quotation marks: He said, \"Immel did it!\" "
+                          "#comment": "Comment example A, plain quotation marks: He said, \"Immel did it!\""
                         },
                         {
-                          "#comment": " Comment example B, XML character entities: He said, &quot;Immel did it!&quot; "
+                          "#comment": "Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                         }
                       ],
                       "-metadata": {
@@ -407,9 +423,6 @@
                       },
                       "-fontStyle": {
                         "FontStyle": {
-                          "@family": [
-                            "SERIF"
-                          ],
                           "@justify": [
                             "MIDDLE",
                             "MIDDLE"
@@ -424,7 +437,7 @@
                 "Collision": {
                   "-children": [
                     {
-                      "#comment": " test containerField='proxy' "
+                      "#comment": "test containerField='proxy'"
                     }
                   ],
                   "-proxy": {
@@ -432,16 +445,16 @@
                       "@DEF": "ProxyShape",
                       "-children": [
                         {
-                          "#comment": " alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' "
+                          "#comment": "alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"
                         },
                         {
-                          "#comment": " alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"' "
+                          "#comment": "alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'"
                         },
                         {
-                          "#comment": " alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"Immel did it!\\\"\"}) "
+                          "#comment": "alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"
                         },
                         {
-                          "#comment": " reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html "
+                          "#comment": "reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
                         }
                       ],
                       "-geometry": {
@@ -449,8 +462,7 @@
                           "@string": [
                             "One, Two, Text",
                             "",
-                            "He said, \"Immel did it!",
-                            "\""
+                            "He said, \"Immel did it!\" \"\""
                           ]
                         }
                       }
@@ -459,19 +471,19 @@
                 }
               },
               {
-                "#comment": " It's a beautiful world "
+                "#comment": "It's a beautiful world"
               },
               {
-                "#comment": " ... for you! "
+                "#comment": "... for you!"
               },
               {
-                "#comment": " https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) "
+                "#comment": "https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song)"
               }
             ]
           }
         },
         {
-          "#comment": " repeatedly spin 180 degrees as a readable special effect "
+          "#comment": "repeatedly spin 180 degrees as a readable special effect"
         },
         {
           "OrientationInterpolator": {
@@ -546,13 +558,16 @@
                   ],
                   "#sourceText": [
                     "",
+                    "",
                     "ecmascript:",
                     "",
                     "function colorInput (eventValue) // Example source code",
                     "{",
                     "   colorsOutput = new MFColor(eventValue); // assigning value sends output event",
                     "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');",
-                    "}"
+                    "}",
+                    "",
+                    ""
                   ]
                 }
               },
@@ -577,7 +592,7 @@
                   ],
                   "-children": [
                     {
-                      "#comment": " AZURE to INDIGO and back again "
+                      "#comment": "AZURE to INDIGO and back again"
                     }
                   ]
                 }
@@ -619,7 +634,7 @@
         {},
         {},
         {
-          "#comment": " Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place "
+          "#comment": "Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place"
         },
         {
           "Shape": {
@@ -629,11 +644,11 @@
                 "@DEF": "TestAppearance1",
                 "-children": [
                   {
-                    "#comment": " ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java "
+                    "#comment": "ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java"
                   }
                 ],
                 "-material": {
-                  "#comment": " Initial node of ProtoBody determines prototype node type "
+                  "#comment": "Initial node of ProtoBody determines prototype node type"
                 }
               }
             },
@@ -652,7 +667,7 @@
                 "@DEF": "TestAppearance2",
                 "-children": [
                   {
-                    "#comment": " ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java "
+                    "#comment": "ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java"
                   }
                 ],
                 "-material": {}
@@ -674,7 +689,7 @@
                 "@DEF": "TestAppearance3",
                 "-children": [
                   {
-                    "#comment": " ArtDeco02Material ProtoInstance USE goes here... "
+                    "#comment": "ArtDeco02Material ProtoInstance USE goes here..."
                   }
                 ],
                 "-material": {
@@ -715,7 +730,7 @@
         },
         {},
         {
-          "#comment": " Test success: declarative statement createDeclarativeShapeTests() "
+          "#comment": "Test success: declarative statement createDeclarativeShapeTests()"
         },
         {
           "Group": {
@@ -725,8 +740,8 @@
                 "Shape": {
                   "-metadata": {
                     "MetadataString": {
-                      "@DEF": "FindableMetadataStringTest",
                       "@name": "findThisNameValue",
+                      "@DEF": "FindableMetadataStringTest",
                       "@value": [
                         "test case"
                       ]
@@ -737,7 +752,7 @@
                       "@DEF": "DeclarativeAppearanceExample",
                       "-children": [
                         {
-                          "#comment": " DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance "
+                          "#comment": "DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance"
                         }
                       ],
                       "-material": {
@@ -775,7 +790,7 @@
                 }
               },
               {
-                "#comment": " Test success: declarativeGroup.addChild() singleton pipeline method "
+                "#comment": "Test success: declarativeGroup.addChild() singleton pipeline method"
               },
               {
                 "Switch": {
@@ -785,7 +800,7 @@
                       "Group": {
                         "-children": [
                           {
-                            "#comment": " Only first node (the node type) is renderable, others are along for the ride "
+                            "#comment": "Only first node (the node type) is renderable, others are along for the ride"
                           },
                           {
                             "Script": {
@@ -820,6 +835,7 @@
                               ],
                               "#sourceText": [
                                 "",
+                                "",
                                 "ecmascript:",
                                 "function initialize ()",
                                 "{",
@@ -842,7 +858,9 @@
                                 "\t{",
                                 "\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');",
                                 "\t}",
-                                "}"
+                                "}",
+                                "",
+                                ""
                               ]
                             }
                           }
@@ -856,47 +874,47 @@
           }
         },
         {
-          "#comment": " Test success: declarative statement addChild() "
+          "#comment": "Test success: declarative statement addChild()"
         },
         {
-          "#comment": " Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance> "
+          "#comment": "Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>"
         },
         {
-          "#comment": " Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/> "
+          "#comment": "Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='\"test case\"'/>"
         },
         {
-          "#comment": " Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found "
+          "#comment": "Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found"
         },
         {
-          "#comment": " Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found "
+          "#comment": "Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found"
         },
         {
-          "#comment": " Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found "
+          "#comment": "Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found"
         },
         {
           "Group": {
             "@DEF": "TestFieldObjectsGroup",
             "-children": [
               {
-                "#comment": " testFieldObjects() results "
+                "#comment": "testFieldObjects() results"
               },
               {
-                "#comment": " SFBool default=true, true=true, false=false, negate()=true "
+                "#comment": "SFBool default=true, true=true, false=false, negate()=true"
               },
               {
-                "#comment": " MFBool default=, initial=true false true, negate()=false true false "
+                "#comment": "MFBool default=, initial=true false true, negate()=false true false"
               },
               {
-                "#comment": " SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0 "
+                "#comment": "SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0"
               },
               {
-                "#comment": " MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 "
+                "#comment": "MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7"
               },
               {
-                "#comment": " ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= "
+                "#comment": "... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear="
               },
               {
-                "#comment": " SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344 "
+                "#comment": "SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344"
               }
             ]
           }
@@ -910,7 +928,7 @@
             ],
             "-children": [
               {
-                "#comment": " set sound-ellipsoid location height at 1.6m to match typical avatar height "
+                "#comment": "set sound-ellipsoid location height at 1.6m to match typical avatar height"
               }
             ],
             "-source": {
@@ -922,7 +940,7 @@
                 ],
                 "-children": [
                   {
-                    "#comment": " Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d "
+                    "#comment": "Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
                   }
                 ]
               }
@@ -938,7 +956,7 @@
             ],
             "-children": [
               {
-                "#comment": " set sound-ellipsoid location height at 1.6m to match typical avatar height "
+                "#comment": "set sound-ellipsoid location height at 1.6m to match typical avatar height"
               }
             ],
             "-source": {
@@ -950,10 +968,10 @@
                 ],
                 "-children": [
                   {
-                    "#comment": " Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d "
+                    "#comment": "Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"
                   },
                   {
-                    "#comment": " Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" "
+                    "#comment": "Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""
                   }
                 ]
               }
@@ -961,32 +979,32 @@
           }
         },
         {
-          "#comment": " Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true "
+          "#comment": "Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"
         },
         {
-          "#comment": " Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false "
+          "#comment": "Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false"
         },
         {
-          "#comment": " Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false "
+          "#comment": "Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false"
         },
         {
-          "#comment": " Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true "
+          "#comment": "Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true"
         },
         {
-          "#comment": " Test success: CommentsBlock.isNode()=false, testComments.isNode()=false "
+          "#comment": "Test success: CommentsBlock.isNode()=false, testComments.isNode()=false"
         },
         {
-          "#comment": " Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true "
+          "#comment": "Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true"
         },
         {
           "Shape": {
             "@DEF": "ExtrusionShape",
             "-children": [
               {
-                "#comment": " ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]' "
+                "#comment": "ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'"
               },
               {
-                "#comment": " ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]' "
+                "#comment": "ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'"
               }
             ],
             "-appearance": {
@@ -1030,10 +1048,10 @@
                       }
                     },
                     {
-                      "#comment": " [HelloWorldProgram diagnostic] should be connected to scene graph: ArtDeco01ProtoDeclare.getNodeType()=\"Material\" "
+                      "#comment": "[HelloWorldProgram diagnostic] should be connected to scene graph: ArtDeco01ProtoDeclare.getNodeType()=\"Material\""
                     },
                     {
-                      "#comment": " presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types "
+                      "#comment": "presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types"
                     },
                     {
                       "TouchSensor": {
@@ -1047,26 +1065,7 @@
             ]
           }
         }
-      ],
-      "-metadata": {
-        "MetadataString": {
-          "@DEF": "scene.addChildMetadata",
-          "@name": "test",
-          "@value": [
-            "Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"
-          ]
-        }
-      },
-      "-layerSet": {
-        "LayerSet": {
-          "@DEF": "scene.addChildLayerSetTest",
-          "@order": [
-            0
-          ]
-        }
-      }
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+      ]
+    }
   }
 }

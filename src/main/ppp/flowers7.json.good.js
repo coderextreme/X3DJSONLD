@@ -402,6 +402,7 @@ X3DJSON['Script']['Scene']['../data/flowers7.json']['UrlSelector'] = function() 
 		console.error('Problems setting old',e);
 	}
 
+
 ecmascript:
        
 	this.set_fraction = function ( f, tm ) {
@@ -418,7 +419,9 @@ ecmascript:
                     this.proxy.top[0] = this.proxy.topUrls[side];
                     this.proxy.bottom[0] = this.proxy.bottomUrls[side];
             }
-        };
+        }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -588,6 +591,7 @@ X3DJSON['Script']['Scene']['../data/flowers7.json']['Animate'] = function() {
 		console.error('Problems setting pdelta',e);
 	}
 
+
 ecmascript:
 
 	this.set_fraction = function () {
@@ -626,7 +630,9 @@ ecmascript:
 	if (this.proxy.d > 20) {
 		this.proxy.d = 4;
 	}
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

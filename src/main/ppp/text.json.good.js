@@ -167,9 +167,11 @@ X3DJSON['Script']['Scene']['../data/text.json'][''] = function() {
 		console.log('Problems setting frontUrls '+e);
 		console.error('Problems setting frontUrls',e);
 	}
-ecmascript:
-			    var me = '"1" "\"2" "3"';
+
+			    ecmascript:
+			    var me = '"1" ""2" "3"';
 			    
+			
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};

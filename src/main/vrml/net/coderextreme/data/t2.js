@@ -37,8 +37,8 @@ browser.currentScene.children[4] = Viewpoint6;
 
 let ProtoDeclare7 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="org" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="posi" value="0 0 0"></field>
-<field accessType="initializeOnly" type="SFColor" name="col" value="0 0 0"></field>
+<ProtoDeclare name="org" ><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><Shape><Appearance><Material transparency="0.400000005960464"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
 </IS>
@@ -54,18 +54,18 @@ let ProtoDeclare7 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 ProtoDeclare7.name = "org";
 let ProtoInterface8 = browser.currentScene.createNode("ProtoInterface");
 let field9 = browser.currentScene.createNode("field");
+field9.name = "posi";
 field9.accessType = "initializeOnly";
 field9.type = "SFVec3f";
-field9.name = "posi";
 field9.value = "0 0 0";
 ProtoInterface8.field = new MFNode();
 
 ProtoInterface8.field[0] = field9;
 
 let field10 = browser.currentScene.createNode("field");
+field10.name = "col";
 field10.accessType = "initializeOnly";
 field10.type = "SFColor";
-field10.name = "col";
 field10.value = "0 0 0";
 ProtoInterface8.field[1] = field10;
 
@@ -119,7 +119,7 @@ browser.currentScene.children[5] = ProtoDeclare7;
 
 let ProtoDeclare21 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="r" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="r" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.300000011920929 1"></fieldValue>
 <fieldValue name="posi"></fieldValue>
@@ -131,9 +131,9 @@ let ProtoDeclare21 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 ProtoDeclare21.name = "r";
 let ProtoInterface22 = browser.currentScene.createNode("ProtoInterface");
 let field23 = browser.currentScene.createNode("field");
+field23.name = "pos";
 field23.accessType = "initializeOnly";
 field23.type = "SFVec3f";
-field23.name = "pos";
 field23.value = "0 0 0";
 ProtoInterface22.field = new MFNode();
 

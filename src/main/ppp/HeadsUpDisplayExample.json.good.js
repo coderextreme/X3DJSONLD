@@ -294,6 +294,7 @@ X3DJSON['Script']['Scene']['../data/HeadsUpDisplayExample.json']['DECLHeadsUpDis
 		console.error('Problems setting translationOffsetChanged',e);
 	}
 
+
 ecmascript:
 
 	this.tracePrint = function (text)
@@ -331,7 +332,9 @@ ecmascript:
 {
 	this.proxy.planeSensorTranslation = value;
 	this.tracePrint('this.proxy.planeSensorTranslation=' + value);
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

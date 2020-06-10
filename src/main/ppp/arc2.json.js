@@ -223,6 +223,7 @@ X3DJSON['Script']['Scene']['../data/arc2.json']['DECLpoint_INSTANCE_MB1'] = func
 	}
 
 
+
 ecmascript:
               
 	this.set_location = function (value) {
@@ -230,6 +231,7 @@ ecmascript:
                     this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f(this.proxy.old, this.proxy.translation);
                }
+
 
 ;
 
@@ -348,6 +350,7 @@ X3DJSON['Script']['Scene']['../data/arc2.json']['DECLpoint_INSTANCE1000_MB1'] = 
 	}
 
 
+
 ecmascript:
               
 	this.set_location = function (value) {
@@ -355,6 +358,7 @@ ecmascript:
                     this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f(this.proxy.old, this.proxy.translation);
                }
+
 
 ;
 
@@ -508,6 +512,7 @@ X3DJSON['Script']['Scene']['../data/arc2.json']['DECLx3dconnector_connector1_S1'
 		console.error('Problems setting endpoint',e);
 	}
 
+
             ecmascript:
        
 	this.recompute = function (startpoint,endpoint){
@@ -556,6 +561,7 @@ X3DJSON['Script']['Scene']['../data/arc2.json']['DECLx3dconnector_connector1_S1'
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(X3DJSON.nodeUtil('Scene','G1', 'translation'),val);
         }
+
 
 ;
 

@@ -46,11 +46,11 @@ for aot in aots:
 
 cns = soup.iter("ConcreteNode")
 for cn in cns:
-    classes[cn.get('name')] = ClassPrinter(cn, "Object")
+    classes[cn.get('name')] = ClassPrinter(cn, "")
 
 sts = soup.iter("Statement")
 for st in sts:
-    classes[st.get('name')] = ClassPrinter(st, "Object")
+    classes[st.get('name')] = ClassPrinter(st, "")
 
 for k,v in classes.items():
     code += v.printClass()

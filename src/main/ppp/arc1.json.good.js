@@ -222,13 +222,16 @@ X3DJSON['Script']['Scene']['../data/arc1.json']['DECLpoint_INSTANCE_MB1'] = func
 		console.error('Problems setting keyValue',e);
 	}
 
+
 ecmascript:
               
 	this.set_location = function (value) {
                     this.proxy.old = this.proxy.translation;
                     this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
-               };
+               }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -344,13 +347,16 @@ X3DJSON['Script']['Scene']['../data/arc1.json']['DECLpoint_INSTANCE1000_MB1'] = 
 		console.error('Problems setting keyValue',e);
 	}
 
+
 ecmascript:
               
 	this.set_location = function (value) {
                     this.proxy.old = this.proxy.translation;
                     this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
-               };
+               }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -501,7 +507,8 @@ X3DJSON['Script']['Scene']['../data/arc1.json']['DECLx3dconnector_connector1_S1'
 		console.log('Problems setting endpoint '+e);
 		console.error('Problems setting endpoint',e);
 	}
-ecmascript:
+
+            ecmascript:
        
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -551,7 +558,8 @@ ecmascript:
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(X3DJSON.nodeUtil('Scene','G1', 'translation'),val);
         }
-           ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

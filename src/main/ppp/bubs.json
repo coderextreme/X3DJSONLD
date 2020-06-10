@@ -1,13 +1,15 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "Scripting"
+          "@name": "Scripting",
+          "@level": 1
         }
       ],
       "meta": [
@@ -33,15 +35,15 @@
         },
         {
           "@name": "translated",
-          "@content": "1 May 2020"
+          "@content": "10 June 2020"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -177,6 +179,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "function initialize() {",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -215,7 +218,9 @@
                     "\ttranslation.z = 0;",
                     "\tinitialize();",
                     "    }",
-                    "}"
+                    "}",
+                    "",
+                    "\t\t\t"
                   ]
                 }
               },
@@ -331,6 +336,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "function initialize() {",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -369,7 +375,9 @@
                     "\ttranslation.z = 0;",
                     "\tinitialize();",
                     "    }",
-                    "}"
+                    "}",
+                    "",
+                    "\t\t\t"
                   ]
                 }
               },
@@ -485,6 +493,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "function initialize() {",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -523,7 +532,9 @@
                     "\ttranslation.z = 0;",
                     "\tinitialize();",
                     "    }",
-                    "}"
+                    "}",
+                    "",
+                    "\t\t\t"
                   ]
                 }
               },
@@ -639,6 +650,7 @@
                     }
                   ],
                   "#sourceText": [
+                    "",
                     "ecmascript:",
                     "function initialize() {",
                     "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -677,7 +689,9 @@
                     "\ttranslation.z = 0;",
                     "\tinitialize();",
                     "    }",
-                    "}"
+                    "}",
+                    "",
+                    "\t\t\t"
                   ]
                 }
               },
@@ -716,8 +730,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }
