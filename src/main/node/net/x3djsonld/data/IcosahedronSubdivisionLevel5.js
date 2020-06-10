@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles. </p>
- <p> Related links: <a href="../../../GeometricShapes/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../GeometricShapes/IcosahedronSubdivisionLevel5Index.html" target="_top">IcosahedronSubdivisionLevel5 catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../GeometricShapes/IcosahedronSubdivisionLevel5.java">IcosahedronSubdivisionLevel5.java</a> source, <a href="../../../GeometricShapes/IcosahedronSubdivisionLevel5Index.html" target="_top">IcosahedronSubdivisionLevel5 catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -94,7 +94,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author Don Brutzman
  */
 
-function NeedClassName
+function IcosahedronSubdivisionLevel5
   /** Default constructor to create this object. */
   ()
   {
@@ -103,7 +103,7 @@ function NeedClassName
     this.initialize();
     return this;
   }
-NeedClassName.prototype = {
+IcosahedronSubdivisionLevel5.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -1168,7 +1168,7 @@ NeedClassName.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return NeedClassName model
+   * @return IcosahedronSubdivisionLevel5 model
    */
   getX3dModel : function()
   {	  
@@ -1180,7 +1180,6 @@ NeedClassName.prototype = {
    */
   validateSelf : function()
   {
-	var       metaResult = "";
 	var validationResult = "";
 	var  exceptionResult = "";
 	try
@@ -1192,30 +1191,17 @@ NeedClassName.prototype = {
 			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
 			return validationResult;
 		}
-		// first list informational meta elements of interest
-		var metaList = this.getX3dModel().getHead().getMetaList();
-		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
-			{
-				metaResult += meta.toStringX3D();
-			}
-		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
 	}
 	catch (e)
 	{
 		exceptionResult = e; // report exception failures, if any
 	}
-	if  (metaResult === "" && exceptionResult === "" && validationResult === "")
+	if  (exceptionResult === "" && validationResult === "")
 	     return "success";
 	else
 	{
-		var returnMessage = metaResult;
+		var returnMessage = "";
 		if  (exceptionResult !== "" && validationResult !== "")
 			returnMessage += "\n*** ";
 		returnMessage += exceptionResult;
@@ -1230,8 +1216,8 @@ NeedClassName.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new NeedClassName();
-		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new IcosahedronSubdivisionLevel5();
+		console.log ("IcosahedronSubdivisionLevel5 execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new NeedClassName().main();
+new IcosahedronSubdivisionLevel5().main();

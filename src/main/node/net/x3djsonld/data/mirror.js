@@ -202,7 +202,6 @@ mirror.prototype = {
    */
   validateSelf : function()
   {
-	var       metaResult = "";
 	var validationResult = "";
 	var  exceptionResult = "";
 	try
@@ -214,30 +213,17 @@ mirror.prototype = {
 			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
 			return validationResult;
 		}
-		// first list informational meta elements of interest
-		var metaList = this.getX3dModel().getHead().getMetaList();
-		for (var m in metaList) {
-			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
-			{
-				metaResult += meta.toStringX3D();
-			}
-		}
 		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
 	}
 	catch (e)
 	{
 		exceptionResult = e; // report exception failures, if any
 	}
-	if  (metaResult === "" && exceptionResult === "" && validationResult === "")
+	if  (exceptionResult === "" && validationResult === "")
 	     return "success";
 	else
 	{
-		var returnMessage = metaResult;
+		var returnMessage = "";
 		if  (exceptionResult !== "" && validationResult !== "")
 			returnMessage += "\n*** ";
 		returnMessage += exceptionResult;
