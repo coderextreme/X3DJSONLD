@@ -36,93 +36,57 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.sai.*;
-import org.web3d.x3d.sai.CADGeometry.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.DIS.*;
-import org.web3d.x3d.sai.EnvironmentalEffects.*;
-import org.web3d.x3d.sai.EnvironmentalSensor.*;
-import org.web3d.x3d.sai.EventUtilities.*;
-import org.web3d.x3d.sai.Followers.*;
-import org.web3d.x3d.sai.Geometry2D.*;
-import org.web3d.x3d.sai.Geometry3D.*;
-import org.web3d.x3d.sai.Geospatial.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Interpolation.*;
-import org.web3d.x3d.sai.KeyDeviceSensor.*;
-import org.web3d.x3d.sai.Layering.*;
-import org.web3d.x3d.sai.Layout.*;
-import org.web3d.x3d.sai.Lighting.*;
-import org.web3d.x3d.sai.NURBS.*;
-import org.web3d.x3d.sai.Navigation.*;
-import org.web3d.x3d.sai.Networking.*;
-import org.web3d.x3d.sai.ParticleSystems.*;
-import org.web3d.x3d.sai.Picking.*;
-import org.web3d.x3d.sai.PointingDeviceSensor.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.RigidBodyPhysics.*;
-import org.web3d.x3d.sai.Scripting.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing3D.*;
-import org.web3d.x3d.sai.Texturing.*;
-import org.web3d.x3d.sai.Time.*;
-import org.web3d.x3d.sai.VolumeRendering.*;
 public class text {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new text().initialize().toFileJSON("../data/text.new.json");
     }
-    public X3DObject initialize() {
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
-      .setHead(new headObject()
-        .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
-        .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
-        .addMeta(new metaObject().setName("title").setContent("text.x3d"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("test \\n text"))
-        .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
-      .setScene(new SceneObject()
-        .addChild(new TransformObject()
-          .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(new MFString0().getArray()))
-              .setFontStyle(new FontStyleObject()))
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject())))
-          .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(new MFString1().getArray()))
-              .setFontStyle(new FontStyleObject()))
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject())))
-          .addChild(new ShapeObject()
-            .setGeometry(new TextObject().setString(new MFStringObject(new MFString2().getArray()))
-              .setFontStyle(new FontStyleObject()))
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject())))
-          .addChild(new ScriptObject()
-            .addField(new fieldObject().setType("MFString").setName("frontUrls").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
+    public X3D initialize() {
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new head()
+        .addMeta(new meta().setName("creator").setContent("John W Carlson"))
+        .addMeta(new meta().setName("created").setContent("December 13 2015"))
+        .addMeta(new meta().setName("title").setContent("text.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
+        .addMeta(new meta().setName("description").setContent("test \\n text"))
+        .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+      .setScene(new Scene()
+        .addChild(new Transform()
+          .addChild(new Shape()
+            .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))
+              .setFontStyle(new FontStyle()))
+            .setAppearance(new Appearance()
+              .setMaterial(new Material())))
+          .addChild(new Shape()
+            .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray()))
+              .setFontStyle(new FontStyle()))
+            .setAppearance(new Appearance()
+              .setMaterial(new Material())))
+          .addChild(new Shape()
+            .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray()))
+              .setFontStyle(new FontStyle()))
+            .setAppearance(new Appearance()
+              .setMaterial(new Material())))
+          .addChild(new Script()
+            .addField(new field().setType("MFString").setName("frontUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
             .setSourceCode("ecmascript:\n"+
 "			    var me = '\"1\" \"\"2\" \"\\n3\"';"))))      ;
     return X3D0;
     }
 protected class MFString0 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node\"\"\""});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Node\"\"\""});
   }
 }
 protected class MFString1 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node2","\\\\","\\\\\\\\","Node2"});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Node2","\\\\","\\\\\\\\","Node2"});
   }
 }
 protected class MFString2 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Node3 \\\\\\\\ \\\\ ","Node3\"\"\""});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Node3 \\\\\\\\ \\\\ ","Node3\"\"\""});
   }
 }
 }

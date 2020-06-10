@@ -86,49 +86,49 @@ public class HeadsUpDisplayPrototype
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_0)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("HeadsUpDisplayPrototype.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Generic Heads Up Display (HUD) prototype to keep children on screen."))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("9 November 2003"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("14 January 2014"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT    ).setContent("HUD Heads Up Display"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject("HeadsUpDisplay").setName("HeadsUpDisplay").setAppinfo("HeadsUpDisplay positions child geometry in screen space, movable by the user")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("children").setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Displayed subscene positioned as a HUD.")
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("HeadsUpDisplayPrototype.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Generic Heads Up Display (HUD) prototype to keep children on screen."))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("9 November 2003"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("14 January 2014"))
+    .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("HUD Heads Up Display"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../../license.html")))
+  .setScene(new Scene()
+    .addChild(new ProtoDeclare("HeadsUpDisplay").setName("HeadsUpDisplay").setAppinfo("HeadsUpDisplay positions child geometry in screen space, movable by the user")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("children").setType(field.TYPE_MFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Displayed subscene positioned as a HUD.")
           .addComments(" default is null array of nodes "))
-        .addField(new fieldObject().setName("dragChildren").setType(fieldObject.TYPE_MFNODE).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.")
+        .addField(new field().setName("dragChildren").setType(field.TYPE_MFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.")
           .addComments(" default is null array of nodes "))
-        .addField(new fieldObject().setName("locationOffset").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3fObject(-2.0f,-2.0f,0.0f)).setAppinfo("Modified screen location and distance (for size)."))
-        .addField(new fieldObject().setName("traceEnabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(false).setAppinfo("Enable/disable console output for troubleshooting.")))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new GroupObject()
-          .addChild(new ProximitySensorObject("WhereSensor").setSize(1000000000.0f,1000000000.0f,1000000000.0f)
-            .setIS(new ISObject()
-              .addConnect(new connectObject().setNodeField("center").setProtoField("locationOffset"))))
-          .addChild(new TransformObject("FixedLocation")
-            .addChild(new TransformObject("MovableLocation")
-              .addChild(new TransformObject("LocationOffset")
-                .setIS(new ISObject()
-                  .addConnect(new connectObject().setNodeField("translation").setProtoField("locationOffset")))
-                .addChild(new TransformObject().setTranslation(0.0f,0.0f,-10.0f)
-                  .addChild(new GroupObject()
-                    .setIS(new ISObject()
-                      .addConnect(new connectObject().setNodeField("children").setProtoField("children"))))
-                  .addChild(new GroupObject("PlaneMovementSensorGroup")
-                    .addChild(new GroupObject("DragGeometry")
-                      .setIS(new ISObject()
-                        .addConnect(new connectObject().setNodeField("children").setProtoField("dragChildren"))))
-                    .addChild(new PlaneSensorObject("PlaneMovementSensor").setDescription("click and drag to move interface")
-                      .setIS(new ISObject()
-                        .addConnect(new connectObject().setNodeField("offset").setProtoField("locationOffset"))))
-                    .addChild(new VisibilitySensorObject("MovementVisibilitySensor"))
-                    .addChild(new ScriptObject("VisibilityControlScript").setSourceCode("\n" + 
+        .addField(new field().setName("locationOffset").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(-2.0f,-2.0f,0.0f)).setAppinfo("Modified screen location and distance (for size)."))
+        .addField(new field().setName("traceEnabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(false).setAppinfo("Enable/disable console output for troubleshooting.")))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Group()
+          .addChild(new ProximitySensor("WhereSensor").setSize(1000000000.0f,1000000000.0f,1000000000.0f)
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("center").setProtoField("locationOffset"))))
+          .addChild(new Transform("FixedLocation")
+            .addChild(new Transform("MovableLocation")
+              .addChild(new Transform("LocationOffset")
+                .setIS(new IS()
+                  .addConnect(new connect().setNodeField("translation").setProtoField("locationOffset")))
+                .addChild(new Transform().setTranslation(0.0f,0.0f,-10.0f)
+                  .addChild(new Group()
+                    .setIS(new IS()
+                      .addConnect(new connect().setNodeField("children").setProtoField("children"))))
+                  .addChild(new Group("PlaneMovementSensorGroup")
+                    .addChild(new Group("DragGeometry")
+                      .setIS(new IS()
+                        .addConnect(new connect().setNodeField("children").setProtoField("dragChildren"))))
+                    .addChild(new PlaneSensor("PlaneMovementSensor").setDescription("click and drag to move interface")
+                      .setIS(new IS()
+                        .addConnect(new connect().setNodeField("offset").setProtoField("locationOffset"))))
+                    .addChild(new VisibilitySensor("MovementVisibilitySensor"))
+                    .addChild(new Script("VisibilityControlScript").setSourceCode("\n" + 
 "                      " + "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -165,60 +165,60 @@ public class HeadsUpDisplayPrototype
 "	planeSensorTranslation = value;" + "\n" + 
 "	tracePrint('planeSensorTranslation=' + value);" + "\n" + 
 "}" + "\n")
-                      .addField(new fieldObject().setName("traceEnabled").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-                      .addField(new fieldObject().setName("isVisible").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(true))
-                      .addField(new fieldObject().setName("planeSensorTranslation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
-                      .addField(new fieldObject().setName("setIsVisible").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-                      .addField(new fieldObject().setName("setPlaneSensorIsActive").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-                      .addField(new fieldObject().setName("setPlaneSensorTranslation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-                      .addField(new fieldObject().setName("translationChanged").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-                      .addField(new fieldObject().setName("translationOffsetChanged").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-                      .setIS(new ISObject()
-                        .addConnect(new connectObject().setNodeField("traceEnabled").setProtoField("traceEnabled"))))
-                    .addChild(new ROUTEObject().setFromNode("PlaneMovementSensor").setFromField("isActive").setToNode("VisibilityControlScript").setToField("setPlaneSensorIsActive"))
-                    .addChild(new ROUTEObject().setFromNode("PlaneMovementSensor").setFromField("translation_changed").setToNode("VisibilityControlScript").setToField("setPlaneSensorTranslation"))
-                    .addChild(new ROUTEObject().setFromNode("MovementVisibilitySensor").setFromField("isActive").setToNode("VisibilityControlScript").setToField("setIsVisible")))))
-              .addChild(new ROUTEObject().setFromNode("PlaneMovementSensor").setFromField("translation_changed").setToNode("MovableLocation").setToField("set_translation"))
-              .addChild(new ROUTEObject().setFromNode("VisibilityControlScript").setFromField("translationChanged").setToNode("MovableLocation").setToField("set_translation"))
-              .addChild(new ROUTEObject().setFromNode("VisibilityControlScript").setFromField("translationOffsetChanged").setToNode("PlaneMovementSensor").setToField("set_offset"))))
-          .addChild(new ROUTEObject().setFromNode("WhereSensor").setFromField("position_changed").setToNode("FixedLocation").setToField("set_translation"))
-          .addChild(new ROUTEObject().setFromNode("WhereSensor").setFromField("orientation_changed").setToNode("FixedLocation").setToField("set_rotation")))))
+                      .addField(new field().setName("traceEnabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+                      .addField(new field().setName("isVisible").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(true))
+                      .addField(new field().setName("planeSensorTranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.0f,0.0f,0.0f)))
+                      .addField(new field().setName("setIsVisible").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                      .addField(new field().setName("setPlaneSensorIsActive").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                      .addField(new field().setName("setPlaneSensorTranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                      .addField(new field().setName("translationChanged").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+                      .addField(new field().setName("translationOffsetChanged").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+                      .setIS(new IS()
+                        .addConnect(new connect().setNodeField("traceEnabled").setProtoField("traceEnabled"))))
+                    .addChild(new ROUTE().setFromNode("PlaneMovementSensor").setFromField("isActive").setToNode("VisibilityControlScript").setToField("setPlaneSensorIsActive"))
+                    .addChild(new ROUTE().setFromNode("PlaneMovementSensor").setFromField("translation_changed").setToNode("VisibilityControlScript").setToField("setPlaneSensorTranslation"))
+                    .addChild(new ROUTE().setFromNode("MovementVisibilitySensor").setFromField("isActive").setToNode("VisibilityControlScript").setToField("setIsVisible")))))
+              .addChild(new ROUTE().setFromNode("PlaneMovementSensor").setFromField("translation_changed").setToNode("MovableLocation").setToField("set_translation"))
+              .addChild(new ROUTE().setFromNode("VisibilityControlScript").setFromField("translationChanged").setToNode("MovableLocation").setToField("set_translation"))
+              .addChild(new ROUTE().setFromNode("VisibilityControlScript").setFromField("translationOffsetChanged").setToNode("PlaneMovementSensor").setToField("set_offset"))))
+          .addChild(new ROUTE().setFromNode("WhereSensor").setFromField("position_changed").setToNode("FixedLocation").setToField("set_translation"))
+          .addChild(new ROUTE().setFromNode("WhereSensor").setFromField("orientation_changed").setToNode("FixedLocation").setToField("set_rotation")))))
     .addComments(" ==================== ")
-    .addChild(new BackgroundObject().setGroundColor(new MFColorObject(new float[] {0.1f,0.1f,0.3f})).setSkyColor(new MFColorObject(new float[] {0.5f,0.5f,0.1f})))
-    .addChild(new AnchorObject().setDescription("HeadsUpDisplayExample").setParameter(new String[] {"target=_blank"}).setUrl(new String[] {"HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"})
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,1.0f).setEmissiveColor(0.0f,1.0f,1.0f)))
-        .setGeometry(new TextObject().setString(new String[] {"HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"})
-          .setFontStyle(new FontStyleObject().setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE).setSize(0.8f))))));
+    .addChild(new Background().setGroundColor(new MFColor(new float[] {0.1f,0.1f,0.3f})).setSkyColor(new MFColor(new float[] {0.5f,0.5f,0.1f})))
+    .addChild(new Anchor().setDescription("HeadsUpDisplayExample").setParameter(new String[] {"target=_blank"}).setUrl(new String[] {"HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"})
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setMaterial(new Material().setDiffuseColor(0.0f,1.0f,1.0f).setEmissiveColor(0.0f,1.0f,1.0f)))
+        .setGeometry(new Text().setString(new String[] {"HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"})
+          .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(0.8f))))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return HeadsUpDisplayPrototype model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new HeadsUpDisplayPrototype().getX3dModel();
+        X3D thisExampleX3dModel = new HeadsUpDisplayPrototype().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -233,15 +233,15 @@ public class HeadsUpDisplayPrototype
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -251,12 +251,12 @@ public class HeadsUpDisplayPrototype
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"HeadsUpDisplayPrototype\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"HeadsUpDisplayPrototype\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

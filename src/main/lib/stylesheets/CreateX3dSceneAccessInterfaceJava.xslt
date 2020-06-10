@@ -49,7 +49,7 @@ Additional references of interest:
 	<xsl:variable name="concretePackage"               >           <xsl:text>org.web3d.x3d.jsail</xsl:text></xsl:variable>
 	<xsl:variable name="concretePackageDirectorySource">    <xsl:text>src/org/web3d/x3d/jsail</xsl:text></xsl:variable>
 	<xsl:variable name="concretePackageDirectoryBuild" >  <xsl:text>build/org/web3d/x3d/jsail</xsl:text></xsl:variable>
-	<xsl:variable name="jsaiClassSuffix"    ><xsl:text>Object</xsl:text></xsl:variable><!-- originally Object -->
+	<xsl:variable name="jsaiClassSuffix"    ><xsl:text></xsl:text></xsl:variable><!-- originally Object -->
 	<xsl:variable name="jsaiInterfaceSuffix"><xsl:text>Interface</xsl:text></xsl:variable>
     
 	<xsl:variable name="x3duomPackage"                 >           <xsl:text>org.web3d.x3d.util.x3duom</xsl:text></xsl:variable>
@@ -254,13 +254,29 @@ Additional references of interest:
 			<!-- X3D Java Specification interface definitions are completely ambiguous, there is no benefit to 
                  including unnecessarily loose node typing accessors for a single node.  Omitted the following general/harmful case:
 			<xsl:when test="($x3dType = 'SFNode') and ($isInterface = 'true')">
-				<xsl:text>X3DNode</xsl:text>
+				<xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
 			</xsl:when> -->
 			<xsl:when test="($x3dType = 'SFNode')">
 				<xsl:choose>
 					<xsl:when test="(string-length(@acceptableNodeTypes) > 0) and not(contains(@acceptableNodeTypes,'|'))">
 						<!-- not always singular, example CADFace shape field (Shape|LOD|Transform) -->
-						<xsl:value-of select="@acceptableNodeTypes"/>
+                        <xsl:variable name="saiPackagePath"> 
+                            <xsl:call-template name="saiPackage">
+                                <xsl:with-param name="nodeType" select="@acceptableNodeTypes"/>
+                            </xsl:call-template>
+                        </xsl:variable>
+                        <xsl:choose>
+                            <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                <!-- <xsl:text>/* here 13a */</xsl:text> -->
+                                <xsl:value-of select="$saiPackagePath"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="@acceptableNodeTypes"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!-- <xsl:text>/* here 13b, saiPackage not found */</xsl:text> -->
+                                <xsl:value-of select="@acceptableNodeTypes"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
 						<xsl:variable name="isX3dStatement">
 							<xsl:call-template name="isX3dStatement">
 								<xsl:with-param name="name" select="@name"/>
@@ -275,19 +291,35 @@ Additional references of interest:
 						</xsl:if>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:text>X3DNode</xsl:text><!-- TODO more precise node-typ echecks -->
+						<xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text><!-- TODO more precise node-typ echecks -->
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:when>
 			<xsl:when test="($x3dType = 'MFNode') and ($isInterface = 'true')">
-				<xsl:text>X3DNode[]</xsl:text>
+				<xsl:text>org.web3d.x3d.sai.Core.X3DNode[]</xsl:text>
 			</xsl:when>
 			<xsl:when test="($x3dType = 'MFNode')">
 				<xsl:choose>
 					<xsl:when test="(string-length(@acceptableNodeTypes) > 0) and not(contains(@acceptableNodeTypes,'|'))">
 						<!-- not always singular, example CADFace shape field (Shape|LOD|Transform) -->
 						<xsl:text disable-output-escaping="yes">ArrayList&lt;</xsl:text><!-- ArrayList<> -->
-						<xsl:value-of select="@acceptableNodeTypes"/>
+                        <xsl:variable name="saiPackagePath"> 
+                            <xsl:call-template name="saiPackage">
+                                <xsl:with-param name="nodeType" select="@acceptableNodeTypes"/>
+                            </xsl:call-template>
+                        </xsl:variable>
+                        <xsl:choose>
+                            <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                <!-- <xsl:text>/* here 13a */</xsl:text> -->
+                                <xsl:value-of select="$saiPackagePath"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="@acceptableNodeTypes"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!-- <xsl:text>/* here 13b, saiPackage not found */</xsl:text> -->
+                                <xsl:value-of select="@acceptableNodeTypes"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
 						<xsl:variable name="isX3dStatement">
 							<xsl:call-template name="isX3dStatement">
 								<xsl:with-param name="name" select="@name"/>
@@ -304,7 +336,7 @@ Additional references of interest:
 						<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:text disable-output-escaping="yes">ArrayList&lt;X3DNode&gt;</xsl:text><!-- TODO more precise node-type checks -->
+						<xsl:text disable-output-escaping="yes">ArrayList&lt;org.web3d.x3d.sai.Core.X3DNode&gt;</xsl:text><!-- TODO more precise node-type checks -->
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:when>
@@ -593,102 +625,113 @@ Additional references of interest:
     
     <xsl:template name="saiPackage">
         <xsl:param name="nodeType"/>
+        
+        <xsl:variable name="nodeTypeBase" select="translate($nodeType,'[]','')"/>
 		
         <xsl:variable name="saiPackageComputed">
             <xsl:choose>
-                <xsl:when test="($nodeType = 'X3DNode')       or ($nodeType = 'X3DChildNode')    or 
-                                ($nodeType = 'X3DSensorNode') or ($nodeType = 'X3DBindableNode') or ($nodeType = 'X3DMetadataObject')">
+                <xsl:when test="($nodeTypeBase = 'X3DNode')       or ($nodeTypeBase = 'X3DChildNode')    or ($nodeTypeBase = 'X3DInfoNode') or 
+                                ($nodeTypeBase = 'X3DSensorNode') or ($nodeTypeBase = 'X3DBindableNode') or ($nodeTypeBase = 'X3DMetadataObject')">
                     <xsl:text>Core</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DProductStructureChildNode)')">
+                <xsl:when test="($nodeTypeBase = 'X3DProductStructureChildNode)')">
                     <xsl:text>CADGeometry</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DEnvironmentTextureNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DEnvironmentTextureNode')">
                     <xsl:text>CubeMapTexturing</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DBackgroundNode') or ($nodeType = 'FogCoordinate')">
+                <xsl:when test="($nodeTypeBase = 'X3DBackgroundNode') or ($nodeTypeBase = 'FogCoordinate')">
                     <xsl:text>EnvironmentalEffects</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DEnvironmentalSensorNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DEnvironmentalSensorNode')">
                     <xsl:text>EnvironmentalSensor</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DSequencerNode') or ($nodeType = 'X3DTriggerNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DSequencerNode') or ($nodeTypeBase = 'X3DTriggerNode')">
                     <xsl:text>EventUtilities</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DFollowerNode') or ($nodeType = 'X3DChaserNode') or ($nodeType = 'X3DDamperNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DFollowerNode') or ($nodeTypeBase = 'X3DChaserNode') or ($nodeTypeBase = 'X3DDamperNode')">
                     <xsl:text>Followers</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DGroupingNode') or ($nodeType = 'X3DBoundedObject')">
+                <xsl:when test="($nodeTypeBase = 'GeoOrigin')">
+                    <xsl:text>Geospatial</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeTypeBase = 'X3DGroupingNode') or ($nodeTypeBase = 'X3DBoundedObject')">
                     <xsl:text>Grouping</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DInterpolatorNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DInterpolatorNode')">
                     <xsl:text>Interpolation</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DLayerNode') or ($nodeType = 'X3DViewportNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DLayerNode') or ($nodeTypeBase = 'X3DViewportNode')">
                     <xsl:text>Layering</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DLightNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DLayoutNode')">
+                    <xsl:text>Layout</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeTypeBase = 'X3DLightNode')">
                     <xsl:text>Lighting</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DViewpointNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DViewpointNode')">
                     <xsl:text>Navigation</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DNetworkSensorNode') or ($nodeType = 'X3DUrlObject')">
+                <xsl:when test="($nodeTypeBase = 'X3DNetworkSensorNode') or ($nodeTypeBase = 'X3DUrlObject')">
                     <xsl:text>Networking</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DNurbsControlCurveNode') or ($nodeType = 'X3DParametricGeometryNode') or ($nodeType = 'X3DNurbsSurfaceGeometryNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DNurbsControlCurveNode') or ($nodeTypeBase = 'X3DParametricGeometryNode') or ($nodeTypeBase = 'X3DNurbsSurfaceGeometryNode') or
+                                ($nodeTypeBase = 'NurbsCurve')">
                     <xsl:text>NURBS</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DParticleEmitterNode') or ($nodeType = 'X3DParticlePhysicsModelNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DParticleEmitterNode') or ($nodeTypeBase = 'X3DParticlePhysicsModelNode')">
                     <xsl:text>ParticleSystems</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DPickableObject')">
+                <xsl:when test="($nodeTypeBase = 'X3DPickableObject')">
                     <xsl:text>Picking</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DPointingDeviceSensorNode') or ($nodeType = 'X3DDragSensorNode') or ($nodeType = 'X3DTouchSensorNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DPointingDeviceSensorNode') or ($nodeTypeBase = 'X3DDragSensorNode') or ($nodeTypeBase = 'X3DTouchSensorNode')">
                     <xsl:text>PointingDeviceSensor</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DColorNode')    or ($nodeType = 'X3DCoordinateNode')        or ($nodeType = 'X3DNormalNode') or
-                                ($nodeType = 'X3DGeometryNode') or ($nodeType = 'X3DGeometricPropertyNode') or  ($nodeType = 'X3DComposedGeometryNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DColorNode')    or ($nodeTypeBase = 'X3DCoordinateNode')        or ($nodeTypeBase = 'X3DNormalNode') or
+                                ($nodeTypeBase = 'X3DGeometryNode') or ($nodeTypeBase = 'X3DGeometricPropertyNode') or ($nodeTypeBase = 'X3DComposedGeometryNode')">
                     <xsl:text>Rendering</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DNBodyCollidableNode') or ($nodeType = 'X3DNBodyCollisionSpaceNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DNBodyCollidableNode') or ($nodeTypeBase = 'X3DNBodyCollisionSpaceNode') or ($nodeTypeBase = 'X3DRigidJointNode') or
+                                ($nodeTypeBase = 'RigidBody') or ($nodeTypeBase = 'CollisionCollection')">
                     <xsl:text>RigidBodyPhysics</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DScriptNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DScriptNode')">
                     <xsl:text>Scripting</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DProgrammableShaderObject') or ($nodeType = 'X3DShaderNode') or ($nodeType = 'X3DVertexAttributeNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DProgrammableShaderObject') or ($nodeTypeBase = 'X3DShaderNode') or ($nodeTypeBase = 'X3DVertexAttributeNode')">
                     <xsl:text>Shaders</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DShapeNode') or ($nodeType = 'X3DAppearanceChildNode') or ($nodeType = 'X3DMaterialNode') or 
-                                ($nodeType = 'X3DAppearanceNode') or ($nodeType = 'Shape')">
+                <xsl:when test="($nodeTypeBase = 'X3DShapeNode')      or ($nodeTypeBase = 'X3DAppearanceChildNode') or ($nodeTypeBase = 'X3DMaterialNode') or 
+                                ($nodeTypeBase = 'X3DAppearanceNode') or ($nodeTypeBase = 'Shape')                  or
+                                ($nodeTypeBase = 'FillProperties')    or ($nodeTypeBase = 'LineProperties')         or ($nodeTypeBase = 'PointProperties')">
                     <xsl:text>Shape</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DSoundNode') or ($nodeType = 'X3DSoundSourceNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DSoundNode') or ($nodeTypeBase = 'X3DSoundSourceNode')">
                     <xsl:text>Sound</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DFontStyleNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DFontStyleNode')">
                     <xsl:text>Text</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DTextureNode') or ($nodeType = 'X3DTexture2DNode') or ($nodeType = 'X3DTextureTransformNode') or
-                                ($nodeType = 'X3DTextureCoordinateNode') or ($nodeType = 'TextureCoordinate') or ($nodeType = 'TextureProperties')">
+                <xsl:when test="($nodeTypeBase = 'X3DTextureNode')           or ($nodeTypeBase = 'X3DTexture2DNode')  or ($nodeTypeBase = 'X3DTextureTransformNode') or
+                                ($nodeTypeBase = 'X3DTextureCoordinateNode') or ($nodeTypeBase = 'TextureCoordinate') or ($nodeTypeBase = 'TextureProperties')">
                     <xsl:text>Texturing</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DTexture3DNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DTexture3DNode')">
                     <xsl:text>Texturing3D</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DTimeDependentNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DTimeDependentNode')">
                     <xsl:text>Time</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeType = 'X3DVolumeDataNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DVolumeDataNode') or ($nodeTypeBase = 'X3DComposableVolumeRenderStyleNode') or ($nodeTypeBase = 'X3DVolumeRenderStyleNode')">
                     <xsl:text>VolumeRendering</xsl:text>
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
         <!-- return value -->
         <xsl:choose>
-            <xsl:when test="starts-with($nodeType,'MF') or starts-with($nodeType,'SF')">
+            <xsl:when test="starts-with($nodeTypeBase,'MF') or starts-with($nodeTypeBase,'SF')">
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="$saiPackage"/><!-- field type in root directory -->
             </xsl:when>
@@ -697,8 +740,8 @@ Additional references of interest:
                 <xsl:message>
                     <xsl:text>*** $saiPackageComputed=</xsl:text>
                     <xsl:value-of select="$saiPackageComputed"/>
-                    <xsl:text> for $nodeType=</xsl:text>
-                    <xsl:value-of select="$nodeType"/>
+                    <xsl:text> for $nodeTypeBase=</xsl:text>
+                    <xsl:value-of select="$nodeTypeBase"/>
                 </xsl:message>
                 -->
                 <xsl:text> </xsl:text>
@@ -710,7 +753,7 @@ Additional references of interest:
                 <!-- debug: report problem
                 <xsl:message>
                     <xsl:text>*** saiPackage not found for type=</xsl:text>
-                    <xsl:value-of select="$nodeType"/>
+                    <xsl:value-of select="$nodeTypeBase"/>
                 </xsl:message> -->
             </xsl:otherwise>
         </xsl:choose>
@@ -923,7 +966,7 @@ Additional references of interest:
 					<xsl:otherwise>
 						<xsl:choose>
 							<xsl:when test="contains($name,'FNode')">
-								<xsl:text>import org.web3d.x3d.sai.Core.*;  // making sure #0</xsl:text>
+								<xsl:text>// import org.web3d.x3d.sai.Core.*;  // making sure #0</xsl:text>
 								<xsl:text>&#10;</xsl:text>
 								<xsl:if test="($inConcretePackage = 'true')">
 									<xsl:text>import org.web3d.x3d.jsail.*; // again making sure #1</xsl:text>
@@ -933,9 +976,11 @@ Additional references of interest:
 							<xsl:when test="(($hasFieldInterface or $hasException or $hasServiceInterface or $canThrowFieldValueException) and (string-length($subPackage) > 0))
 											 and not(starts-with($name,'SF')) and not(starts-with($name,'MF'))">
 								<!-- TODO stronger filtering many be needed to avoid superfluous declaration -->
-								<xsl:text>import org.web3d.x3d.sai.*;      // making sure #2</xsl:text>
+								<xsl:text>// import org.web3d.x3d.sai.*;      // making sure #2</xsl:text>
 								<xsl:text>&#10;</xsl:text>
 								<xsl:text>import org.web3d.x3d.sai.Core.*;  // making sure #2</xsl:text>
+								<xsl:text>&#10;</xsl:text>
+								<xsl:text>import org.web3d.x3d.sai.InvalidFieldValueException;  // making sure #2</xsl:text>
 								<xsl:text>&#10;</xsl:text>
 								<xsl:if test="($inConcretePackage = 'true')">
 									<xsl:text>import org.web3d.x3d.jsail.*; // again making sure #2</xsl:text>
@@ -1025,7 +1070,7 @@ import org.web3d.x3d.util.exi.SerializeEXISchema;
 					<xsl:if test="($name = 'Scene')">
 						<!-- Scene imports -->
 						<xsl:text>
-import org.web3d.x3d.jsail.Layering.LayerSetObject; // special case, as are Metadata* nodes
+import org.web3d.x3d.jsail.Layering.LayerSet; // special case, as are Metadata* nodes
 </xsl:text>
 					</xsl:if>
 					<xsl:if test="($inConcretePackage = 'true') and not($thisClassName = 'X3DConcreteField') and not($thisClassName = 'CommentsBlock')">
@@ -1045,12 +1090,12 @@ import org.web3d.x3d.jsail.Core.*;
 					<xsl:text>&#10;</xsl:text>
 					<xsl:choose>
 						<xsl:when test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ShaderPart') or ($name = 'ProtoInterface')">
-							<xsl:text>import org.web3d.x3d.jsail.Core.fieldObject;</xsl:text>
+							<xsl:text>import org.web3d.x3d.jsail.Core.field;</xsl:text>
 						<xsl:text>&#10;</xsl:text>
 						</xsl:when>
 						<!--
 						<xsl:when test="($name = 'ProtoInstance')">
-							<xsl:text>import org.web3d.x3d.jsail.Core.fieldValueObject;</xsl:text>
+							<xsl:text>import org.web3d.x3d.jsail.Core.fieldValue;</xsl:text>
 						<xsl:text>&#10;</xsl:text>
 						</xsl:when>
 						-->
@@ -1078,7 +1123,7 @@ import org.web3d.x3d.jsail.Core.*;
 									  InterfaceDefinition/field[contains(@acceptableNodeTypes, 'X3DPrototypeInstance')] or
 									  InterfaceDefinition/field[contains(@acceptableNodeTypes, 'X3DSensorNode')]"/>
 				<xsl:if test="($hasCoreComponentType) and ($subPackage != 'Core')">
-					<xsl:text>import org.web3d.x3d.sai.Core.*;</xsl:text>
+					<xsl:text>// import org.web3d.x3d.sai.Core.*;</xsl:text>
 					<xsl:text>&#10;</xsl:text>
 				</xsl:if>
 				-->
@@ -1110,7 +1155,7 @@ import org.web3d.x3d.jsail.Core.*;
                                           (count(preceding-sibling::*[contains(//*[@name = @acceptableNodeTypes]//componentInfo/@name, $acceptableTypeComponent)]) = 0)">
 								<xsl:choose>
 									<xsl:when test="($isInterface = 'true') and not($inConcretePackage = 'true')">
-										<xsl:text>import org.web3d.x3d.sai.</xsl:text>
+										<xsl:text>// import org.web3d.x3d.sai.</xsl:text>
 										<xsl:if test="not($acceptableTypeComponent = 'fields') or ($modifySpecificationInterfaces = 'true')">
 											<xsl:value-of select="translate($acceptableTypeComponent,'-','')"/>
 											<xsl:text>.</xsl:text>
@@ -1120,26 +1165,26 @@ import org.web3d.x3d.jsail.Core.*;
 									</xsl:when>
 									<xsl:otherwise>
 										<xsl:if test="ancestor::ConcreteNode">
-											<xsl:text>import org.web3d.x3d.sai.</xsl:text>
+											<xsl:text>// import org.web3d.x3d.sai.</xsl:text>
 											<xsl:value-of select="translate(ancestor::ConcreteNode/InterfaceDefinition/componentInfo/@name,'-','')"/>
 											<xsl:text>.*; // interfaces for this component</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 										</xsl:if>
 										<!-- brute force, can't reach up into X3D Object Model from within string tokenizer -->
 										<xsl:if test="//field[contains(@acceptableNodeTypes,'|')][contains(@acceptableNodeTypes,'X3DGroupingNode')][1]">
-											<xsl:text>import org.web3d.x3d.sai.Grouping.*;</xsl:text>
+											<xsl:text>// import org.web3d.x3d.sai.Grouping.*;</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 										</xsl:if>
 										<xsl:if test="//field[contains(@acceptableNodeTypes,'|')][contains(@acceptableNodeTypes,'X3DShapeNode')][1]">
-											<xsl:text>import org.web3d.x3d.sai.Shape.*;</xsl:text>
+											<xsl:text>// import org.web3d.x3d.sai.Shape.*;</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 										</xsl:if>
 										<xsl:if test="//field[contains(@acceptableNodeTypes,'|')][contains(@acceptableNodeTypes, 'Inline')][1]">
-											<xsl:text>import org.web3d.x3d.sai.Networking.*;</xsl:text>
+											<xsl:text>// import org.web3d.x3d.sai.Networking.*;</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 										</xsl:if>
 										
-										<xsl:text>import org.web3d.x3d.sai.</xsl:text>
+										<xsl:text>// import org.web3d.x3d.sai.</xsl:text>
 										<xsl:value-of select="translate($acceptableTypeComponent,'-','')"/>
 										<xsl:text>.*;</xsl:text>
 										<xsl:text>
@@ -1169,7 +1214,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 							<xsl:text>&#10;</xsl:text>
 						</xsl:when>
 						<xsl:when test="($name = 'IndexedFaceSet') or ($name = 'IndexedLineSet')">
-							<xsl:text>import org.web3d.x3d.jsail.NURBS.CoordinateDoubleObject;</xsl:text>
+							<xsl:text>import org.web3d.x3d.jsail.NURBS.CoordinateDouble;</xsl:text>
 							<xsl:text>&#10;</xsl:text>
 						</xsl:when>
 					</xsl:choose>
@@ -1177,7 +1222,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				
 				<!-- TODO incorrect?
 				<xsl:if test="($name = 'ROUTE')">
-					<xsl:text>import org.web3d.x3d.jsail.Scripting.*; // for ROUTEObject</xsl:text>
+					<xsl:text>import org.web3d.x3d.jsail.Scripting.*; // for ROUTE</xsl:text>
 					<xsl:text>&#10;</xsl:text>
 				</xsl:if> -->
 			</xsl:if>
@@ -1628,20 +1673,20 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				</xsl:when>
 				<xsl:when test="($name = 'IS')">
 					<xsl:text disable-output-escaping="yes"><![CDATA[
- * @see connectObject
- * @see ProtoDeclareObject
- * @see ProtoInterfaceObject
- * @see ProtoBodyObject
- * @see ProtoInstanceObject
+ * @see connect
+ * @see ProtoDeclare
+ * @see ProtoInterface
+ * @see ProtoBody
+ * @see ProtoInstance
 ]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="($name = 'connect')">
 					<xsl:text disable-output-escaping="yes"><![CDATA[
- * @see ISObject
- * @see ProtoDeclareObject
- * @see ProtoInterfaceObject
- * @see ProtoBodyObject
- * @see ProtoInstanceObject
+ * @see IS
+ * @see ProtoDeclare
+ * @see ProtoInterface
+ * @see ProtoBody
+ * @see ProtoInstance
 ]]></xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
@@ -1676,7 +1721,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 						  not($name = 'X3DLoaderDOM') and not($name = 'BlenderLauncher') and not($name = 'MeshLabLauncher') and not($name = 'CommandLine') and not($name = 'ConfigurationProperties') and not($name = 'CommentsBlock') and not(starts-with($name,'X3DConcrete')) and not(starts-with($name,'X3DUnifiedObjectModel'))">
 				<xsl:value-of select="$jsaiClassSuffix"/>
 			</xsl:if>
-			<xsl:if test="string-length($extends) > 0">
+			<xsl:if test="(string-length($extends) > 0) and not(ends-with(normalize-space($extends),'*/'))">
 				<xsl:text> extends </xsl:text>
 				<xsl:choose>
 					<xsl:when test="contains($extends,'.')">
@@ -1893,6 +1938,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									</xsl:choose>
 								</xsl:variable>
 								<xsl:variable name="normalizedMemberObjectName">
+                                    <xsl:variable name="saiPackagePath"> 
+                                        <xsl:call-template name="saiPackage">
+                                            <xsl:with-param name="nodeType" select="$memberObjectName"/>
+                                        </xsl:call-template>
+                                    </xsl:variable>
+                                    <xsl:if test="(string-length($saiPackagePath) > 0)">
+                                            <xsl:text>/* here 11a */</xsl:text>
+                                            <xsl:value-of select="$saiPackagePath"/>
+                                            <xsl:text>.</xsl:text>
+                                    </xsl:if>
 									<!-- translate name into legal Java form here to avoid xpath problems -->
 									<xsl:value-of select="translate($memberObjectName,'-','_')"/>
 									<xsl:if test="($isX3dStatement = 'true') and (@type='MFNode')">
@@ -1909,8 +1964,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                 <xsl:variable name="listType">
                                     <xsl:choose>
                                         <xsl:when test="true() and (@type = 'MFNode') and not((@name = 'X3D') or (@name = 'head') or (@name = 'meta') or (@name = 'unit') or (@name = 'component') or (@name = 'Scene'))">
-                                            <!-- TODO allow both allowed node types and ProtoInstanceObject in same list, carefully control node type in set methods. impacts multiple methods. -->
-                                            <xsl:text disable-output-escaping="yes"><![CDATA[ArrayList<X3DNode>]]></xsl:text>
+                                            <!-- TODO allow both allowed node types and ProtoInstance in same list, carefully control node type in set methods. impacts multiple methods. -->
+                                            <xsl:text disable-output-escaping="yes"><![CDATA[ArrayList<org.web3d.x3d.sai.Core.X3DNode>]]></xsl:text>
                                         </xsl:when>
                                         <xsl:otherwise>
                                             <xsl:value-of select="$javaType" disable-output-escaping="yes"/><!-- append to type name -->
@@ -1923,7 +1978,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                 <xsl:variable name="javaReferenceType"><!-- base type of ArrayList -->
                                     <xsl:choose>
                                         <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
-                                            <xsl:text>X3DNode</xsl:text>
+                                            <xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
                                         </xsl:when>
                                         <xsl:when test="contains($javaType,'&lt;')">
                                             <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
@@ -1970,7 +2025,23 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                             <xsl:text disable-output-escaping="yes"><![CDATA[>]]></xsl:text>
                                         </xsl:when>
                                         <xsl:otherwise>
-                                            <xsl:value-of select="$javaReferenceType"/>
+                                            <xsl:variable name="saiPackagePath"> 
+                                                <xsl:call-template name="saiPackage">
+                                                    <xsl:with-param name="nodeType" select="$javaReferenceType"/>
+                                                </xsl:call-template>
+                                            </xsl:variable>
+                                            <xsl:choose>
+                                                <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                                    <xsl:text>/* here 10a */</xsl:text>
+                                                    <xsl:value-of select="$saiPackagePath"/>
+                                                    <xsl:text>.</xsl:text>
+                                                    <xsl:value-of select="$javaReferenceType"/>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <xsl:text>/* here 10b, saiPackage not found */</xsl:text>
+                                                    <xsl:value-of select="$javaReferenceType"/>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
                                         </xsl:otherwise>
                                     </xsl:choose>
                                     <xsl:text> </xsl:text>
@@ -1985,7 +2056,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                         <xsl:text> acceptable node types: </xsl:text>
                                         <xsl:value-of select="@acceptableNodeTypes"/>
                                         <xsl:if test="not(@name = 'IS') and not(@name = 'field') and not(@name = 'fieldValue')">
-                                            <xsl:text> or ProtoInstanceObject</xsl:text>
+                                            <xsl:text> or ProtoInstance</xsl:text>
                                         </xsl:if>
                                         <!-- TODO is it possible to restrict these further when setting children? -->
 									</xsl:if>
@@ -2229,7 +2300,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								</xsl:when>
 								<xsl:when test="not($isInterface = 'true') and (($name = 'Script') or ($name = 'ShaderProgram'))">
 <!-- field added to X3DUOM
-	private ArrayList<fieldObject> fieldList = new ArrayList<>(); // instantiation
+	private ArrayList<field> fieldList = new ArrayList<>(); // instantiation
 -->
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	private String sourceCode;
@@ -2238,7 +2309,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								<xsl:when test="not($isInterface = 'true') and (($name = 'ComposedShader') or ($name = 'PackagedShader'))">
 <!-- field added to X3DUOM
 									<xsl:text disable-output-escaping="yes"><![CDATA[
-	private ArrayList<fieldObject> fieldList = new ArrayList<>(); // instantiation
+	private ArrayList<field> fieldList = new ArrayList<>(); // instantiation
 ]]></xsl:text>
 -->
 								</xsl:when>
@@ -2551,15 +2622,15 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 											<xsl:choose>
 												<xsl:when test="(../@simpleType = 'hanimJointNameValues')">
 													<!-- joint parents are joints -->
-													<xsl:text>HAnimJointObject</xsl:text>
+													<xsl:text>HAnimJoint</xsl:text>
 												</xsl:when>
 												<xsl:when test="(../@simpleType = 'hanimSegmentNameValues')">
 													<!-- segment parents are joints -->
-													<xsl:text>HAnimJointObject</xsl:text>
+													<xsl:text>HAnimJoint</xsl:text>
 												</xsl:when>
 												<xsl:when test="(../@simpleType = 'hanimFeaturePointNameValues')">
 													<!-- site parents are segments -->
-													<xsl:text>HAnimSegmentObject</xsl:text>
+													<xsl:text>HAnimSegment</xsl:text>
 												</xsl:when>
 												<xsl:otherwise>
 													<xsl:value-of select="../@simpleType"/>
@@ -2890,7 +2961,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			<xsl:text><![CDATA[</i>
 	 * @return name of this element
 	 */
-	@Override
+	/* @Override */
 	public final String getElementName()
 	{
 		return NAME;
@@ -2913,7 +2984,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			<xsl:text><![CDATA[</i>
 	 * @return X3D component for this element
 	 */
-	@Override
+	/* @Override */
 	public final String getComponent()
 	{
 		return COMPONENT;
@@ -2934,7 +3005,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			<xsl:text><![CDATA[</i>
 	 * @return default X3D component level for this element
 	 */
-	@Override
+	/* @Override */
 	public final int getComponentLevel()
 	{
 		return LEVEL;
@@ -3031,13 +3102,30 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                         <xsl:text>*/</xsl:text><!-- end javadoc -->
                                         <xsl:text>&#10;</xsl:text>
                                         <xsl:text>	public static final </xsl:text>
-                                        <xsl:value-of disable-output-escaping="yes">
+                                        <xsl:variable name="javaType">
                                             <!-- can include collections, must be escaped -->
                                             <xsl:call-template name="javaType">
                                                 <xsl:with-param name="x3dType" select="@type"/>
                                                 <xsl:with-param name="isInterface" select="$isInterface"/>
                                             </xsl:call-template>
-                                        </xsl:value-of>
+                                        </xsl:variable>
+                                        <xsl:variable name="saiPackagePath"> 
+                                            <xsl:call-template name="saiPackage">
+                                                <xsl:with-param name="nodeType" select="$javaType"/>
+                                            </xsl:call-template>
+                                        </xsl:variable>
+                                        <xsl:choose>
+                                            <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                                <xsl:text>/* here 11a */</xsl:text>
+                                                <xsl:value-of select="$saiPackagePath"/>
+                                                <xsl:text>.</xsl:text>
+                                                <xsl:value-of select="$javaType" disable-output-escaping="yes"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:text>/* here 11b, saiPackage not found */</xsl:text>
+                                                <xsl:value-of select="$javaType" disable-output-escaping="yes"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
                                         <xsl:text> </xsl:text>
                                         <xsl:value-of select="upper-case($fieldName)"/>
                                         <xsl:text>_DEFAULT_VALUE</xsl:text>
@@ -3079,7 +3167,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 * @see ConfigurationProperties#ERROR_UNKNOWN_FIELD_TYPE
 	 * @return X3D type (SFvec3f etc.), otherwise ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE if not recognized
 	 */
-	@Override		
+	/* @Override */		
 	public String getFieldType(String fieldName)
 	{
 		String result;
@@ -3173,7 +3261,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 * @see ConfigurationProperties#ERROR_UNKNOWN_FIELD_ACCESSTYPE
 	 * @return X3D accessType (inputOnly etc.), otherwise ConfigurationProperties.ERROR_UNKNOWN_FIELD_ACCESSTYPE if not recognized
 	 */
-	@Override
+	/* @Override */
 	public String getAccessType(String fieldName)
 	{
 		String result; // set by following checks
@@ -3275,7 +3363,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 								<xsl:text>
      * @return default containerField value            
 	 */
-    @Override
+    /* @Override */
     public final String getContainerFieldDefault()
     {
         return containerField_DEFAULT_VALUE;
@@ -3818,8 +3906,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	}
 /**
  * Check whether fileName is satisfactory NMTOKEN, ignoring prior path (if any).
- * @see SFStringObject#isNMTOKEN(String)
- * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+ * @see SFString#isNMTOKEN(String)
+ * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
  * @param fileName name of file to check
  * @return whether fileName is satisfactory NMTOKEN
  */
@@ -3831,14 +3919,14 @@ public static boolean isFileNameNMTOKEN(String fileName)
     if (strippedFileName.contains("\\"))
         strippedFileName = strippedFileName.substring(strippedFileName.lastIndexOf("\\") + 1);
 
-    return SFStringObject.isNMTOKEN(strippedFileName);
+    return SFString.isNMTOKEN(strippedFileName);
 }
 /**
  * Check whether fileName ending in .x3d meets X3D naming conventions, ignoring prior path (if any).
  * Not observing these conventions can cause errors when converting to a Java file name.
  * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#FILE_EXTENSION_X3D
- * @see SFStringObject#isNMTOKEN(String)
- * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+ * @see SFString#isNMTOKEN(String)
+ * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
  * @param fileName name of file to check
  * @return whether fileName ending in .x3d is satisfactory NMTOKEN
  */
@@ -3863,15 +3951,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
          fileName.toUpperCase().contains(".TEMP")    ||
          fileName.toUpperCase().contains("ROUNDTRIP"))
          return true;
-    else return SFStringObject.meetsX3dInteroperabilityNamingConventions(strippedFileName);
+    else return SFString.meetsX3dInteroperabilityNamingConventions(strippedFileName);
 }
 	/**
 	 * Serialize scene graph using <i>toStringX3D()</i> to create a new XML-encoding X3D file with extension <i>x3d</i> or <i>xml</i>.
 	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringX3D()
 	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringXML()
 	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileXML(String)
-	 * @see SFStringObject#isNMTOKEN(String)
-	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+	 * @see SFString#isNMTOKEN(String)
+	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
 	 * @param fileName name of file to create and save, can include local directory path, must end with .x3d
 	 * @return File containing result (if operation succeeds), null otherwise
@@ -3881,12 +3969,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new X3DException("toFileX3D(fileName) fileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("toFileX3D(fileName) fileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_X3D + "\"");
 		}
 		if (!fileName.endsWith(FILE_EXTENSION_X3D) && !fileName.endsWith(FILE_EXTENSION_XML))
 		{
-			throw new X3DException("fileName " + fileName + " does not end with extension " +
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with extension " +
                             "\"" + FILE_EXTENSION_X3D + "\" or " +
                             "\"" + FILE_EXTENSION_XML + "\"");
 		}
@@ -3944,14 +4032,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException exception)
 		{
 			exception.printStackTrace();
-			throw new X3DException("IOException for fileName " + fileName + ", unable to save file: " + exception);
+			throw new org.web3d.x3d.sai.X3DException("IOException for fileName " + fileName + ", unable to save file: " + exception);
 		}
 	}
 	/**
 	 * Serialize scene graph using <i>toStringClassicVRML()</i> to create a new X3D file with extension <i>x3dv</i>.
 	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringClassicVRML()
-	 * @see SFStringObject#isNMTOKEN(String)
-	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+	 * @see SFString#isNMTOKEN(String)
+	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
 	 * @param fileName name of file to create and save, can include local directory path, must end with .x3dv
 	 * @return File containing result (if operation succeeds), null otherwise
@@ -3961,12 +4049,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new X3DException("toFileClassicVRML(fileName) fileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("toFileClassicVRML(fileName) fileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_CLASSICVRML + "\"");
 		}
 		if (!fileName.endsWith(FILE_EXTENSION_CLASSICVRML))
 		{
-			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_CLASSICVRML + "\"");
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_CLASSICVRML + "\"");
 		}
 		if      (!fileNameMeetsX3dNamingConventions(fileName))
             System.out.println ("Warning: " + fileName + " does not meet suggested X3D naming conventions, continuing...");
@@ -4022,14 +4110,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException exception)
 		{
 			exception.printStackTrace();
-			throw new X3DException("IOException for fileName " + fileName + ", unable to save file: " + exception);
+			throw new org.web3d.x3d.sai.X3DException("IOException for fileName " + fileName + ", unable to save file: " + exception);
 		}
 	}
 	/**
 	 * Serialize scene graph using <i>toStringVRML97()</i> to create a new X3D file with extension <i>wrl</i>.
 	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toStringVRML97()
-	 * @see SFStringObject#isNMTOKEN(String)
-	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+	 * @see SFString#isNMTOKEN(String)
+	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
 	 * @param fileName name of file to create and save, can include local directory path, must end with .wrl
 	 * @return File containing result (if operation succeeds), null otherwise
@@ -4039,12 +4127,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new X3DException("toFileVRML97(fileName) fileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("toFileVRML97(fileName) fileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_VRML97 + "\"");
 		}
 		if (!fileName.endsWith(FILE_EXTENSION_VRML97))
 		{
-			throw new X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_VRML97 + "\"");
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with extension \"" + FILE_EXTENSION_VRML97 + "\"");
 		}
 		if      (!fileNameMeetsX3dNamingConventions(fileName))
             System.out.println ("Warning: " + fileName + " does not meet suggested X3D naming conventions, continuing...");
@@ -4100,7 +4188,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException exception)
 		{
 			exception.printStackTrace();
-			throw new X3DException("IOException for fileName " + fileName + ", unable to save file: " + exception);
+			throw new org.web3d.x3d.sai.X3DException("IOException for fileName " + fileName + ", unable to save file: " + exception);
 		}
 	}
 	/**
@@ -4136,8 +4224,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileX3DOM(String)
 	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileX_ITE(String,String)
 	 * @see X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[#toFileCobweb(String,String)
-	 * @see SFStringObject#isNMTOKEN(String)
-	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+	 * @see SFString#isNMTOKEN(String)
+	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see ConfigurationProperties#X3DJSAIL_JAR_RELEASE_VERSIONS
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
 	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
@@ -4162,21 +4250,21 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         String expectedFileNameExtension = "";
 		if ((stylesheetName == null || stylesheetName.isEmpty()))
 		{
-			throw new X3DException("toFileStylesheetConversion(stylesheetName, fileName) stylesheetName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("toFileStylesheetConversion(stylesheetName, fileName) stylesheetName not provided;" +
 				" (see ConfigurationProperties for allowed choices)");
 		}
         expectedFileNameExtension = ConfigurationProperties.getExpectedOutputFileExtension(stylesheetName);
 
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new X3DException("toFileStylesheetConversion(stylesheetName, fileName) fileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("toFileStylesheetConversion(stylesheetName, fileName) fileName not provided;" +
 				" (see ConfigurationProperties for allowed choices)");
 		}
 		if (!((fileName.endsWith(expectedFileNameExtension)) || // some variations allowed
               (fileName.endsWith(FILE_EXTENSION_XHTML)      && expectedFileNameExtension.equals(FILE_EXTENSION_HTML)) ||
               (fileName.endsWith(FILE_EXTENSION_JAVASCRIPT) && expectedFileNameExtension.equals(FILE_EXTENSION_JSON))))
 		{
-			throw new X3DException("fileName " + fileName + " does not end with expected extension \"" + expectedFileNameExtension + "\"");
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with expected extension \"" + expectedFileNameExtension + "\"");
 		}
         // no need to check fileName for suggested X3D naming conventions
         if (!isFileNameNMTOKEN(fileName)) // less strict
@@ -4230,7 +4318,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException exception)
 		{
-			throw new X3DException("IOException when creating intermediateX3DFilePath " + intermediateX3DFilePath + 
+			throw new org.web3d.x3d.sai.X3DException("IOException when creating intermediateX3DFilePath " + intermediateX3DFilePath + 
 				", unable to save file: " + exception);
 		}
                 
@@ -4370,14 +4458,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		}
 		catch (IOException | ParserConfigurationException | TransformerException | SAXException exception)
 		{
-			throw new X3DException(errorNotice + exception.toString() + " exception when transforming and creating fileName " + outputFilePath + 
+			throw new org.web3d.x3d.sai.X3DException(errorNotice + exception.toString() + " exception when transforming and creating fileName " + outputFilePath + 
 				", unable to save result: " + exception);
 		}
 		catch (SaxonApiException saxonApiException)
 		{
 //			Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, saxonApiException);
 										
-			throw new X3DException(errorNotice + "SaxonApiException when transforming and creating fileName " + outputFilePath + 
+			throw new org.web3d.x3d.sai.X3DException(errorNotice + "SaxonApiException when transforming and creating fileName " + outputFilePath + 
 				", unable to save result: " + saxonApiException);
 		}
 		return outputFilePath.toFile(); // success
@@ -4388,14 +4476,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
      * Also create SVG output file (with same base name) for Extrusion crossSection, if found.
 	 * @see ConfigurationProperties#STYLESHEET_HTML_DOCUMENTATION
 	 * @see ConfigurationProperties#STYLESHEET_ExtrusionCrossSectionSVG
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toFileX3D(String)
-	 * @see X3DObject#toFileJava(String)
-	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFilePython(String)
-	 * @see X3DObject#toFileX3DOM(String)
-	 * @see X3DObject#toFileX_ITE(String,String)
-	 * @see X3DObject#toFileCobweb(String,String)
+	 * @see X3D#toStringX3D()
+	 * @see X3D#toFileX3D(String)
+	 * @see X3D#toFileJava(String)
+	 * @see X3D#toFileJSON(String)
+	 * @see X3D#toFilePython(String)
+	 * @see X3D#toFileX3DOM(String)
+	 * @see X3D#toFileX_ITE(String,String)
+	 * @see X3D#toFileCobweb(String,String)
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
 	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
@@ -4484,7 +4572,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         	errorNotice +=             "filePath=" + filePath + "\n";
         }
         // .class or getClass().getResourceAsStream looks within each classpath .jar for stylesheetPath
-        InputStream fileInputStream = X3DObject.class.getResourceAsStream(filePath);
+        InputStream fileInputStream = X3D.class.getResourceAsStream(filePath);
         if (fileInputStream == null)
         {
         	errorNotice += "File not found in " + jarPath + ": " + filePath + ", ";
@@ -4547,7 +4635,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 	/**
 	 * Serialize scene graph using X3dToJson.xslt stylesheet to create a new JSON-encoding string.
-	 * @see X3DObject#toFileJSON(String)
+	 * @see X3D#toFileJSON(String)
 	 * @see ConfigurationProperties#isNormalizeCommentWhitespace()
 	 * @see <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding">X3D JSON Encoding</a>
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html">X3D to JSON Stylesheet Converter</a>
@@ -4573,14 +4661,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException ioe)
 		{
 			ioe.printStackTrace();
-			throw new X3DException("IOException when converting toStringJSON(): " + ioe);
+			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringJSON(): " + ioe);
 		}
 		return "";
 	}
 
 	/**
 	 * Serialize scene graph using X3dToPython.xslt stylesheet to create a new Python-language string.
-	 * @see X3DObject#toFilePython(String)
+	 * @see X3D#toFilePython(String)
 	 * @see ConfigurationProperties#isNormalizeCommentWhitespace()
 	 * @see <a href="https://www.python.org">Python.org</a>
 	 * @see <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python (programming language)</a>
@@ -4607,14 +4695,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException ioe)
 		{
 			ioe.printStackTrace();
-			throw new X3DException("IOException when converting toStringPython(): " + ioe);
+			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringPython(): " + ioe);
 		}
 		return "";
 	}
 
 	/**
 	 * Serialize scene graph using toFileJava() to create new Java source as a string.
-	 * @see X3DObject#toFileJava(String)
+	 * @see X3D#toFileJava(String)
 	 * @return String containing result (if operation succeeds), empty otherwise
 	 */
 	public String toStringJava()
@@ -4643,7 +4731,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 	/**
 	 * Serialize scene graph using NodeSerializer.js to create a JavaScript string.
-	 * @see X3DObject#toFileJavaScript(String)
+	 * @see X3D#toFileJavaScript(String)
 	 * @return String containing result (if operation succeeds), empty otherwise
 	 */
 	public String toStringJavaScript()
@@ -4673,9 +4761,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Serialize scene graph using NodeSerializer.js to create a JavaScript file.
 	 * @author John Carlson
-	 * @see X3DObject#toStringJavaScript()
-	 * @see SFStringObject#isNMTOKEN(String)
-	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+	 * @see X3D#toStringJavaScript()
+	 * @see SFString#isNMTOKEN(String)
+	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @param fileName name of file to create and save, can include local directory path, must end with .js
 	 * @return File containing result (if operation succeeds), empty otherwise
 	 */
@@ -4688,12 +4776,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new X3DException("toFileJavaScript(fileName, includeWeb3dLicense) fileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("toFileJavaScript(fileName, includeWeb3dLicense) fileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_X3D + "\"");
 		}
 		if (!fileName.endsWith(FILE_EXTENSION_JAVASCRIPT))
 		{
-			throw new X3DException("fileName " + fileName + " does not end with extension " +
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with extension " +
                             "\"" + FILE_EXTENSION_JAVASCRIPT + "\"");
 		}
 		Path outputFilePath = Paths.get(fileName);
@@ -4724,9 +4812,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 	/**
 	 * Serialize scene graph using STYLESHEET_HTML_DOCUMENTATION to create a new X3DOM html page as a string.
-	 * @see X3DObject#toFileHtmlDocumentation(String)
-	 * @see X3DObject#FILE_EXTENSION_HTML
-	 * @see X3DObject#FILE_EXTENSION_XHTML
+	 * @see X3D#toFileHtmlDocumentation(String)
+	 * @see X3D#FILE_EXTENSION_HTML
+	 * @see X3D#FILE_EXTENSION_XHTML
 	 * @see ConfigurationProperties#STYLESHEET_HTML_DOCUMENTATION
 	 * @see <a href="https://www.x3dom.org" target="_blank">X3DOM open-source X3D player</a>
 	 * @return String containing result (if operation succeeds), empty otherwise
@@ -4751,15 +4839,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException ioe)
 		{
 			ioe.printStackTrace();
-			throw new X3DException("IOException when converting toHtmlDocumentation(): " + ioe);
+			throw new org.web3d.x3d.sai.X3DException("IOException when converting toHtmlDocumentation(): " + ioe);
 		}
 		return "";
 	}
 
 	/**
 	 * Produce model meta information as `name`=`value` pairs, providing markdown output as a string.
-	 * @see X3DObject#toFileModelMetaMarkdown(String)
-	 * @see X3DObject#FILE_EXTENSION_MARKDOWN
+	 * @see X3D#toFileModelMetaMarkdown(String)
+	 * @see X3D#FILE_EXTENSION_MARKDOWN
 	 * @see ConfigurationProperties#STYLESHEET_MODEL_META_TO_MARKDOWN
 	 * @return String containing result (if operation succeeds), empty otherwise
 	 */
@@ -4783,15 +4871,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException ioe)
 		{
 			ioe.printStackTrace();
-			throw new X3DException("IOException when converting toStringModelMetaMarkdown(): " + ioe);
+			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringModelMetaMarkdown(): " + ioe);
 		}
 		return "";
 	}
 
 	/**
 	 * Produce alternate cleaned-up X3D scene using STYLESHEET_X3DTIDY, providing output as a string.
-	 * @see X3DObject#toFileX3dTidy(String)
-	 * @see X3DObject#FILE_EXTENSION_X3D
+	 * @see X3D#toFileX3dTidy(String)
+	 * @see X3D#FILE_EXTENSION_X3D
 	 * @see ConfigurationProperties#STYLESHEET_X3DTIDY
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D Tidy for Scene Cleanup, Corrections and Modifications</a>
 	 * @return String containing result (if operation succeeds), empty otherwise
@@ -4816,16 +4904,16 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException ioe)
 		{
 			ioe.printStackTrace();
-			throw new X3DException("IOException when converting toStringX3dTidy(): " + ioe);
+			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringX3dTidy(): " + ioe);
 		}
 		return "";
 	}
 
 	/**
 	 * Serialize scene graph using STYLESHEET_X3DOM to create a new X3DOM html page as a string.
-	 * @see X3DObject#toFileX3DOM(String)
-	 * @see X3DObject#FILE_EXTENSION_HTML
-	 * @see X3DObject#FILE_EXTENSION_XHTML
+	 * @see X3D#toFileX3DOM(String)
+	 * @see X3D#FILE_EXTENSION_HTML
+	 * @see X3D#FILE_EXTENSION_XHTML
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
 	 * @see <a href="https://www.x3dom.org" target="_blank">X3DOM open-source X3D player</a>
 	 * @return String containing result (if operation succeeds), empty otherwise
@@ -4850,17 +4938,17 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException ioe)
 		{
 			ioe.printStackTrace();
-			throw new X3DException("IOException when converting toStringX3DOM(): " + ioe);
+			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringX3DOM(): " + ioe);
 		}
 		return "";
 	}
 
 	/**
 	 * Serialize scene graph using STYLESHEET_X3DOM (with appropriate parameters) to create a new X_ITE html page as a string.
-	 * @see X3DObject#toFileX_ITE(String,String)
+	 * @see X3D#toFileX_ITE(String,String)
 	 * @see <a href="http://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
-	 * @see X3DObject#FILE_EXTENSION_HTML
-	 * @see X3DObject#FILE_EXTENSION_XHTML
+	 * @see X3D#FILE_EXTENSION_HTML
+	 * @see X3D#FILE_EXTENSION_XHTML
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
 	 * @see ConfigurationProperties#STYLESHEET_X_ITE
 	 * @param sourceSceneName X3D file to load and view
@@ -4886,23 +4974,23 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		catch (IOException ioe)
 		{
 			ioe.printStackTrace();
-			throw new X3DException("IOException when converting toStringX_ITE(): " + ioe);
+			throw new org.web3d.x3d.sai.X3DException("IOException when converting toStringX_ITE(): " + ioe);
 		}
 		return "";
 	}
 
 	/**
 	 * Serialize scene graph using X3dToJson.xslt stylesheet to create a new JSON-encoding X3D file with extension <i>json</i>.
-	 * @see X3DObject#toStringJSON()
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toFileX3D(String)
-	 * @see X3DObject#toFileJava(String)
-	 * @see X3DObject#toFileHtmlDocumentation(String)
-	 * @see X3DObject#toFileX_ITE(String,String)
-	 * @see X3DObject#toFileCobweb(String,String)
-	 * @see X3DObject#toFileX3DOM(String)
-	 * @see X3DObject#FILE_EXTENSION_JSON
-	 * @see X3DObject#FILE_EXTENSION_JAVASCRIPT
+	 * @see X3D#toStringJSON()
+	 * @see X3D#toStringX3D()
+	 * @see X3D#toFileX3D(String)
+	 * @see X3D#toFileJava(String)
+	 * @see X3D#toFileHtmlDocumentation(String)
+	 * @see X3D#toFileX_ITE(String,String)
+	 * @see X3D#toFileCobweb(String,String)
+	 * @see X3D#toFileX3DOM(String)
+	 * @see X3D#FILE_EXTENSION_JSON
+	 * @see X3D#FILE_EXTENSION_JAVASCRIPT
 	 * @see ConfigurationProperties#STYLESHEET_JSON
 	 * @see ConfigurationProperties#isNormalizeCommentWhitespace()
 	 * @see <a href="../../../../../../lib/stylesheets/X3dToJson.xslt" target="_blank">X3dToJson.xslt</a>
@@ -4924,16 +5012,16 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	}
 	/**
 	 * Serialize scene graph using X3dToPython.xslt stylesheet to create a new Python-language X3D file with extension <i>py</i>.
-	 * @see X3DObject#toStringPython()
-	 * @see X3DObject#toStringJSON()
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toFileX3D(String)
-	 * @see X3DObject#toFilePython(String)
-	 * @see X3DObject#toFileHtmlDocumentation(String)
-	 * @see X3DObject#toFileX_ITE(String,String)
-	 * @see X3DObject#toFileCobweb(String,String)
-	 * @see X3DObject#toFileX3DOM(String)
-	 * @see X3DObject#FILE_EXTENSION_PYTHON
+	 * @see X3D#toStringPython()
+	 * @see X3D#toStringJSON()
+	 * @see X3D#toStringX3D()
+	 * @see X3D#toFileX3D(String)
+	 * @see X3D#toFilePython(String)
+	 * @see X3D#toFileHtmlDocumentation(String)
+	 * @see X3D#toFileX_ITE(String,String)
+	 * @see X3D#toFileCobweb(String,String)
+	 * @see X3D#toFileX3DOM(String)
+	 * @see X3D#FILE_EXTENSION_PYTHON
 	 * @see ConfigurationProperties#STYLESHEET_PYTHON
 	 * @see ConfigurationProperties#isNormalizeCommentWhitespace()
 	 * @see <a href="../../../../../../lib/stylesheets/X3dToPython.xslt" target="_blank">X3dToPython.xslt</a>
@@ -4953,7 +5041,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	}
 	/**
 	 * Serialize scene graph using X3dToJava.xslt stylesheet to create a new Java source file with extension <i>java</i>, no default license included.
-	 * @see X3DObject#toFileJava(String,boolean)
+	 * @see X3D#toFileJava(String,boolean)
 	 * @see <a href="../../../../../../lib/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
 	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.java" target="_blank">examples/HelloWorldProgramOutput.java</a>
 	 * @param fileName name of file to create and save, can include local directory path, must end with .xhtml (preferred) or .html
@@ -4965,16 +5053,16 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	}
 	/**
 	 * Serialize scene graph using X3dToJava.xslt stylesheet to create a new Java source file with extension <i>java</i>.
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toFileX3D(String)
-	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFilePython(String)
-	 * @see X3DObject#toFileHtmlDocumentation(String)
-	 * @see X3DObject#toFileX_ITE(String,String)
-	 * @see X3DObject#toFileCobweb(String,String)
-	 * @see X3DObject#toFileX3DOM(String)
-	 * @see X3DObject#FILE_EXTENSION_JSON
-	 * @see X3DObject#FILE_EXTENSION_JAVASCRIPT
+	 * @see X3D#toStringX3D()
+	 * @see X3D#toFileX3D(String)
+	 * @see X3D#toFileJSON(String)
+	 * @see X3D#toFilePython(String)
+	 * @see X3D#toFileHtmlDocumentation(String)
+	 * @see X3D#toFileX_ITE(String,String)
+	 * @see X3D#toFileCobweb(String,String)
+	 * @see X3D#toFileX3DOM(String)
+	 * @see X3D#FILE_EXTENSION_JSON
+	 * @see X3D#FILE_EXTENSION_JAVASCRIPT
 	 * @see ConfigurationProperties#STYLESHEET_JSON
 	 * @see <a href="../../../../../../lib/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
 	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.java" target="_blank">examples/HelloWorldProgramOutput.java</a>
@@ -4994,12 +5082,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new X3DException("toFileJava(fileName, includeWeb3dLicense) fileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("toFileJava(fileName, includeWeb3dLicense) fileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_X3D + "\"");
 		}
 		if (!fileName.endsWith(FILE_EXTENSION_JAVA))
 		{
-			throw new X3DException("fileName " + fileName + " does not end with extension " +
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with extension " +
                             "\"" + FILE_EXTENSION_JAVA + "\"");
 		}
 		Path outputFilePath = Paths.get(fileName);
@@ -5033,9 +5121,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         
         /* Set whether to include subdirectory paths when creating markdown (default is true)
          * @param value whether to omit subdirectory paths when creating markdown (default is true)
-	 * @see X3DObject#toFileModelMetaMarkdown(String)
-	 * @see X3DObject#toStringModelMetaMarkdown(String)
-	 * @see X3DObject#FILE_EXTENSION_MARKDOWN
+	 * @see X3D#toFileModelMetaMarkdown(String)
+	 * @see X3D#toStringModelMetaMarkdown(String)
+	 * @see X3D#FILE_EXTENSION_MARKDOWN
 	 * @see ConfigurationProperties#STYLESHEET_MODEL_META_TO_MARKDOWN
          */
         public void setIncludeSubdirectoryPaths (boolean value)
@@ -5045,17 +5133,17 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 	/**
 	 * Create model meta information as `name`=`value` pairs, providing markdown output as an output file having extension <i>.md</i>.
-	 * @see X3DObject#toStringModelMetaMarkdown()
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toFileX3D(String)
-	 * @see X3DObject#toFileJava(String)
-	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFilePython(String)
-	 * @see X3DObject#toFileHtmlDocumentation(String)
-	 * @see X3DObject#toFileX_ITE(String,String)
-	 * @see X3DObject#toFileCobweb(String,String)
-	 * @see SFStringObject#isNMTOKEN(String)
-	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+	 * @see X3D#toStringModelMetaMarkdown()
+	 * @see X3D#toStringX3D()
+	 * @see X3D#toFileX3D(String)
+	 * @see X3D#toFileJava(String)
+	 * @see X3D#toFileJSON(String)
+	 * @see X3D#toFilePython(String)
+	 * @see X3D#toFileHtmlDocumentation(String)
+	 * @see X3D#toFileX_ITE(String,String)
+	 * @see X3D#toFileCobweb(String,String)
+	 * @see SFString#isNMTOKEN(String)
+	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see ConfigurationProperties#STYLESHEET_MODEL_META_TO_MARKDOWN
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D Tidy for Scene Cleanup, Corrections and Modifications</a>
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
@@ -5071,12 +5159,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new X3DException("toFileX3dTidy(fileName) fileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("toFileX3dTidy(fileName) fileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_MARKDOWN + "\"");
 		}
 		if (!fileName.endsWith(FILE_EXTENSION_MARKDOWN))
 		{
-			throw new X3DException("fileName " + fileName + " does not end with extension " +
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with extension " +
                             "\"" + FILE_EXTENSION_MARKDOWN + "\"");
 		}
 		if      (!fileNameMeetsX3dNamingConventions(fileName))
@@ -5094,17 +5182,17 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 	/**
 	 * Create alternate cleaned-up X3D scene using STYLESHEET_X3DTIDY within an output file having extension <i>.x3d</i>.
-	 * @see X3DObject#toStringX3dTidy()
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toFileX3D(String)
-	 * @see X3DObject#toFileJava(String)
-	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFilePython(String)
-	 * @see X3DObject#toFileHtmlDocumentation(String)
-	 * @see X3DObject#toFileX_ITE(String,String)
-	 * @see X3DObject#toFileCobweb(String,String)
-	 * @see SFStringObject#isNMTOKEN(String)
-	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+	 * @see X3D#toStringX3dTidy()
+	 * @see X3D#toStringX3D()
+	 * @see X3D#toFileX3D(String)
+	 * @see X3D#toFileJava(String)
+	 * @see X3D#toFileJSON(String)
+	 * @see X3D#toFilePython(String)
+	 * @see X3D#toFileHtmlDocumentation(String)
+	 * @see X3D#toFileX_ITE(String,String)
+	 * @see X3D#toFileCobweb(String,String)
+	 * @see SFString#isNMTOKEN(String)
+	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see ConfigurationProperties#STYLESHEET_X3DTIDY
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D Tidy for Scene Cleanup, Corrections and Modifications</a>
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
@@ -5120,12 +5208,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new X3DException("toFileX3dTidy(fileName) fileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("toFileX3dTidy(fileName) fileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_X3D + "\"");
 		}
 		if (!fileName.endsWith(FILE_EXTENSION_X3D))
 		{
-			throw new X3DException("fileName " + fileName + " does not end with extension " +
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with extension " +
                             "\"" + FILE_EXTENSION_X3D + "\"");
 		}
 		if      (!fileNameMeetsX3dNamingConventions(fileName))
@@ -5144,16 +5232,16 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Create displayable scene page rendered with X3DOM, using STYLESHEET_X3DOM by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
 	 * @see <a href="https://www.x3dom.org" target="_blank">X3DOM open-source X3D player</a>
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toFileX3D(String)
-	 * @see X3DObject#toFileJava(String)
-	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFilePython(String)
-	 * @see X3DObject#toFileHtmlDocumentation(String)
-	 * @see X3DObject#toFileX_ITE(String,String)
-	 * @see X3DObject#toFileCobweb(String,String)
-	 * @see SFStringObject#isNMTOKEN(String)
-	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+	 * @see X3D#toStringX3D()
+	 * @see X3D#toFileX3D(String)
+	 * @see X3D#toFileJava(String)
+	 * @see X3D#toFileJSON(String)
+	 * @see X3D#toFilePython(String)
+	 * @see X3D#toFileHtmlDocumentation(String)
+	 * @see X3D#toFileX_ITE(String,String)
+	 * @see X3D#toFileCobweb(String,String)
+	 * @see SFString#isNMTOKEN(String)
+	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
 	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
@@ -5168,12 +5256,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String errorNotice = new String();
 		if ((fileName == null || fileName.isEmpty()))
 		{
-			throw new X3DException("toFileX3DOM(fileName) fileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("toFileX3DOM(fileName) fileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_HTML + "\" or \"" + FILE_EXTENSION_XHTML + "\"");
 		}
 		if (!fileName.endsWith(FILE_EXTENSION_HTML) && !fileName.endsWith(FILE_EXTENSION_XHTML))
 		{
-			throw new X3DException("fileName " + fileName + " does not end with extension " +
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with extension " +
                             "\"" + FILE_EXTENSION_HTML + "\" or \"" + FILE_EXTENSION_XHTML + "\"");
 		}
 		if      (!fileNameMeetsX3dNamingConventions(fileName))
@@ -5192,15 +5280,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Create displayable scene page rendered with X_ITE (formerly Cobweb) using STYLESHEET_X3DOM and special settings, by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
 	 * @see <a href="http://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toFileX3D(String)
-	 * @see X3DObject#toFileJava(String)
-	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFilePython(String)
-	 * @see X3DObject#toFileHtmlDocumentation(String)
-	 * @see X3DObject#toFileX3DOM(String)
-	 * @see X3DObject#toFileX_ITE(String,String)
-	 * @see X3DObject#toFileCobweb(String,String)
+	 * @see X3D#toStringX3D()
+	 * @see X3D#toFileX3D(String)
+	 * @see X3D#toFileJava(String)
+	 * @see X3D#toFileJSON(String)
+	 * @see X3D#toFilePython(String)
+	 * @see X3D#toFileHtmlDocumentation(String)
+	 * @see X3D#toFileX3DOM(String)
+	 * @see X3D#toFileX_ITE(String,String)
+	 * @see X3D#toFileCobweb(String,String)
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
 	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
@@ -5224,14 +5312,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Create displayable scene page rendered with X_ITE (formerly Cobweb) using STYLESHEET_X3DOM and special settings, by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
 	 * @see <a href="http://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
-	 * @see X3DObject#toStringX3D()
-	 * @see X3DObject#toFileX3D(String)
-	 * @see X3DObject#toFileJava(String)
-	 * @see X3DObject#toFileJSON(String)
-	 * @see X3DObject#toFilePython(String)
-	 * @see X3DObject#toFileHtmlDocumentation(String)
-	 * @see X3DObject#toFileX3DOM(String)
-	 * @see X3DObject#toFileX_ITE(String,String)
+	 * @see X3D#toStringX3D()
+	 * @see X3D#toFileX3D(String)
+	 * @see X3D#toFileJava(String)
+	 * @see X3D#toFileJSON(String)
+	 * @see X3D#toFilePython(String)
+	 * @see X3D#toFileHtmlDocumentation(String)
+	 * @see X3D#toFileX3DOM(String)
+	 * @see X3D#toFileX_ITE(String,String)
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
 	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
 	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
@@ -5250,7 +5338,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									
 	/**
 	 * Load new model from a zip file, using unzip to extract the model plus any associated files into the same path location.
-	 * @see X3DObject#fromFileZIP(String,String,String)
+	 * @see X3D#fromFileZIP(String,String,String)
 	 * @param zipFileName name of zip file to load, can include local directory path, must end with .zip
 	 * @param outputFileName name of output file to save, can include local directory path, must end with .x3d or .xml
 	 * @return boolean if operation succeeds in creating this X3DObject, false otherwise
@@ -5268,13 +5356,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * <i>Warning:</i> this method overwrites any previously existing file versions when decompressing.
 	 * @see <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">Wikipedia: ZIP file format</a>
 	 * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/package-summary.html">Java Package java.util.zip for ZIP and GZIP file formats</a>
-	 * @see X3DObject#FILE_EXTENSION_EXI
-	 * @see X3DObject#FILE_EXTENSION_GZIP
-	 * @see X3DObject#FILE_EXTENSION_ZIP
-	 * @see X3DObject#fromFileEXI(String)
-	 * @see X3DObject#fromFileGZIP(String)
-	 * @see X3DObject#toFileZIP(String,String)
-	 * @see X3DObject#fromFileZIP(String,String)
+	 * @see X3D#FILE_EXTENSION_EXI
+	 * @see X3D#FILE_EXTENSION_GZIP
+	 * @see X3D#FILE_EXTENSION_ZIP
+	 * @see X3D#fromFileEXI(String)
+	 * @see X3D#fromFileGZIP(String)
+	 * @see X3D#toFileZIP(String,String)
+	 * @see X3D#fromFileZIP(String,String)
 	 * @param zipFileName name of zip file to load, can include local directory path, must end with .zip
 	 * @param outputFileName name of output file to save, can include local directory path, must end with .x3d or .xml
 	 * @param modelFileName name of model file to load, can include local directory path, must end with .x3d
@@ -5287,7 +5375,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String errorNotice = new String();
 		if ((zipFileName == null || zipFileName.isEmpty()))
 		{
-			throw new X3DException("fromFileZIP(zipFileName, modelFileName) zipFileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("fromFileZIP(zipFileName, modelFileName) zipFileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_ZIP + "\"");
 		}
 		if (!zipFileName.endsWith(FILE_EXTENSION_ZIP))
@@ -5392,12 +5480,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * <i>Warning:</i> this method overwrites any previously existing file versions when decompressing.
 	 * @see <a href="https://en.wikipedia.org/wiki/Gzip">Wikipedia: GZIP file format</a>
 	 * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/package-summary.html">Java Package java.util.zip for ZIP and GZIP file formats</a>
-	 * @see X3DObject#FILE_EXTENSION_EXI
-	 * @see X3DObject#FILE_EXTENSION_GZIP
-	 * @see X3DObject#FILE_EXTENSION_ZIP
-	 * @see X3DObject#fromFileEXI(String)
-	 * @see X3DObject#fromFileZIP(String,String)
-	 * @see X3DObject#toFileGZIP(String)
+	 * @see X3D#FILE_EXTENSION_EXI
+	 * @see X3D#FILE_EXTENSION_GZIP
+	 * @see X3D#FILE_EXTENSION_ZIP
+	 * @see X3D#fromFileEXI(String)
+	 * @see X3D#fromFileZIP(String,String)
+	 * @see X3D#toFileGZIP(String)
 	 * @param gzipFileName name of file to load, can include local directory path, must end with .exi
 	 * @return boolean if operation succeeds in creating this X3DObject, false otherwise
 	 */
@@ -5406,7 +5494,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		String errorNotice = new String();
 		if ((gzipFileName == null || gzipFileName.isEmpty()))
 		{
-			throw new X3DException("fromFileGZIP(gzipFileName) fileName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("fromFileGZIP(gzipFileName) fileName not provided;" +
 				" be sure to end with extension \"" + FILE_EXTENSION_GZIP + "\"");
 		}
 		if (!gzipFileName.endsWith(FILE_EXTENSION_GZIP))
@@ -5501,12 +5589,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
      * Efficient XML Interchange (EXI) file format</a>
      * @see ConfigurationProperties#getExiEngine()
      * @see ConfigurationProperties#setExiEngine(String)
-     * @see X3DObject#FILE_EXTENSION_EXI
-     * @see X3DObject#FILE_EXTENSION_GZIP
-     * @see X3DObject#FILE_EXTENSION_ZIP
-     * @see X3DObject#toFileEXI(String)
-     * @see X3DObject#fromFileZIP(String,String)
-     * @see X3DObject#fromFileGZIP(String)
+     * @see X3D#FILE_EXTENSION_EXI
+     * @see X3D#FILE_EXTENSION_GZIP
+     * @see X3D#FILE_EXTENSION_ZIP
+     * @see X3D#toFileEXI(String)
+     * @see X3D#fromFileZIP(String,String)
+     * @see X3D#fromFileGZIP(String)
      * @param exiFileName name of file to load, can include local directory
      * path, must end with .exi
      * @return boolean if operation succeeds in creating this X3DObject, false
@@ -5515,7 +5603,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
     public boolean fromFileEXI(String exiFileName) {
         String errorNotice = new String();
         if ((exiFileName == null || exiFileName.isEmpty())) {
-            throw new X3DException("fromFileEXI(exiFileName) fileName not provided;"
+            throw new org.web3d.x3d.sai.X3DException("fromFileEXI(exiFileName) fileName not provided;"
                     + " be sure to end with extension \"" + FILE_EXTENSION_EXI + "\"");
         }
         if (!exiFileName.endsWith(FILE_EXTENSION_EXI)) {
@@ -5740,7 +5828,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		return !(hasHead() || hasScene()); 
 	}
 											
-	/** Load X3D model from file to initialize or replace contents of this X3DObject.
+	/** Load X3D model from file to initialize or replace contents of this X3D object.
 	 * Supports .x3d or .xml file encodings.
 	 * @param fileName name of model file that replaces current X3DObject
 	 * @return true if replacement successful, false otherwise
@@ -5750,7 +5838,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         return loadModelFromFileX3D ("", fileName);
 	}
 											
-	/** Load X3D model from file to initialize or replace contents of this X3DObject.
+	/** Load X3D model from file to initialize or replace contents of this X3D object.
 	 * Supports .x3d or .xml file encodings.
 	 * @param path directory path to file of interest
 	 * @param fileName name of model file that replaces current X3DObject
@@ -5765,12 +5853,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                         
             if (!x3dFile.exists())
             {
-                    throw new X3DException("path, fileName " + path + ", " + fileName + " does not exist and cannot be loaded, check path and filename.");
+                    throw new org.web3d.x3d.sai.X3DException("path, fileName " + path + ", " + fileName + " does not exist and cannot be loaded, check path and filename.");
             }
             return loadModelFromFileX3D (x3dFile);
 	}
 											
-	/** Load X3D model from file to initialize or replace contents of this X3DObject.
+	/** Load X3D model from file to initialize or replace contents of this X3D object.
 	 * Supports .x3d or .xml file encodings.
 	 * @param x3dFile model file that replaces current X3DObject
 	 * @return true if replacement successful, false otherwise
@@ -5784,7 +5872,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
             else return false;
 	}
 										
-	/** Replaces current X3DObject with new X3DObject. 
+	/** Replaces current X3D object with new X3D object. 
 	 * @param newX3DObject replaces current X3DObject
 	 * @return true if replacement successful, false otherwise
 	 */
@@ -5803,13 +5891,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
      * @see <a href="https://openexi.sourceforge.net/tutorial/index.html">OpenEXI Nagasena Tutorial</a>
      * @see ConfigurationProperties#getExiEngine()
      * @see ConfigurationProperties#setExiEngine(String)
-     * @see X3DObject#FILE_EXTENSION_EXI
-     * @see X3DObject#FILE_EXTENSION_GZIP
-     * @see X3DObject#FILE_EXTENSION_ZIP
-     * @see X3DObject#fromFileEXI(String)
-     * @see X3DObject#toFileGZIP(String)
-     * @see X3DObject#toFileZIP(String,String)
-     * @see X3DObject#toFileX3D(String)
+     * @see X3D#FILE_EXTENSION_EXI
+     * @see X3D#FILE_EXTENSION_GZIP
+     * @see X3D#FILE_EXTENSION_ZIP
+     * @see X3D#fromFileEXI(String)
+     * @see X3D#toFileGZIP(String)
+     * @see X3D#toFileZIP(String,String)
+     * @see X3D#toFileX3D(String)
      * @param resultFileName name of file to create and save, can include local
      * directory path, must end with .exi
      * @return File containing result (if operation succeeds), null otherwise
@@ -5817,11 +5905,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
     public File toFileEXI(String resultFileName) {
         String errorNotice = new String();
         if ((resultFileName == null || resultFileName.isEmpty())) {
-            throw new X3DException("toFileJava(resultFileName) fileName not provided;"
+            throw new org.web3d.x3d.sai.X3DException("toFileJava(resultFileName) fileName not provided;"
                     + " be sure to end with extension \"" + FILE_EXTENSION_EXI + "\"");
         }
         if (!resultFileName.endsWith(FILE_EXTENSION_EXI)) {
-            throw new X3DException("resultFileName " + resultFileName + " does not end with extension "
+            throw new org.web3d.x3d.sai.X3DException("resultFileName " + resultFileName + " does not end with extension "
                     + "\"" + FILE_EXTENSION_EXI + "\"");
         }
         Path outputFilePath = Paths.get(resultFileName);
@@ -6046,12 +6134,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Save current model as a GZIP file.
 	 * @see <a href="https://openexi.sourceforge.net/tutorial/index.html">OpenEXI Nagasena Tutorial</a>
-	 * @see X3DObject#FILE_EXTENSION_EXI
-	 * @see X3DObject#FILE_EXTENSION_GZIP
-	 * @see X3DObject#FILE_EXTENSION_ZIP
-	 * @see X3DObject#toFileEXI(String)
-	 * @see X3DObject#toFileZIP(String,String)
-	 * @see X3DObject#toFileX3D(String)
+	 * @see X3D#FILE_EXTENSION_EXI
+	 * @see X3D#FILE_EXTENSION_GZIP
+	 * @see X3D#FILE_EXTENSION_ZIP
+	 * @see X3D#toFileEXI(String)
+	 * @see X3D#toFileZIP(String,String)
+	 * @see X3D#toFileX3D(String)
 	 * @param resultFileName name of file to create and save, can include local directory path, must end with .gz (TODO or .tgz)
 	 * @return File containing result (if operation succeeds), null otherwise
 	 */
@@ -6076,12 +6164,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Save current model as a ZIP file.
 	 * @see <a href="https://openexi.sourceforge.net/tutorial/index.html">OpenEXI Nagasena Tutorial</a>
-	 * @see X3DObject#FILE_EXTENSION_EXI
-	 * @see X3DObject#FILE_EXTENSION_GZIP
-	 * @see X3DObject#FILE_EXTENSION_ZIP
-	 * @see X3DObject#toFileEXI(String)
-	 * @see X3DObject#toFileGZIP(String)
-	 * @see X3DObject#toFileX3D(String)
+	 * @see X3D#FILE_EXTENSION_EXI
+	 * @see X3D#FILE_EXTENSION_GZIP
+	 * @see X3D#FILE_EXTENSION_ZIP
+	 * @see X3D#toFileEXI(String)
+	 * @see X3D#toFileGZIP(String)
+	 * @see X3D#toFileX3D(String)
 	 * @param zipFileName name of zip archive file to create and save, can include local directory path, must end with .zip
 	 * @param modelName name of X3D file to create and save within the .zip archive
 	 * @return File containing result (if operation succeeds), null otherwise
@@ -6124,13 +6212,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		if (getHead() != null)
 		{
 			// first list informational meta elements of interest
-			for (metaObject meta : getHead().getMetaList())
+			for (meta meta : getHead().getMetaList())
 			{
-				if (meta.getName().equals(metaObject.NAME_ERROR) ||
-					meta.getName().equals(metaObject.NAME_WARNING) ||
-					meta.getName().equals(metaObject.NAME_HINT) ||
-					meta.getName().equals(metaObject.NAME_INFO) ||
-					meta.getName().equals(metaObject.NAME_TODO))
+				if (meta.getName().equals(meta.NAME_ERROR) ||
+					meta.getName().equals(meta.NAME_WARNING) ||
+					meta.getName().equals(meta.NAME_HINT) ||
+					meta.getName().equals(meta.NAME_INFO) ||
+					meta.getName().equals(meta.NAME_TODO))
 				{
 					metaResult += meta.toStringX3D();
 				}
@@ -6165,7 +6253,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
   }
 										
 	/** Utility method for standalone programs that get created with stylesheet X3dToJava.xslt,
-	 * also sets loaded X3D model fileInputStream global CommandLine to this X3DObject.
+	 * also sets loaded X3D model fileInputStream global CommandLine to this X3D object.
 	 * Invocation switches are listed in CommandLine.USAGE help.
 	 * @see org.web3d.x3d.jsail.CommandLine
 	 * @see org.web3d.x3d.jsail.CommandLine#USAGE
@@ -6188,74 +6276,74 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								<xsl:when test="($name = 'X3DConcreteElement')">
 									<xsl:value-of select="$protectedPreamble"/>
 									<xsl:text disable-output-escaping="yes"><![CDATA[
-	private X3DConcreteElement parentObject = null; // X3D node or statement
+	private X3DConcreteElement parent = null; // X3D node or statement
 										
 	/**
 	 * Provide object reference to parent X3D node or statement, if any.
 	 * This reference is named "parentObject" rather than "parent" to avoid potential name collision with any X3D field named "parent".
 	 * @return object reference to parent X3D node or statement, otherwise null if none
 	 */			
-	public X3DConcreteElement getParentObject()
+	public X3DConcreteElement getParent()
 	{
-		return parentObject;
+		return parent;
 	}					
 	/**
 	 * Whether parent object exists.
 	 * This reference is named "parentObject" rather than "parent" to avoid potential name collision with any X3D field named "parent".
 	 * @return true if found
 	 */			
-	public boolean hasParentObject()
+	public boolean hasParent()
 	{
-		return (parentObject != null);
+		return (parent != null);
 	}
 										
 	/**
 	 * Package-internal method to set parent object reference.
 	 * @param newParentObject object reference to parent node or X3D statement that contains this node
 	 */			
-	public void setParentObject(X3DConcreteElement newParentObject)
+	public void setParent(X3DConcreteElement newParentObject)
 	{
-		parentObject = newParentObject;
+		parent = newParentObject;
 	}
 										
 	/**
 	 * Package-protected internal method to clear local reference to parent object, if any.
 	 */			
-	public void clearParentObject()
+	public void clearParent()
 	{
-		setParentObject(null);
+		setParent(null);
 	}
 
 	/**
 	 * Find object reference to ancestor Scene element, assumes this object is an attached child.
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see #hasAncestorX3DObject()
-	 * @see X3DConcreteElement#findAncestorX3DObject()
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see #hasAncestorX3D()
+	 * @see X3DConcreteElement#findAncestorX3D()
 	 * @return ancestor Scene child reference if attached, otherwise null
 	 */
-	public Scene]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ findAncestorSceneObject()
+	public Scene]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ findAncestorScene()
 	{
-		if ((this instanceof org.web3d.x3d.sai.Core.X3DNode) && ((org.web3d.x3d.sai.Core.X3DNode)this) instanceof org.web3d.x3d.jsail.Core.SceneObject)
-			return (SceneObject)((org.web3d.x3d.sai.Core.X3DNode)this);
-		X3DConcreteElement element = this.getParentObject();
+		if ((this instanceof org.web3d.x3d.sai.Core.X3DNode) && ((org.web3d.x3d.sai.Core.X3DNode)this) instanceof org.web3d.x3d.jsail.Core.Scene)
+			return (Scene)((org.web3d.x3d.sai.Core.X3DNode)this);
+		X3DConcreteElement element = this.getParent();
 		while (element != null)
 		{
-			if (element instanceof org.web3d.x3d.jsail.Core.SceneObject)
-				 return (SceneObject)element;
-			else element = element.getParentObject(); // walk up the tree to top, then back down to Scene
+			if (element instanceof org.web3d.x3d.jsail.Core.Scene)
+				 return (Scene)element;
+			else element = element.getParent(); // walk up the tree to top, then back down to Scene
 		}
 		return null; // not found
 	}
 	/**
 	 * Determine whether ancestor Scene element is found, meaning this object is an attached child.
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see #hasAncestorX3DObject()
-	 * @see X3DConcreteElement#findAncestorX3DObject()
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see #hasAncestorX3D()
+	 * @see X3DConcreteElement#findAncestorX3D()
 	 * @return whether ancestor Scene node is found
 	 */
-	public boolean hasAncestorSceneObject()
+	public boolean hasAncestorScene()
 	{
-		return (findAncestorSceneObject() != null);
+		return (findAncestorScene() != null);
 	}
 
 	/**
@@ -6267,12 +6355,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	{
 		if (this.getElementName().equals(ancestorElementName))
 			return this;
-		X3DConcreteElement element = this.getParentObject();
+		X3DConcreteElement element = this.getParent();
 		while (element != null)
 		{
 			if (element.getElementName().equals(ancestorElementName))
 				 return element;
-			else element = element.getParentObject(); // walk up the tree to top
+			else element = element.getParent(); // walk up the tree to top
 		}
 		return null; // not found
 	}
@@ -6290,11 +6378,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Find object reference to ancestor ProtoBody, if this node or statement is a child.
 	 * @see #hasAncestorProtoBody()
-	 * @return ancestor ProtoBodyObject reference if attached and found, otherwise null
+	 * @return ancestor ProtoBody reference if attached and found, otherwise null
 	 */
-	public ProtoBodyObject findAncestorProtoBody()
+	public ProtoBody findAncestorProtoBody()
 	{
-		return (ProtoBodyObject) findAncestorElementByName(ProtoBodyObject.NAME);
+		return (ProtoBody) findAncestorElementByName(ProtoBody.NAME);
 	}
 	/**
 	 * Determine whether ancestor ProtoBody element is found, meaning this object is an attached child.
@@ -6307,35 +6395,35 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	}
 										
 	/**
-	 * Find object reference to ancestor X3D element, if this node or statement is part of an X3DObject model.
-	 * @see #hasAncestorX3DObject()
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * Find object reference to ancestor X3D element, if this node or statement is part of an X3D object.
+	 * @see #hasAncestorX3D()
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see X3DConcreteElement#hasAncestorScene()
 	 * @return ancestor X3D reference if attached, otherwise null
 	 */	
-	public X3DObject findAncestorX3DObject()
+	public X3D findAncestorX3D()
 	{
-		if (((org.web3d.x3d.sai.Core.X3DNode)this) instanceof org.web3d.x3d.jsail.Core.X3DObject)
+		if (((org.web3d.x3d.sai.Core.X3DNode)this) instanceof org.web3d.x3d.jsail.Core.X3D)
 			return (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)((org.web3d.x3d.sai.Core.X3DNode)this);
-		X3DConcreteElement element = this.getParentObject();
+		X3DConcreteElement element = this.getParent();
 		while (element != null)
 		{
-			if (element instanceof org.web3d.x3d.jsail.Core.X3DObject)
+			if (element instanceof org.web3d.x3d.jsail.Core.X3D)
 				 return (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)element;
-			else element = element.getParentObject(); // walk up the tree to top
+			else element = element.getParent(); // walk up the tree to top
 		}
 		return null; // not found
 	}
 	/**
 	 * Determine whether ancestor X3D element is found, meaning this object is an attached child.
-	 * @see X3DConcreteElement#findAncestorX3DObject()
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
+	 * @see X3DConcreteElement#findAncestorX3D()
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see X3DConcreteElement#hasAncestorScene()
 	 * @return whether ancestor X3D element is found
 	 */
-	public boolean hasAncestorX3DObject()
+	public boolean hasAncestorX3D()
 	{
-		return (findAncestorX3DObject() != null);
+		return (findAncestorX3D() != null);
 	}
 										
 	/** Provides name of this element.
@@ -6371,13 +6459,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
-	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <i>Warning:</i> first start with findAncestorScene() to check entire scene graph, or findAncestorX3D() to check entire model document.
 	 * <br ><br >
 	 * @see #findNodeByDEF(String)
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
-	 * @see metaObject
-	 * @see MetadataStringObject
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3D()
+	 * @see meta
+	 * @see MetadataString
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
@@ -6389,12 +6477,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
-	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <i>Warning:</i> first start with findAncestorScene() to check entire scene graph, or findAncestorX3D() to check entire model document.
 	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
 	 * @see #findNodeByDEF(String)
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3D()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
 	 */
@@ -6403,12 +6491,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
-	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <i>Warning:</i> first start with findAncestorScene() to check entire scene graph, or findAncestorX3D() to check entire model document.
 	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
 	 * @see #findElementByNameValue(String)
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3D()
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
 	 */
@@ -6450,9 +6538,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Recursive method to provide object reference to node by DEF name, found either as this node or in a contained node (if any).
 	 * <br ><br >
-	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
+	 * <i>Warning:</i> first start with findAncestorScene() to check entire scene graph, or findAncestorX3D() to check entire model document.
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3D()
 	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findElementByNameValue(String,String)
 	 * @param DEFlabel DEF name of node to find
 	 * @return object reference to node
@@ -6495,8 +6583,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                             <xsl:variable name="listType">
                                 <xsl:choose>
                                     <xsl:when test="true() and (@type = 'MFNode') and not((@name = 'X3D') or (@name = 'head') or (@name = 'meta') or (@name = 'unit') or (@name = 'component') or (@name = 'Scene'))">
-                                        <!-- TODO allow both allowed node types and ProtoInstanceObject in same list, carefully control node type in set methods. impacts multiple methods. -->
-                                        <xsl:text disable-output-escaping="yes"><![CDATA[ArrayList<X3DNode>]]></xsl:text>
+                                        <!-- TODO allow both allowed node types and ProtoInstance in same list, carefully control node type in set methods. impacts multiple methods. -->
+                                        <xsl:text disable-output-escaping="yes"><![CDATA[ArrayList<org.web3d.x3d.sai.Core.X3DNode>]]></xsl:text>
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:value-of select="$javaType" disable-output-escaping="yes"/><!-- append to type name -->
@@ -6509,7 +6597,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 							<xsl:variable name="javaReferenceType"><!-- base type of ArrayList -->
                                 <xsl:choose>
                                     <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
-                                        <xsl:text>X3DNode</xsl:text>
+                                        <xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="contains($javaType,'&lt;')">
                                         <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
@@ -6543,7 +6631,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 							<xsl:variable name="javaReferenceType"><!-- base type of ArrayList -->
                                 <xsl:choose>
                                     <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
-                                        <xsl:text>X3DNode</xsl:text>
+                                        <xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="contains($javaType,'&lt;')">
                                         <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
@@ -6757,7 +6845,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:value-of select="$tupleNess"/>
 										<xsl:choose>
 											<xsl:when test="($name = 'ProtoBody') and (@name = 'children')">
-												<xsl:text disable-output-escaping="yes"><![CDATA[ArrayList<X3DNode>]]></xsl:text>
+												<xsl:text disable-output-escaping="yes"><![CDATA[ArrayList<org.web3d.x3d.sai.Core.X3DNode>]]></xsl:text>
 											</xsl:when>
 											<xsl:otherwise>
 												<xsl:value-of select="$javaType" disable-output-escaping="yes"/><!-- append to type name -->
@@ -6797,7 +6885,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:text>(using a properly typed node) </xsl:text>
 									</xsl:when>
 									<xsl:when test="($type='MFNode')">
-										<xsl:text>(using an array consisting of properly typed nodes or ProtoInstanceObjects) </xsl:text>
+										<xsl:text>(using an array consisting of properly typed nodes or ProtoInstances) </xsl:text>
 									</xsl:when>
 								</xsl:choose>
 								<xsl:call-template name="list-restrictions"/>
@@ -6958,17 +7046,17 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												 (($isInterface = 'true') and //AbstractNodeType  [@name = $baseType                     ]/InterfaceDefinition/field[@name = $fieldName]) or
 												 (($isInterface = 'true') and //AbstractNodeType  [@name = $additionalInheritanceBaseType]/InterfaceDefinition/field[@name = $fieldName]) or
 												 (($isInterface = 'true') and //AbstractObjectType[@name = $additionalInheritanceBaseType]/InterfaceDefinition/field[@name = $fieldName]) or
-												 (($thisClassName = 'ProtoInstanceObject') and 
+												 (($thisClassName = 'ProtoInstance') and 
 												  (($CamelCaseName = 'Metadata') or ($CamelCaseName = 'Name') or ($CamelCaseName = 'DEF') or ($CamelCaseName = 'USE') or ($CamelCaseName = 'CssClass')) or
 												 (not($thisClassName = 'X3DNode') and ($CamelCaseName = 'Metadata')))">
-									<!--<xsl:text>	@Override</xsl:text>--><!-- // here1? -->
+									<!--<xsl:text>	/* @Override */</xsl:text>--><!-- // here1? -->
 									<xsl:text>&#10;</xsl:text>
 								</xsl:if>
 								<xsl:text>	public </xsl:text>
 								<xsl:choose>
 									<!--
 									<xsl:when test="($name = 'ProtoBody') and (@name = 'children')">
-										<xsl:text disable-output-escaping="yes"><![CDATA[ArrayList<X3DNode>]]></xsl:text>
+										<xsl:text disable-output-escaping="yes"><![CDATA[ArrayList<org.web3d.x3d.sai.Core.X3DNode>]]></xsl:text>
 									</xsl:when>
 									-->
 									<xsl:when test="(@type = 'MFNode') and (($isClassX3dStatement = 'true') or ($isX3dStatement = 'true') or (@name = 'addChildren') or (@name = 'removeChildren'))">
@@ -7020,57 +7108,57 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		// alternatives for return typed value
 		if ((valueArrayBoolean != null) && (valueArrayBoolean.length > 0))
 		{
-			if      (valueType.equals(fieldObject.TYPE_SFBOOL)) return SFBoolObject.toString(valueArrayBoolean[0]);
-			else if (valueType.equals(fieldObject.TYPE_MFBOOL)) return MFBoolObject.toString(valueArrayBoolean);
+			if      (valueType.equals(field.TYPE_SFBOOL)) return SFBool.toString(valueArrayBoolean[0]);
+			else if (valueType.equals(field.TYPE_MFBOOL)) return MFBool.toString(valueArrayBoolean);
 		}
 		else if ((valueArrayInteger != null) && (valueArrayInteger.length > 0))
 		{
-			if      (valueType.equals(fieldObject.TYPE_SFINT32)) return SFInt32Object.toString(valueArrayInteger[0]);
-			else if (valueType.equals(fieldObject.TYPE_MFINT32)) return MFInt32Object.toString(valueArrayInteger);
-			else if (valueType.equals(fieldObject.TYPE_SFIMAGE)) return SFImageObject.toString(valueArrayInteger);
-			else if (valueType.equals(fieldObject.TYPE_MFIMAGE)) return MFImageObject.toString(valueArrayInteger);
+			if      (valueType.equals(field.TYPE_SFINT32)) return SFInt32.toString(valueArrayInteger[0]);
+			else if (valueType.equals(field.TYPE_MFINT32)) return MFInt32.toString(valueArrayInteger);
+			else if (valueType.equals(field.TYPE_SFIMAGE)) return SFImage.toString(valueArrayInteger);
+			else if (valueType.equals(field.TYPE_MFIMAGE)) return MFImage.toString(valueArrayInteger);
 		}
 		else if ((valueArrayFloat != null) && (valueArrayFloat.length > 0))
 		{
-			if      (valueType.equals(fieldObject.TYPE_SFFLOAT))     return SFFloatObject.toString(valueArrayFloat[0]);
-			else if (valueType.equals(fieldObject.TYPE_MFFLOAT))     return MFFloatObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_SFCOLOR))     return SFColorObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_MFCOLOR))     return MFColorObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_SFCOLORRGBA)) return SFColorRGBAObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_MFCOLORRGBA)) return MFColorRGBAObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_SFROTATION))  return SFRotationObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_MFROTATION))  return MFRotationObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_SFVEC2F))     return SFVec2fObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_SFVEC3F))     return SFVec3fObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_SFVEC4F))     return SFVec4fObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_MFVEC2F))     return MFVec2fObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_MFVEC3F))     return MFVec3fObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_MFVEC4F))     return MFVec4fObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_MFMATRIX3F))  return MFMatrix3fObject.toString(valueArrayFloat);
-			else if (valueType.equals(fieldObject.TYPE_MFMATRIX4F))  return MFMatrix4fObject.toString(valueArrayFloat);
+			if      (valueType.equals(field.TYPE_SFFLOAT))     return SFFloat.toString(valueArrayFloat[0]);
+			else if (valueType.equals(field.TYPE_MFFLOAT))     return MFFloat.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_SFCOLOR))     return SFColor.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_MFCOLOR))     return MFColor.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_SFCOLORRGBA)) return SFColorRGBA.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_MFCOLORRGBA)) return MFColorRGBA.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_SFROTATION))  return SFRotation.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_MFROTATION))  return MFRotation.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_SFVEC2F))     return SFVec2f.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_SFVEC3F))     return SFVec3f.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_SFVEC4F))     return SFVec4f.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_MFVEC2F))     return MFVec2f.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_MFVEC3F))     return MFVec3f.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_MFVEC4F))     return MFVec4f.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_MFMATRIX3F))  return MFMatrix3f.toString(valueArrayFloat);
+			else if (valueType.equals(field.TYPE_MFMATRIX4F))  return MFMatrix4f.toString(valueArrayFloat);
 		}
 		else if ((valueArrayDouble != null) && (valueArrayDouble.length > 0))
 		{
-			if      (valueType.equals(fieldObject.TYPE_SFDOUBLE))    return SFDoubleObject.toString(valueArrayDouble[0]);
-			else if (valueType.equals(fieldObject.TYPE_MFDOUBLE))    return MFDoubleObject.toString(valueArrayDouble);
-			else if (valueType.equals(fieldObject.TYPE_SFTIME))      return SFTimeObject.toString(valueArrayDouble[0]);
-			else if (valueType.equals(fieldObject.TYPE_MFTIME))      return MFTimeObject.toString(valueArrayDouble);
-			else if (valueType.equals(fieldObject.TYPE_SFVEC2D))     return SFVec2dObject.toString(valueArrayDouble);
-			else if (valueType.equals(fieldObject.TYPE_SFVEC3D))     return SFVec3dObject.toString(valueArrayDouble);
-			else if (valueType.equals(fieldObject.TYPE_SFVEC4D))     return SFVec4dObject.toString(valueArrayDouble);
-			else if (valueType.equals(fieldObject.TYPE_MFVEC2D))     return MFVec2dObject.toString(valueArrayDouble);
-			else if (valueType.equals(fieldObject.TYPE_MFVEC3D))     return MFVec3dObject.toString(valueArrayDouble);
-			else if (valueType.equals(fieldObject.TYPE_MFVEC4D))     return MFVec4dObject.toString(valueArrayDouble);
-			else if (valueType.equals(fieldObject.TYPE_MFMATRIX3D))  return MFMatrix3dObject.toString(valueArrayDouble);
-			else if (valueType.equals(fieldObject.TYPE_MFMATRIX4D))  return MFMatrix4dObject.toString(valueArrayDouble);
+			if      (valueType.equals(field.TYPE_SFDOUBLE))    return SFDouble.toString(valueArrayDouble[0]);
+			else if (valueType.equals(field.TYPE_MFDOUBLE))    return MFDouble.toString(valueArrayDouble);
+			else if (valueType.equals(field.TYPE_SFTIME))      return SFTime.toString(valueArrayDouble[0]);
+			else if (valueType.equals(field.TYPE_MFTIME))      return MFTime.toString(valueArrayDouble);
+			else if (valueType.equals(field.TYPE_SFVEC2D))     return SFVec2d.toString(valueArrayDouble);
+			else if (valueType.equals(field.TYPE_SFVEC3D))     return SFVec3d.toString(valueArrayDouble);
+			else if (valueType.equals(field.TYPE_SFVEC4D))     return SFVec4d.toString(valueArrayDouble);
+			else if (valueType.equals(field.TYPE_MFVEC2D))     return MFVec2d.toString(valueArrayDouble);
+			else if (valueType.equals(field.TYPE_MFVEC3D))     return MFVec3d.toString(valueArrayDouble);
+			else if (valueType.equals(field.TYPE_MFVEC4D))     return MFVec4d.toString(valueArrayDouble);
+			else if (valueType.equals(field.TYPE_MFMATRIX3D))  return MFMatrix3d.toString(valueArrayDouble);
+			else if (valueType.equals(field.TYPE_MFMATRIX4D))  return MFMatrix4d.toString(valueArrayDouble);
 		}
 		else if (value != null)
 		{
-			if      (valueType.equals(fieldObject.TYPE_SFSTRING) ||
+			if      (valueType.equals(field.TYPE_SFSTRING) ||
 					 valueType.equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE)) // matches XML default; might not be connected yet
-				return new SFStringObject(value).toString();
-			else if (valueType.equals(fieldObject.TYPE_MFSTRING))
-				return new MFStringObject(value).toString();
+				return new SFString(value).toString();
+			else if (valueType.equals(field.TYPE_MFSTRING))
+				return new MFString(value).toString();
 		}
 		// TODO error handling
 		if (value == null)
@@ -7312,13 +7400,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<!-- these statements do not qualify as SFNode fields -->
 											<xsl:text disable-output-escaping="yes">
 				(newValue instanceof org.web3d.x3d.jsail.Core.CommentsBlock) ||
-				(newValue instanceof org.web3d.x3d.jsail.Core.ROUTEObject) ||
-				(newValue instanceof org.web3d.x3d.jsail.Networking.IMPORTObject) ||
-				(newValue instanceof org.web3d.x3d.jsail.Networking.EXPORTObject) ||
-				(newValue instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject) ||
-				(newValue instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject) ||</xsl:text>
-										</xsl:if>
-										<xsl:if test="contains(@acceptableNodeTypes, 'LayerSet')">
+				(newValue instanceof org.web3d.x3d.jsail.Core.ROUTE) ||
+				(newValue instanceof org.web3d.x3d.jsail.Networking.IMPORT) ||
+				(newValue instanceof org.web3d.x3d.jsail.Networking.EXPORT) ||
+				(newValue instanceof org.web3d.x3d.jsail.Core.ProtoDeclare) ||
+				(newValue instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclare) ||</xsl:text>
 										</xsl:if>
 
 										<!-- must save access to object model tree before going inside an xsl:for-each that loops over strings -->
@@ -7328,13 +7414,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:choose>
 												<xsl:when test="($acceptableNodeType = 'LayerSet')">
 													<xsl:text>
-				(newValue instanceof org.web3d.x3d.jsail.Layering.LayerSetObject)</xsl:text>
+				(newValue instanceof org.web3d.x3d.jsail.Layering.LayerSet)</xsl:text>
 												</xsl:when>
 												<xsl:otherwise>
 													<xsl:text>
 				(((X3DConcreteNode)</xsl:text>
 													<xsl:value-of select="$newValue"/>
 													<xsl:text>) instanceof </xsl:text>
+                                                    <!--
+                                                    -->
 													<xsl:variable name="packageName">
 														<xsl:choose>
 															<xsl:when test="starts-with($acceptableNodeType,'X3D') and contains($acceptableNodeType,'Node')">
@@ -7358,6 +7446,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 															</xsl:otherwise>
 														</xsl:choose>
 													</xsl:variable>
+													<xsl:value-of select="$packageName"/>		
 													<!-- debug trace
 													<xsl:message>
 														<xsl:text>acceptableNodeType=</xsl:text>
@@ -7365,8 +7454,6 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 														<xsl:text>, packageName=</xsl:text>
 														<xsl:value-of select="$packageName"/>											
 													</xsl:message> -->
-													<!-- find, insert package name -->
-													<xsl:value-of select="$packageName"/>
 													<xsl:text>)</xsl:text>
 												</xsl:otherwise>
 											</xsl:choose>
@@ -7397,11 +7484,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:if test="((@name='children') or contains(@acceptableNodeTypes, 'children'))">
 											<xsl:text>
 				(newValue[i] instanceof org.web3d.x3d.jsail.Core.CommentsBlock) ||
-				(newValue[i] instanceof org.web3d.x3d.jsail.Core.ROUTEObject) ||
-				(newValue[i] instanceof org.web3d.x3d.jsail.Networking.IMPORTObject) ||
-				(newValue[i] instanceof org.web3d.x3d.jsail.Networking.EXPORTObject) ||
-				(newValue[i] instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject) ||
-				(newValue[i] instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject) ||</xsl:text>
+				(newValue[i] instanceof org.web3d.x3d.jsail.Core.ROUTE) ||
+				(newValue[i] instanceof org.web3d.x3d.jsail.Networking.IMPORT) ||
+				(newValue[i] instanceof org.web3d.x3d.jsail.Networking.EXPORT) ||
+				(newValue[i] instanceof org.web3d.x3d.jsail.Core.ProtoDeclare) ||
+				(newValue[i] instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclare) ||</xsl:text>
 										</xsl:if>
 										<!-- must save access to object model tree before going inside an xsl:for-each that loops over strings -->
 										<xsl:variable name="X3dUnifiedObjectModelTree" select="/"/>
@@ -7410,7 +7497,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:choose>
 												<xsl:when test="($acceptableNodeType = 'LayerSet')">
 													<xsl:text>
-				(newValue[i] instanceof org.web3d.x3d.jsail.Layering.LayerSetObject)</xsl:text>
+				(newValue[i] instanceof org.web3d.x3d.jsail.Layering.LayerSet)</xsl:text>
 												</xsl:when>
 												<xsl:when test="not(starts-with($acceptableNodeType, 'X3D'))">
 													<xsl:text>
@@ -7429,8 +7516,23 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				(((X3DConcreteNode)</xsl:text>
 													<xsl:value-of select="$newValue"/>
 													<xsl:text>[i]) instanceof </xsl:text>
-													<!-- can't reach up into X3D Object Model from within string tokenizer -->
-													<xsl:value-of select="$acceptableNodeType"/>
+                                                    <xsl:variable name="saiPackagePath"> 
+                                                        <xsl:call-template name="saiPackage">
+                                                            <xsl:with-param name="nodeType" select="$acceptableNodeType"/>
+                                                        </xsl:call-template>
+                                                    </xsl:variable>
+                                                    <xsl:choose>
+                                                        <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                                            <!-- <xsl:text>/* here 17a */</xsl:text> -->
+                                                            <xsl:value-of select="$saiPackagePath"/>
+                                                            <xsl:text>.</xsl:text>
+                                                            <xsl:value-of select="$acceptableNodeType"/>
+                                                        </xsl:when>
+                                                        <xsl:otherwise>
+                                                            <!-- <xsl:text>/* here 17b, saiPackage not found */</xsl:text> -->
+                                                            <xsl:value-of select="$acceptableNodeType"/>
+                                                        </xsl:otherwise>
+                                                    </xsl:choose>
 													<xsl:text>)</xsl:text>
 												</xsl:otherwise>
 											</xsl:choose>
@@ -7527,7 +7629,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:text>(using a properly typed node) </xsl:text>
 									</xsl:when>
 									<xsl:when test="($type='MFNode')">
-										<xsl:text>(using an array consisting of properly typed nodes or ProtoInstanceObjects) </xsl:text>
+										<xsl:text>(using an array consisting of properly typed nodes or ProtoInstances) </xsl:text>
 									</xsl:when>
 								</xsl:choose>
                                 <!-- duplicative
@@ -7592,16 +7694,18 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								</xsl:if>
 								<xsl:text>.</xsl:text>
 								<xsl:text>&#10;</xsl:text>
+                                <!--
 								<xsl:if test="(string-length($newValueInstanceAcceptableNodeTypesTest) > 0)">
 									<xsl:value-of select="$newValueInstanceAcceptableNodeTypesTest"/>
 									<xsl:text>&#10;</xsl:text>
 								</xsl:if>
+                            -->
 
 								<xsl:if test="($type='SFNode') and not($isInterface = 'true') and not($isX3dStatement = 'true')">
                                     <!-- ProtoInstance can only replace nodes, not statements -->
 									<xsl:text>	 * @see #set</xsl:text>
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>(ProtoInstanceObject)</xsl:text>
+									<xsl:text>(ProtoInstance)</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 								</xsl:if>
 								<xsl:if test="(string-length($fieldTooltip) > 0)">
@@ -7850,7 +7954,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										</xsl:for-each>
 										<xsl:if test="(@type = 'MFNode') and ((@name='children') or contains(@acceptableNodeTypes, 'children'))">
 											<!-- these statements do not qualify as SFNode fields -->
-											<xsl:text> as well as X3D statements CommentsBlock, ROUTEObject, IMPORTObject, EXPORTObject, ProtoDeclareObject and ExternProtoDeclareObject.</xsl:text>
+											<xsl:text> as well as X3D statements CommentsBlock, ROUTEObject, IMPORTObject, EXPORTObject, ProtoDeclare and ExternProtoDeclare.</xsl:text>
 										</xsl:if>
 										<xsl:text>.</xsl:text>
 										<xsl:if test="contains(@acceptableNodeTypes, 'LayerSet')">
@@ -7870,11 +7974,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:if test="((@name='children') or contains(@acceptableNodeTypes, 'children'))">
 											<xsl:text>
 				(element instanceof org.web3d.x3d.jsail.Core.CommentsBlock) ||
-				(element instanceof org.web3d.x3d.jsail.Core.ROUTEObject) ||
-				(element instanceof org.web3d.x3d.jsail.Networking.IMPORTObject) ||
-				(element instanceof org.web3d.x3d.jsail.Networking.EXPORTObject) ||
-				(element instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject) ||
-				(element instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject) ||</xsl:text>
+				(element instanceof org.web3d.x3d.jsail.Core.ROUTE) ||
+				(element instanceof org.web3d.x3d.jsail.Networking.IMPORT) ||
+				(element instanceof org.web3d.x3d.jsail.Networking.EXPORT) ||
+				(element instanceof org.web3d.x3d.jsail.Core.ProtoDeclare) ||
+				(element instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclare) ||</xsl:text>
 										</xsl:if>
 										<!-- must save access to object model tree before going inside an xsl:for-each that loops over strings -->
 										<xsl:variable name="X3dUnifiedObjectModelTree" select="/"/>
@@ -7883,7 +7987,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:choose>
 												<xsl:when test="($acceptableNodeType = 'LayerSet')">
 													<xsl:text>
-				(element instanceof org.web3d.x3d.jsail.Layering.LayerSetObject)</xsl:text>
+				(element instanceof org.web3d.x3d.jsail.Layering.LayerSet)</xsl:text>
 												</xsl:when>
 												<xsl:when test="not(starts-with($acceptableNodeType, 'X3D'))">
 													<xsl:text>
@@ -7897,8 +8001,23 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:otherwise>
 													<xsl:text>
 				(element instanceof </xsl:text>
-													<!-- can't reach up into X3D Object Model from within string tokenizer -->
-													<xsl:value-of select="$acceptableNodeType"/>
+                                                    <xsl:variable name="saiPackagePath"> 
+                                                        <xsl:call-template name="saiPackage">
+                                                            <xsl:with-param name="nodeType" select="$acceptableNodeType"/>
+                                                        </xsl:call-template>
+                                                    </xsl:variable>
+                                                    <xsl:choose>
+                                                        <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                                            <!-- <xsl:text>/* here 17a */</xsl:text> -->
+                                                            <xsl:value-of select="$saiPackagePath"/>
+                                                            <xsl:text>.</xsl:text>
+                                                            <xsl:value-of select="$acceptableNodeType"/>
+                                                        </xsl:when>
+                                                        <xsl:otherwise>
+                                                            <!-- <xsl:text>/* here 17b, saiPackage not found */</xsl:text> -->
+                                                            <xsl:value-of select="$acceptableNodeType"/>
+                                                        </xsl:otherwise>
+                                                    </xsl:choose>
 													<xsl:text>)</xsl:text>
 												</xsl:otherwise>
 											</xsl:choose>
@@ -7926,10 +8045,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												 (($isInterface = 'true') and //AbstractNodeType  [@name = $baseType                     ]/InterfaceDefinition/field[@name = $fieldName]) or
 												 (($isInterface = 'true') and //AbstractNodeType  [@name = $additionalInheritanceBaseType]/InterfaceDefinition/field[@name = $fieldName]) or
 												 (($isInterface = 'true') and //AbstractObjectType[@name = $additionalInheritanceBaseType]/InterfaceDefinition/field[@name = $fieldName]) or
-												 (($thisClassName = 'ProtoInstanceObject') and 
+												 (($thisClassName = 'ProtoInstance') and 
 												  (($CamelCaseName = 'Metadata') or ($CamelCaseName = 'Name') or ($CamelCaseName = 'DEF') or ($CamelCaseName = 'USE') or ($CamelCaseName = 'CssClass')) or
 												 (not($thisClassName = 'X3DNode') and ($CamelCaseName = 'Metadata')))">
-									<!--<xsl:text>	@Override</xsl:text>-->
+									<!--<xsl:text>	/* @Override */</xsl:text>-->
 									<xsl:text>&#10;</xsl:text>
 								</xsl:if>
 								<xsl:text>	public </xsl:text>
@@ -8047,27 +8166,27 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			System.out.println(warningMessage);
 			return this;
 		}									
-		boolean isStringType  = newValue.equals(fieldObject.TYPE_SFSTRING) || newValue.equals(fieldObject.TYPE_MFSTRING);					
-		boolean isBooleanType = newValue.equals(fieldObject.TYPE_SFBOOL)   || newValue.equals(fieldObject.TYPE_MFBOOL);
-		boolean isIntegerType = newValue.equals(fieldObject.TYPE_SFINT32)  || newValue.equals(fieldObject.TYPE_MFINT32) ||
-								newValue.equals(fieldObject.TYPE_SFIMAGE)  || newValue.equals(fieldObject.TYPE_MFIMAGE);
-		boolean isFloatType   = newValue.equals(fieldObject.TYPE_SFCOLOR)    || newValue.equals(fieldObject.TYPE_MFCOLOR) ||
-								newValue.equals(fieldObject.TYPE_SFCOLORRGBA)|| newValue.equals(fieldObject.TYPE_MFCOLORRGBA) ||
-								newValue.equals(fieldObject.TYPE_SFFLOAT)    || newValue.equals(fieldObject.TYPE_MFFLOAT) ||
-								newValue.equals(fieldObject.TYPE_SFROTATION) || newValue.equals(fieldObject.TYPE_MFROTATION) ||
-								newValue.equals(fieldObject.TYPE_SFTIME)     || newValue.equals(fieldObject.TYPE_MFTIME) ||
-								newValue.equals(fieldObject.TYPE_SFVEC2F)    || newValue.equals(fieldObject.TYPE_MFVEC2F) ||
-								newValue.equals(fieldObject.TYPE_SFVEC3F)    || newValue.equals(fieldObject.TYPE_MFVEC3F) ||
-								newValue.equals(fieldObject.TYPE_SFVEC4F)    || newValue.equals(fieldObject.TYPE_MFVEC4F) ||
-								newValue.equals(fieldObject.TYPE_SFMATRIX3F) || newValue.equals(fieldObject.TYPE_MFMATRIX3F) ||
-								newValue.equals(fieldObject.TYPE_SFMATRIX4F) || newValue.equals(fieldObject.TYPE_MFMATRIX4F);										
-		boolean isDoubleType  = newValue.equals(fieldObject.TYPE_SFDOUBLE)   || newValue.equals(fieldObject.TYPE_MFDOUBLE) ||
-								newValue.equals(fieldObject.TYPE_SFTIME)     || newValue.equals(fieldObject.TYPE_MFTIME) ||
-								newValue.equals(fieldObject.TYPE_SFVEC2D)    || newValue.equals(fieldObject.TYPE_MFVEC2D) ||
-								newValue.equals(fieldObject.TYPE_SFVEC3D)    || newValue.equals(fieldObject.TYPE_MFVEC3D) ||
-								newValue.equals(fieldObject.TYPE_SFVEC4D)    || newValue.equals(fieldObject.TYPE_MFVEC4D) ||
-								newValue.equals(fieldObject.TYPE_SFMATRIX3D) || newValue.equals(fieldObject.TYPE_MFMATRIX3D) ||
-								newValue.equals(fieldObject.TYPE_SFMATRIX4D);
+		boolean isStringType  = newValue.equals(field.TYPE_SFSTRING) || newValue.equals(field.TYPE_MFSTRING);					
+		boolean isBooleanType = newValue.equals(field.TYPE_SFBOOL)   || newValue.equals(field.TYPE_MFBOOL);
+		boolean isIntegerType = newValue.equals(field.TYPE_SFINT32)  || newValue.equals(field.TYPE_MFINT32) ||
+								newValue.equals(field.TYPE_SFIMAGE)  || newValue.equals(field.TYPE_MFIMAGE);
+		boolean isFloatType   = newValue.equals(field.TYPE_SFCOLOR)    || newValue.equals(field.TYPE_MFCOLOR) ||
+								newValue.equals(field.TYPE_SFCOLORRGBA)|| newValue.equals(field.TYPE_MFCOLORRGBA) ||
+								newValue.equals(field.TYPE_SFFLOAT)    || newValue.equals(field.TYPE_MFFLOAT) ||
+								newValue.equals(field.TYPE_SFROTATION) || newValue.equals(field.TYPE_MFROTATION) ||
+								newValue.equals(field.TYPE_SFTIME)     || newValue.equals(field.TYPE_MFTIME) ||
+								newValue.equals(field.TYPE_SFVEC2F)    || newValue.equals(field.TYPE_MFVEC2F) ||
+								newValue.equals(field.TYPE_SFVEC3F)    || newValue.equals(field.TYPE_MFVEC3F) ||
+								newValue.equals(field.TYPE_SFVEC4F)    || newValue.equals(field.TYPE_MFVEC4F) ||
+								newValue.equals(field.TYPE_SFMATRIX3F) || newValue.equals(field.TYPE_MFMATRIX3F) ||
+								newValue.equals(field.TYPE_SFMATRIX4F) || newValue.equals(field.TYPE_MFMATRIX4F);										
+		boolean isDoubleType  = newValue.equals(field.TYPE_SFDOUBLE)   || newValue.equals(field.TYPE_MFDOUBLE) ||
+								newValue.equals(field.TYPE_SFTIME)     || newValue.equals(field.TYPE_MFTIME) ||
+								newValue.equals(field.TYPE_SFVEC2D)    || newValue.equals(field.TYPE_MFVEC2D) ||
+								newValue.equals(field.TYPE_SFVEC3D)    || newValue.equals(field.TYPE_MFVEC3D) ||
+								newValue.equals(field.TYPE_SFVEC4D)    || newValue.equals(field.TYPE_MFVEC4D) ||
+								newValue.equals(field.TYPE_SFMATRIX3D) || newValue.equals(field.TYPE_MFMATRIX3D) ||
+								newValue.equals(field.TYPE_SFMATRIX4D);
 												
 		boolean hasStringValuePresent  = (value.length() > 0);
 		boolean hasBooleanValuePresent = (valueArrayBoolean.length > 0);
@@ -8092,27 +8211,27 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			int maxLength;
             if (!isBooleanType && hasBooleanValuePresent)
             {
-                maxLength = Integer.min(new MFBoolObject(valueArrayBoolean).toString().length(),40);
-                System.out.println(warningMessage + "valueArrayBoolean=[" + new MFBoolObject(valueArrayBoolean).toString().substring(0,maxLength)  + "]");
+                maxLength = Integer.min(new MFBool(valueArrayBoolean).toString().length(),40);
+                System.out.println(warningMessage + "valueArrayBoolean=[" + new MFBool(valueArrayBoolean).toString().substring(0,maxLength)  + "]");
             }
 			if (!isIntegerType && hasIntegerValuePresent)
             {
-                maxLength = Integer.min(new MFInt32Object(valueArrayInteger).toString().length(),40);
-				System.out.println(warningMessage + "valueArrayInteger=[" + new MFInt32Object(valueArrayInteger).toString().substring(0,maxLength) + "]");
+                maxLength = Integer.min(new MFInt32(valueArrayInteger).toString().length(),40);
+				System.out.println(warningMessage + "valueArrayInteger=[" + new MFInt32(valueArrayInteger).toString().substring(0,maxLength) + "]");
 			}
 			if (!isFloatType && hasFloatValuePresent)
             {
-                maxLength = Integer.min(new MFFloatObject(valueArrayFloat).toString().length(),40);
-				System.out.println(warningMessage + "valueArrayFloat=["   + new MFFloatObject(valueArrayFloat).toString().substring(0,maxLength)   + "]");
+                maxLength = Integer.min(new MFFloat(valueArrayFloat).toString().length(),40);
+				System.out.println(warningMessage + "valueArrayFloat=["   + new MFFloat(valueArrayFloat).toString().substring(0,maxLength)   + "]");
 			}
 			if (!isDoubleType && hasDoubleValuePresent)
             {
-                maxLength = Integer.min(new MFDoubleObject(valueArrayDouble).toString().length(),40);
-				System.out.println(warningMessage + "valueArrayDouble=["  + new MFDoubleObject(valueArrayDouble).toString().substring(0,maxLength) + "]");
+                maxLength = Integer.min(new MFDouble(valueArrayDouble).toString().length(),40);
+				System.out.println(warningMessage + "valueArrayDouble=["  + new MFDouble(valueArrayDouble).toString().substring(0,maxLength) + "]");
 			}
 		}
 		// When assigning type: if appropriate, shift prior string value to corresponding typed array
-		if (newValue.equals(fieldObject.TYPE_SFNODE)   || newValue.equals(fieldObject.TYPE_MFNODE))
+		if (newValue.equals(field.TYPE_SFNODE)   || newValue.equals(field.TYPE_MFNODE))
 		{
 			// clear all arrays
 			value             = new   String(); // reset
@@ -8133,7 +8252,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		{
 			// don't overwrite prior array if present, otherwise recover string value
 			if (!hasBooleanValuePresent && hasStringValuePresent)
-				valueArrayBoolean = new MFBoolObject().setValueByString(value).getPrimitiveValue();
+				valueArrayBoolean = new MFBool().setValueByString(value).getPrimitiveValue();
 			value             = new   String(); // reset
 			valueArrayInteger = new     int[0]; // reset
 			valueArrayFloat   = new   float[0]; // reset
@@ -8143,7 +8262,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		{
 			// don't overwrite prior array if present, otherwise recover string value
 			if (!hasIntegerValuePresent && hasStringValuePresent)
-				valueArrayInteger = new MFInt32Object().setValueByString(value).getPrimitiveValue();
+				valueArrayInteger = new MFInt32().setValueByString(value).getPrimitiveValue();
 			value             = new   String(); // reset
 			valueArrayBoolean = new boolean[0]; // reset
 			valueArrayFloat   = new   float[0]; // reset
@@ -8153,7 +8272,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		{
 			// don't overwrite prior array if present, otherwise recover string value
 			if (!hasFloatValuePresent && hasStringValuePresent)
-				valueArrayFloat = new MFFloatObject().setValueByString(value).getPrimitiveValue();
+				valueArrayFloat = new MFFloat().setValueByString(value).getPrimitiveValue();
 			value             = new   String(); // reset
 			valueArrayBoolean = new boolean[0]; // reset
 			valueArrayInteger = new     int[0]; // reset
@@ -8163,7 +8282,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		{
 			// don't overwrite prior array if present, otherwise recover string value
 			if (!hasDoubleValuePresent && hasStringValuePresent)
-				valueArrayDouble = new MFDoubleObject().setValueByString(value).getPrimitiveValue();
+				valueArrayDouble = new MFDouble().setValueByString(value).getPrimitiveValue();
 			value             = new   String(); // reset
 			valueArrayBoolean = new boolean[0]; // reset
 			valueArrayInteger = new     int[0]; // reset
@@ -8175,16 +8294,16 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text disable-output-escaping="yes"><![CDATA[		// check for legal type
 		String valueType = getType();
 		if (valueType.equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE))
-			valueType = fieldObject.TYPE_SFSTRING; // same as default found in file encodings
+			valueType = field.TYPE_SFSTRING; // same as default found in file encodings
 			// TODO must recheck during run-time validation to ensure fully constructed OK
 
-		if ((valueType.equals(fieldObject.TYPE_SFNODE) || valueType.equals(fieldObject.TYPE_MFNODE)) &&
+		if ((valueType.equals(field.TYPE_SFNODE) || valueType.equals(field.TYPE_MFNODE)) &&
 			(newValue.length() > 0))
 		{
-			throw new InvalidProtoException("field name='" + getName() + "' with type='" + valueType +
+			throw new org.web3d.x3d.sai.InvalidProtoException("field name='" + getName() + "' with type='" + valueType +
 					"' cannot have any simple-type value (newValue='" + newValue + "').  Use setChildren() method instead.");
 		}
-		else if (valueType.equals(fieldObject.TYPE_SFSTRING) || valueType.equals(fieldObject.TYPE_MFSTRING))
+		else if (valueType.equals(field.TYPE_SFSTRING) || valueType.equals(field.TYPE_MFSTRING))
 		{
 			value = newValue;
 		}]]></xsl:text>
@@ -8230,7 +8349,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								</xsl:when>
 								<xsl:when test="starts-with(@type,'SF')">
 							<xsl:text>
-		else if (valueType.equals(fieldObject.TYPE_</xsl:text><xsl:value-of select="$upperCaseFieldName"/><xsl:text>))
+		else if (valueType.equals(field.TYPE_</xsl:text><xsl:value-of select="$upperCaseFieldName"/><xsl:text>))
 		{
 			</xsl:text>
 			<xsl:value-of select="$baseVariable"/>
@@ -8293,7 +8412,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>       ((X3DConcreteElement) </xsl:text>
 												<xsl:value-of select="$newValue"/>
-												<xsl:text>).setParentObject(this); // parentTest10</xsl:text>
+												<xsl:text>).setParent(this); // parentTest10</xsl:text>
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>	}</xsl:text>
 												<xsl:text>&#10;</xsl:text>
@@ -8320,7 +8439,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:if test="($name = 'ProtoBody')">
 													<xsl:text>		if (primaryNode != null)
 		{
-			primaryNode.setParentObject(null); // housekeeping, clear prior object
+			primaryNode.setParent(null); // housekeeping, clear prior object
 		    primaryNode = null;
 		}
 </xsl:text>
@@ -8343,7 +8462,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			if ((primaryNode == null) && (arrayElement instanceof org.web3d.x3d.jsail.X3DConcreteNode))
 			{
 				primaryNode = (X3DConcreteNode) arrayElement; // remember node type
-				primaryNode.setParentObject(this);
+				primaryNode.setParent(this);
 			}
 ]]></xsl:text>
 												</xsl:if>
@@ -8359,7 +8478,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 					 foundValue = arrayElement.getValue();
 				else foundValue = arrayElement.getChildren().toString();
 			
-				throw new InvalidProtoException("ExternProtoDeclare name='" + name +
+				throw new org.web3d.x3d.sai.InvalidProtoException("ExternProtoDeclare name='" + name +
 					"' with field name='" + arrayElement.getName() +
 					"' cannot have any initial value (found \"" + foundValue + 
 					"\"). Instead use ProtoInstance fieldValue to override the original default ProtoDeclare field value.");
@@ -8368,7 +8487,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													</xsl:when>
 												</xsl:choose>
 												<xsl:text>&#10;</xsl:text>
-												<xsl:text>			((X3DConcreteElement) arrayElement).setParentObject(this); // parentTest11</xsl:text>
+												<xsl:text>			((X3DConcreteElement) arrayElement).setParent(this); // parentTest11</xsl:text>
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>		}</xsl:text>
 											</xsl:when>
@@ -8395,7 +8514,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:value-of select="$javaReferenceType"/>
 												<xsl:text>) || (</xsl:text>
 												<xsl:value-of select="$newValue"/>
-												<xsl:text>[i] instanceof ProtoInstanceObject))</xsl:text>
+												<xsl:text>[i] instanceof ProtoInstance))</xsl:text>
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>			{</xsl:text>
 												<xsl:text>&#10;</xsl:text>
@@ -8416,13 +8535,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			if ((primaryNode == null) && (]]></xsl:text><xsl:value-of select="$newValue"/><xsl:text> instanceof org.web3d.x3d.jsail.X3DConcreteNode))
 			{
 				primaryNode = (X3DConcreteNode) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>; // remember node type
-				primaryNode.setParentObject(this);
+				primaryNode.setParent(this);
 			}
 </xsl:text>	
 												</xsl:if>
 												<xsl:text>				((X3DConcreteElement) </xsl:text>
 												<xsl:value-of select="$newValue"/>
-												<xsl:text>[i]).setParentObject(this); // parentTest12</xsl:text>
+												<xsl:text>[i]).setParent(this); // parentTest12</xsl:text>
 												<xsl:text>&#10;</xsl:text>
 													<xsl:choose>
 														<!-- MFNode child -->
@@ -8442,7 +8561,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:value-of select="$newValue"/>
 												<xsl:text>["+i+"] is not instanceof </xsl:text>
 												<xsl:value-of select="$javaReferenceType"/>
-												<xsl:text> or ProtoInstanceObject; array </xsl:text>
+												<xsl:text> or ProtoInstance array </xsl:text>
 												<xsl:value-of select="$newValue"/>
 												<xsl:text>=" + </xsl:text>
 												<xsl:text>Arrays.toString(</xsl:text>
@@ -8486,7 +8605,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				if ((primaryNode == null) && (]]></xsl:text><xsl:value-of select="$newValue"/><xsl:text> instanceof org.web3d.x3d.jsail.X3DConcreteNode))
 				{
 					primaryNode = (X3DConcreteNode) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>[i]; // remember node type
-					primaryNode.setParentObject(this);
+					primaryNode.setParent(this);
 				}
 </xsl:text>	
 														</xsl:if>
@@ -8502,7 +8621,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 														<xsl:text>&#10;</xsl:text>
 														<xsl:text>       ((X3DConcreteElement) </xsl:text>
 														<xsl:value-of select="$newValue"/>
-														<xsl:text>[i]).setParentObject(this); // apparently unused?</xsl:text>
+														<xsl:text>[i]).setParent(this); // apparently unused?</xsl:text>
 														<xsl:text>&#10;</xsl:text>
 														<xsl:text>			}</xsl:text>
 														<xsl:text>&#10;</xsl:text>
@@ -8560,7 +8679,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		{
 			((X3DConcreteElement) </xsl:text>
 													<xsl:value-of select="$normalizedMemberObjectName"/>
-													<xsl:text>).setParentObject(this); // parentTest15</xsl:text>
+													<xsl:text>).setParent(this); // parentTest15</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 									<!-- as needed, containerField updates by checking parent node and SFNode field -->
 									<!-- Reference list found at X3D Scene Authoring Hints: containerField -->
@@ -8592,7 +8711,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:when test="($name = 'Sound') and (@name = 'source')">
 											<xsl:text>			if (</xsl:text>
 											<xsl:value-of select="$normalizedMemberObjectName"/>
-											<xsl:text> instanceof org.web3d.x3d.jsail.Texturing.MovieTextureObject)</xsl:text>
+											<xsl:text> instanceof org.web3d.x3d.jsail.Texturing.MovieTexture)</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 											<xsl:text>				((X3DConcreteNode)    </xsl:text>
 											<xsl:value-of select="$normalizedMemberObjectName"/>
@@ -8614,7 +8733,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 														<xsl:text>
 		if (</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance != null)
 		{
-			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance.setParentObject(null); // housekeeping, clear prior object
+			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance.setParent(null); // housekeeping, clear prior object
 			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance = null;
 		}</xsl:text>
 													</xsl:if>
@@ -8698,7 +8817,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                         <xsl:choose>
                                             <xsl:when test="(@type = 'SFString')">
                                                 <xsl:text disable-output-escaping="yes"><![CDATA[
-        if ( getType().equals(fieldObject.TYPE_SFSTRING) ||
+        if ( getType().equals(field.TYPE_SFSTRING) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             if (newValue != null)
@@ -8706,7 +8825,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                             </xsl:when>
                                             <xsl:when test="(@type = 'MFString')">
                                                 <xsl:text disable-output-escaping="yes"><![CDATA[
-        if ( getType().equals(fieldObject.TYPE_SFSTRING) || getType().equals(fieldObject.TYPE_MFSTRING) ||
+        if ( getType().equals(field.TYPE_SFSTRING) || getType().equals(field.TYPE_MFSTRING) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             if (newValue != null)
@@ -8714,7 +8833,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                             </xsl:when>
                                             <xsl:when test="(@type = 'SFBool') or (@type = 'SFInt32') or (@type = 'SFFloat') or (@type = 'SFDouble') or (@type = 'SFTime')">
                                         <xsl:text disable-output-escaping="yes"><![CDATA[
-        if ( getType().equals(fieldObject.TYPE_]]></xsl:text><xsl:value-of select="upper-case($nameSFType)"/><xsl:text disable-output-escaping="yes"><![CDATA[) ||
+        if ( getType().equals(field.TYPE_]]></xsl:text><xsl:value-of select="upper-case($nameSFType)"/><xsl:text disable-output-escaping="yes"><![CDATA[) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             // https://stackoverflow.com/questions/2843366/how-to-add-new-elements-to-an-array
@@ -8728,8 +8847,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                             </xsl:when>
                                             <xsl:when test="starts-with(@type,'MF') or contains(@type,'FColor') or contains(@type,'FRotation') or contains(@type,'FVec') or contains(@type,'FMatrix') or contains(@type,'FImage')">
                                         <xsl:text disable-output-escaping="yes"><![CDATA[
-        if ( getType().equals(fieldObject.TYPE_]]></xsl:text><xsl:value-of select="upper-case(@type)"/><xsl:text disable-output-escaping="yes"><![CDATA[) || 
-             getType().equals(fieldObject.TYPE_]]></xsl:text><xsl:value-of select="upper-case($nameSFType)"/><xsl:text disable-output-escaping="yes"><![CDATA[) ||
+        if ( getType().equals(field.TYPE_]]></xsl:text><xsl:value-of select="upper-case(@type)"/><xsl:text disable-output-escaping="yes"><![CDATA[) || 
+             getType().equals(field.TYPE_]]></xsl:text><xsl:value-of select="upper-case($nameSFType)"/><xsl:text disable-output-escaping="yes"><![CDATA[) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             // https://stackoverflow.com/questions/2843366/how-to-add-new-elements-to-an-array
@@ -8767,11 +8886,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * <br><br>
 	 * <i>Tooltip:</i> fieldValue contains initial value for this field, which overrides default initialization value defined in original ProtoDeclare field.
 	 * @param newValue is new value to append to the value field.
-	 * @return {@link fieldValueObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link fieldValue} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ appendValue(boolean newValue)
 	{
-        if ( getType().equals(fieldObject.TYPE_MFBOOL) ||
+        if ( getType().equals(field.TYPE_MFBOOL) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             boolean[] newArray = new boolean[valueArrayBoolean.length + 1];
@@ -8792,11 +8911,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * <br><br>
 	 * <i>Tooltip:</i> fieldValue contains initial value for this field, which overrides default initialization value defined in original ProtoDeclare field.
 	 * @param newValue is new value to append to the value field.
-	 * @return {@link fieldValueObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link fieldValue} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ appendValue(int newValue)
 	{
-        if ( getType().equals(fieldObject.TYPE_SFINT32) ||
+        if ( getType().equals(field.TYPE_SFINT32) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             int[] newArray = new int[valueArrayInteger.length + 1];
@@ -8817,11 +8936,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * <br><br>
 	 * <i>Tooltip:</i> fieldValue contains initial value for this field, which overrides default initialization value defined in original ProtoDeclare field.
 	 * @param newValue is new value to append to the value field.
-	 * @return {@link fieldValueObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link fieldValue} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ appendValue(float newValue)
 	{
-        if ( getType().equals(fieldObject.TYPE_SFFLOAT) ||
+        if ( getType().equals(field.TYPE_SFFLOAT) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             float[] newArray = new float[valueArrayFloat.length + 1];
@@ -8842,11 +8961,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * <br><br>
 	 * <i>Tooltip:</i> fieldValue contains initial value for this field, which overrides default initialization value defined in original ProtoDeclare field.
 	 * @param newValue is new value to append to the value field.
-	 * @return {@link fieldValueObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link fieldValue} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ appendValue(double newValue)
 	{
-        if ( getType().equals(fieldObject.TYPE_MFDOUBLE) || getType().equals(fieldObject.TYPE_MFTIME) ||
+        if ( getType().equals(field.TYPE_MFDOUBLE) || getType().equals(field.TYPE_MFTIME) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             double[] newArray = new double[valueArrayDouble.length + 1];
@@ -8867,17 +8986,17 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * <br><br>
 	 * <i>Tooltip:</i> fieldValue contains initial value for this field, which overrides default initialization value defined in original ProtoDeclare field.
 	 * @param newValue is new value to append to the value field.
-	 * @return {@link fieldValueObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link fieldValue} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ appendValue(String newValue)
 	{
         // set-newValue-validity-checks #TODO
-        if ( getType().equals(fieldObject.TYPE_SFSTRING) ||
+        if ( getType().equals(field.TYPE_SFSTRING) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             value += newValue; // append string
         }
-        else if (getType().equals(fieldObject.TYPE_MFSTRING))
+        else if (getType().equals(field.TYPE_MFSTRING))
         {
             if (!newValue.startsWith(" "))
                 value += " ";
@@ -8887,32 +9006,32 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
             if (!newValue.trim().endsWith("\""))
                 value += "\""; // wrap quote
         }
-		else if (getType().equals(fieldObject.TYPE_MFBOOL))
+		else if (getType().equals(field.TYPE_MFBOOL))
 		{
             boolean[] newArray = new boolean[valueArrayBoolean.length + 1];
             System.arraycopy(valueArrayBoolean, 0, newArray, 0, valueArrayBoolean.length);
-            newArray[valueArrayBoolean.length] = new SFBoolObject().setValueByString(newValue).getValue(); // type conversion
+            newArray[valueArrayBoolean.length] = new SFBool().setValueByString(newValue).getValue(); // type conversion
             valueArrayBoolean = newArray;
 		}
-		else if (getType().equals(fieldObject.TYPE_MFINT32))
+		else if (getType().equals(field.TYPE_MFINT32))
 		{
             int[] newArray = new int[valueArrayInteger.length + 1];
             System.arraycopy(valueArrayInteger, 0, newArray, 0, valueArrayInteger.length);
-            newArray[valueArrayInteger.length] = new SFInt32Object().setValueByString(newValue).getValue(); // type conversion
+            newArray[valueArrayInteger.length] = new SFInt32().setValueByString(newValue).getValue(); // type conversion
             valueArrayInteger = newArray;
 		}
-		else if (getType().equals(fieldObject.TYPE_MFFLOAT))
+		else if (getType().equals(field.TYPE_MFFLOAT))
 		{
             float[] newArray = new float[valueArrayFloat.length + 1];
             System.arraycopy(valueArrayFloat, 0, newArray, 0, valueArrayFloat.length);
-            newArray[valueArrayFloat.length] = new SFFloatObject().setValueByString(newValue).getValue(); // type conversion
+            newArray[valueArrayFloat.length] = new SFFloat().setValueByString(newValue).getValue(); // type conversion
             valueArrayFloat = newArray;
 		}
-		else if (getType().equals(fieldObject.TYPE_MFDOUBLE) || getType().equals(fieldObject.TYPE_MFTIME))
+		else if (getType().equals(field.TYPE_MFDOUBLE) || getType().equals(field.TYPE_MFTIME))
 		{
             double[] newArray = new double[valueArrayDouble.length + 1];
             System.arraycopy(valueArrayDouble, 0, newArray, 0, valueArrayDouble.length);
-            newArray[valueArrayDouble.length] = new SFDoubleObject().setValueByString(newValue).getValue(); // type conversion
+            newArray[valueArrayDouble.length] = new SFDouble().setValueByString(newValue).getValue(); // type conversion
             valueArrayDouble = newArray;
 		}
         else
@@ -8926,11 +9045,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Assign typed object MFString value to ]]></xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[, similar to {@link #setValue(String)}.
 	 * @param newValue is new value for the value field.
-	 * @return {@link fieldObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link field} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(MFStringObject newValue)
+	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(MFString newValue)
 	{
-        if ( getType().equals(fieldObject.TYPE_MFSTRING) ||
+        if ( getType().equals(field.TYPE_MFSTRING) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             if (newValue != null)
@@ -8947,15 +9066,15 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Assign typed object String[] array value to ]]></xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[, similar to {@link #setValue(String)}.
 	 * @param newValue is new value for the value field.
-	 * @return {@link fieldObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link field} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(String[] newValue)
 	{
-        if ( getType().equals(fieldObject.TYPE_MFSTRING) ||
+        if ( getType().equals(field.TYPE_MFSTRING) ||
             (getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
         {
             if (newValue != null)
-                setValue (new MFStringObject(newValue));
+                setValue (new MFString(newValue));
             return this;
         }
         else
@@ -9287,7 +9406,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text> field.</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:if test="$isEnumerationType">
-										<xsl:text>	 * @see MFStringObject#cleanupEnumerationValues(String)</xsl:text>
+										<xsl:text>	 * @see MFString#cleanupEnumerationValues(String)</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:if>
 									<xsl:text>	 * @return {@link </xsl:text>
@@ -9338,7 +9457,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>(</xsl:text>
 									<xsl:choose>
 										<xsl:when test="$isEnumerationType">
-											<xsl:text>MFStringObject.cleanupEnumerationValues(</xsl:text>
+											<xsl:text>MFString.cleanupEnumerationValues(</xsl:text>
 											<xsl:value-of select="$newValue"/>
 											<xsl:text>.toString())); // handle potential enumeration values</xsl:text>
 										</xsl:when>
@@ -9376,7 +9495,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text> field.</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:if test="$isEnumerationType">
-										<xsl:text>	 * @see MFStringObject#cleanupEnumerationValues(String)</xsl:text>
+										<xsl:text>	 * @see MFString#cleanupEnumerationValues(String)</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:if>
 									<xsl:text>	 * @return {@link </xsl:text>
@@ -9425,7 +9544,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:text>set</xsl:text>
 											<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 											<xsl:text>(</xsl:text>
-											<xsl:text>MFStringObject.cleanupEnumerationValues(</xsl:text>
+											<xsl:text>MFString.cleanupEnumerationValues(</xsl:text>
 											<xsl:value-of select="$newValue"/>
 											<xsl:text>)</xsl:text>
 											<xsl:text>); // handle potential enumeration values</xsl:text>
@@ -9569,7 +9688,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                         </xsl:if>
                                         <xsl:text>element);</xsl:text>
 										<xsl:text>&#10;</xsl:text>
-										<xsl:text>			((X3DConcreteElement) element).setParentObject(this); // parentTest13</xsl:text>
+										<xsl:text>			((X3DConcreteElement) element).setParent(this); // parentTest13</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 										<xsl:choose>
 											<xsl:when test="($name = 'MetadataSet') and (@name = 'value')">
@@ -9691,7 +9810,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>		((X3DConcreteElement) </xsl:text>
 									<xsl:value-of select="$newValue"/>
-									<xsl:text>).setParentObject(this); // parentTest2</xsl:text>
+									<xsl:text>).setParent(this); // parentTest2</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:choose>
 										<!-- MFNode child -->
@@ -9707,7 +9826,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		if ((primaryNode == null) && (]]></xsl:text><xsl:value-of select="$newValue"/><xsl:text> instanceof org.web3d.x3d.jsail.X3DConcreteNode))
 		{
 			primaryNode = (X3DConcreteNode) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>; // remember node type
-			primaryNode.setParentObject(this);
+			primaryNode.setParent(this);
 		}
 </xsl:text>	
 									</xsl:if>
@@ -9722,7 +9841,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>	}</xsl:text>                              
                                     <xsl:text>
 	/**
-	 * Add single ProtoInstanceObject (with appropriate node type and containerField value) to MFNode array for </xsl:text>
+	 * Add single ProtoInstance (with appropriate node type and containerField value) to MFNode array for </xsl:text>
 									<xsl:value-of select="@name"/>
 									<xsl:text disable-output-escaping="yes"><![CDATA[ field.
 	 * <br><br>
@@ -9733,13 +9852,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).	 */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> add</xsl:text>
                                         <xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
-										<xsl:text>(ProtoInstanceObject newValue)
+										<xsl:text>(ProtoInstance newValue)
 	{
 		if (newValue == null) return this; // newValueNullReturnThis
 		</xsl:text>
 									<xsl:value-of select="@name"/>
 									<xsl:text disable-output-escaping="yes"><![CDATA[.add(newValue);
-		((X3DConcreteElement) newValue).setParentObject(this); // parentTest16
+		((X3DConcreteElement) newValue).setParent(this); // parentTest16
 		return this;
 	}
 ]]></xsl:text>
@@ -9842,7 +9961,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>		((X3DConcreteElement) </xsl:text>
 									<xsl:value-of select="$newValue"/>
-									<xsl:text>).setParentObject(this); // parentTest4 unneeded?</xsl:text>
+									<xsl:text>).setParent(this); // parentTest4 unneeded?</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 													<xsl:choose>
 														<!-- MFNode child -->
@@ -9858,7 +9977,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		if ((primaryNode == null) && (]]></xsl:text><xsl:value-of select="$newValue"/><xsl:text> instanceof org.web3d.x3d.jsail.X3DConcreteNode))
 		{
 			primaryNode = (X3DConcreteNode) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>; // remember node type
-			primaryNode.setParentObject(this);
+			primaryNode.setParent(this);
 		}
 </xsl:text>	
 									</xsl:if>
@@ -9891,10 +10010,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	<xsl:choose>
 		<xsl:when test="($name = 'field') or ($name = 'fieldValue')">
 			<!-- SceneGraphFragmentContentModel -->
-			<xsl:text>X3DNode</xsl:text>
+			<xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
 		</xsl:when>
 		<xsl:when test="($name = 'ViewpointGroup')">
-			<xsl:text>X3DNode</xsl:text>
+			<xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
 		</xsl:when>
 		<xsl:when test="(string-length(@acceptableNodeTypes) > 0) and not(contains(@acceptableNodeTypes, '|'))">
 			<xsl:value-of select="@acceptableNodeTypes"/>
@@ -9914,51 +10033,51 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         if ((primaryNode == null) && (newValue instanceof org.web3d.x3d.jsail.X3DConcreteNode))
         {
             primaryNode = (X3DConcreteNode) newValue; // remember node type
-            primaryNode.setParentObject(this);
+            primaryNode.setParent(this);
         }
 ]]></xsl:text>
                                     </xsl:if>
                                     <xsl:text>
 		children.add(newValue);
-		((X3DConcreteElement) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setParentObject(this); // parentTest3
-        if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> instanceof ProtoInstanceObject)
-            ((ProtoInstanceObject) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setContainerField("children");
+		((X3DConcreteElement) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setParent(this); // parentTest3
+//      if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> instanceof ProtoInstance)
+//          ((ProtoInstance) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>).setContainerField("children");
 		return this;
 	}
 </xsl:text>
 								</xsl:if>
-								<!-- special addChild methods for Contour2DObject -->
+								<!-- special addChild methods for Contour2D -->
 								<xsl:if test="(($name = 'Contour2D') and (@name = 'children'))
 											   and not($isX3dStatement = 'true') and not($isInterface = 'true')">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Add single children node to array of existing children nodes (if any) for Contour2D.
 	 * @param newValue is new node value to be appended the children field.
-	 * @return {@link Contour2DObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link Contour2D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public Contour2DObject addChild(NurbsCurve2DObject newValue)
+	public Contour2D addChild(NurbsCurve2D newValue)
 	{
 		if (newValue == null) // newValueNullReturnSelf
 		{
 			return this; // nothing to do
 		}
 		children.add(newValue);
-		((X3DConcreteElement) newValue).setParentObject(this); // parentTest2
+		((X3DConcreteElement) newValue).setParent(this); // parentTest2
 		return this;
 	}
 	/**
 	 * Add single children node to array of existing children nodes (if any) for Contour2D.
 	 * @param newValue is new node value to be appended the children field.
-	 * @return {@link Contour2DObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link Contour2D} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public Contour2DObject addChild(ContourPolyline2DObject newValue)
+	public Contour2D addChild(ContourPolyline2D newValue)
 	{
 		if (newValue == null) // newValueNullReturnSelf
 		{
 			return this; // nothing to do
 		}
 		children.add(newValue);
-		((X3DConcreteElement) newValue).setParentObject(this); // parentTest2
+		((X3DConcreteElement) newValue).setParent(this); // parentTest2
 		return this;
 	}
 ]]></xsl:text>
@@ -10019,9 +10138,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												    (($isInterface = 'true') and //AbstractNodeType  [@name = $baseType                     ]/InterfaceDefinition/field[@name = $fieldName]) or
 												    (($isInterface = 'true') and //AbstractNodeType  [@name = $additionalInheritanceBaseType]/InterfaceDefinition/field[@name = $fieldName]) or
 												    (($isInterface = 'true') and //AbstractObjectType[@name = $additionalInheritanceBaseType]/InterfaceDefinition/field[@name = $fieldName]) or
-												    (($thisClassName = 'ProtoInstanceObject') and 
+												    (($thisClassName = 'ProtoInstance') and 
 												      (($CamelCaseName = 'Metadata') or ($CamelCaseName = 'Name') or ($CamelCaseName = 'DEF') or ($CamelCaseName = 'USE') or ($CamelCaseName = 'CssClass')))">
-										<xsl:text>	@Override // or here2?</xsl:text>
+										<xsl:text>	/* @Override */ // or here2?</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:if>
 									<xsl:text>	public </xsl:text>
@@ -10065,7 +10184,23 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                             <xsl:text> /* bleah 4 add node typing */ </xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
-											<xsl:value-of select="$javaPrimitiveType"/>
+                                            <xsl:variable name="saiPackagePath"> 
+                                                <xsl:call-template name="saiPackage">
+                                                    <xsl:with-param name="nodeType" select="$javaPrimitiveType"/>
+                                                </xsl:call-template>
+                                            </xsl:variable>
+                                            <xsl:choose>
+                                                <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                                    <xsl:text>/* here 8a */</xsl:text>
+                                                    <xsl:value-of select="$saiPackagePath"/>
+                                                    <xsl:text>.</xsl:text>
+                                                    <xsl:value-of select="$javaPrimitiveType"/>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <xsl:text>/* here 8b, saiPackage not found */</xsl:text>
+                                                    <xsl:value-of select="$javaPrimitiveType"/>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
 										</xsl:otherwise>
 									</xsl:choose>
 									<xsl:text> </xsl:text>
@@ -10104,7 +10239,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text>&#10;</xsl:text>
 													<xsl:text>		((X3DConcreteElement) </xsl:text>
 													<xsl:value-of select="$newValue"/>
-													<xsl:text>).setParentObject(this); // parentTest5</xsl:text>
+													<xsl:text>).setParent(this); // parentTest5</xsl:text>
 												</xsl:when>
 												<xsl:when test="(@type = 'MFNode')">
 													<!-- do not reset array when adding to it -->
@@ -10120,7 +10255,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			if ((primaryNode == null) && (]]></xsl:text><xsl:value-of select="$newValue"/><xsl:text>[i] instanceof org.web3d.x3d.jsail.X3DConcreteNode))
 			{
 				primaryNode = (X3DConcreteNode) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>[i]; // remember node type
-				primaryNode.setParentObject(this);
+				primaryNode.setParent(this);
 			}
 </xsl:text>	
 													</xsl:if>
@@ -10131,7 +10266,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:value-of select="$javaReferenceType"/>
 													<xsl:text>) || (</xsl:text>
 													<xsl:value-of select="$newValue"/>
-													<xsl:text>[i] instanceof ProtoInstanceObject))</xsl:text>
+													<xsl:text>[i] instanceof ProtoInstance))</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 													<xsl:text>			{</xsl:text>
 													<xsl:text>&#10;</xsl:text>
@@ -10149,7 +10284,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text>&#10;</xsl:text>
 													<xsl:text>				((X3DConcreteElement) </xsl:text>
 													<xsl:value-of select="$newValue"/>
-													<xsl:text>[i]).setParentObject(this); // parentTest6</xsl:text>
+													<xsl:text>[i]).setParent(this); // parentTest6</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 													<xsl:choose>
 														<!-- MFNode child -->
@@ -10162,8 +10297,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													</xsl:choose>
                                                     <xsl:text>				if (</xsl:text>
                                                     <xsl:value-of select="$newValue"/>
-                                                    <xsl:text>[i] instanceof ProtoInstanceObject)
-					((ProtoInstanceObject) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>[i]).setContainerField("</xsl:text><xsl:value-of select="@name"/><xsl:text>");</xsl:text>
+                                                    <xsl:text>[i] instanceof ProtoInstance)
+					((ProtoInstance) </xsl:text><xsl:value-of select="$newValue"/><xsl:text>[i]).setContainerField("</xsl:text><xsl:value-of select="@name"/><xsl:text>");</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 													<xsl:text>			}</xsl:text>
 													<xsl:text>&#10;</xsl:text>
@@ -10174,7 +10309,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:value-of select="$newValue"/>
 													<xsl:text>["+i+"] is not instanceof </xsl:text>
 													<xsl:value-of select="$javaReferenceType"/>
-													<xsl:text> or ProtoInstanceObject, array </xsl:text>
+													<xsl:text> or ProtoInstance, array </xsl:text>
 													<xsl:value-of select="$newValue"/>
 													<xsl:text>=" + </xsl:text>
 													<xsl:text>Arrays.toString(</xsl:text>
@@ -10287,7 +10422,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>	 */</xsl:text><!-- end javadoc -->
 									<xsl:text>&#10;</xsl:text>
 									<xsl:if test="not($isInterface = 'true') and not($isX3dStatement = 'true') and not($isClassX3dStatement = 'true')">
-										<xsl:text>	@Override</xsl:text>
+										<xsl:text>	/* @Override */</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:if>
 									<xsl:text>	public </xsl:text>
@@ -10335,7 +10470,23 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                             <xsl:text> /* bleah 2 add node typing */ </xsl:text>
 										</xsl:when>
 										<xsl:otherwise>
-											<xsl:value-of select="substring-before($javaPrimitiveType,'[]')"/>
+                                            <xsl:variable name="saiPackagePath"> 
+                                                <xsl:call-template name="saiPackage">
+                                                    <xsl:with-param name="nodeType" select="$javaPrimitiveType"/>
+                                                </xsl:call-template>
+                                            </xsl:variable>
+                                            <xsl:choose>
+                                                <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                                    <xsl:text>/* here 9a */</xsl:text>
+                                                    <xsl:value-of select="$saiPackagePath"/>
+                                                    <xsl:text>.</xsl:text>
+                                                    <xsl:value-of select="substring-before($javaPrimitiveType,'[]')"/>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <xsl:text>/* here 9b, saiPackage not found */</xsl:text>
+                                                    <xsl:value-of select="substring-before($javaPrimitiveType,'[]')"/>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
 										</xsl:otherwise>
 									</xsl:choose>
 									<xsl:text> </xsl:text>
@@ -10359,7 +10510,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>		{</xsl:text>
 												<xsl:text>&#10;</xsl:text>
-												<xsl:text>			primaryNode.setParentObject(null); // housekeeping, clear prior object</xsl:text>
+												<xsl:text>			primaryNode.setParent(null); // housekeeping, clear prior object</xsl:text>
 												<xsl:text>&#10;</xsl:text>
 												<xsl:text>			primaryNode = null; // clear from ProtoBody</xsl:text>
 												<xsl:text>&#10;</xsl:text>
@@ -10386,7 +10537,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				 foundValue = newValue.getValue();
 			else foundValue = newValue.getChildren().toString();
 			
-			throw new InvalidProtoException("ExternProtoDeclare name='" + name +
+			throw new org.web3d.x3d.sai.InvalidProtoException("ExternProtoDeclare name='" + name +
 					"' with field name='" + newValue.getName() +
 					"' cannot have any initial value (found \"" + foundValue + 
 					"\"). Instead use ProtoInstance fieldValue to override the original default ProtoDeclare field value.");
@@ -10404,7 +10555,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text>)</xsl:text>
 													<xsl:text> // </xsl:text>
 													<xsl:text>&#10;</xsl:text>
-													<xsl:text>			((X3DConcreteElement) element).clearParentObject(); // remove references to facilitate Java memory management</xsl:text>
+													<xsl:text>			((X3DConcreteElement) element).clearParent(); // remove references to facilitate Java memory management</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 													<xsl:text>		</xsl:text>
 													<xsl:text>clear</xsl:text>
@@ -10420,7 +10571,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text>&#10;</xsl:text>
 													<xsl:text>		((X3DConcreteElement) </xsl:text>
 													<xsl:value-of select="$newValue"/>
-													<xsl:text>).setParentObject(this); // parentTest7</xsl:text>
+													<xsl:text>).setParent(this); // parentTest7</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 												</xsl:when>
 												<xsl:when test="(@type = 'MFNode')">
@@ -10429,7 +10580,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text> instanceof </xsl:text>
 													<xsl:choose>
 														<xsl:when test="($name = 'ProtoBody')">
-															<xsl:text>X3DNode</xsl:text>
+															<xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
 														</xsl:when>
 														<xsl:otherwise>
 															<xsl:value-of select="$javaReferenceType"/>
@@ -10446,7 +10597,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:value-of select="$normalizedMemberObjectName"/>
 													<xsl:text>)</xsl:text>
 													<xsl:text>&#10;</xsl:text>
-													<xsl:text>				((X3DConcreteElement) element).clearParentObject(); // remove references to facilitate Java memory management</xsl:text>
+													<xsl:text>				((X3DConcreteElement) element).clearParent(); // remove references to facilitate Java memory management</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 													<xsl:text>			</xsl:text>
 													<xsl:text>clear</xsl:text>
@@ -10456,7 +10607,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:text>&#10;</xsl:text>
 													<xsl:text>			((X3DConcreteElement) </xsl:text>
 													<xsl:value-of select="$newValue"/>
-													<xsl:text>).setParentObject(this); // parentTest8</xsl:text>
+													<xsl:text>).setParent(this); // parentTest8</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 													<xsl:choose>
 														<!-- MFNode child -->
@@ -10524,7 +10675,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													</xsl:if>
 													<xsl:text>		((X3DConcreteElement) </xsl:text>
 													<xsl:value-of select="$newValue"/>
-													<xsl:text>).setParentObject(this); // parentTest9</xsl:text>
+													<xsl:text>).setParent(this); // parentTest9</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 												</xsl:otherwise>
 											</xsl:choose>
@@ -10543,7 +10694,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									</xsl:choose>
 <!-- duplicate method definition -->
                                     <xsl:if test="false() and not(starts-with(@name,'child')) and not($isInterface = 'true') and not($isX3dStatement = 'true') and not($isClassX3dStatement = 'true')">
-                                        <!-- source code: addMFNodeSomething(SFNodeObject) method -->
+                                        <!-- source code: addMFNodeSomething(SFNode) method -->
 										<xsl:text>
 	/**
 	 * Utility method to set single SFNode as </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> </xsl:text>
@@ -10571,7 +10722,7 @@ setAttribute method invocations).
         <xsl:text>((org.web3d.x3d.sai.Core.X3DNode) </xsl:text>
         <xsl:value-of select="@name"/>
         <xsl:text>);
-		((X3DConcreteElement) newValue).setParentObject(this);
+		((X3DConcreteElement) newValue).setParent(this);
 		return this;
 	}
 </xsl:text>
@@ -10603,7 +10754,7 @@ setAttribute method invocations).]]></xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>		((X3DConcreteElement) </xsl:text>
 									<xsl:value-of select="$normalizedMemberObjectName"/>
-									<xsl:text>).clearParentObject(); // remove references to facilitate Java memory management</xsl:text>
+									<xsl:text>).clearParent(); // remove references to facilitate Java memory management</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>		</xsl:text>
 									<xsl:value-of select="$normalizedMemberObjectName"/>
@@ -10648,7 +10799,7 @@ setAttribute method invocations).]]></xsl:text>
 										<xsl:value-of select="$normalizedMemberObjectName"/>
 										<xsl:text>)</xsl:text>
 										<xsl:text>&#10;</xsl:text>
-										<xsl:text>			((X3DConcreteElement) element).clearParentObject(); // remove references to facilitate Java memory management</xsl:text>
+										<xsl:text>			((X3DConcreteElement) element).clearParent(); // remove references to facilitate Java memory management</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:if>
 									<xsl:text>		</xsl:text>
@@ -10661,7 +10812,7 @@ setAttribute method invocations).]]></xsl:text>
 		<xsl:text>&#10;</xsl:text>
 		<xsl:text>		{</xsl:text>
 		<xsl:text>&#10;</xsl:text>
-		<xsl:text>			primaryNode.setParentObject(null); // housekeeping, clear prior object</xsl:text>
+		<xsl:text>			primaryNode.setParent(null); // housekeeping, clear prior object</xsl:text>
 		<xsl:text>&#10;</xsl:text>
 		<xsl:text>			primaryNode = null; // clear from ProtoBody</xsl:text>
 		<xsl:text>&#10;</xsl:text>
@@ -10804,7 +10955,7 @@ setAttribute method invocations).]]></xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									
 									<xsl:if test="not($isInterface = 'true') and (@name = 'metadata')">
-										<xsl:text>	@Override</xsl:text>
+										<xsl:text>	/* @Override */</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 									</xsl:if>
 									<!-- also have setFieldName(ProtoInstance newValue) for SFNode fields -->
@@ -10812,7 +10963,7 @@ setAttribute method invocations).]]></xsl:text>
 									<xsl:value-of select="$thisClassName"/>
 									<xsl:text> set</xsl:text>
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>(ProtoInstanceObject </xsl:text>
+									<xsl:text>(ProtoInstance </xsl:text>
 									<xsl:value-of select="$newValue"/>
 									<xsl:text>)</xsl:text>
 									<xsl:choose>
@@ -10829,7 +10980,7 @@ setAttribute method invocations).]]></xsl:text>
 			((X3DConcreteElement) </xsl:text>
 											<xsl:value-of select="$normalizedMemberObjectName"/>
 											<xsl:text>ProtoInstance</xsl:text>
-											<xsl:text>).setParentObject(null); // parentTest15.5</xsl:text>
+											<xsl:text>).setParent(null); // parentTest15.5</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 											<xsl:text>	    }</xsl:text>
 											<xsl:text>&#10;</xsl:text>
@@ -10843,14 +10994,14 @@ setAttribute method invocations).]]></xsl:text>
 			((X3DConcreteElement) </xsl:text>
 											<xsl:value-of select="$normalizedMemberObjectName"/>
 											<xsl:text>ProtoInstance</xsl:text>
-											<xsl:text>).setParentObject(this); // parentTest15.6
+											<xsl:text>).setParent(this); // parentTest15.6
             </xsl:text>
 											<xsl:value-of select="$normalizedMemberObjectName"/>
 											<xsl:text>ProtoInstance.setContainerField("</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>");
 	    }
 		if (</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text> != null)
 		{
-			((X3DConcreteElement) </xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>).setParentObject(null); // housekeeping, clear prior object
+			((X3DConcreteElement) </xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>).setParent(null); // housekeeping, clear prior object
 			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text> = null;
 		}
 </xsl:text>
@@ -10863,7 +11014,7 @@ setAttribute method invocations).]]></xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>		/** Private utility method to access SFNode ProtoInstance field **/</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>		private ProtoInstanceObject get</xsl:text>
+									<xsl:text>		private ProtoInstance get</xsl:text>
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>ProtoInstance</xsl:text>
 									<xsl:text>()</xsl:text>
@@ -10882,7 +11033,7 @@ setAttribute method invocations).]]></xsl:text>
 								<xsl:if test="false() and ((@type='SFNode') and not($isX3dStatement = 'true') and not($isInterface = 'true'))">
 									<xsl:text>	/**</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text disable-output-escaping="yes"><![CDATA[	 * Assign ProtoInstanceObject to <i>]]></xsl:text>
+									<xsl:text disable-output-escaping="yes"><![CDATA[	 * Assign ProtoInstance to <i>]]></xsl:text>
 									<xsl:value-of select="$normalizedMemberObjectName"/>
 									<xsl:text disable-output-escaping="yes"><![CDATA[</i> field.]]></xsl:text>
 									<xsl:if test="(string-length(@acceptableNodeTypes) > 0)">
@@ -10919,17 +11070,17 @@ setAttribute method invocations).
 ]]></xsl:text>
 									<xsl:text>	public </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> set</xsl:text>
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
-									<xsl:text>(ProtoInstanceObject newProtoInstanceNode)
+									<xsl:text>(ProtoInstance newProtoInstanceNode)
 	{
 		if (</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text> != null)
 		{
-			((X3DConcreteElement) </xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>).setParentObject(null); // housekeeping, clear prior object
+			((X3DConcreteElement) </xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>).setParent(null); // housekeeping, clear prior object
 			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text> = null;
 		}
 		</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance = newProtoInstanceNode;
 		if (newProtoInstanceNode != null)
 		{
-			newProtoInstanceNode.setParentObject(this);
+			newProtoInstanceNode.setParent(this);
 </xsl:text>
                         <xsl:choose>
                                 <xsl:when test="(($name = 'CADFace') or ($name = 'CollidableShape')) and (@name = 'shape')">
@@ -10981,7 +11132,7 @@ setAttribute method invocations).
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
 	 * @return ProtoInstance value of geometry field
 	 */
-	public ProtoInstanceObject get]]></xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>ProtoInstance()
+	public ProtoInstance get]]></xsl:text><xsl:value-of select="$CamelCaseName"/><xsl:text>ProtoInstance()
 	{
 		return </xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance;
 	}
@@ -11061,7 +11212,7 @@ setAttribute method invocations).
 	 * @param newValue is new value to add to the </xsl:text><xsl:value-of select="@name"/><xsl:text> field.</xsl:text>
 									<xsl:if test="($type = 'MFString')">
 										<xsl:text>
-	 * @see MFStringObject#cleanupEnumerationValues(String)</xsl:text>
+	 * @see MFString#cleanupEnumerationValues(String)</xsl:text>
 									</xsl:if>
 									<xsl:text>
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
@@ -11079,7 +11230,7 @@ setAttribute method invocations).
 		{
 			return this; // nothing to do
 		}
-        newValue = MFStringObject.cleanupEnumerationValue(newValue); // handle potential enumeration value
+        newValue = MFString.cleanupEnumerationValue(newValue); // handle potential enumeration value
 		if (!newValue.isEmpty() && !]]></xsl:text>
 											<xsl:value-of select="@name"/>
 											<xsl:text>.contains(newValue))
@@ -11105,7 +11256,7 @@ setAttribute method invocations).
 	 * @param newValue is new value to add to the </xsl:text><xsl:value-of select="@name"/><xsl:text> field.</xsl:text>
 									<xsl:if test="($type = 'MFString')">
 										<xsl:text>
-	 * @see MFStringObject#cleanupEnumerationValues(String)</xsl:text>
+	 * @see MFString#cleanupEnumerationValues(String)</xsl:text>
 									</xsl:if>
 									<xsl:text>
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
@@ -11127,7 +11278,7 @@ setAttribute method invocations).
 									<xsl:choose>
 										<xsl:when test="($type = 'MFString')">
 											<xsl:text disable-output-escaping="yes"><![CDATA[
-        newValue.setValue(MFStringObject.cleanupEnumerationValue(newValue.getValue())); // handle potential enumeration value
+        newValue.setValue(MFString.cleanupEnumerationValue(newValue.getValue())); // handle potential enumeration value
 		if (!newValue.getValue().isEmpty() && !]]></xsl:text>
 											<xsl:value-of select="@name"/>
 											<xsl:text>.contains(newValue.getValue()))
@@ -11174,39 +11325,39 @@ setAttribute method invocations).
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> setDisplacers(HAnimDisplacerObject newValue)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> setDisplacers(HAnimDisplacer newValue)
 	{
         </xsl:text><xsl:value-of select="$newValueNullReturnThis"/><xsl:text>
 		displacers.add(newValue);
-		((X3DConcreteElement) newValue).setParentObject(this);
+		((X3DConcreteElement) newValue).setParent(this);
 		return this;
 	}
 </xsl:text>
 <xsl:text>
 	/**
-	 * Set ProtoInstanceObject with node type HAnimDisplacer as single child in displacers field.
+	 * Set ProtoInstance with node type HAnimDisplacer as single child in displacers field.
 	 * @param newValue ProtoInstance node of type HAnimDisplacer to set
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> setDisplacers(ProtoInstanceObject newValue)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> setDisplacers(ProtoInstance newValue)
 	{
         </xsl:text><xsl:value-of select="$newValueNullReturnThis"/><xsl:text>
 		displacers.set(newValue);
-		((X3DConcreteElement) newValue).setParentObject(this);
+		((X3DConcreteElement) newValue).setParent(this);
 		return this;
 	}
 	/**
-	 * Add ProtoInstanceObject with node type HAnimDisplacer to MFNode array for displacers field.
+	 * Add ProtoInstance with node type HAnimDisplacer to MFNode array for displacers field.
 	 * @param newValue ProtoInstance node of type HAnimDisplacer to add
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addDisplacers(ProtoInstanceObject newValue)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addDisplacers(ProtoInstance newValue)
 	{
         </xsl:text><xsl:value-of select="$newValueNullReturnThis"/><xsl:text>
 		displacers.add(newValue);
-		((X3DConcreteElement) newValue).setParentObject(this);
+		((X3DConcreteElement) newValue).setParent(this);
 		return this;
 	}
 </xsl:text>
@@ -11226,7 +11377,7 @@ setAttribute method invocations).
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	@Override
+	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addComments (String newComment)
 	{
 		if (newComment == null) return this;
@@ -11239,7 +11390,7 @@ setAttribute method invocations).
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	@Override
+	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addComments (String[] newComments)
 	{
 		if (newComments == null) return this;
@@ -11251,7 +11402,7 @@ setAttribute method invocations).
 	 * @param newCommentsBlock block of comments to add
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	@Override
+	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addComments (CommentsBlock newCommentsBlock)
 	{
 		if (newCommentsBlock == null) return this;
@@ -11590,22 +11741,22 @@ setAttribute method invocations).
 								<!-- HAnim utility methods -->
 								<xsl:if test="(($name = 'HAnimJoint') or ($name = 'HAnimSegment') or ($name = 'HAnimSite') or ($name = 'HAnimDisplacer') or ($name = 'HAnimMotion')) and not($isInterface = 'true')">
 									<xsl:text>
-	/** Return reference to ancestor HAnimHumanoidObject
-	 * @return HAnimHumanoidObject if found, otherwise null
+	/** Return reference to ancestor HAnimHumanoid
+	 * @return HAnimHumanoid if found, otherwise null
 	 */
-	public HAnimHumanoidObject getAncestorHAnimHumanoid()
+	public HAnimHumanoid getAncestorHAnimHumanoid()
 	{
-		X3DConcreteElement parentElement = ((X3DConcreteElement)this).getParentObject();;
+		X3DConcreteElement parentElement = ((X3DConcreteElement)this).getParent();;
 		while (parentElement != null)
 		{
-			if (parentElement instanceof HAnimHumanoidObject)
-				return (HAnimHumanoidObject) parentElement;
-			parentElement = ((X3DConcreteElement)this).getParentObject();
+			if (parentElement instanceof HAnimHumanoid)
+				return (HAnimHumanoid) parentElement;
+			parentElement = ((X3DConcreteElement)this).getParent();
 		}
 		return null;
 	}
-	/** Return whether ancestor HAnimHumanoidObject is available
-	 * @return true if ancestor HAnimHumanoidObject found
+	/** Return whether ancestor HAnimHumanoid is available
+	 * @return true if ancestor HAnimHumanoid found
 	 */
 	public boolean hasAncestorHAnimHumanoid()
 	{
@@ -11617,21 +11768,21 @@ setAttribute method invocations).
 								<xsl:choose>
 									<xsl:when test="($name = 'HAnimMotion') and not($isInterface = 'true')">
 										<xsl:text>
-	/** Return version of ancestor HAnimHumanoidObject (if found) or this HAnimMotion node
+	/** Return version of ancestor HAnimHumanoid (if found) or this HAnimMotion node
 	 * @return ancestor version if found, otherwise 2.0
-	 * @see HAnimHumanoidObject#VERSION_2_0
+	 * @see HAnimHumanoid#VERSION_2_0
 	 */
 	public String getHAnimVersion()
 	{
 		if  (hasAncestorHAnimHumanoid())
 			 return getAncestorHAnimHumanoid().getVersion();
-		else return HAnimHumanoidObject.VERSION_2_0;
+		else return HAnimHumanoid.VERSION_2_0;
 	}
 </xsl:text>
 									</xsl:when>
 									<xsl:when test="($name = 'HAnimHumanoid') and not($isInterface = 'true')">
 										<xsl:text>
-	/** Return version of this HAnimHumanoidObject
+	/** Return version of this HAnimHumanoid
 	 * @return HAnim version
 	 */
 	public String getHAnimVersion()
@@ -11642,7 +11793,7 @@ setAttribute method invocations).
 									</xsl:when>
 									<xsl:when test="(starts-with($name, 'HAnim')) and not($isInterface = 'true')">
 										<xsl:text>
-	/** Return version of ancestor HAnimHumanoidObject
+	/** Return version of ancestor HAnimHumanoid
 	 * @return version if found, otherwise "-1"
 	 */
 	public String getHAnimVersion()
@@ -11694,13 +11845,13 @@ setAttribute method invocations).
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#connect">X3D Tooltips: connect</a>
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	@Override
-	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setIS(ISObject newValue)
+	/* @Override */
+	public ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setIS(IS newValue)
 	{
 		if (IS != null)
-			IS.setParentObject(null); // housekeeping, clear prior object
+			IS.setParent(null); // housekeeping, clear prior object
 		IS = newValue;
-		IS.setParentObject(this);
+		IS.setParent(this);
 		return this;
 	}
 	/**
@@ -11708,10 +11859,10 @@ setAttribute method invocations).
 	 * The IS statement connects node fields defined inside a ProtoBody declaration back to corresponding ProtoInterface fields.
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IS">X3D Tooltips: IS</a>
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#connect">X3D Tooltips: connect</a>
-	 * @return current ISObject, if any.
+	 * @return current IS, if any.
 	 */
-	@Override
-	public ISObject getIS()
+	/* @Override */
+	public IS getIS()
 	{
 		return IS;
 	}
@@ -11926,7 +12077,7 @@ setAttribute method invocations).
 	}
 
 	/**
-	 * Utility method that provides ProtoInstanceObject containerField value
+	 * Utility method that provides ProtoInstance containerField value
 	 * <i>Hint:</i> ProtoInstance containerField is important for determining parent-child node relationships.
 	 * @see org.web3d.x3d.jsail.X3DConcreteNode#setContainerFieldOverride(String)
 	 * @return containerField value
@@ -11943,11 +12094,11 @@ setAttribute method invocations).
 	 * <i>Hint:</i> ProtoInstance containerField is important for determining parent-child node relationships.
 	 * @param containerFieldName overriding value
 	 * @see org.web3d.x3d.jsail.X3DConcreteNode#setContainerFieldOverride(String)
-	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#ProtoInstance.containerField">X3D Tooltips: ProtoInstance.containerField</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">X3D Scene Authoring Hints: containerField</a>
 	 */
-	public ProtoInstanceObject setContainerField(String containerFieldName)
+	public ProtoInstance setContainerField(String containerFieldName)
 	{
 		setContainerFieldOverride(containerFieldName);
 		return this;
@@ -11955,7 +12106,7 @@ setAttribute method invocations).
 
 	/**
 	 * Utility method to find original ProtoInstance name if this ProtoInstance is a USE node (which does not include name).
-	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public String getOriginalName()
 	{
@@ -11966,8 +12117,8 @@ setAttribute method invocations).
 		X3DConcreteNode originalProtoInstanceNode = null;
 		if (originalName.isEmpty())
 		{
-            if (findAncestorSceneObject() != null)
-                 originalProtoInstanceNode = findAncestorSceneObject().findNodeByDEF(getUSE());
+            if (findAncestorScene() != null)
+                 originalProtoInstanceNode = findAncestorScene().findNodeByDEF(getUSE());
          
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
             {
@@ -11976,16 +12127,16 @@ setAttribute method invocations).
                     String errorNotice = ConfigurationProperties.ERROR_NODE_NOT_FOUND + 
                             ": unable to locate reference ProtoInstance DEF='" + getUSE() + "' for ProtoInstance USE='" + getUSE() + "'";
                     validationResult.append(errorNotice);
-                    throw new InvalidProtoException(errorNotice); // report error
+                    throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
                 }
-                else if (!(originalProtoInstanceNode instanceof ProtoInstanceObject))
+                else if (!(originalProtoInstanceNode instanceof ProtoInstance))
                 {
                     String errorNotice = ConfigurationProperties.ERROR_NODE_NOT_FOUND + 
                             ": unable to locate correct node reference, ProtoInstance USE='" + getUSE() + "' mistakenly matches " + originalProtoInstanceNode.getClass() + " DEF='" + getUSE() + "'";
                     validationResult.append(errorNotice);
-                    throw new InvalidProtoException(errorNotice); // report error
+                    throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
                 }
-                originalName = ((ProtoInstanceObject)originalProtoInstanceNode).getName();
+                originalName = ((ProtoInstance)originalProtoInstanceNode).getName();
 			}
 		}
 		return originalName;
@@ -11996,20 +12147,20 @@ setAttribute method invocations).
 	 * @see #hasExternProtoDeclare
 	 * @see #getProtoDeclare
 	 * @see #getExternProtoDeclare
-	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public boolean hasProtoDeclare ()
 	{
 		// check for corresponding declaration
-		if  (findAncestorSceneObject() == null)
+		if  (findAncestorScene() == null)
 			 return false;
 		// ProtoInstance USE nodes don't include name, so utility method getOriginalName() helps here
 		X3DConcreteElement matchingDeclaration = null;
         if (!getOriginalName().isEmpty())
-             matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ProtoDeclareObject.NAME); 
-		if ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject))
+             matchingDeclaration = findAncestorScene().findElementByNameValue(getOriginalName(), ProtoDeclare.NAME); 
+		if ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ProtoDeclare))
 		{
-			 referenceProtoDeclare = (ProtoDeclareObject) matchingDeclaration;
+			 referenceProtoDeclare = (ProtoDeclare) matchingDeclaration;
 			 return true;
 		}
 		else return false;
@@ -12020,20 +12171,20 @@ setAttribute method invocations).
 	 * @see #hasProtoDeclare
 	 * @see #getProtoDeclare
 	 * @see #getExternProtoDeclare
-	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public boolean hasExternProtoDeclare ()
 	{
 		// check for corresponding declaration
-		if  (findAncestorSceneObject() == null)
+		if  (findAncestorScene() == null)
 			 return false;
 		// ProtoInstance USE nodes don't include name, so utility method getOriginalName() helps here
 		X3DConcreteElement matchingDeclaration = null;
         if  (!getOriginalName().isEmpty())
-             matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ExternProtoDeclareObject.NAME); 
-		if ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject))
+             matchingDeclaration = findAncestorScene().findElementByNameValue(getOriginalName(), ExternProtoDeclare.NAME); 
+		if ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclare))
 		{
-			 referenceExternProtoDeclare = (ExternProtoDeclareObject) matchingDeclaration;
+			 referenceExternProtoDeclare = (ExternProtoDeclare) matchingDeclaration;
 			 return true;
 		}
 		else return false;
@@ -12044,9 +12195,9 @@ setAttribute method invocations).
 	 * @see #hasProtoDeclare
 	 * @see #hasExternProtoDeclare
 	 * @see #getExternProtoDeclare
-	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public ProtoDeclareObject getProtoDeclare ()
+	public ProtoDeclare getProtoDeclare ()
 	{
 		if  (hasProtoDeclare())
 			 return referenceProtoDeclare;
@@ -12057,9 +12208,9 @@ setAttribute method invocations).
 	 * @see #hasProtoDeclare
 	 * @see #hasExternProtoDeclare
 	 * @see #getProtoDeclare
-	 * @return {@link ProtoInstanceObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public ExternProtoDeclareObject getExternProtoDeclare ()
+	public ExternProtoDeclare getExternProtoDeclare ()
 	{
 		if  (hasExternProtoDeclare())
 			 return referenceExternProtoDeclare;
@@ -12073,7 +12224,7 @@ setAttribute method invocations).
 	/**
 	 * </xsl:text>
 	 <xsl:if test="($name = 'ExternProtoDeclare')">
-		 <xsl:text disable-output-escaping="yes"><![CDATA[(<i>Warning:</i> not yet supported in ExternProtoDeclareObject implementation, TODO) ]]></xsl:text>
+		 <xsl:text disable-output-escaping="yes"><![CDATA[(<i>Warning:</i> not yet supported in ExternProtoDeclare implementation, TODO) ]]></xsl:text>
 	 </xsl:if>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[This method helps determine node type of ProtoInstance by inspecting first node within corresponding ProtoDeclare ProtoBody]]></xsl:text>
 	 <xsl:if test="($name = 'ProtoDeclare')">
@@ -12084,24 +12235,24 @@ setAttribute method invocations).
 	 <xsl:choose>
 		 <xsl:when test="($name = 'ProtoDeclare')">
 			 <xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see ProtoBodyObject#getNodeType()
-	 * @see ExternProtoDeclareObject#getNodeType()
-	 * @see ProtoInstanceObject#getNodeType()
-	 * @see SceneObject]]></xsl:text>
+	 * @see ProtoBody#getNodeType()
+	 * @see ExternProtoDeclare#getNodeType()
+	 * @see ProtoInstance#getNodeType()
+	 * @see Scene]]></xsl:text>
 		 </xsl:when>
 		 <xsl:when test="($name = 'ExternProtoDeclare')">
 			 <xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see ProtoDeclareObject#getNodeType()
-	 * @see ProtoBodyObject#getNodeType()
-	 * @see ProtoInstanceObject#getNodeType()
-	 * @see SceneObject]]></xsl:text>
+	 * @see ProtoDeclare#getNodeType()
+	 * @see ProtoBody#getNodeType()
+	 * @see ProtoInstance#getNodeType()
+	 * @see Scene]]></xsl:text>
 		 </xsl:when>
 		 <xsl:when test="($name = 'ProtoInstance')">
 			 <xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see ProtoDeclareObject#getNodeType()
-	 * @see ProtoBodyObject#getNodeType()
-	 * @see ExternProtoDeclareObject#getNodeType()
-	 * @see SceneObject]]></xsl:text>
+	 * @see ProtoDeclare#getNodeType()
+	 * @see ProtoBody#getNodeType()
+	 * @see ExternProtoDeclare#getNodeType()
+	 * @see Scene]]></xsl:text>
 		 </xsl:when>
 	 </xsl:choose>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[
@@ -12127,12 +12278,12 @@ setAttribute method invocations).
 			<xsl:when test="($name = 'ExternProtoDeclare')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 		String errorNotice = new String();
-		if (findAncestorSceneObject() == null)
+		if (findAncestorScene() == null)
 		{
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
 				errorNotice = ConfigurationProperties.ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE + ": " +
-						   "ExternProtoDeclare name='" + getName() + "' must first be connected to SceneObject scene graph in order to get checked.";
+						   "ExternProtoDeclare name='" + getName() + "' must first be connected to Scene scene graph in order to get checked.";
 				validationResult.append(errorNotice).append("\n");
 			}
 			return errorNotice; // node type not found
@@ -12149,12 +12300,12 @@ setAttribute method invocations).
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 		// check for corresponding declaration
 		String errorNotice = new String();
-		if (findAncestorSceneObject() == null)
+		if (findAncestorScene() == null)
 		{
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
 				errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE + ": " +
-							   "ProtoInstance name='" + getOriginalName() + "' must first be connected to SceneObject scene graph in order to get checked.";
+							   "ProtoInstance name='" + getOriginalName() + "' must first be connected to Scene scene graph in order to get checked.";
 				validationResult.append(errorNotice).append("\n");
 				return ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + "_PrototypeNotFound"; // node type not found
 			}
@@ -12162,18 +12313,18 @@ setAttribute method invocations).
 		}
 		// ProtoInstance USE nodes don't include name, so utility method getOriginalName() helps here
 		X3DConcreteElement matchingDeclaration = null;
-		if ((findAncestorSceneObject() != null) && !getOriginalName().isEmpty())
+		if ((findAncestorScene() != null) && !getOriginalName().isEmpty())
         {
-            // first try ProtoDeclareObject
-			matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ProtoDeclareObject.NAME); 
-            if ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject))
+            // first try ProtoDeclare
+			matchingDeclaration = findAncestorScene().findElementByNameValue(getOriginalName(), ProtoDeclare.NAME); 
+            if ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ProtoDeclare))
             {
                 if (getContainerFieldOverride().isEmpty()) // fall back to use ProtoDeclare default value since actual value not provided in source model
                 {
-					String computedContainerField = ((ProtoDeclareObject) matchingDeclaration).getContainerFieldDefault();
+					String computedContainerField = ((ProtoDeclare) matchingDeclaration).getContainerFieldDefault();
                     setContainerFieldOverride(computedContainerField);
 
-                    if (!computedContainerField.equals(ProtoInstanceObject.containerField_DEFAULT_VALUE))
+                    if (!computedContainerField.equals(ProtoInstance.containerField_DEFAULT_VALUE))
 					{
 						String warningNotice = ConfigurationProperties.WARNING_MESSAGE + ": " + 
 							"ProtoInstance name='" + getOriginalName() + "' DEF='" + getDEF() + "' USE='" + getUSE() + 
@@ -12184,14 +12335,14 @@ setAttribute method invocations).
 						System.out.println(warningNotice);
 					}
                 }
-                return ((ProtoDeclareObject) matchingDeclaration).getNodeType();
+                return ((ProtoDeclare) matchingDeclaration).getNodeType();
             }
-            // next try ExternProtoDeclareObject
-            matchingDeclaration = findAncestorSceneObject().findElementByNameValue(getOriginalName(), ExternProtoDeclareObject.NAME);
-            if ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject))
+            // next try ExternProtoDeclare
+            matchingDeclaration = findAncestorScene().findElementByNameValue(getOriginalName(), ExternProtoDeclare.NAME);
+            if ((matchingDeclaration != null) && (matchingDeclaration instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclare))
             {
                 // no way to determine default containerField
-                return ((ExternProtoDeclareObject) matchingDeclaration).getNodeType();
+                return ((ExternProtoDeclare) matchingDeclaration).getNodeType();
             }
         }
         if  (ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
@@ -12232,9 +12383,9 @@ setAttribute method invocations).
 	/**
 	 * Find contained field statement by name, if present in contained ProtoInterface.
 	 * @param fieldName is name attribute for field of interest
-	 * @return fieldObject reference of interest, null otherwise
+	 * @return field reference of interest, null otherwise
 	 */
-	public fieldObject findFieldByName (String fieldName)
+	public field findFieldByName (String fieldName)
 	{
 		if  (hasProtoInterface())
 			 return getProtoInterface().findFieldByName(fieldName);
@@ -12257,10 +12408,10 @@ setAttribute method invocations).
 	/**
 	 * First node within ProtoDeclare ProtoBody determines node type of corresponding ProtoInstance, local reference maintained in member variable named <i>primaryNode</i>.
 	 * @see <a href="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#PROTOdefinitionsemantics">X3D Abstract Specification: 4.4.4.3 PROTO definition semantics</a>
-	 * @see ProtoDeclareObject#getNodeType()
-	 * @see ExternProtoDeclareObject#getNodeType()
-	 * @see ProtoInstanceObject#getNodeType()
-	 * @see SceneObject
+	 * @see ProtoDeclare#getNodeType()
+	 * @see ExternProtoDeclare#getNodeType()
+	 * @see ProtoInstance#getNodeType()
+	 * @see Scene
 	 * @return name of X3D node corresponding to node type for this ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ statement
 	 */
 	public String getNodeType()
@@ -12270,8 +12421,8 @@ setAttribute method invocations).
 		else
 		{
 			String prototypeName = "ParentProtoDeclareNameNotKnown";
-			if (getParentObject() !=  null)
-				prototypeName = ((ProtoDeclareObject)getParentObject()).getName();
+			if (getParent() !=  null)
+				prototypeName = ((ProtoDeclare)getParent()).getName();
 			String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTODECLARE_NODE_TYPE + ": " +
 						   "ProtoDeclare name='" + prototypeName + "' ProtoBody has no initial node and thus has no node type yet.";
 			validationResult.append(errorNotice).append("\n");
@@ -12395,7 +12546,7 @@ setAttribute method invocations).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addComponent (String componentName, int level)
 	{
-        return addComponent(new componentObject(componentName, level));
+        return addComponent(new component(componentName, level));
 	}
 	/**
 	 * Add a child <i>unit</i> statement.
@@ -12408,7 +12559,7 @@ setAttribute method invocations).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addUnit (String newName, String newCategory, float newConversionFactor)
 	{
-        return addUnit(new unitObject(newName, newCategory, newConversionFactor));
+        return addUnit(new unit(newName, newCategory, newConversionFactor));
 	}
 	/**
 	 * Add a child <i>unit</i> statement.
@@ -12421,7 +12572,7 @@ setAttribute method invocations).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addUnit (String newName, String newCategory, double newConversionFactor)
 	{
-        return addUnit(new unitObject(newName, newCategory, newConversionFactor));
+        return addUnit(new unit(newName, newCategory, newConversionFactor));
 	}
 	/**
 	 * Add a child <i>meta</i> statement.
@@ -12432,7 +12583,7 @@ setAttribute method invocations).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addMeta (String newName, String newDescription)
 	{
-        return addMeta(new metaObject(newName, newDescription));
+        return addMeta(new meta(newName, newDescription));
 	}
 </xsl:text>
                             </xsl:when>
@@ -12467,7 +12618,7 @@ setAttribute method invocations).
 	 * @param newComment initial value
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive setAttribute method invocations).
 	 */
-	@Override
+	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addComments (String newComment)
 	{</xsl:text>
 							<xsl:if test="not($isX3dStatement = 'true')">
@@ -12491,7 +12642,7 @@ setAttribute method invocations).
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	@Override
+	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addComments (String[] newComments)
 	{</xsl:text>
 							<xsl:if test="not($isX3dStatement = 'true')">
@@ -12515,7 +12666,7 @@ setAttribute method invocations).
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	@Override
+	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addComments (CommentsBlock newCommentsBlock)
 	{</xsl:text>
 							<xsl:if test="not($isX3dStatement = 'true')">
@@ -12542,17 +12693,17 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
-	 * @see X3DObject#FILE_EXTENSION_X3D
-	 * @see X3DObject#FILE_EXTENSION_XML
-	 * @see X3DObject#toStringXML()
-	 * @see X3DObject#toFileXML(String)
-	 * @see X3DObject#toFileX3D(String)
+	 * @see X3D#FILE_EXTENSION_X3D
+	 * @see X3D#FILE_EXTENSION_XML
+	 * @see X3D#toStringXML()
+	 * @see X3D#toFileXML(String)
+	 * @see X3D#toFileX3D(String)
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="blank">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @see <a href="https://www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm">X3D Canonicalization (C14N) Tool</a>
 	 * @return X3D string
 	 */
-	@Override
+	/* @Override */
 	public String toStringX3D(int indentLevel)
 	{]]></xsl:text>
 	<xsl:if test="not($name = 'CommentsBlock')">
@@ -12688,7 +12839,7 @@ setAttribute method invocations).
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 			if (!getDEF().equals(DEF_DEFAULT_VALUE) && !isUSE())
 			{
-				stringX3D.append(" DEF='").append(SFStringObject.toString(getDEF())).append("'");
+				stringX3D.append(" DEF='").append(SFString.toString(getDEF())).append("'");
 			}
 			]]></xsl:text>
 			</xsl:if>
@@ -12696,7 +12847,7 @@ setAttribute method invocations).
 				<xsl:text>
 			if (!getUSE().equals(USE_DEFAULT_VALUE))
 			{
-				stringX3D.append(" USE='").append(SFStringObject.toString(getUSE())).append("'");
+				stringX3D.append(" USE='").append(SFString.toString(getUSE())).append("'");
 			}
 			</xsl:text>
 			</xsl:if>
@@ -12713,14 +12864,14 @@ setAttribute method invocations).
 			</xsl:if>
 			<xsl:text>)
 			{
-				stringX3D.append(" name='").append(SFStringObject.toString(getName())).append("'");
+				stringX3D.append(" name='").append(SFString.toString(getName())).append("'");
 			}
 			</xsl:text>
 			</xsl:if>
                         <xsl:choose>
                             <xsl:when test="starts-with(local-name(),'Metadata')">
                                     <xsl:text disable-output-escaping="yes"><![CDATA[
-            if      (getParentObject() instanceof SceneObject)
+            if      (getParent() instanceof Scene)
             {
                     // must be default value since it is one of children of Scene
                     // stringX3D.append(" containerField='").append(this.getContainerFieldDefault()).append("'");
@@ -12765,7 +12916,7 @@ setAttribute method invocations).
 							<xsl:value-of select="@name"/>
 						</xsl:when>
 						<xsl:when test="(@name = 'class')">
-							<!-- getClass() is reserved by Java Object() class -->
+							<!-- getClass() is reserved by Java () class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
 						<xsl:otherwise>
@@ -12975,7 +13126,7 @@ setAttribute method invocations).
 				<xsl:variable name="javaReferenceType"><!-- base type of ArrayList -->
                     <xsl:choose>
                         <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
-                            <xsl:text>X3DNode</xsl:text>
+                            <xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
                         </xsl:when>
                         <xsl:when test="contains($javaType,'&lt;')">
                             <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
@@ -13023,7 +13174,7 @@ setAttribute method invocations).
 			<xsl:if test="($name = 'head')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 			// note required order of component, unit, meta (though relaxation of this requirement has been proposed)
-			for (metaObject element : metaList)
+			for (meta element : metaList)
 				 stringX3D.append(element.toStringX3D(indentLevel + indentIncrement));
 ]]></xsl:text>
 			</xsl:if>
@@ -13038,7 +13189,7 @@ setAttribute method invocations).
 			<xsl:choose>
 				<xsl:when test="($name = 'Script') or ($name = 'ShaderProgram')">
 <!-- field, IS now handled by X3DUOM
-			for (fieldObject element : fieldList)
+			for (field element : fieldList)
 				 stringX3D.append(element.toStringX3D(indentLevel + indentIncrement));
 
 			if (getIS() != null)
@@ -13055,7 +13206,7 @@ setAttribute method invocations).
 <!-- field, IS now handled by X3DUOM
 					<xsl:text disable-output-escaping="yes"><![CDATA[
 
-			for (fieldObject element : fieldList)
+			for (field element : fieldList)
 				 stringX3D.append(element.toStringX3D(indentLevel + indentIncrement));
 
 			if (getIS() != null)
@@ -13116,13 +13267,13 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
 	 * @param indentLevel number of levels of indentation for this element
-	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
+	 * @see X3D#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
 	 * @return ClassicVRML string
 	 */
-	@Override
+	/* @Override */
 	public String toStringClassicVRML(int indentLevel)
 	{
 		StringBuilder stringClassicVRML = new StringBuilder();]]></xsl:text>
@@ -13283,7 +13434,7 @@ setAttribute method invocations).
 		}
 		if (!getAS().equals(AS_DEFAULT_VALUE))
 		{
-			stringClassicVRML.append(" AS ").append(SFStringObject.toString(getAS())).append(" ");
+			stringClassicVRML.append(" AS ").append(SFString.toString(getAS())).append(" ");
 		}
 		stringClassicVRML.append("\n").append(indent);
 		]]></xsl:text>
@@ -13297,7 +13448,7 @@ setAttribute method invocations).
 		}
 		if (!getAS().equals(AS_DEFAULT_VALUE))
 		{
-			stringClassicVRML.append(" AS ").append(SFStringObject.toString(getAS())).append(" ");
+			stringClassicVRML.append(" AS ").append(SFString.toString(getAS())).append(" ");
 		}
 		stringClassicVRML.append("\n").append(indent);
 		]]></xsl:text>
@@ -13310,12 +13461,12 @@ setAttribute method invocations).
 		if (!getAppinfo().equals(APPINFO_DEFAULT_VALUE) || (!getAppinfo().isEmpty() && !ConfigurationProperties.getStripDefaultAttributes()))
 		{
 			stringClassicVRML.append(indent).append(indentCharacter).append(indentCharacter);
-			stringClassicVRML.append(" # [appinfo] ").append("\"").append(SFStringObject.toString(getAppinfo())).append("\"");
+			stringClassicVRML.append(" # [appinfo] ").append("\"").append(SFString.toString(getAppinfo())).append("\"");
 		}
 		if (!getDocumentation().equals(DOCUMENTATION_DEFAULT_VALUE) || (!getDocumentation().isEmpty() && !ConfigurationProperties.getStripDefaultAttributes()))
 		{
 			stringClassicVRML.append("\n").append(indent).append(indentCharacter).append(indentCharacter);
-			stringClassicVRML.append("# [documentation] ").append("\"").append(SFStringObject.toString(getDocumentation())).append("\"").append("\n").append(indent).append(indentCharacter);
+			stringClassicVRML.append("# [documentation] ").append("\"").append(SFString.toString(getDocumentation())).append("\"").append("\n").append(indent).append(indentCharacter);
 		}
 
 		// recursively iterate over child elements
@@ -13323,7 +13474,7 @@ setAttribute method invocations).
 		{
 			stringClassicVRML.append("\n").append(indent).append(indentCharacter).append(indentCharacter);
 			stringClassicVRML.append(ProtoInterface.toStringClassicVRML(indentLevel + indentIncrement));
-			for (fieldObject nextField : ProtoInterface.getFieldList())
+			for (field nextField : ProtoInterface.getFieldList())
 			{
 				stringClassicVRML.append(nextField.toStringClassicVRML(indentLevel + indentIncrement));
 			}
@@ -13356,21 +13507,21 @@ setAttribute method invocations).
 		if (!getAppinfo().equals(APPINFO_DEFAULT_VALUE) || (!getAppinfo().isEmpty() && !ConfigurationProperties.getStripDefaultAttributes()))
 		{
 			stringClassicVRML.append(indent).append(indentCharacter).append(indentCharacter);
-			stringClassicVRML.append(" # [appinfo] ").append("\"").append(SFStringObject.toString(getAppinfo())).append("\"");
+			stringClassicVRML.append(" # [appinfo] ").append("\"").append(SFString.toString(getAppinfo())).append("\"");
 		}
 		if (!getDocumentation().equals(DOCUMENTATION_DEFAULT_VALUE) || (!getDocumentation().isEmpty() && !ConfigurationProperties.getStripDefaultAttributes()))
 		{
 			stringClassicVRML.append("\n").append(indent).append(indentCharacter);
-			stringClassicVRML.append("# [documentation] ").append("\"").append(SFStringObject.toString(getDocumentation())).append("\"").append("\n").append(indent).append(indentCharacter);
+			stringClassicVRML.append("# [documentation] ").append("\"").append(SFString.toString(getDocumentation())).append("\"").append("\n").append(indent).append(indentCharacter);
 		}
 		if (getUrl().length > 0)
 		{
 			stringClassicVRML.append("\n").append(indent).append(indentCharacter);
-			stringClassicVRML.append("url ").append("[ ").append(MFStringObject.toString(getUrl())).append(" ]");
+			stringClassicVRML.append("url ").append("[ ").append(MFString.toString(getUrl())).append(" ]");
 		}
 				
 		// recursively iterate over child elements
-		for (fieldObject element : fieldList)
+		for (field element : fieldList)
 		{
 			stringClassicVRML.append(((X3DConcreteElement)element).toStringClassicVRML(indentLevel));
 		}
@@ -13392,14 +13543,14 @@ setAttribute method invocations).
 				<xsl:text>
 		if (!getDEF().equals(DEF_DEFAULT_VALUE))
 		{
-			stringClassicVRML.append("DEF ").append(SFStringObject.toString(getDEF())).append(" ");
+			stringClassicVRML.append("DEF ").append(SFString.toString(getDEF())).append(" ");
 		}</xsl:text>
 			</xsl:if>
 			<xsl:if test="InterfaceDefinition/field[@name = 'USE']">
 				<xsl:text>
 		if (!getUSE().equals(USE_DEFAULT_VALUE))
 		{
-			 stringClassicVRML.append("USE ").append(SFStringObject.toString(getUSE())).append("\n");
+			 stringClassicVRML.append("USE ").append(SFString.toString(getUSE())).append("\n");
 		}
 		else // only have further output if not a USE node
 		{</xsl:text>
@@ -13451,7 +13602,7 @@ setAttribute method invocations).
 		if (value.length() > 0)
 		{
 			stringClassicVRML.append(" ");
-			if (getType().equals(fieldObject.TYPE_SFSTRING))
+			if (getType().equals(field.TYPE_SFSTRING))
 				 stringClassicVRML.append("\"").append(value).append("\"");
 			else stringClassicVRML             .append(value);
 		}]]></xsl:text>
@@ -13460,11 +13611,11 @@ setAttribute method invocations).
 						<xsl:text disable-output-escaping="yes"><![CDATA[
 		if (!getAppinfo().equals(APPINFO_DEFAULT_VALUE) || (!getAppinfo().isEmpty() && !ConfigurationProperties.getStripDefaultAttributes()))
 		{
-			stringClassicVRML.append(" # [appinfo] ").append("\"").append(SFStringObject.toString(getAppinfo())).append("\"").append("\n").append(indent);
+			stringClassicVRML.append(" # [appinfo] ").append("\"").append(SFString.toString(getAppinfo())).append("\"").append("\n").append(indent);
 		}
 		if (!getDocumentation().equals(DOCUMENTATION_DEFAULT_VALUE) || (!getDocumentation().isEmpty() && !ConfigurationProperties.getStripDefaultAttributes()))
 		{
-			stringClassicVRML.append("# [documentation] ").append("\"").append(SFStringObject.toString(getDocumentation())).append("\"").append("\n").append(indent);
+			stringClassicVRML.append("# [documentation] ").append("\"").append(SFString.toString(getDocumentation())).append("\"").append("\n").append(indent);
 		}]]></xsl:text>
 					</xsl:if>
 				</xsl:when>
@@ -13493,7 +13644,7 @@ setAttribute method invocations).
 							<xsl:value-of select="@name"/>
 						</xsl:when>
 						<xsl:when test="(@name = 'class')">
-							<!-- getClass() is reserved by Java Object() class -->
+							<!-- getClass() is reserved by Java () class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
 						<xsl:otherwise>
@@ -13526,7 +13677,7 @@ setAttribute method invocations).
 					<xsl:text disable-output-escaping="yes"><![CDATA[
 				if (hasISconnect)
 				{
-					for (connectObject element : getIS().getConnectList())
+					for (connect element : getIS().getConnectList())
 					{
 						if (element.getNodeField().equals("]]></xsl:text><xsl:value-of select="@name"/><xsl:text><![CDATA["))
 						{
@@ -13668,7 +13819,7 @@ setAttribute method invocations).
 				<xsl:variable name="javaReferenceType"><!-- base type of ArrayList -->
                     <xsl:choose>
                         <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
-                            <xsl:text>X3DNode</xsl:text>
+                            <xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
                         </xsl:when>
                         <xsl:when test="contains($javaType,'&lt;')">
                             <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
@@ -13813,7 +13964,7 @@ setAttribute method invocations).
 			<xsl:if test="($name = 'head')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 			// note required order of component, unit, meta (though relaxation of this requirement has been proposed)
-			for (metaObject element : metaList)
+			for (meta element : metaList)
 			{
 				 stringClassicVRML.append(element.toStringClassicVRML(indentLevel));
 			}
@@ -13825,7 +13976,7 @@ setAttribute method invocations).
 				<xsl:when test="($name = 'Script') or ($name = 'ShaderProgram')">
 <!--
 
-			for (fieldObject element : fieldList)
+			for (field element : fieldList)
 			{
 				 stringClassicVRML.append(element.toStringClassicVRML(indentLevel + indentIncrement));
 			}
@@ -13843,7 +13994,7 @@ setAttribute method invocations).
 <!--
 					<xsl:text disable-output-escaping="yes"><![CDATA[
 
-			for (fieldObject element : fieldList)
+			for (field element : fieldList)
 			{
 				 stringClassicVRML.append(element.toStringClassicVRML(indentLevel + indentIncrement));
 			}
@@ -13914,13 +14065,13 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
-	 * @see X3DObject#FILE_EXTENSION_VRML97
+	 * @see X3D#FILE_EXTENSION_VRML97
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
 	 * @return VRML97 string
 	 */
-	@Override
+	/* @Override */
 	public String toStringVRML97(int indentLevel)
 	{
 		return toStringClassicVRML(indentLevel)]]></xsl:text>
@@ -13964,16 +14115,16 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide object reference to node by DEF name, if found as this node or in a contained node.
 	 * <br ><br >
-	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
+	 * <i>Warning:</i> first start with findAncestorScene() to check entire scene graph, or findAncestorX3D() to check entire model document.
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3D()
 	 * @see #findElementByNameValue(String,String)
 	 * @param DEFlabel DEF name of node to find
 	 * @return object reference to node
 	 */]]></xsl:text>
 							<xsl:if test="not($name = 'Scene') and not($name = 'ProtoBody')">
 								<xsl:text>
-	@Override</xsl:text>
+	/* @Override */</xsl:text>
 							</xsl:if>
 								<xsl:text>
 	public X3DConcreteNode getNodeByDEF(String DEFlabel)
@@ -14003,7 +14154,7 @@ setAttribute method invocations).
 								<xsl:variable name="javaReferenceType">
                                     <xsl:choose>
                                         <xsl:when test="contains($javaType,'Object') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')">
-                                            <xsl:text>X3DNode</xsl:text>
+                                            <xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
                                         </xsl:when>
                                         <xsl:otherwise>
                                             <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
@@ -14046,7 +14197,7 @@ setAttribute method invocations).
 							<xsl:if test="($name = 'ProtoInstance')">
 								<xsl:text>
 		// ProtoInstance node can contain other DEF'ed nodes in any contained fieldValue
-		for (fieldValueObject fieldInitialization : getFieldValueList()) // MFNode
+		for (fieldValue fieldInitialization : getFieldValueList()) // MFNode
 		{
 			// not yet found, continue with depth-first search of current fieldValueList
 			for (org.web3d.x3d.sai.Core.X3DNode child : fieldInitialization.getChildren())
@@ -14075,16 +14226,16 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
-	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <i>Warning:</i> first start with findAncestorScene() to check entire scene graph, or findAncestorX3D() to check entire model document.
 	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
 	 * @see #findNodeByDEF(String)
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3D()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found element, null otherwise
 	 */
-	@Override
+	/* @Override */
 	public X3DConcreteElement findElementByNameValue(String nameValue)
 	{
 		return findElementByNameValue(nameValue, ""); // empty string is wildcard, any element match is allowed
@@ -14094,17 +14245,17 @@ setAttribute method invocations).
 	 * Recursive method to provide object reference to node or statement by name attribute, if found as part of this element or in a contained element.
 	 * Elements with name fields include meta, Metadata* nodes, field/fieldValue, ProtoDeclare/ExternProtoDeclare/ProtoInstance, CAD and HAnim nodes.
 	 * <br ><br >
-	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <i>Warning:</i> first start with findAncestorScene() to check entire scene graph, or findAncestorX3D() to check entire model document.
 	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
 	 * @see #findNodeByDEF(String)
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3D()
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)
 	 * @return object reference to found element, null otherwise
 	 */
-	@Override
+	/* @Override */
 	public X3DConcreteElement findElementByNameValue(String nameValue, String elementName)
 	{
 		if ((nameValue == null) || nameValue.isEmpty())
@@ -14151,7 +14302,7 @@ setAttribute method invocations).
 								<xsl:variable name="javaReferenceType"><!-- base type of ArrayList -->
                                     <xsl:choose>
                                         <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
-                                            <xsl:text>X3DNode</xsl:text>
+                                            <xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
                                         </xsl:when>
                                         <xsl:when test="contains($javaType,'&lt;')">
                                             <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
@@ -14233,16 +14384,16 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide object reference to node by DEF, if found as this node or in a contained node.
 	 * <br ><br >
-	 * <i>Warning:</i> first start with findAncestorSceneObject() to check entire scene graph, or findAncestorX3DObject() to check entire model document.
+	 * <i>Warning:</i> first start with findAncestorScene() to check entire scene graph, or findAncestorX3D() to check entire model document.
 	 * <br ><br >
 	 * <i>Warning:</i> more than one element may be found that has the same DEF, this method does not handle that case.
 	 * @see #findElementByNameValue(String)
-	 * @see X3DConcreteElement#hasAncestorSceneObject()
-	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3DObject()
+	 * @see X3DConcreteElement#hasAncestorScene()
+	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3D()
 	 * @param DEFvalue is value of the name field being searched for in this element and child elements(if any)
 	 * @return object reference to found node, null otherwise
 	 */
-	@Override
+	/* @Override */
 	public X3DConcreteNode findNodeByDEF(String DEFvalue)
 	{
 		if ((DEFvalue == null) || DEFvalue.isEmpty())
@@ -14282,7 +14433,7 @@ setAttribute method invocations).
 								<xsl:variable name="javaReferenceType"><!-- base type of ArrayList -->
                                     <xsl:choose>
                                         <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
-                                            <xsl:text>X3DNode</xsl:text>
+                                            <xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
                                         </xsl:when>
                                         <xsl:when test="contains($javaType,'&lt;')">
                                             <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
@@ -14355,7 +14506,7 @@ setAttribute method invocations).
 	 * using both datatype-specification value checks and regular expression (regex) checking of corresponding string values.
 	 * @return validation results (if any)
 	 */
-	@Override
+	/* @Override */
 	public String validate()
 	{
 		validationResult = new StringBuilder(); // prepare for updated results
@@ -14382,7 +14533,7 @@ setAttribute method invocations).
 								<xsl:variable name="javaReferenceType"><!-- base type of ArrayList -->
                                     <xsl:choose>
                                         <xsl:when test="(@type = 'MFNode') and not($isX3dStatement = 'true') and not(@name = 'field') and not(@name = 'fieldValue')"><!-- (contains($javaType,'Object') or (@acceptableNodeTypes = 'X3DMetadataObject')) and not(contains($javaType,'X3DMetadataObject')) and -->
-                                            <xsl:text>X3DNode</xsl:text>
+                                            <xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
                                         </xsl:when>
                                         <xsl:when test="contains($javaType,'&lt;')">
                                             <xsl:value-of select="substring-before(substring-after($javaType,'&lt;'),'&gt;')"/>
@@ -14507,7 +14658,7 @@ setAttribute method invocations).
 			String errorNotice = "Internal X3DJSAIL error: incorrect handling of contained SFNode field, both </xsl:text><xsl:value-of select="@name"/><xsl:text> and </xsl:text>
 				<xsl:value-of select="@name"/><xsl:text>ProtoInstance are set simultaneously";
 			validationResult.append(errorNotice);
-			throw new InvalidProtoException(errorNotice); // report error
+			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
 		}</xsl:text>
 				</xsl:if>
 									</xsl:when>
@@ -14641,13 +14792,13 @@ setAttribute method invocations).
         {
 			String errorNotice = "ProtoInstance missing name field, which is usually required (since this ProtoInstance is not a USE node).";
 			validationResult.append(errorNotice);
-			throw new InvalidProtoException(errorNotice); // report error
+			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
         }
 		if (!getName().isEmpty() && isUSE())
         {
 			String errorNotice = "ProtoInstance has name field, which is not included in a ProtoInstance USE node.";
 			validationResult.append(errorNotice);
-			throw new InvalidProtoException(errorNotice); // report error
+			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
         }
 		String originalName = getOriginalName(); // call once here, for efficiency and also to allow separate changes
 
@@ -14669,19 +14820,19 @@ setAttribute method invocations).
 			String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE +
 					"ProtoInstance " + getName() + " has both corresponding ProtoDeclare and ExternProtoDeclare";
 			validationResult.append(errorNotice);
-			throw new InvalidProtoException(errorNotice); // report error
+			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
         }
 		if (getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
         {
 			String errorNotice = getNodeType();
 			validationResult.append(errorNotice);
-			throw new InvalidProtoException(errorNotice); // report error
+			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
         }
 		if (getNodeType().startsWith(ConfigurationProperties.ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE))
         {
 			String errorNotice = getNodeType();
 			validationResult.append(errorNotice);
-			throw new InvalidProtoException(errorNotice); // report error
+			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
         }
 		// TODO check for legal containerField among allowed getContainerFieldAlternateValues() for given nodeType
 ]]></xsl:text>
@@ -14731,7 +14882,7 @@ setAttribute method invocations).
 									<xsl:text disable-output-escaping="yes"><![CDATA[
         // check for redundant component tag
         int index = 0;
-		for (componentObject componentStatement : componentList)
+		for (component componentStatement : componentList)
 		{
             for (int j = 0; j < index; j++)
             {
@@ -14745,7 +14896,7 @@ setAttribute method invocations).
         }  
         // check for redundant unit tag
         index = 0;
-		for (unitObject unitStatement : unitList)
+		for (unit unitStatement : unitList)
 		{
             for (int j = 0; j < index; j++)
             {
@@ -14759,7 +14910,7 @@ setAttribute method invocations).
         }
         // check for duplicate meta tag
         index = -1; // list indices are zero-based
-		for (metaObject metaStatement : metaList)
+		for (meta metaStatement : metaList)
 		{
             for (int j = 0; j < index; j++)
             {
@@ -14772,12 +14923,12 @@ setAttribute method invocations).
                 }
                 // singleton meta tags
                 else if ( metaStatement.getName().equalsIgnoreCase(metaList.get(j).getName()) &&
-                         (metaStatement.getName().equalsIgnoreCase(metaObject.NAME_DESCRIPTION) ||
-                          metaStatement.getName().equalsIgnoreCase(metaObject.NAME_CREATED)     ||
-                          metaStatement.getName().equalsIgnoreCase(metaObject.NAME_MODIFIED)    ||
-                          metaStatement.getName().equalsIgnoreCase(metaObject.NAME_IDENTIFIER)    ||
-                          metaStatement.getName().equalsIgnoreCase(metaObject.NAME_TITLE)    ||
-                          metaStatement.getName().equalsIgnoreCase(metaObject.NAME_SUBJECT)))
+                         (metaStatement.getName().equalsIgnoreCase(meta.NAME_DESCRIPTION) ||
+                          metaStatement.getName().equalsIgnoreCase(meta.NAME_CREATED)     ||
+                          metaStatement.getName().equalsIgnoreCase(meta.NAME_MODIFIED)    ||
+                          metaStatement.getName().equalsIgnoreCase(meta.NAME_IDENTIFIER)    ||
+                          metaStatement.getName().equalsIgnoreCase(meta.NAME_TITLE)    ||
+                          metaStatement.getName().equalsIgnoreCase(meta.NAME_SUBJECT)))
                 {
                     validationResult.append("Duplicate found: <meta name='").append(metaStatement.getName()).append("'/>\n");
                 }
@@ -14821,7 +14972,7 @@ setAttribute method invocations).
 		X3DConcreteNode fromNodeObject = null;
 		X3DConcreteNode   toNodeObject = null;	
 													
-		if ((findAncestorSceneObject() == null) && (findAncestorProtoBody() == null))
+		if ((findAncestorScene() == null) && (findAncestorProtoBody() == null))
 		{
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
@@ -14844,9 +14995,9 @@ setAttribute method invocations).
 				validationResult.append(errorNotice).append("\n");
 			}
 		}
-		else if (findAncestorSceneObject() != null) // otherwise look within Scene
+		else if (findAncestorScene() != null) // otherwise look within Scene
 		{
-			fromNodeObject = findAncestorSceneObject().findNodeByDEF(getFromNode());
+			fromNodeObject = findAncestorScene().findNodeByDEF(getFromNode());
 			if (fromNodeObject == null)
 			{
 				errorNotice = " ROUTE fromNode='" + getFromNode() + "' was not found in connected scene graph. ";
@@ -14867,9 +15018,9 @@ setAttribute method invocations).
 				validationResult.append(errorNotice).append("\n");
 			}
 		}
-		else if (findAncestorSceneObject() != null) // otherwise look within Scene
+		else if (findAncestorScene() != null) // otherwise look within Scene
 		{
-			toNodeObject = findAncestorSceneObject().findNodeByDEF(getToNode());
+			toNodeObject = findAncestorScene().findNodeByDEF(getToNode());
 			if (toNodeObject == null)
 			{
 				errorNotice = " ROUTE toNode='" + getToNode() + "' was not found in connected scene graph. ";
@@ -14906,13 +15057,13 @@ setAttribute method invocations).
 				errorNotice = " ROUTE has source-destination type mismatch, " + 
 							   "fromField='" + fromField + "' source and toField='" + toField + "' destination have different types. ";
 			}
-			if (!fromFieldAccessType.equals(fieldObject.ACCESSTYPE_INPUTOUTPUT) &&
-				!fromFieldAccessType.equals(fieldObject.ACCESSTYPE_OUTPUTONLY))
+			if (!fromFieldAccessType.equals(field.ACCESSTYPE_INPUTOUTPUT) &&
+				!fromFieldAccessType.equals(field.ACCESSTYPE_OUTPUTONLY))
 			{
 				errorNotice = " ROUTE fromField (source) event can only have accessType='inputOutput' or accessType='outputOnly'. ";
 			}
-			if (  !toFieldAccessType.equals(fieldObject.ACCESSTYPE_INPUTOUTPUT) &&
-				  !toFieldAccessType.equals(fieldObject.ACCESSTYPE_INPUTONLY))
+			if (  !toFieldAccessType.equals(field.ACCESSTYPE_INPUTOUTPUT) &&
+				  !toFieldAccessType.equals(field.ACCESSTYPE_INPUTONLY))
 			{
 				errorNotice = " ROUTE toField (destination) event can only have accessType='inputOutput' or accessType='inputOnly'. ";
 			}
@@ -14931,7 +15082,7 @@ setAttribute method invocations).
 			{
 				String errorNotice = NAME + " containing Coordinate node with " + getCoordCount() + " values must also include coordIndex field";
 				validationResult.append(errorNotice);
-				throw new InvalidFieldException(errorNotice); // report error
+				throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
 			}
 		}
 		if (((color != null) || (colorProtoInstance != null)) && colorIndex.isEmpty() && coordIndex.isEmpty())
@@ -14940,7 +15091,7 @@ setAttribute method invocations).
 			{
 				String errorNotice = NAME + " containing Color node with " + getColorCount() + " values must also include colorIndex or coordIndex field";
 				validationResult.append(errorNotice);
-				throw new InvalidFieldException(errorNotice); // report error
+				throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
 			}
 		}]]></xsl:text>
 		<xsl:if test="(@name = 'IndexedFaceSet')">
@@ -14951,7 +15102,7 @@ setAttribute method invocations).
 			{
 				String errorNotice = NAME + " containing Normal node with " + getNormalCount() + " values must also include normalIndex or coordIndex field";
 				validationResult.append(errorNotice);
-				throw new InvalidFieldException(errorNotice); // report error
+				throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
 			}
 		}
 		if (((texCoord != null) || (texCoordProtoInstance != null)) && texCoordIndex.isEmpty() && coordIndex.isEmpty())
@@ -14960,7 +15111,7 @@ setAttribute method invocations).
 			{
 				String errorNotice = NAME + " containing TextureCoordinate node with " + getTexCoordCount() + " values must also include texCoordIndex or coordIndex field";
 				validationResult.append(errorNotice);
-				throw new InvalidFieldException(errorNotice); // report error
+				throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
 			}
 		}]]></xsl:text>
 		</xsl:if>
@@ -14972,20 +15123,20 @@ setAttribute method invocations).
 		String errorNotice = new String();
 		String IMPORT_description = "<IMPORT inlineDEF='" + inlineDEF + "' importedDEF='" + importedDEF + "' AS='" + AS + "'/>";
 										
-		if (findAncestorSceneObject() == null)
+		if (findAncestorScene() == null)
 		{
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
 				errorNotice = ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + 
-							   ": IMPORT is not currently connected to SceneObject scene graph and thus cannot get checked.";
+							   ": IMPORT is not currently connected to Scene scene graph and thus cannot get checked.";
 				validationResult.append(IMPORT_description).append("\n").append(errorNotice).append("\n");
 			}
 		}
 		else
 		{
-			X3DConcreteNode          inlineDEFObject = findAncestorSceneObject().findNodeByDEF(  inlineDEF);
-			X3DConcreteNode importedDEF_InlineObject = findAncestorSceneObject().findNodeByDEF(importedDEF);
-			X3DConcreteNode          AS_InlineObject = findAncestorSceneObject().findNodeByDEF(         AS);
+			X3DConcreteNode          inlineDEFObject = findAncestorScene().findNodeByDEF(  inlineDEF);
+			X3DConcreteNode importedDEF_InlineObject = findAncestorScene().findNodeByDEF(importedDEF);
+			X3DConcreteNode          AS_InlineObject = findAncestorScene().findNodeByDEF(         AS);
 			
 			if (inlineDEF.isEmpty())
 			{
@@ -15020,18 +15171,18 @@ setAttribute method invocations).
 		String errorNotice = new String();
 		String EXPORT_description = "<EXPORT localDEF='" + localDEF + "' AS='" + AS + "'/>";
 										
-		if (findAncestorSceneObject() == null)
+		if (findAncestorScene() == null)
 		{
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
 				errorNotice = ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + 
-							   ": EXPORT is not currently connected to SceneObject scene graph and thus cannot get checked.";
+							   ": EXPORT is not currently connected to Scene scene graph and thus cannot get checked.";
 				validationResult.append(EXPORT_description).append("\n").append(errorNotice).append("\n");
 			}
 		}
 		else
 		{
-			X3DConcreteNode   localDEFObject = findAncestorSceneObject().findNodeByDEF(localDEF);
+			X3DConcreteNode   localDEFObject = findAncestorScene().findNodeByDEF(localDEF);
 
 			if (localDEF.isEmpty())
 			{
@@ -15052,11 +15203,11 @@ setAttribute method invocations).
 								<!-- ProtoDeclare, ExternProtoDeclare check for corresponding ProtoInstance -->
 								<xsl:when test="($name = 'ProtoDeclare') or ($name = 'ExternProtoDeclare')">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
-		if (findAncestorSceneObject().findElementByNameValue (getName(), ProtoInstanceObject.NAME) == null)
+		if (findAncestorScene().findElementByNameValue (getName(), ProtoInstance.NAME) == null)
 		{
 			String warningNotice = ConfigurationProperties.WARNING_PROTOINSTANCE_NOT_FOUND + 
 									", " + NAME + " " + getName() + " has no corresponding " +
-									ProtoInstanceObject.NAME + " attached to the scene graph. ";
+									ProtoInstance.NAME + " attached to the scene graph. ";
 			validationResult.append(warningNotice).append("\n");
 		}
 		// TODO pass through allowed containerField values array?
@@ -15079,14 +15230,14 @@ setAttribute method invocations).
 		{
 			String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 						   ": connect statement cannot modify DEF, USE, cssClass or containerField value of an internal node. ";
-			String connect_description = "connectObject protoField='" + protoField + "' nodeField='" + nodeField + "'. ";
+			String connect_description = "connect protoField='" + protoField + "' nodeField='" + nodeField + "'. ";
 			validationResult.append(connect_description).append("\n").append(errorNotice).append("\n");
 		}
 ]]></xsl:text>
 								</xsl:when>
 								<xsl:when test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ComposedShader') or ($name = 'PackagedShader')">
 <!--
-		for (fieldObject field : fieldList) // check each field
+		for (field field : fieldList) // check each field
 		{
 			field.validate(); // exercise field checks to ensure connected and valid
 			validationResult.append(field.getValidationResult());
@@ -15098,29 +15249,29 @@ setAttribute method invocations).
 								<xsl:when test="($name = 'HAnimJoint') or ($name = 'HAnimSegment') or ($name = 'HAnimSite') or ($name = 'HAnimDisplacer')">
 									<xsl:text>
          // test for correct parent
-         X3DConcreteElement parent = getParentObject();
-         if (hasParentObject())
+         X3DConcreteElement parent = getParent();
+         if (hasParent())
          {
              if      (parent.getElementName().equals(</xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text>.NAME))
              {
                  // now test for correct parent-child LOA4 relationship pair
-                 if (!hasParentMatchingName(((HAnimJointObject)parent).getName()))
+                 if (!hasParentMatchingName(((HAnimJoint)parent).getName()))
                  {
                      String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE +
                          ": illegal parent name found: '" + ((</xsl:text>
                          <xsl:value-of select="$name"/>
-                         <xsl:text disable-output-escaping="yes"><![CDATA[Object)parent).getName() + "' instead of TODO" ;
+                         <xsl:text disable-output-escaping="yes"><![CDATA[)parent).getName() + "' instead of TODO" ;
                      validationResult.append(errorNotice).append("\n");
-                     throw new InvalidFieldException(errorNotice); // report error
+                     throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
                  }
              }
-             else if (!parent.getElementName().equals(fieldObject.NAME) && !parent.getElementName().equals(fieldValueObject.NAME) &&
-                      !parent.getElementName().equals(ProtoBodyObject.NAME))
+             else if (!parent.getElementName().equals(field.NAME) && !parent.getElementName().equals(fieldValue.NAME) &&
+                      !parent.getElementName().equals(ProtoBody.NAME))
              {
                  String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE +
                      ": illegal parent found: '" + parent.getElementName() + "'";
                  validationResult.append(errorNotice).append("\n");
-                 throw new InvalidFieldException(errorNotice); // report error
+                 throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
              }
          }
 // TODO: if LOA less than 4, modify test to compare whether immediate parent is a legal ancestor.
@@ -15154,27 +15305,27 @@ setAttribute method invocations).
 								<!-- TODO review ProtoInstance checks
 									<xsl:when test="($name = 'ProtoInstance')">
 										<xsl:text>		// now check corresponding prototype declaration fields
-		if (findAncestorSceneObject() == null)
+		if (findAncestorScene() == null)
 		{
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
-				String errorNotice = "ProtoDeclare name='" + getName() + "' must first be connected to SceneObject scene graph in order to get checked.";
+				String errorNotice = "ProtoDeclare name='" + getName() + "' must first be connected to Scene scene graph in order to get checked.";
 				validationResult.append(errorNotice).append("\n");
 			}
 			return "PrototypeNotFoundWhenNotConnectedToSceneGraph"; // not found
 		}
-		X3DConcreteElement declarationElement = findAncestorSceneObject().findElementByNameValue(getName(), ProtoDeclareObject.NAME); 
-		if (declarationElement instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject)
+		X3DConcreteElement declarationElement = findAncestorScene().findElementByNameValue(getName(), ProtoDeclare.NAME); 
+		if (declarationElement instanceof org.web3d.x3d.jsail.Core.ProtoDeclare)
 		{
-			fieldObject field = ((ProtoDeclareObject) declarationElement).getProtoInterface().findFieldByName(fieldName);
+			field field = ((ProtoDeclare) declarationElement).getProtoInterface().findFieldByName(fieldName);
 			if  (field != null)
 				 result = field.getType();
 			else result = "FieldDeclarationNotFound";
 		}
-		declarationElement = findAncestorSceneObject().findElementByNameValue(getName(), ExternProtoDeclareObject.NAME);
-		if (declarationElement instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject)
+		declarationElement = findAncestorScene().findElementByNameValue(getName(), ExternProtoDeclare.NAME);
+		if (declarationElement instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclare)
 		{
-			fieldObject field = ((ExternProtoDeclareObject) declarationElement).findFieldByName(fieldName);
+			field field = ((ExternProtoDeclare) declarationElement).findFieldByName(fieldName);
 			if  (field != null)
 				 result = field.getType();
 			else result = "FieldDeclarationNotFound";
@@ -15189,7 +15340,7 @@ setAttribute method invocations).
 		{
 			String errorNotice = "ProtoBody primaryNode is null, but getChildren() has" + getChildren().size() + " entries";
 			validationResult.append(errorNotice).append("\n");
-			throw new InvalidProtoException(errorNotice); // report error
+			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
 		}
 ]]></xsl:text>
 								</xsl:when> -->
@@ -15203,7 +15354,7 @@ setAttribute method invocations).
 			{
 				String errorNotice = "IS statement present, but contains no connect statements";
 				validationResult.append(errorNotice).append("\n");
-				throw new InvalidProtoException(errorNotice); // report error
+				throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
 			}				
 			// TODO also check that this node has ancestor ProtoBody, and that a field with same name also exists, so that IS is legal
 		}]]></xsl:text>
@@ -15216,9 +15367,9 @@ setAttribute method invocations).
 			String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + 
 				": illegal value encountered, containerField='" + getContainerFieldOverride() +
 				"' but allowed values are containerField_ALTERNATE_VALUES='" + 
-				new MFStringObject(containerField_ALTERNATE_VALUES).toStringX3D() + "'.";
+				new MFString(containerField_ALTERNATE_VALUES).toStringX3D() + "'.";
 			validationResult.append(errorNotice).append("\n");
-			throw new InvalidFieldException(errorNotice); // report error
+			throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
 		}]]></xsl:text>
 							</xsl:if>
 							<!-- profileNameChoices checking, add validation test if appropriate -->
@@ -15233,19 +15384,19 @@ setAttribute method invocations).
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 
 		// profile validation test, if connected to full scene
-		if (findAncestorX3DObject() != null)
+		if (findAncestorX3D() != null)
 		{
-			String     modelProfile = findAncestorX3DObject().getProfile();
+			String     modelProfile = findAncestorX3D().getProfile();
 ]]></xsl:text>     
 <!--   
-			headObject modelHead    = findAncestorX3DObject().getHead();
+			headObject modelHead    = findAncestorX3D().getHead();
 
 			// check whether model has a satisfactory component statement for this node
-			ArrayList<componentObject> sceneComponentsList = new ArrayList<>();
+			ArrayList<component> sceneComponentsList = new ArrayList<>();
             if (modelHead != null) 
 				sceneComponentsList = modelHead.getComponentList();
 			boolean hasSatisfactoryComponent = false;
-			for (componentObject nextComponent : sceneComponentsList)
+			for (component nextComponent : sceneComponentsList)
 			{
 				if ( nextComponent.getName().equals("CADGeometry") &&
 					(nextComponent.getLevel() >= 2))
@@ -15254,7 +15405,7 @@ setAttribute method invocations).
 -->
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 			// check whether model has a satisfactory profile for this node
-			boolean hasSatisfactorySupport = findAncestorX3DObject().supportsX3dComponent (COMPONENT, LEVEL);
+			boolean hasSatisfactorySupport = findAncestorX3D().supportsX3dComponent (COMPONENT, LEVEL);
                         
 			if (!hasSatisfactorySupport)]]></xsl:text>     
 <!--   
@@ -15276,12 +15427,12 @@ setAttribute method invocations).
 					<xsl:value-of select="$componentLevel"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA['/>\n" +
 					"or Java source-code assignment: " +
-					" findAncestorX3DObject().getHead().addComponent(\"]]></xsl:text><xsl:value-of select="$componentName"/>
+					" findAncestorX3D().getHead().addComponent(\"]]></xsl:text><xsl:value-of select="$componentName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[\").setLevel(]]></xsl:text>
 					<xsl:value-of select="$componentLevel"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[);";
 				validationResult.append(errorNotice).append("\n");
-				throw new InvalidFieldException(errorNotice); // report error
+				throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice); // report error
 			}
 		}]]></xsl:text>
 								</xsl:otherwise>
@@ -15343,23 +15494,23 @@ setAttribute method invocations).
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addField (fieldObject newField)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addField (field newField)
 	{
 		String errorNotice = "Illegal addField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ DEF='" + getDEF() + "', ";
         if (newField == null)
         {
-            errorNotice += "provided null fieldObject";
+            errorNotice += "provided null field";
             validationResult.append(errorNotice).append("\n");
-            throw new InvalidFieldException(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
         }
-		for (fieldObject priorField : fieldList) // check for field with duplicate name
+		for (field priorField : fieldList) // check for field with duplicate name
 		{
 			if (priorField.getName().equals(newField.getName()))
 			{
 				errorNotice += "provided duplicate newField name='" + newField.getName() + "', each field can only be defined once";
 				validationResult.append(errorNotice).append("\n");
-				throw new InvalidFieldException(errorNotice);
+				throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
 			}
 		}
 		String fieldValidationResult = newField.validate();
@@ -15367,10 +15518,10 @@ setAttribute method invocations).
 		{
 			errorNotice += "newField.validation() failure: " + fieldValidationResult;
 			validationResult.append(errorNotice).append("\n");
-			throw new InvalidFieldException(errorNotice);
+			throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
 		}
 		fieldList.add(newField);
-		newField.setParentObject(this);
+		newField.setParent(this);
 		return this;
 	}
 	/**
@@ -15379,20 +15530,20 @@ setAttribute method invocations).
 	 * @see #removeField(String)
 	 * @return whether field was removed
 	 */
-	public boolean removeField (fieldObject fieldToRemove)
+	public boolean removeField (field fieldToRemove)
 	{
 		String errorNotice = "Illegal removeField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ DEF='" + getDEF() + "', ";
         if (fieldToRemove == null)
         {
-            errorNotice += "provided null fieldObject";
+            errorNotice += "provided null field";
             validationResult.append(errorNotice).append("\n");
-            throw new InvalidFieldException(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
         }
 		int  fieldIndex = fieldList.indexOf(fieldToRemove);
 		if  (fieldIndex >= 0)
 		{
-			 fieldObject removedField = fieldList.remove(fieldIndex);
+			 field removedField = fieldList.remove(fieldIndex);
 			 return (removedField != null);
 		}
 		else return false;
@@ -15400,7 +15551,7 @@ setAttribute method invocations).
 	/**
 	 * Remove a field by name from contained fieldList
 	 * @param fieldName matching field of interest
-	 * @see #removeField(fieldObject)
+	 * @see #removeField(field)
 	 * @return whether field was removed
 	 */
 	public boolean removeField (String fieldName)
@@ -15411,9 +15562,9 @@ setAttribute method invocations).
         {
             errorNotice += "provided null or empty fieldName string";
             validationResult.append(errorNotice).append("\n");
-            throw new InvalidFieldException(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
         }
-		fieldObject fieldToRemove = findFieldByName (fieldName);
+		field fieldToRemove = findFieldByName (fieldName);
 		if (fieldToRemove != null)
 			return removeField (fieldToRemove);
 		else return false;
@@ -15428,11 +15579,11 @@ setAttribute method invocations).
 	/**
 	 * Find contained field statement by name, if present.
 	 * @param fieldName is name attribute for field of interest
-	 * @return fieldObject reference of interest, null otherwise
+	 * @return field reference of interest, null otherwise
 	 */
-	public fieldObject findFieldByName (String fieldName)
+	public field findFieldByName (String fieldName)
 	{
-		for (fieldObject element : fieldList)
+		for (field element : fieldList)
 		{
 			 if (element.getName().equalsIgnoreCase(fieldName))
 				 return element;
@@ -15462,7 +15613,7 @@ setAttribute method invocations).
 	 * Provide list of fields.
 	 * @return value of field list
 	 */
-	public ArrayList<fieldObject> getFieldList()
+	public ArrayList<field> getFieldList()
 	{
 		return fieldList;
 	}
@@ -15601,23 +15752,23 @@ setAttribute method invocations).
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addField (fieldObject newField)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addField (field newField)
 	{
 		String errorNotice = "Illegal addField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> </xsl:text>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ name='" + getName() + "', ";
         if (newField == null)
         {
-            errorNotice += "provided null fieldObject";
+            errorNotice += "provided null field";
             validationResult.append(errorNotice).append("\n");
-            throw new InvalidFieldException(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
         }
-		for (fieldObject priorField : fieldList) // check for field with duplicate name
+		for (field priorField : fieldList) // check for field with duplicate name
 		{
 			if (priorField.getName().equals(newField.getName()))
 			{
 				errorNotice += "trying to add field with duplicate name='" + newField.getName() + "'";
 				validationResult.append(errorNotice).append("\n");
-				throw new InvalidFieldException(errorNotice);
+				throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
 			}
 		}
 		String fieldValidationResult = newField.validate();
@@ -15625,21 +15776,21 @@ setAttribute method invocations).
 		{
 			errorNotice += "newField.validation() failure: " + fieldValidationResult;
 			validationResult.append(errorNotice).append("\n");
-			throw new InvalidFieldException(errorNotice);
+			throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
 		}
 		fieldList.add(newField);
-		newField.setParentObject(this);
+		newField.setParent(this);
 		return this;
 	}
 		
 	/**
 	 * Find contained field statement by name, if present.
 	 * @param fieldName is name attribute for field of interest
-	 * @return fieldObject reference of interest, null otherwise
+	 * @return field reference of interest, null otherwise
 	 */
-	public fieldObject findFieldByName (String fieldName)
+	public field findFieldByName (String fieldName)
 	{
-		for (fieldObject element : fieldList)
+		for (field element : fieldList)
 		{
 			 if (element.getName().equalsIgnoreCase(fieldName))
 				 return element;
@@ -15652,7 +15803,7 @@ setAttribute method invocations).
 	 * @see #removeField(String)
 	 * @return whether field was removed
 	 */
-	public boolean removeField (fieldObject fieldToRemove)
+	public boolean removeField (field fieldToRemove)
 	{
 		String errorNotice = "Illegal removeField() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
                 <xsl:choose>
@@ -15666,14 +15817,14 @@ setAttribute method invocations).
 				<xsl:text disable-output-escaping="yes"><![CDATA[
         if (fieldToRemove == null)
         {
-            errorNotice += "provided null fieldObject";
+            errorNotice += "provided null field";
             validationResult.append(errorNotice).append("\n");
-            throw new InvalidFieldException(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
         }
 		int  fieldIndex = fieldList.indexOf(fieldToRemove);
 		if  (fieldIndex >= 0)
 		{
-			 fieldObject removedField = fieldList.remove(fieldIndex);
+			 field removedField = fieldList.remove(fieldIndex);
 			 return (removedField != null);
 		}
 		else return false;
@@ -15681,7 +15832,7 @@ setAttribute method invocations).
 	/**
 	 * Remove a field by name from contained fieldList
 	 * @param fieldName matching field of interest
-	 * @see #removeField(fieldObject)
+	 * @see #removeField(field)
 	 * @return whether field was removed
 	 */
 	public boolean removeField (String fieldName)
@@ -15700,9 +15851,9 @@ setAttribute method invocations).
         {
             errorNotice += "provided null or empty fieldName string";
             validationResult.append(errorNotice).append("\n");
-            throw new InvalidFieldException(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
         }
-		fieldObject fieldToRemove = findFieldByName (fieldName);
+		field fieldToRemove = findFieldByName (fieldName);
 		if (fieldToRemove != null)
 			return removeField (fieldToRemove);
 		else return false;
@@ -15730,14 +15881,14 @@ setAttribute method invocations).
 	/**
 	 * Utility method to inspect parent ProtoDeclare and provide String value from inputOutput SFString field named <i>name</i>.
 	 * @return value of name field in parent ProtoDeclare
-	 * @see ProtoDeclareObject#getName
+	 * @see ProtoDeclare#getName
 	 */
 	public String getName()
 	{
-		if  (getParentObject() != null)
-			 return ((ProtoDeclareObject)getParentObject()).getName();
+		if  (getParent() != null)
+			 return ((ProtoDeclare)getParent()).getName();
 		else return ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + 
-				": " + getElementName() + "Object has no parent ProtoDeclareObject, thus getName() cannot be checked.";
+				": " + getElementName() + "Object has no parent ProtoDeclare, thus getName() cannot be checked.";
 	}
 ]]></xsl:text>
 								</xsl:if>
@@ -15750,17 +15901,17 @@ setAttribute method invocations).
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addFieldValue (fieldValueObject newFieldValue)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ addFieldValue (fieldValue newFieldValue)
 	{
-		String errorNotice = "Illegal addFieldValue() invocation for ProtoInstanceObject name='" + getName() +
+		String errorNotice = "Illegal addFieldValue() invocation for ProtoInstance name='" + getName() +
 					"' fieldValue name='" + newFieldValue.getName() + "', ";
         if (newFieldValue == null)
         {
-            errorNotice += "provided null fieldValueObject";
+            errorNotice += "provided null fieldValue";
             validationResult.append(errorNotice).append("\n");
-            throw new InvalidFieldException(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
         }
-		for (fieldValueObject priorFieldValue : fieldValueList) // check for field with duplicate name
+		for (fieldValue priorFieldValue : fieldValueList) // check for field with duplicate name
 		{
 			if (priorFieldValue.getName().equals(newFieldValue.getName()))
 			{
@@ -15775,21 +15926,21 @@ setAttribute method invocations).
 		{
 			errorNotice += "newFieldValue.validation() failure:\n   " + fieldValueValidationResult;
 			validationResult.append(errorNotice).append("\n");
-			throw new InvalidFieldException(errorNotice);
+			throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
 		}
 		fieldValueList.add(newFieldValue);
-		newFieldValue.setParentObject(this);
+		newFieldValue.setParent(this);
 		return this;
 	}
 	
 	/**
 	 * Find contained fieldValue statement by name, if present.
 	 * @param fieldValueName is name attribute for fieldValue of interest
-	 * @return fieldValueObject reference of interest, null otherwise
+	 * @return fieldValue reference of interest, null otherwise
 	 */
-	public fieldValueObject findFieldValueByName (String fieldValueName)
+	public fieldValue findFieldValueByName (String fieldValueName)
 	{
-		for (fieldValueObject element : fieldValueList)
+		for (fieldValue element : fieldValueList)
 		{
 			 if (element.getName().equalsIgnoreCase(fieldValueName))
 				 return element;
@@ -15802,20 +15953,20 @@ setAttribute method invocations).
 	 * @see #removeFieldValue(String)
 	 * @return whether fieldValue was removed
 	 */
-	public boolean removeFieldValue (fieldValueObject fieldValueToRemove)
+	public boolean removeFieldValue (fieldValue fieldValueToRemove)
 	{
 		String errorNotice = "Illegal removeFieldValue() invocation for ]]></xsl:text><xsl:value-of select="$thisClassName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[ DEF='" + getDEF() + "', ";
         if (fieldValueToRemove == null)
         {
-            errorNotice += "provided null fieldValueObject";
+            errorNotice += "provided null fieldValue";
             validationResult.append(errorNotice).append("\n");
-            throw new InvalidFieldException(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
         }
 		int  fieldValueIndex = fieldValueList.indexOf(fieldValueToRemove);
 		if  (fieldValueIndex >= 0)
 		{
-			 fieldValueObject removedfieldValue = fieldValueList.remove(fieldValueIndex);
+			 fieldValue removedfieldValue = fieldValueList.remove(fieldValueIndex);
 			 return (removedfieldValue != null);
 		}
 		else return false;
@@ -15823,7 +15974,7 @@ setAttribute method invocations).
 	/**
 	 * Remove a fieldValue by name from contained fieldValueList
 	 * @param fieldValueName matching fieldValue of interest
-	 * @see #removeFieldValue(fieldValueObject)
+	 * @see #removeFieldValue(fieldValue)
 	 * @return whether fieldValue was removed
 	 */
 	public boolean removeFieldValue (String fieldValueName)
@@ -15834,9 +15985,9 @@ setAttribute method invocations).
         {
             errorNotice += "provided null or empty fieldValueName string";
             validationResult.append(errorNotice).append("\n");
-            throw new InvalidFieldException(errorNotice);
+            throw new org.web3d.x3d.sai.InvalidFieldException(errorNotice);
         }
-		fieldValueObject fieldValueToRemove = findFieldValueByName (fieldValueName);
+		fieldValue fieldValueToRemove = findFieldValueByName (fieldValueName);
 		if (fieldValueToRemove != null)
 			return removeFieldValue (fieldValueToRemove);
 		else return false;
@@ -15865,7 +16016,7 @@ setAttribute method invocations).
 	 * Utility method to add single X3DMetadataNode to contained list of existing Scene root nodes (if any).
          * <i>WARNING</i>: Scene is a statement that is implicit in several encodings and has no <i>metadata</i> field, so top-level metadata nodes are typically kept together within other top-level root nodes as Scene children.
 	 * @param newValue is new node value to be appended the children field.	 
-	 * @return {@link SceneObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link Scene} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	*/
 	public Scene]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ addMetadata(X3DMetadataObject newValue)
 	{
@@ -15875,22 +16026,22 @@ setAttribute method invocations).
 		}
                 // note Scene has no metadata field, add to children instead
 		children.add((org.web3d.x3d.sai.Core.X3DNode)newValue);
-		((X3DConcreteElement) newValue).setParentObject(this);
+		((X3DConcreteElement) newValue).setParent(this);
 		return this;
 	}
 	/**
-	 * Utility method to add single LayerSetObject to contained list of existing Scene root nodes (if any).
+	 * Utility method to add single LayerSet to contained list of existing Scene root nodes (if any).
 	 * @param newValue is new node value to be appended the children field.	 
-	 * @return {@link SceneObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link Scene} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	*/
-	public Scene]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ addLayerSet(LayerSetObject newValue)
+	public Scene]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ addLayerSet(LayerSet newValue)
 	{
 		if (newValue == null)
 		{
 			return this; // nothing to do
 		}
 		children.add((org.web3d.x3d.sai.Core.X3DNode)newValue);
-		((X3DConcreteElement) newValue).setParentObject(this);
+		((X3DConcreteElement) newValue).setParent(this);
 		return this;
 	}
 ]]></xsl:text>
@@ -15900,13 +16051,13 @@ setAttribute method invocations).
 	/**
 	 * Find contained meta statement by name, if present.
 	 * @param metaName is NMTOKEN name attribute for meta statement of interest
-	 * @return metaObject reference of interest, null otherwise
+	 * @return meta reference of interest, null otherwise
 	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#meta">X3D Tooltips: meta statement</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
 	 */
-	public metaObject findMetaByName (String metaName)
+	public meta findMetaByName (String metaName)
 	{
-		for (metaObject element : metaList)
+		for (meta element : metaList)
 		{
 			 if (element.getName().equalsIgnoreCase(metaName))
 				 return element;
@@ -15927,12 +16078,12 @@ setAttribute method invocations).
 	/**
 	 * Find contained component statement by name, if present.
 	 * @param componentName name for component statement
-	 * @return componentObject reference of interest, null otherwise
+	 * @return component reference of interest, null otherwise
 	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#component">X3D Tooltips: component</a>
 	 */
-	public componentObject findComponentByName (String componentName)
+	public component findComponentByName (String componentName)
 	{
-		for (componentObject element : componentList)
+		for (component element : componentList)
 		{
 			 if (element.getName().equalsIgnoreCase(componentName))
 				 return element;
@@ -15953,12 +16104,12 @@ setAttribute method invocations).
 	/**
 	 * Find contained unit statement by name, if present.
 	 * @param unitName is name attribute for unit statement of interest
-	 * @return unitObject reference of interest, null otherwise
+	 * @return unit object reference of interest, null otherwise
 	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#unit">X3D Tooltips: unit</a>
 	 */
-	public unitObject findUnitByName (String unitName)
+	public unit findUnitByName (String unitName)
 	{
-		for (unitObject element : unitList)
+		for (unit element : unitList)
 		{
 			 if (element.getName().equalsIgnoreCase(unitName))
 				 return element;
@@ -15988,7 +16139,7 @@ public boolean isCrossSectionClosed()
 {
 boolean isClosed;
 if (crossSection == null) return false; // safety check
-int crossSectionTupleLength = crossSection.length / MFVec2fObject.TUPLE_SIZE;
+int crossSectionTupleLength = crossSection.length / MFVec2f.TUPLE_SIZE;
 isClosed = (crossSectionTupleLength > 1) && 
 (crossSection[0] == crossSection[(crossSectionTupleLength-1)*2 + 0]) && 
 (crossSection[1] == crossSection[(crossSectionTupleLength-1)*2 + 1]);
@@ -16003,7 +16154,7 @@ public boolean isSpineClosed()
 {
 boolean isClosed;
 if (spine == null) return false; // safety check
-int spineTupleLength = spine.length / MFVec3fObject.TUPLE_SIZE;
+int spineTupleLength = spine.length / MFVec3f.TUPLE_SIZE;
 isClosed = (spineTupleLength > 1) && 
 (spine[0] == spine[(spineTupleLength-1)*3 + 0]) && 
 (spine[1] == spine[(spineTupleLength-1)*3 + 1]) && 
@@ -16013,9 +16164,9 @@ return isClosed;
 
 /**
 * Create SVG output file (with same base name) for Extrusion crossSection, if found.
-* @see X3DObject#FILE_EXTENSION_SVG
+* @see X3D#FILE_EXTENSION_SVG
 * @see ConfigurationProperties#STYLESHEET_ExtrusionCrossSectionSVG
-* @see X3DObject#toFileStylesheetConversion(String,String)
+* @see X3D#toFileStylesheetConversion(String,String)
 * @param fileName name of file to create and save, can include local directory path, must end with .svg
 * @return File containing result (if operation succeeds), null otherwise
 */
@@ -16023,9 +16174,9 @@ public File toFileSvgCrossSection(String fileName)
 {
 if (!(fileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_SVG)))
 {
-throw new X3DException("fileName " + fileName + " does not end with expected extension \"" + X3DObject.FILE_EXTENSION_SVG + "\"");
+throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with expected extension \"" + X3D.FILE_EXTENSION_SVG + "\"");
 }
-return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_ExtrusionCrossSectionSVG, fileName);
+return findAncestorX3D().toFileStylesheetConversion(ConfigurationProperties.STYLESHEET_ExtrusionCrossSectionSVG, fileName);
 }
 ]]></xsl:text>
 							</xsl:when>
@@ -16186,7 +16337,7 @@ return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationPropertie
 	public String getPixelsString()
     {
         StringBuilder result = new StringBuilder();
-        String hexFormat = SFImageObject.getPixelHexFormat(getNumberComponents());
+        String hexFormat = SFImage.getPixelHexFormat(getNumberComponents());
 
 		int[] destinationPixels = getPixels();
 		for (int i = 0; i < destinationPixels.length; i++)
@@ -16209,7 +16360,7 @@ return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationPropertie
 	 * Note that returned value might be empty string if never set in original field object.
 	 * If found, provides String value ["SFBool" | "MFBool" | "SFColor" | "MFColor" | "SFColorRGBA" | "MFColorRGBA" | "SFDouble" | "MFDouble" | "SFFloat" | "MFFloat" | "SFImage" | "MFImage" | "SFInt32" | "SFNode" | "MFNode" | "MFInt32" | "SFRotation" | "MFRotation" | "SFString" | "MFString" | "SFTime" | "MFTime" | "SFVec2d" | "MFVec2d" | "SFVec2f" | "MFVec2f" | "SFVec3d" | "MFVec3d" | "SFVec3f" | "MFVec3f" | "SFVec4d" | "MFVec4d" | "SFVec4f" | "MFVec4f" | "SFMatrix3d" | "MFMatrix3d" | "SFMatrix3f" | "MFMatrix3f" | "SFMatrix4d" | "MFMatrix4d" | "SFMatrix4f" | "MFMatrix4f"] from inputOutput SFString field named <i>type</i>.
 	 * <br><br>
-	 * @see org.web3d.x3d.jsail.Core.fieldObject
+	 * @see org.web3d.x3d.jsail.Core.field
 	 * @return type value from corresponding field declaration, otherwise "fieldValueTypeNotFound"
 	 */
 	public String getType()
@@ -16218,15 +16369,15 @@ return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationPropertie
 		String fieldValueType = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE; // default until found
 		String errorNotice;
 							
-		if (getParentObject() == null)
+		if (getParent() == null)
 		{
 			errorNotice = ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH + 
-							": fieldValue name='" + getName() + "' is not currently connected to a ProtoInstanceObject and thus getType() cannot be checked.";
+							": fieldValue name='" + getName() + "' is not currently connected to a ProtoInstance and thus getType() cannot be checked.";
 			validationResult.append(errorNotice).append("\n");
 							
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
-				 throw new InvalidProtoException(errorNotice); // report error
+				 throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
                  // ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE
 			}
 			else // missing type might allowably occur during object creation
@@ -16234,11 +16385,11 @@ return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationPropertie
 				return fieldValueType; // default is unknown type
             }
 		}
-		else prototypeName = ((ProtoInstanceObject) getParentObject()).getName();
+		else prototypeName = ((ProtoInstance) getParent()).getName();
 
-		fieldObject fieldDefinition = new fieldObject();
-		SceneObject ancestorSceneObject = findAncestorSceneObject();
-		if (ancestorSceneObject == null)
+		field fieldDefinition = new field();
+		Scene ancestorScene = findAncestorScene();
+		if (ancestorScene == null)
 		{
 			errorNotice = "ProtoInstance name='" + prototypeName + "' with fieldValue  name='" + getName() + "' problem: " +
 						   ConfigurationProperties.ERROR_NOT_CONNECTED_TO_SCENE_GRAPH;
@@ -16246,25 +16397,25 @@ return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationPropertie
 							
 			if (!ConfigurationProperties.isCreationConnectionValidationExceptionAllowed())
 			{
-				 throw new InvalidProtoException(errorNotice); // report error
+				 throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
 			}
 			else // missing type might allowably occur during object creation
 			{
 				return fieldValueType; // default is unknown type
 			}
 		}
-		X3DConcreteElement correspondingPrototype = ancestorSceneObject.findElementByNameValue(prototypeName);
+		X3DConcreteElement correspondingPrototype = ancestorScene.findElementByNameValue(prototypeName);
 		if (correspondingPrototype == null)
 		{
 			errorNotice = "ProtoInstance name='" + prototypeName + "' does not have a corresponding " +
 						  "ProtoDeclare or ExternProtoDeclare name='" + name + "' definition";
 			validationResult.append(errorNotice).append("\n");
-			throw new InvalidProtoException(errorNotice); // report error
+			throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
 		}
-		correspondingPrototype = findAncestorSceneObject().findElementByNameValue(prototypeName, ProtoDeclareObject.NAME);
-		if (correspondingPrototype instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject)
+		correspondingPrototype = findAncestorScene().findElementByNameValue(prototypeName, ProtoDeclare.NAME);
+		if (correspondingPrototype instanceof org.web3d.x3d.jsail.Core.ProtoDeclare)
 		{
-			fieldDefinition = ((ProtoDeclareObject) correspondingPrototype).getProtoInterface().findFieldByName(name);
+			fieldDefinition = ((ProtoDeclare) correspondingPrototype).getProtoInterface().findFieldByName(name);
 			if (fieldDefinition != null)
 				fieldValueType = fieldDefinition.getType(); // found in scene graph
 			else
@@ -16272,15 +16423,15 @@ return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationPropertie
 				errorNotice = "fieldValue name='" + name + "' does not have a corresponding ProtoDeclare field name='" +
 							   name + "' definition";
 				validationResult.append(errorNotice).append("\n");
-				throw new InvalidProtoException(errorNotice); // report error
+				throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
 			}
 			return fieldValueType; // might be empty string if never set in original field
 		}
 		// else
-		correspondingPrototype = findAncestorSceneObject().findElementByNameValue(prototypeName, ExternProtoDeclareObject.NAME);
-		if (correspondingPrototype instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject)
+		correspondingPrototype = findAncestorScene().findElementByNameValue(prototypeName, ExternProtoDeclare.NAME);
+		if (correspondingPrototype instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclare)
 		{
-			fieldDefinition = ((ExternProtoDeclareObject) correspondingPrototype).findFieldByName(name);
+			fieldDefinition = ((ExternProtoDeclare) correspondingPrototype).findFieldByName(name);
 			if (fieldDefinition != null)
 				fieldValueType = fieldDefinition.getType(); // found in scene graph
 			else
@@ -16288,7 +16439,7 @@ return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationPropertie
 				errorNotice = "fieldValue name='" + name + "' does not have a corresponding ProtoDeclare field name='" +
 							   name + "' definition";
 				validationResult.append(errorNotice).append("\n");
-				throw new InvalidProtoException(errorNotice); // report error
+				throw new org.web3d.x3d.sai.InvalidProtoException(errorNotice); // report error
 			}
 		}
 		return fieldValueType; // might be empty string if never set in original field
@@ -16387,7 +16538,7 @@ return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationPropertie
 		<xsl:text> getValue</xsl:text><xsl:value-of select="@type"/>
 		<xsl:text>()
 	{
-		if (getType().equals(fieldObject.TYPE_</xsl:text><xsl:value-of select="$upperCaseFieldName"/><xsl:text>))
+		if (getType().equals(field.TYPE_</xsl:text><xsl:value-of select="$upperCaseFieldName"/><xsl:text>))
 		{
 			if (</xsl:text>
 			<xsl:choose>
@@ -16463,7 +16614,7 @@ return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationPropertie
 	public </xsl:text><xsl:value-of select="@type"/><xsl:value-of select="$jsaiClassSuffix"/>
 		<xsl:text> getValue</xsl:text><xsl:value-of select="@type"/><xsl:text>()
 	{
-		if (getType().equals(fieldObject.TYPE_</xsl:text><xsl:value-of select="$upperCaseFieldName"/><xsl:text>))
+		if (getType().equals(field.TYPE_</xsl:text><xsl:value-of select="$upperCaseFieldName"/><xsl:text>))
 		{
 			return new </xsl:text><xsl:value-of select="@type"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(</xsl:text><xsl:value-of select="$baseVariable"/><xsl:text>);
 		}
@@ -16489,7 +16640,7 @@ return findAncestorX3DObject().toFileStylesheetConversion(ConfigurationPropertie
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Set typed value of a ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text> </xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ declaration.
-	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>fieldObject</i> declaration to ensure validity of the proper corresponding X3D type.
+	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>field</i> declaration to ensure validity of the proper corresponding X3D type.
 	 * @param newValue is new value to assign
 	 * @return {@link ]]></xsl:text>
 	 <xsl:value-of select="$name"/>
@@ -16545,7 +16696,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Set typed value of a boolean </xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ declaration.
-	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>fieldObject</i> declaration to ensure validity of the proper corresponding X3D type.
+	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>field</i> declaration to ensure validity of the proper corresponding X3D type.
 	 * @param newValue is new value to assign
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -16555,7 +16706,7 @@ method invocations on the same node object).
 	<xsl:text disable-output-escaping="yes"><![CDATA[ setValue(boolean newValue)
 	{
 		if (!getType().isEmpty() && 
-			!getType().equals(fieldObject.TYPE_SFBOOL) && !getType().equals(fieldObject.TYPE_MFBOOL) &&
+			!getType().equals(field.TYPE_SFBOOL) && !getType().equals(field.TYPE_MFBOOL) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
 			String errorNotice = "Illegal type: cannot setValue(boolean " + newValue + ") when ]]></xsl:text>
@@ -16570,7 +16721,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Set typed value of a boolean[] </xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ declaration.
-	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>fieldObject</i> declaration to ensure validity of the proper corresponding X3D type.
+	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>field</i> declaration to ensure validity of the proper corresponding X3D type.
 	 * @param newValue is new value to assign
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -16580,7 +16731,7 @@ method invocations on the same node object).
 	<xsl:text disable-output-escaping="yes"><![CDATA[ setValue(boolean[] newValue)
 	{
 		if (!getType().isEmpty() && 
-			!getType().equals(fieldObject.TYPE_SFBOOL) && !getType().equals(fieldObject.TYPE_MFBOOL) &&
+			!getType().equals(field.TYPE_SFBOOL) && !getType().equals(field.TYPE_MFBOOL) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
 			String errorNotice = "Illegal type: cannot setValue(boolean[] " + newValue + ") when ]]></xsl:text>
@@ -16598,7 +16749,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Set typed value of a integer </xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ declaration.
-	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>fieldObject</i> declaration to ensure validity of the proper corresponding X3D type.
+	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>field</i> declaration to ensure validity of the proper corresponding X3D type.
 	 * @param newValue is new value to assign
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -16608,8 +16759,8 @@ method invocations on the same node object).
 	<xsl:text disable-output-escaping="yes"><![CDATA[ setValue(int newValue)
 	{
 		// type promotion first
-		if (getType().equals(fieldObject.TYPE_SFDOUBLE)  || getType().equals(fieldObject.TYPE_MFDOUBLE) ||
-            getType().equals(fieldObject.TYPE_SFTIME)    || getType().equals(fieldObject.TYPE_MFTIME))
+		if (getType().equals(field.TYPE_SFDOUBLE)  || getType().equals(field.TYPE_MFDOUBLE) ||
+            getType().equals(field.TYPE_SFTIME)    || getType().equals(field.TYPE_MFTIME))
 		{
             clearValues();
             valueArrayDouble = new double[1]; // fix array size
@@ -16617,14 +16768,14 @@ method invocations on the same node object).
             return this;
         }
 		if (!getType().isEmpty() &&
-			getType().equals(fieldObject.TYPE_SFFLOAT)   || getType().equals(fieldObject.TYPE_MFFLOAT))
+			getType().equals(field.TYPE_SFFLOAT)   || getType().equals(field.TYPE_MFFLOAT))
 		{
             clearValues();
             valueArrayFloat = new float[1]; // fix array size
             valueArrayFloat[0] = (float) newValue;
             return this;
         }
-		if (!getType().equals(fieldObject.TYPE_SFINT32) && !getType().equals(fieldObject.TYPE_MFINT32) &&
+		if (!getType().equals(field.TYPE_SFINT32) && !getType().equals(field.TYPE_MFINT32) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
 			String errorNotice = "Illegal type: cannot setValue(int " + newValue + ") when ]]></xsl:text>
@@ -16639,7 +16790,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Set typed value of a integer array </xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ declaration.
-	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>fieldObject</i> declaration to ensure validity of the proper corresponding X3D type.
+	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>field</i> declaration to ensure validity of the proper corresponding X3D type.
 	 * @param newValue is new value to assign
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -16649,8 +16800,8 @@ method invocations on the same node object).
 	<xsl:text disable-output-escaping="yes"><![CDATA[ setValue(int[] newValue)
 	{
 		if (!getType().isEmpty() &&
-			!getType().equals(fieldObject.TYPE_SFINT32) && !getType().equals(fieldObject.TYPE_MFINT32) &&
-			!getType().equals(fieldObject.TYPE_SFIMAGE) && !getType().equals(fieldObject.TYPE_MFIMAGE) &&
+			!getType().equals(field.TYPE_SFINT32) && !getType().equals(field.TYPE_MFINT32) &&
+			!getType().equals(field.TYPE_SFIMAGE) && !getType().equals(field.TYPE_MFIMAGE) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
 			String errorNotice = "Illegal type: cannot setValue(int[] " + newValue + ") when ]]></xsl:text>
@@ -16668,7 +16819,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Set typed value of a float </xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ declaration.
-	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>fieldObject</i> declaration to ensure validity of the proper corresponding X3D type.
+	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>field</i> declaration to ensure validity of the proper corresponding X3D type.
 	 * @param newValue is new value to assign
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -16678,8 +16829,8 @@ method invocations on the same node object).
 	<xsl:text disable-output-escaping="yes"><![CDATA[ setValue(float newValue)
 	{
 		// type promotion first
-		if (getType().equals(fieldObject.TYPE_SFDOUBLE)  || getType().equals(fieldObject.TYPE_MFDOUBLE) ||
-            getType().equals(fieldObject.TYPE_SFTIME)    || getType().equals(fieldObject.TYPE_MFTIME))
+		if (getType().equals(field.TYPE_SFDOUBLE)  || getType().equals(field.TYPE_MFDOUBLE) ||
+            getType().equals(field.TYPE_SFTIME)    || getType().equals(field.TYPE_MFTIME))
 		{
             clearValues();
             valueArrayDouble = new double[1]; // fix array size
@@ -16687,7 +16838,7 @@ method invocations on the same node object).
             return this;
         }
 		if (!getType().isEmpty() &&
-			!getType().equals(fieldObject.TYPE_SFFLOAT)    && !getType().equals(fieldObject.TYPE_MFFLOAT) &&
+			!getType().equals(field.TYPE_SFFLOAT)    && !getType().equals(field.TYPE_MFFLOAT) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
 			String errorNotice = "Illegal type: cannot setValue(float " + newValue + ") when ]]></xsl:text>
@@ -16702,7 +16853,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Set typed value of a float[] array </xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ declaration.
-	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>fieldObject</i> declaration to ensure validity of the proper corresponding X3D type.
+	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>field</i> declaration to ensure validity of the proper corresponding X3D type.
 	 * @param newValue is new value to assign
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -16712,16 +16863,16 @@ method invocations on the same node object).
 	<xsl:text disable-output-escaping="yes"><![CDATA[ setValue(float[] newValue)
 	{
 		if (!getType().isEmpty() && 
-			!getType().equals(fieldObject.TYPE_SFCOLOR)    && !getType().equals(fieldObject.TYPE_MFCOLOR) &&
-			!getType().equals(fieldObject.TYPE_SFCOLORRGBA)&& !getType().equals(fieldObject.TYPE_MFCOLORRGBA) &&
-			!getType().equals(fieldObject.TYPE_SFFLOAT)    && !getType().equals(fieldObject.TYPE_MFFLOAT) &&
-			!getType().equals(fieldObject.TYPE_SFROTATION) && !getType().equals(fieldObject.TYPE_MFROTATION) &&
-			!getType().equals(fieldObject.TYPE_SFTIME)     && !getType().equals(fieldObject.TYPE_MFTIME) &&
-			!getType().equals(fieldObject.TYPE_SFVEC2F)    && !getType().equals(fieldObject.TYPE_MFVEC2F) &&
-			!getType().equals(fieldObject.TYPE_SFVEC3F)    && !getType().equals(fieldObject.TYPE_MFVEC3F) &&
-			!getType().equals(fieldObject.TYPE_SFVEC4F)    && !getType().equals(fieldObject.TYPE_MFVEC4F) &&
-			!getType().equals(fieldObject.TYPE_SFMATRIX3F) && !getType().equals(fieldObject.TYPE_MFMATRIX3F) &&
-			!getType().equals(fieldObject.TYPE_SFMATRIX4F) && !getType().equals(fieldObject.TYPE_MFMATRIX4F) &&
+			!getType().equals(field.TYPE_SFCOLOR)    && !getType().equals(field.TYPE_MFCOLOR) &&
+			!getType().equals(field.TYPE_SFCOLORRGBA)&& !getType().equals(field.TYPE_MFCOLORRGBA) &&
+			!getType().equals(field.TYPE_SFFLOAT)    && !getType().equals(field.TYPE_MFFLOAT) &&
+			!getType().equals(field.TYPE_SFROTATION) && !getType().equals(field.TYPE_MFROTATION) &&
+			!getType().equals(field.TYPE_SFTIME)     && !getType().equals(field.TYPE_MFTIME) &&
+			!getType().equals(field.TYPE_SFVEC2F)    && !getType().equals(field.TYPE_MFVEC2F) &&
+			!getType().equals(field.TYPE_SFVEC3F)    && !getType().equals(field.TYPE_MFVEC3F) &&
+			!getType().equals(field.TYPE_SFVEC4F)    && !getType().equals(field.TYPE_MFVEC4F) &&
+			!getType().equals(field.TYPE_SFMATRIX3F) && !getType().equals(field.TYPE_MFMATRIX3F) &&
+			!getType().equals(field.TYPE_SFMATRIX4F) && !getType().equals(field.TYPE_MFMATRIX4F) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
 			String errorNotice = "Illegal type: cannot setValue(float[] " + newValue + ") when ]]></xsl:text>
@@ -16747,7 +16898,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Set typed value of a double ]]></xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ declaration.
-	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>fieldObject</i> declaration to ensure validity of the proper corresponding X3D type.
+	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>field</i> declaration to ensure validity of the proper corresponding X3D type.
 	 * @param newValue is new value to assign
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -16757,8 +16908,8 @@ method invocations on the same node object).
 	<xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double newValue)
 	{
 		if (!getType().isEmpty() && 
-			!getType().equals(fieldObject.TYPE_SFDOUBLE)   && !getType().equals(fieldObject.TYPE_MFDOUBLE) &&
-			!getType().equals(fieldObject.TYPE_SFTIME)     && !getType().equals(fieldObject.TYPE_MFTIME) &&
+			!getType().equals(field.TYPE_SFDOUBLE)   && !getType().equals(field.TYPE_MFDOUBLE) &&
+			!getType().equals(field.TYPE_SFTIME)     && !getType().equals(field.TYPE_MFTIME) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
 			String errorNotice = "Illegal type: cannot setValue(double " + newValue + ") when ]]></xsl:text>
@@ -16773,7 +16924,7 @@ method invocations on the same node object).
 	}
 	/**
 	 * Set typed value of a double[] array </xsl:text><xsl:value-of select="$name"/><xsl:text disable-output-escaping="yes"><![CDATA[ declaration.
-	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>fieldObject</i> declaration to ensure validity of the proper corresponding X3D type.
+	 * <i>WARNING</i>: must first <i>setType()</i> in ancestor <i>field</i> declaration to ensure validity of the proper corresponding X3D type.
 	 * @param newValue is new value to assign
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$name"/><xsl:value-of select="$jsaiClassSuffix"/>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -16783,13 +16934,13 @@ method invocations on the same node object).
 	<xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double[] newValue)
 	{
 		if (!getType().isEmpty() && 
-			!getType().equals(fieldObject.TYPE_SFDOUBLE)   && !getType().equals(fieldObject.TYPE_MFDOUBLE)   &&
-			!getType().equals(fieldObject.TYPE_SFTIME)     && !getType().equals(fieldObject.TYPE_MFTIME)     &&
-			!getType().equals(fieldObject.TYPE_SFVEC2D)    && !getType().equals(fieldObject.TYPE_MFVEC2D)    &&
-			!getType().equals(fieldObject.TYPE_SFVEC3D)    && !getType().equals(fieldObject.TYPE_MFVEC3D)    &&
-			!getType().equals(fieldObject.TYPE_SFVEC4D)    && !getType().equals(fieldObject.TYPE_MFVEC4D)    &&
-			!getType().equals(fieldObject.TYPE_SFMATRIX3D) && !getType().equals(fieldObject.TYPE_MFMATRIX3D) &&
-			!getType().equals(fieldObject.TYPE_SFMATRIX4D) && !getType().equals(fieldObject.TYPE_MFMATRIX4D) &&
+			!getType().equals(field.TYPE_SFDOUBLE)   && !getType().equals(field.TYPE_MFDOUBLE)   &&
+			!getType().equals(field.TYPE_SFTIME)     && !getType().equals(field.TYPE_MFTIME)     &&
+			!getType().equals(field.TYPE_SFVEC2D)    && !getType().equals(field.TYPE_MFVEC2D)    &&
+			!getType().equals(field.TYPE_SFVEC3D)    && !getType().equals(field.TYPE_MFVEC3D)    &&
+			!getType().equals(field.TYPE_SFVEC4D)    && !getType().equals(field.TYPE_MFVEC4D)    &&
+			!getType().equals(field.TYPE_SFMATRIX3D) && !getType().equals(field.TYPE_MFMATRIX3D) &&
+			!getType().equals(field.TYPE_SFMATRIX4D) && !getType().equals(field.TYPE_MFMATRIX4D) &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
 			String errorNotice = "Illegal type: cannot setValue(double[] " + newValue + ") when ]]></xsl:text>
@@ -16820,23 +16971,23 @@ method invocations on the same node object).
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	/** 
 	 * Utility method to get number of coordinate 3-tuple values in contained Coordinate/CoordinateDouble or ProtoInstance node 
-	 * @see CoordinateObject
-	 * @see CoordinateDoubleObject
-	 * @see ProtoInstanceObject
+	 * @see Coordinate
+	 * @see CoordinateDouble
+	 * @see ProtoInstance
 	 * @return number of coordinate 3-tuple values
 	 */
 	public int getCoordCount()
 	{
 		if (getCoord() != null)
 		{
-			if      (getCoord() instanceof CoordinateObject)
-				 return (((CoordinateObject      )getCoord()).getPoint().length / SFVec3fObject.TUPLE_SIZE);
-			else if (getCoord() instanceof CoordinateDoubleObject)
-				 return (((CoordinateDoubleObject)getCoord()).getPoint().length / SFVec3dObject.TUPLE_SIZE);
+			if      (getCoord() instanceof Coordinate)
+				 return (((Coordinate      )getCoord()).getPoint().length / SFVec3f.TUPLE_SIZE);
+			else if (getCoord() instanceof CoordinateDouble)
+				 return (((CoordinateDouble)getCoord()).getPoint().length / SFVec3d.TUPLE_SIZE);
 		}
 		else if ((getCoordProtoInstance() != null) && getCoordProtoInstance().hasFieldValue())
 		{
-			for (fieldValueObject nextFieldValue : getCoordProtoInstance().getFieldValueList())
+			for (fieldValue nextFieldValue : getCoordProtoInstance().getFieldValueList())
 			{
 				if      (nextFieldValue.getName().equals("point"))
 					     return nextFieldValue.getValueMFVec3f().size();
@@ -16848,23 +16999,23 @@ method invocations on the same node object).
 	}
 	/** 
 	 * Utility method to get number of 3-tuple Color RGB values (or 4-tuple ColorRGBA values) in contained Color/ColorRGBA or ProtoInstance node 
-	 * @see ColorObject
-	 * @see ColorRGBAObject
-	 * @see ProtoInstanceObject
+	 * @see Color
+	 * @see ColorRGBA
+	 * @see ProtoInstance
 	 * @return number of color values
 	 */
 	public int getColorCount()
 	{
 		if (getColor() != null)
 		{
-			if      (getColor() instanceof ColorObject)
-			         return (((ColorObject    )getColor()).getColor().length / SFColorObject.TUPLE_SIZE);
-			else if (getColor() instanceof ColorRGBAObject)
-				     return (((ColorRGBAObject)getColor()).getColor().length / SFColorRGBAObject.TUPLE_SIZE);
+			if      (getColor() instanceof Color)
+			         return (((Color    )getColor()).getColor().length / SFColor.TUPLE_SIZE);
+			else if (getColor() instanceof ColorRGBA)
+				     return (((ColorRGBA)getColor()).getColor().length / SFColorRGBA.TUPLE_SIZE);
 		}
 		else if ((getColorProtoInstance() != null) && getColorProtoInstance().hasFieldValue())
 		{
-			for (fieldValueObject nextFieldValue : getColorProtoInstance().getFieldValueList())
+			for (fieldValue nextFieldValue : getColorProtoInstance().getFieldValueList())
 			{
 				if      (nextFieldValue.getName().equals("color"))
 					     return nextFieldValue.getValueMFColor().size();
@@ -16880,19 +17031,19 @@ method invocations on the same node object).
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	/** 
 	 * Utility method to get number of 3-tuple normal vectors in contained Normal or ProtoInstance node
-	 * @see NormalObject
-	 * @see ProtoInstanceObject
+	 * @see Normal
+	 * @see ProtoInstance
 	 * @return number of color values
 	 */
 	public int getNormalCount()
 	{
 		if (getNormal() != null)
 		{
-			return (((NormalObject)getNormal()).getVector().length / MFVec3fObject.TUPLE_SIZE);
+			return (((Normal)getNormal()).getVector().length / MFVec3f.TUPLE_SIZE);
 		}
 		else if ((getNormalProtoInstance() != null) && getColorProtoInstance().hasFieldValue())
 		{
-			for (fieldValueObject nextFieldValue : getColorProtoInstance().getFieldValueList())
+			for (fieldValue nextFieldValue : getColorProtoInstance().getFieldValueList())
 			{
 				if      (nextFieldValue.getName().equals("normal"))
 					     return nextFieldValue.getValueMFVec3f().size();
@@ -16902,19 +17053,19 @@ method invocations on the same node object).
 	}
 	/** 
 	 * Utility method to get number of 2-tuple texture coordinate values in contained TextureCoordinate or ProtoInstance node
-	 * @see TextureCoordinateObject
-	 * @see ProtoInstanceObject
+	 * @see TextureCoordinate
+	 * @see ProtoInstance
 	 * @return number of color values
 	 */
 	public int getTexCoordCount()
 	{
 		if (getTexCoord() != null)
 		{
-			return (((TextureCoordinateObject)getTexCoord()).getPoint().length / SFVec2fObject.TUPLE_SIZE);
+			return (((TextureCoordinate)getTexCoord()).getPoint().length / SFVec2f.TUPLE_SIZE);
 		}
 		else if ((getTexCoordProtoInstance() != null) && getTexCoordProtoInstance().hasFieldValue())
 		{
-			for (fieldValueObject nextFieldValue : getTexCoordProtoInstance().getFieldValueList())
+			for (fieldValue nextFieldValue : getTexCoordProtoInstance().getFieldValueList())
 			{
 				if      (nextFieldValue.getName().equals("texcoord"))
 					     return nextFieldValue.getValueMFVec2f().size();
@@ -16947,8 +17098,8 @@ method invocations on the same node object).
 /** DO NOT USE: operation ignored since no such field exists for this element. This method has no effect, a stub method is necessary to implement X3DChildNode interface.
  * @return null, this method is deprecated and has no effect */
 @Deprecated
-@Override
-public X3DMetadataObject getMetadata()
+/* @Override */
+public org.web3d.x3d.sai.Core.X3DMetadataObject getMetadata()
 {
 return null;
 }
@@ -16959,7 +17110,7 @@ return null;
 @Deprecated]]></xsl:text>
     <xsl:if test="not($isX3dStatement = 'true') and not($name = 'CommentsBlock')">
         <xsl:text>
-@Override</xsl:text>
+/* @Override */</xsl:text>
     </xsl:if>
     <xsl:text>
 public </xsl:text>
@@ -16967,7 +17118,7 @@ public </xsl:text>
 	<xsl:if test="($name = 'ROUTE') or ($name = 'IMPORT') or ($name = 'EXPORT') or ($name = 'ProtoDeclare') or ($name = 'ExternProtoDeclare')">
 		<xsl:value-of select="$jsaiClassSuffix"/>
 	</xsl:if>
-	<xsl:text disable-output-escaping="yes"><![CDATA[	setMetadata(X3DMetadataObject newValue)
+	<xsl:text disable-output-escaping="yes"><![CDATA[	setMetadata(org.web3d.x3d.sai.Core.X3DMetadataObject newValue)
 {
     return this; // no action
 }
@@ -17004,7 +17155,7 @@ return "";
 @Deprecated]]></xsl:text>
     <xsl:if test="not($isX3dStatement = 'true') and not($name = 'CommentsBlock')">
         <xsl:text>
-@Override</xsl:text>
+/* @Override */</xsl:text>
     </xsl:if>
     <xsl:text>
 public </xsl:text>
@@ -17022,7 +17173,7 @@ public </xsl:text>
 @Deprecated]]></xsl:text>
     <xsl:if test="not($isX3dStatement = 'true') and not($name = 'CommentsBlock')">
         <xsl:text>
-@Override</xsl:text>
+/* @Override */</xsl:text>
     </xsl:if>
     <xsl:text>
 public </xsl:text>
@@ -17037,7 +17188,7 @@ public </xsl:text>
 @Deprecated]]></xsl:text>
     <xsl:if test="not($isX3dStatement = 'true') and not($name = 'CommentsBlock')">
         <xsl:text>
-@Override</xsl:text>
+/* @Override */</xsl:text>
     </xsl:if>
     <xsl:text disable-output-escaping="yes"><![CDATA[
 /** DO NOT USE: operation ignored since no such field exists for this element. This method has no effect, a stub method is necessary to implement X3DChildNode interface.
@@ -17091,7 +17242,7 @@ public String getAccessType(String fieldName)
 		if ((otherVersion == null || otherVersion.isEmpty()))
         {
             otherVersion = VERSION_DEFAULT_VALUE;
-            System.out.println ("Warning: X3DObject.supportsX3dVersion{\"\") called with empty otherVersion value, substituting VERSION_DEFAULT_VALUE=" + VERSION_DEFAULT_VALUE);
+            System.out.println ("Warning: X3D.supportsX3dVersion{\"\") called with empty otherVersion value, substituting VERSION_DEFAULT_VALUE=" + VERSION_DEFAULT_VALUE);
         }
 
         if (!(
@@ -17118,7 +17269,7 @@ public String getAccessType(String fieldName)
 		if ((otherProfile == null || otherProfile.isEmpty()))
         {
             otherProfile = PROFILE_DEFAULT_VALUE;
-            System.out.println ("Warning: X3DObject.supportsX3dProfile{\"\") called with empty otherProfile value, substituting PROFILE_DEFAULT_VALUE=" + PROFILE_DEFAULT_VALUE);
+            System.out.println ("Warning: X3D.supportsX3dProfile{\"\") called with empty otherProfile value, substituting PROFILE_DEFAULT_VALUE=" + PROFILE_DEFAULT_VALUE);
         }
         boolean legalProfile = profile.equals(PROFILE_CORE) ||
                                profile.equals(PROFILE_CADINTERCHANGE) ||
@@ -17133,8 +17284,8 @@ public String getAccessType(String fieldName)
             String errorNotice = ConfigurationProperties.ERROR_ILLEGAL_VALUE + " illegal X3D profile " + otherProfile;
             throw new InvalidFieldValueException(errorNotice);
         }
-        boolean hasComponentCAD =    (head != null) && (head.hasComponent(componentObject.NAME_CADGEOMETRY));
-        boolean hasComponentVolume = (head != null) && (head.hasComponent(componentObject.NAME_VOLUMERENDERING));
+        boolean hasComponentCAD =    (head != null) && (head.hasComponent(component.NAME_CADGEOMETRY));
+        boolean hasComponentVolume = (head != null) && (head.hasComponent(component.NAME_VOLUMERENDERING));
 
         boolean hasSupportedProfile =
             (     profile.equals(PROFILE_FULL)) ||  // FULL supports all profiles
@@ -17171,52 +17322,52 @@ public String getAccessType(String fieldName)
     {
 		if ((otherComponent == null || otherComponent.isEmpty()))
         {
-            System.out.println ("Warning: X3DObject.supportsX3dComponent(\"\"," + minimumLevel + ") called with empty otherComponent value, nothing to do, returning false");
+            System.out.println ("Warning: X3D.supportsX3dComponent(\"\"," + minimumLevel + ") called with empty otherComponent value, nothing to do, returning false");
             return false;
         }
 		if ((minimumLevel < 1) || (minimumLevel > 5))
         {
-            System.out.println ("Warning: X3DObject.supportsX3dComponent(\"" + otherComponent + "\") called with minimumLevel value outside allowed range [1..5], returning false");
+            System.out.println ("Warning: X3D.supportsX3dComponent(\"" + otherComponent + "\") called with minimumLevel value outside allowed range [1..5], returning false");
             return false;
         }
         // check legal component values, throws InvalidFieldValueException if incorrect
-        componentObject testComponentObject = new componentObject().setName(otherComponent).setLevel(minimumLevel);
+        component componentTest = new component().setName(otherComponent).setLevel(minimumLevel);
             
-        boolean hasComponentCADGEOMETRY          = (head != null) && (head.hasComponent(componentObject.NAME_CADGEOMETRY));
-        boolean hasComponentCORE                 = (head != null) && (head.hasComponent(componentObject.NAME_CORE));
-        boolean hasComponentCUBEMAPTEXTURING     = (head != null) && (head.hasComponent(componentObject.NAME_CUBEMAPTEXTURING));
-        boolean hasComponentDIS                  = (head != null) && (head.hasComponent(componentObject.NAME_DIS));
-        boolean hasComponentENVIRONMENTALEFFECTS = (head != null) && (head.hasComponent(componentObject.NAME_ENVIRONMENTALEFFECTS));
-        boolean hasComponentENVIRONMENTALSENSOR  = (head != null) && (head.hasComponent(componentObject.NAME_ENVIRONMENTALSENSOR));
-        boolean hasComponentEVENTUTILITIES       = (head != null) && (head.hasComponent(componentObject.NAME_EVENTUTILITIES));
-        boolean hasComponentFOLLOWERS            = (head != null) && (head.hasComponent(componentObject.NAME_FOLLOWERS));
-        boolean hasComponentGEOMETRY2D           = (head != null) && (head.hasComponent(componentObject.NAME_GEOMETRY2D));
-        boolean hasComponentGEOMETRY3D           = (head != null) && (head.hasComponent(componentObject.NAME_GEOMETRY3D));
-        boolean hasComponentGEOSPATIAL           = (head != null) && (head.hasComponent(componentObject.NAME_GEOSPATIAL));
-        boolean hasComponentGROUPING             = (head != null) && (head.hasComponent(componentObject.NAME_GROUPING));
-        boolean hasComponentH_ANIM               = (head != null) && (head.hasComponent(componentObject.NAME_H_ANIM));
-        boolean hasComponentINTERPOLATION        = (head != null) && (head.hasComponent(componentObject.NAME_INTERPOLATION));
-        boolean hasComponentKEYDEVICESENSOR      = (head != null) && (head.hasComponent(componentObject.NAME_KEYDEVICESENSOR));
-        boolean hasComponentLAYERING             = (head != null) && (head.hasComponent(componentObject.NAME_LAYERING));
-        boolean hasComponentLAYOUT               = (head != null) && (head.hasComponent(componentObject.NAME_LAYOUT));
-        boolean hasComponentLIGHTING             = (head != null) && (head.hasComponent(componentObject.NAME_LIGHTING));
-        boolean hasComponentNAVIGATION           = (head != null) && (head.hasComponent(componentObject.NAME_NAVIGATION));
-        boolean hasComponentNETWORKING           = (head != null) && (head.hasComponent(componentObject.NAME_NETWORKING));
-        boolean hasComponentNURBS                = (head != null) && (head.hasComponent(componentObject.NAME_NURBS));
-        boolean hasComponentPARTICLESYSTEMS      = (head != null) && (head.hasComponent(componentObject.NAME_PARTICLESYSTEMS));
-        boolean hasComponentPICKING              = (head != null) && (head.hasComponent(componentObject.NAME_PICKING));
-        boolean hasComponentPOINTINGDEVICESENSOR = (head != null) && (head.hasComponent(componentObject.NAME_POINTINGDEVICESENSOR));
-        boolean hasComponentRENDERING            = (head != null) && (head.hasComponent(componentObject.NAME_RENDERING));
-        boolean hasComponentRIGIDBODYPHYSICS     = (head != null) && (head.hasComponent(componentObject.NAME_RIGIDBODYPHYSICS));
-        boolean hasComponentSCRIPTING            = (head != null) && (head.hasComponent(componentObject.NAME_SCRIPTING));
-        boolean hasComponentSHADERS              = (head != null) && (head.hasComponent(componentObject.NAME_SHADERS));
-        boolean hasComponentSHAPE                = (head != null) && (head.hasComponent(componentObject.NAME_SHAPE));
-        boolean hasComponentSOUND                = (head != null) && (head.hasComponent(componentObject.NAME_SOUND));
-        boolean hasComponentTEXT                 = (head != null) && (head.hasComponent(componentObject.NAME_TEXT));
-        boolean hasComponentTEXTURING            = (head != null) && (head.hasComponent(componentObject.NAME_TEXTURING));
-        boolean hasComponentTEXTURING3D          = (head != null) && (head.hasComponent(componentObject.NAME_TEXTURING3D));
-        boolean hasComponentTIME                 = (head != null) && (head.hasComponent(componentObject.NAME_TIME));
-        boolean hasComponentVOLUMERENDERING      = (head != null) && (head.hasComponent(componentObject.NAME_VOLUMERENDERING));
+        boolean hasComponentCADGEOMETRY          = (head != null) && (head.hasComponent(component.NAME_CADGEOMETRY));
+        boolean hasComponentCORE                 = (head != null) && (head.hasComponent(component.NAME_CORE));
+        boolean hasComponentCUBEMAPTEXTURING     = (head != null) && (head.hasComponent(component.NAME_CUBEMAPTEXTURING));
+        boolean hasComponentDIS                  = (head != null) && (head.hasComponent(component.NAME_DIS));
+        boolean hasComponentENVIRONMENTALEFFECTS = (head != null) && (head.hasComponent(component.NAME_ENVIRONMENTALEFFECTS));
+        boolean hasComponentENVIRONMENTALSENSOR  = (head != null) && (head.hasComponent(component.NAME_ENVIRONMENTALSENSOR));
+        boolean hasComponentEVENTUTILITIES       = (head != null) && (head.hasComponent(component.NAME_EVENTUTILITIES));
+        boolean hasComponentFOLLOWERS            = (head != null) && (head.hasComponent(component.NAME_FOLLOWERS));
+        boolean hasComponentGEOMETRY2D           = (head != null) && (head.hasComponent(component.NAME_GEOMETRY2D));
+        boolean hasComponentGEOMETRY3D           = (head != null) && (head.hasComponent(component.NAME_GEOMETRY3D));
+        boolean hasComponentGEOSPATIAL           = (head != null) && (head.hasComponent(component.NAME_GEOSPATIAL));
+        boolean hasComponentGROUPING             = (head != null) && (head.hasComponent(component.NAME_GROUPING));
+        boolean hasComponentH_ANIM               = (head != null) && (head.hasComponent(component.NAME_H_ANIM));
+        boolean hasComponentINTERPOLATION        = (head != null) && (head.hasComponent(component.NAME_INTERPOLATION));
+        boolean hasComponentKEYDEVICESENSOR      = (head != null) && (head.hasComponent(component.NAME_KEYDEVICESENSOR));
+        boolean hasComponentLAYERING             = (head != null) && (head.hasComponent(component.NAME_LAYERING));
+        boolean hasComponentLAYOUT               = (head != null) && (head.hasComponent(component.NAME_LAYOUT));
+        boolean hasComponentLIGHTING             = (head != null) && (head.hasComponent(component.NAME_LIGHTING));
+        boolean hasComponentNAVIGATION           = (head != null) && (head.hasComponent(component.NAME_NAVIGATION));
+        boolean hasComponentNETWORKING           = (head != null) && (head.hasComponent(component.NAME_NETWORKING));
+        boolean hasComponentNURBS                = (head != null) && (head.hasComponent(component.NAME_NURBS));
+        boolean hasComponentPARTICLESYSTEMS      = (head != null) && (head.hasComponent(component.NAME_PARTICLESYSTEMS));
+        boolean hasComponentPICKING              = (head != null) && (head.hasComponent(component.NAME_PICKING));
+        boolean hasComponentPOINTINGDEVICESENSOR = (head != null) && (head.hasComponent(component.NAME_POINTINGDEVICESENSOR));
+        boolean hasComponentRENDERING            = (head != null) && (head.hasComponent(component.NAME_RENDERING));
+        boolean hasComponentRIGIDBODYPHYSICS     = (head != null) && (head.hasComponent(component.NAME_RIGIDBODYPHYSICS));
+        boolean hasComponentSCRIPTING            = (head != null) && (head.hasComponent(component.NAME_SCRIPTING));
+        boolean hasComponentSHADERS              = (head != null) && (head.hasComponent(component.NAME_SHADERS));
+        boolean hasComponentSHAPE                = (head != null) && (head.hasComponent(component.NAME_SHAPE));
+        boolean hasComponentSOUND                = (head != null) && (head.hasComponent(component.NAME_SOUND));
+        boolean hasComponentTEXT                 = (head != null) && (head.hasComponent(component.NAME_TEXT));
+        boolean hasComponentTEXTURING            = (head != null) && (head.hasComponent(component.NAME_TEXTURING));
+        boolean hasComponentTEXTURING3D          = (head != null) && (head.hasComponent(component.NAME_TEXTURING3D));
+        boolean hasComponentTIME                 = (head != null) && (head.hasComponent(component.NAME_TIME));
+        boolean hasComponentVOLUMERENDERING      = (head != null) && (head.hasComponent(component.NAME_VOLUMERENDERING));
             
         int hasLevelCADGEOMETRY          = 0;
         int hasLevelCORE                 = 0;
@@ -17256,76 +17407,76 @@ public String getAccessType(String fieldName)
         
         if (head != null)
         {
-            if (head.hasComponent(componentObject.NAME_CADGEOMETRY))
-                hasLevelCADGEOMETRY          = head.findComponentByName(componentObject.NAME_CADGEOMETRY).getLevel();
-            if (head.hasComponent(componentObject.NAME_CORE))
-                hasLevelCORE                 = head.findComponentByName(componentObject.NAME_CORE).getLevel();
-            if (head.hasComponent(componentObject.NAME_CUBEMAPTEXTURING))
-                hasLevelCUBEMAPTEXTURING     = head.findComponentByName(componentObject.NAME_CUBEMAPTEXTURING).getLevel();
-            if (head.hasComponent(componentObject.NAME_DIS))
-                hasLevelDIS                  = head.findComponentByName(componentObject.NAME_DIS).getLevel();
-            if (head.hasComponent(componentObject.NAME_ENVIRONMENTALEFFECTS))
-                hasLevelENVIRONMENTALEFFECTS = head.findComponentByName(componentObject.NAME_ENVIRONMENTALEFFECTS).getLevel();
-            if (head.hasComponent(componentObject.NAME_ENVIRONMENTALSENSOR))
-                hasLevelENVIRONMENTALSENSOR  = head.findComponentByName(componentObject.NAME_ENVIRONMENTALSENSOR).getLevel();
-            if (head.hasComponent(componentObject.NAME_EVENTUTILITIES))
-                hasLevelEVENTUTILITIES       = head.findComponentByName(componentObject.NAME_EVENTUTILITIES).getLevel();
-            if (head.hasComponent(componentObject.NAME_FOLLOWERS))
-                hasLevelFOLLOWERS            = head.findComponentByName(componentObject.NAME_FOLLOWERS).getLevel();
-            if (head.hasComponent(componentObject.NAME_GEOMETRY2D))
-                hasLevelGEOMETRY2D           = head.findComponentByName(componentObject.NAME_GEOMETRY2D).getLevel();
-            if (head.hasComponent(componentObject.NAME_GEOMETRY3D))
-                hasLevelGEOMETRY3D           = head.findComponentByName(componentObject.NAME_GEOMETRY3D).getLevel();
-            if (head.hasComponent(componentObject.NAME_GEOSPATIAL))
-                hasLevelGEOSPATIAL           = head.findComponentByName(componentObject.NAME_GEOSPATIAL).getLevel();
-            if (head.hasComponent(componentObject.NAME_GROUPING))
-                hasLevelGROUPING             = head.findComponentByName(componentObject.NAME_GROUPING).getLevel();
-            if (head.hasComponent(componentObject.NAME_H_ANIM))
-                hasLevelH_ANIM               = head.findComponentByName(componentObject.NAME_H_ANIM).getLevel();
-            if (head.hasComponent(componentObject.NAME_INTERPOLATION))
-                hasLevelINTERPOLATION        = head.findComponentByName(componentObject.NAME_INTERPOLATION).getLevel();
-            if (head.hasComponent(componentObject.NAME_KEYDEVICESENSOR))
-                hasLevelKEYDEVICESENSOR      = head.findComponentByName(componentObject.NAME_KEYDEVICESENSOR).getLevel();
-            if (head.hasComponent(componentObject.NAME_LAYERING))
-                hasLevelLAYERING             = head.findComponentByName(componentObject.NAME_LAYERING).getLevel();
-            if (head.hasComponent(componentObject.NAME_LAYOUT))
-                hasLevelLAYOUT               = head.findComponentByName(componentObject.NAME_LAYOUT).getLevel();
-            if (head.hasComponent(componentObject.NAME_LIGHTING))
-                hasLevelLIGHTING             = head.findComponentByName(componentObject.NAME_LIGHTING).getLevel();
-            if (head.hasComponent(componentObject.NAME_NAVIGATION))
-                hasLevelNAVIGATION           = head.findComponentByName(componentObject.NAME_NAVIGATION).getLevel();
-            if (head.hasComponent(componentObject.NAME_NETWORKING))
-                hasLevelNETWORKING           = head.findComponentByName(componentObject.NAME_NETWORKING).getLevel();
-            if (head.hasComponent(componentObject.NAME_NURBS))
-                hasLevelNURBS                = head.findComponentByName(componentObject.NAME_NURBS).getLevel();
-            if (head.hasComponent(componentObject.NAME_PARTICLESYSTEMS))
-                hasLevelPARTICLESYSTEMS      = head.findComponentByName(componentObject.NAME_PARTICLESYSTEMS).getLevel();
-            if (head.hasComponent(componentObject.NAME_PICKING))
-                hasLevelPICKING              = head.findComponentByName(componentObject.NAME_PICKING).getLevel();
-            if (head.hasComponent(componentObject.NAME_POINTINGDEVICESENSOR))
-                hasLevelPOINTINGDEVICESENSOR = head.findComponentByName(componentObject.NAME_POINTINGDEVICESENSOR).getLevel();
-            if (head.hasComponent(componentObject.NAME_RENDERING))
-                hasLevelRENDERING            = head.findComponentByName(componentObject.NAME_RENDERING).getLevel();
-            if (head.hasComponent(componentObject.NAME_RIGIDBODYPHYSICS))
-                hasLevelRIGIDBODYPHYSICS     = head.findComponentByName(componentObject.NAME_RIGIDBODYPHYSICS).getLevel();
-            if (head.hasComponent(componentObject.NAME_SCRIPTING))
-                hasLevelSCRIPTING            = head.findComponentByName(componentObject.NAME_SCRIPTING).getLevel();
-            if (head.hasComponent(componentObject.NAME_SHADERS))
-                hasLevelSHADERS              = head.findComponentByName(componentObject.NAME_SHADERS).getLevel();
-            if (head.hasComponent(componentObject.NAME_SHAPE))
-                hasLevelSHAPE                = head.findComponentByName(componentObject.NAME_SHAPE).getLevel();
-            if (head.hasComponent(componentObject.NAME_SOUND))
-                hasLevelSOUND                = head.findComponentByName(componentObject.NAME_SOUND).getLevel();
-            if (head.hasComponent(componentObject.NAME_TEXT))
-                hasLevelTEXT                 = head.findComponentByName(componentObject.NAME_TEXT).getLevel();
-            if (head.hasComponent(componentObject.NAME_TEXTURING))
-                hasLevelTEXTURING            = head.findComponentByName(componentObject.NAME_TEXTURING).getLevel();
-            if (head.hasComponent(componentObject.NAME_TEXTURING3D))
-                hasLevelTEXTURING3D          = head.findComponentByName(componentObject.NAME_TEXTURING3D).getLevel();
-            if (head.hasComponent(componentObject.NAME_TIME))
-                hasLevelTIME                 = head.findComponentByName(componentObject.NAME_TIME).getLevel();
-            if (head.hasComponent(componentObject.NAME_VOLUMERENDERING))
-                hasLevelVOLUMERENDERING      = head.findComponentByName(componentObject.NAME_VOLUMERENDERING).getLevel();
+            if (head.hasComponent(component.NAME_CADGEOMETRY))
+                hasLevelCADGEOMETRY          = head.findComponentByName(component.NAME_CADGEOMETRY).getLevel();
+            if (head.hasComponent(component.NAME_CORE))
+                hasLevelCORE                 = head.findComponentByName(component.NAME_CORE).getLevel();
+            if (head.hasComponent(component.NAME_CUBEMAPTEXTURING))
+                hasLevelCUBEMAPTEXTURING     = head.findComponentByName(component.NAME_CUBEMAPTEXTURING).getLevel();
+            if (head.hasComponent(component.NAME_DIS))
+                hasLevelDIS                  = head.findComponentByName(component.NAME_DIS).getLevel();
+            if (head.hasComponent(component.NAME_ENVIRONMENTALEFFECTS))
+                hasLevelENVIRONMENTALEFFECTS = head.findComponentByName(component.NAME_ENVIRONMENTALEFFECTS).getLevel();
+            if (head.hasComponent(component.NAME_ENVIRONMENTALSENSOR))
+                hasLevelENVIRONMENTALSENSOR  = head.findComponentByName(component.NAME_ENVIRONMENTALSENSOR).getLevel();
+            if (head.hasComponent(component.NAME_EVENTUTILITIES))
+                hasLevelEVENTUTILITIES       = head.findComponentByName(component.NAME_EVENTUTILITIES).getLevel();
+            if (head.hasComponent(component.NAME_FOLLOWERS))
+                hasLevelFOLLOWERS            = head.findComponentByName(component.NAME_FOLLOWERS).getLevel();
+            if (head.hasComponent(component.NAME_GEOMETRY2D))
+                hasLevelGEOMETRY2D           = head.findComponentByName(component.NAME_GEOMETRY2D).getLevel();
+            if (head.hasComponent(component.NAME_GEOMETRY3D))
+                hasLevelGEOMETRY3D           = head.findComponentByName(component.NAME_GEOMETRY3D).getLevel();
+            if (head.hasComponent(component.NAME_GEOSPATIAL))
+                hasLevelGEOSPATIAL           = head.findComponentByName(component.NAME_GEOSPATIAL).getLevel();
+            if (head.hasComponent(component.NAME_GROUPING))
+                hasLevelGROUPING             = head.findComponentByName(component.NAME_GROUPING).getLevel();
+            if (head.hasComponent(component.NAME_H_ANIM))
+                hasLevelH_ANIM               = head.findComponentByName(component.NAME_H_ANIM).getLevel();
+            if (head.hasComponent(component.NAME_INTERPOLATION))
+                hasLevelINTERPOLATION        = head.findComponentByName(component.NAME_INTERPOLATION).getLevel();
+            if (head.hasComponent(component.NAME_KEYDEVICESENSOR))
+                hasLevelKEYDEVICESENSOR      = head.findComponentByName(component.NAME_KEYDEVICESENSOR).getLevel();
+            if (head.hasComponent(component.NAME_LAYERING))
+                hasLevelLAYERING             = head.findComponentByName(component.NAME_LAYERING).getLevel();
+            if (head.hasComponent(component.NAME_LAYOUT))
+                hasLevelLAYOUT               = head.findComponentByName(component.NAME_LAYOUT).getLevel();
+            if (head.hasComponent(component.NAME_LIGHTING))
+                hasLevelLIGHTING             = head.findComponentByName(component.NAME_LIGHTING).getLevel();
+            if (head.hasComponent(component.NAME_NAVIGATION))
+                hasLevelNAVIGATION           = head.findComponentByName(component.NAME_NAVIGATION).getLevel();
+            if (head.hasComponent(component.NAME_NETWORKING))
+                hasLevelNETWORKING           = head.findComponentByName(component.NAME_NETWORKING).getLevel();
+            if (head.hasComponent(component.NAME_NURBS))
+                hasLevelNURBS                = head.findComponentByName(component.NAME_NURBS).getLevel();
+            if (head.hasComponent(component.NAME_PARTICLESYSTEMS))
+                hasLevelPARTICLESYSTEMS      = head.findComponentByName(component.NAME_PARTICLESYSTEMS).getLevel();
+            if (head.hasComponent(component.NAME_PICKING))
+                hasLevelPICKING              = head.findComponentByName(component.NAME_PICKING).getLevel();
+            if (head.hasComponent(component.NAME_POINTINGDEVICESENSOR))
+                hasLevelPOINTINGDEVICESENSOR = head.findComponentByName(component.NAME_POINTINGDEVICESENSOR).getLevel();
+            if (head.hasComponent(component.NAME_RENDERING))
+                hasLevelRENDERING            = head.findComponentByName(component.NAME_RENDERING).getLevel();
+            if (head.hasComponent(component.NAME_RIGIDBODYPHYSICS))
+                hasLevelRIGIDBODYPHYSICS     = head.findComponentByName(component.NAME_RIGIDBODYPHYSICS).getLevel();
+            if (head.hasComponent(component.NAME_SCRIPTING))
+                hasLevelSCRIPTING            = head.findComponentByName(component.NAME_SCRIPTING).getLevel();
+            if (head.hasComponent(component.NAME_SHADERS))
+                hasLevelSHADERS              = head.findComponentByName(component.NAME_SHADERS).getLevel();
+            if (head.hasComponent(component.NAME_SHAPE))
+                hasLevelSHAPE                = head.findComponentByName(component.NAME_SHAPE).getLevel();
+            if (head.hasComponent(component.NAME_SOUND))
+                hasLevelSOUND                = head.findComponentByName(component.NAME_SOUND).getLevel();
+            if (head.hasComponent(component.NAME_TEXT))
+                hasLevelTEXT                 = head.findComponentByName(component.NAME_TEXT).getLevel();
+            if (head.hasComponent(component.NAME_TEXTURING))
+                hasLevelTEXTURING            = head.findComponentByName(component.NAME_TEXTURING).getLevel();
+            if (head.hasComponent(component.NAME_TEXTURING3D))
+                hasLevelTEXTURING3D          = head.findComponentByName(component.NAME_TEXTURING3D).getLevel();
+            if (head.hasComponent(component.NAME_TIME))
+                hasLevelTIME                 = head.findComponentByName(component.NAME_TIME).getLevel();
+            if (head.hasComponent(component.NAME_VOLUMERENDERING))
+                hasLevelVOLUMERENDERING      = head.findComponentByName(component.NAME_VOLUMERENDERING).getLevel();
         }
 
         if       (profile.equals(PROFILE_CORE))
@@ -17531,77 +17682,77 @@ public String getAccessType(String fieldName)
         boolean hasSupport =
             (profile.equals(PROFILE_FULL)) ||  // FULL supports all profiles
             
-			(otherComponent.equals(componentObject.NAME_CORE)                 && hasComponentCORE &&
+			(otherComponent.equals(component.NAME_CORE)                 && hasComponentCORE &&
                 (minimumLevel <= hasLevelCORE)) ||  // minimal CORE always supported
-			(otherComponent.equals(componentObject.NAME_CADGEOMETRY)          && hasComponentCADGEOMETRY &&
+			(otherComponent.equals(component.NAME_CADGEOMETRY)          && hasComponentCADGEOMETRY &&
                 (minimumLevel <= hasLevelCADGEOMETRY)) ||
-			(otherComponent.equals(componentObject.NAME_CUBEMAPTEXTURING)     && hasComponentCUBEMAPTEXTURING &&
+			(otherComponent.equals(component.NAME_CUBEMAPTEXTURING)     && hasComponentCUBEMAPTEXTURING &&
                 (minimumLevel <= hasLevelCUBEMAPTEXTURING)) ||
-			(otherComponent.equals(componentObject.NAME_DIS)                  && hasComponentDIS &&
+			(otherComponent.equals(component.NAME_DIS)                  && hasComponentDIS &&
                 (minimumLevel <= hasLevelDIS)) ||
-			(otherComponent.equals(componentObject.NAME_ENVIRONMENTALEFFECTS) && hasComponentENVIRONMENTALEFFECTS &&
+			(otherComponent.equals(component.NAME_ENVIRONMENTALEFFECTS) && hasComponentENVIRONMENTALEFFECTS &&
                 (minimumLevel <= hasLevelENVIRONMENTALEFFECTS)) ||
-			(otherComponent.equals(componentObject.NAME_ENVIRONMENTALSENSOR)  && hasComponentENVIRONMENTALSENSOR &&
+			(otherComponent.equals(component.NAME_ENVIRONMENTALSENSOR)  && hasComponentENVIRONMENTALSENSOR &&
                 (minimumLevel <= hasLevelENVIRONMENTALSENSOR)) ||
-			(otherComponent.equals(componentObject.NAME_EVENTUTILITIES)       && hasComponentEVENTUTILITIES &&
+			(otherComponent.equals(component.NAME_EVENTUTILITIES)       && hasComponentEVENTUTILITIES &&
                 (minimumLevel <= hasLevelEVENTUTILITIES)) ||
-			(otherComponent.equals(componentObject.NAME_FOLLOWERS)            && hasComponentFOLLOWERS &&
+			(otherComponent.equals(component.NAME_FOLLOWERS)            && hasComponentFOLLOWERS &&
                 (minimumLevel <= hasLevelFOLLOWERS)) ||
-			(otherComponent.equals(componentObject.NAME_GEOMETRY2D)           && hasComponentGEOMETRY2D &&
+			(otherComponent.equals(component.NAME_GEOMETRY2D)           && hasComponentGEOMETRY2D &&
                 (minimumLevel <= hasLevelGEOMETRY2D)) ||
-			(otherComponent.equals(componentObject.NAME_GEOMETRY3D)           && hasComponentGEOMETRY3D &&
+			(otherComponent.equals(component.NAME_GEOMETRY3D)           && hasComponentGEOMETRY3D &&
                 (minimumLevel <= hasLevelGEOMETRY3D)) ||
-			(otherComponent.equals(componentObject.NAME_GEOSPATIAL)           && hasComponentGEOSPATIAL &&
+			(otherComponent.equals(component.NAME_GEOSPATIAL)           && hasComponentGEOSPATIAL &&
                 (minimumLevel <= hasLevelGEOSPATIAL)) ||
-			(otherComponent.equals(componentObject.NAME_GROUPING)             && hasComponentGROUPING &&
+			(otherComponent.equals(component.NAME_GROUPING)             && hasComponentGROUPING &&
                 (minimumLevel <= hasLevelGROUPING)) ||
-			(otherComponent.equals(componentObject.NAME_H_ANIM)               && hasComponentH_ANIM &&
+			(otherComponent.equals(component.NAME_H_ANIM)               && hasComponentH_ANIM &&
                 (minimumLevel <= hasLevelH_ANIM)) ||
-			(otherComponent.equals(componentObject.NAME_INTERPOLATION)        && hasComponentINTERPOLATION &&
+			(otherComponent.equals(component.NAME_INTERPOLATION)        && hasComponentINTERPOLATION &&
                 (minimumLevel <= hasLevelINTERPOLATION)) ||
-			(otherComponent.equals(componentObject.NAME_KEYDEVICESENSOR)      && hasComponentKEYDEVICESENSOR &&
+			(otherComponent.equals(component.NAME_KEYDEVICESENSOR)      && hasComponentKEYDEVICESENSOR &&
                 (minimumLevel <= hasLevelKEYDEVICESENSOR)) ||
-			(otherComponent.equals(componentObject.NAME_LAYERING)             && hasComponentLAYERING &&
+			(otherComponent.equals(component.NAME_LAYERING)             && hasComponentLAYERING &&
                 (minimumLevel <= hasLevelLAYERING)) ||
-			(otherComponent.equals(componentObject.NAME_LAYOUT)               && hasComponentLAYOUT &&
+			(otherComponent.equals(component.NAME_LAYOUT)               && hasComponentLAYOUT &&
                 (minimumLevel <= hasLevelLAYOUT)) ||
-			(otherComponent.equals(componentObject.NAME_INTERPOLATION)        && hasComponentINTERPOLATION &&
+			(otherComponent.equals(component.NAME_INTERPOLATION)        && hasComponentINTERPOLATION &&
                 (minimumLevel <= hasLevelINTERPOLATION)) ||
-			(otherComponent.equals(componentObject.NAME_LIGHTING)             && hasComponentLIGHTING &&
+			(otherComponent.equals(component.NAME_LIGHTING)             && hasComponentLIGHTING &&
                 (minimumLevel <= hasLevelLIGHTING)) ||
-			(otherComponent.equals(componentObject.NAME_NAVIGATION)           && hasComponentNAVIGATION &&
+			(otherComponent.equals(component.NAME_NAVIGATION)           && hasComponentNAVIGATION &&
                 (minimumLevel <= hasLevelNAVIGATION)) ||
-			(otherComponent.equals(componentObject.NAME_NETWORKING)           && hasComponentNETWORKING &&
+			(otherComponent.equals(component.NAME_NETWORKING)           && hasComponentNETWORKING &&
                 (minimumLevel <= hasLevelNETWORKING)) ||
-			(otherComponent.equals(componentObject.NAME_NURBS)                && hasComponentNURBS &&
+			(otherComponent.equals(component.NAME_NURBS)                && hasComponentNURBS &&
                 (minimumLevel <= hasLevelNURBS)) ||
-			(otherComponent.equals(componentObject.NAME_PARTICLESYSTEMS)      && hasComponentPARTICLESYSTEMS &&
+			(otherComponent.equals(component.NAME_PARTICLESYSTEMS)      && hasComponentPARTICLESYSTEMS &&
                 (minimumLevel <= hasLevelPARTICLESYSTEMS)) ||
-			(otherComponent.equals(componentObject.NAME_PICKING)              && hasComponentPICKING &&
+			(otherComponent.equals(component.NAME_PICKING)              && hasComponentPICKING &&
                 (minimumLevel <= hasLevelPICKING)) ||
-			(otherComponent.equals(componentObject.NAME_POINTINGDEVICESENSOR) && hasComponentPOINTINGDEVICESENSOR &&
+			(otherComponent.equals(component.NAME_POINTINGDEVICESENSOR) && hasComponentPOINTINGDEVICESENSOR &&
                 (minimumLevel <= hasLevelPOINTINGDEVICESENSOR)) ||
-			(otherComponent.equals(componentObject.NAME_RENDERING)            && hasComponentRENDERING &&
+			(otherComponent.equals(component.NAME_RENDERING)            && hasComponentRENDERING &&
                 (minimumLevel <= hasLevelRENDERING)) ||
-			(otherComponent.equals(componentObject.NAME_RIGIDBODYPHYSICS)     && hasComponentRIGIDBODYPHYSICS &&
+			(otherComponent.equals(component.NAME_RIGIDBODYPHYSICS)     && hasComponentRIGIDBODYPHYSICS &&
                 (minimumLevel <= hasLevelRIGIDBODYPHYSICS)) ||
-			(otherComponent.equals(componentObject.NAME_SCRIPTING)            && hasComponentSCRIPTING &&
+			(otherComponent.equals(component.NAME_SCRIPTING)            && hasComponentSCRIPTING &&
                 (minimumLevel <= hasLevelSCRIPTING)) ||
-			(otherComponent.equals(componentObject.NAME_SHADERS)              && hasComponentSHADERS &&
+			(otherComponent.equals(component.NAME_SHADERS)              && hasComponentSHADERS &&
                 (minimumLevel <= hasLevelSHADERS)) ||
-			(otherComponent.equals(componentObject.NAME_SHAPE)                && hasComponentSHAPE &&
+			(otherComponent.equals(component.NAME_SHAPE)                && hasComponentSHAPE &&
                 (minimumLevel <= hasLevelSHAPE)) ||
-			(otherComponent.equals(componentObject.NAME_SOUND)                && hasComponentSOUND &&
+			(otherComponent.equals(component.NAME_SOUND)                && hasComponentSOUND &&
                 (minimumLevel <= hasLevelSOUND)) ||
-			(otherComponent.equals(componentObject.NAME_TEXT)                 && hasComponentTEXT &&
+			(otherComponent.equals(component.NAME_TEXT)                 && hasComponentTEXT &&
                 (minimumLevel <= hasLevelTEXT)) ||
-			(otherComponent.equals(componentObject.NAME_TEXTURING)            && hasComponentTEXTURING &&
+			(otherComponent.equals(component.NAME_TEXTURING)            && hasComponentTEXTURING &&
                 (minimumLevel <= hasLevelTEXTURING)) ||
-			(otherComponent.equals(componentObject.NAME_TEXTURING3D)          && hasComponentTEXTURING3D &&
+			(otherComponent.equals(component.NAME_TEXTURING3D)          && hasComponentTEXTURING3D &&
                 (minimumLevel <= hasLevelTEXTURING3D)) ||
-			(otherComponent.equals(componentObject.NAME_TIME)                 && hasComponentTIME &&
+			(otherComponent.equals(component.NAME_TIME)                 && hasComponentTIME &&
                 (minimumLevel <= hasLevelTIME)) ||
-			(otherComponent.equals(componentObject.NAME_VOLUMERENDERING)      && hasComponentVOLUMERENDERING &&
+			(otherComponent.equals(component.NAME_VOLUMERENDERING)      && hasComponentVOLUMERENDERING &&
                 (minimumLevel <= hasLevelVOLUMERENDERING));
 
         return hasSupport;
@@ -17926,7 +18077,7 @@ shall not include the underlying field's values at that point in time.
      * X3DFieldTypes interface.
      *
      * @return The access type of this node
-     * @see X3DFieldTypes
+     * @see org.web3d.x3d.sai.X3DFieldTypes
      */
 	public int getAccessType();
 
@@ -17936,7 +18087,7 @@ shall not include the underlying field's values at that point in time.
      * described in the X3DFieldType interface.
      *
      * @return A constant describing the field type
-     * @see X3DFieldTypes
+     * @see org.web3d.x3d.sai.X3DFieldTypes
      */
 	public int getFieldType();
 
@@ -18108,7 +18259,7 @@ shall not include the underlying field's values at that point in time.
 @author Justin Couch
 ]]></xsl:text>
 			</xsl:with-param>
-			<!-- TODO: remove constructor definition from specification interface: public Matrix3(); -->
+			<!-- TODO: remove constructor definition from specification interface: public org.web3d.x3d.sai.Matrix3(); -->
 			<xsl:with-param name="interfaceBlock"><xsl:text><![CDATA[
 				
 	public void setIdentity();
@@ -18117,27 +18268,27 @@ shall not include the underlying field's values at that point in time.
 
 	public float get(int row, int column); // TODO SAI interface problem, needs to be double for Matrix3d Matrix4d types
 
-//	public void setTransform(SFVec3f translation, // TODO incompatible with double types
-//		SFRotation rotation,
-//		SFVec3f scale,
-//		SFRotation scaleOrientation,
-//		SFVec3f center);
+//	public void setTransform(org.web3d.x3d.sai.SFVec3f translation, // TODO incompatible with double types
+//		org.web3d.x3d.sai.SFRotation rotation,
+//		org.web3d.x3d.sai.SFVec3f scale,
+//		org.web3d.x3d.sai.SFRotation scaleOrientation,
+//		org.web3d.x3d.sai.SFVec3f center);
 
-//	public void getTransform(SFVec3f translation, // TODO incompatible with double types
-//		SFRotation rotation,
-//		SFVec3f scale);
+//	public void getTransform(org.web3d.x3d.sai.SFVec3f translation, // TODO incompatible with double types
+//		org.web3d.x3d.sai.SFRotation rotation,
+//		org.web3d.x3d.sai.SFVec3f scale);
 
-	public Matrix3 inverse();
+	public org.web3d.x3d.sai.Matrix3 inverse();
 
-	public Matrix3 transpose();
+	public org.web3d.x3d.sai.Matrix3 transpose();
 
-	public Matrix3 multiplyLeft(Matrix3 matrix3x3);
+	public org.web3d.x3d.sai.Matrix3 multiplyLeft(org.web3d.x3d.sai.Matrix3 matrix3x3);
 
-	public Matrix3 multiplyRight(Matrix3 matrix3x3);
+	public org.web3d.x3d.sai.Matrix3 multiplyRight(org.web3d.x3d.sai.Matrix3 matrix3x3);
 
-//	public Matrix3 multiplyRowVector(SFVec3f vec3f); // TODO incompatible with double types
+//	public org.web3d.x3d.sai.Matrix3 multiplyRowVector(org.web3d.x3d.sai.SFVec3f vec3f); // TODO incompatible with double types
 
-//	public Matrix3 multiplyColVector(SFVec3f vec3f); // TODO incompatible with double types
+//	public org.web3d.x3d.sai.Matrix3 multiplyColVector(org.web3d.x3d.sai.SFVec3f vec3f); // TODO incompatible with double types
 ]]></xsl:text>
 			</xsl:with-param>
 		</xsl:call-template>
@@ -18161,7 +18312,7 @@ shall not include the underlying field's values at that point in time.
 			<xsl:with-param name="x3dAbstractSpecificationRelativeUrl"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="interfaceBlock"><xsl:text><![CDATA[
     /* TODO: remove constructor definition from interface specification
-	public Matrix4();
+	public org.web3d.x3d.sai.Matrix4();
      */
 
 	public void setIdentity();
@@ -18170,27 +18321,27 @@ shall not include the underlying field's values at that point in time.
 
 	public float get(int row, int column);
 
-//	public void setTransform(SFVec3f translation, // TODO incompatible with double types
-//		SFRotation rotation,
-//		SFVec3f scale,
-//		SFRotation scaleOrientation,
-//		SFVec3f center);
+//	public void setTransform(org.web3d.x3d.sai.SFVec3f translation, // TODO incompatible with double types
+//		org.web3d.x3d.sai.SFRotation rotation,
+//		org.web3d.x3d.sai.SFVec3f scale,
+//		org.web3d.x3d.sai.SFRotation scaleOrientation,
+//		org.web3d.x3d.sai.SFVec3f center);
 
-//	public void getTransform(SFVec3f translation, // TODO incompatible with double types
-//		SFRotation rotation,
-//		SFVec3f scale);
+//	public void getTransform(org.web3d.x3d.sai.SFVec3f translation, // TODO incompatible with double types
+//		org.web3d.x3d.sai.SFRotation rotation,
+//		org.web3d.x3d.sai.SFVec3f scale);
 
-	public Matrix4 inverse();
+	public org.web3d.x3d.sai.Matrix4 inverse();
 
-	public Matrix4 transpose();
+	public org.web3d.x3d.sai.Matrix4 transpose();
 
-	public Matrix4 multiplyLeft(Matrix4 matrix4x4);
+	public org.web3d.x3d.sai.Matrix4 multiplyLeft(org.web3d.x3d.sai.Matrix4 matrix4x4);
 
-	public Matrix4 multiplyRight(Matrix4 matrix4x4);
+	public org.web3d.x3d.sai.Matrix4 multiplyRight(org.web3d.x3d.sai.Matrix4 matrix4x4);
 
-//	public Matrix3 multiplyColVector(SFVec3f vec3f);
+//	public org.web3d.x3d.sai.Matrix3 multiplyColVector(org.web3d.x3d.sai.SFVec3f vec3f);
 
-//	public Matrix3 multiplyColVector(SFVec3f vec3f);
+//	public org.web3d.x3d.sai.Matrix3 multiplyColVector(org.web3d.x3d.sai.SFVec3f vec3f);
 ]]></xsl:text>
 			</xsl:with-param>
 		</xsl:call-template>
@@ -18251,10 +18402,10 @@ shall not include the underlying field's values at that point in time.
 			<xsl:variable name="implements">
 				<xsl:choose>
 					<xsl:when test="contains($fieldName,'Matrix3')">
-						<xsl:text> extends Matrix3</xsl:text>
+						<xsl:text> extends org.web3d.x3d.sai.Matrix3</xsl:text>
 					</xsl:when>
 					<xsl:when test="contains($fieldName,'Matrix4')">
-						<xsl:text> extends Matrix4</xsl:text>
+						<xsl:text> extends org.web3d.x3d.sai.Matrix4</xsl:text>
 					</xsl:when>
 				</xsl:choose>
 			</xsl:variable>
@@ -18284,7 +18435,9 @@ shall not include the underlying field's values at that point in time.
 						<xsl:text>import java.awt.image.WritableRenderedImage;</xsl:text>
 					</xsl:when>
 					<xsl:when test="contains($fieldName,'FMatrix')">
-						<xsl:text>import org.web3d.x3d.sai.*;</xsl:text>
+						<xsl:text>import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:text>
+						<xsl:text>&#10;</xsl:text>
+						<xsl:text>// import org.web3d.x3d.sai.*;</xsl:text>
 						<xsl:text>&#10;</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
@@ -18548,24 +18701,40 @@ shall not include the underlying field's values at that point in time.
 					</xsl:when>
 					<xsl:when test="($fieldName = 'SFNode')">
 						<xsl:text>	</xsl:text><!-- tab -->
-						<xsl:text>public static final X3DNode </xsl:text>
+						<xsl:text>public static final org.web3d.x3d.sai.Core.X3DNode </xsl:text>
 						<xsl:text>DEFAULT_VALUE</xsl:text>
 						<xsl:text> = </xsl:text>
 						<xsl:text>null;</xsl:text>
 					</xsl:when>
 					<xsl:when test="($fieldName = 'MFNode')">
 						<xsl:text>	</xsl:text><!-- tab -->
-						<xsl:text>public static final X3DNode[] </xsl:text>
+						<xsl:text>public static final org.web3d.x3d.sai.Core.X3DNode[] </xsl:text>
 						<xsl:text>DEFAULT_VALUE</xsl:text>
 						<xsl:text> = </xsl:text>
-						<xsl:text>new X3DNode[0]; // initialize as empty array</xsl:text>
+						<xsl:text>new org.web3d.x3d.sai.Core.X3DNode[0]; // initialize as empty array</xsl:text>
 					</xsl:when>
 					<xsl:when test="starts-with($fieldName,'MF')">
 						<xsl:text>	public static final </xsl:text>
 						<xsl:value-of select="$javaType"/>
 						<xsl:text> </xsl:text>
 						<xsl:text>DEFAULT_VALUE = new </xsl:text>
-						<xsl:value-of select="substring-before($javaType, '[]')"/>
+                        <xsl:variable name="saiPackagePath"> 
+                            <xsl:call-template name="saiPackage">
+                                <xsl:with-param name="nodeType" select="$javaType"/>
+                            </xsl:call-template>
+                        </xsl:variable>
+                        <xsl:choose>
+                            <xsl:when test="(string-length($saiPackagePath) > 0)">
+                                <!-- <xsl:text>/* here 13a */</xsl:text> -->
+                                <xsl:value-of select="$saiPackagePath"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="substring-before($javaType, '[]')"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!-- <xsl:text>/* here 13b, saiPackage not found */</xsl:text> -->
+                                <xsl:value-of select="substring-before($javaType, '[]')"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
 						<xsl:text>[0]; // initialize as empty array</xsl:text>
 					</xsl:when>
 				</xsl:choose>
@@ -18650,7 +18819,7 @@ shall not include the underlying field's values at that point in time.
     /** Flag to minimize excessive regex warnings for this field type, helpful if memory limitations are present. */
     private static boolean priorRegexStackOverflowFound = false;
 ]]></xsl:text>
-                <!-- special regexes for SimpleType definitions, for example SFVec3fObject bboxSizeType -->
+                <!-- special regexes for SimpleType definitions, for example SFVec3f bboxSizeType -->
                 <xsl:for-each select="//SimpleType[@baseType = $fieldName][string-length(@regex) > 0]">
                     <!-- debug
                     <xsl:message>
@@ -19318,7 +19487,7 @@ shall not include the underlying field's values at that point in time.
 	 * Utility method to determine if string meets XML NMTOKEN requirements
 	 * @param value string to check
 	 * @return whether value meets NMTOKEN regex checks
-	 * @see SFStringObject#meetsX3dInteroperabilityNamingConventions(String)
+	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
 	 * @see <a href="https://www.web3d.org/specifications/X3dRegularExpressions.html">X3D Regular Expressions (regexes)</a>
@@ -19348,7 +19517,7 @@ shall not include the underlying field's values at that point in time.
 	 * Avoids whitespace, apostrophe, hyphen, minus, comma, period or other special characters in order to ensure portability
 	 * @param value string to check
 	 * @return whether value meets suggested X3D naming requirements
-	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFString#isNMTOKEN(String)
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
 	 * @see <a href="https://www.web3d.org/specifications/X3dRegularExpressions.html">X3D Regular Expressions (regexes)</a>
@@ -19396,8 +19565,8 @@ shall not include the underlying field's values at that point in time.
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Modify current object values to ignore all whitespace, remove all embedded quotes, remove all commas, and remove all square brackets.
-	 * @see MFStringObject#cleanupUnescapedEnclosingQuotes()
-	 * @return {@link MFStringObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
+	 * @see MFString#cleanupUnescapedEnclosingQuotes()
+	 * @return {@link MFString} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 method invocations on the same node object).
 	 */
 	public MFString]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ cleanupEnumerationValues()
@@ -19408,7 +19577,7 @@ method invocations on the same node object).
 	/**
 	 * Utility method for single enumeration value to ignore all whitespace, remove all embedded quotes, remove all commas, and remove all square brackets to create an unadorned enumeration String.
 	 * @param value single enumeration string intended for use as an SFString or MFString value
-	 * @see MFStringObject#cleanupUnescapedEnclosingQuotes(String)
+	 * @see MFString#cleanupUnescapedEnclosingQuotes(String)
 	 * @return unquoted string values containing no whitespace as MFString list
 	 */
 	public static String cleanupEnumerationValue(String value)
@@ -19422,7 +19591,7 @@ method invocations on the same node object).
 	/**
 	 * Utility method for a single String containing multiple enumeration values to ignore all whitespace, remove all embedded quotes, remove all commas, and remove all square brackets to create unadorned MFString elements as a String[] array.
 	 * @param values zero or more enumeration values intended for use as an MFString list
-	 * @see MFStringObject#cleanupUnescapedEnclosingQuotes(String)
+	 * @see MFString#cleanupUnescapedEnclosingQuotes(String)
 	 * @return unquoted string values containing no whitespace as MFString list
 	 */
 	public static String[] cleanupEnumerationValues(String values)
@@ -19438,9 +19607,9 @@ method invocations on the same node object).
 	/**
 	 * Utility method for multiple enumeration values to ignore all whitespace, remove all embedded quotes, remove all commas, and remove all square brackets in a String[] array.
 	 * @param values zero or more enumeration values intended for use as an MFString list
-	 * @see MFStringObject#cleanupEnumerationValue(String)
-	 * @see MFStringObject#cleanupEnumerationValues(String)
-	 * @see MFStringObject#cleanupUnescapedEnclosingQuotes(String)
+	 * @see MFString#cleanupEnumerationValue(String)
+	 * @see MFString#cleanupEnumerationValues(String)
+	 * @see MFString#cleanupUnescapedEnclosingQuotes(String)
 	 * @return unquoted string values containing no whitespace as String[] array
 	 */
 	public static String[] cleanupEnumerationValues(String[] values)
@@ -19457,9 +19626,9 @@ method invocations on the same node object).
 	/**
 	 * Utility method for multiple enumeration values to ignore all whitespace, remove all embedded quotes, remove all commas, and remove all square brackets from a ArrayList of values.
 	 * @param values zero or more enumeration values intended for use as an MFString list
-	 * @see MFStringObject#cleanupEnumerationValue(String)
-	 * @see MFStringObject#cleanupEnumerationValues(String)
-	 * @see MFStringObject#cleanupUnescapedEnclosingQuotes(String)
+	 * @see MFString#cleanupEnumerationValue(String)
+	 * @see MFString#cleanupEnumerationValues(String)
+	 * @see MFString#cleanupUnescapedEnclosingQuotes(String)
 	 * @return unquoted string values containing no whitespace as MFString list
 	 */
 	public static ArrayList<String> cleanupEnumerationValues(ArrayList<String> values)
@@ -19475,8 +19644,8 @@ method invocations on the same node object).
 	}
 	/**
 	 * Modify current object values to trim enclosing quotes and outer whitespace.
-	 * @see MFStringObject#cleanupEnumerationValues()
-	 * @return {@link MFStringObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
+	 * @see MFString#cleanupEnumerationValues()
+	 * @return {@link MFString} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 method invocations on the same node object).
 	 */
 	public MFString]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ cleanupUnescapedEnclosingQuotes()
@@ -19493,7 +19662,7 @@ method invocations on the same node object).
 	<xsl:text>	 * </xsl:text>
 	<xsl:text disable-output-escaping="yes"><![CDATA[<i>Warning:</i> do not use this method on a String that contains multiple quoted values, use cleanupEnumerationValues() instead.
 	 * @param singleValue input String for use with MFString list, which must be unquoted
-	 * @see MFStringObject#cleanupEnumerationValue(String)
+	 * @see MFString#cleanupEnumerationValue(String)
 	 * @return unquoted String value
 	 */
 	public static String cleanupUnescapedEnclosingQuotes(String singleValue)
@@ -19514,9 +19683,9 @@ method invocations on the same node object).
 	/**
 	 * Utility method to trim enclosing quotes and outer whitespace from elements in an arbitrary String[] array.
 	 * @param values String[] array for use with MFString list, which must be unquoted
-	 * @see MFStringObject#cleanupUnescapedEnclosingQuotes(String)
-	 * @see MFStringObject#cleanupEnumerationValue(String)
-	 * @see MFStringObject#cleanupEnumerationValues(String)
+	 * @see MFString#cleanupUnescapedEnclosingQuotes(String)
+	 * @see MFString#cleanupEnumerationValue(String)
+	 * @see MFString#cleanupEnumerationValues(String)
 	 * @return unquoted String[] array
 	 */
 	public static String[] cleanupUnescapedEnclosingQuotes(String[] values)
@@ -19533,9 +19702,9 @@ method invocations on the same node object).
 	/**
 	 * Utility method to trim enclosing quotes and outer whitespace from elements in an ArrayList of arbitrary String values.
 	 * @param values existing ArrayList of String values for use with MFString list, which must be unquoted
-	 * @see MFStringObject#cleanupUnescapedEnclosingQuotes(String)
-	 * @see MFStringObject#cleanupEnumerationValue(String)
-	 * @see MFStringObject#cleanupEnumerationValues(String)
+	 * @see MFString#cleanupUnescapedEnclosingQuotes(String)
+	 * @see MFString#cleanupEnumerationValue(String)
+	 * @see MFString#cleanupEnumerationValues(String)
 	 * @return unquoted String[] array
 	 */
 	public static ArrayList<String> cleanupUnescapedEnclosingQuotes(ArrayList<String> values)
@@ -19563,7 +19732,7 @@ method invocations on the same node object).
 	 */
 	public boolean equals(</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text>)
 	{
-        return (getPrimitiveValue() == comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[Object.getPrimitiveValue());
+        return (getPrimitiveValue() == comparison</xsl:text><xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[.getPrimitiveValue());
 	}
 	/**
 	 * Validate current value via ]]></xsl:text>
@@ -19771,7 +19940,7 @@ method invocations on the same node object).
 		<xsl:when test="($fieldName = 'SFString') or ($fieldName = 'MFString')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 	 * @param newValue is new value to assign
-	 * @return {@link MFMatrix4dObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
+	 * @return {@link MFMatrix4d} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 method invocations on the same node object).
 	 */
 	public ]]></xsl:text>
@@ -19785,9 +19954,9 @@ method invocations on the same node object).
 	 * <i>Warning:</i> this method is not 
 	 * <i><a href="https://en.wikipedia.org/wiki/Type_safety" target="_blank">type safe</a></i>
 	 * at compile time!  Best practice for X3DJSAIL programmers is to use strongly typed methods instead, in order to avoid potential for run-time errors.
-	 * @see X3DLoaderDOM#toX3dObjectTree(org.w3c.dom.Node)
+	 * @see X3DLoaderDOM#toX3dModelInstance(org.w3c.dom.Node)
 	 * @param newValue is new value to assign, if empty then assign DEFAULT_VALUE
-	 * @return {@link MFMatrix4dObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
+	 * @return {@link MFMatrix4d} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 method invocations on the same node object).
 	 */
 	public ]]></xsl:text>
@@ -19803,9 +19972,12 @@ method invocations on the same node object).
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 
 		if (!</xsl:text>
+        <!--
 <xsl:value-of select="$fieldName"/>
 <xsl:value-of select="$jsaiClassSuffix"/>
-<xsl:text>.matches(newValue)) // regex test
+<xsl:text>.</xsl:text>
+-->
+<xsl:text>matches(newValue)) // regex test
 		{
 			String errorNotice = "*** Regular expression (regex) failure, new </xsl:text>
 <xsl:value-of select="$fieldName"/>
@@ -20187,9 +20359,9 @@ method invocations on the same node object).
 				]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text>[i] = Double.parseDouble(newValues[i]); // insert in array</xsl:text>
 					<xsl:if test="($fieldName = 'MFTime')">
 						<xsl:text disable-output-escaping="yes"><![CDATA[		
-				if ((MFTime[i] < 0.0) && (MFTime[i] != SFTimeObject.DEFAULT_VALUE)) // initial value check
+				if ((MFTime[i] < 0.0) && (MFTime[i] != SFTime.DEFAULT_VALUE)) // initial value check
 				{
-					MFTime[i] = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+					MFTime[i] = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 				}]]></xsl:text>
 					</xsl:if>
 					<xsl:text>
@@ -20468,9 +20640,9 @@ method invocations on the same node object).
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 		for (int i = 0; i < newValue.length; i++)
 		{
-			if ((newValue[i] < 0.0) && (newValue[i] != SFTimeObject.DEFAULT_VALUE)) // initial value check
+			if ((newValue[i] < 0.0) && (newValue[i] != SFTime.DEFAULT_VALUE)) // initial value check
 			{
-				newValue[i] = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+				newValue[i] = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 			}
 		}]]></xsl:text>
 			</xsl:when>
@@ -20835,7 +21007,7 @@ TODO: also MFColor.
 	 */
 	public static String toStringHTML(float red, float green, float blue)
 	{
-        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColorObject(red, green, blue);
+        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColor(red, green, blue);
 		return newValue.toStringHTML();
 	}
 	/**
@@ -20850,7 +21022,7 @@ TODO: also MFColor.
 	 */
 	public static String toStringHTML(float[] colors)
 	{
-        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColorObject(colors);
+        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColor(colors);
 		return newValue.toStringHTML();
 	}
 	/**
@@ -20879,7 +21051,7 @@ TODO: also MFColor.
 	 */
 	public static String toStringCSS(float red, float green, float blue)
 	{
-        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColorObject(red, green, blue);
+        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColor(red, green, blue);
 		return newValue.toStringCSS();
 	}
 	/**
@@ -20892,7 +21064,7 @@ TODO: also MFColor.
 	 */
 	public static String toStringCSS(float[] colors)
 	{
-        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColorObject(colors);
+        SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue = new SFColor(colors);
 		return newValue.toStringCSS();
 	}
 ]]></xsl:text>
@@ -21064,9 +21236,9 @@ TODO: also MFColor.
 			validationResult.append(errorNotice).append("\n");
 			throw new ArrayIndexOutOfBoundsException(errorNotice);
 		}
-		if (index >= MFColor.length / MFColorObject.TUPLE_SIZE) // tupleSize factor
+		if (index >= MFColor.length / TUPLE_SIZE) // tupleSize factor
 		{
-			String errorNotice = "Provided array index=" + index + " (for 3-tuples) must be less than MFColor array length=" + MFColor.length / MFColorObject.TUPLE_SIZE;
+			String errorNotice = "Provided array index=" + index + " (for 3-tuples) must be less than MFColor array length=" + MFColor.length / TUPLE_SIZE;
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}		
@@ -21157,9 +21329,9 @@ TODO: also MFColor.
 			validationResult.append(errorNotice).append("\n");
 			throw new ArrayIndexOutOfBoundsException(errorNotice);
 		}
-		if (index >= MFColorRGBA.length / MFColorRGBAObject.TUPLE_SIZE) // tupleSize factor
+		if (index >= MFColorRGBA.length / TUPLE_SIZE) // tupleSize factor
 		{
-			String errorNotice = "Provided array index=" + index + " (for 4-tuples) must be less than MFColor array length=" + MFColorRGBA.length / MFColorRGBAObject.TUPLE_SIZE;
+			String errorNotice = "Provided array index=" + index + " (for 4-tuples) must be less than MFColor array length=" + MFColorRGBA.length / TUPLE_SIZE;
 			validationResult.append(errorNotice).append("\n");
 			throw new ArrayIndexOutOfBoundsException(errorNotice);
 		}
@@ -21714,7 +21886,7 @@ TODO: also MFColor.
             <xsl:text> to assign a single </xsl:text><xsl:value-of select="$subTypeObject"/>
             <xsl:text disable-output-escaping="yes"><![CDATA[ as new initial value.
 	 * @param newValue is new value to assign
-	 * @return {@link SFColorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link SFColor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> setValue(</xsl:text>
             <xsl:value-of select="$subTypeObject"/><xsl:text> newValue)
@@ -21733,7 +21905,7 @@ TODO: also MFColor.
 	 */
 	public MFFloat]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (double newValue)
 	{
-		setValue(new SFFloatObject(newValue));
+		setValue(new SFFloat(newValue));
 	}
 ]]></xsl:text>
 			</xsl:when>
@@ -21745,7 +21917,7 @@ TODO: also MFColor.
 	 */
 	public MFDouble]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ (float newValue)
 	{
-		setValue(new SFDoubleObject(newValue));
+		setValue(new SFDouble(newValue));
 	}
 ]]></xsl:text>
 			</xsl:when>
@@ -21804,7 +21976,7 @@ TODO: also MFColor.
 	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type SFColor tuple size of <i>3</i>.
 	 * @see X3DConcreteField#getTupleSize(String)
 	 * @param newValue The replacement value to assign.
-	 * @return {@link SFColorObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link SFColor} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double[] newValue)
 	{
@@ -21823,7 +21995,7 @@ TODO: also MFColor.
 	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type SFColorRGBA tuple size of <i>4</i>.
 	 * @see X3DConcreteField#getTupleSize(String)
 	 * @param newValue The replacement value to assign.
-	 * @return {@link SFColorRGBAObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link SFColorRGBA} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public SFColorRGBA]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double[] newValue)
 	{
@@ -21844,7 +22016,7 @@ TODO: also MFColor.
 	 * @param y second component of axis
 	 * @param z third component of axis
 	 * @param angleRadians fourth component of rotation around axis
-	 * @return {@link SFRotationObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link SFRotation} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public SFRotation]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(float x, float y, float z, float angleRadians)
 	{
@@ -21864,7 +22036,7 @@ TODO: also MFColor.
 	 * @param y second component of axis
 	 * @param z third component of axis
 	 * @param angleRadians fourth component of rotation around axis
-	 * @return {@link SFRotationObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link SFRotation} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public SFRotation]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double x, double y, double z, double angleRadians)
 	{
@@ -21876,7 +22048,7 @@ TODO: also MFColor.
 	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type SFRotation tuple size of <i>4</i>.
 	 * @see X3DConcreteField#getTupleSize(String)
 	 * @param newValue The replacement value to assign.
-	 * @return {@link SFRotationObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @return {@link SFRotation} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public SFRotation]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double[] newValue)
 	{
@@ -21936,19 +22108,19 @@ TODO: also MFColor.
 							contains(@type, 'Color') or 
 							((contains(@type,'Vec') or contains(@type,'Matrix')) and ends-with(@type,'f'))">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see SFFloatObject#stripTrailingZeroes(float)
+	 * @see SFFloat#stripTrailingZeroes(float)
 	 * @return String version of the provided value, with trailing zeroes and decimal points omitted.]]></xsl:text>
 			</xsl:when>
 			<xsl:when test="(@type='MFDouble') or (@type='MFTime') or
 							((contains(@type,'Vec') or contains(@type,'Matrix')) and ends-with(@type,'d'))">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see SFDoubleObject#stripTrailingZeroes(double)
+	 * @see SFDouble#stripTrailingZeroes(double)
 	 * @return String version of the provided value, with trailing zeroes and decimal points omitted.]]></xsl:text>
 			</xsl:when>
 			<xsl:when test="(@type='SFString') or (@type='MFString')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see SFStringObject#toStringX3D
-	 * @see MFStringObject#toStringX3D
+	 * @see SFString#toStringX3D
+	 * @see MFString#toStringX3D
 	 * @see <a href="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString">X3D Abstract Specification: 5.3.14 SFString and MFString</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString">X3D XML Encoding: 5.15 SFString and MFString</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#Text">X3D Tooltips: Text</a>
@@ -21998,7 +22170,7 @@ TODO: also MFColor.
 		for (int i=0; i < value.length; i++)
 		{
 			if  (ConfigurationProperties.isStripTrailingZeroes())
-				 result.append(org.web3d.x3d.jsail.fields.SFFloatObject.stripTrailingZeroes(value[i])).append(" ");
+				 result.append(org.web3d.x3d.jsail.fields.SFFloat.stripTrailingZeroes(value[i])).append(" ");
 			else result.append(value[i]).append(" ");
 		}
 		return result.toString().trim();]]></xsl:text>
@@ -22010,7 +22182,7 @@ TODO: also MFColor.
 		for (int i=0; i < value.length; i++)
 		{
 			if  (ConfigurationProperties.isStripTrailingZeroes())
-				 result.append(org.web3d.x3d.jsail.fields.SFDoubleObject.stripTrailingZeroes(value[i])).append(" ");
+				 result.append(org.web3d.x3d.jsail.fields.SFDouble.stripTrailingZeroes(value[i])).append(" ");
 			else result.append(value[i]).append(" ");
 		}
 		return result.toString().trim();]]></xsl:text>
@@ -22034,8 +22206,8 @@ TODO: also MFColor.
 	/**
 	 * Static utility method to provide String representation of input String, properly escaped using XML-based X3D syntax.
 	 * @param value The value to convert to an escaped String
-	 * @see SFStringObject#toStringX3D
-	 * @see MFStringObject#toStringX3D
+	 * @see SFString#toStringX3D
+	 * @see MFString#toStringX3D
 	 * @see <a href="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString">X3D Abstract Specification: 5.3.14 SFString and MFString</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString">X3D XML Encoding: 5.15 SFString and MFString</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#Text">X3D Tooltips: Text</a>
@@ -22044,7 +22216,7 @@ TODO: also MFColor.
 	 */
 	public static String toStringX3D (String value)
 	{
-		return (new SFStringObject(value)).toString()
+		return (new SFString(value)).toString()
 				.replaceAll("&","&amp;")	// escape ampersands
 				.replaceAll("<","&lt;")		// escape    less-than < signs
 				.replaceAll(">","&gt;")		// escape greater-than > signs in XML attributes
@@ -22054,10 +22226,10 @@ TODO: also MFColor.
 
 	/**
 	 * Provide String representation of this object, properly escaped for XML-based X3D syntax and conforming to X3D Canonical Form.
-	 * @see SFStringObject#toStringX3D(String)
-	 * @see MFStringObject#toStringX3D
-	 * @see X3DObject#FILE_EXTENSION_X3D
-	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see SFString#toStringX3D(String)
+	 * @see MFString#toStringX3D
+	 * @see X3D#FILE_EXTENSION_X3D
+	 * @see X3D#FILE_EXTENSION_XML
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#SFString">X3D Tooltips: type SFString</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="blank">X3D Compressed Binary Encoding: X3D Canonical Form</a>
@@ -22066,7 +22238,7 @@ TODO: also MFColor.
 	 */
 	public String toStringX3D ()
 	{
-		return SFStringObject.toStringX3D(SFString); // apply escaping to member value of this object
+		return toStringX3D(SFString); // apply escaping to member value of this object
 	}
 ]]></xsl:text>
 	</xsl:if>
@@ -22076,10 +22248,10 @@ TODO: also MFColor.
 		<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Provide String representation of this object, properly escaped for XML-based X3D syntax and conforming to X3D Canonical Form.
-	 * @see SFStringObject#toStringX3D
-	 * @see SFStringObject#toStringX3D(String)
-	 * @see X3DObject#FILE_EXTENSION_X3D
-	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see SFString#toStringX3D
+	 * @see SFString#toStringX3D(String)
+	 * @see X3D#FILE_EXTENSION_X3D
+	 * @see X3D#FILE_EXTENSION_XML
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MFString">X3D Tooltips: type MFString</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="blank">X3D Compressed Binary Encoding: X3D Canonical Form</a>
@@ -22095,7 +22267,7 @@ TODO: also MFColor.
 			// MFString[0] // trace
 			if (!MFString[i].startsWith("\""))
 				result += "\"";
-			// avoid SFStringObject.toStringX3D(MFString[i]) due to additional contrary handling of \" and &
+			// avoid SFString.toStringX3D(MFString[i]) due to additional contrary handling of \" and &
 			// http://www.regexplanet.com/advanced/java/index.html
 			// https://www.regular-expressions.info/java.html see "backslash-mess"
 			// https://docs.oracle.com/javase/tutorial/java/data/characters.html
@@ -22128,7 +22300,7 @@ TODO: also MFColor.
 	 * Get the current value of this ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text><![CDATA[ by copying it into the valueDestination array, leaving the current object unchanged.
 	 * @param valueDestination The array to be filled in with current field values.
 	 */
-	@Override
+	/* @Override */
 	public void getValue(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![CDATA[ valueDestination)
 	{
 		valueDestination = ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text><![CDATA[;
@@ -22141,7 +22313,7 @@ TODO: also MFColor.
 	 * Get the current value.
 	 * @return current value
 	 */
-	@Override
+	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![CDATA[ getValue()
 	{
 		return ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text><![CDATA[;
@@ -22173,13 +22345,13 @@ TODO: also MFColor.
 							contains(@type, 'Color') or 
 							((contains(@type,'Vec') or contains(@type,'Matrix')) and ends-with(@type,'f'))">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see org.web3d.x3d.jsail.fields.SFFloatObject#stripTrailingZeroes(float)
+	 * @see org.web3d.x3d.jsail.fields.SFFloat#stripTrailingZeroes(float)
 	 * @return String version of the provided value, with trailing zeroes and decimal points omitted.]]></xsl:text>
 			</xsl:when>
 			<xsl:when test="(@type='MFDouble') or (@type='MFTime') or
 							((contains(@type,'Vec') or contains(@type,'Matrix')) and ends-with(@type,'d'))">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	 * @see org.web3d.x3d.jsail.fields.SFDoubleObject#stripTrailingZeroes(double)
+	 * @see org.web3d.x3d.jsail.fields.SFDouble#stripTrailingZeroes(double)
 	 * @return String version of the provided value, with trailing zeroes and decimal points omitted.]]></xsl:text>
 			</xsl:when>
 			<xsl:when test="contains(@type, 'Image')">
@@ -22198,7 +22370,7 @@ TODO: also MFColor.
 		</xsl:choose>
 <xsl:text><![CDATA[
 	 */
-	@Override
+	/* @Override */
 	public String toString()
 	{
 		]]></xsl:text>
@@ -22268,7 +22440,7 @@ TODO: also MFColor.
 			<xsl:text>.length; i++)
 		{
 			if  (ConfigurationProperties.isStripTrailingZeroes())
-				 result.append(org.web3d.x3d.jsail.fields.SFFloatObject.stripTrailingZeroes(</xsl:text>
+				 result.append(org.web3d.x3d.jsail.fields.SFFloat.stripTrailingZeroes(</xsl:text>
 				<xsl:value-of select="$fieldName"/>
 				<xsl:text>[i]));
 			else result.append(</xsl:text>
@@ -22289,7 +22461,7 @@ TODO: also MFColor.
 			<xsl:text>.length; i++)
 		{
 			if  (ConfigurationProperties.isStripTrailingZeroes())
-				 result.append(org.web3d.x3d.jsail.fields.SFDoubleObject.stripTrailingZeroes(</xsl:text>
+				 result.append(org.web3d.x3d.jsail.fields.SFDouble.stripTrailingZeroes(</xsl:text>
 				<xsl:value-of select="$fieldName"/>
 				<xsl:text>[i]));
 			else result.append(</xsl:text>
@@ -22411,7 +22583,7 @@ TODO: also MFColor.
 	 * @see X3DConcreteField#getTupleSize(String)
 	 * @param newValue The replacement value to assign.
 	 */
-	@Override
+	/* @Override */
 	public void setValue(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue)
 	{
 ]]></xsl:text>		
@@ -22523,9 +22695,9 @@ TODO: also MFColor.
 					<xsl:text disable-output-escaping="yes"><![CDATA[
 		for (int i = 0; i < newValue.length; i++)
 		{
-			if ((newValue[i] < 0.0) && (newValue[i] != SFTimeObject.DEFAULT_VALUE)) // initial value check
+			if ((newValue[i] < 0.0) && (newValue[i] != SFTime.DEFAULT_VALUE)) // initial value check
 			{
-				newValue[i] = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+				newValue[i] = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 			}
 		}
 		]]></xsl:text>
@@ -22655,16 +22827,43 @@ TODO: also MFColor.
 <xsl:text disable-output-escaping="yes"><![CDATA[
 * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
 */
-@Override
+/* @Override */
 public ]]></xsl:text>
+    <xsl:variable name="saiPackagePath"> 
+        <xsl:call-template name="saiPackage">
+            <xsl:with-param name="nodeType" select="$javaPrimitiveType"/>
+        </xsl:call-template>
+    </xsl:variable>
 	<xsl:choose>
 		<xsl:when test="($isSingletonType = 'true')">
-			<xsl:value-of select="$javaPrimitiveType"/>
+            <xsl:choose>
+                <xsl:when test="(string-length($saiPackagePath) > 0)">
+                    <!-- <xsl:text>/* here 15a */</xsl:text> -->
+                    <xsl:value-of select="$saiPackagePath"/>
+                    <xsl:text>.</xsl:text>
+                    <xsl:value-of select="$javaPrimitiveType"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- <xsl:text>/* here 15b, saiPackage not found */</xsl:text> -->
+                    <xsl:value-of select="$javaPrimitiveType"/>
+                </xsl:otherwise>
+            </xsl:choose>
 			<xsl:text> get1Value(int index)</xsl:text>
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:text>void get1Value(int index, </xsl:text>
-			<xsl:value-of select="$javaPrimitiveType"/>
+            <xsl:choose>
+                <xsl:when test="(string-length($saiPackagePath) > 0)">
+                    <!-- <xsl:text>/* here 15a */</xsl:text> -->
+                    <xsl:value-of select="$saiPackagePath"/>
+                    <xsl:text>.</xsl:text>
+                    <xsl:value-of select="$javaPrimitiveType"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- <xsl:text>/* here 15b, saiPackage not found */</xsl:text> -->
+                    <xsl:value-of select="$javaPrimitiveType"/>
+                </xsl:otherwise>
+            </xsl:choose>
 			<xsl:text> destinationValue)</xsl:text>
 		</xsl:otherwise>
 	</xsl:choose>
@@ -22740,7 +22939,7 @@ public ]]></xsl:text>
 * @param size indicates size of result to copy (i.e. the number of typed singleton values) from beginning of newValue array.
 * @param newValue The replacement value array to (potentially) slice and then assign.		 
 */
-@Override
+/* @Override */
 public void setValue(int size, ]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![CDATA[ newValue)
 {
 ]]></xsl:text>
@@ -22750,9 +22949,9 @@ public void setValue(int size, ]]></xsl:text><xsl:value-of select="$javaType"/><
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	for (int i = 0; i < newValue.length; i++)
 	{
-		if ((newValue[i] < 0.0) && (newValue[i] != SFTimeObject.DEFAULT_VALUE)) // initial value check
+		if ((newValue[i] < 0.0) && (newValue[i] != SFTime.DEFAULT_VALUE)) // initial value check
 		{
-			newValue[i] = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+			newValue[i] = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 		}
 	}]]></xsl:text>
 	</xsl:if>
@@ -22783,7 +22982,7 @@ public void setValue(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><
   /**
    * Get the current value of this ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text><![CDATA[ by copying it into the valueDestination array, leaving the current object unchanged.
    */
-  @Override
+  /* @Override */
   public void getValue(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![CDATA[[] valueDestination)
   {
 	// TODO square array adjustment //// valueDestination = ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text><![CDATA[;
@@ -22800,7 +22999,7 @@ public void setValue(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><
 * @param size indicates size of result to copy (i.e. the number of typed singleton values) from beginning of newValue array.
 * @param newValue The replacement value array to (potentially) slice and then assign.
 */
-@Override
+/* @Override */
 public void setValue(int size, ]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![CDATA[[] newValue)
 {
 ]]></xsl:text>
@@ -22835,9 +23034,9 @@ public void setValue(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	for (int i = 0; i < newValue.length; i++)
 	{
-		if ((newValue[i] < 0.0) && (newValue[i] != SFTimeObject.DEFAULT_VALUE)) // initial value check
+		if ((newValue[i] < 0.0) && (newValue[i] != SFTime.DEFAULT_VALUE)) // initial value check
 		{
-			newValue[i] = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+			newValue[i] = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 		}
 	}
 	]]></xsl:text>
@@ -22948,9 +23147,9 @@ public void setValue(]]></xsl:text><xsl:value-of select="substring-before($javaT
 	
 	<xsl:if test="(@type='MFTime')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	if ((newValue < 0.0) && (newValue != SFTimeObject.DEFAULT_VALUE)) // initial value check
+	if ((newValue < 0.0) && (newValue != SFTime.DEFAULT_VALUE)) // initial value check
 	{
-		newValue = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+		newValue = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 	}
 	]]></xsl:text>
 	</xsl:if>
@@ -22980,7 +23179,7 @@ method invocations on the same node object).
 public ]]></xsl:text>
 <xsl:value-of select="$fieldName"/>
 <xsl:value-of select="$jsaiClassSuffix"/>
-<xsl:text> setValue(S</xsl:text><xsl:value-of select="substring(@type, 2)"/><xsl:text><![CDATA[Object newValue)
+<xsl:text> setValue(S</xsl:text><xsl:value-of select="substring(@type, 2)"/><xsl:text><![CDATA[ newValue)
 {
 	if (newValue == null)
 	{
@@ -23031,7 +23230,7 @@ public ]]></xsl:text>
 * @param index is position of selected value in current array
 * @param newValue provides new value to apply
 */
-@Override
+/* @Override */
 public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl:text><![CDATA[ newValue) throws ArrayIndexOutOfBoundsException
 {
 	if (index < 0)
@@ -23082,9 +23281,9 @@ public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimit
 	]]></xsl:text>
 	<xsl:if test="(@type='MFTime')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	if ((newValue < 0.0) && (newValue != SFTimeObject.DEFAULT_VALUE)) // initial value check
+	if ((newValue < 0.0) && (newValue != SFTime.DEFAULT_VALUE)) // initial value check
 	{
-		newValue = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+		newValue = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 	}
 	]]></xsl:text>
 	</xsl:if>
@@ -23118,7 +23317,7 @@ public void set1Value(int index, ]]></xsl:text><xsl:value-of select="$javaPrimit
 * @see X3DConcreteField#getTupleSize(String)
 * @param newValue The newValue to append
 */
-@Override
+/* @Override */
 public void append(]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl:text><![CDATA[ newValue)
 {]]></xsl:text>
 			<!-- newValue size check -->
@@ -23146,9 +23345,9 @@ public void append(]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl
 				<xsl:otherwise>
 	<xsl:if test="(@type='MFTime')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	if ((newValue < 0.0) && (newValue != SFTimeObject.DEFAULT_VALUE)) // initial value check
+	if ((newValue < 0.0) && (newValue != SFTime.DEFAULT_VALUE)) // initial value check
 	{
-		newValue = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+		newValue = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 	}]]></xsl:text>
 	</xsl:if>
 					<xsl:text>
@@ -23209,7 +23408,7 @@ public void append(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![
 	if ((newValue.length % ]]></xsl:text><xsl:value-of select="$tupleSize"/><xsl:text>) != 0) // tupleSize modulus check
 	{
 		String errorNotice = "illegal number of values (" + newValue.length + ")" +
-			" in initialization array, must be multiple of 4 when declaring new MFVec4fObject(" + newValue + ")";
+			" in initialization array, must be multiple of 4 when declaring new MFVec4f(" + newValue + ")";
 		validationResult.append(errorNotice).append("\n");
 		throw new InvalidFieldValueException (errorNotice);
 	}
@@ -23299,7 +23498,7 @@ public ]]></xsl:text>
 * @param index The position for the inserted value in the current array
 * @param newValue The newValue to insert
 */
-@Override
+/* @Override */
 public void insertValue(int index, ]]></xsl:text><xsl:value-of select="$javaPrimitiveType"/><xsl:text disable-output-escaping="yes"><![CDATA[ newValue)
 {
 	if (index < 0)
@@ -23342,9 +23541,9 @@ public void insertValue(int index, ]]></xsl:text><xsl:value-of select="$javaPrim
 	]]></xsl:text>
 	<xsl:if test="(@type='MFTime')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	if ((newValue < 0.0) && (newValue != SFTimeObject.DEFAULT_VALUE)) // initial value check
+	if ((newValue < 0.0) && (newValue != SFTime.DEFAULT_VALUE)) // initial value check
 	{
-		newValue = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+		newValue = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 	}]]></xsl:text>
 	</xsl:if>
 	<xsl:text>
@@ -23394,12 +23593,12 @@ public void insertValue(int index, ]]></xsl:text><xsl:value-of select="$javaPrim
 * Places a new value at the end of the existing value array, increasing the field length accordingly.
 * @param newValue The newValue to append
 */
-@Override
+/* @Override */
 public void append(long newValue)
 {
-	if ((newValue < 0) && ((double)newValue != SFTimeObject.DEFAULT_VALUE)) // initial value check
+	if ((newValue < 0) && ((double)newValue != SFTime.DEFAULT_VALUE)) // initial value check
 	{
-		 append(SFTimeObject.DEFAULT_VALUE); // unusual occurrence, TODO log it
+		 append(SFTime.DEFAULT_VALUE); // unusual occurrence, TODO log it
 	}
 	else append((double) newValue);
 }
@@ -23409,12 +23608,12 @@ public void append(long newValue)
 * @param index The position for the inserted value in the current array
 * @param newValue The newValue to insert
 */
-@Override
+/* @Override */
 public void insertValue(int index, long newValue)
 {
-	if ((newValue < 0) && ((double)newValue != SFTimeObject.DEFAULT_VALUE)) // initial value check
+	if ((newValue < 0) && ((double)newValue != SFTime.DEFAULT_VALUE)) // initial value check
 	{
-		 insertValue(index, SFTimeObject.DEFAULT_VALUE); // unusual occurrence, TODO log it
+		 insertValue(index, SFTime.DEFAULT_VALUE); // unusual occurrence, TODO log it
 	}
 	else insertValue(index, (double) newValue);
 }
@@ -23431,12 +23630,12 @@ public void insertValue(int index, long newValue)
 * @param index is position of selected value in current array
 * @param newValue provides new value to apply
 */
-@Override
+/* @Override */
 public void set1Value(int index, long newValue) throws ArrayIndexOutOfBoundsException
 {
-	if ((newValue < 0) && ((double)newValue != SFTimeObject.DEFAULT_VALUE)) // initial value check
+	if ((newValue < 0) && ((double)newValue != SFTime.DEFAULT_VALUE)) // initial value check
 	{
-		 set1Value(index, SFTimeObject.DEFAULT_VALUE); // unusual occurrence, TODO log it
+		 set1Value(index, SFTime.DEFAULT_VALUE); // unusual occurrence, TODO log it
 	}
 	else set1Value(index, (double) newValue);
 }
@@ -23453,15 +23652,15 @@ public void set1Value(int index, long newValue) throws ArrayIndexOutOfBoundsExce
 * @param index is position of selected value in current array
 * @param newValue provides new value to apply
 */
-@Override
+/* @Override */
 public void setValue(int index, long[] newValue) throws ArrayIndexOutOfBoundsException
 {
 	double[] doubleTimeValues = new double[newValue.length];
 	for (int i=0; i < newValue.length; i++)
 	{
-		if ((newValue[i] < 0) && ((double)newValue[i] != SFTimeObject.DEFAULT_VALUE)) // initial value check
+		if ((newValue[i] < 0) && ((double)newValue[i] != SFTime.DEFAULT_VALUE)) // initial value check
 		{
-			 doubleTimeValues[i] = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+			 doubleTimeValues[i] = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 		}
 		else doubleTimeValues[i] = newValue[i];
 	}
@@ -23476,7 +23675,7 @@ public void setValue(int index, long[] newValue) throws ArrayIndexOutOfBoundsExc
  *
  * @return The number of S]]></xsl:text><xsl:value-of select="substring($fieldName,2)"/><xsl:text disable-output-escaping="yes"><![CDATA[ elements in this field array.
  */
-@Override
+/* @Override */
 public int size()
 {
 	return ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$dimensionSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[;
@@ -23485,7 +23684,7 @@ public int size()
 /**
  * Removes all values in the field array, changing the array size to zero.
  */
-@Override
+/* @Override */
 public void clear()
 {
 	]]></xsl:text>
@@ -23506,7 +23705,7 @@ public void clear()
  * Remove one S]]></xsl:text><xsl:value-of select="substring($fieldName,2)"/><xsl:text disable-output-escaping="yes"><![CDATA[ element of the field array at index position, if found.  Initial element is at index 0.
  * @param index position of element in field array that gets removed
  */
-@Override
+/* @Override */
 public void remove(int index)
 {
 	if (index < 0)
@@ -23553,7 +23752,7 @@ public void remove(int index)
 *	Get the current value.
 * 	@return current value
 */
-@Override
+/* @Override */
 public long getJavaValue()
 {
 	return (long)SFTime;
@@ -23562,7 +23761,7 @@ public long getJavaValue()
 * Assign a new value, converting seconds from (long) to (double).
 * @param newValue The replacement value to assign.
 */
-@Override
+/* @Override */
 public void setValue(long newValue)
 {
 	SFTime = (double)newValue;
@@ -23586,7 +23785,7 @@ public void setValue(long newValue)
  * @return The selected value
  * @throws ArrayIndexOutOfBoundsException The index was outside of the bounds of the current array.
  */
-@Override
+/* @Override */
 public long get1JavaValue(int index)
 {
 	if (index < 0)
@@ -23602,7 +23801,7 @@ public long get1JavaValue(int index)
 * Assign a new value array, converting seconds from (long) to (double).
 * @param newValue is replacement value array to assign
 */
-@Override
+/* @Override */
 public void setValue(long[] newValue)
 {
 ]]></xsl:text>
@@ -23612,9 +23811,9 @@ public void setValue(long[] newValue)
 	MFTime = new double[newValue.length];
 	for (int i=0; i < newValue.length; i++)
 	{
-		if ((newValue[i] < 0) && ((double)newValue[i] != SFTimeObject.DEFAULT_VALUE)) // initial value check
+		if ((newValue[i] < 0) && ((double)newValue[i] != SFTime.DEFAULT_VALUE)) // initial value check
 		{
-			 MFTime[i] = SFTimeObject.DEFAULT_VALUE; // unusual occurrence, TODO log it
+			 MFTime[i] = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 		}
 		else MFTime[i] = (double)newValue[i];
 	}
@@ -23629,7 +23828,7 @@ public void setValue(long[] newValue)
      * @param valueDestination The array to be filled in with current field values.
      * @throws ArrayIndexOutOfBoundsException The provided valueDestination array was too small.
      */
-	@Override
+	/* @Override */
 	public void getValue(float[][] valueDestination)
 	{
 		// TODO
@@ -23646,7 +23845,7 @@ public void setValue(long[] newValue)
 	 * @param size indicates size of result to copy (i.e. the number of typed singleton values) from beginning of newValue array.
      * @param newValue The replacement value array to (potentially) slice and then assign.
      */
-	@Override
+	/* @Override */
 	public void setValue(int size, float[][] newValue)
 	{
 ]]></xsl:text>
@@ -23664,7 +23863,7 @@ public void setValue(long[] newValue)
      * @throws InvalidFieldValueException Invalid SFImage data found
      * @return The width of the image in pixels
      */
-	@Override
+	/* @Override */
 	public int getWidth()
 	{
 		if  ((SFImage == null) || (SFImage.length < 3))
@@ -23690,7 +23889,7 @@ public void setValue(long[] newValue)
      * @throws InvalidFieldValueException Invalid SFImage data found
      * @return The height of the image in pixels
      */
-	@Override
+	/* @Override */
 	public int getHeight()
 	{
 		if  ((SFImage == null) || (SFImage.length < 3))
@@ -23718,7 +23917,7 @@ public void setValue(long[] newValue)
      * @throws InvalidFieldValueException Invalid SFImage data found
      * @return The number of components
      */
-	@Override
+	/* @Override */
 	public int getNumberComponents()
 	{
 		if  ((SFImage == null) || (SFImage.length < 3))
@@ -23807,7 +24006,7 @@ public void setValue(long[] newValue)
      * @param destinationPixels The array to copy pixel values into
      * @throws InvalidFieldValueException Invalid SFImage data found
      */
-	@Override
+	/* @Override */
 	public void getPixels(int[] destinationPixels)
 	{
 		if  ((SFImage == null) || (SFImage.length < 3))
@@ -23843,7 +24042,7 @@ public void setValue(long[] newValue)
      * information from.
      * @return The image reference representing the current state
      */
-	@Override
+	/* @Override */
 	public java.awt.image.WritableRenderedImage getImage()
 	{
 		return null; // TODO
@@ -23855,7 +24054,7 @@ public void setValue(long[] newValue)
      * <p>
      * @param image The new image to use as the source
      */
-	@Override
+	/* @Override */
 	public void setImage(java.awt.image.RenderedImage image)
 	{
 		// TODO
@@ -23922,7 +24121,7 @@ public void setValue(long[] newValue)
 	 * @param destinationYOffset The initial y dimension (height) offset in the SFimage
 	 * object that begins the region to receive the copy
 	 */
-	@Override
+	/* @Override */
 	public void setSubImage(java.awt.image.RenderedImage image,
                             int sourceWidth,
                             int sourceHeight,
@@ -23991,7 +24190,7 @@ public void setValue(long[] newValue)
      *    caller is not enough for the width * height.
      * @throws IllegalArgumentException Invalid parameter(s) provided, no change was made
      */
-	@Override
+	/* @Override */
 	public void setValue(int width,
                          int height,
                          int components,
@@ -24085,7 +24284,7 @@ public void setValue(long[] newValue)
 	public String getPixelsString()
     {
         StringBuilder result = new StringBuilder();
-        String hexFormat = SFImageObject.getPixelHexFormat(getNumberComponents());
+        String hexFormat = getPixelHexFormat(getNumberComponents());
 
         int[] destinationPixels = Arrays.copyOfRange(SFImage, 3, SFImage.length);
 		for (int i = 0; i < destinationPixels.length; i++)
@@ -24104,7 +24303,7 @@ public void setValue(long[] newValue)
      * @param imageIndex the index of the selected image
      * @return The width of the image in pixels
      */
-	@Override
+	/* @Override */
 	public int getWidth(int imageIndex)
 	{
 		return 0; // TODO access correct image, return value
@@ -24115,7 +24314,7 @@ public void setValue(long[] newValue)
      * @param imageIndex the index of the selected image
      * @return The height of the image in pixels
      */
-	@Override
+	/* @Override */
 	public int getHeight(int imageIndex)
 	{
 		return 0; // TODO access correct image, return value
@@ -24128,7 +24327,7 @@ public void setValue(long[] newValue)
      * @param imageIndex the index of the selected image
      * @return The number of components
      */
-	@Override
+	/* @Override */
 	public int getNumberComponents(int imageIndex)
 	{
 		return 0; // TODO access correct image, return value
@@ -24180,7 +24379,7 @@ public void setValue(long[] newValue)
      * @param imageIndex the index of the selected image
      * @param pixels The array to copy pixel values into
      */
-	@Override
+	/* @Override */
 	public void getPixels(int imageIndex, int[] pixels)
 	{
 		// TODO
@@ -24193,7 +24392,7 @@ public void setValue(long[] newValue)
      * @param imageIndex the index of the selected image
      * @return The image reference representing the current state
      */
-	@Override
+	/* @Override */
 	public WritableRenderedImage getImage(int imageIndex)
 	{
 		return null; // TODO
@@ -24205,7 +24404,7 @@ public void setValue(long[] newValue)
      * @param imageIndex the index of the selected image
      * @param image The new image to use as the source
      */
-	@Override
+	/* @Override */
 	public void setImage(int imageIndex, RenderedImage image)
 	{
 		// TODO
@@ -24273,7 +24472,7 @@ public void setValue(long[] newValue)
 	 * @param destinationYOffset The initial y dimension (height) offset in the SFimage
 	 * object that begins the region to receive the copy
 	 */
-	@Override
+	/* @Override */
 	public void setSubImage(int imageIndex,
 		RenderedImage image,
 		int sourceWidth,
@@ -24292,13 +24491,13 @@ public void setValue(long[] newValue)
      * @param imageIndex the index of the selected image
      * @param newValue provides new value to apply
      */
-	@Override
+	/* @Override */
 	public void set1Value(int imageIndex, int newValue)
 	{
 		// TODO
 	}
 
-	@Override
+	/* @Override */
 	public void set1Value(int imageIndex,
 		int width,
 		int height,
@@ -24312,13 +24511,13 @@ public void setValue(long[] newValue)
      * Assign a new value array; can be an SFImage primive array containing width, height, and components count, followed by array of pixels.
      * @param newValue the newValue to set
      */
-	@Override
+	/* @Override */
 	public void setValue(int[] newValue)
 	{
 ]]></xsl:text>
 	<xsl:value-of select="$newValueNullExceptionCheck"/>
 	<xsl:text><![CDATA[
-		SFImage]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newSFImage = new SFImageObject(newValue); // checks values
+		SFImage]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newSFImage = new SFImage(newValue); // checks values
 		// TODO if initial image is OK then proceed; need to improve checks to handle arrays
 		MFImage = newValue;
 	}
@@ -24335,7 +24534,7 @@ public void setValue(long[] newValue)
 		MFImage = newValue.getPrimitiveValue();
 	}
 
-	@Override
+	/* @Override */
 	public void setImage(RenderedImage[] image)
 	{
 		// TODO
@@ -24345,7 +24544,7 @@ public void setValue(long[] newValue)
      * Places a new SFImage value at the end of the existing value array, increasing the field length accordingly.
      * @param newValue The newValue to append
      */
-	@Override
+	/* @Override */
 	public void append(RenderedImage[] newValue)
 	{
 ]]></xsl:text>
@@ -24359,7 +24558,7 @@ public void setValue(long[] newValue)
      * @param index The position for the inserted value in the current array
      * @param newValue The newValue to insert
      */
-	@Override
+	/* @Override */
 	public void insertValue(int index, RenderedImage newValue)
 	{
 		if (index < 0)
@@ -24377,7 +24576,7 @@ public void setValue(long[] newValue)
 	 * Remove one S]]></xsl:text><xsl:value-of select="substring($fieldName,2)"/><xsl:text disable-output-escaping="yes"><![CDATA[ element of the field array at index position, if found.  Initial element is at index 0.
 	 * @param index position of element in field array that gets removed
 	 */
-	@Override
+	/* @Override */
 	public void remove (int index)
 	{
 		if (index < 0)
@@ -24400,7 +24599,7 @@ public void setValue(long[] newValue)
 	/**
 	 * Removes all values in the field array, changing the array size to zero.
 	 */
-	@Override
+	/* @Override */
 	public void clear()
 	{
 		</xsl:text>
@@ -24415,7 +24614,7 @@ public void setValue(long[] newValue)
 	 *
 	 * @return The number of elements in this field array.
 	 */
-	@Override
+	/* @Override */
 	public int size()
 	{
 		return </xsl:text>
@@ -24464,20 +24663,20 @@ public void setValue(long[] newValue)
 		<xsl:value-of select="$fieldName"/><xsl:text> = newValue;
 		return this;
 	}
-	@Override
+	/* @Override */
 	public void setIdentity()
 	{
 		</xsl:text>
-		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ = org.web3d.x3d.jsail.fields.SFMatrix3fObject.DEFAULT_VALUE;
+		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ = org.web3d.x3d.jsail.fields.SFMatrix3f.DEFAULT_VALUE;
 	}
 
-	@Override
+	/* @Override */
 	public void set(int row, int column)
 	{
 		// TODO, problem with interface signature
 	}
 
-	@Override
+	/* @Override */
 	public float get(int row, int column)
 	{
 		if ((row < 0) || (row > 4) || (column < 0) || (column > 4))
@@ -24492,55 +24691,56 @@ public void setValue(long[] newValue)
 		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[[3*row + column]; // TODO typing
 	}
 
-	@Override
-	public void setTransform(SFVec3f translation,
-		SFRotation rotation,
-		SFVec3f scale,
-		SFRotation scaleOrientation,
-		SFVec3f center)
+	/* @Override */
+	public void setTransform(org.web3d.x3d.sai.SFVec3f translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3f scale,
+		org.web3d.x3d.sai.SFRotation scaleOrientation,
+		org.web3d.x3d.sai.SFVec3f center)
 	{
 		// TODO
 	}
 
-	@Override
-	public void getTransform(SFVec3f translation,
-		SFRotation rotation,
-		SFVec3f scale)
+	/* @Override */
+	public void getTransform(org.web3d.x3d.sai.SFVec3f translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3f scale)
 	{
 		// TODO
 	}
 
-	@Override
-	public Matrix3 inverse()
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 inverse()
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix3 transpose()
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 transpose()
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix3 multiplyLeft (Matrix3 matrix3x3)
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 multiplyLeft (org.web3d.x3d.sai.Matrix3 matrix3x3)
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix3 multiplyRight(Matrix3 matrix3x3)
-	{
-		return null; // TODO
-	}
-	@Override
-	public Matrix3 multiplyRowVector(SFVec3f vector3f) // TODO SFVec4f ?
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 multiplyRight(org.web3d.x3d.sai.Matrix3 matrix3x3)
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix3 multiplyColVector(SFVec3f vector3f) // TODO SFVec4f ?
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 multiplyRowVector(org.web3d.x3d.sai.SFVec3f vector3f) // TODO SFVec4f ?
+	{
+		return null; // TODO
+	}
+
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 multiplyColVector(org.web3d.x3d.sai.SFVec3f vector3f) // TODO SFVec4f ?
 	{
 		return null; // TODO
 	}
@@ -24587,20 +24787,20 @@ public void setValue(long[] newValue)
 		<xsl:value-of select="$fieldName"/><xsl:text> = newValue;
 		return this;
 	}
-	@Override
+	/* @Override */
 	public void setIdentity()
 	{
 		</xsl:text>
-		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ = org.web3d.x3d.jsail.fields.SFMatrix3dObject.DEFAULT_VALUE;
+		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ = org.web3d.x3d.jsail.fields.SFMatrix3d.DEFAULT_VALUE;
 	}
 
-	@Override
+	/* @Override */
 	public void set(int row, int column)
 	{
 		// TODO
 	}
 
-	@Override
+	/* @Override */
 	public float get(int row, int column) // TODO SAI interface problem, needs to be double
 	{
 		if ((row < 0) || (row > 4) || (column < 0) || (column > 4))
@@ -24615,55 +24815,56 @@ public void setValue(long[] newValue)
 		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[[3*row + column]; // TODO typing
 	}
 
-	@Override
-	public void setTransform(SFVec3d translation,
-		SFRotation rotation,
-		SFVec3d scale,
-		SFRotation scaleOrientation,
-		SFVec3d center)
+	/* @Override */
+	public void setTransform(org.web3d.x3d.sai.SFVec3d translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3d scale,
+		org.web3d.x3d.sai.SFRotation scaleOrientation,
+		org.web3d.x3d.sai.SFVec3d center)
 	{
 		// TODO
 	}
 
-	@Override
-	public void getTransform(SFVec3d translation,
-		SFRotation rotation,
-		SFVec3d scale)
+	/* @Override */
+	public void getTransform(org.web3d.x3d.sai.SFVec3d translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3d scale)
 	{
 		// TODO
 	}
 
-	@Override
-	public Matrix3 inverse()
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 inverse()
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix3 transpose()
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 transpose()
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix3 multiplyLeft (Matrix3 matrix3x3)
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 multiplyLeft (org.web3d.x3d.sai.Matrix3 matrix3x3)
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix3 multiplyRight(Matrix3 matrix3x3)
-	{
-		return null; // TODO
-	}
-	@Override
-	public Matrix3 multiplyRowVector(SFVec3d vector3d) // TODO SFVec4d ?
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 multiplyRight(org.web3d.x3d.sai.Matrix3 matrix3x3)
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix3 multiplyColVector(SFVec3d vector3d) // TODO SFVec4d ?
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 multiplyRowVector(org.web3d.x3d.sai.SFVec3d vector3d) // TODO SFVec4d ?
+	{
+		return null; // TODO
+	}
+
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix3 multiplyColVector(org.web3d.x3d.sai.SFVec3d vector3d) // TODO SFVec4d ?
 	{
 		return null; // TODO
 	}
@@ -24710,20 +24911,20 @@ public void setValue(long[] newValue)
 		<xsl:value-of select="$fieldName"/><xsl:text> = newValue;
 		return this;
 	}
-	@Override
+	/* @Override */
 	public void setIdentity()
 	{
 		</xsl:text>
-		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ = org.web3d.x3d.jsail.fields.SFMatrix4fObject.DEFAULT_VALUE;
+		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ = org.web3d.x3d.jsail.fields.SFMatrix4f.DEFAULT_VALUE;
 	}
 
-	@Override
+	/* @Override */
 	public void set(int row, int column)
 	{
 		// TODO
 	}
 
-	@Override
+	/* @Override */
 	public float get(int row, int column)
 	{
 		if ((row < 0) || (row > 4) || (column < 0) || (column > 4))
@@ -24738,55 +24939,56 @@ public void setValue(long[] newValue)
 		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[[3*row + column]; // TODO typing
 	}
 
-	@Override
-	public void setTransform(SFVec3f translation,
-		SFRotation rotation,
-		SFVec3f scale,
-		SFRotation scaleOrientation,
-		SFVec3f center)
+	/* @Override */
+	public void setTransform(org.web3d.x3d.sai.SFVec3f translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3f scale,
+		org.web3d.x3d.sai.SFRotation scaleOrientation,
+		org.web3d.x3d.sai.SFVec3f center)
 	{
 		// TODO
 	}
 
-	@Override
-	public void getTransform(SFVec3f translation,
-		SFRotation rotation,
-		SFVec3f scale)
+	/* @Override */
+	public void getTransform(org.web3d.x3d.sai.SFVec3f translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3f scale)
 	{
 		// TODO
 	}
 
-	@Override
-	public Matrix4 inverse()
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 inverse()
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix4 transpose()
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 transpose()
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix4 multiplyLeft (Matrix4 matrix3x3)
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 multiplyLeft (org.web3d.x3d.sai.Matrix4 matrix3x3)
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix4 multiplyRight(Matrix4 matrix3x3)
-	{
-		return null; // TODO
-	}
-	@Override
-	public Matrix4 multiplyRowVector(SFVec3f vector3f) // TODO SFVec4f ?
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 multiplyRight(org.web3d.x3d.sai.Matrix4 matrix3x3)
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix4 multiplyColVector(SFVec3f vector3f) // TODO SFVec4f ?
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 multiplyRowVector(org.web3d.x3d.sai.SFVec3f vector3f) // TODO SFVec4f ?
+	{
+		return null; // TODO
+	}
+
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 multiplyColVector(org.web3d.x3d.sai.SFVec3f vector3f) // TODO SFVec4f ?
 	{
 		return null; // TODO
 	}
@@ -24833,20 +25035,20 @@ public void setValue(long[] newValue)
 		<xsl:value-of select="$fieldName"/><xsl:text> = newValue;
 		return this;
 	}
-	@Override
+	/* @Override */
 	public void setIdentity()
 	{
 		</xsl:text>
-		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ = org.web3d.x3d.jsail.fields.SFMatrix4dObject.DEFAULT_VALUE;
+		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[ = org.web3d.x3d.jsail.fields.SFMatrix4d.DEFAULT_VALUE;
 	}
 
-	@Override
+	/* @Override */
 	public void set(int row, int column)
 	{
 		// TODO
 	}
 
-	@Override
+	/* @Override */
 	public float get(int row, int column) // TODO SAI interface problem, needs to be double
 	{
 		if ((row < 0) || (row > 4) || (column < 0) || (column > 4))
@@ -24861,55 +25063,56 @@ public void setValue(long[] newValue)
 		<xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[[3*row + column]; // TODO typing
 	}
 
-	@Override
-	public void setTransform(SFVec3d translation,
-		SFRotation rotation,
-		SFVec3d scale,
-		SFRotation scaleOrientation,
-		SFVec3d center)
+	/* @Override */
+	public void setTransform(org.web3d.x3d.sai.SFVec3d translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3d scale,
+		org.web3d.x3d.sai.SFRotation scaleOrientation,
+		org.web3d.x3d.sai.SFVec3d center)
 	{
 		// TODO
 	}
 
-	@Override
-	public void getTransform(SFVec3d translation,
-		SFRotation rotation,
-		SFVec3d scale)
+	/* @Override */
+	public void getTransform(org.web3d.x3d.sai.SFVec3d translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3d scale)
 	{
 		// TODO
 	}
 
-	@Override
-	public Matrix4 inverse()
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 inverse()
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix4 transpose()
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 transpose()
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix4 multiplyLeft (Matrix4 matrix3x3)
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 multiplyLeft (org.web3d.x3d.sai.Matrix4 matrix3x3)
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix4 multiplyRight(Matrix4 matrix3x3)
-	{
-		return null; // TODO
-	}
-	@Override
-	public Matrix4 multiplyRowVector(SFVec3d vector3d) // TODO SFVec4d ?
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 multiplyRight(org.web3d.x3d.sai.Matrix4 matrix3x3)
 	{
 		return null; // TODO
 	}
 
-	@Override
-	public Matrix4 multiplyColVector(SFVec3d vector3d) // TODO SFVec4d ?
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 multiplyRowVector(org.web3d.x3d.sai.SFVec3d vector3d) // TODO SFVec4d ?
+	{
+		return null; // TODO
+	}
+
+	/* @Override */
+	public org.web3d.x3d.sai.Matrix4 multiplyColVector(org.web3d.x3d.sai.SFVec3d vector3d) // TODO SFVec4d ?
 	{
 		return null; // TODO
 	}
@@ -25539,13 +25742,13 @@ setAttribute method invocations).
 		return this;
 	}								
 ]]></xsl:text>
-					<!-- additional fieldObject utility classes -->
+					<!-- additional field utility classes -->
 					<xsl:choose>
 						<xsl:when test="($fieldName = 'SFNode')">
 							<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Utility method to clear all contained children including nodes, statements and comments (if any).
-	 * @return {@link SFNodeObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
+	 * @return {@link SFNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
 	public SFNode]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ clearChildren()
@@ -25559,7 +25762,7 @@ setAttribute method invocations).
 							<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Utility method to clear all contained children including nodes, statements and comments (if any).
-	 * @return {@link MFNodeObject} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
+	 * @return {@link MFNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
 	public MFNode]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ clearChildren()
@@ -25707,7 +25910,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 						
 	private boolean writable = true;
 						
-	private ArrayList<X3DFieldEventListener> eventListenerList = new ArrayList<>();
+	private ArrayList<org.web3d.x3d.sai.X3DFieldEventListener> eventListenerList = new ArrayList<>();
 		
 	/** Results log of local validation. */
 	protected static StringBuilder validationResult = new StringBuilder();
@@ -25727,10 +25930,10 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 	}
 
 	/** Check whether field is readable, default /true/
-	 * @see org.web3d.x3d.jsail.Core.fieldObject#getAccessType()
+	 * @see org.web3d.x3d.jsail.Core.field#getAccessType()
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#accessType">X3D Tooltips: accessType</a>
 	 */
-	@Override
+	/* @Override */
 	public boolean isReadable()
 	{
 		return readable;
@@ -25738,7 +25941,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 
 	/** Set whether field is readable
 	 * @param newValue new status for readable
-	 * @see org.web3d.x3d.jsail.Core.fieldObject#getAccessType()
+	 * @see org.web3d.x3d.jsail.Core.field#getAccessType()
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#accessType">X3D Tooltips: accessType</a>
 	 */
 	public void setReadable(boolean newValue)
@@ -25747,10 +25950,10 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 	}
 
 	/** Check whether field is writable, default /true/
-	 * @see org.web3d.x3d.jsail.Core.fieldObject#getAccessType()
+	 * @see org.web3d.x3d.jsail.Core.field#getAccessType()
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#accessType">X3D Tooltips: accessType</a>
 	 */
-	@Override
+	/* @Override */
 	public boolean isWritable()
 	{
 		return writable;
@@ -25758,7 +25961,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 
 	/** Set whether field is writable
 	 * @param newValue new status for writable
-	 * @see org.web3d.x3d.jsail.Core.fieldObject#getAccessType()
+	 * @see org.web3d.x3d.jsail.Core.field#getAccessType()
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#accessType">X3D Tooltips: accessType</a>
 	 */	
 	public void setWritable(boolean newValue)
@@ -25767,14 +25970,14 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 	}
 
 	/** WARNING not tested */
-	@Override
+	/* @Override */
 	public void addX3DEventListener(X3DFieldEventListener newListener)
 	{
 		eventListenerList.add(newListener);
 	}
 
 	/** WARNING not tested */
-	@Override
+	/* @Override */
 	public void removeX3DEventListener(X3DFieldEventListener listener)
 	{
 		eventListenerList.remove(listener);
@@ -25787,42 +25990,42 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 	 */
 	public static int getTupleSize(String fieldType)
 	{
-		if      (fieldType.equals(fieldObject.TYPE_SFBOOL)   || fieldType.equals(fieldObject.TYPE_MFBOOL)   || 
-			     fieldType.equals(fieldObject.TYPE_SFINT32)  || fieldType.equals(fieldObject.TYPE_MFINT32)  || 
-			     fieldType.equals(fieldObject.TYPE_SFFLOAT)  || fieldType.equals(fieldObject.TYPE_MFFLOAT)  || 
-			     fieldType.equals(fieldObject.TYPE_SFDOUBLE) || fieldType.equals(fieldObject.TYPE_MFDOUBLE) || 
-			     fieldType.equals(fieldObject.TYPE_SFSTRING) || fieldType.equals(fieldObject.TYPE_MFSTRING) || 
-			     fieldType.equals(fieldObject.TYPE_SFTIME)   || fieldType.equals(fieldObject.TYPE_MFTIME)   || 
-			     fieldType.equals(fieldObject.TYPE_SFIMAGE)  || fieldType.equals(fieldObject.TYPE_MFIMAGE)  || 
-			     fieldType.equals(fieldObject.TYPE_SFNODE)   || fieldType.equals(fieldObject.TYPE_MFNODE))
+		if      (fieldType.equals(field.TYPE_SFBOOL)   || fieldType.equals(field.TYPE_MFBOOL)   || 
+			     fieldType.equals(field.TYPE_SFINT32)  || fieldType.equals(field.TYPE_MFINT32)  || 
+			     fieldType.equals(field.TYPE_SFFLOAT)  || fieldType.equals(field.TYPE_MFFLOAT)  || 
+			     fieldType.equals(field.TYPE_SFDOUBLE) || fieldType.equals(field.TYPE_MFDOUBLE) || 
+			     fieldType.equals(field.TYPE_SFSTRING) || fieldType.equals(field.TYPE_MFSTRING) || 
+			     fieldType.equals(field.TYPE_SFTIME)   || fieldType.equals(field.TYPE_MFTIME)   || 
+			     fieldType.equals(field.TYPE_SFIMAGE)  || fieldType.equals(field.TYPE_MFIMAGE)  || 
+			     fieldType.equals(field.TYPE_SFNODE)   || fieldType.equals(field.TYPE_MFNODE))
 		{
 			return 1;
 		}
-		else if (fieldType.equals(fieldObject.TYPE_SFVEC2F)  || fieldType.equals(fieldObject.TYPE_MFVEC2F)   || 
-			     fieldType.equals(fieldObject.TYPE_SFVEC2D)  || fieldType.equals(fieldObject.TYPE_MFVEC2D))
+		else if (fieldType.equals(field.TYPE_SFVEC2F)  || fieldType.equals(field.TYPE_MFVEC2F)   || 
+			     fieldType.equals(field.TYPE_SFVEC2D)  || fieldType.equals(field.TYPE_MFVEC2D))
 		{
 			return 2;
 		}
-		else if (fieldType.equals(fieldObject.TYPE_SFCOLOR)  || fieldType.equals(fieldObject.TYPE_MFCOLOR)     || 
-			     fieldType.equals(fieldObject.TYPE_SFVEC3F)  || fieldType.equals(fieldObject.TYPE_MFVEC3F)   || 
-			     fieldType.equals(fieldObject.TYPE_SFVEC3D)  || fieldType.equals(fieldObject.TYPE_MFVEC3D))
+		else if (fieldType.equals(field.TYPE_SFCOLOR)  || fieldType.equals(field.TYPE_MFCOLOR)     || 
+			     fieldType.equals(field.TYPE_SFVEC3F)  || fieldType.equals(field.TYPE_MFVEC3F)   || 
+			     fieldType.equals(field.TYPE_SFVEC3D)  || fieldType.equals(field.TYPE_MFVEC3D))
 		{
 			return 3;
 		}
-		else if (fieldType.equals(fieldObject.TYPE_SFCOLORRGBA) || fieldType.equals(fieldObject.TYPE_MFCOLORRGBA) || 
-			     fieldType.equals(fieldObject.TYPE_SFROTATION)  || fieldType.equals(fieldObject.TYPE_MFROTATION)  || 
-			     fieldType.equals(fieldObject.TYPE_SFVEC4F)     || fieldType.equals(fieldObject.TYPE_MFVEC4F)   || 
-			     fieldType.equals(fieldObject.TYPE_SFVEC4D)     || fieldType.equals(fieldObject.TYPE_MFVEC4D))
+		else if (fieldType.equals(field.TYPE_SFCOLORRGBA) || fieldType.equals(field.TYPE_MFCOLORRGBA) || 
+			     fieldType.equals(field.TYPE_SFROTATION)  || fieldType.equals(field.TYPE_MFROTATION)  || 
+			     fieldType.equals(field.TYPE_SFVEC4F)     || fieldType.equals(field.TYPE_MFVEC4F)   || 
+			     fieldType.equals(field.TYPE_SFVEC4D)     || fieldType.equals(field.TYPE_MFVEC4D))
 		{
 			return 4;
 		}
-		else if (fieldType.equals(fieldObject.TYPE_SFMATRIX3F)  || fieldType.equals(fieldObject.TYPE_MFMATRIX3F) || 
-			     fieldType.equals(fieldObject.TYPE_SFMATRIX3D)  || fieldType.equals(fieldObject.TYPE_MFMATRIX3D))
+		else if (fieldType.equals(field.TYPE_SFMATRIX3F)  || fieldType.equals(field.TYPE_MFMATRIX3F) || 
+			     fieldType.equals(field.TYPE_SFMATRIX3D)  || fieldType.equals(field.TYPE_MFMATRIX3D))
 		{
 			return 9;
 		}
-		else if (fieldType.equals(fieldObject.TYPE_SFMATRIX4F)  || fieldType.equals(fieldObject.TYPE_MFMATRIX4F) || 
-			     fieldType.equals(fieldObject.TYPE_SFMATRIX4D)  || fieldType.equals(fieldObject.TYPE_MFMATRIX4D))
+		else if (fieldType.equals(field.TYPE_SFMATRIX4F)  || fieldType.equals(field.TYPE_MFMATRIX4F) || 
+			     fieldType.equals(field.TYPE_SFMATRIX4D)  || fieldType.equals(field.TYPE_MFMATRIX4D))
 		{
 			return 16;
 		}
@@ -25904,9 +26107,9 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 										
 	private String    name = "";
 										
-	private int accessType = X3DFieldTypes.INPUT_OUTPUT;
+	private int accessType = org.web3d.x3d.sai.X3DFieldTypes.INPUT_OUTPUT;
 										
-	private int  fieldType = X3DFieldTypes.SFSTRING;
+	private int  fieldType = org.web3d.x3d.sai.X3DFieldTypes.SFSTRING;
 					
     /**
      * Get the name of this field. This will be something like "children"
@@ -25916,7 +26119,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
      *
      * @return The name of this field
      */
-	@Override
+	/* @Override */
 	public String getName()
 	{
 		return name;
@@ -25933,10 +26136,10 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
      * exposedField, eventIn or eventOut constants described in the
      * X3DFieldTypes interface.
      *
-     * @see X3DFieldTypes
+     * @see org.web3d.x3d.sai.X3DFieldTypes
      * @return The access type of this field
      */			
-	@Override
+	/* @Override */
 	public int getAccessType()
 	{
 		return accessType;
@@ -25946,13 +26149,13 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
      * exposedField, eventIn or eventOut constants described in the
      * X3DFieldTypes interface.
      *
-     * @see X3DFieldTypes
+     * @see org.web3d.x3d.sai.X3DFieldTypes
      * @throws InvalidFieldValueException Illegal value provided, no change made
      * @param newValue The access type of this field
      */
 	public void setAccessType(int newValue)
 	{
-		if ((newValue >= X3DFieldTypes.INPUT_ONLY) && (newValue <= X3DFieldTypes.OUTPUT_ONLY))
+		if ((newValue >= org.web3d.x3d.sai.X3DFieldTypes.INPUT_ONLY) && (newValue <= org.web3d.x3d.sai.X3DFieldTypes.OUTPUT_ONLY))
 			accessType = newValue;
 		else
 		{
@@ -25968,9 +26171,9 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
      * described in the X3DFieldType interface.
      *
      * @return A constant describing the field type
-     * @see X3DFieldTypes
+     * @see org.web3d.x3d.sai.X3DFieldTypes
      */	
-	@Override
+	/* @Override */
 	public int getFieldType()
 	{
 		return fieldType;
@@ -25981,13 +26184,13 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
      * SFInt32, MFString (etc.) constants described in the
      * X3DFieldTypes interface.
      *
-     * @see X3DFieldTypes
+     * @see org.web3d.x3d.sai.X3DFieldTypes
      * @throws InvalidFieldValueException Illegal value provided, no change made
      * @param newValue The access type of this field
      */
 	public void setFieldType(int newValue)
 	{
-		if ((newValue >= X3DFieldTypes.SFBOOL) && (newValue <= X3DFieldTypes.MFMATRIX4D))
+		if ((newValue >= org.web3d.x3d.sai.X3DFieldTypes.SFBOOL) && (newValue <= org.web3d.x3d.sai.X3DFieldTypes.MFMATRIX4D))
 			fieldType = newValue;
 		else
 		{
@@ -26003,7 +26206,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
      *
      * @return A string describing the field type
      */	
-	@Override
+	/* @Override */
 	public String getFieldTypeString()
 	{
 		return X3DConcreteFieldTypes.toFieldString(fieldType);
@@ -26048,7 +26251,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 					return "outputOnly";
 				default:
 					String message = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE +" "  + accessType;
-					System.out.println ("X3DFieldTypes.toString(" + accessType + ") " + message);
+					System.out.println ("org.web3d.x3d.sai.X3DFieldTypes.toString(" + accessType + ") " + message);
 					return message; // TODO throw exception?
 			}
 		}
@@ -26148,7 +26351,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 					return "MFMatrix4f";
 				default:
 					String message = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE +" "  + fieldType;
-					System.out.println ("X3DFieldTypes.toString(" + fieldType + ") " + message);
+					System.out.println ("org.web3d.x3d.sai.X3DFieldTypes.toString(" + fieldType + ") " + message);
 					return message; // TODO throw exception?
 			}
 		}
@@ -26171,7 +26374,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 		<!-- B.4 Field interfaces -->
 		<!-- https://www.web3d.org/documents/specifications/19777-2/V3.3/Part2/abstracts.html#FieldInterfaces -->
 		<!-- TODO specificaton table bookmark link is incorrect -->
-		<!-- Implemented in X3D Object model -->
+		<!-- Implemented in X3D Unified Object Model (X3DUOM) -->
 		
 		<!-- TODO get enumeration values and create final int constant values -->
 		
@@ -27398,70 +27601,70 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 					</xsl:when>
 					<xsl:when test="($name = 'SFMatrix3d') or ($name = 'MFMatrix3d')">
 						<xsl:text>
-	public void setTransform(SFVec3d translation,
-		SFRotation rotation,
-		SFVec3d scale,
-		SFRotation scaleOrientation,
-		SFVec3d center);
+	public void setTransform(org.web3d.x3d.sai.SFVec3d translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3d scale,
+		org.web3d.x3d.sai.SFRotation scaleOrientation,
+		org.web3d.x3d.sai.SFVec3d center);
 
-	public void getTransform(SFVec3d translation,
-		SFRotation rotation,
-		SFVec3d scale);
+	public void getTransform(org.web3d.x3d.sai.SFVec3d translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3d scale);
 							
-	public Matrix3 multiplyRowVector(SFVec3d vec3d);
+	public org.web3d.x3d.sai.Matrix3 multiplyRowVector(org.web3d.x3d.sai.SFVec3d vec3d);
 
-	public Matrix3 multiplyColVector(SFVec3d vec3d);
+	public org.web3d.x3d.sai.Matrix3 multiplyColVector(org.web3d.x3d.sai.SFVec3d vec3d);
 </xsl:text>
 					</xsl:when>
 					<xsl:when test="($name = 'SFMatrix3f') or ($name = 'MFMatrix3f')">
 						<xsl:text>
-	public void setTransform(SFVec3f translation,
-		SFRotation rotation,
-		SFVec3f scale,
-		SFRotation scaleOrientation,
-		SFVec3f center);
+	public void setTransform(org.web3d.x3d.sai.SFVec3f translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3f scale,
+		org.web3d.x3d.sai.SFRotation scaleOrientation,
+		org.web3d.x3d.sai.SFVec3f center);
 
-	public void getTransform(SFVec3f translation,
-		SFRotation rotation,
-		SFVec3f scale);
+	public void getTransform(org.web3d.x3d.sai.SFVec3f translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3f scale);
 
-	public Matrix3 multiplyRowVector(SFVec3f vec3f);
+	public org.web3d.x3d.sai.Matrix3 multiplyRowVector(org.web3d.x3d.sai.SFVec3f vec3f);
 
-	public Matrix3 multiplyColVector(SFVec3f vec3f);
+	public org.web3d.x3d.sai.Matrix3 multiplyColVector(org.web3d.x3d.sai.SFVec3f vec3f);
 </xsl:text>
 					</xsl:when>
 					<xsl:when test="($name = 'SFMatrix4d') or ($name = 'MFMatrix4d')">
 						<xsl:text>
-	public void setTransform(SFVec3d translation,
-		SFRotation rotation,
-		SFVec3d scale,
-		SFRotation scaleOrientation,
-		SFVec3d center);
+	public void setTransform(org.web3d.x3d.sai.SFVec3d translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3d scale,
+		org.web3d.x3d.sai.SFRotation scaleOrientation,
+		org.web3d.x3d.sai.SFVec3d center);
 
 	public void getTransform(SFVec3d translation,
-		SFRotation rotation,
-		SFVec3d scale);
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3d scale);
 
-	public Matrix4 multiplyRowVector(SFVec3d vec3d);
+	public org.web3d.x3d.sai.Matrix4 multiplyRowVector(org.web3d.x3d.sai.SFVec3d vec3d);
 
-	public Matrix4 multiplyColVector(SFVec3d vec3d);
+	public org.web3d.x3d.sai.Matrix4 multiplyColVector(org.web3d.x3d.sai.SFVec3d vec3d);
 </xsl:text>
 					</xsl:when>
 					<xsl:when test="($name = 'SFMatrix4f') or ($name = 'MFMatrix4f')">
 						<xsl:text>
-	public void setTransform(SFVec3f translation,
-		SFRotation rotation,
-		SFVec3f scale,
-		SFRotation scaleOrientation,
-		SFVec3f center);
+	public void setTransform(org.web3d.x3d.sai.SFVec3f translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3f scale,
+		org.web3d.x3d.sai.SFRotation scaleOrientation,
+		org.web3d.x3d.sai.SFVec3f center);
 
-	public void getTransform(SFVec3f translation,
-		SFRotation rotation,
-		SFVec3f scale);
+	public void getTransform(org.web3d.x3d.sai.SFVec3f translation,
+		org.web3d.x3d.sai.SFRotation rotation,
+		org.web3d.x3d.sai.SFVec3f scale);
 
-	public Matrix4 multiplyRowVector(SFVec3f vec3f);
+	public org.web3d.x3d.sai.Matrix4 multiplyRowVector(org.web3d.x3d.sai.SFVec3f vec3f);
 
-	public Matrix4 multiplyColVector(SFVec3f vec3f);
+	public org.web3d.x3d.sai.Matrix4 multiplyColVector(org.web3d.x3d.sai.SFVec3f vec3f);
 </xsl:text>
 					</xsl:when>
 					<xsl:when test="($name = 'SFNode')">
@@ -28313,7 +28516,7 @@ being generated. Otherwise, it shall use the set implementation.
         // first look in System properties
         String factory_class_name = AccessController.doPrivileged(
                 new PrivilegedAction<String>( ) {
-                    @Override
+                    /* @Override */
                 	public String run( ) {
                         return System.getProperty( FACTORY_CLASS );
                     }
@@ -28329,7 +28532,7 @@ being generated. Otherwise, it shall use the set implementation.
                 // fetch the properties file as a stream
                 propertiesFileInputstream = AccessController.doPrivileged(
                     new PrivilegedAction<InputStream>() {
-                        @Override
+                        /* @Override */
                     	public InputStream run() {
                             // privileged code goes here, for example:
                             return ClassLoader.getSystemResourceAsStream(PROPERTIES_FILE_NAME);
@@ -28344,7 +28547,7 @@ being generated. Otherwise, it shall use the set implementation.
                 if(propertiesFileInputstream == null) {
                    propertiesFileInputstream = AccessController.doPrivileged(
                         new PrivilegedAction<InputStream>() {
-                            @Override
+                            /* @Override */
                         	public InputStream run() {
                                 // privileged code goes here, for example:
                                 return ClassLoader.getSystemResourceAsStream(XJ3D_PROPERTIES_FILE);
@@ -28389,7 +28592,7 @@ being generated. Otherwise, it shall use the set implementation.
      * @throws SecurityException The environment does not allow a factory
      *   to be set
      * @throws IllegalArgumentException The argument factory instance is null
-     * @throws X3DException The factory is already defined.
+     * @throws org.web3d.x3d.sai.X3DException The factory is already defined.
      */
 	public static synchronized void setBrowserFactoryImpl( BrowserFactoryImpl fac )
         throws IllegalArgumentException, X3DException, SecurityException {
@@ -28405,7 +28608,7 @@ being generated. Otherwise, it shall use the set implementation.
 		{
 			String errorNotice =  FACTORY_ALREADY_DEFINED_ERR_MSG ;
 //			validationResult.append(errorNotice).append("\n");
-			throw new X3DException(errorNotice);
+			throw new org.web3d.x3d.sai.X3DException(errorNotice);
 		}
 
         // Check to see whether we can really set the factory needed.
@@ -29988,7 +30191,25 @@ browser instance or there is some other problem.]]></xsl:text>
 			<xsl:variable name="name"                                select="@name"/>
 			<xsl:variable name="description"                         select="InterfaceDefinition/@appinfo"/>
 			<xsl:variable name="x3dAbstractSpecificationRelativeUrl" select="substring-after(InterfaceDefinition/@specificationUrl,'Part01/')"/>
-			<xsl:variable name="extends"                             select="InterfaceDefinition/Inheritance/@baseType"/>
+			<xsl:variable name="extends">
+                <xsl:variable name="saiPackagePath"> 
+                    <xsl:call-template name="saiPackage">
+                        <xsl:with-param name="nodeType" select="InterfaceDefinition/Inheritance/@baseType"/>
+                    </xsl:call-template>
+                </xsl:variable>
+                <xsl:choose>
+                    <xsl:when test="(string-length($saiPackagePath) > 0)">
+                        <xsl:text>/* here 7a */</xsl:text>
+                        <xsl:value-of select="$saiPackagePath"/>
+                        <xsl:text>.</xsl:text>
+                        <xsl:value-of select="InterfaceDefinition/Inheritance/@baseType"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>/* here 7b, saiPackage not found */</xsl:text>
+                        <xsl:value-of select="InterfaceDefinition/Inheritance/@baseType"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
 			<xsl:variable name="componentName"                       select="translate(InterfaceDefinition/componentInfo/@name,'-','')"/>
 			<xsl:variable name="componentLevel"                      select="InterfaceDefinition/componentInfo/@level"/>
 			<xsl:variable name="javadocBlock">
@@ -30026,7 +30247,7 @@ browser instance or there is some other problem.]]></xsl:text>
 				<xsl:variable name="subPackage" select="//*[@name=$baseType]/InterfaceDefinition/componentInfo/@name"/><!-- corresponding subPackage name -->
 				<xsl:if test="(string-length($extends) > 0) and (string-length($subPackage) > 0) and (string-length($baseType) > 0) and
                               ($componentName != $subPackage)">
-					<xsl:text>import org.web3d.x3d.sai.</xsl:text>
+					<xsl:text>// import org.web3d.x3d.sai.</xsl:text>
 					<xsl:if test="(string-length($subPackage) > 0)">
 						<xsl:value-of select="$subPackage"/>
 						<xsl:text>.</xsl:text>
@@ -30041,7 +30262,7 @@ browser instance or there is some other problem.]]></xsl:text>
 					<xsl:variable name="subPackage" select="//*[@name=$baseType]/InterfaceDefinition/componentInfo/@name"/><!-- corresponding subPackage name -->
 					<!-- avoid imports from same package -->
 					<xsl:if test="($componentName != $subPackage)">
-						<xsl:text>import org.web3d.x3d.sai.</xsl:text>
+						<xsl:text>// import org.web3d.x3d.sai.</xsl:text>
 						<xsl:if test="(string-length($subPackage) > 0)">
 							<xsl:value-of select="$subPackage"/>
 							<xsl:text>.</xsl:text>
@@ -30199,7 +30420,7 @@ browser instance or there is some other problem.]]></xsl:text>
 		<!-- B.3 Auxiliary node type interfaces definitions -->
 		<!-- https://www.web3d.org/documents/specifications/19777-2/V3.3/Part2/abstracts.html#AuxiliaryNodeTypeInterfaces -->
 		
-		<xsl:for-each select="//ConcreteNodes/ConcreteNode">
+		<xsl:for-each select="//ConcreteNodes/ConcreteNode[not(@name='ProtoInstance')]"><!-- TODO confirm  -->
 			
 			<xsl:variable name="name"                                select="@name"/>
 			<xsl:variable name="description"                         select="InterfaceDefinition/@appinfo"/>
@@ -30262,7 +30483,7 @@ browser instance or there is some other problem.]]></xsl:text>
 				<xsl:if test="(string-length($extends) > 0) and (string-length($subPackage) > 0) and (string-length($baseType) > 0) and
                               ($componentName != $subPackage)">
 					<xsl:text>&#10;</xsl:text>
-					<xsl:text>import org.web3d.x3d.sai.</xsl:text>
+					<xsl:text>// import org.web3d.x3d.sai.</xsl:text>
 					<xsl:if test="(string-length($subPackage) > 0)">
 						<xsl:value-of select="$subPackage"/>
 						<xsl:text>.</xsl:text>
@@ -30277,7 +30498,7 @@ browser instance or there is some other problem.]]></xsl:text>
 					<xsl:variable name="subPackage" select="//*[@name=$baseType]/InterfaceDefinition/componentInfo/@name"/><!-- corresponding subPackage name -->
 					<!-- avoid imports from same package -->
 					<xsl:if test="($componentName != $subPackage)">
-						<xsl:text>import org.web3d.x3d.sai.</xsl:text>
+						<xsl:text>// import org.web3d.x3d.sai.</xsl:text>
 						<xsl:if test="(string-length($subPackage) > 0)">
 							<xsl:value-of select="$subPackage"/>
 							<xsl:text>.</xsl:text>
@@ -30423,12 +30644,20 @@ browser instance or there is some other problem.]]></xsl:text>
 			<xsl:variable name="additionalInterfaceName2"            select="InterfaceDefinition/AdditionalInheritance[2]/@baseType"/>
 			<xsl:variable name="additionalInterfaceComponent2"       select="concat(//AbstractNodeType  [@name = $additionalInterfaceName2]/InterfaceDefinition/componentInfo/@name,
                                                                                     //AbstractObjectType[@name = $additionalInterfaceName2]/InterfaceDefinition/componentInfo/@name)"/>
+            
 			<xsl:variable name="implements">
 				<!-- SAI abstract interface reference -->
 				<xsl:text>org.web3d.x3d.sai.</xsl:text>
 				<xsl:value-of select="$componentName"/>
 				<xsl:text>.</xsl:text>
-				<xsl:value-of select="@name"/>
+                <xsl:choose>
+                    <xsl:when test="(@name = 'ProtoInstance')">
+                        <xsl:text>X3DPrototypeInstance, X3DChildNode</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="@name"/>
+                    </xsl:otherwise>
+                </xsl:choose>
 				<!-- TODO: remove concrete-package interface references
 				<xsl:text>, </xsl:text>
 				<xsl:text>&#10;</xsl:text>
@@ -30697,7 +30926,7 @@ import javax.script.ScriptException;</xsl:text>
     // ==========================================================================================
 
 	/** Loaded X3D model of interest, useful for initialization and use of CommandLine by other X3D Java programs. */
-	private static X3DObject loadedX3dModel;
+	private static X3D loadedX3dModel;
 
 	/** Set already-loaded X3D model of interest, useful for initialization and use of CommandLine by other X3D Java programs. 
 	 * @param newX3dModel already-loaded X3D model of interest
@@ -30710,7 +30939,7 @@ import javax.script.ScriptException;</xsl:text>
 	/** Reset already-loaded X3D model of interest to empty model */
 	public static void clearLoadedX3dModel ()
 	{
-		loadedX3dModel = new X3DObject();
+		loadedX3dModel = new X3D();
 	}
 
     // ==========================================================================================
@@ -30833,7 +31062,7 @@ import javax.script.ScriptException;</xsl:text>
     /** Default main() method provided for test and debugging purposes, invoking run() method.
      * @param args the command line arguments
      * @see #run(String[])
-     * @see X3DObject#handleArguments(String[])
+     * @see X3D#handleArguments(String[])
      */
     public static void main(String[] args)
     {
@@ -30855,7 +31084,7 @@ import javax.script.ScriptException;</xsl:text>
      * @param args the command line arguments
      * @see #main(String[])
      * @see ConfigurationProperties
-     * @see X3DObject#handleArguments(String[])
+     * @see X3D#handleArguments(String[])
      */
     public static void run(String[] args)
     {
@@ -30971,14 +31200,14 @@ import javax.script.ScriptException;</xsl:text>
 				{
 					clearPriorConversionSwitches(args[i]);
 					convertToX3D = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+					conversionExtension = X3D.FILE_EXTENSION_X3D;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to X3D encoding");
 				}
 				else if (args[i].equalsIgnoreCase("-xml") || args[i].equalsIgnoreCase("-toxml"))
 				{
 					clearPriorConversionSwitches(args[i]);
 					convertToXML = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_XML;
+					conversionExtension = X3D.FILE_EXTENSION_XML;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to XML encoding");
 				}
 				else  if (args[i].equalsIgnoreCase("-canonical")    || args[i].equalsIgnoreCase( "-c14n") || 
@@ -30990,9 +31219,9 @@ import javax.script.ScriptException;</xsl:text>
                     if (resultFileName.isEmpty())        // may be overridden if followed by toFile
                         resultFileName = sourceFileNameRoot + "Canonical.xml";
 					if      (resultFileName.endsWith(".x3d"))
-					         conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+					         conversionExtension = X3D.FILE_EXTENSION_X3D;
 					else if (resultFileName.endsWith(".xml"))
-					         conversionExtension = X3DObject.FILE_EXTENSION_XML;
+					         conversionExtension = X3D.FILE_EXTENSION_XML;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for X3D and XML canonicalization (C14N)");
 				}
 				else if (args[i].equalsIgnoreCase("-html")  || args[i].equalsIgnoreCase("-tohtml")  || args[i].equalsIgnoreCase("-html5") || args[i].equalsIgnoreCase("-tohtml5") ||
@@ -31002,8 +31231,8 @@ import javax.script.ScriptException;</xsl:text>
 					clearPriorConversionSwitches(args[i]);
 					convertToHTML = true;
 					if  (args[i].equalsIgnoreCase("-xhtml") || args[i].equalsIgnoreCase("-toxhtml"))
-					     conversionExtension = X3DObject.FILE_EXTENSION_XHTML;
-					else conversionExtension = X3DObject.FILE_EXTENSION_HTML;
+					     conversionExtension = X3D.FILE_EXTENSION_XHTML;
+					else conversionExtension = X3D.FILE_EXTENSION_HTML;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for producing " + conversionExtension + " pretty-print documentation");
 				}
 				else if (args[i].equalsIgnoreCase("-md")  || args[i].equalsIgnoreCase("-tomd")  || args[i].equalsIgnoreCase("-markdown") || args[i].equalsIgnoreCase("-tomarkdown"))
@@ -31012,7 +31241,7 @@ import javax.script.ScriptException;</xsl:text>
 					clearPriorConversionSwitches(args[i]);
 					includeSubdirectoryPaths = true;
 					convertToMarkdown   = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_MARKDOWN;
+					conversionExtension = X3D.FILE_EXTENSION_MARKDOWN;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for producing " + conversionExtension + " model meta information markdown");
 				}
 				else if (args[i].equalsIgnoreCase("-tidy") || args[i].equalsIgnoreCase("-totidy") || args[i].equalsIgnoreCase("-x3dtidy") || args[i].equalsIgnoreCase("-tox3dtidy"))
@@ -31020,7 +31249,7 @@ import javax.script.ScriptException;</xsl:text>
 				    /* X3D-Tidy cleanup */
 					clearPriorConversionSwitches(args[i]);
 					convertToTidy = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+					conversionExtension = X3D.FILE_EXTENSION_X3D;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for producing X3D-Tidy cleanup of .x3d");
 				}
 				else if (args[i].equalsIgnoreCase("-x3dv") || args[i].equalsIgnoreCase("-tox3dv") || 
@@ -31028,35 +31257,35 @@ import javax.script.ScriptException;</xsl:text>
 				{
 					clearPriorConversionSwitches(args[i]);
 					convertToClassicVRML = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_CLASSICVRML;
+					conversionExtension = X3D.FILE_EXTENSION_CLASSICVRML;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to ClassicVRML encoding");
 				}
 				else  if (args[i].equalsIgnoreCase("-java") || args[i].equalsIgnoreCase("-tojava"))
 				{
 					clearPriorConversionSwitches(args[i]);
 					convertToJava = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_JAVA;
+					conversionExtension = X3D.FILE_EXTENSION_JAVA;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to Java source code");
 				}
 				else  if (args[i].equalsIgnoreCase("-json") || args[i].equalsIgnoreCase("-tojson"))
 				{
 					clearPriorConversionSwitches(args[i]);
 					convertToJSON = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_JSON;
+					conversionExtension = X3D.FILE_EXTENSION_JSON;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to JSON encoding");
 				}
 				else  if (args[i].equalsIgnoreCase("-Python") || args[i].equalsIgnoreCase("-toPython"))
 				{
 					clearPriorConversionSwitches(args[i]);
 					convertToPython = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_PYTHON;
+					conversionExtension = X3D.FILE_EXTENSION_PYTHON;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to Python source code");
 				}
  				else  if (args[i].equalsIgnoreCase("-js") || args[i].equalsIgnoreCase("-tojs"))
  				{
  					clearPriorConversionSwitches(args[i]);
  					convertToJS = true;
- 					conversionExtension = X3DObject.FILE_EXTENSION_JAVASCRIPT;
+ 					conversionExtension = X3D.FILE_EXTENSION_JAVASCRIPT;
  					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to X3DJSONLD JavaScript source");
  				}
 				else  if (args[i].equalsIgnoreCase(  "-vrml") || args[i].equalsIgnoreCase(  "-vrml97") ||args[i].equalsIgnoreCase( "-wrl") || 
@@ -31064,21 +31293,21 @@ import javax.script.ScriptException;</xsl:text>
 				{
 					clearPriorConversionSwitches(args[i]);
 					convertToVRML97 = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_VRML97;
+					conversionExtension = X3D.FILE_EXTENSION_VRML97;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to VRML97 encoding");
 				}
 				else  if (args[i].equalsIgnoreCase("-x3dom") || args[i].equalsIgnoreCase("-tox3dom"))
 				{
 					clearPriorConversionSwitches(args[i]);
 					convertToX3DOM = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_HTML;
+					conversionExtension = X3D.FILE_EXTENSION_HTML;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to X3DOM HTML page containing model");
 				}
 				else  if (args[i].equalsIgnoreCase("-X_ITE") || args[i].equalsIgnoreCase("-toX_ITE"))
 				{
 					clearPriorConversionSwitches(args[i]);
 					convertToX_ITE = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_HTML;
+					conversionExtension = X3D.FILE_EXTENSION_HTML;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to X_ITE HTML page containing model");
 				}
 				// ==========================================
@@ -31107,7 +31336,7 @@ import javax.script.ScriptException;</xsl:text>
 					clearPriorConversionSwitches(args[i]);
 					convertToEXI  = true;
 					convertToFile = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_EXI;
+					conversionExtension = X3D.FILE_EXTENSION_EXI;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to compressed EXI containing model");
 				}
 				else  if ((args[i].equalsIgnoreCase("-EXI") &&  sourceFileName.toLowerCase().endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_EXI)) || 
@@ -31121,7 +31350,7 @@ import javax.script.ScriptException;</xsl:text>
 					}
 					clearPriorConversionSwitches(args[i]);
 					convertFromEXI = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+					conversionExtension = X3D.FILE_EXTENSION_X3D;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion from compressed EXI containing model");
 				}
 				// ==========================================
@@ -31136,7 +31365,7 @@ import javax.script.ScriptException;</xsl:text>
 					clearPriorConversionSwitches(args[i]);
 					convertToGZIP = true;
 					convertToFile = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_GZIP;
+					conversionExtension = X3D.FILE_EXTENSION_GZIP;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to compressed GZIP containing model");
 				}
 				else  if (args[i].equalsIgnoreCase("-fromGZ") || args[i].equalsIgnoreCase("-fromGZIP"))
@@ -31149,7 +31378,7 @@ import javax.script.ScriptException;</xsl:text>
 					}
 					clearPriorConversionSwitches(args[i]);
 					convertFromGZIP = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+					conversionExtension = X3D.FILE_EXTENSION_X3D;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion from compressed GZIP containing model");
 				}
 				// ==========================================
@@ -31163,7 +31392,7 @@ import javax.script.ScriptException;</xsl:text>
 					}
 					clearPriorConversionSwitches(args[i]);
 					convertToZIP = true;
-					conversionExtension = X3DObject.FILE_EXTENSION_ZIP;
+					conversionExtension = X3D.FILE_EXTENSION_ZIP;
 					System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion to compressed ZIP containing model");
 				}
 				else  if (args[i].equalsIgnoreCase("-fromZIP"))
@@ -31178,7 +31407,7 @@ import javax.script.ScriptException;</xsl:text>
                                     clearPriorConversionSwitches(args[i]);
                                     convertFromZIP = true;
                                     convertToFile  = true;
-                                    conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+                                    conversionExtension = X3D.FILE_EXTENSION_X3D;
                                     System.out.println ("CommandLine parameter: \"" + args[i] + "\" for conversion from compressed ZIP containing model");
 				}
 				// ==========================================
@@ -31197,7 +31426,7 @@ import javax.script.ScriptException;</xsl:text>
                                     validateSwitch = true;
                                     if (resultFileName.isEmpty())
                                     {
-                                             resultFileName = "Validation" + X3DObject.FILE_EXTENSION_TEXT; // be prepared with default name
+                                             resultFileName = "Validation" + X3D.FILE_EXTENSION_TEXT; // be prepared with default name
                                              System.out.println ("CommandLine parameter: \"" + args[i] + "\" for model validation");
                                     }
                                     else System.out.println ("CommandLine parameter: \"" + args[i] + "\" for model validation to result file");
@@ -31389,7 +31618,7 @@ import javax.script.ScriptException;</xsl:text>
                 resultFile = new File(resultFileName); // unsaved
                 if (resultFile == null)
                 {
-                       throw new X3DException("ERROR: Failure to create resultFile " + resultFileName);
+                       throw new org.web3d.x3d.sai.X3DException("ERROR: Failure to create resultFile " + resultFileName);
                 }
                 else if (resultFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
                 {
@@ -31421,7 +31650,7 @@ import javax.script.ScriptException;</xsl:text>
                 catch (IOException exception)
                 {
                     exception.printStackTrace();
-                    throw new X3DException("IOException for fileName " + resultFileName + ", unable to save file: " + exception);
+                    throw new org.web3d.x3d.sai.X3DException("IOException for fileName " + resultFileName + ", unable to save file: " + exception);
                 }
                 return;
             }
@@ -31532,7 +31761,7 @@ import javax.script.ScriptException;</xsl:text>
                     
                     X3DConcreteElement x3dConcreteElement = x3dLoader.getX3dObjectTree();
 
-                    if (x3dConcreteElement instanceof X3DObject)
+                    if (x3dConcreteElement instanceof X3D)
                     {
                         loadedX3dModel = (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)x3dConcreteElement;
                     }
@@ -31719,7 +31948,7 @@ import javax.script.ScriptException;</xsl:text>
                         {
                             if (!resultFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_TEXT))
                             {
-                                resultFileName += X3DObject.FILE_EXTENSION_TEXT;
+                                resultFileName += X3D.FILE_EXTENSION_TEXT;
                             }
                             Path outputFilePath = Paths.get(resultFileName);
                             String  errorNotice = new String();
@@ -31742,7 +31971,7 @@ import javax.script.ScriptException;</xsl:text>
                             catch (IOException exception)
                             {
                                 exception.printStackTrace();
-                                throw new X3DException(ERROR+"IOException for resultFileName " + resultFileName + ", unable to save file: " + exception);
+                                throw new org.web3d.x3d.sai.X3DException(ERROR+"IOException for resultFileName " + resultFileName + ", unable to save file: " + exception);
                             }
                         }
                     }
@@ -32123,31 +32352,31 @@ import javax.script.ScriptException;</xsl:text>
         
 		if ((inputFile == null || !inputFile.isFile() || !inputFile.canRead()))
 		{
-			throw new X3DException("fileStylesheetConversion(inputFile, stylesheetName, outputFileName) inputFile not provided");
+			throw new org.web3d.x3d.sai.X3DException("fileStylesheetConversion(inputFile, stylesheetName, outputFileName) inputFile not provided");
 		}
         
 		if ((stylesheetName == null || stylesheetName.isEmpty()))
 		{
-			throw new X3DException("fileStylesheetConversion(stylesheetName, fileName) stylesheetName not provided;" +
+			throw new org.web3d.x3d.sai.X3DException("fileStylesheetConversion(stylesheetName, fileName) stylesheetName not provided;" +
 				" (see ConfigurationProperties for allowed choices)");
 		}
         else if (!ConfigurationProperties.isStylesheetSupported(stylesheetName))
 		{
-			throw new X3DException("fileStylesheetConversion(stylesheetName, fileName) stylesheetName not recognized;" +
+			throw new org.web3d.x3d.sai.X3DException("fileStylesheetConversion(stylesheetName, fileName) stylesheetName not recognized;" +
 				" (see ConfigurationProperties for allowed choices)");
 		}
         String expectedFileNameExtension = ConfigurationProperties.getExpectedOutputFileExtension(stylesheetName);
 
 		if ((outputFileName == null || outputFileName.isEmpty()))
 		{
-			throw new X3DException("toFileStylesheetConversionToFile(" + inputFile.getName() + "', " + stylesheetName + "', " +
+			throw new org.web3d.x3d.sai.X3DException("toFileStylesheetConversionToFile(" + inputFile.getName() + "', " + stylesheetName + "', " +
                                     outputFileName + ") outputFileName not provided");
 		}
 		if (!((outputFileName.endsWith(expectedFileNameExtension)) || // some variations allowed
               (outputFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XHTML)      && expectedFileNameExtension.equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_HTML)) ||
               (outputFileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_JAVASCRIPT) && expectedFileNameExtension.equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_JSON))))
 		{
-			throw new X3DException("outputFileName " + outputFileName + " does not end with expected extension \"" + expectedFileNameExtension + "\"");
+			throw new org.web3d.x3d.sai.X3DException("outputFileName " + outputFileName + " does not end with expected extension \"" + expectedFileNameExtension + "\"");
 		}
 		
 		Path outputFilePath = Paths.get(outputFileName);
@@ -32182,7 +32411,7 @@ import javax.script.ScriptException;</xsl:text>
         // convert file using stylesheet, collect result
 		try // https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html
 		{
-            File stylesheetFile = X3DObject.getTempFileFromX3dJsailJar("/stylesheets", stylesheetName);
+            File stylesheetFile = X3D.getTempFileFromX3dJsailJar("/stylesheets", stylesheetName);
             if      (stylesheetFile == null)
 				errorNotice += "Temporary stylesheet not created: " + stylesheetName + ", ";
             else if (!stylesheetFile.exists())
@@ -32191,7 +32420,7 @@ import javax.script.ScriptException;</xsl:text>
             if (stylesheetName.equalsIgnoreCase(ConfigurationProperties.STYLESHEET_X3DV_CLASSICVRML))
             {
                 // special handling required in temp directory since STYLESHEET_X3DV_CLASSICVRML imports STYLESHEET_VRML97
-                File stylesheetFile2 = X3DObject.getTempFileFromX3dJsailJar("/stylesheets", ConfigurationProperties.STYLESHEET_VRML97);
+                File stylesheetFile2 = X3D.getTempFileFromX3dJsailJar("/stylesheets", ConfigurationProperties.STYLESHEET_VRML97);
                 if      (stylesheetFile2 == null)
                     errorNotice += "Temporary stylesheet not created: " + ConfigurationProperties.STYLESHEET_VRML97 + ", ";
                 else if (!stylesheetFile2.exists())
@@ -32267,13 +32496,13 @@ import javax.script.ScriptException;</xsl:text>
 		}
 		catch (IOException | ParserConfigurationException | TransformerException | SAXException exception)
 		{
-			throw new X3DException(errorNotice + exception.toString() + " exception when transforming and creating string, unable to save result: " + exception);
+			throw new org.web3d.x3d.sai.X3DException(errorNotice + exception.toString() + " exception when transforming and creating string, unable to save result: " + exception);
 		}
 		catch (SaxonApiException saxonApiException)
 		{
 //			Logger.getLogger(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.class.getName()).log(Level.SEVERE, null, saxonApiException);
 										
-			throw new X3DException(errorNotice + "SaxonApiException when transforming and creating string, unable to save result: " + saxonApiException);
+			throw new org.web3d.x3d.sai.X3DException(errorNotice + "SaxonApiException when transforming and creating string, unable to save result: " + saxonApiException);
 		}
 //        String resultText = fileStylesheetConversionToString(inputFile, stylesheetName);
 //
@@ -32290,7 +32519,7 @@ import javax.script.ScriptException;</xsl:text>
 //		catch (IOException exception)
 //		{
 //			exception.printStackTrace();
-//			throw new X3DException("IOException for fileName " + outputFilePath + ", unable to save file: " + exception);
+//			throw new org.web3d.x3d.sai.X3DException("IOException for fileName " + outputFilePath + ", unable to save file: " + exception);
 //		}
     }
     /**
@@ -32327,7 +32556,7 @@ import javax.script.ScriptException;</xsl:text>
             String inputFileName = "[null]";
             if    (inputFile    != null)
                    inputFileName = inputFile.getPath();
-            throw new X3DException(ERROR+"CommandLine.getFileContents(" + inputFileName + ") IOException for inputFile " + inputFile + ", unable to read file: " + ex);
+            throw new org.web3d.x3d.sai.X3DException(ERROR+"CommandLine.getFileContents(" + inputFileName + ") IOException for inputFile " + inputFile + ", unable to read file: " + ex);
         }
     }
 ]]></xsl:text>
@@ -32422,8 +32651,8 @@ showing default attribute values, and other custom settings.</p>
 	public static final String ERROR_ILLEGAL_VALUE = "ERROR_ILLEGAL_VALUE";
 				
 	/** Error message if an element is not currently connected to an existing scene graph object, and necessary checking  for model validation is not possible.
-		Example: <i>fieldObject</i> or <i>fieldValueObject</i> creation may fail validation() if the field types cannot be checked in a 
-		corresponding <i>ProtoDeclareObject</i> or <i>ExternProtoDeclareObject</i>.
+		Example: <i>field</i> or <i>fieldValue</i> creation may fail validation() if the field types cannot be checked in a 
+		corresponding <i>ProtoDeclare</i> or <i>ExternProtoDeclare</i>.
 	 */
 	public static final String ERROR_NOT_CONNECTED_TO_SCENE_GRAPH = "ERROR_NOT_CONNECTED_TO_SCENE_GRAPH";
 
@@ -32436,45 +32665,45 @@ showing default attribute values, and other custom settings.</p>
 	public static final String ERROR_NODE_NOT_FOUND = "ERROR_NODE_NOT_FOUND";
 	
 	/** Error message if incorrect field accessType value encountered.
-	 * @see org.web3d.x3d.jsail.Core.fieldObject#getAccessType()
+	 * @see org.web3d.x3d.jsail.Core.field#getAccessType()
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#accessType">X3D Tooltips: accessType</a>
 	 */
 	public static final String ERROR_UNKNOWN_FIELD_ACCESSTYPE = "ERROR_UNKNOWN_FIELD_ACCESSTYPE";
 	
 	/** Error message if incorrect field type value encountered.
-	 * @see org.web3d.x3d.jsail.Core.fieldObject#getType()
+	 * @see org.web3d.x3d.jsail.Core.field#getType()
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>
 	 */
 	public static final String ERROR_UNKNOWN_FIELD_TYPE = "ERROR_UNKNOWN_FIELD_TYPE";
 
-	/** Error message if node type of ProtoDeclareObject is not found.
-	 * @see ProtoDeclareObject
-	 * @see ExternProtoDeclareObject
-	 * @see ProtoInstanceObject
+	/** Error message if node type of ProtoDeclare is not found.
+	 * @see ProtoDeclare
+	 * @see ExternProtoDeclare
+	 * @see ProtoInstance
 	 * @see <a href="https://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/abstracts.html#InvalidProtoException">X3D SAI: B.7.13 InvalidProtoException</a>
 	 */
 	public static final String ERROR_UNKNOWN_PROTODECLARE_NODE_TYPE = "ERROR_UNKNOWN_PROTODECLARE_NODE_TYPE"; // not defined in X3D Java SAI
 
-	/** Error message if node type of ExternProtoDeclareObject is not found.
-	 * @see ExternProtoDeclareObject
-	 * @see ProtoDeclareObject
-	 * @see ProtoInstanceObject
+	/** Error message if node type of ExternProtoDeclare is not found.
+	 * @see ExternProtoDeclare
+	 * @see ProtoDeclare
+	 * @see ProtoInstance
 	 * @see <a href="https://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/abstracts.html#InvalidProtoException">X3D SAI: B.7.13 InvalidProtoException</a>
 	 */
 	public static final String ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE = "ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE"; // not defined in X3D Java SAI
 
-	/** Error message if node type of ProtoInstanceObject is not found.
-	 * @see ProtoInstanceObject
-	 * @see ProtoDeclareObject
-	 * @see ExternProtoDeclareObject
+	/** Error message if node type of ProtoInstance is not found.
+	 * @see ProtoInstance
+	 * @see ProtoDeclare
+	 * @see ExternProtoDeclare
 	 * @see <a href="https://www.web3d.org/documents/specifications/19775-2/V3.3/Part02/abstracts.html#InvalidProtoException">X3D SAI: B.7.13 InvalidProtoException</a>
 	 */
 	public static final String ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE = "ERROR_UNKNOWN_PROTOINSTANCE_NODE_TYPE"; // not defined in X3D Java SAI
 
-	/** Warning message if a ProtoInstanceObject corresponding to a given ProtoDeclare or ExternProtoDeclare is not found.
-	 * @see ProtoInstanceObject
-	 * @see ProtoDeclareObject
-	 * @see ExternProtoDeclareObject
+	/** Warning message if a ProtoInstance corresponding to a given ProtoDeclare or ExternProtoDeclare is not found.
+	 * @see ProtoInstance
+	 * @see ProtoDeclare
+	 * @see ExternProtoDeclare
 	 */
 	public static final String WARNING_PROTOINSTANCE_NOT_FOUND = "WARNING_PROTOINSTANCE_NOT_FOUND";
 
@@ -32661,59 +32890,59 @@ showing default attribute values, and other custom settings.</p>
         String expectedFileNameExtension = "";
         if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_ExtrusionCrossSectionSVG))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_SVG;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_SVG;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_HTML_DOCUMENTATION))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_HTML;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_HTML;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_X3DTIDY))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_X3D;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_X3D;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_VRML97))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_VRML97;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_VRML97;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_X3DV_CLASSICVRML))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_CLASSICVRML;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_CLASSICVRML;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_JAVASCRIPT))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_JAVASCRIPT;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_JAVASCRIPT;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_JAVA))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_JAVA;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_JAVA;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_JSON))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_JSON;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_JSON;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_PYTHON))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_PYTHON;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_PYTHON;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_X3DOM))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_HTML;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_HTML;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_X_ITE))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_HTML;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_HTML;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_COBWEB))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_HTML;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_HTML;
         }
         else if (stylesheetName.equals(ConfigurationProperties.STYLESHEET_MODEL_META_TO_MARKDOWN))
         {
-            expectedFileNameExtension = X3DObject.FILE_EXTENSION_MARKDOWN;
+            expectedFileNameExtension = X3D.FILE_EXTENSION_MARKDOWN;
         }
         if (expectedFileNameExtension.isEmpty())
 		{
-			throw new X3DException("getExpectedOutputFileExtension(" + stylesheetName + ") stylesheetName not recognized;" +
+			throw new org.web3d.x3d.sai.X3DException("getExpectedOutputFileExtension(" + stylesheetName + ") stylesheetName not recognized;" +
 				" (see ConfigurationProperties for allowed choices)");
 		}
         return expectedFileNameExtension;
@@ -33282,8 +33511,8 @@ setAttribute method invocations).
 				
 	/**
 	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
-	 * @see X3DObject#FILE_EXTENSION_X3D
-	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see X3D#FILE_EXTENSION_X3D
+	 * @see X3D#FILE_EXTENSION_XML
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="blank">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @see <a href="https://www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm">X3D Canonicalization (C14N) Tool</a>
@@ -33297,8 +33526,8 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide X3D string serialization of this model subgraph, utilizing XML encoding and conforming to X3D Canonical Form.
 	 * @param indentLevel number of levels of indentation for this element
-	 * @see X3DObject#FILE_EXTENSION_X3D
-	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see X3D#FILE_EXTENSION_X3D
+	 * @see X3D#FILE_EXTENSION_XML
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/X3D_XML.html">X3D XML Encoding</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="blank">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @see <a href="https://www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm">X3D Canonicalization (C14N) Tool</a>
@@ -33308,7 +33537,7 @@ setAttribute method invocations).
 				
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
-	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
+	 * @see X3D#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
@@ -33322,7 +33551,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide ClassicVRML string serialization.
 	 * @param indentLevel number of levels of indentation for this element
-	 * @see X3DObject#FILE_EXTENSION_CLASSICVRML
+	 * @see X3D#FILE_EXTENSION_CLASSICVRML
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/X3D_ClassicVRML.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/grammar.html">Extensible 3D (X3D) encodings Part 2: Classic VRML encoding, Annex A: Grammar</a>
@@ -33332,7 +33561,7 @@ setAttribute method invocations).
 				
 	/**
 	 * Recursive method to provide VRML97 string serialization.
-	 * @see X3DObject#FILE_EXTENSION_VRML97
+	 * @see X3D#FILE_EXTENSION_VRML97
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
@@ -33346,7 +33575,7 @@ setAttribute method invocations).
 	/**
 	 * Recursive method to provide VRML97 string serialization.
 	 * @param indentLevel number of levels of indentation for this element
-	 * @see X3DObject#FILE_EXTENSION_VRML97
+	 * @see X3D#FILE_EXTENSION_VRML97
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html#VRML">X3D Resources: Virtual Reality Modeling Language (VRML) 97</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/14772/V2.0/index.html">Virtual Reality Modeling Language (VRML) 97 specification</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/14772-1/V2.1/index.html">VRML 97 v2.1 Amendment</a>
@@ -33433,7 +33662,7 @@ setAttribute method invocations).
 	 * <li> <i>Hint:</i> descriptive DEF names improve clarity and help document a model. </li>
 	 * <li> <i>Hint:</i> well-defined names can simplify design and debugging through improved author understanding. </li>
 	 * </ul>
-	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFString#isNMTOKEN(String)
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 */
 	private String DEF = DEF_DEFAULT_VALUE;
@@ -33443,7 +33672,7 @@ setAttribute method invocations).
 	 * <li> <i>Hint:</i> USE references to previously defined DEF geometry (instead of duplicating nodes) can improve performance. </li>
 	 * <li> <i>Warning:</i> each USE value must match a corresponding DEF value that is defined earlier in the scene. </li>
 	 * </ul>
-	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFString#isNMTOKEN(String)
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NamingConventions" target="_blank">X3D Scene Authoring Hints: Naming Conventions</a>
 	 */
 	private String USE = USE_DEFAULT_VALUE;
@@ -33473,7 +33702,7 @@ setAttribute method invocations).
 	/** Initialize all member variables to default values. */
 	public void initialize()
 	{
-		setParentObject(null);
+		setParent(null);
 		     DEF = DEF_DEFAULT_VALUE;
 		     USE = USE_DEFAULT_VALUE;
 		cssClass = CLASS_DEFAULT_VALUE;
@@ -33541,7 +33770,7 @@ setAttribute method invocations).
 	
 	/** Protected internal superclass method to keep DEF private, scene authors should use method setDEF(newValue) instead.
 	 * @param newValue is new value for the DEF field.
-	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFString#isNMTOKEN(String)
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
 	 * @see <a href="https://www.web3d.org/specifications/X3dRegularExpressions.html">X3D Regular Expressions (regexes)</a>
 	 */
@@ -33552,7 +33781,7 @@ setAttribute method invocations).
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 				
 		// Check that newValue parameter meets NMTOKEN requirements before assigning to scene graph
-		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFString.isNMTOKEN(newValue))
 		{
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(getElementName() + " DEF=\"" + newValue +
 					"\" has an illegal value, must provide a valid NMTOKEN name string.");
@@ -33561,7 +33790,7 @@ setAttribute method invocations).
 	}
 	/** Protected internal superclass method to keep USE private, scene authors should use method setUse(newValue) instead.
 	 * @param newValue is new value for the USE field.
-	 * @see SFStringObject#isNMTOKEN(String)
+	 * @see SFString#isNMTOKEN(String)
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
 	 */
 	protected final void setConcreteUSE(String newValue)
@@ -33571,7 +33800,7 @@ setAttribute method invocations).
 			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 
 		// Check that newValue parameter meets NMTOKEN requirements before assigning to scene graph
-		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
+		if (!newValue.isEmpty() && !org.web3d.x3d.jsail.fields.SFString.isNMTOKEN(newValue))
 		{
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(getElementName() + " USE=\"" + newValue +
 					"\" has an illegal value, must provide a valid NMTOKEN name string.");
@@ -33624,12 +33853,12 @@ setAttribute method invocations).
 	abstract public X3DConcreteNode setMetadata (X3DMetadataObject newValue);
 
 	/**
-	 * Assign X3DMetadataObject instance (using a properly typed ProtoInstanceObject) to inputOutput SFNode field <i>metadata</i>.
+	 * Assign X3DMetadataObject instance (using a properly typed ProtoInstance) to inputOutput SFNode field <i>metadata</i>.
 	 * @param newValue is new value for the metadata field.
 	 * @return {@link X3DConcreteNode} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Metadata" target="_blank">X3D Scene Authoring Hints: Metadata Nodes</a>
 	 */
-	abstract public X3DConcreteNode setMetadata (ProtoInstanceObject newValue); // TODO
+	abstract public X3DConcreteNode setMetadata (ProtoInstance newValue); // TODO
 				
 	/**
 	 * Assign field named <i>IS</i> for establishing IS/connect field connections between ProtoInterface fields and internal
@@ -33641,7 +33870,7 @@ ProtoBody nodes.
 	 * @return <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the
 same node object).
 	 */
-	abstract public X3DConcreteNode setIS(ISObject newValue);
+	abstract public X3DConcreteNode setIS(IS newValue);
 				
 	/**
 	 * Provide field named <i>IS</i> for establishing IS/connect field connections between ProtoInterface fields and internal
@@ -33649,9 +33878,9 @@ ProtoBody nodes.
 	 * The IS statement connects node fields defined inside a ProtoBody declaration back to corresponding ProtoInterface fields.
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#IS">X3D Tooltips: IS</a>
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#connect">X3D Tooltips: connect</a>
-	 * @return current ISObject, if any
+	 * @return current IS, if any
 	 */
-	abstract public ISObject getIS();
+	abstract public IS getIS();
 ]]></xsl:text>
 			<xsl:text disable-output-escaping="yes"><![CDATA[
     /** containerField describes the field relationship of a node to its parent.
@@ -33711,7 +33940,7 @@ ProtoBody nodes.
 		{
 			String errorNotice = "Invalid setContainerFieldOverride() value='" + value + 
 				"', legal values for " + getElementName() + " are containerField_ALTERNATE_VALUES='" + 
-				new org.web3d.x3d.jsail.fields.MFStringObject(containerField_ALTERNATE_VALUES).toStringX3D() + "'";
+				new org.web3d.x3d.jsail.fields.MFString(containerField_ALTERNATE_VALUES).toStringX3D() + "'";
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
 		}
 		return this;
@@ -33780,7 +34009,7 @@ ProtoBody nodes.
 	/** Initialize all member variables to default values. */
 	public void initialize()
 	{
-		setParentObject(null);
+		setParent(null);
 	}]]></xsl:text>
 		</xsl:with-param>
 	</xsl:call-template>
@@ -33806,6 +34035,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
+
 import org.web3d.x3d.jsail.CADGeometry.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.CubeMapTexturing.*;
@@ -33843,17 +34073,40 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Texturing3D.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing.*;
+
+// node types are in SAI package, avoid exposing overloaded nodes here
+import org.web3d.x3d.sai.Core.X3DNode;
+import org.web3d.x3d.sai.Core.X3DBindableNode;
+import org.web3d.x3d.sai.Core.X3DChildNode;
+import org.web3d.x3d.sai.Core.X3DInfoNode;
+import org.web3d.x3d.sai.Core.X3DMetadataObject;
+import org.web3d.x3d.sai.Core.X3DPrototypeInstance;
+import org.web3d.x3d.sai.Core.X3DSensorNode;
+import org.web3d.x3d.sai.CubeMapTexturing.X3DEnvironmentTextureNode;
+import org.web3d.x3d.sai.Grouping.X3DBoundedObject;
+import org.web3d.x3d.sai.Grouping.X3DGroupingNode;
+import org.web3d.x3d.sai.Rendering.X3DComposedGeometryNode;
+import org.web3d.x3d.sai.Rendering.X3DColorNode;
+import org.web3d.x3d.sai.Rendering.X3DComposedGeometryNode;
+import org.web3d.x3d.sai.Rendering.X3DCoordinateNode;
+import org.web3d.x3d.sai.Rendering.X3DGeometricPropertyNode;
+import org.web3d.x3d.sai.Rendering.X3DGeometryNode;
+import org.web3d.x3d.sai.Rendering.X3DNormalNode;
+import org.web3d.x3d.sai.Shape.X3DAppearanceNode;
+import org.web3d.x3d.sai.Shape.X3DAppearanceChildNode;
+import org.web3d.x3d.sai.Shape.X3DMaterialNode;
+import org.web3d.x3d.sai.Text.X3DFontStyleNode;
+import org.web3d.x3d.sai.Texturing.X3DTextureNode;
+import org.web3d.x3d.sai.Texturing.X3DTexture2DNode;
+import org.web3d.x3d.sai.Texturing.X3DTextureCoordinateNode;
+import org.web3d.x3d.sai.Texturing.X3DTextureTransformNode;
+import org.web3d.x3d.sai.Shaders.X3DProgrammableShaderObject;
+import org.web3d.x3d.sai.Shaders.X3DShaderNode;
+import org.web3d.x3d.sai.Shaders.X3DVertexAttributeNode;
+import org.web3d.x3d.sai.Sound.X3DSoundSourceNode;
+	
 import org.web3d.x3d.sai.X3DException;
-			
+            
 // fully specified when occurring:
 // import org.w3c.dom.DocumentType;
 // import org.w3c.dom.NamedNodeMap;
@@ -33906,8 +34159,8 @@ import org.web3d.x3d.sai.X3DException;
 	protected int lineBreakWidth = 100;
 	private int lineLength = 0;
 				
-	// persistent object needed for toX3dObjectTree parse process
-	private static X3DObject          loadedX3dObjectTree;	// only one at a time; TODO consider passing as recursive parameter
+	// persistent object needed for toX3dModelInstance parse process
+	private static X3D         loadedX3dModelInstance;	// only one at a time; TODO consider passing as recursive parameter
 	
 	private X3DConcreteElement holdCopyElementObject; // remember elementObject, trying to keep from falling out of scope
 				
@@ -33953,9 +34206,9 @@ import org.web3d.x3d.sai.X3DException;
 	{
 		if (!fileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_X3D) && !fileName.endsWith(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.FILE_EXTENSION_XML))
 		{
-			throw new X3DException("fileName " + fileName + " does not end with extension " +
-                            "\"" + X3DObject.FILE_EXTENSION_X3D + "\" or " +
-                            "\"" + X3DObject.FILE_EXTENSION_XML + "\"");
+			throw new org.web3d.x3d.sai.X3DException("fileName " + fileName + " does not end with extension " +
+                            "\"" + X3D.FILE_EXTENSION_X3D + "\" or " +
+                            "\"" + X3D.FILE_EXTENSION_XML + "\"");
 		}
 		File x3dFile;
         if ((path == null) || path.isEmpty() || path.equals("."))
@@ -33964,7 +34217,7 @@ import org.web3d.x3d.sai.X3DException;
 		
 		if (!x3dFile.exists())
 		{
-			throw new X3DException("path='" + path + "', fileName='" + fileName + "' does not exist and cannot be loaded, check path and filename.");
+			throw new org.web3d.x3d.sai.X3DException("path='" + path + "', fileName='" + fileName + "' does not exist and cannot be loaded, check path and filename.");
 		}
 		return loadModelFromFileX3D (x3dFile); // handoff
 	}
@@ -33982,7 +34235,7 @@ import org.web3d.x3d.sai.X3DException;
 			OutputStreamWriter errorWriter = new OutputStreamWriter(System.out, ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT);
 			documentBuilder.setErrorHandler(new MyErrorHandler (new PrintWriter(errorWriter, true)));
 			document = documentBuilder.parse(x3dFile);
-			X3DConcreteElement concreteElement =  toX3dObjectTree(document);
+			X3DConcreteElement concreteElement =  toX3dModelInstance(document);
             if (!concreteElement.getElementName().equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.NAME))
             {
                 System.out.println ("*** Warning, loadModelFromFileX3D(\"" + x3dFile.getPath() + "\") has root element=" + concreteElement.getElementName());
@@ -34021,8 +34274,8 @@ import org.web3d.x3d.sai.X3DException;
 	 * Convenience method, use DOM to create X3D string from a previously loaded document with default zero indent.
 	 * X3D output is XML encoding.
 	 * @param node DOM Node to process
-	 * @see X3DObject#FILE_EXTENSION_X3D
-	 * @see X3DObject#FILE_EXTENSION_XML
+	 * @see X3D#FILE_EXTENSION_X3D
+	 * @see X3D#FILE_EXTENSION_XML
 	 * @return the loaded X3D document of interest, starting with regular <i>X3D</i> element headers or possibly a scene fragment
 	 */
 	public String toStringX3D(org.w3c.dom.Node node) {
@@ -34186,12 +34439,12 @@ import org.web3d.x3d.sai.X3DException;
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/reflect/index.html">Java Tutorials: Reflection API</a>
 	 * @see <a href="https://www.manning.com/books/java-reflection-in-action">Java Reflection in Action</a>
 	 * @param node DOM Node to process
-	 * @return the loaded X3D objects of interest, starting with regular X3DObject or possibly a scene fragment
+	 * @return the loaded X3D objects of interest, starting with regular X3D object or possibly a scene fragment
 	 */
-	public X3DConcreteElement toX3dObjectTree(org.w3c.dom.Node node)
+	public X3DConcreteElement toX3dModelInstance(org.w3c.dom.Node node)
 	{
-		toX3dObjectTree(node, null); // no parent
-		return loadedX3dObjectTree;
+		toX3dModelInstance(node, null); // no parent
+		return loadedX3dModelInstance;
 	}
 
 	/**
@@ -34201,9 +34454,9 @@ import org.web3d.x3d.sai.X3DException;
 	 * @see <a href="https://www.manning.com/books/java-reflection-in-action">Java Reflection in Action</a>
 	 * @param node DOM Node to process
 	 * @param parentElement the parent of this scene object, if any
-	 * @return the loaded X3D objects of interest, starting with regular X3DObject or possibly a scene fragment
+	 * @return the loaded X3D objects of interest, starting with regular X3D object or possibly a scene fragment
 	 */
-	public X3DConcreteElement toX3dObjectTree(org.w3c.dom.Node node, X3DConcreteElement parentElement)
+	public X3DConcreteElement toX3dModelInstance(org.w3c.dom.Node node, X3DConcreteElement parentElement)
 	{
 		String indent = "  "; // TODO omit when refactored
 		boolean   nodeChildFound = false;
@@ -34213,7 +34466,7 @@ import org.web3d.x3d.sai.X3DException;
         
         if (node==null)
         {
-            String message = "*** Error invoking toX3dObjectTree(node=" + node + ", parentElement=" + parentElement + ")";
+            String message = "*** Error invoking toX3dModelInstance(node=" + node + ", parentElement=" + parentElement + ")";
             System.out.println(message);
             throw new org.web3d.x3d.sai.InvalidDocumentException(message);
         }
@@ -34227,7 +34480,7 @@ import org.web3d.x3d.sai.X3DException;
 					for (int i = 0; i < childNodeList.getLength(); i++)
 					{
 						// recurse on children having elementObject as parent
-						toX3dObjectTree(childNodeList.item(i), elementObject);
+						toX3dModelInstance(childNodeList.item(i), elementObject);
 						// do not return from here, instead process all top-level nodes to completion
 					}
 				}
@@ -34241,42 +34494,44 @@ import org.web3d.x3d.sai.X3DException;
 					for (int i = 0; i < childNodeList.getLength(); i++)
 					{
 						// recurse on children having elementObject as parent
-						toX3dObjectTree(childNodeList.item(i), elementObject);
+						toX3dModelInstance(childNodeList.item(i), elementObject);
 						// do not return from here, instead process all top-level nodes to completion
 					}
 				}
 				break;
 
 			case org.w3c.dom.Node.ELEMENT_NODE:
-				String                nodeName = node.getNodeName();			// DOM
-				String             elementName = node.getNodeName() + "Object"; // X3DJSAIL class name
+				String                nodeName = node.getNodeName(); // DOM
+				String             elementName = node.getNodeName(); // X3DJSAIL class name, formerly + "Object"
 				String             packageName = X3DConcreteNode.getPackageName(elementName); // X3DJSAIL utility
 				String	  elementSetMethodName;
 				Method		  elementSetMethod;
 					
 				// http://stackoverflow.com/questions/7495785/java-how-to-instantiate-a-class-from-stringstring
 				
-				try // to create X3DObject and related X3DConcreteElement node/statement objects
+				try // to create X3D object and related X3DConcreteElement node/statement objects
 				{
 					elementClass  = (Class<X3DConcreteElement>)Class.forName(packageName); // must be fully qualified packageName
-					elementObject = elementClass.newInstance();
+                    // https://stackoverflow.com/questions/46393863/what-to-use-instead-of-class-newinstance
+				//	elementObject = elementClass.newInstance(); // deprecated
+					elementObject = elementClass.getDeclaredConstructor().newInstance(); // default value
 					
-					if ((elementObject instanceof org.web3d.x3d.jsail.Core.X3DObject) // remember root node of X3D model if found
-						|| ((loadedX3dObjectTree == null) && (elementObject instanceof org.web3d.x3d.jsail.X3DConcreteNode))) // found fragment
+					if ((elementObject instanceof org.web3d.x3d.jsail.Core.X3D) // remember root node of X3D model if found
+						|| ((loadedX3dModelInstance == null) && (elementObject instanceof org.web3d.x3d.jsail.X3DConcreteNode))) // found fragment
 					{
-						loadedX3dObjectTree = (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[) elementObject; // remember X3D root
+						loadedX3dModelInstance = (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[) elementObject; // remember X3D root
 						// starting a new scene, reset hash maps
 						protoNameToNodeTypesHashMap.clear();
 						protoDEFtoNodeTypesHashMap.clear();
 						protoContainerFieldHashMap.clear();
 					}
-					else if (elementObject instanceof org.web3d.x3d.jsail.Core.ProtoDeclareObject) // remember prototype declarations
+					else if (elementObject instanceof org.web3d.x3d.jsail.Core.ProtoDeclare) // remember prototype declarations
 					{
 						// inspect DOM to find ProtoDeclare name
 						currentProtoDeclareNameValue = node.getAttributes().getNamedItem("name").getNodeValue();
 						currentProtoNodeTypeFound = false;
 					}
-					else if (elementObject instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclareObject) // remember external prototype declarations
+					else if (elementObject instanceof org.web3d.x3d.jsail.Core.ExternProtoDeclare) // remember external prototype declarations
 					{
 						// inspect DOM to find ExternProtoDeclare name
 						currentExternProtoDeclareNameValue = node.getAttributes().getNamedItem("name").getNodeValue();
@@ -34286,7 +34541,7 @@ import org.web3d.x3d.sai.X3DException;
 				catch (ClassNotFoundException cnfe)
 				{
 					// TODO logging
-					errorNotice = "*** [X3DLoaderDOM error] Fully qualified object package not found," +
+					errorNotice = "*** [X3DLoaderDOM error] Fully qualified object packageName=" + packageName + " not found," +
 						"\n   " + cnfe + " " + cnfe.getMessage();
 					if ((cnfe.getCause()!= null) && !cnfe.getCause().getMessage().isEmpty())
                                             errorNotice += "\n   " + cnfe.getCause();
@@ -34298,7 +34553,7 @@ import org.web3d.x3d.sai.X3DException;
 				catch (IllegalAccessException iae)
 				{
 					// TODO logging
-					errorNotice = "*** [X3DLoaderDOM error] Visibility of no-parameter constructor inaccessible," +
+					errorNotice = "*** [X3DLoaderDOM error] Visibility of no-parameter constructor inaccessible for packageName=" + packageName + "," +
                                             "\n   " + iae + " " + iae.getMessage();
                                         if ((iae.getCause()!= null) && !iae.getCause().getMessage().isEmpty())
                                             errorNotice += "\n   " + iae.getCause();
@@ -34310,13 +34565,25 @@ import org.web3d.x3d.sai.X3DException;
 				catch (InstantiationException ie)
 				{
 					// TODO logging
-					errorNotice = "*** [X3DLoaderDOM error] Failure occurred inside constructor," +
+					errorNotice = "*** [X3DLoaderDOM error] Failure occurred inside constructor for packageName=" + packageName + "," +
                                             "\n   " + ie + " " + ie.getMessage();
                                         if ((ie.getCause()!= null) && !ie.getCause().getMessage().isEmpty())
                                             errorNotice += "\n   " + ie.getCause();
 					validationResult.append(errorNotice).append("\n");
 					System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
 					ie.printStackTrace();
+                    return null; // draconian parse
+				}
+				catch (Exception e)
+				{
+					// TODO logging
+					errorNotice = "*** [X3DLoaderDOM error] Exception occurred inside constructor for packageName=" + packageName + "," +
+                                            "\n   " + e + " " + e.getMessage();
+                                        if ((e.getCause()!= null) && !e.getCause().getMessage().isEmpty())
+                                            errorNotice += "\n   " + e.getCause();
+					validationResult.append(errorNotice).append("\n");
+					System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
+					e.printStackTrace();
                     return null; // draconian parse
 				}
 						
@@ -34342,7 +34609,7 @@ import org.web3d.x3d.sai.X3DException;
 							continue; // break to end of loop, continue with next Node children.item(i)
 
 						// recurse on children having elementObject as parent
-						X3DConcreteElement childX3dElement = toX3dObjectTree(children.item(i), elementObject);
+						X3DConcreteElement childX3dElement = toX3dModelInstance(children.item(i), elementObject);
 						if ((childX3dElement == null) || (childX3dElement.getElementName() == null))
 							continue;
 						String       childElementName = childX3dElement.getElementName();
@@ -34428,7 +34695,7 @@ import org.web3d.x3d.sai.X3DException;
 									       containerField = protoContainerFieldHashMap.get(childProtoInstanceUSE); // find it
 								}
 								if (!containerField.equals("children"))
-									((ProtoInstanceObject) childX3dElement).setContainerField(containerField);
+									((ProtoInstance) childX3dElement).setContainerField(containerField);
 								// diagnostics
 								if ((childProtoInstanceUSE != null) && !childProtoInstanceUSE.isEmpty() &&
 								    ((protoInstanceNodeType == null) ||  protoInstanceNodeType.isEmpty()))
@@ -34475,14 +34742,14 @@ import org.web3d.x3d.sai.X3DException;
 								}
 								/* no longer needed, using protoNodeTypeHashMap, wasn't yet connected by parse process anyway
 								// must find node type of corresponding prototype in order to add it to current parent element
-								ProtoDeclareObject protoDeclare = (ProtoDeclareObject) loadedX3dObjectTree.findElementByNameValue(childProtoInstanceName,ProtoDeclareObject.NAME);
+								ProtoDeclare protoDeclare = (ProtoDeclare) loadedX3dModelInstance.findElementByNameValue(childProtoInstanceName,ProtoDeclare.NAME);
 								if (protoDeclare != null)
 								{
 								    protoInstanceNodeType = protoDeclare.getNodeType();
 								}
 								else // no protoDeclare found, look for externProtoDeclare
 								{
-									ExternProtoDeclareObject externProtoDeclare = (ExternProtoDeclareObject) loadedX3dObjectTree.findElementByNameValue(childProtoInstanceName,ExternProtoDeclareObject.NAME);
+									ExternProtoDeclare externProtoDeclare = (ExternProtoDeclare) loadedX3dModelInstance.findElementByNameValue(childProtoInstanceName,ExternProtoDeclare.NAME);
 									if (externProtoDeclare != null)
 										protoInstanceNodeType = externProtoDeclare.getNodeType();
 								}
@@ -34490,12 +34757,12 @@ import org.web3d.x3d.sai.X3DException;
 							}
                             // parent-child node addition according to typed methods
 							if      (childElementName.equals("head"))
-									((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)elementObject).setHead ((headObject) childX3dElement);
+									((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)elementObject).setHead ((head) childX3dElement);
 							else if (childElementName.equals("component"))
-									((headObject)elementObject).addComponent ((componentObject) childX3dElement);
+									((head)elementObject).addComponent ((component) childX3dElement);
 							else if (childElementName.equals("meta"))
 							{
-									((headObject)elementObject).addMeta ((metaObject) childX3dElement);
+									((head)elementObject).addMeta ((meta) childX3dElement);
 									String metaName    = new String();
 									String metaContent = new String();
 									// use DOM to find name and content for this element, then post any error/warning/info for this document
@@ -34507,143 +34774,143 @@ import org.web3d.x3d.sai.X3DException;
 									System.out.println ("[X3DLoaderDOM] <meta name='" + metaName + "' content='" + metaContent + "'/>");
 							}
 							else if (childElementName.equals("unit"))
-									((headObject)elementObject).addUnit ((unitObject) childX3dElement);
+									((head)elementObject).addUnit ((unit) childX3dElement);
 							else if (childElementName.equals("Scene"))
-									((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)elementObject).setScene ((SceneObject) childX3dElement);
+									((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[)elementObject).setScene ((Scene) childX3dElement);
 							else if (nodeName.equals("Scene") && childElementName.startsWith("Metadata"))
-									((SceneObject)elementObject).addMetadata ((X3DMetadataObject) childX3dElement);
+									((Scene)elementObject).addMetadata ((X3DMetadataObject) childX3dElement);
 							else if (nodeName.equals("Scene") && childElementName.equals("LayerSet"))
-									((SceneObject)elementObject).addLayerSet ((LayerSetObject) childX3dElement);
+									((Scene)elementObject).addLayerSet ((LayerSet) childX3dElement);
 							else if (nodeName.equals("Scene"))
-									((SceneObject)elementObject).addChild((X3DChildNode) childX3dElement); // use non-pipelined method for max coverage
+									((Scene)elementObject).addChild((X3DChildNode) childX3dElement); // use non-pipelined method for max coverage
 							// CommentsBlock handled by case org.w3c.dom.Node.COMMENT_NODE
 					
 							// proto and field handling begins here to avoid possible subsequent missteps
 							else if (nodeName.equals("ProtoDeclare") && childElementName.equals("ProtoInterface"))
-									((ProtoDeclareObject)elementObject).setProtoInterface((ProtoInterfaceObject) childX3dElement);
+									((ProtoDeclare)elementObject).setProtoInterface((ProtoInterface) childX3dElement);
 							else if (nodeName.equals("Script") && childElementName.equals("field"))
-									((ScriptObject)elementObject).addField((fieldObject) childX3dElement);
+									((Script)elementObject).addField((field) childX3dElement);
 							else if (nodeName.equals("ProtoInterface") && childElementName.equals("field"))
-									((ProtoInterfaceObject)elementObject).addField((fieldObject) childX3dElement);
+									((ProtoInterface)elementObject).addField((field) childX3dElement);
 							else if (nodeName.equals("ExternProtoDeclare") && childElementName.equals("field"))
-									((ExternProtoDeclareObject)elementObject).addField((fieldObject) childX3dElement);
+									((ExternProtoDeclare)elementObject).addField((field) childX3dElement);
 							else if (nodeName.equals("ComposedShader") && childElementName.equals("field"))
-									((ComposedShaderObject)elementObject).addField((fieldObject) childX3dElement);
+									((ComposedShader)elementObject).addField((field) childX3dElement);
 							else if (nodeName.equals("ProtoBody"))
-									((ProtoBodyObject)elementObject).addChild((X3DNode) childX3dElement); // note looser node type
+									((ProtoBody)elementObject).addChild((X3DNode) childX3dElement); // note looser node type
 							else if (childElementName.equals("ProtoBody"))
-									((ProtoDeclareObject)elementObject).setProtoBody((ProtoBodyObject) childX3dElement);
+									((ProtoDeclare)elementObject).setProtoBody((ProtoBody) childX3dElement);
 							else if (nodeName.equals("field"))
-									((fieldObject)elementObject).addChild((X3DNode) childX3dElement); // avoid duplicative addChildren, not pipelined
+									((field)elementObject).addChild((X3DNode) childX3dElement); // avoid duplicative addChildren, not pipelined
 							else if (nodeName.equals("fieldValue"))
-									((fieldValueObject)elementObject).addChild((X3DNode) childX3dElement); // avoid duplicative addChildren, not pipelined
+									((fieldValue)elementObject).addChild((X3DNode) childX3dElement); // avoid duplicative addChildren, not pipelined
 							else if (childElementName.equals("fieldValue"))
-									((ProtoInstanceObject)elementObject).setFieldValue((fieldValueObject) childX3dElement);
+									((ProtoInstance)elementObject).setFieldValue((fieldValue) childX3dElement);
 							else if (nodeName.equals("ShaderProgram") && childElementName.equals("field"))
-									((ShaderProgramObject)elementObject).addField((fieldObject) childX3dElement);
+									((ShaderProgram)elementObject).addField((field) childX3dElement);
 							else if (nodeName.equals("ComposedShader") && childElementName.equals("field"))
-									((ComposedShaderObject)elementObject).addField((fieldObject) childX3dElement);
+									((ComposedShader)elementObject).addField((field) childX3dElement);
 							else if (nodeName.equals("PackagedShader") && childElementName.equals("field"))
-									((PackagedShaderObject)elementObject).addField((fieldObject) childX3dElement);
+									((PackagedShader)elementObject).addField((field) childX3dElement);
 					
 							else if (nodeName.equals("Collision") && (containerField.equals("proxy")))
-									((CollisionObject)elementObject).setProxy ((X3DChildNode) childX3dElement);
+									((Collision)elementObject).setProxy ((X3DChildNode) childX3dElement);
 							else if (nodeName.equals("Collision")  && childElementName.equals("ProtoInstance") && (containerField.equals("proxy"))) // Shape and grouping nodes
-									((CollisionObject)elementObject).setProxy ((ProtoInstance) childX3dElement);
+									((Collision)elementObject).setProxy ((ProtoInstance) childX3dElement);
 
 							// TODO better checks for metadata containerField and various combinations
 							else if (nodeName.equals("MetadataSet") && childElementName.startsWith("Metadata") && (!containerField.equals("metadata")))
-									((MetadataSetObject)elementObject).addValue ((X3DNode) childX3dElement);
+									((MetadataSet)elementObject).addValue ((X3DNode) childX3dElement);
 							else if (nodeName.equals("MetadataSet") && childElementName.equals("ProtoInstance") && (!containerField.equals("metadata")))
-									((MetadataSetObject)elementObject).addValue ((X3DNode) childX3dElement);
+									((MetadataSet)elementObject).addValue ((X3DNode) childX3dElement);
 							else if (childElementName.startsWith("Metadata"))
 									((X3DConcreteNode)elementObject).setMetadata ((X3DMetadataObject) childX3dElement);
 							else if ((protoInstanceNodeType.equals("Metadata") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("metadata") || containerField.isEmpty()))
-									((X3DConcreteNode)elementObject).setMetadata ((ProtoInstanceObject) childX3dElement);
+									((X3DConcreteNode)elementObject).setMetadata ((ProtoInstance) childX3dElement);
 					
 							else if (childElementName.equals("Appearance"))
-									((ShapeObject)elementObject).setAppearance ((X3DAppearanceNode) childX3dElement);
+									((Shape)elementObject).setAppearance ((X3DAppearanceNode) childX3dElement);
 							else if ((protoInstanceNodeType.equals("Appearance") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("appearance") || containerField.isEmpty()))
-									((ShapeObject)elementObject).setAppearance ((ProtoInstanceObject) childX3dElement);
+									((Shape)elementObject).setAppearance ((ProtoInstance) childX3dElement);
 					
 							else if (childElementName.equals("Material"))
-									((AppearanceObject)elementObject).setMaterial ((MaterialObject) childX3dElement);
+									((Appearance)elementObject).setMaterial ((Material) childX3dElement);
 							else if ((protoInstanceNodeType.equals("Material") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("material")))
-									((AppearanceObject)elementObject).setMaterial ((ProtoInstanceObject) childX3dElement);
+									((Appearance)elementObject).setMaterial ((ProtoInstance) childX3dElement);
 					
 							else if (childElementName.equals("TwoSidedMaterial"))
-									((AppearanceObject)elementObject).setMaterial ((TwoSidedMaterialObject) childX3dElement);
+									((Appearance)elementObject).setMaterial ((TwoSidedMaterial) childX3dElement);
 							else if ((protoInstanceNodeType.equals("TwoSidedMaterial") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("material")))
-									((AppearanceObject)elementObject).setMaterial ((ProtoInstanceObject) childX3dElement);
+									((Appearance)elementObject).setMaterial ((ProtoInstance) childX3dElement);
 					
 							else if (nodeName.equals("Appearance") && childElementName.equals("LineProperties") && ((containerField.equals("lineProperties") || containerField.isEmpty())))
-									((AppearanceObject)elementObject).setLineProperties ((LinePropertiesObject) childX3dElement);
+									((Appearance)elementObject).setLineProperties ((LineProperties) childX3dElement);
 							else if (nodeName.equals("Appearance") && (protoInstanceNodeType.equals("LineProperties") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("lineProperties") || containerField.isEmpty())))
-									((AppearanceObject)elementObject).setLineProperties ((ProtoInstanceObject) childX3dElement);
+									((Appearance)elementObject).setLineProperties ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("Appearance") && childElementName.equals("FillProperties"))
-									((AppearanceObject)elementObject).setFillProperties ((FillPropertiesObject) childX3dElement);
+									((Appearance)elementObject).setFillProperties ((FillProperties) childX3dElement);
 							else if (nodeName.equals("Appearance") && (protoInstanceNodeType.equals("FillProperties") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("fillProperties") || containerField.isEmpty())))
-									((AppearanceObject)elementObject).setFillProperties ((ProtoInstanceObject) childX3dElement);
+									((Appearance)elementObject).setFillProperties ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("backTexture")))
-									((TextureBackgroundObject)elementObject).setBackTexture ((X3DTexture2DNode) childX3dElement);
+									((TextureBackground)elementObject).setBackTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("backTexture") || containerField.isEmpty())))
-									((TextureBackgroundObject)elementObject).setBackTexture ((ProtoInstanceObject) childX3dElement);
+									((TextureBackground)elementObject).setBackTexture ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("bottomTexture")))
-									((TextureBackgroundObject)elementObject).setBottomTexture ((X3DTexture2DNode) childX3dElement);
+									((TextureBackground)elementObject).setBottomTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("bottomTexture") || containerField.isEmpty())))
-									((TextureBackgroundObject)elementObject).setBottomTexture ((ProtoInstanceObject) childX3dElement);
+									((TextureBackground)elementObject).setBottomTexture ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("frontTexture")))
-									((TextureBackgroundObject)elementObject).setFrontTexture ((X3DTexture2DNode) childX3dElement);
+									((TextureBackground)elementObject).setFrontTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("frontTexture") || containerField.isEmpty())))
-									((TextureBackgroundObject)elementObject).setFrontTexture ((ProtoInstanceObject) childX3dElement);
+									((TextureBackground)elementObject).setFrontTexture ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("leftTexture")))
-									((TextureBackgroundObject)elementObject).setLeftTexture ((X3DTexture2DNode) childX3dElement);
+									((TextureBackground)elementObject).setLeftTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("leftTexture") || containerField.isEmpty())))
-									((TextureBackgroundObject)elementObject).setLeftTexture ((ProtoInstanceObject) childX3dElement);
+									((TextureBackground)elementObject).setLeftTexture ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("rightTexture")))
-									((TextureBackgroundObject)elementObject).setRightTexture ((X3DTexture2DNode) childX3dElement);
+									((TextureBackground)elementObject).setRightTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("rightTexture") || containerField.isEmpty())))
-									((TextureBackgroundObject)elementObject).setRightTexture ((ProtoInstanceObject) childX3dElement);
+									((TextureBackground)elementObject).setRightTexture ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("TextureBackground") && (childElementName.endsWith("Texture")) && (containerField.equals("topTexture")))
-									((TextureBackgroundObject)elementObject).setTopTexture ((X3DTexture2DNode) childX3dElement);
+									((TextureBackground)elementObject).setTopTexture ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("TextureBackground") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("topTexture") || containerField.isEmpty())))
-									((TextureBackgroundObject)elementObject).setTopTexture ((ProtoInstanceObject) childX3dElement);
+									((TextureBackground)elementObject).setTopTexture ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("Sound") && (childElementName.equals("AudioClip") || childElementName.equals("MovieTexture")))
-									((SoundObject)elementObject).setSource ((X3DSoundSourceNode) childX3dElement);
+									((Sound)elementObject).setSource ((X3DSoundSourceNode) childX3dElement);
 							else if (nodeName.equals("Sound") && (protoInstanceNodeType.equals("AudioClip") || protoInstanceNodeType.equals("MovieTexture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("source") || containerField.isEmpty())))
-									((SoundObject)elementObject).setSource ((ProtoInstanceObject) childX3dElement);
+									((Sound)elementObject).setSource ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("front") || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setFront ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setFront ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("front") || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setFront ((ProtoInstanceObject) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setFront ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("back") || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setBack ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setBack ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("back") || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setBack ((ProtoInstanceObject) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setBack ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && ((containerField.equals("left") || containerField.isEmpty()) || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setLeft ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setLeft ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("left") || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setLeft ((ProtoInstanceObject) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setLeft ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && ((containerField.equals("right") || containerField.isEmpty()) || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setRight ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setRight ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("right") || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setRight ((ProtoInstanceObject) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setRight ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("top") || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setTop ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setTop ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("top") || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setTop ((ProtoInstanceObject) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setTop ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture") && (containerField.equals("bottom") || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setBottom ((X3DTexture2DNode) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setBottom ((X3DTexture2DNode) childX3dElement);
 							else if (nodeName.equals("ComposedCubeMapTexture") && (protoInstanceNodeType.equals("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("bottom") || containerField.isEmpty()))
-									((ComposedCubeMapTextureObject)elementObject).setBottom ((ProtoInstanceObject) childX3dElement);
+									((ComposedCubeMapTexture)elementObject).setBottom ((ProtoInstance) childX3dElement);
 							// these checks follow preceding containerField-specific tests
 							else if (nodeName.equals("ComposedCubeMapTexture") && childElementName.endsWith("Texture"))
 							{
@@ -34657,29 +34924,29 @@ import org.web3d.x3d.sai.X3DException;
 							}
 					
 							else if (nodeName.equals("Appearance") && childElementName.endsWith("Texture") && (containerField.equals("texture") || containerField.isEmpty()))
-									((AppearanceObject)elementObject).setTexture ((X3DTextureNode) childX3dElement);
+									((Appearance)elementObject).setTexture ((X3DTextureNode) childX3dElement);
 							else if (nodeName.equals("Appearance") && (protoInstanceNodeType.endsWith("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texture") || containerField.isEmpty()))
-									((AppearanceObject)elementObject).setTexture ((ProtoInstanceObject) childX3dElement);
+									((Appearance)elementObject).setTexture ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("Appearance") && childElementName.contains("TextureTransform") && (containerField.equals("textureTransform") || containerField.isEmpty()))
-									((AppearanceObject)elementObject).setTextureTransform ((X3DTextureTransformNode) childX3dElement);
+									((Appearance)elementObject).setTextureTransform ((X3DTextureTransformNode) childX3dElement);
 							else if (nodeName.equals("Appearance") && (protoInstanceNodeType.contains("TextureTransform") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("textureTransform") || containerField.isEmpty()))
-									((AppearanceObject)elementObject).setTextureTransform ((ProtoInstanceObject) childX3dElement);
+									((Appearance)elementObject).setTextureTransform ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("Appearance") && (childElementName.equals("ComposedShader") || childElementName.equals("PackagedShader") || childElementName.equals("ProgramShader")) && (containerField.equals("shaders") || containerField.isEmpty()))
-									((AppearanceObject)elementObject).addShaders ((X3DShaderNode) childX3dElement);
+									((Appearance)elementObject).addShaders ((X3DShaderNode) childX3dElement);
 							else if (nodeName.equals("Appearance") && (protoInstanceNodeType.contains("Shader") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("shaders") || containerField.isEmpty()))
-									((AppearanceObject)elementObject).addShaders ((ProtoInstanceObject) childX3dElement);
+									((Appearance)elementObject).addShaders ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("ComposedShader") && childElementName.equals("ShaderPart") && (containerField.equals("parts") || containerField.isEmpty()))
-									((ComposedShaderObject)elementObject).addParts ((ShaderPartObject) childX3dElement);
+									((ComposedShader)elementObject).addParts ((ShaderPart) childX3dElement);
 							else if (nodeName.equals("ComposedShader") && (protoInstanceNodeType.equals("ShaderPart") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("parts") || containerField.isEmpty()))
-									((ComposedShaderObject)elementObject).addParts ((ProtoInstanceObject) childX3dElement);
+									((ComposedShader)elementObject).addParts ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("ProgramShader") && childElementName.equals("ShaderProgram") && (containerField.equals("programs") || containerField.isEmpty()))
-									((ProgramShaderObject)elementObject).addPrograms ((ShaderProgramObject) childX3dElement);
+									((ProgramShader)elementObject).addPrograms ((ShaderProgram) childX3dElement);
 							else if (nodeName.equals("ProgramShader") && (protoInstanceNodeType.equals("ShaderProgram") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("programs") || containerField.isEmpty()))
-									((ProgramShaderObject)elementObject).addPrograms ((ProtoInstanceObject) childX3dElement);
+									((ProgramShader)elementObject).addPrograms ((ProtoInstance) childX3dElement);
 					
 							else if ((childElementName.equals("Box") || childElementName.equals("Cone") || childElementName.equals("Cylinder") ||
 									  childElementName.equals("Sphere") || childElementName.equals("Text") || childElementName.equals("IndexedFaceSet") ||
@@ -34694,7 +34961,7 @@ import org.web3d.x3d.sai.X3DException;
 									  childElementName.equals("NurbsCurve") || childElementName.equals("NurbsSweptSurface") || childElementName.equals("NurbsSwungSurface")
 									 ) && containerField.equals("geometry")
 									)
-									  ((ShapeObject)elementObject).setGeometry ((X3DGeometryNode) childX3dElement);
+									  ((Shape)elementObject).setGeometry ((X3DGeometryNode) childX3dElement);
 
 							else if ((protoInstanceNodeType.equals("Box") || protoInstanceNodeType.equals("Cone") || protoInstanceNodeType.equals("Cylinder") ||
 									  protoInstanceNodeType.equals("Sphere") || protoInstanceNodeType.equals("Text") || protoInstanceNodeType.equals("IndexedFaceSet") ||
@@ -34710,352 +34977,352 @@ import org.web3d.x3d.sai.X3DException;
 									  protoInstanceNodeType.equals("ExternProtoDeclare")
 									 ) && containerField.equals("geometry")
 									)
-									  ((ShapeObject)elementObject).setGeometry ((ProtoInstanceObject) childX3dElement);
+									  ((Shape)elementObject).setGeometry ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("ElevationGrid") && (childElementName.equals("Color") || childElementName.equals("ColorRGBA")) && (containerField.equals("color") || containerField.isEmpty()))
-									((ElevationGridObject)elementObject).setColor((X3DColorNode) childX3dElement);
+									((ElevationGrid)elementObject).setColor((X3DColorNode) childX3dElement);
 							else if (nodeName.equals("ElevationGrid") && (protoInstanceNodeType.equals("Color") || protoInstanceNodeType.equals("ColorRGBA") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("color"))
-									((ElevationGridObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((ElevationGrid)elementObject).setColor((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && (childElementName.equals("Color") || childElementName.equals("ColorRGBA")) && (containerField.equals("color") || containerField.isEmpty()))
-									((GeoElevationGridObject)elementObject).setColor((X3DColorNode) childX3dElement);
+									((GeoElevationGrid)elementObject).setColor((X3DColorNode) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && (protoInstanceNodeType.equals("Color") || protoInstanceNodeType.equals("ColorRGBA") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("color"))
-									((GeoElevationGridObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((GeoElevationGrid)elementObject).setColor((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("ElevationGrid") && childElementName.equals("Normal") && (containerField.equals("normal") || containerField.isEmpty()))
-									((ElevationGridObject)elementObject).setNormal((NormalObject) childX3dElement);
+									((ElevationGrid)elementObject).setNormal((Normal) childX3dElement);
 							else if (nodeName.equals("ElevationGrid") && (protoInstanceNodeType.equals("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("normal"))
-									((ElevationGridObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((ElevationGrid)elementObject).setNormal((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && childElementName.equals("Normal") && (containerField.equals("normal") || containerField.isEmpty()))
-									((GeoElevationGridObject)elementObject).setNormal((NormalObject) childX3dElement);
+									((GeoElevationGrid)elementObject).setNormal((Normal) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && (protoInstanceNodeType.equals("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("normal"))
-									((GeoElevationGridObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((GeoElevationGrid)elementObject).setNormal((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("ElevationGrid") && childElementName.contains("TextureCoordinate") && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((ElevationGridObject)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
+									((ElevationGrid)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
 							else if (nodeName.equals("ElevationGrid") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("texcoord"))
-									((ElevationGridObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((ElevationGrid)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && childElementName.contains("TextureCoordinate") && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((GeoElevationGridObject)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
+									((GeoElevationGrid)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("texcoord"))
-									((GeoElevationGridObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((GeoElevationGrid)elementObject).setTexCoord((ProtoInstance) childX3dElement);
                 
 							else if (nodeName.equals("LoadSensor") && (childElementName.equals("Anchor")         || childElementName.equals("AudioClip")           || childElementName.equals("DISEntityTypeMapping") ||
                                                                        childElementName.equals("GeoMetadata")    || childElementName.equals("ImageCubeMapTexture") || childElementName.equals("ImageTexture3D") ||
                                                                        childElementName.equals("ImageTexture")   || childElementName.equals("Inline")              || childElementName.equals("MovieTexture") ||
                                                                        childElementName.equals("PackagedShader") || childElementName.equals("Script")              || childElementName.equals("ShaderPart") ||
                                                                        childElementName.equals("ShaderProgramObject")) && (containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") || containerField.equals("parts") || containerField.equals("children"))) // children is erroneous but common, unambiguous error
-									((LoadSensorObject)elementObject).addWatchList((X3DNode) childX3dElement);
+									((LoadSensor)elementObject).addWatchList((X3DNode) childX3dElement);
 							else if (nodeName.equals("LoadSensor") && (protoInstanceNodeType.equals("Anchor")         || protoInstanceNodeType.equals("AudioClip")           || protoInstanceNodeType.equals("DISEntityTypeMapping") ||
                                                                        protoInstanceNodeType.equals("GeoMetadata")    || protoInstanceNodeType.equals("ImageCubeMapTexture") || protoInstanceNodeType.equals("ImageTexture3D") ||
                                                                        protoInstanceNodeType.equals("ImageTexture")   || protoInstanceNodeType.equals("Inline")              || protoInstanceNodeType.equals("MovieTexture") ||
                                                                        protoInstanceNodeType.equals("PackagedShader") || protoInstanceNodeType.equals("Script")              || protoInstanceNodeType.equals("ShaderPart") ||
                                                                        protoInstanceNodeType.equals("ShaderProgramObject")) && (containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") || containerField.equals("parts") || containerField.equals("children"))) // children is erroneous but common, unambiguous error
-									((CADFaceObject)elementObject).setShape((ProtoInstanceObject) childX3dElement);
+									((CADFace)elementObject).setShape((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("CADFace") && (childElementName.equals("Shape") || childElementName.equals("LOD") || childElementName.equals("Transform")) && containerField.equals("shape"))
-									((CADFaceObject)elementObject).setShape((X3DNode) childX3dElement);
+									((CADFace)elementObject).setShape((X3DNode) childX3dElement);
 							else if (nodeName.equals("CADFace") && (protoInstanceNodeType.equals("Shape") || protoInstanceNodeType.equals("LOD") || protoInstanceNodeType.equals("Transform") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("shape"))
-									((CADFaceObject)elementObject).setShape((ProtoInstanceObject) childX3dElement);
+									((CADFace)elementObject).setShape((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("Scene") && (childElementName.equals("EspduTransform") || childElementName.equals("ReceiverPdu") ||
                                                                   childElementName.equals("SignalPdu") || childElementName.equals("TransmitterPdu") ||
                                                                   childElementName.equals("DISEntityManager")) && containerField.equals("children"))
-									((SceneObject)elementObject).addChild((EspduTransformObject) childX3dElement);
-							else if ((childElementName.equals(EspduTransformObject.NAME)) && containerField.equals("children"))
-									((X3DGroupingNode)elementObject).addChildren(new X3DNode[] { (X3DNode) childX3dElement } ); // default fallback can throw exception
+									((Scene)elementObject).addChild((EspduTransform) childX3dElement);
+							else if ((childElementName.equals(EspduTransform.NAME)) && containerField.equals("children"))
+									((X3DGroupingNode)elementObject).addChildren(new org.web3d.x3d.sai.Core.X3DNode[] { (X3DNode) childX3dElement } ); // default fallback can throw exception
 							else if (nodeName.equals("DISEntityManager") && (childElementName.equals("DISEntityTypeMapping")) && containerField.equals("mapping"))
-									((DISEntityManagerObject)elementObject).addMapping((DISEntityTypeMappingObject) childX3dElement);
+									((DISEntityManager)elementObject).addMapping((DISEntityTypeMapping) childX3dElement);
 							else if (nodeName.equals("DISEntityManager") && protoInstanceNodeType.equals("DISEntityTypeMapping"))
-									((DISEntityManagerObject)elementObject).addMapping((ProtoInstanceObject) childX3dElement);
+									((DISEntityManager)elementObject).addMapping((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("GeoCoordinate") && childElementName.equals("GeoOrigin"))
-									((GeoCoordinateObject)elementObject).setGeoOrigin((GeoOriginObject) childX3dElement);
+									((GeoCoordinate)elementObject).setGeoOrigin((GeoOrigin) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && childElementName.equals("GeoOrigin"))
-									((GeoElevationGridObject)elementObject).setGeoOrigin((GeoOriginObject) childX3dElement);
+									((GeoElevationGrid)elementObject).setGeoOrigin((GeoOrigin) childX3dElement);
 							else if (nodeName.equals("GeoLocation") && childElementName.equals("GeoOrigin"))
-									((GeoLocationObject)elementObject).setGeoOrigin((GeoOriginObject) childX3dElement);
+									((GeoLocation)elementObject).setGeoOrigin((GeoOrigin) childX3dElement);
 							else if (nodeName.equals("GeoLOD") && childElementName.equals("GeoOrigin"))
-									((GeoLODObject)elementObject).setGeoOrigin((GeoOriginObject) childX3dElement);
+									((GeoLOD)elementObject).setGeoOrigin((GeoOrigin) childX3dElement);
 							else if (nodeName.equals("GeoPositionInterpolator") && childElementName.equals("GeoOrigin"))
-									((GeoPositionInterpolatorObject)elementObject).setGeoOrigin((GeoOriginObject) childX3dElement);
+									((GeoPositionInterpolator)elementObject).setGeoOrigin((GeoOrigin) childX3dElement);
 							else if (nodeName.equals("GeoProximitySensor") && childElementName.equals("GeoOrigin"))
-									((GeoProximitySensorObject)elementObject).setGeoOrigin((GeoOriginObject) childX3dElement);
+									((GeoProximitySensor)elementObject).setGeoOrigin((GeoOrigin) childX3dElement);
 							else if (nodeName.equals("GeoTouchSensor") && childElementName.equals("GeoOrigin"))
-									((GeoTouchSensorObject)elementObject).setGeoOrigin((GeoOriginObject) childX3dElement);
+									((GeoTouchSensor)elementObject).setGeoOrigin((GeoOrigin) childX3dElement);
 							else if (nodeName.equals("GeoTransform") && childElementName.equals("GeoOrigin"))
-									((GeoTransformObject)elementObject).setGeoOrigin((GeoOriginObject) childX3dElement);
+									((GeoTransform)elementObject).setGeoOrigin((GeoOrigin) childX3dElement);
 							else if (nodeName.equals("GeoViewpoint") && childElementName.equals("GeoOrigin"))
-									((GeoViewpointObject)elementObject).setGeoOrigin((GeoOriginObject) childX3dElement);
+									((GeoViewpoint)elementObject).setGeoOrigin((GeoOrigin) childX3dElement);
 
 							else if (nodeName.equals("GeoCoordinate") && protoInstanceNodeType.equals("GeoOrigin"))
-									((GeoCoordinateObject)elementObject).setGeoOrigin((ProtoInstanceObject) childX3dElement);
+									((GeoCoordinate)elementObject).setGeoOrigin((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && protoInstanceNodeType.equals("GeoOrigin"))
-									((GeoElevationGridObject)elementObject).setGeoOrigin((ProtoInstanceObject) childX3dElement);
+									((GeoElevationGrid)elementObject).setGeoOrigin((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoLocation") && protoInstanceNodeType.equals("GeoOrigin"))
-									((GeoLocationObject)elementObject).setGeoOrigin((ProtoInstanceObject) childX3dElement);
+									((GeoLocation)elementObject).setGeoOrigin((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoLOD") && protoInstanceNodeType.equals("GeoOrigin"))
-									((GeoLODObject)elementObject).setGeoOrigin((ProtoInstanceObject) childX3dElement);
+									((GeoLOD)elementObject).setGeoOrigin((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoPositionInterpolator") && protoInstanceNodeType.equals("GeoOrigin"))
-									((GeoPositionInterpolatorObject)elementObject).setGeoOrigin((ProtoInstanceObject) childX3dElement);
+									((GeoPositionInterpolator)elementObject).setGeoOrigin((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoProximitySensor") && protoInstanceNodeType.equals("GeoOrigin"))
-									((GeoProximitySensorObject)elementObject).setGeoOrigin((ProtoInstanceObject) childX3dElement);
+									((GeoProximitySensor)elementObject).setGeoOrigin((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoTouchSensor") && protoInstanceNodeType.equals("GeoOrigin"))
-									((GeoTouchSensorObject)elementObject).setGeoOrigin((ProtoInstanceObject) childX3dElement);
+									((GeoTouchSensor)elementObject).setGeoOrigin((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoTransform") && protoInstanceNodeType.equals("GeoOrigin"))
-									((GeoTransformObject)elementObject).setGeoOrigin((ProtoInstanceObject) childX3dElement);
+									((GeoTransform)elementObject).setGeoOrigin((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoViewpoint") && protoInstanceNodeType.equals("GeoOrigin"))
-									((GeoViewpointObject)elementObject).setGeoOrigin((ProtoInstanceObject) childX3dElement);
+									((GeoViewpoint)elementObject).setGeoOrigin((ProtoInstance) childX3dElement);
 
 							// must follow GeoOrigin tests
                             else if (nodeName.equals("GeoLOD") && !protoInstanceNodeType.isEmpty())
-									((GeoLODObject)elementObject).addRootNode((ProtoInstanceObject) childX3dElement);
+									((GeoLOD)elementObject).addRootNode((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoLOD"))
-									((GeoLODObject)elementObject).addRootNode((X3DNode) childX3dElement);
+									((GeoLOD)elementObject).addRootNode((X3DNode) childX3dElement);
 							
 							else if (nodeName.equals("Scene") && (childElementName.equals("HAnimHumanoid")) && containerField.equals("children"))
-									((SceneObject)elementObject).addChild((HAnimHumanoidObject) childX3dElement);
+									((Scene)elementObject).addChild((HAnimHumanoid) childX3dElement);
 							else if ((childElementName.equals("HAnimHumanoid")) && containerField.equals("children"))
-									((X3DGroupingNode)elementObject).addChildren(new X3DNode[] { (X3DNode) childX3dElement } ); // default fallback can throw exception
+									((X3DGroupingNode)elementObject).addChildren(new org.web3d.x3d.sai.Core.X3DNode[] { (X3DNode) childX3dElement } ); // default fallback can throw exception
 							else if (nodeName.equals("HAnimHumanoid") && (childElementName.equals("HAnimJoint") || childElementName.equals("HAnimSite")) && containerField.equals("skeleton"))
-									((HAnimHumanoidObject)elementObject).addSkeleton((X3DNode) childX3dElement);
+									((HAnimHumanoid)elementObject).addSkeleton((X3DNode) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimJoint") || protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("skeleton"))
-									((HAnimHumanoidObject)elementObject).addSkeleton((ProtoInstanceObject) childX3dElement);
+									((HAnimHumanoid)elementObject).addSkeleton((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && containerField.equals("skin"))
-									((HAnimHumanoidObject)elementObject).addSkin((X3DNode) childX3dElement);
+									((HAnimHumanoid)elementObject).addSkin((X3DNode) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimJoint") && containerField.equals("joints"))
-									((HAnimHumanoidObject)elementObject).addJoints((HAnimJointObject) childX3dElement);
+									((HAnimHumanoid)elementObject).addJoints((HAnimJoint) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimJoint") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("joints"))
-									((HAnimHumanoidObject)elementObject).addJoints((ProtoInstanceObject) childX3dElement);
+									((HAnimHumanoid)elementObject).addJoints((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimSegment") && containerField.equals("segments"))
-									((HAnimHumanoidObject)elementObject).addSegments((HAnimSegmentObject) childX3dElement);
+									((HAnimHumanoid)elementObject).addSegments((HAnimSegment) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimSegment") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("segments"))
-									((HAnimHumanoidObject)elementObject).addSegments((ProtoInstanceObject) childX3dElement);
+									((HAnimHumanoid)elementObject).addSegments((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimSite") && containerField.equals("sites"))
-									((HAnimHumanoidObject)elementObject).addSites((HAnimSiteObject) childX3dElement);
+									((HAnimHumanoid)elementObject).addSites((HAnimSite) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("sites"))
-									((HAnimHumanoidObject)elementObject).addSites((ProtoInstanceObject) childX3dElement);
+									((HAnimHumanoid)elementObject).addSites((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("HAnimSite") && containerField.equals("viewpoints"))
-									((HAnimHumanoidObject)elementObject).addViewpoints((HAnimSiteObject) childX3dElement);
+									((HAnimHumanoid)elementObject).addViewpoints((HAnimSite) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("viewpoints"))
-									((HAnimHumanoidObject)elementObject).addViewpoints((ProtoInstanceObject) childX3dElement);
+									((HAnimHumanoid)elementObject).addViewpoints((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("HAnimHumanoid") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble")) && containerField.equals("skinCoord"))
-									((HAnimHumanoidObject)elementObject).setSkinCoord ((X3DCoordinateNode) childX3dElement);
+									((HAnimHumanoid)elementObject).setSkinCoord ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("skinCoord"))
-									((HAnimHumanoidObject)elementObject).setSkinCoord ((ProtoInstanceObject) childX3dElement);
+									((HAnimHumanoid)elementObject).setSkinCoord ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals("Normal") && containerField.equals("skinNormal"))
-									((HAnimHumanoidObject)elementObject).setSkinNormal ((X3DNormalNode) childX3dElement);
+									((HAnimHumanoid)elementObject).setSkinNormal ((X3DNormalNode) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("skinNormal"))
-									((HAnimHumanoidObject)elementObject).setSkinNormal ((ProtoInstanceObject) childX3dElement);
+									((HAnimHumanoid)elementObject).setSkinNormal ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("HAnimJoint") && (childElementName.equals("HAnimJoint") || childElementName.equals("HAnimSegment") || childElementName.equals("HAnimSite")) && containerField.equals("children"))
-									((HAnimJointObject)elementObject).addChild((X3DChildNode) childX3dElement);
+									((HAnimJoint)elementObject).addChild((X3DChildNode) childX3dElement);
 							else if (nodeName.equals("HAnimJoint") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("HAnimSegment") || protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("children"))
-									((HAnimJointObject)elementObject).addChild((X3DChildNode) childX3dElement);
+									((HAnimJoint)elementObject).addChild((X3DChildNode) childX3dElement);
 							else if (nodeName.equals("HAnimJoint") && childElementName.equals("HAnimDisplacer") && (containerField.equals("displacers") || containerField.isEmpty()))
-									((HAnimJointObject)elementObject).addDisplacers((HAnimDisplacerObject) childX3dElement);
+									((HAnimJoint)elementObject).addDisplacers((HAnimDisplacer) childX3dElement);
 							else if (nodeName.equals("HAnimJoint") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("displacers") || containerField.isEmpty()))
-									((HAnimJointObject)elementObject).addDisplacers((ProtoInstanceObject) childX3dElement);
+									((HAnimJoint)elementObject).addDisplacers((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("HAnimSegment") && childElementName.equals("HAnimDisplacer") && (containerField.equals("displacers") || containerField.isEmpty()))
-									((HAnimSegmentObject)elementObject).addDisplacers((HAnimDisplacerObject) childX3dElement);
+									((HAnimSegment)elementObject).addDisplacers((HAnimDisplacer) childX3dElement);
 							else if (nodeName.equals("HAnimSegment") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("displacers") || containerField.isEmpty()))
-									((HAnimSegmentObject)elementObject).addDisplacers((ProtoInstanceObject) childX3dElement);
+									((HAnimSegment)elementObject).addDisplacers((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("HAnimSegment") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((HAnimSegmentObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
+									((HAnimSegment)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("HAnimSegment") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((HAnimSegmentObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
+									((HAnimSegment)elementObject).setCoord ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("IndexedLineSet") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble") || childElementName.equals("GeoCoordinate")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((IndexedLineSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
+									((IndexedLineSet)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("IndexedLineSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((IndexedLineSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
+									((IndexedLineSet)elementObject).setCoord ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("LineSet") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble") || childElementName.equals("GeoCoordinate")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((LineSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
+									((LineSet)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("LineSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((LineSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
+									((LineSet)elementObject).setCoord ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("PointSet") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble") || childElementName.equals("GeoCoordinate")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((PointSetObject)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
+									((PointSet)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("PointSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((PointSetObject)elementObject).setCoord ((ProtoInstanceObject) childX3dElement);
+									((PointSet)elementObject).setCoord ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("NurbsPositionInterpolator") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble")) && containerField.equals("controlPoint"))
-									((NurbsPositionInterpolatorObject)elementObject).setControlPoint ((X3DCoordinateNode) childX3dElement);
+									((NurbsPositionInterpolator)elementObject).setControlPoint ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("NurbsPositionInterpolator") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("controlPoint"))
-									((NurbsPositionInterpolatorObject)elementObject).setControlPoint ((ProtoInstanceObject) childX3dElement);
+									((NurbsPositionInterpolator)elementObject).setControlPoint ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("NurbsOrientationInterpolator") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble")) && containerField.equals("controlPoint"))
-									((NurbsOrientationInterpolatorObject)elementObject).setControlPoint ((X3DCoordinateNode) childX3dElement);
+									((NurbsOrientationInterpolator)elementObject).setControlPoint ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("NurbsOrientationInterpolator") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("controlPoint"))
-									((NurbsOrientationInterpolatorObject)elementObject).setControlPoint ((ProtoInstanceObject) childX3dElement);
+									((NurbsOrientationInterpolator)elementObject).setControlPoint ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("NurbsSurfaceInterpolator") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble")) && containerField.equals("controlPoint"))
-									((NurbsSurfaceInterpolatorObject)elementObject).setControlPoint ((X3DCoordinateNode) childX3dElement);
+									((NurbsSurfaceInterpolator)elementObject).setControlPoint ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("NurbsSurfaceInterpolator") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("controlPoint"))
-									((NurbsSurfaceInterpolatorObject)elementObject).setControlPoint ((ProtoInstanceObject) childX3dElement);
+									((NurbsSurfaceInterpolator)elementObject).setControlPoint ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("NurbsPatchSurface") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble")) && containerField.equals("controlPoint"))
-									((NurbsPatchSurfaceObject)elementObject).setControlPoint ((X3DCoordinateNode) childX3dElement);
+									((NurbsPatchSurface)elementObject).setControlPoint ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("NurbsPatchSurface") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("controlPoint"))
-									((NurbsPatchSurfaceObject)elementObject).setControlPoint ((ProtoInstanceObject) childX3dElement);
+									((NurbsPatchSurface)elementObject).setControlPoint ((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("NurbsTrimmedSurface") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble")) && containerField.equals("controlPoint"))
-									((NurbsTrimmedSurfaceObject)elementObject).setControlPoint ((X3DCoordinateNode) childX3dElement);
+									((NurbsTrimmedSurface)elementObject).setControlPoint ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("NurbsTrimmedSurface") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("controlPoint"))
-									((NurbsTrimmedSurfaceObject)elementObject).setControlPoint ((ProtoInstanceObject) childX3dElement);
+									((NurbsTrimmedSurface)elementObject).setControlPoint ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("IndexedLineSet") && childElementName.startsWith("Color") && (containerField.equals("color") || containerField.isEmpty()))
-									((IndexedLineSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
+									((IndexedLineSet)elementObject).setColor ((X3DColorNode) childX3dElement);
 							else if (nodeName.equals("IndexedLineSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((IndexedLineSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
+									((IndexedLineSet)elementObject).setColor ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("LineSet") && childElementName.startsWith("Color") && (containerField.equals("color") || containerField.isEmpty()))
-									((LineSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
+									((LineSet)elementObject).setColor ((X3DColorNode) childX3dElement);
 							else if (nodeName.equals("LineSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((LineSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
+									((LineSet)elementObject).setColor ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("PointSet") && childElementName.startsWith("Color") && (containerField.equals("color") || containerField.isEmpty()))
-									((PointSetObject)elementObject).setColor ((X3DColorNode) childX3dElement);
+									((PointSet)elementObject).setColor ((X3DColorNode) childX3dElement);
 							else if (nodeName.equals("PointSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((PointSetObject)elementObject).setColor ((ProtoInstanceObject) childX3dElement);
+									((PointSet)elementObject).setColor ((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("MultiTextureCoordinate") && childElementName.contains("TextureCoordinate") && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((MultiTextureCoordinateObject)elementObject).addTexCoord ((X3DTextureCoordinateNode) childX3dElement);
+									((MultiTextureCoordinate)elementObject).addTexCoord ((X3DTextureCoordinateNode) childX3dElement);
 							else if (nodeName.equals("MultiTextureCoordinate") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((MultiTextureCoordinateObject)elementObject).addTexCoord ((ProtoInstanceObject) childX3dElement);
+									((MultiTextureCoordinate)elementObject).addTexCoord ((ProtoInstance) childX3dElement);
 
-							// X3DComposedGeometryNode for IndexedFaceSet, TriangleSet, QuadSet etc. No abstract methods for ProtoInstanceObjects since this is in SAI.
+							// X3DComposedGeometryNode for IndexedFaceSet, TriangleSet, QuadSet etc. No abstract methods for ProtoInstances since this is in SAI.
 							// Note this block must follow (Indexed)LineSet, PointSet and MultiTextureCoordinate tests.
 							// Note that FogCoordinate and TextureCoordinate tests must precede Texture and Coordinate tests.
 							else if (nodeName.endsWith("Set") && childElementName.contains("FogCoordinate") && (containerField.equals("fogCoord") || containerField.isEmpty()))
-									((X3DComposedGeometryNode)elementObject).setFogCoord((FogCoordinateObject) childX3dElement);
+									((X3DComposedGeometryNode)elementObject).setFogCoord((FogCoordinate) childX3dElement);
 							else if (nodeName.equals("IndexedFaceSet") && (protoInstanceNodeType.contains("FogCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
-									((IndexedFaceSetObject)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedFaceSet)elementObject).setFogCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedQuadSet") && (protoInstanceNodeType.contains("FogCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
-									((IndexedQuadSetObject)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedQuadSet)elementObject).setFogCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleSet") && (protoInstanceNodeType.contains("FogCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
-									((IndexedTriangleSetObject)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleSet)elementObject).setFogCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleFanSet") && (protoInstanceNodeType.contains("FogCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
-									((IndexedTriangleFanSetObject)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleFanSet)elementObject).setFogCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleStripSet") && (protoInstanceNodeType.contains("FogCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
-									((IndexedTriangleStripSetObject)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleStripSet)elementObject).setFogCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("QuadSet") && (protoInstanceNodeType.contains("FogCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
-									((QuadSetObject)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+									((QuadSet)elementObject).setFogCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleSet") && (protoInstanceNodeType.contains("FogCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
-									((TriangleSetObject)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+									((TriangleSet)elementObject).setFogCoord((ProtoInstance) childX3dElement);
 								else if (nodeName.equals("TriangleFanSet") && (protoInstanceNodeType.contains("FogCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
-									((TriangleFanSetObject)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+									((TriangleFanSet)elementObject).setFogCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.contains("FogCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fogCoord") || containerField.isEmpty()))
-									((TriangleStripSetObject)elementObject).setFogCoord((ProtoInstanceObject) childX3dElement);
+									((TriangleStripSet)elementObject).setFogCoord((ProtoInstance) childX3dElement);
 							
 							else if ((nodeName.endsWith("Set") || nodeName.endsWith("Surface")) && childElementName.contains("TextureCoordinate") && (containerField.equals("texCoord") || containerField.isEmpty()))
 									((X3DComposedGeometryNode)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
 							else if (nodeName.equals("IndexedFaceSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((IndexedFaceSetObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedFaceSet)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedQuadSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((IndexedQuadSetObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedQuadSet)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((IndexedTriangleSetObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleSet)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleFanSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((IndexedTriangleFanSetObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleFanSet)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleStripSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((IndexedTriangleStripSetObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleStripSet)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("QuadSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((QuadSetObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((QuadSet)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((TriangleSetObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((TriangleSet)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleFanSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((TriangleFanSetObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((TriangleFanSet)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((TriangleStripSetObject)elementObject).setTexCoord((ProtoInstanceObject) childX3dElement);
+									((TriangleStripSet)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 														
 							else if (nodeName.endsWith("Set") && childElementName.startsWith("Color") && (containerField.equals("color") || containerField.isEmpty()))
 									((X3DComposedGeometryNode)elementObject).setColor((X3DColorNode) childX3dElement);
 							else if (nodeName.equals("IndexedFaceSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((IndexedFaceSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((IndexedFaceSet)elementObject).setColor((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedQuadSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((IndexedQuadSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((IndexedQuadSet)elementObject).setColor((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((IndexedTriangleSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleSet)elementObject).setColor((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleFanSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((IndexedTriangleFanSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleFanSet)elementObject).setColor((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleStripSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((IndexedTriangleStripSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleStripSet)elementObject).setColor((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("QuadSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((QuadSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((QuadSet)elementObject).setColor((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((TriangleSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((TriangleSet)elementObject).setColor((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleFanSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((TriangleFanSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((TriangleFanSet)elementObject).setColor((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.startsWith("Color") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("color") || containerField.isEmpty()))
-									((TriangleStripSetObject)elementObject).setColor((ProtoInstanceObject) childX3dElement);
+									((TriangleStripSet)elementObject).setColor((ProtoInstance) childX3dElement);
 							
 							else if (nodeName.endsWith("Set") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble") || childElementName.equals("GeoCoordinate")) && (containerField.equals("coord") || containerField.isEmpty()))
 									((X3DComposedGeometryNode)elementObject).setCoord((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("IndexedFaceSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((IndexedFaceSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedFaceSet)elementObject).setCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedQuadSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((IndexedQuadSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedQuadSet)elementObject).setCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((IndexedTriangleSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleSet)elementObject).setCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleFanSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((IndexedTriangleFanSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleFanSet)elementObject).setCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleStripSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((IndexedTriangleStripSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleStripSet)elementObject).setCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("QuadSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((QuadSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+									((QuadSet)elementObject).setCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((TriangleSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+									((TriangleSet)elementObject).setCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleFanSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((TriangleFanSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+									((TriangleFanSet)elementObject).setCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleStripSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
-									((TriangleStripSetObject)elementObject).setCoord((ProtoInstanceObject) childX3dElement);
+									((TriangleStripSet)elementObject).setCoord((ProtoInstance) childX3dElement);
 							
 							else if (nodeName.endsWith("Set") && childElementName.equals("Normal") && containerField.equals("normal"))
-									((X3DComposedGeometryNode)elementObject).setNormal((NormalObject) childX3dElement);
+									((X3DComposedGeometryNode)elementObject).setNormal((Normal) childX3dElement);
 							else if (nodeName.equals("IndexedFaceSet") && (protoInstanceNodeType.contains("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("normal") || containerField.isEmpty()))
-									((IndexedFaceSetObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((IndexedFaceSet)elementObject).setNormal((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedQuadSet") && (protoInstanceNodeType.contains("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("normal") || containerField.isEmpty()))
-									((IndexedQuadSetObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((IndexedQuadSet)elementObject).setNormal((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleSet") && (protoInstanceNodeType.contains("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("normal") || containerField.isEmpty()))
-									((IndexedTriangleSetObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleSet)elementObject).setNormal((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleFanSet") && (protoInstanceNodeType.contains("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("normal") || containerField.isEmpty()))
-									((IndexedTriangleFanSetObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleFanSet)elementObject).setNormal((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedTriangleStripSet") && (protoInstanceNodeType.contains("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("normal") || containerField.isEmpty()))
-									((IndexedTriangleStripSetObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((IndexedTriangleStripSet)elementObject).setNormal((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("QuadSet") && (protoInstanceNodeType.contains("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("normal") || containerField.isEmpty()))
-									((QuadSetObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((QuadSet)elementObject).setNormal((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleSet") && (protoInstanceNodeType.contains("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("normal") || containerField.isEmpty()))
-									((TriangleSetObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((TriangleSet)elementObject).setNormal((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleFanSet") && (protoInstanceNodeType.contains("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("normal") || containerField.isEmpty()))
-									((TriangleFanSetObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((TriangleFanSet)elementObject).setNormal((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.contains("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("normal") || containerField.isEmpty()) || containerField.isEmpty()))
-									((TriangleStripSetObject)elementObject).setNormal((ProtoInstanceObject) childX3dElement);
+									((TriangleStripSet)elementObject).setNormal((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("StaticGroup") && (containerField.equals("children") || containerField.isEmpty()))
-									((StaticGroupObject)elementObject).addChild((X3DChildNode) childX3dElement);
+									((StaticGroup)elementObject).addChild((X3DChildNode) childX3dElement);
                             // TODO fix for prototype:
 							else if (nodeName.equals("StaticGroup") && (containerField.equals("children") || containerField.isEmpty()))
-									((StaticGroupObject)elementObject).addChild((ProtoInstanceObject) childX3dElement);
+									((StaticGroup)elementObject).addChild((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("ViewpointGroup") && childElementName.contains("Viewpoint") && (containerField.equals("children") || containerField.isEmpty()))
-									((ViewpointGroupObject)elementObject).addChild((X3DNode) childX3dElement);
+									((ViewpointGroup)elementObject).addChild((X3DNode) childX3dElement);
 							else if (nodeName.equals("ViewpointGroup") && (protoInstanceNodeType.equals("Viewpoint") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("children") || containerField.isEmpty()))
-									((ViewpointGroupObject)elementObject).addChild((ProtoInstanceObject) childX3dElement);
+									((ViewpointGroup)elementObject).addChild((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("Text") && childElementName.equals("FontStyle") && (containerField.equals("fontStyle") || containerField.isEmpty()))
-									((TextObject)elementObject).setFontStyle ((X3DFontStyleNode) childX3dElement);
+									((Text)elementObject).setFontStyle ((X3DFontStyleNode) childX3dElement);
 							else if (nodeName.equals("Text") && (protoInstanceNodeType.equals("FontStyle") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fontStyle") || containerField.isEmpty()))
-									((TextObject)elementObject).setFontStyle ((ProtoInstanceObject) childX3dElement);
+									((Text)elementObject).setFontStyle ((ProtoInstance) childX3dElement);
 					
 							else if (nodeName.equals("MultiTexture") && childElementName.contains("Texture") && (containerField.equals("texture") || containerField.isEmpty()))
-									((MultiTextureObject)elementObject).addTexture((X3DTextureNode) childX3dElement);
+									((MultiTexture)elementObject).addTexture((X3DTextureNode) childX3dElement);
 							else if (nodeName.equals("MultiTexture") && (protoInstanceNodeType.contains("Texture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texture") || containerField.isEmpty()))
-									((MultiTextureObject)elementObject).addTexture((ProtoInstanceObject) childX3dElement);
+									((MultiTexture)elementObject).addTexture((ProtoInstance) childX3dElement);
 
 							// no prototype for IS or connect
 							else if (childElementName.equals("IS"))
-									((X3DConcreteNode)elementObject).setIS ((ISObject) childX3dElement);
+									((X3DConcreteNode)elementObject).setIS ((IS) childX3dElement);
 							else if (nodeName.equals("IS") && childElementName.equals("connect"))
-									((ISObject)elementObject).addConnect ((connectObject) childX3dElement);
+									((IS)elementObject).addConnect ((connect) childX3dElement);
 
 							// TODO more
 					
@@ -35069,7 +35336,7 @@ import org.web3d.x3d.sai.X3DException;
                                     validationResult.append(errorNotice);
                                     System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
                                 }
-                                ((X3DGroupingNode)elementObject).addChildren(new X3DNode[] { (X3DNode) childX3dElement } ); // default fallback can throw exception
+                                ((X3DGroupingNode)elementObject).addChildren(new org.web3d.x3d.sai.Core.X3DNode[] { (X3DNode) childX3dElement } ); // default fallback can throw exception
                             }
 							// making it this far without exception means satisfactory parent-child relationship found
 						}
@@ -35093,15 +35360,15 @@ import org.web3d.x3d.sai.X3DException;
 				// properly handle contained CDATA text after child elements handled
 				if      (nodeName.equals("Script") && !node.getTextContent().trim().isEmpty())
 				{
-					((ScriptObject)elementObject).setSourceCode (node.getTextContent().trim());
+					((Script)elementObject).setSourceCode (node.getTextContent().trim());
 				}
 				else if (nodeName.equals("ShaderProgram") && !node.getTextContent().trim().isEmpty())
 				{
-					(( ShaderProgramObject)elementObject).setSourceCode (node.getTextContent().trim());
+					(( ShaderProgram)elementObject).setSourceCode (node.getTextContent().trim());
 				}
 				else if (nodeName.equals("ShaderPart") && !node.getTextContent().trim().isEmpty())
 				{
-					(( ShaderPartObject)elementObject).setSourceCode (node.getTextContent().trim());
+					(( ShaderPart)elementObject).setSourceCode (node.getTextContent().trim());
 				}
 
 				// handle attributes next, note that DOM includes all attributes (including those with default values)
@@ -35109,10 +35376,10 @@ import org.web3d.x3d.sai.X3DException;
 				org.w3c.dom.NamedNodeMap attributes = node.getAttributes();
 				for (int i = 0; i < attributes.getLength(); i++)
 				{
-					String				    fieldObjectTypePrefix;
-					String				    fieldObjectName = "[uninitializedFieldObjectName]";
-					Class<X3DConcreteField> fieldObjectClass; // TODO <X3DConcreteField> ?
-					X3DConcreteField	    fieldObject;
+					String				    fieldTypePrefix;
+					String				    fieldName = "[uninitializedFieldName]";
+					Class<X3DConcreteField> fieldClass; // TODO <X3DConcreteField> ?
+					X3DConcreteField	    field;
 					Method			 	    fieldSetMethod;
 					String			 	    fieldSetMethodName = "setValueByString";
 
@@ -35170,7 +35437,7 @@ import org.web3d.x3d.sai.X3DException;
 					try // to first create corresponding field object, then invoke set method on parent node object
 					{
 						// first create field object, e.g. org.web3d.x3d.jsail.fields.SFFloatObject
-						if   (attributeType.equals(SFStringObject.NAME))
+						if   (attributeType.equals(SFString.NAME))
 						{
 							// SFString attribute values are easy: set value directly on parent object
 							elementSetMethod  = elementClass.getMethod(elementSetMethodName, ((Class<String>[])new Class[] { String.class }));
@@ -35178,16 +35445,16 @@ import org.web3d.x3d.sai.X3DException;
 						}]]></xsl:text>
 						<!--
 						// not needed: previously problematic case
-						else if   (attributeType.equals(SFVec3fObject.NAME))
+						else if   (attributeType.equals(SFVec3f.NAME))
 						{
 							// directly create object
-							SFVec3fObject sfv3fo = new SFVec3fObject();
+							SFVec3fObject sfv3fo = new SFVec3f();
 							sfv3fo.setValueByString(attributeValue);
-							elementSetMethod  = elementClass.getMethod(elementSetMethodName, new Class[] { SFVec3fObject.class });
+							elementSetMethod  = elementClass.getMethod(elementSetMethodName, new Class[] { SFVec3f.class });
 							elementSetMethod.invoke (elementObject, new Object[] { sfv3fo });
 						}
 						--><xsl:text disable-output-escaping="yes"><![CDATA[
-						else if (attributeType.equals(SFNodeObject.NAME) || attributeType.equals(MFNodeObject.NAME))
+						else if (attributeType.equals(SFNode.NAME) || attributeType.equals(MFNode.NAME))
 						{
 							// TODO logging
 							errorNotice = "*** [X3DLoaderDOM error] Reflection parsing unexpectedly encountered " + attributeType + " type when parsing attribute" + 
@@ -35196,34 +35463,36 @@ import org.web3d.x3d.sai.X3DException;
 							System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
 							continue;
 						}
-						else // other SF* or MF* type: build corresponding fieldObject, then invoke set method on element
+						else // other SF* or MF* type: build corresponding field, then invoke set method on element
 						{
-							fieldObjectTypePrefix = "org.web3d.x3d.jsail.fields.";
-							fieldObjectName       = fieldObjectTypePrefix + attributeType + "Object";
-							fieldObjectClass      = (Class<X3DConcreteField>)Class.forName(fieldObjectName);
+							fieldTypePrefix = "org.web3d.x3d.jsail.fields.";
+							fieldName       = fieldTypePrefix + attributeType; // formerly + "Object"
+							fieldClass      = (Class<X3DConcreteField>)Class.forName(fieldName);
 							// Class.newInstance() creates constructor using no parameters
-							fieldObject           = fieldObjectClass.newInstance(); // default value
-							fieldObject.initialize(); // make sure reset
+                            // https://stackoverflow.com/questions/46393863/what-to-use-instead-of-class-newinstance
+						// 	field           = fieldClass.newInstance(); // default value; deprecated
+                            field           = fieldClass.getDeclaredConstructor().newInstance(); // default value
+							field.initialize(); // make sure reset
 							
-							// Invoke protected fieldObject.setValueByString() to match
-							// fieldObjectClass.getDeclaredMethods(); // debug use; must be Declared for protected visibility
-							fieldSetMethod = fieldObjectClass.getDeclaredMethod(fieldSetMethodName, ((Class<String>[])new Class[] { String.class }));
+							// Invoke protected field.setValueByString() to match
+							// fieldClass.getDeclaredMethods(); // debug use; must be Declared for protected visibility
+							fieldSetMethod = fieldClass.getDeclaredMethod(fieldSetMethodName, ((Class<String>[])new Class[] { String.class }));
 							
 							// https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/AccessibleObject.html
 							if (!Modifier.isPublic(fieldSetMethod.getModifiers()))
 							{
 								// TODO logging
-//								errorNotice = "*** [X3DLoaderDOM error] Java reflection invocation problem, class-protected " + fieldObjectName + "." +
+//								errorNotice = "*** [X3DLoaderDOM error] Java reflection invocation problem, class-protected " + fieldName + "." +
 //									fieldSetMethodName + "(\"" + attributeValue + "\") method not publicly accessible";
 //								validationResult.append(errorNotice).append("\n");
 //								System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
 								// reason for this is not clear, but apparently it is necessary
 								fieldSetMethod.setAccessible(true); // class-protected methods must be made accessible
 							}
-							// set value on org.web3d.x3d.jsail.fields.* fieldObject to reinitialize it
+							// set value on org.web3d.x3d.jsail.fields.* field to reinitialize it
                             try
                             {
-                                fieldSetMethod.invoke (fieldObject, new Object[] { attributeValue });
+                                fieldSetMethod.invoke (field, new Object[] { attributeValue });
 							}
                             catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
                             {
@@ -35232,7 +35501,7 @@ import org.web3d.x3d.sai.X3DException;
                                 if (attributeValue.length() < 1000)
                                      insertionValue = "\"" + attributeValue + "\"";
                                 else insertionValue = "\"" + attributeValue.substring(0,40) + "\" ... [attributeValue length=" + attributeValue.length() + " characters]";
-								errorNotice = "*** [X3DLoaderDOM error] Java reflection invocation problem " + fieldObjectName + "." +
+								errorNotice = "*** [X3DLoaderDOM error] Java reflection invocation problem for fieldName=" + fieldName + "." +
 									fieldSetMethodName + "(" + insertionValue + ") method throws exception";
 								if (e.getMessage() != null)
 									errorNotice += " " + e.getMessage();
@@ -35248,15 +35517,15 @@ import org.web3d.x3d.sai.X3DException;
                                          e.printStackTrace();
 								}
                             }
-							elementSetMethod  = elementClass.getMethod(elementSetMethodName, ((Class<fieldObject>[])new Class[] { fieldObjectClass }));
-							elementSetMethod.invoke (elementObject, new Object[] { fieldObject });
+							elementSetMethod  = elementClass.getMethod(elementSetMethodName, ((Class<field>[])new Class[] { fieldClass }));
+							elementSetMethod.invoke (elementObject, new Object[] { field });
 							// element now has correct attribute value set  8)
 						}
 					}
 					catch (ClassNotFoundException cnfe)
 					{
 						// TODO logging
-						errorNotice = "*** [X3DLoaderDOM error] Reflection invocation: fully qualified object package not found," +
+						errorNotice = "*** [X3DLoaderDOM error] Reflection invocation: fully qualified object package not found for fieldName=" + fieldName + "," +
                                                     "\n   " + cnfe + " " + cnfe.getMessage();
 						if ((cnfe.getCause()!= null) && !cnfe.getCause().getMessage().isEmpty())
                                                     errorNotice += "\n   " + cnfe.getCause();
@@ -35268,7 +35537,7 @@ import org.web3d.x3d.sai.X3DException;
 					catch (IllegalAccessException iae)
 					{
 						// TODO logging
-						errorNotice = "*** [X3DLoaderDOM error] Reflection invocation visibility of no-parameter constructor inaccessible," +
+						errorNotice = "*** [X3DLoaderDOM error] Reflection invocation visibility of no-parameter constructor inaccessible for fieldName=" + fieldName + "," +
                                                     "\n   " + iae + " " + iae.getMessage();
 						if ((iae.getCause()!= null) && !iae.getCause().getMessage().isEmpty())
                                                     errorNotice += "\n   " + iae.getCause();
@@ -35280,7 +35549,7 @@ import org.web3d.x3d.sai.X3DException;
 					catch (InstantiationException ie)
 					{
 						// TODO logging
-						errorNotice = "*** [X3DLoaderDOM error] Reflection invocation failure occurred inside constructor," +
+						errorNotice = "*** [X3DLoaderDOM error] Reflection invocation failure occurred inside constructor for fieldName=" + fieldName + "," +
                                                     "\n   " + ie + " " + ie.getMessage();
 						if ((ie.getCause()!= null) && !ie.getCause().getMessage().isEmpty())
                                                     errorNotice += "\n   " + ie.getCause();
@@ -35293,7 +35562,7 @@ import org.web3d.x3d.sai.X3DException;
 					{
 						// TODO logging
 						errorNotice = "*** [X3DLoaderDOM error] Reflection invocation of " + nodeName + "." + elementSetMethodName + "(" + 
-													fieldObjectName + "()." + fieldSetMethodName + "(\"" + attributeValue + "\")) failed (likely due to illegal value)," +
+													fieldName + "()." + fieldSetMethodName + "(\"" + attributeValue + "\")) failed (likely due to illegal value)," +
                                                     "\n   " + ite + " " + ite.getMessage();
 						if ((ite.getCause()!= null))
 						{
@@ -35311,13 +35580,25 @@ import org.web3d.x3d.sai.X3DException;
 					catch (NoSuchMethodException nsme)
 					{
 						// TODO logging
-						errorNotice = "*** [X3DLoaderDOM error] Reflection invocation incorrectly constructed set method name," +
+						errorNotice = "*** [X3DLoaderDOM error] Reflection invocation incorrectly constructed set method name for fieldName=" + fieldName + "," +
                                                     "\n   " + nsme + " " + nsme.getMessage();
 						if ((nsme.getCause()!= null) && !nsme.getCause().getMessage().isEmpty())
                                                     errorNotice += "\n   " + nsme.getCause();
 						validationResult.append(errorNotice).append("\n");
 						System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
 						nsme.printStackTrace();
+						return null; // draconian parse
+					}
+					catch (Exception e)
+					{
+						// TODO logging
+						errorNotice = "*** [X3DLoaderDOM error] Reflection invocation incorrectly constructed set method name for fieldName=" + fieldName + "," +
+                                                    "\n   " + e + " " + e.getMessage();
+						if ((e.getCause()!= null) && !e.getCause().getMessage().isEmpty())
+                                                    errorNotice += "\n   " + e.getCause();
+						validationResult.append(errorNotice).append("\n");
+						System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
+						e.printStackTrace();
 						return null; // draconian parse
 					}
 				}	// continue for each attribute until all are set
@@ -35365,14 +35646,14 @@ import org.web3d.x3d.sai.X3DException;
 //		for (org.w3c.dom.Nodechild = node.getFirstChild(); child != null; child = child.getNextSibling())
 //		{
 //			// recurse on children having elementObject as parent
-//			toX3dObjectTree(child, elementObject);
+//			toX3dModelInstance(child, elementObject);
 //		}
 //		if (elementObject != null) // trace
 //		{
 //			holdCopyElementObject = elementObject; // remember elementObject, trying to keep from falling out of scope
 //			System.out.print ("**************************************************\n" + holdCopyElementObject.toStringX3D()); // debug
 //		}
-		return elementObject; // TODO confirm complete
+		return elementObject; // complete
 	}
 
 	/** TODO javadoc */
@@ -35396,21 +35677,21 @@ import org.web3d.x3d.sai.X3DException;
 						  ": " + spe.getMessage();
 			return info;
 		}
-		@Override
+		/* @Override */
 		public void warning(SAXParseException spe) throws SAXException
 		{
 			String message = "Warning: " + getParseExceptionInfo(spe);
 //			validationResult.append(message).append("\n");
 			out.println(message);
 		}
-		@Override
+		/* @Override */
 		public void error(SAXParseException spe) throws SAXException
 		{
 			String message = "Error: " + getParseExceptionInfo(spe);
 //			validationResult.append(message).append("\n");
 			throw new SAXException(message);
 		}
-		@Override
+		/* @Override */
 		public void fatalError(SAXParseException spe) throws SAXException
 		{
 			String message = "Fatal Error: " + getParseExceptionInfo(spe);
@@ -35458,7 +35739,7 @@ import org.web3d.x3d.sai.X3DException;
 	 */
 	public X3DConcreteElement getX3dObjectTree()
 	{
-		return loadedX3dObjectTree;
+		return loadedX3dModelInstance;
 	}
 
 	/**
@@ -35467,7 +35748,7 @@ import org.web3d.x3d.sai.X3DException;
 	 */
 	public boolean isLoadSuccessful()
 	{
-		return loadSuccess && (loadedX3dObjectTree != null);
+		return loadSuccess && (loadedX3dModelInstance != null);
 	}
 
 	/**
@@ -35697,7 +35978,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
     /** Default main() method provided for test and debugging purposes, invoking run() method.
      * @param args the command line arguments
      * @see #run(String[])
-     * @see X3DObject#handleArguments(String[])
+     * @see X3D#handleArguments(String[])
      */
     public static void main(String[] args)
     {
@@ -35719,7 +36000,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
      * @param args the command line arguments
      * @see #main(String[])
      * @see ConfigurationProperties
-     * @see X3DObject#handleArguments(String[])
+     * @see X3D#handleArguments(String[])
      */
     public static void run(String[] args)
     {
@@ -35847,7 +36128,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 //				{
 //                    initializeConfigurationSwitches();
 //					modelImport = true;
-//                    conversionExtension = X3DObject.FILE_EXTENSION_X3D; // default
+//                    conversionExtension = X3D.FILE_EXTENSION_X3D; // default
 //					System.out.println ("BlenderLauncher parameter: \"" + args[i] + "\" for model export");
 //				}
                 // ==========================================
@@ -35893,8 +36174,8 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
     if (!sourceFileName.isEmpty() && resultFileName.isEmpty())
     {
         if  (createImageSnapshot)
-             conversionExtension = X3DObject.FILE_EXTENSION_PNG;
-        else conversionExtension = X3DObject.FILE_EXTENSION_X3D;
+             conversionExtension = X3D.FILE_EXTENSION_PNG;
+        else conversionExtension = X3D.FILE_EXTENSION_X3D;
 
         resultFileName      = sourceFileNameRoot + conversionExtension;
         resultFileNameRoot  = sourceFileNameRoot;
@@ -36203,7 +36484,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
      * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html" target="_blank">Blender Manual: Command Line</a>
      * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/arguments.html" target="_blank">Blender Manual: Command Line Arguments</a>
      */
-    public static MetadataSetObject getBlenderAnalyticsX3dMetadataSet (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelOfInterest)
+    public static MetadataSet getBlenderAnalyticsX3dMetadataSet (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelOfInterest)
     {
             return null;
     }
@@ -36268,8 +36549,8 @@ import java.net.*;
 import java.nio.file.*;
 import java.text.DecimalFormat;
 import java.util.*;
-import org.web3d.x3d.jsail.Core.X3DObject;
-import org.web3d.x3d.jsail.Core.MetadataSetObject;
+import org.web3d.x3d.jsail.Core.X3D;
+import org.web3d.x3d.jsail.Core.MetadataSet;
 import org.web3d.x3d.sai.InvalidDocumentException;
 import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
 		<xsl:with-param name="inConcretePackage"><xsl:text>true</xsl:text></xsl:with-param>
@@ -36717,7 +36998,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
      */
-    public static MetadataSetObject getMeshLabAnalyticsX3dMetadataSet (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelOfInterest)
+    public static MetadataSet getMeshLabAnalyticsX3dMetadataSet (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelOfInterest)
     {
         return null;
     }
@@ -37193,7 +37474,7 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 	 * @param newComment initial value, with no comment delimiters needed
 	 * @return {@link CommentsBlock} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	@Override
+	/* @Override */
 	public CommentsBlock addComments(String newComment)
 	{
 		commentsList.add(newComment);
@@ -37205,7 +37486,7 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 	 * @param newComments array of comments, with no comment delimiters needed
 	 * @return {@link CommentsBlock} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	@Override
+	/* @Override */
 	public CommentsBlock addComments(String[] newComments)
 	{
 		commentsList.addAll(Arrays.asList(newComments));
@@ -37228,7 +37509,7 @@ import org.web3d.x3d.jsail.*;</xsl:text>
 	 * @param newCommentsBlock block of comments to add, with no comment delimiters needed
 	 * @return {@link CommentsBlock} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	@Override
+	/* @Override */
 	public CommentsBlock addComments(CommentsBlock newCommentsBlock)
 	{
 		commentsList.addAll(Arrays.asList(newCommentsBlock.toStrings()));
@@ -37305,7 +37586,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
                 
-import org.web3d.x3d.jsail.Core.X3DObject;</xsl:text>
+import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 		</xsl:with-param>
 		<xsl:with-param name="visibility"><xsl:text>public final</xsl:text></xsl:with-param>
 		<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
@@ -37434,7 +37715,7 @@ import org.web3d.x3d.jsail.Core.X3DObject;</xsl:text>
 			<xsl:with-param name="x3dAbstractSpecificationRelativeUrl"><xsl:text></xsl:text></xsl:with-param>
 			<xsl:with-param name="implementationBlock">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
-	@Override
+	
 	public void readableFieldChanged(X3DFieldEvent event)
 	{
 		// TODO;
@@ -37507,7 +37788,23 @@ import org.web3d.x3d.jsail.Core.X3DObject;</xsl:text>
 			<xsl:text>  int i = 0;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 			<xsl:text>  for (</xsl:text>
-			<xsl:value-of select="$javaReferenceType"/>
+            <xsl:variable name="saiPackagePath"> 
+                <xsl:call-template name="saiPackage">
+                    <xsl:with-param name="nodeType" select="$javaReferenceType"/>
+                </xsl:call-template>
+            </xsl:variable>
+            <xsl:choose>
+                <xsl:when test="(string-length($saiPackagePath) > 0)">
+                    <xsl:text>/* here 12a */</xsl:text>
+                    <xsl:value-of select="$saiPackagePath"/>
+                    <xsl:text>.</xsl:text>
+                    <xsl:value-of select="$javaReferenceType"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>/* here 12b, saiPackage not found */</xsl:text>
+                    <xsl:value-of select="$javaReferenceType"/>
+                </xsl:otherwise>
+            </xsl:choose>
 			<xsl:text> arrayElement : </xsl:text>
 			<xsl:value-of select="$newValue"/>
 			<xsl:text>) {</xsl:text>
@@ -38102,7 +38399,7 @@ import org.web3d.x3d.jsail.Core.X3DObject;</xsl:text>
 					<xsl:if test="$isEnumerationType">
 						<xsl:text>		</xsl:text>
 						<xsl:value-of select="$newValue"/>
-						<xsl:text> = MFStringObject.cleanupUnescapedEnclosingQuotes(</xsl:text>
+						<xsl:text> = MFString.cleanupUnescapedEnclosingQuotes(</xsl:text>
 						<xsl:value-of select="$newValue"/>
 						<xsl:text>); // handle potential enumeration value</xsl:text>
 					</xsl:if>
@@ -38401,7 +38698,7 @@ import org.web3d.x3d.jsail.Core.X3DObject;</xsl:text>
 				<!-- attribute is not #REQUIRED and so can be empty -->
 				<xsl:text disable-output-escaping="yes"><![CDATA[!newValue.isEmpty() && ]]></xsl:text>
 			</xsl:if>
-			<xsl:text>!org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))</xsl:text>
+			<xsl:text>!org.web3d.x3d.jsail.fields.SFString.isNMTOKEN(newValue))</xsl:text>
 				<xsl:text>&#10;</xsl:text>
 			<xsl:text>		{</xsl:text>
 			<xsl:text>&#10;</xsl:text>
@@ -38450,7 +38747,7 @@ import org.web3d.x3d.jsail.Core.X3DObject;</xsl:text>
                     <!-- H-Anim enumeration is poorly named, deserves specification change -->
                     <xsl:text disable-output-escaping="yes"><![CDATA[!newValue.equals(NAME_H_ANIM) && ]]></xsl:text>
                 </xsl:if>
-                <xsl:text>!org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dInteroperabilityNamingConventions(newValue))</xsl:text>
+                <xsl:text>!org.web3d.x3d.jsail.fields.SFString.meetsX3dInteroperabilityNamingConventions(newValue))</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>		{</xsl:text>
                 <xsl:text>&#10;</xsl:text>
@@ -38507,7 +38804,7 @@ import org.web3d.x3d.jsail.Core.X3DObject;</xsl:text>
 				<!-- attribute is not #REQUIRED and so can be empty -->
 				<xsl:text disable-output-escaping="yes"><![CDATA[!newValue.isEmpty() && ]]></xsl:text>
 			</xsl:if>
-				<xsl:text>!org.web3d.x3d.jsail.fields.SFStringObject.isNMTOKEN(newValue))
+				<xsl:text>!org.web3d.x3d.jsail.fields.SFString.isNMTOKEN(newValue))
 		{
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("</xsl:text>
 			<xsl:value-of select="ancestor::*[string-length(@name) > 0]/@name"/>
@@ -38525,7 +38822,7 @@ import org.web3d.x3d.jsail.Core.X3DObject;</xsl:text>
 				<!-- attribute is not #REQUIRED and so can be empty -->
 				<xsl:text disable-output-escaping="yes"><![CDATA[!newValue.isEmpty() && ]]></xsl:text>
 			</xsl:if>
-				<xsl:text>!org.web3d.x3d.jsail.fields.SFStringObject.meetsX3dInteroperabilityNamingConventions(newValue))
+				<xsl:text>!org.web3d.x3d.jsail.fields.SFString.meetsX3dInteroperabilityNamingConventions(newValue))
 		{
 			System.out.println ("Warning: ";
 			throw new org.web3d.x3d.sai.InvalidFieldValueException("</xsl:text>

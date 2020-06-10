@@ -74,35 +74,35 @@ public class forcenode
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John W Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("December 13 2015"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("forcenode.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("beginnings of a force directed graph in 3D"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
-  .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject("node").setName("node")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("position").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new GroupObject()
-          .addChild(new TransformObject("transform")
-            .setIS(new ISObject()
-              .addConnect(new connectObject().setNodeField("translation").setProtoField("position")))
-            .addChild(new ShapeObject()
-              .setGeometry(new SphereObject())
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(1.0f,0.0f,0.0f))))
-            .addChild(new TransformObject().setTranslation(1.0f,0.0f,1.0f)
-              .addChild(new ShapeObject()
-                .setGeometry(new TextObject().setString(new String[] {"Node"})
-                  .setFontStyle(new FontStyleObject().setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE).setSize(5f)))
-                .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.0f,1.0f))))))
-          .addChild(new PositionInterpolatorObject("NodePosition").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})))
-          .addChild(new ScriptObject("MoveBall").setSourceCode("\n" + 
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John W Carlson"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("December 13 2015"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("forcenode.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/force.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("beginnings of a force directed graph in 3D"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+  .setScene(new Scene()
+    .addChild(new ProtoDeclare("node").setName("node")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("position").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Group()
+          .addChild(new Transform("transform")
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("translation").setProtoField("position")))
+            .addChild(new Shape()
+              .setGeometry(new Sphere())
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setDiffuseColor(1.0f,0.0f,0.0f))))
+            .addChild(new Transform().setTranslation(1.0f,0.0f,1.0f)
+              .addChild(new Shape()
+                .setGeometry(new Text().setString(new String[] {"Node"})
+                  .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(5f)))
+                .setAppearance(new Appearance()
+                  .setMaterial(new Material().setDiffuseColor(0.0f,0.0f,1.0f))))))
+          .addChild(new PositionInterpolator("NodePosition").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3f(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})))
+          .addChild(new Script("MoveBall").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "					function set_cycle(value) {" + "\n" + 
@@ -111,26 +111,26 @@ public class forcenode
 "                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "						// Browser.println(translation);" + "\n" + 
 "					}" + "\n")
-            .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(50.0f,50.0f,0.0f)))
-            .addField(new fieldObject().setName("old").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
-            .addField(new fieldObject().setName("set_cycle").setType(fieldObject.TYPE_SFTIME).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setName("keyValue").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)))
-          .addChild(new TimeSensorObject("nodeClock").setCycleInterval(3).setLoop(true))
-          .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
-          .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
-          .addChild(new ROUTEObject().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
-          .addChild(new ROUTEObject().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation")))))
-    .addChild(new ProtoDeclareObject("cylinder").setName("cylinder")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("set_positionA").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-        .addField(new fieldObject().setName("set_positionB").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY)))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new GroupObject()
-          .addChild(new ShapeObject()
-            .setGeometry(new ExtrusionObject("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})).setSpine(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,50.0f,0.0f})))
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(0.0f,1.0f,0.0f))))
-          .addChild(new ScriptObject("MoveCylinder").setSourceCode("\n" + 
+            .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(50.0f,50.0f,0.0f)))
+            .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f)))
+            .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
+            .addField(new field().setName("keyValue").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
+          .addChild(new TimeSensor("nodeClock").setCycleInterval(3).setLoop(true))
+          .addChild(new ROUTE().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
+          .addChild(new ROUTE().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
+          .addChild(new ROUTE().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
+          .addChild(new ROUTE().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation")))))
+    .addChild(new ProtoDeclare("cylinder").setName("cylinder")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("set_positionA").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
+        .addField(new field().setName("set_positionB").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY)))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Group()
+          .addChild(new Shape()
+            .setGeometry(new Extrusion("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2f(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})).setSpine(new MFVec3f(new float[] {0.0f,-50.0f,0.0f,0.0f,50.0f,0.0f})))
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(0.0f,1.0f,0.0f))))
+          .addChild(new Script("MoveCylinder").setSourceCode("\n" + 
 "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -153,33 +153,33 @@ public class forcenode
 "                function set_spine(value) {" + "\n" + 
 "                    spine = value;" + "\n" + 
 "                }" + "\n")
-            .addField(new fieldObject().setName("spine").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3fObject(new MFVec3fObject(new float[] {0.0f,-50.0f,0.0f,0.0f,50.0f,0.0f}))))
-            .addField(new fieldObject().setName("set_endA").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .addField(new fieldObject().setName("set_endB").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-            .setIS(new ISObject()
-              .addConnect(new connectObject().setNodeField("set_endA").setProtoField("set_positionA"))
-              .addConnect(new connectObject().setNodeField("set_endB").setProtoField("set_positionB"))))
-          .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine")))))
-    .addChild(new TransformObject("HoldsContent").setScale(0.1f,0.1f,0.1f)
-      .addChild(new PlaneSensorObject("clickGenerator").setDescription("click on background to add nodes, click on nodes to add links").setMaxPosition(50.0f,50.0f).setMinPosition(-50.0f,-50.0f))
-      .addChild(new ProtoInstanceObject("node", "nodeA")
-        .addFieldValue(new fieldValueObject().setName("position").setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-      .addChild(new ProtoInstanceObject("node", "nodeB")
-        .addFieldValue(new fieldValueObject().setName("position").setValue(new SFVec3fObject(50.0f,50.0f,50.0f))))
-      .addChild(new ProtoInstanceObject("node", "nodeC")
-        .addFieldValue(new fieldValueObject().setName("position").setValue(new SFVec3fObject(-50.0f,-50.0f,-50.0f))))
-      .addChild(new ProtoInstanceObject("node", "nodeD")
-        .addFieldValue(new fieldValueObject().setName("position").setValue(new SFVec3fObject(50.0f,50.0f,-50.0f))))
-      .addChild(new ProtoInstanceObject("cylinder", "linkA")
-        .addFieldValue(new fieldValueObject().setName("set_positionA").setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
-        .addFieldValue(new fieldValueObject().setName("set_positionB").setValue(new SFVec3fObject(50.0f,50.0f,50.0f))))
-      .addChild(new ProtoInstanceObject("cylinder", "linkB")
-        .addFieldValue(new fieldValueObject().setName("set_positionA").setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
-        .addFieldValue(new fieldValueObject().setName("set_positionB").setValue(new SFVec3fObject(-50.0f,-50.0f,-50.0f))))
-      .addChild(new ProtoInstanceObject("cylinder", "linkC")
-        .addFieldValue(new fieldValueObject().setName("set_positionA").setValue(new SFVec3fObject(50.0f,50.0f,50.0f)))
-        .addFieldValue(new fieldValueObject().setName("set_positionB").setValue(new SFVec3fObject(50.0f,50.0f,-50.0f)))))
-    .addChild(new ScriptObject("clickHandler").setSourceCode("\n" + 
+            .addField(new field().setName("spine").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3f(new MFVec3f(new float[] {0.0f,-50.0f,0.0f,0.0f,50.0f,0.0f}))))
+            .addField(new field().setName("set_endA").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
+            .addField(new field().setName("set_endB").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
+            .setIS(new IS()
+              .addConnect(new connect().setNodeField("set_endA").setProtoField("set_positionA"))
+              .addConnect(new connect().setNodeField("set_endB").setProtoField("set_positionB"))))
+          .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine")))))
+    .addChild(new Transform("HoldsContent").setScale(0.1f,0.1f,0.1f)
+      .addChild(new PlaneSensor("clickGenerator").setDescription("click on background to add nodes, click on nodes to add links").setMaxPosition(50.0f,50.0f).setMinPosition(-50.0f,-50.0f))
+      .addChild(new ProtoInstance("node", "nodeA")
+        .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+      .addChild(new ProtoInstance("node", "nodeB")
+        .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(50.0f,50.0f,50.0f))))
+      .addChild(new ProtoInstance("node", "nodeC")
+        .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(-50.0f,-50.0f,-50.0f))))
+      .addChild(new ProtoInstance("node", "nodeD")
+        .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(50.0f,50.0f,-50.0f))))
+      .addChild(new ProtoInstance("cylinder", "linkA")
+        .addFieldValue(new fieldValue().setName("set_positionA").setValue(new SFVec3f(0.0f,0.0f,0.0f)))
+        .addFieldValue(new fieldValue().setName("set_positionB").setValue(new SFVec3f(50.0f,50.0f,50.0f))))
+      .addChild(new ProtoInstance("cylinder", "linkB")
+        .addFieldValue(new fieldValue().setName("set_positionA").setValue(new SFVec3f(0.0f,0.0f,0.0f)))
+        .addFieldValue(new fieldValue().setName("set_positionB").setValue(new SFVec3f(-50.0f,-50.0f,-50.0f))))
+      .addChild(new ProtoInstance("cylinder", "linkC")
+        .addFieldValue(new fieldValue().setName("set_positionA").setValue(new SFVec3f(50.0f,50.0f,50.0f)))
+        .addFieldValue(new fieldValue().setName("set_positionB").setValue(new SFVec3f(50.0f,50.0f,-50.0f)))))
+    .addChild(new Script("clickHandler").setSourceCode("\n" + 
 "	" + "\n" + 
 "ecmascript:" + "\n" + 
 "	function add_node(value) {" + "\n" + 
@@ -199,48 +199,48 @@ public class forcenode
 "			});" + "\n" + 
 "                " + "\n" + 
 "        }" + "\n")
-      .addField(new fieldObject().setName("counter").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(0))
-      .addField(new fieldObject().setName("node_changed").setType(fieldObject.TYPE_SFNODE).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-      .addField(new fieldObject().setName("add_node").setType(fieldObject.TYPE_SFBOOL).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue(false))
+      .addField(new field().setName("counter").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
+      .addField(new field().setName("node_changed").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+      .addField(new field().setName("add_node").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY).setValue(false))
       .addComments(new String[] {"",
 "            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">",
 "                <Transform USE=\"HoldsContent\"/>",
 "            </field>"}))
-    .addChild(new ROUTEObject().setFromNode("clickGenerator").setFromField("isActive").setToNode("clickHandler").setToField("add_node"))
-    .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
-    .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB"))
-    .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkB").setToField("set_positionA"))
-    .addChild(new ROUTEObject().setFromNode("nodeC").setFromField("position").setToNode("linkB").setToField("set_positionB"))
-    .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkC").setToField("set_positionA"))
-    .addChild(new ROUTEObject().setFromNode("nodeD").setFromField("position").setToNode("linkC").setToField("set_positionB")));
+    .addChild(new ROUTE().setFromNode("clickGenerator").setFromField("isActive").setToNode("clickHandler").setToField("add_node"))
+    .addChild(new ROUTE().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
+    .addChild(new ROUTE().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB"))
+    .addChild(new ROUTE().setFromNode("nodeA").setFromField("position").setToNode("linkB").setToField("set_positionA"))
+    .addChild(new ROUTE().setFromNode("nodeC").setFromField("position").setToNode("linkB").setToField("set_positionB"))
+    .addChild(new ROUTE().setFromNode("nodeA").setFromField("position").setToNode("linkC").setToField("set_positionA"))
+    .addChild(new ROUTE().setFromNode("nodeD").setFromField("position").setToNode("linkC").setToField("set_positionB")));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return forcenode model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new forcenode().getX3dModel();
+        X3D thisExampleX3dModel = new forcenode().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -255,15 +255,15 @@ public class forcenode
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -273,12 +273,12 @@ public class forcenode
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"forcenode\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"forcenode\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

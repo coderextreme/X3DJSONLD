@@ -36,114 +36,78 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.sai.*;
-import org.web3d.x3d.sai.CADGeometry.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.DIS.*;
-import org.web3d.x3d.sai.EnvironmentalEffects.*;
-import org.web3d.x3d.sai.EnvironmentalSensor.*;
-import org.web3d.x3d.sai.EventUtilities.*;
-import org.web3d.x3d.sai.Followers.*;
-import org.web3d.x3d.sai.Geometry2D.*;
-import org.web3d.x3d.sai.Geometry3D.*;
-import org.web3d.x3d.sai.Geospatial.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Interpolation.*;
-import org.web3d.x3d.sai.KeyDeviceSensor.*;
-import org.web3d.x3d.sai.Layering.*;
-import org.web3d.x3d.sai.Layout.*;
-import org.web3d.x3d.sai.Lighting.*;
-import org.web3d.x3d.sai.NURBS.*;
-import org.web3d.x3d.sai.Navigation.*;
-import org.web3d.x3d.sai.Networking.*;
-import org.web3d.x3d.sai.ParticleSystems.*;
-import org.web3d.x3d.sai.Picking.*;
-import org.web3d.x3d.sai.PointingDeviceSensor.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.RigidBodyPhysics.*;
-import org.web3d.x3d.sai.Scripting.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing3D.*;
-import org.web3d.x3d.sai.Texturing.*;
-import org.web3d.x3d.sai.Time.*;
-import org.web3d.x3d.sai.VolumeRendering.*;
 public class HAnimModelsHandsFeet {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new HAnimModelsHandsFeet().initialize().toFileJSON("../data/HAnimModelsHandsFeet.new.json");
     }
-    public X3DObject initialize() {
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("4.0")
-      .setHead(new headObject()
-        .addComponent(new componentObject().setName("H-Anim").setLevel(1))
-        .addMeta(new metaObject().setName("title").setContent("HAnimModelsHandsFeet.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2"))
-        .addMeta(new metaObject().setName("creator").setContent("YOO Kwan Hee and Don Brutzman"))
-        .addMeta(new metaObject().setName("created").setContent("8 February 2015"))
-        .addMeta(new metaObject().setName("modified").setContent("20 October 2019"))
-        .addMeta(new metaObject().setName("warning").setContent("not yet to scale"))
-        .addMeta(new metaObject().setName("warning").setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
-        .addMeta(new metaObject().setName("Image").setContent("HAnimModelsHandsFeet.png"))
-        .addMeta(new metaObject().setName("Image").setContent("HAnimModelsHandsFeetWithFour1mGrids.png"))
-        .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/working-groups/humanoid-animation-h-anim"))
-        .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0"))
-        .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"))
-        .addMeta(new metaObject().setName("subject").setContent("X3D H-Anim humanoid animation"))
-        .addMeta(new metaObject().setName("warning").setContent("scene, DOCTYPE and Schema under development."))
-        .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d"))
-        .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new metaObject().setName("license").setContent("../license.html")))
-      .setScene(new SceneObject()
-        .addChild(new WorldInfoObject().setTitle("HAnimModelsHandsFeet.x3d"))
-        .addChild(new ViewpointObject().setDescription("Hands and feet 10m"))
-        .addChild(new ViewpointObject().setDescription("Hands and feet 1.7m").setPosition(new float[] {0f,0f,1.7f}))
-        .addChild(new TransformObject().setTranslation(new float[] {-1f,1f,0f})
-          .addChild(new InlineObject().setUrl(new MFStringObject(new MFString0().getArray())))
+    public X3D initialize() {
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      .setHead(new head()
+        .addComponent(new component().setName("H-Anim").setLevel(1))
+        .addMeta(new meta().setName("title").setContent("HAnimModelsHandsFeet.x3d"))
+        .addMeta(new meta().setName("description").setContent("Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2"))
+        .addMeta(new meta().setName("creator").setContent("YOO Kwan Hee and Don Brutzman"))
+        .addMeta(new meta().setName("created").setContent("8 February 2015"))
+        .addMeta(new meta().setName("modified").setContent("20 October 2019"))
+        .addMeta(new meta().setName("warning").setContent("not yet to scale"))
+        .addMeta(new meta().setName("warning").setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
+        .addMeta(new meta().setName("Image").setContent("HAnimModelsHandsFeet.png"))
+        .addMeta(new meta().setName("Image").setContent("HAnimModelsHandsFeetWithFour1mGrids.png"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/working-groups/humanoid-animation-h-anim"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"))
+        .addMeta(new meta().setName("subject").setContent("X3D H-Anim humanoid animation"))
+        .addMeta(new meta().setName("warning").setContent("scene, DOCTYPE and Schema under development."))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("license").setContent("../license.html")))
+      .setScene(new Scene()
+        .addChild(new WorldInfo().setTitle("HAnimModelsHandsFeet.x3d"))
+        .addChild(new Viewpoint().setDescription("Hands and feet 10m"))
+        .addChild(new Viewpoint().setDescription("Hands and feet 1.7m").setPosition(new float[] {0f,0f,1.7f}))
+        .addChild(new Transform().setTranslation(new float[] {-1f,1f,0f})
+          .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())))
           .addComments(new CommentsBlock("Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model"))
-          .addChild(new TransformObject().setDEF("GridXY_20x20Fixed_AdjustScale").setScale(new float[] {0.1f,0.1f,0.1f})
-            .addChild(new InlineObject().setDEF("GridXY_20x20Fixed").setUrl(new MFStringObject(new MFString1().getArray())))))
-        .addChild(new TransformObject().setTranslation(new float[] {1f,1f,0f})
-          .addChild(new InlineObject().setUrl(new MFStringObject(new MFString2().getArray())))
-          .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale")))
-        .addChild(new TransformObject().setTranslation(new float[] {-1f,-1f,0f})
+          .addChild(new Transform().setDEF("GridXY_20x20Fixed_AdjustScale").setScale(new float[] {0.1f,0.1f,0.1f})
+            .addChild(new Inline().setDEF("GridXY_20x20Fixed").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())))))
+        .addChild(new Transform().setTranslation(new float[] {1f,1f,0f})
+          .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())))
+          .addChild(new Transform().setUSE("GridXY_20x20Fixed_AdjustScale")))
+        .addChild(new Transform().setTranslation(new float[] {-1f,-1f,0f})
           .addComments(new CommentsBlock("rotation='0 0 1 3.141593'"))
-          .addChild(new InlineObject().setUrl(new MFStringObject(new MFString3().getArray())))
-          .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale")))
-        .addChild(new TransformObject().setTranslation(new float[] {1f,-1f,0f})
+          .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())))
+          .addChild(new Transform().setUSE("GridXY_20x20Fixed_AdjustScale")))
+        .addChild(new Transform().setTranslation(new float[] {1f,-1f,0f})
           .addComments(new CommentsBlock("rotation='0 0 1 3.141593'"))
-          .addChild(new InlineObject().setUrl(new MFStringObject(new MFString4().getArray())))
-          .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale"))))      ;
+          .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())))
+          .addChild(new Transform().setUSE("GridXY_20x20Fixed_AdjustScale"))))      ;
     return X3D0;
     }
 protected class MFString0 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"});
   }
 }
 protected class MFString1 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"});
   }
 }
 protected class MFString2 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"});
   }
 }
 protected class MFString3 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"});
   }
 }
 protected class MFString4 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"});
   }
 }
 }

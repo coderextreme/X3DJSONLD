@@ -107,46 +107,46 @@ HAnimModelsHandsFeet.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("4.0")
-  .setHead(new headObject()
-    .addComponent(new componentObject().setName("H-Anim").setLevel(1))
-    .addMeta(new metaObject().setName("title").setContent("HAnimModelsHandsFeet.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2"))
-    .addMeta(new metaObject().setName("creator").setContent("YOO Kwan Hee and Don Brutzman"))
-    .addMeta(new metaObject().setName("created").setContent("8 February 2015"))
-    .addMeta(new metaObject().setName("modified").setContent("20 October 2019"))
-    .addMeta(new metaObject().setName("warning").setContent("not yet to scale"))
-    .addMeta(new metaObject().setName("warning").setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
-    .addMeta(new metaObject().setName("Image").setContent("HAnimModelsHandsFeet.png"))
-    .addMeta(new metaObject().setName("Image").setContent("HAnimModelsHandsFeetWithFour1mGrids.png"))
-    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/working-groups/humanoid-animation-h-anim"))
-    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0"))
-    .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"))
-    .addMeta(new metaObject().setName("subject").setContent("X3D H-Anim humanoid animation"))
-    .addMeta(new metaObject().setName("warning").setContent("scene, DOCTYPE and Schema under development."))
-    .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName("license").setContent("../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new WorldInfoObject().setTitle("HAnimModelsHandsFeet.x3d"))
-    .addChild(new ViewpointObject().setDescription("Hands and feet 10m"))
-    .addChild(new ViewpointObject().setDescription("Hands and feet 1.7m").setPosition(0.0,0.0,1.7))
-    .addChild(new TransformObject().setTranslation(-1.0,1.0,0.0)
-      .addChild(new InlineObject().setUrl(new MFStringObject("\"HAnimModelHandLeft.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d\" \"HAnimModelHandLeft.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl\"")))
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("4.0")
+  .setHead(new head()
+    .addComponent(new component().setName("H-Anim").setLevel(1))
+    .addMeta(new meta().setName("title").setContent("HAnimModelsHandsFeet.x3d"))
+    .addMeta(new meta().setName("description").setContent("Left and right hands and feet, using high-fidelity definitions for H-Anim version 2.2"))
+    .addMeta(new meta().setName("creator").setContent("YOO Kwan Hee and Don Brutzman"))
+    .addMeta(new meta().setName("created").setContent("8 February 2015"))
+    .addMeta(new meta().setName("modified").setContent("20 October 2019"))
+    .addMeta(new meta().setName("warning").setContent("not yet to scale"))
+    .addMeta(new meta().setName("warning").setContent("TODO will X3D HAnim component add a new level to support LOA-4 functionality?"))
+    .addMeta(new meta().setName("Image").setContent("HAnimModelsHandsFeet.png"))
+    .addMeta(new meta().setName("Image").setContent("HAnimModelsHandsFeetWithFour1mGrids.png"))
+    .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/working-groups/humanoid-animation-h-anim"))
+    .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0"))
+    .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"))
+    .addMeta(new meta().setName("subject").setContent("X3D H-Anim humanoid animation"))
+    .addMeta(new meta().setName("warning").setContent("scene, DOCTYPE and Schema under development."))
+    .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelsHandsFeet.x3d"))
+    .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName("license").setContent("../license.html")))
+  .setScene(new Scene()
+    .addChild(new WorldInfo().setTitle("HAnimModelsHandsFeet.x3d"))
+    .addChild(new Viewpoint().setDescription("Hands and feet 10m"))
+    .addChild(new Viewpoint().setDescription("Hands and feet 1.7m").setPosition(0.0,0.0,1.7))
+    .addChild(new Transform().setTranslation(-1.0,1.0,0.0)
+      .addChild(new Inline().setUrl(new MFString("\"HAnimModelHandLeft.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d\" \"HAnimModelHandLeft.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl\"")))
       .addComments(" Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model ")
-      .addChild(new TransformObject("GridXY_20x20Fixed_AdjustScale").setScale(.1,.1,.1)
-        .addChild(new InlineObject("GridXY_20x20Fixed").setUrl(new MFStringObject("\"GridXY_20x20Fixed.x3d\" \"../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d\" \"https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d\" \"GridXY_20x20Fixed.wrl\" \"../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl\" \"https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl\"")))))
-    .addChild(new TransformObject().setTranslation(1.0,1.0,0.0)
-      .addChild(new InlineObject().setUrl(new MFStringObject("\"HAnimModelHandRight.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d\" \"HAnimModelHandRight.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl\"")))
-      .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale")))
-    .addChild(new TransformObject().setTranslation(-1.0,-1.0,0.0)
+      .addChild(new Transform("GridXY_20x20Fixed_AdjustScale").setScale(.1,.1,.1)
+        .addChild(new Inline("GridXY_20x20Fixed").setUrl(new MFString("\"GridXY_20x20Fixed.x3d\" \"../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d\" \"https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d\" \"GridXY_20x20Fixed.wrl\" \"../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl\" \"https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl\"")))))
+    .addChild(new Transform().setTranslation(1.0,1.0,0.0)
+      .addChild(new Inline().setUrl(new MFString("\"HAnimModelHandRight.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d\" \"HAnimModelHandRight.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl\"")))
+      .addChild(new Transform().setUSE("GridXY_20x20Fixed_AdjustScale")))
+    .addChild(new Transform().setTranslation(-1.0,-1.0,0.0)
       .addComments(" rotation='0 0 1 3.141593' ")
-      .addChild(new InlineObject().setUrl(new MFStringObject("\"HAnimModelFootLeft.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d\" \"HAnimModelFootLeft.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl\"")))
-      .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale")))
-    .addChild(new TransformObject().setTranslation(1.0,-1.0,0.0)
+      .addChild(new Inline().setUrl(new MFString("\"HAnimModelFootLeft.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d\" \"HAnimModelFootLeft.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl\"")))
+      .addChild(new Transform().setUSE("GridXY_20x20Fixed_AdjustScale")))
+    .addChild(new Transform().setTranslation(1.0,-1.0,0.0)
       .addComments(" rotation='0 0 1 3.141593' ")
-      .addChild(new InlineObject().setUrl(new MFStringObject("\"HAnimModelFootRight.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d\" \"HAnimModelFootRight.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl\"")))
-      .addChild(new TransformObject().setUSE("GridXY_20x20Fixed_AdjustScale"))));
+      .addChild(new Inline().setUrl(new MFString("\"HAnimModelFootRight.x3d\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d\" \"HAnimModelFootRight.wrl\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl\"")))
+      .addChild(new Transform().setUSE("GridXY_20x20Fixed_AdjustScale"))));
   },
   // end of initialize() method
 
@@ -180,11 +180,11 @@ HAnimModelsHandsFeet.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

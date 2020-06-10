@@ -78,34 +78,34 @@ public class flipp
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("flipp.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("flipper flopping around"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://www.x3dom.org/x3dom/test/functional/flipp.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Yvonne Jung, metadata by John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED ).setContent("13 March 2016"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
-  .setScene(new SceneObject()
-    .addChild(new ViewpointObject("cam0").setDescription("cam0 description").setPosition(0.0f,0.0f,800.0f))
-    .addChild(new ViewpointObject("cam1").setDescription("cam1 description").setPosition(0.0f,0.0f,2000.0f))
-    .addChild(new ViewpointObject("cam2").setDescription("cam2 description").setPosition(0.0f,200.0f,1000.0f))
-    .addChild(new BackgroundObject().setGroundAngle(new float[] {0.9f,1.5f,1.57f}).setGroundColor(new MFColorObject(new float[] {0.21f,0.18f,0.66f,0.2f,0.44f,0.85f,0.51f,0.81f,0.95f,0.51f,0.81f,0.95f})).setSkyAngle(new float[] {0.9f,1.5f,1.57f}).setSkyColor(new MFColorObject(new float[] {0.21f,0.18f,0.66f,0.2f,0.44f,0.85f,0.51f,0.81f,0.95f,0.51f,0.81f,0.95f})))
-    .addChild(new NavigationInfoObject("user01").setSpeed(50f))
-    .addChild(new FogObject())
-    .addChild(new TransformObject("trans").setRotation(1.0f,0.0f,0.0f,0.78f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject("mat").setAmbientIntensity(0.508497f).setDiffuseColor(0.337255f,0.4f,0.788235f).setSpecularColor(1.0f,1.0f,1.0f)))
-        .setGeometry(new IndexedFaceSetObject().setCreaseAngle(2f).setCoordIndex(getIndexedFaceSet_5_17_coordIndex())
-          .setCoord(new CoordinateObject("pointList").setPoint(getpointList_6_17_point())))))
-    .addChild(new TimeSensorObject("ts").setCycleInterval(2).setLoop(true))
-    .addChild(new ScalarInterpolatorObject("si").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new float[] {0.0f,1.0f,0.0f}))
-    .addChild(new CoordinateInterpolatorObject("ci").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(getci_3_23_keyValue()))
-    .addChild(new ROUTEObject().setFromNode("ci").setFromField("value_changed").setToNode("pointList").setToField("set_point"))
-    .addChild(new ROUTEObject().setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
-    .addChild(new ROUTEObject().setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")));
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("hand conversion from http://www.x3dom.org/x3dom/test/functional/flipper.html"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("flipp.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("flipper flopping around"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.x3dom.org/x3dom/test/functional/flipp.x3d"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Yvonne Jung, metadata by John Carlson"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("13 March 2016"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
+  .setScene(new Scene()
+    .addChild(new Viewpoint("cam0").setDescription("cam0 description").setPosition(0.0f,0.0f,800.0f))
+    .addChild(new Viewpoint("cam1").setDescription("cam1 description").setPosition(0.0f,0.0f,2000.0f))
+    .addChild(new Viewpoint("cam2").setDescription("cam2 description").setPosition(0.0f,200.0f,1000.0f))
+    .addChild(new Background().setGroundAngle(new float[] {0.9f,1.5f,1.57f}).setGroundColor(new MFColor(new float[] {0.21f,0.18f,0.66f,0.2f,0.44f,0.85f,0.51f,0.81f,0.95f,0.51f,0.81f,0.95f})).setSkyAngle(new float[] {0.9f,1.5f,1.57f}).setSkyColor(new MFColor(new float[] {0.21f,0.18f,0.66f,0.2f,0.44f,0.85f,0.51f,0.81f,0.95f,0.51f,0.81f,0.95f})))
+    .addChild(new NavigationInfo("user01").setSpeed(50f))
+    .addChild(new Fog())
+    .addChild(new Transform("trans").setRotation(1.0f,0.0f,0.0f,0.78f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setMaterial(new Material("mat").setAmbientIntensity(0.508497f).setDiffuseColor(0.337255f,0.4f,0.788235f).setSpecularColor(1.0f,1.0f,1.0f)))
+        .setGeometry(new IndexedFaceSet().setCreaseAngle(2f).setCoordIndex(getIndexedFaceSet_5_17_coordIndex())
+          .setCoord(new Coordinate("pointList").setPoint(getpointList_6_17_point())))))
+    .addChild(new TimeSensor("ts").setCycleInterval(2).setLoop(true))
+    .addChild(new ScalarInterpolator("si").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new float[] {0.0f,1.0f,0.0f}))
+    .addChild(new CoordinateInterpolator("ci").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(getci_3_23_keyValue()))
+    .addChild(new ROUTE().setFromNode("ci").setFromField("value_changed").setToNode("pointList").setToField("set_point"))
+    .addChild(new ROUTE().setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
+    .addChild(new ROUTE().setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")));
     }
 	// end of initialize() method
 
@@ -199,12 +199,12 @@ public class flipp
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getIndexedFaceSet_5_17_coordIndex()
+		private MFInt32 getIndexedFaceSet_5_17_coordIndex()
 		{
-			MFInt32Object IndexedFaceSet_5_17_coordIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getIndexedFaceSet_5_17_coordIndex_1()))
-				.append(new MFInt32Object(getIndexedFaceSet_5_17_coordIndex_2()))
-				.append(new MFInt32Object(getIndexedFaceSet_5_17_coordIndex_3()));
+			MFInt32 IndexedFaceSet_5_17_coordIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getIndexedFaceSet_5_17_coordIndex_1()))
+				.append(new MFInt32(getIndexedFaceSet_5_17_coordIndex_2()))
+				.append(new MFInt32(getIndexedFaceSet_5_17_coordIndex_3()));
 			return IndexedFaceSet_5_17_coordIndex;
 		}
 		/** Large attribute array: Coordinate DEF='pointList' point field, scene-graph level=6, element #17, 855 total numbers made up of 285 3-tuple values.
@@ -214,12 +214,12 @@ public class flipp
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getpointList_6_17_point()
+		private MFVec3f getpointList_6_17_point()
 		{
-			MFVec3fObject pointList_6_17_point = new MFVec3fObject()/*2.finalize*/
-				.append(new MFVec3fObject(getpointList_6_17_point_1()))
-				.append(new MFVec3fObject(getpointList_6_17_point_2()))
-				.append(new MFVec3fObject(getpointList_6_17_point_3()));
+			MFVec3f pointList_6_17_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getpointList_6_17_point_1()))
+				.append(new MFVec3f(getpointList_6_17_point_2()))
+				.append(new MFVec3f(getpointList_6_17_point_3()));
 			return pointList_6_17_point;
 		}
 		/** Large attribute array: CoordinateInterpolator DEF='ci' keyValue field, scene-graph level=3, element #23, 2565 total numbers made up of 855 3-tuple values.
@@ -229,46 +229,46 @@ public class flipp
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getci_3_23_keyValue()
+		private MFVec3f getci_3_23_keyValue()
 		{
-			MFVec3fObject ci_3_23_keyValue = new MFVec3fObject()/*2.finalize*/
-				.append(new MFVec3fObject(getci_3_23_keyValue_1()))
-				.append(new MFVec3fObject(getci_3_23_keyValue_2()))
-				.append(new MFVec3fObject(getci_3_23_keyValue_3()))
-				.append(new MFVec3fObject(getci_3_23_keyValue_4()))
-				.append(new MFVec3fObject(getci_3_23_keyValue_5()))
-				.append(new MFVec3fObject(getci_3_23_keyValue_6()))
-				.append(new MFVec3fObject(getci_3_23_keyValue_7()))
-				.append(new MFVec3fObject(getci_3_23_keyValue_8()))
-				.append(new MFVec3fObject(getci_3_23_keyValue_9()));
+			MFVec3f ci_3_23_keyValue = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getci_3_23_keyValue_1()))
+				.append(new MFVec3f(getci_3_23_keyValue_2()))
+				.append(new MFVec3f(getci_3_23_keyValue_3()))
+				.append(new MFVec3f(getci_3_23_keyValue_4()))
+				.append(new MFVec3f(getci_3_23_keyValue_5()))
+				.append(new MFVec3f(getci_3_23_keyValue_6()))
+				.append(new MFVec3f(getci_3_23_keyValue_7()))
+				.append(new MFVec3f(getci_3_23_keyValue_8()))
+				.append(new MFVec3f(getci_3_23_keyValue_9()));
 			return ci_3_23_keyValue;
 		}
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return flipp model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new flipp().getX3dModel();
+        X3D thisExampleX3dModel = new flipp().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -283,15 +283,15 @@ public class flipp
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -301,12 +301,12 @@ public class flipp
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"flipp\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"flipp\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

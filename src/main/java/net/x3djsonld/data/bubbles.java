@@ -73,58 +73,58 @@ public class bubbles
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(1))
-    .addComponent(new componentObject().setName("EnvironmentalEffects").setLevel(3))
-    .addComponent(new componentObject().setName("Shaders").setLevel(1))
-    .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
-    .addComponent(new componentObject().setName("Texturing").setLevel(1))
-    .addComponent(new componentObject().setName("Rendering").setLevel(1))
-    .addComponent(new componentObject().setName("Shape").setLevel(4))
-    .addComponent(new componentObject().setName("Grouping").setLevel(3))
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("bubbles.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manual"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/bubbles.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("not sure what this is")))
-  .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject().setType(new String[] {"EXAMINE"}))
-    .addChild(new ViewpointObject("Tour").setDescription("Tour Views"))
-    .addChild(new ViewpointObject().setDescription("sphere in road").setPosition(0.0f,0.0f,4.0f))
-    .addChild(new BackgroundObject().setBackUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"}))
-    .addChild(new TransformObject("Rose01")
-      .addChild(new ShapeObject()
-        .setGeometry(new SphereObject())
-        .setAppearance(new AppearanceObject("_01_-_Default")
-          .setMaterial(new MaterialObject().setDiffuseColor(0.7f,0.7f,0.7f).setSpecularColor(0.5f,0.5f,0.5f))
-          .setTexture(new ComposedCubeMapTextureObject()
-            .setBack(new ImageTextureObject().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"}))
-            .setBottom(new ImageTextureObject().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"}))
-            .setFront(new ImageTextureObject().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"}))
-            .setLeft(new ImageTextureObject().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"}))
-            .setRight(new ImageTextureObject().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"}))
-            .setTop(new ImageTextureObject().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"})))
-          .addShaders(new ComposedShaderObject("x_ite").setLanguage("GLSL")
-            .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(0))
-            .addField(new fieldObject().setName("chromaticDispertion").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.98f,1.0f,1.033f)))
-            .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
-            .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
-            .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(2f))
-            .addParts(new ShaderPartObject().setUrl(new String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}))
-            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"})))
-          .addShaders(new ComposedShaderObject("x3dom").setLanguage("GLSL")
-            .addField(new fieldObject().setName("cube").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(0))
-            .addField(new fieldObject().setName("chromaticDispertion").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.98f,1.0f,1.033f)))
-            .addField(new fieldObject().setName("bias").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
-            .addField(new fieldObject().setName("scale").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
-            .addField(new fieldObject().setName("power").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(2f))
-            .addParts(new ShaderPartObject().setUrl(new String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}))
-            .addParts(new ShaderPartObject().setType("FRAGMENT").setUrl(new String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"}))))))
-    .addChild(new TimeSensorObject("TourTime").setCycleInterval(5).setLoop(true))
-    .addChild(new PositionInterpolatorObject("TourPosition").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3fObject(new float[] {0.0f,0.0f,10.0f,0.0f,0.0f,-10.0f})))
-    .addChild(new OrientationInterpolatorObject("TourOrientation").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFRotationObject(new float[] {0.0f,1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,3.1416f})))
-    .addChild(new ScriptObject("RandomTourTime").setSourceCode("\n" + 
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addComponent(new component().setName("EnvironmentalEffects").setLevel(1))
+    .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
+    .addComponent(new component().setName("Shaders").setLevel(1))
+    .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
+    .addComponent(new component().setName("Texturing").setLevel(1))
+    .addComponent(new component().setName("Rendering").setLevel(1))
+    .addComponent(new component().setName("Shape").setLevel(4))
+    .addComponent(new component().setName("Grouping").setLevel(3))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("bubbles.x3d"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/bubbles.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("not sure what this is")))
+  .setScene(new Scene()
+    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
+    .addChild(new Viewpoint("Tour").setDescription("Tour Views"))
+    .addChild(new Viewpoint().setDescription("sphere in road").setPosition(0.0f,0.0f,4.0f))
+    .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"}))
+    .addChild(new Transform("Rose01")
+      .addChild(new Shape()
+        .setGeometry(new Sphere())
+        .setAppearance(new Appearance("_01_-_Default")
+          .setMaterial(new Material().setDiffuseColor(0.7f,0.7f,0.7f).setSpecularColor(0.5f,0.5f,0.5f))
+          .setTexture(new ComposedCubeMapTexture()
+            .setBack(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"}))
+            .setBottom(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"}))
+            .setFront(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"}))
+            .setLeft(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"}))
+            .setRight(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"}))
+            .setTop(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"})))
+          .addShaders(new ComposedShader("x_ite").setLanguage("GLSL")
+            .addField(new field().setName("cube").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
+            .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.98f,1.0f,1.033f)))
+            .addField(new field().setName("bias").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
+            .addField(new field().setName("scale").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
+            .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(2f))
+            .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}))
+            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"})))
+          .addShaders(new ComposedShader("x3dom").setLanguage("GLSL")
+            .addField(new field().setName("cube").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
+            .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.98f,1.0f,1.033f)))
+            .addField(new field().setName("bias").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
+            .addField(new field().setName("scale").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
+            .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(2f))
+            .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}))
+            .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"}))))))
+    .addChild(new TimeSensor("TourTime").setCycleInterval(5).setLoop(true))
+    .addChild(new PositionInterpolator("TourPosition").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3f(new float[] {0.0f,0.0f,10.0f,0.0f,0.0f,-10.0f})))
+    .addChild(new OrientationInterpolator("TourOrientation").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFRotation(new float[] {0.0f,1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,3.1416f})))
+    .addChild(new Script("RandomTourTime").setSourceCode("\n" + 
 "	    ecmascript:" + "\n" + 
 "               function set_cycle(value) {" + "\n" + 
 "	       	   try {" + "\n" + 
@@ -147,48 +147,48 @@ public class bubbles
 "			}" + "\n" + 
 "		   }" + "\n" + 
 "               }")
-      .addField(new fieldObject().setName("set_cycle").setType(fieldObject.TYPE_SFTIME).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-      .addField(new fieldObject().setName("lastKey").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(0f))
-      .addField(new fieldObject().setName("orientations").setType(fieldObject.TYPE_MFROTATION).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new MFRotationObject(new MFRotationObject(new float[] {0.0f,1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,-1.57f,0.0f,1.0f,0.0f,3.14f,0.0f,1.0f,0.0f,1.57f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,-1.57f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.57f,0.0f,1.0f,0.0f,0.0f}))))
-      .addField(new fieldObject().setName("positions").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3fObject(new MFVec3fObject(new float[] {0.0f,0.0f,10.0f,-10.0f,0.0f,0.0f,0.0f,0.0f,-10.0f,10.0f,0.0f,0.0f,0.0f,0.0f,10.0f,0.0f,10.0f,0.0f,0.0f,0.0f,10.0f,0.0f,-10.0f,0.0f,0.0f,0.0f,10.0f}))))
-      .addField(new fieldObject().setName("position_changed").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-      .addField(new fieldObject().setName("set_orientation").setType(fieldObject.TYPE_MFROTATION).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-      .addField(new fieldObject().setName("orientation_changed").setType(fieldObject.TYPE_MFROTATION).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY)))
-    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime_changed").setToNode("RandomTourTime").setToField("set_cycle"))
-    .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("orientation_changed").setToNode("TourOrientation").setToField("set_keyValue"))
-    .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("position_changed").setToNode("TourPosition").setToField("set_keyValue"))
-    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))
-    .addChild(new ROUTEObject().setFromNode("TourOrientation").setFromField("value_changed").setToNode("Tour").setToField("set_orientation"))
-    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
-    .addChild(new ROUTEObject().setFromNode("TourPosition").setFromField("value_changed").setToNode("Tour").setToField("set_position")));
+      .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
+      .addField(new field().setName("lastKey").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0f))
+      .addField(new field().setName("orientations").setType(field.TYPE_MFROTATION).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFRotation(new MFRotation(new float[] {0.0f,1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,-1.57f,0.0f,1.0f,0.0f,3.14f,0.0f,1.0f,0.0f,1.57f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,-1.57f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.57f,0.0f,1.0f,0.0f,0.0f}))))
+      .addField(new field().setName("positions").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3f(new MFVec3f(new float[] {0.0f,0.0f,10.0f,-10.0f,0.0f,0.0f,0.0f,0.0f,-10.0f,10.0f,0.0f,0.0f,0.0f,0.0f,10.0f,0.0f,10.0f,0.0f,0.0f,0.0f,10.0f,0.0f,-10.0f,0.0f,0.0f,0.0f,10.0f}))))
+      .addField(new field().setName("position_changed").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+      .addField(new field().setName("set_orientation").setType(field.TYPE_MFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
+      .addField(new field().setName("orientation_changed").setType(field.TYPE_MFROTATION).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
+    .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime_changed").setToNode("RandomTourTime").setToField("set_cycle"))
+    .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("orientation_changed").setToNode("TourOrientation").setToField("set_keyValue"))
+    .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("position_changed").setToNode("TourPosition").setToField("set_keyValue"))
+    .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))
+    .addChild(new ROUTE().setFromNode("TourOrientation").setFromField("value_changed").setToNode("Tour").setToField("set_orientation"))
+    .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
+    .addChild(new ROUTE().setFromNode("TourPosition").setFromField("value_changed").setToNode("Tour").setToField("set_position")));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return bubbles model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new bubbles().getX3dModel();
+        X3D thisExampleX3dModel = new bubbles().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -203,15 +203,15 @@ public class bubbles
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -221,12 +221,12 @@ public class bubbles
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"bubbles\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"bubbles\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

@@ -87,50 +87,50 @@ public class flowers2
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_0)
-  .setHead(new headObject()
-    .addComponent(new componentObject().setName("Scripting").setLevel(1))
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("flowers2.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName("transcriber").setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("23 January 2005"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("21 March 2018"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manually written"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("http://www.web3d.org/x3d/content/examples/license.html")))
-  .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject())
-    .addChild(new ViewpointObject().setDescription("Two mathematical orbitals").setPosition(0.0f,0.0f,50.0f))
-    .addChild(new GroupObject()
-      .addChild(new DirectionalLightObject().setDirection(1.0f,1.0f,1.0f))
-      .addChild(new ProtoDeclareObject("orbit").setName("orbit")
-        .setProtoInterface(new ProtoInterfaceObject()
-          .addField(new fieldObject().setName("translation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(-8.0f,0.0f,0.0f)))
-          .addField(new fieldObject().setName("diffuseColor").setType(fieldObject.TYPE_SFCOLOR).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColorObject(1.0f,0.5f,0.0f)))
-          .addField(new fieldObject().setName("specularColor").setType(fieldObject.TYPE_SFCOLOR).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColorObject(1.0f,0.5f,0.0f)))
-          .addField(new fieldObject().setName("transparency").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(0.75f)))
-        .setProtoBody(new ProtoBodyObject()
-          .addChild(new GroupObject()
-            .addChild(new TimeSensorObject("Clock").setCycleInterval(16).setLoop(true))
-            .addChild(new OrientationInterpolatorObject("OrbitPath").setKey(new float[] {0.0f,0.50f,1.0f}).setKeyValue(new MFRotationObject(new float[] {1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,3.14f,1.0f,0.0f,0.0f,6.28f})))
-            .addChild(new TransformObject("OrbitTransform")
-              .setIS(new ISObject()
-                .addConnect(new connectObject().setNodeField("translation").setProtoField("translation")))
-              .addChild(new ShapeObject()
-                .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject()
-                    .setIS(new ISObject()
-                      .addConnect(new connectObject().setNodeField("diffuseColor").setProtoField("diffuseColor"))
-                      .addConnect(new connectObject().setNodeField("specularColor").setProtoField("specularColor"))
-                      .addConnect(new connectObject().setNodeField("transparency").setProtoField("transparency")))))
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
+  .setHead(new head()
+    .addComponent(new component().setName("Scripting").setLevel(1))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("flowers2.x3d"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new meta().setName("transcriber").setContent("John Carlson"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("23 January 2005"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("21 March 2018"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manually written"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("http://www.web3d.org/x3d/content/examples/license.html")))
+  .setScene(new Scene()
+    .addChild(new NavigationInfo())
+    .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(0.0f,0.0f,50.0f))
+    .addChild(new Group()
+      .addChild(new DirectionalLight().setDirection(1.0f,1.0f,1.0f))
+      .addChild(new ProtoDeclare("orbit").setName("orbit")
+        .setProtoInterface(new ProtoInterface()
+          .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(-8.0f,0.0f,0.0f)))
+          .addField(new field().setName("diffuseColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(1.0f,0.5f,0.0f)))
+          .addField(new field().setName("specularColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(1.0f,0.5f,0.0f)))
+          .addField(new field().setName("transparency").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.75f)))
+        .setProtoBody(new ProtoBody()
+          .addChild(new Group()
+            .addChild(new TimeSensor("Clock").setCycleInterval(16).setLoop(true))
+            .addChild(new OrientationInterpolator("OrbitPath").setKey(new float[] {0.0f,0.50f,1.0f}).setKeyValue(new MFRotation(new float[] {1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,3.14f,1.0f,0.0f,0.0f,6.28f})))
+            .addChild(new Transform("OrbitTransform")
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
+              .addChild(new Shape()
+                .setAppearance(new Appearance()
+                  .setMaterial(new Material()
+                    .setIS(new IS()
+                      .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))
+                      .addConnect(new connect().setNodeField("specularColor").setProtoField("specularColor"))
+                      .addConnect(new connect().setNodeField("transparency").setProtoField("transparency")))))
                 .addComments(new String[] {"",
 "				  <IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\">",
 "				    <Coordinate DEF=\"OrbitCoordinates\"/>",
 "				  </IndexedFaceSet>"})
-                .setGeometry(new IndexedFaceSetObject("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
-                  .setCoord(new CoordinateObject("OrbitCoordinates").setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,0.0f,1.0f,0.0f,0.0f}))))))
-            .addChild(new ScriptObject("OrbitScript").setSourceCode("\n" + 
+                .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
+                  .setCoord(new Coordinate("OrbitCoordinates").setPoint(new MFVec3f(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,0.0f,1.0f,0.0f,0.0f}))))))
+            .addChild(new Script("OrbitScript").setSourceCode("\n" + 
 "			" + "\n" + 
 "			ecmascript:" + "\n" + 
 "\n" + 
@@ -206,57 +206,57 @@ public class flowers2
 "				}" + "\n" + 
 "				generateCoordinates();" + "\n" + 
 "			}" + "\n")
-              .addField(new fieldObject().setName("set_fraction").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-              .addField(new fieldObject().setName("coordinates").setType(fieldObject.TYPE_MFVEC3F).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .addField(new fieldObject().setName("coordIndexes").setType(fieldObject.TYPE_MFINT32).setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-              .addField(new fieldObject().setName("e").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
-              .addField(new fieldObject().setName("f").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
-              .addField(new fieldObject().setName("g").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
-              .addField(new fieldObject().setName("h").setType(fieldObject.TYPE_SFFLOAT).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
-              .addField(new fieldObject().setName("resolution").setType(fieldObject.TYPE_SFINT32).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(50)))
-            .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
-            .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-            .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
-            .addChild(new ROUTEObject().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
-            .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
-      .addChild(new ProtoInstanceObject("orbit")
-        .addFieldValue(new fieldValueObject().setName("translation").setValue(new SFVec3fObject(-8.0f,0.0f,0.0f)))
-        .addFieldValue(new fieldValueObject().setName("diffuseColor").setValue(new SFColorObject(1.0f,0.5f,0.0f)))
-        .addFieldValue(new fieldValueObject().setName("specularColor").setValue(new SFColorObject(1.0f,0.5f,0.0f)))
-        .addFieldValue(new fieldValueObject().setName("transparency").setValue(0.75f)))
-      .addChild(new ProtoInstanceObject("orbit")
-        .addFieldValue(new fieldValueObject().setName("translation").setValue(new SFVec3fObject(8.0f,0.0f,0.0f)))
-        .addFieldValue(new fieldValueObject().setName("diffuseColor").setValue(new SFColorObject(0.0f,0.5f,1.0f)))
-        .addFieldValue(new fieldValueObject().setName("specularColor").setValue(new SFColorObject(0.0f,0.5f,1.0f)))
-        .addFieldValue(new fieldValueObject().setName("transparency").setValue(0.5f)))));
+              .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field().setName("coordinates").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addField(new field().setName("coordIndexes").setType(field.TYPE_MFINT32).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addField(new field().setName("e").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
+              .addField(new field().setName("f").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
+              .addField(new field().setName("g").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
+              .addField(new field().setName("h").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
+              .addField(new field().setName("resolution").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(50)))
+            .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
+            .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
+            .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
+            .addChild(new ROUTE().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
+            .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
+      .addChild(new ProtoInstance("orbit")
+        .addFieldValue(new fieldValue().setName("translation").setValue(new SFVec3f(-8.0f,0.0f,0.0f)))
+        .addFieldValue(new fieldValue().setName("diffuseColor").setValue(new SFColor(1.0f,0.5f,0.0f)))
+        .addFieldValue(new fieldValue().setName("specularColor").setValue(new SFColor(1.0f,0.5f,0.0f)))
+        .addFieldValue(new fieldValue().setName("transparency").setValue(0.75f)))
+      .addChild(new ProtoInstance("orbit")
+        .addFieldValue(new fieldValue().setName("translation").setValue(new SFVec3f(8.0f,0.0f,0.0f)))
+        .addFieldValue(new fieldValue().setName("diffuseColor").setValue(new SFColor(0.0f,0.5f,1.0f)))
+        .addFieldValue(new fieldValue().setName("specularColor").setValue(new SFColor(0.0f,0.5f,1.0f)))
+        .addFieldValue(new fieldValue().setName("transparency").setValue(0.5f)))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return flowers2 model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new flowers2().getX3dModel();
+        X3D thisExampleX3dModel = new flowers2().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -271,15 +271,15 @@ public class flowers2
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -289,12 +289,12 @@ public class flowers2
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"flowers2\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"flowers2\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

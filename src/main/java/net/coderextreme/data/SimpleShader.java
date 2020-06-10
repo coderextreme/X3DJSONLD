@@ -36,125 +36,89 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.sai.*;
-import org.web3d.x3d.sai.CADGeometry.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.DIS.*;
-import org.web3d.x3d.sai.EnvironmentalEffects.*;
-import org.web3d.x3d.sai.EnvironmentalSensor.*;
-import org.web3d.x3d.sai.EventUtilities.*;
-import org.web3d.x3d.sai.Followers.*;
-import org.web3d.x3d.sai.Geometry2D.*;
-import org.web3d.x3d.sai.Geometry3D.*;
-import org.web3d.x3d.sai.Geospatial.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Interpolation.*;
-import org.web3d.x3d.sai.KeyDeviceSensor.*;
-import org.web3d.x3d.sai.Layering.*;
-import org.web3d.x3d.sai.Layout.*;
-import org.web3d.x3d.sai.Lighting.*;
-import org.web3d.x3d.sai.NURBS.*;
-import org.web3d.x3d.sai.Navigation.*;
-import org.web3d.x3d.sai.Networking.*;
-import org.web3d.x3d.sai.ParticleSystems.*;
-import org.web3d.x3d.sai.Picking.*;
-import org.web3d.x3d.sai.PointingDeviceSensor.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.RigidBodyPhysics.*;
-import org.web3d.x3d.sai.Scripting.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing3D.*;
-import org.web3d.x3d.sai.Texturing.*;
-import org.web3d.x3d.sai.Time.*;
-import org.web3d.x3d.sai.VolumeRendering.*;
 public class SimpleShader {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new SimpleShader().initialize().toFileJSON("../data/SimpleShader.new.json");
     }
-    public X3DObject initialize() {
-ProtoInstanceObject ProtoInstance0 = null;
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.2")
-      .setHead(new headObject()
-        .addComponent(new componentObject().setName("Shaders").setLevel(1))
-        .addMeta(new metaObject().setName("title").setContent("SimpleShader.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("Simple shader example"))
-        .addMeta(new metaObject().setName("creator").setContent("John Stewart"))
-        .addMeta(new metaObject().setName("translator").setContent("Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"))
-        .addMeta(new metaObject().setName("created").setContent("26 May 2009"))
-        .addMeta(new metaObject().setName("translated").setContent("15 October 2009"))
-        .addMeta(new metaObject().setName("modified").setContent("20 October 2019"))
-        .addMeta(new metaObject().setName("reference").setContent("http://www.opengl.org/wiki/Fragment_Shader"))
-        .addMeta(new metaObject().setName("reference").setContent("http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"))
-        .addMeta(new metaObject().setName("reference").setContent("https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"))
-        .addMeta(new metaObject().setName("subject").setContent("X3D shader example"))
-        .addMeta(new metaObject().setName("reference").setContent("originals/simpleShader.x3dv"))
-        .addMeta(new metaObject().setName("reference").setContent("ShaderTutorialInstantReality.pdf"))
-        .addMeta(new metaObject().setName("generator").setContent("Titania V3.0.3, http://titania.create3000.de"))
-        .addMeta(new metaObject().setName("comment").setContent("World of Titania"))
-        .addMeta(new metaObject().setName("outputStyle").setContent("nicest"))
-        .addMeta(new metaObject().setName("warning").setContent("under development"))
-        .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
-        .addMeta(new metaObject().setName("license").setContent("../../license.html")))
-      .setScene(new SceneObject()
-        .addChild(new ProtoDeclareObject().setName("myPrototype")
-          .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType("SFVec3f").setName("myInputRange").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.44 0.22")))
-          .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject().setDEF("TR")
-              .addChild(new ShapeObject()
-                .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.5f,0.5f,0.9f}))
-                  .addShaders(new ComposedShaderObject().setLanguage("GLSL")
-                    .addField(new fieldObject().setType("SFVec3f").setName("decis").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-                    .setIS(new ISObject()
-                      .addConnect(new connectObject().setNodeField("decis").setProtoField("myInputRange")))
-                    .addParts(new ShaderPartObject().setType("VERTEX"))
-                    .addParts(new ShaderPartObject().setType("FRAGMENT")))
-                  .addShaders(new ComposedShaderObject().setDEF("Cobweb").setLanguage("GLSL")
-                    .addField(new fieldObject().setType("SFVec3f").setName("decis").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.77 0.44"))
-                    .addParts(new ShaderPartObject().setType("VERTEX"))
-                    .addParts(new ShaderPartObject().setType("FRAGMENT").setDEF("_1"))))
-                .setGeometry(new SphereObject().setRadius(1.75f))))))
-        .addChild(new WorldInfoObject().setTitle("SimpleShader")
-          .setMetadata(new MetadataSetObject().setName("Titania").setDEF("Titania").setReference("http://titania.create3000.de")
-            .addValue(new MetadataSetObject().setName("Selection").setDEF("Selection").setReference("http://titania.create3000.de")
-              .addValue(new MetadataSetObject().setName("nodes").setDEF("nodes").setReference("http://titania.create3000.de")
+    public X3D initialize() {
+ProtoInstance ProtoInstance0 = null;
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.2")
+      .setHead(new head()
+        .addComponent(new component().setName("Shaders").setLevel(1))
+        .addMeta(new meta().setName("title").setContent("SimpleShader.x3d"))
+        .addMeta(new meta().setName("description").setContent("Simple shader example"))
+        .addMeta(new meta().setName("creator").setContent("John Stewart"))
+        .addMeta(new meta().setName("translator").setContent("Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"))
+        .addMeta(new meta().setName("created").setContent("26 May 2009"))
+        .addMeta(new meta().setName("translated").setContent("15 October 2009"))
+        .addMeta(new meta().setName("modified").setContent("20 October 2019"))
+        .addMeta(new meta().setName("reference").setContent("http://www.opengl.org/wiki/Fragment_Shader"))
+        .addMeta(new meta().setName("reference").setContent("http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"))
+        .addMeta(new meta().setName("subject").setContent("X3D shader example"))
+        .addMeta(new meta().setName("reference").setContent("originals/simpleShader.x3dv"))
+        .addMeta(new meta().setName("reference").setContent("ShaderTutorialInstantReality.pdf"))
+        .addMeta(new meta().setName("generator").setContent("Titania V3.0.3, http://titania.create3000.de"))
+        .addMeta(new meta().setName("comment").setContent("World of Titania"))
+        .addMeta(new meta().setName("outputStyle").setContent("nicest"))
+        .addMeta(new meta().setName("warning").setContent("under development"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
+        .addMeta(new meta().setName("license").setContent("../../license.html")))
+      .setScene(new Scene()
+        .addChild(new ProtoDeclare().setName("myPrototype")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("SFVec3f").setName("myInputRange").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.44 0.22")))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Transform().setDEF("TR")
+              .addChild(new Shape()
+                .setAppearance(new Appearance()
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0.5f,0.5f,0.9f}))
+                  .addShaders(new ComposedShader().setLanguage("GLSL")
+                    .addField(new field().setType("SFVec3f").setName("decis").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+                    .setIS(new IS()
+                      .addConnect(new connect().setNodeField("decis").setProtoField("myInputRange")))
+                    .addParts(new ShaderPart().setType("VERTEX"))
+                    .addParts(new ShaderPart().setType("FRAGMENT")))
+                  .addShaders(new ComposedShader().setDEF("Cobweb").setLanguage("GLSL")
+                    .addField(new field().setType("SFVec3f").setName("decis").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.77 0.44"))
+                    .addParts(new ShaderPart().setType("VERTEX"))
+                    .addParts(new ShaderPart().setType("FRAGMENT").setDEF("_1"))))
+                .setGeometry(new Sphere().setRadius(1.75f))))))
+        .addChild(new WorldInfo().setTitle("SimpleShader")
+          .setMetadata(new MetadataSet().setName("Titania").setDEF("Titania").setReference("http://titania.create3000.de")
+            .addValue(new MetadataSet().setName("Selection").setDEF("Selection").setReference("http://titania.create3000.de")
+              .addValue(new MetadataSet().setName("nodes").setDEF("nodes").setReference("http://titania.create3000.de")
                 .addComments(new CommentsBlock("NULL"))))
-            .addValue(new MetadataSetObject().setName("NavigationInfo").setDEF("NavigationInfo").setReference("http://titania.create3000.de")
-              .addValue(new MetadataStringObject().setName("type").setDEF("type").setReference("http://titania.create3000.de").setValue(new MFStringObject(new MFString0().getArray()))))
-            .addValue(new MetadataSetObject().setName("Viewpoint").setDEF("Viewpoint").setReference("http://titania.create3000.de")
-              .addValue(new MetadataDoubleObject().setName("position").setDEF("position").setReference("http://titania.create3000.de").setValue(new MFDoubleObject(new MFDouble1().getArray())))
-              .addValue(new MetadataDoubleObject().setName("orientation").setDEF("orientation").setReference("http://titania.create3000.de").setValue(new MFDoubleObject(new MFDouble2().getArray())))
-              .addValue(new MetadataDoubleObject().setName("centerOfRotation").setDEF("centerOfRotation").setReference("http://titania.create3000.de").setValue(new MFDoubleObject(new MFDouble3().getArray()))))))
-        .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("myPrototype")))      ;
+            .addValue(new MetadataSet().setName("NavigationInfo").setDEF("NavigationInfo").setReference("http://titania.create3000.de")
+              .addValue(new MetadataString().setName("type").setDEF("type").setReference("http://titania.create3000.de").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray()))))
+            .addValue(new MetadataSet().setName("Viewpoint").setDEF("Viewpoint").setReference("http://titania.create3000.de")
+              .addValue(new MetadataDouble().setName("position").setDEF("position").setReference("http://titania.create3000.de").setValue(new org.web3d.x3d.jsail.fields.MFDouble(new MFDouble1().getArray())))
+              .addValue(new MetadataDouble().setName("orientation").setDEF("orientation").setReference("http://titania.create3000.de").setValue(new org.web3d.x3d.jsail.fields.MFDouble(new MFDouble2().getArray())))
+              .addValue(new MetadataDouble().setName("centerOfRotation").setDEF("centerOfRotation").setReference("http://titania.create3000.de").setValue(new org.web3d.x3d.jsail.fields.MFDouble(new MFDouble3().getArray()))))))
+        .addChild(ProtoInstance0 = new ProtoInstance().setName("myPrototype")))      ;
     return X3D0;
     }
 protected class MFString0 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"EXAMINE"});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"EXAMINE"});
   }
 }
 protected class MFDouble1 {
-  protected MFDoubleObject getArray() {
-    return new MFDoubleObject(new double[] {6.24067728185014d,0.00250837343276661d,2.92117542307615d});
+  protected org.web3d.x3d.jsail.fields.MFDouble getArray() {
+    return new org.web3d.x3d.jsail.fields.MFDouble(new double[] {6.24067728185014d,0.00250837343276661d,2.92117542307615d});
   }
 }
 protected class MFDouble2 {
-  protected MFDoubleObject getArray() {
-    return new MFDoubleObject(new double[] {-0.110173424710488d,0.990158061907379d,-0.0863065984000336d,1.21146676119191d});
+  protected org.web3d.x3d.jsail.fields.MFDouble getArray() {
+    return new org.web3d.x3d.jsail.fields.MFDouble(new double[] {-0.110173424710488d,0.990158061907379d,-0.0863065984000336d,1.21146676119191d});
   }
 }
 protected class MFDouble3 {
-  protected MFDoubleObject getArray() {
-    return new MFDoubleObject(new double[] {-0.808320198626341d,-0.358072370409949d,0.22817191560906d});
+  protected org.web3d.x3d.jsail.fields.MFDouble getArray() {
+    return new org.web3d.x3d.jsail.fields.MFDouble(new double[] {-0.808320198626341d,-0.358072370409949d,0.22817191560906d});
   }
 }
 }

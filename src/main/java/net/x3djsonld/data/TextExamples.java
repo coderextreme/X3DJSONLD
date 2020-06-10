@@ -85,63 +85,63 @@ public class TextExamples
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_0)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("TextExamples.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Show different escape-character text examples for embedded quotation marks."))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("7 April 2001"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("26 April 2016"))
-    .addMeta(new metaObject().setName(metaObject.NAME_WARNING    ).setContent("Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."))
-    .addMeta(new metaObject().setName(metaObject.NAME_WARNING    ).setContent("Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new TransformObject().setTranslation(0.0f,2.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new String[] {"Compare special character escaping"})
-          .setFontStyle(new FontStyleObject("testFontStyle").setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE).setSize(0.8f)))
-        .setAppearance(new AppearanceObject("LightBlueAppearance")
-          .setMaterial(new MaterialObject().setDiffuseColor(0.1f,0.7f,0.7f)))))
-    .addChild(new TransformObject().setTranslation(-3.0f,0.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new String[] {"I don't think so","","he said \"Hi\""})
-          .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
-        .setAppearance(new AppearanceObject().setUSE("LightBlueAppearance"))))
-    .addChild(new TransformObject().setTranslation(3.0f,0.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new String[] {"I don't think so","","he said \"Hi\""})
-          .setFontStyle(new FontStyleObject().setUSE("testFontStyle")))
-        .setAppearance(new AppearanceObject().setUSE("LightBlueAppearance")))));
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("TextExamples.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Show different escape-character text examples for embedded quotation marks."))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("7 April 2001"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("26 April 2016"))
+    .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("Note that X3D Canonicalization (C14N) will scrub alternate XML character representations, be careful to check original encoding into version control."))
+    .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("Usually this source document needs to be inspected and edited using a plain-text editor in order to see the differences in these XML-equivalent text representations."))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
+  .setScene(new Scene()
+    .addChild(new Transform().setTranslation(0.0f,2.0f,0.0f)
+      .addChild(new Shape()
+        .setGeometry(new Text().setString(new String[] {"Compare special character escaping"})
+          .setFontStyle(new FontStyle("testFontStyle").setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(0.8f)))
+        .setAppearance(new Appearance("LightBlueAppearance")
+          .setMaterial(new Material().setDiffuseColor(0.1f,0.7f,0.7f)))))
+    .addChild(new Transform().setTranslation(-3.0f,0.0f,0.0f)
+      .addChild(new Shape()
+        .setGeometry(new Text().setString(new String[] {"I don't think so","","he said \"Hi\""})
+          .setFontStyle(new FontStyle().setUSE("testFontStyle")))
+        .setAppearance(new Appearance().setUSE("LightBlueAppearance"))))
+    .addChild(new Transform().setTranslation(3.0f,0.0f,0.0f)
+      .addChild(new Shape()
+        .setGeometry(new Text().setString(new String[] {"I don't think so","","he said \"Hi\""})
+          .setFontStyle(new FontStyle().setUSE("testFontStyle")))
+        .setAppearance(new Appearance().setUSE("LightBlueAppearance")))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return TextExamples model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new TextExamples().getX3dModel();
+        X3D thisExampleX3dModel = new TextExamples().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -156,15 +156,15 @@ public class TextExamples
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -174,12 +174,12 @@ public class TextExamples
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"TextExamples\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"TextExamples\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

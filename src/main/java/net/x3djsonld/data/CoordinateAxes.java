@@ -67,103 +67,103 @@ public class CoordinateAxes
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("CoordinateAxes.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Unknown, see X3D Resources Archives"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manual"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("a box")))
-  .setScene(new SceneObject()
-    .addChild(new CollisionObject("DoNotCollideWithVisualizationWidget")
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("CoordinateAxes.x3d"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Unknown, see X3D Resources Archives"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a box")))
+  .setScene(new Scene()
+    .addChild(new Collision("DoNotCollideWithVisualizationWidget")
       .addComments(" Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. ")
       .addComments(" This NavigationInfo allows examine mode and will be overridden by any parent scene. ")
       .addComments(" Each arrow goes from +1m to -1m to allow linear scaling to fit a scene ")
       .addComments(" Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user ")
-      .addChild(new GroupObject()
+      .addChild(new Group()
         .addComments(" Vertical Y arrow and label ")
-        .addChild(new GroupObject("ArrowGreen")
-          .addChild(new ShapeObject()
-            .setGeometry(new CylinderObject("ArrowCylinder").setRadius(.025f).setTop(false))
-            .setAppearance(new AppearanceObject("Green")
-              .setMaterial(new MaterialObject().setDiffuseColor(.1f,.6f,.1f).setEmissiveColor(.05f,.2f,.05f))))
-          .addChild(new TransformObject().setTranslation(0.0f,1.0f,0.0f)
-            .addChild(new ShapeObject()
-              .setGeometry(new ConeObject("ArrowCone").setBottomRadius(.05f).setHeight(.1f))
-              .setAppearance(new AppearanceObject().setUSE("Green")))))
-        .addChild(new TransformObject().setTranslation(0.0f,1.08f,0.0f)
-          .addChild(new BillboardObject()
-            .addChild(new ShapeObject()
-              .setAppearance(new AppearanceObject("LABEL_APPEARANCE")
-                .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,.3f).setEmissiveColor(.33f,.33f,.1f)))
-              .setGeometry(new TextObject().setString(new String[] {"Y"})
-                .setFontStyle(new FontStyleObject("LABEL_FONT").setFamily(new String[] {"SANS"}).setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE).setSize(.2f)))))))
-      .addChild(new TransformObject().setRotation(0.0f,0.0f,1.0f,-1.57079f)
+        .addChild(new Group("ArrowGreen")
+          .addChild(new Shape()
+            .setGeometry(new Cylinder("ArrowCylinder").setRadius(.025f).setTop(false))
+            .setAppearance(new Appearance("Green")
+              .setMaterial(new Material().setDiffuseColor(.1f,.6f,.1f).setEmissiveColor(.05f,.2f,.05f))))
+          .addChild(new Transform().setTranslation(0.0f,1.0f,0.0f)
+            .addChild(new Shape()
+              .setGeometry(new Cone("ArrowCone").setBottomRadius(.05f).setHeight(.1f))
+              .setAppearance(new Appearance().setUSE("Green")))))
+        .addChild(new Transform().setTranslation(0.0f,1.08f,0.0f)
+          .addChild(new Billboard()
+            .addChild(new Shape()
+              .setAppearance(new Appearance("LABEL_APPEARANCE")
+                .setMaterial(new Material().setDiffuseColor(1.0f,1.0f,.3f).setEmissiveColor(.33f,.33f,.1f)))
+              .setGeometry(new Text().setString(new String[] {"Y"})
+                .setFontStyle(new FontStyle("LABEL_FONT").setFamily(new String[] {"SANS"}).setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(.2f)))))))
+      .addChild(new Transform().setRotation(0.0f,0.0f,1.0f,-1.57079f)
         .addComments(" Horizontal X arrow and label ")
-        .addChild(new GroupObject()
-          .addChild(new GroupObject("ArrowRed")
-            .addChild(new ShapeObject()
-              .setGeometry(new CylinderObject().setUSE("ArrowCylinder"))
-              .setAppearance(new AppearanceObject("Red")
-                .setMaterial(new MaterialObject().setDiffuseColor(.7f,.1f,.1f).setEmissiveColor(.33f,0.0f,0.0f))))
-            .addChild(new TransformObject().setTranslation(0.0f,1.0f,0.0f)
-              .addChild(new ShapeObject()
-                .setGeometry(new ConeObject().setUSE("ArrowCone"))
-                .setAppearance(new AppearanceObject().setUSE("Red")))))
-          .addChild(new TransformObject().setRotation(0.0f,0.0f,1.0f,1.57079f).setTranslation(.072f,1.1f,0.0f)
+        .addChild(new Group()
+          .addChild(new Group("ArrowRed")
+            .addChild(new Shape()
+              .setGeometry(new Cylinder().setUSE("ArrowCylinder"))
+              .setAppearance(new Appearance("Red")
+                .setMaterial(new Material().setDiffuseColor(.7f,.1f,.1f).setEmissiveColor(.33f,0.0f,0.0f))))
+            .addChild(new Transform().setTranslation(0.0f,1.0f,0.0f)
+              .addChild(new Shape()
+                .setGeometry(new Cone().setUSE("ArrowCone"))
+                .setAppearance(new Appearance().setUSE("Red")))))
+          .addChild(new Transform().setRotation(0.0f,0.0f,1.0f,1.57079f).setTranslation(.072f,1.1f,0.0f)
             .addComments(" note label rotated back to original coordinate frame ")
-            .addChild(new BillboardObject()
-              .addChild(new ShapeObject()
-                .setAppearance(new AppearanceObject().setUSE("LABEL_APPEARANCE"))
-                .setGeometry(new TextObject().setString(new String[] {"X"})
-                  .setFontStyle(new FontStyleObject().setUSE("LABEL_FONT"))))))))
-      .addChild(new TransformObject().setRotation(1.0f,0.0f,0.0f,1.57079f)
+            .addChild(new Billboard()
+              .addChild(new Shape()
+                .setAppearance(new Appearance().setUSE("LABEL_APPEARANCE"))
+                .setGeometry(new Text().setString(new String[] {"X"})
+                  .setFontStyle(new FontStyle().setUSE("LABEL_FONT"))))))))
+      .addChild(new Transform().setRotation(1.0f,0.0f,0.0f,1.57079f)
         .addComments(" Perpendicular Z arrow and label, note right-hand rule ")
-        .addChild(new GroupObject()
-          .addChild(new GroupObject("ArrowBlue")
-            .addChild(new ShapeObject()
-              .setGeometry(new CylinderObject().setUSE("ArrowCylinder"))
-              .setAppearance(new AppearanceObject("Blue")
-                .setMaterial(new MaterialObject().setDiffuseColor(.3f,.3f,1.0f).setEmissiveColor(.1f,.1f,.33f))))
-            .addChild(new TransformObject().setTranslation(0.0f,1.0f,0.0f)
-              .addChild(new ShapeObject()
-                .setGeometry(new ConeObject().setUSE("ArrowCone"))
-                .setAppearance(new AppearanceObject().setUSE("Blue")))))
-          .addChild(new TransformObject().setRotation(1.0f,0.0f,0.0f,-1.57079f).setTranslation(0.0f,1.1f,.072f)
+        .addChild(new Group()
+          .addChild(new Group("ArrowBlue")
+            .addChild(new Shape()
+              .setGeometry(new Cylinder().setUSE("ArrowCylinder"))
+              .setAppearance(new Appearance("Blue")
+                .setMaterial(new Material().setDiffuseColor(.3f,.3f,1.0f).setEmissiveColor(.1f,.1f,.33f))))
+            .addChild(new Transform().setTranslation(0.0f,1.0f,0.0f)
+              .addChild(new Shape()
+                .setGeometry(new Cone().setUSE("ArrowCone"))
+                .setAppearance(new Appearance().setUSE("Blue")))))
+          .addChild(new Transform().setRotation(1.0f,0.0f,0.0f,-1.57079f).setTranslation(0.0f,1.1f,.072f)
             .addComments(" note label rotated back to original coordinate frame ")
-            .addChild(new BillboardObject()
-              .addChild(new ShapeObject()
-                .setAppearance(new AppearanceObject().setUSE("LABEL_APPEARANCE"))
-                .setGeometry(new TextObject().setString(new String[] {"Z"})
-                  .setFontStyle(new FontStyleObject().setUSE("LABEL_FONT"))))))))));
+            .addChild(new Billboard()
+              .addChild(new Shape()
+                .setAppearance(new Appearance().setUSE("LABEL_APPEARANCE"))
+                .setGeometry(new Text().setString(new String[] {"Z"})
+                  .setFontStyle(new FontStyle().setUSE("LABEL_FONT"))))))))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return CoordinateAxes model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new CoordinateAxes().getX3dModel();
+        X3D thisExampleX3dModel = new CoordinateAxes().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -178,15 +178,15 @@ public class CoordinateAxes
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -196,12 +196,12 @@ public class CoordinateAxes
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"CoordinateAxes\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"CoordinateAxes\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

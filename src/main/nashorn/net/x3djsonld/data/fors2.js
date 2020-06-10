@@ -69,37 +69,37 @@ fors2.prototype = {
   {
 
 	/** Large attribute array: Extrusion DEF='extrusion' crossSection field, scene-graph level=6, element #34, 34 total numbers made up of 17 2-tuple values */
-	this.extrusion_6_34_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(Java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], Java.type("float[]"))))
-	.append(new MFVec2fObject(Java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], Java.type("float[]"))));
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("creator").setContent("John W Carlson"))
-    .addMeta(new metaObject().setName("created").setContent("December 13 2015"))
-    .addMeta(new metaObject().setName("modified").setContent("April 18 2017"))
-    .addMeta(new metaObject().setName("title").setContent("fors2.x3d"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/fors2.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("beginnings of a force directed graph in 3D"))
-    .addMeta(new metaObject().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
-  .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject().setName("node")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("inputOutput").setName("position").setType("SFVec3f").setValue("0 0 0")))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new TransformObject("transform")
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("translation").setProtoField("position")))
-          .addChild(new ShapeObject()
+	this.extrusion_6_34_crossSection = new MFVec2f() /* splitting up long array to improve readability */
+	.append(new MFVec2f(Java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], Java.type("float[]"))))
+	.append(new MFVec2f(Java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], Java.type("float[]"))));
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("creator").setContent("John W Carlson"))
+    .addMeta(new meta().setName("created").setContent("December 13 2015"))
+    .addMeta(new meta().setName("modified").setContent("April 18 2017"))
+    .addMeta(new meta().setName("title").setContent("fors2.x3d"))
+    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/fors2.x3d"))
+    .addMeta(new meta().setName("description").setContent("beginnings of a force directed graph in 3D"))
+    .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+  .setScene(new Scene()
+    .addChild(new ProtoDeclare().setName("node")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setAccessType("inputOutput").setName("position").setType("SFVec3f").setValue("0 0 0")))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Transform("transform")
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("translation").setProtoField("position")))
+          .addChild(new Shape()
             .addComments("comment before Sphere")
             .addComments("comment after Sphere")
             .addComments("comment after Appearance")
-            .setGeometry(new SphereObject())
-            .setAppearance(new AppearanceObject()
+            .setGeometry(new Sphere())
+            .setAppearance(new Appearance()
               .addComments("comment before Material")
               .addComments("comment after Material")
-              .setMaterial(new MaterialObject().setDiffuseColor(1.0,0.0,0.0)))))
-        .addChild(new PositionInterpolatorObject("NodePosition").setKeyValue(new MFVec3fObject(Java.to([0.0,0.0,0.0,0.0,5.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,1.0], Java.type("float[]"))))
-        .addChild(new ScriptObject("MoveBall").setSourceCode("\n" + 
+              .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0)))))
+        .addChild(new PositionInterpolator("NodePosition").setKeyValue(new MFVec3f(Java.to([0.0,0.0,0.0,0.0,5.0,0.0], Java.type("float[]")))).setKey(Java.to([0.0,1.0], Java.type("float[]"))))
+        .addChild(new Script("MoveBall").setSourceCode("\n" + 
 " ecmascript:" + "\n" + 
 "					function set_cycle(value) {" + "\n" + 
 "                                                old = translation;" + "\n" + 
@@ -107,25 +107,25 @@ fors2.prototype = {
 "                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "						// Browser.println(translation);" + "\n" + 
 "					}" + "\n")
-          .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
-          .addField(new fieldObject().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
-          .addField(new fieldObject().setAccessType("outputOnly").setName("keyValue").setType("MFVec3f")))
-        .addChild(new TimeSensorObject("nodeClock").setCycleInterval(3).setLoop(true))
-        .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
-        .addChild(new ROUTEObject().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
-        .addChild(new ROUTEObject().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
-        .addChild(new ROUTEObject().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation"))))
-    .addChild(new ProtoDeclareObject().setName("cylinder")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setAccessType("inputOnly").setName("positionA").setType("SFVec3f"))
-        .addField(new fieldObject().setAccessType("inputOnly").setName("positionB").setType("SFVec3f")))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new ShapeObject()
-          .setGeometry(new ExtrusionObject("extrusion").setSpine(new MFVec3fObject(Java.to([0.0,-50.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.extrusion_6_34_crossSection))
-          .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setDiffuseColor(0.0,1.0,0.0))))
-        .addChild(new ScriptObject("MoveCylinder").setSourceCode("\n" + 
+          .addField(new field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
+          .addField(new field().setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
+          .addField(new field().setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
+          .addField(new field().setAccessType("outputOnly").setName("keyValue").setType("MFVec3f")))
+        .addChild(new TimeSensor("nodeClock").setCycleInterval(3).setLoop(true))
+        .addChild(new ROUTE().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
+        .addChild(new ROUTE().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
+        .addChild(new ROUTE().setFromNode("MoveBall").setFromField("keyValue").setToNode("NodePosition").setToField("keyValue"))
+        .addChild(new ROUTE().setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation"))))
+    .addChild(new ProtoDeclare().setName("cylinder")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setAccessType("inputOnly").setName("positionA").setType("SFVec3f"))
+        .addField(new field().setAccessType("inputOnly").setName("positionB").setType("SFVec3f")))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Shape()
+          .setGeometry(new Extrusion("extrusion").setSpine(new MFVec3f(Java.to([0.0,-50.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.extrusion_6_34_crossSection))
+          .setAppearance(new Appearance()
+            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0))))
+        .addChild(new Script("MoveCylinder").setSourceCode("\n" + 
 " ecmascript:" + "\n" + 
 "\n" + 
 "                function set_endA(value) {" + "\n" + 
@@ -148,23 +148,23 @@ fors2.prototype = {
 "		    Browser.print('\\n'+'\"');" + "\n" + 
 "                    spine = value;" + "\n" + 
 "                }" + "\n")
-          .addField(new fieldObject().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("0 -50 0 0 0 0 0 50 0"))
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_endA").setType("SFVec3f"))
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_endB").setType("SFVec3f"))
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("set_endA").setProtoField("positionA"))
-            .addConnect(new connectObject().setNodeField("set_endB").setProtoField("positionB"))))
-        .addChild(new ROUTEObject().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-    .addChild(new TransformObject().setScale(0.1,0.1,0.1)
-      .addChild(new ProtoInstanceObject("nodeA", "node").setDEF("nodeA").setName("node")
-        .addFieldValue(new fieldValueObject().setName("position").setValue("-50 -50 -50")))
-      .addChild(new ProtoInstanceObject("nodeB", "node").setDEF("nodeB").setName("node")
-        .addFieldValue(new fieldValueObject().setName("position").setValue("50 50 50")))
-      .addChild(new ProtoInstanceObject("linkA", "cylinder").setDEF("linkA").setName("cylinder")
-        .addFieldValue(new fieldValueObject().setName("positionA").setValue("0 0 0"))
-        .addFieldValue(new fieldValueObject().setName("positionB").setValue("50 50 50"))))
-    .addChild(new ROUTEObject().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
-    .addChild(new ROUTEObject().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("positionB")));
+          .addField(new field().setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("0 -50 0 0 0 0 0 50 0"))
+          .addField(new field().setAccessType("inputOnly").setName("set_endA").setType("SFVec3f"))
+          .addField(new field().setAccessType("inputOnly").setName("set_endB").setType("SFVec3f"))
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("set_endA").setProtoField("positionA"))
+            .addConnect(new connect().setNodeField("set_endB").setProtoField("positionB"))))
+        .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
+    .addChild(new Transform().setScale(0.1,0.1,0.1)
+      .addChild(new ProtoInstance("nodeA", "node").setDEF("nodeA").setName("node")
+        .addFieldValue(new fieldValue().setName("position").setValue("-50 -50 -50")))
+      .addChild(new ProtoInstance("nodeB", "node").setDEF("nodeB").setName("node")
+        .addFieldValue(new fieldValue().setName("position").setValue("50 50 50")))
+      .addChild(new ProtoInstance("linkA", "cylinder").setDEF("linkA").setName("cylinder")
+        .addFieldValue(new fieldValue().setName("positionA").setValue("0 0 0"))
+        .addFieldValue(new fieldValue().setName("positionB").setValue("50 50 50"))))
+    .addChild(new ROUTE().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
+    .addChild(new ROUTE().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("positionB")));
   },
   // end of initialize() method
 
@@ -198,11 +198,11 @@ fors2.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

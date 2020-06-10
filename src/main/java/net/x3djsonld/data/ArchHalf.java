@@ -85,25 +85,25 @@ public class ArchHalf
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("ArchHalf.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Michele Foti, Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("15 December 2014"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("16 February 2016"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("ArchModelingDiagrams.pdf"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/Arch"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new ShapeObject("Arch")
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("ArchHalf.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Michele Foti, Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("15 December 2014"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("16 February 2016"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("ArchModelingDiagrams.pdf"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/Arch"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
+  .setScene(new Scene()
+    .addChild(new Shape("Arch")
       .addComments(" note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly ")
-      .setGeometry(new IndexedFaceSetObject("ArchIndex").setDEF("ArchIndex").setConvex(false).setSolid(false).setCoordIndex(getArchIndex_4_12_coordIndex())
-        .setCoord(new CoordinateObject("ArchChord").setPoint(getArchChord_5_12_point())))
-      .setAppearance(new AppearanceObject()
-        .setMaterial(new MaterialObject("MaterialNode").setDiffuseColor(1.0f,0.75f,0.25f)))));
+      .setGeometry(new IndexedFaceSet("ArchIndex").setDEF("ArchIndex").setConvex(false).setSolid(false).setCoordIndex(getArchIndex_4_12_coordIndex())
+        .setCoord(new Coordinate("ArchChord").setPoint(getArchChord_5_12_point())))
+      .setAppearance(new Appearance()
+        .setMaterial(new Material("MaterialNode").setDiffuseColor(1.0f,0.75f,0.25f)))));
     }
 	// end of initialize() method
 
@@ -134,10 +134,10 @@ public class ArchHalf
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getArchIndex_4_12_coordIndex()
+		private MFInt32 getArchIndex_4_12_coordIndex()
 		{
-			MFInt32Object ArchIndex_4_12_coordIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getArchIndex_4_12_coordIndex_1()));
+			MFInt32 ArchIndex_4_12_coordIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getArchIndex_4_12_coordIndex_1()));
 			return ArchIndex_4_12_coordIndex;
 		}
 		/** Large attribute array: Coordinate DEF='ArchChord' point field, scene-graph level=5, element #12, 468 total numbers made up of 156 3-tuple values.
@@ -147,39 +147,39 @@ public class ArchHalf
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getArchChord_5_12_point()
+		private MFVec3f getArchChord_5_12_point()
 		{
-			MFVec3fObject ArchChord_5_12_point = new MFVec3fObject()/*2.finalize*/
-				.append(new MFVec3fObject(getArchChord_5_12_point_1()))
-				.append(new MFVec3fObject(getArchChord_5_12_point_2()));
+			MFVec3f ArchChord_5_12_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getArchChord_5_12_point_1()))
+				.append(new MFVec3f(getArchChord_5_12_point_2()));
 			return ArchChord_5_12_point;
 		}
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return ArchHalf model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new ArchHalf().getX3dModel();
+        X3D thisExampleX3dModel = new ArchHalf().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -194,15 +194,15 @@ public class ArchHalf
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -212,12 +212,12 @@ public class ArchHalf
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"ArchHalf\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"ArchHalf\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

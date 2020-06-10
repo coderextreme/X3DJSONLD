@@ -36,83 +36,47 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.sai.*;
-import org.web3d.x3d.sai.CADGeometry.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.DIS.*;
-import org.web3d.x3d.sai.EnvironmentalEffects.*;
-import org.web3d.x3d.sai.EnvironmentalSensor.*;
-import org.web3d.x3d.sai.EventUtilities.*;
-import org.web3d.x3d.sai.Followers.*;
-import org.web3d.x3d.sai.Geometry2D.*;
-import org.web3d.x3d.sai.Geometry3D.*;
-import org.web3d.x3d.sai.Geospatial.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Interpolation.*;
-import org.web3d.x3d.sai.KeyDeviceSensor.*;
-import org.web3d.x3d.sai.Layering.*;
-import org.web3d.x3d.sai.Layout.*;
-import org.web3d.x3d.sai.Lighting.*;
-import org.web3d.x3d.sai.NURBS.*;
-import org.web3d.x3d.sai.Navigation.*;
-import org.web3d.x3d.sai.Networking.*;
-import org.web3d.x3d.sai.ParticleSystems.*;
-import org.web3d.x3d.sai.Picking.*;
-import org.web3d.x3d.sai.PointingDeviceSensor.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.RigidBodyPhysics.*;
-import org.web3d.x3d.sai.Scripting.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing3D.*;
-import org.web3d.x3d.sai.Texturing.*;
-import org.web3d.x3d.sai.Time.*;
-import org.web3d.x3d.sai.VolumeRendering.*;
 public class asmallbox {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new asmallbox().initialize().toFileJSON("../data/asmallbox.new.json");
     }
-    public X3DObject initialize() {
-ProtoInstanceObject ProtoInstance0 = null;
-ProtoInstanceObject ProtoInstance1 = null;
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
-      .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("asmallbox.x3d"))
-        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("a box")))
-      .setScene(new SceneObject()
-        .addChild(new ProtoDeclareObject().setName("anyShape")
-          .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType("MFNode").setName("myShape").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new ShapeObject()
-                .setGeometry(new SphereObject()))))
-          .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject()
-              .setIS(new ISObject()
-                .addConnect(new connectObject().setNodeField("children").setProtoField("myShape"))))))
-        .addChild(new ProtoDeclareObject().setName("one")
-          .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType("MFNode").setName("myShape").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new ShapeObject()
-                .setGeometry(new CylinderObject()))))
-          .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject()
-              .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("anyShape")
-                .setIS(new ISObject()
-                  .addConnect(new connectObject().setNodeField("myShape").setProtoField("myShape")))))))
-        .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("one")))      ;
+    public X3D initialize() {
+ProtoInstance ProtoInstance0 = null;
+ProtoInstance ProtoInstance1 = null;
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("asmallbox.x3d"))
+        .addMeta(new meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new meta().setName("generator").setContent("manual"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/abox.x3d"))
+        .addMeta(new meta().setName("description").setContent("a box")))
+      .setScene(new Scene()
+        .addChild(new ProtoDeclare().setName("anyShape")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("MFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+              .addChild(new Shape()
+                .setGeometry(new Sphere()))))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Transform()
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
+        .addChild(new ProtoDeclare().setName("one")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("MFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+              .addChild(new Shape()
+                .setGeometry(new Cylinder()))))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Transform()
+              .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")
+                .setIS(new IS()
+                  .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
+        .addChild(ProtoInstance1 = new ProtoInstance().setName("one")))      ;
 ProtoInstance1
-          .addFieldValue(new fieldValueObject().setName("myShape")
-            .addChild(new ShapeObject()
-              .setGeometry(new BoxObject())));
+          .addFieldValue(new fieldValue().setName("myShape")
+            .addChild(new Shape()
+              .setGeometry(new Box())));
     return X3D0;
     }
 }

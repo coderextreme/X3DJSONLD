@@ -36,100 +36,64 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.sai.*;
-import org.web3d.x3d.sai.CADGeometry.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.DIS.*;
-import org.web3d.x3d.sai.EnvironmentalEffects.*;
-import org.web3d.x3d.sai.EnvironmentalSensor.*;
-import org.web3d.x3d.sai.EventUtilities.*;
-import org.web3d.x3d.sai.Followers.*;
-import org.web3d.x3d.sai.Geometry2D.*;
-import org.web3d.x3d.sai.Geometry3D.*;
-import org.web3d.x3d.sai.Geospatial.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Interpolation.*;
-import org.web3d.x3d.sai.KeyDeviceSensor.*;
-import org.web3d.x3d.sai.Layering.*;
-import org.web3d.x3d.sai.Layout.*;
-import org.web3d.x3d.sai.Lighting.*;
-import org.web3d.x3d.sai.NURBS.*;
-import org.web3d.x3d.sai.Navigation.*;
-import org.web3d.x3d.sai.Networking.*;
-import org.web3d.x3d.sai.ParticleSystems.*;
-import org.web3d.x3d.sai.Picking.*;
-import org.web3d.x3d.sai.PointingDeviceSensor.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.RigidBodyPhysics.*;
-import org.web3d.x3d.sai.Scripting.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing3D.*;
-import org.web3d.x3d.sai.Texturing.*;
-import org.web3d.x3d.sai.Time.*;
-import org.web3d.x3d.sai.VolumeRendering.*;
 public class flowers2 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new flowers2().initialize().toFileJSON("../data/flowers2.new.json");
     }
-    public X3DObject initialize() {
-ProtoInstanceObject ProtoInstance0 = null;
-ProtoInstanceObject ProtoInstance1 = null;
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.0")
-      .setHead(new headObject()
-        .addComponent(new componentObject().setName("Scripting").setLevel(1))
-        .addMeta(new metaObject().setName("title").setContent("flowers2.x3d"))
-        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("transcriber").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("created").setContent("23 January 2005"))
-        .addMeta(new metaObject().setName("modified").setContent("21 March 2018"))
-        .addMeta(new metaObject().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
-        .addMeta(new metaObject().setName("generator").setContent("manually written"))
-        .addMeta(new metaObject().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
-      .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject())
-        .addChild(new ViewpointObject().setDescription("Two mathematical orbitals").setPosition(new float[] {0f,0f,50f}))
-        .addChild(new GroupObject()
-          .addChild(new DirectionalLightObject().setDirection(new float[] {1f,1f,1f}))
-          .addChild(new ProtoDeclareObject().setName("orbit")
-            .setProtoInterface(new ProtoInterfaceObject()
-              .addField(new fieldObject().setType("SFVec3f").setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
-              .addField(new fieldObject().setType("SFColor").setName("diffuseColor").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
-              .addField(new fieldObject().setType("SFColor").setName("specularColor").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
-              .addField(new fieldObject().setType("SFFloat").setName("transparency").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.75")))
-            .setProtoBody(new ProtoBodyObject()
-              .addChild(new GroupObject()
-                .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16d).setLoop(true))
-                .addChild(new OrientationInterpolatorObject().setDEF("OrbitPath").setKey(new MFFloatObject(new MFFloat0().getArray())).setKeyValue(new MFRotationObject(new MFRotation1().getArray())))
-                .addChild(new TransformObject().setDEF("OrbitTransform")
-                  .setIS(new ISObject()
-                    .addConnect(new connectObject().setNodeField("translation").setProtoField("translation")))
-                  .addChild(new ShapeObject()
-                    .setAppearance(new AppearanceObject()
-                      .setMaterial(new MaterialObject()
-                        .setIS(new ISObject()
-                          .addConnect(new connectObject().setNodeField("diffuseColor").setProtoField("diffuseColor"))
-                          .addConnect(new connectObject().setNodeField("specularColor").setProtoField("specularColor"))
-                          .addConnect(new connectObject().setNodeField("transparency").setProtoField("transparency")))))
+    public X3D initialize() {
+ProtoInstance ProtoInstance0 = null;
+ProtoInstance ProtoInstance1 = null;
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      .setHead(new head()
+        .addComponent(new component().setName("Scripting").setLevel(1))
+        .addMeta(new meta().setName("title").setContent("flowers2.x3d"))
+        .addMeta(new meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new meta().setName("transcriber").setContent("John Carlson"))
+        .addMeta(new meta().setName("created").setContent("23 January 2005"))
+        .addMeta(new meta().setName("modified").setContent("21 March 2018"))
+        .addMeta(new meta().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
+        .addMeta(new meta().setName("generator").setContent("manually written"))
+        .addMeta(new meta().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html")))
+      .setScene(new Scene()
+        .addChild(new NavigationInfo())
+        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(new float[] {0f,0f,50f}))
+        .addChild(new Group()
+          .addChild(new DirectionalLight().setDirection(new float[] {1f,1f,1f}))
+          .addChild(new ProtoDeclare().setName("orbit")
+            .setProtoInterface(new ProtoInterface()
+              .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
+              .addField(new field().setType("SFColor").setName("diffuseColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
+              .addField(new field().setType("SFColor").setName("specularColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
+              .addField(new field().setType("SFFloat").setName("transparency").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.75")))
+            .setProtoBody(new ProtoBody()
+              .addChild(new Group()
+                .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16d).setLoop(true))
+                .addChild(new OrientationInterpolator().setDEF("OrbitPath").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat0().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation1().getArray())))
+                .addChild(new Transform().setDEF("OrbitTransform")
+                  .setIS(new IS()
+                    .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
+                  .addChild(new Shape()
+                    .setAppearance(new Appearance()
+                      .setMaterial(new Material()
+                        .setIS(new IS()
+                          .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))
+                          .addConnect(new connect().setNodeField("specularColor").setProtoField("specularColor"))
+                          .addConnect(new connect().setNodeField("transparency").setProtoField("transparency")))))
                     .addComments(new CommentsBlock("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
-                    .setGeometry(new IndexedFaceSetObject().setCcw(false).setConvex(false).setCoordIndex(new MFInt32Object(new MFInt322().getArray())).setDEF("Orbit")
-                      .setCoord(new CoordinateObject().setDEF("OrbitCoordinates").setPoint(new MFVec3fObject(new MFVec3f3().getArray()))))))
-                .addChild(new ScriptObject().setDEF("OrbitScript")
-                  .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-                  .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-                  .addField(new fieldObject().setType("MFInt32").setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-                  .addField(new fieldObject().setType("SFFloat").setName("e").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new fieldObject().setType("SFFloat").setName("f").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new fieldObject().setType("SFFloat").setName("g").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new fieldObject().setType("SFFloat").setName("h").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new fieldObject().setType("SFInt32").setName("resolution").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
+                    .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt322().getArray())).setDEF("Orbit")
+                      .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f3().getArray()))))))
+                .addChild(new Script().setDEF("OrbitScript")
+                  .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+                  .addField(new field().setType("MFVec3f").setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+                  .addField(new field().setType("MFInt32").setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+                  .addField(new field().setType("SFFloat").setName("e").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new field().setType("SFFloat").setName("f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new field().setType("SFFloat").setName("g").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new field().setType("SFFloat").setName("h").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
+                  .addField(new field().setType("SFInt32").setName("resolution").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
                   .setSourceCode("ecmascript:\n"+
 "\n"+
 "			var e = 5;\n"+
@@ -204,49 +168,49 @@ ProtoInstanceObject ProtoInstance1 = null;
 "				}\n"+
 "				generateCoordinates();\n"+
 "			}"))
-                .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
-                .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-                .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
-                .addChild(new ROUTEObject().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
-                .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
-          .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("orbit"))
-          .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("orbit"))))      ;
+                .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
+                .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
+                .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
+                .addChild(new ROUTE().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
+                .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
+          .addChild(ProtoInstance0 = new ProtoInstance().setName("orbit"))
+          .addChild(ProtoInstance1 = new ProtoInstance().setName("orbit"))))      ;
 ProtoInstance0
-            .addFieldValue(new fieldValueObject().setName("translation").setValue("-8 0 0"));
+            .addFieldValue(new fieldValue().setName("translation").setValue("-8 0 0"));
 ProtoInstance0
-            .addFieldValue(new fieldValueObject().setName("diffuseColor").setValue("1 0.5 0"));
+            .addFieldValue(new fieldValue().setName("diffuseColor").setValue("1 0.5 0"));
 ProtoInstance0
-            .addFieldValue(new fieldValueObject().setName("specularColor").setValue("1 0.5 0"));
+            .addFieldValue(new fieldValue().setName("specularColor").setValue("1 0.5 0"));
 ProtoInstance0
-            .addFieldValue(new fieldValueObject().setName("transparency").setValue("0.75"));
+            .addFieldValue(new fieldValue().setName("transparency").setValue("0.75"));
 ProtoInstance1
-            .addFieldValue(new fieldValueObject().setName("translation").setValue("8 0 0"));
+            .addFieldValue(new fieldValue().setName("translation").setValue("8 0 0"));
 ProtoInstance1
-            .addFieldValue(new fieldValueObject().setName("diffuseColor").setValue("0 0.5 1"));
+            .addFieldValue(new fieldValue().setName("diffuseColor").setValue("0 0.5 1"));
 ProtoInstance1
-            .addFieldValue(new fieldValueObject().setName("specularColor").setValue("0 0.5 1"));
+            .addFieldValue(new fieldValue().setName("specularColor").setValue("0 0.5 1"));
 ProtoInstance1
-            .addFieldValue(new fieldValueObject().setName("transparency").setValue("0.5"));
+            .addFieldValue(new fieldValue().setName("transparency").setValue("0.5"));
     return X3D0;
     }
 protected class MFFloat0 {
-  protected MFFloatObject getArray() {
-    return new MFFloatObject(new float[] {0f,0.5f,1f});
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
   }
 }
 protected class MFRotation1 {
-  protected MFRotationObject getArray() {
-    return new MFRotationObject(new float[] {1f,0f,0f,0f,1f,0f,0f,3.14f,1f,0f,0f,6.28f});
+  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0f,1f,0f,0f,3.14f,1f,0f,0f,6.28f});
   }
 }
 protected class MFInt322 {
-  protected MFInt32Object getArray() {
-    return new MFInt32Object(new int[] {0,1,2,-1});
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1});
   }
 }
 protected class MFVec3f3 {
-  protected MFVec3fObject getArray() {
-    return new MFVec3fObject(new float[] {0f,0f,1f,0f,1f,0f,1f,0f,0f});
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,1f,0f,1f,0f,1f,0f,0f});
   }
 }
 }

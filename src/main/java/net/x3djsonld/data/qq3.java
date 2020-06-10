@@ -78,73 +78,73 @@ public class qq3
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("qq3.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATOR ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("11 Jan 2015"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("05 May 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("12 extrusions to test prototype expander"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/x3d/qq3.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manual")))
-  .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject("Process").setName("Process")
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new GroupObject()
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("qq3.x3d"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("John Carlson"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("11 Jan 2015"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("05 May 2017"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("12 extrusions to test prototype expander"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/x3d/qq3.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual")))
+  .setScene(new Scene()
+    .addChild(new ProtoDeclare("Process").setName("Process")
+      .setProtoBody(new ProtoBody()
+        .addChild(new Group()
           .addComments(" left ")
-          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
-            .addChild(new ShapeObject("ShapeLeftDown")
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(0.7f,1.0f,0.0f)))
-              .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})).setSpine(new MFVec3fObject(new float[] {-2.5f,0.0f,0.0f,-1.5f,0.0f,0.0f})))))
+          .addChild(new Transform().setScale(0.5f,0.5f,0.5f)
+            .addChild(new Shape("ShapeLeftDown")
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setDiffuseColor(0.7f,1.0f,0.0f)))
+              .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new MFVec2f(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})).setSpine(new MFVec3f(new float[] {-2.5f,0.0f,0.0f,-1.5f,0.0f,0.0f})))))
           .addComments(" right ")
-          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
-            .addChild(new ShapeObject("ShapeUpRight")
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(0.0f,0.7f,1.0f)))
-              .setGeometry(new ExtrusionObject().setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})).setSpine(new MFVec3fObject(new float[] {1.5f,0.0f,0.0f,2.5f,0.0f,0.0f})))))
+          .addChild(new Transform().setScale(0.5f,0.5f,0.5f)
+            .addChild(new Shape("ShapeUpRight")
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setDiffuseColor(0.0f,0.7f,1.0f)))
+              .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new MFVec2f(new float[] {1.00f,0.00f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.00f,-1.00f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.00f,-0.00f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.00f,1.00f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.00f,0.00f})).setSpine(new MFVec3f(new float[] {1.5f,0.0f,0.0f,2.5f,0.0f,0.0f})))))
           .addComments(" up ")
-          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
-            .addChild(new ShapeObject().setUSE("ShapeUpRight")))
+          .addChild(new Transform().setScale(0.5f,0.5f,0.5f)
+            .addChild(new Shape().setUSE("ShapeUpRight")))
           .addComments(" down ")
-          .addChild(new TransformObject().setScale(0.5f,0.5f,0.5f)
-            .addChild(new ShapeObject().setUSE("ShapeLeftDown"))))))
-    .addChild(new ViewpointObject().setDescription("Process pipes").setOrientation(1.0f,0.0f,0.0f,-0.4f).setPosition(0.0f,5.0f,12.0f))
-    .addChild(new TransformObject().setTranslation(0.0f,-2.5f,0.0f)
-      .addChild(new ProtoInstanceObject("Process")))
-    .addChild(new TransformObject()
-      .addChild(new ProtoInstanceObject("Process")))
-    .addChild(new TransformObject().setTranslation(0.0f,2.5f,0.0f)
-      .addChild(new ProtoInstanceObject("Process"))));
+          .addChild(new Transform().setScale(0.5f,0.5f,0.5f)
+            .addChild(new Shape().setUSE("ShapeLeftDown"))))))
+    .addChild(new Viewpoint().setDescription("Process pipes").setOrientation(1.0f,0.0f,0.0f,-0.4f).setPosition(0.0f,5.0f,12.0f))
+    .addChild(new Transform().setTranslation(0.0f,-2.5f,0.0f)
+      .addChild(new ProtoInstance("Process")))
+    .addChild(new Transform()
+      .addChild(new ProtoInstance("Process")))
+    .addChild(new Transform().setTranslation(0.0f,2.5f,0.0f)
+      .addChild(new ProtoInstance("Process"))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return qq3 model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new qq3().getX3dModel();
+        X3D thisExampleX3dModel = new qq3().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -159,15 +159,15 @@ public class qq3
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -177,12 +177,12 @@ public class qq3
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"qq3\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"qq3\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

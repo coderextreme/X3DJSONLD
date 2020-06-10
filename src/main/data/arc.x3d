@@ -9,7 +9,7 @@
         <meta name='description' content='a generic proto to connect two objects'/>
 </head>
 <Scene>
-	<Viewpoint position='0 0 5' description="Only Viewpoint" orientation='0 0 1 0' />
+	<Viewpoint position='0 0 5' description="Only Viewpoint"/>
 	<Background skyColor='0.4 0.4 0.4'/>
 
     <ProtoDeclare name='point'>

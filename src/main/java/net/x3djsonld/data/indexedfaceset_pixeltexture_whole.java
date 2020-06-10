@@ -131,73 +131,73 @@ public class indexedfaceset_pixeltexture_whole
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_0)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("indexedfaceset_pixeltexture_whole.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_WARNING    ).setContent("file did not transform to vrml97"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-front.jpg"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-rear.jpg"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-top.jpg"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-bottom.jpg"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-left.jpg"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-right.jpg"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.nist.gov/vrml.html"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("http://www.itl.nist.gov/div897/ctg/vrml/members.html"))
-    .addMeta(new metaObject().setName("disclaimer").setContent("This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."))
-    .addMeta(new metaObject().setName(metaObject.NAME_INFO       ).setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATOR ).setContent("Michael Kass NIST, Don Brutzman NPS"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED ).setContent("21 January 2001"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("13 January 2014"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Test of browser ability to map the entire portion of an PixelTexture onto an IndexedFaceSet geometry. Four equal sized red (bottom left), green (bottom right) yellow (top left) and white (top right) squares in the pixel texture map all the faces of the cube."))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_whole.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new ViewpointObject().setDescription("Front View"))
-    .addChild(new ViewpointObject().setDescription("Rear View").setOrientation(0.0f,1.0f,0.0f,3.14f).setPosition(0.0f,0.0f,-10.0f))
-    .addChild(new ViewpointObject().setDescription("Top View").setOrientation(1.0f,0.0f,0.0f,-1.57f).setPosition(0.0f,10.0f,0.0f))
-    .addChild(new ViewpointObject().setDescription("Bottom View").setOrientation(1.0f,0.0f,0.0f,1.57f).setPosition(0.0f,-10.0f,0.0f))
-    .addChild(new ViewpointObject().setDescription("Right View").setOrientation(0.0f,1.0f,0.0f,1.57f).setPosition(10.0f,0.0f,0.0f))
-    .addChild(new ViewpointObject().setDescription("Left View").setOrientation(0.0f,1.0f,0.0f,-1.57f).setPosition(-10.0f,0.0f,0.0f))
-    .addChild(new NavigationInfoObject().setType(new String[] {"EXAMINE"}))
-    .addChild(new ShapeObject()
-      .setAppearance(new AppearanceObject()
-        .setMaterial(new MaterialObject())
-        .setTexture(new PixelTextureObject().setImage(new int[] {2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF})))
-      .setGeometry(new IndexedFaceSetObject().setColorPerVertex(false).setCreaseAngle(0.5f).setCoordIndex(new int[] {0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}).setTexCoordIndex(new int[] {0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1})
-        .setColor(new ColorObject().setColor(new MFColorObject(new float[] {0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f})))
-        .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {-2.0f,1.0f,1.0f,-2.0f,-1.0f,1.0f,2.0f,1.0f,1.0f,2.0f,-1.0f,1.0f,2.0f,1.0f,-1.0f,2.0f,-1.0f,-1.0f,-2.0f,1.0f,-1.0f,-2.0f,-1.0f,-1.0f})))
-        .setTexCoord(new TextureCoordinateObject().setPoint(new MFVec2fObject(new float[] {0.0f,1.0f,0.0f,0.0f,1.0f,1.0f,1.0f,0.0f}))))));
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_0)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("indexedfaceset_pixeltexture_whole.x3d"))
+    .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("file did not transform to vrml97"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-front.jpg"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-rear.jpg"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-top.jpg"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-bottom.jpg"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-left.jpg"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("indexedfaceset_pixeltexture_whole-right.jpg"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.nist.gov/vrml.html"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("http://www.itl.nist.gov/div897/ctg/vrml/members.html"))
+    .addMeta(new meta().setName("disclaimer").setContent("This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."))
+    .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, http://www.web3d.org/working-groups/x3d"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Michael Kass NIST, Don Brutzman NPS"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("21 January 2001"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("13 January 2014"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Test of browser ability to map the entire portion of an PixelTexture onto an IndexedFaceSet geometry. Four equal sized red (bottom left), green (bottom right) yellow (top left) and white (top right) squares in the pixel texture map all the faces of the cube."))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_whole.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../../license.html")))
+  .setScene(new Scene()
+    .addChild(new Viewpoint().setDescription("Front View"))
+    .addChild(new Viewpoint().setDescription("Rear View").setOrientation(0.0f,1.0f,0.0f,3.14f).setPosition(0.0f,0.0f,-10.0f))
+    .addChild(new Viewpoint().setDescription("Top View").setOrientation(1.0f,0.0f,0.0f,-1.57f).setPosition(0.0f,10.0f,0.0f))
+    .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(1.0f,0.0f,0.0f,1.57f).setPosition(0.0f,-10.0f,0.0f))
+    .addChild(new Viewpoint().setDescription("Right View").setOrientation(0.0f,1.0f,0.0f,1.57f).setPosition(10.0f,0.0f,0.0f))
+    .addChild(new Viewpoint().setDescription("Left View").setOrientation(0.0f,1.0f,0.0f,-1.57f).setPosition(-10.0f,0.0f,0.0f))
+    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
+    .addChild(new Shape()
+      .setAppearance(new Appearance()
+        .setMaterial(new Material())
+        .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF})))
+      .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCreaseAngle(0.5f).setCoordIndex(new int[] {0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}).setTexCoordIndex(new int[] {0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1})
+        .setColor(new Color().setColor(new MFColor(new float[] {0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f})))
+        .setCoord(new Coordinate().setPoint(new MFVec3f(new float[] {-2.0f,1.0f,1.0f,-2.0f,-1.0f,1.0f,2.0f,1.0f,1.0f,2.0f,-1.0f,1.0f,2.0f,1.0f,-1.0f,2.0f,-1.0f,-1.0f,-2.0f,1.0f,-1.0f,-2.0f,-1.0f,-1.0f})))
+        .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new float[] {0.0f,1.0f,0.0f,0.0f,1.0f,1.0f,1.0f,0.0f}))))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return indexedfaceset_pixeltexture_whole model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new indexedfaceset_pixeltexture_whole().getX3dModel();
+        X3D thisExampleX3dModel = new indexedfaceset_pixeltexture_whole().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -212,15 +212,15 @@ public class indexedfaceset_pixeltexture_whole
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -230,12 +230,12 @@ public class indexedfaceset_pixeltexture_whole
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"indexedfaceset_pixeltexture_whole\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"indexedfaceset_pixeltexture_whole\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }
