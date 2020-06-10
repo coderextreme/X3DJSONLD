@@ -25,7 +25,7 @@
     <PointLight DEF='light2' ambientIntensity='0.7' color='0.8 0.8 1' location='0 10 -7' on='true'/>
     <!-- External from the Humanoid viewpoints -->
     <Viewpoint DEF='Scene_InclinedView' centerOfRotation='0 0.85 0' description='Scene_Inclined View' orientation='-0.113 0.993 0.0347 0.671' position='1.62 1.05 3.06'/>
-    <Viewpoint DEF='Scene_IFrontView' centerOfRotation='0 0.8 0' description='Scene_Front View' orientation='0 0 1 0' position='0 0.8 2.58'/>
+    <Viewpoint DEF='Scene_IFrontView' centerOfRotation='0 0.8 0' description='Scene_Front View' position='0 0.8 2.58'/>
     <Viewpoint DEF='Scene_ISideView' centerOfRotation='0 0.8 0' description='Scene_Side View' orientation='0 1 0 1.5708' position='2.6 0.5 0'/>
     <Viewpoint DEF='Scene_BackView' centerOfRotation='0 1.5 0' description='Scene_Back View' orientation='0 1 0 3.14' position='0 2.5 -3'/>
     <Viewpoint DEF='Scene_TopView' centerOfRotation='0 1.5 0' description='Scene_Top View' orientation='1 0 0 -1.5708' position='0 3.5 0'/>

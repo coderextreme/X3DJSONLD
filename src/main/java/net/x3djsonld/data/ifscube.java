@@ -66,48 +66,48 @@ public class ifscube
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("ifscube.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Template for an Indexed Face Set"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("4 April 2017")))
-  .setScene(new SceneObject()
-    .addChild(new GroupObject()
-      .addChild(new ShapeObject()
-        .setGeometry(new IndexedFaceSetObject("IndexedFaceSet").setDEF("IndexedFaceSet").setCreaseAngle(1.57f).setNormalPerVertex(false).setColorIndex(new int[] {0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}).setCoordIndex(new int[] {0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1}).setNormalIndex(new int[] {0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1})
-          .setCoord(new CoordinateObject().setPoint(new MFVec3fObject(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,0.0f,1.0f})))
-          .setNormal(new NormalObject().setVector(new MFVec3fObject(new float[] {1.0f,0.0f,0.0f,-1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,0.0f,-1.0f,0.0f,-1.0f,0.0f,0.0f,0.0f,1.0f})))
-          .setColor(new ColorObject().setColor(new MFColorObject(new float[] {0.0f,1.0f,0.0f})))))));
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("ifscube.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Template for an Indexed Face Set"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("4 April 2017")))
+  .setScene(new Scene()
+    .addChild(new Group()
+      .addChild(new Shape()
+        .setGeometry(new IndexedFaceSet("IndexedFaceSet").setDEF("IndexedFaceSet").setCreaseAngle(1.57f).setNormalPerVertex(false).setColorIndex(new int[] {0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1}).setCoordIndex(new int[] {0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1}).setNormalIndex(new int[] {0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1})
+          .setCoord(new Coordinate().setPoint(new MFVec3f(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,0.0f,1.0f})))
+          .setNormal(new Normal().setVector(new MFVec3f(new float[] {1.0f,0.0f,0.0f,-1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,0.0f,-1.0f,0.0f,-1.0f,0.0f,0.0f,0.0f,1.0f})))
+          .setColor(new Color().setColor(new MFColor(new float[] {0.0f,1.0f,0.0f})))))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return ifscube model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new ifscube().getX3dModel();
+        X3D thisExampleX3dModel = new ifscube().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -122,15 +122,15 @@ public class ifscube
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -140,12 +140,12 @@ public class ifscube
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"ifscube\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"ifscube\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

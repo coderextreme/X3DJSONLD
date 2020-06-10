@@ -36,88 +36,52 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.sai.*;
-import org.web3d.x3d.sai.CADGeometry.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.DIS.*;
-import org.web3d.x3d.sai.EnvironmentalEffects.*;
-import org.web3d.x3d.sai.EnvironmentalSensor.*;
-import org.web3d.x3d.sai.EventUtilities.*;
-import org.web3d.x3d.sai.Followers.*;
-import org.web3d.x3d.sai.Geometry2D.*;
-import org.web3d.x3d.sai.Geometry3D.*;
-import org.web3d.x3d.sai.Geospatial.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Interpolation.*;
-import org.web3d.x3d.sai.KeyDeviceSensor.*;
-import org.web3d.x3d.sai.Layering.*;
-import org.web3d.x3d.sai.Layout.*;
-import org.web3d.x3d.sai.Lighting.*;
-import org.web3d.x3d.sai.NURBS.*;
-import org.web3d.x3d.sai.Navigation.*;
-import org.web3d.x3d.sai.Networking.*;
-import org.web3d.x3d.sai.ParticleSystems.*;
-import org.web3d.x3d.sai.Picking.*;
-import org.web3d.x3d.sai.PointingDeviceSensor.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.RigidBodyPhysics.*;
-import org.web3d.x3d.sai.Scripting.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing3D.*;
-import org.web3d.x3d.sai.Texturing.*;
-import org.web3d.x3d.sai.Time.*;
-import org.web3d.x3d.sai.VolumeRendering.*;
 public class CloudsProcedural4 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new CloudsProcedural4().initialize().toFileJSON("../data/CloudsProcedural4.new.json");
     }
-    public X3DObject initialize() {
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.2")
-      .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("CloudsProcedural4.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
-        .addMeta(new metaObject().setName("creator").setContent("Capt Darren W. Murphy"))
-        .addMeta(new metaObject().setName("created").setContent("1 November 2007"))
-        .addMeta(new metaObject().setName("modified").setContent("14 January 2014"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
-        .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
-        .addMeta(new metaObject().setName("license").setContent("../../license.html"))
-        .addMeta(new metaObject().setName("TODO").setContent("fix links")))
-      .setScene(new SceneObject()
+    public X3D initialize() {
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.2")
+      .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("CloudsProcedural4.x3d"))
+        .addMeta(new meta().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
+        .addMeta(new meta().setName("creator").setContent("Capt Darren W. Murphy"))
+        .addMeta(new meta().setName("created").setContent("1 November 2007"))
+        .addMeta(new meta().setName("modified").setContent("14 January 2014"))
+        .addMeta(new meta().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
+        .addMeta(new meta().setName("license").setContent("../../license.html"))
+        .addMeta(new meta().setName("TODO").setContent("fix links")))
+      .setScene(new Scene()
         .addComments(new CommentsBlock("A png image file for the cloud texture must be designated in the ecmascript node."))
-        .addChild(new ViewpointObject().setDescription("Main").setJump(false).setOrientation(new float[] {0f,1f,0f,1.57f}).setPosition(new float[] {50000f,1000f,42000f}))
-        .addChild(new ViewpointObject().setDescription("Light House Tower").setJump(false).setOrientation(new float[] {0f,1f,0f,1.3f}).setPosition(new float[] {45000f,1290f,44000f}))
-        .addChild(new ViewpointObject().setDescription("centerWest").setJump(false).setOrientation(new float[] {0f,1f,0f,2.5f}).setPosition(new float[] {48000f,1000f,20000f}))
-        .addChild(new BackgroundObject().setGroundColor(new MFColorObject(new MFColor0().getArray())).setSkyColor(new MFColorObject(new MFColor1().getArray())))
-        .addChild(new DirectionalLightObject().setAmbientIntensity(1f).setDirection(new float[] {-1f,0f,0f}).setGlobal(true))
-        .addChild(new GroupObject().setDEF("Terrain")
-          .addChild(new TransformObject().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {25000f,0f,25000f})
-            .addChild(new InlineObject().setUrl(new MFStringObject(new MFString2().getArray()))))
-          .addChild(new TransformObject().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {25000f,0f,25000f})
-            .addChild(new ShapeObject()
-              .setGeometry(new Rectangle2DObject().setSize(new float[] {77000f,55000f}))
-              .setAppearance(new AppearanceObject()
-                .setTexture(new ImageTextureObject().setUrl(new MFStringObject(new MFString3().getArray())))))))
-        .addChild(new GroupObject().setDEF("Placemarks")
-          .addChild(new TransformObject().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {45000f,30f,44000f})
-            .addChild(new InlineObject().setUrl(new MFStringObject(new MFString4().getArray())))))
-        .addChild(new GroupObject().setDEF("Clouds")
-          .addChild(new TransformObject().setDEF("Cumulus"))
-          .addChild(new TransformObject().setDEF("Cirrus"))
-          .addChild(new TransformObject().setDEF("Fog"))
-          .addChild(new ScriptObject().setDEF("PixelScript").setDirectOutput(true)
-            .addField(new fieldObject().setType("SFNode").setName("Cumulus").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
-              .addChild(new TransformObject().setUSE("Cumulus")))
-            .addField(new fieldObject().setType("SFNode").setName("Cirrus").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY)
-              .addChild(new TransformObject().setUSE("Cirrus")))
-            .addField(new fieldObject().setType("SFNode").setName("Fog").setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
+        .addChild(new Viewpoint().setDescription("Main").setJump(false).setOrientation(new float[] {0f,1f,0f,1.57f}).setPosition(new float[] {50000f,1000f,42000f}))
+        .addChild(new Viewpoint().setDescription("Light House Tower").setJump(false).setOrientation(new float[] {0f,1f,0f,1.3f}).setPosition(new float[] {45000f,1290f,44000f}))
+        .addChild(new Viewpoint().setDescription("centerWest").setJump(false).setOrientation(new float[] {0f,1f,0f,2.5f}).setPosition(new float[] {48000f,1000f,20000f}))
+        .addChild(new Background().setGroundColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())).setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor1().getArray())))
+        .addChild(new DirectionalLight().setAmbientIntensity(1f).setDirection(new float[] {-1f,0f,0f}).setGlobal(true))
+        .addChild(new Group().setDEF("Terrain")
+          .addChild(new Transform().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {25000f,0f,25000f})
+            .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray()))))
+          .addChild(new Transform().setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {25000f,0f,25000f})
+            .addChild(new Shape()
+              .setGeometry(new Rectangle2D().setSize(new float[] {77000f,55000f}))
+              .setAppearance(new Appearance()
+                .setTexture(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())))))))
+        .addChild(new Group().setDEF("Placemarks")
+          .addChild(new Transform().setScale(new float[] {50f,50f,50f}).setTranslation(new float[] {45000f,30f,44000f})
+            .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())))))
+        .addChild(new Group().setDEF("Clouds")
+          .addChild(new Transform().setDEF("Cumulus"))
+          .addChild(new Transform().setDEF("Cirrus"))
+          .addChild(new Transform().setDEF("Fog"))
+          .addChild(new Script().setDEF("PixelScript").setDirectOutput(true)
+            .addField(new field().setType("SFNode").setName("Cumulus").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+              .addChild(new Transform().setUSE("Cumulus")))
+            .addField(new field().setType("SFNode").setName("Cirrus").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+              .addChild(new Transform().setUSE("Cirrus")))
+            .addField(new field().setType("SFNode").setName("Fog").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
             .setSourceCode("ecmascript:\n"+
 "\n"+
 "\n"+
@@ -499,32 +463,32 @@ public class CloudsProcedural4 {
 "\n"+
 "cirrus();\n"+
 "}"))
-          .addChild(new DirectionalLightObject().setAmbientIntensity(1f).setColor(new float[] {1f,0f,0f}).setDirection(new float[] {-1f,-1f,0f}).setGlobal(true))))      ;
+          .addChild(new DirectionalLight().setAmbientIntensity(1f).setColor(new float[] {1f,0f,0f}).setDirection(new float[] {-1f,-1f,0f}).setGlobal(true))))      ;
     return X3D0;
     }
 protected class MFColor0 {
-  protected MFColorObject getArray() {
-    return new MFColorObject(new float[] {0f,0f,1f});
+  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,1f});
   }
 }
 protected class MFColor1 {
-  protected MFColorObject getArray() {
-    return new MFColorObject(new float[] {0f,0f,1f});
+  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,1f});
   }
 }
 protected class MFString2 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"});
   }
 }
 protected class MFString3 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ocean.png","https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png"});
   }
 }
 protected class MFString4 {
-  protected MFStringObject getArray() {
-    return new MFStringObject(new java.lang.String[] {"Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"});
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"});
   }
 }
 }

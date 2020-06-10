@@ -224,7 +224,7 @@ POSSIBILITY OF SUCH DAMAGE.
   // end of initialize() method
 			
   /** The initialized model object, created within initialize() method. */
-  private X3DObject x3dModel;
+  private X3D x3dModel;
   
   /** Provide a shallow copy of the X3D model.
    * @return ]]></xsl:text><xsl:value-of select="$newClassName"/>
@@ -253,13 +253,13 @@ POSSIBILITY OF SUCH DAMAGE.
 			return validationResult;
 		}
 		// first list informational meta elements of interest
-		for (metaObject meta : getX3dModel().getHead().getMetaList())
+		for (meta meta : getX3dModel().getHead().getMetaList())
 		{
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
@@ -636,7 +636,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		
 		<xsl:text>new </xsl:text>
 		<xsl:value-of select="local-name()"/>
-		<xsl:text>Object(</xsl:text>
+		<xsl:text>(</xsl:text>
 		<xsl:choose>
 			<xsl:when test="(string-length(@DEF) > 0) and (string-length(@name) > 0) and (local-name() = 'ProtoInstance')">
 				<!-- special utility constructor using ProtoInstance DEFname and prototypeName; duplicative of .setDEF().setName() -->
@@ -1824,7 +1824,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:variable name="quotedValue">
 							<xsl:choose>
 								<xsl:when test="not(contains(.,'&quot;'))">
-									<!-- MFStringObject is forgiving, but this code block fixes the error and notifies authors of valid practice -->
+									<!-- MFString is forgiving, but this code block fixes the error and notifies authors of valid practice -->
 									<xsl:message>
 										<xsl:text>*** No quotation marks found in MFString array of individual SFString values, wrapped them.</xsl:text>
 										<xsl:text>&#10;</xsl:text>
@@ -1849,7 +1849,7 @@ POSSIBILITY OF SUCH DAMAGE.
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:variable>
-						<xsl:text>new MFStringObject(</xsl:text>
+						<xsl:text>new MFString(</xsl:text>
 						<xsl:text>"</xsl:text>
 						<xsl:call-template name="escape-quote-characters">
 							<xsl:with-param name="inputString">
@@ -1925,7 +1925,7 @@ POSSIBILITY OF SUCH DAMAGE.
 									contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f')">
 						<xsl:text>new </xsl:text>
 						<xsl:value-of select="$attributeType"/>
-						<xsl:text>Object(</xsl:text>
+						<xsl:text>(</xsl:text>
 						<xsl:choose>
 							<xsl:when test="($tupleCount > $tupleSplitSize)">
 								<xsl:message>
@@ -1953,7 +1953,7 @@ POSSIBILITY OF SUCH DAMAGE.
 											<xsl:text>.append(</xsl:text>
 											<xsl:text>new </xsl:text>
 											<xsl:value-of select="$attributeType"/>
-											<xsl:text>Object(</xsl:text>
+											<xsl:text>(</xsl:text>
 											<xsl:text>new float[] {</xsl:text>
 											<xsl:call-template name="java-float-numbers">
 												<xsl:with-param name="inputString">
@@ -1998,7 +1998,7 @@ POSSIBILITY OF SUCH DAMAGE.
 									contains($attributeType,'Matrix3d') or contains($attributeType,'Matrix4d')">
 						<xsl:text>new </xsl:text>
 						<xsl:value-of select="$attributeType"/>
-						<xsl:text>Object(</xsl:text>
+						<xsl:text>(</xsl:text>
 						<xsl:text>new double[] {</xsl:text>
 						<xsl:call-template name="java-double-numbers">
 							<xsl:with-param name="inputString">
@@ -2534,7 +2534,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>import * from 'org.web3d.x3d.jsail.EnvironmentalEffects';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
-		<xsl:if test="//*[name()='ProximitySensor'] or //*[name()='TransformSensorObject'] or //*[name()='VisibilitySensor']">
+		<xsl:if test="//*[name()='ProximitySensor'] or //*[name()='TransformSensor'] or //*[name()='VisibilitySensor']">
 			<xsl:text>import * from 'org.web3d.x3d.jsail.EnvironmentalSensor';</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>

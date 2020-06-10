@@ -70,63 +70,63 @@ public class text
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John W Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("December 13 2015"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("text.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("test \\n text"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
-  .setScene(new SceneObject()
-    .addChild(new TransformObject()
-      .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new String[] {"Node\"\"\""})
-          .setFontStyle(new FontStyleObject()))
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject())))
-      .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new String[] {"Node2","\\","\\\\","Node2"})
-          .setFontStyle(new FontStyleObject()))
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject())))
-      .addChild(new ShapeObject()
-        .setGeometry(new TextObject().setString(new String[] {"Node3 \\\\ \\ ","Node3\"\"\""})
-          .setFontStyle(new FontStyleObject()))
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject())))
-      .addChild(new ScriptObject().setSourceCode("\n" + 
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John W Carlson"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("December 13 2015"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("text.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/text.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("test \\n text"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+  .setScene(new Scene()
+    .addChild(new Transform()
+      .addChild(new Shape()
+        .setGeometry(new Text().setString(new String[] {"Node\"\"\""})
+          .setFontStyle(new FontStyle()))
+        .setAppearance(new Appearance()
+          .setMaterial(new Material())))
+      .addChild(new Shape()
+        .setGeometry(new Text().setString(new String[] {"Node2","\\","\\\\","Node2"})
+          .setFontStyle(new FontStyle()))
+        .setAppearance(new Appearance()
+          .setMaterial(new Material())))
+      .addChild(new Shape()
+        .setGeometry(new Text().setString(new String[] {"Node3 \\\\ \\ ","Node3\"\"\""})
+          .setFontStyle(new FontStyle()))
+        .setAppearance(new Appearance()
+          .setMaterial(new Material())))
+      .addChild(new Script().setSourceCode("\n" + 
 "			    ecmascript:" + "\n" + 
 "			    var me = '\"1\" \"\\\"2\" \"\\n3\"';" + "\n")
-        .addField(new fieldObject().setName("frontUrls").setType(fieldObject.TYPE_MFSTRING).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"rnl_front.png","uffizi_front.png"})))));
+        .addField(new field().setName("frontUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"rnl_front.png","uffizi_front.png"})))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return text model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new text().getX3dModel();
+        X3D thisExampleX3dModel = new text().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -141,15 +141,15 @@ public class text
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -159,12 +159,12 @@ public class text
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"text\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"text\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

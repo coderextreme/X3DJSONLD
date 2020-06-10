@@ -91,65 +91,65 @@ public class CameraShape
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERACTIVE).setVersion(X3DObject.VERSION_3_1)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("CameraShape.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Simple video camera shape"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Jeff Weekley and Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("2 June 2009"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED ).setContent("2 June 2009"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("13 January 2014"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("CameraExamples.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new WorldInfoObject().setInfo(new String[] {"VRML2.0 created with Version 1.3, from Alias Maya 2008"}).setTitle("SimpleCamera.x3d"))
-    .addChild(new ViewpointObject("CameraShapeView").setDescription("Camera view, over the shoulder").setPosition(0.0f,0.75f,3.0f))
-    .addChild(new ViewpointObject().setDescription("Camera view through lens").setPosition(0.0f,0.0f,0.0f))
-    .addChild(new ViewpointObject().setDescription("Camera view from right side").setOrientation(0.0f,1.0f,0.0f,1.5708f).setPosition(12.0f,0.0f,-4.0f))
-    .addChild(new ViewpointObject().setDescription("Camera view from above").setOrientation(1.0f,0.0f,0.0f,-1.5708f).setPosition(0.0f,15.0f,-5.0f))
-    .addChild(new ViewpointObject().setDescription("Camera view from left side").setOrientation(0.0f,1.0f,0.0f,-1.5708f).setPosition(-12.0f,0.0f,-4.0f))
-    .addChild(new TransformObject().setScale(0.1f,0.1f,0.1f).setTranslation(0.0f,-0.165f,0.02f)
-      .addChild(new SwitchObject().setWhichChoice(-1)
-        .addChild(new ShapeObject()
-          .setAppearance(new AppearanceObject("CameraAppearance")
-            .setMaterial(new MaterialObject("lambert1_0").setAmbientIntensity(0.25f).setDiffuseColor(0.372322f,0.371574f,0.373173f).setShininess(0.02f).setSpecularColor(0.890909f,0.887832f,0.890909f)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERACTIVE).setVersion(X3D.VERSION_3_1)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("CameraShape.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Simple video camera shape"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Jeff Weekley and Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("2 June 2009"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("2 June 2009"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("13 January 2014"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CameraExamples.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../../license.html")))
+  .setScene(new Scene()
+    .addChild(new WorldInfo().setInfo(new String[] {"VRML2.0 created with Version 1.3, from Alias Maya 2008"}).setTitle("SimpleCamera.x3d"))
+    .addChild(new Viewpoint("CameraShapeView").setDescription("Camera view, over the shoulder").setPosition(0.0f,0.75f,3.0f))
+    .addChild(new Viewpoint().setDescription("Camera view through lens").setPosition(0.0f,0.0f,0.0f))
+    .addChild(new Viewpoint().setDescription("Camera view from right side").setOrientation(0.0f,1.0f,0.0f,1.5708f).setPosition(12.0f,0.0f,-4.0f))
+    .addChild(new Viewpoint().setDescription("Camera view from above").setOrientation(1.0f,0.0f,0.0f,-1.5708f).setPosition(0.0f,15.0f,-5.0f))
+    .addChild(new Viewpoint().setDescription("Camera view from left side").setOrientation(0.0f,1.0f,0.0f,-1.5708f).setPosition(-12.0f,0.0f,-4.0f))
+    .addChild(new Transform().setScale(0.1f,0.1f,0.1f).setTranslation(0.0f,-0.165f,0.02f)
+      .addChild(new Switch().setWhichChoice(-1)
+        .addChild(new Shape()
+          .setAppearance(new Appearance("CameraAppearance")
+            .setMaterial(new Material("lambert1_0").setAmbientIntensity(0.25f).setDiffuseColor(0.372322f,0.371574f,0.373173f).setShininess(0.02f).setSpecularColor(0.890909f,0.887832f,0.890909f)
               .addComments(" Universal Media Library: Metals 30 "))))
-        .addChild(new ShapeObject()
-          .setGeometry(new IndexedFaceSetObject("pCylinder1_0Geo").setDEF("pCylinder1_0Geo").setConvex(false).setCreaseAngle(0.7854f).setCoordIndex(new int[] {0,1,13,12,-1,1,2,14,13,-1,2,3,15,14,-1,3,4,16,15,-1,4,5,17,16,-1,5,6,18,17,-1,6,7,19,18,-1,7,8,20,19,-1,8,9,21,20,-1,9,10,22,21,-1,10,11,23,22,-1,11,0,12,23,-1,1,0,24,-1,2,1,24,-1,3,2,24,-1,4,3,24,-1,5,4,24,-1,6,5,24,-1,7,6,24,-1,8,7,24,-1,9,8,24,-1,10,9,24,-1,11,10,24,-1,0,11,24,-1,12,13,25,-1,13,14,25,-1,14,15,25,-1,15,16,25,-1,16,17,25,-1,17,18,25,-1,18,19,25,-1,19,20,25,-1,20,21,25,-1,21,22,25,-1,22,23,25,-1,23,12,25,-1})
-            .setCoord(new CoordinateObject("pCylinder1GeoPoints").setPoint(new MFVec3fObject(new float[] {-0.36f,-2.39f,-0.26f,-0.36f,-1.77f,-0.89f,-0.36f,0.0f,-1.7f,-0.36f,0.85f,-1.47f,-0.36f,1.47f,-0.85f,-0.36f,1.7f,0.0f,-0.36f,1.47f,0.85f,-0.36f,-0.07f,2.05f,-0.36f,-0.92f,2.28f,-0.36f,-1.77f,2.05f,-0.36f,-2.39f,1.43f,-0.36f,-2.62f,0.58f,0.36f,-2.39f,-0.26f,0.36f,-1.77f,-0.89f,0.36f,0.0f,-1.7f,0.36f,0.85f,-1.47f,0.36f,1.47f,-0.85f,0.36f,1.7f,0.0f,0.36f,1.47f,0.85f,0.36f,-0.07f,2.05f,0.36f,-0.92f,2.28f,0.36f,-1.77f,2.05f,0.36f,-2.39f,1.43f,0.36f,-2.62f,0.58f,-0.36f,-0.46f,0.31f,0.36f,-0.46f,0.31f}))))
-          .setAppearance(new AppearanceObject().setUSE("CameraAppearance")))
-        .addChild(new ShapeObject()
-          .setGeometry(new IndexedFaceSetObject("pCube1_0Geo").setDEF("pCube1_0Geo").setConvex(false).setCreaseAngle(0.7854f).setCoordIndex(new int[] {0,1,13,12,-1,2,3,25,24,-1,4,5,11,10,-1,6,7,19,18,-1,1,29,31,13,-1,6,18,23,14,-1,8,9,3,2,-1,10,11,15,14,-1,9,30,25,3,-1,10,21,16,4,-1,12,13,9,8,-1,13,31,30,9,-1,14,23,21,10,-1,14,15,7,6,-1,16,17,5,4,-1,18,19,29,28,-1,22,19,7,15,-1,23,18,28,27,-1,17,20,11,5,-1,16,21,26,24,-1,20,22,15,11,-1,21,23,27,26,-1,24,25,17,16,-1,31,29,19,22,-1,25,30,20,17,-1,30,31,22,20,-1,28,29,1,0,-1,27,28,0,12,-1,24,26,8,2,-1,26,27,12,8,-1})
-            .setCoord(new CoordinateObject("pCube1GeoPoints").setPoint(new MFVec3fObject(new float[] {-1.03f,-1.26f,3.0f,1.03f,-1.26f,3.0f,-1.03f,1.74f,3.0f,1.03f,1.74f,3.0f,-0.78f,1.21f,-3.0f,0.78f,1.21f,-3.0f,-0.78f,-1.3f,-3.0f,0.78f,-1.3f,-3.0f,-1.03f,0.27f,3.0f,1.03f,0.27f,3.0f,-0.78f,0.27f,-3.43f,0.78f,0.27f,-3.43f,-1.03f,-0.99f,3.0f,1.03f,-0.99f,3.0f,-0.78f,-1.05f,-3.43f,0.78f,-1.05f,-3.43f,-0.79f,1.56f,-2.76f,0.79f,1.56f,-2.76f,-0.79f,-1.56f,-2.76f,0.79f,-1.56f,-2.76f,1.13f,0.27f,-2.76f,-1.13f,0.27f,-2.76f,1.13f,-1.31f,-2.76f,-1.13f,-1.31f,-2.76f,-1.02f,1.73f,2.69f,1.02f,1.73f,2.69f,-1.36f,0.27f,2.69f,-1.36f,-1.45f,2.69f,-1.02f,-1.73f,2.69f,1.02f,-1.73f,2.69f,1.36f,0.27f,2.69f,1.36f,-1.45f,2.69f}))))
-          .setAppearance(new AppearanceObject().setUSE("CameraAppearance")))
-        .addChild(new ShapeObject()
-          .setGeometry(new IndexedFaceSetObject("pPipe1_0Geo").setDEF("pPipe1_0Geo").setConvex(false).setCreaseAngle(0.7854f).setCoordIndex(getpPipe1_0Geo_6_30_coordIndex())
-            .setCoord(new CoordinateObject("pPipe1GeoPoints").setPoint(getpPipe1GeoPoints_7_30_point())))
-          .setAppearance(new AppearanceObject().setUSE("CameraAppearance")))
-        .addChild(new ShapeObject()
-          .setGeometry(new IndexedFaceSetObject("pSphere1_0Geo").setDEF("pSphere1_0Geo").setConvex(false).setCreaseAngle(0.7854f).setCoordIndex(getpSphere1_0Geo_6_34_coordIndex())
-            .setCoord(new CoordinateObject("pSphere1GeoPoints").setPoint(getpSphere1GeoPoints_7_34_point())))
-          .setAppearance(new AppearanceObject().setUSE("CameraAppearance"))))
-      .addChild(new GroupObject()
-        .addChild(new TransformObject("pCylinder1").setRotation(-1.0f,0.0f,0.0f,0.373518f).setTranslation(-0.038462f,3.596312f,3.297562f)
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject().setUSE("CameraAppearance"))
-            .setGeometry(new IndexedFaceSetObject().setUSE("pCylinder1_0Geo"))))
-        .addChild(new TransformObject("pCube1").setScale(1.0f,0.727134f,0.801457f).setTranslation(-0.030769f,1.738461f,1.4436f)
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject().setUSE("CameraAppearance"))
-            .setGeometry(new IndexedFaceSetObject().setUSE("pCube1_0Geo"))))
-        .addChild(new TransformObject("pPipe1").setScale(1.0f,1.0f,0.569444f).setTranslation(0.015385f,1.630769f,-1.973274f)
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject().setUSE("CameraAppearance"))
-            .setGeometry(new IndexedFaceSetObject().setUSE("pPipe1_0Geo"))))
-        .addChild(new TransformObject("pSphere1").setScale(1.1f,1.1f,0.1f).setTranslation(-0.015385f,1.628515f,-2.569231f)
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject().setUSE("CameraAppearance"))
-            .setGeometry(new IndexedFaceSetObject().setUSE("pSphere1_0Geo")))))));
+        .addChild(new Shape()
+          .setGeometry(new IndexedFaceSet("pCylinder1_0Geo").setDEF("pCylinder1_0Geo").setConvex(false).setCreaseAngle(0.7854f).setCoordIndex(new int[] {0,1,13,12,-1,1,2,14,13,-1,2,3,15,14,-1,3,4,16,15,-1,4,5,17,16,-1,5,6,18,17,-1,6,7,19,18,-1,7,8,20,19,-1,8,9,21,20,-1,9,10,22,21,-1,10,11,23,22,-1,11,0,12,23,-1,1,0,24,-1,2,1,24,-1,3,2,24,-1,4,3,24,-1,5,4,24,-1,6,5,24,-1,7,6,24,-1,8,7,24,-1,9,8,24,-1,10,9,24,-1,11,10,24,-1,0,11,24,-1,12,13,25,-1,13,14,25,-1,14,15,25,-1,15,16,25,-1,16,17,25,-1,17,18,25,-1,18,19,25,-1,19,20,25,-1,20,21,25,-1,21,22,25,-1,22,23,25,-1,23,12,25,-1})
+            .setCoord(new Coordinate("pCylinder1GeoPoints").setPoint(new MFVec3f(new float[] {-0.36f,-2.39f,-0.26f,-0.36f,-1.77f,-0.89f,-0.36f,0.0f,-1.7f,-0.36f,0.85f,-1.47f,-0.36f,1.47f,-0.85f,-0.36f,1.7f,0.0f,-0.36f,1.47f,0.85f,-0.36f,-0.07f,2.05f,-0.36f,-0.92f,2.28f,-0.36f,-1.77f,2.05f,-0.36f,-2.39f,1.43f,-0.36f,-2.62f,0.58f,0.36f,-2.39f,-0.26f,0.36f,-1.77f,-0.89f,0.36f,0.0f,-1.7f,0.36f,0.85f,-1.47f,0.36f,1.47f,-0.85f,0.36f,1.7f,0.0f,0.36f,1.47f,0.85f,0.36f,-0.07f,2.05f,0.36f,-0.92f,2.28f,0.36f,-1.77f,2.05f,0.36f,-2.39f,1.43f,0.36f,-2.62f,0.58f,-0.36f,-0.46f,0.31f,0.36f,-0.46f,0.31f}))))
+          .setAppearance(new Appearance().setUSE("CameraAppearance")))
+        .addChild(new Shape()
+          .setGeometry(new IndexedFaceSet("pCube1_0Geo").setDEF("pCube1_0Geo").setConvex(false).setCreaseAngle(0.7854f).setCoordIndex(new int[] {0,1,13,12,-1,2,3,25,24,-1,4,5,11,10,-1,6,7,19,18,-1,1,29,31,13,-1,6,18,23,14,-1,8,9,3,2,-1,10,11,15,14,-1,9,30,25,3,-1,10,21,16,4,-1,12,13,9,8,-1,13,31,30,9,-1,14,23,21,10,-1,14,15,7,6,-1,16,17,5,4,-1,18,19,29,28,-1,22,19,7,15,-1,23,18,28,27,-1,17,20,11,5,-1,16,21,26,24,-1,20,22,15,11,-1,21,23,27,26,-1,24,25,17,16,-1,31,29,19,22,-1,25,30,20,17,-1,30,31,22,20,-1,28,29,1,0,-1,27,28,0,12,-1,24,26,8,2,-1,26,27,12,8,-1})
+            .setCoord(new Coordinate("pCube1GeoPoints").setPoint(new MFVec3f(new float[] {-1.03f,-1.26f,3.0f,1.03f,-1.26f,3.0f,-1.03f,1.74f,3.0f,1.03f,1.74f,3.0f,-0.78f,1.21f,-3.0f,0.78f,1.21f,-3.0f,-0.78f,-1.3f,-3.0f,0.78f,-1.3f,-3.0f,-1.03f,0.27f,3.0f,1.03f,0.27f,3.0f,-0.78f,0.27f,-3.43f,0.78f,0.27f,-3.43f,-1.03f,-0.99f,3.0f,1.03f,-0.99f,3.0f,-0.78f,-1.05f,-3.43f,0.78f,-1.05f,-3.43f,-0.79f,1.56f,-2.76f,0.79f,1.56f,-2.76f,-0.79f,-1.56f,-2.76f,0.79f,-1.56f,-2.76f,1.13f,0.27f,-2.76f,-1.13f,0.27f,-2.76f,1.13f,-1.31f,-2.76f,-1.13f,-1.31f,-2.76f,-1.02f,1.73f,2.69f,1.02f,1.73f,2.69f,-1.36f,0.27f,2.69f,-1.36f,-1.45f,2.69f,-1.02f,-1.73f,2.69f,1.02f,-1.73f,2.69f,1.36f,0.27f,2.69f,1.36f,-1.45f,2.69f}))))
+          .setAppearance(new Appearance().setUSE("CameraAppearance")))
+        .addChild(new Shape()
+          .setGeometry(new IndexedFaceSet("pPipe1_0Geo").setDEF("pPipe1_0Geo").setConvex(false).setCreaseAngle(0.7854f).setCoordIndex(getpPipe1_0Geo_6_30_coordIndex())
+            .setCoord(new Coordinate("pPipe1GeoPoints").setPoint(getpPipe1GeoPoints_7_30_point())))
+          .setAppearance(new Appearance().setUSE("CameraAppearance")))
+        .addChild(new Shape()
+          .setGeometry(new IndexedFaceSet("pSphere1_0Geo").setDEF("pSphere1_0Geo").setConvex(false).setCreaseAngle(0.7854f).setCoordIndex(getpSphere1_0Geo_6_34_coordIndex())
+            .setCoord(new Coordinate("pSphere1GeoPoints").setPoint(getpSphere1GeoPoints_7_34_point())))
+          .setAppearance(new Appearance().setUSE("CameraAppearance"))))
+      .addChild(new Group()
+        .addChild(new Transform("pCylinder1").setRotation(-1.0f,0.0f,0.0f,0.373518f).setTranslation(-0.038462f,3.596312f,3.297562f)
+          .addChild(new Shape()
+            .setAppearance(new Appearance().setUSE("CameraAppearance"))
+            .setGeometry(new IndexedFaceSet().setUSE("pCylinder1_0Geo"))))
+        .addChild(new Transform("pCube1").setScale(1.0f,0.727134f,0.801457f).setTranslation(-0.030769f,1.738461f,1.4436f)
+          .addChild(new Shape()
+            .setAppearance(new Appearance().setUSE("CameraAppearance"))
+            .setGeometry(new IndexedFaceSet().setUSE("pCube1_0Geo"))))
+        .addChild(new Transform("pPipe1").setScale(1.0f,1.0f,0.569444f).setTranslation(0.015385f,1.630769f,-1.973274f)
+          .addChild(new Shape()
+            .setAppearance(new Appearance().setUSE("CameraAppearance"))
+            .setGeometry(new IndexedFaceSet().setUSE("pPipe1_0Geo"))))
+        .addChild(new Transform("pSphere1").setScale(1.1f,1.1f,0.1f).setTranslation(-0.015385f,1.628515f,-2.569231f)
+          .addChild(new Shape()
+            .setAppearance(new Appearance().setUSE("CameraAppearance"))
+            .setGeometry(new IndexedFaceSet().setUSE("pSphere1_0Geo")))))));
     }
 	// end of initialize() method
 
@@ -206,10 +206,10 @@ public class CameraShape
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getpPipe1_0Geo_6_30_coordIndex()
+		private MFInt32 getpPipe1_0Geo_6_30_coordIndex()
 		{
-			MFInt32Object pPipe1_0Geo_6_30_coordIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getpPipe1_0Geo_6_30_coordIndex_1()));
+			MFInt32 pPipe1_0Geo_6_30_coordIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getpPipe1_0Geo_6_30_coordIndex_1()));
 			return pPipe1_0Geo_6_30_coordIndex;
 		}
 		/** Large attribute array: Coordinate DEF='pPipe1GeoPoints' point field, scene-graph level=7, element #30, 576 total numbers made up of 192 3-tuple values.
@@ -219,11 +219,11 @@ public class CameraShape
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getpPipe1GeoPoints_7_30_point()
+		private MFVec3f getpPipe1GeoPoints_7_30_point()
 		{
-			MFVec3fObject pPipe1GeoPoints_7_30_point = new MFVec3fObject()/*2.finalize*/
-				.append(new MFVec3fObject(getpPipe1GeoPoints_7_30_point_1()))
-				.append(new MFVec3fObject(getpPipe1GeoPoints_7_30_point_2()));
+			MFVec3f pPipe1GeoPoints_7_30_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getpPipe1GeoPoints_7_30_point_1()))
+				.append(new MFVec3f(getpPipe1GeoPoints_7_30_point_2()));
 			return pPipe1GeoPoints_7_30_point;
 		}
 		/** Large attribute array: IndexedFaceSet DEF='pSphere1_0Geo' coordIndex field, scene-graph level=6, element #34, 964 total numbers.
@@ -233,10 +233,10 @@ public class CameraShape
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getpSphere1_0Geo_6_34_coordIndex()
+		private MFInt32 getpSphere1_0Geo_6_34_coordIndex()
 		{
-			MFInt32Object pSphere1_0Geo_6_34_coordIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getpSphere1_0Geo_6_34_coordIndex_1()));
+			MFInt32 pSphere1_0Geo_6_34_coordIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getpSphere1_0Geo_6_34_coordIndex_1()));
 			return pSphere1_0Geo_6_34_coordIndex;
 		}
 		/** Large attribute array: Coordinate DEF='pSphere1GeoPoints' point field, scene-graph level=7, element #34, 633 total numbers made up of 211 3-tuple values.
@@ -246,40 +246,40 @@ public class CameraShape
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getpSphere1GeoPoints_7_34_point()
+		private MFVec3f getpSphere1GeoPoints_7_34_point()
 		{
-			MFVec3fObject pSphere1GeoPoints_7_34_point = new MFVec3fObject()/*2.finalize*/
-				.append(new MFVec3fObject(getpSphere1GeoPoints_7_34_point_1()))
-				.append(new MFVec3fObject(getpSphere1GeoPoints_7_34_point_2()))
-				.append(new MFVec3fObject(getpSphere1GeoPoints_7_34_point_3()));
+			MFVec3f pSphere1GeoPoints_7_34_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getpSphere1GeoPoints_7_34_point_1()))
+				.append(new MFVec3f(getpSphere1GeoPoints_7_34_point_2()))
+				.append(new MFVec3f(getpSphere1GeoPoints_7_34_point_3()));
 			return pSphere1GeoPoints_7_34_point;
 		}
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return CameraShape model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new CameraShape().getX3dModel();
+        X3D thisExampleX3dModel = new CameraShape().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -294,15 +294,15 @@ public class CameraShape
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -312,12 +312,12 @@ public class CameraShape
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"CameraShape\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"CameraShape\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

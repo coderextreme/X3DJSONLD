@@ -96,87 +96,87 @@ public class Table5_18PixelTexture
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("Table5_18PixelTexture"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("PixelTexture example for Table 5.18"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Leonard Daly and Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("18 December 2006"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("2 April 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://X3dGraphics.com"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
-    .addMeta(new metaObject().setName(metaObject.NAME_RIGHTS     ).setContent("Copyright 2006, Daly Realism and Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT    ).setContent("X3D, PixelTexture"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.0f,0.0f,1.0f})))
-    .addChild(new TransformObject("Checkerboard").setTranslation(0.0f,0.0f,-10.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setTextureTransform(new TextureTransformObject().setScale(500.0f,500.0f))
-          .setTexture(new PixelTextureObject().setImage(new int[] {2,2,3,0xE6B5FD,0xFFDBB7,0xFFDBB7,0xE6B5FD})))
-        .setGeometry(new BoxObject().setSize(1000.0f,1000.0f,.01f))))
-    .addChild(new ViewpointObject().setDescription("View All").setPosition(0.0f,0.0f,20.0f))
-    .addChild(new ViewpointObject().setDescription("Empty Image").setPosition(0.0f,5.0f,5.0f))
-    .addChild(new TransformObject("EmptyImage").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(0.0f,5.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setTexture(new PixelTextureObject()))
-        .setGeometry(new BoxObject("StandardBox"))))
-    .addChild(new ViewpointObject().setDescription("Black and white PixelTexture").setPosition(-5.0f,0.0f,5.0f))
-    .addChild(new TransformObject("BW").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(-5.0f,0.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setTexture(new PixelTextureObject().setImage(new int[] {1,2,1,0xFF,0x00})))
-        .setGeometry(new BoxObject().setUSE("StandardBox"))))
-    .addChild(new ViewpointObject().setDescription("Black and white with Alpha PixelTexture").setPosition(5.0f,0.0f,5.0f))
-    .addChild(new TransformObject("AlphaBW").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(5.0f,0.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setTexture(new PixelTextureObject().setImage(new int[] {2,1,2,0xCCFF,0x2277})))
-        .setGeometry(new BoxObject().setUSE("StandardBox"))))
-    .addChild(new ViewpointObject().setDescription("RGB PixelTexture").setPosition(-5.0f,-5.0f,5.0f))
-    .addChild(new TransformObject("RGB").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(-5.0f,-5.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setTexture(new PixelTextureObject().setImage(new int[] {2,4,3,0xFF0000,0x00FF00,0,0,0,0,0xFFFFFF,0xFFFF00})))
-        .setGeometry(new BoxObject().setUSE("StandardBox"))))
-    .addChild(new ViewpointObject().setDescription("RGB with Alpha PixelTexture").setPosition(5.0f,-5.0f,5.0f))
-    .addChild(new TransformObject("AlphaRGB").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(5.0f,-5.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setTexture(new PixelTextureObject().setImage(new int[] {3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F})))
-        .setGeometry(new BoxObject().setUSE("StandardBox")))));
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("Table5_18PixelTexture"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("PixelTexture example for Table 5.18"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Leonard Daly and Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("18 December 2006"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("2 April 2017"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://X3dGraphics.com"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
+    .addMeta(new meta().setName(meta.NAME_RIGHTS     ).setContent("Copyright 2006, Daly Realism and Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("X3D, PixelTexture"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
+  .setScene(new Scene()
+    .addChild(new Background().setSkyColor(new MFColor(new float[] {0.0f,0.0f,1.0f})))
+    .addChild(new Transform("Checkerboard").setTranslation(0.0f,0.0f,-10.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setTextureTransform(new TextureTransform().setScale(500.0f,500.0f))
+          .setTexture(new PixelTexture().setImage(new int[] {2,2,3,0xE6B5FD,0xFFDBB7,0xFFDBB7,0xE6B5FD})))
+        .setGeometry(new Box().setSize(1000.0f,1000.0f,.01f))))
+    .addChild(new Viewpoint().setDescription("View All").setPosition(0.0f,0.0f,20.0f))
+    .addChild(new Viewpoint().setDescription("Empty Image").setPosition(0.0f,5.0f,5.0f))
+    .addChild(new Transform("EmptyImage").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(0.0f,5.0f,0.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setTexture(new PixelTexture()))
+        .setGeometry(new Box("StandardBox"))))
+    .addChild(new Viewpoint().setDescription("Black and white PixelTexture").setPosition(-5.0f,0.0f,5.0f))
+    .addChild(new Transform("BW").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(-5.0f,0.0f,0.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setTexture(new PixelTexture().setImage(new int[] {1,2,1,0xFF,0x00})))
+        .setGeometry(new Box().setUSE("StandardBox"))))
+    .addChild(new Viewpoint().setDescription("Black and white with Alpha PixelTexture").setPosition(5.0f,0.0f,5.0f))
+    .addChild(new Transform("AlphaBW").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(5.0f,0.0f,0.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setTexture(new PixelTexture().setImage(new int[] {2,1,2,0xCCFF,0x2277})))
+        .setGeometry(new Box().setUSE("StandardBox"))))
+    .addChild(new Viewpoint().setDescription("RGB PixelTexture").setPosition(-5.0f,-5.0f,5.0f))
+    .addChild(new Transform("RGB").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(-5.0f,-5.0f,0.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setTexture(new PixelTexture().setImage(new int[] {2,4,3,0xFF0000,0x00FF00,0,0,0,0,0xFFFFFF,0xFFFF00})))
+        .setGeometry(new Box().setUSE("StandardBox"))))
+    .addChild(new Viewpoint().setDescription("RGB with Alpha PixelTexture").setPosition(5.0f,-5.0f,5.0f))
+    .addChild(new Transform("AlphaRGB").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(5.0f,-5.0f,0.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setTexture(new PixelTexture().setImage(new int[] {3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F})))
+        .setGeometry(new Box().setUSE("StandardBox")))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return Table5_18PixelTexture model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new Table5_18PixelTexture().getX3dModel();
+        X3D thisExampleX3dModel = new Table5_18PixelTexture().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -191,15 +191,15 @@ public class Table5_18PixelTexture
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -209,12 +209,12 @@ public class Table5_18PixelTexture
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"Table5_18PixelTexture\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"Table5_18PixelTexture\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

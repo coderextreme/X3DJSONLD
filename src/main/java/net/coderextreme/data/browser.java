@@ -36,63 +36,27 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.sai.*;
-import org.web3d.x3d.sai.CADGeometry.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.DIS.*;
-import org.web3d.x3d.sai.EnvironmentalEffects.*;
-import org.web3d.x3d.sai.EnvironmentalSensor.*;
-import org.web3d.x3d.sai.EventUtilities.*;
-import org.web3d.x3d.sai.Followers.*;
-import org.web3d.x3d.sai.Geometry2D.*;
-import org.web3d.x3d.sai.Geometry3D.*;
-import org.web3d.x3d.sai.Geospatial.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Interpolation.*;
-import org.web3d.x3d.sai.KeyDeviceSensor.*;
-import org.web3d.x3d.sai.Layering.*;
-import org.web3d.x3d.sai.Layout.*;
-import org.web3d.x3d.sai.Lighting.*;
-import org.web3d.x3d.sai.NURBS.*;
-import org.web3d.x3d.sai.Navigation.*;
-import org.web3d.x3d.sai.Networking.*;
-import org.web3d.x3d.sai.ParticleSystems.*;
-import org.web3d.x3d.sai.Picking.*;
-import org.web3d.x3d.sai.PointingDeviceSensor.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.RigidBodyPhysics.*;
-import org.web3d.x3d.sai.Scripting.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing3D.*;
-import org.web3d.x3d.sai.Texturing.*;
-import org.web3d.x3d.sai.Time.*;
-import org.web3d.x3d.sai.VolumeRendering.*;
 public class browser {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new browser().initialize().toFileJSON("../data/browser.new.json");
     }
-    public X3DObject initialize() {
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
-      .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("browser.x3d"))
-        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
-      .setScene(new SceneObject()
-        .addChild(new ScriptObject().setDEF("Browser")
+    public X3D initialize() {
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("browser.x3d"))
+        .addMeta(new meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new meta().setName("generator").setContent("manual"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
+        .addMeta(new meta().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
+      .setScene(new Scene()
+        .addChild(new Script().setDEF("Browser")
           .setSourceCode("ecmascript:\n"+
 "                function initialize() {\n"+
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
 "                }"))
-        .addChild(new ScriptObject().setDEF("Clouds")
+        .addChild(new Script().setDEF("Clouds")
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "\n"+

@@ -66,96 +66,96 @@ public class rubik
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("rubik.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("manual"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("a kind of rubik cube with spheres")))
-  .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject().setType(new String[] {"EXAMINE"}))
-    .addChild(new ViewpointObject().setDescription("Rubiks Cube").setPosition(0.0f,0.0f,12.0f))
-    .addChild(new ProtoDeclareObject("sphere").setName("sphere")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("xtranslation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new TransformObject()
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("translation").setProtoField("xtranslation")))
-          .addChild(new ShapeObject()
-            .setGeometry(new SphereObject())
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f)))))))
-    .addChild(new ProtoDeclareObject("three").setName("three")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("ytranslation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new TransformObject()
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("translation").setProtoField("ytranslation")))
-          .addChild(new ProtoInstanceObject("sphere")
-            .addFieldValue(new fieldValueObject().setName("xtranslation").setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-          .addChild(new ProtoInstanceObject("sphere")
-            .addFieldValue(new fieldValueObject().setName("xtranslation").setValue(new SFVec3fObject(2.0f,0.0f,0.0f))))
-          .addChild(new ProtoInstanceObject("sphere")
-            .addFieldValue(new fieldValueObject().setName("xtranslation").setValue(new SFVec3fObject(-2.0f,0.0f,0.0f)))))))
-    .addChild(new ProtoDeclareObject("nine").setName("nine")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("ztranslation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new TransformObject()
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("translation").setProtoField("ztranslation")))
-          .addChild(new ProtoInstanceObject("three")
-            .addFieldValue(new fieldValueObject().setName("ytranslation").setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-          .addChild(new ProtoInstanceObject("three")
-            .addFieldValue(new fieldValueObject().setName("ytranslation").setValue(new SFVec3fObject(0.0f,2.0f,0.0f))))
-          .addChild(new ProtoInstanceObject("three")
-            .addFieldValue(new fieldValueObject().setName("ytranslation").setValue(new SFVec3fObject(0.0f,-2.0f,0.0f)))))))
-    .addChild(new ProtoDeclareObject("twentyseven").setName("twentyseven")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("ttranslation").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new TransformObject()
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("translation").setProtoField("ttranslation")))
-          .addChild(new ProtoInstanceObject("nine")
-            .addFieldValue(new fieldValueObject().setName("ztranslation").setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-          .addChild(new ProtoInstanceObject("nine")
-            .addFieldValue(new fieldValueObject().setName("ztranslation").setValue(new SFVec3fObject(0.0f,0.0f,2.0f))))
-          .addChild(new ProtoInstanceObject("nine")
-            .addFieldValue(new fieldValueObject().setName("ztranslation").setValue(new SFVec3fObject(0.0f,0.0f,-2.0f)))))))
-    .addChild(new ProtoInstanceObject("twentyseven")
-      .addFieldValue(new fieldValueObject().setName("ttranslation").setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))));
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("rubik.x3d"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a kind of rubik cube with spheres")))
+  .setScene(new Scene()
+    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
+    .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(0.0f,0.0f,12.0f))
+    .addChild(new ProtoDeclare("sphere").setName("sphere")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("xtranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Transform()
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("translation").setProtoField("xtranslation")))
+          .addChild(new Shape()
+            .setGeometry(new Sphere())
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(1.0f,1.0f,1.0f)))))))
+    .addChild(new ProtoDeclare("three").setName("three")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("ytranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Transform()
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("translation").setProtoField("ytranslation")))
+          .addChild(new ProtoInstance("sphere")
+            .addFieldValue(new fieldValue().setName("xtranslation").setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+          .addChild(new ProtoInstance("sphere")
+            .addFieldValue(new fieldValue().setName("xtranslation").setValue(new SFVec3f(2.0f,0.0f,0.0f))))
+          .addChild(new ProtoInstance("sphere")
+            .addFieldValue(new fieldValue().setName("xtranslation").setValue(new SFVec3f(-2.0f,0.0f,0.0f)))))))
+    .addChild(new ProtoDeclare("nine").setName("nine")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("ztranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Transform()
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("translation").setProtoField("ztranslation")))
+          .addChild(new ProtoInstance("three")
+            .addFieldValue(new fieldValue().setName("ytranslation").setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+          .addChild(new ProtoInstance("three")
+            .addFieldValue(new fieldValue().setName("ytranslation").setValue(new SFVec3f(0.0f,2.0f,0.0f))))
+          .addChild(new ProtoInstance("three")
+            .addFieldValue(new fieldValue().setName("ytranslation").setValue(new SFVec3f(0.0f,-2.0f,0.0f)))))))
+    .addChild(new ProtoDeclare("twentyseven").setName("twentyseven")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("ttranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Transform()
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("translation").setProtoField("ttranslation")))
+          .addChild(new ProtoInstance("nine")
+            .addFieldValue(new fieldValue().setName("ztranslation").setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+          .addChild(new ProtoInstance("nine")
+            .addFieldValue(new fieldValue().setName("ztranslation").setValue(new SFVec3f(0.0f,0.0f,2.0f))))
+          .addChild(new ProtoInstance("nine")
+            .addFieldValue(new fieldValue().setName("ztranslation").setValue(new SFVec3f(0.0f,0.0f,-2.0f)))))))
+    .addChild(new ProtoInstance("twentyseven")
+      .addFieldValue(new fieldValue().setName("ttranslation").setValue(new SFVec3f(0.0f,0.0f,0.0f)))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return rubik model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new rubik().getX3dModel();
+        X3D thisExampleX3dModel = new rubik().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -170,15 +170,15 @@ public class rubik
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -188,12 +188,12 @@ public class rubik
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"rubik\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"rubik\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

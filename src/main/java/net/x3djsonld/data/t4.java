@@ -75,133 +75,133 @@ public class t4
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addComponent(new componentObject().setName("Networking").setLevel(2))
-    .addComponent(new componentObject().setName("Core").setLevel(2))
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("t4.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Andreas Plesch and John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SOURCE     ).setContent("t1.wrl"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Test Case for Proto Expander"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("http://www.web3d.org/x3d/content/examples/license.html")))
-  .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject().setAvatarSize(new float[] {200.0f,200.0f,120.0f}).setSpeed(3f).setType(new String[] {"EXAMINE","FLY","WALK"}))
-    .addChild(new WorldInfoObject().setTitle("Arts Mapper"))
-    .addChild(new ViewpointObject().setDescription("looking North").setFieldOfView(0.785398125648499f).setOrientation(1.0f,0.0f,0.0f,-0.699999988079071f).setPosition(0.0f,60.0f,110.0f))
-    .addChild(new ProtoDeclareObject("org").setName("org")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("posi").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3fObject(0.0f,0.0f,0.0f)))
-        .addField(new fieldObject().setName("col").setType(fieldObject.TYPE_SFCOLOR).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new SFColorObject(0.0f,0.0f,0.0f))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new TransformObject()
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("translation").setProtoField("posi")))
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f)
-                .setIS(new ISObject()
-                  .addConnect(new connectObject().setNodeField("emissiveColor").setProtoField("col")))))
-            .setGeometry(new SphereObject().setRadius(5.10000002384186f))))))
-    .addChild(new ProtoDeclareObject("r").setName("r")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("pos").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new ProtoInstanceObject("org")
-          .addFieldValue(new fieldValueObject().setName("col").setValue(new SFColorObject(0.0f,0.300000011920929f,1.0f)))
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("posi").setProtoField("pos"))))))
-    .addChild(new ProtoDeclareObject("n").setName("n")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("pos").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new ProtoInstanceObject("org")
-          .addFieldValue(new fieldValueObject().setName("col").setValue(new SFColorObject(1.0f,0.0f,0.200000002980232f)))
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("posi").setProtoField("pos"))))))
-    .addChild(new ProtoDeclareObject("i").setName("i")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("pos").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3fObject(0.0f,0.0f,0.0f))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new ProtoInstanceObject("org")
-          .addFieldValue(new fieldValueObject().setName("col").setValue(new SFColorObject(0.600000023841858f,0.0f,0.600000023841858f)))
-          .setIS(new ISObject()
-            .addConnect(new connectObject().setNodeField("posi").setProtoField("pos"))))))
-    .addChild(new TransformObject().setTranslation(-468.0f,0.0f,315.0f)
-      .addChild(new AnchorObject().setDescription("High Peak Community Arts").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("r")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(400.0f,0.100000001490116f,-385.0f)))))
-      .addChild(new AnchorObject().setDescription("People Express").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("i")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(429.899993896484f,0.100000001490116f,-319.600006103516f)))))
-      .addChild(new AnchorObject().setDescription("QArts/Studios").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("i")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(430.0f,0.100000001490116f,-335.0f)))))
-      .addChild(new AnchorObject().setDescription("First Movement").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("n")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(429.899993896484f,0.100000001490116f,-360.299987792969f)))))
-      .addChild(new AnchorObject().setDescription("City Arts").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("i")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(455.899993896484f,0.100000001490116f,-341.299987792969f)))))
-      .addChild(new AnchorObject().setDescription("Indigo Dance Group (Salamanda Tandem)").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("r")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(456.100006103516f,0.100000001490116f,-341.5f)))))
-      .addChild(new AnchorObject().setDescription("Watering Seeds").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("r")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(454.0f,0.100000001490116f,-361.299987792969f)))))
-      .addChild(new AnchorObject().setDescription("Fased In The Arts").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("r")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(440.0f,0.100000001490116f,-350.0f)))))
-      .addChild(new AnchorObject().setDescription("27a Access Artspace").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("n")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(458.899993896484f,0.100000001490116f,-304.299987792969f)))))
-      .addChild(new AnchorObject().setDescription("Bamboozle Theatre Company").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("r")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(457.100006103516f,0.100000001490116f,-300.799987792969f)))))
-      .addChild(new AnchorObject().setDescription("Mantle Community Arts").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("r")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(442.399993896484f,0.100000001490116f,-314.5f)))))
-      .addChild(new AnchorObject().setDescription("Artlink East").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("r")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(491.600006103516f,0.100000001490116f,-335.700012207031f)))))
-      .addChild(new AnchorObject().setDescription("Creations").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("r")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(467.0f,0.100000001490116f,-243.899993896484f)))))
-      .addChild(new AnchorObject().setDescription("New Perspectives").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("n")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(457.399993896484f,0.100000001490116f,-262.700012207031f)))))
-      .addChild(new AnchorObject().setDescription("UKan2").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
-        .addChild(new ProtoInstanceObject("r")
-          .addFieldValue(new fieldValueObject().setName("pos").setValue(new SFVec3fObject(458.700012207031f,0.100000001490116f,-262.700012207031f)))))));
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addComponent(new component().setName("Networking").setLevel(2))
+    .addComponent(new component().setName("Core").setLevel(2))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("t4.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Andreas Plesch and John Carlson"))
+    .addMeta(new meta().setName(meta.NAME_SOURCE     ).setContent("t1.wrl"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Test Case for Proto Expander"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("http://www.web3d.org/x3d/content/examples/license.html")))
+  .setScene(new Scene()
+    .addChild(new NavigationInfo().setAvatarSize(new float[] {200.0f,200.0f,120.0f}).setSpeed(3f).setType(new String[] {"EXAMINE","FLY","WALK"}))
+    .addChild(new WorldInfo().setTitle("Arts Mapper"))
+    .addChild(new Viewpoint().setDescription("looking North").setFieldOfView(0.785398125648499f).setOrientation(1.0f,0.0f,0.0f,-0.699999988079071f).setPosition(0.0f,60.0f,110.0f))
+    .addChild(new ProtoDeclare("org").setName("org")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("posi").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.0f,0.0f,0.0f)))
+        .addField(new field().setName("col").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFColor(0.0f,0.0f,0.0f))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Transform()
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("translation").setProtoField("posi")))
+          .addChild(new Shape()
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(1.0f,1.0f,1.0f)
+                .setIS(new IS()
+                  .addConnect(new connect().setNodeField("emissiveColor").setProtoField("col")))))
+            .setGeometry(new Sphere().setRadius(5.10000002384186f))))))
+    .addChild(new ProtoDeclare("r").setName("r")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("pos").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new ProtoInstance("org")
+          .addFieldValue(new fieldValue().setName("col").setValue(new SFColor(0.0f,0.300000011920929f,1.0f)))
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("posi").setProtoField("pos"))))))
+    .addChild(new ProtoDeclare("n").setName("n")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("pos").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new ProtoInstance("org")
+          .addFieldValue(new fieldValue().setName("col").setValue(new SFColor(1.0f,0.0f,0.200000002980232f)))
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("posi").setProtoField("pos"))))))
+    .addChild(new ProtoDeclare("i").setName("i")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("pos").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new ProtoInstance("org")
+          .addFieldValue(new fieldValue().setName("col").setValue(new SFColor(0.600000023841858f,0.0f,0.600000023841858f)))
+          .setIS(new IS()
+            .addConnect(new connect().setNodeField("posi").setProtoField("pos"))))))
+    .addChild(new Transform().setTranslation(-468.0f,0.0f,315.0f)
+      .addChild(new Anchor().setDescription("High Peak Community Arts").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("r")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(400.0f,0.100000001490116f,-385.0f)))))
+      .addChild(new Anchor().setDescription("People Express").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("i")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(429.899993896484f,0.100000001490116f,-319.600006103516f)))))
+      .addChild(new Anchor().setDescription("QArts/Studios").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("i")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(430.0f,0.100000001490116f,-335.0f)))))
+      .addChild(new Anchor().setDescription("First Movement").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("n")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(429.899993896484f,0.100000001490116f,-360.299987792969f)))))
+      .addChild(new Anchor().setDescription("City Arts").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("i")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(455.899993896484f,0.100000001490116f,-341.299987792969f)))))
+      .addChild(new Anchor().setDescription("Indigo Dance Group (Salamanda Tandem)").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("r")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(456.100006103516f,0.100000001490116f,-341.5f)))))
+      .addChild(new Anchor().setDescription("Watering Seeds").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("r")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(454.0f,0.100000001490116f,-361.299987792969f)))))
+      .addChild(new Anchor().setDescription("Fased In The Arts").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("r")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(440.0f,0.100000001490116f,-350.0f)))))
+      .addChild(new Anchor().setDescription("27a Access Artspace").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("n")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(458.899993896484f,0.100000001490116f,-304.299987792969f)))))
+      .addChild(new Anchor().setDescription("Bamboozle Theatre Company").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("r")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(457.100006103516f,0.100000001490116f,-300.799987792969f)))))
+      .addChild(new Anchor().setDescription("Mantle Community Arts").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("r")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(442.399993896484f,0.100000001490116f,-314.5f)))))
+      .addChild(new Anchor().setDescription("Artlink East").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("r")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(491.600006103516f,0.100000001490116f,-335.700012207031f)))))
+      .addChild(new Anchor().setDescription("Creations").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("r")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(467.0f,0.100000001490116f,-243.899993896484f)))))
+      .addChild(new Anchor().setDescription("New Perspectives").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("n")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(457.399993896484f,0.100000001490116f,-262.700012207031f)))))
+      .addChild(new Anchor().setDescription("UKan2").setUrl(new String[] {"javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"})
+        .addChild(new ProtoInstance("r")
+          .addFieldValue(new fieldValue().setName("pos").setValue(new SFVec3f(458.700012207031f,0.100000001490116f,-262.700012207031f)))))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return t4 model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new t4().getX3dModel();
+        X3D thisExampleX3dModel = new t4().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -216,15 +216,15 @@ public class t4
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -234,12 +234,12 @@ public class t4
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"t4\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"t4\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

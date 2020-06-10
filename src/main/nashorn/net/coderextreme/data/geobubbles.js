@@ -4,31 +4,31 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
-      .setHead(new headObject()
-        .addComponent(new componentObject().setName("Geospatial").setLevel(1))
-        .addMeta(new metaObject().setName("title").setContent("geobubbles.x3d"))
-        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("geo bubbles")))
-      .setScene(new SceneObject()
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new head()
+        .addComponent(new component().setName("Geospatial").setLevel(1))
+        .addMeta(new meta().setName("title").setContent("geobubbles.x3d"))
+        .addMeta(new meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new meta().setName("generator").setContent("manual"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/geobubbles.x3d"))
+        .addMeta(new meta().setName("description").setContent("geo bubbles")))
+      .setScene(new Scene()
         .addComments(new CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
         .addComments(new CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
-        .addChild(new GeoViewpointObject().setDEF("Tour").setPosition(Java.to([0,0,4], Java.type("double[]"))).setOrientation(Java.to([1,0,0,0], Java.type("float[]"))).setDescription("Tour Views"))
-        .addChild(new BackgroundObject().setBackUrl(Java.to(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"], Java.type("java.lang.String[]"))))
-        .addChild(new TransformObject()
-          .addChild(new ShapeObject()
-            .setGeometry(new SphereObject())
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("float[]"))).setSpecularColor(Java.to([0.5,0.5,0.5], Java.type("float[]")))))))
-        .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(5).setLoop(true))
-        .addChild(new GeoPositionInterpolatorObject().setDEF("TourPosition").setKey(Java.to([0,1], Java.type("float[]"))).setKeyValue(Java.to([0.0015708,0,4,0,0.0015708,4], Java.type("double[]"))))
-        .addChild(new ScriptObject().setDEF("RandomTourTime")
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_cycle").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFFLOAT).setName("val").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-          .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3D).setName("positions").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
-          .addField(new fieldObject().setType(fieldObject.TYPE_MFVEC3D).setName("position").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
+        .addChild(new GeoViewpoint().setDEF("Tour").setPosition(Java.to([0,0,4], Java.type("double[]"))).setOrientation(Java.to([1,0,0,0], Java.type("float[]"))).setDescription("Tour Views"))
+        .addChild(new Background().setBackUrl(Java.to(["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"], Java.type("java.lang.String[]"))))
+        .addChild(new Transform()
+          .addChild(new Shape()
+            .setGeometry(new Sphere())
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("float[]"))).setSpecularColor(Java.to([0.5,0.5,0.5], Java.type("float[]")))))))
+        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5).setLoop(true))
+        .addChild(new GeoPositionInterpolator().setDEF("TourPosition").setKey(Java.to([0,1], Java.type("float[]"))).setKeyValue(Java.to([0.0015708,0,4,0,0.0015708,4], Java.type("double[]"))))
+        .addChild(new Script().setDEF("RandomTourTime")
+          .addField(new field().setType(field.TYPE_SFTIME).setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType(field.TYPE_SFFLOAT).setName("val").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+          .addField(new field().setType(field.TYPE_MFVEC3D).setName("positions").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
+          .addField(new field().setType(field.TYPE_MFVEC3D).setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "               function set_cycle(value) {\n"+
@@ -46,8 +46,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);\n"+
 "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\n"+
 "               }"))
-        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
-        .addChild(new ROUTEObject().setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
-        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
-        .addChild(new ROUTEObject().setFromNode("TourPosition").setFromField("geovalue_changed").setToNode("Tour").setToField("set_position")))      ;
+        .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
+        .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
+        .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
+        .addChild(new ROUTE().setFromNode("TourPosition").setFromField("geovalue_changed").setToNode("Tour").setToField("set_position")))      ;
     X3D0.toFileX3D("../data/geobubbles.new.x3d");

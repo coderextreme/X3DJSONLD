@@ -126,89 +126,89 @@ public class SimpleShader
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_2)
-  .setHead(new headObject()
-    .addComponent(new componentObject().setName("Shaders").setLevel(1))
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("SimpleShader.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Simple shader example"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Stewart"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATOR ).setContent("Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("26 May 2009"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED ).setContent("15 October 2009"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("20 October 2019"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.opengl.org/wiki/Fragment_Shader"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT    ).setContent("X3D shader example"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("originals/simpleShader.x3dv"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("ShaderTutorialInstantReality.pdf"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("Titania V3.0.3, http://titania.create3000.de"))
-    .addMeta(new metaObject().setName("comment").setContent("World of Titania"))
-    .addMeta(new metaObject().setName("outputStyle").setContent("nicest"))
-    .addMeta(new metaObject().setName(metaObject.NAME_WARNING    ).setContent("under development"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject("myPrototype").setName("myPrototype")
-      .setProtoInterface(new ProtoInterfaceObject()
-        .addField(new fieldObject().setName("myInputRange").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3fObject(0.95f,0.44f,0.22f))))
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new TransformObject("TR")
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(0.5f,0.5f,0.9f))
-              .addShaders(new ComposedShaderObject().setLanguage("GLSL")
-                .addField(new fieldObject().setName("decis").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY))
-                .setIS(new ISObject()
-                  .addConnect(new connectObject().setNodeField("decis").setProtoField("myInputRange")))
-                .addParts(new ShaderPartObject())
-                .addParts(new ShaderPartObject().setType("FRAGMENT")))
-              .addShaders(new ComposedShaderObject("Cobweb").setLanguage("GLSL")
-                .addField(new fieldObject().setName("decis").setType(fieldObject.TYPE_SFVEC3F).setAccessType(fieldObject.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3fObject(0.95f,0.77f,0.44f)))
-                .addParts(new ShaderPartObject())
-                .addParts(new ShaderPartObject("_1").setType("FRAGMENT"))))
-            .setGeometry(new SphereObject().setRadius(1.75f))))))
-    .addChild(new WorldInfoObject().setTitle("SimpleShader")
-      .setMetadata(new MetadataSetObject("Titania").setName("Titania").setReference("http://titania.create3000.de")
-        .addValue(new MetadataSetObject("Selection").setName("Selection").setReference("http://titania.create3000.de")
-          .addValue(new MetadataSetObject("nodes").setName("nodes").setReference("http://titania.create3000.de")
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_2)
+  .setHead(new head()
+    .addComponent(new component().setName("Shaders").setLevel(1))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("SimpleShader.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Simple shader example"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Stewart"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("26 May 2009"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("15 October 2009"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 October 2019"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.opengl.org/wiki/Fragment_Shader"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"))
+    .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("X3D shader example"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("originals/simpleShader.x3dv"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("ShaderTutorialInstantReality.pdf"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Titania V3.0.3, http://titania.create3000.de"))
+    .addMeta(new meta().setName("comment").setContent("World of Titania"))
+    .addMeta(new meta().setName("outputStyle").setContent("nicest"))
+    .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("under development"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../../license.html")))
+  .setScene(new Scene()
+    .addChild(new ProtoDeclare("myPrototype").setName("myPrototype")
+      .setProtoInterface(new ProtoInterface()
+        .addField(new field().setName("myInputRange").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.95f,0.44f,0.22f))))
+      .setProtoBody(new ProtoBody()
+        .addChild(new Transform("TR")
+          .addChild(new Shape()
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(0.5f,0.5f,0.9f))
+              .addShaders(new ComposedShader().setLanguage("GLSL")
+                .addField(new field().setName("decis").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+                .setIS(new IS()
+                  .addConnect(new connect().setNodeField("decis").setProtoField("myInputRange")))
+                .addParts(new ShaderPart())
+                .addParts(new ShaderPart().setType("FRAGMENT")))
+              .addShaders(new ComposedShader("Cobweb").setLanguage("GLSL")
+                .addField(new field().setName("decis").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.95f,0.77f,0.44f)))
+                .addParts(new ShaderPart())
+                .addParts(new ShaderPart("_1").setType("FRAGMENT"))))
+            .setGeometry(new Sphere().setRadius(1.75f))))))
+    .addChild(new WorldInfo().setTitle("SimpleShader")
+      .setMetadata(new MetadataSet("Titania").setName("Titania").setReference("http://titania.create3000.de")
+        .addValue(new MetadataSet("Selection").setName("Selection").setReference("http://titania.create3000.de")
+          .addValue(new MetadataSet("nodes").setName("nodes").setReference("http://titania.create3000.de")
             .addComments(" NULL ")))
-        .addValue(new MetadataSetObject("NavigationInfo").setName("NavigationInfo").setReference("http://titania.create3000.de")
-          .addValue(new MetadataStringObject("type").setName("type").setReference("http://titania.create3000.de").setValue(new String[] {"EXAMINE"})))
-        .addValue(new MetadataSetObject("Viewpoint").setName("Viewpoint").setReference("http://titania.create3000.de")
-          .addValue(new MetadataDoubleObject("position").setName("position").setReference("http://titania.create3000.de").setValue(new double[] {6.24067728185014,0.00250837343276661,2.92117542307615}))
-          .addValue(new MetadataDoubleObject("orientation").setName("orientation").setReference("http://titania.create3000.de").setValue(new double[] {-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191}))
-          .addValue(new MetadataDoubleObject("centerOfRotation").setName("centerOfRotation").setReference("http://titania.create3000.de").setValue(new double[] {-0.808320198626341,-0.358072370409949,0.22817191560906})))))
-    .addChild(new ProtoInstanceObject("myPrototype")));
+        .addValue(new MetadataSet("NavigationInfo").setName("NavigationInfo").setReference("http://titania.create3000.de")
+          .addValue(new MetadataString("type").setName("type").setReference("http://titania.create3000.de").setValue(new String[] {"EXAMINE"})))
+        .addValue(new MetadataSet("Viewpoint").setName("Viewpoint").setReference("http://titania.create3000.de")
+          .addValue(new MetadataDouble("position").setName("position").setReference("http://titania.create3000.de").setValue(new double[] {6.24067728185014,0.00250837343276661,2.92117542307615}))
+          .addValue(new MetadataDouble("orientation").setName("orientation").setReference("http://titania.create3000.de").setValue(new double[] {-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191}))
+          .addValue(new MetadataDouble("centerOfRotation").setName("centerOfRotation").setReference("http://titania.create3000.de").setValue(new double[] {-0.808320198626341,-0.358072370409949,0.22817191560906})))))
+    .addChild(new ProtoInstance("myPrototype")));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return SimpleShader model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new SimpleShader().getX3dModel();
+        X3D thisExampleX3dModel = new SimpleShader().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -223,15 +223,15 @@ public class SimpleShader
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -241,12 +241,12 @@ public class SimpleShader
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"SimpleShader\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"SimpleShader\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

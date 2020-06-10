@@ -36,131 +36,95 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.sai.*;
-import org.web3d.x3d.sai.CADGeometry.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.DIS.*;
-import org.web3d.x3d.sai.EnvironmentalEffects.*;
-import org.web3d.x3d.sai.EnvironmentalSensor.*;
-import org.web3d.x3d.sai.EventUtilities.*;
-import org.web3d.x3d.sai.Followers.*;
-import org.web3d.x3d.sai.Geometry2D.*;
-import org.web3d.x3d.sai.Geometry3D.*;
-import org.web3d.x3d.sai.Geospatial.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Interpolation.*;
-import org.web3d.x3d.sai.KeyDeviceSensor.*;
-import org.web3d.x3d.sai.Layering.*;
-import org.web3d.x3d.sai.Layout.*;
-import org.web3d.x3d.sai.Lighting.*;
-import org.web3d.x3d.sai.NURBS.*;
-import org.web3d.x3d.sai.Navigation.*;
-import org.web3d.x3d.sai.Networking.*;
-import org.web3d.x3d.sai.ParticleSystems.*;
-import org.web3d.x3d.sai.Picking.*;
-import org.web3d.x3d.sai.PointingDeviceSensor.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.RigidBodyPhysics.*;
-import org.web3d.x3d.sai.Scripting.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing3D.*;
-import org.web3d.x3d.sai.Texturing.*;
-import org.web3d.x3d.sai.Time.*;
-import org.web3d.x3d.sai.VolumeRendering.*;
 public class rubik {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new rubik().initialize().toFileJSON("../data/rubik.new.json");
     }
-    public X3DObject initialize() {
-ProtoInstanceObject ProtoInstance0 = null;
-ProtoInstanceObject ProtoInstance1 = null;
-ProtoInstanceObject ProtoInstance2 = null;
-ProtoInstanceObject ProtoInstance3 = null;
-ProtoInstanceObject ProtoInstance4 = null;
-ProtoInstanceObject ProtoInstance5 = null;
-ProtoInstanceObject ProtoInstance6 = null;
-ProtoInstanceObject ProtoInstance7 = null;
-ProtoInstanceObject ProtoInstance8 = null;
-ProtoInstanceObject ProtoInstance9 = null;
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
-      .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("rubik.x3d"))
-        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("a kind of rubik cube with spheres")))
-      .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject().setType(new java.lang.String[] {"EXAMINE"}))
-        .addChild(new ViewpointObject().setDescription("Rubiks Cube").setPosition(new float[] {0f,0f,12f}))
-        .addChild(new ProtoDeclareObject().setName("sphere")
-          .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType("SFVec3f").setName("xtranslation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
-          .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject()
-              .setIS(new ISObject()
-                .addConnect(new connectObject().setNodeField("translation").setProtoField("xtranslation")))
-              .addChild(new ShapeObject()
-                .setGeometry(new SphereObject())
-                .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject().setDiffuseColor(new float[] {1f,1f,1f})))))))
-        .addChild(new ProtoDeclareObject().setName("three")
-          .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType("SFVec3f").setName("ytranslation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
-          .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject()
-              .setIS(new ISObject()
-                .addConnect(new connectObject().setNodeField("translation").setProtoField("ytranslation")))
-              .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("sphere"))
-              .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("sphere"))
-              .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("sphere")))))
-        .addChild(new ProtoDeclareObject().setName("nine")
-          .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType("SFVec3f").setName("ztranslation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
-          .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject()
-              .setIS(new ISObject()
-                .addConnect(new connectObject().setNodeField("translation").setProtoField("ztranslation")))
-              .addChild(ProtoInstance3 = new ProtoInstanceObject().setName("three"))
-              .addChild(ProtoInstance4 = new ProtoInstanceObject().setName("three"))
-              .addChild(ProtoInstance5 = new ProtoInstanceObject().setName("three")))))
-        .addChild(new ProtoDeclareObject().setName("twentyseven")
-          .setProtoInterface(new ProtoInterfaceObject()
-            .addField(new fieldObject().setType("SFVec3f").setName("ttranslation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
-          .setProtoBody(new ProtoBodyObject()
-            .addChild(new TransformObject()
-              .setIS(new ISObject()
-                .addConnect(new connectObject().setNodeField("translation").setProtoField("ttranslation")))
-              .addChild(ProtoInstance6 = new ProtoInstanceObject().setName("nine"))
-              .addChild(ProtoInstance7 = new ProtoInstanceObject().setName("nine"))
-              .addChild(ProtoInstance8 = new ProtoInstanceObject().setName("nine")))))
-        .addChild(ProtoInstance9 = new ProtoInstanceObject().setName("twentyseven")))      ;
+    public X3D initialize() {
+ProtoInstance ProtoInstance0 = null;
+ProtoInstance ProtoInstance1 = null;
+ProtoInstance ProtoInstance2 = null;
+ProtoInstance ProtoInstance3 = null;
+ProtoInstance ProtoInstance4 = null;
+ProtoInstance ProtoInstance5 = null;
+ProtoInstance ProtoInstance6 = null;
+ProtoInstance ProtoInstance7 = null;
+ProtoInstance ProtoInstance8 = null;
+ProtoInstance ProtoInstance9 = null;
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("rubik.x3d"))
+        .addMeta(new meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new meta().setName("generator").setContent("manual"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d"))
+        .addMeta(new meta().setName("description").setContent("a kind of rubik cube with spheres")))
+      .setScene(new Scene()
+        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE"}))
+        .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(new float[] {0f,0f,12f}))
+        .addChild(new ProtoDeclare().setName("sphere")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("SFVec3f").setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Transform()
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("xtranslation")))
+              .addChild(new Shape()
+                .setGeometry(new Sphere())
+                .setAppearance(new Appearance()
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f})))))))
+        .addChild(new ProtoDeclare().setName("three")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("SFVec3f").setName("ytranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Transform()
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("ytranslation")))
+              .addChild(ProtoInstance0 = new ProtoInstance().setName("sphere"))
+              .addChild(ProtoInstance1 = new ProtoInstance().setName("sphere"))
+              .addChild(ProtoInstance2 = new ProtoInstance().setName("sphere")))))
+        .addChild(new ProtoDeclare().setName("nine")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("SFVec3f").setName("ztranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Transform()
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("ztranslation")))
+              .addChild(ProtoInstance3 = new ProtoInstance().setName("three"))
+              .addChild(ProtoInstance4 = new ProtoInstance().setName("three"))
+              .addChild(ProtoInstance5 = new ProtoInstance().setName("three")))))
+        .addChild(new ProtoDeclare().setName("twentyseven")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("SFVec3f").setName("ttranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Transform()
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("ttranslation")))
+              .addChild(ProtoInstance6 = new ProtoInstance().setName("nine"))
+              .addChild(ProtoInstance7 = new ProtoInstance().setName("nine"))
+              .addChild(ProtoInstance8 = new ProtoInstance().setName("nine")))))
+        .addChild(ProtoInstance9 = new ProtoInstance().setName("twentyseven")))      ;
 ProtoInstance0
-                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("0 0 0"));
+                .addFieldValue(new fieldValue().setName("xtranslation").setValue("0 0 0"));
 ProtoInstance1
-                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("2 0 0"));
+                .addFieldValue(new fieldValue().setName("xtranslation").setValue("2 0 0"));
 ProtoInstance2
-                .addFieldValue(new fieldValueObject().setName("xtranslation").setValue("-2 0 0"));
+                .addFieldValue(new fieldValue().setName("xtranslation").setValue("-2 0 0"));
 ProtoInstance3
-                .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 0 0"));
+                .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 0 0"));
 ProtoInstance4
-                .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 2 0"));
+                .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 2 0"));
 ProtoInstance5
-                .addFieldValue(new fieldValueObject().setName("ytranslation").setValue("0 -2 0"));
+                .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 -2 0"));
 ProtoInstance6
-                .addFieldValue(new fieldValueObject().setName("ztranslation").setValue("0 0 0"));
+                .addFieldValue(new fieldValue().setName("ztranslation").setValue("0 0 0"));
 ProtoInstance7
-                .addFieldValue(new fieldValueObject().setName("ztranslation").setValue("0 0 2"));
+                .addFieldValue(new fieldValue().setName("ztranslation").setValue("0 0 2"));
 ProtoInstance8
-                .addFieldValue(new fieldValueObject().setName("ztranslation").setValue("0 0 -2"));
+                .addFieldValue(new fieldValue().setName("ztranslation").setValue("0 0 -2"));
 ProtoInstance9
-          .addFieldValue(new fieldValueObject().setName("ttranslation").setValue("0 0 0"));
+          .addFieldValue(new fieldValue().setName("ttranslation").setValue("0 0 0"));
     return X3D0;
     }
 }

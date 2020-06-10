@@ -106,61 +106,61 @@ public class StringArrayEncodingExamples
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("StringArrayEncodingExamples.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Demonstrate simple X3D MFString (string array) encoding."))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("27 May 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("27 May 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("X3dHeaderPrototypeSyntaxExamples.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONSECTION).setContent("X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base components, 5 Field type reference, 5.3.14 SFString and MFString"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONURL).setContent("http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONSECTION).setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONURL).setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONSECTION).setContent("X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SPECIFICATIONURL).setContent("http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new ViewpointObject("EntryView").setDescription("Hello MFString syntax"))
-    .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.6f,1.0f,0.8f})))
-    .addChild(new ShapeObject()
-      .setGeometry(new TextObject().setString(new String[] {"One, Two, Three","","He said, \"Immel did it!\""})
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("StringArrayEncodingExamples.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Demonstrate simple X3D MFString (string array) encoding."))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("27 May 2017"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("27 May 2017"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("X3dHeaderPrototypeSyntaxExamples.x3d"))
+    .addMeta(new meta().setName(meta.NAME_SPECIFICATIONSECTION).setContent("X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base components, 5 Field type reference, 5.3.14 SFString and MFString"))
+    .addMeta(new meta().setName(meta.NAME_SPECIFICATIONURL).setContent("http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFStringAndMFString"))
+    .addMeta(new meta().setName(meta.NAME_SPECIFICATIONSECTION).setContent("X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 5.3.14 SFString and MFString"))
+    .addMeta(new meta().setName(meta.NAME_SPECIFICATIONURL).setContent("http://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/EncodingOfFields.html#SFString"))
+    .addMeta(new meta().setName(meta.NAME_SPECIFICATIONSECTION).setContent("X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString"))
+    .addMeta(new meta().setName(meta.NAME_SPECIFICATIONURL).setContent("http://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
+  .setScene(new Scene()
+    .addChild(new Viewpoint("EntryView").setDescription("Hello MFString syntax"))
+    .addChild(new Background().setSkyColor(new MFColor(new float[] {0.6f,1.0f,0.8f})))
+    .addChild(new Shape()
+      .setGeometry(new Text().setString(new String[] {"One, Two, Three","","He said, \"Immel did it!\""})
         .addComments(" alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
         .addComments(" alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"Immel did it!\\\"\"}) ")
-        .setFontStyle(new FontStyleObject().setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE).setStyle("BOLD")))
-      .setAppearance(new AppearanceObject()
-        .setMaterial(new MaterialObject().setDiffuseColor(0.6f,0.4f,0.2f)))));
+        .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setStyle("BOLD")))
+      .setAppearance(new Appearance()
+        .setMaterial(new Material().setDiffuseColor(0.6f,0.4f,0.2f)))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return StringArrayEncodingExamples model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new StringArrayEncodingExamples().getX3dModel();
+        X3D thisExampleX3dModel = new StringArrayEncodingExamples().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -175,15 +175,15 @@ public class StringArrayEncodingExamples
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -193,12 +193,12 @@ public class StringArrayEncodingExamples
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"StringArrayEncodingExamples\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"StringArrayEncodingExamples\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

@@ -36,71 +36,35 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.sai.*;
-import org.web3d.x3d.sai.CADGeometry.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.DIS.*;
-import org.web3d.x3d.sai.EnvironmentalEffects.*;
-import org.web3d.x3d.sai.EnvironmentalSensor.*;
-import org.web3d.x3d.sai.EventUtilities.*;
-import org.web3d.x3d.sai.Followers.*;
-import org.web3d.x3d.sai.Geometry2D.*;
-import org.web3d.x3d.sai.Geometry3D.*;
-import org.web3d.x3d.sai.Geospatial.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Interpolation.*;
-import org.web3d.x3d.sai.KeyDeviceSensor.*;
-import org.web3d.x3d.sai.Layering.*;
-import org.web3d.x3d.sai.Layout.*;
-import org.web3d.x3d.sai.Lighting.*;
-import org.web3d.x3d.sai.NURBS.*;
-import org.web3d.x3d.sai.Navigation.*;
-import org.web3d.x3d.sai.Networking.*;
-import org.web3d.x3d.sai.ParticleSystems.*;
-import org.web3d.x3d.sai.Picking.*;
-import org.web3d.x3d.sai.PointingDeviceSensor.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.RigidBodyPhysics.*;
-import org.web3d.x3d.sai.Scripting.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing3D.*;
-import org.web3d.x3d.sai.Texturing.*;
-import org.web3d.x3d.sai.Time.*;
-import org.web3d.x3d.sai.VolumeRendering.*;
 public class flower3 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new flower3().initialize().toFileJSON("../data/flower3.new.json");
     }
-    public X3DObject initialize() {
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
-      .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("flower3.x3d"))
-        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("generator").setContent("manual"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"))
-        .addMeta(new metaObject().setName("description").setContent("a flower")))
-      .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject())
-        .addChild(new DirectionalLightObject().setDirection(new float[] {0f,-0.8f,-0.2f}).setIntensity(0.5f))
-        .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new MFColor0().getArray())))
-        .addChild(new ViewpointObject().setDescription("One mathematical orbital").setPosition(new float[] {0f,0f,50f}))
-        .addChild(new TransformObject().setDEF("OrbitTransform").setTranslation(new float[] {8f,0f,0f})
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0.5f,1f}).setSpecularColor(new float[] {0f,0.5f,1f})))
-            .setGeometry(new IndexedFaceSetObject().setConvex(false).setDEF("Orbit")
-              .setCoord(new CoordinateObject().setDEF("OrbitCoordinates")))))
-        .addChild(new ScriptObject().setDEF("OrbitScript")
-          .addField(new fieldObject().setType("SFFloat").setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
-          .addField(new fieldObject().setType("MFVec3f").setName("coordinates").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
-          .addField(new fieldObject().setType("MFInt32").setName("coordIndexes").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY))
+    public X3D initialize() {
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("flower3.x3d"))
+        .addMeta(new meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new meta().setName("generator").setContent("manual"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"))
+        .addMeta(new meta().setName("description").setContent("a flower")))
+      .setScene(new Scene()
+        .addChild(new NavigationInfo())
+        .addChild(new DirectionalLight().setDirection(new float[] {0f,-0.8f,-0.2f}).setIntensity(0.5f))
+        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())))
+        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new float[] {0f,0f,50f}))
+        .addChild(new Transform().setDEF("OrbitTransform").setTranslation(new float[] {8f,0f,0f})
+          .addChild(new Shape()
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.5f,1f}).setSpecularColor(new float[] {0f,0.5f,1f})))
+            .setGeometry(new IndexedFaceSet().setConvex(false).setDEF("Orbit")
+              .setCoord(new Coordinate().setDEF("OrbitCoordinates")))))
+        .addChild(new Script().setDEF("OrbitScript")
+          .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("MFVec3f").setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+          .addField(new field().setType("MFInt32").setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"))
           .setSourceCode("ecmascript:\n"+
 "\n"+
@@ -176,15 +140,15 @@ public class flower3 {
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}"))
-        .addChild(new TimeSensorObject().setDEF("Clock").setCycleInterval(16d).setLoop(true))
-        .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
-        .addChild(new ROUTEObject().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-        .addChild(new ROUTEObject().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
+        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16d).setLoop(true))
+        .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
+        .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
+        .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
     return X3D0;
     }
 protected class MFColor0 {
-  protected MFColorObject getArray() {
-    return new MFColorObject(new float[] {1f,1f,1f});
+  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f,1f,1f});
   }
 }
 }

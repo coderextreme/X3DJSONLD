@@ -36,111 +36,75 @@ import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Time.*;
 import org.web3d.x3d.jsail.VolumeRendering.*;
 import org.web3d.x3d.jsail.fields.*;
-import org.web3d.x3d.sai.*;
-import org.web3d.x3d.sai.CADGeometry.*;
-import org.web3d.x3d.sai.Core.*;
-import org.web3d.x3d.sai.CubeMapTexturing.*;
-import org.web3d.x3d.sai.DIS.*;
-import org.web3d.x3d.sai.EnvironmentalEffects.*;
-import org.web3d.x3d.sai.EnvironmentalSensor.*;
-import org.web3d.x3d.sai.EventUtilities.*;
-import org.web3d.x3d.sai.Followers.*;
-import org.web3d.x3d.sai.Geometry2D.*;
-import org.web3d.x3d.sai.Geometry3D.*;
-import org.web3d.x3d.sai.Geospatial.*;
-import org.web3d.x3d.sai.Grouping.*;
-import org.web3d.x3d.sai.HAnim.*;
-import org.web3d.x3d.sai.Interpolation.*;
-import org.web3d.x3d.sai.KeyDeviceSensor.*;
-import org.web3d.x3d.sai.Layering.*;
-import org.web3d.x3d.sai.Layout.*;
-import org.web3d.x3d.sai.Lighting.*;
-import org.web3d.x3d.sai.NURBS.*;
-import org.web3d.x3d.sai.Navigation.*;
-import org.web3d.x3d.sai.Networking.*;
-import org.web3d.x3d.sai.ParticleSystems.*;
-import org.web3d.x3d.sai.Picking.*;
-import org.web3d.x3d.sai.PointingDeviceSensor.*;
-import org.web3d.x3d.sai.Rendering.*;
-import org.web3d.x3d.sai.RigidBodyPhysics.*;
-import org.web3d.x3d.sai.Scripting.*;
-import org.web3d.x3d.sai.Shaders.*;
-import org.web3d.x3d.sai.Shape.*;
-import org.web3d.x3d.sai.Sound.*;
-import org.web3d.x3d.sai.Text.*;
-import org.web3d.x3d.sai.Texturing3D.*;
-import org.web3d.x3d.sai.Texturing.*;
-import org.web3d.x3d.sai.Time.*;
-import org.web3d.x3d.sai.VolumeRendering.*;
 public class qq3 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
     new qq3().initialize().toFileJSON("../data/qq3.new.json");
     }
-    public X3DObject initialize() {
-ProtoInstanceObject ProtoInstance0 = null;
-ProtoInstanceObject ProtoInstance1 = null;
-ProtoInstanceObject ProtoInstance2 = null;
-      X3DObject X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
-      .setHead(new headObject()
-        .addMeta(new metaObject().setName("title").setContent("qq3.x3d"))
-        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("translator").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("created").setContent("11 Jan 2015"))
-        .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
-        .addMeta(new metaObject().setName("description").setContent("12 extrusions to test prototype expander"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/x3d/qq3.x3d"))
-        .addMeta(new metaObject().setName("generator").setContent("manual")))
-      .setScene(new SceneObject()
-        .addChild(new ProtoDeclareObject().setName("Process")
-          .setProtoBody(new ProtoBodyObject()
-            .addChild(new GroupObject()
+    public X3D initialize() {
+ProtoInstance ProtoInstance0 = null;
+ProtoInstance ProtoInstance1 = null;
+ProtoInstance ProtoInstance2 = null;
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("qq3.x3d"))
+        .addMeta(new meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new meta().setName("translator").setContent("John Carlson"))
+        .addMeta(new meta().setName("created").setContent("11 Jan 2015"))
+        .addMeta(new meta().setName("modified").setContent("05 May 2017"))
+        .addMeta(new meta().setName("description").setContent("12 extrusions to test prototype expander"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/x3d/qq3.x3d"))
+        .addMeta(new meta().setName("generator").setContent("manual")))
+      .setScene(new Scene()
+        .addChild(new ProtoDeclare().setName("Process")
+          .setProtoBody(new ProtoBody()
+            .addChild(new Group()
               .addComments(new CommentsBlock("left"))
-              .addChild(new TransformObject().setScale(new float[] {0.5f,0.5f,0.5f})
-                .addChild(new ShapeObject().setDEF("ShapeLeftDown")
-                  .setAppearance(new AppearanceObject()
-                    .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0.7f,1f,0f})))
-                  .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new MFVec3f0().getArray())).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f1().getArray())))))
+              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
+                .addChild(new Shape().setDEF("ShapeLeftDown")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,1f,0f})))
+                  .setGeometry(new Extrusion().setSpine(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f0().getArray())).setCreaseAngle(0.785f).setCrossSection(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f1().getArray())))))
               .addComments(new CommentsBlock("right"))
-              .addChild(new TransformObject().setScale(new float[] {0.5f,0.5f,0.5f})
-                .addChild(new ShapeObject().setDEF("ShapeUpRight")
-                  .setAppearance(new AppearanceObject()
-                    .setMaterial(new MaterialObject().setDiffuseColor(new float[] {0f,0.7f,1f})))
-                  .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(new MFVec3f2().getArray())).setCreaseAngle(0.785f).setCrossSection(new MFVec2fObject(new MFVec2f3().getArray())))))
+              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
+                .addChild(new Shape().setDEF("ShapeUpRight")
+                  .setAppearance(new Appearance()
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.7f,1f})))
+                  .setGeometry(new Extrusion().setSpine(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f2().getArray())).setCreaseAngle(0.785f).setCrossSection(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f3().getArray())))))
               .addComments(new CommentsBlock("up"))
-              .addChild(new TransformObject().setScale(new float[] {0.5f,0.5f,0.5f})
-                .addChild(new ShapeObject().setUSE("ShapeUpRight")))
+              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
+                .addChild(new Shape().setUSE("ShapeUpRight")))
               .addComments(new CommentsBlock("down"))
-              .addChild(new TransformObject().setScale(new float[] {0.5f,0.5f,0.5f})
-                .addChild(new ShapeObject().setUSE("ShapeLeftDown"))))))
-        .addChild(new ViewpointObject().setDescription("Process pipes").setOrientation(new float[] {1f,0f,0f,-0.4f}).setPosition(new float[] {0f,5f,12f}))
-        .addChild(new TransformObject().setTranslation(new float[] {0f,-2.5f,0f})
-          .addChild(ProtoInstance0 = new ProtoInstanceObject().setName("Process")))
-        .addChild(new TransformObject()
-          .addChild(ProtoInstance1 = new ProtoInstanceObject().setName("Process")))
-        .addChild(new TransformObject().setTranslation(new float[] {0f,2.5f,0f})
-          .addChild(ProtoInstance2 = new ProtoInstanceObject().setName("Process"))))      ;
+              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
+                .addChild(new Shape().setUSE("ShapeLeftDown"))))))
+        .addChild(new Viewpoint().setDescription("Process pipes").setOrientation(new float[] {1f,0f,0f,-0.4f}).setPosition(new float[] {0f,5f,12f}))
+        .addChild(new Transform().setTranslation(new float[] {0f,-2.5f,0f})
+          .addChild(ProtoInstance0 = new ProtoInstance().setName("Process")))
+        .addChild(new Transform()
+          .addChild(ProtoInstance1 = new ProtoInstance().setName("Process")))
+        .addChild(new Transform().setTranslation(new float[] {0f,2.5f,0f})
+          .addChild(ProtoInstance2 = new ProtoInstance().setName("Process"))))      ;
     return X3D0;
     }
 protected class MFVec3f0 {
-  protected MFVec3fObject getArray() {
-    return new MFVec3fObject(new float[] {-2.5f,0f,0f,-1.5f,0f,0f});
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2.5f,0f,0f,-1.5f,0f,0f});
   }
 }
 protected class MFVec2f1 {
-  protected MFVec2fObject getArray() {
-    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
   }
 }
 protected class MFVec3f2 {
-  protected MFVec3fObject getArray() {
-    return new MFVec3fObject(new float[] {1.5f,0f,0f,2.5f,0f,0f});
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.5f,0f,0f,2.5f,0f,0f});
   }
 }
 protected class MFVec2f3 {
-  protected MFVec2fObject getArray() {
-    return new MFVec2fObject(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+  protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
   }
 }
 }

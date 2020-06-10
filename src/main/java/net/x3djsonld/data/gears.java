@@ -87,26 +87,26 @@ public class gears
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("gears.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/template.json"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Template for an Indexed Face Set"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("John Carlson"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("4 April 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("30 April 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_TRANSLATED ).setContent("30 April 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
-  .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject().setType(new String[] {"EXAMINE","FLY","WALK","ANY"}))
-    .addChild(new GroupObject()
-      .addChild(new ShapeObject().setBboxCenter(-4.868185499999999f,25.359741f,0.0f).setBboxSize(77.23637099999999f,100.502162f,6.0f)
-        .setGeometry(new IndexedFaceSetObject("OpenSCAD_Model").setDEF("OpenSCAD_Model").setNormalPerVertex(false).setColorIndex(getOpenSCAD_Model_5_13_colorIndex()).setCoordIndex(getOpenSCAD_Model_5_13_coordIndex()).setNormalIndex(getOpenSCAD_Model_5_13_normalIndex())
-          .setCoord(new CoordinateObject().setPoint(getCoordinate_6_13_point()))
-          .setNormal(new NormalObject().setVector(getNormal_6_14_vector()))
-          .setColor(new ColorObject().setColor(new MFColorObject(new float[] {0.0f,1.0f,0.0f})))))));
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("gears.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://coderextreme.net/X3DJSONLD/template.json"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Template for an Indexed Face Set"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("4 April 2017"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/convertStlToJson.js"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("30 April 2017"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("30 April 2017"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
+  .setScene(new Scene()
+    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE","FLY","WALK","ANY"}))
+    .addChild(new Group()
+      .addChild(new Shape().setBboxCenter(-4.868185499999999f,25.359741f,0.0f).setBboxSize(77.23637099999999f,100.502162f,6.0f)
+        .setGeometry(new IndexedFaceSet("OpenSCAD_Model").setDEF("OpenSCAD_Model").setNormalPerVertex(false).setColorIndex(getOpenSCAD_Model_5_13_colorIndex()).setCoordIndex(getOpenSCAD_Model_5_13_coordIndex()).setNormalIndex(getOpenSCAD_Model_5_13_normalIndex())
+          .setCoord(new Coordinate().setPoint(getCoordinate_6_13_point()))
+          .setNormal(new Normal().setVector(getNormal_6_14_vector()))
+          .setColor(new Color().setColor(new MFColor(new float[] {0.0f,1.0f,0.0f})))))));
     }
 	// end of initialize() method
 
@@ -461,24 +461,24 @@ public class gears
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getOpenSCAD_Model_5_13_coordIndex()
+		private MFInt32 getOpenSCAD_Model_5_13_coordIndex()
 		{
-			MFInt32Object OpenSCAD_Model_5_13_coordIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_1()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_2()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_3()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_4()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_5()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_6()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_7()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_8()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_9()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_10()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_11()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_12()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_13()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_14()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_coordIndex_15()));
+			MFInt32 OpenSCAD_Model_5_13_coordIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_1()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_2()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_3()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_4()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_5()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_6()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_7()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_8()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_9()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_10()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_11()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_12()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_13()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_14()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_coordIndex_15()));
 			return OpenSCAD_Model_5_13_coordIndex;
 		}
 		/** Large attribute array: IndexedFaceSet DEF='OpenSCAD_Model' normalIndex field, scene-graph level=5, element #13, 7272 total numbers.
@@ -488,17 +488,17 @@ public class gears
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getOpenSCAD_Model_5_13_normalIndex()
+		private MFInt32 getOpenSCAD_Model_5_13_normalIndex()
 		{
-			MFInt32Object OpenSCAD_Model_5_13_normalIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_normalIndex_1()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_normalIndex_2()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_normalIndex_3()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_normalIndex_4()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_normalIndex_5()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_normalIndex_6()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_normalIndex_7()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_normalIndex_8()));
+			MFInt32 OpenSCAD_Model_5_13_normalIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getOpenSCAD_Model_5_13_normalIndex_1()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_normalIndex_2()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_normalIndex_3()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_normalIndex_4()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_normalIndex_5()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_normalIndex_6()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_normalIndex_7()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_normalIndex_8()));
 			return OpenSCAD_Model_5_13_normalIndex;
 		}
 		/** Large attribute array: IndexedFaceSet DEF='OpenSCAD_Model' colorIndex field, scene-graph level=5, element #13, 14544 total numbers.
@@ -508,24 +508,24 @@ public class gears
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getOpenSCAD_Model_5_13_colorIndex()
+		private MFInt32 getOpenSCAD_Model_5_13_colorIndex()
 		{
-			MFInt32Object OpenSCAD_Model_5_13_colorIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_1()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_2()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_3()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_4()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_5()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_6()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_7()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_8()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_9()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_10()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_11()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_12()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_13()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_14()))
-				.append(new MFInt32Object(getOpenSCAD_Model_5_13_colorIndex_15()));
+			MFInt32 OpenSCAD_Model_5_13_colorIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_1()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_2()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_3()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_4()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_5()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_6()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_7()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_8()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_9()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_10()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_11()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_12()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_13()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_14()))
+				.append(new MFInt32(getOpenSCAD_Model_5_13_colorIndex_15()));
 			return OpenSCAD_Model_5_13_colorIndex;
 		}
 		/** Large attribute array: Coordinate point field, scene-graph level=6, element #13, 5460 total numbers made up of 1820 3-tuple values.
@@ -535,28 +535,28 @@ public class gears
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getCoordinate_6_13_point()
+		private MFVec3f getCoordinate_6_13_point()
 		{
-			MFVec3fObject Coordinate_6_13_point = new MFVec3fObject()/*2.finalize*/
-				.append(new MFVec3fObject(getCoordinate_6_13_point_1()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_2()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_3()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_4()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_5()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_6()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_7()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_8()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_9()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_10()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_11()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_12()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_13()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_14()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_15()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_16()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_17()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_18()))
-				.append(new MFVec3fObject(getCoordinate_6_13_point_19()));
+			MFVec3f Coordinate_6_13_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_6_13_point_1()))
+				.append(new MFVec3f(getCoordinate_6_13_point_2()))
+				.append(new MFVec3f(getCoordinate_6_13_point_3()))
+				.append(new MFVec3f(getCoordinate_6_13_point_4()))
+				.append(new MFVec3f(getCoordinate_6_13_point_5()))
+				.append(new MFVec3f(getCoordinate_6_13_point_6()))
+				.append(new MFVec3f(getCoordinate_6_13_point_7()))
+				.append(new MFVec3f(getCoordinate_6_13_point_8()))
+				.append(new MFVec3f(getCoordinate_6_13_point_9()))
+				.append(new MFVec3f(getCoordinate_6_13_point_10()))
+				.append(new MFVec3f(getCoordinate_6_13_point_11()))
+				.append(new MFVec3f(getCoordinate_6_13_point_12()))
+				.append(new MFVec3f(getCoordinate_6_13_point_13()))
+				.append(new MFVec3f(getCoordinate_6_13_point_14()))
+				.append(new MFVec3f(getCoordinate_6_13_point_15()))
+				.append(new MFVec3f(getCoordinate_6_13_point_16()))
+				.append(new MFVec3f(getCoordinate_6_13_point_17()))
+				.append(new MFVec3f(getCoordinate_6_13_point_18()))
+				.append(new MFVec3f(getCoordinate_6_13_point_19()));
 			return Coordinate_6_13_point;
 		}
 		/** Large attribute array: Normal vector field, scene-graph level=6, element #14, 2664 total numbers made up of 888 3-tuple values.
@@ -566,46 +566,46 @@ public class gears
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getNormal_6_14_vector()
+		private MFVec3f getNormal_6_14_vector()
 		{
-			MFVec3fObject Normal_6_14_vector = new MFVec3fObject()/*2.finalize*/
-				.append(new MFVec3fObject(getNormal_6_14_vector_1()))
-				.append(new MFVec3fObject(getNormal_6_14_vector_2()))
-				.append(new MFVec3fObject(getNormal_6_14_vector_3()))
-				.append(new MFVec3fObject(getNormal_6_14_vector_4()))
-				.append(new MFVec3fObject(getNormal_6_14_vector_5()))
-				.append(new MFVec3fObject(getNormal_6_14_vector_6()))
-				.append(new MFVec3fObject(getNormal_6_14_vector_7()))
-				.append(new MFVec3fObject(getNormal_6_14_vector_8()))
-				.append(new MFVec3fObject(getNormal_6_14_vector_9()));
+			MFVec3f Normal_6_14_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_6_14_vector_1()))
+				.append(new MFVec3f(getNormal_6_14_vector_2()))
+				.append(new MFVec3f(getNormal_6_14_vector_3()))
+				.append(new MFVec3f(getNormal_6_14_vector_4()))
+				.append(new MFVec3f(getNormal_6_14_vector_5()))
+				.append(new MFVec3f(getNormal_6_14_vector_6()))
+				.append(new MFVec3f(getNormal_6_14_vector_7()))
+				.append(new MFVec3f(getNormal_6_14_vector_8()))
+				.append(new MFVec3f(getNormal_6_14_vector_9()));
 			return Normal_6_14_vector;
 		}
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return gears model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new gears().getX3dModel();
+        X3D thisExampleX3dModel = new gears().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -620,15 +620,15 @@ public class gears
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -638,12 +638,12 @@ public class gears
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"gears\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"gears\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

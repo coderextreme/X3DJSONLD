@@ -9,7 +9,7 @@
         <meta name='description' content='an attempt to implement an arc in a graph'/>      
       </head>
 <Scene>
-    <Viewpoint position='0 0 5' orientation='0 0 1 0' description="a moving graph"/>
+    <Viewpoint position='0 0 5' description="a moving graph"/>
     <Background skyColor='0.4 0.4 0.4'/>
     <Transform DEF='trans1' >
     <Transform DEF='rotscale1' >

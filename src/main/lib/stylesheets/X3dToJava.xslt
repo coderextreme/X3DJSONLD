@@ -150,6 +150,17 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:choose>
 		</xsl:variable>
 		<xsl:variable name="newClassName">
+            <!-- https://stackoverflow.com/questions/3854345/xpath-test-if-node-value-is-number -->
+            <xsl:if test="(string(number(substring($className,1,1))) != 'NaN')">
+                <xsl:message>
+						<xsl:text>*** className='</xsl:text>
+						<xsl:value-of select="$className"/>
+                    <xsl:text>' starts with numeric character '</xsl:text>
+                    <xsl:value-of select="substring($className,1,2)"/>
+                    <xsl:text>', prepending underscore _, note that filename needs to match for proper comilation</xsl:text>
+                </xsl:message>
+                <xsl:text>_</xsl:text>
+            </xsl:if>
 			<xsl:choose>
                 <!-- if no className provided, check meta for title and amend it -->
 				<xsl:when test="(string-length(normalize-space($className)) = 0) and (string-length(//meta[@name='title']/@content) > 0)">
@@ -277,31 +288,31 @@ POSSIBILITY OF SUCH DAMAGE.
 
 		<xsl:text><![CDATA[
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return ]]></xsl:text><xsl:value-of select="$newClassName"/>
 	 <xsl:text disable-output-escaping="yes"><![CDATA[ model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[().getX3dModel();
+        X3D thisExampleX3dModel = new ]]></xsl:text><xsl:value-of select="$newClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -316,15 +327,15 @@ POSSIBILITY OF SUCH DAMAGE.
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -335,13 +346,13 @@ POSSIBILITY OF SUCH DAMAGE.
 			System.out.println("WARNING: \"]]></xsl:text><xsl:value-of select="$newClassName"/>
 			<xsl:text disable-output-escaping="yes"><![CDATA[\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"]]></xsl:text><xsl:value-of select="$newClassName"/>
 			<xsl:text disable-output-escaping="yes"><![CDATA[\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }
@@ -800,7 +811,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:text>new </xsl:text>
 		<xsl:value-of select="local-name()"/>
         <xsl:if test="not(starts-with(local-name(),'XvlShell'))">
-            <xsl:text>Object</xsl:text>
+            <xsl:text></xsl:text><!-- originally Object -->
         </xsl:if>
         <xsl:text>(</xsl:text>
         <xsl:choose>
@@ -2479,7 +2490,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>new </xsl:text>
                         <xsl:value-of select="$attributeType"/>
                         <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
-                            <xsl:text>Object</xsl:text>
+                            <xsl:text></xsl:text><!-- originally Object -->
                         </xsl:if>
                         <xsl:text>(</xsl:text>
                     </xsl:if>
@@ -2531,11 +2542,11 @@ POSSIBILITY OF SUCH DAMAGE.
                         <!-- field or fieldValue type, accessType: use enumeration constants for compilation validation, rather than plain error-prone string -->
                         <xsl:when test="(local-name() = 'type') and starts-with(local-name(..), 'field') and
                                         (starts-with(.,'SF') or starts-with(.,'MF'))">
-                            <xsl:text>fieldObject.TYPE_</xsl:text>
+                            <xsl:text>field.TYPE_</xsl:text>
                             <xsl:value-of select="upper-case(string(.))"/>
                         </xsl:when>
                         <xsl:when test="(local-name() = 'accessType') and starts-with(local-name(..), 'field')">
-                            <xsl:text>fieldObject.ACCESSTYPE_</xsl:text>
+                            <xsl:text>field.ACCESSTYPE_</xsl:text>
                             <xsl:value-of select="upper-case(string(.))"/>
                         </xsl:when>
                         <xsl:otherwise>
@@ -3206,7 +3217,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>import org.web3d.x3d.jsail.EnvironmentalEffects.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
-		<xsl:if test="//*[name()='ProximitySensor'] or //*[name()='TransformSensorObject'] or //*[name()='VisibilitySensor']">
+		<xsl:if test="//*[name()='ProximitySensor'] or //*[name()='TransformSensor'] or //*[name()='VisibilitySensor']">
 			<xsl:text>import org.web3d.x3d.jsail.EnvironmentalSensor.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
@@ -4154,7 +4165,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:text>new </xsl:text>
 					<xsl:value-of select="$attributeType"/>
                     <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
-                        <xsl:text>Object</xsl:text>
+                        <xsl:text></xsl:text><!-- originally Object -->
                     </xsl:if>
                     <xsl:text>(</xsl:text>
 				</xsl:if>
@@ -4351,7 +4362,7 @@ POSSIBILITY OF SUCH DAMAGE.
 									<xsl:text>new </xsl:text>
 									<xsl:value-of select="$attributeType"/>
                                     <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
-                                        <xsl:text>Object</xsl:text>
+                                        <xsl:text></xsl:text><!-- originally Object -->
                                     </xsl:if>
                                     <xsl:text>(</xsl:text>
 									<xsl:choose>
@@ -4379,7 +4390,7 @@ POSSIBILITY OF SUCH DAMAGE.
 									<xsl:text>new </xsl:text>
 									<xsl:value-of select="$attributeType"/>
                                     <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
-                                        <xsl:text>Object</xsl:text>
+                                        <xsl:text></xsl:text>  originally Object
                                     </xsl:if>
                                     <xsl:text>(</xsl:text>
 									<xsl:text>new float[] {</xsl:text>
@@ -4624,7 +4635,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:text>new </xsl:text>
 				<xsl:value-of select="$attributeType"/>
                 <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
-                    <xsl:text>Object</xsl:text>
+                    <xsl:text></xsl:text><!-- originally Object -->
                 </xsl:if>
                 <xsl:text>(</xsl:text>
 				<xsl:text>new double[] {</xsl:text>
@@ -4904,7 +4915,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:value-of select="$indent"/>
 						<xsl:text>private </xsl:text>
 						<xsl:value-of select="$attributeType"/>
-						<xsl:text>Object get</xsl:text>
+						<xsl:text> get</xsl:text><!-- Object -->
 						<xsl:value-of select="$dataObjectName"/>
 						<xsl:text>()</xsl:text>
 						<xsl:text>&#10;</xsl:text>
@@ -4916,14 +4927,14 @@ POSSIBILITY OF SUCH DAMAGE.
 						<xsl:text>	</xsl:text><!-- indent tab character -->
 						<xsl:text>	</xsl:text><!-- indent tab character -->
 						<xsl:value-of select="$attributeType"/>
-						<xsl:text>Object </xsl:text>
+						<xsl:text> </xsl:text><!-- Object -->
 						<xsl:value-of select="$dataObjectName"/>
 						<xsl:text> = </xsl:text>
 						<xsl:if test="true() or not($includesFieldTypeObject)">
 							<xsl:text>new </xsl:text>
 							<xsl:value-of select="$attributeType"/>
                             <xsl:if test="not(starts-with($attributeType,'XvlShell'))">
-                                <xsl:text>Object</xsl:text>
+                                <xsl:text></xsl:text><!-- originally Object -->
                             </xsl:if>
                             <xsl:text>(</xsl:text>
 						</xsl:if>
@@ -5022,11 +5033,11 @@ POSSIBILITY OF SUCH DAMAGE.
 		
 		<xsl:choose>
 			<xsl:when test="($elementName = 'X3D') and ($attributeName = 'profile')">
-				<xsl:text>X3DObject.PROFILE_</xsl:text>
+				<xsl:text>X3D.PROFILE_</xsl:text>
 				<xsl:value-of select="$attributeValueUpperCase"/>
 			</xsl:when>
 			<xsl:when test="($elementName = 'X3D') and ($attributeName = 'version')">
-				<xsl:text>X3DObject.VERSION_</xsl:text>
+				<xsl:text>X3D.VERSION_</xsl:text>
 				<xsl:value-of select="translate(string(.),'.','_')"/>
 			</xsl:when>
 			<xsl:when test="($elementName = 'meta') and 
@@ -5039,7 +5050,7 @@ POSSIBILITY OF SUCH DAMAGE.
                  ($NAME = 'SOUND') or ($NAME = 'SOURCE') or ($NAME = 'SPECIFICATIONSECTION') or ($NAME = 'SPECIFICATIONURL') or 
                  ($NAME = 'SUBJECT') or ($NAME = 'TEXT') or ($NAME = 'TITLE') or ($NAME = 'TODO') or ($NAME = 'TRANSLATOR') or
                  ($NAME = 'TRANSLATED') or ($NAME = 'VERSION') or ($NAME = 'WARNING'))">
-				<xsl:text>metaObject.NAME_</xsl:text>
+				<xsl:text>meta.NAME_</xsl:text>
 				<xsl:value-of select="$attributeValueUpperCase"/>
 				<!-- padding whitespace for readability of source code -->
 				<!-- https://stackoverflow.com/questions/5089096/how-to-show-a-character-n-times-in-xslt
@@ -5051,7 +5062,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="substring($spacesBlock,0,(12 - string-length($attributeValueUpperCase)))"/>
 			</xsl:when>
 			<xsl:when test="($elementName = 'FontStyle') and ($attributeName = 'justify')">
-				<xsl:text>FontStyleObject.JUSTIFY_</xsl:text>
+				<xsl:text>FontStyle.JUSTIFY_</xsl:text>
 				<xsl:value-of select="translate($attributeValue,' &quot;','_')"/><!-- replace space character, strip quotes -->
 			</xsl:when>
 			<xsl:otherwise>

@@ -140,77 +140,77 @@ public class HelloWorld
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("HelloWorld.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("Simple X3D scene example: Hello World!"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("30 October 2000"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("14 April 2017"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IMAGE      ).setContent("HelloWorld.tall.png"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://en.wikipedia.org/wiki/Hello_world"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.HelloWorldExample.net"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.web3D.org"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.web3d.org/realtime-3d/news/internationalization-x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("http://www.web3d.org/x3d/content/examples/license.html"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("HelloWorld.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Simple X3D scene example: Hello World!"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("30 October 2000"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("14 April 2017"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("HelloWorld.tall.png"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://en.wikipedia.org/wiki/Hello_world"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.HelloWorldExample.net"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.web3D.org"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.web3d.org/realtime-3d/news/internationalization-x3d"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("http://www.web3d.org/x3d/content/examples/license.html"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addComments(" Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON ")
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("HelloWorld.wrl"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("HelloWorld.x3dv"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("HelloWorld.x3db"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("HelloWorld.xhtml"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("HelloWorld.json")))
-  .setScene(new SceneObject()
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorld.wrl"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorld.x3dv"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorld.x3db"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorld.xhtml"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorld.json")))
+  .setScene(new Scene()
     .addComments(" Example scene to illustrate X3D nodes and fields (XML elements and attributes) ")
-    .addChild(new WorldInfoObject().setTitle("Hello world!"))
-    .addChild(new GroupObject()
-      .addChild(new ViewpointObject("ViewUpClose").setDescription("Hello world!").setCenterOfRotation(0.0f,-1.0f,0.0f).setPosition(0.0f,-1.0f,7.0f))
-      .addChild(new TransformObject().setRotation(0.0f,1.0f,0.0f,3.0f)
-        .addChild(new ShapeObject()
-          .setGeometry(new SphereObject())
-          .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject("MaterialLightBlue").setDiffuseColor(0.1f,0.5f,1.0f))
-            .setTexture(new ImageTextureObject("ImageCloudlessEarth").setUrl(new String[] {"earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"})))))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
-        .addChild(new ShapeObject()
-          .setGeometry(new TextObject("TextMessage").setString(new String[] {"Hello","world!"})
-            .setFontStyle(new FontStyleObject().setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE)))
-          .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))))));
+    .addChild(new WorldInfo().setTitle("Hello world!"))
+    .addChild(new Group()
+      .addChild(new Viewpoint("ViewUpClose").setDescription("Hello world!").setCenterOfRotation(0.0f,-1.0f,0.0f).setPosition(0.0f,-1.0f,7.0f))
+      .addChild(new Transform().setRotation(0.0f,1.0f,0.0f,3.0f)
+        .addChild(new Shape()
+          .setGeometry(new Sphere())
+          .setAppearance(new Appearance()
+            .setMaterial(new Material("MaterialLightBlue").setDiffuseColor(0.1f,0.5f,1.0f))
+            .setTexture(new ImageTexture("ImageCloudlessEarth").setUrl(new String[] {"earth-topo.png","earth-topo.jpg","earth-topo-small.gif","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"})))))
+      .addChild(new Transform().setTranslation(0.0f,-2.0f,0.0f)
+        .addChild(new Shape()
+          .setGeometry(new Text("TextMessage").setString(new String[] {"Hello","world!"})
+            .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE)))
+          .setAppearance(new Appearance()
+            .setMaterial(new Material().setUSE("MaterialLightBlue")))))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return HelloWorld model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new HelloWorld().getX3dModel();
+        X3D thisExampleX3dModel = new HelloWorld().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -225,15 +225,15 @@ public class HelloWorld
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -243,12 +243,12 @@ public class HelloWorld
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"HelloWorld\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"HelloWorld\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

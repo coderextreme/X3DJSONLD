@@ -4,26 +4,26 @@ ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
-      var X3D0 =  new X3DObject().setProfile("Immersive").setVersion("3.3")
-      .setHead(new headObject()
-        .addComponent(new componentObject().setName("Scripting").setLevel(1))
-        .addMeta(new metaObject().setName("title").setContent("SFVec3f.x3d"))
-        .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-        .addMeta(new metaObject().setName("description").setContent("3 prismatic spheres"))
-        .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
-      .setScene(new SceneObject()
-        .addChild(new NavigationInfoObject())
-        .addChild(new TransformObject().setDEF("transform")
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("float[]"))).setSpecularColor(Java.to([0.5,0.5,0.5], Java.type("float[]")))))
-            .setGeometry(new SphereObject())))
-        .addChild(new ScriptObject().setDEF("Bounce2")
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("set_translation").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation_changed").setAccessType(fieldObject.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("translation").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFVEC3F).setName("velocity").setAccessType(fieldObject.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-          .addField(new fieldObject().setType(fieldObject.TYPE_SFTIME).setName("set_fraction").setAccessType(fieldObject.ACCESSTYPE_INPUTONLY))
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      .setHead(new head()
+        .addComponent(new component().setName("Scripting").setLevel(1))
+        .addMeta(new meta().setName("title").setContent("SFVec3f.x3d"))
+        .addMeta(new meta().setName("creator").setContent("John Carlson"))
+        .addMeta(new meta().setName("description").setContent("3 prismatic spheres"))
+        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
+      .setScene(new Scene()
+        .addChild(new NavigationInfo())
+        .addChild(new Transform().setDEF("transform")
+          .addChild(new Shape()
+            .setAppearance(new Appearance()
+              .setMaterial(new Material().setDiffuseColor(Java.to([0.7,0.7,0.7], Java.type("float[]"))).setSpecularColor(Java.to([0.5,0.5,0.5], Java.type("float[]")))))
+            .setGeometry(new Sphere())))
+        .addChild(new Script().setDEF("Bounce2")
+          .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_translation").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
+          .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
+          .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+          .addField(new field().setType(field.TYPE_SFVEC3F).setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+          .addField(new field().setType(field.TYPE_SFTIME).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .setSourceCode("ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
@@ -55,7 +55,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 "			function initialize() {\n"+
 "			     newBubble();\n"+
 "			}"))
-        .addChild(new TimeSensorObject().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
-        .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
-        .addChild(new ROUTEObject().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
+        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(0.15).setLoop(true))
+        .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
+        .addChild(new ROUTE().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
     X3D0.toFileX3D("../data/SFVec3f.new.x3d");

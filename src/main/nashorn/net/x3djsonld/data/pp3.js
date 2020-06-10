@@ -73,92 +73,92 @@ pp3.prototype = {
   {
 
 	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #12, 34 total numbers made up of 17 2-tuple values */
-	this.Extrusion_8_12_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(Java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], Java.type("float[]"))))
-	.append(new MFVec2fObject(Java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], Java.type("float[]"))));
+	this.Extrusion_8_12_crossSection = new MFVec2f() /* splitting up long array to improve readability */
+	.append(new MFVec2f(Java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], Java.type("float[]"))))
+	.append(new MFVec2f(Java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], Java.type("float[]"))));
 
 	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #17, 34 total numbers made up of 17 2-tuple values */
-	this.Extrusion_8_17_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(Java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], Java.type("float[]"))))
-	.append(new MFVec2fObject(Java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], Java.type("float[]"))));
+	this.Extrusion_8_17_crossSection = new MFVec2f() /* splitting up long array to improve readability */
+	.append(new MFVec2f(Java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], Java.type("float[]"))))
+	.append(new MFVec2f(Java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], Java.type("float[]"))));
 
 	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #29, 34 total numbers made up of 17 2-tuple values */
-	this.Extrusion_8_29_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(Java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], Java.type("float[]"))))
-	.append(new MFVec2fObject(Java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], Java.type("float[]"))));
+	this.Extrusion_8_29_crossSection = new MFVec2f() /* splitting up long array to improve readability */
+	.append(new MFVec2f(Java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], Java.type("float[]"))))
+	.append(new MFVec2f(Java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], Java.type("float[]"))));
 
 	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #41, 34 total numbers made up of 17 2-tuple values */
-	this.Extrusion_8_41_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(Java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], Java.type("float[]"))))
-	.append(new MFVec2fObject(Java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], Java.type("float[]"))));
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("pp3.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("translator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("created").setContent("5 May 2015"))
-    .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
-    .addMeta(new metaObject().setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/x3d/pp3.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("manual")))
-  .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject().setName("Process")
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new GroupObject()
+	this.Extrusion_8_41_crossSection = new MFVec2f() /* splitting up long array to improve readability */
+	.append(new MFVec2f(Java.to([1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38], Java.type("float[]"))))
+	.append(new MFVec2f(Java.to([-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0], Java.type("float[]"))));
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("title").setContent("pp3.x3d"))
+    .addMeta(new meta().setName("creator").setContent("John Carlson"))
+    .addMeta(new meta().setName("translator").setContent("John Carlson"))
+    .addMeta(new meta().setName("created").setContent("5 May 2015"))
+    .addMeta(new meta().setName("modified").setContent("05 May 2017"))
+    .addMeta(new meta().setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
+    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/x3d/pp3.x3d"))
+    .addMeta(new meta().setName("generator").setContent("manual")))
+  .setScene(new Scene()
+    .addChild(new ProtoDeclare().setName("Process")
+      .setProtoBody(new ProtoBody()
+        .addChild(new Group()
           .addComments("left")
-          .addChild(new TransformObject().setScale(0.5,0.5,0.5)
-            .addChild(new ShapeObject()
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setTransparency(0.5).setDiffuseColor(0.7,1.0,0.0)))
-              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(Java.to([-2.5,0.0,0.0,-1.5,0.0,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection)))
+          .addChild(new Transform().setScale(0.5,0.5,0.5)
+            .addChild(new Shape()
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setTransparency(0.5).setDiffuseColor(0.7,1.0,0.0)))
+              .setGeometry(new Extrusion().setSpine(new MFVec3f(Java.to([-2.5,0.0,0.0,-1.5,0.0,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection)))
             .addComments("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"))
           .addComments("right")
-          .addChild(new TransformObject().setScale(0.5,0.5,0.5)
-            .addChild(new ShapeObject()
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(0.0,0.7,1.0).setTransparency(0.5)))
-              .setGeometry(new ExtrusionObject().setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new MFVec3fObject(Java.to([1.5,0.0,0.0,2.5,0.0,0.0], Java.type("float[]"))))))
-            .addChild(new TransformObject().setTranslation(2.0,0.0,0.0)
-              .addChild(new ShapeObject()
-                .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject("MaterialLightBlue").setDiffuseColor(1.0,1.0,1.0)))
-                .setGeometry(new TextObject("RightString").setString(new MFStringObject("\"r\"")))))
-            .addChild(new StringSensorObject("RightSensor").setEnabled(false))
-            .addChild(new TouchSensorObject("RightTouch").setDescription("touch to activate")))
+          .addChild(new Transform().setScale(0.5,0.5,0.5)
+            .addChild(new Shape()
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setDiffuseColor(0.0,0.7,1.0).setTransparency(0.5)))
+              .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new MFVec3f(Java.to([1.5,0.0,0.0,2.5,0.0,0.0], Java.type("float[]"))))))
+            .addChild(new Transform().setTranslation(2.0,0.0,0.0)
+              .addChild(new Shape()
+                .setAppearance(new Appearance()
+                  .setMaterial(new Material("MaterialLightBlue").setDiffuseColor(1.0,1.0,1.0)))
+                .setGeometry(new Text("RightString").setString(new MFString("\"r\"")))))
+            .addChild(new StringSensor("RightSensor").setEnabled(false))
+            .addChild(new TouchSensor("RightTouch").setDescription("touch to activate")))
           .addComments("up")
-          .addChild(new TransformObject().setScale(0.5,0.5,0.5)
-            .addChild(new ShapeObject()
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(0.0,0.7,1.0).setTransparency(0.5)))
-              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(Java.to([0.0,1.5,0.0,0.0,2.5,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_29_crossSection)))
-            .addChild(new TransformObject().setTranslation(-0.5,2.0,0.0)
-              .addChild(new ShapeObject()
-                .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))
-                .setGeometry(new TextObject("UpString").setString(new MFStringObject("\"u\"")))))
-            .addChild(new StringSensorObject("UpSensor").setEnabled(false))
-            .addChild(new TouchSensorObject("UpTouch").setDescription("touch to activate")))
+          .addChild(new Transform().setScale(0.5,0.5,0.5)
+            .addChild(new Shape()
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setDiffuseColor(0.0,0.7,1.0).setTransparency(0.5)))
+              .setGeometry(new Extrusion().setSpine(new MFVec3f(Java.to([0.0,1.5,0.0,0.0,2.5,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_29_crossSection)))
+            .addChild(new Transform().setTranslation(-0.5,2.0,0.0)
+              .addChild(new Shape()
+                .setAppearance(new Appearance()
+                  .setMaterial(new Material().setUSE("MaterialLightBlue")))
+                .setGeometry(new Text("UpString").setString(new MFString("\"u\"")))))
+            .addChild(new StringSensor("UpSensor").setEnabled(false))
+            .addChild(new TouchSensor("UpTouch").setDescription("touch to activate")))
           .addComments("down")
-          .addChild(new TransformObject().setScale(0.5,0.5,0.5)
-            .addChild(new ShapeObject()
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setTransparency(0.5).setDiffuseColor(0.7,1.0,0.0)))
-              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(Java.to([0.0,-2.5,0.0,0.0,-1.5,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_41_crossSection)))
+          .addChild(new Transform().setScale(0.5,0.5,0.5)
+            .addChild(new Shape()
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setTransparency(0.5).setDiffuseColor(0.7,1.0,0.0)))
+              .setGeometry(new Extrusion().setSpine(new MFVec3f(Java.to([0.0,-2.5,0.0,0.0,-1.5,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_41_crossSection)))
             .addComments("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"))
           .addComments("center")
-          .addChild(new TransformObject()
-            .addChild(new ShapeObject()
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(1.0,0.0,0.7)))
-              .setGeometry(new SphereObject()))
-            .addChild(new TransformObject().setTranslation(-0.5,0.0,1.0).setScale(0.5,0.5,0.5)
-              .addChild(new ShapeObject()
-                .setAppearance(new AppearanceObject()
-                  .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))
-                .setGeometry(new TextObject("CenterString"))))
-            .addChild(new StringSensorObject("CenterSensor").setEnabled(false))
-            .addChild(new TouchSensorObject("CenterTouch").setDescription("touch to activate"))))
-        .addChild(new ScriptObject("RightSingleToMultiString").setSourceCode("\n" + 
+          .addChild(new Transform()
+            .addChild(new Shape()
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.7)))
+              .setGeometry(new Sphere()))
+            .addChild(new Transform().setTranslation(-0.5,0.0,1.0).setScale(0.5,0.5,0.5)
+              .addChild(new Shape()
+                .setAppearance(new Appearance()
+                  .setMaterial(new Material().setUSE("MaterialLightBlue")))
+                .setGeometry(new Text("CenterString"))))
+            .addChild(new StringSensor("CenterSensor").setEnabled(false))
+            .addChild(new TouchSensor("CenterTouch").setDescription("touch to activate"))))
+        .addChild(new Script("RightSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -168,9 +168,9 @@ pp3.prototype = {
 "function set_rightstring(rightstr) {" + "\n" + 
 "	rightlines = new MFString(rightstr);" + "\n" + 
 "}" + "\n")
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_rightstring").setType("SFString"))
-          .addField(new fieldObject().setAccessType("outputOnly").setName("rightlines").setType("MFString")))
-        .addChild(new ScriptObject("UpSingleToMultiString").setSourceCode("\n" + 
+          .addField(new field().setAccessType("inputOnly").setName("set_rightstring").setType("SFString"))
+          .addField(new field().setAccessType("outputOnly").setName("rightlines").setType("MFString")))
+        .addChild(new Script("UpSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -180,9 +180,9 @@ pp3.prototype = {
 "function set_upstring(upstr) {" + "\n" + 
 "	uplines = new MFString(upstr);" + "\n" + 
 "}" + "\n")
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_upstring").setType("SFString"))
-          .addField(new fieldObject().setAccessType("outputOnly").setName("uplines").setType("MFString")))
-        .addChild(new ScriptObject("CenterSingleToMultiString").setSourceCode("\n" + 
+          .addField(new field().setAccessType("inputOnly").setName("set_upstring").setType("SFString"))
+          .addField(new field().setAccessType("outputOnly").setName("uplines").setType("MFString")))
+        .addChild(new Script("CenterSingleToMultiString").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
 "function initialize() {" + "\n" + 
@@ -192,25 +192,25 @@ pp3.prototype = {
 "function set_centerstring(centerstr) {" + "\n" + 
 "	centerlines = new MFString(centerstr);" + "\n" + 
 "}" + "\n")
-          .addField(new fieldObject().setAccessType("inputOnly").setName("set_centerstring").setType("SFString"))
-          .addField(new fieldObject().setAccessType("outputOnly").setName("centerlines").setType("MFString")))
-        .addChild(new ROUTEObject().setFromNode("CenterSensor").setFromField("enteredText").setToNode("CenterSingleToMultiString").setToField("set_centerstring"))
-        .addChild(new ROUTEObject().setFromNode("CenterSingleToMultiString").setFromField("centerlines").setToNode("CenterString").setToField("set_string"))
-        .addChild(new ROUTEObject().setFromNode("CenterTouch").setFromField("isOver").setToNode("CenterSensor").setToField("set_enabled"))
-        .addChild(new ROUTEObject().setFromNode("RightSensor").setFromField("enteredText").setToNode("RightSingleToMultiString").setToField("set_rightstring"))
-        .addChild(new ROUTEObject().setFromNode("RightSingleToMultiString").setFromField("rightlines").setToNode("RightString").setToField("set_string"))
-        .addChild(new ROUTEObject().setFromNode("RightTouch").setFromField("isOver").setToNode("RightSensor").setToField("set_enabled"))
-        .addChild(new ROUTEObject().setFromNode("UpSensor").setFromField("enteredText").setToNode("UpSingleToMultiString").setToField("set_upstring"))
-        .addChild(new ROUTEObject().setFromNode("UpSingleToMultiString").setFromField("uplines").setToNode("UpString").setToField("set_string"))
-        .addChild(new ROUTEObject().setFromNode("UpTouch").setFromField("isOver").setToNode("UpSensor").setToField("set_enabled"))))
-    .addChild(new NavigationInfoObject())
-    .addChild(new ViewpointObject().setDescription("Process pipes").setPosition(0.0,5.0,12.0).setOrientation(1.0,0.0,0.0,-0.4))
-    .addChild(new TransformObject().setTranslation(0.0,-2.5,0.0)
-      .addChild(new ProtoInstanceObject().setName("Process")))
-    .addChild(new TransformObject()
-      .addChild(new ProtoInstanceObject().setName("Process")))
-    .addChild(new TransformObject().setTranslation(0.0,2.5,0.0)
-      .addChild(new ProtoInstanceObject().setName("Process"))));
+          .addField(new field().setAccessType("inputOnly").setName("set_centerstring").setType("SFString"))
+          .addField(new field().setAccessType("outputOnly").setName("centerlines").setType("MFString")))
+        .addChild(new ROUTE().setFromNode("CenterSensor").setFromField("enteredText").setToNode("CenterSingleToMultiString").setToField("set_centerstring"))
+        .addChild(new ROUTE().setFromNode("CenterSingleToMultiString").setFromField("centerlines").setToNode("CenterString").setToField("set_string"))
+        .addChild(new ROUTE().setFromNode("CenterTouch").setFromField("isOver").setToNode("CenterSensor").setToField("set_enabled"))
+        .addChild(new ROUTE().setFromNode("RightSensor").setFromField("enteredText").setToNode("RightSingleToMultiString").setToField("set_rightstring"))
+        .addChild(new ROUTE().setFromNode("RightSingleToMultiString").setFromField("rightlines").setToNode("RightString").setToField("set_string"))
+        .addChild(new ROUTE().setFromNode("RightTouch").setFromField("isOver").setToNode("RightSensor").setToField("set_enabled"))
+        .addChild(new ROUTE().setFromNode("UpSensor").setFromField("enteredText").setToNode("UpSingleToMultiString").setToField("set_upstring"))
+        .addChild(new ROUTE().setFromNode("UpSingleToMultiString").setFromField("uplines").setToNode("UpString").setToField("set_string"))
+        .addChild(new ROUTE().setFromNode("UpTouch").setFromField("isOver").setToNode("UpSensor").setToField("set_enabled"))))
+    .addChild(new NavigationInfo())
+    .addChild(new Viewpoint().setDescription("Process pipes").setPosition(0.0,5.0,12.0).setOrientation(1.0,0.0,0.0,-0.4))
+    .addChild(new Transform().setTranslation(0.0,-2.5,0.0)
+      .addChild(new ProtoInstance().setName("Process")))
+    .addChild(new Transform()
+      .addChild(new ProtoInstance().setName("Process")))
+    .addChild(new Transform().setTranslation(0.0,2.5,0.0)
+      .addChild(new ProtoInstance().setName("Process"))));
   },
   // end of initialize() method
 
@@ -244,11 +244,11 @@ pp3.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

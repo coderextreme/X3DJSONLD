@@ -87,35 +87,35 @@ public class Teapot
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_INTERCHANGE).setVersion(X3DObject.VERSION_3_0)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("Teapot.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("A mooring buoy used in Naval Harbors").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("LT Patrick Sullivan").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("28 July 2006").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("12 January 2014").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("https://savage.nps.edu/Savage/HarborEquipment/Buoys/MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("VizX3D, http://www.vivaty.com/downloads/studio").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("Wings3D, http://www.wings3d.com").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit").setDir("").setHttp_equiv("").setLang("").setScheme(""))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../../license.html").setDir("").setHttp_equiv("").setLang("").setScheme("")))
-  .setScene(new SceneObject()
-    .addChild(new TransformObject().setScale(0.3f,0.3f,0.3f)
-      .addChild(new GroupObject("MooringBuoyWithHook")
-        .addChild(new TransformObject("Hook")
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject("Black_mat").setDiffuseColor(0.0f,0.0f,0.0f)))
-            .setGeometry(new IndexedFaceSetObject().setCreaseAngle(0.524f).setColorIndex(new int[] {}).setCoordIndex(getIndexedFaceSet_7_14_coordIndex()).setNormalIndex(new int[] {}).setTexCoordIndex(new int[] {})
-              .setCoord(new CoordinateObject().setPoint(getCoordinate_8_14_point())))))
-        .addChild(new TransformObject("MooringBuoy")
-          .addChild(new ShapeObject()
-            .setAppearance(new AppearanceObject()
-              .setMaterial(new MaterialObject("default_mat").setAmbientIntensity(1.0f).setDiffuseColor(0.50196f,0.50196f,0.50196f).setShininess(1.0f))
-              .setTexture(new ImageTextureObject().setUrl(new String[] {"examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg"})))
-            .setGeometry(new IndexedFaceSetObject().setCreaseAngle(1.047f).setColorIndex(new int[] {}).setCoordIndex(getIndexedFaceSet_7_21_coordIndex()).setNormalIndex(new int[] {}).setTexCoordIndex(getIndexedFaceSet_7_21_texCoordIndex())
-              .setCoord(new CoordinateObject().setPoint(getCoordinate_8_21_point()))
-              .setTexCoord(new TextureCoordinateObject().setPoint(getTextureCoordinate_8_22_point()))))))));
+  x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_0)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("Teapot.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("A mooring buoy used in Naval Harbors").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("LT Patrick Sullivan").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("28 July 2006").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("12 January 2014").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://savage.nps.edu/Savage/HarborEquipment/Buoys/MooringBuoy.x3d").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("VizX3D, http://www.vivaty.com/downloads/studio").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Wings3D, http://www.wings3d.com").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit").setDir("").setHttp_equiv("").setLang("").setScheme(""))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../../license.html").setDir("").setHttp_equiv("").setLang("").setScheme("")))
+  .setScene(new Scene()
+    .addChild(new Transform().setScale(0.3f,0.3f,0.3f)
+      .addChild(new Group("MooringBuoyWithHook")
+        .addChild(new Transform("Hook")
+          .addChild(new Shape()
+            .setAppearance(new Appearance()
+              .setMaterial(new Material("Black_mat").setDiffuseColor(0.0f,0.0f,0.0f)))
+            .setGeometry(new IndexedFaceSet().setCreaseAngle(0.524f).setColorIndex(new int[] {}).setCoordIndex(getIndexedFaceSet_7_14_coordIndex()).setNormalIndex(new int[] {}).setTexCoordIndex(new int[] {})
+              .setCoord(new Coordinate().setPoint(getCoordinate_8_14_point())))))
+        .addChild(new Transform("MooringBuoy")
+          .addChild(new Shape()
+            .setAppearance(new Appearance()
+              .setMaterial(new Material("default_mat").setAmbientIntensity(1.0f).setDiffuseColor(0.50196f,0.50196f,0.50196f).setShininess(1.0f))
+              .setTexture(new ImageTexture().setUrl(new String[] {"examples/Savage/HarborEquipment/Buoys/textures/MooringBuoy.jpg"})))
+            .setGeometry(new IndexedFaceSet().setCreaseAngle(1.047f).setColorIndex(new int[] {}).setCoordIndex(getIndexedFaceSet_7_21_coordIndex()).setNormalIndex(new int[] {}).setTexCoordIndex(getIndexedFaceSet_7_21_texCoordIndex())
+              .setCoord(new Coordinate().setPoint(getCoordinate_8_21_point()))
+              .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_8_22_point()))))))));
     }
 	// end of initialize() method
 
@@ -223,11 +223,11 @@ public class Teapot
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getIndexedFaceSet_7_14_coordIndex()
+		private MFInt32 getIndexedFaceSet_7_14_coordIndex()
 		{
-			MFInt32Object IndexedFaceSet_7_14_coordIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getIndexedFaceSet_7_14_coordIndex_1()))
-				.append(new MFInt32Object(getIndexedFaceSet_7_14_coordIndex_2()));
+			MFInt32 IndexedFaceSet_7_14_coordIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getIndexedFaceSet_7_14_coordIndex_1()))
+				.append(new MFInt32(getIndexedFaceSet_7_14_coordIndex_2()));
 			return IndexedFaceSet_7_14_coordIndex;
 		}
 		/** Large attribute array: Coordinate point field, scene-graph level=8, element #14, 576 total numbers made up of 192 3-tuple values.
@@ -237,11 +237,11 @@ public class Teapot
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getCoordinate_8_14_point()
+		private MFVec3f getCoordinate_8_14_point()
 		{
-			MFVec3fObject Coordinate_8_14_point = new MFVec3fObject()/*2.finalize*/
-				.append(new MFVec3fObject(getCoordinate_8_14_point_1()))
-				.append(new MFVec3fObject(getCoordinate_8_14_point_2()));
+			MFVec3f Coordinate_8_14_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_8_14_point_1()))
+				.append(new MFVec3f(getCoordinate_8_14_point_2()));
 			return Coordinate_8_14_point;
 		}
 		/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=7, element #21, 2288 total numbers.
@@ -251,12 +251,12 @@ public class Teapot
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getIndexedFaceSet_7_21_coordIndex()
+		private MFInt32 getIndexedFaceSet_7_21_coordIndex()
 		{
-			MFInt32Object IndexedFaceSet_7_21_coordIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getIndexedFaceSet_7_21_coordIndex_1()))
-				.append(new MFInt32Object(getIndexedFaceSet_7_21_coordIndex_2()))
-				.append(new MFInt32Object(getIndexedFaceSet_7_21_coordIndex_3()));
+			MFInt32 IndexedFaceSet_7_21_coordIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getIndexedFaceSet_7_21_coordIndex_1()))
+				.append(new MFInt32(getIndexedFaceSet_7_21_coordIndex_2()))
+				.append(new MFInt32(getIndexedFaceSet_7_21_coordIndex_3()));
 			return IndexedFaceSet_7_21_coordIndex;
 		}
 		/** Large attribute array: IndexedFaceSet texCoordIndex field, scene-graph level=7, element #21, 2288 total numbers.
@@ -266,12 +266,12 @@ public class Teapot
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32Object getIndexedFaceSet_7_21_texCoordIndex()
+		private MFInt32 getIndexedFaceSet_7_21_texCoordIndex()
 		{
-			MFInt32Object IndexedFaceSet_7_21_texCoordIndex = new MFInt32Object()/*2.finalize*/
-				.append(new MFInt32Object(getIndexedFaceSet_7_21_texCoordIndex_1()))
-				.append(new MFInt32Object(getIndexedFaceSet_7_21_texCoordIndex_2()))
-				.append(new MFInt32Object(getIndexedFaceSet_7_21_texCoordIndex_3()));
+			MFInt32 IndexedFaceSet_7_21_texCoordIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getIndexedFaceSet_7_21_texCoordIndex_1()))
+				.append(new MFInt32(getIndexedFaceSet_7_21_texCoordIndex_2()))
+				.append(new MFInt32(getIndexedFaceSet_7_21_texCoordIndex_3()));
 			return IndexedFaceSet_7_21_texCoordIndex;
 		}
 		/** Large attribute array: Coordinate point field, scene-graph level=8, element #21, 864 total numbers made up of 288 3-tuple values.
@@ -281,12 +281,12 @@ public class Teapot
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3fObject getCoordinate_8_21_point()
+		private MFVec3f getCoordinate_8_21_point()
 		{
-			MFVec3fObject Coordinate_8_21_point = new MFVec3fObject()/*2.finalize*/
-				.append(new MFVec3fObject(getCoordinate_8_21_point_1()))
-				.append(new MFVec3fObject(getCoordinate_8_21_point_2()))
-				.append(new MFVec3fObject(getCoordinate_8_21_point_3()));
+			MFVec3f Coordinate_8_21_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_8_21_point_1()))
+				.append(new MFVec3f(getCoordinate_8_21_point_2()))
+				.append(new MFVec3f(getCoordinate_8_21_point_3()));
 			return Coordinate_8_21_point;
 		}
 		/** Large attribute array: TextureCoordinate point field, scene-graph level=8, element #22, 576 total numbers made up of 288 2-tuple values.
@@ -296,40 +296,40 @@ public class Teapot
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec2fObject getTextureCoordinate_8_22_point()
+		private MFVec2f getTextureCoordinate_8_22_point()
 		{
-			MFVec2fObject TextureCoordinate_8_22_point = new MFVec2fObject()/*2.finalize*/
-				.append(new MFVec2fObject(getTextureCoordinate_8_22_point_1()))
-				.append(new MFVec2fObject(getTextureCoordinate_8_22_point_2()))
-				.append(new MFVec2fObject(getTextureCoordinate_8_22_point_3()));
+			MFVec2f TextureCoordinate_8_22_point = new MFVec2f()/*2.finalize*/
+				.append(new MFVec2f(getTextureCoordinate_8_22_point_1()))
+				.append(new MFVec2f(getTextureCoordinate_8_22_point_2()))
+				.append(new MFVec2f(getTextureCoordinate_8_22_point_3()));
 			return TextureCoordinate_8_22_point;
 		}
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return Teapot model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new Teapot().getX3dModel();
+        X3D thisExampleX3dModel = new Teapot().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -344,15 +344,15 @@ public class Teapot
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -362,12 +362,12 @@ public class Teapot
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"Teapot\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"Teapot\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

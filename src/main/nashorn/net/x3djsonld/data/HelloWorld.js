@@ -131,49 +131,49 @@ HelloWorld.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("HelloWorld.x3d"))
-    .addMeta(new metaObject().setName("description").setContent("Simple X3D scene example: Hello World!"))
-    .addMeta(new metaObject().setName("created").setContent("30 October 2000"))
-    .addMeta(new metaObject().setName("modified").setContent("14 April 2017"))
-    .addMeta(new metaObject().setName("creator").setContent("Don Brutzman"))
-    .addMeta(new metaObject().setName("Image").setContent("HelloWorld.tall.png"))
-    .addMeta(new metaObject().setName("reference").setContent("http://en.wikipedia.org/wiki/Hello_world"))
-    .addMeta(new metaObject().setName("reference").setContent("https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program"))
-    .addMeta(new metaObject().setName("reference").setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
-    .addMeta(new metaObject().setName("reference").setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.HelloWorldExample.net"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3D.org"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/realtime-3d/news/internationalization-x3d"))
-    .addMeta(new metaObject().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
-    .addMeta(new metaObject().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
-    .addMeta(new metaObject().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
-    .addMeta(new metaObject().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html"))
-    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("title").setContent("HelloWorld.x3d"))
+    .addMeta(new meta().setName("description").setContent("Simple X3D scene example: Hello World!"))
+    .addMeta(new meta().setName("created").setContent("30 October 2000"))
+    .addMeta(new meta().setName("modified").setContent("14 April 2017"))
+    .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
+    .addMeta(new meta().setName("Image").setContent("HelloWorld.tall.png"))
+    .addMeta(new meta().setName("reference").setContent("http://en.wikipedia.org/wiki/Hello_world"))
+    .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program"))
+    .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
+    .addMeta(new meta().setName("reference").setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
+    .addMeta(new meta().setName("reference").setContent("http://www.HelloWorldExample.net"))
+    .addMeta(new meta().setName("reference").setContent("http://www.web3D.org"))
+    .addMeta(new meta().setName("reference").setContent("http://www.web3d.org/realtime-3d/news/internationalization-x3d"))
+    .addMeta(new meta().setName("reference").setContent("http://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
+    .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"))
+    .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
+    .addMeta(new meta().setName("license").setContent("http://www.web3d.org/x3d/content/examples/license.html"))
+    .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addComments(" Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON ")
-    .addMeta(new metaObject().setName("reference").setContent("HelloWorld.wrl"))
-    .addMeta(new metaObject().setName("reference").setContent("HelloWorld.x3dv"))
-    .addMeta(new metaObject().setName("reference").setContent("HelloWorld.x3db"))
-    .addMeta(new metaObject().setName("reference").setContent("HelloWorld.xhtml"))
-    .addMeta(new metaObject().setName("reference").setContent("HelloWorld.json")))
-  .setScene(new SceneObject()
+    .addMeta(new meta().setName("reference").setContent("HelloWorld.wrl"))
+    .addMeta(new meta().setName("reference").setContent("HelloWorld.x3dv"))
+    .addMeta(new meta().setName("reference").setContent("HelloWorld.x3db"))
+    .addMeta(new meta().setName("reference").setContent("HelloWorld.xhtml"))
+    .addMeta(new meta().setName("reference").setContent("HelloWorld.json")))
+  .setScene(new Scene()
     .addComments(" Example scene to illustrate X3D nodes and fields (XML elements and attributes) ")
-    .addChild(new WorldInfoObject().setTitle("Hello world!"))
-    .addChild(new GroupObject()
-      .addChild(new ViewpointObject("ViewUpClose").setDescription("Hello world!").setCenterOfRotation(0.0,-1.0,0.0).setPosition(0.0,-1.0,7.0))
-      .addChild(new TransformObject().setRotation(0.0,1.0,0.0,3.0)
-        .addChild(new ShapeObject()
-          .setGeometry(new SphereObject())
-          .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject("MaterialLightBlue").setDiffuseColor(0.1,0.5,1.0))
-            .setTexture(new ImageTextureObject("ImageCloudlessEarth").setUrl(new MFStringObject("\"earth-topo.png\" \"earth-topo.jpg\" \"earth-topo-small.gif\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif\""))))))
-      .addChild(new TransformObject().setTranslation(0.0,-2.0,0.0)
-        .addChild(new ShapeObject()
-          .setGeometry(new TextObject("TextMessage").setString(new MFStringObject("\"Hello\" \"world!\""))
-            .setFontStyle(new FontStyleObject().setJustify(new MFStringObject("\"MIDDLE\" \"MIDDLE\""))))
-          .setAppearance(new AppearanceObject()
-            .setMaterial(new MaterialObject().setUSE("MaterialLightBlue")))))));
+    .addChild(new WorldInfo().setTitle("Hello world!"))
+    .addChild(new Group()
+      .addChild(new Viewpoint("ViewUpClose").setDescription("Hello world!").setCenterOfRotation(0.0,-1.0,0.0).setPosition(0.0,-1.0,7.0))
+      .addChild(new Transform().setRotation(0.0,1.0,0.0,3.0)
+        .addChild(new Shape()
+          .setGeometry(new Sphere())
+          .setAppearance(new Appearance()
+            .setMaterial(new Material("MaterialLightBlue").setDiffuseColor(0.1,0.5,1.0))
+            .setTexture(new ImageTexture("ImageCloudlessEarth").setUrl(new MFString("\"earth-topo.png\" \"earth-topo.jpg\" \"earth-topo-small.gif\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.png\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg\" \"http://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif\""))))))
+      .addChild(new Transform().setTranslation(0.0,-2.0,0.0)
+        .addChild(new Shape()
+          .setGeometry(new Text("TextMessage").setString(new MFString("\"Hello\" \"world!\""))
+            .setFontStyle(new FontStyle().setJustify(new MFString("\"MIDDLE\" \"MIDDLE\""))))
+          .setAppearance(new Appearance()
+            .setMaterial(new Material().setUSE("MaterialLightBlue")))))));
   },
   // end of initialize() method
 
@@ -207,11 +207,11 @@ HelloWorld.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

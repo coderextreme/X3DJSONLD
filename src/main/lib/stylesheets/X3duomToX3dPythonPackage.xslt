@@ -166,7 +166,7 @@ This work is part of the X3D Python Scene Access Interface Library (X3DPSAIL).
 """
 
 _DEBUG = True       # options True False
-    
+
 ###############################################
 
 # SimpleType Enumerations
@@ -220,14 +220,13 @@ def </xsl:text><xsl:value-of select="$assertFunctionName"/><xsl:text>(fieldName,
     """
     if  not value:
         return True # no failure on empty defaults
-    if  isinstance(value,SFString) or isinstance(value,str):
-        if str(value) in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>:
-            return True
-        raise X3DTypeError(fieldName + ' value=' + value + ' does not match allowed enumerations in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>=' + str(</xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>))
-    if  isinstance(value,MFString):
-        if MFString(value).XML() in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>:
-            return True
-        raise X3DTypeError(fieldName + ' value=' + MFString(value).XML() + ' does not match allowed enumerations in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>=' + str(</xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>))</xsl:text>
+    if str(MFString(value).XML()) in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>:
+        # print ('*** </xsl:text><xsl:value-of select="$assertFunctionName"/><xsl:text> ' + fieldName + ' str(MFString(' + str(value) + ').XML())=' + str(MFString(value).XML()), flush=True) # diagnostic
+        return True
+    if isinstance(value, (SFString, str)) and str(SFString(value).XML()) in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>:
+        # print ('*** </xsl:text><xsl:value-of select="$assertFunctionName"/><xsl:text> ' + fieldName + ' str(SFString(' + str(value) + ').XML())=' + str(MFString(value).XML()), flush=True) # diagnostic
+        return True
+    raise X3DTypeError(fieldName + ' value=\'' + MFString(value).XML() + '\' does not match allowed enumerations in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>=' + str(</xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>))</xsl:text>
             </xsl:if>
         <xsl:text>&#10;</xsl:text>
         </xsl:for-each>
@@ -252,10 +251,13 @@ class _X3DField(object):
     """
 ###    value = None
     def NAME(self):
+        ''' Name of this X3D Field class. '''
         return '_X3DField'
     def SPECIFICATION_URL(self):
+        ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
         return 'https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html'
     def TOOLTIP_URL(self):
+        ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#FieldTypesTable'
     @property # getter - - - - - - - - - -
     def value(self):
@@ -389,8 +391,10 @@ class _X3DStatement(object):
     All X3D statements implement _X3DStatement abstract type.
     """
     def NAME(self):
+        ''' Name of this X3D Statement class. '''
         return '_X3DStatement'
     def SPECIFICATION_URL(self):
+        ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
         return 'https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#AbstractX3DStructure'
     def __repl__(self):
         result = self.NAME() + '('
@@ -436,12 +440,16 @@ class Comment(_X3DStatement):
     """
     # immutable constant functions - - - - - - - - - -
     def NAME(self):
+        ''' Name of this X3D Statement class. '''
         return 'Comment'
     def SPECIFICATION_URL(self):
+        ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
         return ''
     def TOOLTIP_URL(self):
+        ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html'
     def FIELD_DECLARATIONS(self):
+        ''' Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom '''
         return []
     def REGEX_XML(self):
         return r'(\s|\S)*' # (includes lower-case true, false)
@@ -611,6 +619,8 @@ def isPositive(value):
     """
     Utility function to confirm positive value(s) greater than or equal to zero.
     """
+    if  value is None:
+        return None
     if isinstance(value, list) and any(isinstance(x, tuple) for x in value):
         for each in value:
             for element in each:
@@ -624,6 +634,7 @@ def isPositive(value):
         return True
     if isinstance(value, (int, float)):
         return value > 0
+    raise X3DTypeError('isPositive(value=' + str(value) + ') with type=' + str(type(value)) + ') is not a valid Python number')
 
 def assertPositive(fieldName, value):
     """
@@ -636,6 +647,8 @@ def isNonNegative(value):
     """
     Utility function to confirm nonnegative value(s) greater than or equal to zero.
     """
+    if  value is None:
+        return None
     if isinstance(value, list) and any(isinstance(x, tuple) for x in value):
         for each in value:
             for element in each:
@@ -650,6 +663,7 @@ def isNonNegative(value):
         return True
     if isinstance(value, (int, float)):
         return value >= 0
+    raise X3DTypeError('isNonNegative(value=' + str(value) + ') with type=' + str(type(value)) + ') is not a valid Python number')
 
 def assertNonNegative(fieldName, value):
     """
@@ -663,6 +677,8 @@ def isZeroToOne(value):
     Utility function to confirm value(s) in range [0..1]
     """
     # if True or _DEBUG: print('* debug: isZeroToOne(' + str(value) + ')', flush=True);
+    if  value is None:
+        return None
     if isinstance(value, (list, tuple)):
         for each in value:
             if isinstance(each, (list, tuple)):
@@ -674,6 +690,7 @@ def isZeroToOne(value):
         return True
     if isinstance(value, (int, float)):
         return 0 <= value <= 1
+    raise X3DTypeError('isZeroToOne(value=' + str(value) + ') with type=' + str(type(value)) + ') is not a valid Python number')
 
 def assertZeroToOne(fieldName, value):
     """
@@ -687,6 +704,8 @@ def isLessThanEquals(value, maximum):
     Utility function to confirm value(s) less than or equal to maximum.
     """
     # if True or _DEBUG: print('* debug: isLessThanEquals(' + str(value) + ')', flush=True);
+    if  value is None:
+        return None
     if isinstance(value, list) and any(isinstance(x, tuple) for x in value):
         for each in value:
             for element in each:
@@ -700,6 +719,7 @@ def isLessThanEquals(value, maximum):
         return True
     if isinstance(value, (int, float)):
         return value <= maximum
+    raise X3DTypeError('isLessThanEquals(value=' + str(value) + ') with type=' + str(type(value)) + ') is not a valid Python number')
 
 def assertLessThanEquals(fieldName, value, maximum):
     """
@@ -713,6 +733,8 @@ def isLessThan(value, maximum):
     Utility function to confirm value(s) less than maximum.
     """
     # if True or _DEBUG: print('* debug: isLessThan(' + str(value) + ')', flush=True);
+    if  value is None:
+        return None
     if isinstance(value, list) and any(isinstance(x, tuple) for x in value):
         for each in value:
             for element in each:
@@ -726,6 +748,7 @@ def isLessThan(value, maximum):
         return True
     if isinstance(value, (int, float)):
         return value < maximum
+    raise X3DTypeError('isLessThan(value=' + str(value) + ') with type=' + str(type(value)) + ') is not a valid Python number')
 
 def assertLessThan(fieldName, value, maximum):
     """
@@ -740,6 +763,8 @@ def isGreaterThanEquals(value, minimum):
     Utility function to confirm value(s) less than or equal to minimum.
     """
     # if True or _DEBUG: print('* debug: isGreaterThanEquals(' + str(value) + ')', flush=True);
+    if  value is None:
+        return None
     if isinstance(value, list) and any(isinstance(x, tuple) for x in value):
         for each in value:
             for element in each:
@@ -753,6 +778,7 @@ def isGreaterThanEquals(value, minimum):
         return True
     if isinstance(value, (int, float)):
         return value >= minimum
+    raise X3DTypeError('isGreaterThanEquals(value=' + str(value) + ') with type=' + str(type(value)) + ') is not a valid Python number')
 
 def assertGreaterThanEquals(fieldName, value, minimum):
     """
@@ -779,6 +805,7 @@ def isGreaterThan(value, minimum):
         return True
     if isinstance(value, (int, float)):
         return value > minimum
+    raise X3DTypeError('isGreaterThan(value=' + str(value) + ') with type=' + str(type(value)) + ') is not a valid Python number')
 
 def assertGreaterThan(fieldName, value, minimum):
     """
@@ -800,6 +827,7 @@ def isBoundingBox(value):
         if value[0] == -1 and value[1] == -1 and value[2] == -1:
             return True
         return isNonNegative(value) # legal bounding box tuple
+    raise X3DTypeError('isBoundingBox(value=' + str(value) + ') with type=' + str(type(value)) + ') is not a valid Python numeric triple')
 
 def assertBoundingBox(fieldName, value):
     """
@@ -1461,9 +1489,11 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     """</xsl:text>
         </xsl:if>
 
+        <!-- https://stackoverflow.com/questions/2682745/how-do-i-create-a-constant-in-python -->
         <xsl:text>
     # immutable constant functions - - - - - - - - - -
     def NAME(self):
+        ''' Name of this X3D Field class. '''
         return '</xsl:text>
         <xsl:value-of select="$fieldTypeName"/>
         <xsl:text>'</xsl:text>
@@ -1471,10 +1501,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <!-- TODO is there a suggested name or form for documentation url? -->
         <xsl:text>
     def SPECIFICATION_URL(self):
+        ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
         return '</xsl:text>
-        <xsl:value-of select="InterfaceDefinition/@SPECIFICATION_URL"/>
+        <xsl:value-of select="InterfaceDefinition/@specificationUrl"/>
         <xsl:text>'
     def TOOLTIP_URL(self):
+        ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
         <xsl:value-of select="$fieldTypeName"/>
         <xsl:text>'</xsl:text>
@@ -1502,11 +1534,13 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:when test="($fieldTypeName = 'SFNode')">
                 <xsl:text>
     def FIELD_DECLARATIONS(self):
+        ''' Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom '''
         return [('value', 'None', FieldType.SFNode, AccessType.inputOutput, 'SFNode')]</xsl:text>
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFNode')">
                 <xsl:text>
     def FIELD_DECLARATIONS(self):
+        ''' Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom '''
         return [('value', None, FieldType.MFNode, AccessType.inputOutput, 'MFNode')]</xsl:text>
             </xsl:when>
             <xsl:otherwise>
@@ -1515,6 +1549,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         
         <xsl:text>
     def ARRAY_TYPE(self):
+        ''' Whether or not this field class is array based. '''
         return </xsl:text>
         <xsl:call-template name="pythonValue">
             <xsl:with-param name="x3dValue" select="@isArray"/>
@@ -1524,6 +1559,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         </xsl:call-template>
         <xsl:text>
     def TUPLE_SIZE(self):
+        ''' How many values make up each data tuple. '''
         return </xsl:text>
         <xsl:call-template name="pythonValue">
             <xsl:with-param name="x3dValue" select="@tupleSize"/>
@@ -1535,6 +1571,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <!-- TODO modify regex for True False -->
         <xsl:text>
     def REGEX_XML(self):
+        ''' Regular expression for validating values, for more information see https://www.web3d.org/specifications/X3dRegularExpressions.html '''
         return r'</xsl:text> <!-- "raw" python string, unescaped -->
         <xsl:value-of select="@regex"/>
         <xsl:text>'</xsl:text>
@@ -1702,26 +1739,27 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:text>return str(self.__value).lower()</xsl:text>
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFBool')">
-                <xsl:text>return str(self.__value).lower().replace(',','').replace('[','').replace(']','')</xsl:text>
+                <xsl:text>return str(self.__value).lower().replace(',', '').replace('[', '').replace(']', '')</xsl:text>
             </xsl:when>
             <xsl:when test="starts-with($fieldTypeName, 'SF') and (contains($fieldTypeName, 'Double') or contains($fieldTypeName, 'Float') or contains($fieldTypeName, 'Vec') or
                             contains($fieldTypeName, 'Int32') or contains($fieldTypeName, 'Time') or contains($fieldTypeName, 'Color') or contains($fieldTypeName, 'Rotation') or
                             contains($fieldTypeName, 'Image') or contains($fieldTypeName, 'Matrix'))">
-                <xsl:text>return str(self.__value).lower().replace(',','').replace('(','').replace(')','').replace('[','').replace(']','')</xsl:text>
+                <xsl:text>return str(self.__value).lower().replace(',', '').replace('(', '').replace(')', '').replace('[', '').replace(']', '')</xsl:text>
             </xsl:when>
             <xsl:when test="starts-with($fieldTypeName, 'MF') and (contains($fieldTypeName, 'Double') or contains($fieldTypeName, 'Float') or contains($fieldTypeName, 'Vec') or 
                             contains($fieldTypeName, 'Int32') or contains($fieldTypeName, 'Time') or contains($fieldTypeName, 'Color') or contains($fieldTypeName, 'Rotation') or
                             contains($fieldTypeName, 'Image') or contains($fieldTypeName, 'Matrix'))">
-                <xsl:text>return str(self.__value).lower().replace('(','').replace(')','').replace(',','').replace('[','').replace(']','')</xsl:text>
+                <xsl:text>return str(self.__value).lower().replace('(', '').replace(')', '').replace(',', '').replace('[', '').replace(']', '')</xsl:text>
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'SFNode')">
-                <xsl:text>if (not self.__value is None):
-            return self.__value.XML()</xsl:text>
+                <xsl:text>if not self.__value is None:
+            return self.__value.XML()
+        return None</xsl:text>
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFNode')">
                 <xsl:text>result = ''
         for each in self.__value:
-            if (not self.__value is None):
+            if not self.__value is None:
                 result += each.XML() # has line break '\n' at end, which is OK
         result = result.rstrip('\n')
         return result</xsl:text>
@@ -1758,26 +1796,27 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:text>return str(self.__value).upper()</xsl:text>
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFBool')">
-                <xsl:text>return str(self.__value).upper().replace(',','').replace('[','').replace(']','')</xsl:text>
+                <xsl:text>return str(self.__value).upper().replace(',', '').replace('[', '').replace(']', '')</xsl:text>
             </xsl:when>
             <xsl:when test="starts-with($fieldTypeName, 'SF') and (contains($fieldTypeName, 'Double') or contains($fieldTypeName, 'Float') or contains($fieldTypeName, 'Vec') or
                             contains($fieldTypeName, 'Int32') or contains($fieldTypeName, 'Time') or contains($fieldTypeName, 'Color') or contains($fieldTypeName, 'Rotation') or
                             contains($fieldTypeName, 'Image') or contains($fieldTypeName, 'Matrix'))">
-                <xsl:text>return str(self.__value).lower().replace(',','').replace('(','').replace(')','').replace('[','').replace(']','')</xsl:text>
+                <xsl:text>return str(self.__value).lower().replace(',', '').replace('(', '').replace(')', '').replace('[', '').replace(']', '')</xsl:text>
             </xsl:when>
             <xsl:when test="starts-with($fieldTypeName, 'MF') and (contains($fieldTypeName, 'Double') or contains($fieldTypeName, 'Float') or contains($fieldTypeName, 'Vec') or 
                             contains($fieldTypeName, 'Int32') or contains($fieldTypeName, 'Time') or contains($fieldTypeName, 'Color') or contains($fieldTypeName, 'Rotation') or
                             contains($fieldTypeName, 'Image') or contains($fieldTypeName, 'Matrix'))">
-                <xsl:text>return '[' + str(self.__value).lower().replace('(','').replace(')','').replace(',','').replace('[','').replace(']','') + ']'</xsl:text>
+                <xsl:text>return '[' + str(self.__value).lower().replace('(', '').replace(')', '').replace(',', '').replace('[', '').replace(']', '') + ']'</xsl:text>
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'SFNode')">
-                <xsl:text>if (not self.__value is None):
-            return self.__value.VRML()</xsl:text>
+                <xsl:text>if not self.__value is None:
+            return self.__value.VRML()
+        return None</xsl:text>
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFNode')">
                 <xsl:text>result = ''
         for each in self.__value:
-            if (not self.__value is None):
+            if not self.__value is None:
                 result += each.VRML() # has line break '\n' at end, which is OK
         result = result.rstrip('\n')
         return result</xsl:text>
@@ -1836,6 +1875,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
 
         <xsl:text>
     def NAME(self):
+        ''' Name of this X3D Abstract Type class. '''
         return '_</xsl:text>
         <xsl:value-of select="@name"/>
         <xsl:text>'</xsl:text>
@@ -1843,8 +1883,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <!-- TODO is there a suggested name or form for documentation url? -->
         <xsl:text>
     def SPECIFICATION_URL(self):
+        ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
         return '</xsl:text>
-        <xsl:value-of select="InterfaceDefinition/@SPECIFICATION_URL"/>
+        <xsl:value-of select="InterfaceDefinition/@specificationUrl"/>
         <xsl:text>'</xsl:text>
         
         <xsl:choose>
@@ -2085,6 +2126,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
 
         <xsl:text>
     def NAME(self):
+        ''' Name of this X3D Node class. '''
         return '</xsl:text>
         <xsl:value-of select="$elementName"/>
         <xsl:text>'</xsl:text>
@@ -2092,10 +2134,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <!-- TODO is there a suggested name or form for documentation url? -->
         <xsl:text>
     def SPECIFICATION_URL(self):
+        ''' Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. '''
         return '</xsl:text>
-        <xsl:value-of select="InterfaceDefinition/@SPECIFICATION_URL"/>
+        <xsl:value-of select="InterfaceDefinition/@specificationUrl"/>
         <xsl:text>'
     def TOOLTIP_URL(self):
+        ''' X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. '''
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
         <xsl:value-of select="$elementName"/>
         <xsl:text>'</xsl:text>
@@ -2111,11 +2155,13 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     XML_DOCTYPE_X3D_3_2 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">'
     XML_DOCTYPE_X3D_3_3 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">'
     XML_DOCTYPE_X3D_4_0 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">'
+    XML_DOCTYPE_X3D_4_1 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "http://www.web3d.org/specifications/x3d-4.1.dtd">'
     X3D_XML_SCHEMA_ATTRIBUTES_3_0 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'"
     X3D_XML_SCHEMA_ATTRIBUTES_3_1 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'"
     X3D_XML_SCHEMA_ATTRIBUTES_3_2 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.2.xsd'"
     X3D_XML_SCHEMA_ATTRIBUTES_3_3 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'"
     X3D_XML_SCHEMA_ATTRIBUTES_4_0 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_4_1 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.1.xsd'"
     VRML97_HEADER = '#VRML V2.0 utf8'
     CLASSIC_VRML_HEADER_PREFIX = '#VRML V' # followed by X3D version number
     CLASSIC_VRML_HEADER_SUFFIX = ' utf8'
@@ -2184,7 +2230,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
 </style>
    </head>
    <body>"""
-    X3DOM_FOOTER = """      
+    X3DOM_FOOTER = """
    </body>
 </html>
 """]]></xsl:text>
@@ -2228,6 +2274,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <!-- beware: original was tuple of tuples, which failed intermittently/bitterly. list of tuples is better. -->
                 <xsl:text>
     def FIELD_DECLARATIONS(self):
+        ''' Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom '''
         return [('children', None, FieldType.MFNode, AccessType.inputOutput, 'head')]
     def __init__(self, children=None):
         self.children = children
@@ -2270,13 +2317,14 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:if test="(position() = 1)">
                 <xsl:text>
     def FIELD_DECLARATIONS(self):
-        return [ # name, defaultValue, type, accessType, inheritedFrom</xsl:text>
+        ''' Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom '''
+        return [</xsl:text>
             </xsl:if>
             <!-- avoid duplicate fields problem in X3DUOM, e.g. ParticleSet geometry (TODO fix X3DUOM) -->
             <xsl:choose>
                 <xsl:when test="not(preceding-sibling::*[@name = $fieldName])">
                     <xsl:text>
-        </xsl:text><!-- pylint requires 8 columns of whitespace -->
+            </xsl:text><!-- pylint requires 12 columns of whitespace -->
                     <xsl:text>('</xsl:text>
                     <xsl:value-of select="$fieldName"/>
                     <xsl:text>', </xsl:text>
@@ -2480,6 +2528,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     def </xsl:text>
                 <xsl:value-of select="$fieldName"/>
                 <xsl:text>(self):</xsl:text>
+                <xsl:if test="ends-with($fieldName, '_')">
+                    <xsl:text> # Appended underscore to field name to avoid naming collision with Python reserved word</xsl:text>
+                </xsl:if>
                 <!-- TODO insert docstring """ tooltip """ -->
                 <xsl:variable name="tooltipText">
                     <xsl:value-of select="$x3d.tooltips.document//element[@name = $elementName]/attribute[@name = $fieldName]/@tooltip" disable-output-escaping="yes"/>
@@ -2697,7 +2748,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     </xsl:if>
                     <!-- avoid duplicate fields problem in X3DUOM, e.g. ParticleSet geometry (TODO fix X3DUOM) -->
                     <xsl:if test="not(preceding-sibling::*[@name = $fieldName])">
-                        <xsl:text>(self.</xsl:text>
+                        <xsl:text>self.</xsl:text>
                         <!--
                         <xsl:if test="not($fieldName = 'IS') and not($fieldName = 'metadata')"> 
                             <! - - not inherited from  _X3DNode - - >
@@ -2705,7 +2756,6 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         </xsl:if>
                         -->
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>)</xsl:text>
                         <xsl:choose>
                             <xsl:when test="not(position() = last())">
                                 <xsl:text> or </xsl:text>
@@ -2765,9 +2815,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             result += self.X3D_XML_SCHEMA_ATTRIBUTES_4_1
         result += '>' + '\n' # finish open tag
         if self.head and self.head.hasChild():
-            result += str(self.head.XML(indentLevel=indentLevel+1,syntax=syntax))
+            result += str(self.head.XML(indentLevel=indentLevel+1, syntax=syntax))
         if self.Scene and self.Scene.hasChild():
-            result += str(self.Scene.XML(indentLevel=indentLevel+1,syntax=syntax))
+            result += str(self.Scene.XML(indentLevel=indentLevel+1, syntax=syntax))
         result += '</X3D>' + '\n'
 #       print('XML serialization complete.', flush=True)
         return result
@@ -2820,17 +2870,32 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     <!-- avoid duplicate fields problem in X3DUOM, e.g. ParticleSet geometry (TODO fix X3DUOM) -->
                     <xsl:if test="not(preceding-sibling::*[@name = $fieldName])">
                         <xsl:text>
-        if self.</xsl:text>
-                        <!-- not inherited from  _X3DNode
-                        <xsl:if test="not($fieldName = 'DEF') and not($fieldName = 'USE') and not($fieldName = 'class_')"> 
-                            <xsl:text>__</xsl:text>
-                        </xsl:if> -->
-                        <xsl:value-of select="$fieldName"/>
-                        <xsl:if test="not(@type = 'SFString') or (string-length(@default) > 0)">
-                            <xsl:text> != </xsl:text>
-                            <xsl:value-of select="$defaultValue"/>
-                        </xsl:if>
-                        <xsl:text>:
+        if </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="(@type = 'SFBool')">
+                                <xsl:if test="(@default = 'true')">
+                                    <xsl:text>not </xsl:text>
+                                </xsl:if>
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text>:</xsl:text>
+                                <xsl:text> # default=</xsl:text>
+                                <xsl:value-of select="@default"/>
+                            </xsl:when>
+                            <xsl:when test="not(@type = 'SFString') or (string-length(@default) > 0)">
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text> != </xsl:text>
+                                <xsl:value-of select="$defaultValue"/>
+                                <xsl:text>:</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text>:</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:text>
             result += " </xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>='" + </xsl:text>
@@ -2886,13 +2951,13 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 # order is significant for component, unit, meta statements
                 for each in self.children:
                     if isinstance(each, component):
-                        result += each.XML(indentLevel=indentLevel+1,syntax=syntax)
+                        result += each.XML(indentLevel=indentLevel+1, syntax=syntax)
                 for each in self.children:
                     if isinstance(each, unit):
-                        result += each.XML(indentLevel=indentLevel+1,syntax=syntax)
+                        result += each.XML(indentLevel=indentLevel+1, syntax=syntax)
                 for each in self.children:
                     if isinstance(each, meta):
-                        result += each.XML(indentLevel=indentLevel+1,syntax=syntax)</xsl:text>
+                        result += each.XML(indentLevel=indentLevel+1, syntax=syntax)</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:for-each select="$allFields[contains(@type,'Node')]">
@@ -2925,7 +2990,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:text>: # output this SFNode
                 result += self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>.XML(indentLevel=indentLevel+1,syntax=syntax)</xsl:text>
+                        <xsl:text>.XML(indentLevel=indentLevel+1, syntax=syntax)</xsl:text>
                                     </xsl:when>
                                     <xsl:otherwise>
                         <!-- ## result += indent + '  ' + 'TODO iterate over each child element' + '\n' -->
@@ -2943,7 +3008,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             for each in self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>:
-               result += each.XML(indentLevel=indentLevel+1,syntax=syntax)</xsl:text>
+                result += each.XML(indentLevel=indentLevel+1, syntax=syntax)</xsl:text>
                                     </xsl:otherwise>
                                 </xsl:choose>
                             </xsl:if>
@@ -2994,18 +3059,17 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 result += 'IMMERSIVE' + '\n'
             else:
                 result += self.profile + '\n'
-                    
         if self.head and self.head.hasChild():
-            result += str(self.head.VRML(indentLevel=indentLevel+1,VRML97=VRML97))
+            result += str(self.head.VRML(indentLevel=indentLevel+1, VRML97=VRML97))
         if self.Scene and self.Scene.hasChild():
-            result += str(self.Scene.VRML(indentLevel=indentLevel+1,VRML97=VRML97))
+            result += str(self.Scene.VRML(indentLevel=indentLevel+1, VRML97=VRML97))
         result += '\n'</xsl:text>
             </xsl:when>
             <xsl:when test="($elementName = 'Scene')">
                                         <xsl:text>
         if self.children: # walk each child in MFNode list, if any
             for each in self.children:
-                result += each.VRML(indentLevel=0,VRML97=VRML97)</xsl:text>
+                result += each.VRML(indentLevel=0, VRML97=VRML97)</xsl:text>
             </xsl:when>
             <xsl:when test="($elementName = 'component')">
                 <xsl:text>
@@ -3061,13 +3125,32 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     <!-- avoid duplicate fields problem in X3DUOM, e.g. ParticleSet geometry (TODO fix X3DUOM) -->
                     <xsl:if test="not(preceding-sibling::*[@name = $fieldName])">
                         <xsl:text>
-        if self.</xsl:text>
-                        <xsl:value-of select="$fieldName"/>
-                        <xsl:if test="not(@type = 'SFString') or (string-length(@default) > 0)">
-                            <xsl:text> != </xsl:text>
-                            <xsl:value-of select="$defaultValue"/>
-                        </xsl:if>
-                        <xsl:text>:
+        if </xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="(@type = 'SFBool')">
+                                <xsl:if test="(@default = 'true')">
+                                    <xsl:text>not </xsl:text>
+                                </xsl:if>
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text>:</xsl:text>
+                                <xsl:text> # default=</xsl:text>
+                                <xsl:value-of select="@default"/>
+                            </xsl:when>
+                            <xsl:when test="not(@type = 'SFString') or (string-length(@default) > 0)">
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text> != </xsl:text>
+                                <xsl:value-of select="$defaultValue"/>
+                                <xsl:text>:</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>self.</xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text>:</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:text>
             result += " </xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text> </xsl:text>
@@ -3122,13 +3205,13 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             # order is significant for component, unit, meta statements
             for each in self.children:
                 if isinstance(each, component):
-                    result += each.VRML(indentLevel=indentLevel+1,VRML97=VRML97)
+                    result += each.VRML(indentLevel=indentLevel+1, VRML97=VRML97)
             for each in self.children:
                 if isinstance(each, unit):
-                    result += each.VRML(indentLevel=indentLevel+1,VRML97=VRML97)
+                    result += each.VRML(indentLevel=indentLevel+1, VRML97=VRML97)
             for each in self.children:
                 if isinstance(each, meta):
-                    result += each.VRML(indentLevel=indentLevel+1,VRML97=VRML97)</xsl:text>
+                    result += each.VRML(indentLevel=indentLevel+1, VRML97=VRML97)</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:for-each select="$allFields[contains(@type,'Node')]">
@@ -3168,7 +3251,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text> ' + self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>.VRML(indentLevel=indentLevel+1,VRML97=VRML97)</xsl:text>
+                        <xsl:text>.VRML(indentLevel=indentLevel+1, VRML97=VRML97)</xsl:text>
                                     </xsl:when>
                                     <xsl:otherwise>
                         <!-- ## result += indent + '  ' + 'TODO iterate over each child element' + '\n' -->
@@ -3179,7 +3262,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             for each in self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>:
-                result += each.VRML(indentLevel=indentLevel+1,VRML97=VRML97)</xsl:text>
+                result += each.VRML(indentLevel=indentLevel+1, VRML97=VRML97)</xsl:text>
                                     </xsl:otherwise>
                                 </xsl:choose>
                             </xsl:if>
@@ -3212,7 +3295,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <!-- PEP 8 - Style Guide for Python Code, Descriptive: Naming Styles -->
             <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
             <xsl:choose>
-                <xsl:when test="(local-name() = 'global')">
+                <xsl:when test="(local-name() = 'class') or (local-name() = 'global') or (local-name() = 'type')">
                     <xsl:value-of select="local-name()"/>
                     <xsl:text>_</xsl:text>
                 </xsl:when>
@@ -3228,6 +3311,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <xsl:text>='</xsl:text>
         <xsl:value-of select="."/>
         <xsl:text>'</xsl:text>
+        <xsl:if test="not(local-name() = $attributeNameNormalizedPython)">
+            <xsl:text>&#10;</xsl:text>
+            <xsl:text>''' Appended underscore to field name '</xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>' to avoid naming collision with Python reserved word'''</xsl:text>
+        </xsl:if>
         
     </xsl:template>
 

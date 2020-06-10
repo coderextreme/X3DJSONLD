@@ -55,21 +55,21 @@ SFVec3f.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addComponent(new componentObject().setName("Scripting").setLevel(1))
-    .addMeta(new metaObject().setName("title").setContent("SFVec3f.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("description").setContent("3 prismatic spheres"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
-  .setScene(new SceneObject()
-    .addChild(new NavigationInfoObject())
-    .addChild(new TransformObject("transform")
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setMaterial(new MaterialObject().setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7)))
-        .setGeometry(new SphereObject())))
-    .addChild(new ScriptObject("Bounce2").setSourceCode("\n" + 
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addComponent(new component().setName("Scripting").setLevel(1))
+    .addMeta(new meta().setName("title").setContent("SFVec3f.x3d"))
+    .addMeta(new meta().setName("creator").setContent("John Carlson"))
+    .addMeta(new meta().setName("description").setContent("3 prismatic spheres"))
+    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/SFVec3f.x3d")))
+  .setScene(new Scene()
+    .addChild(new NavigationInfo())
+    .addChild(new Transform("transform")
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setMaterial(new Material().setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7)))
+        .setGeometry(new Sphere())))
+    .addChild(new Script("Bounce2").setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "			function newBubble() {" + "\n" + 
 "			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
@@ -101,14 +101,14 @@ SFVec3f.prototype = {
 "			function initialize() {" + "\n" + 
 "			     newBubble();" + "\n" + 
 "			}" + "\n")
-      .addField(new fieldObject().setAccessType("inputOnly").setName("set_translation").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new fieldObject().setAccessType("outputOnly").setName("translation_changed").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-      .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFTime")))
-    .addChild(new TimeSensorObject("TourTime").setCycleInterval(0.150).setLoop(true))
-    .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
-    .addChild(new ROUTEObject().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
+      .addField(new field().setAccessType("inputOnly").setName("set_translation").setType("SFVec3f").setValue("0 0 0"))
+      .addField(new field().setAccessType("outputOnly").setName("translation_changed").setType("SFVec3f").setValue("0 0 0"))
+      .addField(new field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+      .addField(new field().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
+      .addField(new field().setAccessType("inputOnly").setName("set_fraction").setType("SFTime")))
+    .addChild(new TimeSensor("TourTime").setCycleInterval(0.150).setLoop(true))
+    .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
+    .addChild(new ROUTE().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
   },
   // end of initialize() method
 
@@ -142,11 +142,11 @@ SFVec3f.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}

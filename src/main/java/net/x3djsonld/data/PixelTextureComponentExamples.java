@@ -101,111 +101,111 @@ public class PixelTextureComponentExamples
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3DObject().setProfile(X3DObject.PROFILE_IMMERSIVE).setVersion(X3DObject.VERSION_3_3)
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName(metaObject.NAME_TITLE      ).setContent("PixelTextureComponentExamples.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_DESCRIPTION).setContent("This example shows the five PixelTexture components, with 0 to 4 components each, shown in Table 5-18."))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATOR    ).setContent("Leonard Daly and Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_CREATED    ).setContent("25 August 2008"))
-    .addMeta(new metaObject().setName(metaObject.NAME_MODIFIED   ).setContent("7 January 2014"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://X3dGraphics.com"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("X3D for Web Authors, Table 5.18"))
-    .addMeta(new metaObject().setName(metaObject.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
-    .addMeta(new metaObject().setName(metaObject.NAME_RIGHTS     ).setContent("Copyright (c) 2006, Daly Realism and Don Brutzman"))
-    .addMeta(new metaObject().setName(metaObject.NAME_SUBJECT    ).setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"))
-    .addMeta(new metaObject().setName(metaObject.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d"))
-    .addMeta(new metaObject().setName(metaObject.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new metaObject().setName(metaObject.NAME_LICENSE    ).setContent("../license.html")))
-  .setScene(new SceneObject()
-    .addChild(new BackgroundObject().setSkyColor(new MFColorObject(new float[] {0.1f,0.1f,0.4f})))
-    .addChild(new ViewpointObject().setDescription("Table 5.18 SFImage component examples").setPosition(0.0f,0.0f,14.0f))
-    .addChild(new TransformObject().setTranslation(-6.0f,0.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setTexture(new PixelTextureObject("ZeroComponents")))
-        .setGeometry(new BoxObject()))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
-        .addChild(new ShapeObject()
-          .setGeometry(new TextObject().setString(new String[] {"0"})
-            .setFontStyle(new FontStyleObject("CenterJustify").setJustify(FontStyleObject.JUSTIFY_MIDDLE_MIDDLE)))
-          .setAppearance(new AppearanceObject("TextMaterial")
-            .setMaterial(new MaterialObject().setDiffuseColor(1.0f,1.0f,1.0f))))))
-    .addChild(new TransformObject().setTranslation(-3.0f,0.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setTexture(new PixelTextureObject("OneComponent").setImage(new int[] {1,2,1,0xFF,0x00})))
-        .setGeometry(new BoxObject()))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
-        .addChild(new ShapeObject()
-          .setGeometry(new TextObject().setString(new String[] {"1"})
-            .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
-          .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
-    .addChild(new TransformObject()
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setTexture(new PixelTextureObject("TwoComponents").setImage(new int[] {2,1,2,0xCCFF,0x2277})))
-        .setGeometry(new BoxObject()))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
-        .addChild(new ShapeObject()
-          .setGeometry(new TextObject().setString(new String[] {"2"})
-            .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
-          .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
-    .addChild(new TransformObject().setTranslation(3.0f,0.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("PixelTextureComponentExamples.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("This example shows the five PixelTexture components, with 0 to 4 components each, shown in Table 5-18."))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Leonard Daly and Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("25 August 2008"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("7 January 2014"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://X3dGraphics.com"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("X3D for Web Authors, Table 5.18"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/content/examples/X3dResources.html"))
+    .addMeta(new meta().setName(meta.NAME_RIGHTS     ).setContent("Copyright (c) 2006, Daly Realism and Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
+  .setScene(new Scene()
+    .addChild(new Background().setSkyColor(new MFColor(new float[] {0.1f,0.1f,0.4f})))
+    .addChild(new Viewpoint().setDescription("Table 5.18 SFImage component examples").setPosition(0.0f,0.0f,14.0f))
+    .addChild(new Transform().setTranslation(-6.0f,0.0f,0.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setTexture(new PixelTexture("ZeroComponents")))
+        .setGeometry(new Box()))
+      .addChild(new Transform().setTranslation(0.0f,-2.0f,0.0f)
+        .addChild(new Shape()
+          .setGeometry(new Text().setString(new String[] {"0"})
+            .setFontStyle(new FontStyle("CenterJustify").setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE)))
+          .setAppearance(new Appearance("TextMaterial")
+            .setMaterial(new Material().setDiffuseColor(1.0f,1.0f,1.0f))))))
+    .addChild(new Transform().setTranslation(-3.0f,0.0f,0.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setTexture(new PixelTexture("OneComponent").setImage(new int[] {1,2,1,0xFF,0x00})))
+        .setGeometry(new Box()))
+      .addChild(new Transform().setTranslation(0.0f,-2.0f,0.0f)
+        .addChild(new Shape()
+          .setGeometry(new Text().setString(new String[] {"1"})
+            .setFontStyle(new FontStyle().setUSE("CenterJustify")))
+          .setAppearance(new Appearance().setUSE("TextMaterial")))))
+    .addChild(new Transform()
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setTexture(new PixelTexture("TwoComponents").setImage(new int[] {2,1,2,0xCCFF,0x2277})))
+        .setGeometry(new Box()))
+      .addChild(new Transform().setTranslation(0.0f,-2.0f,0.0f)
+        .addChild(new Shape()
+          .setGeometry(new Text().setString(new String[] {"2"})
+            .setFontStyle(new FontStyle().setUSE("CenterJustify")))
+          .setAppearance(new Appearance().setUSE("TextMaterial")))))
+    .addChild(new Transform().setTranslation(3.0f,0.0f,0.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
           .addComments(" note 0x000000 = 0 ")
-          .setTexture(new PixelTextureObject("ThreeComponents").setImage(new int[] {2,4,3,0xFF0000,0xFF00,0x000000,0,0,0,0xFFFFFF,0xFFFF00})))
-        .setGeometry(new BoxObject()))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
-        .addChild(new ShapeObject()
-          .setGeometry(new TextObject().setString(new String[] {"3"})
-            .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
-          .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
-    .addChild(new TransformObject().setTranslation(6.0f,0.0f,0.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
+          .setTexture(new PixelTexture("ThreeComponents").setImage(new int[] {2,4,3,0xFF0000,0xFF00,0x000000,0,0,0,0xFFFFFF,0xFFFF00})))
+        .setGeometry(new Box()))
+      .addChild(new Transform().setTranslation(0.0f,-2.0f,0.0f)
+        .addChild(new Shape()
+          .setGeometry(new Text().setString(new String[] {"3"})
+            .setFontStyle(new FontStyle().setUSE("CenterJustify")))
+          .setAppearance(new Appearance().setUSE("TextMaterial")))))
+    .addChild(new Transform().setTranslation(6.0f,0.0f,0.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
           .addComments(" Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 ")
-          .setTexture(new PixelTextureObject("FourComponents").setImage(new int[] {3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F})))
-        .setGeometry(new BoxObject()))
-      .addChild(new TransformObject().setTranslation(0.0f,-2.0f,0.0f)
-        .addChild(new ShapeObject()
-          .setGeometry(new TextObject().setString(new String[] {"4"})
-            .setFontStyle(new FontStyleObject().setUSE("CenterJustify")))
-          .setAppearance(new AppearanceObject().setUSE("TextMaterial")))))
+          .setTexture(new PixelTexture("FourComponents").setImage(new int[] {3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F})))
+        .setGeometry(new Box()))
+      .addChild(new Transform().setTranslation(0.0f,-2.0f,0.0f)
+        .addChild(new Shape()
+          .setGeometry(new Text().setString(new String[] {"4"})
+            .setFontStyle(new FontStyle().setUSE("CenterJustify")))
+          .setAppearance(new Appearance().setUSE("TextMaterial")))))
     .addComments(" Background from PixelTextureBW.x3d ")
-    .addChild(new TransformObject().setTranslation(0.0f,6.0f,-2.0f)
-      .addChild(new ShapeObject()
-        .setAppearance(new AppearanceObject()
-          .setTexture(new PixelTextureObject().setImage(new int[] {8,8,1,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc})))
-        .setGeometry(new BoxObject().setSize(16.0f,16.0f,.1f)))));
+    .addChild(new Transform().setTranslation(0.0f,6.0f,-2.0f)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setTexture(new PixelTexture().setImage(new int[] {8,8,1,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0x00,0xcc,0x00,0xcc,0x00,0xcc,0x00,0xcc})))
+        .setGeometry(new Box().setSize(16.0f,16.0f,.1f)))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
-	private X3DObject x3dModel;
+	private X3D x3dModel;
 
 	/** Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html">X3DObject</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
 	 * @return PixelTextureComponentExamples model
 	 */
-	public X3DObject getX3dModel()
+	public X3D getX3dModel()
 	{	  
 		return x3dModel;
 	}
 	   
     /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#handleArguments-java.lang.String:A-">X3DObject.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3DObject.html#validationReport--">X3DObject.validationReport()</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
-        X3DObject thisExampleX3dObject = new PixelTextureComponentExamples().getX3dModel();
+        X3D thisExampleX3dModel = new PixelTextureComponentExamples().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -220,15 +220,15 @@ public class PixelTextureComponentExamples
 				{
 					validate = true; // making sure
 				}
-				if (arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3D) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_CLASSICVRML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_X3DB) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_VRML97) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_EXI) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_GZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_ZIP) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_HTML) ||
-					arg.toLowerCase().endsWith(X3DObject.FILE_EXTENSION_XHTML))
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
 				{
 					argumentsLoadNewModel = true;
 					fileName = arg;
@@ -238,12 +238,12 @@ public class PixelTextureComponentExamples
 		if      (argumentsLoadNewModel)
 			System.out.println("WARNING: \"PixelTextureComponentExamples\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
-			thisExampleX3dObject.handleArguments(args);
+			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
 			System.out.print("Java program \"PixelTextureComponentExamples\" self-validation test results: ");
-			String validationResults = thisExampleX3dObject.validationReport();
+			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
     }

@@ -73,53 +73,53 @@ qq3.prototype = {
   {
 
 	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #12, 34 total numbers made up of 17 2-tuple values */
-	this.Extrusion_8_12_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(Java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], Java.type("float[]"))))
-	.append(new MFVec2fObject(Java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], Java.type("float[]"))));
+	this.Extrusion_8_12_crossSection = new MFVec2f() /* splitting up long array to improve readability */
+	.append(new MFVec2f(Java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], Java.type("float[]"))))
+	.append(new MFVec2f(Java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], Java.type("float[]"))));
 
 	/** Large attribute array: Extrusion crossSection field, scene-graph level=8, element #17, 34 total numbers made up of 17 2-tuple values */
-	this.Extrusion_8_17_crossSection = new MFVec2fObject() /* splitting up long array to improve readability */
-	.append(new MFVec2fObject(Java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], Java.type("float[]"))))
-	.append(new MFVec2fObject(Java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], Java.type("float[]"))));
-  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
-  .setHead(new headObject()
-    .addMeta(new metaObject().setName("title").setContent("qq3.x3d"))
-    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("translator").setContent("John Carlson"))
-    .addMeta(new metaObject().setName("created").setContent("11 Jan 2015"))
-    .addMeta(new metaObject().setName("modified").setContent("05 May 2017"))
-    .addMeta(new metaObject().setName("description").setContent("12 extrusions to test prototype expander"))
-    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/x3d/qq3.x3d"))
-    .addMeta(new metaObject().setName("generator").setContent("manual")))
-  .setScene(new SceneObject()
-    .addChild(new ProtoDeclareObject().setName("Process")
-      .setProtoBody(new ProtoBodyObject()
-        .addChild(new GroupObject()
+	this.Extrusion_8_17_crossSection = new MFVec2f() /* splitting up long array to improve readability */
+	.append(new MFVec2f(Java.to([1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38], Java.type("float[]"))))
+	.append(new MFVec2f(Java.to([-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00], Java.type("float[]"))));
+  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
+  .setHead(new head()
+    .addMeta(new meta().setName("title").setContent("qq3.x3d"))
+    .addMeta(new meta().setName("creator").setContent("John Carlson"))
+    .addMeta(new meta().setName("translator").setContent("John Carlson"))
+    .addMeta(new meta().setName("created").setContent("11 Jan 2015"))
+    .addMeta(new meta().setName("modified").setContent("05 May 2017"))
+    .addMeta(new meta().setName("description").setContent("12 extrusions to test prototype expander"))
+    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/x3d/qq3.x3d"))
+    .addMeta(new meta().setName("generator").setContent("manual")))
+  .setScene(new Scene()
+    .addChild(new ProtoDeclare().setName("Process")
+      .setProtoBody(new ProtoBody()
+        .addChild(new Group()
           .addComments(" left ")
-          .addChild(new TransformObject().setScale(0.5,0.5,0.5)
-            .addChild(new ShapeObject("ShapeLeftDown")
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(0.7,1.0,0.0)))
-              .setGeometry(new ExtrusionObject().setSpine(new MFVec3fObject(Java.to([-2.5,0.0,0.0,-1.5,0.0,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection))))
+          .addChild(new Transform().setScale(0.5,0.5,0.5)
+            .addChild(new Shape("ShapeLeftDown")
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setDiffuseColor(0.7,1.0,0.0)))
+              .setGeometry(new Extrusion().setSpine(new MFVec3f(Java.to([-2.5,0.0,0.0,-1.5,0.0,0.0], Java.type("float[]")))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection))))
           .addComments(" right ")
-          .addChild(new TransformObject().setScale(0.5,0.5,0.5)
-            .addChild(new ShapeObject("ShapeUpRight")
-              .setAppearance(new AppearanceObject()
-                .setMaterial(new MaterialObject().setDiffuseColor(0.0,0.7,1.0)))
-              .setGeometry(new ExtrusionObject().setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new MFVec3fObject(Java.to([1.5,0.0,0.0,2.5,0.0,0.0], Java.type("float[]")))))))
+          .addChild(new Transform().setScale(0.5,0.5,0.5)
+            .addChild(new Shape("ShapeUpRight")
+              .setAppearance(new Appearance()
+                .setMaterial(new Material().setDiffuseColor(0.0,0.7,1.0)))
+              .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new MFVec3f(Java.to([1.5,0.0,0.0,2.5,0.0,0.0], Java.type("float[]")))))))
           .addComments(" up ")
-          .addChild(new TransformObject().setScale(0.5,0.5,0.5)
-            .addChild(new ShapeObject().setUSE("ShapeUpRight")))
+          .addChild(new Transform().setScale(0.5,0.5,0.5)
+            .addChild(new Shape().setUSE("ShapeUpRight")))
           .addComments(" down ")
-          .addChild(new TransformObject().setScale(0.5,0.5,0.5)
-            .addChild(new ShapeObject().setUSE("ShapeLeftDown"))))))
-    .addChild(new ViewpointObject().setDescription("Process pipes").setPosition(0.0,5.0,12.0).setOrientation(1.0,0.0,0.0,-0.4))
-    .addChild(new TransformObject().setTranslation(0.0,-2.5,0.0)
-      .addChild(new ProtoInstanceObject().setName("Process")))
-    .addChild(new TransformObject()
-      .addChild(new ProtoInstanceObject().setName("Process")))
-    .addChild(new TransformObject().setTranslation(0.0,2.5,0.0)
-      .addChild(new ProtoInstanceObject().setName("Process"))));
+          .addChild(new Transform().setScale(0.5,0.5,0.5)
+            .addChild(new Shape().setUSE("ShapeLeftDown"))))))
+    .addChild(new Viewpoint().setDescription("Process pipes").setPosition(0.0,5.0,12.0).setOrientation(1.0,0.0,0.0,-0.4))
+    .addChild(new Transform().setTranslation(0.0,-2.5,0.0)
+      .addChild(new ProtoInstance().setName("Process")))
+    .addChild(new Transform()
+      .addChild(new ProtoInstance().setName("Process")))
+    .addChild(new Transform().setTranslation(0.0,2.5,0.0)
+      .addChild(new ProtoInstance().setName("Process"))));
   },
   // end of initialize() method
 
@@ -153,11 +153,11 @@ qq3.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(metaObject.NAME_ERROR) ||
-				meta.getName().equals(metaObject.NAME_WARNING) ||
-				meta.getName().equals(metaObject.NAME_HINT) ||
-				meta.getName().equals(metaObject.NAME_INFO) ||
-				meta.getName().equals(metaObject.NAME_TODO))
+			if (meta.getName().equals(meta.NAME_ERROR) ||
+				meta.getName().equals(meta.NAME_WARNING) ||
+				meta.getName().equals(meta.NAME_HINT) ||
+				meta.getName().equals(meta.NAME_INFO) ||
+				meta.getName().equals(meta.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
