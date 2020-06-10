@@ -1,81 +1,83 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Interchange",
     "@version": "3.1",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.1.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "IcosahedronSubdivisionLevel5.x3d",
-          "@name": "title"
-        },
-        {
-          "@content": "IcosahedronSubdivisionLevel5.ply",
-          "@name": "reference"
-        },
-        {
-          "@content": "Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles.",
-          "@name": "description"
-        },
-        {
-          "@content": "13 September 2014",
-          "@name": "created"
-        },
-        {
-          "@content": "27 September 2014",
-          "@name": "modified"
-        },
-        {
-          "@content": "Don Brutzman",
-          "@name": "creator"
-        },
-        {
-          "@content": "Icosahedron.x3d",
-          "@name": "reference"
-        },
-        {
-          "@content": "https://en.wikipedia.org/wiki/Icosahedron",
-          "@name": "reference"
-        },
-        {
-          "@content": "https://en.wiktionary.org/wiki/icosahedron",
-          "@name": "reference"
-        },
-        {
-          "@content": "https://en.wikipedia.org/wiki/Platonic_solid",
-          "@name": "reference"
-        },
-        {
-          "@content": "https://en.wikipedia.org/wiki/Geodesic_grid",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "Meshlab X3D Exported, http://meshlab.sourceforge.net",
-          "@name": "generator"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "1 May 2020"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@name": "title",
+          "@content": "IcosahedronSubdivisionLevel5.x3d"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "IcosahedronSubdivisionLevel5.ply"
+        },
+        {
+          "@name": "description",
+          "@content": "Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles."
+        },
+        {
+          "@name": "created",
+          "@content": "13 September 2014"
+        },
+        {
+          "@name": "modified",
+          "@content": "27 September 2014"
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman"
+        },
+        {
+          "@name": "reference",
+          "@content": "Icosahedron.x3d"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikipedia.org/wiki/Icosahedron"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wiktionary.org/wiki/icosahedron"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikipedia.org/wiki/Platonic_solid"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikipedia.org/wiki/Geodesic_grid"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "Meshlab X3D Exported, http://meshlab.sourceforge.net"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "10 June 2020"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -112778,8 +112780,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

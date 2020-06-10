@@ -1,4 +1,4 @@
-import xml.etree.ElementTree
+from bs4 import BeautifulSoup
 import re
 
 class ClassPrinter:
@@ -6,13 +6,13 @@ class ClassPrinter:
         self.node = node
         self.parents = []
 
-        addinhers = self.node.iter("AdditionalInheritance")
+        addinhers = self.node.find_all("AdditionalInheritance")
         for addinher in addinhers:
-            self.parents.append(addinher.get('baseType'))
+            self.parents.append(addinher['baseType'])
 
-        inhers = self.node.iter("Inheritance")
+        inhers = self.node.find_all("Inheritance")
         for inher in inhers:
-            self.parents.append(inher.get('baseType'))
+            self.parents.append(inher['baseType'])
 
         self.componentInfo = self.node.find("InterfaceDefinition").find("componentInfo")
         self.metaInfo = metaInfo
@@ -30,48 +30,49 @@ class ClassPrinter:
             except:
                 pass
         try:
-            package = self.componentInfo.get('name')
+            package = self.componentInfo['name']
         except:
             package = "fields"
         package = re.sub(r"-", "", package)
-        superpackage = "sai"
-        if self.metaInfo == "Object":
-                superpackage = "jsail"
-        if self.node.get('type') in ['SFNode', 'MFNode']:
-            return str
+        superpackage = "jsail"
         try:
-            str += self.node.get('name') + " = autoclass('org.web3d.x3d."+superpackage+"."+package+"." + self.node.get('name') + self.metaInfo + "')\n"
+            if self.node['name'] in ["X3DBoundedObject", "X3DPickableObject", "X3DPrototypeInstance", "X3DUrlObject", "X3DFogObject", "X3DMetadataObject", "X3DProgrammableShaderObject"] or self.node['name'].endswith("Node") and not self.node['name'] in ["SFNode", "MFNode", "X3DConcreteNode"]:
+                superpackage = "sai"
+            str += self.node['name'] + " = autoclass('org.web3d.x3d."+superpackage+"."+package+"." + self.node['name'] + self.metaInfo + "')\n"
         except:
-            str += self.node.get('type') + " = autoclass('org.web3d.x3d."+superpackage+"."+package+"." + self.node.get('type') + self.metaInfo + "')\n"
+            if self.node['type'] in ["X3DBoundedObject", "X3DPickableObject", "X3DPrototypeInstance", "X3DUrlObject", "X3DFogObject", "X3DMetadataObject", "X3DProgrammableShaderObject"] or self.node['type'].endswith("Node") and not self.node['type'] in ["SFNode", "MFNode", "X3DConcreteNode"]:
+                superpackage = "sai"
+            str += self.node['type'] + " = autoclass('org.web3d.x3d."+superpackage+"."+package+"." + self.node['type'] + self.metaInfo + "')\n"
         self.printed = True
         return str
 
 code = ""
 code += "CommentsBlock = autoclass('org.web3d.x3d.jsail.Core.CommentsBlock')\n"
 
-soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
+soup = BeautifulSoup(open("../../specifications/X3dUnifiedObjectModel-4.0.xml"), "xml")
 
 
 classes = {}
 
-#ants = soup.iter("AbstractNodeType")
-#for ant in ants:
-#    classes[ant.get('name')] = ClassPrinter(ant, "")
-#
-#aots = soup.iter("AbstractObjectType")
-#for aot in aots:
-#    classes[aot.get('name')] = ClassPrinter(aot, "")
-cns = soup.iter("ConcreteNode")
+ants = soup.find_all("AbstractNodeType")
+for ant in ants:
+    classes[ant['name']] = ClassPrinter(ant, "")
+
+aots = soup.find_all("AbstractObjectType")
+for aot in aots:
+    classes[aot['name']] = ClassPrinter(aot, "")
+
+cns = soup.find_all("ConcreteNode")
 for cn in cns:
-    classes[cn.get('name')] = ClassPrinter(cn, "Object")
+    classes[cn['name']] = ClassPrinter(cn, "")
 
-sts = soup.iter("Statement")
+sts = soup.find_all("Statement")
 for st in sts:
-    classes[st.get('name')] = ClassPrinter(st, "Object")
+    classes[st['name']] = ClassPrinter(st, "")
 
-fts = soup.iter("FieldType")
+fts = soup.find_all("FieldType")
 for ft in fts:
-    classes[ft.get('type')] = ClassPrinter(ft, "Object")
+    classes[ft['type']] = ClassPrinter(ft, "")
 
 for k,v in classes.items():
     cls = v.printClass()
@@ -79,15 +80,8 @@ for k,v in classes.items():
         code +=  cls
 
 f = open("x3dpsail.py", "w")
-
-f.write("""
-# Configuration file for Pyjnius to map X3DJSAIL concrete classes to native Python classes
-# Note that no abstract base classes are included, only nodes and simple types
-
-""")
-#f.write("import classpath\n") # note alternate form:
 f.write("import jnius_config\n")
-f.write("jnius_config.set_classpath('c:/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', '../../../jars/X3DJSAIL.4.0.full.jar', '.')\n")
+f.write("jnius_config.set_classpath('.', 'c:/x3d-code/www.web3d.org/x3d/stylesheets/java/jars/X3DJSAIL.4.0.full.jar', './X3DJSAIL.4.0.full.jar')\n")
 
 f.write('from jnius import autoclass\n')
 f.write(code)

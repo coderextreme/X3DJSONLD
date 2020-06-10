@@ -186,13 +186,16 @@ X3DJSON['Script']['Scene']['../data/Java.json']['colorTypeConversionScript'] = f
 		console.error('Problems setting colorsOutput',e);
 	}
 
+
 ecmascript:
 
 	this.colorInput = function (eventValue) // Example source code
 {
    this.proxy.colorsOutput = new MFColor(eventValue); // assigning value sends output event
 // console.error('this.proxy.colorInput=' + eventValue + ', this.proxy.colorsOutput=' + this.proxy.colorsOutput + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -308,6 +311,7 @@ X3DJSON['Script']['Scene']['../data/Java.json']['DECLMaterialModulator_MyMateria
 		console.error('Problems setting clockTrigger',e);
 	}
 
+
 ecmascript:
 	this.initialize = function ()
 {
@@ -332,7 +336,9 @@ ecmascript:
 	{
 		console.error ('this.proxy.diffuseColor=(' + red + ',' + green + ',' + blue + ') this.proxy.newColor=' + this.proxy.newColor.toString() + '');
 	}
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

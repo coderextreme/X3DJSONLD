@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.1.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.1.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.1 of X3D -->
-<!-- Generated 2020-05-25-07:00 10:46:50.77-07:00 -->
+<!-- Generated 2020-06-06-07:00 18:52:19.839-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.1"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -912,7 +912,6 @@
          <enumeration value="leftToRight"/>
          <enumeration value="lineSegments"/>
          <enumeration value="mustEvaluate"/>
-         <enumeration value="name"/>
          <enumeration value="normalIndex"/>
          <enumeration value="normalPerVertex"/>
          <enumeration value="numComponents"/>
@@ -1273,7 +1272,6 @@
          <enumeration value="stiffness"/>
          <enumeration value="stopBounce"/>
          <enumeration value="stopErrorCorrection"/>
-         <enumeration value="stop1ErrorCorrection"/>
          <enumeration value="stop1ConstantForceMix"/>
          <enumeration value="stop1Bounce"/>
          <enumeration value="stop2Bounce"/>
@@ -5966,7 +5964,7 @@
             <Inheritance baseType="X3DGeometryNode"/>
             <field name="bottom"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"/>
             <field name="bottomRadius"
                    type="SFFloat"
@@ -6295,7 +6293,7 @@
             <Inheritance baseType="X3DGeometryNode"/>
             <field name="bottom"
                    type="SFBool"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="true"/>
             <field name="height"
                    type="SFFloat"
@@ -13635,7 +13633,7 @@
                    inheritedFrom="X3DNode"/>
             <field name="type"
                    type="SFString"
-                   accessType="inputOutput"
+                   accessType="initializeOnly"
                    default="VERTEX"
                    additionalEnumerationValuesAllowed="true"
                    simpleType="shaderPartTypeValues"
@@ -13696,7 +13694,7 @@
                    inheritedFrom="X3DNode"/>
             <field name="type"
                    type="SFString"
-                   accessType="inputOutput"
+                   accessType="initializeOnly"
                    default="VERTEX"
                    additionalEnumerationValuesAllowed="true"
                    simpleType="shaderPartTypeValues"

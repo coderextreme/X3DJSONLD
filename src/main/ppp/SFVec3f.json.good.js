@@ -239,6 +239,7 @@ X3DJSON['Script']['Scene']['../data/SFVec3f.json']['Bounce2'] = function() {
 		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
+
 ecmascript:
 		
 	this.newBubble = function () {
@@ -275,6 +276,8 @@ ecmascript:
 	this.initialize = function () {
 			     this.newBubble();
 			}
+
+
 ;
 
 };

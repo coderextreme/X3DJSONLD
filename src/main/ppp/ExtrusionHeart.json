@@ -1,53 +1,55 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "ExtrusionHeart.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "ExtrusionHeart.x3d"
         },
         {
-          "@content": "Simple extrusion of a Valentine heart.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Simple extrusion of a Valentine heart."
         },
         {
-          "@content": "Class participants in course Introduction to VRML/X3D.",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Class participants in course Introduction to VRML/X3D."
         },
         {
-          "@content": "14 February 2001",
-          "@name": "created"
+          "@name": "created",
+          "@content": "14 February 2001"
         },
         {
-          "@content": "27 November 2015",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "27 November 2015"
         },
         {
-          "@content": "http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "1 May 2020"
+          "@name": "identifier",
+          "@content": "http://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "10 June 2020"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -161,8 +163,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

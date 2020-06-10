@@ -37,7 +37,7 @@ JavaScriptSerializer.prototype = {
 		str += "ConfigurationProperties.deleteIntermediateFiles = false;\n";
 		str += "ConfigurationProperties.setStripTrailingZeroes(true);\n";
 		// we figure out body first and print it out later
-		var body = "      var "+element.nodeName+0+" =  new "+element.nodeName+"Object()";
+		var body = "      var "+element.nodeName+0+" =  new "+element.nodeName+"()";
 		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
 		for (var po in this.precode) {
 			str += this.precode[po];
@@ -159,7 +159,7 @@ JavaScriptSerializer.prototype = {
 									return y;
 								}), this.codeno, '","', '"', '"');
 						} else if (attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
-							strval = "fieldObject.TYPE_"+attrs[a].nodeValue.toUpperCase();
+							strval = "field.TYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else {
 							strval = '"'+attrs[a].nodeValue.
 								replace(/\\n/g, '\\\\n').
@@ -205,7 +205,7 @@ JavaScriptSerializer.prototype = {
 						strval = "";
 					} else if (attrType === "SFString") {
 						if (attr === "accessType") {
-							strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
+							strval = "field.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else {
 							strval = '"'+attrs[a].nodeValue.
 								replace(/(\\+)([^&\\"]|$)/g, '$1$1$2').
@@ -338,7 +338,7 @@ JavaScriptSerializer.prototype = {
 					ch += node.nodeName+stack[0] + " = ";
 				}
 
-				ch += "new "+node.nodeName+"Object()";
+				ch += "new "+node.nodeName+"()";
 				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "}";

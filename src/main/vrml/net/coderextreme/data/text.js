@@ -65,7 +65,7 @@ Script18.field[0] = field19;
 
 
 Script18.setSourceCode(`ecmascript:\n"+
-"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';`)
+"			    var me = '\"1\" \"\"2\" \"\\n3\"';`)
 Transform2.children[3] = Script18;
 
 browser.currentScene.children = new MFNode();

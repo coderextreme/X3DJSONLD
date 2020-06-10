@@ -222,6 +222,7 @@ X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G1_MB1'] = function
 		console.error('Problems setting keyValue',e);
 	}
 
+
 ecmascript:
 	
 	this.set_location = function (value) {
@@ -229,7 +230,9 @@ ecmascript:
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.translation);
-		};
+		}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -345,6 +348,7 @@ X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G2_MB1'] = function
 		console.error('Problems setting keyValue',e);
 	}
 
+
 ecmascript:
 	
 	this.set_location = function (value) {
@@ -352,7 +356,9 @@ ecmascript:
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.translation);
-		};
+		}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -468,6 +474,7 @@ X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G3_MB1'] = function
 		console.error('Problems setting keyValue',e);
 	}
 
+
 ecmascript:
 	
 	this.set_location = function (value) {
@@ -475,7 +482,9 @@ ecmascript:
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.translation);
-		};
+		}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -591,6 +600,7 @@ X3DJSON['Script']['Scene']['../data/arcold.json']['DECLpoint_G4_MB1'] = function
 		console.error('Problems setting keyValue',e);
 	}
 
+
 ecmascript:
 	
 	this.set_location = function (value) {
@@ -598,7 +608,9 @@ ecmascript:
 		    this.proxy.translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 		    // console.error(this.proxy.translation);
-		};
+		}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -749,7 +761,8 @@ X3DJSON['Script']['Scene']['../data/arcold.json']['DECLx3dconnector_connector1_S
 		console.log('Problems setting endpoint '+e);
 		console.error('Problems setting endpoint',e);
 	}
-ecmascript:
+
+            ecmascript:
        
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -800,7 +813,9 @@ ecmascript:
 
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(this.proxy.startnode.translation,val || this.proxy.endnode.translation);
-        };
+        }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -951,7 +966,8 @@ X3DJSON['Script']['Scene']['../data/arcold.json']['DECLx3dconnector_connector2_S
 		console.log('Problems setting endpoint '+e);
 		console.error('Problems setting endpoint',e);
 	}
-ecmascript:
+
+            ecmascript:
        
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -1002,7 +1018,9 @@ ecmascript:
 
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(this.proxy.startnode.translation,val || this.proxy.endnode.translation);
-        };
+        }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -1153,7 +1171,8 @@ X3DJSON['Script']['Scene']['../data/arcold.json']['DECLx3dconnector_connector3_S
 		console.log('Problems setting endpoint '+e);
 		console.error('Problems setting endpoint',e);
 	}
-ecmascript:
+
+            ecmascript:
        
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -1204,7 +1223,9 @@ ecmascript:
 
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(this.proxy.startnode.translation,val || this.proxy.endnode.translation);
-        };
+        }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

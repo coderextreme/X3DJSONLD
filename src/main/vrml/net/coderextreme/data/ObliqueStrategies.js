@@ -82,12 +82,12 @@ browser.currentScene.children[3] = Transform5;
 let Script18 = browser.currentScene.createNode("Script");
 Script18.DEF = "TextScript";
 Script18.url = new MFString(new java.lang.String["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"]);
-// initialize() method includes unit test to printAllStrategies() to console 
-// TODO insert field definitions here (index string_changed previous next random) and then animate! 
+//initialize() method includes unit test to printAllStrategies() to console
+//TODO insert field definitions here (index string_changed previous next random) and then animate!
 let field19 = browser.currentScene.createNode("field");
+field19.name = "index";
 field19.accessType = "initializeOnly";
 field19.appinfo = "index for active strategy card, -1 means no selection";
-field19.name = "index";
 field19.type = "SFInt32";
 field19.value = "0";
 Script18.field = new MFNode();
@@ -95,48 +95,48 @@ Script18.field = new MFNode();
 Script18.field[0] = field19;
 
 let field20 = browser.currentScene.createNode("field");
+field20.name = "string_changed";
 field20.accessType = "outputOnly";
 field20.appinfo = "latest strategy card value";
-field20.name = "string_changed";
 field20.type = "MFString";
 Script18.field[1] = field20;
 
 let field21 = browser.currentScene.createNode("field");
+field21.name = "textToSpeechUrl";
 field21.accessType = "outputOnly";
 field21.appinfo = "\"url to invoke Google Translate\"";
-field21.name = "textToSpeechUrl";
 field21.type = "MFString";
 Script18.field[2] = field21;
 
 let field22 = browser.currentScene.createNode("field");
+field22.name = "newCardTime";
 field22.accessType = "outputOnly";
 field22.appinfo = "activate Sound node";
-field22.name = "newCardTime";
 field22.type = "SFTime";
 Script18.field[3] = field22;
 
 let field23 = browser.currentScene.createNode("field");
-field23.accessType = "inputOnly";
 field23.name = "selectPreviousCard";
+field23.accessType = "inputOnly";
 field23.type = "SFBool";
 Script18.field[4] = field23;
 
 let field24 = browser.currentScene.createNode("field");
-field24.accessType = "inputOnly";
 field24.name = "selectNextCard";
+field24.accessType = "inputOnly";
 field24.type = "SFBool";
 Script18.field[5] = field24;
 
 let field25 = browser.currentScene.createNode("field");
-field25.accessType = "inputOnly";
 field25.name = "selectRandomCard";
+field25.accessType = "inputOnly";
 field25.type = "SFBool";
 Script18.field[6] = field25;
 
 let field26 = browser.currentScene.createNode("field");
+field26.name = "traceEnabled";
 field26.accessType = "initializeOnly";
 field26.appinfo = "controls console tracing";
-field26.name = "traceEnabled";
 field26.type = "SFBool";
 field26.value = "true";
 Script18.field[7] = field26;
@@ -182,10 +182,10 @@ Sound34.maxBack = 100;
 Sound34.maxFront = 100;
 Sound34.minBack = 20;
 Sound34.minFront = 20;
-// Make sure the sound source AudioClip is audible at the user location 
-// Not all X3D players seem to use the .mp3 
-// &#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players 
-// %20 is space character used in uri/url encoding 
+//Make sure the sound source AudioClip is audible at the user location
+//Not all X3D players seem to use the .mp3
+//&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players
+//%20 is space character used in uri/url encoding
 let AudioClip35 = browser.currentScene.createNode("AudioClip");
 AudioClip35.DEF = "TextToSpeechAudioClip";
 AudioClip35.description = "sends strategy text google translate";
@@ -250,7 +250,7 @@ let Transform46 = browser.currentScene.createNode("Transform");
 Transform46.scale = new SFVec3f(new float[2,0.6,1]);
 let Shape47 = browser.currentScene.createNode("Shape");
 Shape47.DEF = "TransparentClickSurface";
-// support Selectable Text with a scalable IFS 
+//support Selectable Text with a scalable IFS
 let IndexedFaceSet48 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet48.coordIndex = new MFInt32(new int[0,1,2,3,-1]);
 IndexedFaceSet48.solid = False;

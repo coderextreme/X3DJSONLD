@@ -23,8 +23,8 @@ browser.currentScene.children[2] = Viewpoint4;
 
 let ProtoDeclare5 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="org" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="posi" value="0 0 0"></field>
-<field accessType="initializeOnly" type="SFColor" name="col" value="0 0 0"></field>
+<ProtoDeclare name="org" ><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
+<field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><IS><connect nodeField="translation" protoField="posi"></connect>
 </IS>
@@ -40,18 +40,18 @@ let ProtoDeclare5 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 ProtoDeclare5.name = "org";
 let ProtoInterface6 = browser.currentScene.createNode("ProtoInterface");
 let field7 = browser.currentScene.createNode("field");
+field7.name = "posi";
 field7.accessType = "initializeOnly";
 field7.type = "SFVec3f";
-field7.name = "posi";
 field7.value = "0 0 0";
 ProtoInterface6.field = new MFNode();
 
 ProtoInterface6.field[0] = field7;
 
 let field8 = browser.currentScene.createNode("field");
+field8.name = "col";
 field8.accessType = "initializeOnly";
 field8.type = "SFColor";
-field8.name = "col";
 field8.value = "0 0 0";
 ProtoInterface6.field[1] = field8;
 
@@ -105,7 +105,7 @@ browser.currentScene.children[3] = ProtoDeclare5;
 
 let ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="r" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="r" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0 0.300000011920929 1"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
@@ -116,9 +116,9 @@ let ProtoDeclare19 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 ProtoDeclare19.name = "r";
 let ProtoInterface20 = browser.currentScene.createNode("ProtoInterface");
 let field21 = browser.currentScene.createNode("field");
+field21.name = "pos";
 field21.accessType = "initializeOnly";
 field21.type = "SFVec3f";
-field21.name = "pos";
 field21.value = "0 0 0";
 ProtoInterface20.field = new MFNode();
 
@@ -156,7 +156,7 @@ browser.currentScene.children[4] = ProtoDeclare19;
 
 let ProtoDeclare27 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="n" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="n" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="1 0 0.200000002980232"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
@@ -167,9 +167,9 @@ let ProtoDeclare27 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 ProtoDeclare27.name = "n";
 let ProtoInterface28 = browser.currentScene.createNode("ProtoInterface");
 let field29 = browser.currentScene.createNode("field");
+field29.name = "pos";
 field29.accessType = "initializeOnly";
 field29.type = "SFVec3f";
-field29.name = "pos";
 field29.value = "0 0 0";
 ProtoInterface28.field = new MFNode();
 
@@ -207,7 +207,7 @@ browser.currentScene.children[5] = ProtoDeclare27;
 
 let ProtoDeclare35 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="i" ><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="pos" value="0 0 0"></field>
+<ProtoDeclare name="i" ><ProtoInterface><field name="pos" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><ProtoInstance name="org"><fieldValue name="col" value="0.600000023841858 0 0.600000023841858"></fieldValue>
 <IS><connect nodeField="posi" protoField="pos"></connect>
@@ -218,9 +218,9 @@ let ProtoDeclare35 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 ProtoDeclare35.name = "i";
 let ProtoInterface36 = browser.currentScene.createNode("ProtoInterface");
 let field37 = browser.currentScene.createNode("field");
+field37.name = "pos";
 field37.accessType = "initializeOnly";
 field37.type = "SFVec3f";
-field37.name = "pos";
 field37.value = "0 0 0";
 ProtoInterface36.field = new MFNode();
 
@@ -259,7 +259,7 @@ browser.currentScene.children[6] = ProtoDeclare35;
 let Transform43 = browser.currentScene.createNode("Transform");
 Transform43.translation = new SFVec3f(new float[-468,0,315]);
 let Anchor44 = browser.currentScene.createNode("Anchor");
-Anchor44.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor44.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor44.description = "High Peak Community Arts";
 let ProtoInstance45 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance45.name = "r";
@@ -279,7 +279,7 @@ Transform43.children = new MFNode();
 Transform43.children[0] = Anchor44;
 
 let Anchor47 = browser.currentScene.createNode("Anchor");
-Anchor47.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor47.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor47.description = "People Express";
 let ProtoInstance48 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance48.name = "i";
@@ -297,7 +297,7 @@ Anchor47.children[0] = ProtoInstance48;
 Transform43.children[1] = Anchor47;
 
 let Anchor50 = browser.currentScene.createNode("Anchor");
-Anchor50.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor50.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor50.description = "QArts/Studios";
 let ProtoInstance51 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance51.name = "i";
@@ -315,7 +315,7 @@ Anchor50.children[0] = ProtoInstance51;
 Transform43.children[2] = Anchor50;
 
 let Anchor53 = browser.currentScene.createNode("Anchor");
-Anchor53.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor53.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor53.description = "First Movement";
 let ProtoInstance54 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance54.name = "n";
@@ -333,7 +333,7 @@ Anchor53.children[0] = ProtoInstance54;
 Transform43.children[3] = Anchor53;
 
 let Anchor56 = browser.currentScene.createNode("Anchor");
-Anchor56.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor56.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor56.description = "City Arts";
 let ProtoInstance57 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance57.name = "i";
@@ -351,7 +351,7 @@ Anchor56.children[0] = ProtoInstance57;
 Transform43.children[4] = Anchor56;
 
 let Anchor59 = browser.currentScene.createNode("Anchor");
-Anchor59.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor59.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor59.description = "Indigo Dance Group (Salamanda Tandem)";
 let ProtoInstance60 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance60.name = "r";
@@ -369,7 +369,7 @@ Anchor59.children[0] = ProtoInstance60;
 Transform43.children[5] = Anchor59;
 
 let Anchor62 = browser.currentScene.createNode("Anchor");
-Anchor62.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor62.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor62.description = "Watering Seeds";
 let ProtoInstance63 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance63.name = "r";
@@ -387,7 +387,7 @@ Anchor62.children[0] = ProtoInstance63;
 Transform43.children[6] = Anchor62;
 
 let Anchor65 = browser.currentScene.createNode("Anchor");
-Anchor65.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor65.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor65.description = "Fased In The Arts";
 let ProtoInstance66 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance66.name = "r";
@@ -405,7 +405,7 @@ Anchor65.children[0] = ProtoInstance66;
 Transform43.children[7] = Anchor65;
 
 let Anchor68 = browser.currentScene.createNode("Anchor");
-Anchor68.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor68.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor68.description = "27a Access Artspace";
 let ProtoInstance69 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance69.name = "n";
@@ -423,7 +423,7 @@ Anchor68.children[0] = ProtoInstance69;
 Transform43.children[8] = Anchor68;
 
 let Anchor71 = browser.currentScene.createNode("Anchor");
-Anchor71.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor71.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor71.description = "Bamboozle Theatre Company";
 let ProtoInstance72 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance72.name = "r";
@@ -441,7 +441,7 @@ Anchor71.children[0] = ProtoInstance72;
 Transform43.children[9] = Anchor71;
 
 let Anchor74 = browser.currentScene.createNode("Anchor");
-Anchor74.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor74.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor74.description = "Mantle Community Arts";
 let ProtoInstance75 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance75.name = "r";
@@ -459,7 +459,7 @@ Anchor74.children[0] = ProtoInstance75;
 Transform43.children[10] = Anchor74;
 
 let Anchor77 = browser.currentScene.createNode("Anchor");
-Anchor77.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor77.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor77.description = "Artlink East";
 let ProtoInstance78 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance78.name = "r";
@@ -477,7 +477,7 @@ Anchor77.children[0] = ProtoInstance78;
 Transform43.children[11] = Anchor77;
 
 let Anchor80 = browser.currentScene.createNode("Anchor");
-Anchor80.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor80.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor80.description = "Creations";
 let ProtoInstance81 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance81.name = "r";
@@ -495,7 +495,7 @@ Anchor80.children[0] = ProtoInstance81;
 Transform43.children[12] = Anchor80;
 
 let Anchor83 = browser.currentScene.createNode("Anchor");
-Anchor83.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor83.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor83.description = "New Perspectives";
 let ProtoInstance84 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance84.name = "n";
@@ -513,7 +513,7 @@ Anchor83.children[0] = ProtoInstance84;
 Transform43.children[13] = Anchor83;
 
 let Anchor86 = browser.currentScene.createNode("Anchor");
-Anchor86.url = new MFString(new java.lang.String["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
+Anchor86.url = new MFString(new java.lang.String[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor86.description = "UKan2";
 let ProtoInstance87 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance87.name = "r";

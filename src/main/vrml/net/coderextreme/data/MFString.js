@@ -283,7 +283,7 @@ Transform62.DEF = "FrontWheelTransform";
 Transform62.center = new SFVec3f(new float[0,2.5,0]);
 Transform62.rotation = new SFRotation(new float[-1,0,0,1.92]);
 Transform62.translation = new SFVec3f(new float[0.7,-5.2,-6.5]);
-// Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel) 
+//Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)
 let Inline63 = browser.currentScene.createNode("Inline");
 Inline63.url = new MFString(new java.lang.String["FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"]);
 Transform62.children = new MFNode();
@@ -297,7 +297,7 @@ Transform64.DEF = "RearLeftWheelTransform";
 Transform64.center = new SFVec3f(new float[0,2.5,0]);
 Transform64.rotation = new SFRotation(new float[1,0,1,1.92]);
 Transform64.translation = new SFVec3f(new float[-2.95,-5,7]);
-// Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) 
+//Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)
 let Inline65 = browser.currentScene.createNode("Inline");
 Inline65.url = new MFString(new java.lang.String["RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"]);
 Transform64.children = new MFNode();
@@ -311,7 +311,7 @@ Transform66.DEF = "RearRightWheelTransform";
 Transform66.center = new SFVec3f(new float[0,2.5,0]);
 Transform66.rotation = new SFRotation(new float[-1,0,-1,1.92]);
 Transform66.translation = new SFVec3f(new float[2.95,-5,7]);
-// Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) 
+//Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)
 let Inline67 = browser.currentScene.createNode("Inline");
 Inline67.url = new MFString(new java.lang.String["RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"]);
 Transform66.children = new MFNode();
@@ -465,7 +465,7 @@ Transform97.scale = new SFVec3f(new float[0.06,0.06,0.06]);
 Transform97.translation = new SFVec3f(new float[0.36,1.5,-10]);
 let Shape98 = browser.currentScene.createNode("Shape");
 let Text99 = browser.currentScene.createNode("Text");
-Text99.string = new MFString(new java.lang.String["Target Locked","      FIRE!..","(Green Button)"]);
+Text99.string = new MFString(new java.lang.String["Target Locked"," FIRE!..","(Green Button)"]);
 Shape98.geometry = Text99;
 
 let Appearance100 = browser.currentScene.createNode("Appearance");
@@ -611,7 +611,7 @@ ROUTE122.toField = "set_rotation";
 ROUTE122.toNode = "FrontWheelTransform";
 browser.currentScene.children[10] = ROUTE122;
 
-// Animation commands for Rear Right Wheel Starts 
+//Animation commands for Rear Right Wheel Starts
 let TimeSensor123 = browser.currentScene.createNode("TimeSensor");
 TimeSensor123.DEF = "RRearUp1";
 TimeSensor123.cycleInterval = 8;
@@ -676,7 +676,7 @@ ROUTE132.toField = "set_rotation";
 ROUTE132.toNode = "RearRightWheelTransform";
 browser.currentScene.children[20] = ROUTE132;
 
-// Animation commands for Rear Left Wheel 
+//Animation commands for Rear Left Wheel
 let TimeSensor133 = browser.currentScene.createNode("TimeSensor");
 TimeSensor133.DEF = "LRearUp1";
 TimeSensor133.cycleInterval = 8;
@@ -1035,4 +1035,4 @@ ROUTE189.toField = "set_bind";
 ROUTE189.toNode = "MissileLaunchView";
 browser.currentScene.children[56] = ROUTE189;
 
-// TODO fix type, add filter 
+//TODO fix type, add filter

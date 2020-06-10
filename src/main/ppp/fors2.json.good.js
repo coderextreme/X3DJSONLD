@@ -221,6 +221,7 @@ X3DJSON['Script']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'] = fu
 		console.log('Problems setting keyValue '+e);
 		console.error('Problems setting keyValue',e);
 	}
+
  ecmascript:
 				
 	this.set_cycle = function (value) {
@@ -229,7 +230,7 @@ X3DJSON['Script']['Scene']['../data/fors2.json']['DECLnode_nodeA_MoveBall'] = fu
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
 					}
- ;
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -344,6 +345,7 @@ X3DJSON['Script']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'] = fu
 		console.log('Problems setting keyValue '+e);
 		console.error('Problems setting keyValue',e);
 	}
+
  ecmascript:
 				
 	this.set_cycle = function (value) {
@@ -352,7 +354,7 @@ X3DJSON['Script']['Scene']['../data/fors2.json']['DECLnode_nodeB_MoveBall'] = fu
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
 					}
- ;
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -449,6 +451,7 @@ X3DJSON['Script']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinde
 		console.log('Problems setting endB '+e);
 		console.error('Problems setting endB',e);
 	}
+
  ecmascript:
 
                
@@ -459,7 +462,8 @@ X3DJSON['Script']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinde
 		        this.proxy.spine = new MFVec3f([value, this.proxy.spine[1]]);
 		    }
                 }
-       ;
+
+      ;
 
 	this.set_endB = function (value) {
 		    if (typeof this.proxy.spine === "undefined") {
@@ -468,13 +472,14 @@ X3DJSON['Script']['Scene']['../data/fors2.json']['DECLcylinder_linkA_MoveCylinde
 		        this.proxy.spine = new MFVec3f([this.proxy.spine[0], value]);
 		    }
                 }
-       ;
+
+      ;
 
 	this.set_spine = function (value) {
 		    console.error(''+'"');
                     this.proxy.spine = value;
                 }
- ;
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

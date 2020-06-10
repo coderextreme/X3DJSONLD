@@ -149,11 +149,14 @@ X3DJSON['Script']['Scene']['../data/browser.json'] = {};
 }
 
 X3DJSON['Script']['Scene']['../data/browser.json']['Browser'] = function() {
+
 ecmascript:
                
 	this.initialize = function () {
 		    console.error('DUDES'+'"DUDETTES');
-                };
+                }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -197,6 +200,7 @@ X3DJSON['Script']['Scene']['../data/browser.json'] = {};
 
 X3DJSON['Script']['Scene']['../data/browser.json']['Clouds'] = function() {
 
+
 ecmascript:
 
 
@@ -206,7 +210,9 @@ var xxx = ' '+' '+
 '	Transform		'+
 '    ' + '               	';
 
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

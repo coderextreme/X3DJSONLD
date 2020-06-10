@@ -726,6 +726,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraScript
 {
@@ -1088,7 +1089,9 @@ ecmascript:
          console.error ('[Camera: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[Camera] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -1402,6 +1405,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting keyValueOrientation',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraShotScript
 {
@@ -1507,7 +1511,9 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -1767,6 +1773,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -1867,7 +1874,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -2127,6 +2136,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -2227,7 +2237,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -2487,6 +2499,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -2587,7 +2600,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -2901,6 +2916,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting keyValueOrientation',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraShotScript
 {
@@ -3006,7 +3022,9 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -3266,6 +3284,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -3366,7 +3385,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -3626,6 +3647,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -3726,7 +3748,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -3986,6 +4010,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -4086,7 +4111,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -4400,6 +4427,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting keyValueOrientation',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraShotScript
 {
@@ -4505,7 +4533,9 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -4765,6 +4795,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -4865,7 +4896,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -5125,6 +5158,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -5225,7 +5259,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -5485,6 +5521,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -5585,7 +5622,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -5845,6 +5884,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -5945,7 +5985,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -6259,6 +6301,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting keyValueOrientation',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraShotScript
 {
@@ -6364,7 +6407,9 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -6624,6 +6669,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -6724,7 +6770,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -6984,6 +7032,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -7084,7 +7133,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -7344,6 +7395,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -7444,7 +7496,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -7758,6 +7812,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting keyValueOrientation',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraShotScript
 {
@@ -7863,7 +7918,9 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -8123,6 +8180,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -8223,7 +8281,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -8483,6 +8543,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -8583,7 +8644,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -8843,6 +8906,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -8943,7 +9007,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -9203,6 +9269,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -9303,7 +9370,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -9563,6 +9632,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -9663,7 +9733,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -9923,6 +9995,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -10023,7 +10096,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -10283,6 +10358,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Sim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -10383,7 +10459,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -11003,6 +11081,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraScript
 {
@@ -11365,7 +11444,9 @@ ecmascript:
          console.error ('[Camera: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[Camera] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -11679,6 +11760,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		console.error('Problems setting keyValueOrientation',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraShotScript
 {
@@ -11784,7 +11866,9 @@ ecmascript:
          console.error ('[CameraShot: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraShot] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -12047,6 +12131,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -12147,7 +12232,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -12416,6 +12503,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -12516,7 +12604,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -12785,6 +12875,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -12885,7 +12976,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -13154,6 +13247,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLCamera_Camera.Aim
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // CameraMovementScript
 {
@@ -13254,7 +13348,9 @@ ecmascript:
          console.error ('[CameraMovement: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[CameraMovement] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -13502,6 +13598,7 @@ X3DJSON['Script']['Scene']['../data/CameraExamples.json']['DECLOfflineRender_INS
 		console.error('Problems setting traceEnabled',e);
 	}
 
+
 ecmascript:
 	this.initialize = function () // OfflineRenderScript
 {
@@ -13563,7 +13660,9 @@ ecmascript:
          console.error ('[OfflineRender: ' + this.proxy.description + '] ' + outputString + '');
     else
          console.error ('[OfflineRender] ' + outputString + '');
-};
+}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

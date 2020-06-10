@@ -203,6 +203,7 @@ X3DJSON['Script']['Scene']['../data/bub.json']['DECLBubble_INSTANCE_Bounce'] = f
 		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
+
 ecmascript:
 		
 	this.initialize = function () {
@@ -231,7 +232,8 @@ ecmascript:
 				this.proxy.velocity.z += Math.random() * 0.2 - 0.1;
 			    }
 			}
-           ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -328,6 +330,7 @@ X3DJSON['Script']['Scene']['../data/bub.json']['DECLBubble_INSTANCE1000_Bounce']
 		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
+
 ecmascript:
 		
 	this.initialize = function () {
@@ -356,7 +359,8 @@ ecmascript:
 				this.proxy.velocity.z += Math.random() * 0.2 - 0.1;
 			    }
 			}
-           ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -453,6 +457,7 @@ X3DJSON['Script']['Scene']['../data/bub.json']['DECLBubble_INSTANCE2000_Bounce']
 		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
+
 ecmascript:
 		
 	this.initialize = function () {
@@ -481,7 +486,8 @@ ecmascript:
 				this.proxy.velocity.z += Math.random() * 0.2 - 0.1;
 			    }
 			}
-           ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

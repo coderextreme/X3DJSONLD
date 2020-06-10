@@ -239,6 +239,7 @@ X3DJSON['Script']['Scene']['../data/bubble.json']['DECLBubble_bubbleA_bounce'] =
 		console.log('Problems setting fraction '+e);
 		console.error('Problems setting fraction',e);
 	}
+
 ecmascript:
 	this.initialize = function () {
     this.proxy.velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -284,7 +285,8 @@ ecmascript:
 		this.proxy.translation.z = 0;
 		this.initialize();
 	}
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

@@ -294,6 +294,7 @@ X3DJSON['Script']['Scene']['../data/flowers2.json']['DECLorbit_INSTANCE_OrbitScr
 		console.error('Problems setting resolution',e);
 	}
 
+			
 			ecmascript:
 
 			var e = 5;
@@ -561,6 +562,7 @@ X3DJSON['Script']['Scene']['../data/flowers2.json']['DECLorbit_INSTANCE1000_Orbi
 		console.error('Problems setting resolution',e);
 	}
 
+			
 			ecmascript:
 
 			var e = 5;

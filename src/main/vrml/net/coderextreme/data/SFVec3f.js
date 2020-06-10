@@ -3,14 +3,12 @@ let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let NavigationInfo2 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo2.type = new MFString(new java.lang.String["EXAMINE","ANY"]);
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = NavigationInfo2;
 
 let Transform3 = browser.currentScene.createNode("Transform");
 Transform3.DEF = "transform";
-Transform3.translation = new SFVec3f(new float[0,0,0]);
 let Shape4 = browser.currentScene.createNode("Shape");
 let Appearance5 = browser.currentScene.createNode("Appearance");
 let Material6 = browser.currentScene.createNode("Material");

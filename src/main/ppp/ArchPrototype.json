@@ -1,65 +1,67 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "ArchPrototype.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "ArchPrototype.x3d"
         },
         {
-          "@content": "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js."
         },
         {
-          "@content": "Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information."
         },
         {
-          "@content": "Michele Foti, Don Brutzman",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Michele Foti, Don Brutzman"
         },
         {
-          "@content": "15 December 2014",
-          "@name": "created"
+          "@name": "created",
+          "@content": "15 December 2014"
         },
         {
-          "@content": "27 November 2015",
-          "@name": "modified"
-        },
-        {
-          "@content": "ArchModelingDiagrams.pdf",
-          "@name": "reference"
-        },
-        {
-          "@content": "https://en.wikipedia.org/wiki/Arch",
-          "@name": "reference"
-        },
-        {
-          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "1 May 2020"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@name": "modified",
+          "@content": "27 November 2015"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "ArchModelingDiagrams.pdf"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikipedia.org/wiki/Arch"
+        },
+        {
+          "@name": "identifier",
+          "@content": "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "10 June 2020"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -67,10 +69,10 @@
       "-children": [
         {},
         {
-          "#comment": " First node determines node type of this prototype "
+          "#comment": "First node determines node type of this prototype"
         },
         {
-          "#comment": " IndexedFaceset creates arch "
+          "#comment": "IndexedFaceset creates arch"
         },
         {
           "Transform": {
@@ -81,14 +83,13 @@
                   "@DEF": "DECLArchPrototype_ArchInstance_Arch",
                   "-children": [
                     {
-                      "#comment": " note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly "
+                      "#comment": "note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"
                     }
                   ],
                   "-geometry": {
                     "IndexedFaceSet": {
                       "@DEF": "DECLArchPrototype_ArchInstance_ArchIndex",
                       "@convex": false,
-                      "@creaseAngle": 0,
                       "@solid": false,
                       "-coord": {
                         "Coordinate": {
@@ -122,129 +123,129 @@
           }
         },
         {
-          "#comment": " Subsequent nodes do not render, but still must be a valid X3D subgraph "
+          "#comment": "Subsequent nodes do not render, but still must be a valid X3D subgraph"
         },
         {
-          "#comment": " This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs "
+          "#comment": "This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"
         },
         {
           "Script": {
             "@DEF": "DECLArchPrototype_ArchInstance_ArchPrototypeScript",
             "-children": [
               {
-                "#comment": " INPUT PARAMETERS "
+                "#comment": "INPUT PARAMETERS"
               },
               {
-                "#comment": " General parameters "
+                "#comment": "General parameters"
               },
               {
-                "#comment": " Parameters to create to create shapes related to arch: put true to apply "
+                "#comment": "Parameters to create to create shapes related to arch: put true to apply"
               },
               {
-                "#comment": " OUTPUT PARAMETERS "
+                "#comment": "OUTPUT PARAMETERS"
               }
             ],
             "field": [
               {
+                "@name": "clearSpanWidth",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for clearSpanWidth parameter",
-                "@name": "clearSpanWidth",
                 "@type": "SFFloat",
                 "@value": 5
               },
               {
+                "@name": "riseHeight",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for riseHeight parameter",
-                "@name": "riseHeight",
                 "@type": "SFFloat",
                 "@value": 2.5
               },
               {
+                "@name": "depth",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for depth parameter",
-                "@name": "depth",
                 "@type": "SFFloat",
                 "@value": 2
               },
               {
+                "@name": "topAbutmentHeight",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for topAbutmentHeight parameter",
-                "@name": "topAbutmentHeight",
                 "@type": "SFFloat",
                 "@value": 0.6
               },
               {
+                "@name": "pierWidth",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for pierWidth parameter",
-                "@name": "pierWidth",
                 "@type": "SFFloat",
                 "@value": 1
               },
               {
+                "@name": "pierHeight",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for pierHeight parameter",
-                "@name": "pierHeight",
                 "@type": "SFFloat",
                 "@value": 2
               },
               {
+                "@name": "archHalf",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for archHalf parameter",
-                "@name": "archHalf",
                 "@type": "SFBool",
                 "@value": false
               },
               {
+                "@name": "archHalfExtensionWidth",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for archHalfExtensionWidth parameter",
-                "@name": "archHalfExtensionWidth",
                 "@type": "SFFloat",
                 "@value": 0
               },
               {
+                "@name": "onlyIntrados",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for onlyIntrados parameter",
-                "@name": "onlyIntrados",
                 "@type": "SFBool",
                 "@value": false
               },
               {
+                "@name": "archFilled",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for archFilled parameter",
-                "@name": "archFilled",
                 "@type": "SFBool",
                 "@value": false
               },
               {
+                "@name": "archHalfFilled",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for archHalfFilled parameter",
-                "@name": "archHalfFilled",
                 "@type": "SFBool",
                 "@value": false
               },
               {
+                "@name": "lintel",
                 "@accessType": "initializeOnly",
                 "@appinfo": "user or default input for lintel parameter",
-                "@name": "lintel",
                 "@type": "SFBool",
                 "@value": false
               },
               {
+                "@name": "computedScale",
                 "@accessType": "outputOnly",
                 "@appinfo": "computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth",
-                "@name": "computedScale",
                 "@type": "SFVec3f"
               },
               {
+                "@name": "pointOut",
                 "@accessType": "outputOnly",
                 "@appinfo": "send computed points to the Coordinate node",
-                "@name": "pointOut",
                 "@type": "MFVec3f"
               },
               {
+                "@name": "indexOut",
                 "@accessType": "outputOnly",
                 "@appinfo": "send computed indices to the IndexedFaceSet node",
-                "@name": "indexOut",
                 "@type": "MFInt32"
               }
             ],
@@ -566,7 +567,7 @@
           }
         },
         {
-          "#comment": " Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) "
+          "#comment": "Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"
         },
         {
           "Inline": {
@@ -577,8 +578,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

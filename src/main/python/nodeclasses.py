@@ -33,12 +33,14 @@ class ClassPrinter:
         except:
             package = "fields"
         package = re.sub(r"-", "", package)
-        superpackage = "sai"
-        if self.metaInfo == "Object":
-                superpackage = "jsail"
+        superpackage = "jsail"
         try:
+            if self.node['name'] in ["X3DBoundedObject", "X3DPickableObject", "X3DPrototypeInstance", "X3DUrlObject", "X3DFogObject", "X3DMetadataObject", "X3DProgrammableShaderObject"] or self.node['name'].endswith("Node") and not self.node['name'] in ["SFNode", "MFNode", "X3DConcreteNode"]:
+                superpackage = "sai"
             str += self.node['name'] + " : java.import('org.web3d.x3d."+superpackage+"."+package+"." + self.node['name'] + self.metaInfo + "'),\n"
         except:
+            if self.node['type'] in ["X3DBoundedObject", "X3DPickableObject", "X3DPrototypeInstance", "X3DUrlObject", "X3DFogObject", "X3DMetadataObject", "X3DProgrammableShaderObject"] or self.node['type'].endswith("Node") and not self.node['type'] in ["SFNode", "MFNode", "X3DConcreteNode"]:
+                superpackage = "sai"
             str += self.node['type'] + " : java.import('org.web3d.x3d."+superpackage+"."+package+"." + self.node['type'] + self.metaInfo + "'),\n"
         self.printed = True
         return str
@@ -79,15 +81,15 @@ classes = {}
 
 cns = soup.find_all("ConcreteNode")
 for cn in cns:
-    classes[cn['name']] = ClassPrinter(cn, "Object")
+    classes[cn['name']] = ClassPrinter(cn, "")
 
 sts = soup.find_all("Statement")
 for st in sts:
-    classes[st['name']] = ClassPrinter(st, "Object")
+    classes[st['name']] = ClassPrinter(st, "")
 
 fts = soup.find_all("FieldType")
 for ft in fts:
-    classes[ft['type']] = ClassPrinter(ft, "Object")
+    classes[ft['type']] = ClassPrinter(ft, "")
 
 code += 'module.exports = {\n';
 for k,v in classes.items():

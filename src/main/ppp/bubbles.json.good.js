@@ -275,7 +275,8 @@ X3DJSON['Script']['Scene']['../data/bubbles.json']['RandomTourTime'] = function(
 		console.log('Problems setting orientation '+e);
 		console.error('Problems setting orientation',e);
 	}
-ecmascript:
+
+	    ecmascript:
               
 	this.set_cycle = function (value) {
 	       	   try {
@@ -288,7 +289,7 @@ ecmascript:
                         this.proxy.position_changed = new MFVec3f();
                         this.proxy.position_changed[0] = new SFVec3f(this.proxy.positions[ov].x,this.proxy.positions[ov].y,this.proxy.positions[ov].z);
                         this.proxy.position_changed[1] = new SFVec3f(this.proxy.positions[vc].x,this.proxy.positions[vc].y,this.proxy.positions[vc].z);
-                        
+
                         this.proxy.orientation_changed = new MFRotation();
                         this.proxy.orientation_changed[0] = new SFRotation(this.proxy.orientations[ov].x, this.proxy.orientations[ov].y, this.proxy.orientations[ov].z, this.proxy.orientations[ov].w);
                         this.proxy.orientation_changed[1] = new SFRotation(this.proxy.orientations[vc].x, this.proxy.orientations[vc].y, this.proxy.orientations[vc].z, this.proxy.orientations[vc].w);

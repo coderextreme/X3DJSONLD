@@ -67,6 +67,7 @@ JavaSerializer.prototype = {
 		str += "import org.web3d.x3d.jsail.Time.*;\n";
 		str += "import org.web3d.x3d.jsail.VolumeRendering.*;\n";
 		str += "import org.web3d.x3d.jsail.fields.*;\n";
+		/*
 		str += "import org.web3d.x3d.sai.*;\n";
 		str += "import org.web3d.x3d.sai.CADGeometry.*;\n";
 		str += "import org.web3d.x3d.sai.Core.*;\n";
@@ -103,16 +104,17 @@ JavaSerializer.prototype = {
 		str += "import org.web3d.x3d.sai.Texturing.*;\n";
 		str += "import org.web3d.x3d.sai.Time.*;\n";
 		str += "import org.web3d.x3d.sai.VolumeRendering.*;\n";
+		*/
 		str += "public class "+clz+" {\n";
 		str += "  public static void main(String[] args) {\n";
 		str += "    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);\n";
 		str += "    ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
 		str += "    new "+clz+"().initialize().toFileJSON(\""+clazz+".new.json\");\n";
 		str += "    }\n";
-		str += "    public "+element.nodeName+"Object initialize() {\n";
+		str += "    public "+element.nodeName+" initialize() {\n";
 
 		// we figure out body first and print it out later
-		var body = "      "+element.nodeName+"Object "+element.nodeName+0+" =  new "+element.nodeName+"Object()";
+		var body = "      "+element.nodeName+" "+element.nodeName+0+" =  new "+element.nodeName+"()";
 		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
 		for (var po in this.precode) {
 			str += this.precode[po];
@@ -135,7 +137,7 @@ JavaSerializer.prototype = {
 
 	printSubArray : function (attrType, type, values, co, j, lead, trail) {
 		if (attrType.startsWith("MF")) {
-			var str = "new "+attrType+"Object(";
+			var str = "new org.web3d.x3d.jsail.fields."+attrType+"(";
 			for (var i = 0; i < values.length; i += 840) {
 				var max = values.length;
 				if (i + 840 < max) {
@@ -143,8 +145,8 @@ JavaSerializer.prototype = {
 				}
 				this.codeno++;
 				this.code[co] = "protected class "+attrType+co+" {\n";
-				this.code[co] +=  "  protected "+attrType+"Object getArray() {\n";
-				this.code[co] += "    return new "+attrType+"Object(new "+type+"[] {"+lead+values.slice(i, max).join(j)+trail+"});\n";
+				this.code[co] +=  "  protected org.web3d.x3d.jsail.fields."+attrType+" getArray() {\n";
+				this.code[co] += "    return new org.web3d.x3d.jsail.fields."+attrType+"(new "+type+"[] {"+lead+values.slice(i, max).join(j)+trail+"});\n";
 				this.code[co] += "  }\n";
 				this.code[co] += "}\n";
 				if (i == 0) {
@@ -314,7 +316,7 @@ JavaSerializer.prototype = {
 						strval = "";
 					} else if (attrType === "SFString") {
 						if (attr === "accessType") {
-							strval = "fieldObject.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
+							strval = "field.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else {
 							strval = '"'+attrs[a].nodeValue.
 								replace(/(\\+)([^&\\"]|$)/g, '$1$1$2').
@@ -434,7 +436,7 @@ JavaSerializer.prototype = {
 				if (node.nodeName === "ProtoInstance") {
 					stack.unshift(this.preno);
 					this.preno++;
-					this.precode[stack[0]] = node.nodeName+"Object "+node.nodeName+stack[0]+" = null;\n";
+					this.precode[stack[0]] = node.nodeName+" "+node.nodeName+stack[0]+" = null;\n";
 				}
 				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
 					if (typeof this.postcode[stack[0]] === 'undefined') {
@@ -451,7 +453,7 @@ JavaSerializer.prototype = {
 					ch += node.nodeName+stack[0] + " = ";
 				}
 
-				ch += "new "+node.nodeName+"Object()";
+				ch += "new "+node.nodeName+"()";
 				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
 					ch += "}";

@@ -185,6 +185,7 @@ X3DJSON['Script']['Scene']['../data/pp3.json']['DECLProcess_INSTANCE_RightSingle
 		console.log('Problems setting rightlines '+e);
 		console.error('Problems setting rightlines',e);
 	}
+
 ecmascript:
 
 	this.initialize = function () {
@@ -194,7 +195,8 @@ ecmascript:
 
 	this.set_rightstring = function (rightstr) {
 	this.proxy.rightlines = new MFString(rightstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -273,6 +275,7 @@ X3DJSON['Script']['Scene']['../data/pp3.json']['DECLProcess_INSTANCE_UpSingleToM
 		console.log('Problems setting uplines '+e);
 		console.error('Problems setting uplines',e);
 	}
+
 ecmascript:
 
 	this.initialize = function () {
@@ -282,7 +285,8 @@ ecmascript:
 
 	this.set_upstring = function (upstr) {
 	this.proxy.uplines = new MFString(upstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -361,6 +365,7 @@ X3DJSON['Script']['Scene']['../data/pp3.json']['DECLProcess_INSTANCE_CenterSingl
 		console.log('Problems setting centerlines '+e);
 		console.error('Problems setting centerlines',e);
 	}
+
 ecmascript:
 
 	this.initialize = function () {
@@ -370,7 +375,8 @@ ecmascript:
 
 	this.set_centerstring = function (centerstr) {
 	this.proxy.centerlines = new MFString(centerstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -449,6 +455,7 @@ X3DJSON['Script']['Scene']['../data/pp3.json']['DECLProcess_INSTANCE1000_RightSi
 		console.log('Problems setting rightlines '+e);
 		console.error('Problems setting rightlines',e);
 	}
+
 ecmascript:
 
 	this.initialize = function () {
@@ -458,7 +465,8 @@ ecmascript:
 
 	this.set_rightstring = function (rightstr) {
 	this.proxy.rightlines = new MFString(rightstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -537,6 +545,7 @@ X3DJSON['Script']['Scene']['../data/pp3.json']['DECLProcess_INSTANCE1000_UpSingl
 		console.log('Problems setting uplines '+e);
 		console.error('Problems setting uplines',e);
 	}
+
 ecmascript:
 
 	this.initialize = function () {
@@ -546,7 +555,8 @@ ecmascript:
 
 	this.set_upstring = function (upstr) {
 	this.proxy.uplines = new MFString(upstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -625,6 +635,7 @@ X3DJSON['Script']['Scene']['../data/pp3.json']['DECLProcess_INSTANCE1000_CenterS
 		console.log('Problems setting centerlines '+e);
 		console.error('Problems setting centerlines',e);
 	}
+
 ecmascript:
 
 	this.initialize = function () {
@@ -634,7 +645,8 @@ ecmascript:
 
 	this.set_centerstring = function (centerstr) {
 	this.proxy.centerlines = new MFString(centerstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -713,6 +725,7 @@ X3DJSON['Script']['Scene']['../data/pp3.json']['DECLProcess_INSTANCE2000_RightSi
 		console.log('Problems setting rightlines '+e);
 		console.error('Problems setting rightlines',e);
 	}
+
 ecmascript:
 
 	this.initialize = function () {
@@ -722,7 +735,8 @@ ecmascript:
 
 	this.set_rightstring = function (rightstr) {
 	this.proxy.rightlines = new MFString(rightstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -801,6 +815,7 @@ X3DJSON['Script']['Scene']['../data/pp3.json']['DECLProcess_INSTANCE2000_UpSingl
 		console.log('Problems setting uplines '+e);
 		console.error('Problems setting uplines',e);
 	}
+
 ecmascript:
 
 	this.initialize = function () {
@@ -810,7 +825,8 @@ ecmascript:
 
 	this.set_upstring = function (upstr) {
 	this.proxy.uplines = new MFString(upstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -889,6 +905,7 @@ X3DJSON['Script']['Scene']['../data/pp3.json']['DECLProcess_INSTANCE2000_CenterS
 		console.log('Problems setting centerlines '+e);
 		console.error('Problems setting centerlines',e);
 	}
+
 ecmascript:
 
 	this.initialize = function () {
@@ -898,7 +915,8 @@ ecmascript:
 
 	this.set_centerstring = function (centerstr) {
 	this.proxy.centerlines = new MFString(centerstr);
-};
+}
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

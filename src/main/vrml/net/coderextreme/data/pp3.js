@@ -18,7 +18,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <Text containerField="geometry" DEF="RightString" string="&quot;r&quot;"></Text>
 </Shape>
 </Transform>
-<StringSensor DEF="RightSensor" enabled="false" deletionAllowed="true"></StringSensor>
+<StringSensor DEF="RightSensor" enabled="false"></StringSensor>
 <TouchSensor description="touch to activate" DEF="RightTouch"></TouchSensor>
 </Transform>
 <!--up--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0 0.7 1" transparency="0.5"></Material>
@@ -30,7 +30,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <Text containerField="geometry" DEF="UpString" string="&quot;u&quot;"></Text>
 </Shape>
 </Transform>
-<StringSensor DEF="UpSensor" enabled="false" deletionAllowed="true"></StringSensor>
+<StringSensor DEF="UpSensor" enabled="false"></StringSensor>
 <TouchSensor description="touch to activate" DEF="UpTouch"></TouchSensor>
 </Transform>
 <!--down--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0.7 1 0" transparency="0.5"></Material>
@@ -47,7 +47,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <Text containerField="geometry" DEF="CenterString"></Text>
 </Shape>
 </Transform>
-<StringSensor DEF="CenterSensor" enabled="false" deletionAllowed="true"></StringSensor>
+<StringSensor DEF="CenterSensor" enabled="false"></StringSensor>
 <TouchSensor description="touch to activate" DEF="CenterTouch"></TouchSensor>
 </Transform>
 </Group>
@@ -172,7 +172,6 @@ Transform10.children[1] = Transform15;
 let StringSensor20 = browser.currentScene.createNode("StringSensor");
 StringSensor20.DEF = "RightSensor";
 StringSensor20.enabled = False;
-StringSensor20.deletionAllowed = True;
 Transform10.children[2] = StringSensor20;
 
 let TouchSensor21 = browser.currentScene.createNode("TouchSensor");
@@ -228,7 +227,6 @@ Transform22.children[1] = Transform27;
 let StringSensor32 = browser.currentScene.createNode("StringSensor");
 StringSensor32.DEF = "UpSensor";
 StringSensor32.enabled = False;
-StringSensor32.deletionAllowed = True;
 Transform22.children[2] = StringSensor32;
 
 let TouchSensor33 = browser.currentScene.createNode("TouchSensor");
@@ -304,7 +302,6 @@ Transform39.children[1] = Transform44;
 let StringSensor49 = browser.currentScene.createNode("StringSensor");
 StringSensor49.DEF = "CenterSensor";
 StringSensor49.enabled = False;
-StringSensor49.deletionAllowed = True;
 Transform39.children[2] = StringSensor49;
 
 let TouchSensor50 = browser.currentScene.createNode("TouchSensor");

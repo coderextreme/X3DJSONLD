@@ -12,7 +12,6 @@ Appearance4.material = Material5;
 Shape3.appearance = Appearance4;
 
 let Sphere6 = browser.currentScene.createNode("Sphere");
-Sphere6.radius = 1;
 Shape3.geometry = Sphere6;
 
 Group2.children = new MFNode();

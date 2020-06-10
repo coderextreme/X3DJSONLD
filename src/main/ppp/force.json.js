@@ -222,6 +222,7 @@ X3DJSON['Script']['Scene']['../data/force.json']['DECLnode_nodeA_MoveBall'] = fu
 		console.error('Problems setting keyValue',e);
 	}
 
+
 ecmascript:
 				
 	this.set_cycle = function (value) {
@@ -229,7 +230,9 @@ ecmascript:
 						this.proxy.translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
-					};
+					}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -345,6 +348,7 @@ X3DJSON['Script']['Scene']['../data/force.json']['DECLnode_nodeB_MoveBall'] = fu
 		console.error('Problems setting keyValue',e);
 	}
 
+
 ecmascript:
 				
 	this.set_cycle = function (value) {
@@ -352,7 +356,9 @@ ecmascript:
 						this.proxy.translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
-					};
+					}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -468,6 +474,7 @@ X3DJSON['Script']['Scene']['../data/force.json']['DECLnode_nodeC_MoveBall'] = fu
 		console.error('Problems setting keyValue',e);
 	}
 
+
 ecmascript:
 				
 	this.set_cycle = function (value) {
@@ -475,7 +482,9 @@ ecmascript:
 						this.proxy.translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
-					};
+					}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -591,6 +600,7 @@ X3DJSON['Script']['Scene']['../data/force.json']['DECLnode_nodeD_MoveBall'] = fu
 		console.error('Problems setting keyValue',e);
 	}
 
+
 ecmascript:
 				
 	this.set_cycle = function (value) {
@@ -598,7 +608,9 @@ ecmascript:
 						this.proxy.translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 this.proxy.keyValue = new MFVec3f([this.proxy.old, this.proxy.translation]);
 						// console.error(this.proxy.translation);
-					};
+					}
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -696,6 +708,7 @@ X3DJSON['Script']['Scene']['../data/force.json']['DECLcylinder_linkA_MoveCylinde
 		console.error('Problems setting endB',e);
 	}
 
+
 ecmascript:
 
                
@@ -706,7 +719,8 @@ ecmascript:
 		        this.proxy.spine = new MFVec3f([value, this.proxy.spine[1]]);
 		    }
                 }
-       ;
+
+      ;
 
 	this.set_endB = function (value) {
 		    if (typeof this.proxy.spine === 'undefined') {
@@ -715,11 +729,14 @@ ecmascript:
 		        this.proxy.spine = new MFVec3f([this.proxy.spine[0], value]);
 		    }
                 }
-       ;
+
+      ;
 
 	this.set_spine = function (value) {
                     this.proxy.spine = value;
-                };
+                }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -817,6 +834,7 @@ X3DJSON['Script']['Scene']['../data/force.json']['DECLcylinder_linkB_MoveCylinde
 		console.error('Problems setting endB',e);
 	}
 
+
 ecmascript:
 
                
@@ -827,7 +845,8 @@ ecmascript:
 		        this.proxy.spine = new MFVec3f([value, this.proxy.spine[1]]);
 		    }
                 }
-       ;
+
+      ;
 
 	this.set_endB = function (value) {
 		    if (typeof this.proxy.spine === 'undefined') {
@@ -836,11 +855,14 @@ ecmascript:
 		        this.proxy.spine = new MFVec3f([this.proxy.spine[0], value]);
 		    }
                 }
-       ;
+
+      ;
 
 	this.set_spine = function (value) {
                     this.proxy.spine = value;
-                };
+                }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -938,6 +960,7 @@ X3DJSON['Script']['Scene']['../data/force.json']['DECLcylinder_linkC_MoveCylinde
 		console.error('Problems setting endB',e);
 	}
 
+
 ecmascript:
 
                
@@ -948,7 +971,8 @@ ecmascript:
 		        this.proxy.spine = new MFVec3f([value, this.proxy.spine[1]]);
 		    }
                 }
-       ;
+
+      ;
 
 	this.set_endB = function (value) {
 		    if (typeof this.proxy.spine === 'undefined') {
@@ -957,11 +981,14 @@ ecmascript:
 		        this.proxy.spine = new MFVec3f([this.proxy.spine[0], value]);
 		    }
                 }
-       ;
+
+      ;
 
 	this.set_spine = function (value) {
                     this.proxy.spine = value;
-                };
+                }
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -1059,6 +1086,7 @@ X3DJSON['Script']['Scene']['../data/force.json']['clickHandler'] = function() {
 		console.error('Problems setting add_node',e);
 	}
 
+	
 ecmascript:
 
 	this.add_node = function (value) {
@@ -1076,9 +1104,10 @@ ecmascript:
 				  ]
 				}
 			});
-                
+
         }
-	;
+	
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {

@@ -1,91 +1,93 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "4.0",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "H-Anim"
+          "@name": "H-Anim",
+          "@level": 1
         }
       ],
       "meta": [
         {
-          "@content": "HAnimModelFootRight.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "HAnimModelFootRight.x3d"
         },
         {
-          "@content": "Right foot, using high-fidelity definitions for H-Anim version 2.2",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Right foot, using high-fidelity definitions for H-Anim version 2.2"
         },
         {
-          "@content": "YOO Kwan Hee and Don Brutzman",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "YOO Kwan Hee and Don Brutzman"
         },
         {
-          "@content": "26 January 2015",
-          "@name": "created"
+          "@name": "created",
+          "@content": "26 January 2015"
         },
         {
-          "@content": "20 October 2019",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "20 October 2019"
         },
         {
-          "@content": "not yet to scale",
-          "@name": "warning"
+          "@name": "warning",
+          "@content": "not yet to scale"
         },
         {
-          "@content": "TODO will X3D HAnim component add a new level to support LOA-4 functionality?",
-          "@name": "warning"
-        },
-        {
-          "@content": "https://www.web3d.org/working-groups/humanoid-animation-h-anim",
-          "@name": "reference"
-        },
-        {
-          "@content": "https://www.web3d.org/files/specifications/19774/V1.0",
-          "@name": "reference"
-        },
-        {
-          "@content": "https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html",
-          "@name": "reference"
-        },
-        {
-          "@content": "X3D H-Anim humanoid animation",
-          "@name": "subject"
-        },
-        {
-          "@content": "scene, DOCTYPE and Schema under development.",
-          "@name": "warning"
-        },
-        {
-          "@content": "Integrate and confirm Segment/Joint names, Viewpoints.",
-          "@name": "TODO"
-        },
-        {
-          "@content": "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "5 May 2020"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@name": "warning",
+          "@content": "TODO will X3D HAnim component add a new level to support LOA-4 functionality?"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "https://www.web3d.org/working-groups/humanoid-animation-h-anim"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://www.web3d.org/files/specifications/19774/V1.0"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html"
+        },
+        {
+          "@name": "subject",
+          "@content": "X3D H-Anim humanoid animation"
+        },
+        {
+          "@name": "warning",
+          "@content": "scene, DOCTYPE and Schema under development."
+        },
+        {
+          "@name": "TODO",
+          "@content": "Integrate and confirm Segment/Joint names, Viewpoints."
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "10 June 2020"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -98,6 +100,7 @@
         },
         {
           "HAnimHumanoid": {
+            "@name": "Humanoid_Right_Foot",
             "@DEF": "Humanoid_Right_Foot",
             "@jointBindingPositions": [
               0,
@@ -115,25 +118,22 @@
               1,
               1
             ],
-            "@loa": -1,
-            "@name": "Humanoid_Right_Foot",
-            "@skeletalConfiguration": "BASIC",
             "@version": "2.0",
             "-skeleton": [
               {
                 "HAnimJoint": {
-                  "@DEF": "hanim_HumanoidRoot",
                   "@name": "humanoid_root",
+                  "@DEF": "hanim_HumanoidRoot",
                   "-children": [
                     {
                       "HAnimJoint": {
-                        "@DEF": "r_talocrural_joint",
                         "@name": "r_talocrural_joint",
+                        "@DEF": "r_talocrural_joint",
                         "-children": [
                           {
                             "HAnimSegment": {
-                              "@DEF": "r_talus",
                               "@name": "r_talus",
+                              "@DEF": "r_talus",
                               "-children": [
                                 {
                                   "Transform": {
@@ -245,22 +245,22 @@
                             }
                           },
                           {
-                            "#comment": " TCN "
+                            "#comment": "TCN"
                           },
                           {
                             "HAnimJoint": {
+                              "@name": "r_talocalcaneonavicular_joint",
                               "@DEF": "r_talocalcaneonavicular_joint",
                               "@center": [
                                 0,
                                 -0.3,
                                 0
                               ],
-                              "@name": "r_talocalcaneonavicular_joint",
                               "-children": [
                                 {
                                   "HAnimSegment": {
-                                    "@DEF": "r_navicular",
                                     "@name": "r_navicular",
+                                    "@DEF": "r_navicular",
                                     "-children": [
                                       {
                                         "Transform": {
@@ -396,22 +396,22 @@
                                   }
                                 },
                                 {
-                                  "#comment": " CN1 "
+                                  "#comment": "CN1"
                                 },
                                 {
                                   "HAnimJoint": {
+                                    "@name": "r_cuneonavicular_joint1",
                                     "@DEF": "r_cuneonavicular_joint1",
                                     "@center": [
                                       0.1,
                                       -0.45,
                                       0
                                     ],
-                                    "@name": "r_cuneonavicular_joint1",
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@DEF": "r_cuneiform1",
                                           "@name": "r_cuneiform1",
+                                          "@DEF": "r_cuneiform1",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -472,18 +472,18 @@
                                       },
                                       {
                                         "HAnimJoint": {
+                                          "@name": "r_tarsometatarsal_joint1",
                                           "@DEF": "r_tarsometatarsal_joint1",
                                           "@center": [
                                             0.1,
                                             -0.6,
                                             0
                                           ],
-                                          "@name": "r_tarsometatarsal_joint1",
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@DEF": "r_metatarsal1",
                                                 "@name": "r_metatarsal1",
+                                                "@DEF": "r_metatarsal1",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -544,18 +544,18 @@
                                             },
                                             {
                                               "HAnimJoint": {
+                                                "@name": "r_metatarsophalangeal_joint1",
                                                 "@DEF": "r_metatarsophalangeal_joint1",
                                                 "@center": [
                                                   0.1,
                                                   -0.9,
                                                   0
                                                 ],
-                                                "@name": "r_metatarsophalangeal_joint1",
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
-                                                      "@DEF": "r_proximal_phalanges1",
                                                       "@name": "r_proximal_phalanges1",
+                                                      "@DEF": "r_proximal_phalanges1",
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -616,18 +616,18 @@
                                                   },
                                                   {
                                                     "HAnimJoint": {
+                                                      "@name": "r_f_Interphalangeal_joint",
                                                       "@DEF": "r_f_Interphalangeal_joint",
                                                       "@center": [
                                                         0.1,
                                                         -1.05,
                                                         0
                                                       ],
-                                                      "@name": "r_f_Interphalangeal_joint",
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
-                                                            "@DEF": "r_distal_phalanges1",
                                                             "@name": "r_distal_phalanges1",
+                                                            "@DEF": "r_distal_phalanges1",
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -699,22 +699,22 @@
                                   }
                                 },
                                 {
-                                  "#comment": " CN2 "
+                                  "#comment": "CN2"
                                 },
                                 {
                                   "HAnimJoint": {
+                                    "@name": "r_cuneonavicular_joint2",
                                     "@DEF": "r_cuneonavicular_joint2",
                                     "@center": [
                                       0,
                                       -0.45,
                                       0
                                     ],
-                                    "@name": "r_cuneonavicular_joint2",
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@DEF": "r_cuneiform2",
                                           "@name": "r_cuneiform2",
+                                          "@DEF": "r_cuneiform2",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -775,18 +775,18 @@
                                       },
                                       {
                                         "HAnimJoint": {
+                                          "@name": "r_tarsometatarsal_joint2",
                                           "@DEF": "r_tarsometatarsal_joint2",
                                           "@center": [
                                             -0.05,
                                             -0.6,
                                             0
                                           ],
-                                          "@name": "r_tarsometatarsal_joint2",
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@DEF": "r_metatarsal2",
                                                 "@name": "r_metatarsal2",
+                                                "@DEF": "r_metatarsal2",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -847,18 +847,18 @@
                                             },
                                             {
                                               "HAnimJoint": {
+                                                "@name": "r_metatarsophalangeal_joint2",
                                                 "@DEF": "r_metatarsophalangeal_joint2",
                                                 "@center": [
                                                   -0.05,
                                                   -0.9,
                                                   0
                                                 ],
-                                                "@name": "r_metatarsophalangeal_joint2",
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
-                                                      "@DEF": "r_proximal_phalanges2",
                                                       "@name": "r_proximal_phalanges2",
+                                                      "@DEF": "r_proximal_phalanges2",
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -919,18 +919,18 @@
                                                   },
                                                   {
                                                     "HAnimJoint": {
+                                                      "@name": "r_f_proximal_Interphalangeal_joint2",
                                                       "@DEF": "r_f_proximal_Interphalangeal_joint2",
                                                       "@center": [
                                                         -0.05,
                                                         -1.05,
                                                         0
                                                       ],
-                                                      "@name": "r_f_proximal_Interphalangeal_joint2",
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
-                                                            "@DEF": "r_middle_phalanges2",
                                                             "@name": "r_middle_phalanges2",
+                                                            "@DEF": "r_middle_phalanges2",
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -991,18 +991,18 @@
                                                         },
                                                         {
                                                           "HAnimJoint": {
+                                                            "@name": "r_f_distal_Interphalangeal_joint2",
                                                             "@DEF": "r_f_distal_Interphalangeal_joint2",
                                                             "@center": [
                                                               -0.05,
                                                               -1.12,
                                                               0
                                                             ],
-                                                            "@name": "r_f_distal_Interphalangeal_joint2",
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
-                                                                  "@DEF": "r_distal_phalanges2",
                                                                   "@name": "r_distal_phalanges2",
+                                                                  "@DEF": "r_distal_phalanges2",
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -1077,22 +1077,22 @@
                                   }
                                 },
                                 {
-                                  "#comment": " CN3 "
+                                  "#comment": "CN3"
                                 },
                                 {
                                   "HAnimJoint": {
+                                    "@name": "r_cuneonavicular_joint3",
                                     "@DEF": "r_cuneonavicular_joint3",
                                     "@center": [
                                       -0.1,
                                       -0.4,
                                       0
                                     ],
-                                    "@name": "r_cuneonavicular_joint3",
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@DEF": "r_cuneiform3",
                                           "@name": "r_cuneiform3",
+                                          "@DEF": "r_cuneiform3",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -1153,18 +1153,18 @@
                                       },
                                       {
                                         "HAnimJoint": {
+                                          "@name": "r_tarsometatarsal_joint3",
                                           "@DEF": "r_tarsometatarsal_joint3",
                                           "@center": [
                                             -0.15,
                                             -0.6,
                                             0
                                           ],
-                                          "@name": "r_tarsometatarsal_joint3",
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@DEF": "r_metatarsal3",
                                                 "@name": "r_metatarsal3",
+                                                "@DEF": "r_metatarsal3",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -1225,18 +1225,18 @@
                                             },
                                             {
                                               "HAnimJoint": {
+                                                "@name": "r_metatarsophalangeal_joint3",
                                                 "@DEF": "r_metatarsophalangeal_joint3",
                                                 "@center": [
                                                   -0.15,
                                                   -0.9,
                                                   0
                                                 ],
-                                                "@name": "r_metatarsophalangeal_joint3",
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
-                                                      "@DEF": "r_proximal_phalanges3",
                                                       "@name": "r_proximal_phalanges3",
+                                                      "@DEF": "r_proximal_phalanges3",
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -1297,18 +1297,18 @@
                                                   },
                                                   {
                                                     "HAnimJoint": {
+                                                      "@name": "r_f_proximal_Interphalangeal_joint3",
                                                       "@DEF": "r_f_proximal_Interphalangeal_joint3",
                                                       "@center": [
                                                         -0.15,
                                                         -1.05,
                                                         0
                                                       ],
-                                                      "@name": "r_f_proximal_Interphalangeal_joint3",
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
-                                                            "@DEF": "r_middle_phalanges3",
                                                             "@name": "r_middle_phalanges3",
+                                                            "@DEF": "r_middle_phalanges3",
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -1369,18 +1369,18 @@
                                                         },
                                                         {
                                                           "HAnimJoint": {
+                                                            "@name": "r_f_distal_Interphalangeal_joint3",
                                                             "@DEF": "r_f_distal_Interphalangeal_joint3",
                                                             "@center": [
                                                               -0.15,
                                                               -1.13,
                                                               0
                                                             ],
-                                                            "@name": "r_f_distal_Interphalangeal_joint3",
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
-                                                                  "@DEF": "r_distal_phalanges3",
                                                                   "@name": "r_distal_phalanges3",
+                                                                  "@DEF": "r_distal_phalanges3",
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -1458,22 +1458,22 @@
                             }
                           },
                           {
-                            "#comment": " CC "
+                            "#comment": "CC"
                           },
                           {
                             "HAnimJoint": {
+                              "@name": "r_calcaneuscuboid_joint",
                               "@DEF": "r_calcaneuscuboid_joint",
                               "@center": [
                                 -0.2,
                                 0.3,
                                 0
                               ],
-                              "@name": "r_calcaneuscuboid_joint",
                               "-children": [
                                 {
                                   "HAnimSegment": {
-                                    "@DEF": "r_calcaneus",
                                     "@name": "r_calcaneus",
+                                    "@DEF": "r_calcaneus",
                                     "-children": [
                                       {
                                         "Transform": {
@@ -1533,22 +1533,22 @@
                                   }
                                 },
                                 {
-                                  "#comment": " TT "
+                                  "#comment": "TT"
                                 },
                                 {
                                   "HAnimJoint": {
+                                    "@name": "r_transverse_tarsal_joint",
                                     "@DEF": "r_transverse_tarsal_joint",
                                     "@center": [
                                       -0.21,
                                       -0.3,
                                       0
                                     ],
-                                    "@name": "r_transverse_tarsal_joint",
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@DEF": "r_cuboid",
                                           "@name": "r_cuboid",
+                                          "@DEF": "r_cuboid",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -1646,22 +1646,22 @@
                                         }
                                       },
                                       {
-                                        "#comment": " TMT4 "
+                                        "#comment": "TMT4"
                                       },
                                       {
                                         "HAnimJoint": {
+                                          "@name": "r_tarsometatarsal_joint4",
                                           "@DEF": "r_tarsometatarsal_joint4",
                                           "@center": [
                                             -0.25,
                                             -0.58,
                                             0
                                           ],
-                                          "@name": "r_tarsometatarsal_joint4",
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@DEF": "r_metatarsal4",
                                                 "@name": "r_metatarsal4",
+                                                "@DEF": "r_metatarsal4",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -1722,18 +1722,18 @@
                                             },
                                             {
                                               "HAnimJoint": {
+                                                "@name": "r_metatarsophalangeal_joint4",
                                                 "@DEF": "r_metatarsophalangeal_joint4",
                                                 "@center": [
                                                   -0.25,
                                                   -0.87,
                                                   0
                                                 ],
-                                                "@name": "r_metatarsophalangeal_joint4",
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
-                                                      "@DEF": "r_proximal_phalanges4",
                                                       "@name": "r_proximal_phalanges4",
+                                                      "@DEF": "r_proximal_phalanges4",
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -1794,18 +1794,18 @@
                                                   },
                                                   {
                                                     "HAnimJoint": {
+                                                      "@name": "r_f_proximal_Interphalangeal_joint4",
                                                       "@DEF": "r_f_proximal_Interphalangeal_joint4",
                                                       "@center": [
                                                         -0.25,
                                                         -1,
                                                         0
                                                       ],
-                                                      "@name": "r_f_proximal_Interphalangeal_joint4",
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
-                                                            "@DEF": "r_middle_phalanges4",
                                                             "@name": "r_middle_phalanges4",
+                                                            "@DEF": "r_middle_phalanges4",
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -1866,18 +1866,18 @@
                                                         },
                                                         {
                                                           "HAnimJoint": {
+                                                            "@name": "r_f_distal_Interphalangeal_joint4",
                                                             "@DEF": "r_f_distal_Interphalangeal_joint4",
                                                             "@center": [
                                                               -0.25,
                                                               -1.1,
                                                               0
                                                             ],
-                                                            "@name": "r_f_distal_Interphalangeal_joint4",
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
-                                                                  "@DEF": "r_distal_phalanges4",
                                                                   "@name": "r_distal_phalanges4",
+                                                                  "@DEF": "r_distal_phalanges4",
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -1949,22 +1949,22 @@
                                         }
                                       },
                                       {
-                                        "#comment": " TMT5 "
+                                        "#comment": "TMT5"
                                       },
                                       {
                                         "HAnimJoint": {
+                                          "@name": "r_tarsometatarsal_joint5",
                                           "@DEF": "r_tarsometatarsal_joint5",
                                           "@center": [
                                             -0.33,
                                             -0.52,
                                             0
                                           ],
-                                          "@name": "r_tarsometatarsal_joint5",
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@DEF": "r_metatarsal5",
                                                 "@name": "r_metatarsal5",
+                                                "@DEF": "r_metatarsal5",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -2025,18 +2025,18 @@
                                             },
                                             {
                                               "HAnimJoint": {
+                                                "@name": "r_metatarsophalangeal_joint5",
                                                 "@DEF": "r_metatarsophalangeal_joint5",
                                                 "@center": [
                                                   -0.34,
                                                   -0.8,
                                                   0
                                                 ],
-                                                "@name": "r_metatarsophalangeal_joint5",
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
-                                                      "@DEF": "r_proximal_phalanges5",
                                                       "@name": "r_proximal_phalanges5",
+                                                      "@DEF": "r_proximal_phalanges5",
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -2097,18 +2097,18 @@
                                                   },
                                                   {
                                                     "HAnimJoint": {
+                                                      "@name": "r_f_proximal_Interphalangeal_joint5",
                                                       "@DEF": "r_f_proximal_Interphalangeal_joint5",
                                                       "@center": [
                                                         -0.34,
                                                         -0.95,
                                                         0
                                                       ],
-                                                      "@name": "r_f_proximal_Interphalangeal_joint5",
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
-                                                            "@DEF": "r_middle_phalanges5",
                                                             "@name": "r_middle_phalanges5",
+                                                            "@DEF": "r_middle_phalanges5",
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -2169,18 +2169,18 @@
                                                         },
                                                         {
                                                           "HAnimJoint": {
+                                                            "@name": "r_f_distal_Interphalangeal_joint5",
                                                             "@DEF": "r_f_distal_Interphalangeal_joint5",
                                                             "@center": [
                                                               -0.34,
                                                               -1.05,
                                                               0
                                                             ],
-                                                            "@name": "r_f_distal_Interphalangeal_joint5",
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
-                                                                  "@DEF": "r_distal_phalanges5",
                                                                   "@name": "r_distal_phalanges5",
+                                                                  "@DEF": "r_distal_phalanges5",
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -2536,8 +2536,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"
+    }
   }
 }

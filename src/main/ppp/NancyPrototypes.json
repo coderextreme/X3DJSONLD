@@ -1,69 +1,71 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
-          "@content": "NancyPrototypes.x3d",
-          "@name": "title"
+          "@name": "title",
+          "@content": "NancyPrototypes.x3d"
         },
         {
-          "@content": "Cindy Ballreich",
-          "@name": "creator"
+          "@name": "creator",
+          "@content": "Cindy Ballreich"
         },
         {
-          "@content": "Tom Miller and Don Brutzman, NPS",
-          "@name": "translators"
+          "@name": "translators",
+          "@content": "Tom Miller and Don Brutzman, NPS"
         },
         {
-          "@content": "9 July 2000",
-          "@name": "created"
+          "@name": "created",
+          "@content": "9 July 2000"
         },
         {
-          "@content": "20 October 2019",
-          "@name": "modified"
+          "@name": "modified",
+          "@content": "20 October 2019"
         },
         {
-          "@content": "Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces.",
-          "@name": "description"
+          "@name": "description",
+          "@content": "Canonical H-Anim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."
         },
         {
-          "@content": "using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead",
-          "@name": "warning"
-        },
-        {
-          "@content": "NancyNativeTags.x3d",
-          "@name": "reference"
-        },
-        {
-          "@content": "Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem.",
-          "@name": "TODO"
-        },
-        {
-          "@content": "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d",
-          "@name": "identifier"
-        },
-        {
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-          "@name": "generator"
-        },
-        {
-          "@content": "../license.html",
-          "@name": "license"
-        },
-        {
-          "@name": "translated",
-          "@content": "1 May 2020"
-        },
-        {
-          "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@name": "warning",
+          "@content": "using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "NancyNativeTags.x3d"
+        },
+        {
+          "@name": "TODO",
+          "@content": "Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem."
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/NancyPrototypes.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "10 June 2020"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -75,7 +77,7 @@
         {},
         {},
         {
-          "#comment": " Start scene graph. "
+          "#comment": "Start scene graph."
         },
         {
           "Transform": {
@@ -20890,8 +20892,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

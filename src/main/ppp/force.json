@@ -1,13 +1,15 @@
 {
   "X3D": {
+    "encoding": "UTF-8",
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "http://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
-          "@level": 1,
-          "@name": "Scripting"
+          "@name": "Scripting",
+          "@level": 1
         }
       ],
       "meta": [
@@ -37,15 +39,15 @@
         },
         {
           "@name": "translated",
-          "@content": "1 May 2020"
+          "@content": "10 June 2020"
         },
         {
           "@name": "generator",
-          "@content": "DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
         },
         {
           "@name": "reference",
-          "@content": "X3D JSON encoding: http://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
         }
       ]
     },
@@ -65,7 +67,6 @@
               {
                 "PlaneSensor": {
                   "@DEF": "clickGenerator",
-                  "@enabled": true,
                   "@minPosition": [
                     -50,
                     -50
@@ -126,9 +127,6 @@
                                         ],
                                         "-fontStyle": {
                                           "FontStyle": {
-                                            "@family": [
-                                              "SERIF"
-                                            ],
                                             "@justify": [
                                               "MIDDLE",
                                               "MIDDLE"
@@ -213,13 +211,16 @@
                         ],
                         "#sourceText": [
                           "",
+                          "",
                           "ecmascript:",
                           "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f([old, translation]);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
-                          "\t\t\t\t\t}"
+                          "\t\t\t\t\t}",
+                          "",
+                          ""
                         ]
                       }
                     },
@@ -314,9 +315,6 @@
                                         ],
                                         "-fontStyle": {
                                           "FontStyle": {
-                                            "@family": [
-                                              "SERIF"
-                                            ],
                                             "@justify": [
                                               "MIDDLE",
                                               "MIDDLE"
@@ -401,13 +399,16 @@
                         ],
                         "#sourceText": [
                           "",
+                          "",
                           "ecmascript:",
                           "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f([old, translation]);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
-                          "\t\t\t\t\t}"
+                          "\t\t\t\t\t}",
+                          "",
+                          ""
                         ]
                       }
                     },
@@ -502,9 +503,6 @@
                                         ],
                                         "-fontStyle": {
                                           "FontStyle": {
-                                            "@family": [
-                                              "SERIF"
-                                            ],
                                             "@justify": [
                                               "MIDDLE",
                                               "MIDDLE"
@@ -589,13 +587,16 @@
                         ],
                         "#sourceText": [
                           "",
+                          "",
                           "ecmascript:",
                           "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f([old, translation]);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
-                          "\t\t\t\t\t}"
+                          "\t\t\t\t\t}",
+                          "",
+                          ""
                         ]
                       }
                     },
@@ -690,9 +691,6 @@
                                         ],
                                         "-fontStyle": {
                                           "FontStyle": {
-                                            "@family": [
-                                              "SERIF"
-                                            ],
                                             "@justify": [
                                               "MIDDLE",
                                               "MIDDLE"
@@ -777,13 +775,16 @@
                         ],
                         "#sourceText": [
                           "",
+                          "",
                           "ecmascript:",
                           "\t\t\t\t\tfunction set_cycle(value) {",
                           "                                                old = translation;",
                           "\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
                           "                                                keyValue = new MFVec3f([old, translation]);",
                           "\t\t\t\t\t\t// Browser.println(translation);",
-                          "\t\t\t\t\t}"
+                          "\t\t\t\t\t}",
+                          "",
+                          ""
                         ]
                       }
                     },
@@ -939,6 +940,7 @@
                         ],
                         "#sourceText": [
                           "",
+                          "",
                           "ecmascript:",
                           "",
                           "                function set_endA(value) {",
@@ -948,7 +950,7 @@
                           "\t\t        spine = new MFVec3f([value, spine[1]]);",
                           "\t\t    }",
                           "                }",
-                          "                ",
+                          "",
                           "                function set_endB(value) {",
                           "\t\t    if (typeof spine === 'undefined') {",
                           "\t\t        spine = new MFVec3f([value, value]);",
@@ -956,10 +958,12 @@
                           "\t\t        spine = new MFVec3f([spine[0], value]);",
                           "\t\t    }",
                           "                }",
-                          "                ",
+                          "",
                           "                function set_spine(value) {",
                           "                    spine = value;",
-                          "                }"
+                          "                }",
+                          "",
+                          ""
                         ]
                       }
                     },
@@ -1084,6 +1088,7 @@
                         ],
                         "#sourceText": [
                           "",
+                          "",
                           "ecmascript:",
                           "",
                           "                function set_endA(value) {",
@@ -1093,7 +1098,7 @@
                           "\t\t        spine = new MFVec3f([value, spine[1]]);",
                           "\t\t    }",
                           "                }",
-                          "                ",
+                          "",
                           "                function set_endB(value) {",
                           "\t\t    if (typeof spine === 'undefined') {",
                           "\t\t        spine = new MFVec3f([value, value]);",
@@ -1101,10 +1106,12 @@
                           "\t\t        spine = new MFVec3f([spine[0], value]);",
                           "\t\t    }",
                           "                }",
-                          "                ",
+                          "",
                           "                function set_spine(value) {",
                           "                    spine = value;",
-                          "                }"
+                          "                }",
+                          "",
+                          ""
                         ]
                       }
                     },
@@ -1229,6 +1236,7 @@
                         ],
                         "#sourceText": [
                           "",
+                          "",
                           "ecmascript:",
                           "",
                           "                function set_endA(value) {",
@@ -1238,7 +1246,7 @@
                           "\t\t        spine = new MFVec3f([value, spine[1]]);",
                           "\t\t    }",
                           "                }",
-                          "                ",
+                          "",
                           "                function set_endB(value) {",
                           "\t\t    if (typeof spine === 'undefined') {",
                           "\t\t        spine = new MFVec3f([value, value]);",
@@ -1246,10 +1254,12 @@
                           "\t\t        spine = new MFVec3f([spine[0], value]);",
                           "\t\t    }",
                           "                }",
-                          "                ",
+                          "",
                           "                function set_spine(value) {",
                           "                    spine = value;",
-                          "                }"
+                          "                }",
+                          "",
+                          ""
                         ]
                       }
                     },
@@ -1272,42 +1282,31 @@
             "@DEF": "clickHandler",
             "field": [
               {
-                "@accessType": "inputOutput",
                 "@name": "counter",
+                "@accessType": "inputOutput",
                 "@value": 0,
                 "@type": "SFInt32"
               },
               {
-                "@accessType": "outputOnly",
                 "@name": "node_changed",
+                "@accessType": "outputOnly",
                 "@type": "SFNode"
               },
               {
-                "@accessType": "inputOnly",
                 "@name": "add_node",
+                "@accessType": "inputOnly",
                 "@value": false,
                 "@type": "SFBool"
               }
             ],
             "-children": [
               {
-                "#comment": ""
-              },
-              {
-                "#comment": "            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"
-              },
-              {
-                "#comment": "                <Transform USE=\"HoldsContent\"/>"
-              },
-              {
-                "#comment": "            </field>"
-              },
-              {
-                "#comment": "\t    "
+                "#comment": "<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
               }
             ],
             "#sourceText": [
               "",
+              "\t",
               "ecmascript:",
               "\tfunction add_node(value) {",
               "                // Browser.print('hey ', counter);",
@@ -1324,9 +1323,10 @@
               "\t\t\t\t  ]",
               "\t\t\t\t}",
               "\t\t\t});",
-              "                ",
+              "",
               "        }",
-              "\t"
+              "\t",
+              ""
             ]
           }
         },
@@ -1387,8 +1387,6 @@
           }
         }
       ]
-    },
-    "encoding": "UTF-8",
-    "JSON schema": "http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"
+    }
   }
 }

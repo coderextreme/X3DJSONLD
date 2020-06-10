@@ -257,7 +257,8 @@ X3DJSON['Script']['Scene']['../data/x3dconnectorProto.json']['DECLx3dconnector_c
 		console.log('Problems setting endpoint '+e);
 		console.error('Problems setting endpoint',e);
 	}
-ecmascript:
+
+            ecmascript:
        
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -307,7 +308,8 @@ ecmascript:
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(X3DJSON.nodeUtil('Scene','G1', 'translation'),val);
         }
-           ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -458,7 +460,8 @@ X3DJSON['Script']['Scene']['../data/x3dconnectorProto.json']['DECLx3dconnector_c
 		console.log('Problems setting endpoint '+e);
 		console.error('Problems setting endpoint',e);
 	}
-ecmascript:
+
+            ecmascript:
        
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -508,7 +511,8 @@ ecmascript:
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(X3DJSON.nodeUtil('Scene','G1', 'translation'),val);
         }
-           ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
@@ -659,7 +663,8 @@ X3DJSON['Script']['Scene']['../data/x3dconnectorProto.json']['DECLx3dconnector_c
 		console.log('Problems setting endpoint '+e);
 		console.error('Problems setting endpoint',e);
 	}
-ecmascript:
+
+            ecmascript:
        
 	this.recompute = function (startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -709,7 +714,8 @@ ecmascript:
 	this.set_endpoint = function (val,t){
             this.recompute_and_route(X3DJSON.nodeUtil('Scene','G1', 'translation'),val);
         }
-           ;
+
+;
 
 };
 if (typeof X3DJSON['Obj'] === 'undefined') {
