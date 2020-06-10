@@ -23,7 +23,7 @@ from x3d import *
 ###############################################
 
 newModel=X3D(profile='Immersive',version='3.3',
-  #  x3dVersionComparisonTest for this model: supportsX3dVersion(X3DObject.VERSION_3_0)=true 
+  #  x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true 
   head=head(
     children=[
     #  comment #1 
@@ -40,27 +40,27 @@ newModel=X3D(profile='Immersive',version='3.3',
     unit(name='AngleUnitConversion',category='angle',conversionFactor=1.0),
     unit(name='LengthUnitConversion',category='length',conversionFactor=1.0),
     unit(name='ForceFromPoundsToNewtons',category='force',conversionFactor=4.4482),
-    meta(content='Java.x3d',name='title'),
+    meta(content='HelloWorldProgramOutput.x3d',name='title'),
     meta(content='continued development and testing in progress',name='info'),
     meta(content='Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)',name='description'),
     meta(content='https://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
-    meta(content='Java.java',name='generator'),
+    meta(content='HelloWorldProgramOutput.java',name='generator'),
     meta(content='6 September 2016',name='created'),
-    meta(content='4 April 2020',name='modified'),
+    meta(content='25 May 2020',name='modified'),
     meta(content='X3D Java Scene Access Interface Library (X3DJSAIL)',name='generator'),
     meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java',name='generator'),
     meta(content='Netbeans http://www.netbeans.org',name='generator'),
     meta(content='Don Brutzman',name='creator'),
-    meta(content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/Java.x3d',name='reference'),
+    meta(content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d',name='reference'),
     meta(content='Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:',name='reference'),
-    meta(content='Java.txt',name='reference'),
-    meta(content='Java.x3dv',name='reference'),
-    meta(content='Java.wrl',name='reference'),
-    meta(content='Java.html',name='reference'),
-    meta(content='https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/Java.x3d',name='reference'),
-    meta(content='https://www.web3d.org/specifications/java/examples/Java.x3d',name='identifier'),
+    meta(content='HelloWorldProgramOutput.txt',name='reference'),
+    meta(content='HelloWorldProgramOutput.x3dv',name='reference'),
+    meta(content='HelloWorldProgramOutput.wrl',name='reference'),
+    meta(content='HelloWorldProgramOutput.html',name='reference'),
+    meta(content='https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d',name='reference'),
+    meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d',name='identifier'),
     meta(content='../license.html',name='license'),
-    meta(content='04 April 2020',name='translated'),
+    meta(content='25 May 2020',name='translated'),
     meta(content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html',name='generator'),
     meta(content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding',name='reference')]),
   Scene=Scene(
@@ -318,6 +318,10 @@ newModel=X3D(profile='Immersive',version='3.3',
 # Self-test diagnostics
 ###############################################
 
-if         metaDiagnostics(newModel): # built-in utility method in X3D class
-    print (metaDiagnostics(newModel))
-print ("python x3d.py load successful for Java.py")
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for HelloWorldProgramOutput.py")

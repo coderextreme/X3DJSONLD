@@ -23,7 +23,7 @@ from x3d import *
 ###############################################
 
 newModel=X3D(profile='Immersive',version='3.3',
-  #  x3dVersionComparisonTest for this model: supportsX3dVersion(X3DObject.VERSION_3_0)=true 
+  #  x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true 
   head=head(
     children=[
     #  comment #1 
