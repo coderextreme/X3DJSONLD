@@ -98,7 +98,7 @@
           },
           {
             "@name":"modified",
-            "@content":"9 June 2020"
+            "@content":"25 May 2020"
           },
           {
             "@name":"generator",
@@ -151,6 +151,18 @@
           {
             "@name":"license",
             "@content":"../license.html"
+          },
+          {
+            "@name":"translated",
+            "@content":"25 May 2020"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+          },
+          {
+            "@name":"reference",
+            "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
           },
           {
             "@name":"translated",
@@ -377,7 +389,7 @@
                                   { "MetadataString":
                                     {
                                       "@name":"extraChildTest",
-                                      "@value":["checks MetadataSet addValue() method"]
+                                      "@value":["checks MetadataSetObject addValue() method"]
                                     }
                                   }
                                 ]
@@ -412,7 +424,7 @@
                               "#comment":"alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'"
                             },
                             {
-                              "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"
+                              "#comment":"alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"\"Immel did it!\\\"\"\"\"})"
                             },
                             {
                               "#comment":"reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html"
@@ -1026,7 +1038,7 @@
                   "#comment":"SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true"
                 },
                 {
-                  "#comment":"regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotation.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value"
+                  "#comment":"regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value"
                 }
               ]
             }
@@ -1079,16 +1091,16 @@
             }
           },
           {
-            "#comment":"Test success: Anchor.isNode()=true, siteAnchor.isNode()=true"
+            "#comment":"Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"
           },
           {
-            "#comment":"Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false"
+            "#comment":"Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false"
           },
           {
-            "#comment":"Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false"
+            "#comment":"Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false"
           },
           {
-            "#comment":"Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true"
+            "#comment":"Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true"
           },
           {
             "#comment":"Test success: CommentsBlock.isNode()=false, testComments.isNode()=false"
@@ -1155,18 +1167,6 @@
                     }
                   }
                 },
-                { "ProtoInstance":
-                  {
-                    "@name":"NewWorldInfo",
-                    "@DEF":"Proto1",
-                    "fieldValue": [
-                      {
-                        "@name":"description",
-                        "@value":"testing 1 2 3"
-                      }
-                    ]
-                  }
-                },
                 { "Group":
                   {
                     "@DEF":"Node2",
@@ -1175,12 +1175,6 @@
                         "#comment":"intentionally empty"
                       }
                     ]
-                  }
-                },
-                { "ProtoInstance":
-                  {
-                    "@name":"NewWorldInfo",
-                    "@DEF":"Proto3"
                   }
                 },
                 { "Transform":
