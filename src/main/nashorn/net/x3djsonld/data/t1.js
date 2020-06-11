@@ -47,33 +47,34 @@ t1.prototype = {
   initialize : function ()
   {
 
-	/** Large attribute array: Coordinate point field, scene-graph level=8, element #13, 15 total numbers made up of 5 3-tuple values */
-	this.Coordinate_8_13_point = new MFVec3f(Java.to([-0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,0.0,0.349999994039536,0.0], Java.type("float[]")));
+	/** Large attribute array: Coordinate point field, scene-graph level=8, element #14, 15 total numbers made up of 5 3-tuple values */
+	this.Coordinate_8_14_point = new MFVec3f(Java.to([-0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,0.349999994039536,0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,-0.349999994039536,0.0,0.349999994039536,0.0], Java.type("float[]")));
 
-	/** Large attribute array: IndexedLineSet coordIndex field, scene-graph level=5, element #248, 54 total numbers */
-	this.IndexedLineSet_5_248_coordIndex = new MFInt32(Java.to([0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1,32,33,-1,34,35,-1], Java.type("int[]")));
+	/** Large attribute array: IndexedLineSet coordIndex field, scene-graph level=5, element #249, 54 total numbers */
+	this.IndexedLineSet_5_249_coordIndex = new MFInt32(Java.to([0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1,32,33,-1,34,35,-1], Java.type("int[]")));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=6, element #248, 108 total numbers made up of 36 3-tuple values */
-	this.Coordinate_6_248_point = new MFVec3f() /* splitting up long array to improve readability */
+	/** Large attribute array: Coordinate point field, scene-graph level=6, element #249, 108 total numbers made up of 36 3-tuple values */
+	this.Coordinate_6_249_point = new MFVec3f() /* splitting up long array to improve readability */
 	.append(new MFVec3f(Java.to([430.0,0.0199999995529652,-335.0,435.799987792969,0.100000001490116,-335.299987792969,430.0,0.0199999995529652,-335.0,434.600006103516,0.100000001490116,-338.600006103516,430.0,0.0199999995529652,-335.0,432.700012207031,0.100000001490116,-336.600006103516,430.0,0.0199999995529652,-335.0,434.700012207031,0.100000001490116,-336.899993896484,429.899993896484,0.0199999995529652,-360.299987792969,474.700012207031,0.100000001490116,-318.799987792969], Java.type("float[]"))))
 	.append(new MFVec3f(Java.to([429.899993896484,0.0199999995529652,-360.299987792969,485.600006103516,0.100000001490116,-309.0,429.899993896484,0.0199999995529652,-360.299987792969,434.799987792969,0.100000001490116,-371.5,454.0,0.0199999995529652,-361.299987792969,457.399993896484,0.100000001490116,-359.600006103516,454.0,0.0199999995529652,-361.299987792969,454.200012207031,0.100000001490116,-358.600006103516,454.0,0.0199999995529652,-361.299987792969,450.600006103516,0.100000001490116,-358.600006103516], Java.type("float[]"))))
 	.append(new MFVec3f(Java.to([458.899993896484,0.0199999995529652,-304.299987792969,473.5,0.100000001490116,-287.5,458.899993896484,0.0199999995529652,-304.299987792969,458.0,0.100000001490116,-304.5,491.600006103516,0.0199999995529652,-335.700012207031,491.399993896484,0.100000001490116,-336.799987792969,491.600006103516,0.0199999995529652,-335.700012207031,496.899993896484,0.100000001490116,-368.899993896484,467.0,0.0199999995529652,-243.899993896484,477.100006103516,0.100000001490116,-260.0], Java.type("float[]"))))
 	.append(new MFVec3f(Java.to([467.0,0.0199999995529652,-243.899993896484,459.0,0.100000001490116,-236.399993896484,458.700012207031,0.0199999995529652,-262.700012207031,469.5,0.100000001490116,-249.800003051758,458.700012207031,0.0199999995529652,-262.700012207031,456.700012207031,0.100000001490116,-261.799987792969], Java.type("float[]"))));
 
-	/** Large attribute array: IndexedLineSet coordIndex field, scene-graph level=5, element #253, 54 total numbers */
-	this.IndexedLineSet_5_253_coordIndex = new MFInt32(Java.to([0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1,32,33,-1,34,35,-1], Java.type("int[]")));
+	/** Large attribute array: IndexedLineSet coordIndex field, scene-graph level=5, element #254, 54 total numbers */
+	this.IndexedLineSet_5_254_coordIndex = new MFInt32(Java.to([0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1,10,11,-1,12,13,-1,14,15,-1,16,17,-1,18,19,-1,20,21,-1,22,23,-1,24,25,-1,26,27,-1,28,29,-1,30,31,-1,32,33,-1,34,35,-1], Java.type("int[]")));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=6, element #253, 108 total numbers made up of 36 3-tuple values */
-	this.Coordinate_6_253_point = new MFVec3f() /* splitting up long array to improve readability */
+	/** Large attribute array: Coordinate point field, scene-graph level=6, element #254, 108 total numbers made up of 36 3-tuple values */
+	this.Coordinate_6_254_point = new MFVec3f() /* splitting up long array to improve readability */
 	.append(new MFVec3f(Java.to([400.0,0.0199999995529652,-385.0,400.600006103516,0.100000001490116,-392.899993896484,400.0,0.0199999995529652,-385.0,416.700012207031,0.100000001490116,-383.399993896484,430.0,0.0199999995529652,-335.0,438.299987792969,0.100000001490116,-338.600006103516,430.0,0.0199999995529652,-335.0,434.799987792969,0.100000001490116,-336.0,430.0,0.0199999995529652,-335.0,437.600006103516,0.100000001490116,-332.600006103516], Java.type("float[]"))))
 	.append(new MFVec3f(Java.to([430.0,0.0199999995529652,-335.0,436.299987792969,0.100000001490116,-333.399993896484,430.0,0.0199999995529652,-335.0,435.200012207031,0.100000001490116,-336.799987792969,430.0,0.0199999995529652,-335.0,432.5,0.100000001490116,-332.5,429.899993896484,0.0199999995529652,-360.299987792969,436.100006103516,0.100000001490116,-334.899993896484,429.899993896484,0.0199999995529652,-360.299987792969,440.5,0.100000001490116,-355.5], Java.type("float[]"))))
 	.append(new MFVec3f(Java.to([429.899993896484,0.0199999995529652,-360.299987792969,436.299987792969,0.100000001490116,-371.700012207031,429.899993896484,0.0199999995529652,-360.299987792969,431.200012207031,0.100000001490116,-361.200012207031,457.100006103516,0.0199999995529652,-300.799987792969,456.799987792969,0.100000001490116,-302.600006103516,457.100006103516,0.0199999995529652,-300.799987792969,453.299987792969,0.100000001490116,-318.600006103516,442.399993896484,0.0199999995529652,-314.5,444.600006103516,0.100000001490116,-313.700012207031], Java.type("float[]"))))
 	.append(new MFVec3f(Java.to([442.399993896484,0.0199999995529652,-314.5,440.600006103516,0.100000001490116,-310.399993896484,467.0,0.0199999995529652,-243.899993896484,474.700012207031,0.100000001490116,-259.100006103516,457.399993896484,0.0199999995529652,-262.700012207031,466.899993896484,0.100000001490116,-243.800003051758], Java.type("float[]"))));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=6, element #258, 30 total numbers made up of 10 3-tuple values */
-	this.Coordinate_6_258_point = new MFVec3f(Java.to([430.0,0.0199999995529652,-335.0,429.899993896484,0.100000001490116,-360.299987792969,442.399993896484,0.0199999995529652,-314.5,429.899993896484,0.100000001490116,-319.600006103516,457.399993896484,0.0199999995529652,-262.700012207031,467.0,0.100000001490116,-243.899993896484,458.700012207031,0.0199999995529652,-262.700012207031,457.399993896484,0.100000001490116,-262.700012207031,458.700012207031,0.0199999995529652,-262.700012207031,467.0,0.100000001490116,-243.899993896484], Java.type("float[]")));
+	/** Large attribute array: Coordinate point field, scene-graph level=6, element #259, 30 total numbers made up of 10 3-tuple values */
+	this.Coordinate_6_259_point = new MFVec3f(Java.to([430.0,0.0199999995529652,-335.0,429.899993896484,0.100000001490116,-360.299987792969,442.399993896484,0.0199999995529652,-314.5,429.899993896484,0.100000001490116,-319.600006103516,457.399993896484,0.0199999995529652,-262.700012207031,467.0,0.100000001490116,-243.899993896484,458.700012207031,0.0199999995529652,-262.700012207031,457.399993896484,0.100000001490116,-262.700012207031,458.700012207031,0.0199999995529652,-262.700012207031,467.0,0.100000001490116,-243.899993896484], Java.type("float[]")));
   this.x3dModel = new X3D().setProfile("Interchange").setVersion("3.0")
   .setHead(new head()
+    .addComponent(new component().setName("Networking").setLevel(2))
     .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
     .addMeta(new meta().setName("source").setContent("t1.wrl")))
   .setScene(new Scene()
@@ -91,7 +92,7 @@ t1.prototype = {
             .setAppearance(new Appearance()
               .setMaterial(new Material().setTransparency(0.200000002980232).setDiffuseColor(0.5,0.0,1.0)))
             .setGeometry(new IndexedFaceSet().setCoordIndex(Java.to([0,1,4,-1,1,2,4,-1,2,3,4,-1,3,0,4,-1,0,3,2,1,-1], Java.type("int[]")))
-              .setCoord(new Coordinate().setPoint(this.Coordinate_8_13_point))))
+              .setCoord(new Coordinate().setPoint(this.Coordinate_8_14_point))))
           .setIS(new IS()
             .addConnect(new connect().setNodeField("translation").setProtoField("pos"))))))
     .addChild(new ProtoDeclare().setName("institute")
@@ -323,18 +324,18 @@ t1.prototype = {
       .addChild(new Shape()
         .setAppearance(new Appearance()
           .setMaterial(new Material().setTransparency(0.200000002980232).setEmissiveColor(1.0,0.0,0.0)))
-        .setGeometry(new IndexedLineSet().setCoordIndex(this.IndexedLineSet_5_248_coordIndex)
-          .setCoord(new Coordinate().setPoint(this.Coordinate_6_248_point))))
+        .setGeometry(new IndexedLineSet().setCoordIndex(this.IndexedLineSet_5_249_coordIndex)
+          .setCoord(new Coordinate().setPoint(this.Coordinate_6_249_point))))
       .addChild(new Shape()
         .setAppearance(new Appearance()
           .setMaterial(new Material().setEmissiveColor(0.0,1.0,0.0).setTransparency(0.200000002980232)))
-        .setGeometry(new IndexedLineSet().setCoordIndex(this.IndexedLineSet_5_253_coordIndex)
-          .setCoord(new Coordinate().setPoint(this.Coordinate_6_253_point))))
+        .setGeometry(new IndexedLineSet().setCoordIndex(this.IndexedLineSet_5_254_coordIndex)
+          .setCoord(new Coordinate().setPoint(this.Coordinate_6_254_point))))
       .addChild(new Shape()
         .setAppearance(new Appearance()
           .setMaterial(new Material().setTransparency(0.200000002980232).setEmissiveColor(1.0,0.0,1.0)))
         .setGeometry(new IndexedLineSet().setCoordIndex(Java.to([0,1,-1,2,3,-1,4,5,-1,6,7,-1,8,9,-1], Java.type("int[]")))
-          .setCoord(new Coordinate().setPoint(this.Coordinate_6_258_point))))));
+          .setCoord(new Coordinate().setPoint(this.Coordinate_6_259_point))))));
   },
   // end of initialize() method
 

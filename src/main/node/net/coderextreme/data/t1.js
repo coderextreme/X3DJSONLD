@@ -70,6 +70,7 @@ var ProtoInstance54 = null;
 var ProtoInstance55 = null;
       var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
       .setHead((new autoclass.head())
+        .addComponent((new autoclass.component()).setName("Networking").setLevel(2))
         .addMeta((new autoclass.meta()).setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
         .addMeta((new autoclass.meta()).setName("source").setContent("t1.wrl")))
       .setScene((new autoclass.Scene())

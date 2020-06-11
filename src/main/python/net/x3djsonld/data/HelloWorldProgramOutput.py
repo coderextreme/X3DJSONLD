@@ -46,7 +46,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(content='https://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
     meta(content='HelloWorldProgramOutput.java',name='generator'),
     meta(content='6 September 2016',name='created'),
-    meta(content='4 April 2020',name='modified'),
+    meta(content='9 June 2020',name='modified'),
     meta(content='X3D Java Scene Access Interface Library (X3DJSAIL)',name='generator'),
     meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java',name='generator'),
     meta(content='Netbeans http://www.netbeans.org',name='generator'),
@@ -102,7 +102,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           metadata=MetadataSet(name='EscapedQuotationMarksMetadataSet',
             value=[
             MetadataString(name='quotesTestC',value=["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]),
-            MetadataString(name='extraChildTest',value=["checks MetadataSetObject addValue() method"])]),
+            MetadataString(name='extraChildTest',value=["checks MetadataSet addValue() method"])]),
           fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"]))),
       Collision(
         #  test containerField='proxy' 
@@ -237,7 +237,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       #  MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 
       #  ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= 
       #  SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true 
-      #  regex test SFVec3f().matches("1 2 3")=true, regex test SFVec3f().matches("1 2 3 4")=false, regex test (SFRotationObject.matches("0 0 0 0")=true, failure detecting illegal (zero axis) rotation value 
+      #  regex test SFVec3f().matches("1 2 3")=true, regex test SFVec3f().matches("1 2 3 4")=false, regex test (SFRotation.matches("0 0 0 0")=true, failure detecting illegal (zero axis) rotation value 
       ),
     Sound(location=(0,1.6,0),
       #  set sound-ellipsoid location height at 1.6m to match typical avatar height 
@@ -250,10 +250,10 @@ newModel=X3D(profile='Immersive',version='3.3',
         #  Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d 
         #  Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" "watchList" 
         )),
-    #  Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true 
-    #  Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false 
-    #  Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false 
-    #  Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true 
+    #  Test success: Anchor.isNode()=true, siteAnchor.isNode()=true 
+    #  Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false 
+    #  Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false 
+    #  Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true 
     #  Test success: CommentsBlock.isNode()=false, testComments.isNode()=false 
     #  Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true 
     Shape(DEF='ExtrusionShape',
