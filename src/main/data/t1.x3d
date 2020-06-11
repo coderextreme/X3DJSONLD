@@ -4,6 +4,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
      xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
 <head>
+	<component name='Networking' level='2'/>
 	<meta name="generator" content="view3dscene, https://castle-engine.io/view3dscene.php" />
 	<meta name="source" content="t1.wrl" />
 </head>

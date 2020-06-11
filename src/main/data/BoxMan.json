@@ -38,7 +38,7 @@
           },
           {
             "@name":"modified",
-            "@content":"20 October 2019"
+            "@content":"23 May 2020"
           },
           {
             "@name":"reference",
@@ -126,7 +126,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.x3d"
           },
           {
             "@name":"generator",
@@ -171,13 +171,13 @@
             {
               "@name":"Humanoid",
               "@DEF":"boxman_Humanoid",
-              "@info":["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"],
-              "@version":"2.0",
+              "@info":["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=1.0"],
+              "@version":"1.0",
               "-skeleton":[
                 { "HAnimJoint":
                   {
                     "@name":"humanoid_root",
-                    "@DEF":"boxman_HumanoidRoot",
+                    "@DEF":"boxman_humanoid_root",
                     "@center":[0,0.9723,-0.0728],
                     "@skinCoordIndex":[0,1,2,3,4,5,6,7,8,9,10,11],
                     "@skinCoordWeight":[1,1,1,1,1,1,1,1,1,1,1,1],
@@ -1087,7 +1087,7 @@
                 },
                 { "HAnimJoint":
                   {
-                    "@USE":"boxman_HumanoidRoot"
+                    "@USE":"boxman_humanoid_root"
                   }
                 }
               ],
@@ -1209,6 +1209,7 @@
                 { "HAnimSite":
                   {
                     "@name":"BoxMan_view",
+                    "@DEF":"boxman_BoxMan_view",
                     "-children":[
                       { "Viewpoint":
                         {
@@ -1258,7 +1259,7 @@
           { "ExternProtoDeclare":
             {
               "@name":"LOA1_WalkAnimation",
-              "@url":["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"],
+              "@url":["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"],
               "field": [
                 {
                   "@name":"cycleInterval",
@@ -1402,7 +1403,7 @@
               "@fromField":"HumanoidRoot_translation_changed",
               "@fromNode":"ANIMATOR",
               "@toField":"set_translation",
-              "@toNode":"boxman_HumanoidRoot"
+              "@toNode":"boxman_humanoid_root"
             }
           },
           { "ROUTE":
@@ -1410,7 +1411,7 @@
               "@fromField":"HumanoidRoot_rotation_changed",
               "@fromNode":"ANIMATOR",
               "@toField":"set_rotation",
-              "@toNode":"boxman_HumanoidRoot"
+              "@toNode":"boxman_humanoid_root"
             }
           },
           { "ROUTE":
@@ -1545,7 +1546,7 @@
             {
               "@DEF":"ENGINE",
               "@directOutput":true,
-              "@url":["BoxMan.js","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.js"],
+              "@url":["BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"],
               "field": [
                 {
                   "@name":"update",

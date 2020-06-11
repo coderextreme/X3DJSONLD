@@ -22,7 +22,7 @@
           },
           {
             "@name":"translated",
-            "@content":"12 May 2020"
+            "@content":"11 June 2020"
           },
           {
             "@name":"generator",
@@ -106,7 +106,8 @@
                                     "-material":
                                       { "Material":
                                         {
-                                          "@diffuseColor":[1,1,1]
+                                          "@diffuseColor":[0.5,0,1],
+                                          "@transparency":0.2
                                         }
                                       }
                                   }
@@ -166,7 +167,8 @@
                                     "-material":
                                       { "Material":
                                         {
-                                          "@diffuseColor":[1,1,1]
+                                          "@diffuseColor":[1,1,0],
+                                          "@transparency":0.2
                                         }
                                       }
                                   }
@@ -228,7 +230,7 @@
                               "-geometry":
                                 { "Sphere":
                                   {
-                                    "@radius":1.6999999
+                                    "@radius":0.7
                                   }
                                 }
                             }
@@ -280,7 +282,7 @@
                                     "-material":
                                       { "Material":
                                         {
-                                          "@diffuseColor":[1,1,1],
+                                          "@transparency":0.4,
                                           "IS": {
                                               "connect": [
                                                 {
@@ -1465,7 +1467,8 @@
                           "-material":
                             { "Material":
                               {
-                                "@emissiveColor":[1,0,0]
+                                "@emissiveColor":[1,0,0],
+                                "@transparency":0.2
                               }
                             }
                         }
@@ -1492,7 +1495,8 @@
                           "-material":
                             { "Material":
                               {
-                                "@emissiveColor":[0,1,0]
+                                "@emissiveColor":[0,1,0],
+                                "@transparency":0.2
                               }
                             }
                         }
@@ -1519,7 +1523,8 @@
                           "-material":
                             { "Material":
                               {
-                                "@emissiveColor":[1,0,1]
+                                "@emissiveColor":[1,0,1],
+                                "@transparency":0.2
                               }
                             }
                         }
