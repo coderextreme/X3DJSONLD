@@ -71,11 +71,6 @@
                       "-children":[
                         { "Shape":
                           {
-                            "-geometry":
-                              { "Sphere":
-                                {
-                                }
-                              },
                             "-appearance":
                               { "Appearance":
                                 {
@@ -85,6 +80,11 @@
                                         "@diffuseColor":[1,1,1]
                                       }
                                     }
+                                }
+                              },
+                            "-geometry":
+                              { "Sphere":
+                                {
                                 }
                               }
                           }
@@ -133,11 +133,6 @@
                       "-children":[
                         { "Shape":
                           {
-                            "-geometry":
-                              { "Cylinder":
-                                {
-                                }
-                              },
                             "-appearance":
                               { "Appearance":
                                 {
@@ -147,6 +142,11 @@
                                         "@diffuseColor":[1,1,1]
                                       }
                                     }
+                                }
+                              },
+                            "-geometry":
+                              { "Cylinder":
+                                {
                                 }
                               }
                           }
@@ -171,12 +171,25 @@
                           { "ProtoInstance":
                             {
                               "@name":"anyShape",
+                              "IS": {
+                                  "connect": [
+                                    {
+                                      "@nodeField":"myShape",
+                                      "@protoField":"myShape"
+                                    }
+                                  ]
+                              },
                               "fieldValue": [
                                 {
                                   "@name":"xtranslation",
                                   "@value":[0,0,0]
                                 }
-                              ],
+                              ]
+                            }
+                          },
+                          { "ProtoInstance":
+                            {
+                              "@name":"anyShape",
                               "IS": {
                                   "connect": [
                                     {
@@ -184,37 +197,18 @@
                                       "@protoField":"myShape"
                                     }
                                   ]
-                              }
-                            }
-                          },
-                          { "ProtoInstance":
-                            {
-                              "@name":"anyShape",
+                              },
                               "fieldValue": [
                                 {
                                   "@name":"xtranslation",
                                   "@value":[2,0,0]
                                 }
-                              ],
-                              "IS": {
-                                  "connect": [
-                                    {
-                                      "@nodeField":"myShape",
-                                      "@protoField":"myShape"
-                                    }
-                                  ]
-                              }
+                              ]
                             }
                           },
                           { "ProtoInstance":
                             {
                               "@name":"anyShape",
-                              "fieldValue": [
-                                {
-                                  "@name":"xtranslation",
-                                  "@value":[-2,0,0]
-                                }
-                              ],
                               "IS": {
                                   "connect": [
                                     {
@@ -222,7 +216,13 @@
                                       "@protoField":"myShape"
                                     }
                                   ]
-                              }
+                              },
+                              "fieldValue": [
+                                {
+                                  "@name":"xtranslation",
+                                  "@value":[-2,0,0]
+                                }
+                              ]
                             }
                           }
                         ]
@@ -247,12 +247,6 @@
                     { "Shape":
                       {
                         "@DEF":"box",
-                        "-geometry":
-                          { "Box":
-                            {
-                              "@size":[1,1,1]
-                            }
-                          },
                         "-appearance":
                           { "Appearance":
                             {
@@ -262,6 +256,12 @@
                                     "@diffuseColor":[0,1,0]
                                   }
                                 }
+                            }
+                          },
+                        "-geometry":
+                          { "Box":
+                            {
+                              "@size":[1,1,1]
                             }
                           }
                       }
