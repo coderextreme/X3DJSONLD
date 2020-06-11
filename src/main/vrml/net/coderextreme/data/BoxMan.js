@@ -18,11 +18,11 @@ browser.currentScene.children[1] = Background3;
 let HAnimHumanoid4 = browser.currentScene.createNode("HAnimHumanoid");
 HAnimHumanoid4.name = "Humanoid";
 HAnimHumanoid4.DEF = "boxman_Humanoid";
-HAnimHumanoid4.info = new MFString(new java.lang.String["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"]);
-HAnimHumanoid4.version = "2.0";
+HAnimHumanoid4.info = new MFString(new java.lang.String["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=1.0"]);
+HAnimHumanoid4.version = "1.0";
 let HAnimJoint5 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint5.name = "humanoid_root";
-HAnimJoint5.DEF = "boxman_HumanoidRoot";
+HAnimJoint5.DEF = "boxman_humanoid_root";
 HAnimJoint5.center = new SFVec3f(new float[0,0.9723,-0.0728]);
 HAnimJoint5.skinCoordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9,10,11]);
 HAnimJoint5.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1]);
@@ -746,7 +746,7 @@ HAnimJoint131.USE = "boxman_l_hip";
 HAnimHumanoid4.joints[17] = HAnimJoint131;
 
 let HAnimJoint132 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint132.USE = "boxman_HumanoidRoot";
+HAnimJoint132.USE = "boxman_humanoid_root";
 HAnimHumanoid4.joints[18] = HAnimJoint132;
 
 let HAnimSegment133 = browser.currentScene.createNode("HAnimSegment");
@@ -839,6 +839,7 @@ HAnimHumanoid4.viewpoints[40] = HAnimSite154;
 
 let HAnimSite155 = browser.currentScene.createNode("HAnimSite");
 HAnimSite155.name = "BoxMan_view";
+HAnimSite155.DEF = "boxman_BoxMan_view";
 let Viewpoint156 = browser.currentScene.createNode("Viewpoint");
 Viewpoint156.DEF = "Inclined_View";
 Viewpoint156.description = "Inclined View";
@@ -881,7 +882,7 @@ browser.currentScene.children[2] = HAnimHumanoid4;
 
 let ExternProtoDeclare161 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare161.name = "LOA1_WalkAnimation";
-ExternProtoDeclare161.url = new MFString(new java.lang.String["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"]);
+ExternProtoDeclare161.url = new MFString(new java.lang.String["LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"]);
 let field162 = browser.currentScene.createNode("field");
 field162.name = "cycleInterval";
 field162.accessType = "inputOutput";
@@ -1046,14 +1047,14 @@ let ROUTE188 = browser.currentScene.createNode("ROUTE");
 ROUTE188.fromField = "HumanoidRoot_translation_changed";
 ROUTE188.fromNode = "ANIMATOR";
 ROUTE188.toField = "set_translation";
-ROUTE188.toNode = "boxman_HumanoidRoot";
+ROUTE188.toNode = "boxman_humanoid_root";
 browser.currentScene.children[5] = ROUTE188;
 
 let ROUTE189 = browser.currentScene.createNode("ROUTE");
 ROUTE189.fromField = "HumanoidRoot_rotation_changed";
 ROUTE189.fromNode = "ANIMATOR";
 ROUTE189.toField = "set_rotation";
-ROUTE189.toNode = "boxman_HumanoidRoot";
+ROUTE189.toNode = "boxman_humanoid_root";
 browser.currentScene.children[6] = ROUTE189;
 
 let ROUTE190 = browser.currentScene.createNode("ROUTE");
@@ -1171,7 +1172,7 @@ browser.currentScene.children[22] = ROUTE205;
 let Script206 = browser.currentScene.createNode("Script");
 Script206.DEF = "ENGINE";
 Script206.directOutput = True;
-Script206.url = new MFString(new java.lang.String["BoxMan.js","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.js"]);
+Script206.url = new MFString(new java.lang.String["BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"]);
 let field207 = browser.currentScene.createNode("field");
 field207.name = "update";
 field207.accessType = "inputOnly";
