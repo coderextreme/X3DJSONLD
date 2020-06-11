@@ -3,16 +3,16 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> A Seamless VRML Human, demonstrating the H-Anim 2001 Specification, animation scripting via an external prototype (ExternProtoDeclare). </p>
- <p> Related links: <a href="../../../HumanoidAnimation/BoxMan.java">BoxMan.java</a> source, <a href="../../../HumanoidAnimation/BoxManIndex.html" target="_top">BoxMan catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: BoxMan.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.BoxMan&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxMan.x3d">BoxMan.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.x3d">BoxMan.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -36,7 +36,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 October 2019 </td>
+			<td> 23 May 2020 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -48,7 +48,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxMan.js">BoxMan.js</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js">BoxMan.js</a> </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -64,27 +64,27 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxManViewInclined.png">BoxManViewInclined.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxManViewInclined.png">BoxManViewInclined.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxManViewFront.png">BoxManViewFront.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxManViewFront.png">BoxManViewFront.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxManViewRight.png">BoxManViewRight.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxManViewRight.png">BoxManViewRight.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxManViewLeft.png">BoxManViewLeft.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxManViewLeft.png">BoxManViewLeft.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxManViewTop.png">BoxManViewTop.png</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxManViewTop.png">BoxManViewTop.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxManAnimationPanel.x3d">BoxManAnimationPanel.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxManAnimationPanel.x3d">BoxManAnimationPanel.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -124,7 +124,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -132,7 +132,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../HumanoidAnimation/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -168,7 +168,7 @@ BoxMan.prototype = {
 	this.WorldInfo_3_34_info = new MFString(new MFString("\"(C) 2000 James Smith - james@vapourtech.com\" \"http://www.vapourtech.com/team/james/boxman.wrl\" \"Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com\""));
 
 	/** Large attribute array: HAnimHumanoid DEF='boxman_Humanoid' info field, scene-graph level=3, element #36, 10 total values */
-	this.boxman_Humanoid_3_36_info = new MFString(new MFString("\"authorName=James Smith\" \"authorEmail=james@vapourtech.com\" \"copyright=(C) 2000 James Smith - james@vapourtech.com\" \"humanoidVersion=2.0\""));
+	this.boxman_Humanoid_3_36_info = new MFString(new MFString("\"authorName=James Smith\" \"authorEmail=james@vapourtech.com\" \"copyright=(C) 2000 James Smith - james@vapourtech.com\" \"humanoidVersion=1.0\""));
 
 	/** Large attribute array: HAnimJoint DEF='boxman_r_hip' skinCoordIndex field, scene-graph level=5, element #63, 32 total numbers */
 	this.boxman_r_hip_5_63_skinCoordIndex = new MFInt32(Java.to([80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111], Java.type("int[]")));
@@ -225,7 +225,7 @@ BoxMan.prototype = {
     .addMeta(new meta().setName("translator").setContent("Don Brutzman and Matt Beitler"))
     .addMeta(new meta().setName("created").setContent("1 March 2001"))
     .addMeta(new meta().setName("translated").setContent("19 October 2001"))
-    .addMeta(new meta().setName("modified").setContent("20 October 2019"))
+    .addMeta(new meta().setName("modified").setContent("23 May 2020"))
     .addMeta(new meta().setName("reference").setContent("http://h-anim.org"))
     .addMeta(new meta().setName("reference").setContent("boxman.original.wrl"))
     .addMeta(new meta().setName("reference").setContent("BoxMan.js"))
@@ -247,15 +247,15 @@ BoxMan.prototype = {
     .addMeta(new meta().setName("rights").setContent("(C) 2000 James Smith - james@vapourtech.com"))
     .addMeta(new meta().setName("reference").setContent("http://www.vapourtech.com"))
     .addMeta(new meta().setName("subject").setContent("BoxMan H-Anim 2.0"))
-    .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"))
+    .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.x3d"))
     .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName("license").setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setInfo(this.WorldInfo_3_34_info).setTitle("BoxMan - A Seamless VRML Human"))
     .addChild(new Background().setGroundColor(new MFColor(Java.to([0.6,0.6,0.6], Java.type("float[]")))).setSkyColor(new MFColor(Java.to([0.75,0.75,0.75], Java.type("float[]")))))
     .addComments(" When converting to VRML97 (which didn't include H-Anim), H-Anim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet ")
-    .addChild(new HAnimHumanoid("boxman_Humanoid").setName("Humanoid").setInfo(this.boxman_Humanoid_3_36_info).setVersion("2.0")
-      .addSkeleton(new HAnimJoint("boxman_HumanoidRoot").setName("humanoid_root").setCenter(0.0,0.9723,-0.0728).setSkinCoordIndex(Java.to([0,1,2,3,4,5,6,7,8,9,10,11], Java.type("int[]"))).setSkinCoordWeight(Java.to([1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0], Java.type("float[]")))
+    .addChild(new HAnimHumanoid("boxman_Humanoid").setName("Humanoid").setInfo(this.boxman_Humanoid_3_36_info).setVersion("1.0")
+      .addSkeleton(new HAnimJoint("boxman_humanoid_root").setName("humanoid_root").setCenter(0.0,0.9723,-0.0728).setSkinCoordIndex(Java.to([0,1,2,3,4,5,6,7,8,9,10,11], Java.type("int[]"))).setSkinCoordWeight(Java.to([1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0], Java.type("float[]")))
         .addChild(new HAnimSegment("boxman_sacrum").setName("sacrum")
           .addChild(new Transform().setTranslation(0.0,0.9723,-0.0728)
             .addChild(new Shape("SphereYellow")
@@ -389,7 +389,7 @@ BoxMan.prototype = {
       .addJoints(new HAnimJoint().setUSE("boxman_l_ankle"))
       .addJoints(new HAnimJoint().setUSE("boxman_l_knee"))
       .addJoints(new HAnimJoint().setUSE("boxman_l_hip"))
-      .addJoints(new HAnimJoint().setUSE("boxman_HumanoidRoot"))
+      .addJoints(new HAnimJoint().setUSE("boxman_humanoid_root"))
       .addComments(" top-level segment references ")
       .addSegments(new HAnimSegment().setUSE("boxman_sacrum"))
       .addSegments(new HAnimSegment().setUSE("boxman_l_thigh"))
@@ -414,13 +414,13 @@ BoxMan.prototype = {
       .addSites(new HAnimSite().setUSE("boxman_skull_tip"))
       .addSites(new HAnimSite().setUSE("boxman_l_hand_tip"))
       .addSites(new HAnimSite().setUSE("boxman_r_hand_tip"))
-      .addViewpoints(new HAnimSite().setName("BoxMan_view")
+      .addViewpoints(new HAnimSite("boxman_BoxMan_view").setName("BoxMan_view")
         .addChild(new Viewpoint("Inclined_View").setDescription("Inclined View").setOrientation(0.0,1.0,0.0,0.78).setPosition(2.0,0.9,2.0))
         .addChild(new Viewpoint("Front_View").setDescription("Front View").setPosition(0.0,1.0,3.0))
         .addChild(new Viewpoint("Right_View").setDescription("Right-side View").setPosition(-3.0,1.0,0.0).setOrientation(0.0,1.0,0.0,-1.57))
         .addChild(new Viewpoint("Left_View").setDescription("Left-side View").setOrientation(0.0,1.0,0.0,1.57).setPosition(3.0,1.0,0.0))
         .addChild(new Viewpoint("Top_View").setDescription("Top View").setPosition(0.0,3.0,0.0).setOrientation(1.0,0.0,0.0,-1.57))))
-    .addChild(new ExternProtoDeclare().setName("LOA1_WalkAnimation").setUrl(new MFString("\"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation\" \"LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation\""))
+    .addChild(new ExternProtoDeclare().setName("LOA1_WalkAnimation").setUrl(new MFString("\"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation\" \"LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation\""))
       .addField(new field().setAccessType("inputOutput").setName("cycleInterval").setType("SFTime"))
       .addField(new field().setAccessType("inputOutput").setName("enabled").setType("SFBool"))
       .addField(new field().setAccessType("inputOutput").setName("loop").setType("SFBool"))
@@ -448,8 +448,8 @@ BoxMan.prototype = {
       .addField(new field().setAccessType("outputOnly").setName("isActive").setType("SFBool")))
     .addChild(new ProtoInstance("ANIMATOR", "LOA1_WalkAnimation").setDEF("ANIMATOR").setName("LOA1_WalkAnimation"))
     .addComments(" Animation ROUTEs ")
-    .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("HumanoidRoot_translation_changed").setToNode("boxman_HumanoidRoot").setToField("set_translation"))
-    .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("HumanoidRoot_rotation_changed").setToNode("boxman_HumanoidRoot").setToField("set_rotation"))
+    .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("HumanoidRoot_translation_changed").setToNode("boxman_humanoid_root").setToField("set_translation"))
+    .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("HumanoidRoot_rotation_changed").setToNode("boxman_humanoid_root").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("l_hip_rotation_changed").setToNode("boxman_l_hip").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("l_knee_rotation_changed").setToNode("boxman_l_knee").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("l_ankle_rotation_changed").setToNode("boxman_l_ankle").setToField("set_rotation"))
@@ -466,7 +466,7 @@ BoxMan.prototype = {
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("r_shoulder_rotation_changed").setToNode("boxman_r_shoulder").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("r_elbow_rotation_changed").setToNode("boxman_r_elbow").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("r_wrist_rotation_changed").setToNode("boxman_r_wrist").setToField("set_rotation"))
-    .addChild(new Script("ENGINE").setDirectOutput(true).setUrl(new MFString("\"BoxMan.js\" \"https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.js\""))
+    .addChild(new Script("ENGINE").setDirectOutput(true).setUrl(new MFString("\"BoxMan.js\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js\""))
       .addField(new field().setAccessType("inputOnly").setName("update").setType("SFRotation"))
       .addField(new field().setAccessType("initializeOnly").setName("humanoid").setType("SFNode")
         .addChild(new HAnimHumanoid().setUSE("boxman_Humanoid").setVersion("2.0")))

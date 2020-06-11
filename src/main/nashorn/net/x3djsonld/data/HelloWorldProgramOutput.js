@@ -36,7 +36,7 @@ load('X3Dautoclass.js');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 4 April 2020 </td>
+			<td> 9 June 2020 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -142,7 +142,7 @@ HelloWorldProgramOutput.prototype = {
     .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new meta().setName("generator").setContent("HelloWorldProgramOutput.java"))
     .addMeta(new meta().setName("created").setContent("6 September 2016"))
-    .addMeta(new meta().setName("modified").setContent("4 April 2020"))
+    .addMeta(new meta().setName("modified").setContent("9 June 2020"))
     .addMeta(new meta().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new meta().setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta(new meta().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -192,7 +192,7 @@ HelloWorldProgramOutput.prototype = {
           .addComments(" Comment example B, XML character entities: He said, &quot;Immel did it!&quot; ")
           .setMetadata(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
             .addValue(new MetadataString().setName("quotesTestC").setValue(new MFString("\"MFString example C, backslash-escaped quotes: He said, \\\"Immel did it!\\\"\"")))
-            .addValue(new MetadataString().setName("extraChildTest").setValue(new MFString("\"checks MetadataSetObject addValue() method\""))))
+            .addValue(new MetadataString().setName("extraChildTest").setValue(new MFString("\"checks MetadataSet addValue() method\""))))
           .setFontStyle(new FontStyle().setJustify(new MFString("\"MIDDLE\" \"MIDDLE\"")))))
       .addChild(new Collision()
         .addComments(" test containerField='proxy' ")
@@ -342,7 +342,7 @@ HelloWorldProgramOutput.prototype = {
       .addComments(" MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 ")
       .addComments(" ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= ")
       .addComments(" SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true ")
-      .addComments(" regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value "))
+      .addComments(" regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotation.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value "))
     .addChild(new Sound().setLocation(0.0,1.6,0.0)
       .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
       .setSource(new AudioClip().setDescription("chimes").setUrl(new MFString("\"chimes.wav\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav\""))
@@ -352,10 +352,10 @@ HelloWorldProgramOutput.prototype = {
       .setSource(new MovieTexture().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new MFString("\"mpgsys.mpg\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg\""))
         .addComments(" Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
         .addComments(" Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\" ")))
-    .addComments(" Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true ")
-    .addComments(" Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false ")
-    .addComments(" Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false ")
-    .addComments(" Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true ")
+    .addComments(" Test success: Anchor.isNode()=true, siteAnchor.isNode()=true ")
+    .addComments(" Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false ")
+    .addComments(" Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false ")
+    .addComments(" Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true ")
     .addComments(" Test success: CommentsBlock.isNode()=false, testComments.isNode()=false ")
     .addComments(" Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true ")
     .addChild(new Shape("ExtrusionShape")

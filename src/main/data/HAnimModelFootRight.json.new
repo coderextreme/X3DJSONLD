@@ -77,7 +77,7 @@
         },
         {
           "@name": "translated",
-          "@content": "13 May 2020"
+          "@content": "11 June 2020"
         },
         {
           "@name": "generator",
@@ -116,37 +116,29 @@
               1,
               1
             ],
-            "@loa": -1,
-            "@skeletalConfiguration": "BASIC",
             "@version": "2.0",
-            "@displayBBox": false,
             "-joints": [
               {
                 "HAnimJoint": {
                   "@name": "humanoid_root",
                   "@DEF": "hanim_HumanoidRoot",
-                  "@displayBBox": false,
                   "-children": [
                     {
                       "HAnimJoint": {
                         "@name": "r_talocrural_joint",
                         "@DEF": "r_talocrural_joint",
-                        "@displayBBox": false,
                         "-children": [
                           {
                             "HAnimSegment": {
                               "@name": "r_talus",
                               "@DEF": "r_talus",
-                              "@displayBBox": false,
                               "-children": [
                                 {
                                   "Transform": {
-                                    "@displayBBox": false,
                                     "-children": [
                                       {
                                         "Shape": {
                                           "@DEF": "HAnimJointShape",
-                                          "@displayBBox": false,
                                           "-geometry": {
                                             "Sphere": {
                                               "@radius": 0.025
@@ -173,7 +165,6 @@
                                 },
                                 {
                                   "Shape": {
-                                    "@displayBBox": false,
                                     "-appearance": {
                                       "Appearance": {
                                         "-material": {
@@ -212,7 +203,6 @@
                                 },
                                 {
                                   "Shape": {
-                                    "@displayBBox": false,
                                     "-appearance": {
                                       "Appearance": {
                                         "-material": {
@@ -264,13 +254,11 @@
                                 -0.3,
                                 0
                               ],
-                              "@displayBBox": false,
                               "-children": [
                                 {
                                   "HAnimSegment": {
                                     "@name": "r_navicular",
                                     "@DEF": "r_navicular",
-                                    "@displayBBox": false,
                                     "-children": [
                                       {
                                         "Transform": {
@@ -279,7 +267,6 @@
                                             -0.3,
                                             0
                                           ],
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "Shape": {
@@ -291,7 +278,6 @@
                                       },
                                       {
                                         "Shape": {
-                                          "@displayBBox": false,
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
@@ -330,7 +316,6 @@
                                       },
                                       {
                                         "Shape": {
-                                          "@displayBBox": false,
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
@@ -369,7 +354,6 @@
                                       },
                                       {
                                         "Shape": {
-                                          "@displayBBox": false,
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
@@ -421,13 +405,11 @@
                                       -0.45,
                                       0
                                     ],
-                                    "@displayBBox": false,
                                     "-children": [
                                       {
                                         "HAnimSegment": {
                                           "@name": "r_cuneiform1",
                                           "@DEF": "r_cuneiform1",
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "Transform": {
@@ -436,7 +418,6 @@
                                                   -0.45,
                                                   0
                                                 ],
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "Shape": {
@@ -448,7 +429,6 @@
                                             },
                                             {
                                               "Shape": {
-                                                "@displayBBox": false,
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
@@ -497,13 +477,11 @@
                                             -0.6,
                                             0
                                           ],
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "HAnimSegment": {
                                                 "@name": "r_metatarsal1",
                                                 "@DEF": "r_metatarsal1",
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -512,7 +490,6 @@
                                                         -0.6,
                                                         0
                                                       ],
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "Shape": {
@@ -524,7 +501,6 @@
                                                   },
                                                   {
                                                     "Shape": {
-                                                      "@displayBBox": false,
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
@@ -573,13 +549,11 @@
                                                   -0.9,
                                                   0
                                                 ],
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
                                                       "@name": "r_proximal_phalanges1",
                                                       "@DEF": "r_proximal_phalanges1",
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -588,7 +562,6 @@
                                                               -0.9,
                                                               0
                                                             ],
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "Shape": {
@@ -600,7 +573,6 @@
                                                         },
                                                         {
                                                           "Shape": {
-                                                            "@displayBBox": false,
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
@@ -649,13 +621,11 @@
                                                         -1.05,
                                                         0
                                                       ],
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
                                                             "@name": "r_distal_phalanges1",
                                                             "@DEF": "r_distal_phalanges1",
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -664,7 +634,6 @@
                                                                     -1.05,
                                                                     0
                                                                   ],
-                                                                  "@displayBBox": false,
                                                                   "-children": [
                                                                     {
                                                                       "Shape": {
@@ -676,7 +645,6 @@
                                                               },
                                                               {
                                                                 "Shape": {
-                                                                  "@displayBBox": false,
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
@@ -740,13 +708,11 @@
                                       -0.45,
                                       0
                                     ],
-                                    "@displayBBox": false,
                                     "-children": [
                                       {
                                         "HAnimSegment": {
                                           "@name": "r_cuneiform2",
                                           "@DEF": "r_cuneiform2",
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "Transform": {
@@ -755,7 +721,6 @@
                                                   -0.45,
                                                   0
                                                 ],
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "Shape": {
@@ -767,7 +732,6 @@
                                             },
                                             {
                                               "Shape": {
-                                                "@displayBBox": false,
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
@@ -816,13 +780,11 @@
                                             -0.6,
                                             0
                                           ],
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "HAnimSegment": {
                                                 "@name": "r_metatarsal2",
                                                 "@DEF": "r_metatarsal2",
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -831,7 +793,6 @@
                                                         -0.6,
                                                         0
                                                       ],
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "Shape": {
@@ -843,7 +804,6 @@
                                                   },
                                                   {
                                                     "Shape": {
-                                                      "@displayBBox": false,
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
@@ -892,13 +852,11 @@
                                                   -0.9,
                                                   0
                                                 ],
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
                                                       "@name": "r_proximal_phalanges2",
                                                       "@DEF": "r_proximal_phalanges2",
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -907,7 +865,6 @@
                                                               -0.9,
                                                               0
                                                             ],
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "Shape": {
@@ -919,7 +876,6 @@
                                                         },
                                                         {
                                                           "Shape": {
-                                                            "@displayBBox": false,
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
@@ -968,13 +924,11 @@
                                                         -1.05,
                                                         0
                                                       ],
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
                                                             "@name": "r_middle_phalanges2",
                                                             "@DEF": "r_middle_phalanges2",
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -983,7 +937,6 @@
                                                                     -1.05,
                                                                     0
                                                                   ],
-                                                                  "@displayBBox": false,
                                                                   "-children": [
                                                                     {
                                                                       "Shape": {
@@ -995,7 +948,6 @@
                                                               },
                                                               {
                                                                 "Shape": {
-                                                                  "@displayBBox": false,
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
@@ -1044,13 +996,11 @@
                                                               -1.12,
                                                               0
                                                             ],
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
                                                                   "@name": "r_distal_phalanges2",
                                                                   "@DEF": "r_distal_phalanges2",
-                                                                  "@displayBBox": false,
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -1059,7 +1009,6 @@
                                                                           -1.12,
                                                                           0
                                                                         ],
-                                                                        "@displayBBox": false,
                                                                         "-children": [
                                                                           {
                                                                             "Shape": {
@@ -1071,7 +1020,6 @@
                                                                     },
                                                                     {
                                                                       "Shape": {
-                                                                        "@displayBBox": false,
                                                                         "-appearance": {
                                                                           "Appearance": {
                                                                             "-material": {
@@ -1138,13 +1086,11 @@
                                       -0.4,
                                       0
                                     ],
-                                    "@displayBBox": false,
                                     "-children": [
                                       {
                                         "HAnimSegment": {
                                           "@name": "r_cuneiform3",
                                           "@DEF": "r_cuneiform3",
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "Transform": {
@@ -1153,7 +1099,6 @@
                                                   -0.4,
                                                   0
                                                 ],
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "Shape": {
@@ -1165,7 +1110,6 @@
                                             },
                                             {
                                               "Shape": {
-                                                "@displayBBox": false,
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
@@ -1214,13 +1158,11 @@
                                             -0.6,
                                             0
                                           ],
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "HAnimSegment": {
                                                 "@name": "r_metatarsal3",
                                                 "@DEF": "r_metatarsal3",
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -1229,7 +1171,6 @@
                                                         -0.6,
                                                         0
                                                       ],
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "Shape": {
@@ -1241,7 +1182,6 @@
                                                   },
                                                   {
                                                     "Shape": {
-                                                      "@displayBBox": false,
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
@@ -1290,13 +1230,11 @@
                                                   -0.9,
                                                   0
                                                 ],
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
                                                       "@name": "r_proximal_phalanges3",
                                                       "@DEF": "r_proximal_phalanges3",
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -1305,7 +1243,6 @@
                                                               -0.9,
                                                               0
                                                             ],
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "Shape": {
@@ -1317,7 +1254,6 @@
                                                         },
                                                         {
                                                           "Shape": {
-                                                            "@displayBBox": false,
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
@@ -1366,13 +1302,11 @@
                                                         -1.05,
                                                         0
                                                       ],
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
                                                             "@name": "r_middle_phalanges3",
                                                             "@DEF": "r_middle_phalanges3",
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -1381,7 +1315,6 @@
                                                                     -1.05,
                                                                     0
                                                                   ],
-                                                                  "@displayBBox": false,
                                                                   "-children": [
                                                                     {
                                                                       "Shape": {
@@ -1393,7 +1326,6 @@
                                                               },
                                                               {
                                                                 "Shape": {
-                                                                  "@displayBBox": false,
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
@@ -1442,13 +1374,11 @@
                                                               -1.13,
                                                               0
                                                             ],
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
                                                                   "@name": "r_distal_phalanges3",
                                                                   "@DEF": "r_distal_phalanges3",
-                                                                  "@displayBBox": false,
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -1457,7 +1387,6 @@
                                                                           -1.13,
                                                                           0
                                                                         ],
-                                                                        "@displayBBox": false,
                                                                         "-children": [
                                                                           {
                                                                             "Shape": {
@@ -1469,7 +1398,6 @@
                                                                     },
                                                                     {
                                                                       "Shape": {
-                                                                        "@displayBBox": false,
                                                                         "-appearance": {
                                                                           "Appearance": {
                                                                             "-material": {
@@ -1539,13 +1467,11 @@
                                 0.3,
                                 0
                               ],
-                              "@displayBBox": false,
                               "-children": [
                                 {
                                   "HAnimSegment": {
                                     "@name": "r_calcaneus",
                                     "@DEF": "r_calcaneus",
-                                    "@displayBBox": false,
                                     "-children": [
                                       {
                                         "Transform": {
@@ -1554,7 +1480,6 @@
                                             0.3,
                                             0
                                           ],
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "Shape": {
@@ -1566,7 +1491,6 @@
                                       },
                                       {
                                         "Shape": {
-                                          "@displayBBox": false,
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
@@ -1618,13 +1542,11 @@
                                       -0.3,
                                       0
                                     ],
-                                    "@displayBBox": false,
                                     "-children": [
                                       {
                                         "HAnimSegment": {
                                           "@name": "r_cuboid",
                                           "@DEF": "r_cuboid",
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "Transform": {
@@ -1633,7 +1555,6 @@
                                                   -0.3,
                                                   0
                                                 ],
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "Shape": {
@@ -1645,7 +1566,6 @@
                                             },
                                             {
                                               "Shape": {
-                                                "@displayBBox": false,
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
@@ -1684,7 +1604,6 @@
                                             },
                                             {
                                               "Shape": {
-                                                "@displayBBox": false,
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
@@ -1736,13 +1655,11 @@
                                             -0.58,
                                             0
                                           ],
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "HAnimSegment": {
                                                 "@name": "r_metatarsal4",
                                                 "@DEF": "r_metatarsal4",
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -1751,7 +1668,6 @@
                                                         -0.58,
                                                         0
                                                       ],
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "Shape": {
@@ -1763,7 +1679,6 @@
                                                   },
                                                   {
                                                     "Shape": {
-                                                      "@displayBBox": false,
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
@@ -1812,13 +1727,11 @@
                                                   -0.87,
                                                   0
                                                 ],
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
                                                       "@name": "r_proximal_phalanges4",
                                                       "@DEF": "r_proximal_phalanges4",
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -1827,7 +1740,6 @@
                                                               -0.87,
                                                               0
                                                             ],
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "Shape": {
@@ -1839,7 +1751,6 @@
                                                         },
                                                         {
                                                           "Shape": {
-                                                            "@displayBBox": false,
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
@@ -1888,13 +1799,11 @@
                                                         -1,
                                                         0
                                                       ],
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
                                                             "@name": "r_middle_phalanges4",
                                                             "@DEF": "r_middle_phalanges4",
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -1903,7 +1812,6 @@
                                                                     -1,
                                                                     0
                                                                   ],
-                                                                  "@displayBBox": false,
                                                                   "-children": [
                                                                     {
                                                                       "Shape": {
@@ -1915,7 +1823,6 @@
                                                               },
                                                               {
                                                                 "Shape": {
-                                                                  "@displayBBox": false,
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
@@ -1964,13 +1871,11 @@
                                                               -1.1,
                                                               0
                                                             ],
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
                                                                   "@name": "r_distal_phalanges4",
                                                                   "@DEF": "r_distal_phalanges4",
-                                                                  "@displayBBox": false,
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -1979,7 +1884,6 @@
                                                                           -1.1,
                                                                           0
                                                                         ],
-                                                                        "@displayBBox": false,
                                                                         "-children": [
                                                                           {
                                                                             "Shape": {
@@ -1991,7 +1895,6 @@
                                                                     },
                                                                     {
                                                                       "Shape": {
-                                                                        "@displayBBox": false,
                                                                         "-appearance": {
                                                                           "Appearance": {
                                                                             "-material": {
@@ -2055,13 +1958,11 @@
                                             -0.52,
                                             0
                                           ],
-                                          "@displayBBox": false,
                                           "-children": [
                                             {
                                               "HAnimSegment": {
                                                 "@name": "r_metatarsal5",
                                                 "@DEF": "r_metatarsal5",
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -2070,7 +1971,6 @@
                                                         -0.52,
                                                         0
                                                       ],
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "Shape": {
@@ -2082,7 +1982,6 @@
                                                   },
                                                   {
                                                     "Shape": {
-                                                      "@displayBBox": false,
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
@@ -2131,13 +2030,11 @@
                                                   -0.8,
                                                   0
                                                 ],
-                                                "@displayBBox": false,
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
                                                       "@name": "r_proximal_phalanges5",
                                                       "@DEF": "r_proximal_phalanges5",
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "Transform": {
@@ -2146,7 +2043,6 @@
                                                               -0.8,
                                                               0
                                                             ],
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "Shape": {
@@ -2158,7 +2054,6 @@
                                                         },
                                                         {
                                                           "Shape": {
-                                                            "@displayBBox": false,
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
@@ -2207,13 +2102,11 @@
                                                         -0.95,
                                                         0
                                                       ],
-                                                      "@displayBBox": false,
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
                                                             "@name": "r_middle_phalanges5",
                                                             "@DEF": "r_middle_phalanges5",
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "Transform": {
@@ -2222,7 +2115,6 @@
                                                                     -0.95,
                                                                     0
                                                                   ],
-                                                                  "@displayBBox": false,
                                                                   "-children": [
                                                                     {
                                                                       "Shape": {
@@ -2234,7 +2126,6 @@
                                                               },
                                                               {
                                                                 "Shape": {
-                                                                  "@displayBBox": false,
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
@@ -2283,13 +2174,11 @@
                                                               -1.05,
                                                               0
                                                             ],
-                                                            "@displayBBox": false,
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
                                                                   "@name": "r_distal_phalanges5",
                                                                   "@DEF": "r_distal_phalanges5",
-                                                                  "@displayBBox": false,
                                                                   "-children": [
                                                                     {
                                                                       "Transform": {
@@ -2298,7 +2187,6 @@
                                                                           -1.05,
                                                                           0
                                                                         ],
-                                                                        "@displayBBox": false,
                                                                         "-children": [
                                                                           {
                                                                             "Shape": {
@@ -2310,7 +2198,6 @@
                                                                     },
                                                                     {
                                                                       "Shape": {
-                                                                        "@displayBBox": false,
                                                                         "-appearance": {
                                                                           "Appearance": {
                                                                             "-material": {

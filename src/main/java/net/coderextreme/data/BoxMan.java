@@ -53,7 +53,7 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("translator").setContent("Don Brutzman and Matt Beitler"))
         .addMeta(new meta().setName("created").setContent("1 March 2001"))
         .addMeta(new meta().setName("translated").setContent("19 October 2001"))
-        .addMeta(new meta().setName("modified").setContent("20 October 2019"))
+        .addMeta(new meta().setName("modified").setContent("23 May 2020"))
         .addMeta(new meta().setName("reference").setContent("http://h-anim.org"))
         .addMeta(new meta().setName("reference").setContent("boxman.original.wrl"))
         .addMeta(new meta().setName("reference").setContent("BoxMan.js"))
@@ -75,15 +75,15 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("rights").setContent("(C) 2000 James Smith - james@vapourtech.com"))
         .addMeta(new meta().setName("reference").setContent("http://www.vapourtech.com"))
         .addMeta(new meta().setName("subject").setContent("BoxMan H-Anim 2.0"))
-        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setInfo(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())).setTitle("BoxMan - A Seamless VRML Human"))
         .addChild(new Background().setGroundColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor1().getArray())).setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor2().getArray())))
         .addComments(new CommentsBlock("When converting to VRML97 (which didn't include H-Anim), H-Anim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet"))
-        .addChild(new HAnimHumanoid().setName("Humanoid").setDEF("boxman_Humanoid").setInfo(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())).setVersion("2.0")
-          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("boxman_HumanoidRoot").setCenter(new float[] {0f,0.9723f,-0.0728f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt324().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat5().getArray()))
+        .addChild(new HAnimHumanoid().setName("Humanoid").setDEF("boxman_Humanoid").setInfo(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())).setVersion("1.0")
+          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("boxman_humanoid_root").setCenter(new float[] {0f,0.9723f,-0.0728f}).setSkinCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt324().getArray())).setSkinCoordWeight(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat5().getArray()))
             .addChild(new HAnimSegment().setName("sacrum").setDEF("boxman_sacrum")
               .addChild(new Transform().setTranslation(new float[] {0f,0.9723f,-0.0728f})
                 .addChild(new Shape().setDEF("SphereYellow")
@@ -219,7 +219,7 @@ ProtoInstance ProtoInstance0 = null;
           .addJoints(new HAnimJoint().setUSE("boxman_l_ankle"))
           .addJoints(new HAnimJoint().setUSE("boxman_l_knee"))
           .addJoints(new HAnimJoint().setUSE("boxman_l_hip"))
-          .addJoints(new HAnimJoint().setUSE("boxman_HumanoidRoot"))
+          .addJoints(new HAnimJoint().setUSE("boxman_humanoid_root"))
           .addSegments(new HAnimSegment().setUSE("boxman_sacrum"))
           .addSegments(new HAnimSegment().setUSE("boxman_l_thigh"))
           .addSegments(new HAnimSegment().setUSE("boxman_l_calf"))
@@ -242,7 +242,7 @@ ProtoInstance ProtoInstance0 = null;
           .addViewpoints(new HAnimSite().setUSE("boxman_skull_tip"))
           .addViewpoints(new HAnimSite().setUSE("boxman_l_hand_tip"))
           .addViewpoints(new HAnimSite().setUSE("boxman_r_hand_tip"))
-          .addViewpoints(new HAnimSite().setName("BoxMan_view")
+          .addViewpoints(new HAnimSite().setName("BoxMan_view").setDEF("boxman_BoxMan_view")
             .addChild(new Viewpoint().setDEF("Inclined_View").setDescription("Inclined View").setOrientation(new float[] {0f,1f,0f,0.78f}).setPosition(new float[] {2f,0.9f,2f}))
             .addChild(new Viewpoint().setDEF("Front_View").setDescription("Front View").setPosition(new float[] {0f,1f,3f}))
             .addChild(new Viewpoint().setDEF("Right_View").setDescription("Right-side View").setOrientation(new float[] {0f,1f,0f,-1.57f}).setPosition(new float[] {-3f,1f,0f}))
@@ -276,8 +276,8 @@ ProtoInstance ProtoInstance0 = null;
           .addField(new field().setType("SFBool").setName("isActive").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("LOA1_WalkAnimation").setDEF("ANIMATOR"))
         .addComments(new CommentsBlock("Animation ROUTEs"))
-        .addChild(new ROUTE().setFromField("HumanoidRoot_translation_changed").setFromNode("ANIMATOR").setToField("set_translation").setToNode("boxman_HumanoidRoot"))
-        .addChild(new ROUTE().setFromField("HumanoidRoot_rotation_changed").setFromNode("ANIMATOR").setToField("set_rotation").setToNode("boxman_HumanoidRoot"))
+        .addChild(new ROUTE().setFromField("HumanoidRoot_translation_changed").setFromNode("ANIMATOR").setToField("set_translation").setToNode("boxman_humanoid_root"))
+        .addChild(new ROUTE().setFromField("HumanoidRoot_rotation_changed").setFromNode("ANIMATOR").setToField("set_rotation").setToNode("boxman_humanoid_root"))
         .addChild(new ROUTE().setFromField("l_hip_rotation_changed").setFromNode("ANIMATOR").setToField("set_rotation").setToNode("boxman_l_hip"))
         .addChild(new ROUTE().setFromField("l_knee_rotation_changed").setFromNode("ANIMATOR").setToField("set_rotation").setToNode("boxman_l_knee"))
         .addChild(new ROUTE().setFromField("l_ankle_rotation_changed").setFromNode("ANIMATOR").setToField("set_rotation").setToNode("boxman_l_ankle"))
@@ -325,7 +325,7 @@ protected class MFColor2 {
 }
 protected class MFString3 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=1.0"});
   }
 }
 protected class MFInt324 {
@@ -545,12 +545,12 @@ protected class MFInt3246 {
 }
 protected class MFString47 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"});
   }
 }
 protected class MFString48 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"BoxMan.js","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.js"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"});
   }
 }
 }
