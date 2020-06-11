@@ -25,6 +25,7 @@ from x3d import *
 newModel=X3D(profile='Interchange',version='3.0',
   head=head(
     children=[
+    component(name='Networking',level=2),
     meta(name='generator',content='view3dscene, https://castle-engine.io/view3dscene.php'),
     meta(name='source',content='t1.wrl')]),
   Scene=Scene(
