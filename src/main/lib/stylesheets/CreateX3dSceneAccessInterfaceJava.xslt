@@ -761,7 +761,7 @@ Additional references of interest:
 
     <!-- ===================================================== -->
 	
-	<!-- template to create file containing interface or class source -->
+	<!-- master template to create source file containing interface or class -->
 	<xsl:template name="generateSourceFile">
 		<xsl:param name="name"><xsl:text>..missing name..</xsl:text></xsl:param>
 		<xsl:param name="imports"><xsl:text></xsl:text></xsl:param>
@@ -978,7 +978,7 @@ Additional references of interest:
 								<!-- TODO stronger filtering many be needed to avoid superfluous declaration -->
 								<xsl:text>// import org.web3d.x3d.sai.*;      // making sure #2</xsl:text>
 								<xsl:text>&#10;</xsl:text>
-								<xsl:text>import org.web3d.x3d.sai.Core.*;  // making sure #2</xsl:text>
+								<xsl:text>// import org.web3d.x3d.sai.Core.*;  // making sure #2</xsl:text>
 								<xsl:text>&#10;</xsl:text>
 								<xsl:text>import org.web3d.x3d.sai.InvalidFieldValueException;  // making sure #2</xsl:text>
 								<xsl:text>&#10;</xsl:text>
@@ -8008,13 +8008,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                                     </xsl:variable>
                                                     <xsl:choose>
                                                         <xsl:when test="(string-length($saiPackagePath) > 0)">
-                                                            <!-- <xsl:text>/* here 17a */</xsl:text> -->
+                                                            <!-- <xsl:text>/* here 18a */</xsl:text> -->
                                                             <xsl:value-of select="$saiPackagePath"/>
                                                             <xsl:text>.</xsl:text>
                                                             <xsl:value-of select="$acceptableNodeType"/>
                                                         </xsl:when>
                                                         <xsl:otherwise>
-                                                            <!-- <xsl:text>/* here 17b, saiPackage not found */</xsl:text> -->
+                                                            <!-- <xsl:text>/* here 18b, saiPackage not found */</xsl:text> -->
                                                             <xsl:value-of select="$acceptableNodeType"/>
                                                         </xsl:otherwise>
                                                     </xsl:choose>
@@ -10016,10 +10016,26 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			<xsl:text>org.web3d.x3d.sai.Core.X3DNode</xsl:text>
 		</xsl:when>
 		<xsl:when test="(string-length(@acceptableNodeTypes) > 0) and not(contains(@acceptableNodeTypes, '|'))">
-			<xsl:value-of select="@acceptableNodeTypes"/>
+            <xsl:variable name="saiPackagePath"> 
+                <xsl:call-template name="saiPackage">
+                    <xsl:with-param name="nodeType" select="@acceptableNodeTypes"/>
+                </xsl:call-template>
+            </xsl:variable>
+            <xsl:choose>
+                <xsl:when test="(string-length($saiPackagePath) > 0)">
+                    <xsl:text>/* here 20a */</xsl:text>
+                    <xsl:value-of select="$saiPackagePath"/>
+                    <xsl:text>.</xsl:text>
+                    <xsl:value-of select="@acceptableNodeTypes"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>/* here 20b, saiPackage not found */</xsl:text>
+                    <xsl:value-of select="@acceptableNodeTypes"/>
+                </xsl:otherwise>
+            </xsl:choose>
 		</xsl:when>
 		<xsl:otherwise>
-			<xsl:text>X3DChildNode</xsl:text>
+			<xsl:text>org.web3d.x3d.sai.Core.X3DChildNode</xsl:text>
 		</xsl:otherwise>
 	</xsl:choose>
 	<xsl:text disable-output-escaping="yes"><![CDATA[ newValue)
@@ -22854,13 +22870,13 @@ public ]]></xsl:text>
 			<xsl:text>void get1Value(int index, </xsl:text>
             <xsl:choose>
                 <xsl:when test="(string-length($saiPackagePath) > 0)">
-                    <!-- <xsl:text>/* here 15a */</xsl:text> -->
+                    <!-- <xsl:text>/* here 16a */</xsl:text> -->
                     <xsl:value-of select="$saiPackagePath"/>
                     <xsl:text>.</xsl:text>
                     <xsl:value-of select="$javaPrimitiveType"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <!-- <xsl:text>/* here 15b, saiPackage not found */</xsl:text> -->
+                    <!-- <xsl:text>/* here 16b, saiPackage not found */</xsl:text> -->
                     <xsl:value-of select="$javaPrimitiveType"/>
                 </xsl:otherwise>
             </xsl:choose>
@@ -30652,7 +30668,7 @@ browser instance or there is some other problem.]]></xsl:text>
 				<xsl:text>.</xsl:text>
                 <xsl:choose>
                     <xsl:when test="(@name = 'ProtoInstance')">
-                        <xsl:text>X3DPrototypeInstance, X3DChildNode</xsl:text>
+                        <xsl:text>X3DPrototypeInstance, org.web3d.x3d.sai.Core.X3DChildNode</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="@name"/>
@@ -30690,13 +30706,13 @@ browser instance or there is some other problem.]]></xsl:text>
 				<!-- anything else? -->
 			</xsl:variable>
 			
+			<!-- ConcreteNode -->
 			<!-- TODO add variable $x3dAbstractSpecificationSection -->
 	  
 			<xsl:call-template name="generateSourceFile">
 				<xsl:with-param name="name"><xsl:value-of select="$name"/></xsl:with-param>
 				<xsl:with-param name="imports"><xsl:text></xsl:text></xsl:with-param>
 				<xsl:with-param name="isInterface"><xsl:text>false</xsl:text></xsl:with-param>
-				<!-- TODO fix next -->
 				<xsl:with-param name="subPackage"><xsl:value-of select="$componentName"/></xsl:with-param>
 				<xsl:with-param name="extends"><xsl:text>org.web3d.x3d.jsail.X3DConcreteNode</xsl:text></xsl:with-param>                             
 				<xsl:with-param name="implements"><xsl:value-of select="$implements"/></xsl:with-param>
