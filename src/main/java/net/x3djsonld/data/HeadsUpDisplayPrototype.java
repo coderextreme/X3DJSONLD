@@ -1,6 +1,7 @@
 package net.x3djsonld.data;
 
 import java.util.*;
+import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.EnvironmentalSensor.*;

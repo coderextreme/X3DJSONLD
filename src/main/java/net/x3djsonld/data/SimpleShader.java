@@ -1,6 +1,7 @@
 package net.x3djsonld.data;
 
 import java.util.*;
+import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
@@ -171,15 +172,15 @@ public class SimpleShader
             .setGeometry(new Sphere().setRadius(1.75f))))))
     .addChild(new WorldInfo().setTitle("SimpleShader")
       .setMetadata(new MetadataSet("Titania").setName("Titania").setReference("http://titania.create3000.de")
-        .addValue(new MetadataSet("Selection").setName("Selection").setReference("http://titania.create3000.de")
-          .addValue(new MetadataSet("nodes").setName("nodes").setReference("http://titania.create3000.de")
+        .setMetadata(new MetadataSet("Selection").setName("Selection").setReference("http://titania.create3000.de")
+          .setMetadata(new MetadataSet("nodes").setName("nodes").setReference("http://titania.create3000.de")
             .addComments(" NULL ")))
-        .addValue(new MetadataSet("NavigationInfo").setName("NavigationInfo").setReference("http://titania.create3000.de")
-          .addValue(new MetadataString("type").setName("type").setReference("http://titania.create3000.de").setValue(new String[] {"EXAMINE"})))
-        .addValue(new MetadataSet("Viewpoint").setName("Viewpoint").setReference("http://titania.create3000.de")
-          .addValue(new MetadataDouble("position").setName("position").setReference("http://titania.create3000.de").setValue(new double[] {6.24067728185014,0.00250837343276661,2.92117542307615}))
-          .addValue(new MetadataDouble("orientation").setName("orientation").setReference("http://titania.create3000.de").setValue(new double[] {-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191}))
-          .addValue(new MetadataDouble("centerOfRotation").setName("centerOfRotation").setReference("http://titania.create3000.de").setValue(new double[] {-0.808320198626341,-0.358072370409949,0.22817191560906})))))
+        .setMetadata(new MetadataSet("NavigationInfo").setName("NavigationInfo").setReference("http://titania.create3000.de")
+          .setMetadata(new MetadataString("type").setName("type").setReference("http://titania.create3000.de").setValue(new String[] {"EXAMINE"})))
+        .setMetadata(new MetadataSet("Viewpoint").setName("Viewpoint").setReference("http://titania.create3000.de")
+          .setMetadata(new MetadataDouble("position").setName("position").setReference("http://titania.create3000.de").setValue(new double[] {6.24067728185014,0.00250837343276661,2.92117542307615}))
+          .setMetadata(new MetadataDouble("orientation").setName("orientation").setReference("http://titania.create3000.de").setValue(new double[] {-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191}))
+          .setMetadata(new MetadataDouble("centerOfRotation").setName("centerOfRotation").setReference("http://titania.create3000.de").setValue(new double[] {-0.808320198626341,-0.358072370409949,0.22817191560906})))))
     .addChild(new ProtoInstance("myPrototype")));
     }
 	// end of initialize() method

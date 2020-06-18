@@ -1,6 +1,7 @@
 package net.x3djsonld.data;
 
 import java.util.*;
+import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.CADGeometry.*;
 import org.web3d.x3d.jsail.DIS.*;
@@ -227,8 +228,8 @@ public class Json
           .addComments(" Comment example A, plain quotation marks: He said, \"Immel did it!\" ")
           .addComments(" Comment example B, XML character entities: He said, &quot;Immel did it!&quot; ")
           .setMetadata(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
-            .addValue(new MetadataString().setName("quotesTestC").setValue(new String[] {"MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""}))
-            .addValue(new MetadataString().setName("extraChildTest").setValue(new String[] {"checks MetadataSetObject addValue() method"})))
+            .setMetadata(new MetadataString().setName("quotesTestC").setValue(new String[] {"MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""}))
+            .setMetadata(new MetadataString().setName("extraChildTest").setValue(new String[] {"checks MetadataSetObject addValue() method"})))
           .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE))))
       .addChild(new Collision()
         .addComments(" test containerField='proxy' ")
