@@ -1,6 +1,7 @@
 package net.x3djsonld.data;
 
 import java.util.*;
+import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -136,8 +137,8 @@ public class JoeKick
     .addChild(new Viewpoint("Scene_TopView").setDescription("Scene_Top View").setCenterOfRotation(0.0f,1.5f,0.0f).setOrientation(1.0f,0.0f,0.0f,-1.5708f).setPosition(0.0f,3.5f,0.0f))
     .addChild(new Group("Joe_Humanoid")
       .addChild(new HAnimHumanoid("Joe_Human").setName("Human").setJointBindingPositions(new MFVec3f(new float[] {0.0f,0.0f,0.0f})).setJointBindingRotations(new MFRotation(new float[] {0.0f,0.0f,1.0f,0.0f})).setJointBindingScales(new MFVec3f(new float[] {1.0f,1.0f,1.0f})).setLoa(3).setVersion("2.0")
-        .addChild(new MetadataSet().setName("warnings").setReference("HAnim")
-          .addValue(new MetadataString().setName("SymmetricalLeftRight").setReference("correction options: ignore, warn, average, left, right, largest, smallest").setValue(new String[] {"ignore"})))
+        .setMetadata(new MetadataSet().setName("warnings").setReference("HAnim")
+          .setMetadata(new MetadataString().setName("SymmetricalLeftRight").setReference("correction options: ignore, warn, average, left, right, largest, smallest").setValue(new String[] {"ignore"})))
         .addSkeleton(new HAnimJoint("Joe_humanoid_root").setName("humanoid_root").setCenter(0.0f,0.875f,0.0f)
           .addChild(new HAnimSegment("Joe_sacrum").setName("sacrum")
             .addChild(new HAnimSite("Joe_RootFront_view").setName("RootFront_view")
