@@ -670,7 +670,7 @@ Additional references of interest:
                 <xsl:when test="($nodeTypeBase = 'X3DLightNode')">
                     <xsl:text>Lighting</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DViewpointNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DViewpointNode') or ($nodeTypeBase = 'ViewpointNode') or ($nodeTypeBase = 'NavigationInfo')">
                     <xsl:text>Navigation</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DNetworkSensorNode') or ($nodeTypeBase = 'X3DUrlObject')">
@@ -6465,7 +6465,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3DConcreteElement#hasAncestorScene()
 	 * @see org.web3d.x3d.jsail.X3DConcreteElement#findAncestorX3D()
 	 * @see meta
-	 * @see MetadataString
+	 * @see org.web3d.x3d.jsail.Core.MetadataString
 	 * <i>Warning:</i> more than one element may be found that has the same name, this method does not handle that case.
 	 * @param nameValue is value of the name field being searched for in this element and child elements(if any)
 	 * @param elementName identifies the element of interest (meta MetadataString ProtoDeclare CADassembly ProtoInstance HAnimHumanoid etc.)

@@ -9395,6 +9395,9 @@
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
+            "-navigationInfo": {
+              "$ref": "#/definitions/-NavigationInfoSFNode"
+            },
             "@orientation": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "type": "array",
@@ -9455,6 +9458,11 @@
               "minimum": 0,
               "default": 1,
               "type": "number"
+            },
+            "@viewAll": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -11627,6 +11635,9 @@
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
+            "-normal": {
+              "$ref": "#/definitions/-X3DNormalNodeSFNode"
+            },
             "@set_colorIndex": {
               "pattern": "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
               "type": "array",
@@ -13308,6 +13319,9 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "-normal": {
+              "$ref": "#/definitions/-X3DNormalNodeSFNode"
             },
             "@vertexCount": {
               "pattern": "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
@@ -16785,6 +16799,9 @@
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
+            "-navigationInfo": {
+              "$ref": "#/definitions/-NavigationInfoSFNode"
+            },
             "@orientation": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "type": "array",
@@ -16838,6 +16855,11 @@
             },
             "@set_bind": {
               "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@viewAll": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
               "type": "boolean"
             },
             "@DEF": {
@@ -18073,6 +18095,9 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "-normal": {
+              "$ref": "#/definitions/-X3DNormalNodeSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -26040,6 +26065,9 @@
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
+            "-navigationInfo": {
+              "$ref": "#/definitions/-NavigationInfoSFNode"
+            },
             "@orientation": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "type": "array",
@@ -26093,6 +26121,11 @@
             },
             "@set_bind": {
               "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@viewAll": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
               "type": "boolean"
             },
             "@DEF": {
@@ -29762,6 +29795,18 @@
         },
         "additionalProperties": false
       }
+    },
+    "-NavigationInfoSFNode": {
+      "type": "object",
+      "properties": {
+        "NavigationInfo": {
+          "$ref": "#/definitions/NavigationInfo"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
     },
     "-HAnimJointMFNode": {
       "type": "array",
