@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2020-06-06-07:00 18:43:47.802-07:00 -->
+<!-- Generated 2020-06-14-07:00 21:50:35.479-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -7253,6 +7253,11 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="navigationInfo"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="NavigationInfo"/>
             <field name="orientation"
                    type="SFRotation"
                    accessType="inputOutput"
@@ -7267,6 +7272,10 @@
                    type="SFBool"
                    accessType="inputOnly"
                    inheritedFrom="X3DBindableNode"/>
+            <field name="viewAll"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -7284,6 +7293,7 @@
                    baseType="xs:NMTOKENS"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+               <NodeContentModel name="NavigationInfo"/>
             </ContentModel>
          </InterfaceDefinition>
       </AbstractNodeType>
@@ -13477,6 +13487,12 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="navigationInfo"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="NavigationInfo"
+                   inheritedFrom="X3DViewpointNode"/>
             <field name="orientation"
                    type="SFRotation"
                    accessType="inputOutput"
@@ -13502,6 +13518,11 @@
                    accessType="initializeOnly"
                    default="1.0"
                    minInclusive="0"/>
+            <field name="viewAll"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"
+                   inheritedFrom="X3DViewpointNode"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -13521,6 +13542,7 @@
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="GeoOrigin"/>
+               <NodeContentModel name="NavigationInfo"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
@@ -15396,7 +15418,7 @@
          </InterfaceDefinition>
       </ConcreteNode>
       <ConcreteNode name="HAnimMotion">
-         <InterfaceDefinition specificationUrl="TODO publish"
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19774/V2.0/MotionDataAnimation/MotionNodes.html#MotionObject"
                               appinfo="An HAnimMotion node supports discrete frame-by-frame playback for H-Anim motion data animation.">
             <componentInfo name="HAnim" level="2"/>
             <Inheritance baseType="X3DChildNode"/>
@@ -17538,6 +17560,11 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="normal"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DNormalNode"/>
             <field name="set_colorIndex"
                    type="MFInt32"
                    accessType="inputOnly"
@@ -18952,6 +18979,11 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="normal"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DNormalNode"/>
             <field name="vertexCount"
                    type="MFInt32"
                    accessType="inputOutput"
@@ -21421,6 +21453,12 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="navigationInfo"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="NavigationInfo"
+                   inheritedFrom="X3DViewpointNode"/>
             <field name="orientation"
                    type="SFRotation"
                    accessType="inputOutput"
@@ -21441,6 +21479,11 @@
                    type="SFBool"
                    accessType="inputOnly"
                    inheritedFrom="X3DBindableNode"/>
+            <field name="viewAll"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"
+                   inheritedFrom="X3DViewpointNode"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -21459,6 +21502,7 @@
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+               <NodeContentModel name="NavigationInfo"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
@@ -22401,6 +22445,11 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="normal"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DNormalNode"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -27967,6 +28016,12 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="navigationInfo"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="NavigationInfo"
+                   inheritedFrom="X3DViewpointNode"/>
             <field name="orientation"
                    type="SFRotation"
                    accessType="inputOutput"
@@ -27987,6 +28042,11 @@
                    type="SFBool"
                    accessType="inputOnly"
                    inheritedFrom="X3DBindableNode"/>
+            <field name="viewAll"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"
+                   inheritedFrom="X3DViewpointNode"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -28005,6 +28065,7 @@
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+               <NodeContentModel name="NavigationInfo"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
