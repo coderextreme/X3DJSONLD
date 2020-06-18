@@ -1153,6 +1153,23 @@ POSSIBILITY OF SUCH DAMAGE.
 					<!-- TODO fix: process digital signature element as a CommentsBlock
 					<xsl:apply-templates select="."/> -->
 				</xsl:when>
+				<xsl:when test="(local-name(..) = 'field') or (local-name(..) = 'fieldValue')">
+                    <!-- field, fieldValue can contain SFNode node or MFNode nodes, handle one by one -->
+					<xsl:text>.addChild(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(local-name(..) = 'Scene') and (($containerField = 'metadata') or starts-with(local-name(), 'Metadata'))">
+                    <!-- Scene can contain multiple top-level metadata nodes -->
+					<xsl:text>.addMetadata(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="(($containerField = 'metadata') or starts-with(local-name(), 'Metadata'))">
+					<xsl:text>.setMetadata(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
 				<xsl:when test="(local-name(..) = 'Appearance') and ($containerField = 'material')">
 					<xsl:text>.setMaterial(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
@@ -1196,17 +1213,6 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:when>
 				<xsl:when test="(local-name(..) = 'GeoLOD')"><!-- and ($containerField = 'rootNode') -->
 					<xsl:text>.addRootNode(</xsl:text>
-					<xsl:apply-templates select="."/><!-- handle this node -->
-					<xsl:text>)</xsl:text>
-				</xsl:when>
-				<xsl:when test="(local-name(..) = 'Scene') and (($containerField = 'metadata') or starts-with(local-name(), 'Metadata'))">
-                    <!-- Scene can contain multiple top-level metadata nodes -->
-					<xsl:text>.addMetadata(</xsl:text>
-					<xsl:apply-templates select="."/><!-- handle this node -->
-					<xsl:text>)</xsl:text>
-				</xsl:when>
-				<xsl:when test="(($containerField = 'metadata') or starts-with(local-name(), 'Metadata'))">
-					<xsl:text>.setMetadata(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
