@@ -11,7 +11,7 @@ import org.web3d.x3d.jsail.Shape.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Checkerboard grid background for X3D/VRML materials selection. </p>
- <p> Related links: <a href="../../../UniversalMediaMaterials/gridBack.java">gridBack.java</a> source, <a href="../../../UniversalMediaMaterials/Index.html" target="_top"> catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../UniversalMediaMaterials/gridBack_json.java">gridBack_json.java</a> source, <a href="../../../UniversalMediaMaterials/Index.html" target="_top"> catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -79,10 +79,10 @@ import org.web3d.x3d.jsail.Shape.*;
 	* @author David Roussel
  */
 
-public class gridBack
+public class gridBack_json
 {
 	/** Default constructor to create this object. */
-	public gridBack ()
+	public gridBack_json ()
 	{
 	  initialize();
 	}
@@ -120,7 +120,7 @@ public class gridBack
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return gridBack model
+	 * @return gridBack_json model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -137,7 +137,7 @@ public class gridBack
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new gridBack().getX3dModel();
+        X3D thisExampleX3dModel = new gridBack_json().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -168,13 +168,13 @@ public class gridBack
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"gridBack\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"gridBack_json\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"gridBack\" self-validation test results: ");
+			System.out.print("Java program \"gridBack_json\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
