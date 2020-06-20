@@ -10,8 +10,8 @@ import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> Example scene app. </p>
- <p> Related links: app.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Example scene . </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -46,10 +46,10 @@ import org.web3d.x3d.jsail.Shape.*;
 
  */
 
-public class app
+public class NeedClassName
 {
 	/** Default constructor to create this object. */
-	public app ()
+	public NeedClassName ()
 	{
 	  initialize();
 	}
@@ -79,7 +79,7 @@ public class app
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return app model
+	 * @return NeedClassName model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -96,7 +96,7 @@ public class app
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new app().getX3dModel();
+        X3D thisExampleX3dModel = new NeedClassName().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -127,13 +127,13 @@ public class app
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"app\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"NeedClassName\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"app\" self-validation test results: ");
+			System.out.print("Java program \"NeedClassName\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}

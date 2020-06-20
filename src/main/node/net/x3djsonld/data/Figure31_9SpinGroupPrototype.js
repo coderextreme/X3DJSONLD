@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> The SpinGroup prototype is used to automatically spin a group of three long rectangular boxes. Click on blue crossbar to activate second SpinGroup. </p>
- <p> Related links: <a href="../../../Chapter31Prototypes/Figure31_9SpinGroupPrototype.java">Figure31_9SpinGroupPrototype.java</a> source, <a href="../../../Chapter31Prototypes/Figure31_9SpinGroupPrototypeIndex.html" target="_top">Figure31_9SpinGroupPrototype catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../Chapter31Prototypes/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../Chapter31Prototypes/Figure31_9SpinGroupPrototypeIndex.html" target="_top">Figure31_9SpinGroupPrototype catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -74,7 +74,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author Figure 31.9, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland
  */
 
-function Figure31_9SpinGroupPrototype
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -83,7 +83,7 @@ function Figure31_9SpinGroupPrototype
     this.initialize();
     return this;
   }
-Figure31_9SpinGroupPrototype.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -154,7 +154,7 @@ Figure31_9SpinGroupPrototype.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return Figure31_9SpinGroupPrototype model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -202,8 +202,8 @@ Figure31_9SpinGroupPrototype.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new Figure31_9SpinGroupPrototype();
-		console.log ("Figure31_9SpinGroupPrototype execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new Figure31_9SpinGroupPrototype().main();
+new NeedClassName().main();

@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey. </p>
- <p> Related links: <a href="../../../../AircraftFixedWing/F16-FightingFalcon-Turkey/F16.java">F16.java</a> source, <a href="../../../../AircraftFixedWing/F16-FightingFalcon-Turkey/F16Index.html" target="_top">F16 catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../../AircraftFixedWing/F16-FightingFalcon-Turkey/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../../AircraftFixedWing/F16-FightingFalcon-Turkey/F16Index.html" target="_top">F16 catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -95,7 +95,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission.
  */
 
-function F16
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -104,7 +104,7 @@ function F16
     this.initialize();
     return this;
   }
-F16.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -399,7 +399,7 @@ F16.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return F16 model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -447,8 +447,8 @@ F16.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new F16();
-		console.log ("F16 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new F16().main();
+new NeedClassName().main();

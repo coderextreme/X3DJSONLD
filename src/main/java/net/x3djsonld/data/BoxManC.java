@@ -18,7 +18,7 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> A Seamless VRML Human, demonstrating the H-Anim 2001 Specification. Animation scripting via EcmaScript. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/BoxManC.java">BoxManC.java</a> source, <a href="../../../HumanoidAnimation/BoxManIndex.html" target="_top">BoxMan catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/BoxMan.java">BoxMan.java</a> source, <a href="../../../HumanoidAnimation/BoxManIndex.html" target="_top">BoxMan catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -134,10 +134,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author James Smith - james@vapourtech.com
  */
 
-public class BoxManC
+public class BoxMan
 {
 	/** Default constructor to create this object. */
-	public BoxManC ()
+	public BoxMan ()
 	{
 	  initialize();
 	}
@@ -641,7 +641,7 @@ public class BoxManC
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return BoxManC model
+	 * @return BoxMan model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -658,7 +658,7 @@ public class BoxManC
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new BoxManC().getX3dModel();
+        X3D thisExampleX3dModel = new BoxMan().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -689,13 +689,13 @@ public class BoxManC
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"BoxManC\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"BoxMan\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"BoxManC\" self-validation test results: ");
+			System.out.print("Java program \"BoxMan\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
 			System.out.println(validationResults);
 		}
