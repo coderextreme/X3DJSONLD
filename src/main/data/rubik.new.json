@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"28 June 2020"
           },
           {
             "@name":"generator",
@@ -55,7 +55,7 @@
           },
           { "ProtoDeclare":
             {
-              "@name":"sphere",
+              "@name":"sphereproto",
               "ProtoInterface": {
                   "field": [
                     {
@@ -134,7 +134,7 @@
                         "-children":[
                           { "ProtoInstance":
                             {
-                              "@name":"sphere",
+                              "@name":"sphereproto",
                               "fieldValue": [
                                 {
                                   "@name":"xtranslation",
@@ -145,7 +145,7 @@
                           },
                           { "ProtoInstance":
                             {
-                              "@name":"sphere",
+                              "@name":"sphereproto",
                               "fieldValue": [
                                 {
                                   "@name":"xtranslation",
@@ -156,7 +156,7 @@
                           },
                           { "ProtoInstance":
                             {
-                              "@name":"sphere",
+                              "@name":"sphereproto",
                               "fieldValue": [
                                 {
                                   "@name":"xtranslation",

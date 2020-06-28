@@ -11,7 +11,7 @@
   <Scene>
     <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
     <Viewpoint description='Rubiks Cube' position='0 0 12'/>
-    <ProtoDeclare name='sphere'>
+    <ProtoDeclare name='sphereproto'>
       <ProtoInterface>
         <field name='xtranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
       </ProtoInterface>
@@ -38,13 +38,13 @@
           <IS>
             <connect nodeField='translation' protoField='ytranslation'/>
           </IS>
-          <ProtoInstance name='sphere'>
+          <ProtoInstance name='sphereproto'>
             <fieldValue name='xtranslation' value='0 0 0'/>
           </ProtoInstance>
-          <ProtoInstance name='sphere'>
+          <ProtoInstance name='sphereproto'>
             <fieldValue name='xtranslation' value='2 0 0'/>
           </ProtoInstance>
-          <ProtoInstance name='sphere'>
+          <ProtoInstance name='sphereproto'>
             <fieldValue name='xtranslation' value='-2 0 0'/>
           </ProtoInstance>
         </Transform>

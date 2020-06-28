@@ -34,7 +34,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     children=[
     NavigationInfo(type=["EXAMINE"]),
     Viewpoint(description='Rubiks Cube',position=(0,0,12)),
-    ProtoDeclare(name='sphere',
+    ProtoDeclare(name='sphereproto',
       ProtoInterface=ProtoInterface(
         field=[
         field(name='xtranslation',accessType='inputOutput',type='SFVec3f',value=(0.0,0.0,0.0))]),
@@ -60,13 +60,13 @@ newModel=X3D(profile='Immersive',version='3.3',
             connect=[
             connect(nodeField='translation',protoField='ytranslation')]),
           children=[
-          ProtoInstance(name='sphere',
+          ProtoInstance(name='sphereproto',
             fieldValue=[
             fieldValue(name='xtranslation',value=(0,0,0))]),
-          ProtoInstance(name='sphere',
+          ProtoInstance(name='sphereproto',
             fieldValue=[
             fieldValue(name='xtranslation',value=(2,0,0))]),
-          ProtoInstance(name='sphere',
+          ProtoInstance(name='sphereproto',
             fieldValue=[
             fieldValue(name='xtranslation',value=(-2,0,0))])])])),
     ProtoDeclare(name='nine',
