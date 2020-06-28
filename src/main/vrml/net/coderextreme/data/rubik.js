@@ -15,7 +15,7 @@ browser.currentScene.children[1] = Viewpoint3;
 
 let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="sphere" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="sphereproto" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
 </IS>
@@ -26,7 +26,7 @@ let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare4.name = "sphere";
+ProtoDeclare4.name = "sphereproto";
 let ProtoInterface5 = browser.currentScene.createNode("ProtoInterface");
 let field6 = browser.currentScene.createNode("field");
 field6.name = "xtranslation";
@@ -80,11 +80,11 @@ let ProtoDeclare15 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </ProtoInterface>
 <ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
 </IS>
-<ProtoInstance name="sphere"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
+<ProtoInstance name="sphereproto"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="sphere"><fieldValue name="xtranslation" value="2 0 0"></fieldValue>
+<ProtoInstance name="sphereproto"><fieldValue name="xtranslation" value="2 0 0"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="sphere"><fieldValue name="xtranslation" value="-2 0 0"></fieldValue>
+<ProtoInstance name="sphereproto"><fieldValue name="xtranslation" value="-2 0 0"></fieldValue>
 </ProtoInstance>
 </Transform>
 </ProtoBody>
@@ -115,7 +115,7 @@ IS20.connect[0] = connect21;
 Transform19.iS = IS20;
 
 let ProtoInstance22 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance22.name = "sphere";
+ProtoInstance22.name = "sphereproto";
 let fieldValue23 = browser.currentScene.createNode("fieldValue");
 fieldValue23.name = "xtranslation";
 fieldValue23.value = "0 0 0";
@@ -128,7 +128,7 @@ Transform19.children = new MFNode();
 Transform19.children[0] = ProtoInstance22;
 
 let ProtoInstance24 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance24.name = "sphere";
+ProtoInstance24.name = "sphereproto";
 let fieldValue25 = browser.currentScene.createNode("fieldValue");
 fieldValue25.name = "xtranslation";
 fieldValue25.value = "2 0 0";
@@ -139,7 +139,7 @@ ProtoInstance24.fieldValue[0] = fieldValue25;
 Transform19.children[1] = ProtoInstance24;
 
 let ProtoInstance26 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance26.name = "sphere";
+ProtoInstance26.name = "sphereproto";
 let fieldValue27 = browser.currentScene.createNode("fieldValue");
 fieldValue27.name = "xtranslation";
 fieldValue27.value = "-2 0 0";
