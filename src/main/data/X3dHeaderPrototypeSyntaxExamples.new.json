@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -194,6 +194,7 @@
                         { "Group":
                           {
                             "@DEF":"DefaultNodeValue",
+                            "@bboxCenter":[0,0,0],
                             "@bboxSize":[2,2,2],
                             "-children":[
                               {
@@ -210,10 +211,14 @@
                   "-children":[
                     { "Transform":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "@translation":[0,2,0],
                         "-children":[
                           { "Group":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "IS": {
                                   "connect": [
                                     {
@@ -248,9 +253,13 @@
           { "Group":
             {
               "@DEF":"ExampleChildElement",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -265,6 +274,8 @@
                     "-geometry":
                       { "Box":
                         {
+                          "@size":[2,2,2],
+                          "@solid":true
                         }
                       }
                   }
@@ -275,6 +286,8 @@
           { "Transform":
             {
               "@DEF":"TransformExampleUSE",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "@rotation":[0,1,0,0.78],
               "@translation":[0,2.5,0],
               "-children":[
@@ -288,6 +301,9 @@
           },
           { "Collision":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
+              "@enabled":true,
               "-children":[
                 { "Group":
                   {
@@ -298,6 +314,8 @@
               "-proxy":
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"note that Collision proxy Shape is not rendered"
@@ -324,10 +342,14 @@
           },
           { "Transform":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "@translation":[0,-2.5,0],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -407,6 +429,8 @@
           { "Inline":
             {
               "@DEF":"someInline",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "@url":["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"]
             }
           },

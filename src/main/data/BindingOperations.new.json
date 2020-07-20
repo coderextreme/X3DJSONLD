@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -119,14 +119,20 @@
           },
           { "Group":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@DEF":"Text1",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-6,0,0],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -159,10 +165,14 @@
                 { "Transform":
                   {
                     "@DEF":"Text2",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-2,0,0],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -194,10 +204,14 @@
                 { "Transform":
                   {
                     "@DEF":"Text3",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "@translation":[2,0,0],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -229,10 +243,14 @@
                 { "Transform":
                   {
                     "@DEF":"Text4",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "@translation":[6,0,0],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -271,6 +289,8 @@
           },
           { "Transform":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "@translation":[0,-3,8],
               "-children":[
                 {
@@ -285,6 +305,8 @@
                 },
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -312,6 +334,8 @@
                 },
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -326,7 +350,8 @@
                     "-geometry":
                       { "Box":
                         {
-                          "@size":[7,1,0.02]
+                          "@size":[7,1,0.02],
+                          "@solid":true
                         }
                       }
                   }

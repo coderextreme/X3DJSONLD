@@ -9370,6 +9370,11 @@
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
+            "@farClippingPlane": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": -1,
+              "type": "number"
+            },
             "@fieldOfView": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "exclusiveMaximum": 3.1416,
@@ -9397,6 +9402,11 @@
             },
             "-navigationInfo": {
               "$ref": "#/definitions/-NavigationInfoSFNode"
+            },
+            "@nearClippingPlane": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": -1,
+              "type": "number"
             },
             "@orientation": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -10524,8 +10534,8 @@
             },
             "@endFrame": {
               "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
-              "minimum": -1,
-              "default": -1,
+              "minimum": 0,
+              "default": 0,
               "type": "integer"
             },
             "@frameCount": {
@@ -16762,6 +16772,11 @@
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
+            "@farClippingPlane": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": -1,
+              "type": "number"
+            },
             "@fieldOfView": {
               "pattern": "^(\\s)*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*,?\\s*)*$",
               "type": "array",
@@ -16801,6 +16816,11 @@
             },
             "-navigationInfo": {
               "$ref": "#/definitions/-NavigationInfoSFNode"
+            },
+            "@nearClippingPlane": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": -1,
+              "type": "number"
             },
             "@orientation": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
@@ -19919,6 +19939,11 @@
               "default": false,
               "type": "boolean"
             },
+            "@bboxDisplay": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
             "@centerOfMass": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){2}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",
               "type": "array",
@@ -20109,6 +20134,11 @@
               "default": true,
               "type": "boolean"
             },
+            "@visible": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
@@ -20160,6 +20190,11 @@
               "$ref": "#/definitions/IS"
             },
             "@autoDisable": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": false,
+              "type": "boolean"
+            },
+            "@bboxDisplay": {
               "pattern": "^\\s*(true|false)\\s*$",
               "default": false,
               "type": "boolean"
@@ -20250,6 +20285,11 @@
             },
             "-set_contacts": {
               "$ref": "#/definitions/-ContactMFNode"
+            },
+            "@visible": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -26046,6 +26086,11 @@
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
+            "@farClippingPlane": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": -1,
+              "type": "number"
+            },
             "@fieldOfView": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "exclusiveMaximum": 3.1416,
@@ -26067,6 +26112,11 @@
             },
             "-navigationInfo": {
               "$ref": "#/definitions/-NavigationInfoSFNode"
+            },
+            "@nearClippingPlane": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "default": -1,
+              "type": "number"
             },
             "@orientation": {
               "pattern": "^\\s*(([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s+){3}([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)\\s*$",

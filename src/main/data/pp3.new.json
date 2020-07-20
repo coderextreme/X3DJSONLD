@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -61,16 +61,22 @@
                   "-children":[
                     { "Group":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           {
                             "#comment":"left"
                           },
                           { "Transform":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "@scale":[0.5,0.5,0.5],
                               "-children":[
                                 { "Shape":
                                   {
+                                    "@bboxCenter":[0,0,0],
+                                    "@bboxSize":[-1,-1,-1],
                                     "-appearance":
                                       { "Appearance":
                                         {
@@ -104,10 +110,14 @@
                           },
                           { "Transform":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "@scale":[0.5,0.5,0.5],
                               "-children":[
                                 { "Shape":
                                   {
+                                    "@bboxCenter":[0,0,0],
+                                    "@bboxSize":[-1,-1,-1],
                                     "-appearance":
                                       { "Appearance":
                                         {
@@ -132,10 +142,14 @@
                                 },
                                 { "Transform":
                                   {
+                                    "@bboxCenter":[0,0,0],
+                                    "@bboxSize":[-1,-1,-1],
                                     "@translation":[2,0,0],
                                     "-children":[
                                       { "Shape":
                                         {
+                                          "@bboxCenter":[0,0,0],
+                                          "@bboxSize":[-1,-1,-1],
                                           "-appearance":
                                             { "Appearance":
                                               {
@@ -180,10 +194,14 @@
                           },
                           { "Transform":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "@scale":[0.5,0.5,0.5],
                               "-children":[
                                 { "Shape":
                                   {
+                                    "@bboxCenter":[0,0,0],
+                                    "@bboxSize":[-1,-1,-1],
                                     "-appearance":
                                       { "Appearance":
                                         {
@@ -208,10 +226,14 @@
                                 },
                                 { "Transform":
                                   {
+                                    "@bboxCenter":[0,0,0],
+                                    "@bboxSize":[-1,-1,-1],
                                     "@translation":[-0.5,2,0],
                                     "-children":[
                                       { "Shape":
                                         {
+                                          "@bboxCenter":[0,0,0],
+                                          "@bboxSize":[-1,-1,-1],
                                           "-appearance":
                                             { "Appearance":
                                               {
@@ -255,10 +277,14 @@
                           },
                           { "Transform":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "@scale":[0.5,0.5,0.5],
                               "-children":[
                                 { "Shape":
                                   {
+                                    "@bboxCenter":[0,0,0],
+                                    "@bboxSize":[-1,-1,-1],
                                     "-appearance":
                                       { "Appearance":
                                         {
@@ -292,9 +318,13 @@
                           },
                           { "Transform":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "-children":[
                                 { "Shape":
                                   {
+                                    "@bboxCenter":[0,0,0],
+                                    "@bboxSize":[-1,-1,-1],
                                     "-appearance":
                                       { "Appearance":
                                         {
@@ -315,11 +345,15 @@
                                 },
                                 { "Transform":
                                   {
+                                    "@bboxCenter":[0,0,0],
+                                    "@bboxSize":[-1,-1,-1],
                                     "@scale":[0.5,0.5,0.5],
                                     "@translation":[-0.5,0,1],
                                     "-children":[
                                       { "Shape":
                                         {
+                                          "@bboxCenter":[0,0,0],
+                                          "@bboxSize":[-1,-1,-1],
                                           "-appearance":
                                             { "Appearance":
                                               {
@@ -545,6 +579,8 @@
           },
           { "Transform":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "@translation":[0,-2.5,0],
               "-children":[
                 { "ProtoInstance":
@@ -557,6 +593,8 @@
           },
           { "Transform":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "ProtoInstance":
                   {
@@ -568,6 +606,8 @@
           },
           { "Transform":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "@translation":[0,2.5,0],
               "-children":[
                 { "ProtoInstance":

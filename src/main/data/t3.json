@@ -58,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -95,17 +95,25 @@
           { "Transform":
             {
               "@translation":[-468,0,315],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Anchor":
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"High Peak Community Arts",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -136,12 +144,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"People Express",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -172,12 +186,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"QArts/Studios",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -208,12 +228,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"First Movement",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -244,12 +270,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"City Arts",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -280,12 +312,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"Indigo Dance Group (Salamanda Tandem)",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -316,12 +354,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"Watering Seeds",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -352,12 +396,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"Fased In The Arts",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -388,12 +438,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"27a Access Artspace",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -424,12 +480,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"Bamboozle Theatre Company",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -460,12 +522,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"Mantle Community Arts",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -496,12 +564,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"Artlink East",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -532,12 +606,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"Creations",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -568,12 +648,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"New Perspectives",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -604,12 +690,18 @@
                   {
                     "@url":["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "@description":"UKan2",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {

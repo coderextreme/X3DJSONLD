@@ -166,7 +166,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -238,15 +238,21 @@
             {
               "@DEF":"LogoGeometryTransform",
               "@translation":[0,1.5,0],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Anchor":
                   {
                     "@description":"select for X3D Java SAI Library (X3DJSAIL) description",
                     "@url":["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"],
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
                           "@DEF":"BoxShape",
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -271,7 +277,9 @@
                             { "Box":
                               {
                                 "@DEF":"test-NMTOKEN_regex.0123456789",
-                                "@class":"untextured"
+                                "@class":"untextured",
+                                "@size":[2,2,2],
+                                "@solid":true
                               }
                             }
                         }
@@ -285,6 +293,8 @@
           { "Shape":
             {
               "@DEF":"LineShape",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-appearance":
                 { "Appearance":
                   {
@@ -349,9 +359,13 @@
             {
               "@DEF":"TextTransform",
               "@translation":[0,-1.5,0],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -407,6 +421,9 @@
                 },
                 { "Collision":
                   {
+                    "@enabled":true,
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"test containerField='proxy'"
@@ -416,6 +433,8 @@
                       { "Shape":
                         {
                           "@DEF":"ProxyShape",
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             {
                               "#comment":"alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"
@@ -488,10 +507,14 @@
           { "Group":
             {
               "@DEF":"BackgroundGroup",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Background":
                   {
-                    "@DEF":"GradualBackground"
+                    "@DEF":"GradualBackground",
+                    "@skyColor":[0,0,0],
+                    "@transparency":0
                   }
                 },
                 { "Script":
@@ -657,6 +680,8 @@
           { "Shape":
             {
               "@DEF":"TestShape1",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-appearance":
                 { "Appearance":
                   {
@@ -696,6 +721,8 @@
           { "Shape":
             {
               "@DEF":"TestShape2",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-appearance":
                 { "Appearance":
                   {
@@ -729,7 +756,10 @@
                 { "Cone":
                   {
                     "@bottomRadius":0.001,
-                    "@height":0.001
+                    "@height":0.001,
+                    "@side":true,
+                    "@bottom":true,
+                    "@solid":true
                   }
                 }
             }
@@ -737,6 +767,8 @@
           { "Shape":
             {
               "@DEF":"TestShape3",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-appearance":
                 { "Appearance":
                   {
@@ -766,7 +798,9 @@
           { "Inline":
             {
               "@DEF":"inlineSceneDef",
-              "@url":["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]
+              "@url":["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1]
             }
           },
           { "IMPORT":
@@ -949,9 +983,13 @@
           { "Group":
             {
               "@DEF":"DeclarativeGroupExample",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-metadata":
                       { "MetadataString":
                         {
@@ -983,7 +1021,9 @@
                         {
                           "@bottom":false,
                           "@bottomRadius":0.05,
-                          "@height":0.1
+                          "@height":0.1,
+                          "@side":true,
+                          "@solid":true
                         }
                       }
                   }
@@ -1015,6 +1055,8 @@
           { "Group":
             {
               "@DEF":"TestFieldObjectsGroup",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 {
                   "#comment":"testFieldObjects() results"
@@ -1056,6 +1098,12 @@
                   {
                     "@description":"chimes",
                     "@url":["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
+                    "@loop":false,
+                    "@pitch":1.0,
+                    "@startTime":0,
+                    "@stopTime":0,
+                    "@pauseTime":0,
+                    "@resumeTime":0,
                     "-children":[
                       {
                         "#comment":"Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"
@@ -1111,6 +1159,8 @@
           { "Shape":
             {
               "@DEF":"ExtrusionShape",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 {
                   "#comment":"ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'"
@@ -1141,6 +1191,8 @@
           },
           { "Group":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 {
                   "#comment":"Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes"
@@ -1170,6 +1222,8 @@
                 { "Group":
                   {
                     "@DEF":"Node2",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"intentionally empty"
@@ -1180,6 +1234,8 @@
                 { "Transform":
                   {
                     "@DEF":"Node4",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"intentionally empty"
@@ -1208,6 +1264,8 @@
           },
           { "Shape":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-appearance":
                 { "Appearance":
                   {
@@ -1260,6 +1318,8 @@
           { "Transform":
             {
               "@DEF":"SpecialtyNodes",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "CADLayer":
                   {
@@ -1285,18 +1345,26 @@
                 },
                 { "EspduTransform":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1]
                   }
                 },
                 { "ReceiverPdu":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1]
                   }
                 },
                 { "SignalPdu":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1]
                   }
                 },
                 { "TransmitterPdu":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1]
                   }
                 },
                 { "DISEntityManager":

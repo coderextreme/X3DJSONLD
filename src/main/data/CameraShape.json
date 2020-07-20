@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -110,13 +110,19 @@
             {
               "@scale":[0.1,0.1,0.1],
               "@translation":[0,-0.165,0.02],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Switch":
                   {
                     "@whichChoice":-1,
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -142,6 +148,8 @@
                       },
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "IndexedFaceSet":
                               {
@@ -168,6 +176,8 @@
                       },
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "IndexedFaceSet":
                               {
@@ -194,6 +204,8 @@
                       },
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "IndexedFaceSet":
                               {
@@ -220,6 +232,8 @@
                       },
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "IndexedFaceSet":
                               {
@@ -249,15 +263,21 @@
                 },
                 { "Group":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
                           "@DEF":"pCylinder1",
                           "@rotation":[-1.0,0.0,0.0,0.373518],
                           "@translation":[-0.038462,3.596312,3.297562],
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -280,9 +300,13 @@
                           "@DEF":"pCube1",
                           "@scale":[1.0,0.727134,0.801457],
                           "@translation":[-0.030769,1.738461,1.4436],
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -305,9 +329,13 @@
                           "@DEF":"pPipe1",
                           "@scale":[1.0,1.0,0.569444],
                           "@translation":[0.015385,1.630769,-1.973274],
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -330,9 +358,13 @@
                           "@DEF":"pSphere1",
                           "@scale":[1.1,1.1,0.1],
                           "@translation":[-0.015385,1.628515,-2.569231],
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {

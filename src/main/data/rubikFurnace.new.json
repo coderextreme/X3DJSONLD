@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -71,6 +71,8 @@
                       "-children":[
                         { "Shape":
                           {
+                            "@bboxCenter":[0,0,0],
+                            "@bboxSize":[-1,-1,-1],
                             "-appearance":
                               { "Appearance":
                                 {
@@ -97,6 +99,8 @@
                   "-children":[
                     { "Transform":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -133,6 +137,8 @@
                       "-children":[
                         { "Shape":
                           {
+                            "@bboxCenter":[0,0,0],
+                            "@bboxSize":[-1,-1,-1],
                             "-appearance":
                               { "Appearance":
                                 {
@@ -159,6 +165,8 @@
                   "-children":[
                     { "Transform":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -250,6 +258,8 @@
                       "-children":[
                         { "Shape":
                           {
+                            "@bboxCenter":[0,0,0],
+                            "@bboxSize":[-1,-1,-1],
                             "-appearance":
                               { "Appearance":
                                 {
@@ -276,6 +286,8 @@
                   "-children":[
                     { "Transform":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -367,6 +379,8 @@
                       "-children":[
                         { "Shape":
                           {
+                            "@bboxCenter":[0,0,0],
+                            "@bboxSize":[-1,-1,-1],
                             "-appearance":
                               { "Appearance":
                                 {
@@ -393,6 +407,8 @@
                   "-children":[
                     { "Transform":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -479,6 +495,8 @@
                   "-children":[
                     { "Shape":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "-appearance":
                           { "Appearance":
                             {
@@ -493,7 +511,8 @@
                         "-geometry":
                           { "Box":
                             {
-                              "@size":[1,1,1]
+                              "@size":[1,1,1],
+                              "@solid":true
                             }
                           }
                       }

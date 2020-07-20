@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -70,6 +70,8 @@
                   "-children":[
                     { "Transform":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -81,6 +83,8 @@
                         "-children":[
                           { "Shape":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "-geometry":
                                 { "Sphere":
                                   {
@@ -123,6 +127,8 @@
                   "-children":[
                     { "Transform":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -189,6 +195,8 @@
                   "-children":[
                     { "Transform":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -255,6 +263,8 @@
                   "-children":[
                     { "Transform":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {

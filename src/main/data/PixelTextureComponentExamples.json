@@ -60,7 +60,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -76,7 +76,8 @@
         "-children":[
           { "Background":
             {
-              "@skyColor":[0.1,0.1,0.4]
+              "@skyColor":[0.1,0.1,0.4],
+              "@transparency":0
             }
           },
           { "Viewpoint":
@@ -88,9 +89,13 @@
           { "Transform":
             {
               "@translation":[-6,0,0],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -105,6 +110,8 @@
                     "-geometry":
                       { "Box":
                         {
+                          "@size":[2,2,2],
+                          "@solid":true
                         }
                       }
                   }
@@ -112,9 +119,13 @@
                 { "Transform":
                   {
                     "@translation":[0,-2,0],
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Text":
                               {
@@ -151,9 +162,13 @@
           { "Transform":
             {
               "@translation":[-3,0,0],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -169,6 +184,8 @@
                     "-geometry":
                       { "Box":
                         {
+                          "@size":[2,2,2],
+                          "@solid":true
                         }
                       }
                   }
@@ -176,9 +193,13 @@
                 { "Transform":
                   {
                     "@translation":[0,-2,0],
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Text":
                               {
@@ -207,9 +228,13 @@
           },
           { "Transform":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -225,6 +250,8 @@
                     "-geometry":
                       { "Box":
                         {
+                          "@size":[2,2,2],
+                          "@solid":true
                         }
                       }
                   }
@@ -232,9 +259,13 @@
                 { "Transform":
                   {
                     "@translation":[0,-2,0],
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Text":
                               {
@@ -264,9 +295,13 @@
           { "Transform":
             {
               "@translation":[3,0,0],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -287,6 +322,8 @@
                     "-geometry":
                       { "Box":
                         {
+                          "@size":[2,2,2],
+                          "@solid":true
                         }
                       }
                   }
@@ -294,9 +331,13 @@
                 { "Transform":
                   {
                     "@translation":[0,-2,0],
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Text":
                               {
@@ -326,9 +367,13 @@
           { "Transform":
             {
               "@translation":[6,0,0],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -349,6 +394,8 @@
                     "-geometry":
                       { "Box":
                         {
+                          "@size":[2,2,2],
+                          "@solid":true
                         }
                       }
                   }
@@ -356,9 +403,13 @@
                 { "Transform":
                   {
                     "@translation":[0,-2,0],
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Text":
                               {
@@ -391,9 +442,13 @@
           { "Transform":
             {
               "@translation":[0,6,-2],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -408,7 +463,8 @@
                     "-geometry":
                       { "Box":
                         {
-                          "@size":[16,16,0.1]
+                          "@size":[16,16,0.1],
+                          "@solid":true
                         }
                       }
                   }

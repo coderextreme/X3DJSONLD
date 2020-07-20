@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -68,7 +68,8 @@
         "-children":[
           { "Background":
             {
-              "@skyColor":[1,1,1]
+              "@skyColor":[1,1,1],
+              "@transparency":0
             }
           },
           { "Viewpoint":
@@ -79,6 +80,8 @@
           },
           { "Shape":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 {
                   "#comment":"Empty string \"\" means to skip a line"
