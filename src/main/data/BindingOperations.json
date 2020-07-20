@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -119,14 +119,20 @@
           },
           { "Group":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@DEF":"Text1",
                     "@translation":[-6,0,0],
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Text":
                               {
@@ -160,9 +166,13 @@
                   {
                     "@DEF":"Text2",
                     "@translation":[-2,0,0],
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Text":
                               {
@@ -195,9 +205,13 @@
                   {
                     "@DEF":"Text3",
                     "@translation":[2,0,0],
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Text":
                               {
@@ -230,9 +244,13 @@
                   {
                     "@DEF":"Text4",
                     "@translation":[6,0,0],
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Text":
                               {
@@ -272,6 +290,8 @@
           { "Transform":
             {
               "@translation":[0,-3,8],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 {
                   "#comment":"notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script."
@@ -285,6 +305,8 @@
                 },
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-geometry":
                       { "Text":
                         {
@@ -312,10 +334,13 @@
                 },
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-geometry":
                       { "Box":
                         {
-                          "@size":[7,1,0.02]
+                          "@size":[7,1,0.02],
+                          "@solid":true
                         }
                       },
                     "-appearance":
@@ -364,162 +389,6 @@
                     "@fromNode":"Clock",
                     "@toField":"set_fraction",
                     "@toNode":"TimingSequencer"
-                  }
-                },
-                { "Script":
-                  {
-                    "@DEF":"BindingSequencerEngine",
-                    "field": [
-                      {
-                        "@name":"set_timeEvent",
-                        "@accessType":"inputOnly",
-                        "@type":"SFInt32"
-                      },
-                      {
-                        "@name":"bindView1",
-                        "@accessType":"outputOnly",
-                        "@type":"SFBool"
-                      },
-                      {
-                        "@name":"bindView2",
-                        "@accessType":"outputOnly",
-                        "@type":"SFBool"
-                      },
-                      {
-                        "@name":"bindView3",
-                        "@accessType":"outputOnly",
-                        "@type":"SFBool"
-                      },
-                      {
-                        "@name":"bindView4",
-                        "@accessType":"outputOnly",
-                        "@type":"SFBool"
-                      },
-                      {
-                        "@name":"bindView5",
-                        "@accessType":"outputOnly",
-                        "@type":"SFBool"
-                      },
-                      {
-                        "@name":"view1Bound",
-                        "@accessType":"inputOnly",
-                        "@type":"SFBool"
-                      },
-                      {
-                        "@name":"view2Bound",
-                        "@accessType":"inputOnly",
-                        "@type":"SFBool"
-                      },
-                      {
-                        "@name":"view3Bound",
-                        "@accessType":"inputOnly",
-                        "@type":"SFBool"
-                      },
-                      {
-                        "@name":"view4Bound",
-                        "@accessType":"inputOnly",
-                        "@type":"SFBool"
-                      },
-                      {
-                        "@name":"priorInputvalue",
-                        "@accessType":"initializeOnly",
-                        "@type":"SFInt32",
-                        "@value":-1
-                      }
-                    ],
-                    "#sourceText":[
-"",
-"        ecmascript:",
-"",
-"function initialize ()",
-"{",
-"    bindView5 = true;",
-"    Browser.print ('Timing script initialized and ready for activation');",
-"}",
-"function set_timeEvent (inputValue)",
-"{",
-"    if (inputValue == priorInputvalue)",
-"    {",
-"        return; // ignore repeated inputs",
-"    }",
-"    // new value provided",
-"    priorInputvalue = inputValue;",
-"    // Browser.print ('\ntimeEvent inputValue=' + inputValue);",
-"",
-"    // mimics user execution of Figure 4.1 steps t_0 through t_8",
-"    if (inputValue == 0)",
-"    {",
-"        Browser.print ('\n===========\n time t0');",
-"        bindView1 = true;",
-"    }",
-"    else if (inputValue == 1)",
-"    {",
-"        Browser.print ('\n===========\n time t1');",
-"        bindView2 = true;",
-"    }",
-"    else if (inputValue == 2)",
-"    {",
-"        Browser.print ('\n===========\n time t2');",
-"        bindView3 = true;",
-"    }",
-"    else if (inputValue == 3)",
-"    {",
-"        Browser.print ('\n===========\n time t3');",
-"        bindView3 = false;",
-"    }",
-"    else if (inputValue == 4)",
-"    {",
-"        Browser.print ('\n===========\n time t4');",
-"        bindView1 = true;",
-"    }",
-"    else if (inputValue == 5)",
-"    {",
-"        Browser.print ('\n===========\n time t5');",
-"        bindView2 = false;",
-"    }",
-"    else if (inputValue == 6)",
-"    {",
-"        Browser.print ('\n===========\n time t6');",
-"        bindView1 = false;",
-"    }",
-"    else if (inputValue == 7)",
-"    {",
-"        Browser.print ('\n===========\n time t7');",
-"        bindView4 = true;",
-"",
-"    }",
-"    else if (inputValue == 8)",
-"    {",
-"        Browser.print ('\n===========\n time t8');",
-"        Browser.print (', no action, all done');",
-"        Browser.print ('\n\n');",
-"    }",
-"}",
-"",
-"function view1Bound (inputValue)",
-"{",
-"    Browser.print (', view1Bound ' + (inputValue));",
-"    if (priorInputvalue == -1) Browser.print ('\n');",
-"}",
-"function view2Bound (inputValue)",
-"{",
-"    Browser.print (', view2Bound ' + (inputValue));",
-"}",
-"function view3Bound (inputValue)",
-"{",
-"    Browser.print (', view3Bound ' + (inputValue));",
-"}",
-"function view4Bound (inputValue)",
-"{",
-"    Browser.print (', view4Bound ' + (inputValue));",
-"}",
-"function view5Bound (inputValue)",
-"{",
-"    Browser.print (', view5Bound ' + (inputValue));",
-"}",
-"",
-""
-]
                   }
                 },
                 {
@@ -609,6 +478,71 @@
                     "@fromNode":"View4",
                     "@toField":"view4Bound",
                     "@toNode":"BindingSequencerEngine"
+                  }
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "X3DScript":
+                  {
+                    "@DEF":"BindingSequencerEngine",
+                    "field": [
+                      {
+                        "@name":"set_timeEvent",
+                        "@accessType":"inputOnly",
+                        "@type":"SFInt32"
+                      },
+                      {
+                        "@name":"bindView1",
+                        "@accessType":"outputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"bindView2",
+                        "@accessType":"outputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"bindView3",
+                        "@accessType":"outputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"bindView4",
+                        "@accessType":"outputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"bindView5",
+                        "@accessType":"outputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"view1Bound",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"view2Bound",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"view3Bound",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"view4Bound",
+                        "@accessType":"inputOnly",
+                        "@type":"SFBool"
+                      },
+                      {
+                        "@name":"priorInputvalue",
+                        "@accessType":"initializeOnly",
+                        "@type":"SFInt32",
+                        "@value":-1
+                      }
+                    ]
                   }
                 }
               ]

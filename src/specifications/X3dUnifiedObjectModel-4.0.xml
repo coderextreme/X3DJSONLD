@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2020-06-14-07:00 21:50:35.479-07:00 -->
+<!-- Generated 2020-07-05-07:00 20:39:13.985-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -10,7 +10,7 @@
       <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
       <SimpleType name="accessTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a Script node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively."
+                  appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a Script node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#FieldSemantics">
          <enumeration value="initializeOnly"
                       appinfo="A field with accessType initializeOnly can be initialized, but cannot send or receive events."/>
@@ -23,7 +23,7 @@
       </SimpleType>
       <SimpleType name="appliedParametersChoices"
                   baseType="MFString"
-                  appinfo="Default global parameters for collision outputs of rigid body physics system. Contact node can override parent CollisionCollection node. Multiple optional values, but appliedParameters enumerations cannot be extended."
+                  appinfo="Default global parameters for collision outputs of rigid body physics system. Contact node can override parent CollisionCollection node. Multiple optional values, but appliedParameters enumerations cannot be extended. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#t-AppliedParametersValidValues">
          <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
          <enumeration value="&#34;USER_FRICTION&#34;"
@@ -46,7 +46,7 @@
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/group.html#Boundingboxes"/>
       <SimpleType name="closureTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="closureTypeChoices are strictly allowed enumeration values for ArcClose2D closureType field."
+                  appinfo="closureTypeChoices are strictly allowed enumeration values for ArcClose2D closureType field. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry2D.html#ArcClose2D">
          <enumeration value="PIE"
                       appinfo="Connects arc endpoints to center, forming a pie wedge"/>
@@ -65,7 +65,7 @@
       </SimpleType>
       <SimpleType name="componentNameChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="componentNameChoices are enumeration constants used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the components required by the contained Scene."
+                  appinfo="componentNameChoices are enumeration constants used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the components required by the contained Scene. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Components">
          <enumeration value="Core"
                       appinfo="The Core component supplies the base functionality for the X3D run-time system, including the abstract base node type, field types, the event model, and routing."
@@ -351,7 +351,7 @@
       </SimpleType>
       <SimpleType name="fieldTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="fieldTypeChoices are enumerations for all allowed names of X3DField types."
+                  appinfo="fieldTypeChoices are enumerations for all allowed names of X3DField types. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html">
          <enumeration value="SFBool" appinfo="Single Field (singleton) Boolean"/>
          <enumeration value="MFBool" appinfo="Multiple Field (list) Boolean"/>
@@ -428,7 +428,7 @@
       </SimpleType>
       <SimpleType name="fogTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="fogTypeChoices are strictly allowed enumeration values for Fog node fogType field."
+                  appinfo="fogTypeChoices are strictly allowed enumeration values for Fog node fogType field. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/enveffects.html#Fog">
          <enumeration value="LINEAR" appinfo="linear blending as a function of distance"/>
          <enumeration value="EXPONENTIAL"
@@ -447,7 +447,7 @@
       </SimpleType>
       <SimpleType name="fontStyleChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="fontStyleChoices are strictly allowed enumeration values for FontStyle/ScreenFontStyle node style field."
+                  appinfo="fontStyleChoices are strictly allowed enumeration values for FontStyle/ScreenFontStyle node style field. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/text.html#Fontfamilyandstyle">
          <enumeration value="PLAIN" appinfo="default plain type"/>
          <enumeration value="BOLD" appinfo="boldface type"/>
@@ -463,7 +463,7 @@
       </SimpleType>
       <SimpleType name="generatedCubeMapTextureUpdateChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="generatedCubeMapTextureUpdateChoices are strictly allowed enumeration values for GeneratedCubeMapTexture field named 'update'."
+                  appinfo="generatedCubeMapTextureUpdateChoices are strictly allowed enumeration values for GeneratedCubeMapTexture field named 'update'. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/env_texture.html#GeneratedCubeMapTexture">
          <enumeration value="NONE" appinfo="no further texture updates are rendered"/>
          <enumeration value="NEXT_FRAME_ONLY" appinfo="render texture once at end of frame"/>
@@ -2770,7 +2770,7 @@
       </SimpleType>
       <SimpleType name="hanimVersionChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node. Note that default HAnimHumanoid version is 2.0 for X3D version 4, and default is 1.0 for X3D version 3."
+                  appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node. Note that default HAnimHumanoid version is 2.0 for X3D version 4, and default is 1.0 for X3D version 3. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimHumanoid">
          <enumeration value="1.0"
                       appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since no other versions were formally approved, no other values are allowed for earlier HAnim versions."
@@ -2857,11 +2857,9 @@
          <enumeration value="startAngle"/>
          <enumeration value="style"/>
          <enumeration value="subcategory"/>
-         <enumeration value="surfaceArea"/>
          <enumeration value="texCoordIndex"/>
          <enumeration value="texCoordKey"/>
          <enumeration value="topToBottom"/>
-         <enumeration value="type"/>
          <enumeration value="uClosed"/>
          <enumeration value="uDimension"/>
          <enumeration value="uKnot"/>
@@ -3229,6 +3227,7 @@
          <enumeration value="string"/>
          <enumeration value="stripCount"/>
          <enumeration value="summary"/>
+         <enumeration value="surfaceArea"/>
          <enumeration value="surfaceSpeed"/>
          <enumeration value="surfaceTolerance"/>
          <enumeration value="surfaceValues"/>
@@ -3307,7 +3306,7 @@
       </SimpleType>
       <SimpleType name="justifyChoices"
                   baseType="MFString"
-                  appinfo="justifyChoices are strictly allowed enumeration values for FontStyle node justify field. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values."
+                  appinfo="justifyChoices are strictly allowed enumeration values for FontStyle node justify field. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/text.html#Directionandjustification">
          <enumeration value="&#34;MIDDLE&#34;"/>
          <enumeration value="&#34;MIDDLE&#34; &#34;BEGIN&#34;"/>
@@ -3332,7 +3331,7 @@
       </SimpleType>
       <SimpleType name="layoutAlignChoices"
                   baseType="MFString"
-                  appinfo="Permitted combinations of horizontal and vertical values for the align field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values."
+                  appinfo="Permitted combinations of horizontal and vertical values for the align field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/layout.html#Layout">
          <enumeration value="&#34;LEFT&#34; &#34;BOTTOM&#34;"/>
          <enumeration value="&#34;LEFT&#34; &#34;CENTER&#34;"/>
@@ -3346,7 +3345,7 @@
       </SimpleType>
       <SimpleType name="layoutScaleModeChoices"
                   baseType="MFString"
-                  appinfo="Permitted combinations of horizontal and vertical values for the scaleMode field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values."
+                  appinfo="Permitted combinations of horizontal and vertical values for the scaleMode field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/layout.html#Layout">
          <enumeration value="&#34;NONE&#34; &#34;NONE&#34;"/>
          <enumeration value="&#34;NONE&#34; &#34;FRACTION&#34;"/>
@@ -3367,7 +3366,7 @@
       </SimpleType>
       <SimpleType name="layoutUnitsChoices"
                   baseType="MFString"
-                  appinfo="Permitted combinations of horizontal and vertical values for the offsetUnits field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values."
+                  appinfo="Permitted combinations of horizontal and vertical values for the offsetUnits field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/layout.html#Layout">
          <enumeration value="&#34;WORLD&#34; &#34;WORLD&#34;"/>
          <enumeration value="&#34;WORLD&#34; &#34;FRACTION&#34;"/>
@@ -3385,7 +3384,7 @@
                   documentation="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#LevelsOfArticulation"/>
       <SimpleType name="metaDirectionChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="metaDirectionChoices are strictly allowed enumeration values for meta element direction field."
+                  appinfo="metaDirectionChoices are strictly allowed enumeration values for meta element direction field. Bounded, no additional values are allowed."
                   documentation="http://www.w3.org/TR/html4/struct/dirlang.html#adef-dir">
          <enumeration value="rtl" appinfo="right-to-left"/>
          <enumeration value="ltr" appinfo="left-to-right"/>
@@ -3571,7 +3570,7 @@
       </SimpleType>
       <SimpleType name="networkModeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="networkModeChoices are strictly allowed enumeration values for DIS field networkMode."
+                  appinfo="networkModeChoices are strictly allowed enumeration values for DIS field networkMode. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/dis.html#CommonDISfields">
          <enumeration value="standAlone"
                       appinfo="ignore network but still respond to events in local scene"/>
@@ -3737,7 +3736,7 @@
       </SimpleType>
       <SimpleType name="profileNameChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="profileNameChoices enumeration constants are used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the profile of a contained Scene. Profiles correspond primarily to subsets of allowed X3D nodes. Some nodes in Interchange profile include fields that are ignored unless Immersive or Full profile is active."
+                  appinfo="profileNameChoices enumeration constants are used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the profile of a contained Scene. Profiles correspond primarily to subsets of allowed X3D nodes. Some nodes in Interchange profile include fields that are ignored unless Immersive or Full profile is active. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Profiles">
          <enumeration value="Core"
                       appinfo="Core Profile includes no nodes and is provided as the basis for custom componentization. Allowed X3D statements for all profiles are: connect ExternProtoDeclare EXPORT field fieldValue IMPORT IS ProtoBody ProtoDeclare ProtoInterface ProtoInstance ROUTE X3D. Allowed X3D nodes for this profile are: MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString."
@@ -3766,7 +3765,7 @@
       </SimpleType>
       <SimpleType name="projectionVolumeStyleTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="projectionVolumeStyleTypeChoices are strictly allowed enumeration values for ProjectionVolumeStyle field named 'type'."
+                  appinfo="projectionVolumeStyleTypeChoices are strictly allowed enumeration values for ProjectionVolumeStyle field named 'type'. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/volume.html#ProjectionVolumeStyle">
          <enumeration value="MAX"
                       appinfo="Maximum Intensity Projection (MIP) or Least MIP (LMIP) algorithm is used to generate output color"/>
@@ -3792,7 +3791,7 @@
       </SimpleType>
       <SimpleType name="textureBoundaryModeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="textureBoundaryModeChoices are strictly allowed enumeration values for TextureProperties boundaryMode* fields."
+                  appinfo="textureBoundaryModeChoices are strictly allowed enumeration values for TextureProperties boundaryMode* fields. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-TextureBoundaryModes">
          <enumeration value="CLAMP" appinfo="Clamp texture coordinates to range [0,1]"/>
          <enumeration value="CLAMP_TO_EDGE"
@@ -3805,7 +3804,7 @@
       </SimpleType>
       <SimpleType name="textureCompressionModeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="textureCompressionModeChoices are strictly allowed enumeration values for TextureProperties field textureCompression."
+                  appinfo="textureCompressionModeChoices are strictly allowed enumeration values for TextureProperties field textureCompression. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-TextureCompressionModes">
          <enumeration value="DEFAULT" appinfo="browser-specified default compression mode"/>
          <enumeration value="FASTEST" appinfo="fastest method available"/>
@@ -3816,7 +3815,7 @@
       </SimpleType>
       <SimpleType name="textureCoordinateGeneratorModeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="textureCoordinateGeneratorModeChoices are strictly allowed enumeration values for TextureCoordinateGenerator mode field."
+                  appinfo="textureCoordinateGeneratorModeChoices are strictly allowed enumeration values for TextureCoordinateGenerator mode field. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-Texturecoordgeneration">
          <enumeration value="SPHERE"
                       appinfo="Creates texture coordinates for a spherical environment"/>
@@ -3841,7 +3840,7 @@
       </SimpleType>
       <SimpleType name="textureMagnificationModeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="textureMagnificationModeChoices are strictly allowed enumeration values for TextureProperties field magnificationFilter."
+                  appinfo="textureMagnificationModeChoices are strictly allowed enumeration values for TextureProperties field magnificationFilter. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-TextureMagnificationModes">
          <enumeration value="AVG_PIXEL"
                       appinfo="weighted average of four texture elements closest to center of pixel being textured"/>
@@ -3853,7 +3852,7 @@
       </SimpleType>
       <SimpleType name="textureMinificationModeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="textureMinificationModeChoices are strictly allowed enumeration values for TextureProperties field minificationFilter."
+                  appinfo="textureMinificationModeChoices are strictly allowed enumeration values for TextureProperties field minificationFilter. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-TextureMinificationModes">
          <enumeration value="AVG_PIXEL"
                       appinfo="weighted average of four texture elements closest to center of pixel being textured"/>
@@ -3873,7 +3872,7 @@
       </SimpleType>
       <SimpleType name="unitCategoryChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="unitCategoryChoices are strictly allowed enumeration values for standard units in the UNIT statement."
+                  appinfo="unitCategoryChoices are strictly allowed enumeration values for standard units in the UNIT statement. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#t-Standardunits">
          <enumeration value="angle" appinfo="angle default is radians"/>
          <enumeration value="force" appinfo="force default is newtons"/>
@@ -3893,7 +3892,7 @@
       </SimpleType>
       <SimpleType name="x3dVersionChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="x3dVersionChoices enumeration string constants are used to identify the allowed versions for an X3D scene graph."
+                  appinfo="x3dVersionChoices enumeration string constants are used to identify the allowed versions for an X3D scene graph. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Profiles">
          <enumeration value="3.0"
                       appinfo="X3D version 3.0 approved by ISO in 2004."
@@ -5830,24 +5829,29 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="IS"/>
+                   acceptableNodeTypes="IS"
+                   description="IS/connect statements define prototype connections between ProtoInterface fields and node fields within a ProtoBody."/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DMetadataObject"/>
+                   acceptableNodeTypes="X3DMetadataObject"
+                   description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
-                   baseType="xs:ID"/>
+                   baseType="xs:ID"
+                   description="DEF defines a unique ID name for each node, referenceable by other nodes."/>
             <field name="USE"
                    type="SFString"
                    accessType="inputOutput"
-                   baseType="xs:IDREF"/>
+                   baseType="xs:IDREF"
+                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
-                   baseType="xs:NMTOKENS"/>
+                   baseType="xs:NMTOKENS"
+                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -6087,7 +6091,7 @@
                    minInclusive="0"/>
             <field name="surfaceArea"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="0"
                    minInclusive="0"/>
             <field name="variation"
@@ -7233,6 +7237,10 @@
             <field name="description" type="SFString" accessType="inputOutput">
                <componentInfo name="Navigation" level="2"/>
             </field>
+            <field name="farClippingPlane"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="-1"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -7258,6 +7266,10 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="NavigationInfo"/>
+            <field name="nearClippingPlane"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="-1"/>
             <field name="orientation"
                    type="SFRotation"
                    accessType="inputOutput"
@@ -10285,7 +10297,7 @@
                    inheritedFrom="X3DParticleEmitterNode"/>
             <field name="surfaceArea"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="0"
                    minInclusive="0"
                    inheritedFrom="X3DParticleEmitterNode"/>
@@ -12046,7 +12058,7 @@
                    inheritedFrom="X3DParticleEmitterNode"/>
             <field name="surfaceArea"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="0"
                    minInclusive="0"
                    inheritedFrom="X3DParticleEmitterNode"/>
@@ -13449,6 +13461,11 @@
                    inheritedFrom="X3DViewpointNode">
                <componentInfo name="Navigation" level="2"/>
             </field>
+            <field name="farClippingPlane"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="-1"
+                   inheritedFrom="X3DViewpointNode"/>
             <field name="fieldOfView"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -13492,6 +13509,11 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="NavigationInfo"
+                   inheritedFrom="X3DViewpointNode"/>
+            <field name="nearClippingPlane"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="-1"
                    inheritedFrom="X3DViewpointNode"/>
             <field name="orientation"
                    type="SFRotation"
@@ -15440,8 +15462,8 @@
             <field name="endFrame"
                    type="SFInt32"
                    accessType="inputOutput"
-                   default="-1"
-                   minInclusive="-1"/>
+                   default="0"
+                   minInclusive="0"/>
             <field name="frameCount"
                    type="SFInt32"
                    accessType="inputOutput"
@@ -21428,6 +21450,11 @@
                    inheritedFrom="X3DViewpointNode">
                <componentInfo name="Navigation" level="2"/>
             </field>
+            <field name="farClippingPlane"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="-1"
+                   inheritedFrom="X3DViewpointNode"/>
             <field name="fieldOfView"
                    type="MFFloat"
                    accessType="inputOutput"
@@ -21458,6 +21485,11 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="NavigationInfo"
+                   inheritedFrom="X3DViewpointNode"/>
+            <field name="nearClippingPlane"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="-1"
                    inheritedFrom="X3DViewpointNode"/>
             <field name="orientation"
                    type="SFRotation"
@@ -22095,7 +22127,7 @@
                    inheritedFrom="X3DParticleEmitterNode"/>
             <field name="surfaceArea"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="0"
                    minInclusive="0"
                    inheritedFrom="X3DParticleEmitterNode"/>
@@ -22562,7 +22594,7 @@
                    inheritedFrom="X3DParticleEmitterNode"/>
             <field name="surfaceArea"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="0"
                    minInclusive="0"
                    inheritedFrom="X3DParticleEmitterNode"/>
@@ -23700,6 +23732,10 @@
                    type="SFBool"
                    accessType="inputOutput"
                    default="false"/>
+            <field name="bboxDisplay"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"/>
             <field name="centerOfMass"
                    type="SFVec3f"
                    accessType="inputOutput"
@@ -23781,6 +23817,10 @@
                    type="SFBool"
                    accessType="inputOutput"
                    default="true"/>
+            <field name="visible"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -23813,6 +23853,10 @@
             <componentInfo name="RigidBodyPhysics" level="2"/>
             <Inheritance baseType="X3DChildNode"/>
             <field name="autoDisable"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"/>
+            <field name="bboxDisplay"
                    type="SFBool"
                    accessType="inputOutput"
                    default="false"/>
@@ -23890,6 +23934,10 @@
                    type="MFNode"
                    accessType="inputOnly"
                    acceptableNodeTypes="Contact"/>
+            <field name="visible"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -25797,7 +25845,7 @@
                    acceptableNodeTypes="X3DGeometryNode"/>
             <field name="surfaceArea"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="0"
                    minInclusive="0"
                    inheritedFrom="X3DParticleEmitterNode"/>
@@ -27987,6 +28035,11 @@
                    inheritedFrom="X3DViewpointNode">
                <componentInfo name="Navigation" level="2"/>
             </field>
+            <field name="farClippingPlane"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="-1"
+                   inheritedFrom="X3DViewpointNode"/>
             <field name="fieldOfView"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -28021,6 +28074,11 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="NavigationInfo"
+                   inheritedFrom="X3DViewpointNode"/>
+            <field name="nearClippingPlane"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="-1"
                    inheritedFrom="X3DViewpointNode"/>
             <field name="orientation"
                    type="SFRotation"
@@ -28410,7 +28468,7 @@
                    inheritedFrom="X3DParticleEmitterNode"/>
             <field name="surfaceArea"
                    type="SFFloat"
-                   accessType="initializeOnly"
+                   accessType="inputOutput"
                    default="0"
                    minInclusive="0"
                    inheritedFrom="X3DParticleEmitterNode"/>

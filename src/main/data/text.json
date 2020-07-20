@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -48,9 +48,13 @@
         "-children":[
           { "Transform":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-geometry":
                       { "Text":
                         {
@@ -76,6 +80,8 @@
                 },
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-geometry":
                       { "Text":
                         {
@@ -101,6 +107,8 @@
                 },
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-geometry":
                       { "Text":
                         {
@@ -123,9 +131,10 @@
                         }
                       }
                   }
-                },
-                { "Script":
-                  {
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "X3DScript":
                     "field": [
                       {
                         "@name":"frontUrls",
@@ -133,15 +142,7 @@
                         "@accessType":"initializeOnly",
                         "@value":["rnl_front.png","uffizi_front.png"]
                       }
-                    ],
-                    "#sourceText":[
-"",
-"\t\t\t    ecmascript:",
-"\t\t\t    var me = '\"1\" \"\"2\" \"\n3\"';",
-"\t\t\t    ",
-"\t\t\t"
-]
-                  }
+                    ]
                 }
               ]
             }

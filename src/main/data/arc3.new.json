@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -50,15 +50,20 @@
           },
           { "Background":
             {
-              "@skyColor":[0.4,0.4,0.4]
+              "@skyColor":[0.4,0.4,0.4],
+              "@transparency":0
             }
           },
           { "Transform":
             {
               "@DEF":"DECLpoint_G1_node",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -173,9 +178,13 @@
           { "Transform":
             {
               "@DEF":"DECLpoint_G2_node",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -289,17 +298,25 @@
           },
           { "Group":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@DEF":"DECLx3dconnector_connector1_trans",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
                           "@DEF":"DECLx3dconnector_connector1_rotscale",
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {

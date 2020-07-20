@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -61,15 +61,21 @@
               "@frontUrl":["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"],
               "@leftUrl":["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"],
               "@rightUrl":["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"],
-              "@topUrl":["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]
+              "@skyColor":[0,0,0],
+              "@topUrl":["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"],
+              "@transparency":0
             }
           },
           { "Transform":
             {
               "@DEF":"DECLBubble_bubbleA",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -208,9 +214,13 @@
           { "Transform":
             {
               "@DEF":"DECLBubble_bubbleB",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -349,9 +359,13 @@
           { "Transform":
             {
               "@DEF":"DECLBubble_bubbleC",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -490,9 +504,13 @@
           { "Transform":
             {
               "@DEF":"DECLBubble_bubbleD",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {

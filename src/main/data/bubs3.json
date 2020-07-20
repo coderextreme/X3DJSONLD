@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -61,15 +61,21 @@
               "@frontUrl":["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"],
               "@leftUrl":["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"],
               "@rightUrl":["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"],
-              "@topUrl":["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]
+              "@topUrl":["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"],
+              "@skyColor":[0,0,0],
+              "@transparency":0
             }
           },
           { "Transform":
             {
               "@DEF":"DECLBubble_bubbleA",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-geometry":
                       { "Sphere":
                         {
@@ -88,88 +94,6 @@
                             }
                         }
                       }
-                  }
-                },
-                { "Script":
-                  {
-                    "@DEF":"DECLBubble_bubbleA_bounce",
-                    "field": [
-                      {
-                        "@name":"scale",
-                        "@accessType":"inputOutput",
-                        "@type":"SFVec3f",
-                        "@value":[1,1,1]
-                      },
-                      {
-                        "@name":"translation",
-                        "@accessType":"inputOutput",
-                        "@type":"SFVec3f",
-                        "@value":[0,0,0]
-                      },
-                      {
-                        "@name":"velocity",
-                        "@accessType":"inputOutput",
-                        "@type":"SFVec3f",
-                        "@value":[0,0,0]
-                      },
-                      {
-                        "@name":"scalvel",
-                        "@accessType":"inputOutput",
-                        "@type":"SFVec3f",
-                        "@value":[0,0,0]
-                      },
-                      {
-                        "@name":"set_fraction",
-                        "@accessType":"inputOnly",
-                        "@type":"SFFloat"
-                      }
-                    ],
-                    "#sourceText":[
-"",
-"",
-"ecmascript:",
-"function initialize() {",
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
-"",
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-"}",
-"",
-"function set_fraction(value) {",
-"    translation = new SFVec3f(\ttranslation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);",
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);",
-"    // if you get to far away or too big, explode",
-"    if ( Math.abs(translation.x) > 256) {",
-"\ttranslation.x = 0;",
-"\tinitialize();",
-"    }",
-"    if ( Math.abs(translation.y) > 256) {",
-"\ttranslation.y = 0;",
-"\tinitialize();",
-"    }",
-"    if ( Math.abs(translation.z) > 256) {",
-"\ttranslation.z = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.x) > 20) {",
-"\tscale.x = scale.x/20;",
-"\ttranslation.x = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.y) > 20) {",
-"\tscale.y = scale.y/20;",
-"\ttranslation.y = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.z) > 20) {",
-"\tscale.z = scale.z/20;",
-"\ttranslation.z = 0;",
-"\tinitialize();",
-"    }",
-"}",
-"",
-"\t\t\t",
-""
-]
                   }
                 },
                 { "TimeSensor":
@@ -203,38 +127,11 @@
                     "@toField":"set_fraction"
                   }
                 }
-              ]
-            }
-          },
-          { "Transform":
-            {
-              "@DEF":"DECLBubble_bubbleB",
-              "-children":[
-                { "Shape":
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "X3DScript":
                   {
-                    "-geometry":
-                      { "Sphere":
-                        {
-                          "@radius":0.25
-                        }
-                      },
-                    "-appearance":
-                      { "Appearance":
-                        {
-                          "-material":
-                            { "Material":
-                              {
-                                "@diffuseColor":[1,0,0],
-                                "@transparency":0.2
-                              }
-                            }
-                        }
-                      }
-                  }
-                },
-                { "Script":
-                  {
-                    "@DEF":"DECLBubble_bubbleB_bounce",
+                    "@DEF":"DECLBubble_bubbleA_bounce",
                     "field": [
                       {
                         "@name":"scale",
@@ -265,53 +162,40 @@
                         "@accessType":"inputOnly",
                         "@type":"SFFloat"
                       }
-                    ],
-                    "#sourceText":[
-"",
-"",
-"ecmascript:",
-"function initialize() {",
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
-"",
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-"}",
-"",
-"function set_fraction(value) {",
-"    translation = new SFVec3f(\ttranslation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);",
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);",
-"    // if you get to far away or too big, explode",
-"    if ( Math.abs(translation.x) > 256) {",
-"\ttranslation.x = 0;",
-"\tinitialize();",
-"    }",
-"    if ( Math.abs(translation.y) > 256) {",
-"\ttranslation.y = 0;",
-"\tinitialize();",
-"    }",
-"    if ( Math.abs(translation.z) > 256) {",
-"\ttranslation.z = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.x) > 20) {",
-"\tscale.x = scale.x/20;",
-"\ttranslation.x = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.y) > 20) {",
-"\tscale.y = scale.y/20;",
-"\ttranslation.y = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.z) > 20) {",
-"\tscale.z = scale.z/20;",
-"\ttranslation.z = 0;",
-"\tinitialize();",
-"    }",
-"}",
-"",
-"\t\t\t",
-""
-]
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"DECLBubble_bubbleB",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
+              "-children":[
+                { "Shape":
+                  {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
+                    "-geometry":
+                      { "Sphere":
+                        {
+                          "@radius":0.25
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0,0],
+                                "@transparency":0.2
+                              }
+                            }
+                        }
+                      }
                   }
                 },
                 { "TimeSensor":
@@ -345,38 +229,11 @@
                     "@toField":"set_fraction"
                   }
                 }
-              ]
-            }
-          },
-          { "Transform":
-            {
-              "@DEF":"DECLBubble_bubbleC",
-              "-children":[
-                { "Shape":
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "X3DScript":
                   {
-                    "-geometry":
-                      { "Sphere":
-                        {
-                          "@radius":0.25
-                        }
-                      },
-                    "-appearance":
-                      { "Appearance":
-                        {
-                          "-material":
-                            { "Material":
-                              {
-                                "@diffuseColor":[1,0,0],
-                                "@transparency":0.2
-                              }
-                            }
-                        }
-                      }
-                  }
-                },
-                { "Script":
-                  {
-                    "@DEF":"DECLBubble_bubbleC_bounce",
+                    "@DEF":"DECLBubble_bubbleB_bounce",
                     "field": [
                       {
                         "@name":"scale",
@@ -407,53 +264,40 @@
                         "@accessType":"inputOnly",
                         "@type":"SFFloat"
                       }
-                    ],
-                    "#sourceText":[
-"",
-"",
-"ecmascript:",
-"function initialize() {",
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
-"",
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-"}",
-"",
-"function set_fraction(value) {",
-"    translation = new SFVec3f(\ttranslation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);",
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);",
-"    // if you get to far away or too big, explode",
-"    if ( Math.abs(translation.x) > 256) {",
-"\ttranslation.x = 0;",
-"\tinitialize();",
-"    }",
-"    if ( Math.abs(translation.y) > 256) {",
-"\ttranslation.y = 0;",
-"\tinitialize();",
-"    }",
-"    if ( Math.abs(translation.z) > 256) {",
-"\ttranslation.z = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.x) > 20) {",
-"\tscale.x = scale.x/20;",
-"\ttranslation.x = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.y) > 20) {",
-"\tscale.y = scale.y/20;",
-"\ttranslation.y = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.z) > 20) {",
-"\tscale.z = scale.z/20;",
-"\ttranslation.z = 0;",
-"\tinitialize();",
-"    }",
-"}",
-"",
-"\t\t\t",
-""
-]
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"DECLBubble_bubbleC",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
+              "-children":[
+                { "Shape":
+                  {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
+                    "-geometry":
+                      { "Sphere":
+                        {
+                          "@radius":0.25
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[1,0,0],
+                                "@transparency":0.2
+                              }
+                            }
+                        }
+                      }
                   }
                 },
                 { "TimeSensor":
@@ -487,15 +331,57 @@
                     "@toField":"set_fraction"
                   }
                 }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "X3DScript":
+                  {
+                    "@DEF":"DECLBubble_bubbleC_bounce",
+                    "field": [
+                      {
+                        "@name":"scale",
+                        "@accessType":"inputOutput",
+                        "@type":"SFVec3f",
+                        "@value":[1,1,1]
+                      },
+                      {
+                        "@name":"translation",
+                        "@accessType":"inputOutput",
+                        "@type":"SFVec3f",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"velocity",
+                        "@accessType":"inputOutput",
+                        "@type":"SFVec3f",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"scalvel",
+                        "@accessType":"inputOutput",
+                        "@type":"SFVec3f",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"set_fraction",
+                        "@accessType":"inputOnly",
+                        "@type":"SFFloat"
+                      }
+                    ]
+                  }
+                }
               ]
             }
           },
           { "Transform":
             {
               "@DEF":"DECLBubble_bubbleD",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-geometry":
                       { "Sphere":
                         {
@@ -516,7 +402,40 @@
                       }
                   }
                 },
-                { "Script":
+                { "TimeSensor":
+                  {
+                    "@DEF":"DECLBubble_bubbleD_bubbleClock",
+                    "@cycleInterval":10,
+                    "@loop":true
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"DECLBubble_bubbleD_bounce",
+                    "@fromField":"translation_changed",
+                    "@toNode":"DECLBubble_transform",
+                    "@toField":"set_translation"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"DECLBubble_bubbleD_bounce",
+                    "@fromField":"scale_changed",
+                    "@toNode":"DECLBubble_transform",
+                    "@toField":"set_scale"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"DECLBubble_bubbleD_bubbleClock",
+                    "@fromField":"fraction_changed",
+                    "@toNode":"DECLBubble_bubbleD_bounce",
+                    "@toField":"set_fraction"
+                  }
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "X3DScript":
                   {
                     "@DEF":"DECLBubble_bubbleD_bounce",
                     "field": [
@@ -549,84 +468,7 @@
                         "@accessType":"inputOnly",
                         "@type":"SFFloat"
                       }
-                    ],
-                    "#sourceText":[
-"",
-"",
-"ecmascript:",
-"function initialize() {",
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
-"",
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);",
-"}",
-"",
-"function set_fraction(value) {",
-"    translation = new SFVec3f(\ttranslation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);",
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);",
-"    // if you get to far away or too big, explode",
-"    if ( Math.abs(translation.x) > 256) {",
-"\ttranslation.x = 0;",
-"\tinitialize();",
-"    }",
-"    if ( Math.abs(translation.y) > 256) {",
-"\ttranslation.y = 0;",
-"\tinitialize();",
-"    }",
-"    if ( Math.abs(translation.z) > 256) {",
-"\ttranslation.z = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.x) > 20) {",
-"\tscale.x = scale.x/20;",
-"\ttranslation.x = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.y) > 20) {",
-"\tscale.y = scale.y/20;",
-"\ttranslation.y = 0;",
-"\tinitialize();",
-"    }",
-"    if (Math.abs(scale.z) > 20) {",
-"\tscale.z = scale.z/20;",
-"\ttranslation.z = 0;",
-"\tinitialize();",
-"    }",
-"}",
-"",
-"\t\t\t",
-""
-]
-                  }
-                },
-                { "TimeSensor":
-                  {
-                    "@DEF":"DECLBubble_bubbleD_bubbleClock",
-                    "@cycleInterval":10,
-                    "@loop":true
-                  }
-                },
-                { "ROUTE":
-                  {
-                    "@fromNode":"DECLBubble_bubbleD_bounce",
-                    "@fromField":"translation_changed",
-                    "@toNode":"DECLBubble_transform",
-                    "@toField":"set_translation"
-                  }
-                },
-                { "ROUTE":
-                  {
-                    "@fromNode":"DECLBubble_bubbleD_bounce",
-                    "@fromField":"scale_changed",
-                    "@toNode":"DECLBubble_transform",
-                    "@toField":"set_scale"
-                  }
-                },
-                { "ROUTE":
-                  {
-                    "@fromNode":"DECLBubble_bubbleD_bubbleClock",
-                    "@fromField":"fraction_changed",
-                    "@toNode":"DECLBubble_bubbleD_bounce",
-                    "@toField":"set_fraction"
+                    ]
                   }
                 }
               ]

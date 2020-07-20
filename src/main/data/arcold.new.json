@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -50,19 +50,26 @@
           },
           { "Background":
             {
-              "@skyColor":[0.4,0.4,0.4]
+              "@skyColor":[0.4,0.4,0.4],
+              "@transparency":0
             }
           },
           { "Transform":
             {
               "@DEF":"trans1",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@DEF":"rotscale1",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -91,13 +98,19 @@
           { "Transform":
             {
               "@DEF":"trans2",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@DEF":"rotscale2",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -126,13 +139,19 @@
           { "Transform":
             {
               "@DEF":"trans3",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@DEF":"rotscale3",
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -176,6 +195,8 @@
                     { "Transform":
                       {
                         "@DEF":"node",
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -187,6 +208,8 @@
                         "-children":[
                           { "Shape":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "-appearance":
                                 { "Appearance":
                                   {

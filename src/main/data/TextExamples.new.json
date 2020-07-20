@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -64,10 +64,14 @@
         "-children":[
           { "Transform":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "@translation":[0,2,0],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -101,10 +105,14 @@
           },
           { "Transform":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "@translation":[-3,0,0],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -130,10 +138,14 @@
           },
           { "Transform":
             {
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "@translation":[3,0,0],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {

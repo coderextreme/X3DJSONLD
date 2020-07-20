@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -195,6 +195,7 @@
                           {
                             "@DEF":"DefaultNodeValue",
                             "@bboxSize":[2,2,2],
+                            "@bboxCenter":[0,0,0],
                             "-children":[
                               {
                                 "#comment":"Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\""
@@ -211,9 +212,13 @@
                     { "Transform":
                       {
                         "@translation":[0,2,0],
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           { "Group":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "IS": {
                                   "connect": [
                                     {
@@ -248,12 +253,18 @@
           { "Group":
             {
               "@DEF":"ExampleChildElement",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-geometry":
                       { "Box":
                         {
+                          "@size":[2,2,2],
+                          "@solid":true
                         }
                       },
                     "-appearance":
@@ -277,6 +288,8 @@
               "@DEF":"TransformExampleUSE",
               "@rotation":[0,1,0,0.78],
               "@translation":[0,2.5,0],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Group":
                   {
@@ -288,9 +301,14 @@
           },
           { "Collision":
             {
+              "@enabled":true,
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-proxy":
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"note that Collision proxy Shape is not rendered"
@@ -325,9 +343,13 @@
           { "Transform":
             {
               "@translation":[0,-2.5,0],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -407,7 +429,9 @@
           { "Inline":
             {
               "@DEF":"someInline",
-              "@url":["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"]
+              "@url":["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"],
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1]
             }
           },
           { "IMPORT":

@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -45,6 +45,9 @@
           { "Collision":
             {
               "@DEF":"DoNotCollideWithVisualizationWidget",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
+              "@enabled":true,
               "-children":[
                 {
                   "#comment":"Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph."
@@ -60,6 +63,8 @@
                 },
                 { "Group":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"Vertical Y arrow and label"
@@ -67,9 +72,13 @@
                       { "Group":
                         {
                           "@DEF":"ArrowGreen",
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -95,10 +104,14 @@
                             },
                             { "Transform":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "@translation":[0,1,0],
                                 "-children":[
                                   { "Shape":
                                     {
+                                      "@bboxCenter":[0,0,0],
+                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -109,8 +122,11 @@
                                         { "Cone":
                                           {
                                             "@DEF":"ArrowCone",
+                                            "@bottom":true,
                                             "@bottomRadius":0.05,
-                                            "@height":0.1
+                                            "@height":0.1,
+                                            "@side":true,
+                                            "@solid":true
                                           }
                                         }
                                     }
@@ -123,13 +139,20 @@
                       },
                       { "Transform":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,1.08,0],
                           "-children":[
                             { "Billboard":
                               {
+                                "@axisOfRotation":[0,1,0],
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
+                                      "@bboxCenter":[0,0,0],
+                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -171,6 +194,8 @@
                 },
                 { "Transform":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "@rotation":[0,0,1,-1.57079],
                     "-children":[
                       {
@@ -178,13 +203,19 @@
                       },
                       { "Group":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Group":
                               {
                                 "@DEF":"ArrowRed",
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
+                                      "@bboxCenter":[0,0,0],
+                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -208,10 +239,14 @@
                                   },
                                   { "Transform":
                                     {
+                                      "@bboxCenter":[0,0,0],
+                                      "@bboxSize":[-1,-1,-1],
                                       "@translation":[0,1,0],
                                       "-children":[
                                         { "Shape":
                                           {
+                                            "@bboxCenter":[0,0,0],
+                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -234,6 +269,8 @@
                             },
                             { "Transform":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "@rotation":[0,0,1,1.57079],
                                 "@translation":[0.072,1.1,0],
                                 "-children":[
@@ -242,9 +279,14 @@
                                   },
                                   { "Billboard":
                                     {
+                                      "@axisOfRotation":[0,1,0],
+                                      "@bboxCenter":[0,0,0],
+                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
+                                            "@bboxCenter":[0,0,0],
+                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -279,6 +321,8 @@
                 },
                 { "Transform":
                   {
+                    "@bboxCenter":[0,0,0],
+                    "@bboxSize":[-1,-1,-1],
                     "@rotation":[1,0,0,1.57079],
                     "-children":[
                       {
@@ -286,13 +330,19 @@
                       },
                       { "Group":
                         {
+                          "@bboxCenter":[0,0,0],
+                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Group":
                               {
                                 "@DEF":"ArrowBlue",
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
+                                      "@bboxCenter":[0,0,0],
+                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -316,10 +366,14 @@
                                   },
                                   { "Transform":
                                     {
+                                      "@bboxCenter":[0,0,0],
+                                      "@bboxSize":[-1,-1,-1],
                                       "@translation":[0,1,0],
                                       "-children":[
                                         { "Shape":
                                           {
+                                            "@bboxCenter":[0,0,0],
+                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -342,6 +396,8 @@
                             },
                             { "Transform":
                               {
+                                "@bboxCenter":[0,0,0],
+                                "@bboxSize":[-1,-1,-1],
                                 "@rotation":[1,0,0,-1.57079],
                                 "@translation":[0,1.1,0.072],
                                 "-children":[
@@ -350,9 +406,14 @@
                                   },
                                   { "Billboard":
                                     {
+                                      "@axisOfRotation":[0,1,0],
+                                      "@bboxCenter":[0,0,0],
+                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
+                                            "@bboxCenter":[0,0,0],
+                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {

@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -110,6 +110,8 @@
                     { "Transform":
                       {
                         "@DEF":"SpinGroupTransform",
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -205,6 +207,8 @@
                   "-children":[
                     { "Shape":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "-appearance":
                           { "Appearance":
                             {
@@ -220,13 +224,16 @@
                         "-geometry":
                           { "Box":
                             {
-                              "@size":[25,2,2]
+                              "@size":[25,2,2],
+                              "@solid":true
                             }
                           }
                       }
                     },
                     { "Shape":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "-appearance":
                           { "Appearance":
                             {
@@ -236,7 +243,8 @@
                         "-geometry":
                           { "Box":
                             {
-                              "@size":[2,25,2]
+                              "@size":[2,25,2],
+                              "@solid":true
                             }
                           }
                       }
@@ -274,6 +282,8 @@
                               },
                               { "Shape":
                                 {
+                                  "@bboxCenter":[0,0,0],
+                                  "@bboxSize":[-1,-1,-1],
                                   "-appearance":
                                     { "Appearance":
                                       {
@@ -288,7 +298,8 @@
                                   "-geometry":
                                     { "Box":
                                       {
-                                        "@size":[2,2.05,25]
+                                        "@size":[2,2.05,25],
+                                        "@solid":true
                                       }
                                     }
                                 }

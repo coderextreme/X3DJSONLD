@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -42,39 +42,16 @@
     },
     "Scene": {
         "-children":[
-          { "Script":
+          { "X3DScript":
             {
-              "@DEF":"Browser",
-              "#sourceText":[
-"",
-"ecmascript:",
-"                function initialize() {",
-"\t\t    Browser.print('DUDES\n'+'\"DUDETTES');",
-"                }",
-"",
-""
-]
+              "@DEF":"Browser"
             }
-          },
-          { "Script":
+          }
+        ],
+        "-children":[
+          { "X3DScript":
             {
-              "@DEF":"Clouds",
-              "#sourceText":[
-"",
-"",
-"ecmascript:",
-"",
-"",
-"function cumulustranslation() // These values designate the boundary location of the cloud",
-"{",
-"var xxx = ' '+' '+",
-"'\tTransform\t\t\n'+",
-"'    ' + '               \t\n';",
-"",
-"}",
-"",
-""
-]
+              "@DEF":"Clouds"
             }
           }
         ]

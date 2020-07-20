@@ -58,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -86,7 +86,9 @@
               "@frontUrl":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"],
               "@leftUrl":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"],
               "@rightUrl":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"],
-              "@topUrl":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]
+              "@topUrl":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"],
+              "@skyColor":[0,0,0],
+              "@transparency":0
             }
           },
           { "ProtoDeclare":
@@ -97,9 +99,13 @@
                     { "Transform":
                       {
                         "@DEF":"animate_transform",
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           { "Shape":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "-appearance":
                                 { "Appearance":
                                   {

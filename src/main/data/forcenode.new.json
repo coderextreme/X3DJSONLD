@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 June 2020"
+            "@content":"20 July 2020"
           },
           {
             "@name":"generator",
@@ -63,10 +63,14 @@
                   "-children":[
                     { "Group":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           { "Transform":
                             {
                               "@DEF":"transform",
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "IS": {
                                   "connect": [
                                     {
@@ -78,6 +82,8 @@
                               "-children":[
                                 { "Shape":
                                   {
+                                    "@bboxCenter":[0,0,0],
+                                    "@bboxSize":[-1,-1,-1],
                                     "-appearance":
                                       { "Appearance":
                                         {
@@ -98,10 +104,14 @@
                                 },
                                 { "Transform":
                                   {
+                                    "@bboxCenter":[0,0,0],
+                                    "@bboxSize":[-1,-1,-1],
                                     "@translation":[1,0,1],
                                     "-children":[
                                       { "Shape":
                                         {
+                                          "@bboxCenter":[0,0,0],
+                                          "@bboxSize":[-1,-1,-1],
                                           "-appearance":
                                             { "Appearance":
                                               {
@@ -250,9 +260,13 @@
                   "-children":[
                     { "Group":
                       {
+                        "@bboxCenter":[0,0,0],
+                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           { "Shape":
                             {
+                              "@bboxCenter":[0,0,0],
+                              "@bboxSize":[-1,-1,-1],
                               "-appearance":
                                 { "Appearance":
                                   {
@@ -355,6 +369,8 @@
           { "Transform":
             {
               "@DEF":"HoldsContent",
+              "@bboxCenter":[0,0,0],
+              "@bboxSize":[-1,-1,-1],
               "@scale":[0.1,0.1,0.1],
               "-children":[
                 { "PlaneSensor":

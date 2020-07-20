@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.1.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.1.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.1 of X3D -->
-<!-- Generated 2020-06-06-07:00 18:52:19.839-07:00 -->
+<!-- Generated 2020-07-05-07:00 20:45:40.764-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.1"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -296,7 +296,7 @@
       </SimpleType>
       <SimpleType name="fieldTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="fieldTypeChoices are enumerations for all allowed names of X3DField types."
+                  appinfo="fieldTypeChoices are enumerations for all allowed names of X3DField types. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html">
          <enumeration value="SFBool" appinfo="Single Field (singleton) Boolean"/>
          <enumeration value="MFBool" appinfo="Multiple Field (list) Boolean"/>
@@ -373,7 +373,7 @@
       </SimpleType>
       <SimpleType name="fogTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="fogTypeChoices are strictly allowed enumeration values for Fog node fogType field."
+                  appinfo="fogTypeChoices are strictly allowed enumeration values for Fog node fogType field. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/enveffects.html#Fog">
          <enumeration value="LINEAR" appinfo="linear blending as a function of distance"/>
          <enumeration value="EXPONENTIAL"
@@ -392,7 +392,7 @@
       </SimpleType>
       <SimpleType name="fontStyleChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="fontStyleChoices are strictly allowed enumeration values for FontStyle/ScreenFontStyle node style field."
+                  appinfo="fontStyleChoices are strictly allowed enumeration values for FontStyle/ScreenFontStyle node style field. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/text.html#Fontfamilyandstyle">
          <enumeration value="PLAIN" appinfo="default plain type"/>
          <enumeration value="BOLD" appinfo="boldface type"/>
@@ -401,7 +401,7 @@
       </SimpleType>
       <SimpleType name="generatedCubeMapTextureUpdateChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="generatedCubeMapTextureUpdateChoices are strictly allowed enumeration values for GeneratedCubeMapTexture field named 'update'."
+                  appinfo="generatedCubeMapTextureUpdateChoices are strictly allowed enumeration values for GeneratedCubeMapTexture field named 'update'. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/env_texture.html#GeneratedCubeMapTexture">
          <enumeration value="NONE" appinfo="no further texture updates are rendered"/>
          <enumeration value="NEXT_FRAME_ONLY" appinfo="render texture once at end of frame"/>
@@ -626,7 +626,8 @@
       </SimpleType>
       <SimpleType name="hanimHumanoidInfoKeyValues"
                   baseType="xs:NMTOKEN"
-                  documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/ObjectInterfaces.html#Humanoid">
+                  appinfo="Keyword names for keyword=value metadata pairs describing a given HAnimHumanoid."
+                  documentation="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid">
          <enumeration value="authorName"/>
          <enumeration value="authorEmail"/>
          <enumeration value="copyright"/>
@@ -642,7 +643,9 @@
                   baseType="xs:NMTOKEN"
                   appinfo="CAESAR joint names for identification of HAnimJoint nodes as defined in the HAnim Architecture specification. Alternate name values are also allowed."
                   documentation="https://www.web3d.org/documents/specifications/19774/V1.0/HAnim/concepts.html#Hierarchy">
-         <enumeration value="humanoid_root" index="1"/>
+         <enumeration value="humanoid_root"
+                      index="1"
+                      documentation="https://en.wikipedia.org/wiki/Outline_of_human_anatomy#Joints"/>
          <enumeration value="sacroiliac" index="2"/>
          <enumeration value="l_hip" index="3"/>
          <enumeration value="l_knee" index="4"/>
@@ -851,7 +854,7 @@
       </SimpleType>
       <SimpleType name="hanimVersionChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node. Note that default HAnimHumanoid version is 2.0 for X3D version 4, and default is 1.0 for X3D version 3."
+                  appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node. Note that default HAnimHumanoid version is 2.0 for X3D version 4, and default is 1.0 for X3D version 3. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimHumanoid">
          <enumeration value="1.0"
                       appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since no other versions were formally approved, no other values are allowed for earlier HAnim versions."
@@ -944,7 +947,6 @@
          <enumeration value="texCoordKey"/>
          <enumeration value="top"/>
          <enumeration value="topToBottom"/>
-         <enumeration value="type"/>
          <enumeration value="uClosed"/>
          <enumeration value="uDimension"/>
          <enumeration value="uKnot"/>
@@ -1347,7 +1349,7 @@
                   documentation="_Evaluating the X3D Schema with semantic web tools_, Web3D 2012 Conference, Petit, Marc (EDF), Henry Boccon-Gibod (EDF), Mouton, Christophe (EDF)"/>
       <SimpleType name="justifyChoices"
                   baseType="MFString"
-                  appinfo="justifyChoices are strictly allowed enumeration values for FontStyle node justify field. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values."
+                  appinfo="justifyChoices are strictly allowed enumeration values for FontStyle node justify field. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/text.html#Directionandjustification">
          <enumeration value="&#34;MIDDLE&#34;"/>
          <enumeration value="&#34;MIDDLE&#34; &#34;BEGIN&#34;"/>
@@ -1372,7 +1374,7 @@
       </SimpleType>
       <SimpleType name="metaDirectionChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="metaDirectionChoices are strictly allowed enumeration values for meta element direction field."
+                  appinfo="metaDirectionChoices are strictly allowed enumeration values for meta element direction field. Bounded, no additional values are allowed."
                   documentation="http://www.w3.org/TR/html4/struct/dirlang.html#adef-dir">
          <enumeration value="rtl" appinfo="right-to-left"/>
          <enumeration value="ltr" appinfo="left-to-right"/>
@@ -1558,7 +1560,7 @@
       </SimpleType>
       <SimpleType name="networkModeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="networkModeChoices are strictly allowed enumeration values for DIS field networkMode."
+                  appinfo="networkModeChoices are strictly allowed enumeration values for DIS field networkMode. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/dis.html#CommonDISfields">
          <enumeration value="standAlone"
                       appinfo="ignore network but still respond to events in local scene"/>
@@ -1724,7 +1726,7 @@
       </SimpleType>
       <SimpleType name="profileNameChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="profileNameChoices enumeration constants are used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the profile of a contained Scene. Profiles correspond primarily to subsets of allowed X3D nodes. Some nodes in Interchange profile include fields that are ignored unless Immersive or Full profile is active."
+                  appinfo="profileNameChoices enumeration constants are used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the profile of a contained Scene. Profiles correspond primarily to subsets of allowed X3D nodes. Some nodes in Interchange profile include fields that are ignored unless Immersive or Full profile is active. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Profiles">
          <enumeration value="Core"
                       appinfo="Core Profile includes no nodes and is provided as the basis for custom componentization. Allowed X3D statements for all profiles are: connect ExternProtoDeclare EXPORT field fieldValue IMPORT IS ProtoBody ProtoDeclare ProtoInterface ProtoInstance ROUTE X3D. Allowed X3D nodes for this profile are: MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString."
@@ -1765,7 +1767,7 @@
       </SimpleType>
       <SimpleType name="textureCoordinateGeneratorModeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="textureCoordinateGeneratorModeChoices are strictly allowed enumeration values for TextureCoordinateGenerator mode field."
+                  appinfo="textureCoordinateGeneratorModeChoices are strictly allowed enumeration values for TextureCoordinateGenerator mode field. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#t-Texturecoordgeneration">
          <enumeration value="SPHERE"
                       appinfo="Creates texture coordinates for a spherical environment"/>
@@ -1790,7 +1792,7 @@
       </SimpleType>
       <SimpleType name="x3dVersionChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="x3dVersionChoices enumeration string constants are used to identify the allowed versions for an X3D scene graph."
+                  appinfo="x3dVersionChoices enumeration string constants are used to identify the allowed versions for an X3D scene graph. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Profiles">
          <enumeration value="3.0"
                       appinfo="X3D version 3.0 approved by ISO in 2004."
@@ -3285,24 +3287,29 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="IS"/>
+                   acceptableNodeTypes="IS"
+                   description="IS/connect statements define prototype connections between ProtoInterface fields and node fields within a ProtoBody."/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DMetadataObject"/>
+                   acceptableNodeTypes="X3DMetadataObject"
+                   description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
-                   baseType="xs:ID"/>
+                   baseType="xs:ID"
+                   description="DEF defines a unique ID name for each node, referenceable by other nodes."/>
             <field name="USE"
                    type="SFString"
                    accessType="inputOutput"
-                   baseType="xs:IDREF"/>
+                   baseType="xs:IDREF"
+                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
-                   baseType="xs:NMTOKENS"/>
+                   baseType="xs:NMTOKENS"
+                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -8695,7 +8702,9 @@
                    additionalEnumerationValuesAllowed="true"
                    simpleType="hanimJointNameValues"
                    baseType="xs:NMTOKEN">
-               <enumeration value="humanoid_root" index="1"/>
+               <enumeration value="humanoid_root"
+                            index="1"
+                            documentation="https://en.wikipedia.org/wiki/Outline_of_human_anatomy#Joints"/>
                <enumeration value="sacroiliac" index="2"/>
                <enumeration value="l_hip" index="3"/>
                <enumeration value="l_knee" index="4"/>
