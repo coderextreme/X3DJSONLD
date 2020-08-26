@@ -666,6 +666,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       select="not( local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and .='false') and
+                      not( local-name()='load' and .='true') and
+                      not( local-name()='refresh' and (.='0' or .='0.0')) or
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and string(.)='false') or
@@ -893,6 +895,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       ((local-name()='centerOfRotation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='fieldOfView' and ((string(.)='0.785398') or (string(.)='0.7854') or (string(.)='.785398') or (string(.)='.7854'))) or
                       (local-name()='jump' and string(.)='true') or
+                      (local-name()='viewAll' and .='false') or
+                      ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
                       (local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                       (local-name()='retainUserOffsets' and (string(.)='false')) or
                       (local-name()='position' and (string(.)='0 0 10' or string(.)='0.0 0.0 10.0')))) and
@@ -1120,6 +1124,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       ((local-name()='speedFactor' and (string(.)='1' or string(.)='1.0')) or
 						(local-name()='headlight' and (string(.)='true')) or
 						(local-name()='jump' and (string(.)='true')) or
+                        (local-name()='viewAll' and .='false') or
+                        ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
 						(local-name()='navType' and (string(.)='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
 						(local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
 						(local-name()='position' and (string(.)='0 0 100000' or string(.)='0.0 0.0 100000.0')) or
@@ -1160,6 +1166,9 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingPositions' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
+                       (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
@@ -1173,7 +1182,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       ((local-name()='containerField' and (string(.)='motions')) or
                        (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
                        (local-name()='frameIncrement' and (string(.)='1')) or
-                       (local-name()='frameIndex' and (string(.)='0')) or
+                       ((local-name()='frameIndex' or local-name()='startFrame' or local-name()='endFrame') and (string(.)='0')) or
                        (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
@@ -1673,7 +1682,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
                           ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
-                          ($parentElementName='HAnimMotion'                and $attributeName='channels') or
+                          ($parentElementName='HAnimMotion'                and (($attributeName='channels') or ($attributeName='joints'))) or
 					      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
 						  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
 						  ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
@@ -1727,21 +1736,24 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <xsl:when test="
 					($localFieldType='SFBool')  or 
                     ($attributeName='activate') or
+                    ($attributeName='bboxDisplay')  or
 					($attributeName='ccw')      or
 					($attributeName='closed')   or
 					($attributeName='convex')   or
 					($attributeName='colorPerVertex') or
-                    ($attributeName='bboxDisplay')  or
 					($attributeName='enabled')  or
 					($attributeName='global')   or
 					($attributeName='normalPerVertex') or
 					($attributeName='on')       or
 					($attributeName='loop')     or
+					($attributeName='next')     or
+					($attributeName='previous') or
 					($attributeName='normalizeVelocity') or
 					($attributeName='rtpHeaderExpected') or
 					($attributeName='solid') or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
 					($attributeName='visible') or
+					($attributeName='viewAll') or
 					($parentElementName='AudioClip' and $attributeName='loop') or
 					($parentElementName='BooleanToggle' and $attributeName='toggle') or
 					($parentElementName='Collision' and $attributeName='enabled') or
@@ -1857,8 +1869,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <xsl:when test="
 					($localFieldType='SFFloat')  or 
                     ($attributeName='ambientIntensity') or
-					($attributeName='intensity')        or
 					($attributeName='creaseAngle')      or
+					($attributeName='intensity')        or
                     ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
                     ($attributeName='startAngle')       or ($attributeName='endAngle') or
                     ($attributeName='tolerance')        or
@@ -1951,7 +1963,9 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <xsl:when test="
 					($localFieldType='SFTime')        or 
                     ($parentElementName='TimeSensor') or
+					($attributeName='cycleTime')      or
                     ($attributeName='duration')       or
+					($attributeName='elapsedTime')    or
                     ($attributeName='tau')            or
                     ($attributeName='timestamp')      or
                     ($attributeName='readInterval')   or
@@ -2170,6 +2184,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <xsl:when test="
                     ($localFieldType='SFInt32')           or 
                      ends-with($attributeName,'ID')             or
+                    ($attributeName='farClippingPlane')         or
+                    ($attributeName='nearClippingPlane')        or
                     ($attributeName='order')                    or
 					($attributeName='uOrder')                   or
 					($attributeName='vOrder')                   or
@@ -2188,7 +2204,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
 					($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
 					(starts-with($parentElementName,'HAnim') and $attributeName='loa') or
-                    ($parentElementName='HAnimMotion' and (($attributeName='frameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex'))) or
+                    ($parentElementName='HAnimMotion' and (($attributeName='frameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
                     ($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
 					($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
 					($parentElementName='LineProperties' and ($attributeName='linetype')) or

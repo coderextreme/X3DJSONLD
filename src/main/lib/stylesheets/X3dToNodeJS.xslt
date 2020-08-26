@@ -1194,6 +1194,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and .='false') and
+                      not( local-name()='load' and .='true') and
+                      not( local-name()='refresh' and (.='0' or .='0.0')) or
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -1421,6 +1423,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='centerOfRotation' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='fieldOfView' and ((.='0.785398') or (.='0.7854') or (.='.785398') or (.='.7854'))) or
                       (local-name()='jump' and .='true') or
+                      (local-name()='viewAll' and .='false') or
+                      ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                       (local-name()='retainUserOffsets' and (.='false')) or
                       (local-name()='position' and (.='0 0 10' or .='0.0 0.0 10.0')))) and
@@ -1648,6 +1652,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='speedFactor' and (.='1' or .='1.0')) or
 						(local-name()='headlight' and (.='true')) or
 						(local-name()='jump' and (.='true')) or
+                        (local-name()='viewAll' and .='false') or
+                        ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
 						(local-name()='navType' and (.='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
 						(local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
 						(local-name()='position' and (.='0 0 100000' or .='0.0 0.0 100000.0')) or
@@ -1688,6 +1694,9 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingPositions' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
+                       (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
@@ -1701,7 +1710,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='containerField' and (string(.)='motions')) or
                        (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
                        (local-name()='frameIncrement' and (string(.)='1')) or
-                       (local-name()='frameIndex' and (string(.)='0')) or
+                       ((local-name()='frameIndex' or local-name()='startFrame' or local-name()='endFrame') and (string(.)='0')) or
                        (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
@@ -3220,7 +3229,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				($parentElementName='FillProperties' and ($attributeName='hatchStyle')) or
 				($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
 				($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
-                    ($parentElementName='HAnimMotion' and (($attributeName='frameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex'))) or
+                    ($parentElementName='HAnimMotion' and (($attributeName='frameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
                     ($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
 				($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
 				($parentElementName='LineProperties' and ($attributeName='linetype')) or

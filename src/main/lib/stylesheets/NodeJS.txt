@@ -1,0 +1,58 @@
+Note: This file needs to be converted to HTML and published as X3dToNodeJS.html
+
+Overview:
+
+The goal of the X3dToNodeJS.xslt Extensible Stylesheet Language Transforms (XSLT) stylesheet is to create Node.js programs from Extensible 3D Graphics (X3D) Extensible Markup Language (XML) files.  The stylesheet produces runnable Node.js programs, written in a style similar to X3D Java Scene Access Interface Library (X3DJSAIL) java programs, retaining the style of the Java version for compatibility. The X3dToNodeJS.xslt is packaged as a module of X3DJSAIL, and is run with the CommandLine utility with the "-tojs -toFile" command line parameters to the Java program.  The Node.JS output filename must also appear on the command line.
+
+History and Motivation:
+
+We copied the X3dToNodeJS.xslt file from the X3dToES5.xslt which was created from another stylesheet written by Don Brutzman.  The initial pattern for the Java, Python and ECMAScript stylesheets was developed by John Carlson with his X3D Json Loader program, JavaSerializer.js and follow on serializers for JavaScript and Python.
+
+
+The reason X3DToNodeJS.xslt exists is to provide a refererence implementation and module for X3DJSAIL to convert XML into runnable SAI code.  Two related efforts are 1) An XML to (old) SAI and 2) an X3D EcmaScript class library.  The latter two will provide more of a JavaScript style of programming.   X3dToNodeJS.xslt provides a more Java-like style for the comfort of Java programmers who want to use a Java module in their Node.JS programs.
+
+We originally had an X3dToES5.xslt for translating XML to Java Nashorn JavaScript (ES5, and later ES6).  Nashorn has been deprecated by Oracle, so we pursued an approach to use the Node JavaScript with a node.js module, called npm-java:  https://www.npmjs.com/package/java. Work on the npm-java module was originated in X3DJSAIL, using the RunSaxon.java program.  CommandLine (X3DJSAIL) and DOM2JSONSerializer.js (X3DJSONLD) are progressively replacing the RunSaxon program, although RunSaxon.java is still used for processing multiple files.
+
+One desire was to avoid the Java and Nashorn errors related to large source code methods, although already mostly solved by the Java Serializer and Nashorn Serializers within X3DJSONLD.
+
+Description:
+
+The Node.js file X3Dautoclass.js provides the interface between Node.Js programs and the Java Virtual Machine (JVM).  It is a map of of Java classes and their corresponding node.js constructors.  The X3Dautoclass.js file also contains classpath information, and other parameters for Java.  A Node.js will require the X3Dautoclass module.  The stylesheet currently calls the export from the module "autoclass", thus autoclass must appear when the constructor is used in the NodeJS file, as seen below.
+
+var autoclass = require('./X3Dautoclass');
+
+There are options to the Java module which affect how the module is used.  These options appear at the top of the node.js application, like:
+
+
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
+
+
+The main difference from the standard npm-java options is that we are assigning the syncSuffix to "", when the original suffix is "Sync".  This syncSuffix makesthe Java calls synchronous.
+
+In addition to the java options and the autoclass require, there's also a method to import the npm-java module:
+
+var java = require('java');
+
+This helps specify the java options that the application programmer can customize.
+
+Normally the programmer does not need to modify the output NodeJs file.  The most likely thing that will change is the X3Dautoclass.js file
+
+Description of programs within the java/node/examples folder:
+
+Java.java is a java example of reading in a JSON object, converting it to DOM with X3DJSONLD.java, and outputting it as XML.  This file is unrelated to Node.js, but is the primary example of importing JSON into X3DJSAIL.  You may choose JSON instead of Node.JS as your primary scenegraph input into X3DJSAIL. That's why it's here.  The NodeJS examples folder is in java/node/examples.  There are a small variety of files there, both data files and program files.
+
+Updating X3Dautoclass.js
+
+The java/node/python/nodeclasses.py Python file is a runnable script to generate X3Dautoclass.js.  You at some time, may need to modify this file to support addition jars in the classpath.  You may need to update X3Dautoclass.js if the X3D Unified Object Model (X3DUOM) changes.
+
+Running the NodeJS test.
+
+Run the nodejs test suite by changing folders to java/node, and issuing the following commit:
+
+ant test.node

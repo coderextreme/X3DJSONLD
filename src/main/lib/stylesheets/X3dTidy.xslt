@@ -257,6 +257,8 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
+    <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
+    <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
     
     <xsl:strip-space elements="*"/>
     <!-- TODO add flexibility to handle X3D embedded using X3DOM within HTML page, likely via an external stylesheet -->
@@ -490,9 +492,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <!-- process all elements/nodes -->
     <xsl:template match="*">
-        <!-- indent -->
         <xsl:for-each select="ancestor::*">
-            <xsl:text>  </xsl:text>
+            <xsl:text>  </xsl:text><!-- indent -->
         </xsl:for-each>
         
         <!-- diagnostic
@@ -559,8 +560,64 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:call-template name="process-attributes-in-order"/>
                         <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
                         <xsl:text>&#10;</xsl:text>
-                        
-                        <!-- warn regarding atypical programming language code -->
+                
+                        <!-- special case: split HAnimHumanoid info field -->
+                        <xsl:if test="(local-name() = 'HAnimHumanoid') and (string-length(@info) > 0) and contains(@info,'&quot;') and starts-with(@version,'2')">
+                            <xsl:message>
+                                <xsl:text>*** warning: info array values split into matching MetadataSet structure</xsl:text>
+                            </xsl:message>
+                            <xsl:comment>
+                                <xsl:text>HAnimHumanoid original info='</xsl:text>
+                                <xsl:value-of select="@info"/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:comment>
+                            <xsl:element name="MetadataSet">
+                                <xsl:attribute name="name"          ><xsl:text>HAnimHumanoid.info</xsl:text></xsl:attribute>
+                                <xsl:attribute name="reference"     ><xsl:text>https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid</xsl:text></xsl:attribute>
+                            <!-- <xsl:attribute name="containerField"><xsl:text>metadata</xsl:text></xsl:attribute> Mantis -->
+                                
+                                <xsl:for-each select="tokenize(@info, '&quot;\s*(,)?\s*&quot;')">
+                                    <xsl:sort select="normalize-space(.)" order="ascending"/>
+                                    
+                                    <xsl:variable name="infoNameValuePair"  select="normalize-space(.)"/>
+                                    <!-- debug
+                                    <xsl:message>
+                                        <xsl:text>*** found info token...</xsl:text>
+                                    </xsl:message> -->
+                                    <xsl:element name="MetadataString">
+                                        <xsl:choose>
+                                            <xsl:when test="not(contains($infoNameValuePair,'='))">
+                                                <xsl:message>
+                                                    <xsl:text>*** error: HAnimHumanoid info array name=value pair '</xsl:text>
+                                                    <xsl:value-of select="$infoNameValuePair"/>
+                                                    <xsl:text>' is missing equal sign (= character) and cannot be split</xsl:text>
+                                                </xsl:message>
+                                                <xsl:attribute name="info{position()}">
+                                                    <!-- MFString array values with single values do not need to be quoted, see Mantis 1320 -->
+                                                    <xsl:call-template name="strip-surrounding-quotes">
+                                                        <xsl:with-param name="value" select="$infoNameValuePair"/>
+                                                    </xsl:call-template>
+                                                </xsl:attribute>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:variable name="infoName"  select="normalize-space(translate(substring-before($infoNameValuePair,'='),'&quot;',''))"/>
+                                                <xsl:variable name="infoValue" select="normalize-space(substring-after ($infoNameValuePair,'='))"/>
+                                                <xsl:attribute name="name"  select="$infoName"/>
+                                                <xsl:attribute name="value">
+                                                    <!-- MFString array values with single values do not need to be quoted, see Mantis 1320 -->
+                                                    <xsl:call-template name="strip-surrounding-quotes">
+                                                        <xsl:with-param name="value" select="$infoValue"/>
+                                                    </xsl:call-template>
+                                                </xsl:attribute>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:element><!-- MetadataString -->
+                                </xsl:for-each>
+                            </xsl:element><!-- MetadataSet -->
+                            <xsl:text>&#10;</xsl:text>
+                        </xsl:if>
+                         
+                       <!-- warn regarding atypical programming language code -->
                         <xsl:choose>
                             <xsl:when test="(local-name()='Script') and (contains(@url,'.class&quot;') or contains(@url,'.java&quot;') or contains(@url,'.jar&quot;'))">
                                 <xsl:message>
@@ -699,8 +756,46 @@ POSSIBILITY OF SUCH DAMAGE.
                             </xsl:when>
                             -->
                             <xsl:when test="(local-name()='HAnimHumanoid') and not(string-length(@USE) > 0) and not($HAnimGeometryRemove='true')">
-                                <!-- first handle children of current node (including USE node) without special treatment -->
-                                <xsl:apply-templates select="* | comment()"/> <!--  | text() -->
+                                <!-- first handle children of current node (except USE node) without special treatment -->
+                                <xsl:apply-templates select="*[not(string-length(@USE) > 0)] | comment()"/> <!--  | text() -->
+                                <!-- next handle USE node children of current node -->
+                                <xsl:for-each select="*[(string-length(@USE) > 0)]">
+                                        <xsl:sort select="local-name()" order="ascending"/>
+                                        <xsl:sort select="concat(substring-after(@USE,'_l_'),substring-after(@USE,'_r_'))" order="ascending"/>
+                                        <xsl:sort select="not(ends-with(@USE,'_root') or contains(@USE,'_l_') or contains(@USE,'_r_'))" order="ascending"/>
+                                        <xsl:sort select="ends-with(@USE,'_root')" order="ascending"/>
+                                        
+                                    <xsl:variable name="USEname" select="normalize-space(@USE)"/>
+                                    <!-- debug
+                                    <xsl:message>
+                                        <xsl:text>*** warning: looping on </xsl:text>
+                                    </xsl:message> -->
+                                    <xsl:choose>
+                                        <xsl:when test="not(preceding-sibling::*[@USE = $USEname])">
+                                             <xsl:apply-templates select="."/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:message>
+                                                <xsl:text>*** warning: omitting duplicate </xsl:text>
+                                                <xsl:text disable-output-escaping="yes">'&lt;</xsl:text>
+                                                <xsl:value-of select="local-name()"/>
+                                                <xsl:text> USE='</xsl:text>
+                                                <xsl:value-of select="@USE"/>
+                                                <xsl:text>'</xsl:text>
+                                                <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
+                                                <xsl:text> under parent </xsl:text>
+                                                <xsl:text disable-output-escaping="yes">'&lt;</xsl:text>
+                                                <xsl:text>HAnimHumanoid DEF='</xsl:text>
+                                                <xsl:value-of select="../@DEF"/>
+                                                <xsl:text>' name='</xsl:text>
+                                                <xsl:value-of select="../@name"/>
+                                                <xsl:text>'</xsl:text>
+                                                <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
+                                            </xsl:message>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:for-each>
+                                    
                                 <xsl:variable name="hanimHumanoidName" select="@name"/>
                                 <!-- find and add any missing joints, segments, sites USE nodes at top level of this HAnimHumanoid -->
                                 <xsl:for-each select="//*[(local-name() = 'HAnimJoint') or (local-name() = 'HAnimSegment') or (local-name() = 'HAnimSite')]">
@@ -819,13 +914,14 @@ POSSIBILITY OF SUCH DAMAGE.
                                                             <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
                                                         </xsl:message>
                                                     </xsl:when>
-                                                    <xsl:when test="(string-length(@DEF) = 0)">
+                                                    <xsl:when test="(string-length(@DEF) = 0) and (string-length(@name) > 0)">
                                                         <!-- no top-level USE node found for this skeleton node, but no DEF found either so can't add it -->
                                                         <xsl:message>
                                                             <xsl:text disable-output-escaping="yes">*** error: no top-level &lt;</xsl:text>
                                                             <xsl:value-of select="local-name()"/>
                                                             <xsl:text> USE='</xsl:text>
-                                                            <xsl:value-of select="@DEF"/>
+                                                            <xsl:text>prefix_</xsl:text>
+                                                            <xsl:value-of select="@name"/>
                                                             <xsl:text>' containerField='</xsl:text>
                                                             <xsl:value-of select="$expectedContainerField"/>
                                                             <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
@@ -850,6 +946,9 @@ POSSIBILITY OF SUCH DAMAGE.
                                                         </xsl:comment>
                                                         <xsl:text>&#10;</xsl:text>
                                                     </xsl:when>
+                                                    <xsl:when test="(string-length(@DEF) = 0)">
+                                                        <!-- no top-level USE node found for this skeleton node, but no DEF found either so can't add it -->
+                                                    </xsl:when>
                                                     <xsl:otherwise>
                                                         <!-- no top-level USE node found for this skeleton node, so add it -->
                                                         <xsl:message>
@@ -860,7 +959,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                                             <xsl:text>' containerField='</xsl:text>
                                                             <xsl:value-of select="$expectedContainerField"/>
                                                             <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
-                                                            <xsl:text> was found, need to add it to ancestor </xsl:text>
+                                                            <xsl:text> was found, adding it to ancestor </xsl:text>
                                                             <xsl:text disable-output-escaping="yes">&lt;HAnimHumanoid name='</xsl:text>
                                                             <xsl:value-of select="$hanimHumanoidName"/>
                                                             <xsl:text disable-output-escaping="yes">'/&gt;</xsl:text>
@@ -1192,10 +1291,9 @@ POSSIBILITY OF SUCH DAMAGE.
                             </xsl:otherwise>
                         </xsl:choose>
 
-                        <!-- indent -->
                         <xsl:for-each select="ancestor::*">
                             <xsl:text>  </xsl:text>
-                        </xsl:for-each>
+                        </xsl:for-each><!-- indent -->
                         <!-- close tag for this element -->
                         <xsl:text disable-output-escaping="yes">&lt;/</xsl:text>
                         <xsl:value-of select="local-name()"/>
@@ -1243,66 +1341,197 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:if>
             </xsl:otherwise>
         </xsl:choose>
+        <!-- post-processing -->
+        <xsl:if test="(local-name()='HAnimHumanoid')">
+            <xsl:variable name="isHAnim1" select="$isX3D3 and (starts-with(@version,'1') or (string-length(@version) = 0))"/>
+            <xsl:variable name="isHAnim2" select="$isX3D4 and  starts-with(@version,'2')"/>
+            <xsl:if test="($isHAnim1 = true()) and ($isHAnim2 = true())">
+                <xsl:message>
+                    <xsl:text>*** error in X3dTidy.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, HAnimHumanoid post-processing </xsl:text>
+                </xsl:message>
+            </xsl:if>
+            <xsl:message>
+                <!-- debug
+                <xsl:text>*** output-humanoid-tree HAnimHumanoid commencing</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                -->
+                <xsl:call-template name="output-humanoid-tree">
+                    <xsl:with-param name="currentNode" select="self::node()"/>
+                    <xsl:with-param name="treeMargin"><xsl:text></xsl:text></xsl:with-param>
+                </xsl:call-template>
+            </xsl:message>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template name="process-attributes-in-order">
         <!-- debug
             <xsl:message>
                     <xsl:text disable-output-escaping="yes"> * process-attributes-in-order </xsl:text>
-                    <xsl:value-of select="local-name(.)"/>
+                    <xsl:value-of select="local-name()"/>
             </xsl:message>
         -->
+        <xsl:variable name="isHAnim"  select="starts-with(local-name(),'HAnim')"/>
+        <xsl:variable name="isHAnim1" select="$isX3D3 and (ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)] or
+                                                                                             //HAnimHumanoid  [starts-with(@version,'1') or (string-length(@version) = 0)])"/>
+        <xsl:variable name="isHAnim2" select="$isX3D4 and (ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] or
+                                                                                             //HAnimHumanoid  [starts-with(@version,'2')])"/>
+        <xsl:if test="($isHAnim1 = true()) and ($isHAnim2 = true())">
+            <xsl:message>
+                <xsl:text>*** error in X3dTidy.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, process-attributes-in-order entry </xsl:text>
+            </xsl:message>
+        </xsl:if>
+        <xsl:variable name="DEF" select="@DEF"/>
+        <xsl:variable name="USE" select="@USE"/>
+        <xsl:variable name="nameValue">
+            <xsl:choose>
+                <xsl:when test="(string-length(//*[@DEF=$USE]/@name) > 1)">
+                    <xsl:value-of select="//*[@DEF=$USE]/@name"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="@name"/><!-- same, if any -->
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="newNameValue">
+            <xsl:call-template name="newNameValue">
+                <xsl:with-param name="nameValue"><xsl:value-of select="$nameValue"/></xsl:with-param>
+                <xsl:with-param name="nodeName" ><xsl:value-of select="local-name()"/></xsl:with-param>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="rootDEF">
+            <xsl:choose>
+                <!-- direct ancestor -->
+                <xsl:when test="(count(ancestor-or-self::*[local-name() = 'HAnimHumanoid']/HAnimJoint) > 0)">
+                    <xsl:value-of select="ancestor-or-self::*[local-name() = 'HAnimHumanoid']/HAnimJoint/@DEF"/>
+                </xsl:when>
+                <!-- first humanoid appearing anywhere in current scene -->
+                <xsl:when test="(count(//HAnimHumanoid/HAnimJoint) > 0)">
+                    <xsl:value-of select="//HAnimHumanoid/HAnimJoint/@DEF"/>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="rootName">
+            <xsl:choose>
+                <!-- direct ancestor -->
+                <xsl:when test="(count(ancestor-or-self::*[local-name() = 'HAnimHumanoid']/HAnimJoint) > 0)">
+                    <xsl:value-of select="ancestor-or-self::*[local-name() = 'HAnimHumanoid']/HAnimJoint/@name"/>
+                </xsl:when>
+                <!-- first humanoid appearing anywhere in current scene -->
+                <xsl:when test="(count(//HAnimHumanoid/HAnimJoint) > 0)">
+                    <xsl:value-of select="//HAnimHumanoid/HAnimJoint/@name"/>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="prefixHAnim">
+            <xsl:choose>
+                <xsl:when test="ends-with($rootDEF,$rootName)">
+                    <xsl:value-of select="substring-before($rootDEF,$rootName)"/>
+                    <xsl:if test="not(ends-with(substring-before($rootDEF,$rootName),'_'))">
+                        <xsl:text>_</xsl:text>
+                    </xsl:if>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>hanim_</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="newDEFvalue">
+            <xsl:choose>
+                <xsl:when test="($newNameValue = $nameValue)">
+                    <xsl:value-of select="@DEF"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="concat($prefixHAnim,$newNameValue)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="newUSEvalue">
+            <xsl:choose>
+                <xsl:when test="($newNameValue = $nameValue)">
+                    <xsl:value-of select="@USE"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="concat($prefixHAnim,$newNameValue)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <!-- debug
+        <xsl:if test="$isHAnim">
+            <xsl:message>
+                <xsl:text>*** process-attributes-in-order </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:if test="(string-length(@name) > 0)">
+                    <xsl:text> @DEF='</xsl:text>
+                    <xsl:value-of select="@DEF"/>
+                    <xsl:text>' @name='</xsl:text>
+                    <xsl:value-of select="@name"/>
+                </xsl:if>
+                <xsl:if test="(string-length(@USE) > 0)">
+                    <xsl:text> @USE='</xsl:text>
+                    <xsl:value-of select="@USE"/>
+                </xsl:if>
+                <xsl:text>' $newNameValue='</xsl:text>
+                <xsl:value-of select="$newNameValue"/>
+                <xsl:text>' $newDEFvalue='</xsl:text>
+                <xsl:value-of select="$newDEFvalue"/>
+                <xsl:text>' $rootDEF='</xsl:text>
+                <xsl:value-of select="$rootDEF"/>
+                <xsl:text>' $rootName='</xsl:text>
+                <xsl:value-of select="$rootName"/>
+                <xsl:text>' $prefixHAnim='</xsl:text>
+                <xsl:value-of select="$prefixHAnim"/>
+                <xsl:text>'</xsl:text>
+            </xsl:message>
+        </xsl:if> -->
         <!-- this template is shared among X3dToXhtml.xslt and X3dTidy.xslt -->
         <xsl:choose>
             <xsl:when test="(string-length(@USE) > 0)">
-                <!-- no other attributes allowed with USE except containerField; show DEF to propagate error if there -->
-                <xsl:apply-templates select="@DEF"/>
+                <!-- no other attributes allowed with USE except containerField; show DEF to propagate error if it is there -->
+                <xsl:apply-templates select="@DEF">
+                    <xsl:with-param name="prefixHAnim"  select="$prefixHAnim"/>
+                    <xsl:with-param name=    "isHAnim1" select="$isHAnim1"/>
+                    <xsl:with-param name=    "isHAnim2" select="$isHAnim2"/>
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
+                </xsl:apply-templates>
                 
                 <xsl:choose>
-                    <xsl:when test="starts-with(local-name(),'HAnim')">
-                        <xsl:variable name="USE" select="@USE"/>
-                        <xsl:variable name="nodeName" select="//*[@DEF=$USE]/@name"/>
-                        <xsl:variable name="rootDEF"  select="ancestor-or-self::HAnimHumanoid/HAnimJoint/@DEF"/>
-                        <xsl:variable name="rootName" select="ancestor-or-self::HAnimHumanoid/HAnimJoint/@name"/>
-                        <xsl:choose>
-                            <xsl:when test="not(ends-with(@USE,$nodeName)) or (@USE = $nodeName) or (@DEF = concat('_',$nodeName))">
-                                <xsl:variable name="DEFprefix">
-                                    <xsl:choose>
-                                        <xsl:when test="ends-with($rootDEF,$rootName)">
-                                            <xsl:value-of select="substring-before($rootDEF,$rootName)"/>
-                                            <xsl:if test="not(ends-with(substring-before($rootDEF,$rootName),'_'))">
-                                                <xsl:text>_</xsl:text>
-                                            </xsl:if>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <xsl:text>hanim_</xsl:text>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </xsl:variable>
-                                <xsl:message>
-                                    <xsl:text>*** </xsl:text>
-                                    <xsl:value-of select="local-name()"/>
-                                    <xsl:text> mismatched pair USE='</xsl:text>
-                                    <xsl:value-of select="@USE"/>
-                                    <xsl:text>' for original name='</xsl:text>
-                                    <xsl:value-of select="$nodeName"/>
-                                    <xsl:text>', resetting USE='</xsl:text>
-                                    <xsl:value-of select="$DEFprefix"/>
-                                    <xsl:value-of select="$nodeName"/>
-                                    <xsl:text>'</xsl:text>
-                                </xsl:message>
-                                <xsl:text> USE='</xsl:text>
-                                <xsl:value-of select="$DEFprefix"/>
-                                <xsl:value-of select="$nodeName"/>
-                                <xsl:text>'</xsl:text>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:apply-templates select="@USE"/>
-                            </xsl:otherwise>
-                        </xsl:choose>
+                    <xsl:when test="$isHAnim and not(ends-with(@USE,$nameValue)) or (@USE = $nameValue) or (@DEF = concat('_',$nameValue))">
+                        <xsl:message>
+                            <xsl:text>*** </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> mismatched pair USE='</xsl:text>
+                            <xsl:value-of select="@USE"/>
+                            <xsl:text>' for original name='</xsl:text>
+                            <xsl:value-of select="$nameValue"/>
+                            <xsl:text>', resetting USE='</xsl:text>
+                            <xsl:value-of select="$prefixHAnim"/>
+                            <xsl:value-of select="$nameValue"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:message>
+                        <xsl:text> USE='</xsl:text>
+                        <xsl:value-of select="$prefixHAnim"/>
+                        <xsl:value-of select="$nameValue"/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($isHAnim2 = true()) and not($newUSEvalue = @USE)">
+                        <!-- update name to HAnim2 -->
+                        <xsl:text> USE='</xsl:text>
+                        <xsl:value-of select='$newUSEvalue'/>
+                        <xsl:text>'</xsl:text>
+                        <xsl:message>
+                            <xsl:text>*** HAnim2  USE replaced: </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> USE='</xsl:text>
+                            <xsl:value-of select="@USE"/>
+                            <xsl:text>' alias replaced with standardized newUSEvalue='</xsl:text>
+                            <xsl:value-of select='$newUSEvalue'/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:message>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:apply-templates select="@USE"/>
+                        <xsl:text> USE='</xsl:text>
+                        <xsl:value-of select='@USE'/>
+                        <xsl:text>'</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
                 
@@ -1361,19 +1590,6 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:message> -->
                 <xsl:choose>
                     <xsl:when test="not(ends-with(@DEF,@name)) or (@DEF = @name) or (@DEF = concat('_',@name))">
-                        <xsl:variable name="DEFprefix">
-                            <xsl:choose>
-                                <xsl:when test="ends-with($rootDEF,$rootName)">
-                                    <xsl:value-of select="substring-before($rootDEF,$rootName)"/>
-                                    <xsl:if test="not(ends-with(substring-before($rootDEF,$rootName),'_'))">
-                                        <xsl:text>_</xsl:text>
-                                    </xsl:if>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:text>hanim_</xsl:text>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </xsl:variable>
                         <xsl:message>
                             <xsl:text>*** </xsl:text>
                             <xsl:value-of select="local-name()"/>
@@ -1382,25 +1598,47 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text>' for name='</xsl:text>
                             <xsl:value-of select="@name"/>
                             <xsl:text>', resetting DEF='</xsl:text>
-                            <xsl:value-of select="$DEFprefix"/>
+                            <xsl:value-of select="$prefixHAnim"/>
                             <xsl:value-of select="@name"/>
                             <xsl:text>'</xsl:text>
                         </xsl:message>
                         <xsl:text> DEF='</xsl:text>
-                        <xsl:value-of select="$DEFprefix"/>
+                        <xsl:value-of select="$prefixHAnim"/>
                         <xsl:value-of select="@name"/>
                         <xsl:text>'</xsl:text>
                     </xsl:when>
+                    <xsl:when test="($isHAnim2 = true()) and not($newDEFvalue = @DEF)">
+                        <!-- update name to HAnim2 -->
+                        <xsl:text> DEF='</xsl:text>
+                        <xsl:value-of select='$newDEFvalue'/>
+                        <xsl:text>'</xsl:text>
+                        <xsl:message>
+                            <xsl:text>*** HAnim2  DEF replaced: </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>' alias replaced with standardized newDEFvalue='</xsl:text>
+                            <xsl:value-of select='$newDEFvalue'/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:message>
+                    </xsl:when>
                     <xsl:otherwise>
-                        <xsl:apply-templates select="@DEF"/>
+                        <xsl:text> DEF='</xsl:text>
+                        <xsl:value-of select='@DEF'/>
+                        <xsl:text>'</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
                 <!-- remainder of HAnim node attributes -->
                 <xsl:choose>
                     <xsl:when test="(local-name()='HAnimHumanoid')">
-                        <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='version')]">
+                        <!-- all attributes except DEF, version, info -->
+                        <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='version') and (local-name()!='info')]">
+                            <xsl:with-param name="prefixHAnim"  select="$prefixHAnim"/>
+                            <xsl:with-param name=    "isHAnim1" select="$isHAnim1"/>
+                            <xsl:with-param name=    "isHAnim2" select="$isHAnim2"/>
                             <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                         </xsl:apply-templates>
+                        <!-- HAnimHumanoid version correction if mismatched with respect to X3D version -->
                         <xsl:choose>
                             <xsl:when test="//X3D[starts-with(@version,'3')] and starts-with(@version,'2')">
                                 <xsl:message>
@@ -1412,7 +1650,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                 </xsl:message>
                                 <xsl:text> version='1.0'</xsl:text>
                             </xsl:when>
-                            <xsl:when test="//X3D[starts-with(@version,'4')] and starts-with(@version,'1')">
+                            <xsl:when test="//X3D[starts-with(@version,'4')] and (starts-with(@version,'1') or (string-length(@version) = 0))">
                                 <xsl:message>
                                     <xsl:text>*** fix HAnimHumanoid from version='</xsl:text>
                                      <xsl:value-of select="@version"/>
@@ -1423,12 +1661,25 @@ POSSIBILITY OF SUCH DAMAGE.
                                 <xsl:text> version='2.0'</xsl:text>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:apply-templates select="@version" />
+                                <xsl:apply-templates select="@version" /><!-- retain HAnimHumanoid version as is -->
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:choose>
+                            <xsl:when test="not(starts-with(@version,'2'))">
+                                <xsl:if test="(string-length(@info) > 0) and contains(@info,'&quot;')">
+                                    <xsl:apply-templates select="@*[(local-name() = 'info')]"/>
+                                </xsl:if>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!-- omit info attribute which is split into matching MetadataSet, handled separately in this stylesheet -->
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:apply-templates select="@*[(local-name()!='DEF')]">
+                            <xsl:with-param name="prefixHAnim"  select="$prefixHAnim"/>
+                            <xsl:with-param name=    "isHAnim1" select="$isHAnim1"/>
+                            <xsl:with-param name=    "isHAnim2" select="$isHAnim2"/>
                             <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                         </xsl:apply-templates>
                     </xsl:otherwise>
@@ -1466,7 +1717,7 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:when>
             <!-- X3dTidy checks to insert additional attributes go here -->
             <!-- Material for line geometry: copy diffuseColor value to emissiveColor if default (black) or missing -->
-            <xsl:when test="(local-name(.)='Material') and ((../../PointSet) or (../../LineSet) or (../../IndexedLineSet) or (../../Arc2D) or (../../ArcClose2D) or (../../Circle2D))
+            <xsl:when test="(local-name()='Material') and ((../../PointSet) or (../../LineSet) or (../../IndexedLineSet) or (../../Arc2D) or (../../ArcClose2D) or (../../Circle2D))
                             and not(../../*/Color) and not(../../*/ColorRGBA) and not(IS/connect[@nodeField='emissiveColor'])">
                 <xsl:apply-templates select="@DEF | @containerField "/>
                 <xsl:choose>
@@ -1542,7 +1793,12 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:when>
             <!-- otherwise not a special case, process DEF first and urls/containerField last -->
             <xsl:otherwise>
-                <xsl:apply-templates select="@DEF"/>
+                <xsl:apply-templates select="@DEF">
+                    <xsl:with-param name="prefixHAnim"  select="$prefixHAnim"/>
+                    <xsl:with-param name=    "isHAnim1" select="$isHAnim1"/>
+                    <xsl:with-param name=    "isHAnim2" select="$isHAnim2"/>
+                    <xsl:sort select="local-name()" order="ascending" data-type="text"/>
+                </xsl:apply-templates>
                 <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='containerField') and not(contains(local-name(), 'url') or contains(local-name(), 'Url'))]">
                     <xsl:sort select="local-name()" order="ascending" data-type="text"/>
                 </xsl:apply-templates>
@@ -1957,17 +2213,96 @@ POSSIBILITY OF SUCH DAMAGE.
     </xsl:template>
 
     <xsl:template match="@*" >
-		<!-- debug
-			<xsl:message>
-				<xsl:text disable-output-escaping="yes"> </xsl:text>
-				<xsl:value-of select="local-name(.)"/>
+        <xsl:param name="prefixHAnim"><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="isHAnim" ><xsl:value-of select="starts-with(local-name(..),'HAnim')"/></xsl:param>
+        
+        <xsl:variable name="isHAnim1" select="$isX3D3 and (ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)] or
+                                                                                             //HAnimHumanoid  [starts-with(@version,'1') or (string-length(@version) = 0)])"/>
+        <xsl:variable name="isHAnim2" select="$isX3D4 and (ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] or
+                                                                                             //HAnimHumanoid  [starts-with(@version,'2')])"/>
+        <xsl:if test="($isHAnim1 = true()) and ($isHAnim2 = true())">
+            <xsl:message>
+                <xsl:text>*** error in X3dTidy.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, @* entry for </xsl:text>
+                <xsl:value-of select="local-name(..)"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>='</xsl:text>
+                <xsl:value-of select="substring(.,1,20)"/>
+                <xsl:text>'</xsl:text>
+            </xsl:message>
+        </xsl:if>
+        
+        <xsl:variable name=   "nodeName"  select="local-name(..)"/>
+        <xsl:variable name=   "nameValue">
+            <xsl:choose>
+                <xsl:when test="(local-name() = 'name')">
+                    <xsl:value-of select="."/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="../@name"/><!-- if any, otherwise empty -->
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="newNameValue">
+            <xsl:call-template name="newNameValue">
+                <xsl:with-param name="nameValue"><xsl:value-of select="$nameValue"/></xsl:with-param>
+                <xsl:with-param name="nodeName" ><xsl:value-of select="local-name(..)"/></xsl:with-param>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="newDEFvalue">
+            <xsl:choose>
+                <xsl:when test="($newNameValue = $nameValue)">
+                    <xsl:value-of select="../@DEF"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="concat($prefixHAnim,$newNameValue)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="newUSEvalue">
+            <xsl:choose>
+                <xsl:when test="($newNameValue = $nameValue)">
+                    <xsl:value-of select="../@USE"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="concat($prefixHAnim,$newNameValue)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:if test="starts-with(local-name(..),'HAnim') and (($isHAnim1 = true()) or ($isHAnim2 = true())) and ((local-name() = 'DEF') or (local-name() = 'USE') or (local-name() = 'name'))">
+			<!-- debug 
+            <xsl:message>
+				<xsl:text>*** @* processing for </xsl:text>
+				<xsl:value-of select="$nodeName"/>
+				<xsl:text> </xsl:text>
+				<xsl:value-of select="local-name()"/>
 				<xsl:text>='</xsl:text>
 				<xsl:value-of select="."/>
-				<xsl:text disable-output-escaping="yes">'</xsl:text>
+				<xsl:text>'</xsl:text>
+				<xsl:text> prefixHAnim='</xsl:text>
+				<xsl:value-of select="$prefixHAnim"/>
+				<xsl:text>'</xsl:text>
+                <xsl:text> isHAnim1=</xsl:text>
+                <xsl:value-of select="$isHAnim1"/>
+                <xsl:text> isHAnim2=</xsl:text>
+                <xsl:value-of select="$isHAnim2"/>
+                <xsl:if test="not($newNameValue = $nameValue)">
+                    <xsl:text> newNameValue='</xsl:text>
+                    <xsl:value-of select="$newNameValue"/>
+                    <xsl:text>'</xsl:text>
+                    <xsl:text> newDEFvalue='</xsl:text>
+                    <xsl:value-of select="$newDEFvalue"/>
+                    <xsl:text>'</xsl:text>
+                    <xsl:text> newUSEvalue='</xsl:text>
+                    <xsl:value-of select="$newUSEvalue"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:if>
 			</xsl:message>
-		-->
+            -->
+        </xsl:if>
 		<xsl:choose>
-			<xsl:when test="contains(local-name(), 'otation') and ((. = '0 0 0 0') or (. = '0.0 0.0 0.0 0.0') or
+			<xsl:when test="(contains(local-name(), 'otation') or contains(local-name(), 'rientation')) and ((. = '0 0 0 0') or (. = '0.0 0.0 0.0 0.0') or
                                (. = '-0 0 0 0') or (. = '0 -0 0 0') or (. = '0 0 -0 0') or (. = '0 0 0 -0'))">
 				<!-- no attribute output -->
 				<!-- TODO regex checks for -0 in illegal value, above is a blender export error case -->
@@ -1985,7 +2320,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:text>'/&gt;</xsl:text>
 				</xsl:message>
 			</xsl:when>
-			<xsl:when test="(local-name(..)='ProtoInstance') and (local-name(.)='name') and (string-length(../@USE) > 0)">
+			<xsl:when test="(local-name(..)='ProtoInstance') and (local-name()='name') and (string-length(../@USE) > 0)">
 				<!-- no attribute output -->
 				<xsl:message>
 					<xsl:text>*** revision: remove superfluous field name='</xsl:text>
@@ -2038,6 +2373,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and .='false') and
+                      not( local-name()='load' and .='true') and
+                      not( local-name()='refresh' and (.='0' or .='0.0')) or
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -2265,6 +2602,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='centerOfRotation' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='fieldOfView' and ((.='0.785398') or (.='0.7854') or (.='.785398') or (.='.7854'))) or
                       (local-name()='jump' and .='true') or
+                      (local-name()='viewAll' and .='false') or
+                      ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                       (local-name()='retainUserOffsets' and (.='false')) or
                       (local-name()='position' and (.='0 0 10' or .='0.0 0.0 10.0')))) and
@@ -2492,6 +2831,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='speedFactor' and (.='1' or .='1.0')) or
 						(local-name()='headlight' and (.='true')) or
 						(local-name()='jump' and (.='true')) or
+                        (local-name()='viewAll' and .='false') or
+                        ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
 						(local-name()='navType' and (.='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
 						(local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
 						(local-name()='position' and (.='0 0 100000' or .='0.0 0.0 100000.0')) or
@@ -2531,6 +2872,9 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingPositions' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
+                       (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
                        (local-name()='version' and (string(.)='2.0')) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
@@ -2545,7 +2889,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='containerField' and (string(.)='motions')) or
                        (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
                        (local-name()='frameIncrement' and (string(.)='1')) or
-                       (local-name()='frameIndex' and (string(.)='0')) or
+                       ((local-name()='frameIndex' or local-name()='startFrame' or local-name()='endFrame') and (string(.)='0')) or
                        (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
@@ -2767,14 +3111,14 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:message>
                 <xsl:text>### @* attribute of interest found: [</xsl:text>
                 <xsl:value-of select="local-name(..)"/>
-                <xsl:if test="(local-name(.) = 'value')">
+                <xsl:if test="(local-name() = 'value')">
                     <xsl:text> </xsl:text>
                     <xsl:text>name='</xsl:text>
                     <xsl:value-of select="../@name"/>
                     <xsl:text>'</xsl:text>
                 </xsl:if>
                 <xsl:text> </xsl:text>
-                <xsl:value-of select="local-name(.)"/>
+                <xsl:value-of select="local-name()"/>
                 <xsl:text>='</xsl:text>
                 <xsl:value-of select="."/>
                 <xsl:text>'</xsl:text>
@@ -2838,6 +3182,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			
             <xsl:variable name="attributeName"     select="local-name()"/>
             <xsl:variable name="parentElementName" select="local-name(..)"/>
+            <xsl:variable name="attributeValue"    select="."/>
             <xsl:variable name="fieldValueName"    select="../@name"/>
             <xsl:variable name="protoInstanceName" select="(../../@name)"/>
             <xsl:variable name="fieldValueType1"   select="      //ProtoDeclare[@name = $protoInstanceName][1]/ProtoInterface/field[@name=$fieldValueName][1]/@type"/>
@@ -2914,6 +3259,38 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- keep output form simple, consistent, canonical -->
             <!-- *** apply attribute value overrides, if any *** -->
             <xsl:choose>
+                <xsl:when test="(local-name() = 'DEF') and not($newDEFvalue = .) and (string-length($newDEFvalue) > 0) and (string-length(.) > 0)">
+                    <xsl:value-of select='$newDEFvalue'/>
+                    <xsl:message>
+                        <xsl:text>*** revised replace #4 </xsl:text>
+                        <xsl:value-of select="$nodeName"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' alias replaced with standardized </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>='</xsl:text>
+                        <xsl:value-of select='$newDEFvalue'/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <xsl:when test="(local-name() = 'USE') and not($newUSEvalue = .) and (string-length($newUSEvalue) > 0) and (string-length(.) > 0)">
+                    <xsl:value-of select='$newUSEvalue'/>
+                    <xsl:message>
+                        <xsl:text>*** revised replace #5 </xsl:text>
+                        <xsl:value-of select="$nodeName"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' alias with preferred </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>='</xsl:text>
+                        <xsl:value-of select='$newUSEvalue'/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
                 <xsl:when test="(local-name(..)='X3D') and (local-name()='version')">
                     <xsl:value-of select="$x3dVersion"/>
                 </xsl:when>
@@ -2924,7 +3301,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:when>
                 <!-- fix geoSystem values as appropriate -->
                 <xsl:when test="(starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or (local-name(..)='ReceiverPdu') or (local-name(..)='SignalPdu') or (local-name(..)='TransmitterPdu'))
-                                and (local-name(.)='geoSystem') and 
+                                and (local-name()='geoSystem') and 
                                 ($fixGeoSystemMetadata='true') and
                                 (not(//meta[contains(@name,'Tidy')][contains(@content,'fixGeoSystemMetadata=false')]))">
                     <xsl:variable name="newGeoSystem">
@@ -2966,30 +3343,439 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:message>
                     </xsl:if>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='component') and (local-name(.)='name') and (.='HAnim' and //X3D[starts-with(@version,'3')])">
+                <xsl:when test="(local-name(..)='component') and (local-name()='name') and (.='HAnim' and //X3D[starts-with(@version,'3')])">
                     <xsl:text>H-Anim</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fix component name for X3D4: change componet name='</xsl:text>
+                        <xsl:text>*** fix component name for X3D4: change component name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='H-Anim'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='component') and (local-name(.)='name') and (.='H-Anim' and //X3D[starts-with(@version,'4')])">
+                <xsl:when test="(local-name(..)='component') and (local-name()='name') and (.='H-Anim' and //X3D[starts-with(@version,'4')])">
                     <xsl:text>HAnim</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fix component name for X3D4: change componet name='</xsl:text>
+                        <xsl:text>*** fix component name for X3D4: change component name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='HAnim'</xsl:text>
                     </xsl:message>
                 </xsl:when>
+                <xsl:when test="starts-with(local-name(..),'HAnim') and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE')) and contains(.,'__')">
+                    <xsl:variable name="newName">
+                        <!-- fix double underscore -->
+                        <xsl:value-of select="substring-before(.,'__')"/>
+                        <xsl:text>_</xsl:text>
+                        <xsl:value-of select="substring-after(.,'__')"/>
+                    </xsl:variable>
+                    <xsl:value-of select='$newName'/>
+                    <xsl:message>
+                        <xsl:text>*** fix </xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' to simplify double underscore __ with new name='</xsl:text>
+                        <xsl:value-of select='$newName'/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <xsl:when test="starts-with(local-name(..),'HAnim') and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE')) and contains(.,'_45')">
+                    <xsl:variable name="newName">
+                        <!-- fix double underscore -->
+                        <xsl:value-of select="substring-before(.,'_45')"/>
+                        <xsl:text>_4_5</xsl:text>
+                    </xsl:variable>
+                    <xsl:value-of select='$newName'/>
+                    <xsl:message>
+                        <xsl:text>*** fix </xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' with corrected suffix, name='</xsl:text>
+                        <xsl:value-of select='$newName'/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <xsl:when test="(local-name(..)='HAnimJoint') and (local-name()='name') and contains(.,'transverse_tarsal')">
+                    <xsl:variable name="newName">
+                        <xsl:value-of select="substring-before(.,'_tarsal')"/>
+                        <!-- omit underscore -->
+                        <xsl:text>tarsal</xsl:text>
+                    </xsl:variable>
+                    <xsl:value-of select='$newName'/>
+                    <xsl:message>
+                        <xsl:text>*** fix HAnimJoint name='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' as  name='</xsl:text>
+                        <xsl:value-of select='$newName'/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <xsl:when test="(local-name(..)='HAnimSite') and (local-name()='name') and not(ends-with(.,'_tip') or ends-with(.,'_pt') or ends-with(.,'_view'))">
+                    <xsl:choose>
+                        <xsl:when test="(count(../*[local-name() = 'Viewpoint']) > 0)">
+                            <xsl:variable name="newName">
+                                <xsl:value-of select="."/>
+                                <xsl:text>_view</xsl:text>
+                            </xsl:variable>
+                            <xsl:value-of select='$newName'/>
+                            <xsl:message>
+                                <xsl:text>*** fix HAnimSite name suffix by appending '_view' for child Viewpoint: name='</xsl:text>
+                                <xsl:value-of select='$newName'/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:message>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:variable name="newName">
+                                <xsl:value-of select="."/>
+                                <xsl:text>_pt</xsl:text>
+                            </xsl:variable>
+                            <xsl:value-of select='$newName'/>
+                            <xsl:message>
+                                <xsl:text>*** fix HAnimSite name by appending '_pt' (alternatives _view, _tip): name='</xsl:text>
+                                <xsl:value-of select="."/>
+                                <xsl:value-of select='$newName'/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:message>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+                <xsl:when test="($isHAnim2 = true()) and not($newNameValue = .) and (local-name()='name')">
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:value-of select='$newNameValue'/>
+                    <xsl:message>
+                        <xsl:text>*** HAnim2 name replaced: </xsl:text>
+                        <xsl:value-of select="$nodeName"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>' alias with preferred name='</xsl:text>
+                        <xsl:value-of select='$newNameValue'/>
+                        <xsl:text>'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <!-- check ROUTE for source/destination name changes -->
+                <xsl:when test="($isHAnim2 = true()) and not($newNameValue = .) and ((local-name()='toNode') or (local-name()='fromNode'))">
+                    <xsl:choose>
+                        <xsl:when test="//*[starts-with(local-name(),'HAnim')][@DEF = $attributeValue]">
+                            <!--
+                            -->
+                            <xsl:variable name="newNameValue">
+                                <xsl:call-template name="newNameValue">
+                                    <xsl:with-param name="nameValue"><xsl:value-of select="$attributeValue"/></xsl:with-param>
+                                    <xsl:with-param name="nodeName" ><xsl:text>ROUTE</xsl:text></xsl:with-param>
+                                </xsl:call-template>
+                            </xsl:variable>
+                            <xsl:choose>
+                                <xsl:when test="not(substring-after(.,'_') = $newNameValue)">
+                                    <!-- provide value -->                      
+                                    <xsl:value-of select="substring-before(.,'_')"/>
+                                    <xsl:text>_</xsl:text>
+                                    <xsl:value-of select='$newNameValue'/>
+                                    <xsl:message>
+                                        <xsl:text>*** HAnim2 ROUTE replaced: </xsl:text>
+                                        <xsl:value-of select="$nodeName"/> 
+                                        <xsl:text> </xsl:text>
+                                        <xsl:value-of select="local-name()"/>
+                                        <xsl:text>='</xsl:text>
+                                        <xsl:value-of select="."/>
+                                        <xsl:text>'</xsl:text>
+                                        <xsl:text> with updated </xsl:text>
+                                        <xsl:value-of select="local-name()"/>
+                                        <xsl:text>='</xsl:text>
+                                        <xsl:value-of select="substring-before(.,'_')"/>
+                                        <xsl:text>_</xsl:text>
+                                        <xsl:value-of select='$newNameValue'/>
+                                        <xsl:text>'</xsl:text>
+                                        <!-- debug
+                                        <xsl:text> isHAnim1=</xsl:text>
+                                        <xsl:value-of select="$isHAnim1"/>
+                                        <xsl:text> isHAnim2=</xsl:text>
+                                        <xsl:value-of select="$isHAnim2"/>
+                                        -->
+                                    </xsl:message>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select='.'/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:when>
+                    </xsl:choose>
+                </xsl:when>
+
+      <!-- X3dTidy.xslt correction rules in X3dDiagnostics4.0.xml autogenerated from X3DUOM -->
+      <!-- HAnimJoint alias conversion -->
+      <xsl:when
+          test="(local-name(..)='HAnimJoint') and (local-name()='name') and ($isHAnim2 = true()) and ((.='SIJ') or (.='l_ankle') or (.='l_talocalcaneal') or (.='l_talocalcaneal') or (.='l_talocalcaneal') or (.='l_subtalar') or (.='l_midtarsal') or (.='l_metatarsal') or (.='l_talocalcaneal') or (.='l_calcaneuscuboid') or (.='r_ankle') or (.='r_talocalcaneal') or (.='r_talocalcaneal') or (.='r_talocalcaneal') or (.='r_subtalar') or (.='r_midtarsal') or (.='r_metatarsal') or (.='r_talocalcaneal') or (.='r_calcaneuscuboid') or (.='l_wrist') or (.='r_wrist'))">
+        <xsl:variable name="newName">
+            <!-- find preferred value for this alias -->
+            <xsl:choose>
+                <xsl:when test="(.='SIJ')"><xsl:text>sacroiliac</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ankle')"><xsl:text>l_talocrural</xsl:text></xsl:when>
+                <xsl:when test="(.='l_talocalcaneal')"><xsl:text>l_talocalcaneonavicular</xsl:text></xsl:when>
+                <xsl:when test="(.='l_talocalcaneal')"><xsl:text>l_cuneonavicular_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_talocalcaneal')"><xsl:text>l_cuneonavicular_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_subtalar')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_midtarsal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_metatarsal')"><xsl:text>l_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_talocalcaneal')"><xsl:text>l_cuneonavicular_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_calcaneuscuboid')"><xsl:text>l_calcaneocuboid</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ankle')"><xsl:text>r_talocrural</xsl:text></xsl:when>
+                <xsl:when test="(.='r_talocalcaneal')"><xsl:text>r_talocalcaneonavicular</xsl:text></xsl:when>
+                <xsl:when test="(.='r_talocalcaneal')"><xsl:text>r_cuneonavicular_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_talocalcaneal')"><xsl:text>r_cuneonavicular_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_subtalar')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_midtarsal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_metatarsal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_talocalcaneal')"><xsl:text>r_cuneonavicular_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_calcaneuscuboid')"><xsl:text>r_calcaneocuboid</xsl:text></xsl:when>
+                <xsl:when test="(.='l_wrist')"><xsl:text>l_radiocarpal</xsl:text></xsl:when>
+                <xsl:when test="(.='r_wrist')"><xsl:text>r_radiocarpal</xsl:text></xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:text>&#10;</xsl:text>
+        <xsl:value-of select='$newName'/>
+        <xsl:message>
+            <xsl:text>*** replace </xsl:text>
+            <xsl:value-of select="local-name(..)"/>
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>='</xsl:text>
+            <xsl:value-of select="."/>
+            <xsl:text>' alias with preferred name='</xsl:text>
+            <xsl:value-of select='$newName'/>
+            <xsl:text>'  (touch model and run X3dTidy again to fix corresponding DEF references)</xsl:text>
+        </xsl:message>
+      </xsl:when>
+      <!-- HAnimSegment alias conversion -->
+      <xsl:when
+          test="(local-name(..)='HAnimSegment') and (local-name()='name') and ($isHAnim2 = true()) and ((.='l_hindfoot') or (.='l_midproximal') or (.='l_middistal') or (.='l_forefoot') or (.='l_calcaneum') or (.='r_hindfoot') or (.='r_midproximal') or (.='r_middistal') or (.='r_forefoot') or (.='r_calcaneum') or (.='head') or (.='l_hand') or (.='l_thumb_metacarpal') or (.='l_thumb_proximal') or (.='l_thumb_distal') or (.='l_index_metacarpal') or (.='l_index_proximal') or (.='l_index_middle') or (.='l_index_distal') or (.='l_middle_metacarpal') or (.='l_middle_proximal') or (.='l_middle_middle') or (.='l_middle_distal') or (.='l_ring_metacarpal') or (.='l_ring_proximal') or (.='l_ring_middle') or (.='l_ring_distal') or (.='l_pinky_metacarpal') or (.='l_pinky_proximal') or (.='l_pinky_middle') or (.='l_pinky_distal') or (.='r_hand') or (.='r_thumb_metacarpal') or (.='r_thumb_proximal') or (.='r_thumb_distal') or (.='r_index_metacarpal') or (.='r_index_proximal') or (.='r_index_middle') or (.='r_index_distal') or (.='r_middle_metacarpal') or (.='r_middle_proximal') or (.='r_middle_middle') or (.='r_middle_distal') or (.='r_ring_metacarpal') or (.='r_ring_proximal') or (.='r_ring_middle') or (.='r_ring_distal') or (.='r_pinky_metacarpal') or (.='r_pinky_proximal') or (.='r_pinky_middle') or (.='r_pinky_distal'))">
+        <xsl:variable name="newName">
+            <!-- find preferred value for this alias -->
+            <xsl:choose>
+                <xsl:when test="(.='l_hindfoot')"><xsl:text>l_talus</xsl:text></xsl:when>
+                <xsl:when test="(.='l_midproximal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middistal')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_forefoot')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_calcaneum')"><xsl:text>l_calcaneus</xsl:text></xsl:when>
+                <xsl:when test="(.='r_hindfoot')"><xsl:text>r_talus</xsl:text></xsl:when>
+                <xsl:when test="(.='r_midproximal')"><xsl:text>r_metatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middistal')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_forefoot')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_calcaneum')"><xsl:text>r_calcaneus</xsl:text></xsl:when>
+                <xsl:when test="(.='head')"><xsl:text>skull</xsl:text></xsl:when>
+                <xsl:when test="(.='l_hand')"><xsl:text>l_carpal</xsl:text></xsl:when>
+                <xsl:when test="(.='l_thumb_metacarpal')"><xsl:text>l_metacarpal_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_thumb_proximal')"><xsl:text>l_carpal_proximal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index_metacarpal')"><xsl:text>l_metacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index_proximal')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index_middle')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle_metacarpal')"><xsl:text>l_metacarpal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle_proximal')"><xsl:text>l_carpal_proximal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle_middle')"><xsl:text>l_carpal_middle_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring_metacarpal')"><xsl:text>l_metacarpal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring_proximal')"><xsl:text>l_carpal_proximal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring_middle')"><xsl:text>l_carpal_middle_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky_metacarpal')"><xsl:text>l_metacarpal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky_proximal')"><xsl:text>l_carpal_proximal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky_middle')"><xsl:text>l_carpal_middle_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_hand')"><xsl:text>r_carpal</xsl:text></xsl:when>
+                <xsl:when test="(.='r_thumb_metacarpal')"><xsl:text>r_metacarpal_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_thumb_proximal')"><xsl:text>r_carpal_proximal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index_metacarpal')"><xsl:text>r_metacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index_proximal')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index_middle')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle_metacarpal')"><xsl:text>r_metacarpal_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle_proximal')"><xsl:text>r_carpal_proximal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle_middle')"><xsl:text>r_carpal_middle_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring_metacarpal')"><xsl:text>r_metacarpal_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring_proximal')"><xsl:text>r_carpal_proximal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring_middle')"><xsl:text>r_carpal_middle_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky_metacarpal')"><xsl:text>r_metacarpal_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky_proximal')"><xsl:text>r_carpal_proximal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky_middle')"><xsl:text>r_carpal_middle_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:text>&#10;</xsl:text>
+        <xsl:value-of select='$newName'/>
+        <xsl:message>
+            <xsl:text>*** replace </xsl:text>
+            <xsl:value-of select="local-name(..)"/>
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>='</xsl:text>
+            <xsl:value-of select="."/>
+            <xsl:text>' alias with preferred name='</xsl:text>
+            <xsl:value-of select='$newName'/>
+            <xsl:text>'  (touch model and run X3dTidy again to fix corresponding DEF references)</xsl:text>
+        </xsl:message>
+      </xsl:when>
+      <!-- HAnimSite alias conversion -->
+      <xsl:when
+          test="(local-name(..)='HAnimSite') and (local-name()='name') and ($isHAnim2 = true()) and ((.='vertex') or (.='l_clavicale') or (.='l_axilla_ant') or (.='l_axilla_post') or (.='r_clavicale') or (.='r_axilla_ant') or (.='r_axilla_post') or (.='middle back') or (.='lower back') or (.='waist_preferred_post') or (.='waist_preferred_ant') or (.='l_rib10_midspine') or (.='Left Bustpoint') or (.='r_rib10_midspine') or (.='Right Bustpoint') or (.='Leftt Anterior Superior Iliac Spine') or (.='Left Posterior Superior Iliac Spine') or (.='Right Anterior Superior Iliac Spine') or (.='Right Posterior Superior Iliac Spine') or (.='l_femoral_lateral_epicn') or (.='l_femoral_medial_epicn') or (.='l_kneecap') or (.='l_trochanter') or (.='r_femoral_lateral_epicn') or (.='r_femoral_medial_epicn') or (.='r_kneecap') or (.='r_trochanter') or (.='l_metatarsal_pha1') or (.='l_metatarsal_pha5') or (.='l_calcaneum') or (.='r_metatarsal_pha1') or (.='r_metatarsal_pha5') or (.='r_calcaneum') or (.='l_humeral_lateral_epicn') or (.='l_humeral_lateral_epicn') or (.='r_humeral_lateral_epicn') or (.='r_humeral_lateral_epicn') or (.='l_metacarpal_pha2') or (.='l_metacarpal_pha5') or (.='r_metacarpal_pha2') or (.='r_metacarpal_pha5') or (.='nuchal') or (.='belly button') or (.='l_canthus') or (.='r_canthus') or (.='chin') or (.='mesosternum') or (.='median plane') or (.='l_shoulder') or (.='r_shoulder') or (.='l_thumb_distal') or (.='l_index_distal') or (.='l_middle_distal') or (.='l_ring_distal') or (.='l_pinky_distal') or (.='r_thumb_distal') or (.='r_index_distal') or (.='r_middle_distal') or (.='r_ring_distal') or (.='r_pinky_distal') or (.='l_digit2') or (.='l_tarsal_interphalangeal_pha5') or (.='r_digit2') or (.='r_tarsal_interphalangeal_pha5'))">
+        <xsl:variable name="newName">
+            <!-- find preferred value for this alias -->
+            <xsl:choose>
+                <xsl:when test="(.='vertex')"><xsl:text>skull_vertex</xsl:text></xsl:when>
+                <xsl:when test="(.='l_clavicale')"><xsl:text>l_clavicle</xsl:text></xsl:when>
+                <xsl:when test="(.='l_axilla_ant')"><xsl:text>l_axilla_proximal</xsl:text></xsl:when>
+                <xsl:when test="(.='l_axilla_post')"><xsl:text>l_axilla_distal</xsl:text></xsl:when>
+                <xsl:when test="(.='r_clavicale')"><xsl:text>r_clavicle</xsl:text></xsl:when>
+                <xsl:when test="(.='r_axilla_ant')"><xsl:text>r_axilla_proximal</xsl:text></xsl:when>
+                <xsl:when test="(.='r_axilla_post')"><xsl:text>r_axilla_distal</xsl:text></xsl:when>
+                <xsl:when test="(.='middle back')"><xsl:text>spine_1_middle_back</xsl:text></xsl:when>
+                <xsl:when test="(.='lower back')"><xsl:text>spine_2_lower_back</xsl:text></xsl:when>
+                <xsl:when test="(.='waist_preferred_post')"><xsl:text>waist_preferred_anterior</xsl:text></xsl:when>
+                <xsl:when test="(.='waist_preferred_ant')"><xsl:text>waist_preferred_posterior</xsl:text></xsl:when>
+                <xsl:when test="(.='l_rib10_midspine')"><xsl:text>l_rib10</xsl:text></xsl:when>
+                <xsl:when test="(.='Left Bustpoint')"><xsl:text>l_thelion</xsl:text></xsl:when>
+                <xsl:when test="(.='r_rib10_midspine')"><xsl:text>r_rib10</xsl:text></xsl:when>
+                <xsl:when test="(.='Right Bustpoint')"><xsl:text>r_thelion</xsl:text></xsl:when>
+                <xsl:when test="(.='Leftt Anterior Superior Iliac Spine')"><xsl:text>l_asis</xsl:text></xsl:when>
+                <xsl:when test="(.='Left Posterior Superior Iliac Spine')"><xsl:text>l_psis</xsl:text></xsl:when>
+                <xsl:when test="(.='Right Anterior Superior Iliac Spine')"><xsl:text>r_asis</xsl:text></xsl:when>
+                <xsl:when test="(.='Right Posterior Superior Iliac Spine')"><xsl:text>r_psis</xsl:text></xsl:when>
+                <xsl:when test="(.='l_femoral_lateral_epicn')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text></xsl:when>
+                <xsl:when test="(.='l_femoral_medial_epicn')"><xsl:text>l_femoral_medial_epicondyle</xsl:text></xsl:when>
+                <xsl:when test="(.='l_kneecap')"><xsl:text>l_suprapatella</xsl:text></xsl:when>
+                <xsl:when test="(.='l_trochanter')"><xsl:text>l_trochanterion</xsl:text></xsl:when>
+                <xsl:when test="(.='r_femoral_lateral_epicn')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text></xsl:when>
+                <xsl:when test="(.='r_femoral_medial_epicn')"><xsl:text>r_femoral_medial_epicondyle</xsl:text></xsl:when>
+                <xsl:when test="(.='r_kneecap')"><xsl:text>r_suprapatella</xsl:text></xsl:when>
+                <xsl:when test="(.='r_trochanter')"><xsl:text>r_trochanterion</xsl:text></xsl:when>
+                <xsl:when test="(.='l_metatarsal_pha1')"><xsl:text>l_metatarsal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_metatarsal_pha5')"><xsl:text>l_metatarsal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_calcaneum')"><xsl:text>l_calcaneus_posterior</xsl:text></xsl:when>
+                <xsl:when test="(.='r_metatarsal_pha1')"><xsl:text>r_metatarsal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_metatarsal_pha5')"><xsl:text>r_metatarsal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_calcaneum')"><xsl:text>r_calcaneus_posterior</xsl:text></xsl:when>
+                <xsl:when test="(.='l_humeral_lateral_epicn')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text></xsl:when>
+                <xsl:when test="(.='l_humeral_lateral_epicn')"><xsl:text>l_humeral_medial_epicondyle</xsl:text></xsl:when>
+                <xsl:when test="(.='r_humeral_lateral_epicn')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text></xsl:when>
+                <xsl:when test="(.='r_humeral_lateral_epicn')"><xsl:text>r_humeral_medial_epicondyle</xsl:text></xsl:when>
+                <xsl:when test="(.='l_metacarpal_pha2')"><xsl:text>l_metacarpal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_metacarpal_pha5')"><xsl:text>l_metacarpal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_metacarpal_pha2')"><xsl:text>r_metacarpal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_metacarpal_pha5')"><xsl:text>r_metacarpal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='nuchal')"><xsl:text>nuchale</xsl:text></xsl:when>
+                <xsl:when test="(.='belly button')"><xsl:text>navel</xsl:text></xsl:when>
+                <xsl:when test="(.='l_canthus')"><xsl:text>l_ectocanthus</xsl:text></xsl:when>
+                <xsl:when test="(.='r_canthus')"><xsl:text>r_ectocanthus</xsl:text></xsl:when>
+                <xsl:when test="(.='chin')"><xsl:text>menton</xsl:text></xsl:when>
+                <xsl:when test="(.='mesosternum')"><xsl:text>mesosternale</xsl:text></xsl:when>
+                <xsl:when test="(.='median plane')"><xsl:text>rear_center_midsagittal_plane</xsl:text></xsl:when>
+                <xsl:when test="(.='l_shoulder')"><xsl:text>l_chest_midsagittal_plane</xsl:text></xsl:when>
+                <xsl:when test="(.='r_shoulder')"><xsl:text>r_chest_midsagittal_plane</xsl:text></xsl:when>
+                <xsl:when test="(.='l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(.='r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(.='r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(.='r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='l_digit2')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='l_tarsal_interphalangeal_pha5')"><xsl:text>l_tarsal_distal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(.='r_digit2')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(.='r_tarsal_interphalangeal_pha5')"><xsl:text>r_tarsal_distal_phalanx_5</xsl:text></xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:text>&#10;</xsl:text>
+        <xsl:value-of select='$newName'/>
+        <xsl:message>
+            <xsl:text>*** replace </xsl:text>
+            <xsl:value-of select="local-name(..)"/>
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="local-name()"/>
+            <xsl:text>='</xsl:text>
+            <xsl:value-of select="."/>
+            <xsl:text>' alias with preferred name='</xsl:text>
+            <xsl:value-of select='$newName'/>
+            <xsl:text>'  (touch model and run X3dTidy again to fix corresponding DEF references)</xsl:text>
+        </xsl:message>
+      </xsl:when>
+
+                <!-- fix common meta-name misnomers, needs to follow HAnim2 upgrade rules to avoid false positives -->
+                <!-- insert missing underscore prior to number at end of HAnim name -->
+                <xsl:when test="((local-name(..)='HAnimJoint') or (local-name(..)='HAnimSegment')) and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE')) and 
+                               (contains(.,'_cuneonavicular')       and not(contains(.,'_cuneonavicular_'))) or
+                               (contains(.,'_cuneiform')            and not(contains(.,'_cuneiform_'))) or
+                               (contains(.,'_tarsometatarsal')      and not(contains(.,'_tarsometatarsal_'))) or
+                               (contains(.,'_metatarsal')           and not(contains(.,'_metatarsal_'))) or
+                               (contains(.,'_metatarsophalangeal')  and not(contains(.,'_metatarsophalangeal_'))) or
+                               (contains(.,'_phalanx')              and not(contains(.,'_phalanx_'))) or
+                               (contains(.,'_interphalangeal')      and not(contains(.,'_interphalangeal_'))) or
+                               
+                               (contains(.,'_midcarpal')            and not(contains(.,'_midcarpal_'))) or
+                               (contains(.,'_carpometacarpal')      and not(contains(.,'_carpometacarpal_'))) or
+                               (contains(.,'_metacarpal')           and not(contains(.,'_metacarpal_'))) or
+                               (contains(.,'l_metacarpophalangeal') and not(contains(.,'l_metacarpophalangeal_')))">
+                    
+                    <xsl:variable name="lastCharacter" select="substring(., string-length(.), 1)"/>
+                    <xsl:variable name="newName">
+                        <xsl:value-of select="substring(.,1,string-length(.) - 1)"/>
+                        <xsl:text>_</xsl:text>
+                        <xsl:value-of select="$lastCharacter"/>
+                    </xsl:variable>
+                    <xsl:choose>
+                        <xsl:when test="($lastCharacter = '1') or ($lastCharacter = '2') or ($lastCharacter = '3') or ($lastCharacter = '4') or ($lastCharacter = '5')">
+                            <xsl:value-of select='$newName'/>
+                            <xsl:message>
+                                <xsl:text>*** inserting underscore before lastCharacter='</xsl:text>
+                                <xsl:value-of select="$lastCharacter"/>
+                                <xsl:text>' to fix </xsl:text>
+                                <xsl:value-of select="local-name(..)"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>='</xsl:text>
+                                <xsl:value-of select="."/>
+                                <xsl:text>' with corrected suffix: name='</xsl:text>
+                                <xsl:value-of select='$newName'/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:message>
+                        </xsl:when>
+                        <xsl:when test="($isHAnim2 = true()) and (local-name()='name')">
+                            <!-- no change -->
+                            <xsl:value-of select='.'/>
+                            <xsl:message>
+                                <xsl:text>*** warning, look for missing underscore and digit number as suffix of </xsl:text>
+                                <xsl:value-of select="local-name(..)"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>='</xsl:text>
+                                <xsl:value-of select="."/>
+                                <xsl:text>'</xsl:text>
+                            </xsl:message>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!-- no change -->
+                            <xsl:value-of select='.'/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
                 <!-- fix common meta-name misnomers -->
-                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and 
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and 
                                 (not($fixMetaNamesMatchDublinCore='true') or
                                  (//meta[contains(@name,'Tidy')][contains(@content,'fixMetaNamesMatchDublinCore=false')]))">
                     <!-- no change -->
                     <xsl:value-of select="local-name()"/>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='filename' or .='file')">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (.='filename' or .='file')">
                     <xsl:text>title</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -2997,7 +3783,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>' to name='title'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='changed' or .='revised' or .='updated')">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (.='changed' or .='revised' or .='updated')">
                     <xsl:text>modified</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -3005,7 +3791,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>' to name='modified'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='creators')">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (.='creators')">
                     <xsl:text>creator</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -3013,7 +3799,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>' to name='creator'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (.='url')">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (.='url')">
                     <xsl:text>identifier</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -3021,7 +3807,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>' to name='identifier'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and ((.='image') or starts-with(.,'texture') or starts-with(.,'Texture'))">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and ((.='image') or starts-with(.,'texture') or starts-with(.,'Texture'))">
                     <xsl:text>Image</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -3029,7 +3815,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>' to name='Image'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name(.)='name') and (starts-with(.,'sound') or starts-with(.,'Sounds'))">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (starts-with(.,'sound') or starts-with(.,'Sounds'))">
                     <xsl:text>Sound</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -3037,7 +3823,10 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>' to name='Sound'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="($reviseCurrentDate = 'true') and (local-name(..)='meta') and (local-name(.)='content') and (../@name='modified')">
+                <xsl:when test="(local-name(../..)='HAnimHumanoid') and (local-name(..)='MetadataString')">
+                    <!-- TODO name=value checks, cleanups -->
+                </xsl:when>
+                <xsl:when test="($reviseCurrentDate = 'true') and (local-name(..)='meta') and (local-name()='content') and (../@name='modified')">
                     <xsl:value-of select="$todaysDate"/>
                     <xsl:message>
                         <xsl:text>*** revision: &lt;meta name='modified' content='</xsl:text>
@@ -3046,7 +3835,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     </xsl:message>
                 </xsl:when>
                 <!-- fix meta dates  and contains(substring-after(.,'/'),'/')-->
-                <xsl:when test="($fixDateFormats='true') and (local-name(..)='meta') and (local-name(.)='content') and 
+                <xsl:when test="($fixDateFormats='true') and (local-name(..)='meta') and (local-name()='content') and 
                                 ((../@name='created') or (../@name='translated') or (../@name='modified')) and
                                 (not(//meta[contains(@name,'Tidy')][contains(@content,'fixDateFormats=false')])) and
                                 not(starts-with(.,'*enter date of '))"> <!-- default values from newScene.x3d -->
@@ -3095,7 +3884,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
                         <xsl:value-of select="local-name(..)"/>
                         <xsl:text> </xsl:text>
-                        <xsl:value-of select="local-name(.)"/>
+                        <xsl:value-of select="local-name()"/>
                         <xsl:text disable-output-escaping="yes">='</xsl:text>
                         <xsl:value-of select="substring(.,2,(string-length(.)-2))"/>
                         <xsl:text disable-output-escaping="yes">'</xsl:text>
@@ -3121,7 +3910,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>/&gt;</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <!-- fix unquoted MFString -->
+                <!-- fix unquoted MFString - relaxed this requirement per Mantis 1320 https://www.web3d.org/index.php/folder/id/3?id=1320
                 <xsl:when test="$isMFString and not(contains(.,'&quot;'))">
 					<xsl:text disable-output-escaping="yes">&quot;</xsl:text>
 					<xsl:value-of select="."/>
@@ -3144,9 +3933,9 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>'</xsl:text>
                         <xsl:text>/&gt;</xsl:text>
                     </xsl:message>
-                </xsl:when>
+                </xsl:when> -->
                 <!-- fix fieldValue quotes for MFString -->
-                <xsl:when test="(local-name(..)='fieldValue') and (local-name(.)='value')">
+                <xsl:when test="(local-name(..)='fieldValue') and (local-name()='value')">
                     <xsl:variable name="protoInstanceName" select="../../@name"/>
                     <xsl:variable name="fieldValueName"    select="../@name"/>
                     <xsl:variable name="fieldType">
@@ -3256,7 +4045,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>/&gt;</xsl:text>
 					</xsl:message>
 				</xsl:when>
-                <xsl:when test="(local-name(..)='TextureProperties') and contains(../@minificationFilter,'MIPMAP') and (local-name(.)='generateMipMaps') and not(.='true')">
+                <xsl:when test="(local-name(..)='TextureProperties') and contains(../@minificationFilter,'MIPMAP') and (local-name()='generateMipMaps') and not(.='true')">
                     <xsl:text>true</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixTexturePropertiesGenerateMipMaps: change generateMipMaps='</xsl:text>
@@ -3612,6 +4401,171 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="$inputString" disable-output-escaping="yes"/>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="output-humanoid-tree">
+        <xsl:param name="currentNode"><!-- default value is empty --></xsl:param>
+        <xsl:param name="treeMargin">  <!-- default value is empty --></xsl:param>
+        
+        <xsl:variable name="isHAnim1" select="$isX3D3 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)]"/>
+        <xsl:variable name="isHAnim2" select="$isX3D4 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] and not($isHAnim1 = true())"/>
+        <xsl:if test="($isHAnim1 = true()) and ($isHAnim2 = true())">
+            <xsl:message>
+                <xsl:text>*** error in X3dTidy.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, output-humanoid-tree entry </xsl:text>
+            </xsl:message>
+        </xsl:if>
+        
+        <xsl:if test="(string-length($currentNode/@USE) = 0)">
+            <xsl:variable name="describeSelf">
+                <xsl:value-of select="local-name($currentNode)"/>
+                <xsl:if test="(string-length($currentNode/@name) > 0)">
+                    <xsl:text> (</xsl:text>
+                    <xsl:value-of select="$currentNode/@name"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:if>
+            </xsl:variable>
+            
+            <!-- debug
+            <xsl:if test="starts-with($describeSelf, 'HAnim')">
+                <xsl:message>
+                    <xsl:text>*** output-humanoid-tree trace: </xsl:text>
+                    <xsl:value-of select="$describeSelf"/>
+                </xsl:message>
+            </xsl:if> -->
+            <xsl:if test="(local-name($currentNode)='HAnimHumanoid')">
+                <xsl:text>=========================================================================================</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>HAnimHumanoid skeleton holds HAnimJoint : HAnimSegment : HAnimSite triplets (X3D</xsl:text>
+                <xsl:value-of select="substring(//X3D/@version,1,1)"/>
+                <xsl:text> HAnim</xsl:text>
+                <xsl:choose>
+                    <xsl:when test="(string-length(@version) > 0)">
+                        <xsl:value-of select="substring(@version,1,1)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>1</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:text>)</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>=========================================================================================</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:if>
+            
+            <xsl:choose>
+                <xsl:when test="((local-name($currentNode)='HAnimJoint') or (local-name($currentNode)='HAnimHumanoid')) and (string-length($currentNode/@USE) = 0)">
+                    <xsl:value-of select="$treeMargin"/>
+                    <xsl:choose>
+                        <xsl:when test="(local-name($currentNode)='HAnimHumanoid')">
+                            <xsl:text>HAnimHumanoid DEF='</xsl:text>
+                            <xsl:value-of select="$currentNode/@DEF"/>
+                            <xsl:text> name='</xsl:text>
+                            <xsl:value-of select="$currentNode/@name"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="(string-length($currentNode/@name) > 0)">
+                            <xsl:value-of select="$currentNode/@name"/>
+                            <!-- check if name changed, if so display that too -->
+                            <xsl:variable name="newNameValue">
+                                <xsl:call-template name="newNameValue">
+                                    <xsl:with-param name="nameValue"><xsl:value-of select="$currentNode/@name"/></xsl:with-param>
+                                    <xsl:with-param name="nodeName" ><xsl:value-of select="local-name($currentNode)"/></xsl:with-param>
+                                </xsl:call-template>
+                            </xsl:variable>
+                            <xsl:if test="($isHAnim2 = true()) and not($currentNode/@name = $newNameValue)">
+                                <xsl:text> (HAnim2 name replaced: </xsl:text>
+                                <xsl:value-of select="$newNameValue"/>
+                                <xsl:text>)</xsl:text>
+                            </xsl:if>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> (</xsl:text>
+                            <xsl:value-of select="local-name($currentNode)"/>
+                            <xsl:text>/@name not found)</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:choose>
+                        <xsl:when test="$currentNode/HAnimSegment[string-length(@USE) = 0]"><!-- omit HAnimHumanoid, HAnimJoint from this additional output -->
+                            <xsl:text> : </xsl:text>
+                            <xsl:choose>
+                                <xsl:when test="$currentNode/HAnimSegment[string-length(@name) > 0]">
+                                    <xsl:value-of select="$currentNode/HAnimSegment/@name"/>
+                                    <!-- check if name changed, if so display that too -->
+                                    <xsl:variable name="newNameValue">
+                                        <xsl:call-template name="newNameValue">
+                                            <xsl:with-param name="nameValue"><xsl:value-of select="$currentNode/@name"/></xsl:with-param>
+                                            <xsl:with-param name="nodeName" ><xsl:value-of select="local-name($currentNode)"/></xsl:with-param>
+                                        </xsl:call-template>
+                                    </xsl:variable>
+                                    <xsl:if test="($isHAnim2 = true()) and not($currentNode/@name = $newNameValue)">
+                                        <xsl:text> (HAnim2 name replaced: </xsl:text>
+                                        <xsl:value-of select="$newNameValue"/>
+                                        <xsl:text>)</xsl:text>
+                                    </xsl:if>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:text>(HAnimSegment/@name not found)</xsl:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                            <xsl:if test="(count(child::node()/HAnimSite[string-length(@USE) = 0]) > 0)">
+                                <xsl:text> : </xsl:text>
+                                <xsl:for-each select="child::node()/HAnimSite[string-length(@USE) = 0]">
+                                    <xsl:value-of select="@name"/>
+                                    <!-- check if name changed, if so display that too -->
+                                    <xsl:variable name="newNameValue">
+                                        <xsl:call-template name="newNameValue">
+                                            <xsl:with-param name="nameValue"><xsl:value-of select="$currentNode/@name"/></xsl:with-param>
+                                            <xsl:with-param name="nodeName" ><xsl:value-of select="local-name($currentNode)"/></xsl:with-param>
+                                        </xsl:call-template>
+                                    </xsl:variable>
+                                    <xsl:if test="($isHAnim2 = true()) and not($currentNode/@name = $newNameValue)">
+                                        <xsl:text> (HAnim2 name replaced: </xsl:text>
+                                        <xsl:value-of select="$newNameValue"/>
+                                        <xsl:text>)</xsl:text>
+                                    </xsl:if>
+                                    <xsl:if test="not(position() = last())">
+                                        <xsl:text>, </xsl:text>
+                                    </xsl:if>
+                                </xsl:for-each>
+                            </xsl:if>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!-- no HAnimSegment child -->
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:variable name="treeMarginIncrement">
+                        <xsl:choose>
+                            <xsl:when test="not(position() = last()) and not(local-name($currentNode)='HAnimHumanoid') and not(@name = 'humanoid_root')">
+                                <xsl:text>| </xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>  </xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:for-each select="child::node()[string-length(@USE) = 0][not(local-name() = 'HAnimSegment')]">
+                        <xsl:call-template name="output-humanoid-tree">
+                            <xsl:with-param name="currentNode" select="self::node()"/>
+                            <xsl:with-param name="treeMargin" select="concat($treeMargin,$treeMarginIncrement)"/>
+                        </xsl:call-template>
+                    </xsl:for-each>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- recurse on other children for completeness, but only output HAnim skeleton -->
+                    <xsl:for-each select="child::node()[string-length(@USE) = 0][not(local-name() = 'HAnimSegment')]">
+                        <xsl:call-template name="output-humanoid-tree">
+                            <xsl:with-param name="currentNode" select="self::node()"/>
+                            <xsl:with-param name="treeMargin" select="concat($treeMargin,'**')"/><!-- flags that possible further debugging is needed -->
+                        </xsl:call-template>
+                    </xsl:for-each>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:if test="(local-name($currentNode)='HAnimHumanoid')">
+                <xsl:text>===========================================================================</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:if>
+        </xsl:if>
     </xsl:template>
     
     <!-- ****** XML processing-instruction - TODO experimental.  what about DTDs? ******
@@ -4291,6 +5245,248 @@ POSSIBILITY OF SUCH DAMAGE.
                     </xsl:otherwise>
                 </xsl:choose>
                 <!-- day month year complete -->
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="strip-surrounding-quotes">
+        <!-- returns normalized string without beginning/ending quotes if found, otherwise unchanged -->
+        <xsl:param name="value"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        
+        <xsl:variable name="normalizedValue" select="normalize-space($value)"/>
+        <xsl:choose>
+            <xsl:when test="starts-with($normalizedValue,'&quot;') and ends-with($normalizedValue,'&quot;')">
+                <xsl:value-of select="substring($normalizedValue,2,string-length($normalizedValue) - 1)"/>
+            </xsl:when>
+            <xsl:when test="starts-with($normalizedValue,'&quot;')">
+                <xsl:value-of select="substring($normalizedValue,2)"/>
+            </xsl:when>
+            <xsl:when test="  ends-with($normalizedValue,'&quot;')">
+                <xsl:value-of select="substring($normalizedValue,1,string-length($normalizedValue) - 1)"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$value"/><!-- unmodified -->
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="newNameValue">
+        <xsl:param name="nameValue"><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="nodeName"><xsl:text></xsl:text></xsl:param>
+        
+        <!-- newNameValue check may be performed within an HAnimHumanoid or else outside (for example, by ROUTE) -->
+        <xsl:variable name="isHAnim1" select="$isX3D3 and (ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)] or
+                                                                                             //HAnimHumanoid  [starts-with(@version,'1') or (string-length(@version) = 0)])"/>
+        <xsl:variable name="isHAnim2" select="$isX3D4 and (ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] or
+                                                                                             //HAnimHumanoid  [starts-with(@version,'2')])"/>
+        <xsl:if test="($isHAnim1 = true()) and ($isHAnim2 = true())">
+            <xsl:message>
+                <xsl:text>*** error in X3dTidy.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, newNameValue entry for </xsl:text>
+                <xsl:value-of select="$nodeName "/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$nameValue"/>
+            </xsl:message>
+        </xsl:if>
+      
+        <xsl:choose>
+            <xsl:when test="($nodeName = 'ROUTE') and ((local-name() = 'fromNode') or (local-name() = 'toNode'))">
+                <xsl:variable name="attributeValue" select="."/>
+                <xsl:choose>
+                    <xsl:when test="//*[starts-with(local-name(),'HAnim')][@DEF = $attributeValue]">
+                        <!-- apply change, if any -->
+                        <xsl:variable name="newNameValue">
+                            <xsl:call-template name="newNameValue">
+                                <xsl:with-param name="nameValue"><xsl:value-of select="substring-after($attributeValue,'_')"/></xsl:with-param>
+                                <xsl:with-param name="nodeName" ><xsl:value-of select="local-name(//*[starts-with(local-name(),'HAnim')][@DEF = $attributeValue])"/></xsl:with-param>
+                            </xsl:call-template>
+                        </xsl:variable>
+                        <!-- provide value -->
+                        <xsl:value-of select='$newNameValue'/>
+                        <xsl:if test="not(substring-after($attributeValue,'_') = $newNameValue)">
+                        <!-- debug
+                            <xsl:message>
+                                <xsl:text>*** HAnim2 ROUTE check: </xsl:text>
+                                <xsl:value-of select="local-name(..)"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>='</xsl:text>
+                                <xsl:value-of select="$attributeValue"/>
+                                <xsl:text>'</xsl:text>
+                                <xsl:text> with computed name='</xsl:text>
+                                <xsl:value-of select="substring-after($attributeValue,'_')"/>
+                                <xsl:text>'</xsl:text>
+                                <xsl:text> for target </xsl:text>
+                                <xsl:value-of select="local-name(//*[starts-with(local-name(),'HAnim')][@DEF = $attributeValue])"/>
+                                <xsl:text>,</xsl:text>
+                                <xsl:text> newNameValue='</xsl:text>
+                                <xsl:value-of select="$newNameValue"/>
+                                <xsl:text>'</xsl:text>
+                                <xsl:text> isHAnim1=</xsl:text>
+                                <xsl:value-of select="$isHAnim1"/>
+                                <xsl:text> isHAnim2=</xsl:text>
+                                <xsl:value-of select="$isHAnim2"/>
+                           </xsl:message>
+                        -->
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$attributeValue"/><!-- no change -->
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="($nodeName = 'HAnimJoint')">
+                <xsl:choose>
+                    <xsl:when test="($nameValue = 'SIJ')"><xsl:text>sacroiliac</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ankle')"><xsl:text>l_talocrural</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_talocalcaneonavicular</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_cuneonavicular_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_cuneonavicular_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_subtalar')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_midtarsal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_metatarsal')"><xsl:text>l_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_cuneonavicular_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_calcaneuscuboid')"><xsl:text>l_calcaneocuboid</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ankle')"><xsl:text>r_talocrural</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_talocalcaneonavicular</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_cuneonavicular_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_cuneonavicular_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_subtalar')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_midtarsal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_metatarsal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_cuneonavicular_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_calcaneuscuboid')"><xsl:text>r_calcaneocuboid</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_wrist')"><xsl:text>l_radiocarpal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_wrist')"><xsl:text>r_radiocarpal</xsl:text></xsl:when>
+                    <xsl:otherwise><xsl:value-of select="$nameValue"/></xsl:otherwise><!-- no change -->
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="($nodeName = 'HAnimSegment')">
+                <xsl:choose>
+                    <xsl:when test="($nameValue = 'l_hindfoot')"><xsl:text>l_talus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_midproximal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middistal')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_forefoot')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_calcaneum')"><xsl:text>l_calcaneus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_hindfoot')"><xsl:text>r_talus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_midproximal')"><xsl:text>r_metatarsal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middistal')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_forefoot')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_calcaneum')"><xsl:text>r_calcaneus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'head')"><xsl:text>skull</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_hand')"><xsl:text>l_carpal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_thumb_metacarpal')"><xsl:text>l_metacarpal_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_thumb_proximal')"><xsl:text>l_carpal_proximal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_index_metacarpal')"><xsl:text>l_metacarpal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_index_proximal')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_index_middle')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middle_metacarpal')"><xsl:text>l_metacarpal_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middle_proximal')"><xsl:text>l_carpal_proximal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middle_middle')"><xsl:text>l_carpal_middle_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ring_metacarpal')"><xsl:text>l_metacarpal_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ring_proximal')"><xsl:text>l_carpal_proximal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ring_middle')"><xsl:text>l_carpal_middle_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_pinky_metacarpal')"><xsl:text>l_metacarpal_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_pinky_proximal')"><xsl:text>l_carpal_proximal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_pinky_middle')"><xsl:text>l_carpal_middle_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_hand')"><xsl:text>r_carpal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_thumb_metacarpal')"><xsl:text>r_metacarpal_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_thumb_proximal')"><xsl:text>r_carpal_proximal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_index_metacarpal')"><xsl:text>r_metacarpal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_index_proximal')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_index_middle')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middle_metacarpal')"><xsl:text>r_metacarpal_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middle_proximal')"><xsl:text>r_carpal_proximal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middle_middle')"><xsl:text>r_carpal_middle_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ring_metacarpal')"><xsl:text>r_metacarpal_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ring_proximal')"><xsl:text>r_carpal_proximal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ring_middle')"><xsl:text>r_carpal_middle_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_pinky_metacarpal')"><xsl:text>r_metacarpal_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_pinky_proximal')"><xsl:text>r_carpal_proximal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_pinky_middle')"><xsl:text>r_carpal_middle_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:otherwise><xsl:value-of select="$nameValue"/></xsl:otherwise><!-- no change -->
+                </xsl:choose>                
+            </xsl:when>
+            <xsl:when test="($nodeName = 'HAnimSite')">
+                <xsl:choose>
+                    <xsl:when test="($nameValue = 'vertex')"><xsl:text>skull_vertex</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_clavicale')"><xsl:text>l_clavicle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_axilla_ant')"><xsl:text>l_axilla_proximal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_axilla_post')"><xsl:text>l_axilla_distal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_clavicale')"><xsl:text>r_clavicle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_axilla_ant')"><xsl:text>r_axilla_proximal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_axilla_post')"><xsl:text>r_axilla_distal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'middle back')"><xsl:text>spine_1_middle_back</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'lower back')"><xsl:text>spine_2_lower_back</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'waist_preferred_post')"><xsl:text>waist_preferred_anterior</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'waist_preferred_ant')"><xsl:text>waist_preferred_posterior</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_rib10_midspine')"><xsl:text>l_rib10</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Left Bustpoint')"><xsl:text>l_thelion</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_rib10_midspine')"><xsl:text>r_rib10</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Right Bustpoint')"><xsl:text>r_thelion</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Leftt Anterior Superior Iliac Spine')"><xsl:text>l_asis</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Left Posterior Superior Iliac Spine')"><xsl:text>l_psis</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Right Anterior Superior Iliac Spine')"><xsl:text>r_asis</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Right Posterior Superior Iliac Spine')"><xsl:text>r_psis</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_femoral_lateral_epicn')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_femoral_medial_epicn')"><xsl:text>l_femoral_medial_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_kneecap')"><xsl:text>l_suprapatella</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_trochanter')"><xsl:text>l_trochanterion</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_femoral_lateral_epicn')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_femoral_medial_epicn')"><xsl:text>r_femoral_medial_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_kneecap')"><xsl:text>r_suprapatella</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_trochanter')"><xsl:text>r_trochanterion</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_metatarsal_pha1')"><xsl:text>l_metatarsal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_metatarsal_pha5')"><xsl:text>l_metatarsal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_calcaneum')"><xsl:text>l_calcaneus_posterior</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_metatarsal_pha1')"><xsl:text>r_metatarsal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_metatarsal_pha5')"><xsl:text>r_metatarsal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_calcaneum')"><xsl:text>r_calcaneus_posterior</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_humeral_lateral_epicn')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_humeral_lateral_epicn')"><xsl:text>l_humeral_medial_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_humeral_lateral_epicn')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_humeral_lateral_epicn')"><xsl:text>r_humeral_medial_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_metacarpal_pha2')"><xsl:text>l_metacarpal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_metacarpal_pha5')"><xsl:text>l_metacarpal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_metacarpal_pha2')"><xsl:text>r_metacarpal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_metacarpal_pha5')"><xsl:text>r_metacarpal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'nuchal')"><xsl:text>nuchale</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'belly button')"><xsl:text>navel</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_canthus')"><xsl:text>l_ectocanthus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_canthus')"><xsl:text>r_ectocanthus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'chin')"><xsl:text>menton</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'mesosternum')"><xsl:text>mesosternale</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'median plane')"><xsl:text>rear_center_midsagittal_plane</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_shoulder')"><xsl:text>l_chest_midsagittal_plane</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_shoulder')"><xsl:text>r_chest_midsagittal_plane</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_digit2')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_tarsal_interphalangeal_pha5')"><xsl:text>l_tarsal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_digit2')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_tarsal_interphalangeal_pha5')"><xsl:text>r_tarsal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:otherwise><xsl:value-of select="$nameValue"/></xsl:otherwise><!-- no change -->
+                </xsl:choose>                
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$nameValue"/><!-- no change or empty value -->
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

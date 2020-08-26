@@ -1057,6 +1057,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                 <xsl:text>='</xsl:text>
                                                     <span class="value">
                                                         <xsl:value-of select="@name"/>
+                                                        <xsl:text>_pt</xsl:text><!-- _pt _ti _view -->
                                                     </span>
                                                 <xsl:text>'</xsl:text>
                                                 <xsl:text> </xsl:text>
@@ -2091,6 +2092,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and .='false') and
+                      not( local-name()='load' and .='true') and
+                      not( local-name()='refresh' and (.='0' or .='0.0')) or
                       not( local-name()='visible'     and .='true') or
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -2318,6 +2321,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='centerOfRotation' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='fieldOfView' and ((.='0.785398') or (.='0.7854') or (.='.785398') or (.='.7854'))) or
                       (local-name()='jump' and .='true') or
+                      (local-name()='viewAll' and .='false') or
+                      ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                       (local-name()='retainUserOffsets' and (.='false')) or
                       (local-name()='position' and (.='0 0 10' or .='0.0 0.0 10.0')))) and
@@ -2545,6 +2550,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='speedFactor' and (.='1' or .='1.0')) or
 						(local-name()='headlight' and (.='true')) or
 						(local-name()='jump' and (.='true')) or
+                        (local-name()='viewAll' and .='false') or
+                        ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
 						(local-name()='navType' and (.='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
 						(local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
 						(local-name()='position' and (.='0 0 100000' or .='0.0 0.0 100000.0')) or
@@ -2585,6 +2592,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingPositions' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
+                       (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
@@ -2598,7 +2608,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       ((local-name()='containerField' and (string(.)='motions')) or
                        (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
                        (local-name()='frameIncrement' and (string(.)='1')) or
-                       (local-name()='frameIndex' and (string(.)='0')) or
+                       ((local-name()='frameIndex' or local-name()='startFrame' or local-name()='endFrame') and (string(.)='0')) or
                        (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
