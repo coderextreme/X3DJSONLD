@@ -995,6 +995,11 @@
               "pattern": "^(\\s|\\S)*$",
               "type": "string"
             },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
@@ -1004,6 +1009,12 @@
               "items": {
                 "type": "string"
               }
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "@url": {
               "pattern": "^(\\s|\\S)*$",
@@ -1317,12 +1328,22 @@
               "minimum": 0,
               "type": "number"
             },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "@isActive": {
               "pattern": "^\\s*(true|false)\\s*$",
               "type": "boolean"
             },
             "@isPaused": {
               "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
               "type": "boolean"
             },
             "@loop": {
@@ -1342,6 +1363,12 @@
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "exclusiveMinimum": 0,
               "default": 1,
+              "type": "number"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
               "type": "number"
             },
             "@resumeTime": {
@@ -6002,6 +6029,10 @@
               "default": 0,
               "type": "integer"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "@domain": {
               "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
               "maximum": 255,
@@ -6023,8 +6054,19 @@
               "default": 0,
               "type": "integer"
             },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "@specific": {
               "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
@@ -8685,8 +8727,23 @@
             "-data": {
               "$ref": "#/definitions/-X3DNodeMFNode"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "@summary": {
               "pattern": "^(\\s|\\S)*$",
@@ -11223,8 +11280,23 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "-textureProperties": {
               "$ref": "#/definitions/-TexturePropertiesSFNode"
@@ -11288,8 +11360,23 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "@repeatS": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -11363,8 +11450,23 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "@repeatR": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -12167,6 +12269,10 @@
                 "type": "number"
               }
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "@load": {
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
@@ -12174,6 +12280,12 @@
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "@url": {
               "pattern": "^(\\s|\\S)*$",
@@ -14537,12 +14649,22 @@
               "minimum": 0,
               "type": "number"
             },
+            "@enabled": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "@isActive": {
               "pattern": "^\\s*(true|false)\\s*$",
               "type": "boolean"
             },
             "@isPaused": {
               "pattern": "^\\s*(true|false)\\s*$",
+              "type": "boolean"
+            },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
               "type": "boolean"
             },
             "@loop": {
@@ -14562,6 +14684,12 @@
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "exclusiveMinimum": 0,
               "default": 1,
+              "type": "number"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
               "type": "number"
             },
             "@repeatS": {
@@ -16939,6 +17067,10 @@
               "pattern": "^\\s*(true|false)\\s*$",
               "type": "boolean"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "@isSelected": {
               "pattern": "^\\s*(true|false)\\s*$",
               "type": "boolean"
@@ -16963,8 +17095,19 @@
               ],
               "type": "string"
             },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "@url": {
               "pattern": "^(\\s|\\S)*$",
@@ -20836,9 +20979,18 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "@directOutput": {
               "pattern": "^\\s*(true|false)\\s*$",
               "default": false,
+              "type": "boolean"
+            },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
               "type": "boolean"
             },
             "-metadata": {
@@ -20848,6 +21000,12 @@
               "pattern": "^\\s*(true|false)\\s*$",
               "default": false,
               "type": "boolean"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "@url": {
               "pattern": "^(\\s|\\S)*$",
@@ -21116,8 +21274,23 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "@type": {
               "pattern": "^(\\s|\\S)*$",
@@ -21204,8 +21377,23 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@load": {
+              "pattern": "^\\s*(true|false)\\s*$",
+              "default": true,
+              "type": "boolean"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@refresh": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
             },
             "@type": {
               "pattern": "^(\\s|\\S)*$",
@@ -24370,6 +24558,10 @@
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "minimum": 0,
               "type": "number"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "@elapsedTime": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
