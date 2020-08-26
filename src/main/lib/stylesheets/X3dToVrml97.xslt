@@ -163,7 +163,7 @@ Thanks to Andrew Grieve of Okino for CAD debugging and the disableIndent paramet
   <!--========================================-->
   <!-- check scope of HAnim nodes -->
   <xsl:for-each select="//*[starts-with(local-name(),'HAnim') and not(local-name()='HAnimHumanoid')]">
-    <xsl:if test="not(ancestor::*[local-name()='HAnimHumanoid']) and not(local-name(..) = 'field') and not(local-name(..) = 'fieldValue')">
+    <xsl:if test="not(ancestor::*[local-name()='HAnimHumanoid']) and not(local-name(..) = 'HAnimMotion') and not(local-name(..) = 'field') and not(local-name(..) = 'fieldValue')">
       <xsl:call-template name="output-error">
         <xsl:with-param name="errorString">
           <xsl:text>HAnim node must have HAnimHumanoid ancestor</xsl:text>
@@ -5593,6 +5593,8 @@ EXTERNPROTO TransmitterPdu [
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and .='false') and
+                      not( local-name()='load' and .='true') and
+                      not( local-name()='refresh' and (.='0' or .='0.0')) or
                       not( local-name()='visible'       and .='true') or
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -5820,6 +5822,8 @@ EXTERNPROTO TransmitterPdu [
                       ((local-name()='centerOfRotation' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                       (local-name()='fieldOfView' and ((.='0.785398') or (.='0.7854') or (.='.785398') or (.='.7854'))) or
                       (local-name()='jump' and .='true') or
+                      (local-name()='viewAll' and .='false') or
+                      ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                       (local-name()='retainUserOffsets' and (.='false')) or
                       (local-name()='position' and (.='0 0 10' or .='0.0 0.0 10.0')))) and
@@ -6047,6 +6051,8 @@ EXTERNPROTO TransmitterPdu [
                       ((local-name()='speedFactor' and (.='1' or .='1.0')) or
 						(local-name()='headlight' and (.='true')) or
 						(local-name()='jump' and (.='true')) or
+                        (local-name()='viewAll' and .='false') or
+                        ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
 						(local-name()='navType' and (.='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
 						(local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
 						(local-name()='position' and (.='0 0 100000' or .='0.0 0.0 100000.0')) or
@@ -6087,6 +6093,9 @@ EXTERNPROTO TransmitterPdu [
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingPositions' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
+                       (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
                        (local-name()='version' and (string(.)='2.0')) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
@@ -6101,7 +6110,7 @@ EXTERNPROTO TransmitterPdu [
                       ((local-name()='containerField' and (string(.)='motions')) or
                        (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
                        (local-name()='frameIncrement' and (string(.)='1')) or
-                       (local-name()='frameIndex' and (string(.)='0')) or
+                       ((local-name()='frameIndex' or local-name()='startFrame' or local-name()='endFrame') and (string(.)='0')) or
                        (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and

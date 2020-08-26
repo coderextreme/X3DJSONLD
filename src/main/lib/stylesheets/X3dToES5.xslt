@@ -269,11 +269,11 @@ POSSIBILITY OF SUCH DAMAGE.
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
@@ -687,7 +687,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		
 		<xsl:text>new </xsl:text>
 		<xsl:value-of select="local-name()"/>
-		<xsl:text>(</xsl:text>
+		<xsl:text>Object(</xsl:text>
 		<xsl:choose>
 			<xsl:when test="(string-length(@DEF) > 0) and (string-length(@name) > 0) and (local-name() = 'ProtoInstance')">
 				<!-- special utility constructor using ProtoInstance DEFname and prototypeName; duplicative of .setDEF().setName() -->
@@ -1086,6 +1086,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and .='false') and
+                      not( local-name()='load' and .='true') and
+                      not( local-name()='refresh' and (.='0' or .='0.0')) or
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -1580,6 +1582,9 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingPositions' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
+                       (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
@@ -1593,7 +1598,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='containerField' and (string(.)='motions')) or
                        (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
                        (local-name()='frameIncrement' and (string(.)='1')) or
-                       (local-name()='frameIndex' and (string(.)='0')) or
+                       ((local-name()='frameIndex' or local-name()='startFrame' or local-name()='endFrame') and (string(.)='0')) or
                        (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
@@ -3105,7 +3110,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
 				($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
 					(starts-with($parentElementName,'HAnim') and $attributeName='loa') or
-                    ($parentElementName='HAnimMotion' and (($attributeName='frameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex'))) or
+                    ($parentElementName='HAnimMotion' and (($attributeName='frameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
                     ($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
 				($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
 				($parentElementName='LineProperties' and ($attributeName='linetype')) or
@@ -3189,7 +3194,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:variable name="quotedValue">
 				<xsl:choose>
 					<xsl:when test="not(contains(.,'&quot;'))">
-						<!-- MFString is forgiving, but this code block fixes the error and notifies authors of valid practice -->
+						<!-- MFStringObject is forgiving, but this code block fixes the error and notifies authors of valid practice -->
 						<!-- unquoted MFString values were approved for X3D XML encoding in May 2017 -->
 						<xsl:message>
 							<xsl:text>*** No quotation marks found in MFString array of individual SFString values, wrapped them.</xsl:text>
@@ -3215,7 +3220,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<xsl:text>new MFString(</xsl:text>
+			<xsl:text>new MFStringObject(</xsl:text>
 			<xsl:text>"</xsl:text>
 			<xsl:call-template name="escape-quote-characters">
 				<xsl:with-param name="inputString">
@@ -3292,7 +3297,7 @@ POSSIBILITY OF SUCH DAMAGE.
 						contains($attributeType,'Matrix3f') or contains($attributeType,'Matrix4f')">
 			<xsl:text>new </xsl:text>
 			<xsl:value-of select="$attributeType"/>
-			<xsl:text>(</xsl:text>
+			<xsl:text>Object(</xsl:text>
 			<xsl:choose>
 				<xsl:when test="($tupleCount > $tupleSplitSize)">
 					<xsl:message>
@@ -3320,7 +3325,7 @@ POSSIBILITY OF SUCH DAMAGE.
 								<xsl:text>.append(</xsl:text>
 								<xsl:text>new </xsl:text>
 								<xsl:value-of select="$attributeType"/>
-								<xsl:text>(</xsl:text>
+								<xsl:text>Object(</xsl:text>
 								<xsl:text>Java.to([</xsl:text>
 								<xsl:call-template name="java-float-numbers">
 									<xsl:with-param name="inputString">
@@ -3365,7 +3370,7 @@ POSSIBILITY OF SUCH DAMAGE.
 							contains($attributeType,'Matrix3d') or contains($attributeType,'Matrix4d')">
 				<xsl:text>new </xsl:text>
 				<xsl:value-of select="$attributeType"/>
-				<xsl:text>(</xsl:text>
+				<xsl:text>Object(</xsl:text>
 				<xsl:text>Java.to([</xsl:text>
 				<xsl:call-template name="java-double-numbers">
 					<xsl:with-param name="inputString">
@@ -3511,7 +3516,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:if test="not($includesFieldTypeObject)">
 					<xsl:text>new </xsl:text>
 					<xsl:value-of select="$attributeType"/>
-					<xsl:text>(</xsl:text>
+					<xsl:text>Object(</xsl:text>
 				</xsl:if>
 				<xsl:call-template name="output-attribute-value">
 					<xsl:with-param name="inputString"   select="."/>

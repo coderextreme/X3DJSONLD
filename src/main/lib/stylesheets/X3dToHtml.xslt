@@ -504,6 +504,8 @@ Recommended tool:
 		not( local-name(..)='Viewpoint' and
 						((local-name()='fieldOfView' and .='0.785398') or
 						 (local-name()='jump' and .='true') or
+                         (local-name()='viewAll' and .='false') or
+                         ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
 						 (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
 						 (local-name()='position' and (.='0 0 10' or .='0.0 0.0 10.0')))) and
 		not( local-name(..)='VisibilitySensor' and

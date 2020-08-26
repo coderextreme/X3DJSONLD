@@ -453,7 +453,7 @@ Recommended tool:
         <!-- check for duplicated field name within accessType enumeration lists -->
         <xsl:for-each select="//xs:simpleType[ends-with(@name,'AccessTypes')]//xs:enumeration">
             <xsl:sort select="@value"/>
-            <xsl:variable name="accessType" select="../../@name"/>
+            <xsl:variable name="accessType" select="substring-before(../../@name,'AccessTypes')"/>
             <xsl:variable name="fieldName" select="@value"/>
                 <!-- <xsl:message>
                     <xsl:text>*** </xsl:text>
@@ -462,14 +462,20 @@ Recommended tool:
                  and  (count(following-sibling::*[@value=$fieldName]) > 0) -->
             <xsl:if test="(count(//xs:simpleType[ends-with(@name,'AccessTypes')]//xs:enumeration[@value=$fieldName]) > 1)">
                 <xsl:message>
-                    <xsl:text>*** </xsl:text>
+                    <xsl:text>*** field '</xsl:text>
                     <xsl:value-of select="$fieldName"/>
-                    <xsl:text> field is defined with multiple accessType values: </xsl:text>
-                    <xsl:value-of select="substring-before($accessType,'AccessTypes')"/>
-                    <xsl:for-each select="following-sibling::*[@value=$fieldName]">
-                        <xsl:text> </xsl:text>
-                        <xsl:value-of select="substring-before(../../@name,'AccessTypes')"/>
+                    <xsl:text>' has multiple accessType values including '</xsl:text>
+                    <xsl:value-of select="$accessType"/>
+                    <xsl:text>'</xsl:text>
+                    <xsl:text> for elements (</xsl:text>
+                    <xsl:for-each select="//xs:element//xs:appinfo        /xs:attribute[(@name=$fieldName) and not(@name='field')][(substring-before(@fixed,'Field')=$accessType)]
+                                        | //xs:element//xs:complexContent//xs:attribute[(@name=$fieldName) and not(@name='field')][($accessType = 'inputOutput')]">
+                        <xsl:if test="(position() > 1)">
+                            <xsl:text> </xsl:text>
+                        </xsl:if>
+                        <xsl:value-of select="ancestor::xs:element/@name"/>
                     </xsl:for-each>
+                    <xsl:text>)</xsl:text>
                 </xsl:message>
             </xsl:if>
         </xsl:for-each>
@@ -1331,14 +1337,17 @@ Recommended tool:
     <xsl:variable name="givenType">
         <xsl:choose>
             <xsl:when test="(string-length(xs:simpleType/xs:restriction/@base) > 0)">
-                <xsl:value-of select="xs:simpleType/xs:restriction/@base"/>
+                <xsl:value-of      select="xs:simpleType/xs:restriction/@base"/>
+            </xsl:when>
+            <xsl:when test="(string-length(xs:simpleType/xs:extension/@base) > 0)">
+                <xsl:value-of      select="xs:simpleType/xs:extension/@base"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="@type"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
-    <xsl:variable name="constrainedTypeParent" select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/@base"/>
+    <xsl:variable name="constrainedTypeParent"      select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/@base"/>
     <xsl:variable name="constrainedTypeGrandParent" select="//xs:schema/xs:simpleType[@name=$constrainedTypeParent]/xs:restriction/@base"/>
     <xsl:variable name="baseType">
         <xsl:choose>
@@ -1371,6 +1380,48 @@ Recommended tool:
             </xsl:choose>
 	</xsl:variable>
                 
+    <xsl:variable name="additionalInterfaces">
+        <xsl:variable name="intermediateResult">
+            <xsl:for-each select="ancestor::xs:element/xs:annotation/xs:appinfo/xs:attribute[@name = 'additionalInterface']/@default
+                                | ancestor::xs:element/xs:complexType/xs:complexContent/*/@base">
+                <xsl:sort select="."/>
+                
+                <xsl:variable name="thisAdditionalInterface" select="."/>
+                <!-- filter out thisAdditionalInterface if it does not include current field -->
+                <xsl:variable           name="parentNodeType" select="ancestor::xs:schema/xs:complexType[@name = $thisAdditionalInterface]/xs:complexContent/xs:extension/@base"/>
+                <xsl:variable      name="grandparentNodeType" select="ancestor::xs:schema/xs:complexType[@name = $parentNodeType         ]/xs:complexContent/xs:extension/@base"/>
+                <xsl:variable name="greatgrandparentNodeType" select="ancestor::xs:schema/xs:complexType[@name = $grandparentNodeType    ]/xs:complexContent/xs:extension/@base"/>
+                    
+                    <!-- debug diagnostic  -->
+                    <xsl:if test="($containerName='AudioClip') and ($fieldName='description')">
+                        <xsl:message>
+                            <xsl:text>*** </xsl:text>
+                            <xsl:value-of select="$containerName"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:value-of select="$fieldName"/>
+                            <xsl:text> additionalInterface computation:</xsl:text>
+                            <xsl:text> computation: $thisAdditionalInterface=</xsl:text>
+                            <xsl:value-of select="$thisAdditionalInterface"/>
+                            <xsl:text>, $parentNodeType=</xsl:text>
+                            <xsl:value-of select="$parentNodeType"/>
+                            <xsl:text>, $grandparentNodeType=</xsl:text>
+                            <xsl:value-of select="$grandparentNodeType"/>
+                            <xsl:text>, $greatgrandparentNodeType=</xsl:text>
+                            <xsl:value-of select="$greatgrandparentNodeType"/>
+                        </xsl:message>
+                    </xsl:if>
+                
+                <xsl:if test="(count(ancestor::xs:schema/xs:complexType[@name = $thisAdditionalInterface ]//xs:attribute[@name = $fieldName]) > 0) or
+                              (count(ancestor::xs:schema/xs:complexType[@name = $parentNodeType          ]//xs:attribute[@name = $fieldName]) > 0) or
+                              (count(ancestor::xs:schema/xs:complexType[@name = $grandparentNodeType     ]//xs:attribute[@name = $fieldName]) > 0) or
+                              (count(ancestor::xs:schema/xs:complexType[@name = $greatgrandparentNodeType]//xs:attribute[@name = $fieldName]) > 0)">
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="$thisAdditionalInterface"/>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:value-of select="translate(normalize-space($intermediateResult), ' ', ',')"/>
+    </xsl:variable>
     <xsl:variable name="additionalInterfaceMatch">
         <xsl:for-each select="ancestor::xs:element/xs:annotation/xs:appinfo/xs:attribute[@name = 'additionalInterface']/@default">
             <xsl:variable name="thisAdditionalInterface" select="."/>
@@ -1492,377 +1543,436 @@ Recommended tool:
 	<!-- also be careful when checking relative paths because they vary, thus use of ancestor:: preferred -->
 	<xsl:if test="(parent::xs:appinfo) or (not(parent::xs:appinfo) and 
                                            not(ancestor::xs:complexType//xs:annotation/xs:appinfo/xs:attribute[@name = $fieldName]) and
+                                           not(    ancestor::xs:element//xs:annotation/xs:appinfo/xs:attribute[@name = $fieldName]) and
                                            not(    ancestor::xs:element//xs:annotation/xs:appinfo/xs:attribute[@name = $fieldName]))">
-		<!-- TODO properly filter ParticleSet geometry duplication of X3DShapeNode geoemetry:  and
-                                           not(//xs:complexType//xs:annotation/xs:appinfo/xs:element[@name = $fieldName]) -->
-		<!-- debug diagnostic
-		<xsl:if test="($containerName='component') and (@name='level')">
-			<xsl:message>
-				<xsl:text>    ... made it inside the if... </xsl:text>
-				<xsl:text> $containerName=</xsl:text>
-                                <xsl:value-of select="$containerName"/>
-				<xsl:text>, local-name()=</xsl:text>
-                                <xsl:value-of select="local-name()"/>
-				<xsl:text>, @name=</xsl:text>
-                                <xsl:value-of select="@name"/>
-				<xsl:text>, $fieldName=</xsl:text>
-                                <xsl:value-of select="$fieldName"/>
-				<xsl:text>, @use=</xsl:text>
-                                <xsl:value-of select="@use"/>
-				<xsl:text>, $givenType=</xsl:text>
-                                <xsl:value-of select="$givenType"/>
-				<xsl:text>, $fieldAccessType=</xsl:text>
-                                <xsl:value-of select="$fieldAccessType"/>
-				<xsl:text>, xs:simpleType/xs:restriction/@base=</xsl:text>
-                                <xsl:value-of select="xs:simpleType/xs:restriction/@base"/>
-				<xsl:text>, ../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/@base=</xsl:text>
-                                <xsl:value-of select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/@base"/>
-			</xsl:message>
-		</xsl:if> -->
-            <xsl:element name="field">
-                <xsl:attribute name="name" select="$fieldName"/>
-                <xsl:attribute name="type" select="$fieldType"/>
-                <xsl:attribute name="accessType" select="$fieldAccessType"/>
-                <!-- default -->
-                <xsl:choose>
-                        <xsl:when test="$givenType='SFNode'">
-                            <xsl:attribute name="default">NULL</xsl:attribute>
-                        </xsl:when>
-                        <!-- avoid applying specification-syntax [square brackets] to default values -->
-                        <xsl:when test="$givenType='MFNode'">
-                            <!-- Don't specify a default value -->
-                        </xsl:when>
-                        <xsl:when test="(starts-with($fieldType, 'MF')) and (string-length(@default) > 0) and not(starts-with(@default,'X3D'))">
-                            <xsl:attribute name="default" select="@default"/>
-                        </xsl:when>
-                        <xsl:when test="(parent::xs:appinfo) and (string-length(@default) > 0) and not(starts-with(@default,'X3D'))">
-                            <xsl:attribute name="default" select="@default"/>
-                        </xsl:when>
-                        <xsl:when test="(parent::xs:appinfo) and  (string-length(ancestor::xs:element//xs:complexContent//xs:attribute[@name = $fieldName]/@default) > 0)">
-                            <xsl:attribute name="default"><xsl:value-of select="(ancestor::xs:element//xs:complexContent//xs:attribute[@name = $fieldName]/@default)"/></xsl:attribute>
-                        </xsl:when>
-                        <xsl:when test="(parent::xs:appinfo) and  (string-length(ancestor::xs:complexType//xs:complexContent//xs:attribute[@name = $fieldName]/@default) > 0)">
-                            <xsl:attribute name="default"><xsl:value-of select="(ancestor::xs:complexType//xs:complexContent//xs:attribute[@name = $fieldName]/@default)"/></xsl:attribute>
-                        </xsl:when>
-                        <!-- only output the default attribute if a default value is present, otherwise empty -->
-                        <xsl:when test="(string-length(@default) > 0) and not(starts-with(@default,'X3D'))">
-                            <xsl:attribute name="default" select="@default"/>
-                        </xsl:when>
-                </xsl:choose>
-                <!-- min/max -->
-                <xsl:if test="true()">
-                    <xsl:choose>
-                        <xsl:when test="xs:simpleType/xs:restriction/xs:minInclusive">
-                            <xsl:attribute name="minInclusive" select="xs:simpleType/xs:restriction/xs:minInclusive/@value"/>
-                        </xsl:when>
-                        <xsl:when test="xs:simpleType/xs:restriction/xs:minExclusive">
-                            <xsl:attribute name="minExclusive" select="xs:simpleType/xs:restriction/xs:minExclusive/@value"/>
-                        </xsl:when>
-                        <!-- currently in xs:annotation that provides default value for restrictions that follow -->
-                        <xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minInclusive">
-                            <xsl:attribute name="minInclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minInclusive/@value"/>
-                        </xsl:when>
-                        <xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minExclusive">
-                            <xsl:attribute name="minExclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minExclusive/@value"/>
-                        </xsl:when>
-                    </xsl:choose>
-                    <xsl:choose>
-                        <xsl:when test="xs:simpleType/xs:restriction/xs:maxInclusive">
-                            <xsl:attribute name="maxInclusive" select="xs:simpleType/xs:restriction/xs:maxInclusive/@value"/>
-                        </xsl:when>
-                        <xsl:when test="xs:simpleType/xs:restriction/xs:maxExclusive">
-                            <xsl:attribute name="maxExclusive" select="xs:simpleType/xs:restriction/xs:maxExclusive/@value"/>
-                        </xsl:when>
-                        <!-- currently in xs:annotation that provides default value for restrictions that follow -->
-                        <xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxInclusive">
-                            <xsl:attribute name="maxInclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxInclusive/@value"/>
-                        </xsl:when>
-                        <xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxExclusive">
-                            <xsl:attribute name="maxExclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxExclusive/@value"/>
-                        </xsl:when>
-                    </xsl:choose>
-                </xsl:if>
-                <xsl:if test="(starts-with($givenType, 'SF')) or (starts-with($givenType, 'MF'))">
-                    <xsl:choose>
-                        <xsl:when test="xs:annotation/xs:appinfo/xs:minInclusive">
-                            <xsl:attribute name="minInclusive" select="xs:annotation/xs:appinfo/xs:minInclusive/@value"/>
-                        </xsl:when>
-                        <xsl:when test="xs:annotation/xs:appinfo/xs:minExclusive">
-                            <xsl:attribute name="minExclusive" select="xs:annotation/xs:appinfo/xs:minExclusive/@value"/>
-                        </xsl:when>
-                        <xsl:when test="(ends-with($fieldType, 'FColor')) or (ends-with($fieldType, 'FColorRGBA'))">
-                            <xsl:attribute name="minInclusive">0</xsl:attribute>
-                        </xsl:when>
-                    </xsl:choose>
-                    <xsl:choose>
-                        <xsl:when test="xs:annotation/xs:appinfo/xs:maxInclusive">
-                            <xsl:attribute name="maxInclusive" select="xs:annotation/xs:appinfo/xs:maxInclusive/@value"/>
-                        </xsl:when>
-                        <xsl:when test="xs:annotation/xs:appinfo/xs:maxExclusive">
-                            <xsl:attribute name="maxExclusive" select="xs:annotation/xs:appinfo/xs:maxExclusive/@value"/>
-                        </xsl:when>
-                        <xsl:when test="(ends-with($fieldType, 'FColor')) or (ends-with($fieldType, 'FColorRGBA'))">
-                            <xsl:attribute name="maxInclusive">1</xsl:attribute>
-                        </xsl:when>
-                    </xsl:choose>
-                </xsl:if>
-                <xsl:if test="(not(starts-with($givenType, 'SF'))) and (not(starts-with($givenType, 'MF')))">
-                    <xsl:choose>
-                        <xsl:when test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:minInclusive">
-                            <xsl:attribute name="minInclusive" select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:minInclusive/@value"/>
-                        </xsl:when>
-                        <xsl:when test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:minExclusive">
-                            <xsl:attribute name="minExclusive" select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:minExclusive/@value"/>
-                        </xsl:when>
-                    </xsl:choose>
-                    <xsl:choose>
-                        <xsl:when test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:maxInclusive">
-                            <xsl:attribute name="maxInclusive" select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:maxInclusive/@value"/>
-                        </xsl:when>
-                        <xsl:when test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:maxExclusive">
-                            <xsl:attribute name="maxExclusive" select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:maxExclusive/@value"/>
-                        </xsl:when>
-                    </xsl:choose>
-                </xsl:if>
-                <!-- TODO: Decide if we want to keep acceptable types for node fields which are inputOnly or outputOnly -->
-                <xsl:if test="(($givenType='SFNode') or ($givenType='MFNode')) and (string-length(normalize-space(@default)) > 0)">
-                    <xsl:variable name="root" select="/"/>
-                    <xsl:variable name="accessType" select="@fixed"/>
-                    <xsl:variable name="acceptableNodeTypes" select="@default"/>
-                    <!-- debug diagnostic
-                    <xsl:if test="($acceptableNodeTypes = 'FogCoordinate')">
-                        <xsl:message>
-                            <xsl:text>*** found field </xsl:text>
-                            <xsl:value-of select="$fieldName"/>
-                            <xsl:text> default='FogCoordinate' </xsl:text>
-                        </xsl:message>
-                    </xsl:if>
-                    -->
-                    <xsl:for-each select="tokenize($acceptableNodeTypes,'\|\s*')">
-                        <xsl:variable name="acceptableNodeType" select="string(.)"/>
-                        <xsl:if test="not($root//xs:complexType[@name=$acceptableNodeType]) and not($root//xs:element[@name=$acceptableNodeType])">
-                            <xsl:message>
-                                <xsl:text>*** </xsl:text>
-                                <xsl:value-of select="$containerName"/>
-                                <xsl:text> refers to unknown acceptableNodeType </xsl:text>
-                                <xsl:value-of select="$acceptableNodeType"/>
-                                <xsl:text> in xs:element name='</xsl:text>
-                                <xsl:value-of select="$fieldName"/>
-                                <xsl:text>' type='</xsl:text>
-                                <xsl:value-of select="$givenType"/>
-                                <xsl:text>' fixed='</xsl:text>
-                                <xsl:value-of select="$accessType"/>
-                                <xsl:text>' default='</xsl:text>
-                                <xsl:value-of select="$acceptableNodeTypes"/>
-                                <xsl:text>' - check and fix X3D Schema</xsl:text>
-                            </xsl:message>
-                        </xsl:if>
-                    </xsl:for-each>
-                    <xsl:attribute name="acceptableNodeTypes" select="@default"/>
-                </xsl:if>
-                <xsl:choose>
-                    <xsl:when test="(string-length(@use) > 0)">
-                        <xsl:attribute name="use" select="@use"/>
-                    </xsl:when>
-                    <xsl:when test="ancestor::xs:element/xs:complexType//xs:attribute[@name=$fieldName][@use]">
-                        <xsl:attribute name="use" select="ancestor::xs:element/xs:complexType//xs:attribute[@name=$fieldName]/@use"/>
-                    </xsl:when>
-                </xsl:choose>
-                <!-- inheritedFrom attribute -->
-                <xsl:if test="($originInheritedFrom != $containerName) and not($containerName = 'X3DNode') "><!-- avoid DEF, USE, class -->
-                    <xsl:choose>
-                        <xsl:when test="($originInheritedFrom = 'X3DNodeMixedContent') or ($fieldName = 'DEF') or ($fieldName = 'USE') or
-                                        ($fieldName = 'class') or ($fieldName = 'IS')  or ($fieldName = 'metadata')">
-                            <xsl:attribute name="inheritedFrom">
-                                <xsl:text>X3DNode</xsl:text>
-                            </xsl:attribute>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="inheritedFrom" select="$originInheritedFrom"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:if>
-                <xsl:variable name="hasEnumerations" select="ends-with(@type,'Choices') or ends-with(@type,'AccessTypes') or ends-with(@type,'Values') or ends-with(@type,'Type')"/>
-                <xsl:if test="$hasEnumerations and (contains($fieldType,'FString') or starts-with(@type,'xs:')) and (string-length($baseType) > 0)">
-                    <xsl:variable name="additionalEnumerationValuesAllowed">
-                        <xsl:choose>
-                            <!-- TODO make this test less cryptic
-                            if simpleType name of allowed types also appears within an appInfo, it is informational and not a requirement -->
-                            <xsl:when test="ends-with(@type,'Choices') or ends-with(@type,'AccessTypes')">
-                                <xsl:text>false</xsl:text>
-                            </xsl:when>
-                            <xsl:when test="ends-with(@type,'Values') or ends-with(@type,'Type')">
-                                <xsl:text>true</xsl:text>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:text>enumerationsError</xsl:text>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:variable>
-                    <xsl:attribute name="additionalEnumerationValuesAllowed" select="$additionalEnumerationValuesAllowed"/>
-                    <!-- debug diagnostic
+        <xsl:choose>
+            <xsl:when test="((($containerName='ParticleSystem')) and ($fieldName='geometry') and ($originInheritedFrom ='X3DShapeNode'))">
+                <!-- avoid duplicate fields when provided by multiple inheritance/interface combinations or annotation documentation -->
+                <xsl:message>
+                    <xsl:text>*** </xsl:text>
+                    <xsl:value-of select="$containerName"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="$fieldName"/>
+                    <xsl:text> $originInheritedFrom=</xsl:text>
+                    <xsl:value-of select="$originInheritedFrom"/>
+                    <xsl:text>: avoid duplicate field, provided by annotation and </xsl:text>
+                    <xsl:value-of select="//xs:element[@name = $containerName]//xs:extension/@base"/>
+                </xsl:message>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- debug diagnostic -->
+                <xsl:if test="($containerName='AudioClip') and (@name='description')">
                     <xsl:message>
-                        <xsl:text>local-name()=</xsl:text>
+                        <xsl:text>    ... made it inside the if... </xsl:text>
+                        <xsl:text> $containerName=</xsl:text>
+                                        <xsl:value-of select="$containerName"/>
+                        <xsl:text>, local-name()=</xsl:text>
                                         <xsl:value-of select="local-name()"/>
                         <xsl:text>, @name=</xsl:text>
                                         <xsl:value-of select="@name"/>
                         <xsl:text>, $fieldName=</xsl:text>
                                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>, @type=</xsl:text>
-                                        <xsl:value-of select="@type"/>
-                        <xsl:text>, $fieldType=</xsl:text>
-                                        <xsl:value-of select="$fieldType"/>
+                        <xsl:text>, @use=</xsl:text>
+                                        <xsl:value-of select="@use"/>
+                        <xsl:text>, $givenType=</xsl:text>
+                                        <xsl:value-of select="$givenType"/>
                         <xsl:text>, $baseType=</xsl:text>
                                         <xsl:value-of select="$baseType"/>
-                        <xsl:text>, $additionalEnumerationValuesAllowed=</xsl:text>
-                                        <xsl:value-of select="$additionalEnumerationValuesAllowed"/>
-                    </xsl:message> -->
+                        <xsl:text>, $fieldAccessType=</xsl:text>
+                                        <xsl:value-of select="$fieldAccessType"/>
+                        <xsl:text>, $additionalInterfaces=</xsl:text>
+                                        <xsl:value-of select="$additionalInterfaces"/>
+                        <xsl:text>, $additionalInterfaceMatch=</xsl:text>
+                                        <xsl:value-of select="$additionalInterfaceMatch"/>
+                        <xsl:text>, xs:simpleType/xs:restriction/@base=</xsl:text>
+                                        <xsl:value-of select="xs:simpleType/xs:restriction/@base"/>
+                        <xsl:text>, ../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/@base=</xsl:text>
+                                        <xsl:value-of select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/@base"/>
+                    </xsl:message>
                 </xsl:if>
-                <xsl:choose>
-                    <xsl:when test="starts-with($baseType,'SF') or starts-with($baseType,'MF')">
-                        <xsl:attribute name="simpleType">
-                            <xsl:value-of select="$baseType"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="baseType">
-                            <xsl:value-of select="//xs:simpleType[@name = $baseType]/xs:restriction/@base"/>
-                        </xsl:attribute>
-                    </xsl:when>
-                    <xsl:when test="ends-with($baseType,'Choices') or ends-with($baseType,'Values')">
-                        <xsl:attribute name="simpleType">
-                            <xsl:value-of select="$baseType"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="baseType">
-                            <xsl:value-of select="//xs:simpleType[@name = $baseType]/xs:restriction/@base"/>
-                        </xsl:attribute>
-                    </xsl:when>
-                    <xsl:when test="(string-length($baseType) > 0)">
-                        <!-- no simpleType -->
-                        <xsl:attribute name="baseType">
-                            <xsl:value-of select="$baseType"/>
-                        </xsl:attribute>
-                    </xsl:when>
-                    <xsl:when test="(@type = 'xs:NMTOKEN') or (@type = 'xs:NMTOKENS') or (@type = 'xs:token') or (@type = 'xs:ID') or (@type = 'xs:IDREF')">
-                        <!-- no simpleType -->
-                        <xsl:attribute name="baseType">
-                            <xsl:value-of select="@type"/>
-                        </xsl:attribute>
-                    </xsl:when>
-                </xsl:choose>
-                <xsl:variable name="initialX3dVersion" select="@initialX3dVersion"/>
-                <xsl:if test="(string-length($initialX3dVersion) > 0)">
-                    <xsl:attribute name="initialX3dVersion">
-                        <xsl:value-of select="$initialX3dVersion"/>
-                    </xsl:attribute>
-                </xsl:if>
-                <!--xsl:message>test found...</xsl:message-->
-                <xsl:if test="($fieldAccessType='inputOutput') or ($fieldAccessType='initializeOnly') or ($isStatement='no')">
-                    <!-- TODO: Improve this code -->
-                    <xsl:if test="xs:simpleType/xs:restriction[@base='SFString']">
-                        <xsl:for-each select="xs:simpleType/xs:restriction/xs:enumeration">
-                            <xsl:element name="enumeration">
-                                <xsl:attribute name="value" select="@value"/>
-                                <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
-                                    <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
-                                        <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
-                                    </xsl:if>
-                                </xsl:for-each>
-                                <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
-                                <xsl:if test="string-length($appinfo) > 0">
-                                    <xsl:attribute name="appinfo">
-                                        <xsl:value-of select="$appinfo"/>
-                                        <xsl:if test="not(ends-with($appinfo,'.'))">
-                                            <xsl:text>.</xsl:text>
-                                        </xsl:if>
-                                    </xsl:attribute>
-                                </xsl:if>
-                                <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
-                                    <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
-                                </xsl:if>
-                            </xsl:element>
+                <xsl:element name="field">
+                    <xsl:attribute name="name" select="$fieldName"/>
+                    <xsl:attribute name="type" select="$fieldType"/>
+                    <xsl:attribute name="accessType" select="$fieldAccessType"/>
+                    <!-- default -->
+                    <xsl:choose>
+                            <xsl:when test="$givenType='SFNode'">
+                                <xsl:attribute name="default">NULL</xsl:attribute>
+                            </xsl:when>
+                            <!-- avoid applying specification-syntax [square brackets] to default values -->
+                            <xsl:when test="$givenType='MFNode'">
+                                <!-- Don't specify a default value -->
+                            </xsl:when>
+                            <xsl:when test="(starts-with($fieldType, 'MF')) and (string-length(@default) > 0) and not(starts-with(@default,'X3D'))">
+                                <xsl:attribute name="default" select="@default"/>
+                            </xsl:when>
+                            <xsl:when test="(parent::xs:appinfo) and (string-length(@default) > 0) and not(starts-with(@default,'X3D'))">
+                                <xsl:attribute name="default" select="@default"/>
+                            </xsl:when>
+                            <xsl:when test="(parent::xs:appinfo) and  (string-length(ancestor::xs:element//xs:complexContent//xs:attribute[@name = $fieldName]/@default) > 0)">
+                                <xsl:attribute name="default"><xsl:value-of select="(ancestor::xs:element//xs:complexContent//xs:attribute[@name = $fieldName]/@default)"/></xsl:attribute>
+                            </xsl:when>
+                            <xsl:when test="(parent::xs:appinfo) and  (string-length(ancestor::xs:complexType//xs:complexContent//xs:attribute[@name = $fieldName]/@default) > 0)">
+                                <xsl:attribute name="default"><xsl:value-of select="(ancestor::xs:complexType//xs:complexContent//xs:attribute[@name = $fieldName]/@default)"/></xsl:attribute>
+                            </xsl:when>
+                            <!-- only output the default attribute if a default value is present, otherwise empty -->
+                            <xsl:when test="(string-length(@default) > 0) and not(starts-with(@default,'X3D'))">
+                                <xsl:attribute name="default" select="@default"/>
+                            </xsl:when>
+                    </xsl:choose>
+                    <!-- min/max -->
+                    <xsl:if test="true()">
+                        <xsl:choose>
+                            <xsl:when test="xs:simpleType/xs:restriction/xs:minInclusive">
+                                <xsl:attribute name="minInclusive" select="xs:simpleType/xs:restriction/xs:minInclusive/@value"/>
+                            </xsl:when>
+                            <xsl:when test="xs:simpleType/xs:restriction/xs:minExclusive">
+                                <xsl:attribute name="minExclusive" select="xs:simpleType/xs:restriction/xs:minExclusive/@value"/>
+                            </xsl:when>
+                            <!-- currently in xs:annotation that provides default value for restrictions that follow -->
+                            <xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minInclusive">
+                                <xsl:attribute name="minInclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minInclusive/@value"/>
+                            </xsl:when>
+                            <xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minExclusive">
+                                <xsl:attribute name="minExclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:minExclusive/@value"/>
+                            </xsl:when>
+                        </xsl:choose>
+                        <xsl:choose>
+                            <xsl:when test="xs:simpleType/xs:restriction/xs:maxInclusive">
+                                <xsl:attribute name="maxInclusive" select="xs:simpleType/xs:restriction/xs:maxInclusive/@value"/>
+                            </xsl:when>
+                            <xsl:when test="xs:simpleType/xs:restriction/xs:maxExclusive">
+                                <xsl:attribute name="maxExclusive" select="xs:simpleType/xs:restriction/xs:maxExclusive/@value"/>
+                            </xsl:when>
+                            <!-- currently in xs:annotation that provides default value for restrictions that follow -->
+                            <xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxInclusive">
+                                <xsl:attribute name="maxInclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxInclusive/@value"/>
+                            </xsl:when>
+                            <xsl:when test="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxExclusive">
+                                <xsl:attribute name="maxExclusive" select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/xs:maxExclusive/@value"/>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:if>
+                    <xsl:if test="(starts-with($givenType, 'SF')) or (starts-with($givenType, 'MF'))">
+                        <xsl:choose>
+                            <xsl:when test="xs:annotation/xs:appinfo/xs:minInclusive">
+                                <xsl:attribute name="minInclusive" select="xs:annotation/xs:appinfo/xs:minInclusive/@value"/>
+                            </xsl:when>
+                            <xsl:when test="xs:annotation/xs:appinfo/xs:minExclusive">
+                                <xsl:attribute name="minExclusive" select="xs:annotation/xs:appinfo/xs:minExclusive/@value"/>
+                            </xsl:when>
+                            <xsl:when test="(ends-with($fieldType, 'FColor')) or (ends-with($fieldType, 'FColorRGBA'))">
+                                <xsl:attribute name="minInclusive">0</xsl:attribute>
+                            </xsl:when>
+                        </xsl:choose>
+                        <xsl:choose>
+                            <xsl:when test="xs:annotation/xs:appinfo/xs:maxInclusive">
+                                <xsl:attribute name="maxInclusive" select="xs:annotation/xs:appinfo/xs:maxInclusive/@value"/>
+                            </xsl:when>
+                            <xsl:when test="xs:annotation/xs:appinfo/xs:maxExclusive">
+                                <xsl:attribute name="maxExclusive" select="xs:annotation/xs:appinfo/xs:maxExclusive/@value"/>
+                            </xsl:when>
+                            <xsl:when test="(ends-with($fieldType, 'FColor')) or (ends-with($fieldType, 'FColorRGBA'))">
+                                <xsl:attribute name="maxInclusive">1</xsl:attribute>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:if>
+                    <xsl:if test="(not(starts-with($givenType, 'SF'))) and (not(starts-with($givenType, 'MF')))">
+                        <xsl:choose>
+                            <xsl:when test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:minInclusive">
+                                <xsl:attribute name="minInclusive" select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:minInclusive/@value"/>
+                            </xsl:when>
+                            <xsl:when test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:minExclusive">
+                                <xsl:attribute name="minExclusive" select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:minExclusive/@value"/>
+                            </xsl:when>
+                        </xsl:choose>
+                        <xsl:choose>
+                            <xsl:when test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:maxInclusive">
+                                <xsl:attribute name="maxInclusive" select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:maxInclusive/@value"/>
+                            </xsl:when>
+                            <xsl:when test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:maxExclusive">
+                                <xsl:attribute name="maxExclusive" select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:maxExclusive/@value"/>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:if>
+                    <!-- TODO: Decide if we want to keep acceptable types for node fields which are inputOnly or outputOnly -->
+                    <xsl:if test="(($givenType='SFNode') or ($givenType='MFNode')) and (string-length(normalize-space(@default)) > 0)">
+                        <xsl:variable name="root" select="/"/>
+                        <xsl:variable name="accessType" select="@fixed"/>
+                        <xsl:variable name="acceptableNodeTypes" select="@default"/>
+                        <!-- debug diagnostic
+                        <xsl:if test="($acceptableNodeTypes = 'FogCoordinate')">
+                            <xsl:message>
+                                <xsl:text>*** found field </xsl:text>
+                                <xsl:value-of select="$fieldName"/>
+                                <xsl:text> default='FogCoordinate' </xsl:text>
+                            </xsl:message>
+                        </xsl:if>
+                        -->
+                        <xsl:for-each select="tokenize($acceptableNodeTypes,'\|\s*')">
+                            <xsl:variable name="acceptableNodeType" select="string(.)"/>
+                            <xsl:if test="not($root//xs:complexType[@name=$acceptableNodeType]) and not($root//xs:element[@name=$acceptableNodeType])">
+                                <xsl:message>
+                                    <xsl:text>*** </xsl:text>
+                                    <xsl:value-of select="$containerName"/>
+                                    <xsl:text> refers to unknown acceptableNodeType </xsl:text>
+                                    <xsl:value-of select="$acceptableNodeType"/>
+                                    <xsl:text> in xs:element name='</xsl:text>
+                                    <xsl:value-of select="$fieldName"/>
+                                    <xsl:text>' type='</xsl:text>
+                                    <xsl:value-of select="$givenType"/>
+                                    <xsl:text>' fixed='</xsl:text>
+                                    <xsl:value-of select="$accessType"/>
+                                    <xsl:text>' default='</xsl:text>
+                                    <xsl:value-of select="$acceptableNodeTypes"/>
+                                    <xsl:text>' - check and fix X3D Schema</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
                         </xsl:for-each>
+                        <xsl:attribute name="acceptableNodeTypes" select="@default"/>
                     </xsl:if>
-                    <xsl:if test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:enumeration">
-                        <xsl:for-each select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:enumeration">
+                    <xsl:choose>
+                        <xsl:when test="(string-length(@use) > 0)">
+                            <xsl:attribute name="use" select="@use"/>
+                        </xsl:when>
+                        <xsl:when test="ancestor::xs:element/xs:complexType//xs:attribute[@name=$fieldName][@use]">
+                            <xsl:attribute name="use" select="ancestor::xs:element/xs:complexType//xs:attribute[@name=$fieldName]/@use"/>
+                        </xsl:when>
+                    </xsl:choose>
+                    <!-- inheritedFrom attribute -->
+                    <xsl:if test="($originInheritedFrom != $containerName) and not($containerName = 'X3DNode') "><!-- avoid DEF, USE, class -->
+                        <xsl:choose>
+                            <xsl:when test="($originInheritedFrom = 'X3DNodeMixedContent') or ($fieldName = 'DEF') or ($fieldName = 'USE') or
+                                            ($fieldName = 'class') or ($fieldName = 'IS')  or ($fieldName = 'metadata')">
+                                <xsl:attribute name="inheritedFrom">
+                                    <xsl:text>X3DNode</xsl:text>
+                                </xsl:attribute>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:attribute name="inheritedFrom">
+                                    <xsl:value-of select="$originInheritedFrom"/>
+                                    <xsl:if test="(string-length($additionalInterfaces) > 0) and not($additionalInterfaces = $originInheritedFrom)">
+                                        <xsl:if test="not(contains($additionalInterfaces, $originInheritedFrom))">
+                                            <xsl:message>
+                                                <xsl:text>*** unexpected mismatch, $additionalInterfaces does not contain $originInheritedFrom=</xsl:text>
+                                                <xsl:value-of select="$originInheritedFrom"/>
+                                            </xsl:message>
+                                        </xsl:if>
+                                        <xsl:message>
+                                            <xsl:text>*** </xsl:text>
+                                            <xsl:value-of select="$containerName"/>
+                                            <xsl:text> </xsl:text>
+                                            <xsl:value-of select="$fieldName"/>
+                                            <xsl:text> field has</xsl:text>
+                                            <xsl:if test="contains($additionalInterfaces,',')">
+                                                <xsl:text> multiple derivations,</xsl:text>
+                                            </xsl:if>
+                                            <xsl:text> $additionalInterfaces=</xsl:text>
+                                            <xsl:value-of select="$additionalInterfaces"/>
+                                        </xsl:message>
+                                        <xsl:text>,</xsl:text>
+                                        <xsl:value-of select="$additionalInterfaces"/>
+                                    </xsl:if>
+                                </xsl:attribute>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:if>
+                    <xsl:variable name="hasEnumerations" select="ends-with(@type,'Choices') or ends-with(@type,'AccessTypes') or ends-with(@type,'Values') or ends-with(@type,'Type')"/>
+                    <xsl:if test="$hasEnumerations and (contains($fieldType,'FString') or starts-with(@type,'xs:')) and (string-length($baseType) > 0)">
+                        <xsl:variable name="additionalEnumerationValuesAllowed">
+                            <xsl:choose>
+                                <!-- TODO make this test less cryptic
+                                if simpleType name of allowed types also appears within an appInfo, it is informational and not a requirement -->
+                                <xsl:when test="ends-with(@type,'Choices') or ends-with(@type,'AccessTypes')">
+                                    <xsl:text>false</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="ends-with(@type,'Values') or ends-with(@type,'Type')">
+                                    <xsl:text>true</xsl:text>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:text>enumerationsError</xsl:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>
+                        <xsl:attribute name="additionalEnumerationValuesAllowed" select="$additionalEnumerationValuesAllowed"/>
+                        <!-- debug diagnostic
+                        <xsl:message>
+                            <xsl:text>local-name()=</xsl:text>
+                                            <xsl:value-of select="local-name()"/>
+                            <xsl:text>, @name=</xsl:text>
+                                            <xsl:value-of select="@name"/>
+                            <xsl:text>, $fieldName=</xsl:text>
+                                            <xsl:value-of select="$fieldName"/>
+                            <xsl:text>, @type=</xsl:text>
+                                            <xsl:value-of select="@type"/>
+                            <xsl:text>, $fieldType=</xsl:text>
+                                            <xsl:value-of select="$fieldType"/>
+                            <xsl:text>, $baseType=</xsl:text>
+                                            <xsl:value-of select="$baseType"/>
+                            <xsl:text>, $additionalEnumerationValuesAllowed=</xsl:text>
+                                            <xsl:value-of select="$additionalEnumerationValuesAllowed"/>
+                        </xsl:message> -->
+                    </xsl:if>
+                    <xsl:choose>
+                        <xsl:when test="starts-with($baseType,'SF') or starts-with($baseType,'MF')">
+                            <xsl:attribute name="simpleType">
+                                <xsl:value-of select="$baseType"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="baseType">
+                                <xsl:value-of select="//xs:simpleType[@name = $baseType]/xs:restriction/@base"/>
+                            </xsl:attribute>
+                        </xsl:when>
+                        <xsl:when test="ends-with($baseType,'Choices') or ends-with($baseType,'Values')">
+                            <xsl:attribute name="simpleType">
+                                <xsl:value-of select="$baseType"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="baseType">
+                                <xsl:value-of select="//xs:simpleType[@name = $baseType]/xs:restriction/@base"/>
+                            </xsl:attribute>
+                        </xsl:when>
+                        <xsl:when test="(string-length($baseType) > 0)">
+                            <!-- no simpleType -->
+                            <xsl:attribute name="baseType">
+                                <xsl:value-of select="$baseType"/>
+                            </xsl:attribute>
+                        </xsl:when>
+                        <xsl:when test="(@type = 'xs:NMTOKEN') or (@type = 'xs:NMTOKENS') or (@type = 'xs:token') or (@type = 'xs:ID') or (@type = 'xs:IDREF')">
+                            <!-- no simpleType -->
+                            <xsl:attribute name="baseType">
+                                <xsl:value-of select="@type"/>
+                            </xsl:attribute>
+                        </xsl:when>
+                    </xsl:choose>
+                    <xsl:variable name="initialX3dVersion" select="@initialX3dVersion"/>
+                    <xsl:if test="(string-length($initialX3dVersion) > 0)">
+                        <xsl:attribute name="initialX3dVersion">
+                            <xsl:value-of select="$initialX3dVersion"/>
+                        </xsl:attribute>
+                    </xsl:if>
+                    <!--xsl:message>test found...</xsl:message-->
+                    <xsl:if test="($fieldAccessType='inputOutput') or ($fieldAccessType='initializeOnly') or ($isStatement='no')">
+                        <!-- TODO: Improve this code -->
+                        <xsl:if test="xs:simpleType/xs:restriction[@base='SFString']">
+                            <xsl:for-each select="xs:simpleType/xs:restriction/xs:enumeration">
+                                <xsl:element name="enumeration">
+                                    <xsl:attribute name="value" select="@value"/>
+                                    <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
+                                        <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
+                                            <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                    <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
+                                    <xsl:if test="string-length($appinfo) > 0">
+                                        <xsl:attribute name="appinfo">
+                                            <xsl:value-of select="$appinfo"/>
+                                            <xsl:if test="not(ends-with($appinfo,'.'))">
+                                                <xsl:text>.</xsl:text>
+                                            </xsl:if>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
+                                    </xsl:if>
+                                </xsl:element>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:enumeration">
+                            <xsl:for-each select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:enumeration">
+                                <xsl:element name="enumeration">
+                                    <xsl:attribute name="value" select="@value"/>
+                                    <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
+                                        <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
+                                            <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                    <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
+                                    <xsl:if test="string-length($appinfo) > 0">
+                                        <xsl:attribute name="appinfo">
+                                            <xsl:value-of select="$appinfo"/>
+                                            <xsl:if test="not(ends-with($appinfo,'.'))">
+                                                <xsl:text>.</xsl:text>
+                                            </xsl:if>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
+                                    </xsl:if>
+                                </xsl:element>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="contains(xs:annotation/xs:appinfo/text(), 'enumeration values')">
+                            <xsl:attribute name="enumerationValues" select="normalize-space(substring-after(xs:annotation/xs:appinfo/text(), substring-before(xs:annotation/xs:appinfo/text(), '&#34;')))"/>
+                        </xsl:if>
+                        <xsl:if test="xs:annotation/xs:appinfo/xs:enumeration/@value">
                             <xsl:element name="enumeration">
-                                <xsl:attribute name="value" select="@value"/>
-                                <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
-                                    <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
-                                        <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
-                                    </xsl:if>
-                                </xsl:for-each>
-                                <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
-                                <xsl:if test="string-length($appinfo) > 0">
-                                    <xsl:attribute name="appinfo">
-                                        <xsl:value-of select="$appinfo"/>
-                                        <xsl:if test="not(ends-with($appinfo,'.'))">
-                                            <xsl:text>.</xsl:text>
+                                    <xsl:attribute name="value" select="xs:annotation/xs:appinfo/xs:enumeration/@value"/>
+                                    <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
+                                        <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
+                                            <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
                                         </xsl:if>
-                                    </xsl:attribute>
-                                </xsl:if>
-                                <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
-                                    <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
-                                </xsl:if>
+                                    </xsl:for-each>
+                                    <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
+                                    <xsl:if test="string-length($appinfo) > 0">
+                                        <xsl:attribute name="appinfo">
+                                            <xsl:value-of select="$appinfo"/>
+                                            <xsl:if test="not(ends-with($appinfo,'.'))">
+                                                <xsl:text>.</xsl:text>
+                                            </xsl:if>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
+                                    </xsl:if>
                             </xsl:element>
-                        </xsl:for-each>
-                    </xsl:if>
-                    <xsl:if test="contains(xs:annotation/xs:appinfo/text(), 'enumeration values')">
-                        <xsl:attribute name="enumerationValues" select="normalize-space(substring-after(xs:annotation/xs:appinfo/text(), substring-before(xs:annotation/xs:appinfo/text(), '&#34;')))"/>
-                    </xsl:if>
-                    <xsl:if test="xs:annotation/xs:appinfo/xs:enumeration/@value">
-                        <xsl:element name="enumeration">
-                                <xsl:attribute name="value" select="xs:annotation/xs:appinfo/xs:enumeration/@value"/>
-                                <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
-                                    <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
-                                        <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
-                                    </xsl:if>
-                                </xsl:for-each>
-                                <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
-                                <xsl:if test="string-length($appinfo) > 0">
-                                    <xsl:attribute name="appinfo">
-                                        <xsl:value-of select="$appinfo"/>
-                                        <xsl:if test="not(ends-with($appinfo,'.'))">
-                                            <xsl:text>.</xsl:text>
+                        </xsl:if>
+                        <xsl:if test="xs:annotation/xs:appinfo/xs:list">
+                            <xsl:variable name="enumerationValuesType" select="xs:annotation/xs:appinfo/xs:list/@itemType"/>
+                            <xsl:for-each select="//xs:schema/xs:simpleType[@name=$enumerationValuesType]/xs:restriction/xs:enumeration">
+                                <xsl:element name="enumeration">
+                                    <xsl:attribute name="value" select="@value"/>
+                                    <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
+                                        <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
+                                            <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
                                         </xsl:if>
-                                    </xsl:attribute>
-                                </xsl:if>
-                                <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
-                                    <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
-                                </xsl:if>
+                                    </xsl:for-each>
+                                    <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
+                                    <xsl:if test="string-length($appinfo) > 0">
+                                        <xsl:attribute name="appinfo">
+                                            <xsl:value-of select="$appinfo"/>
+                                            <xsl:if test="not(ends-with($appinfo,'.'))">
+                                                <xsl:text>.</xsl:text>
+                                            </xsl:if>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
+                                        <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
+                                    </xsl:if>
+                                </xsl:element>
+                            </xsl:for-each>
+                        </xsl:if>
+                    </xsl:if>
+                    <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute[@name='componentName']">
+                        <xsl:element name="componentInfo">
+                            <xsl:attribute name="name" select="@fixed"/>
+                            <xsl:attribute name="level" select="following-sibling::*[1]/@fixed"/>
                         </xsl:element>
+                    </xsl:for-each>
+                    <!-- description -->
+                    <xsl:if test="($containerName = 'X3DNode')">
+                        <xsl:choose>
+                            <xsl:when test="//xs:attributeGroup/xs:attribute[@name = $fieldName]/xs:annotation/xs:appinfo[string-length(normalize-space(.)) > 0]">
+                                <!-- DEF, USE, class -->
+                                <xsl:attribute name="description" select="normalize-space(//xs:attributeGroup/xs:attribute[@name = $fieldName]/xs:annotation/xs:appinfo/.)"/>
+                            </xsl:when>
+                            <xsl:when test="($fieldName = 'IS') or ($fieldName = 'metadata')">
+                                <!-- IS, metadata -->
+                                <xsl:attribute name="description" select="normalize-space(//xs:complexType[@name='X3DNode']/xs:annotation/xs:appinfo/xs:element[@name = $fieldName]/xs:annotation/xs:appinfo/.)"/>
+                            </xsl:when>
+                        </xsl:choose>
                     </xsl:if>
-                    <xsl:if test="xs:annotation/xs:appinfo/xs:list">
-                        <xsl:variable name="enumerationValuesType" select="xs:annotation/xs:appinfo/xs:list/@itemType"/>
-                        <xsl:for-each select="//xs:schema/xs:simpleType[@name=$enumerationValuesType]/xs:restriction/xs:enumeration">
-                            <xsl:element name="enumeration">
-                                <xsl:attribute name="value" select="@value"/>
-                                <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
-                                    <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
-                                        <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
-                                    </xsl:if>
-                                </xsl:for-each>
-                                <xsl:variable name="appinfo" select="normalize-space(xs:annotation/xs:appinfo/text())"/>
-                                <xsl:if test="string-length($appinfo) > 0">
-                                    <xsl:attribute name="appinfo">
-                                        <xsl:value-of select="$appinfo"/>
-                                        <xsl:if test="not(ends-with($appinfo,'.'))">
-                                            <xsl:text>.</xsl:text>
-                                        </xsl:if>
-                                    </xsl:attribute>
-                                </xsl:if>
-                                <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
-                                    <xsl:attribute name="documentation" select="normalize-space(xs:annotation/xs:documentation/@source)"/>
-                                </xsl:if>
-                            </xsl:element>
-                        </xsl:for-each>
-                    </xsl:if>
-                </xsl:if>
-                <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute[@name='componentName']">
-                    <xsl:element name="componentInfo">
-                        <xsl:attribute name="name" select="@fixed"/>
-                        <xsl:attribute name="level" select="following-sibling::*[1]/@fixed"/>
-                    </xsl:element>
-                </xsl:for-each>
-</xsl:element>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
 	</xsl:if>
 </xsl:template>
 

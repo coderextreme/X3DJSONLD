@@ -290,7 +290,8 @@ POSSIBILITY OF SUCH DAMAGE.
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -302,7 +303,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -1597,6 +1599,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       select="not( local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) and
                       not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and .='false') and
+                      not( local-name()='load' and .='true') and
+                      not( local-name()='refresh' and (.='0' or .='0.0')) or
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and string(.)='false') or
@@ -1824,6 +1828,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='centerOfRotation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='fieldOfView' and ((string(.)='0.785398') or (string(.)='0.7854') or (string(.)='.785398') or (string(.)='.7854'))) or
                       (local-name()='jump' and string(.)='true') or
+                      (local-name()='viewAll' and .='false') or
+                      ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
                       (local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                       (local-name()='retainUserOffsets' and (string(.)='false')) or
                       (local-name()='position' and (string(.)='0 0 10' or string(.)='0.0 0.0 10.0')))) and
@@ -2051,6 +2057,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='speedFactor' and (string(.)='1' or string(.)='1.0')) or
 						(local-name()='headlight' and (string(.)='true')) or
 						(local-name()='jump' and (string(.)='true')) or
+                        (local-name()='viewAll' and .='false') or
+                        ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
 						(local-name()='navType' and (string(.)='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
 						(local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
 						(local-name()='position' and (string(.)='0 0 100000' or string(.)='0.0 0.0 100000.0')) or
@@ -2091,6 +2099,9 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingPositions' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
+                       (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
@@ -2104,7 +2115,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       ((local-name()='containerField' and (string(.)='motions')) or
                        (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
                        (local-name()='frameIncrement' and (string(.)='1')) or
-                       (local-name()='frameIndex' and (string(.)='0')) or
+                       ((local-name()='frameIndex' or local-name()='startFrame' or local-name()='endFrame') and (string(.)='0')) or
                        (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
@@ -2973,7 +2984,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:if test="not(contains($arrayString,'.')) and not(contains($arrayString,'E')) and not(contains($arrayString,'e'))">
 					<xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
 				</xsl:if>
-                <xsl:text>f</xsl:text><!-- indicate that this number is a float; added after exponential form also -->
+                <!-- <xsl:text>f</xsl:text> no longer needed thanks to method overloading: indicate that this number is floating point; added after exponential form also -->
             </xsl:when>
             <xsl:when test="contains($arrayString,',') and not(contains($inputType,'String'))">
 				<xsl:variable name="firstNumber">
@@ -2985,7 +2996,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:if test="not(contains($firstNumber,'.')) and not(contains($arrayString,'E')) and not(contains($arrayString,'e'))">
                         <xsl:text>.0</xsl:text> <!-- necessary to append decimal point to integer value -->
                     </xsl:if>
-                    <xsl:text>f</xsl:text><!-- indicate that this number is a float -->
+                    <!-- <xsl:text>f</xsl:text> no longer needed thanks to method overloading: indicate that this number is floating point -->
                     <xsl:text>,</xsl:text>
                 </xsl:if>
                 <xsl:call-template name="java-array-values"> <!-- tail recursion -->
@@ -3123,40 +3134,40 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:choose>
 			<xsl:when test="ancestor::*">
 				<xsl:text>.addComments(</xsl:text>
-				<xsl:if test="(string-length($inputString) > $maxCommentLength) and ($firstPass = 'true')">
-					<xsl:variable name="warningMessage">
-						  <xsl:text>*** Warning: very large comment found (</xsl:text>
-                          
-						  <xsl:value-of select="string-length($inputString)"/>
-						  <xsl:text> characters) starting with '</xsl:text>
-                            <xsl:call-template name="escape-quote-characters">
-                                <xsl:with-param name="inputString">
-                                    <!-- must escape backslashes before quote characters to avoid side effects -->
-                                    <xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
-                                        <xsl:with-param name="inputString">
-                                            <xsl:value-of select="substring(normalize-space($inputString),0,30)"/>
-                                        </xsl:with-param>
-                                    </xsl:call-template>
-                                </xsl:with-param>
-                            </xsl:call-template>
-						  <xsl:text>' split into blocks of </xsl:text>
-						  <xsl:value-of select="$maxCommentLength"/>
-						  <xsl:text> characters</xsl:text>
-					</xsl:variable>
-					<xsl:message>
-						  <xsl:value-of select="$warningMessage"/>
-						  <xsl:text disable-output-escaping="no"> (starting with "&lt;!--</xsl:text>
-						  <xsl:value-of select="substring(.,0,30)"/><!-- truncate -->
-						  <xsl:text>")</xsl:text>
-					</xsl:message>
-					<xsl:text>"</xsl:text>
-					<xsl:value-of select="$warningMessage"/>
-					<xsl:text>")</xsl:text>
-                    <xsl:text>&#10;</xsl:text>
-                    <xsl:text>        </xsl:text>
-					<xsl:text>.addComments(</xsl:text>
-				</xsl:if>
 				<xsl:choose>
+                    <!-- diagnostic -->
+                    <xsl:when test="(string-length($inputString) > $maxCommentLength) and ($firstPass = 'true')">
+                        <xsl:variable name="warningMessage">
+                              <xsl:text>*** Warning: extra large comment found (</xsl:text>
+                              <xsl:value-of select="string-length($inputString)"/>
+                              <xsl:text> characters) starting with '</xsl:text>
+                                <xsl:call-template name="escape-quote-characters">
+                                    <xsl:with-param name="inputString">
+                                        <!-- must escape backslashes before quote characters to avoid side effects -->
+                                        <xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
+                                            <xsl:with-param name="inputString">
+                                                <xsl:value-of select="substring(normalize-space($inputString),0,30)"/>
+                                            </xsl:with-param>
+                                        </xsl:call-template>
+                                    </xsl:with-param>
+                                </xsl:call-template>
+                              <xsl:text>'</xsl:text>
+                              <!--
+                              <xsl:text>' split into blocks of </xsl:text>
+                              <xsl:value-of select="$maxCommentLength"/>
+                              <xsl:text> characters</xsl:text>
+                              -->
+                        </xsl:variable>
+                        <xsl:message>
+                              <xsl:value-of select="$warningMessage"/>
+                              <xsl:text disable-output-escaping="no"> (starting with "&lt;!--</xsl:text>
+                              <xsl:value-of select="substring(.,0,30)"/><!-- truncate -->
+                              <xsl:text>")</xsl:text>
+                        </xsl:message>
+                        <xsl:text>"</xsl:text>
+                        <xsl:value-of select="$warningMessage"/>
+                        <xsl:text>"</xsl:text>
+                    </xsl:when>
 					<!-- split into string array if needed -->
 					<xsl:when test="not(contains($inputString,'&#10;'))">
 						<xsl:text>"</xsl:text>
@@ -3198,7 +3209,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					</xsl:otherwise>
 				</xsl:choose>
 				<xsl:text>)</xsl:text>
-                <xsl:if test="(string-length(substring($inputString,$maxCommentLength)) > 0)">
+                <xsl:if test="(string-length(substring($inputString,$maxCommentLength)) > 0) and not(string-length($inputString) > $maxCommentLength)">
                     <xsl:call-template name="process-comment">
                         <xsl:with-param name="inputString">
                             <xsl:value-of select="substring($inputString,$maxCommentLength)"/>
@@ -3289,8 +3300,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <xsl:template name="list-component-imports">
 
-		<xsl:text>import java.util.*;</xsl:text><xsl:text>&#10;</xsl:text>
-		<xsl:text>import org.web3d.x3d.jsail.*;</xsl:text><xsl:text>&#10;</xsl:text>
+	<!--<xsl:text>import java.util.*;</xsl:text><xsl:text>&#10;</xsl:text>           avoid extraneous package -->
+	<!--<xsl:text>import org.web3d.x3d.jsail.*;</xsl:text><xsl:text>&#10;</xsl:text> avoid extraneous package -->
 		<xsl:if test="//comment() or //*[name()='X3D'] or //*[name()='Scene'] or //*[name()='head'] or //*[name()='field'] or //*[name()='fieldValue'] or 
 					  //*[name()='component'] or //*[name()='unit'] or //*[name()='meta'] or //*[name()='IS'] or //*[name()='connect'] or //*[name()='ROUTE'] or 
 					  //*[starts-with(local-name(),'Metadata')] or //*[contains(local-name(),'Proto')] or //*[name()='WorldInfo']">
@@ -3583,7 +3594,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
                           ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
-                          ($parentElementName='HAnimMotion'                and $attributeName='channels') or
+                          ($parentElementName='HAnimMotion'                and (($attributeName='channels') or ($attributeName='joints'))) or
 					      (ends-with($parentElementName,'FontStyle')       and $attributeName='style') or
 						  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
 						  ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
@@ -3637,20 +3648,23 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
 					($localFieldType='SFBool')  or 
                     ($attributeName='activate') or
+                    ($attributeName='bboxDisplay') or
 					($attributeName='ccw')      or
 					($attributeName='closed')   or
 					($attributeName='convex')   or
 					($attributeName='colorPerVertex') or
-                    ($attributeName='bboxDisplay')  or
 					($attributeName='enabled')  or
 					($attributeName='global')   or
 					($attributeName='normalPerVertex') or
 					($attributeName='on')       or
 					($attributeName='loop')     or
+					($attributeName='next')     or
+					($attributeName='previous') or
 					($attributeName='normalizeVelocity') or
 					($attributeName='rtpHeaderExpected') or
 					($attributeName='solid') or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
+					($attributeName='viewAll') or
 					($attributeName='visible') or
 					($parentElementName='AudioClip' and $attributeName='loop') or
 					($parentElementName='BooleanToggle' and $attributeName='toggle') or
@@ -3767,8 +3781,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
 					($localFieldType='SFFloat')  or 
                     ($attributeName='ambientIntensity') or
-					($attributeName='intensity')        or
 					($attributeName='creaseAngle')      or
+					($attributeName='intensity')        or
                     ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
                     ($attributeName='startAngle')       or ($attributeName='endAngle') or
                     ($attributeName='tolerance')        or
@@ -3861,7 +3875,9 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
 					($localFieldType='SFTime')        or 
                     ($parentElementName='TimeSensor') or
+					($attributeName='cycleTime')      or
                     ($attributeName='duration')       or
+					($attributeName='elapsedTime')    or
                     ($attributeName='tau')            or
                     ($attributeName='timestamp')      or
                     ($attributeName='readInterval')   or
@@ -4080,6 +4096,8 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
                     ($localFieldType='SFInt32')           or 
                      ends-with($attributeName,'ID')             or
+                    ($attributeName='farClippingPlane')         or
+                    ($attributeName='nearClippingPlane')        or
                     ($attributeName='order')                    or
 					($attributeName='uOrder')                   or
 					($attributeName='vOrder')                   or
@@ -4098,7 +4116,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
 					($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
 					(starts-with($parentElementName,'HAnim') and $attributeName='loa') or
-                    ($parentElementName='HAnimMotion' and (($attributeName='frameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex'))) or
+                    ($parentElementName='HAnimMotion' and (($attributeName='frameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
                     ($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
 					($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
 					($parentElementName='LineProperties' and ($attributeName='linetype')) or
@@ -4225,7 +4243,8 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:text>String[]</xsl:text><!-- false() - safety net if testing shows it is needed -->
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:text>float[]</xsl:text>
+                <!--<xsl:text>float[]</xsl:text> no longer needed thanks to method overloading: indicate that this number is floating point -->
+                    <xsl:text>double[]</xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
@@ -4572,7 +4591,8 @@ POSSIBILITY OF SUCH DAMAGE.
 								<xsl:text>new int[] {</xsl:text>
 							</xsl:when>
 							<xsl:otherwise>
-								<xsl:text>new float[] {</xsl:text>
+                            <!--<xsl:text>new float[] {</xsl:text> no longer needed thanks to method overloading: indicate that this number is floating point -->
+                                <xsl:text>new double[] {</xsl:text>
 							</xsl:otherwise>
 						</xsl:choose>
 						<xsl:call-template name="java-array-values">
@@ -4685,7 +4705,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			</xsl:when>
 			<xsl:when test="($attributeType = 'SFFloat')">
 				<xsl:value-of select="."/>
-				<xsl:text>f</xsl:text>
+				<!-- <xsl:text>f</xsl:text> no longer needed thanks to method overloading: indicate that this number is floating point -->
 			</xsl:when>
 			<xsl:when test="($attributeType = 'SFInt32') or ($attributeType = 'SFDouble') or ($attributeType = 'SFTime')">
 				<xsl:value-of select="."/>
@@ -4696,7 +4716,8 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:text>}</xsl:text>
 			</xsl:when>
 			<xsl:when test="($attributeType = 'MFFloat')">
-				<xsl:text>new float[] {</xsl:text>
+            <!--<xsl:text>new float[] {</xsl:text> no longer needed thanks to method overloading: indicate that this number is floating point -->
+				<xsl:text>new double[] {</xsl:text>
 				<xsl:call-template name="java-array-values">
 					<xsl:with-param name="inputString">
 						<xsl:value-of select="."/>

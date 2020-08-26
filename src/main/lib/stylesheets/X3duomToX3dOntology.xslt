@@ -28,7 +28,7 @@
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix xs:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
 ]]></xsl:text>
 
 <!-- Additional namespaces, as yet unused:
@@ -114,6 +114,31 @@
 :hasAncestor a owl:ObjectProperty , owl:TransitiveProperty ;
   dc:description "X3D element (node or statement) has ancestor element" .
 
+:accessTypeProperty a owl:DatatypeProperty ;
+  dc:description "accessTypeProperty values denote accessType for a given field within a given node." .
+:accessTypeInputOutput a owl:DatatypeProperty ;
+  rdfs:subPropertyOf :accessTypeProperty ;
+  dc:description "accessTypeInputOutput values denote accessType=inputOutput for a given field within a given node." ;
+  rdfs:domain xsd:NMTOKEN ;
+  rdfs:range  xsd:NMTOKEN .
+ :accessTypeInitializeOnly a owl:DatatypeProperty ;
+  rdfs:subPropertyOf :accessTypeProperty ;
+  dc:description "accessTypeInitializeOnly values denote accessType=initializeOnly for a given field within a given node." ;
+  rdfs:domain xsd:NMTOKEN ;
+  rdfs:range  xsd:NMTOKEN .
+:accessTypeInputOnly a owl:DatatypeProperty ;
+  rdfs:subPropertyOf :accessTypeProperty ;
+  dc:description "accessTypeInputOnly values denote accessType=inputOnly for a given field within a given node." ;
+  rdfs:domain xsd:NMTOKEN ;
+  rdfs:range  xsd:NMTOKEN .
+:accessTypeOutputOnly a owl:DatatypeProperty ;
+  rdfs:subPropertyOf :accessTypeProperty ;
+  dc:description "accessTypeOutputOnly values denote accessType=outputOnly for a given field within a given node." ;
+  rdfs:domain xsd:NMTOKEN ;
+  rdfs:range  xsd:NMTOKEN .
+]]></xsl:text>
+
+        <xsl:text disable-output-escaping="yes"><![CDATA[
 ###############################################
             
 # FieldTypes
@@ -202,7 +227,14 @@
                     <xsl:text> </xsl:text>
                     <xsl:text> dc:description </xsl:text>
                     <xsl:text>"</xsl:text>
-                    <xsl:value-of select="translate(substring-before(InterfaceDefinition/@appinfo, '.'),'&quot;','')"/>
+                    <xsl:choose>
+                        <xsl:when test="(string-length(InterfaceDefinition/@appinfo) le 400) or not(contains(InterfaceDefinition/@appinfo, '.'))">
+                            <xsl:value-of select="translate(InterfaceDefinition/@appinfo,'&quot;','')"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="translate(substring-before(InterfaceDefinition/@appinfo, '.'),'&quot;','')"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <xsl:text>"</xsl:text>
                 </xsl:if>
             </xsl:otherwise>
@@ -241,37 +273,73 @@
             <xsl:value-of select="$simpleTypeName"/>
             <xsl:text>"</xsl:text>
             <xsl:text> ;</xsl:text>
-            <xsl:choose>
-                <xsl:when test="(string-length(@baseType) > 0)">
-                    <!-- superfluous information for ontology
-                    <xsl:text> # baseType </xsl:text>
-                    <xsl:if test="not(starts-with(@baseType,'xs:'))">
-                        <xsl:text>:</xsl:text>
-                    </xsl:if>
-                    <xsl:value-of select="@baseType"/>
-                -->
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:message>
-                        <xsl:text>*** error, no baseType found in X3DUOM for SimpleType </xsl:text>
-                        <xsl:value-of select="$simpleTypeName"/>
-                    </xsl:message>
-                </xsl:otherwise>
-            </xsl:choose>
+            <xsl:variable name="baseType">
+                <xsl:choose>
+                    <!-- owl supports xsd: XML Schema types -->
+                    <xsl:when test="starts-with(@baseType,'xsd:')">
+                        <xsl:value-of select="@baseType"/>
+                    </xsl:when>
+                    <xsl:when test="starts-with(@baseType,'xs:')">
+                        <xsl:value-of select="concat('xsd:',substring-after(@baseType,'xs:'))"/>
+                    </xsl:when>
+                    <xsl:when test="(string-length(@baseType) > 0)">
+                        <!-- debug; superfluous information for ontology
+                        <xsl:text> # baseType </xsl:text>
+                        <xsl:if test="not(starts-with(@baseType,'xsd:'))">
+                            <xsl:text>:</xsl:text>
+                        </xsl:if>
+                    -->
+                        <xsl:value-of select="@baseType"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:message>
+                            <xsl:text>*** error, no baseType found in X3DUOM for SimpleType </xsl:text>
+                            <xsl:value-of select="$simpleTypeName"/>
+                        </xsl:message>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
             <xsl:if test="(string-length(@appinfo) > 0)">
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text> </xsl:text>
                 <xsl:text> dc:description </xsl:text>
                 <xsl:text>"</xsl:text>
-                <xsl:value-of select="translate(substring-before(@appinfo, '.'),'&quot;','')"/>
+                <xsl:choose>
+                    <xsl:when test="(string-length(@appinfo) le 400) or not(contains(@appinfo, '.'))">
+                        <xsl:value-of select="translate(@appinfo,'&quot;','')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="translate(substring-before(@appinfo, '.'),'&quot;','')"/>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:text>"</xsl:text>
-            </xsl:if>
+            </xsl:if>            
             <xsl:choose>
                 <xsl:when test="(count(enumeration) > 0)">
                     <xsl:text> ;</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text> </xsl:text>
-                    <xsl:text> rdfs:domain [ owl:oneOf (</xsl:text>
+                    <xsl:text> rdfs:domain </xsl:text>                    
+
+                    <xsl:if test="not(contains($baseType, ':'))">
+                        <xsl:text>:</xsl:text>
+                    </xsl:if>
+                    <xsl:choose>
+                        <xsl:when test="(string-length($baseType) > 0)">
+                            <xsl:value-of select="$baseType"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:message>
+                            <xsl:text>*** error: missing type for rdfs:domain </xsl:text>
+                            </xsl:message>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    
+                    <xsl:text> ;</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+
+                    <xsl:text> </xsl:text>
+                    <xsl:text> rdfs:range [ owl:oneOf (</xsl:text>
                     <xsl:for-each select="enumeration">
                         <!-- value may include "quoted" "enumeration" "values" -->
                         <xsl:text> '</xsl:text>
@@ -280,8 +348,6 @@
                     </xsl:for-each>
                     <xsl:text> ) ]</xsl:text>
                     <xsl:text> .</xsl:text>
-                    <xsl:text> # </xsl:text>
-                    <xsl:value-of select="@baseType"/>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:for-each select="enumeration[string-length(@appinfo) > 0]">
                         <xsl:text># </xsl:text>
@@ -376,13 +442,14 @@
                 <xsl:value-of select="$elementName"/>
                 <xsl:text> has multiple AdditionalInterface definitions:</xsl:text>
                 <xsl:for-each select="InterfaceDefinition/AdditionalInheritance">
+                    <xsl:sort select="@baseType"/>
                     <xsl:text> </xsl:text>
                     <xsl:value-of select="@baseType"/>
                 </xsl:for-each>
             </xsl:message>
         </xsl:if>
         
-        <xsl:variable name="interfaceFieldsList" select="InterfaceDefinition/field[(@accessType = 'initializeOnly') or (@accessType = 'inputOutput')]"/>
+        <xsl:variable name="interfaceFieldsList" select="InterfaceDefinition/field"/><!-- filter accessType [(@accessType = 'initializeOnly') or (@accessType = 'inputOutput')] -->
         
         <xsl:for-each select="$interfaceFieldsList">
             <xsl:sort select="(@name = 'metadata')"/>
@@ -397,6 +464,30 @@
             <xsl:variable name="upperFieldName"            select="concat(upper-case(substring(@name,1,1)),substring(@name,2))"/>
             <xsl:variable name="isNodeType"                select="(@type = 'SFNode') or (@type = 'MFNode')"/>
             <xsl:variable name="inheritedFrom"             select="@inheritedFrom"/>
+            <xsl:variable name="accessTypePropertyName"    select="concat('accessType',upper-case(substring(@accessType,1,1)),substring(@accessType,2))"/>
+            <xsl:variable name="baseType">
+                <xsl:choose>
+                    <!-- owl supports xsd: XML Schema types -->
+                    <xsl:when test="starts-with(@baseType,'xsd:')">
+                        <xsl:value-of select="@baseType"/>
+                    </xsl:when>
+                    <xsl:when test="starts-with(@baseType,'xs:')">
+                        <xsl:value-of select="concat('xsd:',substring-after(@baseType,'xs:'))"/>
+                    </xsl:when>
+                    <xsl:when test="(string-length(@baseType) > 0)">
+                        <!-- debug; superfluous information for ontology
+                        <xsl:text> # baseType </xsl:text>
+                        <xsl:if test="not(starts-with(@baseType,'xsd:'))">
+                            <xsl:text>:</xsl:text>
+                        </xsl:if>
+                        <xsl:value-of select="@baseType"/>
+                    -->
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <!-- primary type only, baseType not provided -->
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
             <!-- debug
             <xsl:message>
                 <xsl:value-of select="$elementName"/>
@@ -417,12 +508,23 @@
                           and (count(//AbstractObjectType[@name = $additionalInheritanceName]/InterfaceDefinition/field[@name = $fieldName]) = 0)">
             -->
             
-            <!-- Avoid duplicating field names, since that has been handled during X3DUOM construction -->
+            <!-- Avoid duplicating field names, since that has been handled during X3DUOM construction. Nevertheless list them as informative comments. -->
             <xsl:choose>
-                <xsl:when test="(string-length(@inheritedFrom) > 0)">
+                <xsl:when test="(string-length(@inheritedFrom) > 0) or 
+                                ((($fieldName = 'IS') or ($fieldName = 'metadata')) and not($elementName = 'X3DNode'))">
                     <xsl:text># </xsl:text>
-                    <xsl:value-of select="@name"/>
-                    <xsl:text> field inheritedFrom=</xsl:text>
+                    <xsl:text>:</xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="($fieldName = 'IS') or ($fieldName = 'metadata')">
+                            <!-- for IS, do not overload node-name classes as DatatypeProperty definitions, aka "punning" -->
+                            <xsl:text>has</xsl:text>
+                            <xsl:value-of select="$upperFieldName"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="@name"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:text> inheritedFrom=</xsl:text>
                     <xsl:value-of select="@inheritedFrom"/>
                     <xsl:text> with accessType=</xsl:text>
                     <xsl:value-of select="@accessType"/>
@@ -436,16 +538,25 @@
                         <xsl:text>, simpleType=</xsl:text>
                         <xsl:value-of select="@simpleType"/>
                     </xsl:if>
-                    <xsl:if test="(string-length(@baseType) > 0)">
+                    <xsl:if test="(string-length($baseType) > 0)">
                         <xsl:text>, baseType=</xsl:text>
-                        <xsl:value-of select="@baseType"/>
+                        <xsl:value-of select="$baseType"/>
                     </xsl:if>
                     <xsl:text>&#10;</xsl:text>
                 </xsl:when>
                 <xsl:when test="ancestor::AbstractNodeType">
                     <xsl:variable name="abstractNodeTypeName" select="ancestor::AbstractNodeType/@name"/>
                     <xsl:text>:</xsl:text>
-                    <xsl:value-of select="$fieldName"/>
+                    <xsl:choose>
+                        <xsl:when test="($fieldName = 'IS') or ($fieldName = 'metadata')">
+                            <!-- for IS, do not overload node-name classes as DatatypeProperty definitions, aka "punning" -->
+                            <xsl:text>has</xsl:text>
+                            <xsl:value-of select="$upperFieldName"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="$fieldName"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <xsl:text> a owl:DatatypeProperty ;</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text>  rdfs:label </xsl:text>
@@ -456,26 +567,41 @@
                     <xsl:text> is implemented by </xsl:text>
                     <xsl:choose>
                         <xsl:when test="(count(//field[@name = $fieldName][@inheritedFrom = $inheritedFrom][(@accessType = 'initializeOnly') or (@accessType = 'inputOutput')][local-name(../..) = 'ConcreteNode']) = 1)">
-                            <xsl:text>one node</xsl:text>
+                            <xsl:text>one node.</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:text>multiple nodes</xsl:text>
+                            <xsl:text>multiple nodes.</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
+                    <xsl:if test="(string-length(@description) > 0)">
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="@description"/>
+                    </xsl:if>
                     <xsl:text>"</xsl:text>
                     <xsl:text> ;</xsl:text>
                     <xsl:text>&#10;</xsl:text>
 
-                    <xsl:text>  rdfs:domain [ owl:unionOf (</xsl:text>
-                    <xsl:text> :</xsl:text>
-                    <xsl:value-of select="$abstractNodeTypeName"/>
+                    <xsl:if test="(string-length(@accessType) > 0)">
+                        <xsl:text>  rdfs:subPropertyOf </xsl:text>
+                        <xsl:text>:</xsl:text><!-- local namespace -->
+                        <xsl:value-of select="$accessTypePropertyName"/>
+                        <xsl:text> ;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:if>
+
+                    <!-- do not use [ owl:unionOf ( ...node list... ) ] with rdfs:domain because it creates blank nodes, which fail documentation and are unhelpful. -->
+                    <!-- use simple unadorned list of types and nodes instead. -->
+                    <xsl:text>  rdfs:domain </xsl:text>
+                        <xsl:text>:</xsl:text>
+                            <xsl:value-of select="$abstractNodeTypeName"/>
                     <xsl:for-each select="//InterfaceDefinition/field[@name = $fieldName][(@accessType = 'initializeOnly') or (@accessType = 'inputOutput')][@inheritedFrom = $abstractNodeTypeName]">
                         <xsl:sort select="@name" order="ascending"/>
 
+                        <xsl:text> ,</xsl:text>
                         <xsl:text> :</xsl:text>
                         <xsl:value-of select="../../@name"/><!--parent ConcreteNode -->
                     </xsl:for-each>
-                    <xsl:text> ) ] ;</xsl:text>
+                    <xsl:text> ;</xsl:text>
                     <xsl:text>&#10;</xsl:text>
 
                     <!-- X3D type -->
@@ -504,9 +630,9 @@
                             <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
                             <xsl:value-of select="@simpleType"/>
                         </xsl:when>
-                        <!-- owl supports xs: XML Schema types -->
-                        <xsl:when test="starts-with(@baseType,'xs:')">
-                            <xsl:value-of select="@baseType"/>
+                        <!-- owl supports xsd: XML Schema types -->
+                        <xsl:when test="starts-with($baseType,'xsd:') or starts-with($baseType,'xs:')">
+                            <xsl:value-of select="$baseType"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
@@ -563,11 +689,28 @@
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:text>:</xsl:text><!-- local namespace -->
-                            <xsl:value-of select="@name"/>
+                            <xsl:choose>
+                                <xsl:when test="($fieldName = 'IS') or ($fieldName = 'metadata')">
+                                    <!-- for IS, do not overload node-name classes as DatatypeProperty definitions, aka "punning" -->
+                                    <xsl:text>has</xsl:text>
+                                    <xsl:value-of select="$upperFieldName"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="@name"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                             <xsl:text> a owl:DatatypeProperty ;</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
                     <xsl:text>&#10;</xsl:text>
+                    
+                    <xsl:if test="(string-length(@accessType) > 0)">
+                        <xsl:text>  rdfs:subPropertyOf </xsl:text>
+                        <xsl:text>:</xsl:text><!-- local namespace -->
+                        <xsl:value-of select="$accessTypePropertyName"/>
+                        <xsl:text> ;</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:if>
 
                     <!-- parent for this field -->
                     <xsl:text> </xsl:text>
@@ -575,11 +718,6 @@
                     <xsl:text>:</xsl:text>
                     <xsl:value-of select="$elementName"/>
                     <xsl:text> ;</xsl:text>
-                    <xsl:text>&#10;</xsl:text>
-
-                    <xsl:text> </xsl:text>
-                    <xsl:text> # accessType=</xsl:text>
-                    <xsl:value-of select="@accessType"/>
                     <xsl:text>&#10;</xsl:text>
 
                     <xsl:variable name="rangePrefix">
@@ -617,23 +755,26 @@
                             <xsl:value-of select="@acceptableNodeTypes"/>
                         </xsl:when>
                         <xsl:when test="(string-length(@simpleType) > 0)">
-                            <xsl:if test="not(starts-with(@simpleType,'xs:'))">
-                                 <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
-                            </xsl:if>
                             <xsl:choose>
                                 <xsl:when test="ends-with(@simpleType,'Values')">
-                                    <xsl:value-of select="@baseType"/>
+                                    <xsl:if test="not(contains($baseType,':'))">
+                                         <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
+                                    </xsl:if>
+                                    <xsl:value-of select="$baseType"/>
                                 </xsl:when>
                                 <xsl:otherwise>
+                                    <xsl:if test="not(contains(@simpleType,':'))">
+                                         <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
+                                    </xsl:if>
                                     <xsl:value-of select="@simpleType"/>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:when>
-                        <xsl:when test="(string-length(@baseType) > 0)">
-                            <xsl:if test="not(starts-with(@baseType,'xs:'))">
+                        <xsl:when test="(string-length($baseType) > 0)">
+                            <xsl:if test="not(starts-with($baseType,'xsd:')) and not(starts-with($baseType,'xs:')) and not(starts-with(@simpleType,'xs:'))">
                                  <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
                             </xsl:if>
-                            <xsl:value-of select="@baseType"/>
+                            <xsl:value-of select="$baseType"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:text>:</xsl:text><!-- DatatypeProperty is local namespace, not x3d: namespace -->
@@ -650,10 +791,10 @@
                     </xsl:if>
 
                     <xsl:text> .</xsl:text>
-                                <xsl:if test="ends-with(@simpleType,'Values')">
-                                    <xsl:text> # alternate enumerations allowed, supported values found in </xsl:text>
-                                    <xsl:value-of select="@simpleType"/>
-                                </xsl:if>
+                    <xsl:if test="ends-with(@simpleType,'Values')">
+                        <xsl:text> # alternate enumerations allowed, supported values found in </xsl:text>
+                        <xsl:value-of select="@simpleType"/>
+                    </xsl:if>
                     <xsl:text>&#10;</xsl:text>
 <!--
 :hasParentAppearance owl:inverseOf :hasFillProperties . #old
