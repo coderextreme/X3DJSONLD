@@ -9,7 +9,7 @@ export PATH="${PYTHONPATH};${JAVA_HOME}/bin;${JAVA_HOME}/jre/bin/server;${PATH}"
 export PYTHON=python.exe
 export PIP=pip.exe
 export NODE=node.exe
-export NODEDIR=/c/Users/$USERNAME/X3DJSONLD/src/main/node
+export NODEDIR=C:/Users/$USERNAME/X3DJSONLD/src/main/node
 # ${HOME}\\apache-maven-3.5.2\\bin\\mvn clean install
 # sh replaceclass.sh
 # ${HOME}\\apache-maven-3.5.2\\bin\\mvn install
