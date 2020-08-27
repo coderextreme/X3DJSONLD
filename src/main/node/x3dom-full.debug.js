@@ -1,8 +1,8 @@
 /** 
  * X3DOM 1.8.2-dev
- * Build : 7476
- * Revision: 5723c16bddcdd4ee7e4bb90929a3f8013011996f
- * Date: Sun Jun 28 13:29:06 2020 -0500
+ * Build : 7568
+ * Revision: 51c6b6fe3b252e873470d90eafcde0d7d278e98a
+ * Date: Mon Jun 29 19:20:39 2020 -0500
  */
 /**
  * X3DOM JavaScript Library
@@ -29,9 +29,9 @@ var x3dom = {
 
 x3dom.about = {
     version  : "1.8.2-dev",
-    build    : "7476",
-    revision : "5723c16bddcdd4ee7e4bb90929a3f8013011996f",
-    date     : "Sun Jun 28 13:29:06 2020 -0500"
+    build    : "7568",
+    revision : "51c6b6fe3b252e873470d90eafcde0d7d278e98a",
+    date     : "Mon Jun 29 19:20:39 2020 -0500"
 };
 
 /**
@@ -883,7 +883,7 @@ x3dom.X3DCanvas.prototype.bindEventListeners = function ()
         }
     };
 
-    this.onMouseAlt = function ( evt )
+    this.onMouseOut = function ( evt )
     {
         if ( !this.isMulti )
         {
@@ -3483,7 +3483,9 @@ x3dom.Viewarea.prototype.onMouseRelease = function ( x, y, buttonState, prevButt
     var navi = this._scene.getNavigationInfo();
     var navType = navi.getType();
 
-    if ( this._scene._vf.pickMode.toLowerCase() !== "box" )
+    var pickMode = this._scene._vf.pickMode.toLowerCase();
+
+    if ( pickMode !== "box" )
     {
         this.prepareEvents( x, y, prevButton, "onmouseup" );
 
@@ -3537,7 +3539,22 @@ x3dom.Viewarea.prototype.onMouseRelease = function ( x, y, buttonState, prevButt
 
             x3dom.debug.logInfo( "Hit '" + obj._xmlNode.localName + "/ " +
                 obj._DEF + "' at dist=" + line.dist.toFixed( 4 ) );
-            x3dom.debug.logInfo( "Ray hit at position " + this._pick );
+            if ( pickMode === "color" )
+            {
+                x3dom.debug.logInfo( "Ray hit color " + this._pick );
+            }
+            else if ( pickMode === "idbufid" || pickMode === "texcoord" )
+            {
+                x3dom.debug.logInfo( "Ray hit data " + this._pick );
+            }
+            else
+            { // idbuf idbuf24 box
+                x3dom.debug.logInfo( "Ray hit at position "
+                    + this._pick.x.toFixed( 4 ) + " "
+                    + this._pick.y.toFixed( 4 ) + " "
+                    + this._pick.z.toFixed( 4 )
+                );
+            }
         }
 
         var t1 = new Date().getTime() - t0;
@@ -3823,7 +3840,22 @@ x3dom.Viewarea.prototype.prepareEvents = function ( x, y, buttonState, eventType
             {  // debug
                 if ( obj._xmlNode )
                 {x3dom.debug.logInfo( "Hit \"" + obj._xmlNode.localName + "/ " + obj._DEF + "\"" );}
-                x3dom.debug.logInfo( "Ray hit at position " + this._pick );
+                if ( pickMode === "color" )
+                {
+                    x3dom.debug.logInfo( "Ray hit color " + this._pick );
+                }
+                else if ( pickMode === "idbufid" || pickMode === "texcoord" )
+                {
+                    x3dom.debug.logInfo( "Ray hit data " + this._pick );
+                }
+                else
+                { // idbuf idbuf24 box
+                    x3dom.debug.logInfo( "Ray hit at position "
+                        + this._pick.x.toFixed( 4 ) + " "
+                        + this._pick.y.toFixed( 4 ) + " "
+                        + this._pick.z.toFixed( 4 )
+                    );
+                }
             }
         }
     }
@@ -9837,7 +9869,7 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
                 n._xmlNode = domNode;
                 domNode._x3domNode = n;
 
-                //register ProtoDeclares and convert ProtoInstance tp new nodes
+                //register ProtoDeclares and convert ProtoInstance to new nodes
                 domNode.querySelectorAll( ":scope > *" ) //static nodelist
                     . forEach( function ( childDomNode )
                     {
@@ -9868,6 +9900,11 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
     else if ( domNode.localName )
     {
         var tagLC = domNode.localName.toLowerCase();
+        //check if externproto tag for direct syntax
+        var protoDeclaration = this.protos.find( function ( declaration )
+            {
+                return tagLC == declaration.name.toLowerCase() && declaration.isExternProto;
+            } );
         if ( parent && tagLC == "x3dommetagroup" )
         {
             domNode.childNodes.forEach( function ( childDomNode )
@@ -9893,6 +9930,10 @@ x3dom.NodeNameSpace.prototype.setupTree = function ( domNode, parent )
             {
                 x3dom.debug.logWarning( "IS statement without connect link: " + domNode.parentElement.localName );
             }
+        }
+        else if ( protoDeclaration )
+        {
+            this.loadExternProtoAsync( protoDeclaration, domNode, domNode, domNode.parentElement );
         }
         else
         {
@@ -10013,10 +10054,13 @@ x3dom.NodeNameSpace.prototype.loadExternProtoAsync = function ( protoDeclaration
             while ( instance = protoDeclaration.instanceQueue.shift() ) //process in correct sequence
             {
                 that.doc.mutationObserver.disconnect();//do not record mutation
-                instance.domNode.insertAdjacentElement( "afterend", instance.protoInstanceDom ); // do not use appendChild since scene parent may be already transferred
+                if (instance.domNode !== instance.protoInstanceDom )
+                {
+                    instance.domNode.insertAdjacentElement( "afterend", instance.protoInstanceDom ); // do not use appendChild since scene parent may be already transferred
+                }
                 that.doc.mutationObserver.observe( that.doc._scene._xmlNode, { attributes: true, attributeOldValue: true, childList: true, subtree: true } );
                 that.doc.onNodeAdded( instance.protoInstanceDom, instance.parentDom );
-                instance.domNode._x3dom = instance.protoInstanceDom;
+                //instance.domNode._x3dom = instance.protoInstanceDom;
 
                 that.lateRoutes.forEach( function ( route )
                 {
@@ -10182,6 +10226,7 @@ x3dom.ProtoDeclaration.prototype.registerNode = function ()
                         }
                         this[ "addField_" + field.dataType ]( ctx, field.name, field.value );
                     }, this );
+                this._cf_hash = {};
                 that.fields.filter( function ( field )
                 {
                     return field.dataType.endsWith( "ode" ); //_cf fields
@@ -10213,6 +10258,7 @@ x3dom.ProtoDeclaration.prototype.registerNode = function ()
                             type = ISNode._cf[ nodeField ].type;
                         }
                         this[ "addField_" + field.dataType ]( field.name, type );//type should be registered x3dom type
+                        this._cf_hash[ field.name ] = "trigger";
                     }, this );
 
                 //initial
@@ -10240,7 +10286,7 @@ x3dom.ProtoDeclaration.prototype.registerNode = function ()
                 this._maxTries = 5;
             },
             {
-                nodeChanged : function ()
+                nodeChanged : function ( nodeField )
                 {
                     if ( this._changing ) {return;}
 
@@ -10283,7 +10329,19 @@ x3dom.ProtoDeclaration.prototype.registerNode = function ()
                     }
                     for ( field in this._cf )
                     {
-                        this.fieldChanged( field );
+                        var cf = this._cf[ field ];
+                        if ( "nodes" in cf )
+                        {
+                            if ( this._cf_hash[ field ] !== this._get_cf_hash( field )
+                                || field == nodeField ) //changed
+                            {
+                                this.fieldChanged( field );
+                            }
+                        }
+                        else
+                        {
+                            this.fieldChanged( field );
+                        }
                     }
 
                     //add fieldwatchers to nodeFields to forward event out
@@ -10297,6 +10355,15 @@ x3dom.ProtoDeclaration.prototype.registerNode = function ()
                         }
                     };
                     this._changing = false;
+
+                    //save a current hash of cf children
+                    for ( field in this._cf )
+                    {
+                        if ( "nodes" in this._cf[ field ] )
+                        {
+                            this._cf_hash[ field ] = this._get_cf_hash( field );
+                        }
+                    }
                 },
 
                 fieldChanged : function ( field )
@@ -10355,19 +10422,36 @@ x3dom.ProtoDeclaration.prototype.registerNode = function ()
                                     x3dom.debug.logWarning( "Unexpected field type: " + instanceNode._cfFieldTypes[ nodeField ] );
                                 }
 
-                                //only update if not already added
-                                nodes.forEach( function ( sfnode )
+                                //first remove all field childnodes
+                                instanceNode._childNodes.forEach( function ( sfnode )
                                 {
-                                    if ( !instanceNode._childNodes.some( function ( child )
-                                    {
-                                        return child == sfnode;
-                                    } ) )
-                                    {
-                                        instanceNode.addChild( sfnode, nodeField );
-                                    }
+                                    instanceNode.removeChild( sfnode, nodeField, "force" );
                                 } );
 
-                                instanceNode.nodeChanged();
+                                // then re-add new child nodes to instance
+                                nodes.forEach( function ( sfnode, i )
+                                {
+                                    instanceNode.addChild( sfnode, nodeField );
+                                } );
+
+                                if ( instanceNode._cfFieldTypes[ nodeField ] == "MFNode" )
+                                {
+                                    // now the _cf nodes array may contain duplicates
+                                    // remove the first one
+                                    for ( var i = 0; i < nodes.length; i++ )
+                                    {
+                                        var node = nodes[ i ];
+                                        for ( var j = nodes.length - 1; j > i; j-- )
+                                        {
+                                            if ( node == nodes[ j ] )
+                                            {
+                                                nodes.splice( j, 1 );
+                                            }
+                                        }
+                                    }
+                                }
+
+                                instanceNode.nodeChanged( nodeField );
                             }
                         }, this );
                     }
@@ -10413,6 +10497,12 @@ x3dom.ProtoDeclaration.prototype.registerNode = function ()
                         instanceNode._fieldWatchers[ nodeField ].push(
                             this.postMessage.bind( this, field ) ); // forward
                     }, this );
+                },
+
+                _get_cf_hash : function ( field )
+                {
+                    var nodes = this._cf[ field ].nodes;
+                    return nodes.length;
                 }
             }
         )
@@ -11473,7 +11563,8 @@ x3dom.gfx_webgl = ( function ()
 
                 if ( sky.length != colors.length )
                 {
-                    x3dom.debug.logError( "Number of background colors and corresponding angles are different!" );
+                    x3dom.debug.logError( "Number of background colors and corresponding angles do not match.\n"
+                        + "You have to define one angle less than the count of RGB colors because the angle 0° is added automatically." );
                     var minArrayLength = ( sky.length < colors.length ) ? sky.length : colors.length;
                     sky.length = minArrayLength;
                     colors.length = minArrayLength;
@@ -17869,7 +17960,7 @@ x3dom.Runtime.prototype.createX3DFromString = function ( jsonOrXML, optionalURL 
 x3dom.Runtime.prototype.createX3DFromURLPromise = function ( url, optionalURL )
 {
     this.canvas.doc.incrementDownloads();
-    that = this;
+    var that = this;
     return fetch( url )
         .then( function ( r ) { return r.text(); } )
         .then( function ( text )
@@ -17909,7 +18000,7 @@ x3dom.Runtime.prototype.createX3DFromURLPromise = function ( url, optionalURL )
  */
 x3dom.Runtime.prototype.loadURL = function ( url, optionalURL )
 {
-    that = this;
+    var that = this;
     this.createX3DFromURLPromise( url, optionalURL )
         .then( function ( x3d )
         {
@@ -19471,10 +19562,10 @@ x3dom.X3DDocument.prototype._setup = function ( sceneDoc )
 {
     var doc = this;
 
-    this.mutationObserver.observe( sceneDoc, { attributes: true, attributeOldValue: true, childList: true, subtree: true } );
-
     // sceneDoc is the X3D element here...
     var sceneElem = x3dom.findScene( sceneDoc );
+
+    this.mutationObserver.observe( sceneElem, { attributes: true, attributeOldValue: true, childList: true, subtree: true } );
 
     // create and add BindableBag that holds all bindable stacks
     this._bindableBag = new x3dom.BindableBag( this );
@@ -21049,44 +21140,44 @@ x3dom.Mesh.prototype.calcTexCoords = function ( mode )
 x3dom.docs = {};
 
 x3dom.docs.specURLMap = {
-    CADGeometry          : "CADGeometry.html",
-    Core                 : "core.html",
-    DIS                  : "dis.html",
-    CubeMapTexturing     : "env_texture.html",
-    EnvironmentalEffects : "enveffects.html",
-    EnvironmentalSensor  : "envsensor.html",
-    Followers            : "followers.html",
-    Geospatial           : "geodata.html",
-    Geometry2D           : "geometry2D.html",
-    Geometry3D           : "geometry3D.html",
-    Grouping             : "group.html",
-    "H-Anim"             : "hanim.html",
-    Interpolation        : "interp.html",
-    KeyDeviceSensor      : "keyboard.html",
-    Layering             : "layering.html",
-    Layout               : "layout.html",
-    Lighting             : "lighting.html",
-    Navigation           : "navigation.html",
-    Networking           : "networking.html",
-    NURBS                : "nurbs.html",
-    ParticleSystems      : "particle_systems.html",
-    Picking              : "picking.html",
-    PointingDeviceSensor : "pointingsensor.html",
-    Rendering            : "rendering.html",
-    RigidBodyPhysics     : "rigid_physics.html",
-    Scripting            : "scripting.html",
-    Shaders              : "shaders.html",
-    Shape                : "shape.html",
-    Sound                : "sound.html",
-    Text                 : "text.html",
-    Texturing3D          : "texture3D.html",
-    Texturing            : "texturing.html",
-    Time                 : "time.html",
-    EventUtilities       : "utils.html",
-    VolumeRendering      : "volume.html"
+    CADGeometry          : "CADGeometry.html",      // 32 CAD geometry component
+    Core                 : "core.html",             //  7 Core component
+    DIS                  : "dis.html",              // 28 Distributed interactive simulation (DIS) component
+    CubeMapTexturing     : "env_texture.html",      // 34 Cube map environmental texturing component
+    EnvironmentalEffects : "enveffects.html",       // 24 Environmental effects component
+    EnvironmentalSensor  : "envsensor.html",        // 22 Environmental sensor component
+    Followers            : "followers.html",        // 39 Followers component
+    Geospatial           : "geodata.html",          // 25 Geospatial component
+    Geometry2D           : "geometry2D.html",       // 14 Geometry2D component
+    Geometry3D           : "geometry3D.html",       // 13 Geometry3D component
+    Grouping             : "group.html",            // 10 Grouping component
+    "H-Anim"             : "hanim.html",            // 26 Humanoid Animation (H-Anim) component
+    Interpolation        : "interp.html",           // 19 Interpolation component
+    KeyDeviceSensor      : "keyboard.html",         // 21 Key device sensor component
+    Layering             : "layering.html",         // 35 Layering component
+    Layout               : "layout.html",           // 36 Layout component
+    Lighting             : "lighting.html",         // 17 Lighting component
+    Navigation           : "navigation.html",       // 23 Navigation component
+    Networking           : "networking.html",       //  9 Networking component
+    NURBS                : "nurbs.html",            // 27 NURBS component
+    ParticleSystems      : "particle_systems.html", // 40 Particle systems component
+    Picking              : "picking.html",          // 38 Picking component
+    PointingDeviceSensor : "pointingsensor.html",   // 20 Pointing device sensor component
+    Rendering            : "rendering.html",        // 11 Rendering component
+    RigidBodyPhysics     : "rigid_physics.html",    // 37 Rigid body physics
+    Scripting            : "scripting.html",        // 29 Scripting component
+    Shaders              : "shaders.html",          // 31 Programmable shaders component
+    Shape                : "shape.html",            // 12 Shape component
+    Sound                : "sound.html",            // 16 Sound component
+    Text                 : "text.html",             // 15 Text component
+    Texturing3D          : "texture3D.html",        // 33 Texturing3D Component
+    Texturing            : "texturing.html",        // 18 Texturing component
+    Time                 : "time.html",             //  8 Time component
+    EventUtilities       : "utils.html",            // 30 Event Utilities component
+    VolumeRendering      : "volume.html"            // 41 Volume rendering component
 };
 
-x3dom.docs.specBaseURL = "http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/";
+x3dom.docs.specBaseURL = "https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/";
 
 /**
  * The dump-nodetype tree functionality in a function
@@ -24012,7 +24103,11 @@ x3dom.Utils.wrapProgram = function ( gl, program, shaderID )
         glErr = gl.getError();
         if ( glErr )
         {
-            x3dom.debug.logError( "GL-Error (on searching uniforms): " + glErr );
+            x3dom.debug.logError( "GL-Error (on searching uniforms):"
+                + " name=" + obj.name
+                + " type=" + obj.type
+                + " size=" + obj.size
+                + " Err=" + glErr );
         }
 
         loc = gl.getUniformLocation( program, obj.name );
@@ -24115,7 +24210,11 @@ x3dom.Utils.wrapProgram = function ( gl, program, shaderID )
         glErr = gl.getError();
         if ( glErr )
         {
-            x3dom.debug.logError( "GL-Error (on searching attributes): " + glErr );
+            x3dom.debug.logError( "GL-Error (on searching attributes):"
+                + " name=" + obj.name
+                + " type=" + obj.type
+                + " size=" + obj.size
+                + " Err=" + glErr );
         }
 
         loc = gl.getAttribLocation( program, obj.name );
@@ -29625,7 +29724,7 @@ x3dom.VRControllerManager.prototype.fit = function ( viewarea, vrDisplay )
 
     var aspect =  Math.min( viewarea._width / viewarea._height, 1 );
 
-    var tanfov2 = Math.tan( 1.57 / 2.0 );
+    var tanfov2 = Math.tan( 0.5 * Math.PI / 2.0 );
     var dist = bsr / tanfov2 / aspect;
 
     viewarea._movement = viewDir.multiply( -dist );
@@ -30870,6 +30969,8 @@ x3dom.PROTOS.prototype = {
 
     prototypeExpander : function ( file, object )
     {
+	    // Use Andreas' proto code
+	    /*
         this.protos = {};
         this.names = {};
         this.protoField = {};
@@ -30886,6 +30987,7 @@ x3dom.PROTOS.prototype = {
         object = this.flattener( object );
         // console.error("SCRIPTS", JSON.stringify(this.scriptField));
         // console.error("PROTOS", JSON.stringify(this.protoField, null, 2));
+	    */
         return object;
     },
 
@@ -33648,7 +33750,7 @@ x3dom.shader.DynamicShader.prototype.generateFragmentShader = function ( gl, pro
     }
     else
     {
-        shader += "if (color.a <= 0.01) discard;\n";
+        shader += "if (color.a <= alphaCutoff) discard;\n";
     }
 
     //Output the gamma encoded result.
@@ -35940,16 +36042,18 @@ x3dom.registerNodeType(
                 return false;
             },
 
-            removeChild : function ( node )
+            removeChild : function ( node, targetField, force )
             {
+                targetField = targetField || "any";
                 if ( node )
                 {
                     for ( var fieldName in this._cf )
                     {
-                        if ( this._cf.hasOwnProperty( fieldName ) )
+                        if ( this._cf.hasOwnProperty( fieldName ) &&
+                             ( targetField == "any" || fieldName == targetField ) )
                         {
                             var field = this._cf[ fieldName ];
-                            if ( field.rmLink( node ) )
+                            if ( field.rmLink( node ) || force )
                             {
                                 for ( var i = node._parentNodes.length - 1; i >= 0; i-- )
                                 {
@@ -37177,6 +37281,7 @@ x3dom.registerNodeType(
         }
     )
 );
+
 /** @namespace x3dom.nodeTypes */
 /*
  * X3DOM JavaScript Library
@@ -42682,6 +42787,146 @@ x3dom.nodeTypes.ClipPlane.count = 0;
 
 /** @namespace x3dom.nodeTypes */
 /*
+ * X3DOM X3DScript Library
+ * http://www.x3dom.org
+ *
+ * (C)2020 Fraunhofer IGD, Darmstadt, Germany
+ * Dual licensed under the MIT and GPL
+ */
+
+/* ### X3DScript ### */
+x3dom.registerNodeType(
+    "X3DScript",
+    "Scripting",
+    defineClass( x3dom.nodeTypes.X3DChildNode,
+
+        /**
+         * Constructor for X3DScript
+         * @constructs x3dom.nodeTypes.X3DScript
+         * @x3d 4.0
+         * @component Scripting
+         * @status full
+         * @extends x3dom.nodeTypes.X3DChildNode
+         * @param {Object} [ctx=null] - context object, containing initial settings like namespace
+         * @classdesc The X3DScript node defines the source for multiple object, particulary Script nodes found in nearly identical "ProtoInstantiated" nodes.
+         */
+        function ( ctx )
+        {
+            x3dom.nodeTypes.X3DScript.superClass.call( this, ctx );
+
+            /**
+             * The X3DScript source is read from the URL specified by the url field. When the url field contains no values
+             *  ([]), this object instance is ignored.
+             * @var {x3dom.fields.MFString} url
+             * @memberof x3dom.nodeTypes.X3DScript
+             * @initvalue []
+             * @field x3d
+             * @instance
+             */
+            this.addField_MFString( ctx, "url", [] );
+
+            this._id = ( ctx && ctx.xmlNode && ctx.xmlNode.id != "" ) ?
+                ctx.xmlNode.id : ++x3dom.nodeTypes.X3DScript.ScriptID;
+
+        },
+        {
+            nodeChanged : function ()
+            {
+                var ctx = {};
+                ctx.xmlNode = this._xmlNode;
+
+                if ( ctx.xmlNode !== undefined && ctx.xmlNode !== null )
+                {
+                    var that = this;
+
+                    if ( that._vf.url.length && that._vf.url[ 0 ].indexOf( "\n" ) == -1 )
+                    {
+                        var xhr        = new XMLHttpRequest(),
+                            url        = that._nameSpace.getURL( that._vf.url[ 0 ] ),
+                            originalID = that._id;
+
+                        that._id = "default";
+                        that._vf.url = new x3dom.fields.MFString( [ this._getDefaultScript() ] );
+
+                        xhr.open( "GET", url, false );
+                        xhr.onload = function ()
+                        {
+                            that._vf.url = new x3dom.fields.MFString( [] );
+                            that._vf.url.push( xhr.response );
+			    eval ( xhr.response );
+                            that._id = originalID;
+                            that.fieldChanged( "url" );
+                        };
+                        xhr.onerror = function ()
+                        {
+                            x3dom.debug.logError( "Could not load file '" + that._vf.url[ 0 ] + "'." );
+                        };
+                        //xhr.send(null);
+                        x3dom.RequestManager.addRequest( xhr );
+                    }
+                    else
+                    {
+                        if ( that._vf.url.length )
+                        {
+                            that._vf.url = new x3dom.fields.MFString( [] );
+                        }
+                        try
+                        {
+                            that._vf.url.push( ctx.xmlNode.childNodes[ 1 ].nodeValue );
+                            ctx.xmlNode.removeChild( ctx.xmlNode.childNodes[ 1 ] );
+                        }
+                        catch ( e )
+                        {
+                            ctx.xmlNode.childNodes.forEach( function ( childDomNode )
+                            {
+                                if ( childDomNode.nodeType === 3 )
+                                {
+                                    that._vf.url.push( childDomNode.nodeValue );
+                                }
+                                else if ( childDomNode.nodeType === 4 )
+                                {
+                                    that._vf.url.push( childDomNode.data );
+                                }
+                                childDomNode.parentNode.removeChild( childDomNode );
+                            } );
+                        }
+                    }
+		    eval ( ctx.xmlNode.textContent );
+                }
+                // else hope that url field was already set somehow
+
+                this._parentNodes.forEach( function ( script )
+                {
+                    script.nodeChanged();
+                } );
+            },
+
+            fieldChanged : function ( fieldName )
+            {
+                if ( fieldName === "url" )
+                {
+                    this._parentNodes.forEach( function ( script )
+                    {
+                        script.fieldChanged( "url" );
+                    } );
+                }
+            },
+
+            parentAdded : function ( parent )
+            {
+                parent.nodeChanged();
+            },
+
+            _getDefaultScript : function ()
+            {
+                    return  "ecmascript:;\n";
+            }
+        }
+    )
+);
+
+/** @namespace x3dom.nodeTypes */
+/*
  * X3DOM JavaScript Library
  * http://www.x3dom.org
  *
@@ -44924,11 +45169,11 @@ x3dom.registerNodeType(
              * @var {x3dom.fields.SFFloat} beamWidth
              * @range [0, pi/2]
              * @memberof x3dom.nodeTypes.SpotLight
-             * @initvalue 1.5707963
+             * @initvalue pi/2
              * @field x3d
              * @instance
              */
-            this.addField_SFFloat( ctx, "beamWidth", 1.5707963 );
+            this.addField_SFFloat( ctx, "beamWidth", Math.PI / 2.0 );
 
             /**
              * The cutOffAngle field specifies the outer bound of the solid angle. The light source does not emit light outside of this solid angle.
@@ -44937,11 +45182,11 @@ x3dom.registerNodeType(
              * @range [0, pi/2]
              * @var {x3dom.fields.SFFloat} cutOffAngle
              * @memberof x3dom.nodeTypes.SpotLight
-             * @initvalue 1.5707963
+             * @initvalue pi/2
              * @field x3d
              * @instance
              */
-            this.addField_SFFloat( ctx, "cutOffAngle", 1.5707963 );
+            this.addField_SFFloat( ctx, "cutOffAngle", Math.PI / 2.0 );
 
             /**
              *
@@ -50903,7 +51148,7 @@ x3dom.registerNodeType(
 
             getFieldOfView : function ()
             {
-                return 1.57079633;
+                return Math.PI / 2.0;
             },
 
             /**
@@ -68526,7 +68771,7 @@ x3dom.registerNodeType(
              * @var {x3dom.fields.SFFloat} startAngle
              * @memberof x3dom.nodeTypes.Arc2D
              * @initvalue 0
-             * @range [-2 pi, 2pi]
+             * @range [-2 pi, 2 pi]
              * @field x3d
              * @instance
              */
@@ -68536,12 +68781,12 @@ x3dom.registerNodeType(
              * The arc extends from the startAngle counterclockwise to the endAngle.
              * @var {x3dom.fields.SFFloat} endAngle
              * @memberof x3dom.nodeTypes.Arc2D
-             * @initvalue 1.570796
-             * @range [-2 pi, 2pi]
+             * @initvalue pi/2
+             * @range [-2 pi, 2 pi]
              * @field x3d
              * @instance
              */
-            this.addField_SFFloat( ctx, "endAngle", 1.570796 );
+            this.addField_SFFloat( ctx, "endAngle", Math.PI / 2.0 );
 
             /**
              * Number of lines into which the arc is subdivided
@@ -68719,7 +68964,7 @@ x3dom.registerNodeType(
              * @var {x3dom.fields.SFFloat} startAngle
              * @memberof x3dom.nodeTypes.Arc2D
              * @initvalue 0
-             * @range [-2 pi, 2pi]
+             * @range [-2 pi, 2 pi]
              * @field x3d
              * @instance
              */
@@ -68729,12 +68974,12 @@ x3dom.registerNodeType(
              * The arc extends from the startAngle counterclockwise to the endAngle.
              * @var {x3dom.fields.SFFloat} endAngle
              * @memberof x3dom.nodeTypes.Arc2D
-             * @initvalue 1.570796
-             * @range [-2 pi, 2pi]
+             * @initvalue pi/2
+             * @range [-2 pi, 2 pi]
              * @field x3d
              * @instance
              */
-            this.addField_SFFloat( ctx, "endAngle", 1.570796 );
+            this.addField_SFFloat( ctx, "endAngle", Math.PI / 2.0 );
 
             /**
              * Number of lines into which the arc is subdivided
