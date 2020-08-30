@@ -6,8 +6,7 @@ var FLOAT_SUFFIX = '';
 function ECMAScriptSerializer () {
 this.code = [];
 this.codeno = 0;
-this.precode = [];
-this.preno = 0;
+this.precode = {};
 this.postcode = [];
 }
 
@@ -16,8 +15,7 @@ ECMAScriptSerializer.prototype = {
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		this.code = [];
 		this.codeno = 0;
-		this.precode = [];
-		this.preno = 0;
+		this.precode = {};
 		this.postcode = [];
 
 		var str = "";
@@ -32,14 +30,15 @@ ECMAScriptSerializer.prototype = {
 
 		str += "'use strict';\n"
 		str += "import fs from 'fs';\n"
-		str += "import { * } from './x3d.js';\n"
+		str += "import { X3D } from './x3d.js';\n"
 
 
 		// we figure out body first and print it out later
 		var body = "var "+element.nodeName+0+" =  new "+element.nodeName+"({\n";
 		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, []);
-		for (var po in this.precode) {
-			str += this.precode[po];
+		for (var key in this.precode) {
+			str += "import { "+key+" } from './x3d.js';\n"
+			
 		}
 		str += body;
 		str += "});\n";
@@ -78,7 +77,7 @@ ECMAScriptSerializer.prototype = {
 		return prepre+method+" : ";
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
-		var str = "";
+		var childs = [];
 		var fieldAttrType = "";
 		var attrType = "";
 		for (var a in element.attributes) {
@@ -117,7 +116,8 @@ ECMAScriptSerializer.prototype = {
 						}
 						var prepre = "\n"+("  ".repeat(n));
 						method = method.charAt(0).toLowerCase() + method.slice(1);
-						str += prepre+method+" : new "+fieldAttrType +"("+strval+"),";
+						childs.push(prepre+method+" : "+strval);
+						this.precode[fieldAttrType] = true;
 					}
 				}
 			} catch (e) {
@@ -259,15 +259,13 @@ ECMAScriptSerializer.prototype = {
 					}
 					
 					var prepre = "\n"+("  ".repeat(n));
-					str += prepre+method+" : new "+attrType +"("+strval+"),";
+					childs.push(prepre+method+" : new "+attrType +"("+strval+")");
+					this.precode[attrType] = true;
 				}
 			} catch (e) {
 				console.error(e);
 			}
 			attrType = "";
-		}
-		if (str.endsWith(",")) {
-			str = str.substr(0, str.length-1);
 		}
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
@@ -287,18 +285,34 @@ ECMAScriptSerializer.prototype = {
 				}
 				var ch = this.printParentChild(element, node, cn, mapToMethod, n);
 				ch += "(";
-				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
-					ch += "new X3DNode [] {";
+				var ppc = ch.trim();
+				if (ppc.indexOf("children") >= 0
+				   || ppc.indexOf("connect") >= 0
+				   || ppc.indexOf("field") >= 0
+				   || ppc.indexOf("fieldValue") >= 0
+				   || ppc.indexOf("meta") >= 0) {
+					ch += "new MFNode([";
+					this.precode["MFNode"] = true;
+				} else {
+					ch += "new SFNode(";
+					this.precode["SFNode"] = true;
 				}
 				if (node.nodeName === "ProtoInstance") {
 					// ch += node.nodeName+stack[0] + " = ";
 				}
 
 				ch += "new "+node.nodeName+"({\n";
+				this.precode[node.nodeName] = true;
 				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				ch += "})";
-				if (element.nodeName === "Appearance" && node.NodeName === "ComposedShader") {
-					ch += "}";
+				if (ppc.indexOf("children") >= 0
+				   || ppc.indexOf("connect") >= 0
+				   || ppc.indexOf("field") >= 0
+				   || ppc.indexOf("fieldValue") >= 0
+				   || ppc.indexOf("meta") >= 0) {
+					ch += "])";
+				} else {
+					ch += ")";
 				}
 				ch += ")";
 				/*
@@ -308,7 +322,7 @@ ECMAScriptSerializer.prototype = {
 				} else {
 					// ch is attached to body
 				*/
-					str += ch;
+					childs.push(ch);
 				/*
 				}
 				if (node.nodeName === "ProtoInstance") {
@@ -319,12 +333,13 @@ ECMAScriptSerializer.prototype = {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				str += "\n"+("  ".repeat(n))+'.addComments(new CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'"))';
+				childs.push("\n"+("  ".repeat(n))+'.addComments(new CommentsBlock("'+y.split("\n").join('\\n\"+\n\"')+'"))');
+				this.precode["CommentsBlock"] = true;
 				if (y !== node.nodeValue) {
 					// console.error("ECMAScript Comment Replacing "+node.nodeValue+" with "+y);
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += "\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
+				childs.push("\n"+("  ".repeat(n))+".setSourceCode(\""+node.nodeValue.split("\r\n").map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
 						replace(/"/g, '\\"');
@@ -332,10 +347,11 @@ ECMAScriptSerializer.prototype = {
 						replace(/\\n/g, "\\\\n")
 						*/
 					;
-					}).join('\\n\"+\n\"')+'")';
+					}).join('\\n\"+\n\"')+'")');
 			}
 		}
-		return str;
+
+		return childs.join(",");
 	}
 };
 
