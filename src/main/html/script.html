@@ -4,13 +4,13 @@
     <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
-   <script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.js'> </script>
-<link rel="stylesheet" type="text/css" href="https://code.create3000.de/x_ite/latest/dist/x_ite.css"/>
-<script type="text/javascript" src="https://code.create3000.de/x_ite/latest/dist/x_ite.min.js"></script>
-<script type="text/javascript" src="https://raw.githack.com/andreasplesch/x_ite_dom/master/release/x_ite_dom.1.3.js"></script>
-   <!--
-    <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
+    <!--
+    <script type="text/javascript" src="https://5efa06157960e80256fa5d6b--x3dom.netlify.app/x3dom-full.debug.js"></script>
     -->
+    <script type="text/javascript" src="../node/x3dom-full.debug.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/create3000/x_ite@4.6.10/dist/x_ite.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/create3000/x_ite@4.6.10/dist/x_ite.min.js"></script>
+<script type="text/javascript" src="https://raw.githack.com/andreasplesch/x_ite_dom/master/release/x_ite_dom.1.3.js"></script>
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.12.3/ajv.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
@@ -49,106 +49,24 @@ a:active {
 <tr>
 <td>
 <select id="file">
-<option>../data/flipp.json</option>
-<option>../data/force.json</option>
-<option>../data/ArchHalf.json</option>
-<option>../data/ArchPrototype.json</option>
-<option>../data/bubbles.json</option>
-<option>../data/geobubbles.json</option>
-<option>../data/ObliqueStrategies.json</option>
-<option>../data/IcosahedronSubdivisionLevel5.json</option>
-<option>../data/ExtrusionHeart.json</option>
-<option>../data/bubs.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/Scenarios/RemusMission10MAR2003/RemusMissionLineTrackPlayback.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/CommunicationsAndSensors/Sonar/AuvwStackSceneVisualizationExample.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/ShipsMilitary/Seafighter/SeafighterWithHelos.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/Robots/UnmannedUnderwaterVehicles/Marv.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/ShipsCivilian/CigaretteBoat/CigaretteBoatWithDriver.json</option>
-<option>www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/SanCarlosCathedral/Church.json</option>
-<option>www.web3d.org/x3d/content/examples/Savage/AircraftHelicopters/AH1W-UnitedStates/SuperCobraLightsOn.json</option>
-<option>../stl/CaffeinePubChem2519Sticks.blender.stl</option>
-<option>../stl/cleat_clamp.stl</option>
-<option>../stl/example.stl</option>
-<option>../stl/UavBeehive.stl</option>
-<option>../ply/Dodecahedron.ply</option>
-<option>../ply/example.ply</option>
-<option>../ply/Icosahedron.ply</option>
-<option>../ply/IcosahedronSubdivisionLevel1.ply</option>
-<option>../ply/IcosahedronSubdivisionLevel2.ply</option>
-<option>../ply/IcosahedronSubdivisionLevel3.ply</option>
-<option>../ply/IcosahedronSubdivisionLevel4.ply</option>
-<option>../ply/IcosahedronSubdivisionLevel5.ply</option>
-<option>../ply/Octahedron.ply</option>
-<option>../ply/OrigamiCrane.ply</option>
-<option>../ply/Rocktopus.stl</option>
-<option>../ply/teapot.ply</option>
-<option>../ply/Tetrahedron.ply</option>
-<option>../ppp/abox.json</option>
-<option>../ppp/arc.json</option>
-<option>../ppp/ArchHalf.json</option>
-<option>../ppp/ArchPrototype.json</option>
-<option>../ppp/asmallbox.json</option>
-<option>../ppp/ball.json</option>
-<option>../ppp/BindingOperations.json</option>
-<option>../ppp/BoxEm.json</option>
-<option>../ppp/browser.json</option>
-<option>../ppp/bub.json</option>
-<option>../ppp/bubble.json</option>
-<option>../ppp/bubbles.json</option>
-<option>../ppp/CameraExamples.json</option>
-<option>../ppp/CameraPrototypes.json</option>
-<option>../ppp/CameraShape.json</option>
-<option>../ppp/CloudsProcedural4.json</option>
-<option>../ppp/bubs.json</option>
-<option>../ppp/bubs2.json</option>
-<option>../ppp/CoordinateAxes.json</option>
-<option>../ppp/cube.json</option>
-<option>../ppp/extrusion.json</option>
-<option>../ppp/ExtrusionHeart.json</option>
-<option>../ppp/flipp.json</option>
-<option>../ppp/flowerproto.json</option>
-<option>../ppp/flowers.json</option>
-<option>../ppp/flowers2.json</option>
-<option>../ppp/flowers4.json</option>
-<option>../ppp/flowers7.json</option>
-<option>../ppp/force.json</option>
-<option>../ppp/fors.json</option>
-<option>../ppp/fors2.json</option>
-<option>../ppp/freewrlflowers.json</option>
-<option>../ppp/geo.json</option>
-<option>../ppp/geobubbles.json</option>
-<option>../ppp/glflowers.json</option>
-<option>../ppp/gridBack.json</option>
-<option>../ppp/HeadsUpDisplayExample.json</option>
-<option>../ppp/ifscube.json</option>
-<option>../ppp/ifscubeworks.json</option>
-<option>../ppp/indexedfaceset_pixeltexture_entire.json</option>
-<option>../ppp/indexedfaceset_pixeltexture_part.json</option>
-<option>../ppp/indexedfaceset_pixeltexture_plus.json</option>
-<option>../ppp/indexedfaceset_pixeltexture_whole.json</option>
-<option>../ppp/MFString.json</option>
-<option>../ppp/mirror.json</option>
-<option>../ppp/mirror2.json</option>
-<option>../ppp/ObliqueStrategies.json</option>
-<option>../ppp/PixelTextureComponentExamples.json</option>
-<option>../ppp/plainflowers.json</option>
-<option>../ppp/pp3.json</option>
-<option>../ppp/qq3.json</option>
-<option>../ppp/rgb_alpha.json</option>
-<option>../ppp/rubik.json</option>
-<option>../ppp/rubikFurnace.json</option>
-<option>../ppp/rubikOnFire.json</option>
-<option>../ppp/SFVec3f.json</option>
-<option>../ppp/sphere.json</option>
-<option>../ppp/sphereflowers.json</option>
-<option>../ppp/Table5_18PixelTexture.json</option>
-<option>../ppp/Teapot.json</option>
-<option>../ppp/TextExamples.json</option>
-<option>../ppp/TextSpecialCharacters.json</option>
-<option>../ppp/x3dconnector.json</option>
-<option>../ppp/x3dconnectorProto.json</option>
-<option>../ppp/X3dHeaderPrototypeSyntaxExamples.json</option>
-<option>../ppp/x3domflowers.json</option>
+<option>../data/arc2.x3d</option>
+<option>../data/ArchHalf.x3d</option>
+<option>../data/BindingOperations.x3d</option>
+<option>../data/browser.x3d</option>
+<option>../data/bubbles.x3d</option>
+<option>../data/bubs3.x3d</option>
+<option>../data/CloudsProcedural4.x3d</option>
+<option>../data/extrusion.x3d</option>
+<option>../data/flower.x3d</option>
+<option>../data/flower3.x3d</option>
+<option>../data/flowers4.x3d</option>
+<option>../data/flowers7.x3d</option>
+<option>../data/geobubbles.x3d</option>
+<option>../data/mirror.x3d</option>
+<option>../data/mirror2.x3d</option>
+<option>../data/MyBounce.x3d</option>
+<option>../data/ObliqueStrategies.x3d</option>
+<option>../data/text.x3d</option>
 </select>
 <input type="text" onchange="filter(event)"></input>
 </td>
@@ -231,9 +149,8 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
 </body>
     <script type="text/javascript" src="../node/JavaScriptSerializer.js"></script>
     <script type="text/javascript" src="../node/DOM2JSONSerializer.js"></script>
+    <script src="../node/Three2Serializer.js"></script>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
-    <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="../node/Script.js"></script>
     <script type="text/javascript" src="../node/mapToMethod.js"></script>
     <script type="text/javascript" src="../node/mapToMethod2.js"></script>
     <script type="text/javascript" src="../node/fieldTypes.js"></script>
@@ -241,6 +158,13 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
     <script type="text/javascript" src="../node/convertPlyToJson.js"></script>
     <script type="text/javascript" src="../node/convertStlToJson.js"></script>
     <script type="text/javascript" src="../node/convertJsonToStl.js"></script>
+    <script src="../../../node_modules/three/build/three.js"></script>
+    <script src="../../../node_modules/three/examples/js/controls/OrbitControls.js"></script>
+    <script src="../../../node_modules/three/examples/js/libs/chevrotain.min.js"></script>
+    <script src="../node/x3d-parser.js"></script>
+    <script src="../node/x3d-loader.js"></script>
+    <script src="../node/threex3dloader.js"></script>
+    <script src="../../../node_modules/three/examples/js/loaders/VRMLLoader.js"></script>
     <script type="text/javascript" src="../node/loadValidate.js"></script>
     <script type="text/javascript" src="../node/loaderJQuery.js"></script>
     <script type="text/javascript" src="../node/exi.js"></script>
