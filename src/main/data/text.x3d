@@ -35,12 +35,12 @@
                                 <Material/>
                             </Appearance>
                         </Shape> 
-			<Script>
+			<X3DScript>
 			    <field name='frontUrls' type='MFString' accessType='initializeOnly' value='"rnl_front.png" "uffizi_front.png"'/>
 			    <![CDATA[ecmascript:
 			    var me = '"1" "\"2" "\n3"';
 			    ]]>
-			</Script>
+			</X3DScript>
                     </Transform>               
     </Scene>
 </X3D>

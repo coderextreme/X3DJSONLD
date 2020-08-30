@@ -20,7 +20,7 @@
                     </Appearance>
                 </Shape>
                 <PositionInterpolator DEF="DECLpoint_INSTANCE_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-                <Script DEF="DECLpoint_INSTANCE_MB1">
+                <X3DScript DEF="DECLpoint_INSTANCE_MB1">
                     <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                     <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                     <field name="set_location" accessType="inputOnly" type="SFTime"></field>
@@ -35,7 +35,7 @@ ecmascript:
                }
 
 
-]]></Script>
+]]></X3DScript>
                 <TimeSensor DEF="DECLpoint_INSTANCE_CL1" cycleInterval="3" loop="true"></TimeSensor>
                 <ROUTE fromNode="DECLpoint_INSTANCE_CL1" fromField="cycleTime" toNode="DECLpoint_INSTANCE_MB1" toField="set_location"></ROUTE>
                 <ROUTE fromNode="DECLpoint_INSTANCE_CL1" fromField="fraction_changed" toNode="DECLpoint_INSTANCE_PI1" toField="set_fraction"></ROUTE>
@@ -53,7 +53,7 @@ ecmascript:
                     </Appearance>
                 </Shape>
                 <PositionInterpolator DEF="DECLpoint_INSTANCE1000_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-                <Script DEF="DECLpoint_INSTANCE1000_MB1">
+                <X3DScript DEF="DECLpoint_INSTANCE1000_MB1">
                     <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                     <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                     <field name="set_location" accessType="inputOnly" type="SFTime"></field>
@@ -68,7 +68,7 @@ ecmascript:
                }
 
 
-]]></Script>
+]]></X3DScript>
                 <TimeSensor DEF="DECLpoint_INSTANCE1000_CL1" cycleInterval="3" loop="true"></TimeSensor>
                 <ROUTE fromNode="DECLpoint_INSTANCE1000_CL1" fromField="cycleTime" toNode="DECLpoint_INSTANCE1000_MB1" toField="set_location"></ROUTE>
                 <ROUTE fromNode="DECLpoint_INSTANCE1000_CL1" fromField="fraction_changed" toNode="DECLpoint_INSTANCE1000_PI1" toField="set_fraction"></ROUTE>
@@ -87,7 +87,7 @@ ecmascript:
                 </Shape>
             </Transform>
         </Transform>
-        <Script DEF="DECLx3dconnector_connector1_S1">
+        <X3DScript DEF="DECLx3dconnector_connector1_S1">
             <field name="startnode" accessType="initializeOnly" type="SFNode">
                 <Transform USE="G1"></Transform>
             </field>
@@ -144,7 +144,7 @@ ecmascript:
         }
 
 
-]]></Script>
+]]></X3DScript>
         <ROUTE fromNode="G1" fromField="translation_changed" toNode="DECLx3dconnector_connector1_S1" toField="set_startpoint"></ROUTE>
         <ROUTE fromNode="G2" fromField="translation_changed" toNode="DECLx3dconnector_connector1_S1" toField="set_endpoint"></ROUTE>
     </Scene>

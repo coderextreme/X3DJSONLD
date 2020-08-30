@@ -67,7 +67,7 @@
             </Transform>
           </Transform>
         </Switch>
-        <Script DEF='GeometryComputationScript' directOutput='true' url='"ViewFrustumPrototypeScript.js"'>
+        <X3DScript DEF='GeometryComputationScript' directOutput='true' url='"ViewFrustumPrototypeScript.js"'>
           <field accessType='inputOutput' appinfo='Whether or not frustum geometry is rendered' name='visible' type='SFBool'/>
           <field accessType='outputOnly' appinfo='Adjust Switch selection to make geometry visible or not' name='visibilitySwitchSelection' type='SFInt32'/>
           <field accessType='initializeOnly' name='ViewpointNode' type='SFNode'>
@@ -97,7 +97,7 @@
             <connect nodeField='aspectRatio' protoField='aspectRatio'/>
             <connect nodeField='trace' protoField='trace'/>
           </IS>
-        </Script>
+        </X3DScript>
         <ROUTE fromField='visibilitySwitchSelection' fromNode='GeometryComputationScript' toField='whichChoice' toNode='VisibilitySwitch'/>
         <ROUTE fromField='position_changed' fromNode='GeometryComputationScript' toField='translation' toNode='PositionTransform'/>
         <ROUTE fromField='orientation_changed' fromNode='GeometryComputationScript' toField='rotation' toNode='OrientationTransform'/>

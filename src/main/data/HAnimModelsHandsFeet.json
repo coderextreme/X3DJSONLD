@@ -82,7 +82,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 July 2020"
+            "@content":"28 August 2020"
           },
           {
             "@name":"generator",
@@ -123,6 +123,7 @@
                 { "Inline":
                   {
                     "@url":["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"],
+                    "@refresh":0,
                     "@bboxCenter":[0,0,0],
                     "@bboxSize":[-1,-1,-1],
                     "@bboxDisplay":false,
@@ -145,6 +146,7 @@
                         {
                           "@DEF":"GridXY_20x20Fixed",
                           "@url":["GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"],
+                          "@refresh":0,
                           "@bboxCenter":[0,0,0],
                           "@bboxSize":[-1,-1,-1],
                           "@bboxDisplay":false,
@@ -168,6 +170,7 @@
                 { "Inline":
                   {
                     "@url":["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"],
+                    "@refresh":0,
                     "@bboxCenter":[0,0,0],
                     "@bboxSize":[-1,-1,-1],
                     "@bboxDisplay":false,
@@ -196,6 +199,7 @@
                 { "Inline":
                   {
                     "@url":["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"],
+                    "@refresh":0,
                     "@bboxCenter":[0,0,0],
                     "@bboxSize":[-1,-1,-1],
                     "@bboxDisplay":false,
@@ -224,6 +228,7 @@
                 { "Inline":
                   {
                     "@url":["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"],
+                    "@refresh":0,
                     "@bboxCenter":[0,0,0],
                     "@bboxSize":[-1,-1,-1],
                     "@bboxDisplay":false,

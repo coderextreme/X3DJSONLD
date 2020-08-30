@@ -11,15 +11,16 @@ browser.currentScene.children[0] = Viewpoint2;
 
 let Background3 = browser.currentScene.createNode("Background");
 Background3.skyColor = new MFColor(new float[0.4,0.4,0.4]);
+Background3.transparency = 0;
 browser.currentScene.children[1] = Background3;
 
 let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="point" ><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
+<ProtoBody><Transform DEF="node" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Sphere containerField="geometry" radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -59,6 +60,8 @@ ProtoDeclare4.protoInterface = ProtoInterface5;
 let ProtoBody7 = browser.currentScene.createNode("ProtoBody");
 let Transform8 = browser.currentScene.createNode("Transform");
 Transform8.DEF = "node";
+Transform8.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform8.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS9 = browser.currentScene.createNode("IS");
 let connect10 = browser.currentScene.createNode("connect");
 connect10.nodeField = "translation";
@@ -70,6 +73,8 @@ IS9.connect[0] = connect10;
 Transform8.iS = IS9;
 
 let Shape11 = browser.currentScene.createNode("Shape");
+Shape11.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape11.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere12 = browser.currentScene.createNode("Sphere");
 Sphere12.radius = 0.1;
 Shape11.geometry = Sphere12;
@@ -182,6 +187,8 @@ browser.currentScene.children[2] = ProtoDeclare4;
 
 let Transform27 = browser.currentScene.createNode("Transform");
 Transform27.DEF = "G1";
+Transform27.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform27.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let ProtoInstance28 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance28.name = "point";
 Transform27.children = new MFNode();
@@ -192,6 +199,8 @@ browser.currentScene.children[3] = Transform27;
 
 let Transform29 = browser.currentScene.createNode("Transform");
 Transform29.DEF = "G2";
+Transform29.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform29.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let ProtoInstance30 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance30.name = "point";
 Transform29.children = new MFNode();
@@ -202,9 +211,15 @@ browser.currentScene.children[4] = Transform29;
 
 let Transform31 = browser.currentScene.createNode("Transform");
 Transform31.DEF = "transC1";
+Transform31.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform31.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform32 = browser.currentScene.createNode("Transform");
 Transform32.DEF = "rotscaleC1";
+Transform32.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform32.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape33 = browser.currentScene.createNode("Shape");
+Shape33.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape33.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance34 = browser.currentScene.createNode("Appearance");
 let Material35 = browser.currentScene.createNode("Material");
 Material35.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);

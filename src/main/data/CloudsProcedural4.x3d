@@ -41,7 +41,7 @@
       <Transform DEF='Cumulus'/>
       <Transform DEF='Cirrus'/>
       <Transform DEF='Fog'/>
-      <Script DEF='PixelScript' directOutput='true'>
+      <X3DScript DEF='PixelScript' directOutput='true'>
         <field accessType='initializeOnly' name='Cumulus' type='SFNode'>
           <Transform USE='Cumulus'/>
         </field>
@@ -432,7 +432,7 @@ cumulus();
 cirrus();
 }
 ]]>
-      </Script>
+      </X3DScript>
       <DirectionalLight ambientIntensity='1' color='1 0 0' direction='-1 -1 0' global='true'/>
     </Group>
   </Scene>
