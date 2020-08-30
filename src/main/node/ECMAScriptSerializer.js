@@ -52,6 +52,18 @@ ECMAScriptSerializer.prototype = {
 		return str;
 	},
 
+	filterProperty : function(method) {
+		if (method !== "Scene"
+		    && method !== "ProtoDeclare"
+		    && method !== "ProtoInterface"
+		    && method !== "ProtoBody"
+		    && method !== "IS"
+		    && method !== "ProtoInstance") {
+			method = method.charAt(0).toLowerCase() + method.slice(1);
+		}
+		return method;
+	},
+
 	printSubArray : function (attrType, type, values, co, j, lead, trail) {
 		return '['+lead+values.join(j)+trail+']';
 	},
@@ -72,7 +84,8 @@ ECMAScriptSerializer.prototype = {
 		if (method.startsWith("add") || method.startsWith("set")) {
 			method = method.substr(3);
 		}
-		method = method.charAt(0).toLowerCase() + method.slice(1);
+
+		method = this.filterProperty(method);
 		var prepre = "\n"+("  ".repeat(n));
 		return prepre+method+" : ";
 	},
@@ -115,7 +128,7 @@ ECMAScriptSerializer.prototype = {
 								+'"';
 						}
 						var prepre = "\n"+("  ".repeat(n));
-						method = method.charAt(0).toLowerCase() + method.slice(1);
+						method = this.filterProperty(method);
 						childs.push(prepre+method+" : "+strval);
 						this.precode[fieldAttrType] = true;
 					}
@@ -148,7 +161,7 @@ ECMAScriptSerializer.prototype = {
 					    fieldAttrType === "MFNode")) {
 						method = "clearChildren";
 					} else {
-						method = method.charAt(0).toLowerCase() + method.slice(1);
+						method = this.filterProperty(method);
 					}
 					var strval;
 					if (attrs[a].nodeValue === 'NULL') {
@@ -267,6 +280,8 @@ ECMAScriptSerializer.prototype = {
 			}
 			attrType = "";
 		}
+		var alreadyFound = {};
+		var closeMFNode = false;
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
@@ -284,14 +299,19 @@ ECMAScriptSerializer.prototype = {
 					*/
 				}
 				var ch = this.printParentChild(element, node, cn, mapToMethod, n);
-				ch += "(";
 				var ppc = ch.trim();
 				if (ppc.indexOf("children") >= 0
 				   || ppc.indexOf("connect") >= 0
 				   || ppc.indexOf("field") >= 0
 				   || ppc.indexOf("fieldValue") >= 0
 				   || ppc.indexOf("meta") >= 0) {
-					ch += "new MFNode([";
+					if (!alreadyFound[ppc]) {
+						alreadyFound[ppc] = true;
+						ch += "new MFNode([";
+						closeMFNode = true;
+					} else {
+						ch = "\n";
+					}
 					this.precode["MFNode"] = true;
 				} else {
 					ch += "new SFNode(";
@@ -301,20 +321,19 @@ ECMAScriptSerializer.prototype = {
 					// ch += node.nodeName+stack[0] + " = ";
 				}
 
-				ch += "new "+node.nodeName+"({\n";
+				ch += "\n"+("  ".repeat(n+1));
+				ch += "new "+node.nodeName+"({";
 				this.precode[node.nodeName] = true;
-				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
+				ch += this.subSerializeToString(node, mapToMethod, fieldTypes, n+2, stack);
 				ch += "})";
 				if (ppc.indexOf("children") >= 0
 				   || ppc.indexOf("connect") >= 0
 				   || ppc.indexOf("field") >= 0
 				   || ppc.indexOf("fieldValue") >= 0
 				   || ppc.indexOf("meta") >= 0) {
-					ch += "])";
 				} else {
 					ch += ")";
 				}
-				ch += ")";
 				/*
 				if (element.nodeName === "ProtoInstance" && node.nodeName === "fieldValue") {
 					// ch goes to end of body
@@ -350,8 +369,12 @@ ECMAScriptSerializer.prototype = {
 					}).join('\\n\"+\n\"')+'")');
 			}
 		}
+		ch =  childs.join(",");
+		if (closeMFNode) {
+			ch += "])";
+		}
+		return ch;
 
-		return childs.join(",");
 	}
 };
 
