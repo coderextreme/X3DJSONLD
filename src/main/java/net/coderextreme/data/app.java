@@ -49,12 +49,12 @@ public class app {
         .addMeta(new meta().setName("John A").setContent("Carlson, II"))
         .addMeta(new meta().setName("John R").setContent("Carlson, III")))
       .setScene(new Scene()
-        .addChild(new Group()
-          .addChild(new Shape()
+        .addChild(new Group().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setVisible(true)
+          .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setVisible(true)
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f})))
-            .setGeometry(new Box())))
-        .addChild(new Transform().setRotation(new float[] {7f,8f,9f,3.14f}).setScale(new float[] {4f,5f,6f}).setTranslation(new float[] {1f,2f,3f})))      ;
+            .setGeometry(new Box().setSize(new float[] {2f,2f,2f}).setSolid(true))))
+        .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setRotation(new float[] {7f,8f,9f,3.14f}).setScale(new float[] {4f,5f,6f}).setTranslation(new float[] {1f,2f,3f}).setVisible(true)))      ;
     return X3D0;
     }
 }

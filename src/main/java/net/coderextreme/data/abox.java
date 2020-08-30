@@ -56,27 +56,27 @@ ProtoInstance ProtoInstance1 = null;
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("MFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape()
+              .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                 .setGeometry(new Sphere()))))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform()
+            .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
         .addChild(new ProtoDeclare().setName("one")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("MFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape()
+              .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                 .setGeometry(new Cylinder()))))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform()
+            .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
               .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(ProtoInstance1 = new ProtoInstance().setName("one")))      ;
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Shape()
-              .setGeometry(new Box().setSize(new float[] {140f,140f,140f}))));
+            .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+              .setGeometry(new Box().setSize(new float[] {140f,140f,140f}).setSolid(true))));
     return X3D0;
     }
 }

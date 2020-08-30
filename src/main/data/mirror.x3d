@@ -61,7 +61,7 @@
             </Appearance>
             <Sphere radius="30"></Sphere>
           </Shape>
-	  <Script DEF='UrlSelector' directOutput='true'>
+	  <X3DScript DEF='UrlSelector' directOutput='true'>
 	    <field name='frontUrls' type='MFString' accessType='initializeOnly' value='"../resources/images/all_probes/beach_cross/beach_front.png" "../resources/images/all_probes/building_cross/building_front.png" "../resources/images/all_probes/campus_cross/campus_front.png" "../resources/images/all_probes/galileo_cross/galileo_front.png" "../resources/images/all_probes/grace_cross/grace_front.png" "../resources/images/all_probes/kitchen_cross/kitchen_front.png" "../resources/images/all_probes/rnl_cross/rnl_front.png" "../resources/images/all_probes/stpeters_cross/stpeters_front.png" "../resources/images/all_probes/uffizi_cross/uffizi_front.png"'/>
 	    <field name='backUrls' type='MFString' accessType='initializeOnly' value='"../resources/images/all_probes/beach_cross/beach_back.png" "../resources/images/all_probes/building_cross/building_back.png" "../resources/images/all_probes/campus_cross/campus_back.png" "../resources/images/all_probes/galileo_cross/galileo_back.png" "../resources/images/all_probes/grace_cross/grace_back.png" "../resources/images/all_probes/kitchen_cross/kitchen_back.png" "../resources/images/all_probes/rnl_cross/rnl_back.png" "../resources/images/all_probes/stpeters_cross/stpeters_back.png" "../resources/images/all_probes/uffizi_cross/uffizi_back.png"'/>
 	    <field name='leftUrls' type='MFString' accessType='initializeOnly' value='"../resources/images/all_probes/beach_cross/beach_left.png" "../resources/images/all_probes/building_cross/building_left.png" "../resources/images/all_probes/campus_cross/campus_left.png" "../resources/images/all_probes/galileo_cross/galileo_left.png" "../resources/images/all_probes/grace_cross/grace_left.png" "../resources/images/all_probes/kitchen_cross/kitchen_left.png" "../resources/images/all_probes/rnl_cross/rnl_left.png" "../resources/images/all_probes/stpeters_cross/stpeters_left.png" "../resources/images/all_probes/uffizi_cross/uffizi_left.png"'/>
@@ -95,7 +95,7 @@ ecmascript:
             }
         }
 ]]>
-</Script> 
+</X3DScript> 
 	    <TimeSensor DEF="Clock" cycleInterval="45" loop='true'/>
             <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> 
 	    <ROUTE fromNode='UrlSelector' fromField='front_changed' toNode='frontBack' toField='url'/>

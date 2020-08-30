@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 July 2020"
+            "@content":"28 August 2020"
           },
           {
             "@name":"generator",
@@ -163,7 +163,9 @@
                                               { "ImageTexture":
                                                 {
                                                   "@DEF":"AnnexC01JinTextureAtlas",
-                                                  "@url":["Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/HAnimSpecification/Jin.png"]
+                                                  "@url":["Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/HAnimSpecification/Jin.png"],
+                                                  "@load":true,
+                                                  "@refresh":0
                                                 }
                                               }
                                           }

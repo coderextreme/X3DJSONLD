@@ -11,11 +11,11 @@
 <Scene><NavigationInfo type='"EXAMINE"'></NavigationInfo>
 <Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubbles in action"></Viewpoint>
 <Background backUrl='"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/images/BK.png"' bottomUrl='"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/images/BT.png"' frontUrl='"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/images/FR.png"' leftUrl='"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/images/LF.png"' rightUrl='"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/images/RT.png"' topUrl='"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/images/TP.png"'></Background>
-<ProtoDeclare name="Bubble"><ProtoBody><Transform DEF="transform"><Shape><Sphere radius="0.25"></Sphere>
+<ProtoDeclare name="Bubble"><ProtoBody><Transform DEF="body_trans"><Shape><Sphere radius="0.25"></Sphere>
 <Appearance><Material diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
-<Script DEF="bounce"><field name="scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>
+<X3DScript DEF="bounce"><field name="scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>
 <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="scalvel" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
@@ -70,10 +70,10 @@ function set_fraction(value) {
 	translation.z = 0;
 	initialize();
     }
-}]]></Script>
+}]]></X3DScript>
 <TimeSensor DEF="bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
-<ROUTE fromNode="bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
-<ROUTE fromNode="bounce" fromField="scale_changed" toNode="transform" toField="set_scale"></ROUTE>
+<ROUTE fromNode="bounce" fromField="translation_changed" toNode="body_trans" toField="set_translation"></ROUTE>
+<ROUTE fromNode="bounce" fromField="scale_changed" toNode="body_trans" toField="set_scale"></ROUTE>
 <ROUTE fromNode="bubbleClock" fromField="fraction_changed" toNode="bounce" toField="set_fraction"></ROUTE>
 </Transform>
 </ProtoBody>

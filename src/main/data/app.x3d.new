@@ -4,11 +4,11 @@
 <meta name="John A" content="Carlson, II"></meta>
 <meta name="John R" content="Carlson, III"></meta>
 </head>
-<Scene><Group><Shape><Appearance><Material diffuseColor="1 0 0"></Material>
+<Scene><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1" visible="true"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1" visible="true"><Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
-<Box containerField="geometry"></Box>
+<Box containerField="geometry" size="2 2 2" solid="true"></Box>
 </Shape>
 </Group>
-<Transform rotation="7 8 9 3.14" scale="4 5 6" translation="1 2 3"></Transform>
+<Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1" rotation="7 8 9 3.14" scale="4 5 6" translation="1 2 3" visible="true"></Transform>
 </Scene>
 </X3D>

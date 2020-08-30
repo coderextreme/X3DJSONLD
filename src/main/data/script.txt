@@ -1,0 +1,7 @@
+Force-directed layout of graph nodes and edges.
+Random trajectories, like the wind blowing.
+Resizing, reshaping randomly.
+Animating shading language parameters for big meshes.
+Animating along great circles.
+Changing background cubemaps.
+Interactive placement of nodes in mathematical graphs.

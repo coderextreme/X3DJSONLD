@@ -10,10 +10,10 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new meta().setName("John A").setContent("Carlson, II"))
         .addMeta(new meta().setName("John R").setContent("Carlson, III")))
       .setScene(new Scene()
-        .addChild(new Group()
-          .addChild(new Shape()
+        .addChild(new Group().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]"))).setVisible(true)
+          .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]"))).setVisible(true)
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(Java.to([1,0,0], Java.type("float[]")))))
-            .setGeometry(new Box())))
-        .addChild(new Transform().setRotation(Java.to([7,8,9,3.14], Java.type("float[]"))).setScale(Java.to([4,5,6], Java.type("float[]"))).setTranslation(Java.to([1,2,3], Java.type("float[]")))))      ;
+            .setGeometry(new Box().setSize(Java.to([2,2,2], Java.type("float[]"))).setSolid(true))))
+        .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]"))).setRotation(Java.to([7,8,9,3.14], Java.type("float[]"))).setScale(Java.to([4,5,6], Java.type("float[]"))).setTranslation(Java.to([1,2,3], Java.type("float[]"))).setVisible(true)))      ;
     X3D0.toFileX3D("../data/app.new.x3d");
