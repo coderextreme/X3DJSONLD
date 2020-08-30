@@ -26,101 +26,101 @@ var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
       version : new SFString("3.3"),
-      head : (new SFNode(new head({
+      head : new SFNode(
+        new head({
+          meta : new MFNode([
+            new meta({
+              name : new SFString("title"),
+              content : new SFString("abox.x3d")}),
 
-        meta : (new MFNode([new meta({
+            new meta({
+              name : new SFString("creator"),
+              content : new SFString("John Carlson")}),
 
-          name : new SFString("title"),
-          content : new SFString("abox.x3d")})])),
-        meta : (new MFNode([new meta({
+            new meta({
+              name : new SFString("generator"),
+              content : new SFString("manual")}),
 
-          name : new SFString("creator"),
-          content : new SFString("John Carlson")})])),
-        meta : (new MFNode([new meta({
+            new meta({
+              name : new SFString("identifier"),
+              content : new SFString("https://coderextreme.net/X3DJSONLD/abox.x3d")}),
 
-          name : new SFString("generator"),
-          content : new SFString("manual")})])),
-        meta : (new MFNode([new meta({
+            new meta({
+              name : new SFString("description"),
+              content : new SFString("a box")})])})),
+      Scene : new SFNode(
+        new Scene({
+          children : new MFNode([
+            new ProtoDeclare({
+              name : new SFString("anyShape"),
+              ProtoInterface : new SFNode(
+                new ProtoInterface({
+                  field : new MFNode([
+                    new field({
+                      type : field.TYPE_MFNODE,
+                      name : new SFString("myShape"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      children : new MFNode([
+                        new Shape({
+                          bboxCenter : new SFVec3f([0,0,0]),
+                          bboxSize : new SFVec3f([-1,-1,-1]),
+                          geometry : new SFNode(
+                            new Sphere({}))})])})])})),
+              ProtoBody : new SFNode(
+                new ProtoBody({
+                  children : new MFNode([
+                    new Transform({
+                      bboxCenter : new SFVec3f([0,0,0]),
+                      bboxSize : new SFVec3f([-1,-1,-1]),
+                      IS : new SFNode(
+                        new IS({
+                          connect : new MFNode([
+                            new connect({
+                              nodeField : new SFString("children"),
+                              protoField : new SFString("myShape")})])}))})])}))}),
 
-          name : new SFString("identifier"),
-          content : new SFString("https://coderextreme.net/X3DJSONLD/abox.x3d")})])),
-        meta : (new MFNode([new meta({
+            new ProtoDeclare({
+              name : new SFString("one"),
+              ProtoInterface : new SFNode(
+                new ProtoInterface({
+                  field : new MFNode([
+                    new field({
+                      type : field.TYPE_MFNODE,
+                      name : new SFString("myShape"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      children : new MFNode([
+                        new Shape({
+                          bboxCenter : new SFVec3f([0,0,0]),
+                          bboxSize : new SFVec3f([-1,-1,-1]),
+                          geometry : new SFNode(
+                            new Cylinder({}))})])})])})),
+              ProtoBody : new SFNode(
+                new ProtoBody({
+                  children : new MFNode([
+                    new Transform({
+                      bboxCenter : new SFVec3f([0,0,0]),
+                      bboxSize : new SFVec3f([-1,-1,-1]),
+                      children : new MFNode([
+                        new ProtoInstance({
+                          name : new SFString("anyShape"),
+                          IS : new SFNode(
+                            new IS({
+                              connect : new MFNode([
+                                new connect({
+                                  nodeField : new SFString("myShape"),
+                                  protoField : new SFString("myShape")})])}))})])})])}))}),
 
-          name : new SFString("description"),
-          content : new SFString("a box")})]))}))),
-      scene : (new SFNode(new Scene({
-
-        children : (new MFNode([new ProtoDeclare({
-
-          name : new SFString("anyShape"),
-          protoInterface : (new SFNode(new ProtoInterface({
-
-            field : (new MFNode([new field({
-
-              type : field.TYPE_MFNODE,
-              name : new SFString("myShape"),
-              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-              children : (new MFNode([new Shape({
-
-                bboxCenter : new SFVec3f([0,0,0]),
-                bboxSize : new SFVec3f([-1,-1,-1]),
-                geometry : (new SFNode(new Sphere({
-})))})]))})]))}))),
-          protoBody : (new SFNode(new ProtoBody({
-
-            children : (new MFNode([new Transform({
-
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              iS : (new SFNode(new IS({
-
-                connect : (new MFNode([new connect({
-
-                  nodeField : new SFString("children"),
-                  protoField : new SFString("myShape")})]))})))})]))})))})])),
-        children : (new MFNode([new ProtoDeclare({
-
-          name : new SFString("one"),
-          protoInterface : (new SFNode(new ProtoInterface({
-
-            field : (new MFNode([new field({
-
-              type : field.TYPE_MFNODE,
-              name : new SFString("myShape"),
-              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-              children : (new MFNode([new Shape({
-
-                bboxCenter : new SFVec3f([0,0,0]),
-                bboxSize : new SFVec3f([-1,-1,-1]),
-                geometry : (new SFNode(new Cylinder({
-})))})]))})]))}))),
-          protoBody : (new SFNode(new ProtoBody({
-
-            children : (new MFNode([new Transform({
-
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              children : (new MFNode([new ProtoInstance({
-
-                name : new SFString("anyShape"),
-                iS : (new SFNode(new IS({
-
-                  connect : (new MFNode([new connect({
-
-                    nodeField : new SFString("myShape"),
-                    protoField : new SFString("myShape")})]))})))})]))})]))})))})])),
-        children : (new MFNode([new ProtoInstance({
-
-          name : new SFString("one"),
-          fieldValue : (new MFNode([new fieldValue({
-
-            name : new SFString("myShape"),
-            children : (new MFNode([new Shape({
-
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              geometry : (new SFNode(new Box({
-
-                size : new SFVec3f([140,140,140]),
-                solid : new SFBool(true)})))})]))})]))})]))})))});
+            new ProtoInstance({
+              name : new SFString("one"),
+              fieldValue : new MFNode([
+                new fieldValue({
+                  name : new SFString("myShape"),
+                  children : new MFNode([
+                    new Shape({
+                      bboxCenter : new SFVec3f([0,0,0]),
+                      bboxSize : new SFVec3f([-1,-1,-1]),
+                      geometry : new SFNode(
+                        new Box({
+                          size : new SFVec3f([140,140,140]),
+                          solid : new SFBool(true)}))})])})])})])}))});
 console.log(X3D0.toXMLNode());
