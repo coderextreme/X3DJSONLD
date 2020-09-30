@@ -15,11 +15,13 @@ Background3.frontUrl = new MFString(new java.lang.String["../resources/images/al
 Background3.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]);
 Background3.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]);
 Background3.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]);
+Background3.skyColor = new MFColor(new float[0,0,0]);
+Background3.transparency = 0;
 browser.currentScene.children[1] = Background3;
 
 let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="flower" ><ProtoBody><Transform DEF="animate_transform"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<ProtoDeclare name="flower" ><ProtoBody><Transform DEF="animate_transform" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottom" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
 <ImageTexture containerField="front" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
@@ -60,7 +62,7 @@ let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <Sphere containerField="geometry"></Sphere>
 </Shape>
 </Transform>
-<Script DEF="Animate"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<X3DScript DEF="Animate"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
 <field name="a" type="SFFloat" accessType="inputOutput" value="0.5"></field>
@@ -69,73 +71,7 @@ let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <field name="d" type="SFFloat" accessType="inputOutput" value="3"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
-<![CDATA[ecmascript:
-
-			function initialize() {
-			    translation = new SFVec3f(0, 0, 0);
-			    velocity = new SFVec3f(
-			    	Math.random() - 0.5,
-				Math.random() - 0.5,
-				Math.random() - 0.5);
-			}
-			function set_fraction() {
-			    translation = new SFVec3f(
-			    	translation.x + velocity.x,
-				translation.y + velocity.y,
-				translation.z + velocity.z);
-			    for (var j = 0; j <= 2; j++) {
-				    if (Math.abs(translation.x) > 10) {
-					initialize();
-				    } else if (Math.abs(translation.y) > 10) {
-					initialize();
-				    } else if (Math.abs(translation.z) > 10) {
-					initialize();
-				    } else {
-					velocity.x += Math.random() * 0.2 - 0.1;
-					velocity.y += Math.random() * 0.2 - 0.1;
-					velocity.z += Math.random() * 0.2 - 0.1;
-				    }
-			    }
-			    animate_flowers();
-			}
-
-			function animate_flowers(fraction, eventTime) {
-				var choice = Math.floor(Math.random() * 4);
-				switch (choice) {
-				case 0:
-					a += Math.random() * 0.2 - 0.1;
-					break;
-				case 1:
-					b += Math.random() * 0.2 - 0.1;
-					break;
-				case 2:
-					c += Math.random() * 2 - 1;
-					break;
-				case 3:
-					d += Math.random() * 2 - 1;
-					break;
-				}
-				tdelta += 0.5;
-				pdelta += 0.5;
-				if (a > 1) {
-					a =  0.5;
-				}
-				if (b > 1) {
-					b =  0.5;
-				}
-				if (c < 1) {
-					c =  4;
-				}
-				if (d < 1) {
-					d =  4;
-				}
-				if (c > 10) {
-					c = 4;
-				}
-				if (d > 10) {
-					d = 4;
-				}
-			}]]></Script>
+</X3DScript>
 <TimeSensor DEF="TourTime" cycleInterval="5" loop="true"></TimeSensor>
 <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="Animate" fromField="translation_changed" toNode="animate_transform" toField="set_translation"></ROUTE>
@@ -157,7 +93,11 @@ ProtoDeclare4.name = "flower";
 let ProtoBody5 = browser.currentScene.createNode("ProtoBody");
 let Transform6 = browser.currentScene.createNode("Transform");
 Transform6.DEF = "animate_transform";
+Transform6.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape7 = browser.currentScene.createNode("Shape");
+Shape7.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape7.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance8 = browser.currentScene.createNode("Appearance");
 let Material9 = browser.currentScene.createNode("Material");
 Material9.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
@@ -401,141 +341,73 @@ ProtoBody5.children = new MFNode();
 
 ProtoBody5.children[0] = Transform6;
 
-let Script47 = browser.currentScene.createNode("Script");
-Script47.DEF = "Animate";
+let X3DScript47 = browser.currentScene.createNode("X3DScript");
+X3DScript47.DEF = "Animate";
 let field48 = browser.currentScene.createNode("field");
 field48.name = "translation";
 field48.accessType = "inputOutput";
 field48.type = "SFVec3f";
 field48.value = "0 0 0";
-Script47.field = new MFNode();
+X3DScript47.field = new MFNode();
 
-Script47.field[0] = field48;
+X3DScript47.field[0] = field48;
 
 let field49 = browser.currentScene.createNode("field");
 field49.name = "velocity";
 field49.accessType = "inputOutput";
 field49.type = "SFVec3f";
 field49.value = "0 0 0";
-Script47.field[1] = field49;
+X3DScript47.field[1] = field49;
 
 let field50 = browser.currentScene.createNode("field");
 field50.name = "set_fraction";
 field50.accessType = "inputOnly";
 field50.type = "SFFloat";
-Script47.field[2] = field50;
+X3DScript47.field[2] = field50;
 
 let field51 = browser.currentScene.createNode("field");
 field51.name = "a";
 field51.type = "SFFloat";
 field51.accessType = "inputOutput";
 field51.value = "0.5";
-Script47.field[3] = field51;
+X3DScript47.field[3] = field51;
 
 let field52 = browser.currentScene.createNode("field");
 field52.name = "b";
 field52.type = "SFFloat";
 field52.accessType = "inputOutput";
 field52.value = "0.5";
-Script47.field[4] = field52;
+X3DScript47.field[4] = field52;
 
 let field53 = browser.currentScene.createNode("field");
 field53.name = "c";
 field53.type = "SFFloat";
 field53.accessType = "inputOutput";
 field53.value = "3";
-Script47.field[5] = field53;
+X3DScript47.field[5] = field53;
 
 let field54 = browser.currentScene.createNode("field");
 field54.name = "d";
 field54.type = "SFFloat";
 field54.accessType = "inputOutput";
 field54.value = "3";
-Script47.field[6] = field54;
+X3DScript47.field[6] = field54;
 
 let field55 = browser.currentScene.createNode("field");
 field55.name = "tdelta";
 field55.type = "SFFloat";
 field55.accessType = "inputOutput";
 field55.value = "0.5";
-Script47.field[7] = field55;
+X3DScript47.field[7] = field55;
 
 let field56 = browser.currentScene.createNode("field");
 field56.name = "pdelta";
 field56.type = "SFFloat";
 field56.accessType = "inputOutput";
 field56.value = "0.5";
-Script47.field[8] = field56;
+X3DScript47.field[8] = field56;
 
-
-Script47.setSourceCode(`ecmascript:\n"+
-"\n"+
-"			function initialize() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation.x + velocity.x,\n"+
-"				translation.y + velocity.y,\n"+
-"				translation.z + velocity.z);\n"+
-"			    for (var j = 0; j <= 2; j++) {\n"+
-"				    if (Math.abs(translation.x) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.y) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.z) > 10) {\n"+
-"					initialize();\n"+
-"				    } else {\n"+
-"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
-"				    }\n"+
-"			    }\n"+
-"			    animate_flowers();\n"+
-"			}\n"+
-"\n"+
-"			function animate_flowers(fraction, eventTime) {\n"+
-"				var choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					a += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					b += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					c += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					d += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				tdelta += 0.5;\n"+
-"				pdelta += 0.5;\n"+
-"				if (a > 1) {\n"+
-"					a =  0.5;\n"+
-"				}\n"+
-"				if (b > 1) {\n"+
-"					b =  0.5;\n"+
-"				}\n"+
-"				if (c < 1) {\n"+
-"					c =  4;\n"+
-"				}\n"+
-"				if (d < 1) {\n"+
-"					d =  4;\n"+
-"				}\n"+
-"				if (c > 10) {\n"+
-"					c = 4;\n"+
-"				}\n"+
-"				if (d > 10) {\n"+
-"					d = 4;\n"+
-"				}\n"+
-"			}`)
-ProtoBody5.children[1] = Script47;
+ProtoBody5.x3DScript[1] = X3DScript47;
 
 let TimeSensor57 = browser.currentScene.createNode("TimeSensor");
 TimeSensor57.DEF = "TourTime";

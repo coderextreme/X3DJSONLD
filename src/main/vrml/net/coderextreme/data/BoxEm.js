@@ -16,13 +16,13 @@ browser.currentScene.children[1] = Viewpoint3;
 let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="anyShape" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Sphere containerField="geometry"></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
+<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="xtranslation"></connect>
 <connect nodeField="children" protoField="myShape"></connect>
 </IS>
 </Transform>
@@ -44,6 +44,8 @@ field7.name = "myShape";
 field7.accessType = "inputOutput";
 field7.type = "MFNode";
 let Shape8 = browser.currentScene.createNode("Shape");
+Shape8.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape8.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere9 = browser.currentScene.createNode("Sphere");
 Shape8.geometry = Sphere9;
 
@@ -64,6 +66,8 @@ ProtoDeclare4.protoInterface = ProtoInterface5;
 
 let ProtoBody12 = browser.currentScene.createNode("ProtoBody");
 let Transform13 = browser.currentScene.createNode("Transform");
+Transform13.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform13.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS14 = browser.currentScene.createNode("IS");
 let connect15 = browser.currentScene.createNode("connect");
 connect15.nodeField = "translation";
@@ -90,13 +94,13 @@ browser.currentScene.children[2] = ProtoDeclare4;
 let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="three" ><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder containerField="geometry"></Cylinder>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Cylinder containerField="geometry"></Cylinder>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
+<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="ytranslation"></connect>
 </IS>
 <ProtoInstance name="anyShape"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
 <IS><connect nodeField="myShape" protoField="myShape"></connect>
@@ -129,6 +133,8 @@ field20.name = "myShape";
 field20.accessType = "inputOutput";
 field20.type = "MFNode";
 let Shape21 = browser.currentScene.createNode("Shape");
+Shape21.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape21.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Cylinder22 = browser.currentScene.createNode("Cylinder");
 Shape21.geometry = Cylinder22;
 
@@ -149,6 +155,8 @@ ProtoDeclare17.protoInterface = ProtoInterface18;
 
 let ProtoBody25 = browser.currentScene.createNode("ProtoBody");
 let Transform26 = browser.currentScene.createNode("Transform");
+Transform26.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform26.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS27 = browser.currentScene.createNode("IS");
 let connect28 = browser.currentScene.createNode("connect");
 connect28.nodeField = "translation";
@@ -246,8 +254,11 @@ let fieldValue43 = browser.currentScene.createNode("fieldValue");
 fieldValue43.name = "myShape";
 let Shape44 = browser.currentScene.createNode("Shape");
 Shape44.DEF = "box";
+Shape44.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape44.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Box45 = browser.currentScene.createNode("Box");
 Box45.size = new SFVec3f(new float[1,1,1]);
+Box45.solid = True;
 Shape44.geometry = Box45;
 
 let Appearance46 = browser.currentScene.createNode("Appearance");
@@ -267,6 +278,8 @@ browser.currentScene.children[4] = ProtoInstance41;
 
 let Transform48 = browser.currentScene.createNode("Transform");
 Transform48.translation = new SFVec3f(new float[0,2,0]);
+Transform48.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform48.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape49 = browser.currentScene.createNode("Shape");
 Shape49.USE = "box";
 Transform48.children = new MFNode();

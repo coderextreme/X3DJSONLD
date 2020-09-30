@@ -4,11 +4,11 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="anyShape" ><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
+<ProtoDeclare name="anyShape" ><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Sphere containerField="geometry"></Sphere>
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="children" protoField="myShape"></connect>
+<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="myShape"></connect>
 </IS>
 </Transform>
 </ProtoBody>
@@ -20,6 +20,8 @@ field4.name = "myShape";
 field4.accessType = "inputOutput";
 field4.type = "MFNode";
 let Shape5 = browser.currentScene.createNode("Shape");
+Shape5.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere6 = browser.currentScene.createNode("Sphere");
 Shape5.geometry = Sphere6;
 
@@ -35,6 +37,8 @@ ProtoDeclare2.protoInterface = ProtoInterface3;
 
 let ProtoBody7 = browser.currentScene.createNode("ProtoBody");
 let Transform8 = browser.currentScene.createNode("Transform");
+Transform8.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform8.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS9 = browser.currentScene.createNode("IS");
 let connect10 = browser.currentScene.createNode("connect");
 connect10.nodeField = "children";

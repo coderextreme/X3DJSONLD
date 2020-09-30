@@ -4,16 +4,16 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="Process" ><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0.7 1 0" transparency="0.5"></Material>
+<ProtoDeclare name="Process" ><ProtoBody><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--left--><Transform scale="0.5 0.5 0.5" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
 <Extrusion containerField="geometry" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -1.5 0 0"></Extrusion>
 </Shape>
 <!--<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'></Text> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"></StringSensor> <TouchSensor DEF="LeftTouch" enabled="true"></TouchSensor>--></Transform>
-<!--right--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0 0.7 1" transparency="0.5"></Material>
+<!--right--><Transform scale="0.5 0.5 0.5" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
 <Extrusion containerField="geometry" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2.5 0 0"></Extrusion>
 </Shape>
-<Transform translation="2 0 0"><Shape><Appearance><Material DEF="MaterialLightBlue" diffuseColor="1 1 1"></Material>
+<Transform translation="2 0 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material DEF="MaterialLightBlue" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text containerField="geometry" DEF="RightString" string="&quot;r&quot;"></Text>
 </Shape>
@@ -21,11 +21,11 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <StringSensor DEF="RightSensor" enabled="false"></StringSensor>
 <TouchSensor description="touch to activate" DEF="RightTouch"></TouchSensor>
 </Transform>
-<!--up--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0 0.7 1" transparency="0.5"></Material>
+<!--up--><Transform scale="0.5 0.5 0.5" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
 <Extrusion containerField="geometry" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 1.5 0 0 2.5 0"></Extrusion>
 </Shape>
-<Transform translation="-0.5 2 0"><Shape><Appearance><Material USE="MaterialLightBlue"></Material>
+<Transform translation="-0.5 2 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material USE="MaterialLightBlue"></Material>
 </Appearance>
 <Text containerField="geometry" DEF="UpString" string="&quot;u&quot;"></Text>
 </Shape>
@@ -33,16 +33,16 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <StringSensor DEF="UpSensor" enabled="false"></StringSensor>
 <TouchSensor description="touch to activate" DEF="UpTouch"></TouchSensor>
 </Transform>
-<!--down--><Transform scale="0.5 0.5 0.5"><Shape><Appearance><Material diffuseColor="0.7 1 0" transparency="0.5"></Material>
+<!--down--><Transform scale="0.5 0.5 0.5" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
 <Extrusion containerField="geometry" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -2.5 0 0 -1.5 0"></Extrusion>
 </Shape>
 <!--<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'></Text> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"></StringSensor> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"></TouchSensor>--></Transform>
-<!--center--><Transform><Shape><Appearance><Material diffuseColor="1 0 0.7"></Material>
+<!--center--><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="1 0 0.7"></Material>
 </Appearance>
 <Sphere containerField="geometry"></Sphere>
 </Shape>
-<Transform scale="0.5 0.5 0.5" translation="-0.5 0 1"><Shape><Appearance><Material USE="MaterialLightBlue"></Material>
+<Transform scale="0.5 0.5 0.5" translation="-0.5 0 1" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material USE="MaterialLightBlue"></Material>
 </Appearance>
 <Text containerField="geometry" DEF="CenterString"></Text>
 </Shape>
@@ -51,39 +51,15 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <TouchSensor description="touch to activate" DEF="CenterTouch"></TouchSensor>
 </Transform>
 </Group>
-<Script DEF="RightSingleToMultiString"><field name="set_rightstring" accessType="inputOnly" type="SFString"></field>
+<X3DScript DEF="RightSingleToMultiString"><field name="set_rightstring" accessType="inputOnly" type="SFString"></field>
 <field name="rightlines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[ecmascript:
-
-function initialize() {
-	rightlines = new MFString("");
-}
-
-function set_rightstring(rightstr) {
-	rightlines = new MFString(rightstr);
-}]]></Script>
-<Script DEF="UpSingleToMultiString"><field name="set_upstring" accessType="inputOnly" type="SFString"></field>
+</X3DScript>
+<X3DScript DEF="UpSingleToMultiString"><field name="set_upstring" accessType="inputOnly" type="SFString"></field>
 <field name="uplines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[ecmascript:
-
-function initialize() {
-	uplines = new MFString("");
-}
-
-function set_upstring(upstr) {
-	uplines = new MFString(upstr);
-}]]></Script>
-<Script DEF="CenterSingleToMultiString"><field name="set_centerstring" accessType="inputOnly" type="SFString"></field>
+</X3DScript>
+<X3DScript DEF="CenterSingleToMultiString"><field name="set_centerstring" accessType="inputOnly" type="SFString"></field>
 <field name="centerlines" accessType="outputOnly" type="MFString"></field>
-<![CDATA[ecmascript:
-
-function initialize() {
-	centerlines = new MFString("");
-}
-
-function set_centerstring(centerstr) {
-	centerlines = new MFString(centerstr);
-}]]></Script>
+</X3DScript>
 <ROUTE fromField="enteredText" fromNode="CenterSensor" toField="set_centerstring" toNode="CenterSingleToMultiString"></ROUTE>
 <ROUTE fromField="centerlines" fromNode="CenterSingleToMultiString" toField="set_string" toNode="CenterString"></ROUTE>
 <ROUTE fromField="isOver" fromNode="CenterTouch" toField="set_enabled" toNode="CenterSensor"></ROUTE>
@@ -98,10 +74,16 @@ function set_centerstring(centerstr) {
 ProtoDeclare2.name = "Process";
 let ProtoBody3 = browser.currentScene.createNode("ProtoBody");
 let Group4 = browser.currentScene.createNode("Group");
+Group4.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 //left
 let Transform5 = browser.currentScene.createNode("Transform");
 Transform5.scale = new SFVec3f(new float[0.5,0.5,0.5]);
+Transform5.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape6 = browser.currentScene.createNode("Shape");
+Shape6.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance7 = browser.currentScene.createNode("Appearance");
 let Material8 = browser.currentScene.createNode("Material");
 Material8.diffuseColor = new SFColor(new float[0.7,1,0]);
@@ -128,7 +110,11 @@ Group4.children[0] = Transform5;
 //right
 let Transform10 = browser.currentScene.createNode("Transform");
 Transform10.scale = new SFVec3f(new float[0.5,0.5,0.5]);
+Transform10.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform10.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape11 = browser.currentScene.createNode("Shape");
+Shape11.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape11.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance12 = browser.currentScene.createNode("Appearance");
 let Material13 = browser.currentScene.createNode("Material");
 Material13.diffuseColor = new SFColor(new float[0,0.7,1]);
@@ -149,7 +135,11 @@ Transform10.children[0] = Shape11;
 
 let Transform15 = browser.currentScene.createNode("Transform");
 Transform15.translation = new SFVec3f(new float[2,0,0]);
+Transform15.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform15.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape16 = browser.currentScene.createNode("Shape");
+Shape16.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape16.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance17 = browser.currentScene.createNode("Appearance");
 let Material18 = browser.currentScene.createNode("Material");
 Material18.DEF = "MaterialLightBlue";
@@ -184,7 +174,11 @@ Group4.children[1] = Transform10;
 //up
 let Transform22 = browser.currentScene.createNode("Transform");
 Transform22.scale = new SFVec3f(new float[0.5,0.5,0.5]);
+Transform22.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform22.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape23 = browser.currentScene.createNode("Shape");
+Shape23.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape23.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance24 = browser.currentScene.createNode("Appearance");
 let Material25 = browser.currentScene.createNode("Material");
 Material25.diffuseColor = new SFColor(new float[0,0.7,1]);
@@ -205,7 +199,11 @@ Transform22.children[0] = Shape23;
 
 let Transform27 = browser.currentScene.createNode("Transform");
 Transform27.translation = new SFVec3f(new float[-0.5,2,0]);
+Transform27.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform27.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape28 = browser.currentScene.createNode("Shape");
+Shape28.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape28.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance29 = browser.currentScene.createNode("Appearance");
 let Material30 = browser.currentScene.createNode("Material");
 Material30.USE = "MaterialLightBlue";
@@ -239,7 +237,11 @@ Group4.children[2] = Transform22;
 //down
 let Transform34 = browser.currentScene.createNode("Transform");
 Transform34.scale = new SFVec3f(new float[0.5,0.5,0.5]);
+Transform34.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform34.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape35 = browser.currentScene.createNode("Shape");
+Shape35.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape35.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance36 = browser.currentScene.createNode("Appearance");
 let Material37 = browser.currentScene.createNode("Material");
 Material37.diffuseColor = new SFColor(new float[0.7,1,0]);
@@ -263,7 +265,11 @@ Group4.children[3] = Transform34;
 
 //center
 let Transform39 = browser.currentScene.createNode("Transform");
+Transform39.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform39.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape40 = browser.currentScene.createNode("Shape");
+Shape40.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape40.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance41 = browser.currentScene.createNode("Appearance");
 let Material42 = browser.currentScene.createNode("Material");
 Material42.diffuseColor = new SFColor(new float[1,0,0.7]);
@@ -281,7 +287,11 @@ Transform39.children[0] = Shape40;
 let Transform44 = browser.currentScene.createNode("Transform");
 Transform44.scale = new SFVec3f(new float[0.5,0.5,0.5]);
 Transform44.translation = new SFVec3f(new float[-0.5,0,1]);
+Transform44.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform44.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape45 = browser.currentScene.createNode("Shape");
+Shape45.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape45.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance46 = browser.currentScene.createNode("Appearance");
 let Material47 = browser.currentScene.createNode("Material");
 Material47.USE = "MaterialLightBlue";
@@ -315,89 +325,59 @@ ProtoBody3.children = new MFNode();
 
 ProtoBody3.children[0] = Group4;
 
-let Script51 = browser.currentScene.createNode("Script");
-Script51.DEF = "RightSingleToMultiString";
+let X3DScript51 = browser.currentScene.createNode("X3DScript");
+X3DScript51.DEF = "RightSingleToMultiString";
 let field52 = browser.currentScene.createNode("field");
 field52.name = "set_rightstring";
 field52.accessType = "inputOnly";
 field52.type = "SFString";
-Script51.field = new MFNode();
+X3DScript51.field = new MFNode();
 
-Script51.field[0] = field52;
+X3DScript51.field[0] = field52;
 
 let field53 = browser.currentScene.createNode("field");
 field53.name = "rightlines";
 field53.accessType = "outputOnly";
 field53.type = "MFString";
-Script51.field[1] = field53;
+X3DScript51.field[1] = field53;
 
+ProtoBody3.x3DScript[1] = X3DScript51;
 
-Script51.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	rightlines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_rightstring(rightstr) {\n"+
-"	rightlines = new MFString(rightstr);\n"+
-"}`)
-ProtoBody3.children[1] = Script51;
-
-let Script54 = browser.currentScene.createNode("Script");
-Script54.DEF = "UpSingleToMultiString";
+let X3DScript54 = browser.currentScene.createNode("X3DScript");
+X3DScript54.DEF = "UpSingleToMultiString";
 let field55 = browser.currentScene.createNode("field");
 field55.name = "set_upstring";
 field55.accessType = "inputOnly";
 field55.type = "SFString";
-Script54.field = new MFNode();
+X3DScript54.field = new MFNode();
 
-Script54.field[0] = field55;
+X3DScript54.field[0] = field55;
 
 let field56 = browser.currentScene.createNode("field");
 field56.name = "uplines";
 field56.accessType = "outputOnly";
 field56.type = "MFString";
-Script54.field[1] = field56;
+X3DScript54.field[1] = field56;
 
+ProtoBody3.x3DScript[2] = X3DScript54;
 
-Script54.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	uplines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_upstring(upstr) {\n"+
-"	uplines = new MFString(upstr);\n"+
-"}`)
-ProtoBody3.children[2] = Script54;
-
-let Script57 = browser.currentScene.createNode("Script");
-Script57.DEF = "CenterSingleToMultiString";
+let X3DScript57 = browser.currentScene.createNode("X3DScript");
+X3DScript57.DEF = "CenterSingleToMultiString";
 let field58 = browser.currentScene.createNode("field");
 field58.name = "set_centerstring";
 field58.accessType = "inputOnly";
 field58.type = "SFString";
-Script57.field = new MFNode();
+X3DScript57.field = new MFNode();
 
-Script57.field[0] = field58;
+X3DScript57.field[0] = field58;
 
 let field59 = browser.currentScene.createNode("field");
 field59.name = "centerlines";
 field59.accessType = "outputOnly";
 field59.type = "MFString";
-Script57.field[1] = field59;
+X3DScript57.field[1] = field59;
 
-
-Script57.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	centerlines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_centerstring(centerstr) {\n"+
-"	centerlines = new MFString(centerstr);\n"+
-"}`)
-ProtoBody3.children[3] = Script57;
+ProtoBody3.x3DScript[3] = X3DScript57;
 
 let ROUTE60 = browser.currentScene.createNode("ROUTE");
 ROUTE60.fromField = "enteredText";
@@ -479,6 +459,8 @@ browser.currentScene.children[2] = Viewpoint70;
 
 let Transform71 = browser.currentScene.createNode("Transform");
 Transform71.translation = new SFVec3f(new float[0,-2.5,0]);
+Transform71.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform71.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let ProtoInstance72 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance72.name = "Process";
 Transform71.children = new MFNode();
@@ -488,6 +470,8 @@ Transform71.children[0] = ProtoInstance72;
 browser.currentScene.children[3] = Transform71;
 
 let Transform73 = browser.currentScene.createNode("Transform");
+Transform73.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform73.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let ProtoInstance74 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance74.name = "Process";
 Transform73.children = new MFNode();
@@ -498,6 +482,8 @@ browser.currentScene.children[4] = Transform73;
 
 let Transform75 = browser.currentScene.createNode("Transform");
 Transform75.translation = new SFVec3f(new float[0,2.5,0]);
+Transform75.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform75.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let ProtoInstance76 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance76.name = "Process";
 Transform75.children = new MFNode();

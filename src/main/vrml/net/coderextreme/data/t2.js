@@ -40,7 +40,7 @@ let ProtoDeclare7 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <ProtoDeclare name="org" ><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 <field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><Shape><Appearance><Material transparency="0.400000005960464"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
+<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material transparency="0.400000005960464"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
 </IS>
 </Material>
 </Appearance>
@@ -73,7 +73,11 @@ ProtoDeclare7.protoInterface = ProtoInterface8;
 
 let ProtoBody11 = browser.currentScene.createNode("ProtoBody");
 let Transform12 = browser.currentScene.createNode("Transform");
+Transform12.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform12.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape13 = browser.currentScene.createNode("Shape");
+Shape13.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape13.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance14 = browser.currentScene.createNode("Appearance");
 let Material15 = browser.currentScene.createNode("Material");
 Material15.transparency = 0.400000005960464;
@@ -176,6 +180,8 @@ browser.currentScene.children[6] = ProtoDeclare21;
 let Anchor30 = browser.currentScene.createNode("Anchor");
 Anchor30.url = new MFString(new java.lang.String["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]);
 Anchor30.description = "High Peak Community Arts";
+Anchor30.bboxCenter = new SFVec3f(new float[0,0,0]);
+Anchor30.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let ProtoInstance31 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance31.name = "r";
 let fieldValue32 = browser.currentScene.createNode("fieldValue");

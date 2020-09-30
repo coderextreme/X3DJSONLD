@@ -17,9 +17,9 @@ let ProtoDeclare4 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="sphereproto" ><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
+<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="xtranslation"></connect>
 </IS>
-<Shape><Sphere containerField="geometry"></Sphere>
+<Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Sphere containerField="geometry"></Sphere>
 <Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 </Shape>
@@ -41,6 +41,8 @@ ProtoDeclare4.protoInterface = ProtoInterface5;
 
 let ProtoBody7 = browser.currentScene.createNode("ProtoBody");
 let Transform8 = browser.currentScene.createNode("Transform");
+Transform8.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform8.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS9 = browser.currentScene.createNode("IS");
 let connect10 = browser.currentScene.createNode("connect");
 connect10.nodeField = "translation";
@@ -52,6 +54,8 @@ IS9.connect[0] = connect10;
 Transform8.iS = IS9;
 
 let Shape11 = browser.currentScene.createNode("Shape");
+Shape11.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape11.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere12 = browser.currentScene.createNode("Sphere");
 Shape11.geometry = Sphere12;
 
@@ -78,7 +82,7 @@ let ProtoDeclare15 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="three" ><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
+<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="ytranslation"></connect>
 </IS>
 <ProtoInstance name="sphereproto"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
 </ProtoInstance>
@@ -104,6 +108,8 @@ ProtoDeclare15.protoInterface = ProtoInterface16;
 
 let ProtoBody18 = browser.currentScene.createNode("ProtoBody");
 let Transform19 = browser.currentScene.createNode("Transform");
+Transform19.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform19.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS20 = browser.currentScene.createNode("IS");
 let connect21 = browser.currentScene.createNode("connect");
 connect21.nodeField = "translation";
@@ -161,7 +167,7 @@ let ProtoDeclare28 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="nine" ><ProtoInterface><field name="ztranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ztranslation"></connect>
+<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="ztranslation"></connect>
 </IS>
 <ProtoInstance name="three"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
 </ProtoInstance>
@@ -187,6 +193,8 @@ ProtoDeclare28.protoInterface = ProtoInterface29;
 
 let ProtoBody31 = browser.currentScene.createNode("ProtoBody");
 let Transform32 = browser.currentScene.createNode("Transform");
+Transform32.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform32.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS33 = browser.currentScene.createNode("IS");
 let connect34 = browser.currentScene.createNode("connect");
 connect34.nodeField = "translation";
@@ -244,7 +252,7 @@ let ProtoDeclare41 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="twentyseven" ><ProtoInterface><field name="ttranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ttranslation"></connect>
+<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="ttranslation"></connect>
 </IS>
 <ProtoInstance name="nine"><fieldValue name="ztranslation" value="0 0 0"></fieldValue>
 </ProtoInstance>
@@ -270,6 +278,8 @@ ProtoDeclare41.protoInterface = ProtoInterface42;
 
 let ProtoBody44 = browser.currentScene.createNode("ProtoBody");
 let Transform45 = browser.currentScene.createNode("Transform");
+Transform45.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform45.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS46 = browser.currentScene.createNode("IS");
 let connect47 = browser.currentScene.createNode("connect");
 connect47.nodeField = "translation";

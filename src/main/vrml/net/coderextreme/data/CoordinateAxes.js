@@ -2,254 +2,319 @@ let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
 X3D0.version = "3.3";
-let Collision2 = browser.currentScene.createNode("Collision");
-Collision2.DEF = "DoNotCollideWithVisualizationWidget";
+let WorldInfo2 = browser.currentScene.createNode("WorldInfo");
+WorldInfo2.title = "CoordinateAxes.x3d";
+browser.currentScene.children = new MFNode();
+
+browser.currentScene.children[0] = WorldInfo2;
+
+let Collision3 = browser.currentScene.createNode("Collision");
+Collision3.DEF = "DoNotCollideWithVisualizationWidget";
+Collision3.enabled = True;
+Collision3.bboxCenter = new SFVec3f(new float[0,0,0]);
+Collision3.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 //Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.
 //This NavigationInfo allows examine mode and will be overridden by any parent scene.
 //Each arrow goes from +1m to -1m to allow linear scaling to fit a scene
 //Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user
-let Group3 = browser.currentScene.createNode("Group");
-//Vertical Y arrow and label
 let Group4 = browser.currentScene.createNode("Group");
-Group4.DEF = "ArrowGreen";
-let Shape5 = browser.currentScene.createNode("Shape");
-let Cylinder6 = browser.currentScene.createNode("Cylinder");
-Cylinder6.DEF = "ArrowCylinder";
-Cylinder6.radius = 0.025;
-Cylinder6.top = False;
-Shape5.geometry = Cylinder6;
+Group4.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+//Vertical Y arrow and label
+let Group5 = browser.currentScene.createNode("Group");
+Group5.DEF = "ArrowGreen";
+Group5.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Shape6 = browser.currentScene.createNode("Shape");
+Shape6.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Cylinder7 = browser.currentScene.createNode("Cylinder");
+Cylinder7.DEF = "ArrowCylinder";
+Cylinder7.radius = 0.025;
+Cylinder7.top = False;
+Shape6.geometry = Cylinder7;
 
-let Appearance7 = browser.currentScene.createNode("Appearance");
-Appearance7.DEF = "Green";
-let Material8 = browser.currentScene.createNode("Material");
-Material8.diffuseColor = new SFColor(new float[0.1,0.6,0.1]);
-Material8.emissiveColor = new SFColor(new float[0.05,0.2,0.05]);
-Appearance7.material = Material8;
+let Appearance8 = browser.currentScene.createNode("Appearance");
+Appearance8.DEF = "Green";
+let Material9 = browser.currentScene.createNode("Material");
+Material9.diffuseColor = new SFColor(new float[0.1,0.6,0.1]);
+Material9.emissiveColor = new SFColor(new float[0.05,0.2,0.05]);
+Appearance8.material = Material9;
 
-Shape5.appearance = Appearance7;
+Shape6.appearance = Appearance8;
+
+Group5.children = new MFNode();
+
+Group5.children[0] = Shape6;
+
+let Transform10 = browser.currentScene.createNode("Transform");
+Transform10.translation = new SFVec3f(new float[0,1,0]);
+Transform10.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform10.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Shape11 = browser.currentScene.createNode("Shape");
+Shape11.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape11.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Cone12 = browser.currentScene.createNode("Cone");
+Cone12.DEF = "ArrowCone";
+Cone12.bottomRadius = 0.05;
+Cone12.height = 0.1;
+Cone12.side = True;
+Cone12.bottom = True;
+Cone12.solid = True;
+Shape11.geometry = Cone12;
+
+let Appearance13 = browser.currentScene.createNode("Appearance");
+Appearance13.USE = "Green";
+Shape11.appearance = Appearance13;
+
+Transform10.children = new MFNode();
+
+Transform10.children[0] = Shape11;
+
+Group5.children[1] = Transform10;
 
 Group4.children = new MFNode();
 
-Group4.children[0] = Shape5;
+Group4.children[0] = Group5;
 
-let Transform9 = browser.currentScene.createNode("Transform");
-Transform9.translation = new SFVec3f(new float[0,1,0]);
-let Shape10 = browser.currentScene.createNode("Shape");
-let Cone11 = browser.currentScene.createNode("Cone");
-Cone11.DEF = "ArrowCone";
-Cone11.bottomRadius = 0.05;
-Cone11.height = 0.1;
-Shape10.geometry = Cone11;
+let Transform14 = browser.currentScene.createNode("Transform");
+Transform14.translation = new SFVec3f(new float[0,1.08,0]);
+Transform14.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform14.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Billboard15 = browser.currentScene.createNode("Billboard");
+Billboard15.axisOfRotation = new SFVec3f(new float[0,1,0]);
+Billboard15.bboxCenter = new SFVec3f(new float[0,0,0]);
+Billboard15.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Shape16 = browser.currentScene.createNode("Shape");
+Shape16.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape16.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Appearance17 = browser.currentScene.createNode("Appearance");
+Appearance17.DEF = "LABEL_APPEARANCE";
+let Material18 = browser.currentScene.createNode("Material");
+Material18.diffuseColor = new SFColor(new float[1,1,0.3]);
+Material18.emissiveColor = new SFColor(new float[0.33,0.33,0.1]);
+Appearance17.material = Material18;
 
-let Appearance12 = browser.currentScene.createNode("Appearance");
-Appearance12.USE = "Green";
-Shape10.appearance = Appearance12;
+Shape16.appearance = Appearance17;
 
-Transform9.children = new MFNode();
+let Text19 = browser.currentScene.createNode("Text");
+Text19.string = new MFString(new java.lang.String["Y"]);
+let FontStyle20 = browser.currentScene.createNode("FontStyle");
+FontStyle20.DEF = "LABEL_FONT";
+FontStyle20.family = new MFString(new java.lang.String["SANS"]);
+FontStyle20.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+FontStyle20.size = 0.2;
+Text19.fontStyle = FontStyle20;
 
-Transform9.children[0] = Shape10;
+Shape16.geometry = Text19;
 
-Group4.children[1] = Transform9;
+Billboard15.children = new MFNode();
 
-Group3.children = new MFNode();
+Billboard15.children[0] = Shape16;
 
-Group3.children[0] = Group4;
+Transform14.children = new MFNode();
 
-let Transform13 = browser.currentScene.createNode("Transform");
-Transform13.translation = new SFVec3f(new float[0,1.08,0]);
-let Billboard14 = browser.currentScene.createNode("Billboard");
-let Shape15 = browser.currentScene.createNode("Shape");
-let Appearance16 = browser.currentScene.createNode("Appearance");
-Appearance16.DEF = "LABEL_APPEARANCE";
-let Material17 = browser.currentScene.createNode("Material");
-Material17.diffuseColor = new SFColor(new float[1,1,0.3]);
-Material17.emissiveColor = new SFColor(new float[0.33,0.33,0.1]);
-Appearance16.material = Material17;
+Transform14.children[0] = Billboard15;
 
-Shape15.appearance = Appearance16;
+Group4.children[1] = Transform14;
 
-let Text18 = browser.currentScene.createNode("Text");
-Text18.string = new MFString(new java.lang.String["Y"]);
-let FontStyle19 = browser.currentScene.createNode("FontStyle");
-FontStyle19.DEF = "LABEL_FONT";
-FontStyle19.family = new MFString(new java.lang.String["SANS"]);
-FontStyle19.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-FontStyle19.size = 0.2;
-Text18.fontStyle = FontStyle19;
+Collision3.proxy = Group4;
 
-Shape15.geometry = Text18;
-
-Billboard14.children = new MFNode();
-
-Billboard14.children[0] = Shape15;
-
-Transform13.children = new MFNode();
-
-Transform13.children[0] = Billboard14;
-
-Group3.children[1] = Transform13;
-
-Collision2.proxy = Group3;
-
-let Transform20 = browser.currentScene.createNode("Transform");
-Transform20.rotation = new SFRotation(new float[0,0,1,-1.57079]);
+let Transform21 = browser.currentScene.createNode("Transform");
+Transform21.rotation = new SFRotation(new float[0,0,1,-1.57079]);
+Transform21.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform21.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 //Horizontal X arrow and label
-let Group21 = browser.currentScene.createNode("Group");
 let Group22 = browser.currentScene.createNode("Group");
-Group22.DEF = "ArrowRed";
-let Shape23 = browser.currentScene.createNode("Shape");
-let Cylinder24 = browser.currentScene.createNode("Cylinder");
-Cylinder24.USE = "ArrowCylinder";
-Shape23.geometry = Cylinder24;
+Group22.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group22.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Group23 = browser.currentScene.createNode("Group");
+Group23.DEF = "ArrowRed";
+Group23.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group23.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Shape24 = browser.currentScene.createNode("Shape");
+Shape24.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape24.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Cylinder25 = browser.currentScene.createNode("Cylinder");
+Cylinder25.USE = "ArrowCylinder";
+Shape24.geometry = Cylinder25;
 
-let Appearance25 = browser.currentScene.createNode("Appearance");
-Appearance25.DEF = "Red";
-let Material26 = browser.currentScene.createNode("Material");
-Material26.diffuseColor = new SFColor(new float[0.7,0.1,0.1]);
-Material26.emissiveColor = new SFColor(new float[0.33,0,0]);
-Appearance25.material = Material26;
+let Appearance26 = browser.currentScene.createNode("Appearance");
+Appearance26.DEF = "Red";
+let Material27 = browser.currentScene.createNode("Material");
+Material27.diffuseColor = new SFColor(new float[0.7,0.1,0.1]);
+Material27.emissiveColor = new SFColor(new float[0.33,0,0]);
+Appearance26.material = Material27;
 
-Shape23.appearance = Appearance25;
+Shape24.appearance = Appearance26;
+
+Group23.children = new MFNode();
+
+Group23.children[0] = Shape24;
+
+let Transform28 = browser.currentScene.createNode("Transform");
+Transform28.translation = new SFVec3f(new float[0,1,0]);
+Transform28.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform28.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Shape29 = browser.currentScene.createNode("Shape");
+Shape29.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape29.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Cone30 = browser.currentScene.createNode("Cone");
+Cone30.USE = "ArrowCone";
+Shape29.geometry = Cone30;
+
+let Appearance31 = browser.currentScene.createNode("Appearance");
+Appearance31.USE = "Red";
+Shape29.appearance = Appearance31;
+
+Transform28.children = new MFNode();
+
+Transform28.children[0] = Shape29;
+
+Group23.children[1] = Transform28;
 
 Group22.children = new MFNode();
 
-Group22.children[0] = Shape23;
+Group22.children[0] = Group23;
 
-let Transform27 = browser.currentScene.createNode("Transform");
-Transform27.translation = new SFVec3f(new float[0,1,0]);
-let Shape28 = browser.currentScene.createNode("Shape");
-let Cone29 = browser.currentScene.createNode("Cone");
-Cone29.USE = "ArrowCone";
-Shape28.geometry = Cone29;
-
-let Appearance30 = browser.currentScene.createNode("Appearance");
-Appearance30.USE = "Red";
-Shape28.appearance = Appearance30;
-
-Transform27.children = new MFNode();
-
-Transform27.children[0] = Shape28;
-
-Group22.children[1] = Transform27;
-
-Group21.children = new MFNode();
-
-Group21.children[0] = Group22;
-
-let Transform31 = browser.currentScene.createNode("Transform");
-Transform31.rotation = new SFRotation(new float[0,0,1,1.57079]);
-Transform31.translation = new SFVec3f(new float[0.072,1.1,0]);
+let Transform32 = browser.currentScene.createNode("Transform");
+Transform32.rotation = new SFRotation(new float[0,0,1,1.57079]);
+Transform32.translation = new SFVec3f(new float[0.072,1.1,0]);
+Transform32.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform32.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 //note label rotated back to original coordinate frame
-let Billboard32 = browser.currentScene.createNode("Billboard");
-let Shape33 = browser.currentScene.createNode("Shape");
-let Appearance34 = browser.currentScene.createNode("Appearance");
-Appearance34.USE = "LABEL_APPEARANCE";
-Shape33.appearance = Appearance34;
+let Billboard33 = browser.currentScene.createNode("Billboard");
+Billboard33.axisOfRotation = new SFVec3f(new float[0,1,0]);
+Billboard33.bboxCenter = new SFVec3f(new float[0,0,0]);
+Billboard33.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Shape34 = browser.currentScene.createNode("Shape");
+Shape34.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape34.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Appearance35 = browser.currentScene.createNode("Appearance");
+Appearance35.USE = "LABEL_APPEARANCE";
+Shape34.appearance = Appearance35;
 
-let Text35 = browser.currentScene.createNode("Text");
-Text35.string = new MFString(new java.lang.String["X"]);
-let FontStyle36 = browser.currentScene.createNode("FontStyle");
-FontStyle36.USE = "LABEL_FONT";
-Text35.fontStyle = FontStyle36;
+let Text36 = browser.currentScene.createNode("Text");
+Text36.string = new MFString(new java.lang.String["X"]);
+let FontStyle37 = browser.currentScene.createNode("FontStyle");
+FontStyle37.USE = "LABEL_FONT";
+Text36.fontStyle = FontStyle37;
 
-Shape33.geometry = Text35;
+Shape34.geometry = Text36;
 
-Billboard32.children = new MFNode();
+Billboard33.children = new MFNode();
 
-Billboard32.children[0] = Shape33;
+Billboard33.children[0] = Shape34;
 
-Transform31.children = new MFNode();
+Transform32.children = new MFNode();
 
-Transform31.children[0] = Billboard32;
+Transform32.children[0] = Billboard33;
 
-Group21.children[1] = Transform31;
+Group22.children[1] = Transform32;
 
-Transform20.children = new MFNode();
+Transform21.children = new MFNode();
 
-Transform20.children[0] = Group21;
+Transform21.children[0] = Group22;
 
-Collision2.proxy = Transform20;
+Collision3.proxy = Transform21;
 
-let Transform37 = browser.currentScene.createNode("Transform");
-Transform37.rotation = new SFRotation(new float[1,0,0,1.57079]);
+let Transform38 = browser.currentScene.createNode("Transform");
+Transform38.rotation = new SFRotation(new float[1,0,0,1.57079]);
+Transform38.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform38.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 //Perpendicular Z arrow and label, note right-hand rule
-let Group38 = browser.currentScene.createNode("Group");
 let Group39 = browser.currentScene.createNode("Group");
-Group39.DEF = "ArrowBlue";
-let Shape40 = browser.currentScene.createNode("Shape");
-let Cylinder41 = browser.currentScene.createNode("Cylinder");
-Cylinder41.USE = "ArrowCylinder";
-Shape40.geometry = Cylinder41;
+Group39.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group39.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Group40 = browser.currentScene.createNode("Group");
+Group40.DEF = "ArrowBlue";
+Group40.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group40.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Shape41 = browser.currentScene.createNode("Shape");
+Shape41.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape41.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Cylinder42 = browser.currentScene.createNode("Cylinder");
+Cylinder42.USE = "ArrowCylinder";
+Shape41.geometry = Cylinder42;
 
-let Appearance42 = browser.currentScene.createNode("Appearance");
-Appearance42.DEF = "Blue";
-let Material43 = browser.currentScene.createNode("Material");
-Material43.diffuseColor = new SFColor(new float[0.3,0.3,1]);
-Material43.emissiveColor = new SFColor(new float[0.1,0.1,0.33]);
-Appearance42.material = Material43;
+let Appearance43 = browser.currentScene.createNode("Appearance");
+Appearance43.DEF = "Blue";
+let Material44 = browser.currentScene.createNode("Material");
+Material44.diffuseColor = new SFColor(new float[0.3,0.3,1]);
+Material44.emissiveColor = new SFColor(new float[0.1,0.1,0.33]);
+Appearance43.material = Material44;
 
-Shape40.appearance = Appearance42;
+Shape41.appearance = Appearance43;
+
+Group40.children = new MFNode();
+
+Group40.children[0] = Shape41;
+
+let Transform45 = browser.currentScene.createNode("Transform");
+Transform45.translation = new SFVec3f(new float[0,1,0]);
+Transform45.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform45.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Shape46 = browser.currentScene.createNode("Shape");
+Shape46.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape46.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Cone47 = browser.currentScene.createNode("Cone");
+Cone47.USE = "ArrowCone";
+Shape46.geometry = Cone47;
+
+let Appearance48 = browser.currentScene.createNode("Appearance");
+Appearance48.USE = "Blue";
+Shape46.appearance = Appearance48;
+
+Transform45.children = new MFNode();
+
+Transform45.children[0] = Shape46;
+
+Group40.children[1] = Transform45;
 
 Group39.children = new MFNode();
 
-Group39.children[0] = Shape40;
+Group39.children[0] = Group40;
 
-let Transform44 = browser.currentScene.createNode("Transform");
-Transform44.translation = new SFVec3f(new float[0,1,0]);
-let Shape45 = browser.currentScene.createNode("Shape");
-let Cone46 = browser.currentScene.createNode("Cone");
-Cone46.USE = "ArrowCone";
-Shape45.geometry = Cone46;
-
-let Appearance47 = browser.currentScene.createNode("Appearance");
-Appearance47.USE = "Blue";
-Shape45.appearance = Appearance47;
-
-Transform44.children = new MFNode();
-
-Transform44.children[0] = Shape45;
-
-Group39.children[1] = Transform44;
-
-Group38.children = new MFNode();
-
-Group38.children[0] = Group39;
-
-let Transform48 = browser.currentScene.createNode("Transform");
-Transform48.rotation = new SFRotation(new float[1,0,0,-1.57079]);
-Transform48.translation = new SFVec3f(new float[0,1.1,0.072]);
+let Transform49 = browser.currentScene.createNode("Transform");
+Transform49.rotation = new SFRotation(new float[1,0,0,-1.57079]);
+Transform49.translation = new SFVec3f(new float[0,1.1,0.072]);
+Transform49.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform49.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 //note label rotated back to original coordinate frame
-let Billboard49 = browser.currentScene.createNode("Billboard");
-let Shape50 = browser.currentScene.createNode("Shape");
-let Appearance51 = browser.currentScene.createNode("Appearance");
-Appearance51.USE = "LABEL_APPEARANCE";
-Shape50.appearance = Appearance51;
+let Billboard50 = browser.currentScene.createNode("Billboard");
+Billboard50.axisOfRotation = new SFVec3f(new float[0,1,0]);
+Billboard50.bboxCenter = new SFVec3f(new float[0,0,0]);
+Billboard50.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Shape51 = browser.currentScene.createNode("Shape");
+Shape51.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape51.bboxSize = new SFVec3f(new float[-1,-1,-1]);
+let Appearance52 = browser.currentScene.createNode("Appearance");
+Appearance52.USE = "LABEL_APPEARANCE";
+Shape51.appearance = Appearance52;
 
-let Text52 = browser.currentScene.createNode("Text");
-Text52.string = new MFString(new java.lang.String["Z"]);
-let FontStyle53 = browser.currentScene.createNode("FontStyle");
-FontStyle53.USE = "LABEL_FONT";
-Text52.fontStyle = FontStyle53;
+let Text53 = browser.currentScene.createNode("Text");
+Text53.string = new MFString(new java.lang.String["Z"]);
+let FontStyle54 = browser.currentScene.createNode("FontStyle");
+FontStyle54.USE = "LABEL_FONT";
+Text53.fontStyle = FontStyle54;
 
-Shape50.geometry = Text52;
+Shape51.geometry = Text53;
 
-Billboard49.children = new MFNode();
+Billboard50.children = new MFNode();
 
-Billboard49.children[0] = Shape50;
+Billboard50.children[0] = Shape51;
 
-Transform48.children = new MFNode();
+Transform49.children = new MFNode();
 
-Transform48.children[0] = Billboard49;
+Transform49.children[0] = Billboard50;
 
-Group38.children[1] = Transform48;
+Group39.children[1] = Transform49;
 
-Transform37.children = new MFNode();
+Transform38.children = new MFNode();
 
-Transform37.children[0] = Group38;
+Transform38.children[0] = Group39;
 
-Collision2.proxy = Transform37;
+Collision3.proxy = Transform38;
 
-browser.currentScene.children = new MFNode();
-
-browser.currentScene.children[0] = Collision2;
+browser.currentScene.children[1] = Collision3;
 
