@@ -17,22 +17,17 @@
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<Script DEF="MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"></field>
-<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_location" accessType="inputOnly" type="SFTime"></field>
-<field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
-<![CDATA[ecmascript:
-               function set_location(value) {
-                    old = translation;
-                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-                    keyValue = new MFVec3f([old, translation]);
-               }]]></Script>
 <TimeSensor DEF="CL1" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="CL1" fromField="cycleTime" toNode="MB1" toField="set_location"></ROUTE>
 <ROUTE fromNode="CL1" fromField="fraction_changed" toNode="PI1" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="MB1" fromField="keyValue" toNode="PI1" toField="keyValue"></ROUTE>
 <ROUTE fromNode="PI1" fromField="value_changed" toNode="node" toField="set_translation"></ROUTE>
 <ROUTE fromNode="MB1" fromField="translation_changed" toNode="node" toField="set_translation"></ROUTE>
+<X3DScript DEF="MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"></field>
+<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_location" accessType="inputOnly" type="SFTime"></field>
+<field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
+</X3DScript>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
@@ -53,7 +48,7 @@
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Script DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
+<ProtoBody><X3DScript DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="endnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="transnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
@@ -66,47 +61,7 @@
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
 <connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
 </IS>
-<![CDATA[ecmascript:
-        function recompute(startpoint,endpoint){
-	    if (typeof endpoint === 'undefined') {
-		return;
-	    }
-            var dif = endpoint.subtract(startpoint);
-            var dist = dif.length()*0.5;
-            var dif2 = dif.multiply(0.5);
-            var norm = dif.normalize();
-            var transl = startpoint.add(dif2);
-	    if (typeof Quaternion !== 'undefined') {
-		    return {
-			    scale : new SFVec3f(1.0,dist,1.0),
-			    translation : transl,
-			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
-		    };
-	    } else {
-		    return {
-			    scale : new SFVec3f(1.0,dist,1.0),
-			    translation : transl,
-			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
-		    };
-	    }
-	}
-	function recompute_and_route(startpoint, endpoint) {
-	      var trafo = recompute(startpoint, endpoint);
-	      if (trafo) {
-		      transnode.translation = trafo.translation;
-		      rotscalenode.rotation = trafo.rotation;
-		      rotscalenode.scale = trafo.scale;
-	      }
-	}
-        function initialize(){
-            recompute_and_route(startnode.translation,endnode.translation);
-        }
-        function set_startpoint(val,t){
-            recompute_and_route(val,endnode.translation);
-        }
-        function set_endpoint(val,t){
-            recompute_and_route(startnode.translation,val);
-        }]]></Script>
+</X3DScript>
 </ProtoBody>
 </ProtoDeclare>
 <ProtoInstance name="x3dconnector" DEF="connector1"><fieldValue name="startnode"><Transform USE="G1"></Transform>

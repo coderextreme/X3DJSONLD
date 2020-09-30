@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
 <X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
   <head>
     <meta content='HeadsUpDisplayPrototype.x3d' name='title'/>
@@ -55,7 +55,7 @@
                       </IS>
                     </PlaneSensor>
                     <VisibilitySensor DEF='MovementVisibilitySensor'/>
-                    <Script DEF='VisibilityControlScript'>
+                    <X3DScript DEF='VisibilityControlScript'>
                       <field accessType='initializeOnly' name='traceEnabled' type='SFBool'/>
                       <field accessType='initializeOnly' name='isVisible' type='SFBool' value='true'/>
                       <field accessType='initializeOnly' name='planeSensorTranslation' type='SFVec3f' value='0 0 0'/>
@@ -104,7 +104,7 @@ function setPlaneSensorTranslation (value, timeStamp)
 	tracePrint('planeSensorTranslation=' + value);
 }
 ]]>
-                    </Script>
+                    </X3DScript>
                     <ROUTE fromField='isActive' fromNode='PlaneMovementSensor' toField='setPlaneSensorIsActive' toNode='VisibilityControlScript'/>
                     <ROUTE fromField='translation_changed' fromNode='PlaneMovementSensor' toField='setPlaneSensorTranslation' toNode='VisibilityControlScript'/>
                     <ROUTE fromField='isActive' fromNode='MovementVisibilitySensor' toField='setIsVisible' toNode='VisibilityControlScript'/>

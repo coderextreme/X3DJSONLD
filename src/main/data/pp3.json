@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 August 2020"
+            "@content":"16 September 2020"
           },
           {
             "@name":"generator",
@@ -394,7 +394,7 @@
                         ]
                       }
                     },
-                    { "Script":
+                    { "X3DScript":
                       {
                         "@DEF":"RightSingleToMultiString",
                         "field": [
@@ -408,23 +408,10 @@
                             "@accessType":"outputOnly",
                             "@type":"MFString"
                           }
-                        ],
-                        "#sourceText":[
-"",
-"ecmascript:",
-"",
-"function initialize() {",
-"\trightlines = new MFString(\"\");",
-"}",
-"",
-"function set_rightstring(rightstr) {",
-"\trightlines = new MFString(rightstr);",
-"}",
-""
-]
+                        ]
                       }
                     },
-                    { "Script":
+                    { "X3DScript":
                       {
                         "@DEF":"UpSingleToMultiString",
                         "field": [
@@ -438,23 +425,10 @@
                             "@accessType":"outputOnly",
                             "@type":"MFString"
                           }
-                        ],
-                        "#sourceText":[
-"",
-"ecmascript:",
-"",
-"function initialize() {",
-"\tuplines = new MFString(\"\");",
-"}",
-"",
-"function set_upstring(upstr) {",
-"\tuplines = new MFString(upstr);",
-"}",
-""
-]
+                        ]
                       }
                     },
-                    { "Script":
+                    { "X3DScript":
                       {
                         "@DEF":"CenterSingleToMultiString",
                         "field": [
@@ -468,20 +442,7 @@
                             "@accessType":"outputOnly",
                             "@type":"MFString"
                           }
-                        ],
-                        "#sourceText":[
-"",
-"ecmascript:",
-"",
-"function initialize() {",
-"\tcenterlines = new MFString(\"\");",
-"}",
-"",
-"function set_centerstring(centerstr) {",
-"\tcenterlines = new MFString(centerstr);",
-"}",
-""
-]
+                        ]
                       }
                     },
                     { "ROUTE":

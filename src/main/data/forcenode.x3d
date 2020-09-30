@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
     <head>
         <meta name='creator' content='John W Carlson'/>
@@ -39,7 +39,7 @@
                     </Transform>               
                 </Transform>
                 <PositionInterpolator DEF='NodePosition' key='0 1' keyValue='0 0 0 0 5 0'/>
-                <Script DEF='MoveBall'>
+                <X3DScript DEF='MoveBall'>
                     <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
                     <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
                     <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
@@ -53,7 +53,7 @@ ecmascript:
 						// Browser.println(translation);
 					}
 ]]>
-                </Script>
+                </X3DScript>
                 <TimeSensor DEF='nodeClock' cycleInterval='3' loop='true'></TimeSensor>
                 <ROUTE fromNode='nodeClock' fromField='cycleTime' toNode='MoveBall' toField='set_cycle'/>
                 <ROUTE fromNode='nodeClock' fromField='fraction_changed' toNode='NodePosition' toField='set_fraction'/>
@@ -75,7 +75,7 @@ ecmascript:
                         <Material diffuseColor='0 1 0'/>
                     </Appearance>
                 </Shape>
-                <Script DEF='MoveCylinder'>
+                <X3DScript DEF='MoveCylinder'>
                     <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 50 0'/>
                     <field name='set_endA' accessType='inputOnly' type='SFVec3f'/>
                     <field name='set_endB' accessType='inputOnly' type='SFVec3f'/>
@@ -106,7 +106,7 @@ ecmascript:
                     spine = value;
                 }
 ]]>
-                </Script>
+                </X3DScript>
                 
                 <ROUTE fromNode='MoveCylinder' fromField='spine' toNode='extrusion' toField='set_spine'/>
                 
@@ -140,7 +140,7 @@ ecmascript:
                 <fieldValue name='set_positionB' value='50 50 -50'/>
             </ProtoInstance>
         </Transform>
-        <Script DEF="clickHandler">
+        <X3DScript DEF="clickHandler">
             <field accessType="inputOutput" name="counter" value="0" type="SFInt32"/>
             <field accessType="outputOnly" name="node_changed" type="SFNode"/>
             <field accessType="inputOnly" name="add_node" value="false" type="SFBool"/>
@@ -169,7 +169,7 @@ ecmascript:
                 
         }
 	]]>
-        </Script>
+        </X3DScript>
         <ROUTE fromNode='clickGenerator' fromField='isActive' toNode='clickHandler' toField='add_node'/>
         <ROUTE fromNode='nodeA' fromField='position' toNode='linkA' toField='set_positionA'/>
         <ROUTE fromNode='nodeB' fromField='position' toNode='linkA' toField='set_positionB'/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 
 <X3D profile="Immersive" version="3.3"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
@@ -130,7 +130,7 @@
             toField="rotation" toNode="TextTransform"/>
         <Group DEF="BackgroundGroup">
             <Background DEF="GradualBackground"/>
-            <Script DEF="colorTypeConversionScript">
+            <X3DScript DEF="colorTypeConversionScript">
                 <field accessType="inputOnly" name="colorInput" type="SFColor"/>
                 <field accessType="outputOnly" name="colorsOutput" type="MFColor"/><![CDATA[
 
@@ -147,7 +147,7 @@ function colorInput (eventValue) // Example source code
 
 
 
-]]></Script>
+]]></X3DScript>
             <ColorInterpolator DEF="ColorAnimator" key="0 0.5 1" keyValue="0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1">
                 <!-- AZURE to INDIGO and back again -->
             </ColorInterpolator>
@@ -255,7 +255,7 @@ function colorInput (eventValue) // Example source code
                     </IS>
                 </Material>
                 <!-- Only first node (the node type) is renderable, others are along for the ride -->
-                <Script DEF="MaterialModulatorScript">
+                <X3DScript DEF="MaterialModulatorScript">
                     <field accessType="inputOutput" name="enabled" type="SFBool"/>
                     <field accessType="inputOutput" name="diffuseColor" type="SFColor"/>
                     <field accessType="outputOnly" name="newColor" type="SFColor"/>
@@ -294,7 +294,7 @@ function clockTrigger (timeValue)
 
 
 
-]]></Script>
+]]></X3DScript>
             </ProtoBody>
         </ProtoDeclare>
         <!-- Test success: declarative statement createDeclarativeShapeTests() -->

@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 August 2020"
+            "@content":"16 September 2020"
           },
           {
             "@name":"generator",
@@ -130,7 +130,7 @@
                         "@keyValue":[0,0,0,0,5,0]
                       }
                     },
-                    { "Script":
+                    { "X3DScript":
                       {
                         "@DEF":"MoveBall",
                         "field": [
@@ -156,18 +156,7 @@
                             "@accessType":"outputOnly",
                             "@type":"MFVec3f"
                           }
-                        ],
-                        "#sourceText":[
-"",
-" ecmascript:",
-"\t\t\t\t\tfunction set_cycle(value) {",
-"                                                old = translation;",
-"\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
-"                                                keyValue = new MFVec3f([old, translation]);",
-"\t\t\t\t\t\t// Browser.println(translation);",
-"\t\t\t\t\t}",
-""
-]
+                        ]
                       }
                     },
                     { "TimeSensor":
@@ -258,7 +247,7 @@
                           }
                       }
                     },
-                    { "Script":
+                    { "X3DScript":
                       {
                         "@DEF":"MoveCylinder",
                         "field": [
@@ -290,33 +279,7 @@
                                 "@protoField":"positionB"
                               }
                             ]
-                        },
-                        "#sourceText":[
-"",
-" ecmascript:",
-"",
-"                function set_endA(value) {",
-"\t\t    if (typeof spine === \"undefined\") {",
-"\t\t        spine = new MFVec3f([value, value]);",
-"\t\t    } else {",
-"\t\t        spine = new MFVec3f([value, spine[1]]);",
-"\t\t    }",
-"                }",
-"",
-"                function set_endB(value) {",
-"\t\t    if (typeof spine === \"undefined\") {",
-"\t\t        spine = new MFVec3f([value, value]);",
-"\t\t    } else {",
-"\t\t        spine = new MFVec3f([spine[0], value]);",
-"\t\t    }",
-"                }",
-"",
-"                function set_spine(value) {",
-"\t\t    Browser.print('\n'+'\"');",
-"                    spine = value;",
-"                }",
-""
-]
+                        }
                       }
                     },
                     { "ROUTE":

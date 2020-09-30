@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 August 2020"
+            "@content":"16 September 2020"
           },
           {
             "@name":"generator",
@@ -256,9 +256,9 @@
                       "#comment":"Subsequent nodes do not render, but still must be a valid X3D subgraph"
                     },
                     {
-                      "#comment":"This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"
+                      "#comment":"This embedded X3DScript provides the X3D author with additional visibility and control over prototype inputs and outputs"
                     },
-                    { "Script":
+                    { "X3DScript":
                       {
                         "@DEF":"ArchPrototypeScript",
                         "@url":["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"],

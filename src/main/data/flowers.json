@@ -58,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 August 2020"
+            "@content":"16 September 2020"
           },
           {
             "@name":"generator",
@@ -359,7 +359,7 @@
                         ]
                       }
                     },
-                    { "Script":
+                    { "X3DScript":
                       {
                         "@DEF":"Animate",
                         "field": [
@@ -416,80 +416,7 @@
                             "@accessType":"inputOutput",
                             "@value":0.5
                           }
-                        ],
-                        "#sourceText":[
-"",
-"",
-"ecmascript:",
-"",
-"\t\t\tfunction initialize() {",
-"\t\t\t    translation = new SFVec3f(0, 0, 0);",
-"\t\t\t    velocity = new SFVec3f(",
-"\t\t\t    \tMath.random() - 0.5,",
-"\t\t\t\tMath.random() - 0.5,",
-"\t\t\t\tMath.random() - 0.5);",
-"\t\t\t}",
-"\t\t\tfunction set_fraction() {",
-"\t\t\t    translation = new SFVec3f(",
-"\t\t\t    \ttranslation.x + velocity.x,",
-"\t\t\t\ttranslation.y + velocity.y,",
-"\t\t\t\ttranslation.z + velocity.z);",
-"\t\t\t    for (var j = 0; j <= 2; j++) {",
-"\t\t\t\t    if (Math.abs(translation.x) > 10) {",
-"\t\t\t\t\tinitialize();",
-"\t\t\t\t    } else if (Math.abs(translation.y) > 10) {",
-"\t\t\t\t\tinitialize();",
-"\t\t\t\t    } else if (Math.abs(translation.z) > 10) {",
-"\t\t\t\t\tinitialize();",
-"\t\t\t\t    } else {",
-"\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;",
-"\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;",
-"\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;",
-"\t\t\t\t    }",
-"\t\t\t    }",
-"\t\t\t    animate_flowers();",
-"\t\t\t}",
-"",
-"\t\t\tfunction animate_flowers(fraction, eventTime) {",
-"\t\t\t\tvar choice = Math.floor(Math.random() * 4);",
-"\t\t\t\tswitch (choice) {",
-"\t\t\t\tcase 0:",
-"\t\t\t\t\ta += Math.random() * 0.2 - 0.1;",
-"\t\t\t\t\tbreak;",
-"\t\t\t\tcase 1:",
-"\t\t\t\t\tb += Math.random() * 0.2 - 0.1;",
-"\t\t\t\t\tbreak;",
-"\t\t\t\tcase 2:",
-"\t\t\t\t\tc += Math.random() * 2 - 1;",
-"\t\t\t\t\tbreak;",
-"\t\t\t\tcase 3:",
-"\t\t\t\t\td += Math.random() * 2 - 1;",
-"\t\t\t\t\tbreak;",
-"\t\t\t\t}",
-"\t\t\t\ttdelta += 0.5;",
-"\t\t\t\tpdelta += 0.5;",
-"\t\t\t\tif (a > 1) {",
-"\t\t\t\t\ta =  0.5;",
-"\t\t\t\t}",
-"\t\t\t\tif (b > 1) {",
-"\t\t\t\t\tb =  0.5;",
-"\t\t\t\t}",
-"\t\t\t\tif (c < 1) {",
-"\t\t\t\t\tc =  4;",
-"\t\t\t\t}",
-"\t\t\t\tif (d < 1) {",
-"\t\t\t\t\td =  4;",
-"\t\t\t\t}",
-"\t\t\t\tif (c > 10) {",
-"\t\t\t\t\tc = 4;",
-"\t\t\t\t}",
-"\t\t\t\tif (d > 10) {",
-"\t\t\t\t\td = 4;",
-"\t\t\t\t}",
-"\t\t\t}",
-"",
-""
-]
+                        ]
                       }
                     },
                     { "TimeSensor":

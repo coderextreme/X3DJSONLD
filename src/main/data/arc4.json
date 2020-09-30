@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 August 2020"
+            "@content":"16 September 2020"
           },
           {
             "@name":"generator",
@@ -90,49 +90,6 @@
                     "@keyValue":[0,0,0,0,5,0]
                   }
                 },
-                { "Script":
-                  {
-                    "@DEF":"DECLpoint_G1_MB1",
-                    "field": [
-                      {
-                        "@name":"translation",
-                        "@accessType":"inputOutput",
-                        "@type":"SFVec3f",
-                        "@value":[0,0,0]
-                      },
-                      {
-                        "@name":"old",
-                        "@accessType":"inputOutput",
-                        "@type":"SFVec3f",
-                        "@value":[0,0,0]
-                      },
-                      {
-                        "@name":"set_location",
-                        "@accessType":"inputOnly",
-                        "@type":"SFTime"
-                      },
-                      {
-                        "@name":"keyValue",
-                        "@accessType":"inputOutput",
-                        "@type":"MFVec3f",
-                        "@value":[0,0,0,0,5,0]
-                      }
-                    ],
-                    "#sourceText":[
-"",
-"ecmascript:",
-"\t\tfunction set_location(value) {",
-"                    old = translation;",
-"\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
-"                    keyValue = new MFVec3f([old, translation]);",
-"\t\t    // Browser.println(keyValue);",
-"\t\t}",
-"",
-"",
-""
-]
-                  }
-                },
                 { "TimeSensor":
                   {
                     "@DEF":"DECLpoint_G1_CL1",
@@ -170,6 +127,38 @@
                     "@fromField":"value_changed",
                     "@toNode":"DECLpoint_G1_node",
                     "@toField":"set_translation"
+                  }
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "X3DScript":
+                  {
+                    "@DEF":"DECLpoint_G1_MB1",
+                    "field": [
+                      {
+                        "@name":"translation",
+                        "@accessType":"inputOutput",
+                        "@type":"SFVec3f",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"old",
+                        "@accessType":"inputOutput",
+                        "@type":"SFVec3f",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"set_location",
+                        "@accessType":"inputOnly",
+                        "@type":"SFTime"
+                      },
+                      {
+                        "@name":"keyValue",
+                        "@accessType":"inputOutput",
+                        "@type":"MFVec3f",
+                        "@value":[0,0,0,0,5,0]
+                      }
+                    ]
                   }
                 }
               ]
@@ -211,49 +200,6 @@
                     "@keyValue":[0,0,0,0,5,0]
                   }
                 },
-                { "Script":
-                  {
-                    "@DEF":"DECLpoint_G2_MB1",
-                    "field": [
-                      {
-                        "@name":"translation",
-                        "@accessType":"inputOutput",
-                        "@type":"SFVec3f",
-                        "@value":[0,0,0]
-                      },
-                      {
-                        "@name":"old",
-                        "@accessType":"inputOutput",
-                        "@type":"SFVec3f",
-                        "@value":[0,0,0]
-                      },
-                      {
-                        "@name":"set_location",
-                        "@accessType":"inputOnly",
-                        "@type":"SFTime"
-                      },
-                      {
-                        "@name":"keyValue",
-                        "@accessType":"inputOutput",
-                        "@type":"MFVec3f",
-                        "@value":[0,0,0,0,5,0]
-                      }
-                    ],
-                    "#sourceText":[
-"",
-"ecmascript:",
-"\t\tfunction set_location(value) {",
-"                    old = translation;",
-"\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);",
-"                    keyValue = new MFVec3f([old, translation]);",
-"\t\t    // Browser.println(keyValue);",
-"\t\t}",
-"",
-"",
-""
-]
-                  }
-                },
                 { "TimeSensor":
                   {
                     "@DEF":"DECLpoint_G2_CL1",
@@ -291,6 +237,38 @@
                     "@fromField":"value_changed",
                     "@toNode":"DECLpoint_G2_node",
                     "@toField":"set_translation"
+                  }
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "X3DScript":
+                  {
+                    "@DEF":"DECLpoint_G2_MB1",
+                    "field": [
+                      {
+                        "@name":"translation",
+                        "@accessType":"inputOutput",
+                        "@type":"SFVec3f",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"old",
+                        "@accessType":"inputOutput",
+                        "@type":"SFVec3f",
+                        "@value":[0,0,0]
+                      },
+                      {
+                        "@name":"set_location",
+                        "@accessType":"inputOnly",
+                        "@type":"SFTime"
+                      },
+                      {
+                        "@name":"keyValue",
+                        "@accessType":"inputOutput",
+                        "@type":"MFVec3f",
+                        "@value":[0,0,0,0,5,0]
+                      }
+                    ]
                   }
                 }
               ]
@@ -342,8 +320,10 @@
                       }
                     ]
                   }
-                },
-                { "Script":
+                }
+              ],
+              "-IllegalChildNodeFieldNameNotFound":[
+                { "X3DScript":
                   {
                     "@DEF":"DECLx3dconnector_connector1_S1",
                     "field": [
@@ -391,72 +371,7 @@
                         "@accessType":"inputOnly",
                         "@type":"SFVec3f"
                       }
-                    ],
-                    "#sourceText":[
-"",
-"ecmascript:",
-"        function recompute(startpoint,endpoint){",
-"\t    if (typeof endpoint === 'undefined') {",
-"\t\t    if (typeof Quaternion !== 'undefined') {",
-"\t\t\t    return {",
-"\t\t\t\t    scale : new SFVec3f(1.0,1.0,1.0),",
-"\t\t\t\t    translation : new SFVec3f(1.0,1.0,1.0),",
-"\t\t\t    \t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), 1.0)",
-"\t\t\t    };",
-"\t    \t    } else if (typeof SFRotation !== 'undefined') {",
-"\t\t\t    return {",
-"\t\t\t\t    scale : new SFVec3f(1.0,1.0,1.0),",
-"\t\t\t\t    translation : new SFVec3f(1.0,1.0,1.0),",
-"\t\t\t    \t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),1.0)",
-"\t\t\t    };",
-"\t    \t    } else {",
-"\t\t\t    return {",
-"\t\t\t\t    scale : new SFVec3f(1.0,1.0,1.0),",
-"\t\t\t\t    translation : new SFVec3f(1.0,1.0,1.0)",
-"\t\t\t    };",
-"\t\t    }",
-"\t    }",
-"            var dif = endpoint.subtract(startpoint);",
-"            var dist = dif.length()*0.5;",
-"            var dif2 = dif.multiply(0.5);",
-"            var norm = dif.normalize();",
-"            var transl = startpoint.add(dif2);",
-"\t    if (typeof Quaternion !== 'undefined') {",
-"\t\t    return {",
-"\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
-"\t\t\t    translation : transl,",
-"\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)",
-"\t\t    };",
-"\t    } else if (typeof SFRotation !== 'undefined') {",
-"\t\t    return {",
-"\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
-"\t\t\t    translation : transl,",
-"\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)",
-"\t\t    };",
-"\t    } else {",
-"\t\t    return {",
-"\t\t\t    scale : new SFVec3f(1.0,dist,1.0),",
-"\t\t\t    translation : transl",
-"\t\t    };",
-"\t    }",
-"\t}",
-"\tfunction recompute_and_route(startpoint, endpoint) {",
-"\t      var trafo = recompute(startpoint, endpoint);",
-"\t      position.translation = trafo.translation;",
-"\t      rotscale.rotation = trafo.rotation;",
-"\t      rotscale.scale = trafo.scale;",
-"\t}",
-"        function initialize(){",
-"            recompute_and_route(startnode.translation,endnode.translation);",
-"        }",
-"        function set_startpoint(val,t){",
-"            recompute_and_route(val,endnode.translation);",
-"        }",
-"        function set_endpoint(val,t){",
-"            recompute_and_route(startnode.translation,val);",
-"        }",
-""
-]
+                    ]
                   }
                 }
               ]

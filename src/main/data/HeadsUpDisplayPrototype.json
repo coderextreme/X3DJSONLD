@@ -44,7 +44,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 August 2020"
+            "@content":"16 September 2020"
           },
           {
             "@name":"generator",
@@ -209,7 +209,33 @@
                                                             "@DEF":"MovementVisibilitySensor"
                                                           }
                                                         },
-                                                        { "Script":
+                                                        { "ROUTE":
+                                                          {
+                                                            "@fromField":"isActive",
+                                                            "@fromNode":"PlaneMovementSensor",
+                                                            "@toField":"setPlaneSensorIsActive",
+                                                            "@toNode":"VisibilityControlScript"
+                                                          }
+                                                        },
+                                                        { "ROUTE":
+                                                          {
+                                                            "@fromField":"translation_changed",
+                                                            "@fromNode":"PlaneMovementSensor",
+                                                            "@toField":"setPlaneSensorTranslation",
+                                                            "@toNode":"VisibilityControlScript"
+                                                          }
+                                                        },
+                                                        { "ROUTE":
+                                                          {
+                                                            "@fromField":"isActive",
+                                                            "@fromNode":"MovementVisibilitySensor",
+                                                            "@toField":"setIsVisible",
+                                                            "@toNode":"VisibilityControlScript"
+                                                          }
+                                                        }
+                                                      ],
+                                                      "-IllegalChildNodeFieldNameNotFound":[
+                                                        { "X3DScript":
                                                           {
                                                             "@DEF":"VisibilityControlScript",
                                                             "field": [
@@ -263,72 +289,7 @@
                                                                     "@protoField":"traceEnabled"
                                                                   }
                                                                 ]
-                                                            },
-                                                            "#sourceText":[
-"",
-"",
-"ecmascript:",
-"",
-"function tracePrint (text)",
-"{",
-"\tif (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);",
-"}",
-"function setIsVisible (value, timeStamp)",
-"{",
-"\tisVisible = value;",
-"\ttracePrint('isVisible=' + value);",
-"}",
-"function setPlaneSensorIsActive (value, timeStamp)",
-"{",
-"\ttracePrint('PlaneSensor isActive=' + value);",
-"",
-"\tif (value == false)",
-"\t{",
-"\t\ttracePrint('planeSensorTranslation=' + planeSensorTranslation);",
-"\t\tif (isVisible)",
-"\t\t{",
-"\t\t\ttranslationChanged = planeSensorTranslation;",
-"\t\t}",
-"\t\telse",
-"\t\t{",
-"\t\t\t// fell off screen, reset to center",
-"\t\t\ttranslationChanged = new SFVec3f(0, 0, 0);",
-"\t\t\ttranslationOffsetChanged  = new SFVec3f(0, 0, 0);",
-"\t\t}",
-"\t}",
-"}",
-"function setPlaneSensorTranslation (value, timeStamp)",
-"{",
-"\tplaneSensorTranslation = value;",
-"\ttracePrint('planeSensorTranslation=' + value);",
-"}",
-"",
-""
-]
-                                                          }
-                                                        },
-                                                        { "ROUTE":
-                                                          {
-                                                            "@fromField":"isActive",
-                                                            "@fromNode":"PlaneMovementSensor",
-                                                            "@toField":"setPlaneSensorIsActive",
-                                                            "@toNode":"VisibilityControlScript"
-                                                          }
-                                                        },
-                                                        { "ROUTE":
-                                                          {
-                                                            "@fromField":"translation_changed",
-                                                            "@fromNode":"PlaneMovementSensor",
-                                                            "@toField":"setPlaneSensorTranslation",
-                                                            "@toNode":"VisibilityControlScript"
-                                                          }
-                                                        },
-                                                        { "ROUTE":
-                                                          {
-                                                            "@fromField":"isActive",
-                                                            "@fromNode":"MovementVisibilitySensor",
-                                                            "@toField":"setIsVisible",
-                                                            "@toNode":"VisibilityControlScript"
+                                                            }
                                                           }
                                                         }
                                                       ]
