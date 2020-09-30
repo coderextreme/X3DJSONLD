@@ -626,21 +626,28 @@ Additional references of interest:
     <xsl:template name="saiPackage">
         <xsl:param name="nodeType"/>
         
-        <xsl:variable name="nodeTypeBase" select="translate($nodeType,'[]','')"/>
+        <xsl:variable name="nodeTypeBase" select="normalize-space(translate($nodeType,'[]',''))"/>
 		
         <xsl:variable name="saiPackageComputed">
             <xsl:choose>
+                <xsl:when test="starts-with($nodeTypeBase,'ArrayList')">
+                    <!-- ignore, though package (if any) for contained type must be correct -->
+                </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DNode')       or ($nodeTypeBase = 'X3DChildNode')    or ($nodeTypeBase = 'X3DInfoNode') or 
                                 ($nodeTypeBase = 'X3DSensorNode') or ($nodeTypeBase = 'X3DBindableNode') or ($nodeTypeBase = 'X3DMetadataObject')">
                     <xsl:text>Core</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DProductStructureChildNode)')">
+                <xsl:when test="($nodeTypeBase = 'X3DProductStructureChildNode') or starts-with($nodeTypeBase, 'CAD')">
                     <xsl:text>CADGeometry</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DEnvironmentTextureNode')">
                     <xsl:text>CubeMapTexturing</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DBackgroundNode') or ($nodeTypeBase = 'FogCoordinate')">
+                <xsl:when test="($nodeTypeBase = 'DISEntityManager') or ($nodeTypeBase = 'DISEntityTypeMapping') or ($nodeTypeBase = 'EspduTransform') or
+                                ends-with($nodeTypeBase, 'Pdu')">
+                    <xsl:text>DIS</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeTypeBase = 'X3DBackgroundNode') or ($nodeTypeBase = 'X3DFogObject') or ($nodeTypeBase = 'FogCoordinate')">
                     <xsl:text>EnvironmentalEffects</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DEnvironmentalSensorNode')">
@@ -658,8 +665,14 @@ Additional references of interest:
                 <xsl:when test="($nodeTypeBase = 'X3DGroupingNode') or ($nodeTypeBase = 'X3DBoundedObject')">
                     <xsl:text>Grouping</xsl:text>
                 </xsl:when>
+                <xsl:when test="starts-with($nodeTypeBase, 'HAnim')">
+                    <xsl:text>HAnim</xsl:text>
+                </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DInterpolatorNode')">
                     <xsl:text>Interpolation</xsl:text>
+                </xsl:when>
+                <xsl:when test="($nodeTypeBase = 'X3DKeyDeviceSensorNode')">
+                    <xsl:text>KeyDeviceSensor</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DLayerNode') or ($nodeTypeBase = 'X3DViewportNode')">
                     <xsl:text>Layering</xsl:text>
@@ -677,13 +690,14 @@ Additional references of interest:
                     <xsl:text>Networking</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DNurbsControlCurveNode') or ($nodeTypeBase = 'X3DParametricGeometryNode') or ($nodeTypeBase = 'X3DNurbsSurfaceGeometryNode') or
-                                ($nodeTypeBase = 'NurbsCurve')">
+                                ($nodeTypeBase = 'Contour2D') or ($nodeTypeBase = 'ContourPolyline2D') or ($nodeTypeBase = 'CoordinateDouble') or 
+                                starts-with($nodeTypeBase, 'Nurbs')">
                     <xsl:text>NURBS</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DParticleEmitterNode') or ($nodeTypeBase = 'X3DParticlePhysicsModelNode')">
                     <xsl:text>ParticleSystems</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DPickableObject')">
+                <xsl:when test="($nodeTypeBase = 'X3DPickableObject') or ($nodeTypeBase = 'X3DPickSensorNode') or contains($nodeTypeBase, 'Pick')">
                     <xsl:text>Picking</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DPointingDeviceSensorNode') or ($nodeTypeBase = 'X3DDragSensorNode') or ($nodeTypeBase = 'X3DTouchSensorNode')">
@@ -694,18 +708,20 @@ Additional references of interest:
                     <xsl:text>Rendering</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DNBodyCollidableNode') or ($nodeTypeBase = 'X3DNBodyCollisionSpaceNode') or ($nodeTypeBase = 'X3DRigidJointNode') or
-                                ($nodeTypeBase = 'RigidBody') or ($nodeTypeBase = 'CollisionCollection')">
+                                ($nodeTypeBase = 'Contact') or ($nodeTypeBase = 'RigidBody') or ($nodeTypeBase = 'CollisionCollection')">
                     <xsl:text>RigidBodyPhysics</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DScriptNode')">
                     <xsl:text>Scripting</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DProgrammableShaderObject') or ($nodeTypeBase = 'X3DShaderNode') or ($nodeTypeBase = 'X3DVertexAttributeNode')">
+                <xsl:when test="($nodeTypeBase = 'X3DProgrammableShaderObject') or ($nodeTypeBase = 'X3DShaderNode') or ($nodeTypeBase = 'X3DVertexAttributeNode') or 
+                                contains($nodeTypeBase, 'Shader') or ends-with($nodeTypeBase, 'VertexAttribute')">
                     <xsl:text>Shaders</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DShapeNode')      or ($nodeTypeBase = 'X3DAppearanceChildNode') or ($nodeTypeBase = 'X3DMaterialNode') or 
-                                ($nodeTypeBase = 'X3DAppearanceNode') or ($nodeTypeBase = 'Shape')                  or
-                                ($nodeTypeBase = 'FillProperties')    or ($nodeTypeBase = 'LineProperties')         or ($nodeTypeBase = 'PointProperties')">
+                <xsl:when test="($nodeTypeBase = 'X3DShapeNode')      or ($nodeTypeBase = 'X3DAppearanceChildNode')  or 
+                                ($nodeTypeBase = 'X3DMaterialNode')   or ($nodeTypeBase = 'X3DOneSidedMaterialNode') or 
+                                ($nodeTypeBase = 'X3DAppearanceNode') or ($nodeTypeBase = 'Shape')                   or
+                                ($nodeTypeBase = 'FillProperties')    or ($nodeTypeBase = 'LineProperties')          or ($nodeTypeBase = 'PointProperties')">
                     <xsl:text>Shape</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DSoundNode') or ($nodeTypeBase = 'X3DSoundSourceNode')">
@@ -714,8 +730,11 @@ Additional references of interest:
                 <xsl:when test="($nodeTypeBase = 'X3DFontStyleNode')">
                     <xsl:text>Text</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DTextureNode')           or ($nodeTypeBase = 'X3DTexture2DNode')  or ($nodeTypeBase = 'X3DTextureTransformNode') or
-                                ($nodeTypeBase = 'X3DTextureCoordinateNode') or ($nodeTypeBase = 'TextureCoordinate') or ($nodeTypeBase = 'TextureProperties')">
+                <xsl:when test="($nodeTypeBase = 'X3DTextureNode')           or ($nodeTypeBase = 'X3DSingleTextureNode')           or 
+                                ($nodeTypeBase = 'X3DTexture2DNode')         or 
+                                ($nodeTypeBase = 'X3DTextureCoordinateNode') or ($nodeTypeBase = 'X3DSingleTextureCoordinateNode') or
+                                ($nodeTypeBase = 'X3DTextureTransformNode')  or ($nodeTypeBase = 'X3DSingleTextureTransformNode')  or
+                                ($nodeTypeBase = 'TextureCoordinate') or ($nodeTypeBase = 'TextureProperties')">
                     <xsl:text>Texturing</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DTexture3DNode')">
@@ -727,6 +746,31 @@ Additional references of interest:
                 <xsl:when test="($nodeTypeBase = 'X3DVolumeDataNode') or ($nodeTypeBase = 'X3DComposableVolumeRenderStyleNode') or ($nodeTypeBase = 'X3DVolumeRenderStyleNode')">
                     <xsl:text>VolumeRendering</xsl:text>
                 </xsl:when>
+                <xsl:when test="starts-with($nodeTypeBase,'org.web3d') or
+                                
+                                starts-with($nodeTypeBase,'Proto') or
+                                starts-with($nodeTypeBase,'Matrix') or
+                               ($nodeTypeBase = 'String') or
+                               ($nodeTypeBase = 'X3D') or
+                               ($nodeTypeBase = 'MField') or 
+                               ($nodeTypeBase = 'IS') or
+                               ($nodeTypeBase = 'AS') or
+                               ($nodeTypeBase = 'Scene') or
+                               (substring($nodeTypeBase,1,1) = lower-case(substring($nodeTypeBase,1,1)))">
+                    <!-- known X3D or Java type -->
+                </xsl:when>
+                <xsl:when test="($nodeTypeBase = 'X3DConcreteField') or 
+                                ($nodeTypeBase = 'X3DField')">
+                    <!-- known special X3DJSAIL type -->
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>saiPackageUnknown</xsl:text>
+                <!-- debug diagnostic -->
+                    <xsl:message>
+                        <xsl:text>*** template saiPackage unable to recognize package for </xsl:text>
+                        <xsl:value-of select="$nodeTypeBase"/>
+                    </xsl:message>
+                </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <!-- return value -->
@@ -749,12 +793,15 @@ Additional references of interest:
                 <xsl:text>.</xsl:text>
                 <xsl:value-of select="$saiPackageComputed"/>
             </xsl:when>
+            <xsl:when test="(string-length($saiPackageComputed) = 0)">
+                <!-- known type -->
+            </xsl:when>
             <xsl:otherwise> 
-                <!-- debug: report problem
+                <!-- error: report problem -->
                 <xsl:message>
                     <xsl:text>*** saiPackage not found for type=</xsl:text>
                     <xsl:value-of select="$nodeTypeBase"/>
-                </xsl:message> -->
+                </xsl:message>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -1479,21 +1526,26 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 			<xsl:text> * @author Don Brutzman and Roy Walmsley</xsl:text><xsl:text>&#10;</xsl:text>
 			
 			<xsl:if test="(string-length($saiJavaSpecificationSection) > 0) or (string-length($saiJavaSpecificationRelativeUrl) > 0)">
-				<!-- diagnostics if one is missing -->
+				<!-- debug diagnostics if one is missing:S
 				<xsl:if test="not($saiJavaSpecificationSection) or (string-length($saiJavaSpecificationSection) = 0)">
 					<xsl:message>
 						<xsl:text>*** Code-generation error: </xsl:text>
 						<xsl:value-of select="$name"/>
-						<xsl:text> definition contains saiJavaSpecificationRelativeUrl but not saiJavaSpecificationSection</xsl:text>
+						<xsl:text> definition contains saiJavaSpecificationRelativeUrl='</xsl:text>
+						<xsl:value-of select="$saiJavaSpecificationRelativeUrl"/>
+						<xsl:text>' but not saiJavaSpecificationSection</xsl:text>
 					</xsl:message>
 				</xsl:if>
 				<xsl:if test="not($saiJavaSpecificationRelativeUrl) or (string-length($saiJavaSpecificationRelativeUrl) = 0)">
 					<xsl:message>
 						<xsl:text>*** Code-generation error: </xsl:text>
 						<xsl:value-of select="$name"/>
-						<xsl:text> definition contains saiJavaSpecificationSection but not saiJavaSpecificationRelativeUrl</xsl:text>
+						<xsl:text> definition contains saiJavaSpecificationSection='</xsl:text>
+						<xsl:value-of select="$saiJavaSpecificationSection"/>
+						<xsl:text>' but not saiJavaSpecificationRelativeUrl</xsl:text>
 					</xsl:message>
 				</xsl:if>
+                -->
 				<xsl:if test="ends-with($saiJavaSpecificationRelativeUrl,'#')">
 					<xsl:message>
 						<xsl:text>*** Code-generation error: saiJavaSpecificationRelativeUrl=</xsl:text>
@@ -1551,21 +1603,25 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				<xsl:text>&#10;</xsl:text>
 			</xsl:if>
 			<xsl:if test="(string-length($x3dAbstractSpecificationSection) > 0) or (string-length($x3dAbstractSpecificationRelativeUrl) > 0)">
-				<!-- diagnostics if one is missing -->
+				<!-- debug diagnostics if one is missing
 				<xsl:if test="not($x3dAbstractSpecificationSection) or (string-length($x3dAbstractSpecificationSection) = 0)">
 					<xsl:message>
 						<xsl:text>*** Code-generation error: </xsl:text>
 						<xsl:value-of select="$name"/>
-						<xsl:text> definition contains x3dAbstractSpecificationRelativeUrl but not x3dAbstractSpecificationSection</xsl:text>
+						<xsl:text> definition contains x3dAbstractSpecificationRelativeUrl='</xsl:text>
+						<xsl:value-of select="$x3dAbstractSpecificationRelativeUrl"/>
+						<xsl:text>' but not x3dAbstractSpecificationSection</xsl:text>
 					</xsl:message>
 				</xsl:if>
 				<xsl:if test="not($x3dAbstractSpecificationRelativeUrl) or (string-length($x3dAbstractSpecificationRelativeUrl) = 0)">
 					<xsl:message>
 						<xsl:text>*** Code-generation error: </xsl:text>
 						<xsl:value-of select="$name"/>
-						<xsl:text> definition contains x3dAbstractSpecificationSection but not x3dAbstractSpecificationRelativeUrl</xsl:text>
+						<xsl:text> definition contains x3dAbstractSpecificationSection='</xsl:text>
+						<xsl:value-of select="$x3dAbstractSpecificationRelativeUrl"/>
+						<xsl:text>' but not x3dAbstractSpecificationRelativeUrl</xsl:text>
 					</xsl:message>
-				</xsl:if>
+				</xsl:if> -->
 				<xsl:if test="ends-with($x3dAbstractSpecificationSection,'#')">
 					<xsl:message>
 						<xsl:text>*** Code-generation error: x3dAbstractSpecificationSection=</xsl:text>
@@ -4009,7 +4065,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		File priorFile = new File(fileName);
 		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
 		{
-			System.out.println ("Warning: toFileX3D() is overwriting prior file " + fileName);
+			System.out.println ("Note: toFileX3D() is overwriting prior file " + fileName);
 		}
 		else if  (priorFile.exists())
 		{
@@ -4087,7 +4143,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		File priorFile = new File(fileName);
 		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
 		{
-			System.out.println ("Warning: toFileClassicVRML() is overwriting prior file " + fileName);
+			System.out.println ("Note: toFileClassicVRML() is overwriting prior file " + fileName);
 		}
 		else if  (priorFile.exists())
 		{
@@ -4165,7 +4221,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		File priorFile = new File(fileName);
 		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
 		{
-			System.out.println ("Warning: toFileVRML97() is overwriting prior file " + fileName);
+			System.out.println ("Note: toFileVRML97() is overwriting prior file " + fileName);
 		}
 		else if  (priorFile.exists())
 		{
@@ -4300,7 +4356,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		File priorFile = new File(fileName);
 		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
 		{
-			System.out.println ("Warning: toFileStylesheetConversion(" + stylesheetName + ") is overwriting prior file " + fileName);
+			System.out.println ("Note: toFileStylesheetConversion(" + stylesheetName + ") is overwriting prior file " + fileName);
 		}
 		else if  (priorFile.exists())
 		{
@@ -5434,7 +5490,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 				File priorFile = new File(outputFileName);
 				if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
 				{
-					System.out.println ("Warning: fromFileZIP() is overwriting prior file " + outputFileName);
+					System.out.println ("Note: fromFileZIP() is overwriting prior file " + outputFileName);
 				}
 				else if  (priorFile.exists())
 				{
@@ -5529,7 +5585,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		File priorFile = new File(modelFileName);
 		if  (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
 		{
-			System.out.println ("Warning: fromFileGZIP() is overwriting prior file " + modelFileName);
+			System.out.println ("Note: fromFileGZIP() is overwriting prior file " + modelFileName);
 		}
 		else if  (priorFile.exists())
 		{
@@ -5612,7 +5668,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         }
         File priorFile = new File(exiFileName);
         if (priorFile.exists() && ConfigurationProperties.isOverwriteExistingFiles()) {
-            System.out.println("Warning: fromFileEXI() is overwriting prior file " + exiFileName);
+            System.out.println("Note: fromFileEXI() is overwriting prior file " + exiFileName);
         } else if (priorFile.exists()) {
             System.out.println("Warning: fromFileEXI() is not allowed to overwrite prior file: " + exiFileName);
             System.out.println("  see X3DJSAIL.properties file, or ConfigurationProperties.isOverwriteExistingFiles() and .setOverwriteExistingFiles(), to get/set permissions");
@@ -16845,7 +16901,8 @@ method invocations on the same node object).
 	{
 		// type promotion first
 		if (getType().equals(field.TYPE_SFDOUBLE)  || getType().equals(field.TYPE_MFDOUBLE) ||
-            getType().equals(field.TYPE_SFTIME)    || getType().equals(field.TYPE_MFTIME))
+            getType().equals(field.TYPE_SFTIME)    || getType().equals(field.TYPE_MFTIME)   ||
+			getType().equals(field.TYPE_SFINT32)   || getType().equals(field.TYPE_MFINT32))
 		{
             clearValues();
             valueArrayDouble = new double[1]; // fix array size
@@ -16878,16 +16935,17 @@ method invocations on the same node object).
 	<xsl:text disable-output-escaping="yes"><![CDATA[ setValue(float[] newValue)
 	{
 		if (!getType().isEmpty() && 
-			!getType().equals(field.TYPE_SFCOLOR)    && !getType().equals(field.TYPE_MFCOLOR) &&
+			!getType().equals(field.TYPE_SFCOLOR)    && !getType().equals(field.TYPE_MFCOLOR)     &&
 			!getType().equals(field.TYPE_SFCOLORRGBA)&& !getType().equals(field.TYPE_MFCOLORRGBA) &&
-			!getType().equals(field.TYPE_SFFLOAT)    && !getType().equals(field.TYPE_MFFLOAT) &&
-			!getType().equals(field.TYPE_SFROTATION) && !getType().equals(field.TYPE_MFROTATION) &&
-			!getType().equals(field.TYPE_SFTIME)     && !getType().equals(field.TYPE_MFTIME) &&
-			!getType().equals(field.TYPE_SFVEC2F)    && !getType().equals(field.TYPE_MFVEC2F) &&
-			!getType().equals(field.TYPE_SFVEC3F)    && !getType().equals(field.TYPE_MFVEC3F) &&
-			!getType().equals(field.TYPE_SFVEC4F)    && !getType().equals(field.TYPE_MFVEC4F) &&
-			!getType().equals(field.TYPE_SFMATRIX3F) && !getType().equals(field.TYPE_MFMATRIX3F) &&
-			!getType().equals(field.TYPE_SFMATRIX4F) && !getType().equals(field.TYPE_MFMATRIX4F) &&
+			!getType().equals(field.TYPE_SFFLOAT)    && !getType().equals(field.TYPE_MFFLOAT)     &&
+			!getType().equals(field.TYPE_SFINT32)    && !getType().equals(field.TYPE_MFINT32)     &&
+			!getType().equals(field.TYPE_SFROTATION) && !getType().equals(field.TYPE_MFROTATION)  &&
+			!getType().equals(field.TYPE_SFTIME)     && !getType().equals(field.TYPE_MFTIME)      &&
+			!getType().equals(field.TYPE_SFVEC2F)    && !getType().equals(field.TYPE_MFVEC2F)     &&
+			!getType().equals(field.TYPE_SFVEC3F)    && !getType().equals(field.TYPE_MFVEC3F)     &&
+			!getType().equals(field.TYPE_SFVEC4F)    && !getType().equals(field.TYPE_MFVEC4F)     &&
+			!getType().equals(field.TYPE_SFMATRIX3F) && !getType().equals(field.TYPE_MFMATRIX3F)  &&
+			!getType().equals(field.TYPE_SFMATRIX4F) && !getType().equals(field.TYPE_MFMATRIX4F)  &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
 			String errorNotice = "Illegal type: cannot setValue(float[] " + newValue + ") when ]]></xsl:text>
@@ -16924,7 +16982,9 @@ method invocations on the same node object).
 	{
 		if (!getType().isEmpty() && 
 			!getType().equals(field.TYPE_SFDOUBLE)   && !getType().equals(field.TYPE_MFDOUBLE) &&
-			!getType().equals(field.TYPE_SFTIME)     && !getType().equals(field.TYPE_MFTIME) &&
+			!getType().equals(field.TYPE_SFTIME)     && !getType().equals(field.TYPE_MFTIME)   &&
+			!getType().equals(field.TYPE_SFFLOAT)    && !getType().equals(field.TYPE_MFFLOAT)  &&
+			!getType().equals(field.TYPE_SFINT32)    && !getType().equals(field.TYPE_MFINT32)  &&
             !(getType().equals(ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE) && ConfigurationProperties.isCreationConnectionValidationExceptionAllowed()))
 		{
 			String errorNotice = "Illegal type: cannot setValue(double " + newValue + ") when ]]></xsl:text>
@@ -31637,7 +31697,7 @@ import javax.script.ScriptException;</xsl:text>
                 }
                 else if (resultFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
                 {
-                    System.out.println("Warning: x3dCanonicalizer is overwriting prior file " + resultFileName);
+                    System.out.println("Note: x3dCanonicalizer is overwriting prior file " + resultFileName);
                 }
                 else if  (resultFile.exists())
 				{
@@ -32414,7 +32474,7 @@ import javax.script.ScriptException;</xsl:text>
         
 		else if (outputFile.exists() && ConfigurationProperties.isOverwriteExistingFiles())
 		{
-			errorNotice += "Warning: fileStylesheetConversion() is overwriting prior file " + outputFilePath;
+			errorNotice += "Note: fileStylesheetConversion() is overwriting prior file " + outputFilePath;
 		}
 		else if  (outputFile.exists())
 		{
@@ -34121,6 +34181,8 @@ import org.web3d.x3d.sai.Texturing.X3DTextureNode;
 import org.web3d.x3d.sai.Texturing.X3DTexture2DNode;
 import org.web3d.x3d.sai.Texturing.X3DTextureCoordinateNode;
 import org.web3d.x3d.sai.Texturing.X3DTextureTransformNode;
+import org.web3d.x3d.sai.Texturing.X3DSingleTextureCoordinateNode;
+import org.web3d.x3d.sai.Texturing.X3DSingleTextureTransformNode;
 import org.web3d.x3d.sai.Shaders.X3DProgrammableShaderObject;
 import org.web3d.x3d.sai.Shaders.X3DShaderNode;
 import org.web3d.x3d.sai.Shaders.X3DVertexAttributeNode;
@@ -35019,11 +35081,11 @@ import org.web3d.x3d.sai.X3DException;
 									((GeoElevationGrid)elementObject).setNormal((ProtoInstance) childX3dElement);
 
 							else if (nodeName.equals("ElevationGrid") && childElementName.contains("TextureCoordinate") && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((ElevationGrid)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
+									((ElevationGrid)elementObject).setTexCoord((X3DSingleTextureCoordinateNode) childX3dElement);
 							else if (nodeName.equals("ElevationGrid") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("texcoord"))
 									((ElevationGrid)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && childElementName.contains("TextureCoordinate") && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((GeoElevationGrid)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
+									((GeoElevationGrid)elementObject).setTexCoord((X3DSingleTextureCoordinateNode) childX3dElement);
 							else if (nodeName.equals("GeoElevationGrid") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("texcoord"))
 									((GeoElevationGrid)elementObject).setTexCoord((ProtoInstance) childX3dElement);
                 
@@ -35235,7 +35297,7 @@ import org.web3d.x3d.sai.X3DException;
 									((TriangleStripSet)elementObject).setFogCoord((ProtoInstance) childX3dElement);
 							
 							else if ((nodeName.endsWith("Set") || nodeName.endsWith("Surface")) && childElementName.contains("TextureCoordinate") && (containerField.equals("texCoord") || containerField.isEmpty()))
-									((X3DComposedGeometryNode)elementObject).setTexCoord((X3DTextureCoordinateNode) childX3dElement);
+									((X3DComposedGeometryNode)elementObject).setTexCoord((X3DSingleTextureCoordinateNode) childX3dElement);
 							else if (nodeName.equals("IndexedFaceSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))
 									((IndexedFaceSet)elementObject).setTexCoord((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("IndexedQuadSet") && (protoInstanceNodeType.contains("TextureCoordinate") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("texCoord") || containerField.isEmpty()))

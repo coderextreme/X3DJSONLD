@@ -26,14 +26,14 @@
 
 <!--
   <head>
-   <meta name="filename"    content="BuildObjectModelXmlFile.xslt" />
+   <meta name="filename"    content="BuildX3dUnifiedObjectModelXmlFile.xslt" />
    <meta name="author"      content="Roy Walmsley" />
    <meta name="created"     content="27 November 2015" />
    <meta name="modified"    content="29 December 2015" />
    <meta name="description" content="XSL stylesheet to walk X3D Schema and generate X3D Unified Object Model (X3DUOM) XML file." />
-   <meta name="identifier"  content="https://www.web3d.org/x3d/stylesheets/BuildObjectModelXmlFile.xslt" />
-   <meta name="reference"   content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildObjectModelXmlFile.xslt?revision=22300&view=markup" />
-   <meta name="reference"   content="BuildObjectModelXmlFile.xslt" />
+   <meta name="identifier"  content="https://www.web3d.org/x3d/stylesheets/BuildX3dUnifiedObjectModelXmlFile.xslt" />
+   <meta name="reference"   content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildX3dUnifiedObjectModelXmlFile.xslt?revision=22300&view=markup" />
+   <meta name="reference"   content="BuildX3dUnifiedObjectModelXmlFile.xslt" />
   </head>
 
 Recommended tool:
@@ -76,7 +76,7 @@ Recommended tool:
 <xsl:message>
   <xsl:text>X3dUnifiedObjectModel:  process X3D schema version </xsl:text>
   <xsl:value-of select="//xs:schema/@version"/>
-  <xsl:text> using BuildObjectModelXmlFile.xslt </xsl:text>
+  <xsl:text> using BuildX3dUnifiedObjectModelXmlFile.xslt </xsl:text>
  </xsl:message>
 
 <!-- ===================================================================================== -->
@@ -467,15 +467,24 @@ Recommended tool:
                     <xsl:text>' has multiple accessType values including '</xsl:text>
                     <xsl:value-of select="$accessType"/>
                     <xsl:text>'</xsl:text>
-                    <xsl:text> for elements (</xsl:text>
+                    <xsl:text> for (</xsl:text>
                     <xsl:for-each select="//xs:element//xs:appinfo        /xs:attribute[(@name=$fieldName) and not(@name='field')][(substring-before(@fixed,'Field')=$accessType)]
-                                        | //xs:element//xs:complexContent//xs:attribute[(@name=$fieldName) and not(@name='field')][($accessType = 'inputOutput')]">
+                                        | //xs:element//xs:appinfo        /xs:element  [(@name=$fieldName) and not(@name='field')][(substring-before(@fixed,'Field')=$accessType)]
+                                        | //xs:element//xs:complexContent//xs:attribute[(@name=$fieldName) and not(@name='field')][($accessType = 'inputOutput') or (string-length($accessType) = 0)]">
                         <xsl:if test="(position() > 1)">
                             <xsl:text> </xsl:text>
                         </xsl:if>
                         <xsl:value-of select="ancestor::xs:element/@name"/>
                     </xsl:for-each>
                     <xsl:text>)</xsl:text>
+                    <!-- schema diagnostic -->
+                    <xsl:if test="(count(//xs:element//xs:appinfo        /xs:attribute[(@name=$fieldName) and not(@name='field')][(substring-before(@fixed,'Field')=$accessType)]
+                                        | //xs:element//xs:appinfo        /xs:element  [(@name=$fieldName) and not(@name='field')][(substring-before(@fixed,'Field')=$accessType)]
+                                        | //xs:element//xs:complexContent//xs:attribute[(@name=$fieldName) and not(@name='field')][($accessType = 'inputOutput') or (string-length($accessType) = 0)]) = 0)">
+                        <xsl:text> *** none found, check correctness of list </xsl:text>
+                        <xsl:value-of select="$accessType"/>
+                        <xsl:text>AccessTypes</xsl:text>
+                    </xsl:if>
                 </xsl:message>
             </xsl:if>
         </xsl:for-each>
@@ -911,9 +920,9 @@ Recommended tool:
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <xsl:message>
-                                        <xsl:text>*** note: ConcreteNode name='</xsl:text>
+                                        <xsl:text>*** tooltip note: ConcreteNode name='</xsl:text>
                                         <xsl:value-of select="@name"/>
-                                        <xsl:text>' no has appinfo description.</xsl:text>
+                                        <xsl:text>' has no appinfo description.</xsl:text>
                                     </xsl:message>
                                 </xsl:otherwise>
                             </xsl:choose>
@@ -1560,7 +1569,7 @@ Recommended tool:
                 </xsl:message>
             </xsl:when>
             <xsl:otherwise>
-                <!-- debug diagnostic -->
+                <!-- debug diagnostic
                 <xsl:if test="($containerName='AudioClip') and (@name='description')">
                     <xsl:message>
                         <xsl:text>    ... made it inside the if... </xsl:text>
@@ -1589,7 +1598,7 @@ Recommended tool:
                         <xsl:text>, ../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/@base=</xsl:text>
                                         <xsl:value-of select="../../../xs:complexType//xs:attribute[@name=$fieldName]/xs:simpleType/xs:restriction/@base"/>
                     </xsl:message>
-                </xsl:if>
+                </xsl:if> -->
                 <xsl:element name="field">
                     <xsl:attribute name="name" select="$fieldName"/>
                     <xsl:attribute name="type" select="$fieldType"/>

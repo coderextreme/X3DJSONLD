@@ -1343,6 +1343,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:choose>
         <!-- post-processing -->
         <xsl:if test="(local-name()='HAnimHumanoid')">
+            <!-- used in X3dTidy.xslt and X3dToXhtml.xslt -->
             <xsl:variable name="isHAnim1" select="$isX3D3 and (starts-with(@version,'1') or (string-length(@version) = 0))"/>
             <xsl:variable name="isHAnim2" select="$isX3D4 and  starts-with(@version,'2')"/>
             <xsl:if test="($isHAnim1 = true()) and ($isHAnim2 = true())">
@@ -1393,7 +1394,7 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:choose>
         </xsl:variable>
         <xsl:variable name="newNameValue">
-            <xsl:call-template name="newNameValue">
+            <xsl:call-template name="newHAnimNameValue">
                 <xsl:with-param name="nameValue"><xsl:value-of select="$nameValue"/></xsl:with-param>
                 <xsl:with-param name="nodeName" ><xsl:value-of select="local-name()"/></xsl:with-param>
             </xsl:call-template>
@@ -2244,7 +2245,7 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:choose>
         </xsl:variable>
         <xsl:variable name="newNameValue">
-            <xsl:call-template name="newNameValue">
+            <xsl:call-template name="newHAnimNameValue">
                 <xsl:with-param name="nameValue"><xsl:value-of select="$nameValue"/></xsl:with-param>
                 <xsl:with-param name="nodeName" ><xsl:value-of select="local-name(..)"/></xsl:with-param>
             </xsl:call-template>
@@ -2374,7 +2375,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and .='false') and
                       not( local-name()='load' and .='true') and
-                      not( local-name()='refresh' and (.='0' or .='0.0')) or
+                      not( local-name()='refresh' and (.='0' or .='0.0')) and
                       not( local-name()='visible' and .='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -3109,7 +3110,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- debug
         <xsl:if test="starts-with(local-name(), 'bbox')">
             <xsl:message>
-                <xsl:text>### @* attribute of interest found: [</xsl:text>
+                <xsl:text>*** debug @* attribute of interest found: [</xsl:text>
                 <xsl:value-of select="local-name(..)"/>
                 <xsl:if test="(local-name() = 'value')">
                     <xsl:text> </xsl:text>
@@ -3123,9 +3124,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="."/>
                 <xsl:text>'</xsl:text>
                 <xsl:text>]</xsl:text>
-            </xsl:message>
-            <xsl:message>
-                <xsl:text>notDefaultFieldValue1='</xsl:text>
+                <xsl:text> notDefaultFieldValue1='</xsl:text>
                 <xsl:value-of select="$notDefaultFieldValue1"/>
                 <xsl:text>', notDefaultFieldValue1a='</xsl:text>
                 <xsl:value-of select="$notDefaultFieldValue1a"/>
@@ -3227,7 +3226,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:value-of select="$attributeName"/>
                 <xsl:text>='</xsl:text>
                 <xsl:value-of select="."/>
-                <xsl:text>' $isMFString=</xsl:text>
+                <xsl:text>'</xsl:text>
+                <xsl:text> is an allowed value</xsl:text>
+                <xsl:text>, $isMFString=</xsl:text>
                 <xsl:value-of select="$isMFString"/>
             </xsl:message>
             -->
@@ -3464,7 +3465,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             <!--
                             -->
                             <xsl:variable name="newNameValue">
-                                <xsl:call-template name="newNameValue">
+                                <xsl:call-template name="newHAnimNameValue">
                                     <xsl:with-param name="nameValue"><xsl:value-of select="$attributeValue"/></xsl:with-param>
                                     <xsl:with-param name="nodeName" ><xsl:text>ROUTE</xsl:text></xsl:with-param>
                                 </xsl:call-template>
@@ -4404,6 +4405,7 @@ POSSIBILITY OF SUCH DAMAGE.
     </xsl:template>
 
     <xsl:template name="output-humanoid-tree">
+        <!-- used in X3dTidy.xslt and X3dToXhtml.xslt -->
         <xsl:param name="currentNode"><!-- default value is empty --></xsl:param>
         <xsl:param name="treeMargin">  <!-- default value is empty --></xsl:param>
         
@@ -4433,9 +4435,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:message>
             </xsl:if> -->
             <xsl:if test="(local-name($currentNode)='HAnimHumanoid')">
-                <xsl:text>=========================================================================================</xsl:text>
+                <xsl:text>=======================================================================================================</xsl:text>
                 <xsl:text>&#10;</xsl:text>
-                <xsl:text>HAnimHumanoid skeleton holds HAnimJoint : HAnimSegment : HAnimSite triplets (X3D</xsl:text>
+                <xsl:text>HAnimHumanoid skeleton holds X3D</xsl:text>
                 <xsl:value-of select="substring(//X3D/@version,1,1)"/>
                 <xsl:text> HAnim</xsl:text>
                 <xsl:choose>
@@ -4446,9 +4448,16 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>1</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
+                <xsl:text> triplets, </xsl:text>
+                <xsl:text>HAnimJoint (</xsl:text>
+                <xsl:value-of select="count(descendant::*[local-name() = 'HAnimJoint']  [string-length(@name) > 0])"/>
+                <xsl:text>) : HAnimSegment (</xsl:text>
+                <xsl:value-of select="count(descendant::*[local-name() = 'HAnimSegment'][string-length(@name) > 0])"/>
+                <xsl:text>) : HAnimSite (</xsl:text>
+                <xsl:value-of select="count(descendant::*[local-name() = 'HAnimSite']   [string-length(@name) > 0])"/>
                 <xsl:text>)</xsl:text>
                 <xsl:text>&#10;</xsl:text>
-                <xsl:text>=========================================================================================</xsl:text>
+                <xsl:text>=======================================================================================================</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:if>
             
@@ -4467,7 +4476,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:value-of select="$currentNode/@name"/>
                             <!-- check if name changed, if so display that too -->
                             <xsl:variable name="newNameValue">
-                                <xsl:call-template name="newNameValue">
+                                <xsl:call-template name="newHAnimNameValue">
                                     <xsl:with-param name="nameValue"><xsl:value-of select="$currentNode/@name"/></xsl:with-param>
                                     <xsl:with-param name="nodeName" ><xsl:value-of select="local-name($currentNode)"/></xsl:with-param>
                                 </xsl:call-template>
@@ -4492,7 +4501,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                     <xsl:value-of select="$currentNode/HAnimSegment/@name"/>
                                     <!-- check if name changed, if so display that too -->
                                     <xsl:variable name="newNameValue">
-                                        <xsl:call-template name="newNameValue">
+                                        <xsl:call-template name="newHAnimNameValue">
                                             <xsl:with-param name="nameValue"><xsl:value-of select="$currentNode/@name"/></xsl:with-param>
                                             <xsl:with-param name="nodeName" ><xsl:value-of select="local-name($currentNode)"/></xsl:with-param>
                                         </xsl:call-template>
@@ -4513,7 +4522,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                     <xsl:value-of select="@name"/>
                                     <!-- check if name changed, if so display that too -->
                                     <xsl:variable name="newNameValue">
-                                        <xsl:call-template name="newNameValue">
+                                        <xsl:call-template name="newHAnimNameValue">
                                             <xsl:with-param name="nameValue"><xsl:value-of select="$currentNode/@name"/></xsl:with-param>
                                             <xsl:with-param name="nodeName" ><xsl:value-of select="local-name($currentNode)"/></xsl:with-param>
                                         </xsl:call-template>
@@ -4562,7 +4571,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:if test="(local-name($currentNode)='HAnimHumanoid')">
-                <xsl:text>===========================================================================</xsl:text>
+                <xsl:text>=======================================================================================================</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:if>
         </xsl:if>
@@ -5270,7 +5279,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:choose>
     </xsl:template>
 
-    <xsl:template name="newNameValue">
+    <xsl:template name="newHAnimNameValue">
         <xsl:param name="nameValue"><xsl:text></xsl:text></xsl:param>
         <xsl:param name="nodeName"><xsl:text></xsl:text></xsl:param>
         
@@ -5295,7 +5304,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:when test="//*[starts-with(local-name(),'HAnim')][@DEF = $attributeValue]">
                         <!-- apply change, if any -->
                         <xsl:variable name="newNameValue">
-                            <xsl:call-template name="newNameValue">
+                            <xsl:call-template name="newHAnimNameValue">
                                 <xsl:with-param name="nameValue"><xsl:value-of select="substring-after($attributeValue,'_')"/></xsl:with-param>
                                 <xsl:with-param name="nodeName" ><xsl:value-of select="local-name(//*[starts-with(local-name(),'HAnim')][@DEF = $attributeValue])"/></xsl:with-param>
                             </xsl:call-template>

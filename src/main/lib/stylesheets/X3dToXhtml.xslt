@@ -246,7 +246,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>HAnimHumanoidReport</xsl:text>
                         </xsl:variable>
                         <h3>
-                            <!-- add bookmark -->
+            <!-- Unicode Character 'BOOKMARK' (U+1F516) https://www.fileformat.info/info/unicode/char/1f516/index.htm -->
+            <a href="#{$hAnimHumanoidID}">&#128278;</a>
                             <xsl:element name="a">
                                 <xsl:attribute name="name">
                                     <xsl:value-of select="$hAnimHumanoidID"/>
@@ -257,6 +258,32 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 </a>
                             </xsl:element>
                         </h3>
+                        
+        <!-- post-processing -->
+        <xsl:if test="(local-name()='HAnimHumanoid')">
+            <!-- used in X3dTidy.xslt and X3dToXhtml.xslt -->
+            <xsl:message>
+                <!-- debug
+                <xsl:text>*** output-humanoid-tree HAnimHumanoid commencing</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                -->
+                <xsl:call-template name="output-humanoid-tree">
+                    <xsl:with-param name="currentNode" select="self::node()"/>
+                    <xsl:with-param name="treeMargin"><xsl:text></xsl:text></xsl:with-param>
+                </xsl:call-template>
+            </xsl:message>
+            <pre>
+                <xsl:call-template name="output-humanoid-tree">
+                    <xsl:with-param name="currentNode" select="self::node()"/>
+                    <xsl:with-param name="treeMargin"><xsl:text></xsl:text></xsl:with-param>
+                </xsl:call-template>
+            </pre>
+        </xsl:if>
+        
+                        <p>
+                            The following inset decorates the original HAnimHumanoid skeleton with additional visualization shapes.
+                            Authors can copy/paste this version to assist in visually diagnosing skeleton correctness.
+                        </p>
                         <p>
                             Key to author-assist additions inserted in the HAnimHumanoid skeleton:
                             <ul>
@@ -312,9 +339,13 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                             </span>
                                             <xsl:text>' </xsl:text>
                                         </xsl:if>
+                                        <xsl:if test="(string-length(normalize-space(@info)) = 0)">
+                                            <xsl:text>&gt;</xsl:text>
+                                        </xsl:if>
                                         <xsl:text>&#10;</xsl:text>
                                     </td>
                                 </tr>
+                                <xsl:if test="(string-length(normalize-space(@info)) > 0)">
                                 <tr>
                                     <td valign="top" align="right" width="80px">
                                         <span class="attribute">info</span>
@@ -338,6 +369,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                         <xsl:text>&#10;</xsl:text>
                                     </td>
                                 </tr>
+                                </xsl:if>
                                 <tr>
                                     <td colspan="2">
                                         <xsl:for-each select="HAnimJoint[string-length(@name) > 0]">
@@ -374,6 +406,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                         <td colspan="2">
                                             <!-- <xsl:text>&lt;! - - USE nodes go here for access by inverse kinematics (IK) engines and other tools - -&gt;</xsl:text> -->
                                             <br />
+                                            <div class="indent">
                                             <xsl:for-each select="*[string-length(@USE) > 0]">
                                                 <!-- http://p2p.wrox.com/xslt/70832-preceding-sibling-comment.html -->
                                                 <xsl:if test="preceding-sibling::node()[1][self::comment()]">
@@ -383,6 +416,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                 <xsl:apply-templates select="."/>
                                                 <br />
                                             </xsl:for-each>
+                                            </div>
                                         </td>
                                     </tr>
                                 </xsl:if>
@@ -525,11 +559,13 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>&#10;</xsl:text>
                     <span style="color:white">&lt;!--</span>
                     <xsl:text>&#10;</xsl:text>
-                    Additional help information about X3D scenes:  
-                    <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" title="Numerous resources that support X3D graphics">X3D Resources</a>,
-                    <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" title="Style guidelines, authoring tips and best practices">X3D Scene Authoring Hints</a>
-                    and
+                    <xsl:text>For additional help information about X3D scenes, please see </xsl:text>
                     <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" title="Summary descriptions and authoring hints for each X3D node (element) and field (attribute)">X3D Tooltips</a>
+                    <xsl:text>, </xsl:text>
+                    <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" title="Numerous resources that support X3D graphics">X3D Resources</a>
+                    <xsl:text> and </xsl:text>
+                    <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" title="Style guidelines, authoring tips and best practices">X3D Scene Authoring Hints</a>
+                    <xsl:text>.</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <span style="color:white">--&gt;</span>
                     <xsl:text>&#10;</xsl:text>
@@ -2052,6 +2088,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
     </xsl:template>
 
     <xsl:template match="@*" >
+      <xsl:if test="(string-length(../@USE) = 0) or (local-name()='USE') or (local-name()='containerField')">
         <!-- eliminate default attribute values, otherwise they will all appear in output  -->
         <!-- this block of tests is used identically in X3dToXhtml.xslt X3dToHtml.xslt X3dToVrml97.xslt X3dTidy.xslt X3dToX3dom.xslt X3dUnwrap.xslt X3dWrap.xslt and X3dToJson.xslt -->
         <!-- check values with/without .0 suffix since these are string checks and autogenerated/DOM output might have either -->
@@ -2093,7 +2130,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
                       not( local-name()='bboxDisplay' and .='false') and
                       not( local-name()='load' and .='true') and
-                      not( local-name()='refresh' and (.='0' or .='0.0')) or
+                      not( local-name()='refresh' and (.='0' or .='0.0')) and
                       not( local-name()='visible'     and .='true') or
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and .='false') or
@@ -3547,6 +3584,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             </xsl:if>
             <!-- end if filtering of default attribute values -->
         </xsl:if>
+      </xsl:if>
     </xsl:template>
 
     <!-- ****** XML text ****** -->
@@ -3639,7 +3677,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>,</xsl:text>
                         </xsl:if>
                     </xsl:for-each>
-                    <br />
+                    <hr width="50%"/>
                 </xsl:if>
                 <xsl:if test="//*[local-name()='ExternProtoDeclare']">
                     <xsl:text>&#10;</xsl:text>
@@ -4148,6 +4186,404 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         </xsl:for-each>
 
         <!-- can invoke other 2D nodes similarly -->
+    </xsl:template>
+    
+    <xsl:template name="output-humanoid-tree">
+        <!-- used in X3dTidy.xslt and X3dToXhtml.xslt -->
+        <xsl:param name="currentNode"><!-- default value is empty --></xsl:param>
+        <xsl:param name="treeMargin">  <!-- default value is empty --></xsl:param>
+        
+        <xsl:variable name="isHAnim1" select="$isX3D3 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)]"/>
+        <xsl:variable name="isHAnim2" select="$isX3D4 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] and not($isHAnim1 = true())"/>
+        <xsl:if test="($isHAnim1 = true()) and ($isHAnim2 = true())">
+            <xsl:message>
+                <xsl:text>*** error in X3dTidy.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, output-humanoid-tree entry </xsl:text>
+            </xsl:message>
+        </xsl:if>
+        
+        <xsl:if test="(string-length($currentNode/@USE) = 0)">
+            <xsl:variable name="describeSelf">
+                <xsl:value-of select="local-name($currentNode)"/>
+                <xsl:if test="(string-length($currentNode/@name) > 0)">
+                    <xsl:text> (</xsl:text>
+                    <xsl:value-of select="$currentNode/@name"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:if>
+            </xsl:variable>
+            
+            <!-- debug
+            <xsl:if test="starts-with($describeSelf, 'HAnim')">
+                <xsl:message>
+                    <xsl:text>*** output-humanoid-tree trace: </xsl:text>
+                    <xsl:value-of select="$describeSelf"/>
+                </xsl:message>
+            </xsl:if> -->
+            <xsl:if test="(local-name($currentNode)='HAnimHumanoid')">
+                <xsl:text>=======================================================================================================</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>HAnimHumanoid skeleton holds X3D</xsl:text>
+                <xsl:value-of select="substring(//X3D/@version,1,1)"/>
+                <xsl:text> HAnim</xsl:text>
+                <xsl:choose>
+                    <xsl:when test="(string-length(@version) > 0)">
+                        <xsl:value-of select="substring(@version,1,1)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>1</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:text> triplets, </xsl:text>
+                <xsl:text>HAnimJoint (</xsl:text>
+                <xsl:value-of select="count(descendant::*[local-name() = 'HAnimJoint']  [string-length(@name) > 0])"/>
+                <xsl:text>) : HAnimSegment (</xsl:text>
+                <xsl:value-of select="count(descendant::*[local-name() = 'HAnimSegment'][string-length(@name) > 0])"/>
+                <xsl:text>) : HAnimSite (</xsl:text>
+                <xsl:value-of select="count(descendant::*[local-name() = 'HAnimSite']   [string-length(@name) > 0])"/>
+                <xsl:text>)</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>=======================================================================================================</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:if>
+            
+            <xsl:choose>
+                <xsl:when test="((local-name($currentNode)='HAnimJoint') or (local-name($currentNode)='HAnimHumanoid')) and (string-length($currentNode/@USE) = 0)">
+                    <xsl:value-of select="$treeMargin"/>
+                    <xsl:choose>
+                        <xsl:when test="(local-name($currentNode)='HAnimHumanoid')">
+                            <xsl:text>HAnimHumanoid DEF='</xsl:text>
+                            <xsl:value-of select="$currentNode/@DEF"/>
+                            <xsl:text> name='</xsl:text>
+                            <xsl:value-of select="$currentNode/@name"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="(string-length($currentNode/@name) > 0)">
+                            <xsl:value-of select="$currentNode/@name"/>
+                            <!-- check if name changed, if so display that too -->
+                            <xsl:variable name="newNameValue">
+                                <xsl:call-template name="newHAnimNameValue">
+                                    <xsl:with-param name="nameValue"><xsl:value-of select="$currentNode/@name"/></xsl:with-param>
+                                    <xsl:with-param name="nodeName" ><xsl:value-of select="local-name($currentNode)"/></xsl:with-param>
+                                </xsl:call-template>
+                            </xsl:variable>
+                            <xsl:if test="($isHAnim2 = true()) and not($currentNode/@name = $newNameValue)">
+                                <xsl:text> (HAnim2 name replaced: </xsl:text>
+                                <xsl:value-of select="$newNameValue"/>
+                                <xsl:text>)</xsl:text>
+                            </xsl:if>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> (</xsl:text>
+                            <xsl:value-of select="local-name($currentNode)"/>
+                            <xsl:text>/@name not found)</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:choose>
+                        <xsl:when test="$currentNode/HAnimSegment[string-length(@USE) = 0]"><!-- omit HAnimHumanoid, HAnimJoint from this additional output -->
+                            <xsl:text> : </xsl:text>
+                            <xsl:choose>
+                                <xsl:when test="$currentNode/HAnimSegment[string-length(@name) > 0]">
+                                    <xsl:value-of select="$currentNode/HAnimSegment/@name"/>
+                                    <!-- check if name changed, if so display that too -->
+                                    <xsl:variable name="newNameValue">
+                                        <xsl:call-template name="newHAnimNameValue">
+                                            <xsl:with-param name="nameValue"><xsl:value-of select="$currentNode/@name"/></xsl:with-param>
+                                            <xsl:with-param name="nodeName" ><xsl:value-of select="local-name($currentNode)"/></xsl:with-param>
+                                        </xsl:call-template>
+                                    </xsl:variable>
+                                    <xsl:if test="($isHAnim2 = true()) and not($currentNode/@name = $newNameValue)">
+                                        <xsl:text> (HAnim2 name replaced: </xsl:text>
+                                        <xsl:value-of select="$newNameValue"/>
+                                        <xsl:text>)</xsl:text>
+                                    </xsl:if>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:text>(HAnimSegment/@name not found)</xsl:text>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                            <xsl:if test="(count(child::node()/HAnimSite[string-length(@USE) = 0]) > 0)">
+                                <xsl:text> : </xsl:text>
+                                <xsl:for-each select="child::node()/HAnimSite[string-length(@USE) = 0]">
+                                    <xsl:value-of select="@name"/>
+                                    <!-- check if name changed, if so display that too -->
+                                    <xsl:variable name="newNameValue">
+                                        <xsl:call-template name="newHAnimNameValue">
+                                            <xsl:with-param name="nameValue"><xsl:value-of select="$currentNode/@name"/></xsl:with-param>
+                                            <xsl:with-param name="nodeName" ><xsl:value-of select="local-name($currentNode)"/></xsl:with-param>
+                                        </xsl:call-template>
+                                    </xsl:variable>
+                                    <xsl:if test="($isHAnim2 = true()) and not($currentNode/@name = $newNameValue)">
+                                        <xsl:text> (HAnim2 name replaced: </xsl:text>
+                                        <xsl:value-of select="$newNameValue"/>
+                                        <xsl:text>)</xsl:text>
+                                    </xsl:if>
+                                    <xsl:if test="not(position() = last())">
+                                        <xsl:text>, </xsl:text>
+                                    </xsl:if>
+                                </xsl:for-each>
+                            </xsl:if>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!-- no HAnimSegment child -->
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:variable name="treeMarginIncrement">
+                        <xsl:choose>
+                            <xsl:when test="not(position() = last()) and not(local-name($currentNode)='HAnimHumanoid') and not(@name = 'humanoid_root')">
+                                <xsl:text>| </xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>  </xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:for-each select="child::node()[string-length(@USE) = 0][not(local-name() = 'HAnimSegment')]">
+                        <xsl:call-template name="output-humanoid-tree">
+                            <xsl:with-param name="currentNode" select="self::node()"/>
+                            <xsl:with-param name="treeMargin" select="concat($treeMargin,$treeMarginIncrement)"/>
+                        </xsl:call-template>
+                    </xsl:for-each>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- recurse on other children for completeness, but only output HAnim skeleton -->
+                    <xsl:for-each select="child::node()[string-length(@USE) = 0][not(local-name() = 'HAnimSegment')]">
+                        <xsl:call-template name="output-humanoid-tree">
+                            <xsl:with-param name="currentNode" select="self::node()"/>
+                            <xsl:with-param name="treeMargin" select="concat($treeMargin,'**')"/><!-- flags that possible further debugging is needed -->
+                        </xsl:call-template>
+                    </xsl:for-each>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:if test="(local-name($currentNode)='HAnimHumanoid')">
+                <xsl:text>=======================================================================================================</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:if>
+        </xsl:if>
+    </xsl:template>
+    
+    <!-- X3dTidy includes diagnostics -->
+    <xsl:variable name="isX3D3" select="starts-with(//X3D/@version,'3')"/>
+    <xsl:variable name="isX3D4" select="starts-with(//X3D/@version,'4')"/>
+
+    <xsl:template name="newHAnimNameValue">
+        <xsl:param name="nameValue"><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="nodeName"><xsl:text></xsl:text></xsl:param>
+        
+        <!-- newNameValue check may be performed within an HAnimHumanoid or else outside (for example, by ROUTE) -->
+        <xsl:variable name="isHAnim1" select="$isX3D3 and (ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)] or
+                                                                                             //HAnimHumanoid  [starts-with(@version,'1') or (string-length(@version) = 0)])"/>
+        <xsl:variable name="isHAnim2" select="$isX3D4 and (ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] or
+                                                                                             //HAnimHumanoid  [starts-with(@version,'2')])"/>
+        <xsl:if test="($isHAnim1 = true()) and ($isHAnim2 = true())">
+            <xsl:message>
+                <xsl:text>*** error in X3dTidy.xslt internal logic, $isHAnim1 and $isHAnim2 are both true, newNameValue entry for </xsl:text>
+                <xsl:value-of select="$nodeName "/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$nameValue"/>
+            </xsl:message>
+        </xsl:if>
+      
+        <xsl:choose>
+            <xsl:when test="($nodeName = 'ROUTE') and ((local-name() = 'fromNode') or (local-name() = 'toNode'))">
+                <xsl:variable name="attributeValue" select="."/>
+                <xsl:choose>
+                    <xsl:when test="//*[starts-with(local-name(),'HAnim')][@DEF = $attributeValue]">
+                        <!-- apply change, if any -->
+                        <xsl:variable name="newNameValue">
+                            <xsl:call-template name="newHAnimNameValue">
+                                <xsl:with-param name="nameValue"><xsl:value-of select="substring-after($attributeValue,'_')"/></xsl:with-param>
+                                <xsl:with-param name="nodeName" ><xsl:value-of select="local-name(//*[starts-with(local-name(),'HAnim')][@DEF = $attributeValue])"/></xsl:with-param>
+                            </xsl:call-template>
+                        </xsl:variable>
+                        <!-- provide value -->
+                        <xsl:value-of select='$newNameValue'/>
+                        <xsl:if test="not(substring-after($attributeValue,'_') = $newNameValue)">
+                        <!-- debug
+                            <xsl:message>
+                                <xsl:text>*** HAnim2 ROUTE check: </xsl:text>
+                                <xsl:value-of select="local-name(..)"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>='</xsl:text>
+                                <xsl:value-of select="$attributeValue"/>
+                                <xsl:text>'</xsl:text>
+                                <xsl:text> with computed name='</xsl:text>
+                                <xsl:value-of select="substring-after($attributeValue,'_')"/>
+                                <xsl:text>'</xsl:text>
+                                <xsl:text> for target </xsl:text>
+                                <xsl:value-of select="local-name(//*[starts-with(local-name(),'HAnim')][@DEF = $attributeValue])"/>
+                                <xsl:text>,</xsl:text>
+                                <xsl:text> newNameValue='</xsl:text>
+                                <xsl:value-of select="$newNameValue"/>
+                                <xsl:text>'</xsl:text>
+                                <xsl:text> isHAnim1=</xsl:text>
+                                <xsl:value-of select="$isHAnim1"/>
+                                <xsl:text> isHAnim2=</xsl:text>
+                                <xsl:value-of select="$isHAnim2"/>
+                           </xsl:message>
+                        -->
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="$attributeValue"/><!-- no change -->
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="($nodeName = 'HAnimJoint')">
+                <xsl:choose>
+                    <xsl:when test="($nameValue = 'SIJ')"><xsl:text>sacroiliac</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ankle')"><xsl:text>l_talocrural</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_talocalcaneonavicular</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_cuneonavicular_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_cuneonavicular_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_subtalar')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_midtarsal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_metatarsal')"><xsl:text>l_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_talocalcaneal')"><xsl:text>l_cuneonavicular_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_calcaneuscuboid')"><xsl:text>l_calcaneocuboid</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ankle')"><xsl:text>r_talocrural</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_talocalcaneonavicular</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_cuneonavicular_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_cuneonavicular_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_subtalar')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_midtarsal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_metatarsal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_talocalcaneal')"><xsl:text>r_cuneonavicular_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_calcaneuscuboid')"><xsl:text>r_calcaneocuboid</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_wrist')"><xsl:text>l_radiocarpal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_wrist')"><xsl:text>r_radiocarpal</xsl:text></xsl:when>
+                    <xsl:otherwise><xsl:value-of select="$nameValue"/></xsl:otherwise><!-- no change -->
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="($nodeName = 'HAnimSegment')">
+                <xsl:choose>
+                    <xsl:when test="($nameValue = 'l_hindfoot')"><xsl:text>l_talus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_midproximal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middistal')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_forefoot')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_calcaneum')"><xsl:text>l_calcaneus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_hindfoot')"><xsl:text>r_talus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_midproximal')"><xsl:text>r_metatarsal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middistal')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_forefoot')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_calcaneum')"><xsl:text>r_calcaneus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'head')"><xsl:text>skull</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_hand')"><xsl:text>l_carpal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_thumb_metacarpal')"><xsl:text>l_metacarpal_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_thumb_proximal')"><xsl:text>l_carpal_proximal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_index_metacarpal')"><xsl:text>l_metacarpal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_index_proximal')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_index_middle')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middle_metacarpal')"><xsl:text>l_metacarpal_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middle_proximal')"><xsl:text>l_carpal_proximal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middle_middle')"><xsl:text>l_carpal_middle_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ring_metacarpal')"><xsl:text>l_metacarpal_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ring_proximal')"><xsl:text>l_carpal_proximal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ring_middle')"><xsl:text>l_carpal_middle_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_pinky_metacarpal')"><xsl:text>l_metacarpal_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_pinky_proximal')"><xsl:text>l_carpal_proximal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_pinky_middle')"><xsl:text>l_carpal_middle_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_hand')"><xsl:text>r_carpal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_thumb_metacarpal')"><xsl:text>r_metacarpal_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_thumb_proximal')"><xsl:text>r_carpal_proximal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_index_metacarpal')"><xsl:text>r_metacarpal_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_index_proximal')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_index_middle')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middle_metacarpal')"><xsl:text>r_metacarpal_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middle_proximal')"><xsl:text>r_carpal_proximal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middle_middle')"><xsl:text>r_carpal_middle_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ring_metacarpal')"><xsl:text>r_metacarpal_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ring_proximal')"><xsl:text>r_carpal_proximal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ring_middle')"><xsl:text>r_carpal_middle_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_pinky_metacarpal')"><xsl:text>r_metacarpal_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_pinky_proximal')"><xsl:text>r_carpal_proximal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_pinky_middle')"><xsl:text>r_carpal_middle_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:otherwise><xsl:value-of select="$nameValue"/></xsl:otherwise><!-- no change -->
+                </xsl:choose>                
+            </xsl:when>
+            <xsl:when test="($nodeName = 'HAnimSite')">
+                <xsl:choose>
+                    <xsl:when test="($nameValue = 'vertex')"><xsl:text>skull_vertex</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_clavicale')"><xsl:text>l_clavicle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_axilla_ant')"><xsl:text>l_axilla_proximal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_axilla_post')"><xsl:text>l_axilla_distal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_clavicale')"><xsl:text>r_clavicle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_axilla_ant')"><xsl:text>r_axilla_proximal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_axilla_post')"><xsl:text>r_axilla_distal</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'middle back')"><xsl:text>spine_1_middle_back</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'lower back')"><xsl:text>spine_2_lower_back</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'waist_preferred_post')"><xsl:text>waist_preferred_anterior</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'waist_preferred_ant')"><xsl:text>waist_preferred_posterior</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_rib10_midspine')"><xsl:text>l_rib10</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Left Bustpoint')"><xsl:text>l_thelion</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_rib10_midspine')"><xsl:text>r_rib10</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Right Bustpoint')"><xsl:text>r_thelion</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Leftt Anterior Superior Iliac Spine')"><xsl:text>l_asis</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Left Posterior Superior Iliac Spine')"><xsl:text>l_psis</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Right Anterior Superior Iliac Spine')"><xsl:text>r_asis</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'Right Posterior Superior Iliac Spine')"><xsl:text>r_psis</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_femoral_lateral_epicn')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_femoral_medial_epicn')"><xsl:text>l_femoral_medial_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_kneecap')"><xsl:text>l_suprapatella</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_trochanter')"><xsl:text>l_trochanterion</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_femoral_lateral_epicn')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_femoral_medial_epicn')"><xsl:text>r_femoral_medial_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_kneecap')"><xsl:text>r_suprapatella</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_trochanter')"><xsl:text>r_trochanterion</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_metatarsal_pha1')"><xsl:text>l_metatarsal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_metatarsal_pha5')"><xsl:text>l_metatarsal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_calcaneum')"><xsl:text>l_calcaneus_posterior</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_metatarsal_pha1')"><xsl:text>r_metatarsal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_metatarsal_pha5')"><xsl:text>r_metatarsal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_calcaneum')"><xsl:text>r_calcaneus_posterior</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_humeral_lateral_epicn')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_humeral_lateral_epicn')"><xsl:text>l_humeral_medial_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_humeral_lateral_epicn')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_humeral_lateral_epicn')"><xsl:text>r_humeral_medial_epicondyle</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_metacarpal_pha2')"><xsl:text>l_metacarpal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_metacarpal_pha5')"><xsl:text>l_metacarpal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_metacarpal_pha2')"><xsl:text>r_metacarpal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_metacarpal_pha5')"><xsl:text>r_metacarpal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'nuchal')"><xsl:text>nuchale</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'belly button')"><xsl:text>navel</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_canthus')"><xsl:text>l_ectocanthus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_canthus')"><xsl:text>r_ectocanthus</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'chin')"><xsl:text>menton</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'mesosternum')"><xsl:text>mesosternale</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'median plane')"><xsl:text>rear_center_midsagittal_plane</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_shoulder')"><xsl:text>l_chest_midsagittal_plane</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_shoulder')"><xsl:text>r_chest_midsagittal_plane</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_digit2')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'l_tarsal_interphalangeal_pha5')"><xsl:text>l_tarsal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_digit2')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                    <xsl:when test="($nameValue = 'r_tarsal_interphalangeal_pha5')"><xsl:text>r_tarsal_distal_phalanx_5</xsl:text></xsl:when>
+                    <xsl:otherwise><xsl:value-of select="$nameValue"/></xsl:otherwise><!-- no change -->
+                </xsl:choose>                
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$nameValue"/><!-- no change or empty value -->
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
 </xsl:stylesheet>

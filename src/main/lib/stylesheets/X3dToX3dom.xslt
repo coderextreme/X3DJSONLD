@@ -69,10 +69,14 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="cache"                    >true</xsl:param>
 	<!-- also in CreateContentCatalogPages.xslt -->
     <xsl:param name="urlScene"                 ></xsl:param>      <!-- X3D MFString url list -->
+    
     <!-- TODO update urlCobweb as urlX_ITE when X3D-Edit can be updated -->
-    <xsl:param name="urlCobweb"                >https://cdn.jsdelivr.net/gh/create3000</xsl:param> <!-- no trailing slash / -->
-    <xsl:param name="versionCobweb"            >x_ite@latest/dist</xsl:param> <!-- 1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or 4.1.5 or x_ite@latest/dist with no trailing slash / -->
-    <xsl:param name="urlWebsiteX_ITE"          >http://create3000.de/x_ite</xsl:param> <!-- redirection likely, so far https not supported -->
+    <xsl:param name="urlCobweb"                >https://create3000.github.io/code/x_ite</xsl:param> <!-- no trailing slash / -->
+<!--<xsl:param name="urlCobweb"                >https://cdn.jsdelivr.net/gh/create3000</xsl:param> no trailing slash / -->
+    <xsl:param name="versionCobweb"            >latest/dist</xsl:param>
+<!--<xsl:param name="versionCobweb"            >x_ite@latest/dist</xsl:param>  1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or 4.1.5 4.6.11 or x_ite@latest/dist with no trailing slash / -->
+    <xsl:param name="urlWebsiteX_ITE"          >https://github.com/create3000/x_ite/wiki</xsl:param>
+<!--<xsl:param name="urlWebsiteX_ITE"          >http://create3000.de/x_ite</xsl:param>  redirection likely, so far https not supported -->
     <!-- Catalog generator and configuration parameters -->
     <xsl:param name="x3dSceneAvailable"        >true</xsl:param> <!-- .x3d source, same file name -->
     <xsl:param name="x3dDocumentationAvailable">true</xsl:param> <!-- .html pretty print, same file name -->
