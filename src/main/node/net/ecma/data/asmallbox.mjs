@@ -1,27 +1,27 @@
 'use strict';
 import fs from 'fs';
-import { X3D } from './x3d.js';
-import { SFString } from './x3d.js';
-import { SFNode } from './x3d.js';
-import { head } from './x3d.js';
-import { MFNode } from './x3d.js';
-import { meta } from './x3d.js';
-import { Scene } from './x3d.js';
-import { ProtoDeclare } from './x3d.js';
-import { ProtoInterface } from './x3d.js';
-import { field } from './x3d.js';
-import { Shape } from './x3d.js';
-import { SFVec3f } from './x3d.js';
-import { Sphere } from './x3d.js';
-import { ProtoBody } from './x3d.js';
-import { Transform } from './x3d.js';
-import { IS } from './x3d.js';
-import { connect } from './x3d.js';
-import { Cylinder } from './x3d.js';
-import { ProtoInstance } from './x3d.js';
-import { fieldValue } from './x3d.js';
-import { Box } from './x3d.js';
-import { SFBool } from './x3d.js';
+import { X3D } from './x3d.mjs';
+import { SFString } from './x3d.mjs';
+import { SFNode } from './x3d.mjs';
+import { head } from './x3d.mjs';
+import { MFNode } from './x3d.mjs';
+import { meta } from './x3d.mjs';
+import { Scene } from './x3d.mjs';
+import { ProtoDeclare } from './x3d.mjs';
+import { ProtoInterface } from './x3d.mjs';
+import { field } from './x3d.mjs';
+import { Shape } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
+import { Sphere } from './x3d.mjs';
+import { ProtoBody } from './x3d.mjs';
+import { Transform } from './x3d.mjs';
+import { IS } from './x3d.mjs';
+import { connect } from './x3d.mjs';
+import { Cylinder } from './x3d.mjs';
+import { ProtoInstance } from './x3d.mjs';
+import { fieldValue } from './x3d.mjs';
+import { Box } from './x3d.mjs';
+import { SFBool } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -31,7 +31,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("abox.x3d")}),
+              content : new SFString("asmallbox.x3d")}),
 
             new meta({
               name : new SFString("creator"),
@@ -121,6 +121,6 @@ var X3D0 =  new X3D({
                       bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([140,140,140]),
+                          size : new SFVec3f([2,2,2]),
                           solid : new SFBool(true)}))})])})])})])}))});
 console.log(X3D0.toXMLNode());

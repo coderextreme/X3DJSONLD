@@ -58,14 +58,14 @@ var ProtoInstance3 = null;
         .addChild((new autoclass.WorldInfo()).setUSE("WorldInfoDEF"))
         .addMetadata((new autoclass.MetadataString()).setName("test").setDEF("scene.addChildMetadata").setValue(java.newArray("java.lang.String", ["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"])))
         .addLayerSet((new autoclass.LayerSet()).setDEF("scene.addChildLayerSetTest"))
-        .addChild((new autoclass.Transform()).setDEF("LogoGeometryTransform").setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(1.5), java.newFloat(0)]))
-          .addChild((new autoclass.Anchor()).setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(java.newArray("java.lang.String", ["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"]))
-            .addChild((new autoclass.Shape()).setDEF("BoxShape")
+        .addChild((new autoclass.Transform()).setDEF("LogoGeometryTransform").setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(1.5), java.newFloat(0)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+          .addChild((new autoclass.Anchor()).setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(java.newArray("java.lang.String", ["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+            .addChild((new autoclass.Shape()).setDEF("BoxShape").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDEF("GreenMaterial").setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(1)])).setEmissiveColor(java.newArray("float", [java.newFloat(0.8), java.newFloat(0), java.newFloat(0)])).setTransparency(java.newFloat(0.1)))
                 .setTexture((new autoclass.ImageTexture()).setUrl(java.newArray("java.lang.String", ["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]))))
-              .setGeometry((new autoclass.Box()).setDEF("test-NMTOKEN_regex.0123456789").setCssClass("untextured")))))
-        .addChild((new autoclass.Shape()).setDEF("LineShape")
+              .setGeometry((new autoclass.Box()).setDEF("test-NMTOKEN_regex.0123456789").setCssClass("untextured").setSize(java.newArray("float", [java.newFloat(2), java.newFloat(2), java.newFloat(2)])).setSolid(true)))))
+        .addChild((new autoclass.Shape()).setDEF("LineShape").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setEmissiveColor(java.newArray("float", [java.newFloat(0.6), java.newFloat(0.19607843), java.newFloat(0.8)]))))
           .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,2,3,4,0]))
@@ -75,8 +75,8 @@ var ProtoInstance3 = null;
         .addChild((new autoclass.TimeSensor()).setDEF("OrbitClock").setCycleInterval(8).setLoop(true))
         .addChild((new autoclass.ROUTE()).setFromField("fraction_changed").setFromNode("OrbitClock").setToField("set_fraction").setToNode("BoxPathAnimator"))
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("BoxPathAnimator").setToField("set_translation").setToNode("LogoGeometryTransform"))
-        .addChild((new autoclass.Transform()).setDEF("TextTransform").setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(-1.5), java.newFloat(0)]))
-          .addChild((new autoclass.Shape())
+        .addChild((new autoclass.Transform()).setDEF("TextTransform").setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(-1.5), java.newFloat(0)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+          .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setUSE("GreenMaterial")))
             .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["X3D Java","SAI Library","X3DJSAIL"]))
@@ -86,9 +86,9 @@ var ProtoInstance3 = null;
                 .addValue((new autoclass.MetadataString()).setName("quotesTestC").setValue(java.newArray("java.lang.String", ["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""])))
                 .addValue((new autoclass.MetadataString()).setName("extraChildTest").setValue(java.newArray("java.lang.String", ["checks MetadataSetObject addValue() method"]))))
               .setFontStyle((new autoclass.FontStyle()).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])))))
-          .addChild((new autoclass.Collision())
+          .addChild((new autoclass.Collision()).setEnabled(true).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
             .addComments((new autoclass.CommentsBlock("test containerField='proxy'")))
-            .setProxy((new autoclass.Shape()).setDEF("ProxyShape")
+            .setProxy((new autoclass.Shape()).setDEF("ProxyShape").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .addComments((new autoclass.CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'")))
               .addComments((new autoclass.CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'")))
               .addComments((new autoclass.CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"\"Immel did it!\\\"\"\\\"\"})")))
@@ -102,24 +102,17 @@ var ProtoInstance3 = null;
         .addChild((new autoclass.TimeSensor()).setDEF("SpinClock").setCycleInterval(5).setLoop(true))
         .addChild((new autoclass.ROUTE()).setFromField("fraction_changed").setFromNode("SpinClock").setToField("set_fraction").setToNode("SpinInterpolator"))
         .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("SpinInterpolator").setToField("rotation").setToNode("TextTransform"))
-        .addChild((new autoclass.Group()).setDEF("BackgroundGroup")
-          .addChild((new autoclass.Background()).setDEF("GradualBackground"))
-          .addChild((new autoclass.Script()).setDEF("colorTypeConversionScript")
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFCOLOR).setName("colorInput").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFCOLOR).setName("colorsOutput").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-            .setSourceCode("ecmascript:\n"+
-"\n"+
-"function colorInput (eventValue) // Example source code\n"+
-"{\n"+
-"   colorsOutput = new MFColor(eventValue); // assigning value sends output event\n"+
-"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');\n"+
-"}"))
+        .addChild((new autoclass.Group()).setDEF("BackgroundGroup").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+          .addChild((new autoclass.Background()).setDEF("GradualBackground").setSkyColor(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setTransparency(java.newFloat(0)))
           .addChild((new autoclass.ColorInterpolator()).setDEF("ColorAnimator").setKey(java.newArray("float", [java.newFloat(0), java.newFloat(0.5), java.newFloat(1)])).setKeyValue(java.newArray("float", [java.newFloat(0.9411765), java.newFloat(1), java.newFloat(1), java.newFloat(0.29411766), java.newFloat(0), java.newFloat(0.50980395), java.newFloat(0.9411765), java.newFloat(1), java.newFloat(1)]))
             .addComments((new autoclass.CommentsBlock("AZURE to INDIGO and back again"))))
           .addChild((new autoclass.TimeSensor()).setDEF("ColorClock").setCycleInterval(60).setLoop(true))
           .addChild((new autoclass.ROUTE()).setFromField("colorsOutput").setFromNode("colorTypeConversionScript").setToField("skyColor").setToNode("GradualBackground"))
           .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("ColorAnimator").setToField("colorInput").setToNode("colorTypeConversionScript"))
-          .addChild((new autoclass.ROUTE()).setFromField("fraction_changed").setFromNode("ColorClock").setToField("set_fraction").setToNode("ColorAnimator")))
+          .addChild((new autoclass.ROUTE()).setFromField("fraction_changed").setFromNode("ColorClock").setToField("set_fraction").setToNode("ColorAnimator"))
+          .addX3DScript((new autoclass.X3DScript()).setDEF("colorTypeConversionScript")
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFCOLOR).setName("colorInput").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFCOLOR).setName("colorsOutput").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))))
         .addChild((new autoclass.ProtoDeclare()).setName("ArtDeco01Material").setAppinfo("tooltip: ArtDeco01Material prototype is a Material node")
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setName("description").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("tooltip for descriptionField").setValue("ArtDeco01Material prototype is a Material node"))
@@ -137,24 +130,24 @@ var ProtoInstance3 = null;
           .addComments((new autoclass.CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\"")))
           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFSTRING).setName("description").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("tooltip for descriptionField")))
         .addComments((new autoclass.CommentsBlock("Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place")))
-        .addChild((new autoclass.Shape()).setDEF("TestShape1")
+        .addChild((new autoclass.Shape()).setDEF("TestShape1").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
           .setAppearance((new autoclass.Appearance()).setDEF("TestAppearance1")
             .addComments((new autoclass.CommentsBlock("ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java")))
             .setMaterial(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("ArtDeco01Material")
               .addComments((new autoclass.CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\"")))))
           .setGeometry((new autoclass.Sphere()).setRadius(java.newFloat(0.001))))
-        .addChild((new autoclass.Shape()).setDEF("TestShape2")
+        .addChild((new autoclass.Shape()).setDEF("TestShape2").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
           .setAppearance((new autoclass.Appearance()).setDEF("TestAppearance2")
             .addComments((new autoclass.CommentsBlock("ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java")))
             .setMaterial(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("ArtDeco02Material").setDEF("ArtDeco02MaterialDEF")
               .addComments((new autoclass.CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\"")))))
-          .setGeometry((new autoclass.Cone()).setBottomRadius(java.newFloat(0.001)).setHeight(java.newFloat(0.001))))
-        .addChild((new autoclass.Shape()).setDEF("TestShape3")
+          .setGeometry((new autoclass.Cone()).setBottomRadius(java.newFloat(0.001)).setHeight(java.newFloat(0.001)).setSide(true).setBottom(true).setSolid(true)))
+        .addChild((new autoclass.Shape()).setDEF("TestShape3").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
           .setAppearance((new autoclass.Appearance()).setDEF("TestAppearance3")
             .addComments((new autoclass.CommentsBlock("ArtDeco02Material ProtoInstance USE goes here...")))
             .setMaterial(ProtoInstance2 = (new autoclass.ProtoInstance()).setUSE("ArtDeco02MaterialDEF")))
           .setGeometry((new autoclass.Cylinder()).setHeight(java.newFloat(0.001)).setRadius(java.newFloat(0.001))))
-        .addChild((new autoclass.Inline()).setDEF("inlineSceneDef").setUrl(java.newArray("java.lang.String", ["someOtherScene.x3d"])))
+        .addChild((new autoclass.Inline()).setDEF("inlineSceneDef").setUrl(java.newArray("java.lang.String", ["someOtherScene.x3d"])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)])))
         .addChild((new autoclass.IMPORT()).setAS("WorldInfoDEF2").setImportedDEF("WorldInfoDEF").setInlineDEF("inlineSceneDef"))
         .addChild((new autoclass.EXPORT()).setAS("WorldInfoDEF3").setLocalDEF("WorldInfoDEF"))
         .addChild((new autoclass.ProtoDeclare()).setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
@@ -176,45 +169,22 @@ var ProtoInstance3 = null;
                 .addConnect((new autoclass.connect()).setNodeField("shininess").setProtoField("shininess"))
                 .addConnect((new autoclass.connect()).setNodeField("ambientIntensity").setProtoField("ambientIntensity"))))
             .addComments((new autoclass.CommentsBlock("Only first node (the node type) is renderable, others are along for the ride")))
-            .addChild((new autoclass.Script()).setDEF("MaterialModulatorScript")
+            .addX3DScript((new autoclass.X3DScript()).setDEF("MaterialModulatorScript")
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("enabled").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFCOLOR).setName("diffuseColor").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFCOLOR).setName("newColor").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFTIME).setName("clockTrigger").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("enabled").setProtoField("enabled"))
-                .addConnect((new autoclass.connect()).setNodeField("diffuseColor").setProtoField("diffuseColor")))
-              .setSourceCode("ecmascript:\n"+
-"function initialize ()\n"+
-"{\n"+
-"    newColor = diffuseColor; // start with correct color\n"+
-"}\n"+
-"function set_enabled (newValue)\n"+
-"{\n"+
-"	enabled = newValue;\n"+
-"}\n"+
-"function clockTrigger (timeValue)\n"+
-"{\n"+
-"    if (!enabled) return;\n"+
-"    red   = newColor.r;\n"+
-"    green = newColor.g;\n"+
-"    blue  = newColor.b;\n"+
-"\n"+
-"    // note different modulation rates for each color component, % is modulus operator\n"+
-"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);\n"+
-"	if (enabled)\n"+
-"	{\n"+
-"		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');\n"+
-"	}\n"+
-"}"))))
+                .addConnect((new autoclass.connect()).setNodeField("diffuseColor").setProtoField("diffuseColor"))))))
         .addComments((new autoclass.CommentsBlock("Test success: declarative statement createDeclarativeShapeTests()")))
-        .addChild((new autoclass.Group()).setDEF("DeclarativeGroupExample")
-          .addChild((new autoclass.Shape())
+        .addChild((new autoclass.Group()).setDEF("DeclarativeGroupExample").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+          .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
             .setMetadata((new autoclass.MetadataString()).setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(java.newArray("java.lang.String", ["test case"])))
             .setAppearance((new autoclass.Appearance()).setDEF("DeclarativeAppearanceExample")
               .addComments((new autoclass.CommentsBlock("DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance")))
               .setMaterial(ProtoInstance3 = (new autoclass.ProtoInstance()).setName("MaterialModulator").setDEF("MyMaterialModulator")))
-            .setGeometry((new autoclass.Cone()).setBottom(false).setBottomRadius(java.newFloat(0.05)).setHeight(java.newFloat(0.1))))
+            .setGeometry((new autoclass.Cone()).setBottom(false).setBottomRadius(java.newFloat(0.05)).setHeight(java.newFloat(0.1)).setSide(true).setSolid(true)))
           .addComments((new autoclass.CommentsBlock("Test success: declarativeGroup.addChild() singleton pipeline method"))))
         .addComments((new autoclass.CommentsBlock("Test success: declarative statement addChild()")))
         .addComments((new autoclass.CommentsBlock("Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>")))
@@ -222,7 +192,7 @@ var ProtoInstance3 = null;
         .addComments((new autoclass.CommentsBlock("Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found")))
         .addComments((new autoclass.CommentsBlock("Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found")))
         .addComments((new autoclass.CommentsBlock("Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found")))
-        .addChild((new autoclass.Group()).setDEF("TestFieldObjectsGroup")
+        .addChild((new autoclass.Group()).setDEF("TestFieldObjectsGroup").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
           .addComments((new autoclass.CommentsBlock("testFieldObjects() results")))
           .addComments((new autoclass.CommentsBlock("SFBool default=true, true=true, false=false, negate()=true")))
           .addComments((new autoclass.CommentsBlock("MFBool default=, initial=true false true, negate()=false true false")))
@@ -232,7 +202,7 @@ var ProtoInstance3 = null;
           .addComments((new autoclass.CommentsBlock("SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344"))))
         .addChild((new autoclass.Sound()).setLocation(java.newArray("float", [java.newFloat(0), java.newFloat(1.6), java.newFloat(0)]))
           .addComments((new autoclass.CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height")))
-          .setSource((new autoclass.AudioClip()).setDescription("chimes").setUrl(java.newArray("java.lang.String", ["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]))
+          .setSource((new autoclass.AudioClip()).setDescription("chimes").setUrl(java.newArray("java.lang.String", ["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"])).setLoop(false).setPitch(java.newFloat(1)).setStartTime(0).setStopTime(0).setPauseTime(0).setResumeTime(0)
             .addComments((new autoclass.CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d")))))
         .addChild((new autoclass.Sound()).setLocation(java.newArray("float", [java.newFloat(0), java.newFloat(1.6), java.newFloat(0)]))
           .addComments((new autoclass.CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height")))
@@ -245,7 +215,7 @@ var ProtoInstance3 = null;
         .addComments((new autoclass.CommentsBlock("Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true")))
         .addComments((new autoclass.CommentsBlock("Test success: CommentsBlock.isNode()=false, testComments.isNode()=false")))
         .addComments((new autoclass.CommentsBlock("Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true")))
-        .addChild((new autoclass.Shape()).setDEF("ExtrusionShape")
+        .addChild((new autoclass.Shape()).setDEF("ExtrusionShape").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
           .addComments((new autoclass.CommentsBlock("ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'")))
           .addComments((new autoclass.CommentsBlock("ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'")))
           .setAppearance((new autoclass.Appearance()).setDEF("TransparentAppearance")

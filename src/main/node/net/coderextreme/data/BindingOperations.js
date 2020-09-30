@@ -35,43 +35,43 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.Viewpoint()).setDEF("View3").setCenterOfRotation(java.newArray("float", [java.newFloat(2), java.newFloat(0), java.newFloat(0)])).setDescription("Viewpoint 3").setPosition(java.newArray("float", [java.newFloat(2), java.newFloat(0), java.newFloat(5)])))
         .addChild((new autoclass.Viewpoint()).setDEF("View4").setCenterOfRotation(java.newArray("float", [java.newFloat(6), java.newFloat(0), java.newFloat(0)])).setDescription("Viewpoint 4").setPosition(java.newArray("float", [java.newFloat(6), java.newFloat(0), java.newFloat(5)])))
         .addComments((new autoclass.CommentsBlock("Script initialization ought to first bind view5 below.")))
-        .addChild((new autoclass.Group())
-          .addChild((new autoclass.Transform()).setDEF("Text1").setTranslation(java.newArray("float", [java.newFloat(-6), java.newFloat(0), java.newFloat(0)]))
-            .addChild((new autoclass.Shape())
+        .addChild((new autoclass.Group()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+          .addChild((new autoclass.Transform()).setDEF("Text1").setTranslation(java.newArray("float", [java.newFloat(-6), java.newFloat(0), java.newFloat(0)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+            .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["View","# 1"]))
                 .setFontStyle((new autoclass.FontStyle()).setDEF("CenterJustify").setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"]))))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)]))))))
-          .addChild((new autoclass.Transform()).setDEF("Text2").setTranslation(java.newArray("float", [java.newFloat(-2), java.newFloat(0), java.newFloat(0)]))
-            .addChild((new autoclass.Shape())
+          .addChild((new autoclass.Transform()).setDEF("Text2").setTranslation(java.newArray("float", [java.newFloat(-2), java.newFloat(0), java.newFloat(0)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+            .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["View","# 2"]))
                 .setFontStyle((new autoclass.FontStyle()).setUSE("CenterJustify")))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)]))))))
-          .addChild((new autoclass.Transform()).setDEF("Text3").setTranslation(java.newArray("float", [java.newFloat(2), java.newFloat(0), java.newFloat(0)]))
-            .addChild((new autoclass.Shape())
+          .addChild((new autoclass.Transform()).setDEF("Text3").setTranslation(java.newArray("float", [java.newFloat(2), java.newFloat(0), java.newFloat(0)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+            .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["View","# 3"]))
                 .setFontStyle((new autoclass.FontStyle()).setUSE("CenterJustify")))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1)]))))))
-          .addChild((new autoclass.Transform()).setDEF("Text4").setTranslation(java.newArray("float", [java.newFloat(6), java.newFloat(0), java.newFloat(0)]))
-            .addChild((new autoclass.Shape())
+          .addChild((new autoclass.Transform()).setDEF("Text4").setTranslation(java.newArray("float", [java.newFloat(6), java.newFloat(0), java.newFloat(0)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+            .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["View","# 4"]))
                 .setFontStyle((new autoclass.FontStyle()).setUSE("CenterJustify")))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()))))))
         .addComments((new autoclass.CommentsBlock("The following advanced animation sequence uses nodes covered in Chapters 7, 8 and 9.")))
         .addComments((new autoclass.CommentsBlock("It does not need to be studied in this chapter.")))
-        .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(-3), java.newFloat(8)]))
+        .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(-3), java.newFloat(8)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
           .addComments((new autoclass.CommentsBlock("notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.")))
           .addChild((new autoclass.Viewpoint()).setDEF("ClickToAnimateView").setDescription("Select animation sequence").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(7)])))
-          .addChild((new autoclass.Shape())
+          .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
             .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["Click here to animate"]))
               .setFontStyle((new autoclass.FontStyle()).setJustify(java.newArray("java.lang.String", ["MIDDLE","BEGIN"]))))
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.8), java.newFloat(0.4), java.newFloat(0)])))))
-          .addChild((new autoclass.Shape())
-            .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(7), java.newFloat(1), java.newFloat(0.02)])))
+          .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+            .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(7), java.newFloat(1), java.newFloat(0.02)])).setSolid(true))
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(1)))))
           .addChild((new autoclass.TouchSensor()).setDEF("TextTouchSensor").setDescription("Click to begin animating viewpoint selections"))
@@ -79,106 +79,6 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.ROUTE()).setFromField("touchTime").setFromNode("TextTouchSensor").setToField("set_startTime").setToNode("Clock"))
           .addChild((new autoclass.IntegerSequencer()).setDEF("TimingSequencer").setKey(java.newArray("float", [java.newFloat(0), java.newFloat(0.1), java.newFloat(0.2), java.newFloat(0.3), java.newFloat(0.4), java.newFloat(0.5), java.newFloat(0.6), java.newFloat(0.7), java.newFloat(0.8), java.newFloat(1)])).setKeyValue(java.newArray("int", [0,1,2,3,4,5,6,7,8,10])))
           .addChild((new autoclass.ROUTE()).setFromField("fraction_changed").setFromNode("Clock").setToField("set_fraction").setToNode("TimingSequencer"))
-          .addChild((new autoclass.Script()).setDEF("BindingSequencerEngine")
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFINT32).setName("set_timeEvent").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("bindView1").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("bindView2").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("bindView3").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("bindView4").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("bindView5").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("view1Bound").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("view2Bound").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("view3Bound").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("view4Bound").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFINT32).setName("priorInputvalue").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("-1"))
-            .setSourceCode("ecmascript:\n"+
-"\n"+
-"function initialize ()\n"+
-"{\n"+
-"    bindView5 = true;\n"+
-"    Browser.print ('Timing script initialized and ready for activation');\n"+
-"}\n"+
-"function set_timeEvent (inputValue)\n"+
-"{\n"+
-"    if (inputValue == priorInputvalue)\n"+
-"    {\n"+
-"        return; // ignore repeated inputs\n"+
-"    }\n"+
-"    // new value provided\n"+
-"    priorInputvalue = inputValue;\n"+
-"    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\n"+
-"\n"+
-"    // mimics user execution of Figure 4.1 steps t_0 through t_8\n"+
-"    if (inputValue == 0)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t0');\n"+
-"        bindView1 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 1)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t1');\n"+
-"        bindView2 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 2)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t2');\n"+
-"        bindView3 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 3)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t3');\n"+
-"        bindView3 = false;\n"+
-"    }\n"+
-"    else if (inputValue == 4)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t4');\n"+
-"        bindView1 = true;\n"+
-"    }\n"+
-"    else if (inputValue == 5)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t5');\n"+
-"        bindView2 = false;\n"+
-"    }\n"+
-"    else if (inputValue == 6)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t6');\n"+
-"        bindView1 = false;\n"+
-"    }\n"+
-"    else if (inputValue == 7)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t7');\n"+
-"        bindView4 = true;\n"+
-"\n"+
-"    }\n"+
-"    else if (inputValue == 8)\n"+
-"    {\n"+
-"        Browser.print ('\\n===========\\n time t8');\n"+
-"        Browser.print (', no action, all done');\n"+
-"        Browser.print ('\\n\\n');\n"+
-"    }\n"+
-"}\n"+
-"\n"+
-"function view1Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view1Bound ' + (inputValue));\n"+
-"    if (priorInputvalue == -1) Browser.print ('\\n');\n"+
-"}\n"+
-"function view2Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view2Bound ' + (inputValue));\n"+
-"}\n"+
-"function view3Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view3Bound ' + (inputValue));\n"+
-"}\n"+
-"function view4Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view4Bound ' + (inputValue));\n"+
-"}\n"+
-"function view5Bound (inputValue)\n"+
-"{\n"+
-"    Browser.print (', view5Bound ' + (inputValue));\n"+
-"}"))
           .addComments((new autoclass.CommentsBlock("drive Script with TimeSensor clock")))
           .addChild((new autoclass.ROUTE()).setFromField("value_changed").setFromNode("TimingSequencer").setToField("set_timeEvent").setToNode("BindingSequencerEngine"))
           .addComments((new autoclass.CommentsBlock("Script will bind and unbind Viewpoint nodes")))
@@ -191,5 +91,17 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addChild((new autoclass.ROUTE()).setFromField("isBound").setFromNode("View1").setToField("view1Bound").setToNode("BindingSequencerEngine"))
           .addChild((new autoclass.ROUTE()).setFromField("isBound").setFromNode("View2").setToField("view2Bound").setToNode("BindingSequencerEngine"))
           .addChild((new autoclass.ROUTE()).setFromField("isBound").setFromNode("View3").setToField("view3Bound").setToNode("BindingSequencerEngine"))
-          .addChild((new autoclass.ROUTE()).setFromField("isBound").setFromNode("View4").setToField("view4Bound").setToNode("BindingSequencerEngine"))))      ;
+          .addChild((new autoclass.ROUTE()).setFromField("isBound").setFromNode("View4").setToField("view4Bound").setToNode("BindingSequencerEngine"))
+          .addX3DScript((new autoclass.X3DScript()).setDEF("BindingSequencerEngine")
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFINT32).setName("set_timeEvent").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("bindView1").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("bindView2").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("bindView3").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("bindView4").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("bindView5").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("view1Bound").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("view2Bound").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("view3Bound").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("view4Bound").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
+            .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFINT32).setName("priorInputvalue").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("-1")))))      ;
     X3D0.toFileX3D("../data/BindingOperations.new.x3d");

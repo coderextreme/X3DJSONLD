@@ -30,12 +30,12 @@ var ProtoInstance3 = null;
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("xtranslation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild((new autoclass.Shape())
+              .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
                 .setGeometry((new autoclass.Sphere()))
                 .setAppearance((new autoclass.Appearance())
                   .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))))))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform())
+            .addChild((new autoclass.Transform()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("xtranslation"))
                 .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("myShape"))))))
@@ -43,12 +43,12 @@ var ProtoInstance3 = null;
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("ytranslation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild((new autoclass.Shape())
+              .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
                 .setGeometry((new autoclass.Cylinder()))
                 .setAppearance((new autoclass.Appearance())
                   .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))))))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform())
+            .addChild((new autoclass.Transform()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("ytranslation")))
               .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("anyShape")
@@ -61,7 +61,7 @@ var ProtoInstance3 = null;
                 .setIS((new autoclass.IS())
                   .addConnect((new autoclass.connect()).setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(ProtoInstance3 = (new autoclass.ProtoInstance()).setName("three").setDEF("threepi"))
-        .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(2), java.newFloat(0)]))
+        .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(2), java.newFloat(0)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
           .addChild((new autoclass.Shape()).setUSE("box"))))      ;
 ProtoInstance0
                 .addFieldValue((new autoclass.fieldValue()).setName("xtranslation").setValue("0 0 0"));
@@ -73,8 +73,8 @@ ProtoInstance3
           .addFieldValue((new autoclass.fieldValue()).setName("ytranslation").setValue("0 0 0"));
 ProtoInstance3
           .addFieldValue((new autoclass.fieldValue()).setName("myShape")
-            .addChild((new autoclass.Shape()).setDEF("box")
-              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))
+            .addChild((new autoclass.Shape()).setDEF("box").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])).setSolid(true))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)]))))));
     X3D0.toFileX3D("../data/BoxEm.new.x3d");
