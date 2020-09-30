@@ -16,8 +16,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setDescription("Extrusion Heart").setOrientation(Java.to([1,0,0,1.57], Java.type("float[]"))).setPosition(Java.to([0,-4,0], Java.type("float[]"))))
-        .addChild(new Transform().setTranslation(Java.to([0,-0.5,0], Java.type("float[]")))
-          .addChild(new Shape()
+        .addChild(new Transform().setTranslation(Java.to([0,-0.5,0], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+          .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
             .setGeometry(new Extrusion().setCreaseAngle(3.14159).setCrossSection(Java.to([0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8], Java.type("float[]"))).setScale(Java.to([0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01], Java.type("float[]"))).setSolid(false).setSpine(Java.to([0,0,0,0,0.1,0,0,0.5,0,0,0.9,0,0,1,0], Java.type("float[]"))))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(Java.to([0.8,0.3,0.3], Java.type("float[]"))))))))      ;

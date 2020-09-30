@@ -64,28 +64,31 @@ public class HeadsUpDisplayPrototype {
             .addField(new field().setType("SFVec3f").setName("locationOffset").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Modified screen location and distance (for size).").setValue("-2 -2 0"))
             .addField(new field().setType("SFBool").setName("traceEnabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Enable/disable console output for troubleshooting.").setValue("false")))
           .setProtoBody(new ProtoBody()
-            .addChild(new Group()
+            .addChild(new Group().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
               .addChild(new ProximitySensor().setDEF("WhereSensor").setSize(new float[] {1000000000f,1000000000f,1000000000f})
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("center").setProtoField("locationOffset"))))
-              .addChild(new Transform().setDEF("FixedLocation")
-                .addChild(new Transform().setDEF("MovableLocation")
-                  .addChild(new Transform().setDEF("LocationOffset")
+              .addChild(new Transform().setDEF("FixedLocation").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                .addChild(new Transform().setDEF("MovableLocation").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                  .addChild(new Transform().setDEF("LocationOffset").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("translation").setProtoField("locationOffset")))
-                    .addChild(new Transform().setTranslation(new float[] {0f,0f,-10f})
-                      .addChild(new Group()
+                    .addChild(new Transform().setTranslation(new float[] {0f,0f,-10f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                      .addChild(new Group().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                         .setIS(new IS()
                           .addConnect(new connect().setNodeField("children").setProtoField("children"))))
-                      .addChild(new Group().setDEF("PlaneMovementSensorGroup")
-                        .addChild(new Group().setDEF("DragGeometry")
+                      .addChild(new Group().setDEF("PlaneMovementSensorGroup").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                        .addChild(new Group().setDEF("DragGeometry").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                           .setIS(new IS()
                             .addConnect(new connect().setNodeField("children").setProtoField("dragChildren"))))
                         .addChild(new PlaneSensor().setDEF("PlaneMovementSensor").setDescription("click and drag to move interface")
                           .setIS(new IS()
                             .addConnect(new connect().setNodeField("offset").setProtoField("locationOffset"))))
                         .addChild(new VisibilitySensor().setDEF("MovementVisibilitySensor"))
-                        .addChild(new Script().setDEF("VisibilityControlScript")
+                        .addChild(new ROUTE().setFromField("isActive").setFromNode("PlaneMovementSensor").setToField("setPlaneSensorIsActive").setToNode("VisibilityControlScript"))
+                        .addChild(new ROUTE().setFromField("translation_changed").setFromNode("PlaneMovementSensor").setToField("setPlaneSensorTranslation").setToNode("VisibilityControlScript"))
+                        .addChild(new ROUTE().setFromField("isActive").setFromNode("MovementVisibilitySensor").setToField("setIsVisible").setToNode("VisibilityControlScript"))
+                        .addX3DScript(new X3DScript().setDEF("VisibilityControlScript")
                           .addField(new field().setType("SFBool").setName("traceEnabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
                           .addField(new field().setType("SFBool").setName("isVisible").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("true"))
                           .addField(new field().setType("SFVec3f").setName("planeSensorTranslation").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
@@ -95,45 +98,7 @@ public class HeadsUpDisplayPrototype {
                           .addField(new field().setType("SFVec3f").setName("translationChanged").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                           .addField(new field().setType("SFVec3f").setName("translationOffsetChanged").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                           .setIS(new IS()
-                            .addConnect(new connect().setNodeField("traceEnabled").setProtoField("traceEnabled")))
-                          .setSourceCode("ecmascript:\n"+
-"\n"+
-"function tracePrint (text)\n"+
-"{\n"+
-"	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);\n"+
-"}\n"+
-"function setIsVisible (value, timeStamp)\n"+
-"{\n"+
-"	isVisible = value;\n"+
-"	tracePrint('isVisible=' + value);\n"+
-"}\n"+
-"function setPlaneSensorIsActive (value, timeStamp)\n"+
-"{\n"+
-"	tracePrint('PlaneSensor isActive=' + value);\n"+
-"\n"+
-"	if (value == false)\n"+
-"	{\n"+
-"		tracePrint('planeSensorTranslation=' + planeSensorTranslation);\n"+
-"		if (isVisible)\n"+
-"		{\n"+
-"			translationChanged = planeSensorTranslation;\n"+
-"		}\n"+
-"		else\n"+
-"		{\n"+
-"			// fell off screen, reset to center\n"+
-"			translationChanged = new SFVec3f(0, 0, 0);\n"+
-"			translationOffsetChanged  = new SFVec3f(0, 0, 0);\n"+
-"		}\n"+
-"	}\n"+
-"}\n"+
-"function setPlaneSensorTranslation (value, timeStamp)\n"+
-"{\n"+
-"	planeSensorTranslation = value;\n"+
-"	tracePrint('planeSensorTranslation=' + value);\n"+
-"}"))
-                        .addChild(new ROUTE().setFromField("isActive").setFromNode("PlaneMovementSensor").setToField("setPlaneSensorIsActive").setToNode("VisibilityControlScript"))
-                        .addChild(new ROUTE().setFromField("translation_changed").setFromNode("PlaneMovementSensor").setToField("setPlaneSensorTranslation").setToNode("VisibilityControlScript"))
-                        .addChild(new ROUTE().setFromField("isActive").setFromNode("MovementVisibilitySensor").setToField("setIsVisible").setToNode("VisibilityControlScript")))))
+                            .addConnect(new connect().setNodeField("traceEnabled").setProtoField("traceEnabled")))))))
                   .addChild(new ROUTE().setFromField("translation_changed").setFromNode("PlaneMovementSensor").setToField("set_translation").setToNode("MovableLocation"))
                   .addChild(new ROUTE().setFromField("translationChanged").setFromNode("VisibilityControlScript").setToField("set_translation").setToNode("MovableLocation"))
                   .addChild(new ROUTE().setFromField("translationOffsetChanged").setFromNode("VisibilityControlScript").setToField("set_offset").setToNode("PlaneMovementSensor"))))
@@ -141,8 +106,8 @@ public class HeadsUpDisplayPrototype {
               .addChild(new ROUTE().setFromField("orientation_changed").setFromNode("WhereSensor").setToField("set_rotation").setToNode("FixedLocation")))))
         .addComments(new CommentsBlock("===================="))
         .addChild(new Background().setGroundColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())).setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor1().getArray())))
-        .addChild(new Anchor().setDescription("HeadsUpDisplayExample").setParameter(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray()))
-          .addChild(new Shape()
+        .addChild(new Anchor().setDescription("HeadsUpDisplayExample").setParameter(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+          .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,1f}).setEmissiveColor(new float[] {0f,1f,1f})))
             .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray()))

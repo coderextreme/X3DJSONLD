@@ -91,10 +91,16 @@ Background19.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeter
 Background19.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
 Background19.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
 Background19.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
+Background19.setSkyColor([0,0,0])
+Background19.setTransparency(0)
 
 Scene16.addChildren(Background19)
 Transform20 = x3d.Transform()
+Transform20.setBboxCenter([0,0,0])
+Transform20.setBboxSize([-1,-1,-1])
 Shape21 = x3d.Shape()
+Shape21.setBboxCenter([0,0,0])
+Shape21.setBboxSize([-1,-1,-1])
 Sphere22 = x3d.Sphere()
 
 Shape21.setGeometry(Sphere22)

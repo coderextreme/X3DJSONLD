@@ -92,11 +92,17 @@ Background19.setFrontUrl(["../resources/images/all_probes/uffizi_cross/uffizi_fr
 Background19.setLeftUrl(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"])
 Background19.setRightUrl(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"])
 Background19.setTopUrl(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"])
+Background19.setSkyColor([0,0,0])
+Background19.setTransparency(0)
 
 Scene15.addChildren(Background19)
 Transform20 = x3d.Transform()
 Transform20.setDEF("Rose01")
+Transform20.setBboxCenter([0,0,0])
+Transform20.setBboxSize([-1,-1,-1])
 Shape21 = x3d.Shape()
+Shape21.setBboxCenter([0,0,0])
+Shape21.setBboxSize([-1,-1,-1])
 Sphere22 = x3d.Sphere()
 
 Shape21.setGeometry(Sphere22)
@@ -258,127 +264,55 @@ OrientationInterpolator50.setKey([0,1])
 OrientationInterpolator50.setKeyValue([0,1,0,0,0,1,0,3.1416])
 
 Scene15.addChildren(OrientationInterpolator50)
-Script51 = x3d.Script()
-Script51.setDEF("RandomTourTime")
-field52 = x3d.field()
-field52.setName("set_cycle")
-field52.setAccessType("inputOnly")
-field52.setType("SFTime")
+ROUTE51 = x3d.ROUTE()
+ROUTE51.setFromNode("TourTime")
+ROUTE51.setFromField("cycleTime_changed")
+ROUTE51.setToNode("RandomTourTime")
+ROUTE51.setToField("set_cycle")
 
-Script51.addField(field52)
-field53 = x3d.field()
-field53.setName("lastKey")
-field53.setAccessType("inputOutput")
-field53.setType("SFFloat")
-field53.setValue("0")
+Scene15.addChildren(ROUTE51)
+ROUTE52 = x3d.ROUTE()
+ROUTE52.setFromNode("RandomTourTime")
+ROUTE52.setFromField("orientation_changed")
+ROUTE52.setToNode("TourOrientation")
+ROUTE52.setToField("set_keyValue")
 
-Script51.addField(field53)
-field54 = x3d.field()
-field54.setName("orientations")
-field54.setAccessType("inputOutput")
-field54.setType("MFRotation")
-field54.setValue("0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0")
+Scene15.addChildren(ROUTE52)
+ROUTE53 = x3d.ROUTE()
+ROUTE53.setFromNode("RandomTourTime")
+ROUTE53.setFromField("position_changed")
+ROUTE53.setToNode("TourPosition")
+ROUTE53.setToField("set_keyValue")
 
-Script51.addField(field54)
-field55 = x3d.field()
-field55.setName("positions")
-field55.setAccessType("inputOutput")
-field55.setType("MFVec3f")
-field55.setValue("0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10")
+Scene15.addChildren(ROUTE53)
+ROUTE54 = x3d.ROUTE()
+ROUTE54.setFromNode("TourTime")
+ROUTE54.setFromField("fraction_changed")
+ROUTE54.setToNode("TourOrientation")
+ROUTE54.setToField("set_fraction")
 
-Script51.addField(field55)
-field56 = x3d.field()
-field56.setName("position_changed")
-field56.setAccessType("outputOnly")
-field56.setType("MFVec3f")
+Scene15.addChildren(ROUTE54)
+ROUTE55 = x3d.ROUTE()
+ROUTE55.setFromNode("TourOrientation")
+ROUTE55.setFromField("value_changed")
+ROUTE55.setToNode("Tour")
+ROUTE55.setToField("set_orientation")
 
-Script51.addField(field56)
-field57 = x3d.field()
-field57.setName("set_orientation")
-field57.setAccessType("inputOnly")
-field57.setType("MFRotation")
+Scene15.addChildren(ROUTE55)
+ROUTE56 = x3d.ROUTE()
+ROUTE56.setFromNode("TourTime")
+ROUTE56.setFromField("fraction_changed")
+ROUTE56.setToNode("TourPosition")
+ROUTE56.setToField("set_fraction")
 
-Script51.addField(field57)
-field58 = x3d.field()
-field58.setName("orientation_changed")
-field58.setAccessType("outputOnly")
-field58.setType("MFRotation")
+Scene15.addChildren(ROUTE56)
+ROUTE57 = x3d.ROUTE()
+ROUTE57.setFromNode("TourPosition")
+ROUTE57.setFromField("value_changed")
+ROUTE57.setToNode("Tour")
+ROUTE57.setToField("set_position")
 
-Script51.addField(field58)
-
-Script51.setSourceCode('''ecmascript:\n"+
-"               function set_cycle(value) {\n"+
-"	       	   try {\n"+
-"                        var ov = lastKey;\n"+
-"                        do {\n"+
-"                            lastKey = Math.round(Math.random()*(positions.length-1));\n"+
-"                        } while (lastKey === ov);\n"+
-"                        var vc = lastKey;\n"+
-"\n"+
-"                        position_changed = new MFVec3f();\n"+
-"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);\n"+
-"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);\n"+
-"\n"+
-"                        orientation_changed = new MFRotation();\n"+
-"                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
-"                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+
-"		   } catch (e) {\n"+
-"		   	if (typeof console.log === 'function') {\n"+
-"				console.log(e);\n"+
-"			}\n"+
-"		   }\n"+
-"               }''')
-
-Scene15.addChildren(Script51)
-ROUTE59 = x3d.ROUTE()
-ROUTE59.setFromNode("TourTime")
-ROUTE59.setFromField("cycleTime_changed")
-ROUTE59.setToNode("RandomTourTime")
-ROUTE59.setToField("set_cycle")
-
-Scene15.addChildren(ROUTE59)
-ROUTE60 = x3d.ROUTE()
-ROUTE60.setFromNode("RandomTourTime")
-ROUTE60.setFromField("orientation_changed")
-ROUTE60.setToNode("TourOrientation")
-ROUTE60.setToField("set_keyValue")
-
-Scene15.addChildren(ROUTE60)
-ROUTE61 = x3d.ROUTE()
-ROUTE61.setFromNode("RandomTourTime")
-ROUTE61.setFromField("position_changed")
-ROUTE61.setToNode("TourPosition")
-ROUTE61.setToField("set_keyValue")
-
-Scene15.addChildren(ROUTE61)
-ROUTE62 = x3d.ROUTE()
-ROUTE62.setFromNode("TourTime")
-ROUTE62.setFromField("fraction_changed")
-ROUTE62.setToNode("TourOrientation")
-ROUTE62.setToField("set_fraction")
-
-Scene15.addChildren(ROUTE62)
-ROUTE63 = x3d.ROUTE()
-ROUTE63.setFromNode("TourOrientation")
-ROUTE63.setFromField("value_changed")
-ROUTE63.setToNode("Tour")
-ROUTE63.setToField("set_orientation")
-
-Scene15.addChildren(ROUTE63)
-ROUTE64 = x3d.ROUTE()
-ROUTE64.setFromNode("TourTime")
-ROUTE64.setFromField("fraction_changed")
-ROUTE64.setToNode("TourPosition")
-ROUTE64.setToField("set_fraction")
-
-Scene15.addChildren(ROUTE64)
-ROUTE65 = x3d.ROUTE()
-ROUTE65.setFromNode("TourPosition")
-ROUTE65.setFromField("value_changed")
-ROUTE65.setToNode("Tour")
-ROUTE65.setToField("set_position")
-
-Scene15.addChildren(ROUTE65)
+Scene15.addChildren(ROUTE57)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/bubbles_RoundTrip.x3d")

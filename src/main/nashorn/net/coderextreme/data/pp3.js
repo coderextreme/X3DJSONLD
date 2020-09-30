@@ -20,96 +20,69 @@ var ProtoInstance2 = null;
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("Process")
           .setProtoBody(new ProtoBody()
-            .addChild(new Group()
+            .addChild(new Group().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
               .addComments(new CommentsBlock("left"))
-              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]")))
-                .addChild(new Shape()
+              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+                .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to([0.7,1,0], Java.type("float[]"))).setTransparency(0.5)))
                   .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0], Java.type("float[]"))).setSpine(Java.to([-2.5,0,0,-1.5,0,0], Java.type("float[]")))))
                 .addComments(new CommentsBlock("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>")))
               .addComments(new CommentsBlock("right"))
-              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]")))
-                .addChild(new Shape()
+              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+                .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to([0,0.7,1], Java.type("float[]"))).setTransparency(0.5)))
                   .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0], Java.type("float[]"))).setSpine(Java.to([1.5,0,0,2.5,0,0], Java.type("float[]")))))
-                .addChild(new Transform().setTranslation(Java.to([2,0,0], Java.type("float[]")))
-                  .addChild(new Shape()
+                .addChild(new Transform().setTranslation(Java.to([2,0,0], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+                  .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(Java.to([1,1,1], Java.type("float[]")))))
                     .setGeometry(new Text().setDEF("RightString").setString(Java.to(["r"], Java.type("java.lang.String[]"))))))
                 .addChild(new StringSensor().setDEF("RightSensor").setEnabled(false))
                 .addChild(new TouchSensor().setDescription("touch to activate").setDEF("RightTouch")))
               .addComments(new CommentsBlock("up"))
-              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]")))
-                .addChild(new Shape()
+              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+                .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to([0,0.7,1], Java.type("float[]"))).setTransparency(0.5)))
                   .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0], Java.type("float[]"))).setSpine(Java.to([0,1.5,0,0,2.5,0], Java.type("float[]")))))
-                .addChild(new Transform().setTranslation(Java.to([-0.5,2,0], Java.type("float[]")))
-                  .addChild(new Shape()
+                .addChild(new Transform().setTranslation(Java.to([-0.5,2,0], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+                  .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("MaterialLightBlue")))
                     .setGeometry(new Text().setDEF("UpString").setString(Java.to(["u"], Java.type("java.lang.String[]"))))))
                 .addChild(new StringSensor().setDEF("UpSensor").setEnabled(false))
                 .addChild(new TouchSensor().setDescription("touch to activate").setDEF("UpTouch")))
               .addComments(new CommentsBlock("down"))
-              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]")))
-                .addChild(new Shape()
+              .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+                .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to([0.7,1,0], Java.type("float[]"))).setTransparency(0.5)))
                   .setGeometry(new Extrusion().setCreaseAngle(0.785).setCrossSection(Java.to([1,0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0,-1,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1,0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0,1,0.38,0.92,0.71,0.71,0.92,0.38,1,0], Java.type("float[]"))).setSpine(Java.to([0,-2.5,0,0,-1.5,0], Java.type("float[]")))))
                 .addComments(new CommentsBlock("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>")))
               .addComments(new CommentsBlock("center"))
-              .addChild(new Transform()
-                .addChild(new Shape()
+              .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+                .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to([1,0,0.7], Java.type("float[]")))))
                   .setGeometry(new Sphere()))
-                .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]"))).setTranslation(Java.to([-0.5,0,1], Java.type("float[]")))
-                  .addChild(new Shape()
+                .addChild(new Transform().setScale(Java.to([0.5,0.5,0.5], Java.type("float[]"))).setTranslation(Java.to([-0.5,0,1], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+                  .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("MaterialLightBlue")))
                     .setGeometry(new Text().setDEF("CenterString"))))
                 .addChild(new StringSensor().setDEF("CenterSensor").setEnabled(false))
                 .addChild(new TouchSensor().setDescription("touch to activate").setDEF("CenterTouch"))))
-            .addChild(new Script().setDEF("RightSingleToMultiString")
+            .addX3DScript(new X3DScript().setDEF("RightSingleToMultiString")
               .addField(new field().setType(field.TYPE_SFSTRING).setName("set_rightstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType(field.TYPE_MFSTRING).setName("rightlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	rightlines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_rightstring(rightstr) {\n"+
-"	rightlines = new MFString(rightstr);\n"+
-"}"))
-            .addChild(new Script().setDEF("UpSingleToMultiString")
+              .addField(new field().setType(field.TYPE_MFSTRING).setName("rightlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
+            .addX3DScript(new X3DScript().setDEF("UpSingleToMultiString")
               .addField(new field().setType(field.TYPE_SFSTRING).setName("set_upstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType(field.TYPE_MFSTRING).setName("uplines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	uplines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_upstring(upstr) {\n"+
-"	uplines = new MFString(upstr);\n"+
-"}"))
-            .addChild(new Script().setDEF("CenterSingleToMultiString")
+              .addField(new field().setType(field.TYPE_MFSTRING).setName("uplines").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
+            .addX3DScript(new X3DScript().setDEF("CenterSingleToMultiString")
               .addField(new field().setType(field.TYPE_SFSTRING).setName("set_centerstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType(field.TYPE_MFSTRING).setName("centerlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	centerlines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_centerstring(centerstr) {\n"+
-"	centerlines = new MFString(centerstr);\n"+
-"}"))
+              .addField(new field().setType(field.TYPE_MFSTRING).setName("centerlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
             .addChild(new ROUTE().setFromField("enteredText").setFromNode("CenterSensor").setToField("set_centerstring").setToNode("CenterSingleToMultiString"))
             .addChild(new ROUTE().setFromField("centerlines").setFromNode("CenterSingleToMultiString").setToField("set_string").setToNode("CenterString"))
             .addChild(new ROUTE().setFromField("isOver").setFromNode("CenterTouch").setToField("set_enabled").setToNode("CenterSensor"))
@@ -121,10 +94,10 @@ var ProtoInstance2 = null;
             .addChild(new ROUTE().setFromField("isOver").setFromNode("UpTouch").setToField("set_enabled").setToNode("UpSensor"))))
         .addChild(new NavigationInfo())
         .addChild(new Viewpoint().setDescription("Process pipes").setOrientation(Java.to([1,0,0,-0.4], Java.type("float[]"))).setPosition(Java.to([0,5,12], Java.type("float[]"))))
-        .addChild(new Transform().setTranslation(Java.to([0,-2.5,0], Java.type("float[]")))
+        .addChild(new Transform().setTranslation(Java.to([0,-2.5,0], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
           .addChild(ProtoInstance0 = new ProtoInstance().setName("Process")))
-        .addChild(new Transform()
+        .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
           .addChild(ProtoInstance1 = new ProtoInstance().setName("Process")))
-        .addChild(new Transform().setTranslation(Java.to([0,2.5,0], Java.type("float[]")))
+        .addChild(new Transform().setTranslation(Java.to([0,2.5,0], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("Process"))))      ;
     X3D0.toFileX3D("../data/pp3.new.x3d");

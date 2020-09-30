@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.1.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.1.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.1 of X3D -->
-<!-- Generated 2020-07-05-07:00 20:45:40.764-07:00 -->
+<!-- Generated 2020-09-27-07:00 18:10:27.069-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.1"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -10,7 +10,7 @@
       <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
       <SimpleType name="accessTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a Script node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively."
+                  appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a Script node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#FieldSemantics">
          <enumeration value="initializeOnly"
                       appinfo="A field with accessType initializeOnly can be initialized, but cannot send or receive events."/>
@@ -29,7 +29,7 @@
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/group.html#Boundingboxes"/>
       <SimpleType name="closureTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="closureTypeChoices are strictly allowed enumeration values for ArcClose2D closureType field."
+                  appinfo="closureTypeChoices are strictly allowed enumeration values for ArcClose2D closureType field. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geometry2D.html#ArcClose2D">
          <enumeration value="PIE"
                       appinfo="Connects arc endpoints to center, forming a pie wedge"/>
@@ -38,7 +38,7 @@
       </SimpleType>
       <SimpleType name="componentNameChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="componentNameChoices are enumeration constants used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the components required by the contained Scene."
+                  appinfo="componentNameChoices are enumeration constants used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the components required by the contained Scene. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Components">
          <enumeration value="Core"
                       appinfo="The Core component supplies the base functionality for the X3D run-time system, including the abstract base node type, field types, the event model, and routing."
@@ -871,7 +871,6 @@
          <enumeration value="bboxCenter"/>
          <enumeration value="bboxSize"/>
          <enumeration value="beginCap"/>
-         <enumeration value="bottom"/>
          <enumeration value="bottomRadius"/>
          <enumeration value="category"/>
          <enumeration value="ccw"/>
@@ -945,7 +944,6 @@
          <enumeration value="surfaceArea"/>
          <enumeration value="texCoordIndex"/>
          <enumeration value="texCoordKey"/>
-         <enumeration value="top"/>
          <enumeration value="topToBottom"/>
          <enumeration value="uClosed"/>
          <enumeration value="uDimension"/>

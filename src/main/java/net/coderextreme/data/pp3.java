@@ -59,96 +59,69 @@ ProtoInstance ProtoInstance2 = null;
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("Process")
           .setProtoBody(new ProtoBody()
-            .addChild(new Group()
+            .addChild(new Group().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
               .addComments(new CommentsBlock("left"))
-              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
-                .addChild(new Shape()
+              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,1f,0f}).setTransparency(0.5f)))
                   .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f0().getArray())).setSpine(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f1().getArray()))))
                 .addComments(new CommentsBlock("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>")))
               .addComments(new CommentsBlock("right"))
-              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
-                .addChild(new Shape()
+              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.7f,1f}).setTransparency(0.5f)))
                   .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f2().getArray())).setSpine(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f3().getArray()))))
-                .addChild(new Transform().setTranslation(new float[] {2f,0f,0f})
-                  .addChild(new Shape()
+                .addChild(new Transform().setTranslation(new float[] {2f,0f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                  .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new float[] {1f,1f,1f})))
                     .setGeometry(new Text().setDEF("RightString").setString(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())))))
                 .addChild(new StringSensor().setDEF("RightSensor").setEnabled(false))
                 .addChild(new TouchSensor().setDescription("touch to activate").setDEF("RightTouch")))
               .addComments(new CommentsBlock("up"))
-              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
-                .addChild(new Shape()
+              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.7f,1f}).setTransparency(0.5f)))
                   .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f5().getArray())).setSpine(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f6().getArray()))))
-                .addChild(new Transform().setTranslation(new float[] {-0.5f,2f,0f})
-                  .addChild(new Shape()
+                .addChild(new Transform().setTranslation(new float[] {-0.5f,2f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                  .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("MaterialLightBlue")))
                     .setGeometry(new Text().setDEF("UpString").setString(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray())))))
                 .addChild(new StringSensor().setDEF("UpSensor").setEnabled(false))
                 .addChild(new TouchSensor().setDescription("touch to activate").setDEF("UpTouch")))
               .addComments(new CommentsBlock("down"))
-              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
-                .addChild(new Shape()
+              .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,1f,0f}).setTransparency(0.5f)))
                   .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f8().getArray())).setSpine(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f9().getArray()))))
                 .addComments(new CommentsBlock("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>")))
               .addComments(new CommentsBlock("center"))
-              .addChild(new Transform()
-                .addChild(new Shape()
+              .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0.7f})))
                   .setGeometry(new Sphere()))
-                .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f}).setTranslation(new float[] {-0.5f,0f,1f})
-                  .addChild(new Shape()
+                .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f}).setTranslation(new float[] {-0.5f,0f,1f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+                  .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("MaterialLightBlue")))
                     .setGeometry(new Text().setDEF("CenterString"))))
                 .addChild(new StringSensor().setDEF("CenterSensor").setEnabled(false))
                 .addChild(new TouchSensor().setDescription("touch to activate").setDEF("CenterTouch"))))
-            .addChild(new Script().setDEF("RightSingleToMultiString")
+            .addX3DScript(new X3DScript().setDEF("RightSingleToMultiString")
               .addField(new field().setType("SFString").setName("set_rightstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFString").setName("rightlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	rightlines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_rightstring(rightstr) {\n"+
-"	rightlines = new MFString(rightstr);\n"+
-"}"))
-            .addChild(new Script().setDEF("UpSingleToMultiString")
+              .addField(new field().setType("MFString").setName("rightlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
+            .addX3DScript(new X3DScript().setDEF("UpSingleToMultiString")
               .addField(new field().setType("SFString").setName("set_upstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFString").setName("uplines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	uplines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_upstring(upstr) {\n"+
-"	uplines = new MFString(upstr);\n"+
-"}"))
-            .addChild(new Script().setDEF("CenterSingleToMultiString")
+              .addField(new field().setType("MFString").setName("uplines").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
+            .addX3DScript(new X3DScript().setDEF("CenterSingleToMultiString")
               .addField(new field().setType("SFString").setName("set_centerstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFString").setName("centerlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"function initialize() {\n"+
-"	centerlines = new MFString(\"\");\n"+
-"}\n"+
-"\n"+
-"function set_centerstring(centerstr) {\n"+
-"	centerlines = new MFString(centerstr);\n"+
-"}"))
+              .addField(new field().setType("MFString").setName("centerlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
             .addChild(new ROUTE().setFromField("enteredText").setFromNode("CenterSensor").setToField("set_centerstring").setToNode("CenterSingleToMultiString"))
             .addChild(new ROUTE().setFromField("centerlines").setFromNode("CenterSingleToMultiString").setToField("set_string").setToNode("CenterString"))
             .addChild(new ROUTE().setFromField("isOver").setFromNode("CenterTouch").setToField("set_enabled").setToNode("CenterSensor"))
@@ -160,11 +133,11 @@ ProtoInstance ProtoInstance2 = null;
             .addChild(new ROUTE().setFromField("isOver").setFromNode("UpTouch").setToField("set_enabled").setToNode("UpSensor"))))
         .addChild(new NavigationInfo())
         .addChild(new Viewpoint().setDescription("Process pipes").setOrientation(new float[] {1f,0f,0f,-0.4f}).setPosition(new float[] {0f,5f,12f}))
-        .addChild(new Transform().setTranslation(new float[] {0f,-2.5f,0f})
+        .addChild(new Transform().setTranslation(new float[] {0f,-2.5f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .addChild(ProtoInstance0 = new ProtoInstance().setName("Process")))
-        .addChild(new Transform()
+        .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .addChild(ProtoInstance1 = new ProtoInstance().setName("Process")))
-        .addChild(new Transform().setTranslation(new float[] {0f,2.5f,0f})
+        .addChild(new Transform().setTranslation(new float[] {0f,2.5f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .addChild(ProtoInstance2 = new ProtoInstance().setName("Process"))))      ;
     return X3D0;
     }

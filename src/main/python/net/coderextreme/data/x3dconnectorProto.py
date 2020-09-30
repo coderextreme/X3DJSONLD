@@ -38,11 +38,16 @@ Viewpoint8.setDescription("Only Viewpoint")
 Scene7.addChildren(Viewpoint8)
 Background9 = x3d.Background()
 Background9.setSkyColor([0.4,0.4,0.4])
+Background9.setTransparency(0)
 
 Scene7.addChildren(Background9)
 Transform10 = x3d.Transform()
 Transform10.setDEF("G1")
+Transform10.setBboxCenter([0,0,0])
+Transform10.setBboxSize([-1,-1,-1])
 Shape11 = x3d.Shape()
+Shape11.setBboxCenter([0,0,0])
+Shape11.setBboxSize([-1,-1,-1])
 Appearance12 = x3d.Appearance()
 Material13 = x3d.Material()
 Material13.setDiffuseColor([0.7,0.2,0.2])
@@ -73,7 +78,11 @@ Scene7.addChildren(Transform10)
 Transform17 = x3d.Transform()
 Transform17.setDEF("G2")
 Transform17.setTranslation([1,-1,0.01])
+Transform17.setBboxCenter([0,0,0])
+Transform17.setBboxSize([-1,-1,-1])
 Shape18 = x3d.Shape()
+Shape18.setBboxCenter([0,0,0])
+Shape18.setBboxSize([-1,-1,-1])
 Appearance19 = x3d.Appearance()
 Material20 = x3d.Material()
 Material20.setDiffuseColor([0.2,0.7,0.2])
@@ -105,7 +114,11 @@ Scene7.addChildren(Transform17)
 Transform24 = x3d.Transform()
 Transform24.setDEF("G3")
 Transform24.setTranslation([1,1,0.01])
+Transform24.setBboxCenter([0,0,0])
+Transform24.setBboxSize([-1,-1,-1])
 Shape25 = x3d.Shape()
+Shape25.setBboxCenter([0,0,0])
+Shape25.setBboxSize([-1,-1,-1])
 Appearance26 = x3d.Appearance()
 Material27 = x3d.Material()
 Material27.setDiffuseColor([0.2,0.7,0.2])
@@ -137,7 +150,11 @@ Scene7.addChildren(Transform24)
 Transform31 = x3d.Transform()
 Transform31.setDEF("G4")
 Transform31.setTranslation([-1,1,0.01])
+Transform31.setBboxCenter([0,0,0])
+Transform31.setBboxSize([-1,-1,-1])
 Shape32 = x3d.Shape()
+Shape32.setBboxCenter([0,0,0])
+Shape32.setBboxSize([-1,-1,-1])
 Appearance33 = x3d.Appearance()
 Material34 = x3d.Material()
 Material34.setDiffuseColor([0.2,0.7,0.2])
@@ -168,9 +185,15 @@ Transform31.addChildren(ROUTE37)
 Scene7.addChildren(Transform31)
 Transform38 = x3d.Transform()
 Transform38.setDEF("transC1")
+Transform38.setBboxCenter([0,0,0])
+Transform38.setBboxSize([-1,-1,-1])
 Transform39 = x3d.Transform()
 Transform39.setDEF("rotscaleC1")
+Transform39.setBboxCenter([0,0,0])
+Transform39.setBboxSize([-1,-1,-1])
 Shape40 = x3d.Shape()
+Shape40.setBboxCenter([0,0,0])
+Shape40.setBboxSize([-1,-1,-1])
 Appearance41 = x3d.Appearance()
 Material42 = x3d.Material()
 Material42.setDiffuseColor([0.2,0.7,0.7])
@@ -191,9 +214,15 @@ Transform38.addChildren(Transform39)
 Scene7.addChildren(Transform38)
 Transform44 = x3d.Transform()
 Transform44.setDEF("transC2")
+Transform44.setBboxCenter([0,0,0])
+Transform44.setBboxSize([-1,-1,-1])
 Transform45 = x3d.Transform()
 Transform45.setDEF("rotscaleC2")
+Transform45.setBboxCenter([0,0,0])
+Transform45.setBboxSize([-1,-1,-1])
 Shape46 = x3d.Shape()
+Shape46.setBboxCenter([0,0,0])
+Shape46.setBboxSize([-1,-1,-1])
 Appearance47 = x3d.Appearance()
 Material48 = x3d.Material()
 Material48.setDiffuseColor([0.2,0.7,0.7])
@@ -214,9 +243,15 @@ Transform44.addChildren(Transform45)
 Scene7.addChildren(Transform44)
 Transform50 = x3d.Transform()
 Transform50.setDEF("transC3")
+Transform50.setBboxCenter([0,0,0])
+Transform50.setBboxSize([-1,-1,-1])
 Transform51 = x3d.Transform()
 Transform51.setDEF("rotscaleC3")
+Transform51.setBboxCenter([0,0,0])
+Transform51.setBboxSize([-1,-1,-1])
 Shape52 = x3d.Shape()
+Shape52.setBboxCenter([0,0,0])
+Shape52.setBboxSize([-1,-1,-1])
 Appearance53 = x3d.Appearance()
 Material54 = x3d.Material()
 Material54.setDiffuseColor([0.2,0.7,0.7])
@@ -277,44 +312,44 @@ ProtoInterface57.addField(field63)
 
 ProtoDeclare56.setProtoInterface(ProtoInterface57)
 ProtoBody64 = x3d.ProtoBody()
-Script65 = x3d.Script()
-Script65.setDEF("S1")
+X3DScript65 = x3d.X3DScript()
+X3DScript65.setDEF("S1")
 field66 = x3d.field()
 field66.setName("startnode")
 field66.setAccessType("initializeOnly")
 field66.setType("SFNode")
 
-Script65.addField(field66)
+X3DScript65.addField(field66)
 field67 = x3d.field()
 field67.setName("endnode")
 field67.setAccessType("initializeOnly")
 field67.setType("SFNode")
 
-Script65.addField(field67)
+X3DScript65.addField(field67)
 field68 = x3d.field()
 field68.setName("transnode")
 field68.setAccessType("initializeOnly")
 field68.setType("SFNode")
 
-Script65.addField(field68)
+X3DScript65.addField(field68)
 field69 = x3d.field()
 field69.setName("rotscalenode")
 field69.setAccessType("initializeOnly")
 field69.setType("SFNode")
 
-Script65.addField(field69)
+X3DScript65.addField(field69)
 field70 = x3d.field()
 field70.setName("set_startpoint")
 field70.setAccessType("inputOnly")
 field70.setType("SFVec3f")
 
-Script65.addField(field70)
+X3DScript65.addField(field70)
 field71 = x3d.field()
 field71.setName("set_endpoint")
 field71.setAccessType("inputOnly")
 field71.setType("SFVec3f")
 
-Script65.addField(field71)
+X3DScript65.addField(field71)
 IS72 = x3d.IS()
 connect73 = x3d.connect()
 connect73.setNodeField("startnode")
@@ -347,51 +382,9 @@ connect78.setProtoField("set_endpoint")
 
 IS72.addConnect(connect78)
 
-Script65.setIS(IS72)
+X3DScript65.setIS(IS72)
 
-Script65.setSourceCode('''ecmascript:\n"+
-"        function recompute(startpoint,endpoint){\n"+
-"	    if (typeof endpoint === 'undefined') {\n"+
-"		return;\n"+
-"	    }\n"+
-"            var dif = endpoint.subtract(startpoint);\n"+
-"            var dist = dif.length()*0.5;\n"+
-"            var dif2 = dif.multiply(0.5);\n"+
-"            var norm = dif.normalize();\n"+
-"            var transl = startpoint.add(dif2);\n"+
-"	    if (typeof Quaternion !== 'undefined') {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
-"		    };\n"+
-"	    } else {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
-"		    };\n"+
-"	    }\n"+
-"	}\n"+
-"	function recompute_and_route(startpoint, endpoint) {\n"+
-"	      var trafo = recompute(startpoint, endpoint);\n"+
-"	      if (trafo) {\n"+
-"		      transnode.translation = trafo.translation;\n"+
-"		      rotscalenode.rotation = trafo.rotation;\n"+
-"		      rotscalenode.scale = trafo.scale;\n"+
-"	      }\n"+
-"	}\n"+
-"        function initialize(){\n"+
-"            recompute_and_route(startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_startpoint(val,t){\n"+
-"            recompute_and_route(val,endnode.translation);\n"+
-"        }\n"+
-"        function set_endpoint(val,t){\n"+
-"            recompute_and_route(startnode.translation,val);\n"+
-"        }''')
-
-ProtoBody64.addChildren(Script65)
+ProtoBody64.setX3DScript(X3DScript65)
 
 ProtoDeclare56.setProtoBody(ProtoBody64)
 

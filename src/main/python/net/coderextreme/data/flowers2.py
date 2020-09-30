@@ -65,6 +65,8 @@ Viewpoint14.setPosition([0,0,50])
 
 Scene12.addChildren(Viewpoint14)
 Group15 = x3d.Group()
+Group15.setBboxCenter([0,0,0])
+Group15.setBboxSize([-1,-1,-1])
 DirectionalLight16 = x3d.DirectionalLight()
 DirectionalLight16.setDirection([1,1,1])
 
@@ -104,6 +106,8 @@ ProtoInterface18.addField(field22)
 ProtoDeclare17.setProtoInterface(ProtoInterface18)
 ProtoBody23 = x3d.ProtoBody()
 Group24 = x3d.Group()
+Group24.setBboxCenter([0,0,0])
+Group24.setBboxSize([-1,-1,-1])
 TimeSensor25 = x3d.TimeSensor()
 TimeSensor25.setDEF("Clock")
 TimeSensor25.setCycleInterval(16)
@@ -118,6 +122,8 @@ OrientationInterpolator26.setKeyValue([1,0,0,0,1,0,0,3.14,1,0,0,6.28])
 Group24.addChildren(OrientationInterpolator26)
 Transform27 = x3d.Transform()
 Transform27.setDEF("OrbitTransform")
+Transform27.setBboxCenter([0,0,0])
+Transform27.setBboxSize([-1,-1,-1])
 IS28 = x3d.IS()
 connect29 = x3d.connect()
 connect29.setNodeField("translation")
@@ -127,6 +133,8 @@ IS28.addConnect(connect29)
 
 Transform27.setIS(IS28)
 Shape30 = x3d.Shape()
+Shape30.setBboxCenter([0,0,0])
+Shape30.setBboxSize([-1,-1,-1])
 Appearance31 = x3d.Appearance()
 Material32 = x3d.Material()
 IS33 = x3d.IS()
@@ -168,173 +176,98 @@ Shape30.setGeometry(IndexedFaceSet37)
 Transform27.addChildren(Shape30)
 
 Group24.addChildren(Transform27)
-Script39 = x3d.Script()
-Script39.setDEF("OrbitScript")
-field40 = x3d.field()
-field40.setName("set_fraction")
-field40.setAccessType("inputOnly")
-field40.setType("SFFloat")
+ROUTE39 = x3d.ROUTE()
+ROUTE39.setFromNode("OrbitScript")
+ROUTE39.setFromField("coordIndexes")
+ROUTE39.setToNode("Orbit")
+ROUTE39.setToField("coordIndex")
 
-Script39.addField(field40)
-field41 = x3d.field()
-field41.setName("coordinates")
-field41.setAccessType("outputOnly")
-field41.setType("MFVec3f")
+Group24.addChildren(ROUTE39)
+ROUTE40 = x3d.ROUTE()
+ROUTE40.setFromNode("OrbitScript")
+ROUTE40.setFromField("coordinates")
+ROUTE40.setToNode("OrbitCoordinates")
+ROUTE40.setToField("point")
 
-Script39.addField(field41)
-field42 = x3d.field()
-field42.setName("coordIndexes")
-field42.setAccessType("outputOnly")
-field42.setType("MFInt32")
+Group24.addChildren(ROUTE40)
+ROUTE41 = x3d.ROUTE()
+ROUTE41.setFromNode("Clock")
+ROUTE41.setFromField("fraction_changed")
+ROUTE41.setToNode("OrbitScript")
+ROUTE41.setToField("set_fraction")
 
-Script39.addField(field42)
-field43 = x3d.field()
-field43.setName("e")
-field43.setAccessType("inputOutput")
-field43.setType("SFFloat")
-field43.setValue("5")
+Group24.addChildren(ROUTE41)
+ROUTE42 = x3d.ROUTE()
+ROUTE42.setFromNode("OrbitPath")
+ROUTE42.setFromField("value_changed")
+ROUTE42.setToNode("OrbitTransform")
+ROUTE42.setToField("rotation")
 
-Script39.addField(field43)
-field44 = x3d.field()
-field44.setName("f")
-field44.setAccessType("inputOutput")
-field44.setType("SFFloat")
-field44.setValue("5")
+Group24.addChildren(ROUTE42)
+ROUTE43 = x3d.ROUTE()
+ROUTE43.setFromNode("Clock")
+ROUTE43.setFromField("fraction_changed")
+ROUTE43.setToNode("OrbitPath")
+ROUTE43.setToField("set_fraction")
 
-Script39.addField(field44)
+Group24.addChildren(ROUTE43)
+X3DScript44 = x3d.X3DScript()
+X3DScript44.setDEF("OrbitScript")
 field45 = x3d.field()
-field45.setName("g")
-field45.setAccessType("inputOutput")
+field45.setName("set_fraction")
+field45.setAccessType("inputOnly")
 field45.setType("SFFloat")
-field45.setValue("5")
 
-Script39.addField(field45)
+X3DScript44.addField(field45)
 field46 = x3d.field()
-field46.setName("h")
-field46.setAccessType("inputOutput")
-field46.setType("SFFloat")
-field46.setValue("5")
+field46.setName("coordinates")
+field46.setAccessType("outputOnly")
+field46.setType("MFVec3f")
 
-Script39.addField(field46)
+X3DScript44.addField(field46)
 field47 = x3d.field()
-field47.setName("resolution")
-field47.setAccessType("inputOutput")
-field47.setType("SFInt32")
-field47.setValue("50")
+field47.setName("coordIndexes")
+field47.setAccessType("outputOnly")
+field47.setType("MFInt32")
 
-Script39.addField(field47)
+X3DScript44.addField(field47)
+field48 = x3d.field()
+field48.setName("e")
+field48.setAccessType("inputOutput")
+field48.setType("SFFloat")
+field48.setValue("5")
 
-Script39.setSourceCode('''ecmascript:\n"+
-"\n"+
-"			var e = 5;\n"+
-"			var f = 5;\n"+
-"			var g = 5;\n"+
-"			var h = 5;\n"+
-"			var resolution = 100;\n"+
-"\n"+
-"			function initialize() {\n"+
-"			     generateCoordinates();\n"+
-"			     var localci = [];\n"+
-"			     for (var i = 0; i < resolution-1; i++) {\n"+
-"				for (var j = 0; j < resolution-1; j++) {\n"+
-"				     localci.push(i*resolution+j);\n"+
-"				     localci.push(i*resolution+j+1);\n"+
-"				     localci.push((i+1)*resolution+j+1);\n"+
-"				     localci.push((i+1)*resolution+j);\n"+
-"				     localci.push(-1);\n"+
-"				}\n"+
-"			    }\n"+
-"			    coordIndexes = new MFInt32(localci);\n"+
-"			}\n"+
-"\n"+
-"			function generateCoordinates() {\n"+
-"			     var theta = 0.0;\n"+
-"			     var phi = 0.0;\n"+
-"			     var delta = (2 * 3.141592653) / (resolution-1);\n"+
-"			     var localc = [];\n"+
-"			     for (var i = 0; i < resolution; i++) {\n"+
-"				for (var j = 0; j < resolution; j++) {\n"+
-"					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"					localc.push(new SFVec3f(\n"+
-"						rho * Math.cos(phi) * Math.cos(theta),\n"+
-"						rho * Math.cos(phi) * Math.sin(theta),\n"+
-"						rho * Math.sin(phi)\n"+
-"					));\n"+
-"					theta += delta;\n"+
-"				}\n"+
-"				phi += delta;\n"+
-"			     }\n"+
-"			     \n"+
-"			     coordinates = new MFVec3f(localc);\n"+
-"			}\n"+
-"\n"+
-"			function set_fraction(fraction, eventTime) {\n"+
-"				var choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				if (e < 1) {\n"+
-"					f = 10;\n"+
-"				}\n"+
-"				if (f < 1) {\n"+
-"					f = 10;\n"+
-"				}\n"+
-"				if (g < 1) {\n"+
-"					g = 4;\n"+
-"				}\n"+
-"				if (h < 1) {\n"+
-"					h = 4;\n"+
-"				}\n"+
-"				generateCoordinates();\n"+
-"			}''')
+X3DScript44.addField(field48)
+field49 = x3d.field()
+field49.setName("f")
+field49.setAccessType("inputOutput")
+field49.setType("SFFloat")
+field49.setValue("5")
 
-Group24.addChildren(Script39)
-ROUTE48 = x3d.ROUTE()
-ROUTE48.setFromNode("OrbitScript")
-ROUTE48.setFromField("coordIndexes")
-ROUTE48.setToNode("Orbit")
-ROUTE48.setToField("coordIndex")
+X3DScript44.addField(field49)
+field50 = x3d.field()
+field50.setName("g")
+field50.setAccessType("inputOutput")
+field50.setType("SFFloat")
+field50.setValue("5")
 
-Group24.addChildren(ROUTE48)
-ROUTE49 = x3d.ROUTE()
-ROUTE49.setFromNode("OrbitScript")
-ROUTE49.setFromField("coordinates")
-ROUTE49.setToNode("OrbitCoordinates")
-ROUTE49.setToField("point")
+X3DScript44.addField(field50)
+field51 = x3d.field()
+field51.setName("h")
+field51.setAccessType("inputOutput")
+field51.setType("SFFloat")
+field51.setValue("5")
 
-Group24.addChildren(ROUTE49)
-ROUTE50 = x3d.ROUTE()
-ROUTE50.setFromNode("Clock")
-ROUTE50.setFromField("fraction_changed")
-ROUTE50.setToNode("OrbitScript")
-ROUTE50.setToField("set_fraction")
+X3DScript44.addField(field51)
+field52 = x3d.field()
+field52.setName("resolution")
+field52.setAccessType("inputOutput")
+field52.setType("SFInt32")
+field52.setValue("50")
 
-Group24.addChildren(ROUTE50)
-ROUTE51 = x3d.ROUTE()
-ROUTE51.setFromNode("OrbitPath")
-ROUTE51.setFromField("value_changed")
-ROUTE51.setToNode("OrbitTransform")
-ROUTE51.setToField("rotation")
+X3DScript44.addField(field52)
 
-Group24.addChildren(ROUTE51)
-ROUTE52 = x3d.ROUTE()
-ROUTE52.setFromNode("Clock")
-ROUTE52.setFromField("fraction_changed")
-ROUTE52.setToNode("OrbitPath")
-ROUTE52.setToField("set_fraction")
-
-Group24.addChildren(ROUTE52)
+Group24.addX3DScript(X3DScript44)
 
 ProtoBody23.addChildren(Group24)
 

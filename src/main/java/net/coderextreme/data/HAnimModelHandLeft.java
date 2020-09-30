@@ -64,249 +64,249 @@ public class HAnimModelHandLeft {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("HAnimModelHandLeft.x3d"))
-        .addChild(new HAnimHumanoid().setName("Humanoid_Left_hand").setDEF("Humanoid_Left_hand").setJointBindingPositions(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f0().getArray())).setJointBindingRotations(new org.web3d.x3d.jsail.fields.MFRotation(new MFRotation1().getArray())).setJointBindingScales(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f2().getArray())).setVersion("2.0")
-          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("hanim_HumanoidRoot")
-            .addChild(new HAnimJoint().setName("l_radiocarpal_joint").setDEF("l_radiocarpal_joint")
-              .addChild(new HAnimSegment().setName("l_wrist").setDEF("l_wrist")
-                .addChild(new Transform()
-                  .addChild(new Shape().setDEF("HAnimJointShape")
+        .addChild(new HAnimHumanoid().setName("Humanoid_Left_hand").setDEF("Humanoid_Left_hand").setVersion("2.0").setBboxDisplay(false).setVisible(true)
+          .addJoints(new HAnimJoint().setName("humanoid_root").setDEF("hanim_HumanoidRoot").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+            .addChild(new HAnimJoint().setName("l_radiocarpal_joint").setDEF("l_radiocarpal_joint").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+              .addChild(new HAnimSegment().setName("l_wrist").setDEF("l_wrist").setBboxDisplay(false).setVisible(true)
+                .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                  .addChild(new Shape().setDEF("HAnimJointShape").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                     .setGeometry(new Sphere().setRadius(0.025f))
                     .setAppearance(new Appearance().setDEF("HAnimJointAppearanceBlue")
                       .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,1f})))))
-                .addChild(new Shape()
+                .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                  .setGeometry(new IndexedLineSet().setDEF("RCToMC12").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt323().getArray()))
-                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f4().getArray())))))
-                .addChild(new Shape()
+                  .setGeometry(new IndexedLineSet().setDEF("RCToMC12").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt320().getArray()))
+                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f1().getArray())))))
+                .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                  .setGeometry(new IndexedLineSet().setDEF("RCToMC3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt325().getArray()))
-                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f6().getArray())))))
-                .addChild(new Shape()
+                  .setGeometry(new IndexedLineSet().setDEF("RCToMC3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt322().getArray()))
+                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f3().getArray())))))
+                .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                  .setGeometry(new IndexedLineSet().setDEF("RCToMC45").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt327().getArray()))
-                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f8().getArray()))))))
+                  .setGeometry(new IndexedLineSet().setDEF("RCToMC45").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt324().getArray()))
+                    .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f5().getArray()))))))
               .addComments(new CommentsBlock("MC12"))
-              .addChild(new HAnimJoint().setName("l_midcarpal_joint_12").setDEF("l_midcarpal_joint_12").setCenter(new float[] {0.1f,0.1f,0f})
-                .addChild(new HAnimSegment().setName("l_trapezoid").setDEF("l_trapezoid")
-                  .addChild(new Transform().setTranslation(new float[] {0.1f,0.1f,0f})
-                    .addChild(new Shape().setDEF("HAnimNewJointShape")
+              .addChild(new HAnimJoint().setName("l_midcarpal_joint_12").setDEF("l_midcarpal_joint_12").setCenter(new float[] {0.1f,0.1f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                .addChild(new HAnimSegment().setName("l_trapezoid").setDEF("l_trapezoid").setBboxDisplay(false).setVisible(true)
+                  .addChild(new Transform().setTranslation(new float[] {0.1f,0.1f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                    .addChild(new Shape().setDEF("HAnimNewJointShape").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .setGeometry(new Sphere().setRadius(0.025f))
                       .setAppearance(new Appearance().setDEF("HAnimJointAppearanceRed")
                         .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f})))))
-                  .addChild(new Shape()
+                  .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                    .setGeometry(new IndexedLineSet().setDEF("MC12toCMC1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt329().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f10().getArray())))))
-                  .addChild(new Shape()
+                    .setGeometry(new IndexedLineSet().setDEF("MC12toCMC1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt326().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f7().getArray())))))
+                  .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                    .setGeometry(new IndexedLineSet().setDEF("MC12toCMC2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3211().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f12().getArray()))))))
+                    .setGeometry(new IndexedLineSet().setDEF("MC12toCMC2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt328().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f9().getArray()))))))
                 .addComments(new CommentsBlock("thumb finger"))
-                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_1").setDEF("l_carpometacarpal_joint_1").setCenter(new float[] {0.2f,0.15f,0f})
-                  .addChild(new HAnimSegment().setName("l_metacarpal_1").setDEF("l_metacarpal_1")
-                    .addChild(new Transform().setTranslation(new float[] {0.2f,0.15f,0f})
+                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_1").setDEF("l_carpometacarpal_joint_1").setCenter(new float[] {0.2f,0.15f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                  .addChild(new HAnimSegment().setName("l_metacarpal_1").setDEF("l_metacarpal_1").setBboxDisplay(false).setVisible(true)
+                    .addChild(new Transform().setTranslation(new float[] {0.2f,0.15f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .addChild(new Shape().setUSE("HAnimJointShape")))
-                    .addChild(new Shape()
+                    .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC1toMCP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3213().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f14().getArray()))))))
-                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_1").setDEF("l_metacarpophalangeal_joint_1").setCenter(new float[] {0.3f,0.3f,0f})
-                    .addChild(new HAnimSegment().setName("l_proximal_phalanges1").setDEF("l_proximal_phalanges1")
-                      .addChild(new Transform().setTranslation(new float[] {0.3f,0.3f,0f})
+                      .setGeometry(new IndexedLineSet().setDEF("CMC1toMCP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3210().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f11().getArray()))))))
+                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_1").setDEF("l_metacarpophalangeal_joint_1").setCenter(new float[] {0.3f,0.3f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                    .addChild(new HAnimSegment().setName("l_proximal_phalanges1").setDEF("l_proximal_phalanges1").setBboxDisplay(false).setVisible(true)
+                      .addChild(new Transform().setTranslation(new float[] {0.3f,0.3f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                         .addChild(new Shape().setUSE("HAnimJointShape")))
-                      .addChild(new Shape()
+                      .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                         .setAppearance(new Appearance()
                           .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP11toIP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3215().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f16().getArray()))))))
-                    .addChild(new HAnimJoint().setName("l_interphalangeal_joint_1").setDEF("l_interphalangeal_joint_1").setCenter(new float[] {0.35f,0.4f,0f})
-                      .addChild(new HAnimSegment().setName("l_distal_phalanges1").setDEF("l_distal_phalanges1")
-                        .addChild(new Transform().setTranslation(new float[] {0.35f,0.4f,0f})
+                        .setGeometry(new IndexedLineSet().setDEF("MCP11toIP1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3212().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f13().getArray()))))))
+                    .addChild(new HAnimJoint().setName("l_interphalangeal_joint_1").setDEF("l_interphalangeal_joint_1").setCenter(new float[] {0.35f,0.4f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                      .addChild(new HAnimSegment().setName("l_distal_phalanges1").setDEF("l_distal_phalanges1").setBboxDisplay(false).setVisible(true)
+                        .addChild(new Transform().setTranslation(new float[] {0.35f,0.4f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                           .addChild(new Shape().setUSE("HAnimJointShape")))
-                        .addChild(new Shape()
+                        .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                          .setGeometry(new IndexedLineSet().setDEF("fingertip_l_interphalangeal_joint_1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3217().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f18().getArray())))))))))
+                          .setGeometry(new IndexedLineSet().setDEF("fingertip_l_interphalangeal_joint_1").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3214().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f15().getArray())))))))))
                 .addComments(new CommentsBlock("index finger"))
-                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_2").setDEF("l_carpometacarpal_joint_2").setCenter(new float[] {0.1f,0.2f,0f})
-                  .addChild(new HAnimSegment().setName("l_metacarpal2").setDEF("l_metacarpal2")
-                    .addChild(new Transform().setTranslation(new float[] {0.1f,0.2f,0f})
+                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_2").setDEF("l_carpometacarpal_joint_2").setCenter(new float[] {0.1f,0.2f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                  .addChild(new HAnimSegment().setName("l_metacarpal2").setDEF("l_metacarpal2").setBboxDisplay(false).setVisible(true)
+                    .addChild(new Transform().setTranslation(new float[] {0.1f,0.2f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .addChild(new Shape().setUSE("HAnimJointShape")))
-                    .addChild(new Shape()
+                    .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC2toMCP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3219().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f20().getArray()))))))
-                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_2").setDEF("l_metacarpophalangeal_joint_2").setCenter(new float[] {0.15f,0.5f,0f})
-                    .addChild(new HAnimSegment().setName("l_proximal_phalanges2").setDEF("l_proximal_phalanges2")
-                      .addChild(new Transform().setTranslation(new float[] {0.15f,0.5f,0f})
+                      .setGeometry(new IndexedLineSet().setDEF("CMC2toMCP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3216().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f17().getArray()))))))
+                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_2").setDEF("l_metacarpophalangeal_joint_2").setCenter(new float[] {0.15f,0.5f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                    .addChild(new HAnimSegment().setName("l_proximal_phalanges2").setDEF("l_proximal_phalanges2").setBboxDisplay(false).setVisible(true)
+                      .addChild(new Transform().setTranslation(new float[] {0.15f,0.5f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                         .addChild(new Shape().setUSE("HAnimJointShape")))
-                      .addChild(new Shape()
+                      .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                         .setAppearance(new Appearance()
                           .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP2toPIP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3221().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f22().getArray()))))))
-                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_2").setDEF("l_proximal_interphalangeal_joint_2").setCenter(new float[] {0.2f,0.7f,0f})
-                      .addChild(new HAnimSegment().setName("l_middle_phalanges2").setDEF("l_middle_phalanges2")
-                        .addChild(new Transform().setTranslation(new float[] {0.2f,0.7f,0f})
+                        .setGeometry(new IndexedLineSet().setDEF("MCP2toPIP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3218().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f19().getArray()))))))
+                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_2").setDEF("l_proximal_interphalangeal_joint_2").setCenter(new float[] {0.2f,0.7f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                      .addChild(new HAnimSegment().setName("l_middle_phalanges2").setDEF("l_middle_phalanges2").setBboxDisplay(false).setVisible(true)
+                        .addChild(new Transform().setTranslation(new float[] {0.2f,0.7f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                           .addChild(new Shape().setUSE("HAnimJointShape")))
-                        .addChild(new Shape()
+                        .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                          .setGeometry(new IndexedLineSet().setDEF("PIP2toDIP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3223().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f24().getArray()))))))
-                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_2").setDEF("l_distal_interphalangeal_joint_2").setCenter(new float[] {0.24f,0.87f,0f})
-                        .addChild(new HAnimSegment().setName("l_distal_phalanges2").setDEF("l_distal_phalanges2")
-                          .addChild(new Transform().setTranslation(new float[] {0.24f,0.87f,0f})
+                          .setGeometry(new IndexedLineSet().setDEF("PIP2toDIP2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3220().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f21().getArray()))))))
+                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_2").setDEF("l_distal_interphalangeal_joint_2").setCenter(new float[] {0.24f,0.87f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                        .addChild(new HAnimSegment().setName("l_distal_phalanges2").setDEF("l_distal_phalanges2").setBboxDisplay(false).setVisible(true)
+                          .addChild(new Transform().setTranslation(new float[] {0.24f,0.87f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                             .addChild(new Shape().setUSE("HAnimJointShape")))
-                          .addChild(new Shape()
+                          .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3225().getArray()))
-                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f26().getArray())))))))))))
+                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_2").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3222().getArray()))
+                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f23().getArray())))))))))))
               .addComments(new CommentsBlock("MC3"))
-              .addChild(new HAnimJoint().setName("l_midcarpal_joint_3").setDEF("l_midcarpal_joint_3").setCenter(new float[] {0f,0.07f,0f})
-                .addChild(new HAnimSegment().setName("l_capitate").setDEF("l_capitate")
-                  .addChild(new Transform().setTranslation(new float[] {0f,0.07f,0f})
+              .addChild(new HAnimJoint().setName("l_midcarpal_joint_3").setDEF("l_midcarpal_joint_3").setCenter(new float[] {0f,0.07f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                .addChild(new HAnimSegment().setName("l_capitate").setDEF("l_capitate").setBboxDisplay(false).setVisible(true)
+                  .addChild(new Transform().setTranslation(new float[] {0f,0.07f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                     .addChild(new Shape().setUSE("HAnimNewJointShape")))
-                  .addChild(new Shape()
+                  .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                    .setGeometry(new IndexedLineSet().setDEF("MC3toCMC3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3227().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f28().getArray()))))))
+                    .setGeometry(new IndexedLineSet().setDEF("MC3toCMC3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3224().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f25().getArray()))))))
                 .addComments(new CommentsBlock("Middle fingle"))
-                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_3").setDEF("l_carpometacarpal_joint_3").setCenter(new float[] {0f,0.2f,0f})
-                  .addChild(new HAnimSegment().setName("l_metacarpal3").setDEF("l_metacarpal3")
-                    .addChild(new Transform().setTranslation(new float[] {0f,0.2f,0f})
+                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_3").setDEF("l_carpometacarpal_joint_3").setCenter(new float[] {0f,0.2f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                  .addChild(new HAnimSegment().setName("l_metacarpal3").setDEF("l_metacarpal3").setBboxDisplay(false).setVisible(true)
+                    .addChild(new Transform().setTranslation(new float[] {0f,0.2f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .addChild(new Shape().setUSE("HAnimJointShape")))
-                    .addChild(new Shape()
+                    .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC3toMCP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3229().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f30().getArray()))))))
-                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_3").setDEF("l_metacarpophalangeal_joint_3").setCenter(new float[] {0.03f,0.5f,0f})
-                    .addChild(new HAnimSegment().setName("l_proximal_phalanges3").setDEF("l_proximal_phalanges3")
-                      .addChild(new Transform().setTranslation(new float[] {0.03f,0.5f,0f})
+                      .setGeometry(new IndexedLineSet().setDEF("CMC3toMCP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3226().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f27().getArray()))))))
+                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_3").setDEF("l_metacarpophalangeal_joint_3").setCenter(new float[] {0.03f,0.5f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                    .addChild(new HAnimSegment().setName("l_proximal_phalanges3").setDEF("l_proximal_phalanges3").setBboxDisplay(false).setVisible(true)
+                      .addChild(new Transform().setTranslation(new float[] {0.03f,0.5f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                         .addChild(new Shape().setUSE("HAnimJointShape")))
-                      .addChild(new Shape()
+                      .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                         .setAppearance(new Appearance()
                           .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP3toPIP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3231().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f32().getArray()))))))
-                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_3").setDEF("l_proximal_interphalangeal_joint_3").setCenter(new float[] {0.05f,0.75f,0f})
-                      .addChild(new HAnimSegment().setName("l_middle_phalanges3").setDEF("l_middle_phalanges3")
-                        .addChild(new Transform().setTranslation(new float[] {0.05f,0.75f,0f})
+                        .setGeometry(new IndexedLineSet().setDEF("MCP3toPIP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3228().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f29().getArray()))))))
+                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_3").setDEF("l_proximal_interphalangeal_joint_3").setCenter(new float[] {0.05f,0.75f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                      .addChild(new HAnimSegment().setName("l_middle_phalanges3").setDEF("l_middle_phalanges3").setBboxDisplay(false).setVisible(true)
+                        .addChild(new Transform().setTranslation(new float[] {0.05f,0.75f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                           .addChild(new Shape().setUSE("HAnimJointShape")))
-                        .addChild(new Shape()
+                        .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                          .setGeometry(new IndexedLineSet().setDEF("PIP3toDIP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3233().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f34().getArray()))))))
-                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_3").setDEF("l_distal_interphalangeal_joint_3").setCenter(new float[] {0.08f,0.96f,0f})
-                        .addChild(new HAnimSegment().setName("l_distal_phalanges3").setDEF("l_distal_phalanges3")
-                          .addChild(new Transform().setTranslation(new float[] {0.08f,0.96f,0f})
+                          .setGeometry(new IndexedLineSet().setDEF("PIP3toDIP3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3230().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f31().getArray()))))))
+                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_3").setDEF("l_distal_interphalangeal_joint_3").setCenter(new float[] {0.08f,0.96f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                        .addChild(new HAnimSegment().setName("l_distal_phalanges3").setDEF("l_distal_phalanges3").setBboxDisplay(false).setVisible(true)
+                          .addChild(new Transform().setTranslation(new float[] {0.08f,0.96f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                             .addChild(new Shape().setUSE("HAnimJointShape")))
-                          .addChild(new Shape()
+                          .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3235().getArray()))
-                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f36().getArray())))))))))))
+                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_3").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3232().getArray()))
+                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f33().getArray())))))))))))
               .addComments(new CommentsBlock("MC45"))
-              .addChild(new HAnimJoint().setName("l_midcarpal_joint_12").setDEF("l_midcarpal_joint_45").setCenter(new float[] {-0.1f,0.1f,0f})
-                .addChild(new HAnimSegment().setName("l_hamate").setDEF("l_hamate")
-                  .addChild(new Transform().setTranslation(new float[] {-0.1f,0.1f,0f})
+              .addChild(new HAnimJoint().setName("l_midcarpal_joint_12").setDEF("l_midcarpal_joint_45").setCenter(new float[] {-0.1f,0.1f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                .addChild(new HAnimSegment().setName("l_hamate").setDEF("l_hamate").setBboxDisplay(false).setVisible(true)
+                  .addChild(new Transform().setTranslation(new float[] {-0.1f,0.1f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                     .addChild(new Shape().setUSE("HAnimNewJointShape")))
-                  .addChild(new Shape()
+                  .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                    .setGeometry(new IndexedLineSet().setDEF("MC45toCMC4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3237().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f38().getArray())))))
-                  .addChild(new Shape()
+                    .setGeometry(new IndexedLineSet().setDEF("MC45toCMC4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3234().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f35().getArray())))))
+                  .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                    .setGeometry(new IndexedLineSet().setDEF("MC45toCMC5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3239().getArray()))
-                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f40().getArray()))))))
+                    .setGeometry(new IndexedLineSet().setDEF("MC45toCMC5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3236().getArray()))
+                      .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f37().getArray()))))))
                 .addComments(new CommentsBlock("ring finger"))
-                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_4").setDEF("l_carpometacarpal_joint_4").setCenter(new float[] {-0.1f,0.2f,0f})
-                  .addChild(new HAnimSegment().setName("l_metacarpal4").setDEF("l_metacarpal4")
-                    .addChild(new Transform().setTranslation(new float[] {-0.1f,0.2f,0f})
+                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_4").setDEF("l_carpometacarpal_joint_4").setCenter(new float[] {-0.1f,0.2f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                  .addChild(new HAnimSegment().setName("l_metacarpal4").setDEF("l_metacarpal4").setBboxDisplay(false).setVisible(true)
+                    .addChild(new Transform().setTranslation(new float[] {-0.1f,0.2f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .addChild(new Shape().setUSE("HAnimJointShape")))
-                    .addChild(new Shape()
+                    .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC4toMCP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3241().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f42().getArray()))))))
-                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_4").setDEF("l_metacarpophalangeal_joint_4").setCenter(new float[] {-0.1f,0.47f,0f})
-                    .addChild(new HAnimSegment().setName("l_proximal_phalanges4").setDEF("l_proximal_phalanges4")
-                      .addChild(new Transform().setTranslation(new float[] {-0.1f,0.47f,0f})
+                      .setGeometry(new IndexedLineSet().setDEF("CMC4toMCP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3238().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f39().getArray()))))))
+                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_4").setDEF("l_metacarpophalangeal_joint_4").setCenter(new float[] {-0.1f,0.47f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                    .addChild(new HAnimSegment().setName("l_proximal_phalanges4").setDEF("l_proximal_phalanges4").setBboxDisplay(false).setVisible(true)
+                      .addChild(new Transform().setTranslation(new float[] {-0.1f,0.47f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                         .addChild(new Shape().setUSE("HAnimJointShape")))
-                      .addChild(new Shape()
+                      .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                         .setAppearance(new Appearance()
                           .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP4toPIP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3243().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f44().getArray()))))))
-                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_4").setDEF("l_proximal_interphalangeal_joint_4").setCenter(new float[] {-0.1f,0.7f,0f})
-                      .addChild(new HAnimSegment().setName("l_middle_phalanges4").setDEF("l_middle_phalanges4")
-                        .addChild(new Transform().setTranslation(new float[] {-0.1f,0.7f,0f})
+                        .setGeometry(new IndexedLineSet().setDEF("MCP4toPIP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3240().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f41().getArray()))))))
+                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_4").setDEF("l_proximal_interphalangeal_joint_4").setCenter(new float[] {-0.1f,0.7f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                      .addChild(new HAnimSegment().setName("l_middle_phalanges4").setDEF("l_middle_phalanges4").setBboxDisplay(false).setVisible(true)
+                        .addChild(new Transform().setTranslation(new float[] {-0.1f,0.7f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                           .addChild(new Shape().setUSE("HAnimJointShape")))
-                        .addChild(new Shape()
+                        .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                          .setGeometry(new IndexedLineSet().setDEF("PIP4toDIP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3245().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f46().getArray()))))))
-                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_4").setDEF("l_distal_interphalangeal_joint_4").setCenter(new float[] {-0.1f,0.93f,0f})
-                        .addChild(new HAnimSegment().setName("l_distal_phalanx4").setDEF("l_distal_phalanx4")
-                          .addChild(new Transform().setTranslation(new float[] {-0.1f,0.93f,0f})
+                          .setGeometry(new IndexedLineSet().setDEF("PIP4toDIP4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3242().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f43().getArray()))))))
+                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_4").setDEF("l_distal_interphalangeal_joint_4").setCenter(new float[] {-0.1f,0.93f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                        .addChild(new HAnimSegment().setName("l_distal_phalanx4").setDEF("l_distal_phalanx4").setBboxDisplay(false).setVisible(true)
+                          .addChild(new Transform().setTranslation(new float[] {-0.1f,0.93f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                             .addChild(new Shape().setUSE("HAnimJointShape")))
-                          .addChild(new Shape()
+                          .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3247().getArray()))
-                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f48().getArray()))))))))))
+                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_4").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3244().getArray()))
+                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f45().getArray()))))))))))
                 .addComments(new CommentsBlock("pinky finger"))
-                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_5").setDEF("l_carpometacarpal_joint_5").setCenter(new float[] {-0.15f,0.17f,0f})
-                  .addChild(new HAnimSegment().setName("l_metacarpal5").setDEF("l_metacarpal5")
-                    .addChild(new Transform().setTranslation(new float[] {-0.15f,0.17f,0f})
+                .addChild(new HAnimJoint().setName("l_carpometacarpal_joint_5").setDEF("l_carpometacarpal_joint_5").setCenter(new float[] {-0.15f,0.17f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                  .addChild(new HAnimSegment().setName("l_metacarpal5").setDEF("l_metacarpal5").setBboxDisplay(false).setVisible(true)
+                    .addChild(new Transform().setTranslation(new float[] {-0.15f,0.17f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .addChild(new Shape().setUSE("HAnimJointShape")))
-                    .addChild(new Shape()
+                    .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                      .setGeometry(new IndexedLineSet().setDEF("CMC5toMCP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3249().getArray()))
-                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f50().getArray()))))))
-                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_5").setDEF("l_metacarpophalangeal_joint_5").setCenter(new float[] {-0.2f,0.4f,0f})
-                    .addChild(new HAnimSegment().setName("l_proximal_phalanges2").setDEF("l_proximal_phalanges5")
-                      .addChild(new Transform().setTranslation(new float[] {-0.2f,0.4f,0f})
+                      .setGeometry(new IndexedLineSet().setDEF("CMC5toMCP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3246().getArray()))
+                        .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f47().getArray()))))))
+                  .addChild(new HAnimJoint().setName("l_metacarpophalangeal_joint_5").setDEF("l_metacarpophalangeal_joint_5").setCenter(new float[] {-0.2f,0.4f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                    .addChild(new HAnimSegment().setName("l_proximal_phalanges2").setDEF("l_proximal_phalanges5").setBboxDisplay(false).setVisible(true)
+                      .addChild(new Transform().setTranslation(new float[] {-0.2f,0.4f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                         .addChild(new Shape().setUSE("HAnimJointShape")))
-                      .addChild(new Shape()
+                      .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                         .setAppearance(new Appearance()
                           .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                        .setGeometry(new IndexedLineSet().setDEF("MCP5toPIP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3251().getArray()))
-                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f52().getArray()))))))
-                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_5").setDEF("l_proximal_interphalangeal_joint_5").setCenter(new float[] {-0.23f,0.63f,0f})
-                      .addChild(new HAnimSegment().setName("l_middle_phalanges5").setDEF("l_middle_phalanges5")
-                        .addChild(new Transform().setTranslation(new float[] {-0.23f,0.63f,0f})
+                        .setGeometry(new IndexedLineSet().setDEF("MCP5toPIP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3248().getArray()))
+                          .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f49().getArray()))))))
+                    .addChild(new HAnimJoint().setName("l_proximal_interphalangeal_joint_5").setDEF("l_proximal_interphalangeal_joint_5").setCenter(new float[] {-0.23f,0.63f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                      .addChild(new HAnimSegment().setName("l_middle_phalanges5").setDEF("l_middle_phalanges5").setBboxDisplay(false).setVisible(true)
+                        .addChild(new Transform().setTranslation(new float[] {-0.23f,0.63f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                           .addChild(new Shape().setUSE("HAnimJointShape")))
-                        .addChild(new Shape()
+                        .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                          .setGeometry(new IndexedLineSet().setDEF("PIP5toDIP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3253().getArray()))
-                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f54().getArray()))))))
-                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_5").setDEF("l_distal_interphalangeal_joint_5").setCenter(new float[] {-0.25f,0.79f,0f})
-                        .addChild(new HAnimSegment().setName("l_distal_phalanges5").setDEF("l_distal_phalanges5")
-                          .addChild(new Transform().setTranslation(new float[] {-0.25f,0.79f,0f})
+                          .setGeometry(new IndexedLineSet().setDEF("PIP5toDIP5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3250().getArray()))
+                            .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f51().getArray()))))))
+                      .addChild(new HAnimJoint().setName("l_distal_interphalangeal_joint_5").setDEF("l_distal_interphalangeal_joint_5").setCenter(new float[] {-0.25f,0.79f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
+                        .addChild(new HAnimSegment().setName("l_distal_phalanges5").setDEF("l_distal_phalanges5").setBboxDisplay(false).setVisible(true)
+                          .addChild(new Transform().setTranslation(new float[] {-0.25f,0.79f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                             .addChild(new Shape().setUSE("HAnimJointShape")))
-                          .addChild(new Shape()
+                          .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}).setBboxDisplay(false).setVisible(true)
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setEmissiveColor(new float[] {1f,1f,1f})))
-                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3255().getArray()))
-                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f56().getArray())))))))))))))
+                            .setGeometry(new IndexedLineSet().setDEF("fingertip_l_distal_interphalangeal_joint_5").setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt3252().getArray()))
+                              .setCoord(new Coordinate().setPoint(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f53().getArray())))))))))))))
           .addJoints(new HAnimJoint().setUSE("hanim_HumanoidRoot"))
           .addJoints(new HAnimJoint().setUSE("l_radiocarpal_joint"))
           .addJoints(new HAnimJoint().setUSE("l_midcarpal_joint_12"))
@@ -356,287 +356,272 @@ public class HAnimModelHandLeft {
           .addSegments(new HAnimSegment().setUSE("l_distal_phalanges5"))))      ;
     return X3D0;
     }
-protected class MFVec3f0 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f});
-  }
-}
-protected class MFRotation1 {
-  protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f});
-  }
-}
-protected class MFVec3f2 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,1f,1f});
-  }
-}
-protected class MFInt323 {
+protected class MFInt320 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f4 {
+protected class MFVec3f1 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0.1f,0.1f,0f});
   }
 }
-protected class MFInt325 {
+protected class MFInt322 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f6 {
+protected class MFVec3f3 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,0.07f,0f});
   }
 }
-protected class MFInt327 {
+protected class MFInt324 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f8 {
+protected class MFVec3f5 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,-0.1f,0.1f,0f});
   }
 }
-protected class MFInt329 {
+protected class MFInt326 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f10 {
+protected class MFVec3f7 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1f,0.1f,0f,0.2f,0.15f,0f});
   }
 }
-protected class MFInt3211 {
+protected class MFInt328 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f12 {
+protected class MFVec3f9 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1f,0.1f,0f,0.1f,0.2f,0f});
   }
 }
-protected class MFInt3213 {
+protected class MFInt3210 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f14 {
+protected class MFVec3f11 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.2f,0.15f,0f,0.3f,0.3f,0f});
   }
 }
-protected class MFInt3215 {
+protected class MFInt3212 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f16 {
+protected class MFVec3f13 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.3f,0.3f,0f,0.35f,0.4f,0f});
   }
 }
-protected class MFInt3217 {
+protected class MFInt3214 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f18 {
+protected class MFVec3f15 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.35f,0.4f,0f,0.36f,0.45f,0f});
   }
 }
-protected class MFInt3219 {
+protected class MFInt3216 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f20 {
+protected class MFVec3f17 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1f,0.2f,0f,0.15f,0.5f,0f});
   }
 }
-protected class MFInt3221 {
+protected class MFInt3218 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f22 {
+protected class MFVec3f19 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.15f,0.5f,0f,0.2f,0.7f,0f});
   }
 }
-protected class MFInt3223 {
+protected class MFInt3220 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f24 {
+protected class MFVec3f21 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.2f,0.7f,0f,0.24f,0.87f,0f});
   }
 }
-protected class MFInt3225 {
+protected class MFInt3222 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f26 {
+protected class MFVec3f23 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.24f,0.87f,0f,0.26f,0.93f,0f});
   }
 }
-protected class MFInt3227 {
+protected class MFInt3224 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f28 {
+protected class MFVec3f25 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.07f,0f,0f,0.2f,0f});
   }
 }
-protected class MFInt3229 {
+protected class MFInt3226 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f30 {
+protected class MFVec3f27 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.2f,0f,0.03f,0.5f,0f});
   }
 }
-protected class MFInt3231 {
+protected class MFInt3228 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f32 {
+protected class MFVec3f29 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.03f,0.5f,0f,0.05f,0.75f,0f});
   }
 }
-protected class MFInt3233 {
+protected class MFInt3230 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f34 {
+protected class MFVec3f31 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.05f,0.75f,0f,0.08f,0.96f,0f});
   }
 }
-protected class MFInt3235 {
+protected class MFInt3232 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f36 {
+protected class MFVec3f33 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.08f,0.96f,0f,0.09f,1.05f,0f});
   }
 }
-protected class MFInt3237 {
+protected class MFInt3234 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f38 {
+protected class MFVec3f35 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.1f,0f,-0.1f,0.2f,0f});
   }
 }
-protected class MFInt3239 {
+protected class MFInt3236 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f40 {
+protected class MFVec3f37 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.1f,0f,-0.15f,0.17f,0f});
   }
 }
-protected class MFInt3241 {
+protected class MFInt3238 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f42 {
+protected class MFVec3f39 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.2f,0f,-0.1f,0.47f,0f});
   }
 }
-protected class MFInt3243 {
+protected class MFInt3240 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f44 {
+protected class MFVec3f41 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.47f,0f,-0.1f,0.7f,0f});
   }
 }
-protected class MFInt3245 {
+protected class MFInt3242 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f46 {
+protected class MFVec3f43 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.7f,0f,-0.1f,0.93f,0f});
   }
 }
-protected class MFInt3247 {
+protected class MFInt3244 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f48 {
+protected class MFVec3f45 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1f,0.93f,0f,-0.1f,1f,0f});
   }
 }
-protected class MFInt3249 {
+protected class MFInt3246 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f50 {
+protected class MFVec3f47 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.15f,0.17f,0f,-0.2f,0.4f,0f});
   }
 }
-protected class MFInt3251 {
+protected class MFInt3248 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f52 {
+protected class MFVec3f49 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.2f,0.4f,0f,-0.23f,0.63f,0f});
   }
 }
-protected class MFInt3253 {
+protected class MFInt3250 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f54 {
+protected class MFVec3f51 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.23f,0.63f,0f,-0.25f,0.79f,0f});
   }
 }
-protected class MFInt3255 {
+protected class MFInt3252 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1});
   }
 }
-protected class MFVec3f56 {
+protected class MFVec3f53 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.25f,0.79f,0f,-0.26f,0.85f,0f});
   }

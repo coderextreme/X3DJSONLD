@@ -22,8 +22,8 @@ var ProtoInstance1 = null;
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("posi").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
             .addField(new field().setType(field.TYPE_SFCOLOR).setName("col").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0")))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform()
-              .addChild(new Shape()
+            .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+              .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setTransparency(0.400000005960464)
                     .setIS(new IS()
@@ -38,7 +38,7 @@ var ProtoInstance1 = null;
             .addChild(ProtoInstance0 = new ProtoInstance().setName("org")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("posi").setProtoField("pos"))))))
-        .addChild(new Anchor().setUrl(Java.to(["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"], Java.type("java.lang.String[]"))).setDescription("High Peak Community Arts")
+        .addChild(new Anchor().setUrl(Java.to(["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"], Java.type("java.lang.String[]"))).setDescription("High Peak Community Arts").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
           .addChild(ProtoInstance1 = new ProtoInstance().setName("r"))))      ;
 ProtoInstance0
               .addFieldValue(new fieldValue().setName("col").setValue("0 0.300000011920929 1"));

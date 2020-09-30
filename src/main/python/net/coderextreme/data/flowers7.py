@@ -73,6 +73,8 @@ Background15.setFrontUrl(["../resources/images/all_probes/beach_cross/beach_fron
 Background15.setLeftUrl(["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"])
 Background15.setRightUrl(["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"])
 Background15.setTopUrl(["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])
+Background15.setSkyColor([0,0,0])
+Background15.setTransparency(0)
 
 Scene13.addChildren(Background15)
 Viewpoint16 = x3d.Viewpoint()
@@ -81,7 +83,11 @@ Viewpoint16.setDescription("Transparent rose")
 
 Scene13.addChildren(Viewpoint16)
 Transform17 = x3d.Transform()
+Transform17.setBboxCenter([0,0,0])
+Transform17.setBboxSize([-1,-1,-1])
 Shape18 = x3d.Shape()
+Shape18.setBboxCenter([0,0,0])
+Shape18.setBboxSize([-1,-1,-1])
 Appearance19 = x3d.Appearance()
 Material20 = x3d.Material()
 Material20.setDiffuseColor([0.7,0.7,0.7])
@@ -319,310 +325,104 @@ Shape18.setGeometry(Sphere57)
 Transform17.addChildren(Shape18)
 
 Scene13.addChildren(Transform17)
-Script58 = x3d.Script()
-Script58.setDEF("UrlSelector")
-Script58.setDirectOutput(True)
-field59 = x3d.field()
-field59.setName("frontUrls")
-field59.setType("MFString")
-field59.setAccessType("initializeOnly")
-field59.setValue("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"")
-
-Script58.addField(field59)
-field60 = x3d.field()
-field60.setName("backUrls")
-field60.setType("MFString")
-field60.setAccessType("initializeOnly")
-field60.setValue("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"")
-
-Script58.addField(field60)
-field61 = x3d.field()
-field61.setName("leftUrls")
-field61.setType("MFString")
-field61.setAccessType("initializeOnly")
-field61.setValue("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"")
-
-Script58.addField(field61)
-field62 = x3d.field()
-field62.setName("rightUrls")
-field62.setType("MFString")
-field62.setAccessType("initializeOnly")
-field62.setValue("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"")
-
-Script58.addField(field62)
-field63 = x3d.field()
-field63.setName("topUrls")
-field63.setType("MFString")
-field63.setAccessType("initializeOnly")
-field63.setValue("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"")
-
-Script58.addField(field63)
-field64 = x3d.field()
-field64.setName("bottomUrls")
-field64.setType("MFString")
-field64.setAccessType("initializeOnly")
-field64.setValue("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"")
-
-Script58.addField(field64)
-field65 = x3d.field()
-field65.setName("front")
-field65.setType("MFString")
-field65.setAccessType("inputOutput")
-
-Script58.addField(field65)
-field66 = x3d.field()
-field66.setName("back")
-field66.setType("MFString")
-field66.setAccessType("inputOutput")
-
-Script58.addField(field66)
-field67 = x3d.field()
-field67.setName("left")
-field67.setType("MFString")
-field67.setAccessType("inputOutput")
-
-Script58.addField(field67)
-field68 = x3d.field()
-field68.setName("right")
-field68.setType("MFString")
-field68.setAccessType("inputOutput")
-
-Script58.addField(field68)
-field69 = x3d.field()
-field69.setName("top")
-field69.setType("MFString")
-field69.setAccessType("inputOutput")
-
-Script58.addField(field69)
-field70 = x3d.field()
-field70.setName("bottom")
-field70.setType("MFString")
-field70.setAccessType("inputOutput")
-
-Script58.addField(field70)
-field71 = x3d.field()
-field71.setName("set_fraction")
-field71.setType("SFFloat")
-field71.setAccessType("inputOnly")
-
-Script58.addField(field71)
-field72 = x3d.field()
-field72.setName("old")
-field72.setType("SFInt32")
-field72.setAccessType("inputOutput")
-field72.setValue("-1")
-
-Script58.addField(field72)
-
-Script58.setSourceCode('''ecmascript:\n"+
-"        function set_fraction( f, tm ) {\n"+
-"            var side = Math.floor(f*frontUrls.length);\n"+
-"            if (side > frontUrls.length-1) {\n"+
-"                side = 0;\n"+
-"            }\n"+
-"            if (side != old) {\n"+
-"                    old = side;\n"+
-"                    front[0] = frontUrls[side];\n"+
-"                    back[0] = backUrls[side];\n"+
-"                    left[0] = leftUrls[side];\n"+
-"                    right[0] = rightUrls[side];\n"+
-"                    top[0] = topUrls[side];\n"+
-"                    bottom[0] = bottomUrls[side];\n"+
-"            }\n"+
-"        }''')
-
-Scene13.addChildren(Script58)
 #<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
-Script73 = x3d.Script()
-Script73.setDEF("Animate")
-Script73.setDirectOutput(True)
-field74 = x3d.field()
-field74.setName("set_fraction")
-field74.setType("SFFloat")
-field74.setAccessType("inputOnly")
+TimeSensor58 = x3d.TimeSensor()
+TimeSensor58.setDEF("TourTime")
+TimeSensor58.setCycleInterval(5)
+TimeSensor58.setLoop(True)
 
-Script73.addField(field74)
-field75 = x3d.field()
-field75.setName("a")
-field75.setType("SFFloat")
-field75.setAccessType("inputOutput")
-field75.setValue("10")
+Scene13.addChildren(TimeSensor58)
+ROUTE59 = x3d.ROUTE()
+ROUTE59.setFromNode("TourTime")
+ROUTE59.setFromField("fraction_changed")
+ROUTE59.setToNode("Animate")
+ROUTE59.setToField("set_fraction")
 
-Script73.addField(field75)
-field76 = x3d.field()
-field76.setName("b")
-field76.setType("SFFloat")
-field76.setAccessType("inputOutput")
-field76.setValue("1")
+Scene13.addChildren(ROUTE59)
+ROUTE60 = x3d.ROUTE()
+ROUTE60.setFromNode("Animate")
+ROUTE60.setFromField("a")
+ROUTE60.setToNode("x_ite")
+ROUTE60.setToField("a")
 
-Script73.addField(field76)
-field77 = x3d.field()
-field77.setName("c")
-field77.setType("SFFloat")
-field77.setAccessType("inputOutput")
-field77.setValue("20")
+Scene13.addChildren(ROUTE60)
+ROUTE61 = x3d.ROUTE()
+ROUTE61.setFromNode("Animate")
+ROUTE61.setFromField("b")
+ROUTE61.setToNode("x_ite")
+ROUTE61.setToField("b")
 
-Script73.addField(field77)
-field78 = x3d.field()
-field78.setName("d")
-field78.setType("SFFloat")
-field78.setAccessType("inputOutput")
-field78.setValue("20")
+Scene13.addChildren(ROUTE61)
+ROUTE62 = x3d.ROUTE()
+ROUTE62.setFromNode("Animate")
+ROUTE62.setFromField("c")
+ROUTE62.setToNode("x_ite")
+ROUTE62.setToField("c")
 
-Script73.addField(field78)
-field79 = x3d.field()
-field79.setName("tdelta")
-field79.setType("SFFloat")
-field79.setAccessType("inputOutput")
-field79.setValue("0")
+Scene13.addChildren(ROUTE62)
+ROUTE63 = x3d.ROUTE()
+ROUTE63.setFromNode("Animate")
+ROUTE63.setFromField("d")
+ROUTE63.setToNode("x_ite")
+ROUTE63.setToField("d")
 
-Script73.addField(field79)
-field80 = x3d.field()
-field80.setName("pdelta")
-field80.setType("SFFloat")
-field80.setAccessType("inputOutput")
-field80.setValue("0")
+Scene13.addChildren(ROUTE63)
+ROUTE64 = x3d.ROUTE()
+ROUTE64.setFromNode("Animate")
+ROUTE64.setFromField("pdelta")
+ROUTE64.setToNode("x_ite")
+ROUTE64.setToField("pdelta")
 
-Script73.addField(field80)
+Scene13.addChildren(ROUTE64)
+ROUTE65 = x3d.ROUTE()
+ROUTE65.setFromNode("Animate")
+ROUTE65.setFromField("tdelta")
+ROUTE65.setToNode("x_ite")
+ROUTE65.setToField("tdelta")
 
-Script73.setSourceCode('''ecmascript:\n"+
-"\n"+
-"function set_fraction() {\n"+
-"	var choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		a = a + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		b = b + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		c = c + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		d = d + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	tdelta = tdelta + 0.5;\n"+
-"	pdelta = pdelta + 0.5;\n"+
-"	if (a < 1) {\n"+
-"		a = 10;\n"+
-"	}\n"+
-"	if (b < 1) {\n"+
-"		b = 10;\n"+
-"	}\n"+
-"	if (c < 1) {\n"+
-"		c = 4;\n"+
-"	}\n"+
-"	if (c > 20) {\n"+
-"		c = 4;\n"+
-"	}\n"+
-"	if (d < 1) {\n"+
-"		d = 4;\n"+
-"	}\n"+
-"	if (d > 20) {\n"+
-"		d = 4;\n"+
-"	}\n"+
-"}''')
+Scene13.addChildren(ROUTE65)
+ROUTE66 = x3d.ROUTE()
+ROUTE66.setFromNode("Animate")
+ROUTE66.setFromField("a")
+ROUTE66.setToNode("x3dom")
+ROUTE66.setToField("a")
 
-Scene13.addChildren(Script73)
-TimeSensor81 = x3d.TimeSensor()
-TimeSensor81.setDEF("TourTime")
-TimeSensor81.setCycleInterval(5)
-TimeSensor81.setLoop(True)
+Scene13.addChildren(ROUTE66)
+ROUTE67 = x3d.ROUTE()
+ROUTE67.setFromNode("Animate")
+ROUTE67.setFromField("b")
+ROUTE67.setToNode("x3dom")
+ROUTE67.setToField("b")
 
-Scene13.addChildren(TimeSensor81)
-ROUTE82 = x3d.ROUTE()
-ROUTE82.setFromNode("TourTime")
-ROUTE82.setFromField("fraction_changed")
-ROUTE82.setToNode("Animate")
-ROUTE82.setToField("set_fraction")
+Scene13.addChildren(ROUTE67)
+ROUTE68 = x3d.ROUTE()
+ROUTE68.setFromNode("Animate")
+ROUTE68.setFromField("c")
+ROUTE68.setToNode("x3dom")
+ROUTE68.setToField("c")
 
-Scene13.addChildren(ROUTE82)
-ROUTE83 = x3d.ROUTE()
-ROUTE83.setFromNode("Animate")
-ROUTE83.setFromField("a")
-ROUTE83.setToNode("x_ite")
-ROUTE83.setToField("a")
+Scene13.addChildren(ROUTE68)
+ROUTE69 = x3d.ROUTE()
+ROUTE69.setFromNode("Animate")
+ROUTE69.setFromField("d")
+ROUTE69.setToNode("x3dom")
+ROUTE69.setToField("d")
 
-Scene13.addChildren(ROUTE83)
-ROUTE84 = x3d.ROUTE()
-ROUTE84.setFromNode("Animate")
-ROUTE84.setFromField("b")
-ROUTE84.setToNode("x_ite")
-ROUTE84.setToField("b")
+Scene13.addChildren(ROUTE69)
+ROUTE70 = x3d.ROUTE()
+ROUTE70.setFromNode("Animate")
+ROUTE70.setFromField("pdelta")
+ROUTE70.setToNode("x3dom")
+ROUTE70.setToField("pdelta")
 
-Scene13.addChildren(ROUTE84)
-ROUTE85 = x3d.ROUTE()
-ROUTE85.setFromNode("Animate")
-ROUTE85.setFromField("c")
-ROUTE85.setToNode("x_ite")
-ROUTE85.setToField("c")
+Scene13.addChildren(ROUTE70)
+ROUTE71 = x3d.ROUTE()
+ROUTE71.setFromNode("Animate")
+ROUTE71.setFromField("tdelta")
+ROUTE71.setToNode("x3dom")
+ROUTE71.setToField("tdelta")
 
-Scene13.addChildren(ROUTE85)
-ROUTE86 = x3d.ROUTE()
-ROUTE86.setFromNode("Animate")
-ROUTE86.setFromField("d")
-ROUTE86.setToNode("x_ite")
-ROUTE86.setToField("d")
-
-Scene13.addChildren(ROUTE86)
-ROUTE87 = x3d.ROUTE()
-ROUTE87.setFromNode("Animate")
-ROUTE87.setFromField("pdelta")
-ROUTE87.setToNode("x_ite")
-ROUTE87.setToField("pdelta")
-
-Scene13.addChildren(ROUTE87)
-ROUTE88 = x3d.ROUTE()
-ROUTE88.setFromNode("Animate")
-ROUTE88.setFromField("tdelta")
-ROUTE88.setToNode("x_ite")
-ROUTE88.setToField("tdelta")
-
-Scene13.addChildren(ROUTE88)
-ROUTE89 = x3d.ROUTE()
-ROUTE89.setFromNode("Animate")
-ROUTE89.setFromField("a")
-ROUTE89.setToNode("x3dom")
-ROUTE89.setToField("a")
-
-Scene13.addChildren(ROUTE89)
-ROUTE90 = x3d.ROUTE()
-ROUTE90.setFromNode("Animate")
-ROUTE90.setFromField("b")
-ROUTE90.setToNode("x3dom")
-ROUTE90.setToField("b")
-
-Scene13.addChildren(ROUTE90)
-ROUTE91 = x3d.ROUTE()
-ROUTE91.setFromNode("Animate")
-ROUTE91.setFromField("c")
-ROUTE91.setToNode("x3dom")
-ROUTE91.setToField("c")
-
-Scene13.addChildren(ROUTE91)
-ROUTE92 = x3d.ROUTE()
-ROUTE92.setFromNode("Animate")
-ROUTE92.setFromField("d")
-ROUTE92.setToNode("x3dom")
-ROUTE92.setToField("d")
-
-Scene13.addChildren(ROUTE92)
-ROUTE93 = x3d.ROUTE()
-ROUTE93.setFromNode("Animate")
-ROUTE93.setFromField("pdelta")
-ROUTE93.setToNode("x3dom")
-ROUTE93.setToField("pdelta")
-
-Scene13.addChildren(ROUTE93)
-ROUTE94 = x3d.ROUTE()
-ROUTE94.setFromNode("Animate")
-ROUTE94.setFromField("tdelta")
-ROUTE94.setToNode("x3dom")
-ROUTE94.setToField("tdelta")
-
-Scene13.addChildren(ROUTE94)
+Scene13.addChildren(ROUTE71)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/flowers7_RoundTrip.x3d")

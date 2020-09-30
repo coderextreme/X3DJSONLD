@@ -26,22 +26,22 @@ var ProtoInstance12 = null;
         .addMeta(new meta().setName("description").setContent("an attempt to implement an arc in a graph")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setPosition(Java.to([0,0,5], Java.type("float[]"))).setDescription("a moving graph"))
-        .addChild(new Background().setSkyColor(Java.to([0.4,0.4,0.4], Java.type("float[]"))))
-        .addChild(new Transform().setDEF("trans1")
-          .addChild(new Transform().setDEF("rotscale1")
-            .addChild(new Shape()
+        .addChild(new Background().setSkyColor(Java.to([0.4,0.4,0.4], Java.type("float[]"))).setTransparency(0))
+        .addChild(new Transform().setDEF("trans1").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+          .addChild(new Transform().setDEF("rotscale1").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(Java.to([0.2,0.7,0.7], Java.type("float[]")))))
               .setGeometry(new Cylinder().setRadius(0.1)))))
-        .addChild(new Transform().setDEF("trans2")
-          .addChild(new Transform().setDEF("rotscale2")
-            .addChild(new Shape()
+        .addChild(new Transform().setDEF("trans2").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+          .addChild(new Transform().setDEF("rotscale2").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(Java.to([0.2,0.7,0.7], Java.type("float[]")))))
               .setGeometry(new Cylinder().setRadius(0.1)))))
-        .addChild(new Transform().setDEF("trans3")
-          .addChild(new Transform().setDEF("rotscale3")
-            .addChild(new Shape()
+        .addChild(new Transform().setDEF("trans3").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+          .addChild(new Transform().setDEF("rotscale3").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(Java.to([0.2,0.7,0.7], Java.type("float[]")))))
               .setGeometry(new Cylinder().setRadius(0.1)))))
@@ -49,31 +49,24 @@ var ProtoInstance12 = null;
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setDEF("node")
+            .addChild(new Transform().setDEF("node").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
-              .addChild(new Shape()
+              .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                 .setGeometry(new Sphere().setRadius(0.1))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(Java.to([1,0,0], Java.type("float[]"))))))
               .addChild(new PositionInterpolator().setDEF("PI1").setKey(Java.to([0,1], Java.type("float[]"))).setKeyValue(Java.to([0,0,0,0,5,0], Java.type("float[]"))))
-              .addChild(new Script().setDEF("MB1")
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
-                .addField(new field().setType(field.TYPE_SFVEC3F).setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType(field.TYPE_SFTIME).setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType(field.TYPE_MFVEC3F).setName("keyValue").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-                .setSourceCode("ecmascript:\n"+
-"		function set_location(value) {\n"+
-"                    old = translation;\n"+
-"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f([old, translation]);\n"+
-"		    // Browser.println(translation);\n"+
-"		}"))
               .addChild(new TimeSensor().setDEF("CL1").setCycleInterval(3).setLoop(true))
               .addChild(new ROUTE().setFromNode("CL1").setFromField("cycleTime").setToNode("MB1").setToField("set_location"))
               .addChild(new ROUTE().setFromNode("CL1").setFromField("fraction_changed").setToNode("PI1").setToField("set_fraction"))
               .addChild(new ROUTE().setFromNode("MB1").setFromField("keyValue").setToNode("PI1").setToField("keyValue"))
-              .addChild(new ROUTE().setFromNode("PI1").setFromField("value_changed").setToNode("node").setToField("set_translation")))))
+              .addChild(new ROUTE().setFromNode("PI1").setFromField("value_changed").setToNode("node").setToField("set_translation"))
+              .addX3DScript(new X3DScript().setDEF("MB1")
+                .addField(new field().setType(field.TYPE_SFVEC3F).setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
+                .addField(new field().setType(field.TYPE_SFVEC3F).setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new field().setType(field.TYPE_SFTIME).setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType(field.TYPE_MFVEC3F).setName("keyValue").setAccessType(field.ACCESSTYPE_OUTPUTONLY))))))
         .addComments(new CommentsBlock("from doug sanden"))
         .addChild(new ProtoDeclare().setName("x3dconnector")
           .setProtoInterface(new ProtoInterface()
@@ -84,7 +77,7 @@ var ProtoInstance12 = null;
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_startpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("set_endpoint").setAccessType(field.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBody()
-            .addChild(new Script().setDEF("S1")
+            .setX3DScript(new X3DScript().setDEF("S1")
               .addField(new field().setType(field.TYPE_SFNODE).setName("startnode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
               .addField(new field().setType(field.TYPE_SFNODE).setName("endnode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
               .addField(new field().setType(field.TYPE_SFNODE).setName("transnode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
@@ -97,50 +90,7 @@ var ProtoInstance12 = null;
                 .addConnect(new connect().setNodeField("transnode").setProtoField("transnode"))
                 .addConnect(new connect().setNodeField("rotscalenode").setProtoField("rotscalenode"))
                 .addConnect(new connect().setNodeField("set_startpoint").setProtoField("set_startpoint"))
-                .addConnect(new connect().setNodeField("set_endpoint").setProtoField("set_endpoint")))
-              .setSourceCode("ecmascript:\n"+
-"        function recompute(startpoint,endpoint){\n"+
-"	    if (typeof endpoint === 'undefined') {\n"+
-"		return;\n"+
-"	    }\n"+
-"            var dif = endpoint.subtract(startpoint);\n"+
-"            var dist = dif.length()*0.5;\n"+
-"            var dif2 = dif.multiply(0.5);\n"+
-"            var norm = dif.normalize();\n"+
-"            var transl = startpoint.add(dif2);\n"+
-"	    if (typeof Quaternion !== 'undefined') {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
-"		    };\n"+
-"	    } else {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
-"		    };\n"+
-"	    }\n"+
-"	}\n"+
-"	function recompute_and_route(startpoint, endpoint) {\n"+
-"		var trafo = recompute(startpoint, endpoint);\n"+
-"		if (typeof trafo !== 'undefined') {\n"+
-"			transnode.translation = trafo.translation;\n"+
-"			rotscalenode.rotation = trafo.rotation;\n"+
-"			rotscalenode.scale = trafo.scale;\n"+
-"		} else {\n"+
-"			Browser.print(\"recompute returned undefined\");\n"+
-"		}\n"+
-"	}\n"+
-"        function initialize(){\n"+
-"            recompute_and_route(startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_startpoint(val,t){\n"+
-"            recompute_and_route(val || startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_endpoint(val,t){\n"+
-"            recompute_and_route(startnode.translation,val || endnode.translation);\n"+
-"        }"))))
+                .addConnect(new connect().setNodeField("set_endpoint").setProtoField("set_endpoint"))))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("point").setDEF("G1"))
         .addChild(ProtoInstance1 = new ProtoInstance().setName("point").setDEF("G2"))
         .addChild(ProtoInstance2 = new ProtoInstance().setName("point").setDEF("G3"))
