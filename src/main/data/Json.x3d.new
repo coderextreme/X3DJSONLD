@@ -43,14 +43,14 @@
 <WorldInfo USE="WorldInfoDEF"></WorldInfo>
 <MetadataString name="test" DEF="scene.addChildMetadata" value="&quot;Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding&quot;"></MetadataString>
 <LayerSet DEF="scene.addChildLayerSetTest"></LayerSet>
-<Transform DEF="LogoGeometryTransform" translation="0 1.5 0"><Anchor description="select for X3D Java SAI Library (X3DJSAIL) description" url="&quot;../X3DJSAIL.html&quot; &quot;https://www.web3d.org/specifications/java/X3DJSAIL.html&quot;"><Shape DEF="BoxShape"><Appearance><Material DEF="GreenMaterial" diffuseColor="0 1 1" emissiveColor="0.8 0 0" transparency="0.1"></Material>
+<Transform DEF="LogoGeometryTransform" translation="0 1.5 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Anchor description="select for X3D Java SAI Library (X3DJSAIL) description" url="&quot;../X3DJSAIL.html&quot; &quot;https://www.web3d.org/specifications/java/X3DJSAIL.html&quot;" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape DEF="BoxShape" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material DEF="GreenMaterial" diffuseColor="0 1 1" emissiveColor="0.8 0 0" transparency="0.1"></Material>
 <ImageTexture containerField="texture" url="&quot;images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot; &quot;https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png&quot;"></ImageTexture>
 </Appearance>
-<Box containerField="geometry" DEF="test-NMTOKEN_regex.0123456789" class="untextured"></Box>
+<Box containerField="geometry" DEF="test-NMTOKEN_regex.0123456789" class="untextured" size="2 2 2" solid="true"></Box>
 </Shape>
 </Anchor>
 </Transform>
-<Shape DEF="LineShape"><Appearance><Material emissiveColor="0.6 0.19607843 0.8"></Material>
+<Shape DEF="LineShape" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material emissiveColor="0.6 0.19607843 0.8"></Material>
 </Appearance>
 <IndexedLineSet containerField="geometry" coordIndex="0 1 2 3 4 0"><!--Coordinate 3-tuple point count: 6--><Coordinate containerField="coord" point="0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0"></Coordinate>
 </IndexedLineSet>
@@ -59,7 +59,7 @@
 <TimeSensor DEF="OrbitClock" cycleInterval="8" loop="true"></TimeSensor>
 <ROUTE fromField="fraction_changed" fromNode="OrbitClock" toField="set_fraction" toNode="BoxPathAnimator"></ROUTE>
 <ROUTE fromField="value_changed" fromNode="BoxPathAnimator" toField="set_translation" toNode="LogoGeometryTransform"></ROUTE>
-<Transform DEF="TextTransform" translation="0 -1.5 0"><Shape><Appearance><Material USE="GreenMaterial"></Material>
+<Transform DEF="TextTransform" translation="0 -1.5 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material USE="GreenMaterial"></Material>
 </Appearance>
 <Text containerField="geometry" string="&quot;X3D Java&quot; &quot;SAI Library&quot; &quot;X3DJSAIL&quot;"><!--Comment example A, plain quotation marks: He said, "Immel did it!"--><!--Comment example B, XML character entities: He said, &quot;Immel did it!&quot;--><MetadataSet containerField="metadata" name="EscapedQuotationMarksMetadataSet"><MetadataString name="quotesTestC" value="&quot;MFString example C, backslash-escaped quotes: He said, \&quot;Immel did it!\&quot;&quot;"></MetadataString>
 <MetadataString name="extraChildTest" value="&quot;checks MetadataSetObject addValue() method&quot;"></MetadataString>
@@ -67,7 +67,7 @@
 <FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
 </Text>
 </Shape>
-<Collision><!--test containerField='proxy'--><Shape containerField="proxy" DEF="ProxyShape"><!--alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;"'--><!--alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;" ""'--><!--alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \""Immel did it!\"""})--><!--reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html--><Text containerField="geometry" string="&quot;One, Two, Text&quot; &quot;&quot; &quot;He said, \&quot;Immel did it!\&quot; \&quot;\&quot;&quot;"></Text>
+<Collision enabled="true" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--test containerField='proxy'--><Shape containerField="proxy" DEF="ProxyShape" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;"'--><!--alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;" ""'--><!--alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \""Immel did it!\"""})--><!--reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html--><Text containerField="geometry" string="&quot;One, Two, Text&quot; &quot;&quot; &quot;He said, \&quot;Immel did it!\&quot; \&quot;\&quot;&quot;"></Text>
 </Shape>
 </Collision>
 <!--It's a beautiful world--><!--... for you!--><!--https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song)--></Transform>
@@ -75,21 +75,15 @@
 <TimeSensor DEF="SpinClock" cycleInterval="5" loop="true"></TimeSensor>
 <ROUTE fromField="fraction_changed" fromNode="SpinClock" toField="set_fraction" toNode="SpinInterpolator"></ROUTE>
 <ROUTE fromField="value_changed" fromNode="SpinInterpolator" toField="rotation" toNode="TextTransform"></ROUTE>
-<Group DEF="BackgroundGroup"><Background DEF="GradualBackground"></Background>
-<Script DEF="colorTypeConversionScript"><field name="colorInput" accessType="inputOnly" type="SFColor"></field>
-<field name="colorsOutput" accessType="outputOnly" type="MFColor"></field>
-<![CDATA[ecmascript:
-
-function colorInput (eventValue) // Example source code
-{
-   colorsOutput = new MFColor(eventValue); // assigning value sends output event
-// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');
-}]]></Script>
+<Group DEF="BackgroundGroup" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Background DEF="GradualBackground" skyColor="0 0 0" transparency="0"></Background>
 <ColorInterpolator DEF="ColorAnimator" key="0 0.5 1" keyValue="0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1"><!--AZURE to INDIGO and back again--></ColorInterpolator>
 <TimeSensor DEF="ColorClock" cycleInterval="60" loop="true"></TimeSensor>
 <ROUTE fromField="colorsOutput" fromNode="colorTypeConversionScript" toField="skyColor" toNode="GradualBackground"></ROUTE>
 <ROUTE fromField="value_changed" fromNode="ColorAnimator" toField="colorInput" toNode="colorTypeConversionScript"></ROUTE>
 <ROUTE fromField="fraction_changed" fromNode="ColorClock" toField="set_fraction" toNode="ColorAnimator"></ROUTE>
+<X3DScript DEF="colorTypeConversionScript"><field name="colorInput" accessType="inputOnly" type="SFColor"></field>
+<field name="colorsOutput" accessType="outputOnly" type="MFColor"></field>
+</X3DScript>
 </Group>
 <ProtoDeclare name="ArtDeco01Material" appinfo="tooltip: ArtDeco01Material prototype is a Material node"><ProtoInterface><field name="description" accessType="inputOutput" appinfo="tooltip for descriptionField" type="SFString" value="ArtDeco01Material prototype is a Material node"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
@@ -103,21 +97,21 @@ function colorInput (eventValue) // Example source code
 </ProtoDeclare>
 <ExternProtoDeclare name="ArtDeco02Material" appinfo="this is a different Material node" url="&quot;http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material&quot; &quot;http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material&quot;"><!--[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file."--><field name="description" accessType="inputOutput" appinfo="tooltip for descriptionField" type="SFString"></field>
 </ExternProtoDeclare>
-<!--Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place--><Shape DEF="TestShape1"><Appearance DEF="TestAppearance1"><!--ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java--><ProtoInstance containerField="material" name="ArtDeco01Material"><!--[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="Material"--><fieldValue name="description" value="ArtDeco01Material can substitute for a Material node"></fieldValue>
+<!--Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place--><Shape DEF="TestShape1" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance DEF="TestAppearance1"><!--ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java--><ProtoInstance containerField="material" name="ArtDeco01Material"><!--[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="Material"--><fieldValue name="description" value="ArtDeco01Material can substitute for a Material node"></fieldValue>
 </ProtoInstance>
 </Appearance>
 <Sphere containerField="geometry" radius="0.001"></Sphere>
 </Shape>
-<Shape DEF="TestShape2"><Appearance DEF="TestAppearance2"><!--ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java--><ProtoInstance containerField="material" name="ArtDeco02Material" DEF="ArtDeco02MaterialDEF"><!--[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file."--><fieldValue name="description" value="ArtDeco02Material can substitute for another Material node"></fieldValue>
+<Shape DEF="TestShape2" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance DEF="TestAppearance2"><!--ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java--><ProtoInstance containerField="material" name="ArtDeco02Material" DEF="ArtDeco02MaterialDEF"><!--[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file."--><fieldValue name="description" value="ArtDeco02Material can substitute for another Material node"></fieldValue>
 </ProtoInstance>
 </Appearance>
-<Cone containerField="geometry" bottomRadius="0.001" height="0.001"></Cone>
+<Cone containerField="geometry" bottomRadius="0.001" height="0.001" side="true" bottom="true" solid="true"></Cone>
 </Shape>
-<Shape DEF="TestShape3"><Appearance DEF="TestAppearance3"><!--ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE.--><ProtoInstance containerField="material" USE="ArtDeco02MaterialDEF"></ProtoInstance>
+<Shape DEF="TestShape3" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance DEF="TestAppearance3"><!--ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE.--><ProtoInstance containerField="material" USE="ArtDeco02MaterialDEF"></ProtoInstance>
 </Appearance>
 <Cylinder containerField="geometry" height="0.001" radius="0.001"></Cylinder>
 </Shape>
-<Inline DEF="inlineSceneDef" url="&quot;someOtherScene.x3d&quot; &quot;https://www.web3d.org/specifications/java/examples/someOtherScene.x3d&quot;"></Inline>
+<Inline DEF="inlineSceneDef" url="&quot;someOtherScene.x3d&quot; &quot;https://www.web3d.org/specifications/java/examples/someOtherScene.x3d&quot;" bboxCenter="0 0 0" bboxSize="-1 -1 -1"></Inline>
 <IMPORT AS="WorldInfoDEF2" importedDEF="WorldInfoDEF" inlineDEF="inlineSceneDef"></IMPORT>
 <EXPORT AS="WorldInfoDEF3" localDEF="WorldInfoDEF"></EXPORT>
 <ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html"><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
@@ -136,79 +130,57 @@ function colorInput (eventValue) // Example source code
 <connect nodeField="ambientIntensity" protoField="ambientIntensity"></connect>
 </IS>
 </Material>
-<!--Only first node (the node type) is renderable, others are along for the ride--><Script DEF="MaterialModulatorScript"><field name="enabled" accessType="inputOutput" type="SFBool"></field>
+<!--Only first node (the node type) is renderable, others are along for the ride--><X3DScript DEF="MaterialModulatorScript"><field name="enabled" accessType="inputOutput" type="SFBool"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor"></field>
 <field name="newColor" accessType="outputOnly" type="SFColor"></field>
 <field name="clockTrigger" accessType="inputOnly" type="SFTime"></field>
 <IS><connect nodeField="enabled" protoField="enabled"></connect>
 <connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
 </IS>
-<![CDATA[ecmascript:
-function initialize ()
-{
-    newColor = diffuseColor; // start with correct color
-}
-function set_enabled (newValue)
-{
-	enabled = newValue;
-}
-function clockTrigger (timeValue)
-{
-    if (!enabled) return;
-    red   = newColor.r;
-    green = newColor.g;
-    blue  = newColor.b;
-
-    // note different modulation rates for each color component, % is modulus operator
-    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
-	if (enabled)
-	{
-		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');
-	}
-}]]></Script>
+</X3DScript>
 </ProtoBody>
 </ProtoDeclare>
-<!--Test success: declarative statement createDeclarativeShapeTests()--><Group DEF="DeclarativeGroupExample"><Shape><MetadataString containerField="metadata" name="findThisNameValue" DEF="FindableMetadataStringTest" value="&quot;test case&quot;"></MetadataString>
+<!--Test success: declarative statement createDeclarativeShapeTests()--><Group DEF="DeclarativeGroupExample" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><MetadataString containerField="metadata" name="findThisNameValue" DEF="FindableMetadataStringTest" value="&quot;test case&quot;"></MetadataString>
 <Appearance DEF="DeclarativeAppearanceExample"><!--DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance--><ProtoInstance containerField="material" name="MaterialModulator" DEF="MyMaterialModulator"></ProtoInstance>
 </Appearance>
-<Cone containerField="geometry" bottom="false" bottomRadius="0.05" height="0.1"></Cone>
+<Cone containerField="geometry" bottom="false" bottomRadius="0.05" height="0.1" side="true" solid="true"></Cone>
 </Shape>
 <!--Test success: declarativeGroup.addChild() singleton pipeline method--></Group>
-<!--Test success: declarative statement addChild()--><!--Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'></Appearance> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'></ProtoInstance> </Appearance>--><!--Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'></MetadataString>--><!--Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare") found--><!--Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare") found--><!--Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found--><Group DEF="TestFieldObjectsGroup"><!--testFieldObjects() results--><!--SFBool default=true, true=true, false=false, negate()=true--><!--MFBool default=, initial=true false true, negate()=false true false--><!--SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0--><!--MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7--><!--... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=--><!--SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true--><!--regex test SFVec3f().matches("1 2 3")=true, regex test SFVec3f().matches("1 2 3 4")=false, regex test (SFRotationObject.matches("0 0 0 0")=true, failure detecting illegal (zero axis) rotation value--></Group>
-<Sound location="0 1.6 0"><!--set sound-ellipsoid location height at 1.6m to match typical avatar height--><AudioClip containerField="source" description="chimes" url="&quot;chimes.wav&quot; &quot;https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav&quot;"><!--Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d--></AudioClip>
+<!--Test success: declarative statement addChild()--><!--Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'></Appearance> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'></ProtoInstance> </Appearance>--><!--Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'></MetadataString>--><!--Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare") found--><!--Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare") found--><!--Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found--><Group DEF="TestFieldObjectsGroup" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--testFieldObjects() results--><!--SFBool default=true, true=true, false=false, negate()=true--><!--MFBool default=, initial=true false true, negate()=false true false--><!--SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0--><!--MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7--><!--... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=--><!--SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true--><!--regex test SFVec3f().matches("1 2 3")=true, regex test SFVec3f().matches("1 2 3 4")=false, regex test (SFRotationObject.matches("0 0 0 0")=true, failure detecting illegal (zero axis) rotation value--></Group>
+<Sound location="0 1.6 0"><!--set sound-ellipsoid location height at 1.6m to match typical avatar height--><AudioClip containerField="source" description="chimes" url="&quot;chimes.wav&quot; &quot;https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav&quot;" loop="false" pitch="1" startTime="0" stopTime="0" pauseTime="0" resumeTime="0"><!--Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d--></AudioClip>
 </Sound>
 <Sound location="0 1.6 0"><!--set sound-ellipsoid location height at 1.6m to match typical avatar height--><MovieTexture containerField="source" description="mpgsys.mpg from ConformanceNist suite" url="&quot;mpgsys.mpg&quot; &quot;https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg&quot;"><!--Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d--><!--Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" "watchList"--></MovieTexture>
 </Sound>
-<!--Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true--><!--Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false--><!--Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false--><!--Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true--><!--Test success: CommentsBlock.isNode()=false, testComments.isNode()=false--><!--Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true--><Shape DEF="ExtrusionShape"><!--ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'--><!--ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'--><Appearance DEF="TransparentAppearance"><Material transparency="1"></Material>
+<!--Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true--><!--Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false--><!--Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false--><!--Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true--><!--Test success: CommentsBlock.isNode()=false, testComments.isNode()=false--><!--Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true--><Shape DEF="ExtrusionShape" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'--><!--ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'--><Appearance DEF="TransparentAppearance"><Material transparency="1"></Material>
 </Appearance>
 <Extrusion containerField="geometry" DEF="ExampleExtrusion"></Extrusion>
 </Shape>
-<Group><!--Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes--><ProtoDeclare name="NewWorldInfo"><ProtoInterface><field name="description" accessType="initializeOnly" type="SFString"></field>
+<Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes--><ProtoDeclare name="NewWorldInfo"><ProtoInterface><field name="description" accessType="initializeOnly" type="SFString"></field>
 </ProtoInterface>
 <ProtoBody><WorldInfo></WorldInfo>
 </ProtoBody>
 </ProtoDeclare>
-<Group DEF="Node2"><!--intentionally empty--></Group>
-<Transform DEF="Node4"><!--intentionally empty--></Transform>
+<Group DEF="Node2" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--intentionally empty--></Group>
+<Transform DEF="Node4" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--intentionally empty--></Transform>
 <!--Test satisfactorily creates MFNode children array as an ordered list with mixed content--></Group>
 <ProtoDeclare name="ShaderProto"><ProtoBody><ProgramShader></ProgramShader>
 </ProtoBody>
 </ProtoDeclare>
-<Shape><Appearance><!--Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes--><!--Test satisfactorily creates MFNode shaders array as an ordered list with mixed content--><ProgramShader DEF="TestShader1"><ShaderProgram DEF="TestShader2" type="VERTEX"></ShaderProgram>
+<Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><!--Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes--><!--Test satisfactorily creates MFNode shaders array as an ordered list with mixed content--><ProgramShader DEF="TestShader1"><ShaderProgram DEF="TestShader2" type="VERTEX"></ShaderProgram>
 </ProgramShader>
 <ProtoInstance name="ShaderProto" DEF="TestShader3"></ProtoInstance>
 <ComposedShader DEF="TestShader4"><ShaderPart DEF="TestShader5" type="VERTEX"></ShaderPart>
 </ComposedShader>
 </Appearance>
 </Shape>
-<Transform DEF="SpecialtyNodes"><CADLayer><CADAssembly><CADPart><CADFace></CADFace>
+<Transform DEF="SpecialtyNodes" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><CADLayer><CADAssembly><CADPart><CADFace></CADFace>
 </CADPart>
 </CADAssembly>
 </CADLayer>
-<EspduTransform></EspduTransform>
-<ReceiverPdu></ReceiverPdu>
-<SignalPdu></SignalPdu>
-<TransmitterPdu></TransmitterPdu>
+<EspduTransform bboxCenter="0 0 0" bboxSize="-1 -1 -1"></EspduTransform>
+<ReceiverPdu bboxCenter="0 0 0" bboxSize="-1 -1 -1"></ReceiverPdu>
+<SignalPdu bboxCenter="0 0 0" bboxSize="-1 -1 -1"></SignalPdu>
+<TransmitterPdu bboxCenter="0 0 0" bboxSize="-1 -1 -1"></TransmitterPdu>
 <DISEntityManager><DISEntityTypeMapping></DISEntityTypeMapping>
 </DISEntityManager>
 </Transform>

@@ -9,29 +9,29 @@
 <meta name="identifier" content="https://coderextreme.net/x3d/qq3.x3d"></meta>
 <meta name="generator" content="manual"></meta>
 </head>
-<Scene><ProtoDeclare name="Process"><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeLeftDown"><Appearance><Material diffuseColor="0.7 1 0"></Material>
+<Scene><ProtoDeclare name="Process"><ProtoBody><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--left--><Transform scale="0.5 0.5 0.5" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape DEF="ShapeLeftDown" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.7 1 0"></Material>
 </Appearance>
 <Extrusion containerField="geometry" spine="-2.5 0 0 -1.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
 </Shape>
 </Transform>
-<!--right--><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeUpRight"><Appearance><Material diffuseColor="0 0.7 1"></Material>
+<!--right--><Transform scale="0.5 0.5 0.5" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape DEF="ShapeUpRight" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0 0.7 1"></Material>
 </Appearance>
 <Extrusion containerField="geometry" spine="1.5 0 0 2.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
 </Shape>
 </Transform>
-<!--up--><Transform scale="0.5 0.5 0.5"><Shape USE="ShapeUpRight"></Shape>
+<!--up--><Transform scale="0.5 0.5 0.5" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape USE="ShapeUpRight"></Shape>
 </Transform>
-<!--down--><Transform scale="0.5 0.5 0.5"><Shape USE="ShapeLeftDown"></Shape>
+<!--down--><Transform scale="0.5 0.5 0.5" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape USE="ShapeLeftDown"></Shape>
 </Transform>
 </Group>
 </ProtoBody>
 </ProtoDeclare>
 <Viewpoint description="Process pipes" orientation="1 0 0 -0.4" position="0 5 12"></Viewpoint>
-<Transform translation="0 -2.5 0"><ProtoInstance name="Process"></ProtoInstance>
+<Transform translation="0 -2.5 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><ProtoInstance name="Process"></ProtoInstance>
 </Transform>
-<Transform><ProtoInstance name="Process"></ProtoInstance>
+<Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><ProtoInstance name="Process"></ProtoInstance>
 </Transform>
-<Transform translation="0 2.5 0"><ProtoInstance name="Process"></ProtoInstance>
+<Transform translation="0 2.5 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><ProtoInstance name="Process"></ProtoInstance>
 </Transform>
 </Scene>
 </X3D>

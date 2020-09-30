@@ -24,7 +24,7 @@
 </head>
 <Scene><ProtoDeclare name="myPrototype"><ProtoInterface><field name="myInputRange" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="TR"><Shape><Appearance><Material diffuseColor="0.5 0.5 0.9"></Material>
+<ProtoBody><Transform DEF="TR" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.5 0.5 0.9"></Material>
 <ComposedShader language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f"></field>
 <IS><connect nodeField="decis" protoField="myInputRange"></connect>
 </IS>

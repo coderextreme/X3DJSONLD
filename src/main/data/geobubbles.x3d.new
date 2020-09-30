@@ -8,35 +8,14 @@
 <meta name="description" content="geo bubbles"></meta>
 </head>
 <Scene><!--Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/--><!--PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/--><GeoViewpoint DEF="Tour" position="0 0 4" orientation="1 0 0 0" description="Tour Views"></GeoViewpoint>
-<Background backUrl="&quot;../resources/images/BK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/BK.png&quot;" bottomUrl="&quot;../resources/images/BT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/BT.png&quot;" frontUrl="&quot;../resources/images/FR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/FR.png&quot;" leftUrl="&quot;../resources/images/LF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/LF.png&quot;" rightUrl="&quot;../resources/images/RT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/RT.png&quot;" topUrl="&quot;../resources/images/TP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/TP.png&quot;"></Background>
-<Transform><Shape><Sphere containerField="geometry"></Sphere>
+<Background backUrl="&quot;../resources/images/BK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/BK.png&quot;" bottomUrl="&quot;../resources/images/BT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/BT.png&quot;" frontUrl="&quot;../resources/images/FR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/FR.png&quot;" leftUrl="&quot;../resources/images/LF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/LF.png&quot;" rightUrl="&quot;../resources/images/RT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/RT.png&quot;" topUrl="&quot;../resources/images/TP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/TP.png&quot;" skyColor="0 0 0" transparency="0"></Background>
+<Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Sphere containerField="geometry"></Sphere>
 <Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 </Appearance>
 </Shape>
 </Transform>
 <TimeSensor DEF="TourTime" cycleInterval="5" loop="true"></TimeSensor>
 <GeoPositionInterpolator DEF="TourPosition" key="0 1" keyValue="0.0015708 0 4 0 0.0015708 4"></GeoPositionInterpolator>
-<Script DEF="RandomTourTime"><field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
-<field name="val" accessType="inputOutput" type="SFFloat" value="0"></field>
-<field name="positions" accessType="inputOutput" type="MFVec3d" value="0.0015708 0 4 0 0.0015708 4"></field>
-<field name="position" accessType="inputOutput" type="MFVec3d" value="0.0015708 0 4 0 0.0015708 4"></field>
-<![CDATA[ecmascript:
-
-               function set_cycle(value) {
-                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo
-                        var ov = val;
-			// Browser.print('old '+ov);
-                        do {
-                                val = Math.floor(Math.random()*2);
-                                var vc = val;
-                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);
-                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
-			// Browser.println(positions[ov]);
-			// Browser.println(positions[vc]);
-                        position = new MFVec3d();
-                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
-                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
-               }]]></Script>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="RandomTourTime" toField="set_cycle"></ROUTE>
 <ROUTE fromNode="RandomTourTime" fromField="position" toNode="TourPosition" toField="keyValue"></ROUTE>
 <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="TourPosition" toField="set_fraction"></ROUTE>

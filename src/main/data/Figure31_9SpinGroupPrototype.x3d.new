@@ -18,7 +18,7 @@
 <field name="startTime" accessType="inputOutput" type="SFTime" value="0"></field>
 <field name="stopTime" accessType="inputOutput" type="SFTime" value="0"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="SpinGroupTransform"><IS><connect nodeField="children" protoField="children"></connect>
+<ProtoBody><Transform DEF="SpinGroupTransform" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="children"></connect>
 </IS>
 </Transform>
 <!--following nodes will not be rendered, only the first node of a ProtoBody is drawn--><TimeSensor DEF="SpinGroupClock"><IS><connect nodeField="cycleInterval" protoField="cycleInterval"></connect>
@@ -35,18 +35,18 @@
 <!--Now the scene proper begins. Nothing renders in a ProtoDeclare (or ExternProtoDeclare).--><Viewpoint description="Click on blue crossbar to activate second SpinGroup" orientation="1 0 0 -0.52" position="0 18 30"></Viewpoint>
 <!--Create an instance, meaning actual nodes that render--><ProtoInstance name="SpinGroup"><fieldValue name="cycleInterval" value="8"></fieldValue>
 <fieldValue name="loop" value="true"></fieldValue>
-<fieldValue name="children"><Shape><Box containerField="geometry" size="25 2 2"></Box>
+<fieldValue name="children"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Box containerField="geometry" size="25 2 2" solid="true"></Box>
 <Appearance DEF="Green"><Material diffuseColor="0 1 0.3"></Material>
 </Appearance>
 </Shape>
-<Shape><Box containerField="geometry" size="2 25 2"></Box>
+<Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Box containerField="geometry" size="2 25 2" solid="true"></Box>
 <Appearance USE="Green"></Appearance>
 </Shape>
 <ProtoInstance name="SpinGroup" DEF="SecondSpinGroup"><fieldValue name="cycleInterval" value="4"></fieldValue>
 <fieldValue name="loop" value="true"></fieldValue>
 <fieldValue name="stopTime" value="1"></fieldValue>
 <fieldValue name="children"><TouchSensor DEF="ActivateSecondSpinGroup" description="Activate second SpinGroup by clicking blue bar"></TouchSensor>
-<Shape><Box containerField="geometry" size="2 2.05 25"></Box>
+<Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Box containerField="geometry" size="2 2.05 25" solid="true"></Box>
 <Appearance><Material diffuseColor="0 0.3 1"></Material>
 </Appearance>
 </Shape>

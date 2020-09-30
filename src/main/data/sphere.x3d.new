@@ -6,7 +6,7 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/sphere.x3d"></meta>
 <meta name="description" content="a sphere"></meta>
 </head>
-<Scene><Group><Shape><Appearance><Material diffuseColor="1 1 1"></Material>
+<Scene><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="1 1 1"></Material>
 </Appearance>
 <Sphere containerField="geometry"></Sphere>
 </Shape>

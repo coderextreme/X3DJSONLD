@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile="Immersive" version="3.3" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
       <head>
         <meta name='title' content='arcold.x3d'/>
@@ -51,7 +51,7 @@
                         </Appearance>
                </Shape>  
                <PositionInterpolator DEF='PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
-               <Script DEF='MB1'>
+               <X3DScript DEF='MB1'>
                     <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
                     <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
                     <field name='set_location' accessType='inputOnly' type='SFTime'/>
@@ -65,7 +65,7 @@ ecmascript:
 		    // Browser.println(translation);
 		}
 ]]>
-                </Script>
+                </X3DScript>
                 <TimeSensor DEF='CL1' cycleInterval='3' loop='true'></TimeSensor>
                 <ROUTE fromNode='CL1' fromField='cycleTime' toNode='MB1' toField='set_location'/>
                 <ROUTE fromNode='CL1' fromField='fraction_changed' toNode='PI1' toField='set_fraction'/>
@@ -86,7 +86,7 @@ ecmascript:
         <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
     </ProtoInterface>
     <ProtoBody>
-        <Script DEF='S1'>
+        <X3DScript DEF='S1'>
             <field accessType='inputOutput' name='startnode' type='SFNode'/>
             <field accessType='inputOutput' name='endnode' type='SFNode'/>
             <field accessType='inputOutput' name='transnode' type='SFNode'/>
@@ -145,7 +145,7 @@ ecmascript:
             recompute_and_route(startnode.translation,val || endnode.translation);
         }
 ]]>
-        </Script>
+        </X3DScript>
     </ProtoBody>
     </ProtoDeclare>
     <ProtoInstance DEF='G1' name='point'/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
 	<head>
 	      <component name='Shaders' level='1'></component>
@@ -100,7 +100,7 @@
                         <Sphere/>
                     </Shape>
                 </Transform>
-                <Script DEF="Bounce">
+                <X3DScript DEF="Bounce">
                     <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                     <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                     <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
@@ -130,7 +130,7 @@
 			    }
 			}
                ]]>
-                </Script>
+                </X3DScript>
                 <TimeSensor DEF='TourTime' cycleInterval='0.150' loop='true'></TimeSensor>
                 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
                 <ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>

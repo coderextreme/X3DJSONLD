@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'>
 <head>
 <meta name='title' content='pp3.x3d'/>
@@ -105,7 +105,7 @@
 <TouchSensor description='touch to activate' DEF='CenterTouch'/>
 </Transform>
 </Group>
-<Script DEF='RightSingleToMultiString'>
+<X3DScript DEF='RightSingleToMultiString'>
 <field name='set_rightstring' accessType='inputOnly' type='SFString'/>
 <field name='rightlines' accessType='outputOnly' type='MFString'/>
 <![CDATA[ecmascript:
@@ -117,8 +117,8 @@ function initialize() {
 function set_rightstring(rightstr) {
 	rightlines = new MFString(rightstr);
 }]]>
-</Script>
-<Script DEF='UpSingleToMultiString'>
+</X3DScript>
+<X3DScript DEF='UpSingleToMultiString'>
 <field name='set_upstring' accessType='inputOnly' type='SFString'/>
 <field name='uplines' accessType='outputOnly' type='MFString'/>
 <![CDATA[ecmascript:
@@ -130,8 +130,8 @@ function initialize() {
 function set_upstring(upstr) {
 	uplines = new MFString(upstr);
 }]]>
-</Script>
-<Script DEF='CenterSingleToMultiString'>
+</X3DScript>
+<X3DScript DEF='CenterSingleToMultiString'>
 <field name='set_centerstring' accessType='inputOnly' type='SFString'/>
 <field name='centerlines' accessType='outputOnly' type='MFString'/>
 <![CDATA[ecmascript:
@@ -143,7 +143,7 @@ function initialize() {
 function set_centerstring(centerstr) {
 	centerlines = new MFString(centerstr);
 }]]>
-</Script>
+</X3DScript>
 <ROUTE fromField='enteredText' fromNode='CenterSensor' toField='set_centerstring' toNode='CenterSingleToMultiString'/>
 <ROUTE fromField='centerlines' fromNode='CenterSingleToMultiString' toField='set_string' toNode='CenterString'/>
 <ROUTE fromField='isOver' fromNode='CenterTouch' toField='set_enabled' toNode='CenterSensor'/>

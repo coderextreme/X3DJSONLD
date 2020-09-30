@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
     <component level='1' name='H-Anim'/>
@@ -330,7 +330,7 @@
     <ROUTE fromField='r_shoulder_rotation_changed' fromNode='ANIMATOR' toField='set_rotation' toNode='boxman_r_shoulder'/>
     <ROUTE fromField='r_elbow_rotation_changed' fromNode='ANIMATOR' toField='set_rotation' toNode='boxman_r_elbow'/>
     <ROUTE fromField='r_wrist_rotation_changed' fromNode='ANIMATOR' toField='set_rotation' toNode='boxman_r_wrist'/>
-    <Script DEF='ENGINE' directOutput='true' url='"BoxMan.js" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"'>
+    <X3DScript DEF='ENGINE' directOutput='true' url='"BoxMan.js" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"'>
       <field accessType='inputOnly' name='update' type='SFRotation'/>
       <field accessType='initializeOnly' name='humanoid' type='SFNode'>
         <HAnimHumanoid USE='boxman_Humanoid' version='2.0'/>
@@ -342,7 +342,7 @@
       <field accessType='initializeOnly' name='translation' type='SFVec3f' value='0 0 0'/>
       <field accessType='initializeOnly' name='rotation' type='SFRotation' value='1 0 0 0'/>
       <field accessType='initializeOnly' name='scale' type='SFVec3f' value='1 1 1'/>
-    </Script>
+    </X3DScript>
     <!-- Trigger calculation after each animation change -->
     <!-- <ROUTE fromField='rotation_changed' fromNode='boxman_r_wrist' toField='update' toNode='ENGINE'/> -->
   </Scene>
