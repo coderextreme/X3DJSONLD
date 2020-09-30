@@ -115,10 +115,10 @@ browser.currentScene.children[3] = ProtoDeclare13;
 
 let ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="ShiftGroupUp2m" ><ProtoInterface><field name="children" accessType="inputOutput" type="MFNode"><Group DEF="DefaultNodeValue" bboxSize="2 2 2"><!--Authors need to override this node when creating the ProtoInstance fieldValue name="children"--></Group>
+<ProtoDeclare name="ShiftGroupUp2m" ><ProtoInterface><field name="children" accessType="inputOutput" type="MFNode"><Group DEF="DefaultNodeValue" bboxSize="2 2 2" bboxCenter="0 0 0"><!--Authors need to override this node when creating the ProtoInstance fieldValue name="children"--></Group>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform translation="0 2 0"><Group><IS><connect nodeField="children" protoField="children"></connect>
+<ProtoBody><Transform translation="0 2 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="children"></connect>
 </IS>
 </Group>
 </Transform>
@@ -133,6 +133,7 @@ field22.type = "MFNode";
 let Group23 = browser.currentScene.createNode("Group");
 Group23.DEF = "DefaultNodeValue";
 Group23.bboxSize = new SFVec3f(new float[2,2,2]);
+Group23.bboxCenter = new SFVec3f(new float[0,0,0]);
 //Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\"
 field22.children = new MFNode();
 
@@ -147,7 +148,11 @@ ProtoDeclare20.protoInterface = ProtoInterface21;
 let ProtoBody24 = browser.currentScene.createNode("ProtoBody");
 let Transform25 = browser.currentScene.createNode("Transform");
 Transform25.translation = new SFVec3f(new float[0,2,0]);
+Transform25.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform25.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Group26 = browser.currentScene.createNode("Group");
+Group26.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group26.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS27 = browser.currentScene.createNode("IS");
 let connect28 = browser.currentScene.createNode("connect");
 connect28.nodeField = "children";
@@ -182,8 +187,14 @@ browser.currentScene.children[6] = Viewpoint30;
 
 let Group31 = browser.currentScene.createNode("Group");
 Group31.DEF = "ExampleChildElement";
+Group31.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group31.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape32 = browser.currentScene.createNode("Shape");
+Shape32.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape32.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Box33 = browser.currentScene.createNode("Box");
+Box33.size = new SFVec3f(new float[2,2,2]);
+Box33.solid = True;
 Shape32.geometry = Box33;
 
 let Appearance34 = browser.currentScene.createNode("Appearance");
@@ -203,6 +214,8 @@ let Transform36 = browser.currentScene.createNode("Transform");
 Transform36.DEF = "TransformExampleUSE";
 Transform36.rotation = new SFRotation(new float[0,1,0,0.78]);
 Transform36.translation = new SFVec3f(new float[0,2.5,0]);
+Transform36.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform36.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Group37 = browser.currentScene.createNode("Group");
 Group37.USE = "ExampleChildElement";
 Transform36.children = new MFNode();
@@ -212,7 +225,12 @@ Transform36.children[0] = Group37;
 browser.currentScene.children[8] = Transform36;
 
 let Collision38 = browser.currentScene.createNode("Collision");
+Collision38.enabled = True;
+Collision38.bboxCenter = new SFVec3f(new float[0,0,0]);
+Collision38.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape39 = browser.currentScene.createNode("Shape");
+Shape39.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape39.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 //note that Collision proxy Shape is not rendered
 let Sphere40 = browser.currentScene.createNode("Sphere");
 Shape39.geometry = Sphere40;
@@ -233,7 +251,11 @@ browser.currentScene.children[9] = Collision38;
 
 let Transform44 = browser.currentScene.createNode("Transform");
 Transform44.translation = new SFVec3f(new float[0,-2.5,0]);
+Transform44.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform44.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape45 = browser.currentScene.createNode("Shape");
+Shape45.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape45.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance46 = browser.currentScene.createNode("Appearance");
 let ProtoInstance47 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance47.name = "EmissiveMaterial";
@@ -305,6 +327,8 @@ browser.currentScene.children[15] = ROUTE56;
 let Inline57 = browser.currentScene.createNode("Inline");
 Inline57.DEF = "someInline";
 Inline57.url = new MFString(new java.lang.String["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"]);
+Inline57.bboxCenter = new SFVec3f(new float[0,0,0]);
+Inline57.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 browser.currentScene.children[16] = Inline57;
 
 let IMPORT58 = browser.currentScene.createNode("IMPORT");

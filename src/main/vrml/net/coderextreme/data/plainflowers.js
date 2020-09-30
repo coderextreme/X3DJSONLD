@@ -14,9 +14,13 @@ Background3.frontUrl = new MFString(new java.lang.String["../resources/images/al
 Background3.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]);
 Background3.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]);
 Background3.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]);
+Background3.skyColor = new MFColor(new float[0,0,0]);
+Background3.transparency = 0;
 browser.currentScene.children[1] = Background3;
 
 let Group4 = browser.currentScene.createNode("Group");
+Group4.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let ExternProtoDeclare5 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare5.name = "FlowerProto";
 ExternProtoDeclare5.url = new MFString(new java.lang.String["../data/flowerproto.x3d#FlowerProto"]);
@@ -40,7 +44,7 @@ Group4.children[0] = ExternProtoDeclare5;
 
 let ProtoDeclare8 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="flower" ><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x_ite_flowers_plain.vs&quot;"></fieldValue>
+<ProtoDeclare name="flower" ><ProtoBody><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x_ite_flowers_plain.vs&quot;"></fieldValue>
 <fieldValue name="fragment" value="&quot;../shaders/plain.fs&quot;"></fieldValue>
 </ProtoInstance>
 </Group>
@@ -49,6 +53,8 @@ let ProtoDeclare8 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 ProtoDeclare8.name = "flower";
 let ProtoBody9 = browser.currentScene.createNode("ProtoBody");
 let Group10 = browser.currentScene.createNode("Group");
+Group10.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group10.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let ProtoInstance11 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance11.name = "FlowerProto";
 let fieldValue12 = browser.currentScene.createNode("fieldValue");

@@ -47,6 +47,7 @@ Background7.groundAngle = new MFFloat(new float[0.05,1.52,1.56,1.5707]);
 Background7.groundColor = new MFColor(new float[0.2,0.2,0,0.3,0.3,0,0.5,0.5,0.3,0.1,0.3,0.4,0,0.2,0.4]);
 Background7.skyAngle = new MFFloat(new float[0.04,0.05,0.1,1.309,1.57]);
 Background7.skyColor = new MFColor(new float[0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9]);
+Background7.transparency = 0;
 browser.currentScene.children[1] = Background7;
 
 let Viewpoint8 = browser.currentScene.createNode("Viewpoint");
@@ -68,6 +69,8 @@ ProtoInstance9.fieldValue[0] = fieldValue10;
 let fieldValue11 = browser.currentScene.createNode("fieldValue");
 fieldValue11.name = "children";
 let Shape12 = browser.currentScene.createNode("Shape");
+Shape12.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape12.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text13 = browser.currentScene.createNode("Text");
 Text13.string = new MFString(new java.lang.String["HUD text stays fixed","while user navigates"]);
 let FontStyle14 = browser.currentScene.createNode("FontStyle");
@@ -94,5 +97,7 @@ browser.currentScene.children[3] = ProtoInstance9;
 
 let Inline17 = browser.currentScene.createNode("Inline");
 Inline17.url = new MFString(new java.lang.String["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"]);
+Inline17.bboxCenter = new SFVec3f(new float[0,0,0]);
+Inline17.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 browser.currentScene.children[4] = Inline17;
 

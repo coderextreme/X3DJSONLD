@@ -12,7 +12,11 @@ browser.currentScene.children[0] = Viewpoint2;
 
 let Transform3 = browser.currentScene.createNode("Transform");
 Transform3.translation = new SFVec3f(new float[0,-0.5,0]);
+Transform3.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform3.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape4 = browser.currentScene.createNode("Shape");
+Shape4.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Extrusion5 = browser.currentScene.createNode("Extrusion");
 Extrusion5.creaseAngle = 3.14159;
 Extrusion5.crossSection = new MFVec2f(new float[0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8]);

@@ -19,7 +19,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <field name="archHalfFilled" accessType="initializeOnly" appinfo="archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width." type="SFBool" value="false"></field>
 <field name="lintel" accessType="initializeOnly" appinfo="lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true." type="SFBool" value="false"></field>
 </ProtoInterface>
-<ProtoBody><!--First node determines node type of this prototype--><!--IndexedFaceset creates arch--><Transform DEF="ArchTransform"><Shape DEF="Arch"><!--note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly--><IndexedFaceSet containerField="geometry" DEF="ArchIndex" convex="false" solid="false"><Coordinate containerField="coord" DEF="ArchChord"></Coordinate>
+<ProtoBody><!--First node determines node type of this prototype--><!--IndexedFaceset creates arch--><Transform DEF="ArchTransform" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape DEF="Arch" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly--><IndexedFaceSet containerField="geometry" DEF="ArchIndex" convex="false" solid="false"><Coordinate containerField="coord" DEF="ArchChord"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material DEF="MaterialNode"><IS><connect nodeField="emissiveColor" protoField="emissiveColor"></connect>
 <connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
@@ -28,7 +28,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 </Appearance>
 </Shape>
 </Transform>
-<!--Subsequent nodes do not render, but still must be a valid X3D subgraph--><!--This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs--><Script DEF="ArchPrototypeScript" url="&quot;../node/ArchPrototypeScript.js&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js&quot;"><!--INPUT PARAMETERS--><!--General parameters--><!--Parameters to create to create shapes related to arch: put true to apply--><!--OUTPUT PARAMETERS--><field name="clearSpanWidth" accessType="initializeOnly" appinfo="user or default input for clearSpanWidth parameter" type="SFFloat"></field>
+<!--Subsequent nodes do not render, but still must be a valid X3D subgraph--><!--This embedded X3DScript provides the X3D author with additional visibility and control over prototype inputs and outputs--><X3DScript DEF="ArchPrototypeScript" url="&quot;../node/ArchPrototypeScript.js&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js&quot;"><!--INPUT PARAMETERS--><!--General parameters--><!--Parameters to create to create shapes related to arch: put true to apply--><!--OUTPUT PARAMETERS--><field name="clearSpanWidth" accessType="initializeOnly" appinfo="user or default input for clearSpanWidth parameter" type="SFFloat"></field>
 <field name="riseHeight" accessType="initializeOnly" appinfo="user or default input for riseHeight parameter" type="SFFloat"></field>
 <field name="depth" accessType="initializeOnly" appinfo="user or default input for depth parameter" type="SFFloat"></field>
 <field name="topAbutmentHeight" accessType="initializeOnly" appinfo="user or default input for topAbutmentHeight parameter" type="SFFloat"></field>
@@ -56,7 +56,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <connect nodeField="archHalfFilled" protoField="archHalfFilled"></connect>
 <connect nodeField="lintel" protoField="lintel"></connect>
 </IS>
-</Script>
+</X3DScript>
 <ROUTE fromField="computedScale" fromNode="ArchPrototypeScript" toField="scale" toNode="ArchTransform"></ROUTE>
 <ROUTE fromField="pointOut" fromNode="ArchPrototypeScript" toField="point" toNode="ArchChord"></ROUTE>
 <ROUTE fromField="indexOut" fromNode="ArchPrototypeScript" toField="set_coordIndex" toNode="ArchIndex"></ROUTE>
@@ -190,8 +190,12 @@ let ProtoBody18 = browser.currentScene.createNode("ProtoBody");
 //IndexedFaceset creates arch
 let Transform19 = browser.currentScene.createNode("Transform");
 Transform19.DEF = "ArchTransform";
+Transform19.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform19.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape20 = browser.currentScene.createNode("Shape");
 Shape20.DEF = "Arch";
+Shape20.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape20.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 //note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly
 let IndexedFaceSet21 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet21.DEF = "ArchIndex";
@@ -234,10 +238,10 @@ ProtoBody18.children = new MFNode();
 ProtoBody18.children[0] = Transform19;
 
 //Subsequent nodes do not render, but still must be a valid X3D subgraph
-//This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs
-let Script28 = browser.currentScene.createNode("Script");
-Script28.DEF = "ArchPrototypeScript";
-Script28.url = new MFString(new java.lang.String["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]);
+//This embedded X3DScript provides the X3D author with additional visibility and control over prototype inputs and outputs
+let X3DScript28 = browser.currentScene.createNode("X3DScript");
+X3DScript28.DEF = "ArchPrototypeScript";
+X3DScript28.url = new MFString(new java.lang.String["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]);
 //INPUT PARAMETERS
 //General parameters
 //Parameters to create to create shapes related to arch: put true to apply
@@ -247,107 +251,107 @@ field29.name = "clearSpanWidth";
 field29.accessType = "initializeOnly";
 field29.appinfo = "user or default input for clearSpanWidth parameter";
 field29.type = "SFFloat";
-Script28.field = new MFNode();
+X3DScript28.field = new MFNode();
 
-Script28.field[0] = field29;
+X3DScript28.field[0] = field29;
 
 let field30 = browser.currentScene.createNode("field");
 field30.name = "riseHeight";
 field30.accessType = "initializeOnly";
 field30.appinfo = "user or default input for riseHeight parameter";
 field30.type = "SFFloat";
-Script28.field[1] = field30;
+X3DScript28.field[1] = field30;
 
 let field31 = browser.currentScene.createNode("field");
 field31.name = "depth";
 field31.accessType = "initializeOnly";
 field31.appinfo = "user or default input for depth parameter";
 field31.type = "SFFloat";
-Script28.field[2] = field31;
+X3DScript28.field[2] = field31;
 
 let field32 = browser.currentScene.createNode("field");
 field32.name = "topAbutmentHeight";
 field32.accessType = "initializeOnly";
 field32.appinfo = "user or default input for topAbutmentHeight parameter";
 field32.type = "SFFloat";
-Script28.field[3] = field32;
+X3DScript28.field[3] = field32;
 
 let field33 = browser.currentScene.createNode("field");
 field33.name = "pierWidth";
 field33.accessType = "initializeOnly";
 field33.appinfo = "user or default input for pierWidth parameter";
 field33.type = "SFFloat";
-Script28.field[4] = field33;
+X3DScript28.field[4] = field33;
 
 let field34 = browser.currentScene.createNode("field");
 field34.name = "pierHeight";
 field34.accessType = "initializeOnly";
 field34.appinfo = "user or default input for pierHeight parameter";
 field34.type = "SFFloat";
-Script28.field[5] = field34;
+X3DScript28.field[5] = field34;
 
 let field35 = browser.currentScene.createNode("field");
 field35.name = "archHalf";
 field35.accessType = "initializeOnly";
 field35.appinfo = "user or default input for archHalf parameter";
 field35.type = "SFBool";
-Script28.field[6] = field35;
+X3DScript28.field[6] = field35;
 
 let field36 = browser.currentScene.createNode("field");
 field36.name = "archHalfExtensionWidth";
 field36.accessType = "initializeOnly";
 field36.appinfo = "user or default input for archHalfExtensionWidth parameter";
 field36.type = "SFFloat";
-Script28.field[7] = field36;
+X3DScript28.field[7] = field36;
 
 let field37 = browser.currentScene.createNode("field");
 field37.name = "onlyIntrados";
 field37.accessType = "initializeOnly";
 field37.appinfo = "user or default input for onlyIntrados parameter";
 field37.type = "SFBool";
-Script28.field[8] = field37;
+X3DScript28.field[8] = field37;
 
 let field38 = browser.currentScene.createNode("field");
 field38.name = "archFilled";
 field38.accessType = "initializeOnly";
 field38.appinfo = "user or default input for archFilled parameter";
 field38.type = "SFBool";
-Script28.field[9] = field38;
+X3DScript28.field[9] = field38;
 
 let field39 = browser.currentScene.createNode("field");
 field39.name = "archHalfFilled";
 field39.accessType = "initializeOnly";
 field39.appinfo = "user or default input for archHalfFilled parameter";
 field39.type = "SFBool";
-Script28.field[10] = field39;
+X3DScript28.field[10] = field39;
 
 let field40 = browser.currentScene.createNode("field");
 field40.name = "lintel";
 field40.accessType = "initializeOnly";
 field40.appinfo = "user or default input for lintel parameter";
 field40.type = "SFBool";
-Script28.field[11] = field40;
+X3DScript28.field[11] = field40;
 
 let field41 = browser.currentScene.createNode("field");
 field41.name = "computedScale";
 field41.accessType = "outputOnly";
 field41.appinfo = "computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth";
 field41.type = "SFVec3f";
-Script28.field[12] = field41;
+X3DScript28.field[12] = field41;
 
 let field42 = browser.currentScene.createNode("field");
 field42.name = "pointOut";
 field42.accessType = "outputOnly";
 field42.appinfo = "send computed points to the Coordinate node";
 field42.type = "MFVec3f";
-Script28.field[13] = field42;
+X3DScript28.field[13] = field42;
 
 let field43 = browser.currentScene.createNode("field");
 field43.name = "indexOut";
 field43.accessType = "outputOnly";
 field43.appinfo = "send computed indices to the IndexedFaceSet node";
 field43.type = "MFInt32";
-Script28.field[14] = field43;
+X3DScript28.field[14] = field43;
 
 let IS44 = browser.currentScene.createNode("IS");
 let connect45 = browser.currentScene.createNode("connect");
@@ -412,9 +416,9 @@ connect56.nodeField = "lintel";
 connect56.protoField = "lintel";
 IS44.connect[11] = connect56;
 
-Script28.iS = IS44;
+X3DScript28.iS = IS44;
 
-ProtoBody18.children[1] = Script28;
+ProtoBody18.x3DScript[1] = X3DScript28;
 
 let ROUTE57 = browser.currentScene.createNode("ROUTE");
 ROUTE57.fromField = "computedScale";
@@ -494,5 +498,7 @@ browser.currentScene.children[1] = ProtoInstance60;
 let Inline69 = browser.currentScene.createNode("Inline");
 Inline69.DEF = "CoordinateAxes";
 Inline69.url = new MFString(new java.lang.String["../data/CoordinateAxes.x3d"]);
+Inline69.bboxCenter = new SFVec3f(new float[0,0,0]);
+Inline69.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 browser.currentScene.children[2] = Inline69;
 

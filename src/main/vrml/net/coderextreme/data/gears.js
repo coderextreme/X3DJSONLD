@@ -9,6 +9,8 @@ browser.currentScene.children = new MFNode();
 browser.currentScene.children[0] = NavigationInfo2;
 
 let Group3 = browser.currentScene.createNode("Group");
+Group3.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group3.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape4 = browser.currentScene.createNode("Shape");
 Shape4.bboxCenter = new SFVec3f(new float[-4.868185499999999,25.359741,0]);
 Shape4.bboxSize = new SFVec3f(new float[77.23637099999999,100.502162,6]);

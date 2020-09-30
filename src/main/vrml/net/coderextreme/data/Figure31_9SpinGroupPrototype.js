@@ -16,7 +16,7 @@ let ProtoDeclare3 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <field name="startTime" accessType="inputOutput" type="SFTime" value="0"></field>
 <field name="stopTime" accessType="inputOutput" type="SFTime" value="0"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="SpinGroupTransform"><IS><connect nodeField="children" protoField="children"></connect>
+<ProtoBody><Transform DEF="SpinGroupTransform" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="children"></connect>
 </IS>
 </Transform>
 <!--following nodes will not be rendered, only the first node of a ProtoBody is drawn--><TimeSensor DEF="SpinGroupClock"><IS><connect nodeField="cycleInterval" protoField="cycleInterval"></connect>
@@ -74,6 +74,8 @@ ProtoDeclare3.protoInterface = ProtoInterface4;
 let ProtoBody10 = browser.currentScene.createNode("ProtoBody");
 let Transform11 = browser.currentScene.createNode("Transform");
 Transform11.DEF = "SpinGroupTransform";
+Transform11.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform11.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS12 = browser.currentScene.createNode("IS");
 let connect13 = browser.currentScene.createNode("connect");
 connect13.nodeField = "children";
@@ -167,8 +169,11 @@ ProtoInstance24.fieldValue[1] = fieldValue26;
 let fieldValue27 = browser.currentScene.createNode("fieldValue");
 fieldValue27.name = "children";
 let Shape28 = browser.currentScene.createNode("Shape");
+Shape28.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape28.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Box29 = browser.currentScene.createNode("Box");
 Box29.size = new SFVec3f(new float[25,2,2]);
+Box29.solid = True;
 Shape28.geometry = Box29;
 
 let Appearance30 = browser.currentScene.createNode("Appearance");
@@ -184,8 +189,11 @@ fieldValue27.children = new MFNode();
 fieldValue27.children[0] = Shape28;
 
 let Shape32 = browser.currentScene.createNode("Shape");
+Shape32.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape32.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Box33 = browser.currentScene.createNode("Box");
 Box33.size = new SFVec3f(new float[2,25,2]);
+Box33.solid = True;
 Shape32.geometry = Box33;
 
 let Appearance34 = browser.currentScene.createNode("Appearance");
@@ -224,8 +232,11 @@ fieldValue39.children = new MFNode();
 fieldValue39.children[0] = TouchSensor40;
 
 let Shape41 = browser.currentScene.createNode("Shape");
+Shape41.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape41.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Box42 = browser.currentScene.createNode("Box");
 Box42.size = new SFVec3f(new float[2,2.05,25]);
+Box42.solid = True;
 Shape41.geometry = Box42;
 
 let Appearance43 = browser.currentScene.createNode("Appearance");

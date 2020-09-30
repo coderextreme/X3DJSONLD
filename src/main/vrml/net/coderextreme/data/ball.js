@@ -19,10 +19,16 @@ Background4.frontUrl = new MFString(new java.lang.String["../resources/images/al
 Background4.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]);
 Background4.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]);
 Background4.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]);
+Background4.skyColor = new MFColor(new float[0,0,0]);
+Background4.transparency = 0;
 browser.currentScene.children[2] = Background4;
 
 let Transform5 = browser.currentScene.createNode("Transform");
+Transform5.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape6 = browser.currentScene.createNode("Shape");
+Shape6.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere7 = browser.currentScene.createNode("Sphere");
 Shape6.geometry = Sphere7;
 

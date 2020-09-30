@@ -11,11 +11,16 @@ browser.currentScene.children[0] = Viewpoint2;
 
 let Background3 = browser.currentScene.createNode("Background");
 Background3.skyColor = new MFColor(new float[0.4,0.4,0.4]);
+Background3.transparency = 0;
 browser.currentScene.children[1] = Background3;
 
 let Transform4 = browser.currentScene.createNode("Transform");
 Transform4.DEF = "G1";
+Transform4.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape5 = browser.currentScene.createNode("Shape");
+Shape5.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance6 = browser.currentScene.createNode("Appearance");
 let Material7 = browser.currentScene.createNode("Material");
 Material7.diffuseColor = new SFColor(new float[0.7,0.2,0.2]);
@@ -48,7 +53,11 @@ browser.currentScene.children[2] = Transform4;
 let Transform11 = browser.currentScene.createNode("Transform");
 Transform11.DEF = "G2";
 Transform11.translation = new SFVec3f(new float[1,-1,0.01]);
+Transform11.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform11.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape12 = browser.currentScene.createNode("Shape");
+Shape12.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape12.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance13 = browser.currentScene.createNode("Appearance");
 let Material14 = browser.currentScene.createNode("Material");
 Material14.diffuseColor = new SFColor(new float[0.2,0.7,0.2]);
@@ -82,7 +91,11 @@ browser.currentScene.children[3] = Transform11;
 let Transform18 = browser.currentScene.createNode("Transform");
 Transform18.DEF = "G3";
 Transform18.translation = new SFVec3f(new float[1,1,0.01]);
+Transform18.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform18.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape19 = browser.currentScene.createNode("Shape");
+Shape19.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape19.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance20 = browser.currentScene.createNode("Appearance");
 let Material21 = browser.currentScene.createNode("Material");
 Material21.diffuseColor = new SFColor(new float[0.2,0.7,0.2]);
@@ -116,7 +129,11 @@ browser.currentScene.children[4] = Transform18;
 let Transform25 = browser.currentScene.createNode("Transform");
 Transform25.DEF = "G4";
 Transform25.translation = new SFVec3f(new float[-1,1,0.01]);
+Transform25.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform25.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape26 = browser.currentScene.createNode("Shape");
+Shape26.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape26.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance27 = browser.currentScene.createNode("Appearance");
 let Material28 = browser.currentScene.createNode("Material");
 Material28.diffuseColor = new SFColor(new float[0.2,0.7,0.2]);
@@ -149,9 +166,15 @@ browser.currentScene.children[5] = Transform25;
 
 let Transform32 = browser.currentScene.createNode("Transform");
 Transform32.DEF = "transC1";
+Transform32.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform32.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform33 = browser.currentScene.createNode("Transform");
 Transform33.DEF = "rotscaleC1";
+Transform33.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform33.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape34 = browser.currentScene.createNode("Shape");
+Shape34.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape34.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance35 = browser.currentScene.createNode("Appearance");
 let Material36 = browser.currentScene.createNode("Material");
 Material36.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);
@@ -176,9 +199,15 @@ browser.currentScene.children[6] = Transform32;
 
 let Transform38 = browser.currentScene.createNode("Transform");
 Transform38.DEF = "transC2";
+Transform38.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform38.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform39 = browser.currentScene.createNode("Transform");
 Transform39.DEF = "rotscaleC2";
+Transform39.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform39.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape40 = browser.currentScene.createNode("Shape");
+Shape40.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape40.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance41 = browser.currentScene.createNode("Appearance");
 let Material42 = browser.currentScene.createNode("Material");
 Material42.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);
@@ -203,9 +232,15 @@ browser.currentScene.children[7] = Transform38;
 
 let Transform44 = browser.currentScene.createNode("Transform");
 Transform44.DEF = "transC3";
+Transform44.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform44.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform45 = browser.currentScene.createNode("Transform");
 Transform45.DEF = "rotscaleC3";
+Transform45.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform45.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape46 = browser.currentScene.createNode("Shape");
+Shape46.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape46.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance47 = browser.currentScene.createNode("Appearance");
 let Material48 = browser.currentScene.createNode("Material");
 Material48.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);
@@ -237,7 +272,7 @@ let ProtoDeclare50 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><Script DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
+<ProtoBody><X3DScript DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="endnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="transnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
@@ -250,47 +285,7 @@ let ProtoDeclare50 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
 <connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
 </IS>
-<![CDATA[ecmascript:
-        function recompute(startpoint,endpoint){
-	    if (typeof endpoint === 'undefined') {
-		return;
-	    }
-            var dif = endpoint.subtract(startpoint);
-            var dist = dif.length()*0.5;
-            var dif2 = dif.multiply(0.5);
-            var norm = dif.normalize();
-            var transl = startpoint.add(dif2);
-	    if (typeof Quaternion !== 'undefined') {
-		    return {
-			    scale : new SFVec3f(1.0,dist,1.0),
-			    translation : transl,
-			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
-		    };
-	    } else {
-		    return {
-			    scale : new SFVec3f(1.0,dist,1.0),
-			    translation : transl,
-			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
-		    };
-	    }
-	}
-	function recompute_and_route(startpoint, endpoint) {
-	      var trafo = recompute(startpoint, endpoint);
-	      if (trafo) {
-		      transnode.translation = trafo.translation;
-		      rotscalenode.rotation = trafo.rotation;
-		      rotscalenode.scale = trafo.scale;
-	      }
-	}
-        function initialize(){
-            recompute_and_route(startnode.translation,endnode.translation);
-        }
-        function set_startpoint(val,t){
-            recompute_and_route(val,endnode.translation);
-        }
-        function set_endpoint(val,t){
-            recompute_and_route(startnode.translation,val);
-        }]]></Script>
+</X3DScript>
 </ProtoBody>
 </ProtoDeclare>`);
 ProtoDeclare50.name = "x3dconnector";
@@ -336,45 +331,45 @@ ProtoInterface51.field[5] = field57;
 ProtoDeclare50.protoInterface = ProtoInterface51;
 
 let ProtoBody58 = browser.currentScene.createNode("ProtoBody");
-let Script59 = browser.currentScene.createNode("Script");
-Script59.DEF = "S1";
+let X3DScript59 = browser.currentScene.createNode("X3DScript");
+X3DScript59.DEF = "S1";
 let field60 = browser.currentScene.createNode("field");
 field60.name = "startnode";
 field60.accessType = "initializeOnly";
 field60.type = "SFNode";
-Script59.field = new MFNode();
+X3DScript59.field = new MFNode();
 
-Script59.field[0] = field60;
+X3DScript59.field[0] = field60;
 
 let field61 = browser.currentScene.createNode("field");
 field61.name = "endnode";
 field61.accessType = "initializeOnly";
 field61.type = "SFNode";
-Script59.field[1] = field61;
+X3DScript59.field[1] = field61;
 
 let field62 = browser.currentScene.createNode("field");
 field62.name = "transnode";
 field62.accessType = "initializeOnly";
 field62.type = "SFNode";
-Script59.field[2] = field62;
+X3DScript59.field[2] = field62;
 
 let field63 = browser.currentScene.createNode("field");
 field63.name = "rotscalenode";
 field63.accessType = "initializeOnly";
 field63.type = "SFNode";
-Script59.field[3] = field63;
+X3DScript59.field[3] = field63;
 
 let field64 = browser.currentScene.createNode("field");
 field64.name = "set_startpoint";
 field64.accessType = "inputOnly";
 field64.type = "SFVec3f";
-Script59.field[4] = field64;
+X3DScript59.field[4] = field64;
 
 let field65 = browser.currentScene.createNode("field");
 field65.name = "set_endpoint";
 field65.accessType = "inputOnly";
 field65.type = "SFVec3f";
-Script59.field[5] = field65;
+X3DScript59.field[5] = field65;
 
 let IS66 = browser.currentScene.createNode("IS");
 let connect67 = browser.currentScene.createNode("connect");
@@ -409,53 +404,9 @@ connect72.nodeField = "set_endpoint";
 connect72.protoField = "set_endpoint";
 IS66.connect[5] = connect72;
 
-Script59.iS = IS66;
+X3DScript59.iS = IS66;
 
-
-Script59.setSourceCode(`ecmascript:\n"+
-"        function recompute(startpoint,endpoint){\n"+
-"	    if (typeof endpoint === 'undefined') {\n"+
-"		return;\n"+
-"	    }\n"+
-"            var dif = endpoint.subtract(startpoint);\n"+
-"            var dist = dif.length()*0.5;\n"+
-"            var dif2 = dif.multiply(0.5);\n"+
-"            var norm = dif.normalize();\n"+
-"            var transl = startpoint.add(dif2);\n"+
-"	    if (typeof Quaternion !== 'undefined') {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
-"		    };\n"+
-"	    } else {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
-"		    };\n"+
-"	    }\n"+
-"	}\n"+
-"	function recompute_and_route(startpoint, endpoint) {\n"+
-"	      var trafo = recompute(startpoint, endpoint);\n"+
-"	      if (trafo) {\n"+
-"		      transnode.translation = trafo.translation;\n"+
-"		      rotscalenode.rotation = trafo.rotation;\n"+
-"		      rotscalenode.scale = trafo.scale;\n"+
-"	      }\n"+
-"	}\n"+
-"        function initialize(){\n"+
-"            recompute_and_route(startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_startpoint(val,t){\n"+
-"            recompute_and_route(val,endnode.translation);\n"+
-"        }\n"+
-"        function set_endpoint(val,t){\n"+
-"            recompute_and_route(startnode.translation,val);\n"+
-"        }`)
-ProtoBody58.children = new MFNode();
-
-ProtoBody58.children[0] = Script59;
+ProtoBody58.x3DScript = X3DScript59;
 
 ProtoDeclare50.protoBody = ProtoBody58;
 

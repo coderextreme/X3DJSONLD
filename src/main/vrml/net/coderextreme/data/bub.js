@@ -14,6 +14,8 @@ Background3.frontUrl = new MFString(new java.lang.String["../resources/images/al
 Background3.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]);
 Background3.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]);
 Background3.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]);
+Background3.skyColor = new MFColor(new float[0,0,0]);
+Background3.transparency = 0;
 browser.currentScene.children[1] = Background3;
 
 let Viewpoint4 = browser.currentScene.createNode("Viewpoint");
@@ -23,7 +25,7 @@ browser.currentScene.children[2] = Viewpoint4;
 
 let ProtoDeclare5 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="transform"><Shape DEF="myShape"><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<ProtoDeclare name="Bubble" ><ProtoBody><Transform DEF="transform" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape DEF="myShape" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottom" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
 <ImageTexture containerField="front" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
@@ -52,34 +54,10 @@ let ProtoDeclare5 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <Sphere containerField="geometry"></Sphere>
 </Shape>
 </Transform>
-<Script DEF="Bounce"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<X3DScript DEF="Bounce"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
-<![CDATA[ecmascript:
-			function initialize() {
-			    translation = new SFVec3f(0, 0, 0);
-			    velocity = new SFVec3f(
-			    	Math.random() - 0.5,
-				Math.random() - 0.5,
-				Math.random() - 0.5);
-			}
-			function set_fraction() {
-			    translation = new SFVec3f(
-			    	translation.x + velocity.x,
-				translation.y + velocity.y,
-				translation.z + velocity.z);
-			    if (Math.abs(translation.x) > 10) {
-				initialize();
-			    } else if (Math.abs(translation.y) > 10) {
-				initialize();
-			    } else if (Math.abs(translation.z) > 10) {
-				initialize();
-			    } else {
-				velocity.x += Math.random() * 0.2 - 0.1;
-				velocity.y += Math.random() * 0.2 - 0.1;
-				velocity.z += Math.random() * 0.2 - 0.1;
-			    }
-			}]]></Script>
+</X3DScript>
 <TimeSensor DEF="TourTime" cycleInterval="0.15" loop="true"></TimeSensor>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
@@ -89,8 +67,12 @@ ProtoDeclare5.name = "Bubble";
 let ProtoBody6 = browser.currentScene.createNode("ProtoBody");
 let Transform7 = browser.currentScene.createNode("Transform");
 Transform7.DEF = "transform";
+Transform7.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform7.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape8 = browser.currentScene.createNode("Shape");
 Shape8.DEF = "myShape";
+Shape8.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape8.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance9 = browser.currentScene.createNode("Appearance");
 let Material10 = browser.currentScene.createNode("Material");
 Material10.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
@@ -251,57 +233,31 @@ ProtoBody6.children = new MFNode();
 
 ProtoBody6.children[0] = Transform7;
 
-let Script36 = browser.currentScene.createNode("Script");
-Script36.DEF = "Bounce";
+let X3DScript36 = browser.currentScene.createNode("X3DScript");
+X3DScript36.DEF = "Bounce";
 let field37 = browser.currentScene.createNode("field");
 field37.name = "translation";
 field37.accessType = "inputOutput";
 field37.type = "SFVec3f";
 field37.value = "0 0 0";
-Script36.field = new MFNode();
+X3DScript36.field = new MFNode();
 
-Script36.field[0] = field37;
+X3DScript36.field[0] = field37;
 
 let field38 = browser.currentScene.createNode("field");
 field38.name = "velocity";
 field38.accessType = "inputOutput";
 field38.type = "SFVec3f";
 field38.value = "0 0 0";
-Script36.field[1] = field38;
+X3DScript36.field[1] = field38;
 
 let field39 = browser.currentScene.createNode("field");
 field39.name = "set_fraction";
 field39.accessType = "inputOnly";
 field39.type = "SFTime";
-Script36.field[2] = field39;
+X3DScript36.field[2] = field39;
 
-
-Script36.setSourceCode(`ecmascript:\n"+
-"			function initialize() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation.x + velocity.x,\n"+
-"				translation.y + velocity.y,\n"+
-"				translation.z + velocity.z);\n"+
-"			    if (Math.abs(translation.x) > 10) {\n"+
-"				initialize();\n"+
-"			    } else if (Math.abs(translation.y) > 10) {\n"+
-"				initialize();\n"+
-"			    } else if (Math.abs(translation.z) > 10) {\n"+
-"				initialize();\n"+
-"			    } else {\n"+
-"				velocity.x += Math.random() * 0.2 - 0.1;\n"+
-"				velocity.y += Math.random() * 0.2 - 0.1;\n"+
-"				velocity.z += Math.random() * 0.2 - 0.1;\n"+
-"			    }\n"+
-"			}`)
-ProtoBody6.children[1] = Script36;
+ProtoBody6.x3DScript[1] = X3DScript36;
 
 let TimeSensor40 = browser.currentScene.createNode("TimeSensor");
 TimeSensor40.DEF = "TourTime";

@@ -9,22 +9,25 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <field name="locationOffset" accessType="initializeOnly" appinfo="Modified screen location and distance (for size)." type="SFVec3f" value="-2 -2 0"></field>
 <field name="traceEnabled" accessType="initializeOnly" appinfo="Enable/disable console output for troubleshooting." type="SFBool" value="false"></field>
 </ProtoInterface>
-<ProtoBody><Group><ProximitySensor DEF="WhereSensor" size="1000000000 1000000000 1000000000"><IS><connect nodeField="center" protoField="locationOffset"></connect>
+<ProtoBody><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><ProximitySensor DEF="WhereSensor" size="1000000000 1000000000 1000000000"><IS><connect nodeField="center" protoField="locationOffset"></connect>
 </IS>
 </ProximitySensor>
-<Transform DEF="FixedLocation"><Transform DEF="MovableLocation"><Transform DEF="LocationOffset"><IS><connect nodeField="translation" protoField="locationOffset"></connect>
+<Transform DEF="FixedLocation" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Transform DEF="MovableLocation" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Transform DEF="LocationOffset" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="locationOffset"></connect>
 </IS>
-<Transform translation="0 0 -10"><Group><IS><connect nodeField="children" protoField="children"></connect>
+<Transform translation="0 0 -10" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="children"></connect>
 </IS>
 </Group>
-<Group DEF="PlaneMovementSensorGroup"><Group DEF="DragGeometry"><IS><connect nodeField="children" protoField="dragChildren"></connect>
+<Group DEF="PlaneMovementSensorGroup" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Group DEF="DragGeometry" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="dragChildren"></connect>
 </IS>
 </Group>
 <PlaneSensor DEF="PlaneMovementSensor" description="click and drag to move interface"><IS><connect nodeField="offset" protoField="locationOffset"></connect>
 </IS>
 </PlaneSensor>
 <VisibilitySensor DEF="MovementVisibilitySensor"></VisibilitySensor>
-<Script DEF="VisibilityControlScript"><field name="traceEnabled" accessType="initializeOnly" type="SFBool"></field>
+<ROUTE fromField="isActive" fromNode="PlaneMovementSensor" toField="setPlaneSensorIsActive" toNode="VisibilityControlScript"></ROUTE>
+<ROUTE fromField="translation_changed" fromNode="PlaneMovementSensor" toField="setPlaneSensorTranslation" toNode="VisibilityControlScript"></ROUTE>
+<ROUTE fromField="isActive" fromNode="MovementVisibilitySensor" toField="setIsVisible" toNode="VisibilityControlScript"></ROUTE>
+<X3DScript DEF="VisibilityControlScript"><field name="traceEnabled" accessType="initializeOnly" type="SFBool"></field>
 <field name="isVisible" accessType="initializeOnly" type="SFBool" value="true"></field>
 <field name="planeSensorTranslation" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 <field name="setIsVisible" accessType="inputOnly" type="SFBool"></field>
@@ -34,44 +37,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <field name="translationOffsetChanged" accessType="outputOnly" type="SFVec3f"></field>
 <IS><connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<![CDATA[ecmascript:
-
-function tracePrint (text)
-{
-	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);
-}
-function setIsVisible (value, timeStamp)
-{
-	isVisible = value;
-	tracePrint('isVisible=' + value);
-}
-function setPlaneSensorIsActive (value, timeStamp)
-{
-	tracePrint('PlaneSensor isActive=' + value);
-
-	if (value == false)
-	{
-		tracePrint('planeSensorTranslation=' + planeSensorTranslation);
-		if (isVisible)
-		{
-			translationChanged = planeSensorTranslation;
-		}
-		else
-		{
-			// fell off screen, reset to center
-			translationChanged = new SFVec3f(0, 0, 0);
-			translationOffsetChanged  = new SFVec3f(0, 0, 0);
-		}
-	}
-}
-function setPlaneSensorTranslation (value, timeStamp)
-{
-	planeSensorTranslation = value;
-	tracePrint('planeSensorTranslation=' + value);
-}]]></Script>
-<ROUTE fromField="isActive" fromNode="PlaneMovementSensor" toField="setPlaneSensorIsActive" toNode="VisibilityControlScript"></ROUTE>
-<ROUTE fromField="translation_changed" fromNode="PlaneMovementSensor" toField="setPlaneSensorTranslation" toNode="VisibilityControlScript"></ROUTE>
-<ROUTE fromField="isActive" fromNode="MovementVisibilitySensor" toField="setIsVisible" toNode="VisibilityControlScript"></ROUTE>
+</X3DScript>
 </Group>
 </Transform>
 </Transform>
@@ -126,6 +92,8 @@ ProtoDeclare2.protoInterface = ProtoInterface3;
 
 let ProtoBody8 = browser.currentScene.createNode("ProtoBody");
 let Group9 = browser.currentScene.createNode("Group");
+Group9.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group9.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let ProximitySensor10 = browser.currentScene.createNode("ProximitySensor");
 ProximitySensor10.DEF = "WhereSensor";
 ProximitySensor10.size = new SFVec3f(new float[1000000000,1000000000,1000000000]);
@@ -145,10 +113,16 @@ Group9.children[0] = ProximitySensor10;
 
 let Transform13 = browser.currentScene.createNode("Transform");
 Transform13.DEF = "FixedLocation";
+Transform13.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform13.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform14 = browser.currentScene.createNode("Transform");
 Transform14.DEF = "MovableLocation";
+Transform14.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform14.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform15 = browser.currentScene.createNode("Transform");
 Transform15.DEF = "LocationOffset";
+Transform15.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform15.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS16 = browser.currentScene.createNode("IS");
 let connect17 = browser.currentScene.createNode("connect");
 connect17.nodeField = "translation";
@@ -161,7 +135,11 @@ Transform15.iS = IS16;
 
 let Transform18 = browser.currentScene.createNode("Transform");
 Transform18.translation = new SFVec3f(new float[0,0,-10]);
+Transform18.bboxCenter = new SFVec3f(new float[0,0,0]);
+Transform18.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Group19 = browser.currentScene.createNode("Group");
+Group19.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group19.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS20 = browser.currentScene.createNode("IS");
 let connect21 = browser.currentScene.createNode("connect");
 connect21.nodeField = "children";
@@ -178,8 +156,12 @@ Transform18.children[0] = Group19;
 
 let Group22 = browser.currentScene.createNode("Group");
 Group22.DEF = "PlaneMovementSensorGroup";
+Group22.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group22.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Group23 = browser.currentScene.createNode("Group");
 Group23.DEF = "DragGeometry";
+Group23.bboxCenter = new SFVec3f(new float[0,0,0]);
+Group23.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS24 = browser.currentScene.createNode("IS");
 let connect25 = browser.currentScene.createNode("connect");
 connect25.nodeField = "children";
@@ -213,128 +195,92 @@ let VisibilitySensor29 = browser.currentScene.createNode("VisibilitySensor");
 VisibilitySensor29.DEF = "MovementVisibilitySensor";
 Group22.children[2] = VisibilitySensor29;
 
-let Script30 = browser.currentScene.createNode("Script");
-Script30.DEF = "VisibilityControlScript";
-let field31 = browser.currentScene.createNode("field");
-field31.name = "traceEnabled";
-field31.accessType = "initializeOnly";
-field31.type = "SFBool";
-Script30.field = new MFNode();
+let ROUTE30 = browser.currentScene.createNode("ROUTE");
+ROUTE30.fromField = "isActive";
+ROUTE30.fromNode = "PlaneMovementSensor";
+ROUTE30.toField = "setPlaneSensorIsActive";
+ROUTE30.toNode = "VisibilityControlScript";
+Group22.children[3] = ROUTE30;
 
-Script30.field[0] = field31;
+let ROUTE31 = browser.currentScene.createNode("ROUTE");
+ROUTE31.fromField = "translation_changed";
+ROUTE31.fromNode = "PlaneMovementSensor";
+ROUTE31.toField = "setPlaneSensorTranslation";
+ROUTE31.toNode = "VisibilityControlScript";
+Group22.children[4] = ROUTE31;
 
-let field32 = browser.currentScene.createNode("field");
-field32.name = "isVisible";
-field32.accessType = "initializeOnly";
-field32.type = "SFBool";
-field32.value = "true";
-Script30.field[1] = field32;
+let ROUTE32 = browser.currentScene.createNode("ROUTE");
+ROUTE32.fromField = "isActive";
+ROUTE32.fromNode = "MovementVisibilitySensor";
+ROUTE32.toField = "setIsVisible";
+ROUTE32.toNode = "VisibilityControlScript";
+Group22.children[5] = ROUTE32;
 
-let field33 = browser.currentScene.createNode("field");
-field33.name = "planeSensorTranslation";
-field33.accessType = "initializeOnly";
-field33.type = "SFVec3f";
-field33.value = "0 0 0";
-Script30.field[2] = field33;
-
+let X3DScript33 = browser.currentScene.createNode("X3DScript");
+X3DScript33.DEF = "VisibilityControlScript";
 let field34 = browser.currentScene.createNode("field");
-field34.name = "setIsVisible";
-field34.accessType = "inputOnly";
+field34.name = "traceEnabled";
+field34.accessType = "initializeOnly";
 field34.type = "SFBool";
-Script30.field[3] = field34;
+X3DScript33.field = new MFNode();
+
+X3DScript33.field[0] = field34;
 
 let field35 = browser.currentScene.createNode("field");
-field35.name = "setPlaneSensorIsActive";
-field35.accessType = "inputOnly";
+field35.name = "isVisible";
+field35.accessType = "initializeOnly";
 field35.type = "SFBool";
-Script30.field[4] = field35;
+field35.value = "true";
+X3DScript33.field[1] = field35;
 
 let field36 = browser.currentScene.createNode("field");
-field36.name = "setPlaneSensorTranslation";
-field36.accessType = "inputOnly";
+field36.name = "planeSensorTranslation";
+field36.accessType = "initializeOnly";
 field36.type = "SFVec3f";
-Script30.field[5] = field36;
+field36.value = "0 0 0";
+X3DScript33.field[2] = field36;
 
 let field37 = browser.currentScene.createNode("field");
-field37.name = "translationChanged";
-field37.accessType = "outputOnly";
-field37.type = "SFVec3f";
-Script30.field[6] = field37;
+field37.name = "setIsVisible";
+field37.accessType = "inputOnly";
+field37.type = "SFBool";
+X3DScript33.field[3] = field37;
 
 let field38 = browser.currentScene.createNode("field");
-field38.name = "translationOffsetChanged";
-field38.accessType = "outputOnly";
-field38.type = "SFVec3f";
-Script30.field[7] = field38;
+field38.name = "setPlaneSensorIsActive";
+field38.accessType = "inputOnly";
+field38.type = "SFBool";
+X3DScript33.field[4] = field38;
 
-let IS39 = browser.currentScene.createNode("IS");
-let connect40 = browser.currentScene.createNode("connect");
-connect40.nodeField = "traceEnabled";
-connect40.protoField = "traceEnabled";
-IS39.connect = new MFNode();
+let field39 = browser.currentScene.createNode("field");
+field39.name = "setPlaneSensorTranslation";
+field39.accessType = "inputOnly";
+field39.type = "SFVec3f";
+X3DScript33.field[5] = field39;
 
-IS39.connect[0] = connect40;
+let field40 = browser.currentScene.createNode("field");
+field40.name = "translationChanged";
+field40.accessType = "outputOnly";
+field40.type = "SFVec3f";
+X3DScript33.field[6] = field40;
 
-Script30.iS = IS39;
+let field41 = browser.currentScene.createNode("field");
+field41.name = "translationOffsetChanged";
+field41.accessType = "outputOnly";
+field41.type = "SFVec3f";
+X3DScript33.field[7] = field41;
 
+let IS42 = browser.currentScene.createNode("IS");
+let connect43 = browser.currentScene.createNode("connect");
+connect43.nodeField = "traceEnabled";
+connect43.protoField = "traceEnabled";
+IS42.connect = new MFNode();
 
-Script30.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function tracePrint (text)\n"+
-"{\n"+
-"	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);\n"+
-"}\n"+
-"function setIsVisible (value, timeStamp)\n"+
-"{\n"+
-"	isVisible = value;\n"+
-"	tracePrint('isVisible=' + value);\n"+
-"}\n"+
-"function setPlaneSensorIsActive (value, timeStamp)\n"+
-"{\n"+
-"	tracePrint('PlaneSensor isActive=' + value);\n"+
-"\n"+
-"	if (value == false)\n"+
-"	{\n"+
-"		tracePrint('planeSensorTranslation=' + planeSensorTranslation);\n"+
-"		if (isVisible)\n"+
-"		{\n"+
-"			translationChanged = planeSensorTranslation;\n"+
-"		}\n"+
-"		else\n"+
-"		{\n"+
-"			// fell off screen, reset to center\n"+
-"			translationChanged = new SFVec3f(0, 0, 0);\n"+
-"			translationOffsetChanged  = new SFVec3f(0, 0, 0);\n"+
-"		}\n"+
-"	}\n"+
-"}\n"+
-"function setPlaneSensorTranslation (value, timeStamp)\n"+
-"{\n"+
-"	planeSensorTranslation = value;\n"+
-"	tracePrint('planeSensorTranslation=' + value);\n"+
-"}`)
-Group22.children[3] = Script30;
+IS42.connect[0] = connect43;
 
-let ROUTE41 = browser.currentScene.createNode("ROUTE");
-ROUTE41.fromField = "isActive";
-ROUTE41.fromNode = "PlaneMovementSensor";
-ROUTE41.toField = "setPlaneSensorIsActive";
-ROUTE41.toNode = "VisibilityControlScript";
-Group22.children[4] = ROUTE41;
+X3DScript33.iS = IS42;
 
-let ROUTE42 = browser.currentScene.createNode("ROUTE");
-ROUTE42.fromField = "translation_changed";
-ROUTE42.fromNode = "PlaneMovementSensor";
-ROUTE42.toField = "setPlaneSensorTranslation";
-ROUTE42.toNode = "VisibilityControlScript";
-Group22.children[5] = ROUTE42;
-
-let ROUTE43 = browser.currentScene.createNode("ROUTE");
-ROUTE43.fromField = "isActive";
-ROUTE43.fromNode = "MovementVisibilitySensor";
-ROUTE43.toField = "setIsVisible";
-ROUTE43.toNode = "VisibilityControlScript";
-Group22.children[6] = ROUTE43;
+Group22.x3DScript[6] = X3DScript33;
 
 Transform18.children[1] = Group22;
 
@@ -407,7 +353,11 @@ let Anchor50 = browser.currentScene.createNode("Anchor");
 Anchor50.description = "HeadsUpDisplayExample";
 Anchor50.parameter = new MFString(new java.lang.String["target=_blank"]);
 Anchor50.url = new MFString(new java.lang.String["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"]);
+Anchor50.bboxCenter = new SFVec3f(new float[0,0,0]);
+Anchor50.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape51 = browser.currentScene.createNode("Shape");
+Shape51.bboxCenter = new SFVec3f(new float[0,0,0]);
+Shape51.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance52 = browser.currentScene.createNode("Appearance");
 let Material53 = browser.currentScene.createNode("Material");
 Material53.diffuseColor = new SFColor(new float[0,1,1]);
