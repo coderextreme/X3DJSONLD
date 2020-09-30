@@ -28,75 +28,24 @@ var ProtoInstance3 = null;
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE"])))
         .addChild((new autoclass.Viewpoint()).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(4)])).setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setDescription("Bubbles in action"))
-        .addChild((new autoclass.Background()).setBackUrl(java.newArray("java.lang.String", ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])))
+        .addChild((new autoclass.Background()).setBackUrl(java.newArray("java.lang.String", ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])).setSkyColor(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setTransparency(java.newFloat(0)))
         .addChild((new autoclass.ProtoDeclare()).setName("Bubble")
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform()).setDEF("transform")
-              .addChild((new autoclass.Shape())
+            .addChild((new autoclass.Transform()).setDEF("body_trans").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+              .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
                 .setGeometry((new autoclass.Sphere()).setRadius(java.newFloat(0.25)))
                 .setAppearance((new autoclass.Appearance())
                   .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)])).setTransparency(java.newFloat(0.2)))))
-              .addChild((new autoclass.Script()).setDEF("bounce")
+              .addChild((new autoclass.TimeSensor()).setDEF("bubbleClock").setCycleInterval(10).setLoop(true))
+              .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
+              .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))
+              .addChild((new autoclass.ROUTE()).setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction"))
+              .addX3DScript((new autoclass.X3DScript()).setDEF("bounce")
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("scale").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("velocity").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("scalvel").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-                .setSourceCode("ecmascript:\n"+
-"function initialize() {\n"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
-"\n"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(value) {\n"+
-"    if (typeof translation === 'undefined') {\n"+
-"		translation = new SFVec3f(0, 0, 0);\n"+
-"    }\n"+
-"    if (typeof velocity === 'undefined') {\n"+
-"		velocity = new SFVec3f(0, 0, 0);\n"+
-"    }\n"+
-"    if (typeof scalvel === 'undefined') {\n"+
-"		scalvel = new SFVec3f(0, 0, 0);\n"+
-"    }\n"+
-"    if (typeof scale === 'undefined') {\n"+
-"		scale = new SFVec3f(1, 1, 1);\n"+
-"    }\n"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
-"    // if you get to far away or too big, explode\n"+
-"    if ( Math.abs(translation.x) > 256) {\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.y) > 256) {\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if ( Math.abs(translation.z) > 256) {\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.x) > 20) {\n"+
-"	scale.x = scale.x/20;\n"+
-"	translation.x = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.y) > 20) {\n"+
-"	scale.y = scale.y/20;\n"+
-"	translation.y = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"    if (Math.abs(scale.z) > 20) {\n"+
-"	scale.z = scale.z/20;\n"+
-"	translation.z = 0;\n"+
-"	initialize();\n"+
-"    }\n"+
-"}"))
-              .addChild((new autoclass.TimeSensor()).setDEF("bubbleClock").setCycleInterval(10).setLoop(true))
-              .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-              .addChild((new autoclass.ROUTE()).setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
-              .addChild((new autoclass.ROUTE()).setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
+                .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))))))
         .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("Bubble").setDEF("bubbleA"))
         .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("Bubble").setDEF("bubbleB"))
         .addChild(ProtoInstance2 = (new autoclass.ProtoInstance()).setName("Bubble").setDEF("bubbleC"))

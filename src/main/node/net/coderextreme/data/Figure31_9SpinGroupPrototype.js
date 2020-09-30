@@ -37,7 +37,7 @@ var ProtoInstance1 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFTIME).setName("startTime").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFTIME).setName("stopTime").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0")))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform()).setDEF("SpinGroupTransform")
+            .addChild((new autoclass.Transform()).setDEF("SpinGroupTransform").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("children"))))
             .addComments((new autoclass.CommentsBlock("following nodes will not be rendered, only the first node of a ProtoBody is drawn")))
@@ -61,12 +61,12 @@ ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("loop").setValue("true"));
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("children")
-            .addChild((new autoclass.Shape())
-              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(25), java.newFloat(2), java.newFloat(2)])))
+            .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(25), java.newFloat(2), java.newFloat(2)])).setSolid(true))
               .setAppearance((new autoclass.Appearance()).setDEF("Green")
                 .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0.3)])))))
-            .addChild((new autoclass.Shape())
-              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(2), java.newFloat(25), java.newFloat(2)])))
+            .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(2), java.newFloat(25), java.newFloat(2)])).setSolid(true))
               .setAppearance((new autoclass.Appearance()).setUSE("Green")))
             .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("SpinGroup").setDEF("SecondSpinGroup")
               .addComments((new autoclass.CommentsBlock("stopTime > startTime ensures that initial state is stopped")))));
@@ -79,8 +79,8 @@ ProtoInstance1
 ProtoInstance1
               .addFieldValue((new autoclass.fieldValue()).setName("children")
                 .addChild((new autoclass.TouchSensor()).setDEF("ActivateSecondSpinGroup").setDescription("Activate second SpinGroup by clicking blue bar"))
-                .addChild((new autoclass.Shape())
-                  .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(2), java.newFloat(2.05), java.newFloat(25)])))
+                .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+                  .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(2), java.newFloat(2.05), java.newFloat(25)])).setSolid(true))
                   .setAppearance((new autoclass.Appearance())
                     .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(0.3), java.newFloat(1)]))))));
     X3D0.toFileX3D("../data/Figure31_9SpinGroupPrototype.new.x3d");

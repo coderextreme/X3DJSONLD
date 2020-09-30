@@ -38,10 +38,10 @@ var ProtoInstance9 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
               .addChild((new autoclass.Sphere()))))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform())
+            .addChild((new autoclass.Transform()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("xtranslation")))
-              .addChild((new autoclass.Shape())
+              .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
                 .setIS((new autoclass.IS())
                   .addConnect((new autoclass.connect()).setNodeField("geometry").setProtoField("myShape")))
                 .setAppearance((new autoclass.Appearance())
@@ -52,7 +52,7 @@ var ProtoInstance9 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
               .addChild((new autoclass.Sphere()))))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform())
+            .addChild((new autoclass.Transform()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("ytranslation")))
               .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("anyShape")
@@ -70,7 +70,7 @@ var ProtoInstance9 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
               .addChild((new autoclass.Sphere()))))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform())
+            .addChild((new autoclass.Transform()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("ztranslation")))
               .addChild(ProtoInstance3 = (new autoclass.ProtoInstance()).setName("three")
@@ -88,7 +88,7 @@ var ProtoInstance9 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
               .addChild((new autoclass.Sphere()))))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform())
+            .addChild((new autoclass.Transform()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("ttranslation")))
               .addChild(ProtoInstance6 = (new autoclass.ProtoInstance()).setName("nine")
@@ -123,5 +123,5 @@ ProtoInstance9
           .addFieldValue((new autoclass.fieldValue()).setName("ttranslation").setValue("0 0 0"));
 ProtoInstance9
           .addFieldValue((new autoclass.fieldValue()).setName("myShape")
-            .addChild((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))));
+            .addChild((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])).setSolid(true)));
     X3D0.toFileX3D("../data/rubikOnFire.new.x3d");

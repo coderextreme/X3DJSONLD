@@ -28,32 +28,25 @@ var ProtoInstance2 = null;
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("position").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform()).setDEF("transform")
+            .addChild((new autoclass.Transform()).setDEF("transform").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("position")))
-              .addChild((new autoclass.Shape())
+              .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
                 .setGeometry((new autoclass.Sphere()))
                 .setAppearance((new autoclass.Appearance())
                   .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)])))))
-              .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)]))
-                .addChild((new autoclass.Shape())
+              .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+                .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
                   .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["Node"]))
                     .setFontStyle((new autoclass.FontStyle()).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(java.newFloat(5))))
                   .setAppearance((new autoclass.Appearance())
                     .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1)])))))))
             .addChild((new autoclass.PositionInterpolator()).setDEF("NodePosition").setKey(java.newArray("float", [java.newFloat(0), java.newFloat(1)])).setKeyValue(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(5), java.newFloat(0)])))
-            .addChild((new autoclass.Script()).setDEF("MoveBall")
+            .addX3DScript((new autoclass.X3DScript()).setDEF("MoveBall")
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("old").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFTIME).setName("set_cycle").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
-              .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFVEC3F).setName("keyValue").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
-"					function set_cycle(value) {\n"+
-"                                                old = translation;\n"+
-"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
-"						// Browser.println(translation);\n"+
-"					}"))
+              .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFVEC3F).setName("keyValue").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY)))
             .addChild((new autoclass.TimeSensor()).setDEF("nodeClock").setCycleInterval(3).setLoop(true))
             .addChild((new autoclass.ROUTE()).setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
             .addChild((new autoclass.ROUTE()).setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
@@ -64,40 +57,19 @@ var ProtoInstance2 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("set_positionA").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("set_positionB").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY)))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Shape())
+            .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
               .setGeometry((new autoclass.Extrusion()).setDEF("extrusion").setCreaseAngle(java.newFloat(0.785)).setCrossSection(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0.92), java.newFloat(-0.38), java.newFloat(0.71), java.newFloat(-0.71), java.newFloat(0.38), java.newFloat(-0.92), java.newFloat(0), java.newFloat(-1), java.newFloat(-0.38), java.newFloat(-0.92), java.newFloat(-0.71), java.newFloat(-0.71), java.newFloat(-0.92), java.newFloat(-0.38), java.newFloat(-1), java.newFloat(0), java.newFloat(-0.92), java.newFloat(0.38), java.newFloat(-0.71), java.newFloat(0.71), java.newFloat(-0.38), java.newFloat(0.92), java.newFloat(0), java.newFloat(1), java.newFloat(0.38), java.newFloat(0.92), java.newFloat(0.71), java.newFloat(0.71), java.newFloat(0.92), java.newFloat(0.38), java.newFloat(1), java.newFloat(0)])).setSpine(java.newArray("float", [java.newFloat(0), java.newFloat(-50), java.newFloat(0), java.newFloat(0), java.newFloat(50), java.newFloat(0)])))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)])))))
-            .addChild((new autoclass.Script()).setDEF("MoveCylinder")
+            .addX3DScript((new autoclass.X3DScript()).setDEF("MoveCylinder")
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFVEC3F).setName("spine").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 50 0"))
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("set_endA").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("set_endB").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("set_endA").setProtoField("set_positionA"))
-                .addConnect((new autoclass.connect()).setNodeField("set_endB").setProtoField("set_positionB")))
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"                function set_endA(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_endB(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_spine(value) {\n"+
-"                    spine = value;\n"+
-"                }"))
+                .addConnect((new autoclass.connect()).setNodeField("set_endB").setProtoField("set_positionB"))))
             .addChild((new autoclass.ROUTE()).setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-        .addChild((new autoclass.Transform()).setDEF("HoldsContent").setScale(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.1), java.newFloat(0.1)]))
+        .addChild((new autoclass.Transform()).setDEF("HoldsContent").setScale(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.1), java.newFloat(0.1)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
           .addChild((new autoclass.PlaneSensor()).setDEF("clickGenerator").setMinPosition(java.newArray("float", [java.newFloat(-50), java.newFloat(-50)])).setMaxPosition(java.newArray("float", [java.newFloat(50), java.newFloat(50)])).setDescription("click on background to add nodes, click on nodes to add links"))
           .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeA"))
           .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("node").setDEF("nodeB"))

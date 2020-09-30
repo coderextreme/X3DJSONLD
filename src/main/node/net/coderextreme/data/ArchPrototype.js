@@ -50,8 +50,8 @@ var ProtoInstance0 = null;
           .setProtoBody((new autoclass.ProtoBody())
             .addComments((new autoclass.CommentsBlock("First node determines node type of this prototype")))
             .addComments((new autoclass.CommentsBlock("IndexedFaceset creates arch")))
-            .addChild((new autoclass.Transform()).setDEF("ArchTransform")
-              .addChild((new autoclass.Shape()).setDEF("Arch")
+            .addChild((new autoclass.Transform()).setDEF("ArchTransform").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+              .addChild((new autoclass.Shape()).setDEF("Arch").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
                 .addComments((new autoclass.CommentsBlock("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly")))
                 .setGeometry((new autoclass.IndexedFaceSet()).setDEF("ArchIndex").setConvex(false).setSolid(false)
                   .setCoord((new autoclass.Coordinate()).setDEF("ArchChord")))
@@ -61,8 +61,8 @@ var ProtoInstance0 = null;
                       .addConnect((new autoclass.connect()).setNodeField("emissiveColor").setProtoField("emissiveColor"))
                       .addConnect((new autoclass.connect()).setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
             .addComments((new autoclass.CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph")))
-            .addComments((new autoclass.CommentsBlock("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs")))
-            .addChild((new autoclass.Script()).setDEF("ArchPrototypeScript").setUrl(java.newArray("java.lang.String", ["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]))
+            .addComments((new autoclass.CommentsBlock("This embedded X3DScript provides the X3D author with additional visibility and control over prototype inputs and outputs")))
+            .addX3DScript((new autoclass.X3DScript()).setDEF("ArchPrototypeScript").setUrl(java.newArray("java.lang.String", ["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]))
               .addComments((new autoclass.CommentsBlock("INPUT PARAMETERS")))
               .addComments((new autoclass.CommentsBlock("General parameters")))
               .addComments((new autoclass.CommentsBlock("Parameters to create to create shapes related to arch: put true to apply")))
@@ -100,7 +100,7 @@ var ProtoInstance0 = null;
             .addChild((new autoclass.ROUTE()).setFromField("indexOut").setFromNode("ArchPrototypeScript").setToField("set_coordIndex").setToNode("ArchIndex"))))
         .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("ArchPrototype").setDEF("ArchInstance"))
         .addComments((new autoclass.CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)")))
-        .addChild((new autoclass.Inline()).setDEF("CoordinateAxes").setUrl(java.newArray("java.lang.String", ["../data/CoordinateAxes.x3d"]))))      ;
+        .addChild((new autoclass.Inline()).setDEF("CoordinateAxes").setUrl(java.newArray("java.lang.String", ["../data/CoordinateAxes.x3d"])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))))      ;
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("diffuseColor").setValue("0.5 0.3 0.6"));
 ProtoInstance0

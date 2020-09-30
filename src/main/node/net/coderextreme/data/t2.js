@@ -30,8 +30,8 @@ var ProtoInstance1 = null;
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("posi").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFCOLOR).setName("col").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0")))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform())
-              .addChild((new autoclass.Shape())
+            .addChild((new autoclass.Transform()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+              .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
                 .setAppearance((new autoclass.Appearance())
                   .setMaterial((new autoclass.Material()).setTransparency(java.newFloat(0.400000005960464))
                     .setIS((new autoclass.IS())
@@ -46,7 +46,7 @@ var ProtoInstance1 = null;
             .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("org")
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("posi").setProtoField("pos"))))))
-        .addChild((new autoclass.Anchor()).setUrl(java.newArray("java.lang.String", ["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])).setDescription("High Peak Community Arts")
+        .addChild((new autoclass.Anchor()).setUrl(java.newArray("java.lang.String", ["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"])).setDescription("High Peak Community Arts").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
           .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("r"))))      ;
 ProtoInstance0
               .addFieldValue((new autoclass.fieldValue()).setName("col").setValue("0 0.300000011920929 1"));
