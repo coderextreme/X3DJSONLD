@@ -52,10 +52,16 @@ Background10.setFrontUrl(["../resources/images/FR.png","https://coderextreme.net
 Background10.setLeftUrl(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])
 Background10.setRightUrl(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])
 Background10.setTopUrl(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])
+Background10.setSkyColor([0,0,0])
+Background10.setTransparency(0)
 
 Scene8.addChildren(Background10)
 Transform11 = x3d.Transform()
+Transform11.setBboxCenter([0,0,0])
+Transform11.setBboxSize([-1,-1,-1])
 Shape12 = x3d.Shape()
+Shape12.setBboxCenter([0,0,0])
+Shape12.setBboxSize([-1,-1,-1])
 Sphere13 = x3d.Sphere()
 
 Shape12.setGeometry(Sphere13)
@@ -83,83 +89,34 @@ GeoPositionInterpolator17.setKey([0,1])
 GeoPositionInterpolator17.setKeyValue([0.0015708,0,4,0,0.0015708,4])
 
 Scene8.addChildren(GeoPositionInterpolator17)
-Script18 = x3d.Script()
-Script18.setDEF("RandomTourTime")
-field19 = x3d.field()
-field19.setName("set_cycle")
-field19.setAccessType("inputOnly")
-field19.setType("SFTime")
+ROUTE18 = x3d.ROUTE()
+ROUTE18.setFromNode("TourTime")
+ROUTE18.setFromField("cycleTime")
+ROUTE18.setToNode("RandomTourTime")
+ROUTE18.setToField("set_cycle")
 
-Script18.addField(field19)
-field20 = x3d.field()
-field20.setName("val")
-field20.setAccessType("inputOutput")
-field20.setType("SFFloat")
-field20.setValue("0")
+Scene8.addChildren(ROUTE18)
+ROUTE19 = x3d.ROUTE()
+ROUTE19.setFromNode("RandomTourTime")
+ROUTE19.setFromField("position")
+ROUTE19.setToNode("TourPosition")
+ROUTE19.setToField("keyValue")
 
-Script18.addField(field20)
-field21 = x3d.field()
-field21.setName("positions")
-field21.setAccessType("inputOutput")
-field21.setType("MFVec3d")
-field21.setValue("0.0015708 0 4 0 0.0015708 4")
+Scene8.addChildren(ROUTE19)
+ROUTE20 = x3d.ROUTE()
+ROUTE20.setFromNode("TourTime")
+ROUTE20.setFromField("fraction_changed")
+ROUTE20.setToNode("TourPosition")
+ROUTE20.setToField("set_fraction")
 
-Script18.addField(field21)
-field22 = x3d.field()
-field22.setName("position")
-field22.setAccessType("inputOutput")
-field22.setType("MFVec3d")
-field22.setValue("0.0015708 0 4 0 0.0015708 4")
+Scene8.addChildren(ROUTE20)
+ROUTE21 = x3d.ROUTE()
+ROUTE21.setFromNode("TourPosition")
+ROUTE21.setFromField("geovalue_changed")
+ROUTE21.setToNode("Tour")
+ROUTE21.setToField("set_position")
 
-Script18.addField(field22)
-
-Script18.setSourceCode('''ecmascript:\n"+
-"\n"+
-"               function set_cycle(value) {\n"+
-"                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo\n"+
-"                        var ov = val;\n"+
-"			// Browser.print('old '+ov);\n"+
-"                        do {\n"+
-"                                val = Math.floor(Math.random()*2);\n"+
-"                                var vc = val;\n"+
-"                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);\n"+
-"                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);\n"+
-"			// Browser.println(positions[ov]);\n"+
-"			// Browser.println(positions[vc]);\n"+
-"                        position = new MFVec3d();\n"+
-"                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);\n"+
-"                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\n"+
-"               }''')
-
-Scene8.addChildren(Script18)
-ROUTE23 = x3d.ROUTE()
-ROUTE23.setFromNode("TourTime")
-ROUTE23.setFromField("cycleTime")
-ROUTE23.setToNode("RandomTourTime")
-ROUTE23.setToField("set_cycle")
-
-Scene8.addChildren(ROUTE23)
-ROUTE24 = x3d.ROUTE()
-ROUTE24.setFromNode("RandomTourTime")
-ROUTE24.setFromField("position")
-ROUTE24.setToNode("TourPosition")
-ROUTE24.setToField("keyValue")
-
-Scene8.addChildren(ROUTE24)
-ROUTE25 = x3d.ROUTE()
-ROUTE25.setFromNode("TourTime")
-ROUTE25.setFromField("fraction_changed")
-ROUTE25.setToNode("TourPosition")
-ROUTE25.setToField("set_fraction")
-
-Scene8.addChildren(ROUTE25)
-ROUTE26 = x3d.ROUTE()
-ROUTE26.setFromNode("TourPosition")
-ROUTE26.setFromField("geovalue_changed")
-ROUTE26.setToNode("Tour")
-ROUTE26.setToField("set_position")
-
-Scene8.addChildren(ROUTE26)
+Scene8.addChildren(ROUTE21)
 
 X3D0.setScene(Scene8)
 X3D0.toFileX3D("../data/geobubbles_RoundTrip.x3d")

@@ -52,25 +52,17 @@ public class extrusion {
         .addMeta(new meta().setName("description").setContent("beginnings of a force directed graph in 3D"))
         .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
       .setScene(new Scene()
-        .addChild(new Group()
-          .addChild(new Shape()
+        .addChild(new Group().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+          .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
             .setGeometry(new Extrusion().setDEF("extrusion").setSpine(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f0().getArray())).setCreaseAngle(0.785f).setCrossSection(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f1().getArray())))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}))))
           .addChild(new TimeSensor().setDEF("TourTime").setLoop(true))
-          .addChild(new Script().setDEF("MoveCylinder")
-            .addField(new field().setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType("MFVec3f").setName("spine").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-50 -50 0 50 50 0"))
-            .setSourceCode("ecmascript:\n"+
-"\n"+
-"                function set_cycle(value) {\n"+
-"                        Browser.print(value);\n"+
-"                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\n"+
-"                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
-"		        spine = new MFVec3f([endA, endB]);\n"+
-"                }"))
           .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
-          .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine"))))      ;
+          .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("spine"))
+          .addX3DScript(new X3DScript().setDEF("MoveCylinder")
+            .addField(new field().setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
+            .addField(new field().setType("MFVec3f").setName("spine").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-50 -50 0 50 50 0")))))      ;
     return X3D0;
     }
 protected class MFVec3f0 {

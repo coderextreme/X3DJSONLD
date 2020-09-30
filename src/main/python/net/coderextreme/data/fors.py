@@ -51,6 +51,8 @@ ProtoDeclare9.setProtoInterface(ProtoInterface10)
 ProtoBody12 = x3d.ProtoBody()
 Transform13 = x3d.Transform()
 Transform13.setDEF("transform")
+Transform13.setBboxCenter([0,0,0])
+Transform13.setBboxSize([-1,-1,-1])
 IS14 = x3d.IS()
 connect15 = x3d.connect()
 connect15.setNodeField("translation")
@@ -60,6 +62,8 @@ IS14.addConnect(connect15)
 
 Transform13.setIS(IS14)
 Shape16 = x3d.Shape()
+Shape16.setBboxCenter([0,0,0])
+Shape16.setBboxSize([-1,-1,-1])
 Sphere17 = x3d.Sphere()
 
 Shape16.setGeometry(Sphere17)
@@ -74,7 +78,11 @@ Shape16.setAppearance(Appearance18)
 Transform13.addChildren(Shape16)
 Transform20 = x3d.Transform()
 Transform20.setTranslation([1,0,0])
+Transform20.setBboxCenter([0,0,0])
+Transform20.setBboxSize([-1,-1,-1])
 Shape21 = x3d.Shape()
+Shape21.setBboxCenter([0,0,0])
+Shape21.setBboxSize([-1,-1,-1])
 Text22 = x3d.Text()
 Text22.setString(["Node"])
 FontStyle23 = x3d.FontStyle()
@@ -103,44 +111,36 @@ PositionInterpolator26.setKey([0,1])
 PositionInterpolator26.setKeyValue([0,0,0,0,5,0])
 
 ProtoBody12.addChildren(PositionInterpolator26)
-Script27 = x3d.Script()
-Script27.setDEF("MoveBall")
+X3DScript27 = x3d.X3DScript()
+X3DScript27.setDEF("MoveBall")
 field28 = x3d.field()
 field28.setName("translation")
 field28.setAccessType("inputOutput")
 field28.setType("SFVec3f")
 field28.setValue("50 50 0")
 
-Script27.addField(field28)
+X3DScript27.addField(field28)
 field29 = x3d.field()
 field29.setName("old")
 field29.setAccessType("inputOutput")
 field29.setType("SFVec3f")
 field29.setValue("0 0 0")
 
-Script27.addField(field29)
+X3DScript27.addField(field29)
 field30 = x3d.field()
 field30.setName("set_cycle")
 field30.setAccessType("inputOnly")
 field30.setType("SFTime")
 
-Script27.addField(field30)
+X3DScript27.addField(field30)
 field31 = x3d.field()
 field31.setName("keyValue")
 field31.setAccessType("outputOnly")
 field31.setType("MFVec3f")
 
-Script27.addField(field31)
+X3DScript27.addField(field31)
 
-Script27.setSourceCode('''ecmascript:\n"+
-"					function set_cycle(value) {\n"+
-"                                                old = translation;\n"+
-"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
-"						// Browser.println(translation);\n"+
-"					}''')
-
-ProtoBody12.addChildren(Script27)
+ProtoBody12.addX3DScript(X3DScript27)
 TimeSensor32 = x3d.TimeSensor()
 TimeSensor32.setDEF("nodeClock")
 TimeSensor32.setCycleInterval(3)
@@ -198,6 +198,8 @@ ProtoInterface38.addField(field40)
 ProtoDeclare37.setProtoInterface(ProtoInterface38)
 ProtoBody41 = x3d.ProtoBody()
 Shape42 = x3d.Shape()
+Shape42.setBboxCenter([0,0,0])
+Shape42.setBboxSize([-1,-1,-1])
 Extrusion43 = x3d.Extrusion()
 Extrusion43.setDEF("extrusion")
 Extrusion43.setCreaseAngle(0.785)
@@ -214,27 +216,27 @@ Appearance44.setMaterial(Material45)
 Shape42.setAppearance(Appearance44)
 
 ProtoBody41.addChildren(Shape42)
-Script46 = x3d.Script()
-Script46.setDEF("MoveCylinder")
+X3DScript46 = x3d.X3DScript()
+X3DScript46.setDEF("MoveCylinder")
 field47 = x3d.field()
 field47.setName("spine")
 field47.setAccessType("inputOutput")
 field47.setType("MFVec3f")
 field47.setValue("0 -50 0 0 50 0")
 
-Script46.addField(field47)
+X3DScript46.addField(field47)
 field48 = x3d.field()
 field48.setName("set_endA")
 field48.setAccessType("inputOnly")
 field48.setType("SFVec3f")
 
-Script46.addField(field48)
+X3DScript46.addField(field48)
 field49 = x3d.field()
 field49.setName("set_endB")
 field49.setAccessType("inputOnly")
 field49.setType("SFVec3f")
 
-Script46.addField(field49)
+X3DScript46.addField(field49)
 IS50 = x3d.IS()
 connect51 = x3d.connect()
 connect51.setNodeField("set_endA")
@@ -247,31 +249,9 @@ connect52.setProtoField("set_positionB")
 
 IS50.addConnect(connect52)
 
-Script46.setIS(IS50)
+X3DScript46.setIS(IS50)
 
-Script46.setSourceCode('''ecmascript:\n"+
-"\n"+
-"                function set_endA(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_endB(value) {\n"+
-"		    if (typeof spine === 'undefined') {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_spine(value) {\n"+
-"                    spine = value;\n"+
-"                }''')
-
-ProtoBody41.addChildren(Script46)
+ProtoBody41.addX3DScript(X3DScript46)
 ROUTE53 = x3d.ROUTE()
 ROUTE53.setFromNode("MoveCylinder")
 ROUTE53.setFromField("spine")
@@ -286,6 +266,8 @@ Scene8.addChildren(ProtoDeclare37)
 Transform54 = x3d.Transform()
 Transform54.setDEF("HoldsContent")
 Transform54.setScale([0.1,0.1,0.1])
+Transform54.setBboxCenter([0,0,0])
+Transform54.setBboxSize([-1,-1,-1])
 PlaneSensor55 = x3d.PlaneSensor()
 PlaneSensor55.setDEF("clickGenerator")
 PlaneSensor55.setMinPosition([-50,-50])

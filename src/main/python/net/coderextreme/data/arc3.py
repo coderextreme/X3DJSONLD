@@ -38,11 +38,16 @@ Viewpoint8.setDescription("Only Viewpoint")
 Scene7.addChildren(Viewpoint8)
 Background9 = x3d.Background()
 Background9.setSkyColor([0.4,0.4,0.4])
+Background9.setTransparency(0)
 
 Scene7.addChildren(Background9)
 Transform10 = x3d.Transform()
 Transform10.setDEF("DECLpoint_G1_node")
+Transform10.setBboxCenter([0,0,0])
+Transform10.setBboxSize([-1,-1,-1])
 Shape11 = x3d.Shape()
+Shape11.setBboxCenter([0,0,0])
+Shape11.setBboxSize([-1,-1,-1])
 Sphere12 = x3d.Sphere()
 Sphere12.setRadius(0.1)
 
@@ -62,84 +67,80 @@ PositionInterpolator15.setKey([0,1])
 PositionInterpolator15.setKeyValue([0,0,0,0,5,0])
 
 Transform10.addChildren(PositionInterpolator15)
-Script16 = x3d.Script()
-Script16.setDEF("DECLpoint_G1_MB1")
-field17 = x3d.field()
-field17.setName("translation")
-field17.setAccessType("inputOutput")
-field17.setType("SFVec3f")
-field17.setValue("0 0 0")
+TimeSensor16 = x3d.TimeSensor()
+TimeSensor16.setDEF("DECLpoint_G1_CL1")
+TimeSensor16.setCycleInterval(3)
+TimeSensor16.setLoop(True)
 
-Script16.addField(field17)
-field18 = x3d.field()
-field18.setName("old")
-field18.setAccessType("inputOutput")
-field18.setType("SFVec3f")
-field18.setValue("0 0 0")
+Transform10.addChildren(TimeSensor16)
+ROUTE17 = x3d.ROUTE()
+ROUTE17.setFromNode("DECLpoint_G1_CL1")
+ROUTE17.setFromField("cycleTime")
+ROUTE17.setToNode("DECLpoint_G1_MB1")
+ROUTE17.setToField("set_location")
 
-Script16.addField(field18)
-field19 = x3d.field()
-field19.setName("set_location")
-field19.setAccessType("inputOnly")
-field19.setType("SFTime")
+Transform10.addChildren(ROUTE17)
+ROUTE18 = x3d.ROUTE()
+ROUTE18.setFromNode("DECLpoint_G1_CL1")
+ROUTE18.setFromField("fraction_changed")
+ROUTE18.setToNode("DECLpoint_G1_PI1")
+ROUTE18.setToField("set_fraction")
 
-Script16.addField(field19)
-field20 = x3d.field()
-field20.setName("keyValue")
-field20.setAccessType("inputOutput")
-field20.setType("MFVec3f")
-field20.setValue("0 0 0 0 5 0")
+Transform10.addChildren(ROUTE18)
+ROUTE19 = x3d.ROUTE()
+ROUTE19.setFromNode("DECLpoint_G1_MB1")
+ROUTE19.setFromField("keyValue")
+ROUTE19.setToNode("DECLpoint_G1_PI1")
+ROUTE19.setToField("keyValue")
 
-Script16.addField(field20)
+Transform10.addChildren(ROUTE19)
+ROUTE20 = x3d.ROUTE()
+ROUTE20.setFromNode("DECLpoint_G1_PI1")
+ROUTE20.setFromField("value_changed")
+ROUTE20.setToNode("DECLpoint_G1_node")
+ROUTE20.setToField("set_translation")
 
-Script16.setSourceCode('''ecmascript:\n"+
-"		function set_location(value) {\n"+
-"                    old = translation;\n"+
-"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f([old, translation]);\n"+
-"		    // Browser.println(keyValue);\n"+
-"		}''')
+Transform10.addChildren(ROUTE20)
+X3DScript21 = x3d.X3DScript()
+X3DScript21.setDEF("DECLpoint_G1_MB1")
+field22 = x3d.field()
+field22.setName("translation")
+field22.setAccessType("inputOutput")
+field22.setType("SFVec3f")
+field22.setValue("0 0 0")
 
-Transform10.addChildren(Script16)
-TimeSensor21 = x3d.TimeSensor()
-TimeSensor21.setDEF("DECLpoint_G1_CL1")
-TimeSensor21.setCycleInterval(3)
-TimeSensor21.setLoop(True)
+X3DScript21.addField(field22)
+field23 = x3d.field()
+field23.setName("old")
+field23.setAccessType("inputOutput")
+field23.setType("SFVec3f")
+field23.setValue("0 0 0")
 
-Transform10.addChildren(TimeSensor21)
-ROUTE22 = x3d.ROUTE()
-ROUTE22.setFromNode("DECLpoint_G1_CL1")
-ROUTE22.setFromField("cycleTime")
-ROUTE22.setToNode("DECLpoint_G1_MB1")
-ROUTE22.setToField("set_location")
+X3DScript21.addField(field23)
+field24 = x3d.field()
+field24.setName("set_location")
+field24.setAccessType("inputOnly")
+field24.setType("SFTime")
 
-Transform10.addChildren(ROUTE22)
-ROUTE23 = x3d.ROUTE()
-ROUTE23.setFromNode("DECLpoint_G1_CL1")
-ROUTE23.setFromField("fraction_changed")
-ROUTE23.setToNode("DECLpoint_G1_PI1")
-ROUTE23.setToField("set_fraction")
+X3DScript21.addField(field24)
+field25 = x3d.field()
+field25.setName("keyValue")
+field25.setAccessType("inputOutput")
+field25.setType("MFVec3f")
+field25.setValue("0 0 0 0 5 0")
 
-Transform10.addChildren(ROUTE23)
-ROUTE24 = x3d.ROUTE()
-ROUTE24.setFromNode("DECLpoint_G1_MB1")
-ROUTE24.setFromField("keyValue")
-ROUTE24.setToNode("DECLpoint_G1_PI1")
-ROUTE24.setToField("keyValue")
+X3DScript21.addField(field25)
 
-Transform10.addChildren(ROUTE24)
-ROUTE25 = x3d.ROUTE()
-ROUTE25.setFromNode("DECLpoint_G1_PI1")
-ROUTE25.setFromField("value_changed")
-ROUTE25.setToNode("DECLpoint_G1_node")
-ROUTE25.setToField("set_translation")
-
-Transform10.addChildren(ROUTE25)
+Transform10.addX3DScript(X3DScript21)
 
 Scene7.addChildren(Transform10)
 Transform26 = x3d.Transform()
 Transform26.setDEF("DECLpoint_G2_node")
+Transform26.setBboxCenter([0,0,0])
+Transform26.setBboxSize([-1,-1,-1])
 Shape27 = x3d.Shape()
+Shape27.setBboxCenter([0,0,0])
+Shape27.setBboxSize([-1,-1,-1])
 Sphere28 = x3d.Sphere()
 Sphere28.setRadius(0.1)
 
@@ -159,87 +160,87 @@ PositionInterpolator31.setKey([0,1])
 PositionInterpolator31.setKeyValue([0,0,0,0,5,0])
 
 Transform26.addChildren(PositionInterpolator31)
-Script32 = x3d.Script()
-Script32.setDEF("DECLpoint_G2_MB1")
-field33 = x3d.field()
-field33.setName("translation")
-field33.setAccessType("inputOutput")
-field33.setType("SFVec3f")
-field33.setValue("0 0 0")
+TimeSensor32 = x3d.TimeSensor()
+TimeSensor32.setDEF("DECLpoint_G2_CL1")
+TimeSensor32.setCycleInterval(3)
+TimeSensor32.setLoop(True)
 
-Script32.addField(field33)
-field34 = x3d.field()
-field34.setName("old")
-field34.setAccessType("inputOutput")
-field34.setType("SFVec3f")
-field34.setValue("0 0 0")
+Transform26.addChildren(TimeSensor32)
+ROUTE33 = x3d.ROUTE()
+ROUTE33.setFromNode("DECLpoint_G2_CL1")
+ROUTE33.setFromField("cycleTime")
+ROUTE33.setToNode("DECLpoint_G2_MB1")
+ROUTE33.setToField("set_location")
 
-Script32.addField(field34)
-field35 = x3d.field()
-field35.setName("set_location")
-field35.setAccessType("inputOnly")
-field35.setType("SFTime")
+Transform26.addChildren(ROUTE33)
+ROUTE34 = x3d.ROUTE()
+ROUTE34.setFromNode("DECLpoint_G2_CL1")
+ROUTE34.setFromField("fraction_changed")
+ROUTE34.setToNode("DECLpoint_G2_PI1")
+ROUTE34.setToField("set_fraction")
 
-Script32.addField(field35)
-field36 = x3d.field()
-field36.setName("keyValue")
-field36.setAccessType("inputOutput")
-field36.setType("MFVec3f")
-field36.setValue("0 0 0 0 5 0")
+Transform26.addChildren(ROUTE34)
+ROUTE35 = x3d.ROUTE()
+ROUTE35.setFromNode("DECLpoint_G2_MB1")
+ROUTE35.setFromField("keyValue")
+ROUTE35.setToNode("DECLpoint_G2_PI1")
+ROUTE35.setToField("keyValue")
 
-Script32.addField(field36)
+Transform26.addChildren(ROUTE35)
+ROUTE36 = x3d.ROUTE()
+ROUTE36.setFromNode("DECLpoint_G2_PI1")
+ROUTE36.setFromField("value_changed")
+ROUTE36.setToNode("DECLpoint_G2_node")
+ROUTE36.setToField("set_translation")
 
-Script32.setSourceCode('''ecmascript:\n"+
-"		function set_location(value) {\n"+
-"                    old = translation;\n"+
-"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f([old, translation]);\n"+
-"		    // Browser.println(keyValue);\n"+
-"		}''')
+Transform26.addChildren(ROUTE36)
+X3DScript37 = x3d.X3DScript()
+X3DScript37.setDEF("DECLpoint_G2_MB1")
+field38 = x3d.field()
+field38.setName("translation")
+field38.setAccessType("inputOutput")
+field38.setType("SFVec3f")
+field38.setValue("0 0 0")
 
-Transform26.addChildren(Script32)
-TimeSensor37 = x3d.TimeSensor()
-TimeSensor37.setDEF("DECLpoint_G2_CL1")
-TimeSensor37.setCycleInterval(3)
-TimeSensor37.setLoop(True)
+X3DScript37.addField(field38)
+field39 = x3d.field()
+field39.setName("old")
+field39.setAccessType("inputOutput")
+field39.setType("SFVec3f")
+field39.setValue("0 0 0")
 
-Transform26.addChildren(TimeSensor37)
-ROUTE38 = x3d.ROUTE()
-ROUTE38.setFromNode("DECLpoint_G2_CL1")
-ROUTE38.setFromField("cycleTime")
-ROUTE38.setToNode("DECLpoint_G2_MB1")
-ROUTE38.setToField("set_location")
+X3DScript37.addField(field39)
+field40 = x3d.field()
+field40.setName("set_location")
+field40.setAccessType("inputOnly")
+field40.setType("SFTime")
 
-Transform26.addChildren(ROUTE38)
-ROUTE39 = x3d.ROUTE()
-ROUTE39.setFromNode("DECLpoint_G2_CL1")
-ROUTE39.setFromField("fraction_changed")
-ROUTE39.setToNode("DECLpoint_G2_PI1")
-ROUTE39.setToField("set_fraction")
+X3DScript37.addField(field40)
+field41 = x3d.field()
+field41.setName("keyValue")
+field41.setAccessType("inputOutput")
+field41.setType("MFVec3f")
+field41.setValue("0 0 0 0 5 0")
 
-Transform26.addChildren(ROUTE39)
-ROUTE40 = x3d.ROUTE()
-ROUTE40.setFromNode("DECLpoint_G2_MB1")
-ROUTE40.setFromField("keyValue")
-ROUTE40.setToNode("DECLpoint_G2_PI1")
-ROUTE40.setToField("keyValue")
+X3DScript37.addField(field41)
 
-Transform26.addChildren(ROUTE40)
-ROUTE41 = x3d.ROUTE()
-ROUTE41.setFromNode("DECLpoint_G2_PI1")
-ROUTE41.setFromField("value_changed")
-ROUTE41.setToNode("DECLpoint_G2_node")
-ROUTE41.setToField("set_translation")
-
-Transform26.addChildren(ROUTE41)
+Transform26.addX3DScript(X3DScript37)
 
 Scene7.addChildren(Transform26)
 Group42 = x3d.Group()
+Group42.setBboxCenter([0,0,0])
+Group42.setBboxSize([-1,-1,-1])
 Transform43 = x3d.Transform()
 Transform43.setDEF("DECLx3dconnector_connector1_trans")
+Transform43.setBboxCenter([0,0,0])
+Transform43.setBboxSize([-1,-1,-1])
 Transform44 = x3d.Transform()
 Transform44.setDEF("DECLx3dconnector_connector1_rotscale")
+Transform44.setBboxCenter([0,0,0])
+Transform44.setBboxSize([-1,-1,-1])
 Shape45 = x3d.Shape()
+Shape45.setBboxCenter([0,0,0])
+Shape45.setBboxSize([-1,-1,-1])
 Appearance46 = x3d.Appearance()
 Material47 = x3d.Material()
 Material47.setDiffuseColor([0.2,0.7,0.7])
@@ -258,8 +259,8 @@ Transform44.addChildren(Shape45)
 Transform43.addChildren(Transform44)
 
 Group42.addChildren(Transform43)
-Script49 = x3d.Script()
-Script49.setDEF("DECLx3dconnector_connector1_S1")
+X3DScript49 = x3d.X3DScript()
+X3DScript49.setDEF("DECLx3dconnector_connector1_S1")
 field50 = x3d.field()
 field50.setName("startnode")
 field50.setAccessType("initializeOnly")
@@ -269,7 +270,7 @@ Group51.setUSE("DECLpoint_G1_node")
 
 field50.addChildren(Group51)
 
-Script49.addField(field50)
+X3DScript49.addField(field50)
 field52 = x3d.field()
 field52.setName("endnode")
 field52.setAccessType("initializeOnly")
@@ -279,7 +280,7 @@ Group53.setUSE("DECLpoint_G2_node")
 
 field52.addChildren(Group53)
 
-Script49.addField(field52)
+X3DScript49.addField(field52)
 field54 = x3d.field()
 field54.setName("position")
 field54.setAccessType("inputOutput")
@@ -289,7 +290,7 @@ Transform55.setUSE("DECLx3dconnector_connector1_trans")
 
 field54.addChildren(Transform55)
 
-Script49.addField(field54)
+X3DScript49.addField(field54)
 field56 = x3d.field()
 field56.setName("rotscale")
 field56.setAccessType("inputOutput")
@@ -299,68 +300,21 @@ Transform57.setUSE("DECLx3dconnector_connector1_rotscale")
 
 field56.addChildren(Transform57)
 
-Script49.addField(field56)
+X3DScript49.addField(field56)
 field58 = x3d.field()
 field58.setName("set_startpoint")
 field58.setAccessType("inputOnly")
 field58.setType("SFVec3f")
 
-Script49.addField(field58)
+X3DScript49.addField(field58)
 field59 = x3d.field()
 field59.setName("set_endpoint")
 field59.setAccessType("inputOnly")
 field59.setType("SFVec3f")
 
-Script49.addField(field59)
+X3DScript49.addField(field59)
 
-Script49.setSourceCode('''ecmascript:\n"+
-"        function recompute(startpoint,endpoint){\n"+
-"	    if (typeof endpoint === 'undefined') {\n"+
-"		return;\n"+
-"	    }\n"+
-"            var dif = endpoint.subtract(startpoint);\n"+
-"            var dist = dif.length()*0.5;\n"+
-"            var dif2 = dif.multiply(0.5);\n"+
-"            var norm = dif.normalize();\n"+
-"            var transl = startpoint.add(dif2);\n"+
-"	    if (typeof Quaternion !== 'undefined') {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
-"		    };\n"+
-"	    } else if (typeof SFRotation !== 'undefined') {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl,\n"+
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
-"		    };\n"+
-"	    } else {\n"+
-"		    return {\n"+
-"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
-"			    translation : transl\n"+
-"		    };\n"+
-"	    }\n"+
-"	}\n"+
-"	function recompute_and_route(startpoint, endpoint) {\n"+
-"	      var trafo = recompute(startpoint, endpoint);\n"+
-"	      if (trafo) {\n"+
-"		      position.translation = trafo.translation;\n"+
-"		      rotscale.rotation = trafo.rotation;\n"+
-"		      rotscale.scale = trafo.scale;\n"+
-"	      }\n"+
-"	}\n"+
-"        function initialize(){\n"+
-"            recompute_and_route(startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_startpoint(val,t){\n"+
-"            recompute_and_route(val,endnode.translation);\n"+
-"        }\n"+
-"        function set_endpoint(val,t){\n"+
-"            recompute_and_route(startnode.translation,val);\n"+
-"        }''')
-
-Group42.addChildren(Script49)
+Group42.addX3DScript(X3DScript49)
 
 Scene7.addChildren(Group42)
 ROUTE60 = x3d.ROUTE()

@@ -35,7 +35,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild(new Viewpoint().setDescription("Right View").setOrientation(Java.to([0,1,0,1.57], Java.type("float[]"))).setPosition(Java.to([10,0,0], Java.type("float[]"))))
         .addChild(new Viewpoint().setDescription("Left View").setOrientation(Java.to([0,1,0,-1.57], Java.type("float[]"))).setPosition(Java.to([-10,0,0], Java.type("float[]"))))
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))
-        .addChild(new Shape()
+        .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
           .setAppearance(new Appearance()
             .setMaterial(new Material())
             .setTexture(new PixelTexture().setImage(Java.to([2,2,4,4278190335,16711935,4294967295,4294902015], Java.type("int[]")))))

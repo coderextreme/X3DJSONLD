@@ -22,12 +22,12 @@ var ProtoInstance3 = null;
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
             .addField(new field().setType(field.TYPE_MFNODE).setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape()
+              .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(Java.to([1,1,1], Java.type("float[]"))))))))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform()
+            .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("xtranslation"))
                 .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
@@ -35,12 +35,12 @@ var ProtoInstance3 = null;
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_SFVEC3F).setName("ytranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
             .addField(new field().setType(field.TYPE_MFNODE).setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape()
+              .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
                 .setGeometry(new Cylinder())
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(Java.to([1,1,1], Java.type("float[]"))))))))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform()
+            .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("ytranslation")))
               .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")
@@ -53,7 +53,7 @@ var ProtoInstance3 = null;
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(ProtoInstance3 = new ProtoInstance().setName("three").setDEF("threepi"))
-        .addChild(new Transform().setTranslation(Java.to([0,2,0], Java.type("float[]")))
+        .addChild(new Transform().setTranslation(Java.to([0,2,0], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
           .addChild(new Shape().setUSE("box"))))      ;
 ProtoInstance0
                 .addFieldValue(new fieldValue().setName("xtranslation").setValue("0 0 0"));
@@ -65,8 +65,8 @@ ProtoInstance3
           .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 0 0"));
 ProtoInstance3
           .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Shape().setDEF("box")
-              .setGeometry(new Box().setSize(Java.to([1,1,1], Java.type("float[]"))))
+            .addChild(new Shape().setDEF("box").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+              .setGeometry(new Box().setSize(Java.to([1,1,1], Java.type("float[]"))).setSolid(true))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(Java.to([0,1,0], Java.type("float[]")))))));
     X3D0.toFileX3D("../data/BoxEm.new.x3d");

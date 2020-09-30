@@ -4290,6 +4290,10 @@
             "-bottom": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "-front": {
               "$ref": "#/definitions/-X3DTexture2DNodeSFNode"
             },
@@ -4441,6 +4445,10 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -6662,7 +6670,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@xDimension": {
               "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
@@ -8178,6 +8186,10 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
@@ -8384,7 +8396,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@xDimension": {
               "pattern": "^(\\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\\s)*$",
@@ -11651,7 +11663,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@texCoordIndex": {
               "pattern": "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
@@ -11871,7 +11883,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -11978,7 +11990,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -12085,7 +12097,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -12192,7 +12204,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -13790,6 +13802,13 @@
               "default": 0.2,
               "type": "number"
             },
+            "-ambientTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@ambientTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "@diffuseColor": {
               "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
               "maximum": 1,
@@ -13803,6 +13822,13 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "-diffuseTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@diffuseTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "@emissiveColor": {
               "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
@@ -13818,8 +13844,49 @@
                 "type": "number"
               }
             },
+            "-emissiveTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@emissiveTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@normalScale": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "-normalTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@normalTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@occlusionStrength": {
+              "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "-occlusionTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@occlusionTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "@shininess": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
@@ -13827,6 +13894,13 @@
               "minimum": 0,
               "default": 0.2,
               "type": "number"
+            },
+            "-shininessTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@shininessTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "@specularColor": {
               "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
@@ -13841,6 +13915,13 @@
                 "minimum": 0,
                 "type": "number"
               }
+            },
+            "-specularTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@specularTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "@transparency": {
               "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
@@ -14805,6 +14886,10 @@
                 "type": "number"
               }
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "@function": {
               "pattern": "^(\\s|\\S)*$",
               "type": "array",
@@ -14884,7 +14969,7 @@
               }
             },
             "-texture": {
-              "$ref": "#/definitions/-X3DTextureNodeMFNode"
+              "$ref": "#/definitions/-X3DSingleTextureNodeMFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -14940,7 +15025,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeMFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeMFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -14996,7 +15081,7 @@
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
             "-textureTransform": {
-              "$ref": "#/definitions/-X3DTextureTransformNodeMFNode"
+              "$ref": "#/definitions/-X3DSingleTextureTransformNodeMFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -15643,7 +15728,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNode-NurbsTextureCoordinateSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-NurbsTextureCoordinateSFNode"
             },
             "@uClosed": {
               "pattern": "^\\s*(true|false)\\s*$",
@@ -16327,7 +16412,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNode-NurbsTextureCoordinateSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-NurbsTextureCoordinateSFNode"
             },
             "-trimmingContour": {
               "$ref": "#/definitions/-Contour2DMFNode"
@@ -17313,6 +17398,156 @@
         }
       ]
     },
+    "PhysicalMaterial": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@baseColor": {
+              "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 1,
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "-baseTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@baseTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@emissiveColor": {
+              "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "-emissiveTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@emissiveTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@metallic": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "-metallicRoughnessTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@metallicRoughnessTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@normalScale": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "-normalTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@normalTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@occlusionStrength": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "-occlusionTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@occlusionTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@roughness": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "@transparency": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "type": "number"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "PickableGroup": {
       "type": "object",
       "oneOf": [
@@ -17458,6 +17693,10 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "@image": {
               "pattern": "^\\s*([+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?\\s+){2}[+]?[0-4](\\s+(0x[0-9a-fA-F]{1,16}|[+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?))*\\s*$",
               "type": "array",
@@ -17531,6 +17770,10 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@description": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "@image": {
               "pattern": "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
@@ -19708,7 +19951,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -20918,103 +21161,6 @@
               "pattern": "^\\s*(true|false)\\s*$",
               "default": true,
               "type": "boolean"
-            },
-            "@DEF": {
-              "pattern": "^(\\s|\\S)*$",
-              "type": "string"
-            },
-            "@class": {
-              "pattern": "^(\\s|\\S)*$",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "Script": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "#sourceText": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "string"
-              }
-            },
-            "field": {
-              "$ref": "#/definitions/field"
-            },
-            "-children": {
-              "$ref": "#/definitions/-childrenStatements"
-            },
-            "IS": {
-              "$ref": "#/definitions/IS"
-            },
-            "@description": {
-              "pattern": "^(\\s|\\S)*$",
-              "type": "string"
-            },
-            "@directOutput": {
-              "pattern": "^\\s*(true|false)\\s*$",
-              "default": false,
-              "type": "boolean"
-            },
-            "@load": {
-              "pattern": "^\\s*(true|false)\\s*$",
-              "default": true,
-              "type": "boolean"
-            },
-            "-metadata": {
-              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
-            },
-            "@mustEvaluate": {
-              "pattern": "^\\s*(true|false)\\s*$",
-              "default": false,
-              "type": "boolean"
-            },
-            "@refresh": {
-              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
-              "minimum": 0,
-              "default": 0,
-              "type": "number"
-            },
-            "@url": {
-              "pattern": "^(\\s|\\S)*$",
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "format": "uri-reference",
-                "type": "string"
-              }
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -23799,6 +23945,10 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@mapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
@@ -23859,6 +24009,10 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@mapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -23921,6 +24075,10 @@
             "IS": {
               "$ref": "#/definitions/IS"
             },
+            "@mapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
             },
@@ -23981,6 +24139,10 @@
             },
             "IS": {
               "$ref": "#/definitions/IS"
+            },
+            "@mapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
             },
             "-metadata": {
               "$ref": "#/definitions/-X3DMetadataObjectSFNode"
@@ -25601,7 +25763,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -25692,7 +25854,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -25857,7 +26019,7 @@
               }
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -26208,6 +26370,100 @@
               "maximum": 1,
               "minimum": 0,
               "default": 0.8,
+              "type": "number"
+            },
+            "@DEF": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@class": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "UnlitMaterial": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@USE": {
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/definitions/-childrenStatements"
+            },
+            "IS": {
+              "$ref": "#/definitions/IS"
+            },
+            "@emissiveColor": {
+              "pattern": "^(\\s)*(([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)+){2}([+]?((0(\\.[0-9]*)?|\\.[0-9]+)|1(\\.0*)?)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "-emissiveTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@emissiveTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "-metadata": {
+              "$ref": "#/definitions/-X3DMetadataObjectSFNode"
+            },
+            "@normalScale": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "minimum": 0,
+              "default": 1,
+              "type": "number"
+            },
+            "-normalTexture": {
+              "$ref": "#/definitions/-X3DSingleTextureNodeSFNode"
+            },
+            "@normalTextureMapping": {
+              "pattern": "^(\\s|\\S)*$",
+              "type": "string"
+            },
+            "@transparency": {
+              "pattern": "^(\\s)*([+-]?((0|[1-9][0-9]*)(\\.[0-9]*)?|\\.[0-9]+)([Ee][+-]?[0-9]+)?)(\\s)*$",
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
               "type": "number"
             },
             "@DEF": {
@@ -28021,9 +28277,6 @@
           "CADFace": {
             "$ref": "#/definitions/CADFace"
           },
-          "Script": {
-            "$ref": "#/definitions/Script"
-          },
           "GeoProximitySensor": {
             "$ref": "#/definitions/GeoProximitySensor"
           },
@@ -28246,6 +28499,12 @@
       "properties": {
         "Material": {
           "$ref": "#/definitions/Material"
+        },
+        "PhysicalMaterial": {
+          "$ref": "#/definitions/PhysicalMaterial"
+        },
+        "UnlitMaterial": {
+          "$ref": "#/definitions/UnlitMaterial"
         },
         "TwoSidedMaterial": {
           "$ref": "#/definitions/TwoSidedMaterial"
@@ -28816,9 +29075,6 @@
         "CADFace": {
           "$ref": "#/definitions/CADFace"
         },
-        "Script": {
-          "$ref": "#/definitions/Script"
-        },
         "GeoProximitySensor": {
           "$ref": "#/definitions/GeoProximitySensor"
         },
@@ -29266,12 +29522,9 @@
       },
       "additionalProperties": false
     },
-    "-X3DTextureCoordinateNodeSFNode": {
+    "-X3DSingleTextureCoordinateNodeSFNode": {
       "type": "object",
       "properties": {
-        "MultiTextureCoordinate": {
-          "$ref": "#/definitions/MultiTextureCoordinate"
-        },
         "TextureCoordinate": {
           "$ref": "#/definitions/TextureCoordinate"
         },
@@ -29313,6 +29566,12 @@
           },
           "Material": {
             "$ref": "#/definitions/Material"
+          },
+          "PhysicalMaterial": {
+            "$ref": "#/definitions/PhysicalMaterial"
+          },
+          "UnlitMaterial": {
+            "$ref": "#/definitions/UnlitMaterial"
           },
           "TwoSidedMaterial": {
             "$ref": "#/definitions/TwoSidedMaterial"
@@ -29584,9 +29843,6 @@
           "CADFace": {
             "$ref": "#/definitions/CADFace"
           },
-          "Script": {
-            "$ref": "#/definitions/Script"
-          },
           "GeoProximitySensor": {
             "$ref": "#/definitions/GeoProximitySensor"
           },
@@ -29770,9 +30026,6 @@
           "Normal": {
             "$ref": "#/definitions/Normal"
           },
-          "MultiTextureCoordinate": {
-            "$ref": "#/definitions/MultiTextureCoordinate"
-          },
           "TextureCoordinate": {
             "$ref": "#/definitions/TextureCoordinate"
           },
@@ -29784,6 +30037,9 @@
           },
           "TextureCoordinateGenerator": {
             "$ref": "#/definitions/TextureCoordinateGenerator"
+          },
+          "MultiTextureCoordinate": {
+            "$ref": "#/definitions/MultiTextureCoordinate"
           },
           "FloatVertexAttribute": {
             "$ref": "#/definitions/FloatVertexAttribute"
@@ -30421,9 +30677,6 @@
           "#comment": {
             "type": "string"
           },
-          "Script": {
-            "$ref": "#/definitions/Script"
-          },
           "Anchor": {
             "$ref": "#/definitions/Anchor"
           },
@@ -30467,6 +30720,24 @@
         "additionalProperties": false
       }
     },
+    "-X3DSingleTextureNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "ImageTexture": {
+          "$ref": "#/definitions/ImageTexture"
+        },
+        "MovieTexture": {
+          "$ref": "#/definitions/MovieTexture"
+        },
+        "PixelTexture": {
+          "$ref": "#/definitions/PixelTexture"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
     "-X3DMetadataObjectMFNode": {
       "type": "array",
       "minItems": 1,
@@ -30501,7 +30772,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DTextureNodeMFNode": {
+    "-X3DSingleTextureNodeMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -30509,15 +30780,6 @@
         "properties": {
           "#comment": {
             "type": "string"
-          },
-          "ComposedCubeMapTexture": {
-            "$ref": "#/definitions/ComposedCubeMapTexture"
-          },
-          "GeneratedCubeMapTexture": {
-            "$ref": "#/definitions/GeneratedCubeMapTexture"
-          },
-          "ImageCubeMapTexture": {
-            "$ref": "#/definitions/ImageCubeMapTexture"
           },
           "ImageTexture": {
             "$ref": "#/definitions/ImageTexture"
@@ -30528,18 +30790,6 @@
           "PixelTexture": {
             "$ref": "#/definitions/PixelTexture"
           },
-          "ComposedTexture3D": {
-            "$ref": "#/definitions/ComposedTexture3D"
-          },
-          "ImageTexture3D": {
-            "$ref": "#/definitions/ImageTexture3D"
-          },
-          "PixelTexture3D": {
-            "$ref": "#/definitions/PixelTexture3D"
-          },
-          "MultiTexture": {
-            "$ref": "#/definitions/MultiTexture"
-          },
           "ProtoInstance": {
             "$ref": "#/definitions/ProtoInstance"
           }
@@ -30547,7 +30797,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DTextureCoordinateNodeMFNode": {
+    "-X3DSingleTextureCoordinateNodeMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -30555,9 +30805,6 @@
         "properties": {
           "#comment": {
             "type": "string"
-          },
-          "MultiTextureCoordinate": {
-            "$ref": "#/definitions/MultiTextureCoordinate"
           },
           "TextureCoordinate": {
             "$ref": "#/definitions/TextureCoordinate"
@@ -30578,7 +30825,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DTextureTransformNodeMFNode": {
+    "-X3DSingleTextureTransformNodeMFNode": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -30587,18 +30834,6 @@
           "#comment": {
             "type": "string"
           },
-          "MultiTextureTransform": {
-            "$ref": "#/definitions/MultiTextureTransform"
-          },
-          "TextureTransform": {
-            "$ref": "#/definitions/TextureTransform"
-          },
-          "TextureTransform3D": {
-            "$ref": "#/definitions/TextureTransform3D"
-          },
-          "TextureTransformMatrix3D": {
-            "$ref": "#/definitions/TextureTransformMatrix3D"
-          },
           "ProtoInstance": {
             "$ref": "#/definitions/ProtoInstance"
           }
@@ -30606,12 +30841,9 @@
         "additionalProperties": false
       }
     },
-    "-X3DTextureCoordinateNode-NurbsTextureCoordinateSFNode": {
+    "-X3DSingleTextureCoordinateNode-NurbsTextureCoordinateSFNode": {
       "type": "object",
       "properties": {
-        "MultiTextureCoordinate": {
-          "$ref": "#/definitions/MultiTextureCoordinate"
-        },
         "TextureCoordinate": {
           "$ref": "#/definitions/TextureCoordinate"
         },
@@ -31296,9 +31528,6 @@
           },
           "CADFace": {
             "$ref": "#/definitions/CADFace"
-          },
-          "Script": {
-            "$ref": "#/definitions/Script"
           },
           "GeoProximitySensor": {
             "$ref": "#/definitions/GeoProximitySensor"

@@ -88,9 +88,12 @@ Viewpoint18.setDescription("Hello MFString syntax")
 Scene17.addChildren(Viewpoint18)
 Background19 = x3d.Background()
 Background19.setSkyColor([0.6,1,0.8])
+Background19.setTransparency(0)
 
 Scene17.addChildren(Background19)
 Shape20 = x3d.Shape()
+Shape20.setBboxCenter([0,0,0])
+Shape20.setBboxSize([-1,-1,-1])
 Text21 = x3d.Text()
 Text21.setString(["One, Two, Three","","He said, \"Immel did it!\""])
 #alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'

@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2020-07-05-07:00 20:39:13.985-07:00 -->
+<!-- Generated 2020-09-28-07:00 13:15:10.675-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -10,7 +10,7 @@
       <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
       <SimpleType name="accessTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a Script node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively. Bounded, no additional values are allowed."
+                  appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a X3DScript node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#FieldSemantics">
          <enumeration value="initializeOnly"
                       appinfo="A field with accessType initializeOnly can be initialized, but cannot send or receive events."/>
@@ -86,7 +86,7 @@
                       appinfo="The Environment Sensor nodes emit events indicating activity in the scene environment, usually based on interactions between the viewer and the world."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/envsensor.html"/>
          <enumeration value="EventUtilities"
-                      appinfo="The Event Utility nodes provide the capability to filter, trigger, convert, or sequence numerous event-types for common interactive applications without the use of a Script node."
+                      appinfo="The Event Utility nodes provide the capability to filter, trigger, convert, or sequence numerous event-types for common interactive applications without the use of a X3DScript node."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/utils.html"/>
          <enumeration value="Followers"
                       appinfo="The Follower nodes (Chasers and Dampers) support dynamic creation of smooth parameter transitions at run time."
@@ -149,7 +149,7 @@
                       appinfo="The Rigid Body Physics component describes how to model rigid bodies and their interactions through the application of basic physics principles to effect motion."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html"/>
          <enumeration value="Scripting"
-                      appinfo="The Script component describes how Script nodes are used to effect changes in X3D worlds."
+                      appinfo="The X3DScript component describes how X3DScript nodes are used to effect changes in X3D worlds."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html"/>
          <enumeration value="Shaders"
                       appinfo="The programmable shaders component describes how programmable shaders are specified and how they affect the visual appearance of geometry."
@@ -321,7 +321,7 @@
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DUrlObject"
                   baseType="xs:NMTOKEN"
-                  appinfo="containerFieldChoicesX3DUrlObject lists the allowed containerField enumeration values for Anchor, GeoMetadata, Inline and Script nodes: default &#34;children&#34; if parent node has abstract type X3DGroupingNode, otherwise &#34;watchList&#34; if parent node is LoadSensor."
+                  appinfo="containerFieldChoicesX3DUrlObject lists the allowed containerField enumeration values for Anchor, GeoMetadata, Inline and X3DScript nodes: default &#34;children&#34; if parent node has abstract type X3DGroupingNode, otherwise &#34;watchList&#34; if parent node is LoadSensor."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="children"
                       appinfo="parent node has abstract type X3DGroupingNode"/>
@@ -3026,6 +3026,7 @@
          <enumeration value="eventNumber"/>
          <enumeration value="eventSiteID"/>
          <enumeration value="fanCount"/>
+         <enumeration value="farClippingPlane"/>
          <enumeration value="fieldOfView"/>
          <enumeration value="filled"/>
          <enumeration value="finiteRotationAxis"/>
@@ -3138,6 +3139,7 @@
          <enumeration value="munitionSiteID"/>
          <enumeration value="munitionQuantity"/>
          <enumeration value="name"/>
+         <enumeration value="nearClippingPlane"/>
          <enumeration value="networkMode"/>
          <enumeration value="normalizeVelocity"/>
          <enumeration value="objectType"/>
@@ -3176,6 +3178,7 @@
          <enumeration value="receivedPower"/>
          <enumeration value="receiverState"/>
          <enumeration value="reference"/>
+         <enumeration value="refresh"/>
          <enumeration value="relativeAntennaLocation"/>
          <enumeration value="retainedOpacity"/>
          <enumeration value="retainUserOffsets"/>
@@ -3272,6 +3275,7 @@
          <enumeration value="vector"/>
          <enumeration value="vertexCount"/>
          <enumeration value="vertices"/>
+         <enumeration value="viewAll"/>
          <enumeration value="visibilityLimit"/>
          <enumeration value="visibilityRange"/>
          <enumeration value="visible"/>
@@ -3751,7 +3755,7 @@
                       appinfo="Interactive Profile adds interaction nodes (Anchor, KeySensor) to the minimum subset of nodes needed to display lightweight compelling content. Allowed X3D nodes for this profile are: Anchor Appearance Background BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineSet Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineSet Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet PositionInterpolator ProximitySensor ScalarInterpolator Shape Sphere SphereSensor SpotLight StringSensor Switch TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor Transform TriangleFanSet TriangleSet TriangleStripSet Viewpoint VisibilitySensor WorldInfo."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/interactive.html"/>
          <enumeration value="Immersive"
-                      appinfo="Immersive Profile equals all of the nodes in the VRML97 Specification, plus various X3D node additions including KeySensor, StringSensor and Scene. Allowed X3D nodes for this profile are: Anchor Appearance AudioClip Background Billboard BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Collision Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Extrusion Fog FontStyle Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFan IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineProperties LineSet LoadSensor LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MovieTexture MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet Polyline2D Polypoint2D PositionInterpolator ProximitySensor Rectangle2D ScalarInterpolator Script Shape Sound Sphere SphereSensor SpotLight StringSensor Switch Text TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor TriangleFanSet TriangleSet TriangleSet2D TriangleStripSet Transform Viewpoint VisibilitySensor WorldInfo."
+                      appinfo="Immersive Profile equals all of the nodes in the VRML97 Specification, plus various X3D node additions including KeySensor, StringSensor and Scene. Allowed X3D nodes for this profile are: Anchor Appearance AudioClip Background Billboard BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Collision Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Extrusion Fog FontStyle Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFan IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineProperties LineSet LoadSensor LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MovieTexture MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet Polyline2D Polypoint2D PositionInterpolator ProximitySensor Rectangle2D ScalarInterpolator X3DScript Shape Sound Sphere SphereSensor SpotLight StringSensor Switch Text TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor TriangleFanSet TriangleSet TriangleSet2D TriangleStripSet Transform Viewpoint VisibilitySensor WorldInfo."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/immersive.html"/>
          <enumeration value="MedicalInterchange"
                       appinfo="The MedicalInterchange profile adds support for VolumeRendering component to Interchange profile. Allowed X3D nodes for this profile are: Anchor Arc2D ArcClose2D Appearance Background Billboard BlendedVolumeStyle BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger BoundaryEnhancementVolumeStyle Box CartoonVolumeStyle Circle2D ClipPlane Collision Color ColorInterpolator ColorRGBA ComposedVolumeStyle CompositeTexture3D Cone Coordinate CoordinateDouble CoordinateInterpolator Cylinder DirectionalLight Disk2D EdgeEnhancementVolumeStyle FillProperties FontStyle Group ImageTexture ImageTexture3D IndexedFaceSet IndexedLineSet IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger IsoSurfaceVolumeData LineProperties LineSet LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OctTree OpacityMapVolumeStyle OrientationInterpolator OrthoViewpoint PixelTexture PixelTexture3D PointSet Polyline2D Polypoint2D PositionInterpolator ProjectionVolumeStyle Rectangle2D ScalarInterpolator SegmentedVolumeData ShadedVolumeStyle Shape SilhouetteEnhancementVolumeStyle Sphere StaticGroup Switch Text TextureCoordinate TextureCoordinate3D TextureCoordinate4D TextureCoordinateGenerator TextureMatrixTransform TextureProperties TextureTransform TextureTransform3D TimeSensor TimeTrigger ToneMappedVolumeStyle Transform TriangleFanSet TriangleSet TriangleStripSet Viewpoint ViewpointGroup VolumeData WorldInfo."
@@ -4418,6 +4422,16 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/networking.html#X3DUrlObject"
                               appinfo="X3DUrlObject indicates that a node has content loaded from a Uniform Resource Locator (URL) and can be tracked via a LoadSensor. Such child nodes have containerField='watchList' to indicate their relationship to the parent LoadSensor node.">
             <componentInfo name="Networking" level="1"/>
+            <field name="description" type="SFString" accessType="inputOutput"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"/>
             <field name="url" type="MFString" accessType="inputOutput">
                <componentInfo name="Networking" level="4"/>
             </field>
@@ -4848,7 +4862,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"/>
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -5080,6 +5094,10 @@
                               appinfo="Base type for all nodes that specify cubic environment map sources for texture images.">
             <componentInfo name="CubeMapTexturing" level="1"/>
             <Inheritance baseType="X3DTextureNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -5962,7 +5980,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode|NurbsTextureCoordinate"/>
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|NurbsTextureCoordinate"/>
             <field name="uClosed"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -6005,6 +6023,64 @@
                    type="MFDouble"
                    accessType="inputOutput"
                    minExclusive="0"/>
+            <field name="DEF"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:ID"/>
+            <field name="USE"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:IDREF"/>
+            <field name="class"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKENS"/>
+            <ContentModel>
+               <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+            </ContentModel>
+         </InterfaceDefinition>
+      </AbstractNodeType>
+      <AbstractNodeType name="X3DOneSidedMaterialNode">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#X3DOneSidedMaterialNode"
+                              appinfo="Base type for material nodes that describe how the shape looks like from one side. A different number of contanied texture nodes are allowed by each of the implementing nodes.">
+            <componentInfo name="Shape" level="4"/>
+            <Inheritance baseType="X3DMaterialNode"/>
+            <field name="emissiveColor"
+                   type="SFColor"
+                   accessType="inputOutput"
+                   default="0 0 0"
+                   minInclusive="0"
+                   maxInclusive="1"/>
+            <field name="emissiveTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
+            <field name="IS"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="IS"
+                   inheritedFrom="X3DNode"/>
+            <field name="metadata"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DMetadataObject"
+                   inheritedFrom="X3DNode"/>
+            <field name="normalScale"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="1"
+                   minInclusive="0">
+               <componentInfo name="Shape" level="2"/>
+            </field>
+            <field name="normalTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -6444,16 +6520,26 @@
             <componentInfo name="Scripting" level="1"/>
             <Inheritance baseType="X3DChildNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="description" type="SFString" accessType="inputOutput"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"/>
             <field name="url" type="MFString" accessType="inputOutput">
                <componentInfo name="Networking" level="4"/>
             </field>
@@ -6676,6 +6762,129 @@
             </ContentModel>
          </InterfaceDefinition>
       </AbstractNodeType>
+      <AbstractNodeType name="X3DSingleTextureCoordinateNode">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#X3DSingleTextureCoordinateNode"
+                              appinfo="Base type for all texture coordinate nodes which specify texture coordinates for a single texture.">
+            <componentInfo name="Texturing" level="1"/>
+            <Inheritance baseType="X3DTextureCoordinateNode"/>
+            <field name="IS"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="IS"
+                   inheritedFrom="X3DNode"/>
+            <field name="mapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
+            <field name="metadata"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DMetadataObject"
+                   inheritedFrom="X3DNode"/>
+            <field name="DEF"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:ID"/>
+            <field name="USE"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:IDREF"/>
+            <field name="class"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKENS"/>
+            <ContentModel>
+               <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+            </ContentModel>
+         </InterfaceDefinition>
+      </AbstractNodeType>
+      <AbstractNodeType name="X3DSingleTextureNode">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#X3DSingleTextureNode"
+                              appinfo="Base type for all texture node types that define a single texture. A single texture can be used to influence a parameter of various material nodes in the Shape component, and it can be a child of MultiTexture.">
+            <componentInfo name="Texturing" level="1"/>
+            <Inheritance baseType="X3DTextureNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
+            <field name="IS"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="IS"
+                   inheritedFrom="X3DNode"/>
+            <field name="metadata"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DMetadataObject"
+                   inheritedFrom="X3DNode"/>
+            <field name="DEF"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:ID"/>
+            <field name="USE"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:IDREF"/>
+            <field name="class"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKENS"/>
+            <ContentModel>
+               <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+            </ContentModel>
+         </InterfaceDefinition>
+      </AbstractNodeType>
+      <AbstractNodeType name="X3DSingleTextureTransformNode">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/texturing.html#X3DSingleTextureTransformNode"
+                              appinfo="Base type for all texture transform nodes which specify texture coordinate transformation for a single texture.">
+            <componentInfo name="Texturing" level="1"/>
+            <Inheritance baseType="X3DTextureTransformNode"/>
+            <field name="IS"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="IS"
+                   inheritedFrom="X3DNode"/>
+            <field name="mapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
+            <field name="metadata"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DMetadataObject"
+                   inheritedFrom="X3DNode"/>
+            <field name="DEF"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:ID"/>
+            <field name="USE"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:IDREF"/>
+            <field name="class"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKENS"/>
+            <ContentModel>
+               <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+            </ContentModel>
+         </InterfaceDefinition>
+      </AbstractNodeType>
       <AbstractNodeType name="X3DSoundNode">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/sound.html#X3DSoundNode"
                               appinfo="Base type for all sound nodes.">
@@ -6718,7 +6927,10 @@
                               appinfo="Nodes implementing X3DSoundSourceNode are allowed as children of Sound node.">
             <componentInfo name="Sound" level="1"/>
             <Inheritance baseType="X3DTimeDependentNode"/>
-            <field name="description" type="SFString" accessType="inputOutput"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTimeDependentNode"/>
             <field name="duration_changed"
                    type="SFTime"
                    accessType="outputOnly"
@@ -6728,6 +6940,10 @@
                    accessType="outputOnly"
                    minInclusive="0"
                    inheritedFrom="X3DTimeDependentNode"/>
+            <field name="enabled"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -6808,7 +7024,11 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#X3DTexture2DNode"
                               appinfo="Base type for all nodes which specify 2D sources for texture images.">
             <componentInfo name="Texturing" level="1"/>
-            <Inheritance baseType="X3DTextureNode"/>
+            <Inheritance baseType="X3DSingleTextureNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -6861,6 +7081,10 @@
                               appinfo="Base type for all nodes that specify 3D sources for texture images.">
             <componentInfo name="Texturing3D" level="1"/>
             <Inheritance baseType="X3DTextureNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -6954,6 +7178,7 @@
                               appinfo="Base type for all nodes which specify sources for texture images.">
             <componentInfo name="Texturing" level="1"/>
             <Inheritance baseType="X3DAppearanceChildNode"/>
+            <field name="description" type="SFString" accessType="inputOutput"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -7028,6 +7253,7 @@
                               appinfo="Base type from which all time-dependent nodes are derived.">
             <componentInfo name="Time" level="1"/>
             <Inheritance baseType="X3DChildNode"/>
+            <field name="description" type="SFString" accessType="inputOutput"/>
             <field name="elapsedTime"
                    type="SFTime"
                    accessType="outputOnly"
@@ -7524,13 +7750,21 @@
                    accessType="inputOutput"
                    acceptableNodeTypes="X3DChildNode"
                    inheritedFrom="X3DGroupingNode"/>
-            <field name="description" type="SFString" accessType="inputOutput"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -7538,6 +7772,12 @@
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
             <field name="parameter" type="MFString" accessType="inputOutput"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="removeChildren"
                    type="MFNode"
                    accessType="inputOnly"
@@ -7798,7 +8038,7 @@
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
-                   inheritedFrom="X3DSoundSourceNode"/>
+                   inheritedFrom="X3DTimeDependentNode"/>
             <field name="duration_changed"
                    type="SFTime"
                    accessType="outputOnly"
@@ -7809,6 +8049,11 @@
                    accessType="outputOnly"
                    minInclusive="0"
                    inheritedFrom="X3DTimeDependentNode"/>
+            <field name="enabled"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DSoundSourceNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -7825,6 +8070,11 @@
                    inheritedFrom="X3DTimeDependentNode">
                <componentInfo name="Time" level="2"/>
             </field>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="loop"
                    type="SFBool"
                    accessType="inputOutput"
@@ -7849,6 +8099,12 @@
                    default="1.0"
                    minExclusive="0"
                    inheritedFrom="X3DSoundSourceNode"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="resumeTime"
                    type="SFTime"
                    accessType="inputOutput"
@@ -9945,6 +10201,10 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DTexture2DNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="front"
                    type="SFNode"
                    accessType="inputOutput"
@@ -10078,6 +10338,10 @@
                               appinfo="ComposedTexture3D defines a 3D image-based texture map as a collection of 2D texture sources at various depths.">
             <componentInfo name="Texturing3D" level="1"/>
             <Inheritance baseType="X3DTexture3DNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -11176,6 +11440,10 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="65535"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="domain"
                    type="SFInt32"
                    accessType="initializeOnly"
@@ -11200,12 +11468,23 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="255"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="specific"
                    type="SFInt32"
                    accessType="initializeOnly"
@@ -11597,7 +11876,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"/>
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"/>
             <field name="xDimension"
                    type="SFInt32"
                    accessType="initializeOnly"
@@ -12564,6 +12843,10 @@
                               appinfo="GeneratedCubeMapTexture is a texture node that defines a cubic environment map that sources its data from internally generated images.">
             <componentInfo name="CubeMapTexturing" level="3"/>
             <Inheritance baseType="X3DEnvironmentTextureNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -12743,7 +13026,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"/>
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"/>
             <field name="xDimension"
                    type="SFInt32"
                    accessType="initializeOnly"
@@ -13008,18 +13291,33 @@
                    type="MFNode"
                    accessType="inputOutput"
                    acceptableNodeTypes="X3DNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="summary" type="MFString" accessType="inputOutput"/>
             <field name="url"
                    type="MFString"
@@ -17210,18 +17508,33 @@
             <componentInfo name="CubeMapTexturing" level="2"/>
             <Inheritance baseType="X3DEnvironmentTextureNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="textureProperties"
                    type="SFNode"
                    accessType="initializeOnly"
@@ -17262,18 +17575,33 @@
             <componentInfo name="Texturing" level="1"/>
             <Inheritance baseType="X3DTexture2DNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="repeatS"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -17325,18 +17653,33 @@
             <componentInfo name="Texturing3D" level="2"/>
             <Inheritance baseType="X3DTexture3DNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="repeatR"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -17504,7 +17847,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"/>
             <field name="texCoordIndex"
                    type="MFInt32"
@@ -17699,7 +18042,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"/>
             <field name="DEF"
                    type="SFString"
@@ -17803,7 +18146,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"/>
             <field name="DEF"
                    type="SFString"
@@ -17907,7 +18250,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"/>
             <field name="DEF"
                    type="SFString"
@@ -18011,7 +18354,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"/>
             <field name="DEF"
                    type="SFString"
@@ -18060,6 +18403,10 @@
                    default="-1 -1 -1"
                    inheritedFrom="X3DBoundedObject"
                    baseType="bboxSizeType"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -18069,15 +18416,20 @@
             <field name="load"
                    type="SFBool"
                    accessType="inputOutput"
-                   default="true">
-               <componentInfo name="Networking" level="3"/>
-            </field>
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="url"
                    type="MFString"
                    accessType="inputOutput"
@@ -19258,7 +19610,7 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shape.html#Material"
                               appinfo="Material specifies surface rendering properties for associated geometry nodes.">
             <componentInfo name="Shape" level="1"/>
-            <Inheritance baseType="X3DMaterialNode"/>
+            <Inheritance baseType="X3DOneSidedMaterialNode"/>
             <field name="ambientIntensity"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -19268,20 +19620,47 @@
                    baseType="intensityType">
                <componentInfo name="Shape" level="2"/>
             </field>
+            <field name="ambientTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="ambientTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
             <field name="diffuseColor"
                    type="SFColor"
                    accessType="inputOutput"
                    default="0.8 0.8 0.8"
                    minInclusive="0"
                    maxInclusive="1"/>
+            <field name="diffuseTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="diffuseTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
             <field name="emissiveColor"
                    type="SFColor"
                    accessType="inputOutput"
                    default="0 0 0"
                    minInclusive="0"
-                   maxInclusive="1">
-               <componentInfo name="Shape" level="2"/>
-            </field>
+                   maxInclusive="1"
+                   inheritedFrom="X3DOneSidedMaterialNode"/>
+            <field name="emissiveTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="emissiveTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DOneSidedMaterialNode"
+                   baseType="xs:NMTOKEN"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -19294,6 +19673,39 @@
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="normalScale"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="1"
+                   minInclusive="0"
+                   inheritedFrom="X3DOneSidedMaterialNode">
+               <componentInfo name="Shape" level="2"/>
+            </field>
+            <field name="normalTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="normalTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DOneSidedMaterialNode"
+                   baseType="xs:NMTOKEN"/>
+            <field name="occlusionStrength"
+                   type="SFColor"
+                   accessType="inputOutput"
+                   default="0 0 0"
+                   minInclusive="0"
+                   maxInclusive="1"/>
+            <field name="occlusionTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="occlusionTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
             <field name="shininess"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -19303,6 +19715,15 @@
                    baseType="intensityType">
                <componentInfo name="Shape" level="2"/>
             </field>
+            <field name="shininessTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="shininessTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
             <field name="specularColor"
                    type="SFColor"
                    accessType="inputOutput"
@@ -19311,6 +19732,15 @@
                    maxInclusive="1">
                <componentInfo name="Shape" level="2"/>
             </field>
+            <field name="specularTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="specularTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
             <field name="transparency"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -19338,6 +19768,10 @@
             <containerField default="material" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+               <NodeContentModel name="ImageTexture"/>
+               <NodeContentModel name="MovieTexture"/>
+               <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
@@ -19867,7 +20301,7 @@
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
-                   inheritedFrom="X3DSoundSourceNode"/>
+                   inheritedFrom="X3DTimeDependentNode"/>
             <field name="duration_changed"
                    type="SFTime"
                    accessType="outputOnly"
@@ -19878,6 +20312,11 @@
                    accessType="outputOnly"
                    minInclusive="0"
                    inheritedFrom="X3DTimeDependentNode"/>
+            <field name="enabled"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DSoundSourceNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -19894,6 +20333,11 @@
                    inheritedFrom="X3DTimeDependentNode">
                <componentInfo name="Time" level="2"/>
             </field>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="loop"
                    type="SFBool"
                    accessType="inputOutput"
@@ -19918,6 +20362,12 @@
                    default="1.0"
                    minExclusive="0"
                    inheritedFrom="X3DSoundSourceNode"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="repeatS"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -19998,6 +20448,10 @@
                    default="1 1 1"
                    minInclusive="0"
                    maxInclusive="1"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="function"
                    type="MFString"
                    accessType="inputOutput"
@@ -20063,7 +20517,7 @@
             <field name="texture"
                    type="MFNode"
                    accessType="inputOutput"
-                   acceptableNodeTypes="X3DTextureNode"/>
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -20109,7 +20563,7 @@
             <field name="texCoord"
                    type="MFNode"
                    accessType="inputOutput"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"/>
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -20154,7 +20608,7 @@
             <field name="textureTransform"
                    type="MFNode"
                    accessType="inputOutput"
-                   acceptableNodeTypes="X3DTextureTransformNode"/>
+                   acceptableNodeTypes="X3DSingleTextureTransformNode"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -20591,7 +21045,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode|NurbsTextureCoordinate"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|NurbsTextureCoordinate"
                    inheritedFrom="X3DNurbsSurfaceGeometryNode"/>
             <field name="uClosed"
                    type="SFBool"
@@ -21110,7 +21564,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode|NurbsTextureCoordinate"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|NurbsTextureCoordinate"
                    inheritedFrom="X3DNurbsSurfaceGeometryNode"/>
             <field name="trimmingContour"
                    type="MFNode"
@@ -21549,6 +22003,10 @@
                    type="SFBool"
                    accessType="inputOnly"
                    inheritedFrom="X3DShaderNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="field"
                    type="MFNode"
                    accessType="inputOutput"
@@ -21577,11 +22035,22 @@
                <enumeration value="GLSL" appinfo="OpenGL shading language (GLSL)."/>
                <enumeration value="HLSL" appinfo="Microsoft High Level Shading Language (HLSL)."/>
             </field>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="url"
                    type="MFString"
                    accessType="inputOutput"
@@ -21659,12 +22128,6 @@
                    type="SFBool"
                    accessType="inputOutput"
                    default="true"/>
-            <field name="geometry"
-                   type="SFNode"
-                   accessType="inputOutput"
-                   default="NULL"
-                   acceptableNodeTypes="X3DGeometryNode"
-                   inheritedFrom="X3DShapeNode"/>
             <field name="geometry"
                    type="SFNode"
                    accessType="inputOutput"
@@ -21780,6 +22243,144 @@
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
+      <ConcreteNode name="PhysicalMaterial">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#PhysicalMaterial"
+                              appinfo="PhysicalMaterial specifies surface rendering properties for associated geometry nodes.">
+            <componentInfo name="Shape" level="2"/>
+            <Inheritance baseType="X3DOneSidedMaterialNode"/>
+            <field name="baseColor"
+                   type="SFColor"
+                   accessType="inputOutput"
+                   default="1 1 1"
+                   minInclusive="0"
+                   maxInclusive="1"/>
+            <field name="baseTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="baseTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
+            <field name="emissiveColor"
+                   type="SFColor"
+                   accessType="inputOutput"
+                   default="0 0 0"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   inheritedFrom="X3DOneSidedMaterialNode"/>
+            <field name="emissiveTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="emissiveTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DOneSidedMaterialNode"
+                   baseType="xs:NMTOKEN"/>
+            <field name="IS"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="IS"
+                   inheritedFrom="X3DNode"/>
+            <field name="metadata"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DMetadataObject"
+                   inheritedFrom="X3DNode"/>
+            <field name="metallic"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="1"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   baseType="intensityType"/>
+            <field name="metallicRoughnessTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="metallicRoughnessTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
+            <field name="normalScale"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="1"
+                   minInclusive="0"
+                   inheritedFrom="X3DOneSidedMaterialNode">
+               <componentInfo name="Shape" level="2"/>
+            </field>
+            <field name="normalTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="normalTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DOneSidedMaterialNode"
+                   baseType="xs:NMTOKEN"/>
+            <field name="occlusionStrength"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="1"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   baseType="intensityType"/>
+            <field name="occlusionTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="occlusionTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKEN"/>
+            <field name="roughness"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="1"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   baseType="intensityType"/>
+            <field name="transparency"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   baseType="intensityType"/>
+            <field name="DEF"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:ID"/>
+            <field name="USE"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:IDREF"/>
+            <field name="class"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKENS"/>
+            <containerField default="material" type="xs:NMTOKEN"/>
+            <ContentModel>
+               <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+               <NodeContentModel name="ImageTexture"/>
+               <NodeContentModel name="MovieTexture"/>
+               <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="ProtoInstance"/>
+            </ContentModel>
+         </InterfaceDefinition>
+      </ConcreteNode>
       <ConcreteNode name="PickableGroup">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/picking.html#PickableGroup"
                               appinfo="PickableGroup is a Grouping node that can contain most nodes.">
@@ -21887,6 +22488,10 @@
                               appinfo="PixelTexture creates a 2D-image texture map using a numeric array of pixel values.">
             <componentInfo name="Texturing" level="1"/>
             <Inheritance baseType="X3DTexture2DNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="image"
                    type="SFImage"
                    accessType="inputOutput"
@@ -21947,6 +22552,10 @@
                               appinfo="PixelTexture3D defines a 3D image-based texture map as an explicit array of pixel values (image field).">
             <componentInfo name="Texturing3D" level="1"/>
             <Inheritance baseType="X3DTexture3DNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTextureNode"/>
             <field name="image"
                    type="MFInt32"
                    accessType="inputOutput"
@@ -23469,7 +24078,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"/>
             <field name="DEF"
                    type="SFString"
@@ -24332,11 +24941,15 @@
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
-      <ConcreteNode name="Script">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html#Script"
-                              appinfo="Script contains author-programmed event behaviors for a scene.">
+      <ConcreteNode name="X3DScript">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html#X3DScript"
+                              appinfo="X3DScript contains author-programmed event behaviors for a scene.">
             <componentInfo name="Scripting" level="1"/>
             <Inheritance baseType="X3DScriptNode"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DScriptNode"/>
             <field name="directOutput"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -24351,6 +24964,11 @@
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DScriptNode"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -24361,6 +24979,12 @@
                    type="SFBool"
                    accessType="initializeOnly"
                    default="false"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DScriptNode"/>
             <field name="url"
                    type="MFString"
                    accessType="inputOutput"
@@ -24554,18 +25178,33 @@
             <componentInfo name="Shaders" level="1"/>
             <Inheritance baseType="X3DNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="type"
                    type="SFString"
                    accessType="initializeOnly"
@@ -24611,6 +25250,10 @@
             <Inheritance baseType="X3DNode"/>
             <AdditionalInheritance baseType="X3DUrlObject"/>
             <AdditionalInheritance baseType="X3DProgrammableShaderObject"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="field"
                    type="MFNode"
                    accessType="inputOutput"
@@ -24621,12 +25264,23 @@
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="load"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"/>
+            <field name="refresh"
+                   type="SFTime"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   inheritedFrom="X3DUrlObject"/>
             <field name="type"
                    type="SFString"
                    accessType="initializeOnly"
@@ -26271,13 +26925,18 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#TextureCoordinate"
                               appinfo="TextureCoordinate specifies 2D (s,t) texture-coordinate points, used by vertex-based geometry nodes (such as IndexedFaceSet or ElevationGrid) to map textures to vertices (and patches to NURBS surfaces).">
             <componentInfo name="Texturing" level="1"/>
-            <Inheritance baseType="X3DTextureCoordinateNode"/>
+            <Inheritance baseType="X3DSingleTextureCoordinateNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="mapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DSingleTextureCoordinateNode"
+                   baseType="xs:NMTOKEN"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -26310,13 +26969,18 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texture3D.html#TextureCoordinate3D"
                               appinfo="TextureCoordinate3D specifies a set of 3D texture coordinates used by vertex-based geometry nodes (such as IndexedFaceSet or ElevationGrid) to map 3D textures to vertices.">
             <componentInfo name="Texturing3D" level="1"/>
-            <Inheritance baseType="X3DTextureCoordinateNode"/>
+            <Inheritance baseType="X3DSingleTextureCoordinateNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="mapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DSingleTextureCoordinateNode"
+                   baseType="xs:NMTOKEN"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -26349,13 +27013,18 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texture3D.html#TextureCoordinate4D"
                               appinfo="TextureCoordinate4D specifies a set of 4D (homogeneous 3D) texture coordinates used by vertex-based geometry nodes (such as IndexedFaceSet or ElevationGrid) to map 3D textures to vertices.">
             <componentInfo name="Texturing3D" level="1"/>
-            <Inheritance baseType="X3DTextureCoordinateNode"/>
+            <Inheritance baseType="X3DSingleTextureCoordinateNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="mapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DSingleTextureCoordinateNode"
+                   baseType="xs:NMTOKEN"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -26388,13 +27057,18 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/texturing.html#TextureCoordinateGenerator"
                               appinfo="TextureCoordinateGenerator computes 2D (s,t) texture-coordinate points, used by vertex-based geometry nodes (such as IndexedFaceSet or ElevationGrid) to map textures to vertices (and patches to NURBS surfaces).">
             <componentInfo name="Texturing" level="2"/>
-            <Inheritance baseType="X3DTextureCoordinateNode"/>
+            <Inheritance baseType="X3DSingleTextureCoordinateNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
+            <field name="mapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DSingleTextureCoordinateNode"
+                   baseType="xs:NMTOKEN"/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -26780,6 +27454,10 @@
                    type="SFTime"
                    accessType="outputOnly"
                    minInclusive="0"/>
+            <field name="description"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DTimeDependentNode"/>
             <field name="elapsedTime"
                    type="SFTime"
                    accessType="outputOnly"
@@ -27529,7 +28207,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"/>
             <field name="DEF"
                    type="SFString"
@@ -27625,7 +28303,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"/>
             <field name="DEF"
                    type="SFString"
@@ -27768,7 +28446,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"/>
             <field name="DEF"
                    type="SFString"
@@ -27795,7 +28473,7 @@
          </InterfaceDefinition>
       </ConcreteNode>
       <ConcreteNode name="TwoSidedMaterial">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shape.html#Material"
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shape.html#TwoSidedMaterial"
                               appinfo="TwoSidedMaterial specifies surface rendering properties for associated geometry nodes, for outer (front) and inner (back) sides of polygons.">
             <componentInfo name="Shape" level="4"/>
             <Inheritance baseType="X3DMaterialNode"/>
@@ -28013,6 +28691,90 @@
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="RigidJointNodeContentModel" minOccurs="0"/>
+            </ContentModel>
+         </InterfaceDefinition>
+      </ConcreteNode>
+      <ConcreteNode name="UnlitMaterial">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/shape.html#UnlitMaterial"
+                              appinfo="UnlitMaterial specifies surface rendering properties for associated geometry nodes.">
+            <componentInfo name="Shape" level="1"/>
+            <Inheritance baseType="X3DOneSidedMaterialNode"/>
+            <field name="emissiveColor"
+                   type="SFColor"
+                   accessType="inputOutput"
+                   default="0 0 0"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   inheritedFrom="X3DOneSidedMaterialNode"/>
+            <field name="emissiveTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="emissiveTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DOneSidedMaterialNode"
+                   baseType="xs:NMTOKEN"/>
+            <field name="IS"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="IS"
+                   inheritedFrom="X3DNode"/>
+            <field name="metadata"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DMetadataObject"
+                   inheritedFrom="X3DNode"/>
+            <field name="normalScale"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="1"
+                   minInclusive="0"
+                   inheritedFrom="X3DOneSidedMaterialNode">
+               <componentInfo name="Shape" level="2"/>
+            </field>
+            <field name="normalTexture"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DSingleTextureNode"/>
+            <field name="normalTextureMapping"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DOneSidedMaterialNode"
+                   baseType="xs:NMTOKEN"/>
+            <field name="transparency"
+                   type="SFFloat"
+                   accessType="inputOutput"
+                   default="0"
+                   minInclusive="0"
+                   maxInclusive="1"
+                   baseType="intensityType"/>
+            <field name="DEF"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:ID"/>
+            <field name="USE"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:IDREF"/>
+            <field name="class"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKENS"/>
+            <containerField default="material" type="xs:NMTOKEN"/>
+            <ContentModel>
+               <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+               <NodeContentModel name="ImageTexture"/>
+               <NodeContentModel name="MovieTexture"/>
+               <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
@@ -28770,7 +29532,7 @@
                             appinfo="The Environment Sensor nodes emit events indicating activity in the scene environment, usually based on interactions between the viewer and the world."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/envsensor.html"/>
                <enumeration value="EventUtilities"
-                            appinfo="The Event Utility nodes provide the capability to filter, trigger, convert, or sequence numerous event-types for common interactive applications without the use of a Script node."
+                            appinfo="The Event Utility nodes provide the capability to filter, trigger, convert, or sequence numerous event-types for common interactive applications without the use of a X3DScript node."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/utils.html"/>
                <enumeration value="Followers"
                             appinfo="The Follower nodes (Chasers and Dampers) support dynamic creation of smooth parameter transitions at run time."
@@ -28833,7 +29595,7 @@
                             appinfo="The Rigid Body Physics component describes how to model rigid bodies and their interactions through the application of basic physics principles to effect motion."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html"/>
                <enumeration value="Scripting"
-                            appinfo="The Script component describes how Script nodes are used to effect changes in X3D worlds."
+                            appinfo="The X3DScript component describes how X3DScript nodes are used to effect changes in X3D worlds."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html"/>
                <enumeration value="Shaders"
                             appinfo="The programmable shaders component describes how programmable shaders are specified and how they affect the visual appearance of geometry."
@@ -29402,7 +30164,7 @@
                             appinfo="Interactive Profile adds interaction nodes (Anchor, KeySensor) to the minimum subset of nodes needed to display lightweight compelling content. Allowed X3D nodes for this profile are: Anchor Appearance Background BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineSet Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineSet Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet PositionInterpolator ProximitySensor ScalarInterpolator Shape Sphere SphereSensor SpotLight StringSensor Switch TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor Transform TriangleFanSet TriangleSet TriangleStripSet Viewpoint VisibilitySensor WorldInfo."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/interactive.html"/>
                <enumeration value="Immersive"
-                            appinfo="Immersive Profile equals all of the nodes in the VRML97 Specification, plus various X3D node additions including KeySensor, StringSensor and Scene. Allowed X3D nodes for this profile are: Anchor Appearance AudioClip Background Billboard BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Collision Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Extrusion Fog FontStyle Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFan IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineProperties LineSet LoadSensor LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MovieTexture MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet Polyline2D Polypoint2D PositionInterpolator ProximitySensor Rectangle2D ScalarInterpolator Script Shape Sound Sphere SphereSensor SpotLight StringSensor Switch Text TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor TriangleFanSet TriangleSet TriangleSet2D TriangleStripSet Transform Viewpoint VisibilitySensor WorldInfo."
+                            appinfo="Immersive Profile equals all of the nodes in the VRML97 Specification, plus various X3D node additions including KeySensor, StringSensor and Scene. Allowed X3D nodes for this profile are: Anchor Appearance AudioClip Background Billboard BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Collision Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Extrusion Fog FontStyle Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFan IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineProperties LineSet LoadSensor LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MovieTexture MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet Polyline2D Polypoint2D PositionInterpolator ProximitySensor Rectangle2D ScalarInterpolator X3DScript Shape Sound Sphere SphereSensor SpotLight StringSensor Switch Text TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor TriangleFanSet TriangleSet TriangleSet2D TriangleStripSet Transform Viewpoint VisibilitySensor WorldInfo."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/immersive.html"/>
                <enumeration value="MedicalInterchange"
                             appinfo="The MedicalInterchange profile adds support for VolumeRendering component to Interchange profile. Allowed X3D nodes for this profile are: Anchor Arc2D ArcClose2D Appearance Background Billboard BlendedVolumeStyle BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger BoundaryEnhancementVolumeStyle Box CartoonVolumeStyle Circle2D ClipPlane Collision Color ColorInterpolator ColorRGBA ComposedVolumeStyle CompositeTexture3D Cone Coordinate CoordinateDouble CoordinateInterpolator Cylinder DirectionalLight Disk2D EdgeEnhancementVolumeStyle FillProperties FontStyle Group ImageTexture ImageTexture3D IndexedFaceSet IndexedLineSet IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger IsoSurfaceVolumeData LineProperties LineSet LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OctTree OpacityMapVolumeStyle OrientationInterpolator OrthoViewpoint PixelTexture PixelTexture3D PointSet Polyline2D Polypoint2D PositionInterpolator ProjectionVolumeStyle Rectangle2D ScalarInterpolator SegmentedVolumeData ShadedVolumeStyle Shape SilhouetteEnhancementVolumeStyle Sphere StaticGroup Switch Text TextureCoordinate TextureCoordinate3D TextureCoordinate4D TextureCoordinateGenerator TextureMatrixTransform TextureProperties TextureTransform TextureTransform3D TimeSensor TimeTrigger ToneMappedVolumeStyle Transform TriangleFanSet TriangleSet TriangleStripSet Viewpoint ViewpointGroup VolumeData WorldInfo."

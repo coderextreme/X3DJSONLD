@@ -59,14 +59,14 @@ ProtoInstance ProtoInstance6 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Background().setBackUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())).setBottomUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setFrontUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setLeftUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())).setRightUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())).setTopUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray())))
-        .addChild(new Group()
-          .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString6().getArray()))
+        .addChild(new Background().setBackUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())).setBottomUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setFrontUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setLeftUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())).setRightUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())).setTopUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray())).setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor6().getArray())).setTransparency(0f))
+        .addChild(new Group().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+          .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray()))
             .addField(new field().setType("MFString").setName("vertex").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
             .addField(new field().setType("MFString").setName("fragment").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
           .addChild(new ProtoDeclare().setName("flower")
             .setProtoBody(new ProtoBody()
-              .addChild(new Group()
+              .addChild(new Group().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                 .addChild(ProtoInstance0 = new ProtoInstance().setName("FlowerProto")))))
           .addChild(ProtoInstance1 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("flower"))
@@ -76,7 +76,7 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))
           .addChild(new TimeSensor().setDEF("SongTime").setLoop(true))
           .addChild(new Sound().setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
-            .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray()))))
+            .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString8().getArray())).setLoop(false).setPitch(1f).setStartTime(0d).setStopTime(0d).setPauseTime(0d).setResumeTime(0d)))
           .addChild(new ROUTE().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))))      ;
 ProtoInstance0
                   .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/x_ite_flowers_chromatic.vs\""));
@@ -114,12 +114,17 @@ protected class MFString5 {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
-protected class MFString6 {
+protected class MFColor6 {
+  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,0f});
+  }
+}
+protected class MFString7 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/flowerproto.json#FlowerProto"});
   }
 }
-protected class MFString7 {
+protected class MFString8 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/chandubabamusic1.wav"});
   }

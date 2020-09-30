@@ -71,11 +71,17 @@ Background15.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeter
 Background15.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
 Background15.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
 Background15.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
+Background15.setSkyColor([0,0,0])
+Background15.setTransparency(0)
 
 Scene13.addChildren(Background15)
 Transform16 = x3d.Transform()
 Transform16.setDEF("transform")
+Transform16.setBboxCenter([0,0,0])
+Transform16.setBboxSize([-1,-1,-1])
 Shape17 = x3d.Shape()
+Shape17.setBboxCenter([0,0,0])
+Shape17.setBboxSize([-1,-1,-1])
 Appearance18 = x3d.Appearance()
 Material19 = x3d.Material()
 Material19.setDiffuseColor([0.7,0.7,0.7])
@@ -175,127 +181,33 @@ Shape17.setGeometry(IndexedFaceSet35)
 Transform16.addChildren(Shape17)
 
 Scene13.addChildren(Transform16)
-Script37 = x3d.Script()
-Script37.setDEF("OrbitScript")
-field38 = x3d.field()
-field38.setName("set_fraction")
-field38.setAccessType("inputOnly")
-field38.setType("SFFloat")
+TimeSensor37 = x3d.TimeSensor()
+TimeSensor37.setDEF("Clock")
+TimeSensor37.setCycleInterval(16)
+TimeSensor37.setLoop(True)
 
-Script37.addField(field38)
-field39 = x3d.field()
-field39.setName("coordinates")
-field39.setAccessType("inputOutput")
-field39.setType("MFVec3f")
+Scene13.addChildren(TimeSensor37)
+ROUTE38 = x3d.ROUTE()
+ROUTE38.setFromField("coordIndexes")
+ROUTE38.setFromNode("OrbitScript")
+ROUTE38.setToField("set_coordIndex")
+ROUTE38.setToNode("Orbit")
 
-Script37.addField(field39)
-field40 = x3d.field()
-field40.setName("coordIndexes")
-field40.setAccessType("outputOnly")
-field40.setType("MFInt32")
+Scene13.addChildren(ROUTE38)
+ROUTE39 = x3d.ROUTE()
+ROUTE39.setFromField("coordinates")
+ROUTE39.setFromNode("OrbitScript")
+ROUTE39.setToField("set_point")
+ROUTE39.setToNode("OrbitCoordinates")
 
-Script37.addField(field40)
+Scene13.addChildren(ROUTE39)
+ROUTE40 = x3d.ROUTE()
+ROUTE40.setFromField("fraction_changed")
+ROUTE40.setFromNode("Clock")
+ROUTE40.setToField("set_fraction")
+ROUTE40.setToNode("OrbitScript")
 
-Script37.setSourceCode('''ecmascript:\n"+
-"\n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
-"\n"+
-"function initialize() {\n"+
-"     var resolution = 100;\n"+
-"     updateCoordinates(resolution);\n"+
-"     var cis = [];\n"+
-"     for ( i = 0; i < resolution-1; i++) {\n"+
-"     	for ( j = 0; j < resolution-1; j++) {\n"+
-"	     cis.push(i*resolution+j);\n"+
-"	     cis.push(i*resolution+j+1);\n"+
-"	     cis.push((i+1)*resolution+j+1);\n"+
-"	     cis.push((i+1)*resolution+j);\n"+
-"	     cis.push(-1);\n"+
-"	}\n"+
-"    }\n"+
-"    coordIndexes = new MFInt32(cis);\n"+
-"}\n"+
-"\n"+
-"function updateCoordinates(resolution) {\n"+
-"     var theta = 0.0;\n"+
-"     var phi = 0.0;\n"+
-"     var delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var crds = [];\n"+
-"     for ( i = 0; i < resolution; i++) {\n"+
-"     	for ( j = 0; j < resolution; j++) {\n"+
-"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		crds.push(new SFVec3f(\n"+
-"			rho * Math.cos(phi) * Math.cos(theta),\n"+
-"			rho * Math.cos(phi) * Math.sin(theta),\n"+
-"			rho * Math.sin(phi)\n"+
-"		));\n"+
-"		theta += delta;\n"+
-"	}\n"+
-"	phi += delta;\n"+
-"     }\n"+
-"     coordinates = new MFVec3f(crds);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(fraction, eventTime) {\n"+
-"	var choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	if (f < 1) {\n"+
-"		f = 10;\n"+
-"	}\n"+
-"	if (g < 1) {\n"+
-"		g = 4;\n"+
-"	}\n"+
-"	if (h < 1) {\n"+
-"		h = 4;\n"+
-"	}\n"+
-"	var resolution = 100;\n"+
-"	updateCoordinates(resolution);\n"+
-"}''')
-
-Scene13.addChildren(Script37)
-TimeSensor41 = x3d.TimeSensor()
-TimeSensor41.setDEF("Clock")
-TimeSensor41.setCycleInterval(16)
-TimeSensor41.setLoop(True)
-
-Scene13.addChildren(TimeSensor41)
-ROUTE42 = x3d.ROUTE()
-ROUTE42.setFromField("coordIndexes")
-ROUTE42.setFromNode("OrbitScript")
-ROUTE42.setToField("set_coordIndex")
-ROUTE42.setToNode("Orbit")
-
-Scene13.addChildren(ROUTE42)
-ROUTE43 = x3d.ROUTE()
-ROUTE43.setFromField("coordinates")
-ROUTE43.setFromNode("OrbitScript")
-ROUTE43.setToField("set_point")
-ROUTE43.setToNode("OrbitCoordinates")
-
-Scene13.addChildren(ROUTE43)
-ROUTE44 = x3d.ROUTE()
-ROUTE44.setFromField("fraction_changed")
-ROUTE44.setFromNode("Clock")
-ROUTE44.setToField("set_fraction")
-ROUTE44.setToNode("OrbitScript")
-
-Scene13.addChildren(ROUTE44)
+Scene13.addChildren(ROUTE40)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/flowers4_RoundTrip.x3d")

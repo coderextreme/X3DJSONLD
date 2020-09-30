@@ -57,7 +57,7 @@ public class gridBack {
         .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addChild(new Shape()
+        .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .setAppearance(new Appearance()
             .setMaterial(new Material().setAmbientIntensity(0.01f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.05f)))
           .setGeometry(new IndexedFaceSet().setColorIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt320().getArray())).setColorPerVertex(false).setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt321().getArray())).setNormalPerVertex(false)

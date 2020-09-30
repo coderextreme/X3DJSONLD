@@ -89,14 +89,14 @@ ProtoInstance ProtoInstance3 = null;
         .addChild(new WorldInfo().setUSE("WorldInfoDEF"))
         .addMetadata(new MetadataString().setName("test").setDEF("scene.addChildMetadata").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())))
         .addLayerSet(new LayerSet().setDEF("scene.addChildLayerSetTest"))
-        .addChild(new Transform().setDEF("LogoGeometryTransform").setTranslation(new float[] {0f,1.5f,0f})
-          .addChild(new Anchor().setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray()))
-            .addChild(new Shape().setDEF("BoxShape")
+        .addChild(new Transform().setDEF("LogoGeometryTransform").setTranslation(new float[] {0f,1.5f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+          .addChild(new Anchor().setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Shape().setDEF("BoxShape").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDEF("GreenMaterial").setDiffuseColor(new float[] {0f,1f,1f}).setEmissiveColor(new float[] {0.8f,0f,0f}).setTransparency(0.1f))
                 .setTexture(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray()))))
-              .setGeometry(new Box().setDEF("test-NMTOKEN_regex.0123456789").setCssClass("untextured")))))
-        .addChild(new Shape().setDEF("LineShape")
+              .setGeometry(new Box().setDEF("test-NMTOKEN_regex.0123456789").setCssClass("untextured").setSize(new float[] {2f,2f,2f}).setSolid(true)))))
+        .addChild(new Shape().setDEF("LineShape").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .setAppearance(new Appearance()
             .setMaterial(new Material().setEmissiveColor(new float[] {0.6f,0.19607843f,0.8f})))
           .setGeometry(new IndexedLineSet().setCoordIndex(new org.web3d.x3d.jsail.fields.MFInt32(new MFInt323().getArray()))
@@ -106,8 +106,8 @@ ProtoInstance ProtoInstance3 = null;
         .addChild(new TimeSensor().setDEF("OrbitClock").setCycleInterval(8d).setLoop(true))
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("OrbitClock").setToField("set_fraction").setToNode("BoxPathAnimator"))
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("BoxPathAnimator").setToField("set_translation").setToNode("LogoGeometryTransform"))
-        .addChild(new Transform().setDEF("TextTransform").setTranslation(new float[] {0f,-1.5f,0f})
-          .addChild(new Shape()
+        .addChild(new Transform().setDEF("TextTransform").setTranslation(new float[] {0f,-1.5f,0f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+          .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
             .setAppearance(new Appearance()
               .setMaterial(new Material().setUSE("GreenMaterial")))
             .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray()))
@@ -117,9 +117,9 @@ ProtoInstance ProtoInstance3 = null;
                 .addValue(new MetadataString().setName("quotesTestC").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString8().getArray())))
                 .addValue(new MetadataString().setName("extraChildTest").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString9().getArray()))))
               .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString10().getArray())))))
-          .addChild(new Collision()
+          .addChild(new Collision().setEnabled(true).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
             .addComments(new CommentsBlock("test containerField='proxy'"))
-            .setProxy(new Shape().setDEF("ProxyShape")
+            .setProxy(new Shape().setDEF("ProxyShape").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
               .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"))
               .addComments(new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'"))
               .addComments(new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"\"Immel did it!\\\"\"\\\"\"})"))
@@ -133,24 +133,17 @@ ProtoInstance ProtoInstance3 = null;
         .addChild(new TimeSensor().setDEF("SpinClock").setCycleInterval(5d).setLoop(true))
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("SpinClock").setToField("set_fraction").setToNode("SpinInterpolator"))
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("SpinInterpolator").setToField("rotation").setToNode("TextTransform"))
-        .addChild(new Group().setDEF("BackgroundGroup")
-          .addChild(new Background().setDEF("GradualBackground"))
-          .addChild(new Script().setDEF("colorTypeConversionScript")
-            .addField(new field().setType("SFColor").setName("colorInput").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType("MFColor").setName("colorsOutput").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-            .setSourceCode("ecmascript:\n"+
-"\n"+
-"function colorInput (eventValue) // Example source code\n"+
-"{\n"+
-"   colorsOutput = new MFColor(eventValue); // assigning value sends output event\n"+
-"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');\n"+
-"}"))
-          .addChild(new ColorInterpolator().setDEF("ColorAnimator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat14().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFColor(new MFColor15().getArray()))
+        .addChild(new Group().setDEF("BackgroundGroup").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+          .addChild(new Background().setDEF("GradualBackground").setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor14().getArray())).setTransparency(0f))
+          .addChild(new ColorInterpolator().setDEF("ColorAnimator").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat15().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFColor(new MFColor16().getArray()))
             .addComments(new CommentsBlock("AZURE to INDIGO and back again")))
           .addChild(new TimeSensor().setDEF("ColorClock").setCycleInterval(60d).setLoop(true))
           .addChild(new ROUTE().setFromField("colorsOutput").setFromNode("colorTypeConversionScript").setToField("skyColor").setToNode("GradualBackground"))
           .addChild(new ROUTE().setFromField("value_changed").setFromNode("ColorAnimator").setToField("colorInput").setToNode("colorTypeConversionScript"))
-          .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("ColorClock").setToField("set_fraction").setToNode("ColorAnimator")))
+          .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("ColorClock").setToField("set_fraction").setToNode("ColorAnimator"))
+          .addX3DScript(new X3DScript().setDEF("colorTypeConversionScript")
+            .addField(new field().setType("SFColor").setName("colorInput").setAccessType(field.ACCESSTYPE_INPUTONLY))
+            .addField(new field().setType("MFColor").setName("colorsOutput").setAccessType(field.ACCESSTYPE_OUTPUTONLY))))
         .addChild(new ProtoDeclare().setName("ArtDeco01Material").setAppinfo("tooltip: ArtDeco01Material prototype is a Material node")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("tooltip for descriptionField").setValue("ArtDeco01Material prototype is a Material node"))
@@ -164,28 +157,28 @@ ProtoInstance ProtoInstance3 = null;
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("description").setProtoField("description"))
                 .addConnect(new connect().setNodeField("enabled").setProtoField("enabled"))))))
-        .addChild(new ExternProtoDeclare().setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString16().getArray()))
+        .addChild(new ExternProtoDeclare().setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString17().getArray()))
           .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""))
           .addField(new field().setType("SFString").setName("description").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("tooltip for descriptionField")))
         .addComments(new CommentsBlock("Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place"))
-        .addChild(new Shape().setDEF("TestShape1")
+        .addChild(new Shape().setDEF("TestShape1").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .setAppearance(new Appearance().setDEF("TestAppearance1")
             .addComments(new CommentsBlock("ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java"))
             .setMaterial(ProtoInstance0 = new ProtoInstance().setName("ArtDeco01Material")
               .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\""))))
           .setGeometry(new Sphere().setRadius(0.001f)))
-        .addChild(new Shape().setDEF("TestShape2")
+        .addChild(new Shape().setDEF("TestShape2").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .setAppearance(new Appearance().setDEF("TestAppearance2")
             .addComments(new CommentsBlock("ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java"))
             .setMaterial(ProtoInstance1 = new ProtoInstance().setName("ArtDeco02Material").setDEF("ArtDeco02MaterialDEF")
               .addComments(new CommentsBlock("[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\""))))
-          .setGeometry(new Cone().setBottomRadius(0.001f).setHeight(0.001f)))
-        .addChild(new Shape().setDEF("TestShape3")
+          .setGeometry(new Cone().setBottomRadius(0.001f).setHeight(0.001f).setSide(true).setBottom(true).setSolid(true)))
+        .addChild(new Shape().setDEF("TestShape3").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .setAppearance(new Appearance().setDEF("TestAppearance3")
             .addComments(new CommentsBlock("ArtDeco02Material ProtoInstance USE goes here..."))
             .setMaterial(ProtoInstance2 = new ProtoInstance().setUSE("ArtDeco02MaterialDEF")))
           .setGeometry(new Cylinder().setHeight(0.001f).setRadius(0.001f)))
-        .addChild(new Inline().setDEF("inlineSceneDef").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString17().getArray())))
+        .addChild(new Inline().setDEF("inlineSceneDef").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString18().getArray())).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}))
         .addChild(new IMPORT().setAS("WorldInfoDEF2").setImportedDEF("WorldInfoDEF").setInlineDEF("inlineSceneDef"))
         .addChild(new EXPORT().setAS("WorldInfoDEF3").setLocalDEF("WorldInfoDEF"))
         .addChild(new ProtoDeclare().setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
@@ -207,45 +200,22 @@ ProtoInstance ProtoInstance3 = null;
                 .addConnect(new connect().setNodeField("shininess").setProtoField("shininess"))
                 .addConnect(new connect().setNodeField("ambientIntensity").setProtoField("ambientIntensity"))))
             .addComments(new CommentsBlock("Only first node (the node type) is renderable, others are along for the ride"))
-            .addChild(new Script().setDEF("MaterialModulatorScript")
+            .addX3DScript(new X3DScript().setDEF("MaterialModulatorScript")
               .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
               .addField(new field().setType("SFColor").setName("diffuseColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
               .addField(new field().setType("SFColor").setName("newColor").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
               .addField(new field().setType("SFTime").setName("clockTrigger").setAccessType(field.ACCESSTYPE_INPUTONLY))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("enabled").setProtoField("enabled"))
-                .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor")))
-              .setSourceCode("ecmascript:\n"+
-"function initialize ()\n"+
-"{\n"+
-"    newColor = diffuseColor; // start with correct color\n"+
-"}\n"+
-"function set_enabled (newValue)\n"+
-"{\n"+
-"	enabled = newValue;\n"+
-"}\n"+
-"function clockTrigger (timeValue)\n"+
-"{\n"+
-"    if (!enabled) return;\n"+
-"    red   = newColor.r;\n"+
-"    green = newColor.g;\n"+
-"    blue  = newColor.b;\n"+
-"\n"+
-"    // note different modulation rates for each color component, % is modulus operator\n"+
-"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);\n"+
-"	if (enabled)\n"+
-"	{\n"+
-"		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');\n"+
-"	}\n"+
-"}"))))
+                .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))))))
         .addComments(new CommentsBlock("Test success: declarative statement createDeclarativeShapeTests()"))
-        .addChild(new Group().setDEF("DeclarativeGroupExample")
-          .addChild(new Shape()
-            .setMetadata(new MetadataString().setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString18().getArray())))
+        .addChild(new Group().setDEF("DeclarativeGroupExample").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+          .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .setMetadata(new MetadataString().setName("findThisNameValue").setDEF("FindableMetadataStringTest").setValue(new org.web3d.x3d.jsail.fields.MFString(new MFString19().getArray())))
             .setAppearance(new Appearance().setDEF("DeclarativeAppearanceExample")
               .addComments(new CommentsBlock("DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance"))
               .setMaterial(ProtoInstance3 = new ProtoInstance().setName("MaterialModulator").setDEF("MyMaterialModulator")))
-            .setGeometry(new Cone().setBottom(false).setBottomRadius(0.05f).setHeight(0.1f)))
+            .setGeometry(new Cone().setBottom(false).setBottomRadius(0.05f).setHeight(0.1f).setSide(true).setSolid(true)))
           .addComments(new CommentsBlock("Test success: declarativeGroup.addChild() singleton pipeline method")))
         .addComments(new CommentsBlock("Test success: declarative statement addChild()"))
         .addComments(new CommentsBlock("Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>"))
@@ -253,7 +223,7 @@ ProtoInstance ProtoInstance3 = null;
         .addComments(new CommentsBlock("Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found"))
         .addComments(new CommentsBlock("Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found"))
         .addComments(new CommentsBlock("Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found"))
-        .addChild(new Group().setDEF("TestFieldObjectsGroup")
+        .addChild(new Group().setDEF("TestFieldObjectsGroup").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .addComments(new CommentsBlock("testFieldObjects() results"))
           .addComments(new CommentsBlock("SFBool default=true, true=true, false=false, negate()=true"))
           .addComments(new CommentsBlock("MFBool default=, initial=true false true, negate()=false true false"))
@@ -263,11 +233,11 @@ ProtoInstance ProtoInstance3 = null;
           .addComments(new CommentsBlock("SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344")))
         .addChild(new Sound().setLocation(new float[] {0f,1.6f,0f})
           .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height"))
-          .setSource(new AudioClip().setDescription("chimes").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString19().getArray()))
+          .setSource(new AudioClip().setDescription("chimes").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString20().getArray())).setLoop(false).setPitch(1f).setStartTime(0d).setStopTime(0d).setPauseTime(0d).setResumeTime(0d)
             .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d"))))
         .addChild(new Sound().setLocation(new float[] {0f,1.6f,0f})
           .addComments(new CommentsBlock("set sound-ellipsoid location height at 1.6m to match typical avatar height"))
-          .setSource(new MovieTexture().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString20().getArray()))
+          .setSource(new MovieTexture().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString21().getArray()))
             .addComments(new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d"))
             .addComments(new CommentsBlock("Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\""))))
         .addComments(new CommentsBlock("Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true"))
@@ -276,7 +246,7 @@ ProtoInstance ProtoInstance3 = null;
         .addComments(new CommentsBlock("Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true"))
         .addComments(new CommentsBlock("Test success: CommentsBlock.isNode()=false, testComments.isNode()=false"))
         .addComments(new CommentsBlock("Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true"))
-        .addChild(new Shape().setDEF("ExtrusionShape")
+        .addChild(new Shape().setDEF("ExtrusionShape").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .addComments(new CommentsBlock("ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'"))
           .addComments(new CommentsBlock("ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'"))
           .setAppearance(new Appearance().setDEF("TransparentAppearance")
@@ -358,37 +328,42 @@ protected class MFRotation13 {
     return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,1f,0f,4.712389f,0f,1f,0f,0f,0f,1f,0f,1.5707964f});
   }
 }
-protected class MFFloat14 {
+protected class MFColor14 {
+  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat15 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
   }
 }
-protected class MFColor15 {
+protected class MFColor16 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
     return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.9411765f,1f,1f,0.29411766f,0f,0.50980395f,0.9411765f,1f,1f});
   }
 }
-protected class MFString16 {
+protected class MFString17 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"});
   }
 }
-protected class MFString17 {
+protected class MFString18 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"someOtherScene.x3d"});
   }
 }
-protected class MFString18 {
+protected class MFString19 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"test case"});
   }
 }
-protected class MFString19 {
+protected class MFString20 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"});
   }
 }
-protected class MFString20 {
+protected class MFString21 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"});
   }

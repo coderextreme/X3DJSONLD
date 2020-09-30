@@ -77,6 +77,8 @@ Background16.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeter
 Background16.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
 Background16.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
 Background16.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
+Background16.setSkyColor([0,0,0])
+Background16.setTransparency(0)
 
 Scene14.addChildren(Background16)
 ProtoDeclare17 = x3d.ProtoDeclare()
@@ -84,7 +86,11 @@ ProtoDeclare17.setName("flower")
 ProtoBody18 = x3d.ProtoBody()
 Transform19 = x3d.Transform()
 Transform19.setDEF("animate_transform")
+Transform19.setBboxCenter([0,0,0])
+Transform19.setBboxSize([-1,-1,-1])
 Shape20 = x3d.Shape()
+Shape20.setBboxCenter([0,0,0])
+Shape20.setBboxSize([-1,-1,-1])
 Appearance21 = x3d.Appearance()
 Material22 = x3d.Material()
 Material22.setDiffuseColor([0.7,0.7,0.7])
@@ -316,140 +322,72 @@ Shape20.setGeometry(Sphere59)
 Transform19.addChildren(Shape20)
 
 ProtoBody18.addChildren(Transform19)
-Script60 = x3d.Script()
-Script60.setDEF("Animate")
+X3DScript60 = x3d.X3DScript()
+X3DScript60.setDEF("Animate")
 field61 = x3d.field()
 field61.setName("translation")
 field61.setAccessType("inputOutput")
 field61.setType("SFVec3f")
 field61.setValue("0 0 0")
 
-Script60.addField(field61)
+X3DScript60.addField(field61)
 field62 = x3d.field()
 field62.setName("velocity")
 field62.setAccessType("inputOutput")
 field62.setType("SFVec3f")
 field62.setValue("0 0 0")
 
-Script60.addField(field62)
+X3DScript60.addField(field62)
 field63 = x3d.field()
 field63.setName("set_fraction")
 field63.setAccessType("inputOnly")
 field63.setType("SFFloat")
 
-Script60.addField(field63)
+X3DScript60.addField(field63)
 field64 = x3d.field()
 field64.setName("a")
 field64.setType("SFFloat")
 field64.setAccessType("inputOutput")
 field64.setValue("0.5")
 
-Script60.addField(field64)
+X3DScript60.addField(field64)
 field65 = x3d.field()
 field65.setName("b")
 field65.setType("SFFloat")
 field65.setAccessType("inputOutput")
 field65.setValue("0.5")
 
-Script60.addField(field65)
+X3DScript60.addField(field65)
 field66 = x3d.field()
 field66.setName("c")
 field66.setType("SFFloat")
 field66.setAccessType("inputOutput")
 field66.setValue("3")
 
-Script60.addField(field66)
+X3DScript60.addField(field66)
 field67 = x3d.field()
 field67.setName("d")
 field67.setType("SFFloat")
 field67.setAccessType("inputOutput")
 field67.setValue("3")
 
-Script60.addField(field67)
+X3DScript60.addField(field67)
 field68 = x3d.field()
 field68.setName("tdelta")
 field68.setType("SFFloat")
 field68.setAccessType("inputOutput")
 field68.setValue("0.5")
 
-Script60.addField(field68)
+X3DScript60.addField(field68)
 field69 = x3d.field()
 field69.setName("pdelta")
 field69.setType("SFFloat")
 field69.setAccessType("inputOutput")
 field69.setValue("0.5")
 
-Script60.addField(field69)
+X3DScript60.addField(field69)
 
-Script60.setSourceCode('''ecmascript:\n"+
-"\n"+
-"			function initialize() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation.x + velocity.x,\n"+
-"				translation.y + velocity.y,\n"+
-"				translation.z + velocity.z);\n"+
-"			    for (var j = 0; j <= 2; j++) {\n"+
-"				    if (Math.abs(translation.x) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.y) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.z) > 10) {\n"+
-"					initialize();\n"+
-"				    } else {\n"+
-"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
-"				    }\n"+
-"			    }\n"+
-"			    animate_flowers();\n"+
-"			}\n"+
-"\n"+
-"			function animate_flowers(fraction, eventTime) {\n"+
-"				var choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					a += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					b += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					c += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					d += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				tdelta += 0.5;\n"+
-"				pdelta += 0.5;\n"+
-"				if (a > 1) {\n"+
-"					a =  0.5;\n"+
-"				}\n"+
-"				if (b > 1) {\n"+
-"					b =  0.5;\n"+
-"				}\n"+
-"				if (c < 1) {\n"+
-"					c =  4;\n"+
-"				}\n"+
-"				if (d < 1) {\n"+
-"					d =  4;\n"+
-"				}\n"+
-"				if (c > 10) {\n"+
-"					c = 4;\n"+
-"				}\n"+
-"				if (d > 10) {\n"+
-"					d = 4;\n"+
-"				}\n"+
-"			}''')
-
-ProtoBody18.addChildren(Script60)
+ProtoBody18.addX3DScript(X3DScript60)
 TimeSensor70 = x3d.TimeSensor()
 TimeSensor70.setDEF("TourTime")
 TimeSensor70.setCycleInterval(5)

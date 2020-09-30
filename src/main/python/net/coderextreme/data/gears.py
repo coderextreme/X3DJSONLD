@@ -61,6 +61,8 @@ NavigationInfo13.setType(["EXAMINE","FLY","WALK","ANY"])
 
 Scene12.addChildren(NavigationInfo13)
 Group14 = x3d.Group()
+Group14.setBboxCenter([0,0,0])
+Group14.setBboxSize([-1,-1,-1])
 Shape15 = x3d.Shape()
 Shape15.setBboxCenter([-4.868185499999999,25.359741,0])
 Shape15.setBboxSize([77.23637099999999,100.502162,6])

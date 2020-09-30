@@ -60,10 +60,10 @@ ProtoInstance ProtoInstance2 = null;
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setDEF("transform")
+            .addChild(new Transform().setDEF("transform").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("position")))
-              .addChild(new Shape()
+              .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
                 .addComments(new CommentsBlock("comment before Sphere"))
                 .addComments(new CommentsBlock("comment after Sphere"))
                 .addComments(new CommentsBlock("comment after Appearance"))
@@ -73,18 +73,11 @@ ProtoInstance ProtoInstance2 = null;
                   .addComments(new CommentsBlock("comment after Material"))
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f})))))
             .addChild(new PositionInterpolator().setDEF("NodePosition").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat0().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f1().getArray())))
-            .addChild(new Script().setDEF("MoveBall")
+            .addX3DScript(new X3DScript().setDEF("MoveBall")
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50 50 0"))
               .addField(new field().setType("SFVec3f").setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new field().setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFVec3f").setName("keyValue").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-              .setSourceCode("ecmascript:\n"+
-"					function set_cycle(value) {\n"+
-"                                                old = translation;\n"+
-"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
-"                                                keyValue = new MFVec3f([old, translation]);\n"+
-"						// Browser.println(translation);\n"+
-"					}"))
+              .addField(new field().setType("MFVec3f").setName("keyValue").setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
             .addChild(new TimeSensor().setDEF("nodeClock").setCycleInterval(3d).setLoop(true))
             .addChild(new ROUTE().setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
             .addChild(new ROUTE().setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
@@ -95,41 +88,19 @@ ProtoInstance ProtoInstance2 = null;
             .addField(new field().setType("SFVec3f").setName("positionA").setAccessType(field.ACCESSTYPE_INPUTONLY))
             .addField(new field().setType("SFVec3f").setName("positionB").setAccessType(field.ACCESSTYPE_INPUTONLY)))
           .setProtoBody(new ProtoBody()
-            .addChild(new Shape()
+            .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
               .setGeometry(new Extrusion().setDEF("extrusion").setCreaseAngle(0.785f).setCrossSection(new org.web3d.x3d.jsail.fields.MFVec2f(new MFVec2f2().getArray())).setSpine(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f3().getArray())))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f,1f,0f}))))
-            .addChild(new Script().setDEF("MoveCylinder")
+            .addX3DScript(new X3DScript().setDEF("MoveCylinder")
               .addField(new field().setType("MFVec3f").setName("spine").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 -50 0 0 0 0 0 50 0"))
               .addField(new field().setType("SFVec3f").setName("set_endA").setAccessType(field.ACCESSTYPE_INPUTONLY))
               .addField(new field().setType("SFVec3f").setName("set_endB").setAccessType(field.ACCESSTYPE_INPUTONLY))
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("set_endA").setProtoField("positionA"))
-                .addConnect(new connect().setNodeField("set_endB").setProtoField("positionB")))
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"                function set_endA(value) {\n"+
-"		    if (typeof spine === \"undefined\") {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([value, spine[1]]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_endB(value) {\n"+
-"		    if (typeof spine === \"undefined\") {\n"+
-"		        spine = new MFVec3f([value, value]);\n"+
-"		    } else {\n"+
-"		        spine = new MFVec3f([spine[0], value]);\n"+
-"		    }\n"+
-"                }\n"+
-"\n"+
-"                function set_spine(value) {\n"+
-"		    Browser.print('\\n'+'\"');\n"+
-"                    spine = value;\n"+
-"                }"))
+                .addConnect(new connect().setNodeField("set_endB").setProtoField("positionB"))))
             .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-        .addChild(new Transform().setScale(new float[] {0.1f,0.1f,0.1f})
+        .addChild(new Transform().setScale(new float[] {0.1f,0.1f,0.1f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
           .addChild(ProtoInstance0 = new ProtoInstance().setName("node").setDEF("nodeA"))
           .addChild(ProtoInstance1 = new ProtoInstance().setName("node").setDEF("nodeB"))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("cylinder").setDEF("linkA")))

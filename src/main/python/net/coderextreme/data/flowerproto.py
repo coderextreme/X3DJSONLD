@@ -83,7 +83,11 @@ ProtoDeclare14.setProtoInterface(ProtoInterface15)
 ProtoBody18 = x3d.ProtoBody()
 Transform19 = x3d.Transform()
 Transform19.setDEF("transform")
+Transform19.setBboxCenter([0,0,0])
+Transform19.setBboxSize([-1,-1,-1])
 Shape20 = x3d.Shape()
+Shape20.setBboxCenter([0,0,0])
+Shape20.setBboxSize([-1,-1,-1])
 Appearance21 = x3d.Appearance()
 Material22 = x3d.Material()
 Material22.setDiffuseColor([0.7,0.7,0.7])
@@ -232,201 +236,134 @@ Sphere48 = x3d.Sphere()
 Shape20.setGeometry(Sphere48)
 
 Transform19.addChildren(Shape20)
-Script49 = x3d.Script()
-Script49.setDEF("Animate")
-field50 = x3d.field()
-field50.setName("translation")
-field50.setAccessType("inputOutput")
-field50.setType("SFVec3f")
-field50.setValue("0 0 0")
+TimeSensor49 = x3d.TimeSensor()
+TimeSensor49.setDEF("TourTime")
+TimeSensor49.setCycleInterval(5)
+TimeSensor49.setLoop(True)
 
-Script49.addField(field50)
-field51 = x3d.field()
-field51.setName("velocity")
-field51.setAccessType("inputOutput")
-field51.setType("SFVec3f")
-field51.setValue("0 0 0")
+Transform19.addChildren(TimeSensor49)
+ROUTE50 = x3d.ROUTE()
+ROUTE50.setFromNode("TourTime")
+ROUTE50.setFromField("fraction_changed")
+ROUTE50.setToNode("Animate")
+ROUTE50.setToField("set_fraction")
 
-Script49.addField(field51)
-field52 = x3d.field()
-field52.setName("set_fraction")
-field52.setAccessType("inputOnly")
-field52.setType("SFFloat")
+Transform19.addChildren(ROUTE50)
+ROUTE51 = x3d.ROUTE()
+ROUTE51.setFromNode("Animate")
+ROUTE51.setFromField("translation_changed")
+ROUTE51.setToNode("transform")
+ROUTE51.setToField("set_translation")
 
-Script49.addField(field52)
-field53 = x3d.field()
-field53.setName("a")
-field53.setType("SFFloat")
-field53.setAccessType("inputOutput")
-field53.setValue("0.5")
+Transform19.addChildren(ROUTE51)
+ROUTE52 = x3d.ROUTE()
+ROUTE52.setFromNode("Animate")
+ROUTE52.setFromField("a")
+ROUTE52.setToNode("shader")
+ROUTE52.setToField("a")
 
-Script49.addField(field53)
-field54 = x3d.field()
-field54.setName("b")
-field54.setType("SFFloat")
-field54.setAccessType("inputOutput")
-field54.setValue("0.5")
+Transform19.addChildren(ROUTE52)
+ROUTE53 = x3d.ROUTE()
+ROUTE53.setFromNode("Animate")
+ROUTE53.setFromField("b")
+ROUTE53.setToNode("shader")
+ROUTE53.setToField("b")
 
-Script49.addField(field54)
-field55 = x3d.field()
-field55.setName("c")
-field55.setType("SFFloat")
-field55.setAccessType("inputOutput")
-field55.setValue("3")
+Transform19.addChildren(ROUTE53)
+ROUTE54 = x3d.ROUTE()
+ROUTE54.setFromNode("Animate")
+ROUTE54.setFromField("c")
+ROUTE54.setToNode("shader")
+ROUTE54.setToField("c")
 
-Script49.addField(field55)
-field56 = x3d.field()
-field56.setName("d")
-field56.setType("SFFloat")
-field56.setAccessType("inputOutput")
-field56.setValue("3")
+Transform19.addChildren(ROUTE54)
+ROUTE55 = x3d.ROUTE()
+ROUTE55.setFromNode("Animate")
+ROUTE55.setFromField("d")
+ROUTE55.setToNode("shader")
+ROUTE55.setToField("d")
 
-Script49.addField(field56)
-field57 = x3d.field()
-field57.setName("tdelta")
-field57.setType("SFFloat")
-field57.setAccessType("inputOutput")
-field57.setValue("0.5")
+Transform19.addChildren(ROUTE55)
+ROUTE56 = x3d.ROUTE()
+ROUTE56.setFromNode("Animate")
+ROUTE56.setFromField("tdelta")
+ROUTE56.setToNode("shader")
+ROUTE56.setToField("tdelta")
 
-Script49.addField(field57)
-field58 = x3d.field()
-field58.setName("pdelta")
-field58.setType("SFFloat")
-field58.setAccessType("inputOutput")
-field58.setValue("0.5")
+Transform19.addChildren(ROUTE56)
+ROUTE57 = x3d.ROUTE()
+ROUTE57.setFromNode("Animate")
+ROUTE57.setFromField("pdelta")
+ROUTE57.setToNode("shader")
+ROUTE57.setToField("pdelta")
 
-Script49.addField(field58)
+Transform19.addChildren(ROUTE57)
+X3DScript58 = x3d.X3DScript()
+X3DScript58.setDEF("Animate")
+field59 = x3d.field()
+field59.setName("translation")
+field59.setAccessType("inputOutput")
+field59.setType("SFVec3f")
+field59.setValue("0 0 0")
 
-Script49.setSourceCode('''ecmascript:\n"+
-"			function initialize() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation.x + velocity.x,\n"+
-"				translation.y + velocity.y,\n"+
-"				translation.z + velocity.z);\n"+
-"			    for (var j = 0; j <= 2; j++) {\n"+
-"				    if (Math.abs(translation.x) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.y) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.z) > 10) {\n"+
-"					initialize();\n"+
-"				    } else {\n"+
-"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
-"				    }\n"+
-"			    }\n"+
-"			    animate_flowers();\n"+
-"			}\n"+
-"\n"+
-"			function animate_flowers(fraction, eventTime) {\n"+
-"				var choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					a += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					b += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					c += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					d += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				tdelta += 0.5;\n"+
-"				pdelta += 0.5;\n"+
-"				if (a > 1) {\n"+
-"					a =  0.5;\n"+
-"				}\n"+
-"				if (b > 1) {\n"+
-"					b =  0.5;\n"+
-"				}\n"+
-"				if (c < 1) {\n"+
-"					c =  4;\n"+
-"				}\n"+
-"				if (d < 1) {\n"+
-"					d =  4;\n"+
-"				}\n"+
-"				if (c > 10) {\n"+
-"					c = 4;\n"+
-"				}\n"+
-"				if (d > 10) {\n"+
-"					d = 4;\n"+
-"				}\n"+
-"			}''')
+X3DScript58.addField(field59)
+field60 = x3d.field()
+field60.setName("velocity")
+field60.setAccessType("inputOutput")
+field60.setType("SFVec3f")
+field60.setValue("0 0 0")
 
-Transform19.addChildren(Script49)
-TimeSensor59 = x3d.TimeSensor()
-TimeSensor59.setDEF("TourTime")
-TimeSensor59.setCycleInterval(5)
-TimeSensor59.setLoop(True)
+X3DScript58.addField(field60)
+field61 = x3d.field()
+field61.setName("set_fraction")
+field61.setAccessType("inputOnly")
+field61.setType("SFFloat")
 
-Transform19.addChildren(TimeSensor59)
-ROUTE60 = x3d.ROUTE()
-ROUTE60.setFromNode("TourTime")
-ROUTE60.setFromField("fraction_changed")
-ROUTE60.setToNode("Animate")
-ROUTE60.setToField("set_fraction")
+X3DScript58.addField(field61)
+field62 = x3d.field()
+field62.setName("a")
+field62.setType("SFFloat")
+field62.setAccessType("inputOutput")
+field62.setValue("0.5")
 
-Transform19.addChildren(ROUTE60)
-ROUTE61 = x3d.ROUTE()
-ROUTE61.setFromNode("Animate")
-ROUTE61.setFromField("translation_changed")
-ROUTE61.setToNode("transform")
-ROUTE61.setToField("set_translation")
+X3DScript58.addField(field62)
+field63 = x3d.field()
+field63.setName("b")
+field63.setType("SFFloat")
+field63.setAccessType("inputOutput")
+field63.setValue("0.5")
 
-Transform19.addChildren(ROUTE61)
-ROUTE62 = x3d.ROUTE()
-ROUTE62.setFromNode("Animate")
-ROUTE62.setFromField("a")
-ROUTE62.setToNode("shader")
-ROUTE62.setToField("a")
+X3DScript58.addField(field63)
+field64 = x3d.field()
+field64.setName("c")
+field64.setType("SFFloat")
+field64.setAccessType("inputOutput")
+field64.setValue("3")
 
-Transform19.addChildren(ROUTE62)
-ROUTE63 = x3d.ROUTE()
-ROUTE63.setFromNode("Animate")
-ROUTE63.setFromField("b")
-ROUTE63.setToNode("shader")
-ROUTE63.setToField("b")
+X3DScript58.addField(field64)
+field65 = x3d.field()
+field65.setName("d")
+field65.setType("SFFloat")
+field65.setAccessType("inputOutput")
+field65.setValue("3")
 
-Transform19.addChildren(ROUTE63)
-ROUTE64 = x3d.ROUTE()
-ROUTE64.setFromNode("Animate")
-ROUTE64.setFromField("c")
-ROUTE64.setToNode("shader")
-ROUTE64.setToField("c")
+X3DScript58.addField(field65)
+field66 = x3d.field()
+field66.setName("tdelta")
+field66.setType("SFFloat")
+field66.setAccessType("inputOutput")
+field66.setValue("0.5")
 
-Transform19.addChildren(ROUTE64)
-ROUTE65 = x3d.ROUTE()
-ROUTE65.setFromNode("Animate")
-ROUTE65.setFromField("d")
-ROUTE65.setToNode("shader")
-ROUTE65.setToField("d")
+X3DScript58.addField(field66)
+field67 = x3d.field()
+field67.setName("pdelta")
+field67.setType("SFFloat")
+field67.setAccessType("inputOutput")
+field67.setValue("0.5")
 
-Transform19.addChildren(ROUTE65)
-ROUTE66 = x3d.ROUTE()
-ROUTE66.setFromNode("Animate")
-ROUTE66.setFromField("tdelta")
-ROUTE66.setToNode("shader")
-ROUTE66.setToField("tdelta")
+X3DScript58.addField(field67)
 
-Transform19.addChildren(ROUTE66)
-ROUTE67 = x3d.ROUTE()
-ROUTE67.setFromNode("Animate")
-ROUTE67.setFromField("pdelta")
-ROUTE67.setToNode("shader")
-ROUTE67.setToField("pdelta")
-
-Transform19.addChildren(ROUTE67)
+Transform19.addX3DScript(X3DScript58)
 
 ProtoBody18.addChildren(Transform19)
 

@@ -51,22 +51,7 @@ public class browser {
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
         .addMeta(new meta().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
       .setScene(new Scene()
-        .addChild(new Script().setDEF("Browser")
-          .setSourceCode("ecmascript:\n"+
-"                function initialize() {\n"+
-"		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
-"                }"))
-        .addChild(new Script().setDEF("Clouds")
-          .setSourceCode("ecmascript:\n"+
-"\n"+
-"\n"+
-"function cumulustranslation() // These values designate the boundary location of the cloud\n"+
-"{\n"+
-"var xxx = ' '+' '+\n"+
-"'	Transform		\\n'+\n"+
-"'    ' + '               	\\n';\n"+
-"\n"+
-"}")))      ;
+        .setX3DScript(new X3DScript().setDEF("Clouds")))      ;
     return X3D0;
     }
 }
