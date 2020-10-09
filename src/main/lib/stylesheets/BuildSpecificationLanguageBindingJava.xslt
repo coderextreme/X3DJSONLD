@@ -3625,7 +3625,7 @@ declare methods that are not defined by the abstract node representation.</p>
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-		<xsl:attribute name="content"><xsl:text>http://www.web3d.org/specifications/x3d-3.3.xsd</xsl:text></xsl:attribute>
+		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/specifications/x3d-3.3.xsd</xsl:text></xsl:attribute>
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>

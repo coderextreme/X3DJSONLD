@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -134,134 +132,134 @@ public class F16
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../../license.html")))
   .setScene(new Scene()
     .addChild(new Transform("F16Transform")
-      .addChild(new Transform("MainFrameTransform").setScale(3.0f,3.0f,3.0f)
+      .addChild(new Transform("MainFrameTransform").setScale(3.0,3.0,3.0)
         .addChild(new Shape("Nose")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(.25f,.25f,.25f)))
-          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5f).setSolid(false).setCoordIndex(new int[] {24,0,3,-1,4,0,24,-1,25,26,27,-1,28,25,27,-1,27,29,28,-1,27,30,29,-1,27,31,30,-1,3,18,24,-1}).setNormalIndex(new int[] {16,0,3,-1,4,0,16,-1,17,17,17,-1,18,18,18,-1,19,19,19,-1,20,20,20,-1,21,21,21,-1,3,14,16,-1})
+            .setMaterial(new Material().setDiffuseColor(.25,.25,.25)))
+          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setSolid(false).setCoordIndex(new int[] {24,0,3,-1,4,0,24,-1,25,26,27,-1,28,25,27,-1,27,29,28,-1,27,30,29,-1,27,31,30,-1,3,18,24,-1}).setNormalIndex(new int[] {16,0,3,-1,4,0,16,-1,17,17,17,-1,18,18,18,-1,19,19,19,-1,20,20,20,-1,21,21,21,-1,3,14,16,-1})
             .setCoord(new Coordinate("coordinates").setPoint(getcoordinates_7_19_point()))
             .setNormal(new Normal("normalVector").setVector(getnormalVector_7_20_vector()))))
         .addChild(new Shape("Canopy")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(.25f,.25f,.25f).setTransparency(0.8f)))
-          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5f).setSolid(false).setCoordIndex(new int[] {2,32,33,-1,34,32,2,-1,35,36,37,-1,38,36,35,-1,39,40,41,-1,37,36,42,-1,2,43,44,-1,33,43,2,-1,45,37,42,46,-1,46,42,47,48,-1,33,45,46,43,-1,43,46,48,44,-1,34,49,50,32,-1,32,50,45,33,-1,49,38,35,50,-1,50,35,37,45,-1}).setNormalIndex(new int[] {2,22,23,-1,24,22,2,-1,25,26,27,-1,28,26,25,-1,29,29,29,-1,27,26,30,-1,2,31,32,-1,23,31,2,-1,33,27,30,34,-1,34,30,35,36,-1,23,33,34,31,-1,31,34,36,32,-1,24,37,38,22,-1,22,38,33,23,-1,37,28,25,38,-1,38,25,27,33,-1})
+            .setMaterial(new Material().setDiffuseColor(.25,.25,.25).setTransparency(0.8)))
+          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setSolid(false).setCoordIndex(new int[] {2,32,33,-1,34,32,2,-1,35,36,37,-1,38,36,35,-1,39,40,41,-1,37,36,42,-1,2,43,44,-1,33,43,2,-1,45,37,42,46,-1,46,42,47,48,-1,33,45,46,43,-1,43,46,48,44,-1,34,49,50,32,-1,32,50,45,33,-1,49,38,35,50,-1,50,35,37,45,-1}).setNormalIndex(new int[] {2,22,23,-1,24,22,2,-1,25,26,27,-1,28,26,25,-1,29,29,29,-1,27,26,30,-1,2,31,32,-1,23,31,2,-1,33,27,30,34,-1,34,30,35,36,-1,23,33,34,31,-1,31,34,36,32,-1,24,37,38,22,-1,22,38,33,23,-1,37,28,25,38,-1,38,25,27,33,-1})
             .setCoord(new Coordinate().setUSE("coordinates"))
             .setNormal(new Normal().setUSE("normalVector"))))
         .addChild(new Shape("MainBodyAndWingEdges")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(.1796f,.1914f,.2382f)))
-          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5f).setSolid(false).setCoordIndex(getIndexedFaceSet_6_31_coordIndex()).setNormalIndex(getIndexedFaceSet_6_31_normalIndex())
+            .setMaterial(new Material().setDiffuseColor(.1796,.1914,.2382)))
+          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setSolid(false).setCoordIndex(getIndexedFaceSet_6_31_coordIndex()).setNormalIndex(getIndexedFaceSet_6_31_normalIndex())
             .setCoord(new Coordinate().setUSE("coordinates"))
             .setNormal(new Normal().setUSE("normalVector"))))
         .addChild(new Shape("ExhaustExitFlatPanel")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(.5f,.5f,.5f)))
-          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5f).setSolid(false).setCoordIndex(new int[] {186,187,188,189,190,-1,190,191,192,193,186,-1}).setNormalIndex(new int[] {118,119,120,121,122,-1,122,123,124,125,118,-1})
+            .setMaterial(new Material().setDiffuseColor(.5,.5,.5)))
+          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setSolid(false).setCoordIndex(new int[] {186,187,188,189,190,-1,190,191,192,193,186,-1}).setNormalIndex(new int[] {118,119,120,121,122,-1,122,123,124,125,118,-1})
             .setCoord(new Coordinate().setUSE("coordinates"))
             .setNormal(new Normal().setUSE("normalVector"))))
         .addChild(new Shape("ExhaustEntranceFrontBottomPart")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(.2304f,.2304f,.2304f)))
-          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5f).setSolid(false).setCoordIndex(new int[] {194,130,173,195,196,197,-1,197,198,199,82,81,194,-1}).setNormalIndex(new int[] {126,126,126,126,126,126,-1,126,126,126,126,126,126,-1})
+            .setMaterial(new Material().setDiffuseColor(.2304,.2304,.2304)))
+          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setSolid(false).setCoordIndex(new int[] {194,130,173,195,196,197,-1,197,198,199,82,81,194,-1}).setNormalIndex(new int[] {126,126,126,126,126,126,-1,126,126,126,126,126,126,-1})
             .setCoord(new Coordinate().setUSE("coordinates"))
             .setNormal(new Normal().setUSE("normalVector"))))
         .addChild(new Shape("ThirdPartFromNoseUnderCanopy")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(.6f,.6f,.6f)))
-          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5f).setSolid(false).setCoordIndex(new int[] {12,200,201,15,-1,19,48,127,17,-1,15,201,128,5,-1,17,127,202,11,-1,11,202,200,12,-1,5,128,49,1,-1,48,19,44,-1,19,2,44,-1,34,1,49,-1,34,2,1,-1}).setNormalIndex(new int[] {8,127,128,11,-1,15,36,83,13,-1,11,128,85,5,-1,13,83,129,7,-1,7,129,127,8,-1,5,85,37,1,-1,36,15,32,-1,15,2,32,-1,24,1,37,-1,24,2,1,-1})
+            .setMaterial(new Material().setDiffuseColor(.6,.6,.6)))
+          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setSolid(false).setCoordIndex(new int[] {12,200,201,15,-1,19,48,127,17,-1,15,201,128,5,-1,17,127,202,11,-1,11,202,200,12,-1,5,128,49,1,-1,48,19,44,-1,19,2,44,-1,34,1,49,-1,34,2,1,-1}).setNormalIndex(new int[] {8,127,128,11,-1,15,36,83,13,-1,11,128,85,5,-1,13,83,129,7,-1,7,129,127,8,-1,5,85,37,1,-1,36,15,32,-1,15,2,32,-1,24,1,37,-1,24,2,1,-1})
             .setCoord(new Coordinate().setUSE("coordinates"))
             .setNormal(new Normal().setUSE("normalVector"))))
         .addChild(new Shape("RearExhaustExitPartLastPartOfMainBody")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(.37f,.37f,.37f).setShininess(.5f)))
-          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5f).setSolid(false).setCoordIndex(new int[] {64,186,193,165,-1,203,204,164,163,-1,192,191,138,142,-1,191,190,96,138,-1,94,96,190,189,-1,95,94,189,188,-1,63,187,186,64,-1,62,61,205,206,-1}).setNormalIndex(new int[] {50,118,125,107,-1,130,130,130,130,-1,124,123,91,94,-1,123,122,75,91,-1,73,75,122,121,-1,74,73,121,120,-1,49,119,118,50,-1,131,131,131,131,-1})
+            .setMaterial(new Material().setDiffuseColor(.37,.37,.37).setShininess(.5)))
+          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setSolid(false).setCoordIndex(new int[] {64,186,193,165,-1,203,204,164,163,-1,192,191,138,142,-1,191,190,96,138,-1,94,96,190,189,-1,95,94,189,188,-1,63,187,186,64,-1,62,61,205,206,-1}).setNormalIndex(new int[] {50,118,125,107,-1,130,130,130,130,-1,124,123,91,94,-1,123,122,75,91,-1,73,75,122,121,-1,74,73,121,120,-1,49,119,118,50,-1,131,131,131,131,-1})
             .setCoord(new Coordinate().setUSE("coordinates"))
             .setNormal(new Normal().setUSE("normalVector"))))
         .addChild(new Shape("WingsAndTail")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setEmissiveColor(.1796f,.1914f,.2382f)))
-          .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCreaseAngle(0.5f).setSolid(false).setCoordIndex(new int[] {6,7,8,9,-1,9,8,7,6,-1,20,21,22,23,-1,23,22,21,20,-1,97,20,23,98,99,-1,99,98,23,20,97,-1,108,109,110,111,-1,111,110,109,108,-1,112,113,114,115,-1,115,114,113,112,-1,132,6,9,133,134,-1,134,133,9,6,132,-1,86,139,140,67,-1,67,140,139,86,-1,143,144,145,146,-1,146,145,144,143,-1,177,178,179,-1,179,178,177,-1,178,180,181,182,183,179,-1,179,183,182,181,180,178,-1,182,184,183,-1,183,184,182,-1,177,178,179,-1,179,178,177,-1,178,180,181,182,183,179,-1,179,183,182,181,180,178,-1,182,184,183,-1,183,184,182,-1}).setNormalIndex(new int[] {50,118,125,107,-1,130,130,130,130,-1,124,123,91,94,-1,123,122,75,91,-1,73,75,122,121,-1,74,73,121,120,-1,49,119,118,50,-1,131,131,131,131,-1})
+            .setMaterial(new Material().setEmissiveColor(.1796,.1914,.2382)))
+          .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCreaseAngle(0.5).setSolid(false).setCoordIndex(new int[] {6,7,8,9,-1,9,8,7,6,-1,20,21,22,23,-1,23,22,21,20,-1,97,20,23,98,99,-1,99,98,23,20,97,-1,108,109,110,111,-1,111,110,109,108,-1,112,113,114,115,-1,115,114,113,112,-1,132,6,9,133,134,-1,134,133,9,6,132,-1,86,139,140,67,-1,67,140,139,86,-1,143,144,145,146,-1,146,145,144,143,-1,177,178,179,-1,179,178,177,-1,178,180,181,182,183,179,-1,179,183,182,181,180,178,-1,182,184,183,-1,183,184,182,-1,177,178,179,-1,179,178,177,-1,178,180,181,182,183,179,-1,179,183,182,181,180,178,-1,182,184,183,-1,183,184,182,-1}).setNormalIndex(new int[] {50,118,125,107,-1,130,130,130,130,-1,124,123,91,94,-1,123,122,75,91,-1,73,75,122,121,-1,74,73,121,120,-1,49,119,118,50,-1,131,131,131,131,-1})
             .setCoord(new Coordinate().setUSE("coordinates"))
             .setNormal(new Normal().setUSE("normalVector"))))
         .addChild(new Shape("SecondPartAfterNose")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(.6f,.6f,.6f)))
-          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5f).setSolid(false).setCoordIndex(new int[] {0,1,2,3,-1,4,5,1,0,-1,10,11,12,13,-1,14,15,5,4,-1,13,12,15,14,-1,16,17,11,10,-1,18,19,17,16,-1,3,2,19,18,-1}).setNormalIndex(new int[] {0,1,2,3,-1,4,5,1,0,-1,6,7,8,9,-1,10,11,5,4,-1,9,8,11,10,-1,12,13,7,6,-1,14,15,13,12,-1,3,2,15,14,-1})
+            .setMaterial(new Material().setDiffuseColor(.6,.6,.6)))
+          .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setSolid(false).setCoordIndex(new int[] {0,1,2,3,-1,4,5,1,0,-1,10,11,12,13,-1,14,15,5,4,-1,13,12,15,14,-1,16,17,11,10,-1,18,19,17,16,-1,3,2,19,18,-1}).setNormalIndex(new int[] {0,1,2,3,-1,4,5,1,0,-1,6,7,8,9,-1,10,11,5,4,-1,9,8,11,10,-1,12,13,7,6,-1,14,15,13,12,-1,3,2,15,14,-1})
             .setCoord(new Coordinate().setUSE("coordinates"))
             .setNormal(new Normal().setUSE("normalVector")))))
-      .addChild(new Transform("CockpitTransform").setRotation(1.0f,0.0f,0.0f,-0.1f).setScale(0.045f,0.045f,0.045f).setTranslation(0.0f,1.0f,-10.0f)
+      .addChild(new Transform("CockpitTransform").setRotation(1.0,0.0,0.0,-0.1).setScale(0.045,0.045,0.045).setTranslation(0.0,1.0,-10.0)
         .addChild(new Inline().setUrl(new String[] {"Cockpit.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d","Cockpit.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl"})))
-      .addChild(new Transform("SeatTransform").setRotation(-1.0f,0.0f,0.0f,-0.1f).setScale(0.9f,0.9f,0.9f).setTranslation(0.0f,0.0f,-8.3f)
+      .addChild(new Transform("SeatTransform").setRotation(-1.0,0.0,0.0,-0.1).setScale(0.9,0.9,0.9).setTranslation(0.0,0.0,-8.3)
         .addChild(new Inline().setUrl(new String[] {"Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"})))
-      .addChild(new Transform("FrontWheelTransform").setCenter(0.0f,2.5f,0.0f).setRotation(-1.0f,0.0f,0.0f,1.92f).setTranslation(0.7f,-5.2f,-6.5f)
+      .addChild(new Transform("FrontWheelTransform").setCenter(0.0,2.5,0.0).setRotation(-1.0,0.0,0.0,1.92).setTranslation(0.7,-5.2,-6.5)
         .addComments(" Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel) ")
         .addChild(new Inline().setUrl(new String[] {"FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"})))
-      .addChild(new Transform("RearLeftWheelTransform").setCenter(0.0f,2.5f,0.0f).setRotation(1.0f,0.0f,1.0f,1.92f).setTranslation(-2.95f,-5.0f,7.0f)
+      .addChild(new Transform("RearLeftWheelTransform").setCenter(0.0,2.5,0.0).setRotation(1.0,0.0,1.0,1.92).setTranslation(-2.95,-5.0,7.0)
         .addComments(" Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) ")
         .addChild(new Inline().setUrl(new String[] {"RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"})))
-      .addChild(new Transform("RearRightWheelTransform").setCenter(0.0f,2.5f,0.0f).setRotation(-1.0f,0.0f,-1.0f,1.92f).setTranslation(2.95f,-5.0f,7.0f)
+      .addChild(new Transform("RearRightWheelTransform").setCenter(0.0,2.5,0.0).setRotation(-1.0,0.0,-1.0,1.92).setTranslation(2.95,-5.0,7.0)
         .addComments(" Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) ")
         .addChild(new Inline().setUrl(new String[] {"RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"})))
       .addChild(new Transform("CockpitButtonsTransform")
-        .addChild(new Transform("UpButtonTransform").setRotation(1.0f,0.0f,0.0f,1.57f).setScale(.008f,.008f,.008f).setTranslation(-0.95f,1.05f,-10.0f)
+        .addChild(new Transform("UpButtonTransform").setRotation(1.0,0.0,0.0,1.57).setScale(.008,.008,.008).setTranslation(-0.95,1.05,-10.0)
           .addChild(new Shape()
-            .setGeometry(new Cylinder().setHeight(1f).setRadius(4f))
+            .setGeometry(new Cylinder().setHeight(1).setRadius(4))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(1.0f,0.0f,0.0f).setShininess(.8f))))
+              .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0).setShininess(.8))))
           .addChild(new TouchSensor("TouchSensorUp").setDescription("click for gears up")))
-        .addChild(new Transform("DownButtonTransform").setRotation(1.0f,0.0f,0.0f,1.57f).setScale(.008f,.008f,.008f).setTranslation(-0.83f,1.05f,-10.0f)
+        .addChild(new Transform("DownButtonTransform").setRotation(1.0,0.0,0.0,1.57).setScale(.008,.008,.008).setTranslation(-0.83,1.05,-10.0)
           .addChild(new Shape()
-            .setGeometry(new Cylinder().setHeight(1f).setRadius(4f))
+            .setGeometry(new Cylinder().setHeight(1).setRadius(4))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(1.0f,1.0f,0.0f).setShininess(.8f))))
+              .setMaterial(new Material().setDiffuseColor(1.0,1.0,0.0).setShininess(.8))))
           .addChild(new TouchSensor("TouchSensorDown").setDescription("click for gears down")))
-        .addChild(new Transform("GearUpTextTransform").setScale(.06f,.06f,.06f).setTranslation(-.65f,1.55f,-10.0f)
+        .addChild(new Transform("GearUpTextTransform").setScale(.06,.06,.06).setTranslation(-.65,1.55,-10.0)
           .addChild(new Shape()
             .setGeometry(new Text().setString(new String[] {"RED Button","Gear Up"}))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(1.0f,0.0f,0.0f)))))
-        .addChild(new Transform("GearDownTextTransform").setScale(.06f,.06f,.06f).setTranslation(-.65f,1.35f,-10.0f)
+              .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0)))))
+        .addChild(new Transform("GearDownTextTransform").setScale(.06,.06,.06).setTranslation(-.65,1.35,-10.0)
           .addChild(new Shape()
-            .setGeometry(new Text().setLength(new float[] {5.5f}).setString(new String[] {"YELLOW Button","Gear Down"}))
+            .setGeometry(new Text().setLength(new double[] {5.5}).setString(new String[] {"YELLOW Button","Gear Down"}))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(1.0f,1.0f,0.0f)))))
-        .addChild(new Transform("FireButtonTransform").setRotation(1.0f,0.0f,0.0f,1.57f).setScale(.008f,.008f,.008f).setTranslation(.52f,1.6f,-10.0f)
+              .setMaterial(new Material().setDiffuseColor(1.0,1.0,0.0)))))
+        .addChild(new Transform("FireButtonTransform").setRotation(1.0,0.0,0.0,1.57).setScale(.008,.008,.008).setTranslation(.52,1.6,-10.0)
           .addChild(new Shape()
-            .setGeometry(new Cylinder().setHeight(1f).setRadius(4f))
+            .setGeometry(new Cylinder().setHeight(1).setRadius(4))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(0.0f,.75f,.18f).setShininess(.8f))))
+              .setMaterial(new Material().setDiffuseColor(0.0,.75,.18).setShininess(.8))))
           .addChild(new TouchSensor("FireSensor").setDescription("click to fire")))
-        .addChild(new Transform("FireTextTransform").setScale(.06f,.06f,.06f).setTranslation(.36f,1.5f,-10.0f)
+        .addChild(new Transform("FireTextTransform").setScale(.06,.06,.06).setTranslation(.36,1.5,-10.0)
           .addChild(new Shape()
             .setGeometry(new Text().setString(new String[] {"Target Locked","      FIRE!..","(Green Button)"}))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(0.0f,.75f,.18f))))))
-      .addChild(new Viewpoint().setDescription("F16 Close Look-up").setOrientation(-0.559f,-0.827f,-0.057f,1.3534f).setPosition(-28.7f,19.9f,17.4f))
-      .addChild(new Viewpoint().setDescription("Cockpit").setOrientation(-1.0f,0.0f,0.0f,0.1249f).setPosition(0.0f,1.5f,-7.9f))
-      .addChild(new Viewpoint("LandingGearAnimationView").setDescription("Landing Gear Animation View").setOrientation(-0.003f,1.0f,-0.012f,2.5741f).setPosition(16.1f,-5.8f,-24.6f))
-      .addChild(new Viewpoint().setDescription("Cockpit Left View").setOrientation(-0.276f,-0.922f,-0.271f,1.2338f).setPosition(-6.7f,6.1f,-3.9f))
-      .addChild(new Viewpoint().setDescription("F-16 Front View").setOrientation(-0.007f,0.995f,0.102f,3.1152f).setPosition(-0.1f,13.4f,-65.0f))
-      .addChild(new Viewpoint().setDescription("Cockpit Target View").setOrientation(-0.834f,-0.523f,-0.176f,0.0875f).setPosition(0.0f,2.4f,-7.9f))
-      .addChild(new Transform("NoseAntennaTransform").setRotation(1.0f,0.0f,0.0f,1.57f).setTranslation(0.0f,-.275f,-21.0f)
+              .setMaterial(new Material().setDiffuseColor(0.0,.75,.18))))))
+      .addChild(new Viewpoint().setDescription("F16 Close Look-up").setOrientation(-0.559,-0.827,-0.057,1.3534).setPosition(-28.7,19.9,17.4))
+      .addChild(new Viewpoint().setDescription("Cockpit").setOrientation(-1.0,0.0,0.0,0.1249).setPosition(0.0,1.5,-7.9))
+      .addChild(new Viewpoint("LandingGearAnimationView").setDescription("Landing Gear Animation View").setOrientation(-0.003,1.0,-0.012,2.5741).setPosition(16.1,-5.8,-24.6))
+      .addChild(new Viewpoint().setDescription("Cockpit Left View").setOrientation(-0.276,-0.922,-0.271,1.2338).setPosition(-6.7,6.1,-3.9))
+      .addChild(new Viewpoint().setDescription("F-16 Front View").setOrientation(-0.007,0.995,0.102,3.1152).setPosition(-0.1,13.4,-65.0))
+      .addChild(new Viewpoint().setDescription("Cockpit Target View").setOrientation(-0.834,-0.523,-0.176,0.0875).setPosition(0.0,2.4,-7.9))
+      .addChild(new Transform("NoseAntennaTransform").setRotation(1.0,0.0,0.0,1.57).setTranslation(0.0,-.275,-21.0)
         .addChild(new Shape()
-          .setGeometry(new Cylinder().setRadius(.05f))
+          .setGeometry(new Cylinder().setRadius(.05))
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(.5f,.5f,.5f).setShininess(.5f))))))
+            .setMaterial(new Material().setDiffuseColor(.5,.5,.5).setShininess(.5))))))
     .addChild(new TimeSensor("WheelUp").setCycleInterval(8))
-    .addChild(new OrientationInterpolator("GearUpInterpolator").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,-0.79f,1.0f,0.0f,0.0f,-1.92f})))
+    .addChild(new OrientationInterpolator("GearUpInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {1.0,0.0,0.0,0.0,1.0,0.0,0.0,-0.79,1.0,0.0,0.0,-1.92})))
     .addChild(new ROUTE().setFromNode("TouchSensorUp").setFromField("touchTime").setToNode("WheelUp").setToField("set_startTime"))
     .addChild(new ROUTE().setFromNode("WheelUp").setFromField("fraction_changed").setToNode("GearUpInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("GearUpInterpolator").setFromField("value_changed").setToNode("FrontWheelTransform").setToField("set_rotation"))
     .addChild(new TimeSensor("WheelDown").setCycleInterval(8))
-    .addChild(new OrientationInterpolator("GearDownInterpolator").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {1.0f,0.0f,0.0f,-1.92f,1.0f,0.0f,0.0f,-0.79f,1.0f,0.0f,0.0f,0.0f})))
+    .addChild(new OrientationInterpolator("GearDownInterpolator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {1.0,0.0,0.0,-1.92,1.0,0.0,0.0,-0.79,1.0,0.0,0.0,0.0})))
     .addChild(new ROUTE().setFromNode("TouchSensorDown").setFromField("touchTime").setToNode("WheelDown").setToField("set_startTime"))
     .addChild(new ROUTE().setFromNode("WheelDown").setFromField("fraction_changed").setToNode("GearDownInterpolator").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("GearDownInterpolator").setFromField("value_changed").setToNode("FrontWheelTransform").setToField("set_rotation"))
     .addComments(" Animation commands for Rear Right Wheel Starts ")
     .addChild(new TimeSensor("RRearUp1").setCycleInterval(8))
     .addChild(new TimeSensor("RRearDown1").setCycleInterval(8))
-    .addChild(new OrientationInterpolator("RRearInterUp1").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {-1.0f,0.0f,-1.0f,0.0f,-1.0f,0.0f,-1.0f,0.44f,-1.0f,0.0f,-1.0f,1.92f})))
-    .addChild(new OrientationInterpolator("RRearInterDown1").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {-1.0f,0.0f,-1.0f,1.92f,-1.0f,0.0f,-1.0f,0.44f,-1.0f,0.0f,-1.0f,0.0f})))
+    .addChild(new OrientationInterpolator("RRearInterUp1").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {-1.0,0.0,-1.0,0.0,-1.0,0.0,-1.0,0.44,-1.0,0.0,-1.0,1.92})))
+    .addChild(new OrientationInterpolator("RRearInterDown1").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {-1.0,0.0,-1.0,1.92,-1.0,0.0,-1.0,0.44,-1.0,0.0,-1.0,0.0})))
     .addChild(new ROUTE().setFromNode("TouchSensorDown").setFromField("touchTime").setToNode("RRearDown1").setToField("set_startTime"))
     .addChild(new ROUTE().setFromNode("TouchSensorUp").setFromField("touchTime").setToNode("RRearUp1").setToField("set_startTime"))
     .addChild(new ROUTE().setFromNode("RRearDown1").setFromField("fraction_changed").setToNode("RRearInterDown1").setToField("set_fraction"))
@@ -271,92 +269,92 @@ public class F16
     .addComments(" Animation commands for Rear Left Wheel ")
     .addChild(new TimeSensor("LRearUp1").setCycleInterval(8))
     .addChild(new TimeSensor("LRearDown1").setCycleInterval(8))
-    .addChild(new OrientationInterpolator("LRearInterUp1").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {1.0f,0.0f,1.0f,0.0f,1.0f,0.0f,1.0f,0.44f,1.0f,0.0f,1.0f,1.92f})))
-    .addChild(new OrientationInterpolator("LRearInterDown1").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {1.0f,0.0f,1.0f,1.92f,1.0f,0.0f,1.0f,0.44f,1.0f,0.0f,1.0f,0.0f})))
+    .addChild(new OrientationInterpolator("LRearInterUp1").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.44,1.0,0.0,1.0,1.92})))
+    .addChild(new OrientationInterpolator("LRearInterDown1").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {1.0,0.0,1.0,1.92,1.0,0.0,1.0,0.44,1.0,0.0,1.0,0.0})))
     .addChild(new ROUTE().setFromNode("TouchSensorDown").setFromField("touchTime").setToNode("LRearDown1").setToField("set_startTime"))
     .addChild(new ROUTE().setFromNode("TouchSensorUp").setFromField("touchTime").setToNode("LRearUp1").setToField("set_startTime"))
     .addChild(new ROUTE().setFromNode("LRearDown1").setFromField("fraction_changed").setToNode("LRearInterDown1").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("LRearUp1").setFromField("fraction_changed").setToNode("LRearInterUp1").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("LRearInterDown1").setFromField("value_changed").setToNode("RearLeftWheelTransform").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("LRearInterUp1").setFromField("value_changed").setToNode("RearLeftWheelTransform").setToField("set_rotation"))
-    .addChild(new Background().setGroundAngle(new float[] {1.309f,1.570796f}).setGroundColor(new MFColor(new float[] {0.0f,0.3f,.7f,0.0f,0.35f,0.75f,0.0f,0.4f,0.8f})).setSkyAngle(new float[] {1.309f,1.571f}).setSkyColor(new MFColor(new float[] {0.0f,0.3f,0.8f,0.0f,0.5f,1.0f,1.0f,1.0f,1.0f})))
-    .addChild(new Transform("RightmostAmraamTransform").setRotation(-1.0f,0.0f,0.0f,1.57f).setScale(1.4f,1.4f,1.4f).setTranslation(15.65f,0.0f,4.5f)
+    .addChild(new Background().setGroundAngle(new double[] {1.309,1.570796}).setGroundColor(new MFColor(new double[] {0.0,0.3,.7,0.0,0.35,0.75,0.0,0.4,0.8})).setSkyAngle(new double[] {1.309,1.571}).setSkyColor(new MFColor(new double[] {0.0,0.3,0.8,0.0,0.5,1.0,1.0,1.0,1.0})))
+    .addChild(new Transform("RightmostAmraamTransform").setRotation(-1.0,0.0,0.0,1.57).setScale(1.4,1.4,1.4).setTranslation(15.65,0.0,4.5)
       .addChild(new Inline("Amraam").setUrl(new String[] {"../../Weapons/Missiles/Amraam.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d","../../Weapons/Missiles/Amraam.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"})))
-    .addChild(new Transform("LeftmostAmraamTransform").setRotation(-1.0f,0.0f,0.0f,1.57f).setScale(1.4f,1.4f,1.4f).setTranslation(-15.65f,0.0f,4.5f)
+    .addChild(new Transform("LeftmostAmraamTransform").setRotation(-1.0,0.0,0.0,1.57).setScale(1.4,1.4,1.4).setTranslation(-15.65,0.0,4.5)
       .addChild(new Inline().setUSE("Amraam")))
-    .addChild(new Transform("SidewinderHolderTransformRight").setRotation(0.0f,1.0f,0.0f,1.57f).setScale(6.0f,3.0f,3.0f).setTranslation(9.0f,-1.125f,8.0f)
+    .addChild(new Transform("SidewinderHolderTransformRight").setRotation(0.0,1.0,0.0,1.57).setScale(6.0,3.0,3.0).setTranslation(9.0,-1.125,8.0)
       .addChild(new Inline("SidewinderHolder").setUrl(new String[] {"SidewinderHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d","SidewinderHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl"})))
-    .addChild(new Transform("SidewinderHolderTransformLeft").setRotation(0.0f,1.0f,0.0f,1.57f).setScale(6.0f,3.0f,3.0f).setTranslation(-8.45f,-1.125f,8.0f)
+    .addChild(new Transform("SidewinderHolderTransformLeft").setRotation(0.0,1.0,0.0,1.57).setScale(6.0,3.0,3.0).setTranslation(-8.45,-1.125,8.0)
       .addChild(new Inline().setUSE("SidewinderHolder")))
-    .addChild(new Transform("TurkishFlagTransformLeft").setRotation(0.0f,-1.0f,0.0f,1.57f).setScale(.3f,.25f,.3f).setTranslation(-.01f,8.0f,19.5f)
+    .addChild(new Transform("TurkishFlagTransformLeft").setRotation(0.0,-1.0,0.0,1.57).setScale(.3,.25,.3).setTranslation(-.01,8.0,19.5)
       .addChild(new Inline().setUrl(new String[] {"TurkishFlagLeft.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d","TurkishFlagLeft.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl"})))
-    .addChild(new Transform("TurkishFlagTransformRight").setRotation(0.0f,1.0f,0.0f,1.57f).setScale(.3f,.25f,.3f).setTranslation(.01f,8.0f,20.5f)
+    .addChild(new Transform("TurkishFlagTransformRight").setRotation(0.0,1.0,0.0,1.57).setScale(.3,.25,.3).setTranslation(.01,8.0,20.5)
       .addChild(new Inline().setUrl(new String[] {"TurkishFlagRight.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d","TurkishFlagRight.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl"})))
-    .addChild(new Transform("AmraamHolderTransformLeft").setTranslation(-12.0f,-.176f,10.7f)
+    .addChild(new Transform("AmraamHolderTransformLeft").setTranslation(-12.0,-.176,10.7)
       .addChild(new Inline("AmraamHolder").setUrl(new String[] {"AmraamHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d","AmraamHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl"})))
-    .addChild(new Transform("AmraamHolderTransformRight").setTranslation(12.0f,-.176f,10.7f)
+    .addChild(new Transform("AmraamHolderTransformRight").setTranslation(12.0,-.176,10.7)
       .addChild(new Inline().setUSE("AmraamHolder")))
-    .addChild(new Transform("AmraamInnerTransformRight").setRotation(-1.0f,0.0f,0.0f,1.57f).setScale(1.4f,1.4f,1.4f).setTranslation(12.0f,-1.6f,4.5f)
+    .addChild(new Transform("AmraamInnerTransformRight").setRotation(-1.0,0.0,0.0,1.57).setScale(1.4,1.4,1.4).setTranslation(12.0,-1.6,4.5)
       .addChild(new Inline().setUSE("Amraam")))
-    .addChild(new Transform("AmraamInnerTransformLeft").setRotation(-1.0f,0.0f,0.0f,1.57f).setScale(1.4f,1.4f,1.4f).setTranslation(-12.0f,-1.6f,4.5f)
+    .addChild(new Transform("AmraamInnerTransformLeft").setRotation(-1.0,0.0,0.0,1.57).setScale(1.4,1.4,1.4).setTranslation(-12.0,-1.6,4.5)
       .addChild(new Inline().setUSE("Amraam")))
-    .addChild(new Transform("SidewinderTransformLeft").setRotation(-1.0f,0.0f,0.0f,1.57f).setScale(1.6f,1.6f,1.6f).setTranslation(-8.7f,-2.0f,3.5f)
+    .addChild(new Transform("SidewinderTransformLeft").setRotation(-1.0,0.0,0.0,1.57).setScale(1.6,1.6,1.6).setTranslation(-8.7,-2.0,3.5)
       .addChild(new Inline("Sidewinder").setUrl(new String[] {"../../Weapons/Missiles/Sidewinder.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d","../../Weapons/Missiles/Sidewinder.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl"})))
-    .addChild(new Transform("SidewinderTransformRight").setRotation(-1.0f,0.0f,0.0f,1.57f).setScale(1.6f,1.6f,1.6f).setTranslation(8.7f,-2.0f,3.5f)
+    .addChild(new Transform("SidewinderTransformRight").setRotation(-1.0,0.0,0.0,1.57).setScale(1.6,1.6,1.6).setTranslation(8.7,-2.0,3.5)
       .addChild(new Inline().setUSE("Sidewinder")))
-    .addChild(new Transform("FuelTankHolderTransformLeft").setRotation(0.0f,1.0f,0.0f,1.57f).setScale(1.5f,1.5f,1.5f).setTranslation(-4.8f,-1.125f,6.0f)
+    .addChild(new Transform("FuelTankHolderTransformLeft").setRotation(0.0,1.0,0.0,1.57).setScale(1.5,1.5,1.5).setTranslation(-4.8,-1.125,6.0)
       .addChild(new Inline("FuelTankHolder").setUrl(new String[] {"FuelTankHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d","FuelTankHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl"})))
-    .addChild(new Transform("FuelTankHolderTransformRight").setRotation(0.0f,1.0f,0.0f,1.57f).setScale(1.5f,1.5f,1.5f).setTranslation(5.3f,-1.125f,6.0f)
+    .addChild(new Transform("FuelTankHolderTransformRight").setRotation(0.0,1.0,0.0,1.57).setScale(1.5,1.5,1.5).setTranslation(5.3,-1.125,6.0)
       .addChild(new Inline().setUSE("FuelTankHolder")))
-    .addChild(new Transform("FuelTankTransformRight").setRotation(-1.0f,0.0f,0.0f,1.57f).setScale(1.5f,1.5f,1.5f).setTranslation(5.0f,-2.85f,5.5f)
+    .addChild(new Transform("FuelTankTransformRight").setRotation(-1.0,0.0,0.0,1.57).setScale(1.5,1.5,1.5).setTranslation(5.0,-2.85,5.5)
       .addChild(new Inline("FuelTank").setUrl(new String[] {"FuelTank.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d","FuelTank.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl"})))
-    .addChild(new Transform("FuelTankTransformLeft").setRotation(-1.0f,0.0f,0.0f,1.57f).setScale(1.5f,1.5f,1.5f).setTranslation(-5.0f,-2.85f,5.5f)
+    .addChild(new Transform("FuelTankTransformLeft").setRotation(-1.0,0.0,0.0,1.57).setScale(1.5,1.5,1.5).setTranslation(-5.0,-2.85,5.5)
       .addChild(new Inline().setUSE("FuelTank")))
     .addChild(new Transform("InlineCoverOfPlaneTansform")
       .addChild(new Shape()
-        .setGeometry(new Box().setSize(4.15f,.1f,20.0f))
+        .setGeometry(new Box().setSize(4.15,.1,20.0))
         .setAppearance(new Appearance()
-          .setMaterial(new Material().setDiffuseColor(.25f,.25f,.25f)))))
-    .addChild(new Transform("TargetHelicopterTransform").setTranslation(16.0f,-50.0f,-500.0f)
+          .setMaterial(new Material().setDiffuseColor(.25,.25,.25)))))
+    .addChild(new Transform("TargetHelicopterTransform").setTranslation(16.0,-50.0,-500.0)
       .addChild(new Inline().setUrl(new String[] {"Target.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d","Target.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl"})))
     .addChild(new TimeSensor("FireClock").setCycleInterval(8))
-    .addChild(new PositionInterpolator("MissilePath").setKey(new float[] {0.0f,.1f,1.0f}).setKeyValue(new MFVec3f(new float[] {-15.65f,0.0f,4.5f,-15.65f,-2.0f,4.5f,16.0f,-50.0f,-500.0f})))
+    .addChild(new PositionInterpolator("MissilePath").setKey(new double[] {0.0,.1,1.0}).setKeyValue(new MFVec3f(new double[] {-15.65,0.0,4.5,-15.65,-2.0,4.5,16.0,-50.0,-500.0})))
     .addChild(new ROUTE().setFromNode("FireSensor").setFromField("touchTime").setToNode("FireClock").setToField("set_startTime"))
     .addChild(new ROUTE().setFromNode("FireClock").setFromField("fraction_changed").setToNode("MissilePath").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("MissilePath").setFromField("value_changed").setToNode("LeftmostAmraamTransform").setToField("set_translation"))
-    .addChild(new Viewpoint("MissileLaunchView").setDescription("Missile Fire View").setOrientation(0.094f,-0.994f,0.057f,1.1716f).setPosition(-344.3f,-142.8f,-27.7f))
+    .addChild(new Viewpoint("MissileLaunchView").setDescription("Missile Fire View").setOrientation(0.094,-0.994,0.057,1.1716).setPosition(-344.3,-142.8,-27.7))
     .addChild(new ROUTE().setFromNode("FireSensor").setFromField("isActive").setToNode("MissileLaunchView").setToField("set_bind"))
     .addComments(" TODO fix type, add filter "));
     }
 	// end of initialize() method
 
-		/** Define subarrays using type float[] */
-		private float[] getcoordinates_7_19_point_1()
+		/** Define subarrays using type double[] */
+		private double[] getcoordinates_7_19_point_1()
 		{
-			float[] value = {-0.32f,0.36f,-4.91f,-0.38f,0.43f,-4.21f,0.0f,0.6f,-4.2f,0.0f,0.5f,-4.9f,-0.5f,0.0f,-4.9f,-0.6f,0.0f,-4.2f,1.0f,0.0f,5.8f,1.0f,0.0f,5.3f,2.8f,-0.4f,6.3f,2.8f,-0.4f,6.61f,0.31f,-0.36f,-4.9f,0.4f,-0.35f,-4.2f,0.0f,-0.4f,-4.2f,0.0f,-0.4f,-4.9f,-0.31f,-0.36f,-4.9f,-0.4f,-0.35f,-4.2f,0.5f,0.0f,-4.9f,0.6f,0.0f,-4.2f,0.32f,0.36f,-4.91f,0.38f,0.43f,-4.21f,-1.0f,0.0f,5.8f,-1.0f,0.0f,5.3f,-2.8f,-0.4f,6.3f,-2.8f,-0.4f,6.61f,0.0f,-0.1f,-7.0f,-0.31f,-0.36f,-4.9f,-0.5f,0.0f,-4.9f,0.0f,-0.1f,-7.0f,0.0f,-0.4f,-4.9f,0.31f,-0.36f,-4.9f,0.5f,0.0f,-4.9f,0.32f,0.36f,-4.91f,-0.27f,0.93f,-3.51f,0.0f,1.1f,-3.6f,-0.33f,0.5f,-3.41f,-0.34f,0.9f,-1.73f,0.0f,0.9f,-1.0f,0.0f,1.1f,-1.8f,-0.38f,0.64f,-1.68f,0.34f,0.9f,-1.73f,0.0f,0.9f,-1.0f,0.38f,0.64f,-1.68f,0.34f,0.9f,-1.73f,0.27f,0.93f,-3.51f,0.33f,0.5f,-3.41f,0.0f,1.3f,-2.8f,0.45f,1.02f,-2.68f,0.38f,0.64f,-1.68f,0.53f,0.5f,-2.56f,-0.53f,0.5f,-2.56f,-0.45f,1.02f,-2.68f,-0.53f,0.75f,0.0f,-0.56f,0.66f,2.8f,0.0f,0.7f,2.8f,0.0f,0.8f,0.0f,-1.1f,0.3f,0.0f,-1.0f,0.3f,2.8f,-0.37f,0.57f,4.9f,0.0f,0.59f,4.9f,-0.7f,0.3f,4.9f,-0.7f,0.3f,4.9f,-0.7f,0.0f,7.0f,-0.5f,0.49f,7.0f,-0.5f,0.49f,7.0f,0.0f,0.7f,7.0f,-1.4f,0.0f,0.0f,-1.4f,0.0f,3.9f,-1.4f,0.0f,3.9f,-1.0f,0.0f,3.9f,-1.0f,0.3f,2.8f,-1.0f,0.3f,4.9f,-0.59f,0.65f,-0.77f,-0.8f,0.3f,-0.6f,-1.4f,0.0f,-0.7f,-1.0f,-0.1f,2.8f,-0.7f,-0.7f,-2.5f,-0.5f,-0.9f,-2.5f,-0.5f,-0.9f,-0.6f,-0.7f,-0.7f,-0.6f,0.0f,-1.0f,-2.5f,0.0f,-1.0f,-0.6f,-0.72f,-0.12f,-2.5f,-0.8f,-0.3f,-2.5f,-0.8f,-0.3f,-0.6f,-0.8f,-0.3f,-2.5f,-0.8f,-0.3f,-0.6f,-1.4f,0.0f,0.0f,-1.4f,0.0f,-0.7f,-0.7f,-0.1f,4.9f,-1.0f,-0.1f,4.9f,-0.5f,-0.9f,4.9f,-0.7f,-0.7f,4.9f,0.0f,-1.0f,4.9f,-0.7f,-0.1f,4.9f,-0.5f,-0.5f,7.0f,-0.7f,0.0f,7.0f,0.0f,-0.7f,7.0f,-1.0f,0.0f,7.4f,-2.8f,-0.4f,7.1f,-2.57f,-0.32f,7.42f};
+			double[] value = {-0.32,0.36,-4.91,-0.38,0.43,-4.21,0.0,0.6,-4.2,0.0,0.5,-4.9,-0.5,0.0,-4.9,-0.6,0.0,-4.2,1.0,0.0,5.8,1.0,0.0,5.3,2.8,-0.4,6.3,2.8,-0.4,6.61,0.31,-0.36,-4.9,0.4,-0.35,-4.2,0.0,-0.4,-4.2,0.0,-0.4,-4.9,-0.31,-0.36,-4.9,-0.4,-0.35,-4.2,0.5,0.0,-4.9,0.6,0.0,-4.2,0.32,0.36,-4.91,0.38,0.43,-4.21,-1.0,0.0,5.8,-1.0,0.0,5.3,-2.8,-0.4,6.3,-2.8,-0.4,6.61,0.0,-0.1,-7.0,-0.31,-0.36,-4.9,-0.5,0.0,-4.9,0.0,-0.1,-7.0,0.0,-0.4,-4.9,0.31,-0.36,-4.9,0.5,0.0,-4.9,0.32,0.36,-4.91,-0.27,0.93,-3.51,0.0,1.1,-3.6,-0.33,0.5,-3.41,-0.34,0.9,-1.73,0.0,0.9,-1.0,0.0,1.1,-1.8,-0.38,0.64,-1.68,0.34,0.9,-1.73,0.0,0.9,-1.0,0.38,0.64,-1.68,0.34,0.9,-1.73,0.27,0.93,-3.51,0.33,0.5,-3.41,0.0,1.3,-2.8,0.45,1.02,-2.68,0.38,0.64,-1.68,0.53,0.5,-2.56,-0.53,0.5,-2.56,-0.45,1.02,-2.68,-0.53,0.75,0.0,-0.56,0.66,2.8,0.0,0.7,2.8,0.0,0.8,0.0,-1.1,0.3,0.0,-1.0,0.3,2.8,-0.37,0.57,4.9,0.0,0.59,4.9,-0.7,0.3,4.9,-0.7,0.3,4.9,-0.7,0.0,7.0,-0.5,0.49,7.0,-0.5,0.49,7.0,0.0,0.7,7.0,-1.4,0.0,0.0,-1.4,0.0,3.9,-1.4,0.0,3.9,-1.0,0.0,3.9,-1.0,0.3,2.8,-1.0,0.3,4.9,-0.59,0.65,-0.77,-0.8,0.3,-0.6,-1.4,0.0,-0.7,-1.0,-0.1,2.8,-0.7,-0.7,-2.5,-0.5,-0.9,-2.5,-0.5,-0.9,-0.6,-0.7,-0.7,-0.6,0.0,-1.0,-2.5,0.0,-1.0,-0.6,-0.72,-0.12,-2.5,-0.8,-0.3,-2.5,-0.8,-0.3,-0.6,-0.8,-0.3,-2.5,-0.8,-0.3,-0.6,-1.4,0.0,0.0,-1.4,0.0,-0.7,-0.7,-0.1,4.9,-1.0,-0.1,4.9,-0.5,-0.9,4.9,-0.7,-0.7,4.9,0.0,-1.0,4.9,-0.7,-0.1,4.9,-0.5,-0.5,7.0,-0.7,0.0,7.0,0.0,-0.7,7.0,-1.0,0.0,7.4,-2.8,-0.4,7.1,-2.57,-0.32,7.42};
 			return value;
 		}
-		private float[] getcoordinates_7_19_point_2()
+		private double[] getcoordinates_7_19_point_2()
 		{
-			float[] value = {-4.9f,0.1f,4.0f,-5.1f,0.1f,4.0f,-5.1f,-0.1f,4.0f,-4.9f,-0.1f,4.0f,-5.1f,0.1f,1.6f,-5.1f,-0.1f,1.6f,-4.9f,0.1f,2.8f,-4.9f,-0.1f,2.8f,-0.58f,-0.83f,3.6f,-0.72f,-1.4f,3.9f,-0.69f,-1.32f,4.9f,-0.58f,-0.83f,4.9f,0.58f,-0.83f,3.6f,0.72f,-1.4f,3.9f,0.69f,-1.32f,4.9f,0.58f,-0.83f,4.9f,4.9f,-0.1f,2.8f,5.1f,-0.1f,1.6f,5.1f,-0.1f,4.0f,4.9f,-0.1f,4.0f,-0.8f,0.0f,-2.5f,4.9f,0.1f,4.0f,5.1f,0.1f,4.0f,5.1f,0.1f,1.6f,4.9f,0.1f,2.8f,0.59f,0.65f,-0.77f,0.8f,0.3f,-0.6f,0.8f,0.0f,-2.5f,-0.8f,0.0f,-2.5f,0.8f,-0.3f,-0.6f,0.72f,-0.12f,-2.5f,0.8f,0.0f,-2.5f,1.0f,0.0f,7.4f,2.8f,-0.4f,7.1f,2.57f,-0.32f,7.42f,-0.7f,0.0f,7.4f,0.5f,-0.9f,4.9f,0.7f,-0.7f,4.9f,0.5f,-0.5f,7.0f,-4.9f,0.0f,2.8f,-4.9f,0.0f,3.9f,0.7f,-0.1f,4.9f,0.7f,0.0f,7.0f,1.4f,0.0f,0.0f,4.9f,0.0f,2.8f,4.9f,0.0f,3.9f,1.4f,0.0f,3.9f,1.4f,0.0f,-0.7f,1.4f,0.0f,-0.7f,0.7f,-0.7f,-0.6f,0.8f,-0.3f,-0.6f,0.5f,-0.9f,-0.6f,1.0f,-0.1f,4.9f,1.0f,0.3f,4.9f,0.7f,0.0f,7.4f,0.7f,0.3f,4.9f,0.7f,-0.1f,4.9f,0.56f,0.66f,2.8f,0.53f,0.75f,0.0f,1.0f,0.3f,2.8f,1.1f,0.3f,0.0f,0.37f,0.57f,4.9f,0.7f,0.3f,4.9f,0.5f,0.49f,7.0f,0.7f,0.0f,7.0f,0.5f,0.49f,7.0f,1.4f,0.0f,3.9f,1.4f,0.0f,0.0f,1.0f,0.3f,2.8f,1.0f,0.0f,3.9f,1.0f,-0.1f,2.8f,0.5f,-0.9f,-2.5f,0.7f,-0.7f,-2.5f,0.8f,-0.3f,-2.5f,0.8f,-0.3f,-2.5f,1.0f,0.3f,3.9f,0.59f,0.65f,-0.77f,0.0f,0.7f,2.8f,0.0f,1.4f,4.5f,0.0f,0.59f,4.9f,0.0f,3.5f,6.8f,0.0f,3.5f,8.1f,0.0f,1.4f,7.3f,0.0f,0.7f,7.0f,0.0f,0.7f,7.3f,-1.0f,0.3f,3.9f,0.0f,0.35f,7.7f,-0.25f,0.24f,7.7f,-0.35f,0.0f,7.7f,-0.25f,-0.25f,7.7f,0.0f,-0.35f,7.7f,0.25f,-0.25f,7.7f,0.35f,0.0f,7.7f,0.25f,0.24f,7.7f,0.0f,-0.2f,-2.5f,0.7f,-0.7f,-2.5f,0.5f,-0.9f,-2.5f,0.0f,-1.0f,-2.5f,-0.5f,-0.9f,-2.5f,-0.7f,-0.7f,-2.5f};
+			double[] value = {-4.9,0.1,4.0,-5.1,0.1,4.0,-5.1,-0.1,4.0,-4.9,-0.1,4.0,-5.1,0.1,1.6,-5.1,-0.1,1.6,-4.9,0.1,2.8,-4.9,-0.1,2.8,-0.58,-0.83,3.6,-0.72,-1.4,3.9,-0.69,-1.32,4.9,-0.58,-0.83,4.9,0.58,-0.83,3.6,0.72,-1.4,3.9,0.69,-1.32,4.9,0.58,-0.83,4.9,4.9,-0.1,2.8,5.1,-0.1,1.6,5.1,-0.1,4.0,4.9,-0.1,4.0,-0.8,0.0,-2.5,4.9,0.1,4.0,5.1,0.1,4.0,5.1,0.1,1.6,4.9,0.1,2.8,0.59,0.65,-0.77,0.8,0.3,-0.6,0.8,0.0,-2.5,-0.8,0.0,-2.5,0.8,-0.3,-0.6,0.72,-0.12,-2.5,0.8,0.0,-2.5,1.0,0.0,7.4,2.8,-0.4,7.1,2.57,-0.32,7.42,-0.7,0.0,7.4,0.5,-0.9,4.9,0.7,-0.7,4.9,0.5,-0.5,7.0,-4.9,0.0,2.8,-4.9,0.0,3.9,0.7,-0.1,4.9,0.7,0.0,7.0,1.4,0.0,0.0,4.9,0.0,2.8,4.9,0.0,3.9,1.4,0.0,3.9,1.4,0.0,-0.7,1.4,0.0,-0.7,0.7,-0.7,-0.6,0.8,-0.3,-0.6,0.5,-0.9,-0.6,1.0,-0.1,4.9,1.0,0.3,4.9,0.7,0.0,7.4,0.7,0.3,4.9,0.7,-0.1,4.9,0.56,0.66,2.8,0.53,0.75,0.0,1.0,0.3,2.8,1.1,0.3,0.0,0.37,0.57,4.9,0.7,0.3,4.9,0.5,0.49,7.0,0.7,0.0,7.0,0.5,0.49,7.0,1.4,0.0,3.9,1.4,0.0,0.0,1.0,0.3,2.8,1.0,0.0,3.9,1.0,-0.1,2.8,0.5,-0.9,-2.5,0.7,-0.7,-2.5,0.8,-0.3,-2.5,0.8,-0.3,-2.5,1.0,0.3,3.9,0.59,0.65,-0.77,0.0,0.7,2.8,0.0,1.4,4.5,0.0,0.59,4.9,0.0,3.5,6.8,0.0,3.5,8.1,0.0,1.4,7.3,0.0,0.7,7.0,0.0,0.7,7.3,-1.0,0.3,3.9,0.0,0.35,7.7,-0.25,0.24,7.7,-0.35,0.0,7.7,-0.25,-0.25,7.7,0.0,-0.35,7.7,0.25,-0.25,7.7,0.35,0.0,7.7,0.25,0.24,7.7,0.0,-0.2,-2.5,0.7,-0.7,-2.5,0.5,-0.9,-2.5,0.0,-1.0,-2.5,-0.5,-0.9,-2.5,-0.7,-0.7,-2.5};
 			return value;
 		}
-		private float[] getcoordinates_7_19_point_3()
+		private double[] getcoordinates_7_19_point_3()
 		{
-			float[] value = {0.0f,-0.2f,-2.5f,-0.72f,-0.12f,-2.5f,0.72f,-0.12f,-2.5f,0.25f,0.24f,7.7f,0.35f,0.0f,7.7f,-0.35f,0.0f,7.7f,-0.25f,0.24f,7.7f};
+			double[] value = {0.0,-0.2,-2.5,-0.72,-0.12,-2.5,0.72,-0.12,-2.5,0.25,0.24,7.7,0.35,0.0,7.7,-0.35,0.0,7.7,-0.25,0.24,7.7};
 			return value;
 		}
 
 
-		/** Define subarrays using type float[] */
-		private float[] getnormalVector_7_20_vector_1()
+		/** Define subarrays using type double[] */
+		private double[] getnormalVector_7_20_vector_1()
 		{
-			float[] value = {-0.68f,0.714f,-0.166f,-0.689f,0.721f,-0.072f,0.0f,0.965f,-0.26f,0.0f,0.985f,-0.175f,-0.99f,-0.016f,-0.138f,-0.999f,-0.022f,-0.037f,0.567f,-0.819f,-0.093f,0.561f,-0.828f,0.0f,0.0f,-1.0f,0.0f,0.0f,-0.997f,-0.071f,-0.567f,-0.819f,-0.093f,-0.561f,-0.828f,0.0f,0.99f,-0.016f,-0.138f,0.999f,-0.022f,-0.037f,0.68f,0.714f,-0.166f,0.689f,0.721f,-0.072f,-0.351f,0.889f,-0.294f,-0.868f,-0.459f,-0.19f,-0.13f,-0.982f,-0.14f,0.13f,-0.982f,-0.14f,0.868f,-0.459f,-0.19f,0.872f,0.431f,-0.231f,-0.834f,0.445f,-0.327f,0.0f,0.929f,-0.369f,-0.88f,0.401f,-0.256f,-0.799f,0.577f,0.169f,-0.58f,0.798f,0.164f,0.0f,0.998f,0.065f,-0.862f,0.486f,0.146f,0.886f,0.219f,0.408f,0.799f,0.577f,0.169f,0.834f,0.445f,-0.327f,0.88f,0.401f,-0.256f,-0.0f,0.995f,-0.096f,0.842f,0.534f,-0.08f,0.862f,0.486f,0.146f,0.833f,0.549f,-0.073f,-0.833f,0.549f,-0.073f,-0.842f,0.534f,-0.08f,-0.485f,0.87f,-0.089f,-0.37f,0.929f,0.0f,0.0f,1.0f,0.0f,-0.0f,1.0f,-0.01f,-0.592f,0.796f,-0.125f,-0.573f,0.818f,0.05f,-0.37f,0.929f,-0.01f,0.0f,1.0f,-0.025f,-0.487f,0.873f,0.036f,-0.923f,0.381f,0.05f,-0.683f,0.704f,0.195f,0.0f,0.99f,0.14f,-0.707f,0.707f,0.0f,-0.385f,0.912f,0.141f,0.0f,0.966f,0.259f,-0.563f,0.826f,-0.037f,-0.661f,0.738f,-0.138f,-0.521f,0.846f,-0.115f,0.0f,-0.996f,0.09f,-0.773f,-0.436f,-0.461f,-0.42f,-0.781f,-0.463f,-0.474f,-0.881f,0.0f,-0.871f,-0.492f,0.0f,0.0f,-0.891f,-0.455f,-0.917f,0.399f,0.0f,-0.881f,0.074f,-0.467f,-0.902f,-0.429f,-0.039f,-0.09f,-0.995f,0.05f,-0.451f,-0.892f,0.0f,-0.28f,-0.959f,0.04f,-0.468f,-0.878f,0.097f,-0.877f,-0.474f,0.085f,0.0f,-0.997f,0.072f,-0.693f,-0.72f,0.045f,-0.79f,-0.562f,0.244f,-0.968f,0.003f,0.25f,0.0f,-0.966f,0.257f,0.0f,0.0f,1.0f,-1.0f,0.0f,0.0f,0.987f,0.0f,-0.16f,1.0f,0.0f,0.0f,-0.831f,-0.551f,-0.08f,0.563f,0.826f,-0.037f,0.661f,0.738f,-0.138f,0.998f,-0.037f,-0.049f,-0.987f,0.0f,-0.16f,-0.998f,-0.037f,-0.049f,0.831f,-0.551f,-0.08f,0.0f,-0.999f,0.04f,0.0f,0.993f,0.12f,0.468f,-0.878f,0.097f,0.877f,-0.474f,0.085f,0.79f,-0.562f,0.244f,-0.419f,-0.897f,-0.14f,0.693f,-0.72f,0.045f,0.968f,0.003f,0.25f,0.521f,0.846f,-0.115f,0.419f,-0.897f,-0.14f,0.871f,-0.492f,0.0f,0.902f,-0.429f,-0.039f,0.474f,-0.881f,0.0f};
+			double[] value = {-0.68,0.714,-0.166,-0.689,0.721,-0.072,0.0,0.965,-0.26,0.0,0.985,-0.175,-0.99,-0.016,-0.138,-0.999,-0.022,-0.037,0.567,-0.819,-0.093,0.561,-0.828,0.0,0.0,-1.0,0.0,0.0,-0.997,-0.071,-0.567,-0.819,-0.093,-0.561,-0.828,0.0,0.99,-0.016,-0.138,0.999,-0.022,-0.037,0.68,0.714,-0.166,0.689,0.721,-0.072,-0.351,0.889,-0.294,-0.868,-0.459,-0.19,-0.13,-0.982,-0.14,0.13,-0.982,-0.14,0.868,-0.459,-0.19,0.872,0.431,-0.231,-0.834,0.445,-0.327,0.0,0.929,-0.369,-0.88,0.401,-0.256,-0.799,0.577,0.169,-0.58,0.798,0.164,0.0,0.998,0.065,-0.862,0.486,0.146,0.886,0.219,0.408,0.799,0.577,0.169,0.834,0.445,-0.327,0.88,0.401,-0.256,-0.0,0.995,-0.096,0.842,0.534,-0.08,0.862,0.486,0.146,0.833,0.549,-0.073,-0.833,0.549,-0.073,-0.842,0.534,-0.08,-0.485,0.87,-0.089,-0.37,0.929,0.0,0.0,1.0,0.0,-0.0,1.0,-0.01,-0.592,0.796,-0.125,-0.573,0.818,0.05,-0.37,0.929,-0.01,0.0,1.0,-0.025,-0.487,0.873,0.036,-0.923,0.381,0.05,-0.683,0.704,0.195,0.0,0.99,0.14,-0.707,0.707,0.0,-0.385,0.912,0.141,0.0,0.966,0.259,-0.563,0.826,-0.037,-0.661,0.738,-0.138,-0.521,0.846,-0.115,0.0,-0.996,0.09,-0.773,-0.436,-0.461,-0.42,-0.781,-0.463,-0.474,-0.881,0.0,-0.871,-0.492,0.0,0.0,-0.891,-0.455,-0.917,0.399,0.0,-0.881,0.074,-0.467,-0.902,-0.429,-0.039,-0.09,-0.995,0.05,-0.451,-0.892,0.0,-0.28,-0.959,0.04,-0.468,-0.878,0.097,-0.877,-0.474,0.085,0.0,-0.997,0.072,-0.693,-0.72,0.045,-0.79,-0.562,0.244,-0.968,0.003,0.25,0.0,-0.966,0.257,0.0,0.0,1.0,-1.0,0.0,0.0,0.987,0.0,-0.16,1.0,0.0,0.0,-0.831,-0.551,-0.08,0.563,0.826,-0.037,0.661,0.738,-0.138,0.998,-0.037,-0.049,-0.987,0.0,-0.16,-0.998,-0.037,-0.049,0.831,-0.551,-0.08,0.0,-0.999,0.04,0.0,0.993,0.12,0.468,-0.878,0.097,0.877,-0.474,0.085,0.79,-0.562,0.244,-0.419,-0.897,-0.14,0.693,-0.72,0.045,0.968,0.003,0.25,0.521,0.846,-0.115,0.419,-0.897,-0.14,0.871,-0.492,0.0,0.902,-0.429,-0.039,0.474,-0.881,0.0};
 			return value;
 		}
-		private float[] getnormalVector_7_20_vector_2()
+		private double[] getnormalVector_7_20_vector_2()
 		{
-			float[] value = {0.37f,0.929f,0.0f,0.485f,0.87f,-0.089f,0.573f,0.818f,0.05f,0.592f,0.796f,-0.125f,0.37f,0.929f,-0.01f,0.487f,0.873f,0.036f,0.923f,0.381f,0.05f,0.683f,0.704f,0.195f,0.385f,0.912f,0.141f,0.707f,0.707f,0.0f,0.42f,-0.781f,-0.463f,0.773f,-0.436f,-0.461f,0.917f,0.399f,0.0f,0.881f,0.074f,-0.467f,0.09f,-0.995f,0.05f,0.451f,-0.892f,0.0f,0.28f,-0.959f,0.04f,0.42f,0.901f,-0.11f,0.0f,0.666f,0.746f,-0.481f,0.468f,0.741f,-0.674f,0.0f,0.738f,-0.475f,-0.475f,0.741f,0.0f,-0.674f,0.738f,0.475f,-0.475f,0.741f,0.674f,0.0f,0.738f,0.481f,0.468f,0.741f,0.0f,0.0f,-1.0f,0.0f,-0.893f,-0.45f,-0.901f,-0.224f,-0.372f,0.901f,-0.224f,-0.372f,0.841f,0.34f,0.421f,-0.841f,0.34f,0.421f};
+			double[] value = {0.37,0.929,0.0,0.485,0.87,-0.089,0.573,0.818,0.05,0.592,0.796,-0.125,0.37,0.929,-0.01,0.487,0.873,0.036,0.923,0.381,0.05,0.683,0.704,0.195,0.385,0.912,0.141,0.707,0.707,0.0,0.42,-0.781,-0.463,0.773,-0.436,-0.461,0.917,0.399,0.0,0.881,0.074,-0.467,0.09,-0.995,0.05,0.451,-0.892,0.0,0.28,-0.959,0.04,0.42,0.901,-0.11,0.0,0.666,0.746,-0.481,0.468,0.741,-0.674,0.0,0.738,-0.475,-0.475,0.741,0.0,-0.674,0.738,0.475,-0.475,0.741,0.674,0.0,0.738,0.481,0.468,0.741,0.0,0.0,-1.0,0.0,-0.893,-0.45,-0.901,-0.224,-0.372,0.901,-0.224,-0.372,0.841,0.34,0.421,-0.841,0.34,0.421};
 			return value;
 		}
 
@@ -435,7 +433,8 @@ public class F16
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -446,7 +445,8 @@ public class F16
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -495,7 +495,9 @@ public class F16
 		{
 			System.out.print("Java program \"F16\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

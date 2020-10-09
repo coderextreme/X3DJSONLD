@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -9,7 +7,6 @@ import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
 import org.web3d.x3d.jsail.PointingDeviceSensor.*;
-import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc annotations follow, see below for source.
@@ -78,28 +75,28 @@ public class x3dconnector
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a generic proto to connect two objects")))
   .setScene(new Scene()
-    .addChild(new Viewpoint().setDescription("Only Viewpoint").setPosition(0.0f,0.0f,5.0f))
-    .addChild(new Background().setSkyColor(new MFColor(new float[] {0.4f,0.4f,0.4f})))
+    .addChild(new Viewpoint().setDescription("Only Viewpoint").setPosition(0.0,0.0,5.0))
+    .addChild(new Background().setSkyColor(new MFColor(new double[] {0.4,0.4,0.4})))
     .addChild(new Transform("G1")
       .addChild(new Shape()
         .setAppearance(new Appearance()
-          .setMaterial(new Material().setDiffuseColor(0.7f,0.2f,0.2f)))
-        .setGeometry(new Sphere().setRadius(.1f)))
+          .setMaterial(new Material().setDiffuseColor(0.7,0.2,0.2)))
+        .setGeometry(new Sphere().setRadius(.1)))
       .addChild(new PlaneSensor("PS1").setDescription("Grab to move"))
       .addChild(new ROUTE().setFromNode("PS1").setFromField("translation_changed").setToNode("G1").setToField("set_translation")))
-    .addChild(new Transform("G2").setTranslation(1.0f,-1.0f,.01f)
+    .addChild(new Transform("G2").setTranslation(1.0,-1.0,.01)
       .addChild(new Shape()
         .setAppearance(new Appearance()
-          .setMaterial(new Material().setDiffuseColor(0.2f,0.7f,0.2f)))
-        .setGeometry(new Sphere().setRadius(.1f)))
-      .addChild(new PlaneSensor("PS2").setDescription("Grab to move").setOffset(1.0f,-1.0f,.01f))
+          .setMaterial(new Material().setDiffuseColor(0.2,0.7,0.2)))
+        .setGeometry(new Sphere().setRadius(.1)))
+      .addChild(new PlaneSensor("PS2").setDescription("Grab to move").setOffset(1.0,-1.0,.01))
       .addChild(new ROUTE().setFromNode("PS2").setFromField("translation_changed").setToNode("G2").setToField("set_translation")))
     .addChild(new Transform("transC1")
       .addChild(new Transform("rotscaleC1")
         .addChild(new Shape()
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(0.2f,0.7f,0.7f).setTransparency(.5f)))
-          .setGeometry(new Cylinder().setRadius(.05f)))))
+            .setMaterial(new Material().setDiffuseColor(0.2,0.7,0.7).setTransparency(.5)))
+          .setGeometry(new Cylinder().setRadius(.05)))))
     .addChild(new ProtoDeclare("x3dconnector").setName("x3dconnector")
       .setProtoInterface(new ProtoInterface()
         .addField(new field().setName("startnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
@@ -109,48 +106,7 @@ public class x3dconnector
         .addField(new field().setName("set_startpoint").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("set_endpoint").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY)))
       .setProtoBody(new ProtoBody()
-        .addChild(new Script("S1").setSourceCode("\n" + 
-"            ecmascript:" + "\n" + 
-"        function recompute(startpoint,endpoint){" + "\n" + 
-"	    if (typeof endpoint === 'undefined') {" + "\n" + 
-"		return;" + "\n" + 
-"	    }" + "\n" + 
-"            var dif = endpoint.subtract(startpoint);" + "\n" + 
-"            var dist = dif.length()*0.5;" + "\n" + 
-"            var dif2 = dif.multiply(0.5);" + "\n" + 
-"            var norm = dif.normalize();" + "\n" + 
-"            var transl = startpoint.add(dif2);" + "\n" + 
-"	    if (typeof Quaternion !== 'undefined') {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    } else {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    }" + "\n" + 
-"	}" + "\n" + 
-"	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
-"	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
-"	      if (trafo) {" + "\n" + 
-"		      transnode.translation = trafo.translation;" + "\n" + 
-"		      rotscalenode.rotation = trafo.rotation;" + "\n" + 
-"		      rotscalenode.scale = trafo.scale;" + "\n" + 
-"	      }" + "\n" + 
-"	}" + "\n" + 
-"        function initialize(){" + "\n" + 
-"            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
-"        }" + "\n" + 
-"        function set_startpoint(val,t){" + "\n" + 
-"            recompute_and_route(val,endnode.translation);" + "\n" + 
-"        }" + "\n" + 
-"        function set_endpoint(val,t){" + "\n" + 
-"            recompute_and_route(startnode.translation,val);" + "\n" + 
-"        }" + "\n")
+        .addChild(new X3DScript("S1")
           .addField(new field().setName("startnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
           .addField(new field().setName("endnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
           .addField(new field().setName("transnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
@@ -164,7 +120,7 @@ public class x3dconnector
             .addConnect(new connect().setNodeField("rotscalenode").setProtoField("rotscalenode"))
             .addConnect(new connect().setNodeField("set_startpoint").setProtoField("set_startpoint"))
             .addConnect(new connect().setNodeField("set_endpoint").setProtoField("set_endpoint"))))))
-    .addChild(new ProtoInstance("x3dconnector", "connector1")
+    .addChild(new ProtoInstance("x3dconnector", "connector1").setContainerField("children")
       .addFieldValue(new fieldValue().setName("startnode")
         .addChild(new Transform().setUSE("G1")))
       .addFieldValue(new fieldValue().setName("endnode")
@@ -183,7 +139,8 @@ public class x3dconnector
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -194,7 +151,8 @@ public class x3dconnector
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -243,7 +201,9 @@ public class x3dconnector
 		{
 			System.out.print("Java program \"x3dconnector\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

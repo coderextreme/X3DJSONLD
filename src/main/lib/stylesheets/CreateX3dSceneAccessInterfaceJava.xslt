@@ -2197,83 +2197,83 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	public static final String XML_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 					
 	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
-	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "http://www.web3d.org/specifications/x3d-4.1.dtd"&gt;</i>
+	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd"&gt;</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
-	public static final String XML_DOCTYPE_X3D_4_1 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"http://www.web3d.org/specifications/x3d-4.1.dtd\">";
+	public static final String XML_DOCTYPE_X3D_4_1 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">";
 	
 	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
-	 * <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd"&gt;</i>
+	 * <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd"&gt;</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
-	public static final String XML_DOCTYPE_X3D_4_0 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"http://www.web3d.org/specifications/x3d-4.0.dtd\">";
+	public static final String XML_DOCTYPE_X3D_4_0 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">";
 	
 	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
-	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd"&gt;</i>
+	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd"&gt;</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
-	public static final String XML_DOCTYPE_X3D_3_3 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.3//EN\" \"http://www.web3d.org/specifications/x3d-3.3.dtd\">";
+	public static final String XML_DOCTYPE_X3D_3_3 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.3//EN\" \"https://www.web3d.org/specifications/x3d-3.3.dtd\">";
 	
 	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
-	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd"&gt;</i>
+	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "https://www.web3d.org/specifications/x3d-3.2.dtd"&gt;</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
-	public static final String XML_DOCTYPE_X3D_3_2 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.2//EN\" \"http://www.web3d.org/specifications/x3d-3.2.dtd\">";
+	public static final String XML_DOCTYPE_X3D_3_2 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.2//EN\" \"https://www.web3d.org/specifications/x3d-3.2.dtd\">";
 	
 	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
-	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "http://www.web3d.org/specifications/x3d-3.1.dtd"&gt;</i>
+	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "https://www.web3d.org/specifications/x3d-3.1.dtd"&gt;</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
-	public static final String XML_DOCTYPE_X3D_3_1 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.1//EN\" \"http://www.web3d.org/specifications/x3d-3.1.dtd\">";
+	public static final String XML_DOCTYPE_X3D_3_1 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.1//EN\" \"https://www.web3d.org/specifications/x3d-3.1.dtd\">";
 	
 	/** XML document type declaration. DOCTYPE supports element/attribute structural validation and follows the initial XML declaration, before the first element in an XML document.
-	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd"&gt;</i>
+	 * <br> <i>&lt;?DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd"&gt;</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xml/#sec-prolog-dtd">W3C Recommendation, Extensible Markup Language (XML) 1.0 (Fifth Edition) section 2.8, Prolog and Document Type Declaration</a> */
-	public static final String XML_DOCTYPE_X3D_3_0 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.0//EN\" \"http://www.web3d.org/specifications/x3d-3.0.dtd\">";
+	public static final String XML_DOCTYPE_X3D_3_0 = "<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 3.0//EN\" \"https://www.web3d.org/specifications/x3d-3.0.dtd\">";
 
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'";
+	public static final String X3D_XML_SCHEMA_3_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'";
+	public static final String X3D_XML_SCHEMA_3_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.2.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_2_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.2.xsd'";
+	public static final String X3D_XML_SCHEMA_3_2_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_3_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'";
+	public static final String X3D_XML_SCHEMA_3_3_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_4_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'";
+	public static final String X3D_XML_SCHEMA_4_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'";
 	/**  
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.1.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_4_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.1.xsd'";
+	public static final String X3D_XML_SCHEMA_4_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'";
 
 ]]></xsl:text>
 								</xsl:when>
@@ -5698,7 +5698,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     // TODO is a grammar needed for file reading?
                     if (exificientGrammarX3D == null) // only needed once, avoid recomputation
                     {
-                        exificientGrammarX3D = GrammarFactory.newInstance().createGrammars("http://www.web3d.org/specifications/x3d-4.0.xsd"); // use XML schema
+                        exificientGrammarX3D = GrammarFactory.newInstance().createGrammars("https://www.web3d.org/specifications/x3d-4.0.xsd"); // use XML schema
                     }
                     exiFactory.setGrammars(exificientGrammarX3D);
                     exiFactory.setCodingMode(CodingMode.COMPRESSION); // use deflate compression for larger XML files
@@ -5998,7 +5998,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     // TODO can the grammar be precompiled and cached in X3DJSAIL library?
                     if (exificientGrammarX3D == null) // only needed once, avoid recomputation
                     {
-                        exificientGrammarX3D = GrammarFactory.newInstance().createGrammars("http://www.web3d.org/specifications/x3d-4.0.xsd"); // use XML schema
+                        exificientGrammarX3D = GrammarFactory.newInstance().createGrammars("https://www.web3d.org/specifications/x3d-4.0.xsd"); // use XML schema
                     }
                     exiFactory.setGrammars(exificientGrammarX3D);
                     exiFactory.setCodingMode(CodingMode.COMPRESSION); // use deflate compression for larger XML files
@@ -6052,7 +6052,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                     // Strict not going to work: org.openexi.sax.TransmogrifierException:
                     // Attribute "noNamespaceSchemaLocation" of namespace
                     // "http://www.w3.org/2001/XMLSchema-instance" with value
-                    // "http://www.web3d.org/specifications/x3d-3.3.xsd" is not expected.
+                    // "https://www.web3d.org/specifications/x3d-3.3.xsd" is not expected.
                     
                     // Therefore, set default
                     options = GrammarOptions.DEFAULT_OPTIONS;
@@ -6303,8 +6303,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		returnMessage += exceptionResult;
 		if  (exceptionResult.isEmpty() && !validationResult.isEmpty())
 			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
-		returnMessage += validationResult;
-		return returnMessage.trim();
+		returnMessage += "\n" + validationResult;
+		return returnMessage;
 	}
   }
 										
@@ -8252,8 +8252,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		boolean hasMismatchedValuePresent = // (hasStringValuePresent  && !isStringType)  ||
 											(hasBooleanValuePresent && !isBooleanType) ||
 											(hasIntegerValuePresent && !isIntegerType) ||
-											(hasFloatValuePresent   && !isFloatType)   ||
-											(hasDoubleValuePresent  && !isDoubleType);
+											(hasFloatValuePresent   && !isIntegerType && !isFloatType)   ||
+											(hasDoubleValuePresent  && !isIntegerType && !isFloatType && !isDoubleType);
 		if (hasMismatchedValuePresent)
 		{
 			// Report if prior data is getting cleared from a differently typed value holder
@@ -17011,6 +17011,8 @@ method invocations on the same node object).
 		if (!getType().isEmpty() && 
 			!getType().equals(field.TYPE_SFDOUBLE)   && !getType().equals(field.TYPE_MFDOUBLE)   &&
 			!getType().equals(field.TYPE_SFTIME)     && !getType().equals(field.TYPE_MFTIME)     &&
+			!getType().equals(field.TYPE_SFFLOAT)    && !getType().equals(field.TYPE_MFFLOAT)    &&
+			!getType().equals(field.TYPE_SFINT32)    && !getType().equals(field.TYPE_MFINT32)    &&
 			!getType().equals(field.TYPE_SFVEC2D)    && !getType().equals(field.TYPE_MFVEC2D)    &&
 			!getType().equals(field.TYPE_SFVEC3D)    && !getType().equals(field.TYPE_MFVEC3D)    &&
 			!getType().equals(field.TYPE_SFVEC4D)    && !getType().equals(field.TYPE_MFVEC4D)    &&
@@ -21556,7 +21558,7 @@ TODO: also MFColor.
 			throw new InvalidFieldValueException(errorNotice);
 		}
 		if (Math.abs(angleRadians) > 2.0 * Math.PI)
-			System.out.println ("SFRotation constructor: questionable |angleRadians| > 2pi");
+			System.out.println ("SFRotation constructor: questionable |angleRadians| = " + Math.abs(angleRadians) + " > 2pi");
 		SFRotation[0] = x;
 		SFRotation[1] = y;
 		SFRotation[2] = z;
@@ -21581,7 +21583,7 @@ TODO: also MFColor.
 			throw new InvalidFieldValueException(errorNotice);
 		}
 		if (Math.abs(angleRadians) > 2.0 * Math.PI)
-			System.out.println ("SFRotation constructor: questionable |angleRadians| > 2pi");
+			System.out.println ("SFRotation constructor: questionable |angleRadians| = " + Math.abs(angleRadians) + " > 2pi");
 		SFRotation[0] = (float) x;
 		SFRotation[1] = (float) y;
 		SFRotation[2] = (float) z;
@@ -21606,7 +21608,7 @@ TODO: also MFColor.
 			throw new InvalidFieldValueException(errorNotice);
 		}
 		if (Math.abs(angleRadians) > 2.0 * Math.PI)
-			System.out.println ("SFRotation constructor: questionable |angleRadians| > 2pi");
+			System.out.println ("SFRotation constructor: questionable |angleRadians| = " + Math.abs(angleRadians) + " > 2pi");
 		SFRotation[0] = (float) x;
 		SFRotation[1] = (float) y;
 		SFRotation[2] = (float) z;
@@ -22732,7 +22734,7 @@ TODO: also MFColor.
 			throw new InvalidFieldValueException(errorNotice);
 		}
 		if (Math.abs(angleRadians) > 2.0 * Math.PI)
-			System.out.println ("SFRotation constructor: questionable |angleRadians| > 2pi");
+			System.out.println ("SFRotation constructor: questionable |angleRadians| = " + Math.abs(angleRadians) + " > 2pi");
 		]]></xsl:text>
 			</xsl:when>
 			<xsl:when test="(@type='SFColor')">
@@ -34405,7 +34407,7 @@ import org.web3d.x3d.sai.X3DException;
 				if (documentType.getName().compareTo("X3D") == 0)
 				{
 					result.append(" PUBLIC \"ISO//Web3D//DTD X3D 3.3//EN\"");
-					result.append(" \"http://www.web3d.org/specifications/x3d-3.3.dtd\"");
+					result.append(" \"https://www.web3d.org/specifications/x3d-3.3.dtd\"");
 				}
 				else if ((documentType.getPublicId() != null) && (documentType.getSystemId() != null))
 				{

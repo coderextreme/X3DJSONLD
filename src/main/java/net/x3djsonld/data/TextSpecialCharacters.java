@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -105,8 +103,8 @@ public class TextSpecialCharacters
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
-    .addChild(new Background().setSkyColor(new MFColor(new float[] {1.0f,1.0f,1.0f})))
-    .addChild(new Viewpoint().setDescription("Default View").setPosition(0.0f,0.0f,15.0f))
+    .addChild(new Background().setSkyColor(new MFColor(new double[] {1.0,1.0,1.0})))
+    .addChild(new Viewpoint().setDescription("Default View").setPosition(0.0,0.0,15.0))
     .addChild(new Shape()
       .addComments(" Empty string \"\" means to skip a line ")
       .addComments(" The ampersand escape characters are based on XML rules ")
@@ -119,14 +117,15 @@ public class TextSpecialCharacters
       .setGeometry(new Text("DefaultText").setString(new String[] {"Character entity substitutions:","empty string \"\" skips a line:","","apostrophe  '  is &apos;","ampersand & is &amp;","quote mark  \"  is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"})
         .setFontStyle(new FontStyle("CenteredFontStyle").setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE)))
       .setAppearance(new Appearance()
-        .setMaterial(new Material("DefaultMaterial").setDiffuseColor(0.2f,0.2f,0.2f)))));
+        .setMaterial(new Material("DefaultMaterial").setDiffuseColor(0.2,0.2,0.2)))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -137,7 +136,8 @@ public class TextSpecialCharacters
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -186,7 +186,9 @@ public class TextSpecialCharacters
 		{
 			System.out.print("Java program \"TextSpecialCharacters\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

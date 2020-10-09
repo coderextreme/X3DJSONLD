@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -85,17 +83,17 @@ public class sphereflowers
       .addChild(new ProtoDeclare("flower").setName("flower")
         .setProtoBody(new ProtoBody()
           .addChild(new Group()
-            .addChild(new ProtoInstance("FlowerProto")
+            .addChild(new ProtoInstance("FlowerProto").setContainerField("children")
               .addFieldValue(new fieldValue().setName("vertex").setValue(new String[] {"../shaders/x_ite_flowers_chromatic.vs"}))
               .addFieldValue(new fieldValue().setName("fragment").setValue(new String[] {"../shaders/common.fs"}))))))
-      .addChild(new ProtoInstance("flower"))
-      .addChild(new ProtoInstance("flower"))
-      .addChild(new ProtoInstance("flower"))
-      .addChild(new ProtoInstance("flower"))
-      .addChild(new ProtoInstance("flower"))
-      .addChild(new ProtoInstance("flower"))
+      .addChild(new ProtoInstance("flower").setContainerField("children"))
+      .addChild(new ProtoInstance("flower").setContainerField("children"))
+      .addChild(new ProtoInstance("flower").setContainerField("children"))
+      .addChild(new ProtoInstance("flower").setContainerField("children"))
+      .addChild(new ProtoInstance("flower").setContainerField("children"))
+      .addChild(new ProtoInstance("flower").setContainerField("children"))
       .addChild(new TimeSensor("SongTime").setLoop(true))
-      .addChild(new Sound().setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
+      .addChild(new Sound().setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
         .setSource(new AudioClip("AudioClip").setDescription("Chandubabamusic #1").setUrl(new String[] {"../resources/chandubabamusic1.wav"})))
       .addChild(new ROUTE().setFromNode("SongTime").setFromField("cycleTime").setToNode("AudioClip").setToField("startTime"))));
     }
@@ -104,7 +102,8 @@ public class sphereflowers
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -115,7 +114,8 @@ public class sphereflowers
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -164,7 +164,9 @@ public class sphereflowers
 		{
 			System.out.print("Java program \"sphereflowers\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

@@ -1,14 +1,11 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Networking.*;
 import org.web3d.x3d.jsail.Rendering.*;
-import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc annotations follow, see below for source.
@@ -110,19 +107,19 @@ public class ArchPrototype
     .addChild(new ProtoDeclare("ArchPrototype").setName("ArchPrototype").setAppinfo("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.")
       .setProtoInterface(new ProtoInterface()
         .addComments(" COLOR OF ARCH ")
-        .addField(new field().setName("diffuseColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(0.2f,0.8f,0.8f)).setAppinfo("color of arch"))
-        .addField(new field().setName("emissiveColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(0.2f,0.8f,0.8f)).setAppinfo("color of arch"))
+        .addField(new field().setName("diffuseColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(0.2,0.8,0.8)).setAppinfo("color of arch"))
+        .addField(new field().setName("emissiveColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(0.2,0.8,0.8)).setAppinfo("color of arch"))
         .addComments(" INPUT PARAMETERS ")
         .addComments(" General parameters: measures in meters ")
-        .addField(new field().setName("clearSpanWidth").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(4f).setAppinfo("clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference"))
-        .addField(new field().setName("riseHeight").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(2f).setAppinfo("riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference"))
-        .addField(new field().setName("depth").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(3f).setAppinfo("depth"))
-        .addField(new field().setName("topAbutmentHeight").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(0.5f).setAppinfo("topAbutmentHeight:topAbutmentHeight=0 means no topAbutment"))
-        .addField(new field().setName("pierWidth").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(0.5f).setAppinfo("pierWidth:pierWidtht=0 means no pierWidth"))
-        .addField(new field().setName("pierHeight").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(1f).setAppinfo("pierHeight: pierHeight=0 means no pierHeight"))
+        .addField(new field().setName("clearSpanWidth").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(4).setAppinfo("clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference"))
+        .addField(new field().setName("riseHeight").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(2).setAppinfo("riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference"))
+        .addField(new field().setName("depth").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(3).setAppinfo("depth"))
+        .addField(new field().setName("topAbutmentHeight").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(0.5).setAppinfo("topAbutmentHeight:topAbutmentHeight=0 means no topAbutment"))
+        .addField(new field().setName("pierWidth").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(0.5).setAppinfo("pierWidth:pierWidtht=0 means no pierWidth"))
+        .addField(new field().setName("pierHeight").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(1).setAppinfo("pierHeight: pierHeight=0 means no pierHeight"))
         .addComments(" Parameters to create to create shapes related to arch: put true to apply ")
         .addField(new field().setName("archHalf").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(false).setAppinfo("archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width"))
-        .addField(new field().setName("archHalfExtensionWidth").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(0f).setAppinfo("archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information."))
+        .addField(new field().setName("archHalfExtensionWidth").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(0).setAppinfo("archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information."))
         .addField(new field().setName("onlyIntrados").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(false).setAppinfo("onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true."))
         .addField(new field().setName("archFilled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(false).setAppinfo("archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose."))
         .addField(new field().setName("archHalfFilled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(false).setAppinfo("archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width."))
@@ -141,8 +138,8 @@ public class ArchPrototype
                   .addConnect(new connect().setNodeField("emissiveColor").setProtoField("emissiveColor"))
                   .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
-        .addComments(" This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs ")
-        .addChild(new Script("ArchPrototypeScript").setUrl(new String[] {"../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"})
+        .addComments(" This embedded X3DScript provides the X3D author with additional visibility and control over prototype inputs and outputs ")
+        .addChild(new X3DScript("ArchPrototypeScript").setUrl(new String[] {"../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"})
           .addComments(" INPUT PARAMETERS ")
           .addComments(" General parameters ")
           .addComments(" Parameters to create to create shapes related to arch: put true to apply ")
@@ -178,15 +175,15 @@ public class ArchPrototype
         .addChild(new ROUTE().setFromNode("ArchPrototypeScript").setFromField("computedScale").setToNode("ArchTransform").setToField("scale"))
         .addChild(new ROUTE().setFromNode("ArchPrototypeScript").setFromField("pointOut").setToNode("ArchChord").setToField("point"))
         .addChild(new ROUTE().setFromNode("ArchPrototypeScript").setFromField("indexOut").setToNode("ArchIndex").setToField("set_coordIndex"))))
-    .addChild(new ProtoInstance("ArchPrototype", "ArchInstance")
-      .addFieldValue(new fieldValue().setName("diffuseColor").setValue(new SFColor(0.5f,0.3f,0.6f)))
-      .addFieldValue(new fieldValue().setName("emissiveColor").setValue(new SFColor(0.5f,0.3f,0.6f)))
-      .addFieldValue(new fieldValue().setName("clearSpanWidth").setValue(5f))
-      .addFieldValue(new fieldValue().setName("riseHeight").setValue(2.5f))
-      .addFieldValue(new fieldValue().setName("depth").setValue(2f))
-      .addFieldValue(new fieldValue().setName("topAbutmentHeight").setValue(0.6f))
-      .addFieldValue(new fieldValue().setName("pierWidth").setValue(1f))
-      .addFieldValue(new fieldValue().setName("pierHeight").setValue(2f)))
+    .addChild(new ProtoInstance("ArchPrototype", "ArchInstance").setContainerField("children")
+      .addFieldValue(new fieldValue().setName("diffuseColor").setValue(new SFColor(0.5,0.3,0.6)))
+      .addFieldValue(new fieldValue().setName("emissiveColor").setValue(new SFColor(0.5,0.3,0.6)))
+      .addFieldValue(new fieldValue().setName("clearSpanWidth").setValue(5))
+      .addFieldValue(new fieldValue().setName("riseHeight").setValue(2.5))
+      .addFieldValue(new fieldValue().setName("depth").setValue(2))
+      .addFieldValue(new fieldValue().setName("topAbutmentHeight").setValue(0.6))
+      .addFieldValue(new fieldValue().setName("pierWidth").setValue(1))
+      .addFieldValue(new fieldValue().setName("pierHeight").setValue(2)))
     .addComments(" Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) ")
     .addChild(new Inline("CoordinateAxes").setUrl(new String[] {"../data/CoordinateAxes.x3d"})));
     }
@@ -195,7 +192,8 @@ public class ArchPrototype
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -206,7 +204,8 @@ public class ArchPrototype
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -255,7 +254,9 @@ public class ArchPrototype
 		{
 			System.out.print("Java program \"ArchPrototype\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -112,40 +110,40 @@ public class Table5_18PixelTexture
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
-    .addChild(new Background().setSkyColor(new MFColor(new float[] {0.0f,0.0f,1.0f})))
-    .addChild(new Transform("Checkerboard").setTranslation(0.0f,0.0f,-10.0f)
+    .addChild(new Background().setSkyColor(new MFColor(new double[] {0.0,0.0,1.0})))
+    .addChild(new Transform("Checkerboard").setTranslation(0.0,0.0,-10.0)
       .addChild(new Shape()
         .setAppearance(new Appearance()
-          .setTextureTransform(new TextureTransform().setScale(500.0f,500.0f))
+          .setTextureTransform(new TextureTransform().setScale(500.0,500.0))
           .setTexture(new PixelTexture().setImage(new int[] {2,2,3,0xE6B5FD,0xFFDBB7,0xFFDBB7,0xE6B5FD})))
-        .setGeometry(new Box().setSize(1000.0f,1000.0f,.01f))))
-    .addChild(new Viewpoint().setDescription("View All").setPosition(0.0f,0.0f,20.0f))
-    .addChild(new Viewpoint().setDescription("Empty Image").setPosition(0.0f,5.0f,5.0f))
-    .addChild(new Transform("EmptyImage").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(0.0f,5.0f,0.0f)
+        .setGeometry(new Box().setSize(1000.0,1000.0,.01))))
+    .addChild(new Viewpoint().setDescription("View All").setPosition(0.0,0.0,20.0))
+    .addChild(new Viewpoint().setDescription("Empty Image").setPosition(0.0,5.0,5.0))
+    .addChild(new Transform("EmptyImage").setRotation(1.0,1.0,0.0,1.0).setTranslation(0.0,5.0,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance()
           .setTexture(new PixelTexture()))
         .setGeometry(new Box("StandardBox"))))
-    .addChild(new Viewpoint().setDescription("Black and white PixelTexture").setPosition(-5.0f,0.0f,5.0f))
-    .addChild(new Transform("BW").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(-5.0f,0.0f,0.0f)
+    .addChild(new Viewpoint().setDescription("Black and white PixelTexture").setPosition(-5.0,0.0,5.0))
+    .addChild(new Transform("BW").setRotation(1.0,1.0,0.0,1.0).setTranslation(-5.0,0.0,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance()
           .setTexture(new PixelTexture().setImage(new int[] {1,2,1,0xFF,0x00})))
         .setGeometry(new Box().setUSE("StandardBox"))))
-    .addChild(new Viewpoint().setDescription("Black and white with Alpha PixelTexture").setPosition(5.0f,0.0f,5.0f))
-    .addChild(new Transform("AlphaBW").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(5.0f,0.0f,0.0f)
+    .addChild(new Viewpoint().setDescription("Black and white with Alpha PixelTexture").setPosition(5.0,0.0,5.0))
+    .addChild(new Transform("AlphaBW").setRotation(1.0,1.0,0.0,1.0).setTranslation(5.0,0.0,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance()
           .setTexture(new PixelTexture().setImage(new int[] {2,1,2,0xCCFF,0x2277})))
         .setGeometry(new Box().setUSE("StandardBox"))))
-    .addChild(new Viewpoint().setDescription("RGB PixelTexture").setPosition(-5.0f,-5.0f,5.0f))
-    .addChild(new Transform("RGB").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(-5.0f,-5.0f,0.0f)
+    .addChild(new Viewpoint().setDescription("RGB PixelTexture").setPosition(-5.0,-5.0,5.0))
+    .addChild(new Transform("RGB").setRotation(1.0,1.0,0.0,1.0).setTranslation(-5.0,-5.0,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance()
           .setTexture(new PixelTexture().setImage(new int[] {2,4,3,0xFF0000,0x00FF00,0,0,0,0,0xFFFFFF,0xFFFF00})))
         .setGeometry(new Box().setUSE("StandardBox"))))
-    .addChild(new Viewpoint().setDescription("RGB with Alpha PixelTexture").setPosition(5.0f,-5.0f,5.0f))
-    .addChild(new Transform("AlphaRGB").setRotation(1.0f,1.0f,0.0f,1.0f).setTranslation(5.0f,-5.0f,0.0f)
+    .addChild(new Viewpoint().setDescription("RGB with Alpha PixelTexture").setPosition(5.0,-5.0,5.0))
+    .addChild(new Transform("AlphaRGB").setRotation(1.0,1.0,0.0,1.0).setTranslation(5.0,-5.0,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance()
           .setTexture(new PixelTexture().setImage(new int[] {3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F})))
@@ -156,7 +154,8 @@ public class Table5_18PixelTexture
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -167,7 +166,8 @@ public class Table5_18PixelTexture
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -216,7 +216,9 @@ public class Table5_18PixelTexture
 		{
 			System.out.print("Java program \"Table5_18PixelTexture\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

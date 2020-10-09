@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -10,7 +8,6 @@ import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Lighting.*;
 import org.web3d.x3d.jsail.Navigation.*;
 import org.web3d.x3d.jsail.Rendering.*;
-import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Time.*;
 
@@ -81,90 +78,16 @@ public class flower
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a flower")))
   .setScene(new Scene()
     .addChild(new NavigationInfo())
-    .addChild(new DirectionalLight().setDirection(0.0f,-0.8f,-0.2f).setIntensity(0.5f))
-    .addChild(new Background().setSkyColor(new MFColor(new float[] {1.000f,1.000f,1.000f})))
-    .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(0.0f,0.0f,50.0f))
-    .addChild(new Transform().setRotation(0.0f,1.0f,0.0f,3.1415926f).setScale(1.5f,1.5f,1.5f).setTranslation(0.0f,-1.0f,1.0f)
+    .addChild(new DirectionalLight().setDirection(0.0,-0.8,-0.2).setIntensity(0.5))
+    .addChild(new Background().setSkyColor(new MFColor(new double[] {1.000,1.000,1.000})))
+    .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(0.0,0.0,50.0))
+    .addChild(new Transform().setRotation(0.0,1.0,0.0,3.1415926).setScale(1.5,1.5,1.5).setTranslation(0.0,-1.0,1.0)
       .addChild(new Shape()
         .setAppearance(new Appearance()
-          .setMaterial(new Material().setDiffuseColor(0.9f,0.3f,0.3f).setShininess(0.145f).setSpecularColor(0.8f,0.8f,0.8f).setTransparency(0.1f)))
+          .setMaterial(new Material().setDiffuseColor(0.9,0.3,0.3).setShininess(0.145).setSpecularColor(0.8,0.8,0.8).setTransparency(0.1)))
         .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
-          .setCoord(new Coordinate("OrbitCoordinates").setPoint(new MFVec3f(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,0.0f,1.0f,0.0f,0.0f}))))))
-    .addChild(new Script("OrbitScript").setSourceCode("\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"var e = 5;" + "\n" + 
-"var f = 5;" + "\n" + 
-"var g = 5;" + "\n" + 
-"var h = 5;" + "\n" + 
-"var resolution = 100;" + "\n" + 
-"var t = 0;" + "\n" + 
-"var p = 0;" + "\n" + 
-"\n" + 
-"function initialize() {" + "\n" + 
-"     generateCoordinates(resolution);" + "\n" + 
-"     var localci = [];" + "\n" + 
-"     for ( i = 0; i < resolution-1; i++) {" + "\n" + 
-"     	for ( j = 0; j < resolution-1; j++) {" + "\n" + 
-"	     localci.push(i*resolution+j);" + "\n" + 
-"	     localci.push(i*resolution+j+1);" + "\n" + 
-"	     localci.push((i+1)*resolution+j+1);" + "\n" + 
-"	     localci.push((i+1)*resolution+j);" + "\n" + 
-"	     localci.push(-1);" + "\n" + 
-"	}" + "\n" + 
-"    }" + "\n" + 
-"    coordIndexes = new MFInt32(localci);" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function generateCoordinates(resolution) {" + "\n" + 
-"     var theta = 0.0;" + "\n" + 
-"     var phi = 0.0;" + "\n" + 
-"     var delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
-"     var localc = [];" + "\n" + 
-"     for ( i = 0; i < resolution; i++) {" + "\n" + 
-"     	for ( j = 0; j < resolution; j++) {" + "\n" + 
-"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
-"		localc.push(new SFVec3f(" + "\n" + 
-"			rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
-"			rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
-"			rho * Math.sin(phi)" + "\n" + 
-"		));" + "\n" + 
-"		theta += delta;" + "\n" + 
-"	}" + "\n" + 
-"	phi += delta;" + "\n" + 
-"     }" + "\n" + 
-"     coordinates = new MFVec3f(localc);" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function set_fraction(fraction, eventTime) {" + "\n" + 
-"	t += 0.5;" + "\n" + 
-"	p += 0.5;" + "\n" + 
-"	var choice = Math.floor(Math.random() * 4);" + "\n" + 
-"	switch (choice) {" + "\n" + 
-"	case 0:" + "\n" + 
-"		e += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	case 1:" + "\n" + 
-"		f += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	case 2:" + "\n" + 
-"		g += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	case 3:" + "\n" + 
-"		h += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	}" + "\n" + 
-"	if (f < 1) {" + "\n" + 
-"		f = 10;" + "\n" + 
-"	}" + "\n" + 
-"	if (g < 1) {" + "\n" + 
-"		g = 4;" + "\n" + 
-"	}" + "\n" + 
-"	if (h < 1) {" + "\n" + 
-"		h = 4;" + "\n" + 
-"	}" + "\n" + 
-"	generateCoordinates(resolution);" + "\n" + 
-"}" + "\n")
+          .setCoord(new Coordinate("OrbitCoordinates").setPoint(new MFVec3f(new double[] {0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0}))))))
+    .addChild(new X3DScript("OrbitScript")
       .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("coordinates").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
       .addField(new field().setName("coordIndexes").setType(field.TYPE_MFINT32).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
@@ -186,7 +109,8 @@ public class flower
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -197,7 +121,8 @@ public class flower
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -246,7 +171,9 @@ public class flower
 		{
 			System.out.print("Java program \"flower\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

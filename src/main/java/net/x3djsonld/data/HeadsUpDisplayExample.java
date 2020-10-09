@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -122,18 +120,18 @@ public class HeadsUpDisplayExample
       .addField(new field().setName("children").setType(field.TYPE_MFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("X3D content positioned at HUD offset"))
       .addField(new field().setName("position_changed").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("HUD position update (in world coordinates) relative to original location"))
       .addField(new field().setName("orientation_changed").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("HUD orientation update relative to original location")))
-    .addChild(new Background("SandyShallowBottom").setGroundAngle(new float[] {0.05f,1.52f,1.56f,1.5707f}).setGroundColor(new MFColor(new float[] {0.2f,0.2f,0.0f,0.3f,0.3f,0.0f,0.5f,0.5f,0.3f,0.1f,0.3f,0.4f,0.0f,0.2f,0.4f})).setSkyAngle(new float[] {0.04f,0.05f,0.1f,1.309f,1.570f}).setSkyColor(new MFColor(new float[] {0.8f,0.8f,0.2f,0.8f,0.8f,0.2f,0.1f,0.1f,0.6f,0.1f,0.1f,0.6f,0.1f,0.25f,0.8f,0.6f,0.6f,0.9f})))
+    .addChild(new Background("SandyShallowBottom").setGroundAngle(new double[] {0.05,1.52,1.56,1.5707}).setGroundColor(new MFColor(new double[] {0.2,0.2,0.0,0.3,0.3,0.0,0.5,0.5,0.3,0.1,0.3,0.4,0.0,0.2,0.4})).setSkyAngle(new double[] {0.04,0.05,0.1,1.309,1.570}).setSkyColor(new MFColor(new double[] {0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9})))
     .addChild(new Viewpoint().setDescription("Heads-up display (HUD)"))
     .addComments(" ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence ")
-    .addChild(new ProtoInstance("HeadsUpDisplay", "HeadsUpDisplayInstance")
+    .addChild(new ProtoInstance("HeadsUpDisplay", "HeadsUpDisplayInstance").setContainerField("children")
       .addComments(" example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view ")
-      .addFieldValue(new fieldValue().setName("screenOffset").setValue(new SFVec3f(-0.75f,1.0f,-5.0f)))
+      .addFieldValue(new fieldValue().setName("screenOffset").setValue(new SFVec3f(-0.75,1.0,-5.0)))
       .addFieldValue(new fieldValue().setName("children")
         .addChild(new Shape()
           .setGeometry(new Text().setString(new String[] {"HUD text stays fixed","while user navigates"})
-            .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(0.3f)))
+            .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(0.3)))
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(0.894118f,0.819608f,1.0f))))))
+            .setMaterial(new Material().setDiffuseColor(0.894118,0.819608,1.0))))))
     .addChild(new Inline().setUrl(new String[] {"../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"})));
     }
 	// end of initialize() method
@@ -141,7 +139,8 @@ public class HeadsUpDisplayExample
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -152,7 +151,8 @@ public class HeadsUpDisplayExample
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -201,7 +201,9 @@ public class HeadsUpDisplayExample
 		{
 			System.out.print("Java program \"HeadsUpDisplayExample\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

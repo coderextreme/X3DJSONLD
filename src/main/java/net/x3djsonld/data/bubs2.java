@@ -1,14 +1,11 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
-import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Time.*;
 
@@ -89,87 +86,37 @@ public class bubs2
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3dToJson.xslt, http://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
   .setScene(new Scene()
     .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
-    .addChild(new Viewpoint().setDescription("Bubbles in action").setOrientation(1.0f,0.0f,0.0f,0.0f).setPosition(0.0f,0.0f,4.0f))
+    .addChild(new Viewpoint().setDescription("Bubbles in action").setOrientation(1.0,0.0,0.0,0.0).setPosition(0.0,0.0,4.0))
     .addChild(new Background().setBackUrl(new String[] {"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"}).setBottomUrl(new String[] {"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"}).setFrontUrl(new String[] {"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"}).setLeftUrl(new String[] {"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"}).setRightUrl(new String[] {"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"}).setTopUrl(new String[] {"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"}))
     .addChild(new ProtoDeclare("Bubble").setName("Bubble")
       .setProtoBody(new ProtoBody()
-        .addChild(new Transform("transform")
+        .addChild(new Transform("body_trans")
           .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(0.25f))
+            .setGeometry(new Sphere().setRadius(0.25))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(1.0f,0.0f,0.0f).setTransparency(0.2f))))
-          .addChild(new Script("bounce").setSourceCode("\n" + 
-"ecmascript:" + "\n" + 
-"function initialize() {" + "\n" + 
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);" + "\n" + 
-"\n" + 
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function set_fraction(value) {" + "\n" + 
-"    if (typeof translation === 'undefined') {" + "\n" + 
-"		translation = new SFVec3f(0, 0, 0);" + "\n" + 
-"    }" + "\n" + 
-"    if (typeof velocity === 'undefined') {" + "\n" + 
-"		velocity = new SFVec3f(0, 0, 0);" + "\n" + 
-"    }" + "\n" + 
-"    if (typeof scalvel === 'undefined') {" + "\n" + 
-"		scalvel = new SFVec3f(0, 0, 0);" + "\n" + 
-"    }" + "\n" + 
-"    if (typeof scale === 'undefined') {" + "\n" + 
-"		scale = new SFVec3f(1, 1, 1);" + "\n" + 
-"    }" + "\n" + 
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);" + "\n" + 
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);" + "\n" + 
-"    // if you get to far away or too big, explode" + "\n" + 
-"    if ( Math.abs(translation.x) > 256) {" + "\n" + 
-"	translation.x = 0;" + "\n" + 
-"	initialize();" + "\n" + 
-"    }" + "\n" + 
-"    if ( Math.abs(translation.y) > 256) {" + "\n" + 
-"	translation.y = 0;" + "\n" + 
-"	initialize();" + "\n" + 
-"    }" + "\n" + 
-"    if ( Math.abs(translation.z) > 256) {" + "\n" + 
-"	translation.z = 0;" + "\n" + 
-"	initialize();" + "\n" + 
-"    }" + "\n" + 
-"    if (Math.abs(scale.x) > 20) {" + "\n" + 
-"	scale.x = scale.x/20;" + "\n" + 
-"	translation.x = 0;" + "\n" + 
-"	initialize();" + "\n" + 
-"    }" + "\n" + 
-"    if (Math.abs(scale.y) > 20) {" + "\n" + 
-"	scale.y = scale.y/20;" + "\n" + 
-"	translation.y = 0;" + "\n" + 
-"	initialize();" + "\n" + 
-"    }" + "\n" + 
-"    if (Math.abs(scale.z) > 20) {" + "\n" + 
-"	scale.z = scale.z/20;" + "\n" + 
-"	translation.z = 0;" + "\n" + 
-"	initialize();" + "\n" + 
-"    }" + "\n" + 
-"}")
-            .addField(new field().setName("scale").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(1.0f,1.0f,1.0f)))
-            .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f)))
-            .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f)))
-            .addField(new field().setName("scalvel").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f)))
+              .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0).setTransparency(0.2))))
+          .setX3DScript(new X3DScript("bounce")
+            .addField(new field().setName("scale").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(1.0,1.0,1.0)))
+            .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
+            .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
+            .addField(new field().setName("scalvel").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
             .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY)))
           .addChild(new TimeSensor("bubbleClock").setCycleInterval(10).setLoop(true))
-          .addChild(new ROUTE().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
+          .addChild(new ROUTE().setFromNode("bounce").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
+          .addChild(new ROUTE().setFromNode("bounce").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))
           .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
-    .addChild(new ProtoInstance("Bubble", "bubbleA"))
-    .addChild(new ProtoInstance("Bubble", "bubbleB"))
-    .addChild(new ProtoInstance("Bubble", "bubbleC"))
-    .addChild(new ProtoInstance("Bubble", "bubbleD")));
+    .addChild(new ProtoInstance("Bubble", "bubbleA").setContainerField("children"))
+    .addChild(new ProtoInstance("Bubble", "bubbleB").setContainerField("children"))
+    .addChild(new ProtoInstance("Bubble", "bubbleC").setContainerField("children"))
+    .addChild(new ProtoInstance("Bubble", "bubbleD").setContainerField("children")));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -180,7 +127,8 @@ public class bubs2
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -229,7 +177,9 @@ public class bubs2
 		{
 			System.out.print("Java program \"bubs2\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

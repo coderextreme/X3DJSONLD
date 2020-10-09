@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
@@ -123,24 +121,24 @@ public class Figure31_9SpinGroupPrototype
             .addConnect(new connect().setNodeField("loop").setProtoField("loop"))
             .addConnect(new connect().setNodeField("startTime").setProtoField("startTime"))
             .addConnect(new connect().setNodeField("stopTime").setProtoField("stopTime"))))
-        .addChild(new OrientationInterpolator("Spinner").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {0.0f,1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,3.14f,0.0f,1.0f,0.0f,6.28f})))
+        .addChild(new OrientationInterpolator("Spinner").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.14,0.0,1.0,0.0,6.28})))
         .addChild(new ROUTE().setFromNode("SpinGroupClock").setFromField("fraction_changed").setToNode("Spinner").setToField("set_fraction"))
         .addChild(new ROUTE().setFromNode("Spinner").setFromField("value_changed").setToNode("SpinGroupTransform").setToField("set_rotation"))))
     .addComments(" Now the scene proper begins. Nothing renders in a ProtoDeclare (or ExternProtoDeclare). ")
-    .addChild(new Viewpoint().setDescription("Click on blue crossbar to activate second SpinGroup").setOrientation(1.0f,0.0f,0.0f,-0.52f).setPosition(0.0f,18.0f,30.0f))
+    .addChild(new Viewpoint().setDescription("Click on blue crossbar to activate second SpinGroup").setOrientation(1.0,0.0,0.0,-0.52).setPosition(0.0,18.0,30.0))
     .addComments(" Create an instance, meaning actual nodes that render ")
-    .addChild(new ProtoInstance("SpinGroup")
+    .addChild(new ProtoInstance("SpinGroup").setContainerField("children")
       .addFieldValue(new fieldValue().setName("cycleInterval").setValue(8))
       .addFieldValue(new fieldValue().setName("loop").setValue(true))
       .addFieldValue(new fieldValue().setName("children")
         .addChild(new Shape()
-          .setGeometry(new Box().setSize(25.0f,2.0f,2.0f))
+          .setGeometry(new Box().setSize(25.0,2.0,2.0))
           .setAppearance(new Appearance("Green")
-            .setMaterial(new Material().setDiffuseColor(0.0f,1.0f,0.3f))))
+            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.3))))
         .addChild(new Shape()
-          .setGeometry(new Box().setSize(2.0f,25.0f,2.0f))
+          .setGeometry(new Box().setSize(2.0,25.0,2.0))
           .setAppearance(new Appearance().setUSE("Green")))
-        .addChild(new ProtoInstance("SpinGroup", "SecondSpinGroup")
+        .addChild(new ProtoInstance("SpinGroup", "SecondSpinGroup").setContainerField("children")
           .addFieldValue(new fieldValue().setName("cycleInterval").setValue(4))
           .addFieldValue(new fieldValue().setName("loop").setValue(true))
           .addComments(" stopTime > startTime ensures that initial state is stopped ")
@@ -148,9 +146,9 @@ public class Figure31_9SpinGroupPrototype
           .addFieldValue(new fieldValue().setName("children")
             .addChild(new TouchSensor("ActivateSecondSpinGroup").setDescription("Activate second SpinGroup by clicking blue bar"))
             .addChild(new Shape()
-              .setGeometry(new Box().setSize(2.0f,2.05f,25.0f))
+              .setGeometry(new Box().setSize(2.0,2.05,25.0))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(0.0f,0.3f,1.0f))))))))
+                .setMaterial(new Material().setDiffuseColor(0.0,0.3,1.0))))))))
     .addChild(new ROUTE().setFromNode("ActivateSecondSpinGroup").setFromField("touchTime").setToNode("SecondSpinGroup").setToField("startTime")));
     }
 	// end of initialize() method
@@ -158,7 +156,8 @@ public class Figure31_9SpinGroupPrototype
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -169,7 +168,8 @@ public class Figure31_9SpinGroupPrototype
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -218,7 +218,9 @@ public class Figure31_9SpinGroupPrototype
 		{
 			System.out.print("Java program \"Figure31_9SpinGroupPrototype\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }
