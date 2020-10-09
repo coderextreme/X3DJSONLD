@@ -73,23 +73,15 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Transform({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               scale : new SFVec3f([0.3,0.3,0.3]),
               children : new MFNode([
                 new Group({
                   DEF : new SFString("MooringBuoyWithHook"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("Hook"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -106,12 +98,8 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       DEF : new SFString("MooringBuoy"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(

@@ -11,10 +11,10 @@ import { WorldInfo } from './x3d.mjs';
 import { ExternProtoDeclare } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { PositionInterpolator } from './x3d.mjs';
@@ -302,8 +302,6 @@ var X3D0 =  new X3D({
               url : new MFString(["ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"])}),
 
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new NavigationInfo({
                   headlight : new SFBool(false)}),
@@ -333,8 +331,6 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   DEF : new SFString("Close_travel"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new PositionInterpolator({
                       DEF : new SFString("Close_Mover"),
@@ -361,18 +357,12 @@ var X3D0 =  new X3D({
                 new Anchor({
                   description : new SFString("Back to front view"),
                   url : new MFString(["#Front"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,0,-0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Inline({
-                          url : new MFString(["../data/gridBack.json"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1])})])})])}),
+                          url : new MFString(["../data/gridBack.json"])})])})])}),
 
                 new Viewpoint({
                   DEF : new SFString("View00"),
@@ -381,18 +371,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-3.75,3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco00 view"),
                       url : new MFString(["#View00"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -405,19 +389,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco00"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -442,18 +420,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-2.25,3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco01 view"),
                       url : new MFString(["#View01"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -465,19 +437,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco01"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -497,18 +463,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-0.75,3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco02 view"),
                       url : new MFString(["#View02"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -520,19 +480,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco02"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -552,18 +506,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([0.75,3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco03 view"),
                       url : new MFString(["#View03"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -575,19 +523,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco03"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -607,18 +549,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([2.25,3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco04 view"),
                       url : new MFString(["#View04"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -630,19 +566,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco04"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -662,18 +592,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([3.75,3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco05 view"),
                       url : new MFString(["#View05"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -685,19 +609,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco05"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -717,18 +635,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-3.75,2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco06 view"),
                       url : new MFString(["#View06"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -740,19 +652,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco06"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -772,18 +678,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-2.25,2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco07 view"),
                       url : new MFString(["#View07"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -795,19 +695,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco07"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -827,18 +721,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-0.75,2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco08 view"),
                       url : new MFString(["#View08"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -850,19 +738,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco08"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -882,18 +764,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([0.75,2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco09 view"),
                       url : new MFString(["#View09"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -905,19 +781,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco09"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -937,18 +807,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([2.25,2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco10 view"),
                       url : new MFString(["#View10"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -960,19 +824,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco10"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -992,18 +850,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([3.75,2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco11 view"),
                       url : new MFString(["#View11"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1015,19 +867,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco11"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1047,18 +893,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-3.75,0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco12 view"),
                       url : new MFString(["#View12"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1070,19 +910,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco12"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1102,18 +936,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-2.25,0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco13 view"),
                       url : new MFString(["#View13"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1125,19 +953,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco13"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1157,18 +979,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-0.75,0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco14 view"),
                       url : new MFString(["#View14"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1180,19 +996,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco14"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1212,18 +1022,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([0.75,0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco15 view"),
                       url : new MFString(["#View15"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1235,19 +1039,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco15"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1267,18 +1065,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([2.25,0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco16 view"),
                       url : new MFString(["#View16"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1290,19 +1082,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco16"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1322,18 +1108,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([3.75,0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco17 view"),
                       url : new MFString(["#View17"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1345,19 +1125,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco17"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1377,18 +1151,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-3.75,-0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco18 view"),
                       url : new MFString(["#View18"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1400,19 +1168,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco18"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1432,18 +1194,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-2.25,-0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco19 view"),
                       url : new MFString(["#View19"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1455,19 +1211,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco19"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1487,18 +1237,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-0.75,-0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco20 view"),
                       url : new MFString(["#View20"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1510,19 +1254,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco20"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1542,18 +1280,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([0.75,-0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco21 view"),
                       url : new MFString(["#View21"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1565,19 +1297,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco21"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1597,18 +1323,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([2.25,-0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco22 view"),
                       url : new MFString(["#View22"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1620,19 +1340,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco22"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1652,18 +1366,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([3.75,-0.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco23 view"),
                       url : new MFString(["#View23"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1675,19 +1383,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco23"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1707,18 +1409,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-3.75,-2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco24 view"),
                       url : new MFString(["#View24"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1730,19 +1426,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco24"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1762,18 +1452,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-2.25,-2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco25 view"),
                       url : new MFString(["#View25"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1785,19 +1469,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco25"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1817,18 +1495,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-0.75,-2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco26 view"),
                       url : new MFString(["#View26"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1840,19 +1512,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco26"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1872,18 +1538,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([0.75,-2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco27 view"),
                       url : new MFString(["#View27"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1895,19 +1555,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco27"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1927,18 +1581,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([2.25,-2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco28 view"),
                       url : new MFString(["#View28"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -1950,19 +1598,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco28"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -1982,18 +1624,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([3.75,-2.25,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco29 view"),
                       url : new MFString(["#View29"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -2005,19 +1641,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco29"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -2037,18 +1667,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-3.75,-3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco30 view"),
                       url : new MFString(["#View30"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -2060,19 +1684,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco30"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -2092,18 +1710,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-2.25,-3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco31 view"),
                       url : new MFString(["#View31"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -2115,19 +1727,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco31"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -2147,18 +1753,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-0.75,-3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco32 view"),
                       url : new MFString(["#View32"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -2170,19 +1770,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco32"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -2202,18 +1796,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([0.75,-3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco33 view"),
                       url : new MFString(["#View33"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -2225,19 +1813,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco33"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -2257,18 +1839,12 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([2.25,-3.75,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Anchor({
                       description : new SFString("ArtDeco34 view"),
                       url : new MFString(["#View34"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               shaders : new SFNode(
@@ -2280,19 +1856,13 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([0,0.3,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Anchor({
                           description : new SFString("ArtDeco34"),
                           parameter : new MFString(["target=_source"]),
                           url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(

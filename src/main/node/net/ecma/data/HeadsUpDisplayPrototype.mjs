@@ -13,15 +13,15 @@ import { field } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { ProximitySensor } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { IS } from './x3d.mjs';
 import { connect } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { PlaneSensor } from './x3d.mjs';
 import { VisibilitySensor } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
 import { Anchor } from './x3d.mjs';
@@ -115,8 +115,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Group({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new ProximitySensor({
                           DEF : new SFString("WhereSensor"),
@@ -130,18 +128,12 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           DEF : new SFString("FixedLocation"),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Transform({
                               DEF : new SFString("MovableLocation"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Transform({
                                   DEF : new SFString("LocationOffset"),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   IS : new SFNode(
                                     new IS({
                                       connect : new MFNode([
@@ -151,12 +143,8 @@ var X3D0 =  new X3D({
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0,0,-10]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                       children : new MFNode([
                                         new Group({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                           IS : new SFNode(
                                             new IS({
                                               connect : new MFNode([
@@ -166,13 +154,9 @@ var X3D0 =  new X3D({
 
                                         new Group({
                                           DEF : new SFString("PlaneMovementSensorGroup"),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                           children : new MFNode([
                                             new Group({
                                               DEF : new SFString("DragGeometry"),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
                                               IS : new SFNode(
                                                 new IS({
                                                   connect : new MFNode([
@@ -193,25 +177,7 @@ var X3D0 =  new X3D({
                                             new VisibilitySensor({
                                               DEF : new SFString("MovementVisibilitySensor")}),
 
-                                            new ROUTE({
-                                              fromField : new SFString("isActive"),
-                                              fromNode : new SFString("PlaneMovementSensor"),
-                                              toField : new SFString("setPlaneSensorIsActive"),
-                                              toNode : new SFString("VisibilityControlScript")}),
-
-                                            new ROUTE({
-                                              fromField : new SFString("translation_changed"),
-                                              fromNode : new SFString("PlaneMovementSensor"),
-                                              toField : new SFString("setPlaneSensorTranslation"),
-                                              toNode : new SFString("VisibilityControlScript")}),
-
-                                            new ROUTE({
-                                              fromField : new SFString("isActive"),
-                                              fromNode : new SFString("MovementVisibilitySensor"),
-                                              toField : new SFString("setIsVisible"),
-                                              toNode : new SFString("VisibilityControlScript")}),
-                                          X3DScript : new SFNode(
-                                            new X3DScript({
+                                            new Script({
                                               DEF : new SFString("VisibilityControlScript"),
                                               field : new MFNode([
                                                 new field({
@@ -260,7 +226,60 @@ var X3D0 =  new X3D({
                                                   connect : new MFNode([
                                                     new connect({
                                                       nodeField : new SFString("traceEnabled"),
-                                                      protoField : new SFString("traceEnabled")})])}))])}))])})])})])}),
+                                                      protoField : new SFString("traceEnabled")})])})),
+                                              .setSourceCode("ecmascript:\n"+
+"\n"+
+"function tracePrint (text)\n"+
+"{\n"+
+"	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);\n"+
+"}\n"+
+"function setIsVisible (value, timeStamp)\n"+
+"{\n"+
+"	isVisible = value;\n"+
+"	tracePrint('isVisible=' + value);\n"+
+"}\n"+
+"function setPlaneSensorIsActive (value, timeStamp)\n"+
+"{\n"+
+"	tracePrint('PlaneSensor isActive=' + value);\n"+
+"\n"+
+"	if (value == false)\n"+
+"	{\n"+
+"		tracePrint('planeSensorTranslation=' + planeSensorTranslation);\n"+
+"		if (isVisible)\n"+
+"		{\n"+
+"			translationChanged = planeSensorTranslation;\n"+
+"		}\n"+
+"		else\n"+
+"		{\n"+
+"			// fell off screen, reset to center\n"+
+"			translationChanged = new SFVec3f(0, 0, 0);\n"+
+"			translationOffsetChanged  = new SFVec3f(0, 0, 0);\n"+
+"		}\n"+
+"	}\n"+
+"}\n"+
+"function setPlaneSensorTranslation (value, timeStamp)\n"+
+"{\n"+
+"	planeSensorTranslation = value;\n"+
+"	tracePrint('planeSensorTranslation=' + value);\n"+
+"}")])}),
+
+                                            new ROUTE({
+                                              fromField : new SFString("isActive"),
+                                              fromNode : new SFString("PlaneMovementSensor"),
+                                              toField : new SFString("setPlaneSensorIsActive"),
+                                              toNode : new SFString("VisibilityControlScript")}),
+
+                                            new ROUTE({
+                                              fromField : new SFString("translation_changed"),
+                                              fromNode : new SFString("PlaneMovementSensor"),
+                                              toField : new SFString("setPlaneSensorTranslation"),
+                                              toNode : new SFString("VisibilityControlScript")}),
+
+                                            new ROUTE({
+                                              fromField : new SFString("isActive"),
+                                              fromNode : new SFString("MovementVisibilitySensor"),
+                                              toField : new SFString("setIsVisible"),
+                                              toNode : new SFString("VisibilityControlScript")})])})])})])}),
 
                                 new ROUTE({
                                   fromField : new SFString("translation_changed"),
@@ -301,12 +320,8 @@ var X3D0 =  new X3D({
               description : new SFString("HeadsUpDisplayExample"),
               parameter : new MFString(["target=_blank"]),
               url : new MFString(["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(

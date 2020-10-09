@@ -11,9 +11,7 @@ import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { WorldInfo } from './x3d.mjs';
 import { HAnimHumanoid } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { HAnimJoint } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { HAnimSegment } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
@@ -27,6 +25,7 @@ import { MFInt32 } from './x3d.mjs';
 import { Coordinate } from './x3d.mjs';
 import { MFVec3f } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -111,43 +110,23 @@ var X3D0 =  new X3D({
               name : new SFString("Humanoid_Right_hand"),
               DEF : new SFString("Humanoid_Right_hand"),
               version : new SFString("2.0"),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               joints : new SFNode(
                 new HAnimJoint({
                   name : new SFString("humanoid_root"),
                   DEF : new SFString("hanim_HumanoidRoot"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true),
                   children : new MFNode([
                     new HAnimJoint({
                       name : new SFString("r_radiocarpal_joint"),
                       DEF : new SFString("r_radiocarpal_joint"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
-                      bboxDisplay : new SFBool(false),
-                      visible : new SFBool(true),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("r_wrist"),
                           DEF : new SFString("r_wrist"),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new Transform({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new Shape({
                                   DEF : new SFString("HAnimJointShape"),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   geometry : new SFNode(
                                     new Sphere({
                                       radius : new SFFloat(0.025)})),
@@ -159,15 +138,10 @@ var X3D0 =  new X3D({
                                           diffuseColor : new SFColor([0,0,1])}))}))})])}),
 
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
-                                    new Material({
-                                      emissiveColor : new SFColor([1,1,1])}))})),
+                                    new Material({}))})),
                               geometry : new SFNode(
                                 new IndexedLineSet({
                                   DEF : new SFString("RCToMC12"),
@@ -177,15 +151,10 @@ var X3D0 =  new X3D({
                                       point : new MFVec3f([0,0,0,-0.1,0.1,0])}))}))}),
 
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
-                                    new Material({
-                                      emissiveColor : new SFColor([1,1,1])}))})),
+                                    new Material({}))})),
                               geometry : new SFNode(
                                 new IndexedLineSet({
                                   DEF : new SFString("RCToMC3"),
@@ -195,15 +164,10 @@ var X3D0 =  new X3D({
                                       point : new MFVec3f([0,0,0,0,0.07,0])}))}))}),
 
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
-                                    new Material({
-                                      emissiveColor : new SFColor([1,1,1])}))})),
+                                    new Material({}))})),
                               geometry : new SFNode(
                                 new IndexedLineSet({
                                   DEF : new SFString("RCToMC45"),
@@ -217,30 +181,16 @@ var X3D0 =  new X3D({
                           name : new SFString("r_midcarpal_joint_12"),
                           DEF : new SFString("r_midcarpal_joint_12"),
                           center : new SFVec3f([-0.1,0.1,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("r_trapezoid"),
                               DEF : new SFString("r_trapezoid"),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([-0.1,0.1,0]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Shape({
                                       DEF : new SFString("HAnimNewJointShape"),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       geometry : new SFNode(
                                         new Sphere({
                                           radius : new SFFloat(0.025)})),
@@ -252,15 +202,10 @@ var X3D0 =  new X3D({
                                               diffuseColor : new SFColor([1,0,0])}))}))})])}),
 
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
-                                        new Material({
-                                          emissiveColor : new SFColor([1,1,1])}))})),
+                                        new Material({}))})),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("MC12toCMC1"),
@@ -270,15 +215,10 @@ var X3D0 =  new X3D({
                                           point : new MFVec3f([-0.1,0.1,0,-0.2,0.15,0])}))}))}),
 
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
-                                        new Material({
-                                          emissiveColor : new SFColor([1,1,1])}))})),
+                                        new Material({}))})),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("MC12toCMC2"),
@@ -292,37 +232,22 @@ var X3D0 =  new X3D({
                               name : new SFString("r_carpometacarpal_joint_1"),
                               DEF : new SFString("r_carpometacarpal_joint_1"),
                               center : new SFVec3f([-0.2,0.15,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("r_metacarpal_1"),
                                   DEF : new SFString("r_metacarpal_1"),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([-0.2,0.15,0]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Shape({
                                           USE : new SFString("HAnimJointShape")})])}),
 
                                     new Shape({
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
-                                            new Material({
-                                              emissiveColor : new SFColor([1,1,1])}))})),
+                                            new Material({}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
                                           DEF : new SFString("CMC1toMCP1"),
@@ -335,37 +260,22 @@ var X3D0 =  new X3D({
                                   name : new SFString("r_metacarpophalangeal_joint_1"),
                                   DEF : new SFString("r_metacarpophalangeal_joint_1"),
                                   center : new SFVec3f([-0.3,0.3,0]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("r_proximal_phalanges1"),
                                       DEF : new SFString("r_proximal_phalanges1"),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-0.3,0.3,0]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("HAnimJointShape")})])}),
 
                                         new Shape({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
-                                                new Material({
-                                                  emissiveColor : new SFColor([1,1,1])}))})),
+                                                new Material({}))})),
                                           geometry : new SFNode(
                                             new IndexedLineSet({
                                               DEF : new SFString("MCP11toIP1"),
@@ -378,37 +288,22 @@ var X3D0 =  new X3D({
                                       name : new SFString("r_interphalangeal_joint_1"),
                                       DEF : new SFString("r_interphalangeal_joint_1"),
                                       center : new SFVec3f([-0.35,0.4,0]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimSegment({
                                           name : new SFString("r_distal_phalanges1"),
                                           DEF : new SFString("r_distal_phalanges1"),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([-0.35,0.4,0]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Shape({
                                                   USE : new SFString("HAnimJointShape")})])}),
 
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
-                                                    new Material({
-                                                      emissiveColor : new SFColor([1,1,1])}))})),
+                                                    new Material({}))})),
                                               geometry : new SFNode(
                                                 new IndexedLineSet({
                                                   DEF : new SFString("fingertip_r_interphalangeal_joint_1"),
@@ -422,37 +317,22 @@ var X3D0 =  new X3D({
                               name : new SFString("r_carpometacarpal_joint_2"),
                               DEF : new SFString("r_carpometacarpal_joint_2"),
                               center : new SFVec3f([-0.1,0.2,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("r_metacarpal_2"),
                                   DEF : new SFString("r_metacarpal_2"),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([-0.1,0.2,0]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Shape({
                                           USE : new SFString("HAnimJointShape")})])}),
 
                                     new Shape({
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
-                                            new Material({
-                                              emissiveColor : new SFColor([1,1,1])}))})),
+                                            new Material({}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
                                           DEF : new SFString("CMC2toMCP2"),
@@ -465,37 +345,22 @@ var X3D0 =  new X3D({
                                   name : new SFString("r_metacarpophalangeal_joint_2"),
                                   DEF : new SFString("r_metacarpophalangeal_joint_2"),
                                   center : new SFVec3f([-0.15,0.5,0]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("r_proximal_phalanges2"),
                                       DEF : new SFString("r_proximal_phalanges2"),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-0.15,0.5,0]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("HAnimJointShape")})])}),
 
                                         new Shape({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
-                                                new Material({
-                                                  emissiveColor : new SFColor([1,1,1])}))})),
+                                                new Material({}))})),
                                           geometry : new SFNode(
                                             new IndexedLineSet({
                                               DEF : new SFString("MCP2toPIP2"),
@@ -508,37 +373,22 @@ var X3D0 =  new X3D({
                                       name : new SFString("r_proximal_interphalangeal_joint_2"),
                                       DEF : new SFString("r_proximal_interphalangeal_joint_2"),
                                       center : new SFVec3f([-0.2,0.7,0]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimSegment({
                                           name : new SFString("r_middle_phalanges2"),
                                           DEF : new SFString("r_middle_phalanges2"),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([-0.2,0.7,0]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Shape({
                                                   USE : new SFString("HAnimJointShape")})])}),
 
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
-                                                    new Material({
-                                                      emissiveColor : new SFColor([1,1,1])}))})),
+                                                    new Material({}))})),
                                               geometry : new SFNode(
                                                 new IndexedLineSet({
                                                   DEF : new SFString("PIP2toDIP2"),
@@ -551,37 +401,22 @@ var X3D0 =  new X3D({
                                           name : new SFString("r_distal_interphalangeal_joint_2"),
                                           DEF : new SFString("r_distal_interphalangeal_joint_2"),
                                           center : new SFVec3f([-0.24,0.87,0]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("r_distal_phalanges2"),
                                               DEF : new SFString("r_distal_phalanges2"),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([-0.24,0.87,0]),
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   children : new MFNode([
                                                     new Shape({
                                                       USE : new SFString("HAnimJointShape")})])}),
 
                                                 new Shape({
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
-                                                        new Material({
-                                                          emissiveColor : new SFColor([1,1,1])}))})),
+                                                        new Material({}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
                                                       DEF : new SFString("fingertip_r_distal_interphalangeal_joint_2"),
@@ -595,37 +430,22 @@ var X3D0 =  new X3D({
                           name : new SFString("r_midcarpal_joint_3"),
                           DEF : new SFString("r_midcarpal_joint_3"),
                           center : new SFVec3f([0,0.07,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("r_capitate"),
                               DEF : new SFString("r_capitate"),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0,0.07,0]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Shape({
                                       USE : new SFString("HAnimNewJointShape")})])}),
 
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
-                                        new Material({
-                                          emissiveColor : new SFColor([1,1,1])}))})),
+                                        new Material({}))})),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("MC3toCMC3"),
@@ -639,37 +459,22 @@ var X3D0 =  new X3D({
                               name : new SFString("r_carpometacarpal_joint_3"),
                               DEF : new SFString("r_carpometacarpal_joint_3"),
                               center : new SFVec3f([0,0.2,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("r_metacarpal_3"),
                                   DEF : new SFString("r_metacarpal_3"),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0,0.2,0]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Shape({
                                           USE : new SFString("HAnimJointShape")})])}),
 
                                     new Shape({
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
-                                            new Material({
-                                              emissiveColor : new SFColor([1,1,1])}))})),
+                                            new Material({}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
                                           DEF : new SFString("CMC3toMCP3"),
@@ -682,37 +487,22 @@ var X3D0 =  new X3D({
                                   name : new SFString("r_metacarpophalangeal_joint_3"),
                                   DEF : new SFString("r_metacarpophalangeal_joint_3"),
                                   center : new SFVec3f([-0.03,0.5,0]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("r_proximal_phalanges3"),
                                       DEF : new SFString("r_proximal_phalanges3"),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-0.03,0.5,0]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("HAnimJointShape")})])}),
 
                                         new Shape({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
-                                                new Material({
-                                                  emissiveColor : new SFColor([1,1,1])}))})),
+                                                new Material({}))})),
                                           geometry : new SFNode(
                                             new IndexedLineSet({
                                               DEF : new SFString("MCP3toPIP3"),
@@ -725,37 +515,22 @@ var X3D0 =  new X3D({
                                       name : new SFString("r_proximal_interphalangeal_joint_3"),
                                       DEF : new SFString("r_proximal_interphalangeal_joint_3"),
                                       center : new SFVec3f([-0.05,0.75,0]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimSegment({
                                           name : new SFString("r_middle_phalanges3"),
                                           DEF : new SFString("r_middle_phalanges3"),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([-0.05,0.75,0]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Shape({
                                                   USE : new SFString("HAnimJointShape")})])}),
 
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
-                                                    new Material({
-                                                      emissiveColor : new SFColor([1,1,1])}))})),
+                                                    new Material({}))})),
                                               geometry : new SFNode(
                                                 new IndexedLineSet({
                                                   DEF : new SFString("PIP3toDIP3"),
@@ -768,37 +543,22 @@ var X3D0 =  new X3D({
                                           name : new SFString("r_distal_interphalangeal_joint_3"),
                                           DEF : new SFString("r_distal_interphalangeal_joint_3"),
                                           center : new SFVec3f([-0.08,0.96,0]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("r_distal_phalanges3"),
                                               DEF : new SFString("r_distal_phalanges3"),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([-0.08,0.96,0]),
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   children : new MFNode([
                                                     new Shape({
                                                       USE : new SFString("HAnimJointShape")})])}),
 
                                                 new Shape({
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
-                                                        new Material({
-                                                          emissiveColor : new SFColor([1,1,1])}))})),
+                                                        new Material({}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
                                                       DEF : new SFString("fingertip_r_distal_interphalangeal_joint_3"),
@@ -812,37 +572,22 @@ var X3D0 =  new X3D({
                           name : new SFString("r_midcarpal_joint_45"),
                           DEF : new SFString("r_midcarpal_joint_45"),
                           center : new SFVec3f([0.1,0.1,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("r_hamate"),
                               DEF : new SFString("r_hamate"),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0.1,0.1,0]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Shape({
                                       USE : new SFString("HAnimNewJointShape")})])}),
 
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
-                                        new Material({
-                                          emissiveColor : new SFColor([1,1,1])}))})),
+                                        new Material({}))})),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("MC45toCMC4"),
@@ -852,15 +597,10 @@ var X3D0 =  new X3D({
                                           point : new MFVec3f([0.1,0.1,0,0.1,0.2,0])}))}))}),
 
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
-                                        new Material({
-                                          emissiveColor : new SFColor([1,1,1])}))})),
+                                        new Material({}))})),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("MC45toCMC5"),
@@ -874,37 +614,22 @@ var X3D0 =  new X3D({
                               name : new SFString("r_carpometacarpal_joint_4"),
                               DEF : new SFString("r_carpometacarpal_joint_4"),
                               center : new SFVec3f([0.1,0.2,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("r_metacarpal_4"),
                                   DEF : new SFString("r_metacarpal_4"),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0.1,0.2,0]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Shape({
                                           USE : new SFString("HAnimJointShape")})])}),
 
                                     new Shape({
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
-                                            new Material({
-                                              emissiveColor : new SFColor([1,1,1])}))})),
+                                            new Material({}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
                                           DEF : new SFString("CMC4toMCP4"),
@@ -917,37 +642,22 @@ var X3D0 =  new X3D({
                                   name : new SFString("r_metacarpophalangeal_joint_4"),
                                   DEF : new SFString("r_metacarpophalangeal_joint_4"),
                                   center : new SFVec3f([0.1,0.47,0]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("r_proximal_phalanges4"),
                                       DEF : new SFString("r_proximal_phalanges4"),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([0.1,0.47,0]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("HAnimJointShape")})])}),
 
                                         new Shape({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
-                                                new Material({
-                                                  emissiveColor : new SFColor([1,1,1])}))})),
+                                                new Material({}))})),
                                           geometry : new SFNode(
                                             new IndexedLineSet({
                                               DEF : new SFString("MCP4toPIP4"),
@@ -960,37 +670,22 @@ var X3D0 =  new X3D({
                                       name : new SFString("r_proximal_interphalangeal_joint_4"),
                                       DEF : new SFString("r_proximal_interphalangeal_joint_4"),
                                       center : new SFVec3f([0.1,0.7,0]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimSegment({
                                           name : new SFString("r_middle_phalanges4"),
                                           DEF : new SFString("r_middle_phalanges4"),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([0.1,0.7,0]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Shape({
                                                   USE : new SFString("HAnimJointShape")})])}),
 
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
-                                                    new Material({
-                                                      emissiveColor : new SFColor([1,1,1])}))})),
+                                                    new Material({}))})),
                                               geometry : new SFNode(
                                                 new IndexedLineSet({
                                                   DEF : new SFString("PIP4toDIP4"),
@@ -1003,37 +698,22 @@ var X3D0 =  new X3D({
                                           name : new SFString("r_distal_interphalangeal_joint_4"),
                                           DEF : new SFString("r_distal_interphalangeal_joint_4"),
                                           center : new SFVec3f([0.1,0.93,0]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("r_distal_phalanx4"),
                                               DEF : new SFString("r_distal_phalanx4"),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([0.1,0.93,0]),
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   children : new MFNode([
                                                     new Shape({
                                                       USE : new SFString("HAnimJointShape")})])}),
 
                                                 new Shape({
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
-                                                        new Material({
-                                                          emissiveColor : new SFColor([1,1,1])}))})),
+                                                        new Material({}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
                                                       DEF : new SFString("fingertip_r_distal_interphalangeal_joint_4"),
@@ -1047,37 +727,22 @@ var X3D0 =  new X3D({
                               name : new SFString("r_carpometacarpal_joint_5"),
                               DEF : new SFString("r_carpometacarpal_joint_5"),
                               center : new SFVec3f([0.15,0.17,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("r_metacarpal_5"),
                                   DEF : new SFString("r_metacarpal_5"),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0.15,0.17,0]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Shape({
                                           USE : new SFString("HAnimJointShape")})])}),
 
                                     new Shape({
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
-                                            new Material({
-                                              emissiveColor : new SFColor([1,1,1])}))})),
+                                            new Material({}))})),
                                       geometry : new SFNode(
                                         new IndexedLineSet({
                                           DEF : new SFString("CMC5toMCP5"),
@@ -1090,37 +755,22 @@ var X3D0 =  new X3D({
                                   name : new SFString("r_metacarpophalangeal_joint_5"),
                                   DEF : new SFString("r_metacarpophalangeal_joint_5"),
                                   center : new SFVec3f([0.2,0.4,0]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("r_proximal_phalanges2"),
                                       DEF : new SFString("r_proximal_phalanges5"),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([0.2,0.4,0]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("HAnimJointShape")})])}),
 
                                         new Shape({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
-                                                new Material({
-                                                  emissiveColor : new SFColor([1,1,1])}))})),
+                                                new Material({}))})),
                                           geometry : new SFNode(
                                             new IndexedLineSet({
                                               DEF : new SFString("MCP5toPIP5"),
@@ -1133,37 +783,22 @@ var X3D0 =  new X3D({
                                       name : new SFString("r_proximal_interphalangeal_joint_5"),
                                       DEF : new SFString("r_proximal_interphalangeal_joint_5"),
                                       center : new SFVec3f([0.23,0.63,0]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimSegment({
                                           name : new SFString("r_middle_phalanges5"),
                                           DEF : new SFString("r_middle_phalanges5"),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([0.23,0.63,0]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Shape({
                                                   USE : new SFString("HAnimJointShape")})])}),
 
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
-                                                    new Material({
-                                                      emissiveColor : new SFColor([1,1,1])}))})),
+                                                    new Material({}))})),
                                               geometry : new SFNode(
                                                 new IndexedLineSet({
                                                   DEF : new SFString("PIP5toDIP5"),
@@ -1176,37 +811,22 @@ var X3D0 =  new X3D({
                                           name : new SFString("r_distal_interphalangeal_joint_5"),
                                           DEF : new SFString("r_distal_interphalangeal_joint_5"),
                                           center : new SFVec3f([0.25,0.79,0]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("r_distal_phalanges5"),
                                               DEF : new SFString("r_distal_phalanges5"),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Transform({
                                                   translation : new SFVec3f([0.25,0.79,0]),
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   children : new MFNode([
                                                     new Shape({
                                                       USE : new SFString("HAnimJointShape")})])}),
 
                                                 new Shape({
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
-                                                        new Material({
-                                                          emissiveColor : new SFColor([1,1,1])}))})),
+                                                        new Material({}))})),
                                                   geometry : new SFNode(
                                                     new IndexedLineSet({
                                                       DEF : new SFString("fingertip_r_distal_interphalangeal_joint_5"),

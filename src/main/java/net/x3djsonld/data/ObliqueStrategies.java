@@ -9,6 +9,7 @@ import org.web3d.x3d.jsail.Navigation.*;
 import org.web3d.x3d.jsail.Networking.*;
 import org.web3d.x3d.jsail.PointingDeviceSensor.*;
 import org.web3d.x3d.jsail.Rendering.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Sound.*;
 import org.web3d.x3d.jsail.Text.*;
@@ -225,7 +226,7 @@ public class ObliqueStrategies
             .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {1.0,1.0,0.0,1.0,-1.0,0.0,-1.0,-1.0,0.0,-1.0,1.0,0.0}))))
           .setAppearance(new Appearance()
             .setMaterial(new Material().setAmbientIntensity(0.245763).setDiffuseColor(0.34773,0.090909,0.005289).setShininess(0.07).setSpecularColor(0.336735,0.051091,0.051091).setTransparency(0.8))))))
-    .addChild(new X3DScript("TextScript").setUrl(new String[] {"ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"})
+    .addChild(new Script("TextScript").setUrl(new String[] {"ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"})
       .addComments(" initialize() method includes unit test to printAllStrategies() to console ")
       .addComments(" TODO insert field definitions here (index string_changed previous next random) and then animate! ")
       .addField(new field().setName("index").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(0).setAppinfo("index for active strategy card, -1 means no selection"))

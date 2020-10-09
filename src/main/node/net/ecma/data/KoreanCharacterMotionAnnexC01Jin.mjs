@@ -15,8 +15,10 @@ import { SFFloat } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { HAnimHumanoid } from './x3d.mjs';
+import { CommentsBlock } from './x3d.mjs';
+import { MetadataSet } from './x3d.mjs';
+import { MetadataString } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { HAnimJoint } from './x3d.mjs';
 import { HAnimSegment } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
@@ -25,7 +27,6 @@ import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { ImageTexture } from './x3d.mjs';
-import { undefined } from './x3d.mjs';
 import { IndexedFaceSet } from './x3d.mjs';
 import { MFInt32 } from './x3d.mjs';
 import { Coordinate } from './x3d.mjs';
@@ -35,6 +36,7 @@ import { MFVec2f } from './x3d.mjs';
 import { Group } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
+import { SFBool } from './x3d.mjs';
 import { PositionInterpolator } from './x3d.mjs';
 import { MFFloat } from './x3d.mjs';
 import { OrientationInterpolator } from './x3d.mjs';
@@ -73,7 +75,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("10 May 2020")}),
+              content : new SFString("12 July 2020")}),
 
             new meta({
               name : new SFString("description"),
@@ -131,39 +133,31 @@ var X3D0 =  new X3D({
             new HAnimHumanoid({
               name : new SFString("AnnexC01Jin"),
               DEF : new SFString("hanim_AnnexC01Jin"),
-              info : new MFString(["humanoidVersion=2.0"]),
               scale : new SFVec3f([0.0225,0.0225,0.0225]),
               version : new SFString("2.0"),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
+              { "#comment" : new CommentsBlock("HAnimHumanoid original info='\"humanoidVersion=2.0\"'") },
+              metadata : new MFNode([
+                new MetadataSet({
+                  name : new SFString("HAnimHumanoid.info"),
+                  reference : new SFString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"),
+                  value : new SFNode(
+                    new MetadataString({
+                      name : new SFString("humanoidVersion"),
+                      value : new MFString(["2.0"])}))}),
               joints : new SFNode(
                 new HAnimJoint({
-                  name : new SFString("HumanoidRoot"),
-                  DEF : new SFString("hanim_HumanoidRoot"),
+                  name : new SFString("humanoid_root"),
+                  DEF : new SFString("hanim_humanoid_root"),
                   center : new SFVec3f([0,30.53,-0.7076]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true),
                   children : new MFNode([
                     new HAnimSegment({
                       name : new SFString("sacrum"),
                       DEF : new SFString("hanim_sacrum"),
-                      bboxDisplay : new SFBool(false),
-                      visible : new SFBool(true),
                       children : new MFNode([
                         new Transform({
                           translation : new SFVec3f([0,30.53,-0.7076]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -172,9 +166,7 @@ var X3D0 =  new X3D({
                                   texture : new SFNode(
                                     new ImageTexture({
                                       DEF : new SFString("AnnexC01JinTextureAtlas"),
-                                      url : new MFString(["Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/HAnimSpecification/Jin.png"]),
-                                      load : new undefined("true"),
-                                      refresh : new undefined("0")}))})),
+                                      url : new MFString(["Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/HAnimSpecification/Jin.png"])}))})),
                               geometry : new SFNode(
                                 new IndexedFaceSet({
                                   coordIndex : new MFInt32([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]),
@@ -191,29 +183,15 @@ var X3D0 =  new X3D({
                       name : new SFString("sacroiliac"),
                       DEF : new SFString("hanim_sacroiliac"),
                       center : new SFVec3f([0,35.8,-0.7076]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
-                      bboxDisplay : new SFBool(false),
-                      visible : new SFBool(true),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("pelvis"),
                           DEF : new SFString("hanim_pelvis"),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([0,35.8,-0.7076]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
@@ -238,29 +216,15 @@ var X3D0 =  new X3D({
                           name : new SFString("l_hip"),
                           DEF : new SFString("hanim_l_hip"),
                           center : new SFVec3f([4.207,32.02,-0.8155]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("l_thigh"),
                               DEF : new SFString("hanim_l_thigh"),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([4.207,32.02,-0.8155]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Shape({
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
@@ -285,29 +249,15 @@ var X3D0 =  new X3D({
                               name : new SFString("l_knee"),
                               DEF : new SFString("hanim_l_knee"),
                               center : new SFVec3f([4.116,17.26,-0.8639]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("l_calf"),
                                   DEF : new SFString("hanim_l_calf"),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([4.116,17.26,-0.8639]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Shape({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
@@ -332,29 +282,15 @@ var X3D0 =  new X3D({
                                   name : new SFString("l_talocrural"),
                                   DEF : new SFString("hanim_l_talocrural"),
                                   center : new SFVec3f([3.854,3.939,-0.7038]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimSegment({
-                                      name : new SFString("l_hindfoot"),
-                                      DEF : new SFString("hanim_l_hindfoot"),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
+                                      name : new SFString("l_talus"),
+                                      DEF : new SFString("hanim_l_talus"),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([3.854,3.939,-0.7038]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
@@ -379,29 +315,15 @@ var X3D0 =  new X3D({
                                       name : new SFString("l_metatarsophalangeal"),
                                       DEF : new SFString("hanim_l_metatarsophalangeal"),
                                       center : new SFVec3f([3.854,3.64,0.7402]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          name : new SFString("l_middistal"),
-                                          DEF : new SFString("hanim_l_middistal"),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
+                                          name : new SFString("l_tarsal_proximal_phalanx_2"),
+                                          DEF : new SFString("hanim_l_tarsal_proximal_phalanx_2"),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([3.854,3.64,0.7402]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Shape({
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
@@ -426,29 +348,15 @@ var X3D0 =  new X3D({
                           name : new SFString("r_hip"),
                           DEF : new SFString("hanim_r_hip"),
                           center : new SFVec3f([-4.207,32.02,-0.8155]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("r_thigh"),
                               DEF : new SFString("hanim_r_thigh"),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([-4.207,32.02,-0.8155]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Shape({
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
@@ -473,29 +381,15 @@ var X3D0 =  new X3D({
                               name : new SFString("r_knee"),
                               DEF : new SFString("hanim_r_knee"),
                               center : new SFVec3f([-4.116,17.26,-0.8639]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("r_calf"),
                                   DEF : new SFString("hanim_r_calf"),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([-4.116,17.26,-0.8639]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Shape({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
@@ -520,29 +414,15 @@ var X3D0 =  new X3D({
                                   name : new SFString("r_talocrural"),
                                   DEF : new SFString("hanim_r_talocrural"),
                                   center : new SFVec3f([-3.854,3.939,-0.7038]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimSegment({
-                                      name : new SFString("r_hindfoot"),
-                                      DEF : new SFString("hanim_r_hindfoot"),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
+                                      name : new SFString("r_talus"),
+                                      DEF : new SFString("hanim_r_talus"),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-3.854,3.939,-0.7038]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
@@ -567,29 +447,15 @@ var X3D0 =  new X3D({
                                       name : new SFString("r_metatarsophalangeal"),
                                       DEF : new SFString("hanim_r_metatarsophalangeal"),
                                       center : new SFVec3f([-3.854,3.64,0.7402]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          name : new SFString("r_middistal"),
-                                          DEF : new SFString("hanim_r_middistal"),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
+                                          name : new SFString("r_tarsal_proximal_phalanx_2"),
+                                          DEF : new SFString("hanim_r_tarsal_proximal_phalanx_2"),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([-3.854,3.64,0.7402]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Shape({
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
@@ -614,29 +480,15 @@ var X3D0 =  new X3D({
                           name : new SFString("vl5"),
                           DEF : new SFString("hanim_vl5"),
                           center : new SFVec3f([0,40.23,-0.8527]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("l5"),
                               DEF : new SFString("hanim_l5"),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0,40.23,-0.8527]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Shape({
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       appearance : new SFNode(
                                         new Appearance({
                                           material : new SFNode(
@@ -661,29 +513,15 @@ var X3D0 =  new X3D({
                               name : new SFString("skullbase"),
                               DEF : new SFString("hanim_skullbase"),
                               center : new SFVec3f([0,57.43,-0.6863]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("skull"),
                                   DEF : new SFString("hanim_skull"),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0,57.43,-0.6863]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Shape({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
@@ -708,29 +546,15 @@ var X3D0 =  new X3D({
                               name : new SFString("l_shoulder"),
                               DEF : new SFString("hanim_l_shoulder"),
                               center : new SFVec3f([5.975,52,-0.1452]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("l_upperarm"),
                                   DEF : new SFString("hanim_l_upperarm"),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([5.975,52,-0.1452]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Shape({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
@@ -755,29 +579,15 @@ var X3D0 =  new X3D({
                                   name : new SFString("l_elbow"),
                                   DEF : new SFString("hanim_l_elbow"),
                                   center : new SFVec3f([8.093,40.38,-0.2502]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("l_forearm"),
                                       DEF : new SFString("hanim_l_forearm"),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([8.093,40.38,-0.2502]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
@@ -802,29 +612,15 @@ var X3D0 =  new X3D({
                                       name : new SFString("l_radiocarpal"),
                                       DEF : new SFString("hanim_l_radiocarpal"),
                                       center : new SFVec3f([7.808,31.46,-0.05849]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          name : new SFString("l_hand"),
-                                          DEF : new SFString("hanim_l_hand"),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
+                                          name : new SFString("l_carpal"),
+                                          DEF : new SFString("hanim_l_carpal"),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([7.808,31.46,-0.05849]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Shape({
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
@@ -849,29 +645,15 @@ var X3D0 =  new X3D({
                               name : new SFString("r_shoulder"),
                               DEF : new SFString("hanim_r_shoulder"),
                               center : new SFVec3f([-5.975,52,-0.1452]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("r_upperarm"),
                                   DEF : new SFString("hanim_r_upperarm"),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([-5.975,52,-0.1452]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Shape({
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           appearance : new SFNode(
                                             new Appearance({
                                               material : new SFNode(
@@ -896,29 +678,15 @@ var X3D0 =  new X3D({
                                   name : new SFString("r_elbow"),
                                   DEF : new SFString("hanim_r_elbow"),
                                   center : new SFVec3f([-8.093,40.38,-0.2502]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("r_forearm"),
                                       DEF : new SFString("hanim_r_forearm"),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-8.093,40.38,-0.2502]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
@@ -943,29 +711,15 @@ var X3D0 =  new X3D({
                                       name : new SFString("r_radiocarpal"),
                                       DEF : new SFString("hanim_r_radiocarpal"),
                                       center : new SFVec3f([-7.808,31.46,-0.05849]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimSegment({
-                                          name : new SFString("r_hand"),
-                                          DEF : new SFString("hanim_r_hand"),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
+                                          name : new SFString("r_carpal"),
+                                          DEF : new SFString("hanim_r_carpal"),
                                           children : new MFNode([
                                             new Transform({
                                               translation : new SFVec3f([-7.808,31.46,-0.05849]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new Shape({
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   appearance : new SFNode(
                                                     new Appearance({
                                                       material : new SFNode(
@@ -993,55 +747,52 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_sacroiliac")})),
               joints : new SFNode(
                 new HAnimJoint({
-                  USE : new SFString("hanim_l_hip")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_knee")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_talocrural")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_metatarsophalangeal")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_r_hip")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_r_knee")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_r_talocrural")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_r_metatarsophalangeal")})),
-              joints : new SFNode(
-                new HAnimJoint({
                   USE : new SFString("hanim_vl5")})),
               joints : new SFNode(
                 new HAnimJoint({
                   USE : new SFString("hanim_skullbase")})),
               joints : new SFNode(
                 new HAnimJoint({
-                  USE : new SFString("hanim_l_shoulder")})),
-              joints : new SFNode(
-                new HAnimJoint({
                   USE : new SFString("hanim_l_elbow")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_l_radiocarpal")})),
-              joints : new SFNode(
-                new HAnimJoint({
-                  USE : new SFString("hanim_r_shoulder")})),
               joints : new SFNode(
                 new HAnimJoint({
                   USE : new SFString("hanim_r_elbow")})),
               joints : new SFNode(
                 new HAnimJoint({
+                  USE : new SFString("hanim_l_hip")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_hip")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_knee")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_knee")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_metatarsophalangeal")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_metatarsophalangeal")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_radiocarpal")})),
+              joints : new SFNode(
+                new HAnimJoint({
                   USE : new SFString("hanim_r_radiocarpal")})),
               joints : new SFNode(
                 new HAnimJoint({
-                  USE : new SFString("hanim_HumanoidRoot")})),
+                  USE : new SFString("hanim_l_shoulder")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_shoulder")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_l_talocrural")})),
+              joints : new SFNode(
+                new HAnimJoint({
+                  USE : new SFString("hanim_r_talocrural")})),
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_sacrum")})),
@@ -1050,59 +801,55 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_pelvis")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_l_thigh")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_l_calf")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_l_hindfoot")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_l_middistal")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_thigh")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_calf")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_hindfoot")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_middistal")})),
-              segments : new SFNode(
-                new HAnimSegment({
                   USE : new SFString("hanim_l5")})),
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_skull")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_l_upperarm")})),
+                  USE : new SFString("hanim_l_calf")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_calf")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_carpal")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_carpal")})),
               segments : new SFNode(
                 new HAnimSegment({
                   USE : new SFString("hanim_l_forearm")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_l_hand")})),
-              segments : new SFNode(
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_upperarm")})),
-              segments : new SFNode(
-                new HAnimSegment({
                   USE : new SFString("hanim_r_forearm")})),
               segments : new SFNode(
                 new HAnimSegment({
-                  USE : new SFString("hanim_r_hand")}))}),
+                  USE : new SFString("hanim_l_talus")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_talus")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_tarsal_proximal_phalanx_2")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_tarsal_proximal_phalanx_2")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_thigh")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_thigh")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_l_upperarm")})),
+              segments : new SFNode(
+                new HAnimSegment({
+                  USE : new SFString("hanim_r_upperarm")}))])}),
 
             new Group({
               DEF : new SFString("KeyframeAnimation"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               children : new MFNode([
                 new TimeSensor({
                   DEF : new SFString("KeyframeTimer"),
@@ -1428,7 +1175,7 @@ var X3D0 =  new X3D({
 
                 new ROUTE({
                   fromField : new SFString("value_changed"),
-                  fromNode : new SFString("Keyframe_l_talocrural"),
+                  fromNode : new SFString("Keyframe_r_metatarsophalangeal"),
                   toField : new SFString("rotation"),
                   toNode : new SFString("hanim_r_metatarsophalangeal")})])})])}))});
 console.log(X3D0.toXMLNode());

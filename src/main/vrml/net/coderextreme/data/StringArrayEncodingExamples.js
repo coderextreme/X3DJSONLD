@@ -11,12 +11,9 @@ browser.currentScene.children[0] = Viewpoint2;
 
 let Background3 = browser.currentScene.createNode("Background");
 Background3.skyColor = new MFColor(new float[0.6,1,0.8]);
-Background3.transparency = 0;
 browser.currentScene.children[1] = Background3;
 
 let Shape4 = browser.currentScene.createNode("Shape");
-Shape4.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text5 = browser.currentScene.createNode("Text");
 Text5.string = new MFString(new java.lang.String["One, Two, Three","","He said, \"Immel did it!\""]);
 //alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'

@@ -66,17 +66,17 @@ ProtoInstance ProtoInstance0 = null;
           .addField(new field().setType("MFNode").setName("children").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("X3D content positioned at HUD offset"))
           .addField(new field().setType("SFVec3f").setName("position_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("HUD position update (in world coordinates) relative to original location"))
           .addField(new field().setType("SFRotation").setName("orientation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("HUD orientation update relative to original location")))
-        .addChild(new Background().setDEF("SandyShallowBottom").setGroundAngle(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat1().getArray())).setGroundColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor2().getArray())).setSkyAngle(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat3().getArray())).setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor4().getArray())).setTransparency(0f))
+        .addChild(new Background().setDEF("SandyShallowBottom").setGroundAngle(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat1().getArray())).setGroundColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor2().getArray())).setSkyAngle(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat3().getArray())).setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor4().getArray())))
         .addChild(new Viewpoint().setDescription("Heads-up display (HUD)"))
         .addComments(new CommentsBlock("ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("HeadsUpDisplay").setDEF("HeadsUpDisplayInstance")
           .addComments(new CommentsBlock("example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view")))
-        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray())).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})))      ;
+        .addChild(new Inline().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray()))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("screenOffset").setValue("-0.75 1 -5"));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("children")
-            .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Shape()
               .setGeometry(new Text().setString(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray()))
                 .setFontStyle(new FontStyle().setJustify(new org.web3d.x3d.jsail.fields.MFString(new MFString6().getArray())).setSize(0.3f)))
               .setAppearance(new Appearance()

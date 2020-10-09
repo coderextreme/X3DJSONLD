@@ -10,33 +10,61 @@ var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> a box. </p>
- <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> X Y Z axis arrows and labels in X3D coordinate system. See CoordinateAxesExample for use as an Inline coordinate-system reference frame. </p>
+ <p> Related links: <a href="../../../Chapter03Grouping/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../Chapter03Grouping/CoordinateAxesIndex.html" target="_top">CoordinateAxes catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d">CoordinateAxes.x3d</a> </td>
+			<td> <a href="../../../Chapter03Grouping/CoordinateAxes.x3d">CoordinateAxes.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
-			<td> Unknown, see X3D Resources Archives </td>
+			<td> Don Brutzman, Byounghyun Yoo </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> manual </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
+			<td> 14 July 2000 </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d</a> </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
+			<td> 20 October 2019 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> a box </td>
+			<td> X Y Z axis arrows and labels in X3D coordinate system. See CoordinateAxesExample for use as an Inline coordinate-system reference frame. </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" target="_blank">http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d" target="_blank">http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d" target="_blank">https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d" target="_blank">https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
+			<td> <a href="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" target="_blank">http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="../../../Chapter03Grouping/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -51,7 +79,7 @@ var autoclass = require('./X3Dautoclass');
 		stylesheet to create NodeJS source code from an <code>.x3d</code> scene.
 	</p>
 
-	* @author Unknown, see X3D Resources Archives
+	* @author Don Brutzman, Byounghyun Yoo
  */
 
 function NeedClassName
@@ -70,11 +98,19 @@ NeedClassName.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("CoordinateAxes.x3d"))
-    .addMeta((new autoclass.meta()).setName("creator").setContent("Unknown, see X3D Resources Archives"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d"))
-    .addMeta((new autoclass.meta()).setName("description").setContent("a box")))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman, Byounghyun Yoo"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("14 July 2000"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("20 October 2019"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("X Y Z axis arrows and labels in X3D coordinate system. See CoordinateAxesExample for use as an Inline coordinate-system reference frame."))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
+    .addChild((new autoclass.WorldInfo()).setTitle("CoordinateAxes.x3d"))
     .addChild((new autoclass.Collision("DoNotCollideWithVisualizationWidget"))
       .addComments(" Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. ")
       .addComments(" This NavigationInfo allows examine mode and will be overridden by any parent scene. ")

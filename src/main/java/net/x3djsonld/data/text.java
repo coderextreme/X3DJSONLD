@@ -3,6 +3,7 @@ package net.x3djsonld.data;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Grouping.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Text.*;
 
@@ -93,7 +94,9 @@ public class text
           .setFontStyle(new FontStyle()))
         .setAppearance(new Appearance()
           .setMaterial(new Material())))
-      .setX3DScript(new X3DScript()
+      .addChild(new Script().setSourceCode("\n" + 
+"			    ecmascript:" + "\n" + 
+"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';" + "\n")
         .addField(new field().setName("frontUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"rnl_front.png","uffizi_front.png"})))));
     }
 	// end of initialize() method

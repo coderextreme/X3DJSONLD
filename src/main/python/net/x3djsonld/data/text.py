@@ -50,7 +50,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           fontStyle=FontStyle(),),
         appearance=Appearance(
           material=Material(),)),
-      X3DScript(
+      Script(
         field=[
         field(name='frontUrls',type='MFString',accessType='initializeOnly',value=["rnl_front.png","uffizi_front.png"])])])])
 ) # X3D model complete

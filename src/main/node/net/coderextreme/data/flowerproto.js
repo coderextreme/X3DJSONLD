@@ -31,8 +31,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setName("vertex").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("\"../shaders/gl_flowers_chromatic.vs\""))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFSTRING).setName("fragment").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("\"../shaders/pc_flowers.fs\"")))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform()).setDEF("transform").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
-              .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+            .addChild((new autoclass.Transform()).setDEF("transform")
+              .addChild((new autoclass.Shape())
                 .setAppearance((new autoclass.Appearance())
                   .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0.7), java.newFloat(0.7), java.newFloat(0.7)])).setSpecularColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.5)])))
                   .setTexture((new autoclass.ComposedCubeMapTexture()).setDEF("texture")
@@ -62,16 +62,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                       .setIS((new autoclass.IS())
                         .addConnect((new autoclass.connect()).setNodeField("url").setProtoField("fragment"))))))
                 .setGeometry((new autoclass.Sphere())))
-              .addChild((new autoclass.TimeSensor()).setDEF("TourTime").setCycleInterval(5).setLoop(true))
-              .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
-              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("a").setToNode("shader").setToField("a"))
-              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("b").setToNode("shader").setToField("b"))
-              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("c").setToNode("shader").setToField("c"))
-              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("d").setToNode("shader").setToField("d"))
-              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
-              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("pdelta").setToNode("shader").setToField("pdelta"))
-              .addX3DScript((new autoclass.X3DScript()).setDEF("Animate")
+              .addChild((new autoclass.Script()).setDEF("Animate")
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("translation").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("velocity").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
@@ -80,5 +71,80 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("c").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("d").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
                 .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("tdelta").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("pdelta").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")))))))      ;
+                .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("pdelta").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                .setSourceCode("ecmascript:\n"+
+"			function initialize() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"			    for (var j = 0; j <= 2; j++) {\n"+
+"				    if (Math.abs(translation.x) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.y) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.z) > 10) {\n"+
+"					initialize();\n"+
+"				    } else {\n"+
+"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
+"				    }\n"+
+"			    }\n"+
+"			    animate_flowers();\n"+
+"			}\n"+
+"\n"+
+"			function animate_flowers(fraction, eventTime) {\n"+
+"				var choice = Math.floor(Math.random() * 4);\n"+
+"				switch (choice) {\n"+
+"				case 0:\n"+
+"					a += Math.random() * 0.2 - 0.1;\n"+
+"					break;\n"+
+"				case 1:\n"+
+"					b += Math.random() * 0.2 - 0.1;\n"+
+"					break;\n"+
+"				case 2:\n"+
+"					c += Math.random() * 2 - 1;\n"+
+"					break;\n"+
+"				case 3:\n"+
+"					d += Math.random() * 2 - 1;\n"+
+"					break;\n"+
+"				}\n"+
+"				tdelta += 0.5;\n"+
+"				pdelta += 0.5;\n"+
+"				if (a > 1) {\n"+
+"					a =  0.5;\n"+
+"				}\n"+
+"				if (b > 1) {\n"+
+"					b =  0.5;\n"+
+"				}\n"+
+"				if (c < 1) {\n"+
+"					c =  4;\n"+
+"				}\n"+
+"				if (d < 1) {\n"+
+"					d =  4;\n"+
+"				}\n"+
+"				if (c > 10) {\n"+
+"					c = 4;\n"+
+"				}\n"+
+"				if (d > 10) {\n"+
+"					d = 4;\n"+
+"				}\n"+
+"			}"))
+              .addChild((new autoclass.TimeSensor()).setDEF("TourTime").setCycleInterval(5).setLoop(true))
+              .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
+              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
+              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("a").setToNode("shader").setToField("a"))
+              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("b").setToNode("shader").setToField("b"))
+              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("c").setToNode("shader").setToField("c"))
+              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("d").setToNode("shader").setToField("d"))
+              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
+              .addChild((new autoclass.ROUTE()).setFromNode("Animate").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))))      ;
     X3D0.toFileX3D("../data/flowerproto.new.x3d");

@@ -20,8 +20,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a sphere")))
       .setScene((new autoclass.Scene())
-        .addChild((new autoclass.Group()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
-          .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+        .addChild((new autoclass.Group())
+          .addChild((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)]))))
             .setGeometry((new autoclass.Sphere())))))      ;

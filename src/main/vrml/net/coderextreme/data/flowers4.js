@@ -14,17 +14,11 @@ Background3.frontUrl = new MFString(new java.lang.String["../resources/images/al
 Background3.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]);
 Background3.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]);
 Background3.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]);
-Background3.skyColor = new MFColor(new float[0,0,0]);
-Background3.transparency = 0;
 browser.currentScene.children[1] = Background3;
 
 let Transform4 = browser.currentScene.createNode("Transform");
 Transform4.DEF = "transform";
-Transform4.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape5 = browser.currentScene.createNode("Shape");
-Shape5.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance6 = browser.currentScene.createNode("Appearance");
 let Material7 = browser.currentScene.createNode("Material");
 Material7.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
@@ -130,30 +124,126 @@ Transform4.children[0] = Shape5;
 
 browser.currentScene.children[2] = Transform4;
 
-let TimeSensor25 = browser.currentScene.createNode("TimeSensor");
-TimeSensor25.DEF = "Clock";
-TimeSensor25.cycleInterval = 16;
-TimeSensor25.loop = True;
-browser.currentScene.children[3] = TimeSensor25;
+let Script25 = browser.currentScene.createNode("Script");
+Script25.DEF = "OrbitScript";
+let field26 = browser.currentScene.createNode("field");
+field26.name = "set_fraction";
+field26.accessType = "inputOnly";
+field26.type = "SFFloat";
+Script25.field = new MFNode();
 
-let ROUTE26 = browser.currentScene.createNode("ROUTE");
-ROUTE26.fromField = "coordIndexes";
-ROUTE26.fromNode = "OrbitScript";
-ROUTE26.toField = "set_coordIndex";
-ROUTE26.toNode = "Orbit";
-browser.currentScene.children[4] = ROUTE26;
+Script25.field[0] = field26;
 
-let ROUTE27 = browser.currentScene.createNode("ROUTE");
-ROUTE27.fromField = "coordinates";
-ROUTE27.fromNode = "OrbitScript";
-ROUTE27.toField = "set_point";
-ROUTE27.toNode = "OrbitCoordinates";
-browser.currentScene.children[5] = ROUTE27;
+let field27 = browser.currentScene.createNode("field");
+field27.name = "coordinates";
+field27.accessType = "inputOutput";
+field27.type = "MFVec3f";
+Script25.field[1] = field27;
 
-let ROUTE28 = browser.currentScene.createNode("ROUTE");
-ROUTE28.fromField = "fraction_changed";
-ROUTE28.fromNode = "Clock";
-ROUTE28.toField = "set_fraction";
-ROUTE28.toNode = "OrbitScript";
-browser.currentScene.children[6] = ROUTE28;
+let field28 = browser.currentScene.createNode("field");
+field28.name = "coordIndexes";
+field28.accessType = "outputOnly";
+field28.type = "MFInt32";
+Script25.field[2] = field28;
+
+
+Script25.setSourceCode(`ecmascript:\n"+
+"\n"+
+"var e = 5;\n"+
+"var f = 5;\n"+
+"var g = 5;\n"+
+"var h = 5;\n"+
+"\n"+
+"function initialize() {\n"+
+"     var resolution = 100;\n"+
+"     updateCoordinates(resolution);\n"+
+"     var cis = [];\n"+
+"     for ( i = 0; i < resolution-1; i++) {\n"+
+"     	for ( j = 0; j < resolution-1; j++) {\n"+
+"	     cis.push(i*resolution+j);\n"+
+"	     cis.push(i*resolution+j+1);\n"+
+"	     cis.push((i+1)*resolution+j+1);\n"+
+"	     cis.push((i+1)*resolution+j);\n"+
+"	     cis.push(-1);\n"+
+"	}\n"+
+"    }\n"+
+"    coordIndexes = new MFInt32(cis);\n"+
+"}\n"+
+"\n"+
+"function updateCoordinates(resolution) {\n"+
+"     var theta = 0.0;\n"+
+"     var phi = 0.0;\n"+
+"     var delta = (2 * 3.141592653) / (resolution-1);\n"+
+"     var crds = [];\n"+
+"     for ( i = 0; i < resolution; i++) {\n"+
+"     	for ( j = 0; j < resolution; j++) {\n"+
+"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
+"		crds.push(new SFVec3f(\n"+
+"			rho * Math.cos(phi) * Math.cos(theta),\n"+
+"			rho * Math.cos(phi) * Math.sin(theta),\n"+
+"			rho * Math.sin(phi)\n"+
+"		));\n"+
+"		theta += delta;\n"+
+"	}\n"+
+"	phi += delta;\n"+
+"     }\n"+
+"     coordinates = new MFVec3f(crds);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(fraction, eventTime) {\n"+
+"	var choice = Math.floor(Math.random() * 4);\n"+
+"	switch (choice) {\n"+
+"	case 0:\n"+
+"		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		break;\n"+
+"	case 1:\n"+
+"		f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		break;\n"+
+"	case 2:\n"+
+"		g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		break;\n"+
+"	case 3:\n"+
+"		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"		break;\n"+
+"	}\n"+
+"	if (f < 1) {\n"+
+"		f = 10;\n"+
+"	}\n"+
+"	if (g < 1) {\n"+
+"		g = 4;\n"+
+"	}\n"+
+"	if (h < 1) {\n"+
+"		h = 4;\n"+
+"	}\n"+
+"	var resolution = 100;\n"+
+"	updateCoordinates(resolution);\n"+
+"}`)
+browser.currentScene.children[3] = Script25;
+
+let TimeSensor29 = browser.currentScene.createNode("TimeSensor");
+TimeSensor29.DEF = "Clock";
+TimeSensor29.cycleInterval = 16;
+TimeSensor29.loop = True;
+browser.currentScene.children[4] = TimeSensor29;
+
+let ROUTE30 = browser.currentScene.createNode("ROUTE");
+ROUTE30.fromField = "coordIndexes";
+ROUTE30.fromNode = "OrbitScript";
+ROUTE30.toField = "set_coordIndex";
+ROUTE30.toNode = "Orbit";
+browser.currentScene.children[5] = ROUTE30;
+
+let ROUTE31 = browser.currentScene.createNode("ROUTE");
+ROUTE31.fromField = "coordinates";
+ROUTE31.fromNode = "OrbitScript";
+ROUTE31.toField = "set_point";
+ROUTE31.toNode = "OrbitCoordinates";
+browser.currentScene.children[6] = ROUTE31;
+
+let ROUTE32 = browser.currentScene.createNode("ROUTE");
+ROUTE32.fromField = "fraction_changed";
+ROUTE32.fromNode = "Clock";
+ROUTE32.toField = "set_fraction";
+ROUTE32.toNode = "OrbitScript";
+browser.currentScene.children[7] = ROUTE32;
 

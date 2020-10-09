@@ -7,7 +7,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <ProtoDeclare name="FlowerProto" ><ProtoInterface><field name="vertex" accessType="inputOutput" type="MFString" value="&quot;../shaders/gl_flowers_chromatic.vs&quot;"></field>
 <field name="fragment" accessType="inputOutput" type="MFString" value="&quot;../shaders/pc_flowers.fs&quot;"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="transform" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<ProtoBody><Transform DEF="transform"><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
 <ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="back" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
 <ImageTexture containerField="bottom" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
 <ImageTexture containerField="front" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
@@ -36,6 +36,81 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 </Appearance>
 <Sphere containerField="geometry"></Sphere>
 </Shape>
+<Script DEF="Animate"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<field name="a" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="b" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="c" type="SFFloat" accessType="inputOutput" value="3"></field>
+<field name="d" type="SFFloat" accessType="inputOutput" value="3"></field>
+<field name="tdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="pdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<![CDATA[ecmascript:
+			function initialize() {
+			    translation = new SFVec3f(0, 0, 0);
+			    velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			function set_fraction() {
+			    translation = new SFVec3f(
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+			    for (var j = 0; j <= 2; j++) {
+				    if (Math.abs(translation.x) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.y) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.z) > 10) {
+					initialize();
+				    } else {
+					velocity.x += Math.random() * 0.2 - 0.1;
+					velocity.y += Math.random() * 0.2 - 0.1;
+					velocity.z += Math.random() * 0.2 - 0.1;
+				    }
+			    }
+			    animate_flowers();
+			}
+
+			function animate_flowers(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					a += Math.random() * 0.2 - 0.1;
+					break;
+				case 1:
+					b += Math.random() * 0.2 - 0.1;
+					break;
+				case 2:
+					c += Math.random() * 2 - 1;
+					break;
+				case 3:
+					d += Math.random() * 2 - 1;
+					break;
+				}
+				tdelta += 0.5;
+				pdelta += 0.5;
+				if (a > 1) {
+					a =  0.5;
+				}
+				if (b > 1) {
+					b =  0.5;
+				}
+				if (c < 1) {
+					c =  4;
+				}
+				if (d < 1) {
+					d =  4;
+				}
+				if (c > 10) {
+					c = 4;
+				}
+				if (d > 10) {
+					d = 4;
+				}
+			}]]></Script>
 <TimeSensor DEF="TourTime" cycleInterval="5" loop="true"></TimeSensor>
 <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="Animate" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
@@ -45,16 +120,6 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <ROUTE fromNode="Animate" fromField="d" toNode="shader" toField="d"></ROUTE>
 <ROUTE fromNode="Animate" fromField="tdelta" toNode="shader" toField="tdelta"></ROUTE>
 <ROUTE fromNode="Animate" fromField="pdelta" toNode="shader" toField="pdelta"></ROUTE>
-<X3DScript DEF="Animate"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<field name="a" type="SFFloat" accessType="inputOutput" value="0.5"></field>
-<field name="b" type="SFFloat" accessType="inputOutput" value="0.5"></field>
-<field name="c" type="SFFloat" accessType="inputOutput" value="3"></field>
-<field name="d" type="SFFloat" accessType="inputOutput" value="3"></field>
-<field name="tdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
-<field name="pdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
-</X3DScript>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
@@ -81,11 +146,7 @@ ProtoDeclare2.protoInterface = ProtoInterface3;
 let ProtoBody6 = browser.currentScene.createNode("ProtoBody");
 let Transform7 = browser.currentScene.createNode("Transform");
 Transform7.DEF = "transform";
-Transform7.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform7.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape8 = browser.currentScene.createNode("Shape");
-Shape8.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape8.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance9 = browser.currentScene.createNode("Appearance");
 let Material10 = browser.currentScene.createNode("Material");
 Material10.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
@@ -244,135 +305,202 @@ Transform7.children = new MFNode();
 
 Transform7.children[0] = Shape8;
 
-let TimeSensor37 = browser.currentScene.createNode("TimeSensor");
-TimeSensor37.DEF = "TourTime";
-TimeSensor37.cycleInterval = 5;
-TimeSensor37.loop = True;
-Transform7.children[1] = TimeSensor37;
+let Script37 = browser.currentScene.createNode("Script");
+Script37.DEF = "Animate";
+let field38 = browser.currentScene.createNode("field");
+field38.name = "translation";
+field38.accessType = "inputOutput";
+field38.type = "SFVec3f";
+field38.value = "0 0 0";
+Script37.field = new MFNode();
 
-let ROUTE38 = browser.currentScene.createNode("ROUTE");
-ROUTE38.fromNode = "TourTime";
-ROUTE38.fromField = "fraction_changed";
-ROUTE38.toNode = "Animate";
-ROUTE38.toField = "set_fraction";
-Transform7.children[2] = ROUTE38;
+Script37.field[0] = field38;
 
-let ROUTE39 = browser.currentScene.createNode("ROUTE");
-ROUTE39.fromNode = "Animate";
-ROUTE39.fromField = "translation_changed";
-ROUTE39.toNode = "transform";
-ROUTE39.toField = "set_translation";
-Transform7.children[3] = ROUTE39;
+let field39 = browser.currentScene.createNode("field");
+field39.name = "velocity";
+field39.accessType = "inputOutput";
+field39.type = "SFVec3f";
+field39.value = "0 0 0";
+Script37.field[1] = field39;
 
-let ROUTE40 = browser.currentScene.createNode("ROUTE");
-ROUTE40.fromNode = "Animate";
-ROUTE40.fromField = "a";
-ROUTE40.toNode = "shader";
-ROUTE40.toField = "a";
-Transform7.children[4] = ROUTE40;
+let field40 = browser.currentScene.createNode("field");
+field40.name = "set_fraction";
+field40.accessType = "inputOnly";
+field40.type = "SFFloat";
+Script37.field[2] = field40;
 
-let ROUTE41 = browser.currentScene.createNode("ROUTE");
-ROUTE41.fromNode = "Animate";
-ROUTE41.fromField = "b";
-ROUTE41.toNode = "shader";
-ROUTE41.toField = "b";
-Transform7.children[5] = ROUTE41;
+let field41 = browser.currentScene.createNode("field");
+field41.name = "a";
+field41.type = "SFFloat";
+field41.accessType = "inputOutput";
+field41.value = "0.5";
+Script37.field[3] = field41;
 
-let ROUTE42 = browser.currentScene.createNode("ROUTE");
-ROUTE42.fromNode = "Animate";
-ROUTE42.fromField = "c";
-ROUTE42.toNode = "shader";
-ROUTE42.toField = "c";
-Transform7.children[6] = ROUTE42;
+let field42 = browser.currentScene.createNode("field");
+field42.name = "b";
+field42.type = "SFFloat";
+field42.accessType = "inputOutput";
+field42.value = "0.5";
+Script37.field[4] = field42;
 
-let ROUTE43 = browser.currentScene.createNode("ROUTE");
-ROUTE43.fromNode = "Animate";
-ROUTE43.fromField = "d";
-ROUTE43.toNode = "shader";
-ROUTE43.toField = "d";
-Transform7.children[7] = ROUTE43;
+let field43 = browser.currentScene.createNode("field");
+field43.name = "c";
+field43.type = "SFFloat";
+field43.accessType = "inputOutput";
+field43.value = "3";
+Script37.field[5] = field43;
 
-let ROUTE44 = browser.currentScene.createNode("ROUTE");
-ROUTE44.fromNode = "Animate";
-ROUTE44.fromField = "tdelta";
-ROUTE44.toNode = "shader";
-ROUTE44.toField = "tdelta";
-Transform7.children[8] = ROUTE44;
+let field44 = browser.currentScene.createNode("field");
+field44.name = "d";
+field44.type = "SFFloat";
+field44.accessType = "inputOutput";
+field44.value = "3";
+Script37.field[6] = field44;
 
-let ROUTE45 = browser.currentScene.createNode("ROUTE");
-ROUTE45.fromNode = "Animate";
-ROUTE45.fromField = "pdelta";
-ROUTE45.toNode = "shader";
-ROUTE45.toField = "pdelta";
-Transform7.children[9] = ROUTE45;
+let field45 = browser.currentScene.createNode("field");
+field45.name = "tdelta";
+field45.type = "SFFloat";
+field45.accessType = "inputOutput";
+field45.value = "0.5";
+Script37.field[7] = field45;
 
-let X3DScript46 = browser.currentScene.createNode("X3DScript");
-X3DScript46.DEF = "Animate";
-let field47 = browser.currentScene.createNode("field");
-field47.name = "translation";
-field47.accessType = "inputOutput";
-field47.type = "SFVec3f";
-field47.value = "0 0 0";
-X3DScript46.field = new MFNode();
+let field46 = browser.currentScene.createNode("field");
+field46.name = "pdelta";
+field46.type = "SFFloat";
+field46.accessType = "inputOutput";
+field46.value = "0.5";
+Script37.field[8] = field46;
 
-X3DScript46.field[0] = field47;
 
-let field48 = browser.currentScene.createNode("field");
-field48.name = "velocity";
-field48.accessType = "inputOutput";
-field48.type = "SFVec3f";
-field48.value = "0 0 0";
-X3DScript46.field[1] = field48;
+Script37.setSourceCode(`ecmascript:\n"+
+"			function initialize() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"			    for (var j = 0; j <= 2; j++) {\n"+
+"				    if (Math.abs(translation.x) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.y) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.z) > 10) {\n"+
+"					initialize();\n"+
+"				    } else {\n"+
+"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
+"				    }\n"+
+"			    }\n"+
+"			    animate_flowers();\n"+
+"			}\n"+
+"\n"+
+"			function animate_flowers(fraction, eventTime) {\n"+
+"				var choice = Math.floor(Math.random() * 4);\n"+
+"				switch (choice) {\n"+
+"				case 0:\n"+
+"					a += Math.random() * 0.2 - 0.1;\n"+
+"					break;\n"+
+"				case 1:\n"+
+"					b += Math.random() * 0.2 - 0.1;\n"+
+"					break;\n"+
+"				case 2:\n"+
+"					c += Math.random() * 2 - 1;\n"+
+"					break;\n"+
+"				case 3:\n"+
+"					d += Math.random() * 2 - 1;\n"+
+"					break;\n"+
+"				}\n"+
+"				tdelta += 0.5;\n"+
+"				pdelta += 0.5;\n"+
+"				if (a > 1) {\n"+
+"					a =  0.5;\n"+
+"				}\n"+
+"				if (b > 1) {\n"+
+"					b =  0.5;\n"+
+"				}\n"+
+"				if (c < 1) {\n"+
+"					c =  4;\n"+
+"				}\n"+
+"				if (d < 1) {\n"+
+"					d =  4;\n"+
+"				}\n"+
+"				if (c > 10) {\n"+
+"					c = 4;\n"+
+"				}\n"+
+"				if (d > 10) {\n"+
+"					d = 4;\n"+
+"				}\n"+
+"			}`)
+Transform7.children[1] = Script37;
 
-let field49 = browser.currentScene.createNode("field");
-field49.name = "set_fraction";
-field49.accessType = "inputOnly";
-field49.type = "SFFloat";
-X3DScript46.field[2] = field49;
+let TimeSensor47 = browser.currentScene.createNode("TimeSensor");
+TimeSensor47.DEF = "TourTime";
+TimeSensor47.cycleInterval = 5;
+TimeSensor47.loop = True;
+Transform7.children[2] = TimeSensor47;
 
-let field50 = browser.currentScene.createNode("field");
-field50.name = "a";
-field50.type = "SFFloat";
-field50.accessType = "inputOutput";
-field50.value = "0.5";
-X3DScript46.field[3] = field50;
+let ROUTE48 = browser.currentScene.createNode("ROUTE");
+ROUTE48.fromNode = "TourTime";
+ROUTE48.fromField = "fraction_changed";
+ROUTE48.toNode = "Animate";
+ROUTE48.toField = "set_fraction";
+Transform7.children[3] = ROUTE48;
 
-let field51 = browser.currentScene.createNode("field");
-field51.name = "b";
-field51.type = "SFFloat";
-field51.accessType = "inputOutput";
-field51.value = "0.5";
-X3DScript46.field[4] = field51;
+let ROUTE49 = browser.currentScene.createNode("ROUTE");
+ROUTE49.fromNode = "Animate";
+ROUTE49.fromField = "translation_changed";
+ROUTE49.toNode = "transform";
+ROUTE49.toField = "set_translation";
+Transform7.children[4] = ROUTE49;
 
-let field52 = browser.currentScene.createNode("field");
-field52.name = "c";
-field52.type = "SFFloat";
-field52.accessType = "inputOutput";
-field52.value = "3";
-X3DScript46.field[5] = field52;
+let ROUTE50 = browser.currentScene.createNode("ROUTE");
+ROUTE50.fromNode = "Animate";
+ROUTE50.fromField = "a";
+ROUTE50.toNode = "shader";
+ROUTE50.toField = "a";
+Transform7.children[5] = ROUTE50;
 
-let field53 = browser.currentScene.createNode("field");
-field53.name = "d";
-field53.type = "SFFloat";
-field53.accessType = "inputOutput";
-field53.value = "3";
-X3DScript46.field[6] = field53;
+let ROUTE51 = browser.currentScene.createNode("ROUTE");
+ROUTE51.fromNode = "Animate";
+ROUTE51.fromField = "b";
+ROUTE51.toNode = "shader";
+ROUTE51.toField = "b";
+Transform7.children[6] = ROUTE51;
 
-let field54 = browser.currentScene.createNode("field");
-field54.name = "tdelta";
-field54.type = "SFFloat";
-field54.accessType = "inputOutput";
-field54.value = "0.5";
-X3DScript46.field[7] = field54;
+let ROUTE52 = browser.currentScene.createNode("ROUTE");
+ROUTE52.fromNode = "Animate";
+ROUTE52.fromField = "c";
+ROUTE52.toNode = "shader";
+ROUTE52.toField = "c";
+Transform7.children[7] = ROUTE52;
 
-let field55 = browser.currentScene.createNode("field");
-field55.name = "pdelta";
-field55.type = "SFFloat";
-field55.accessType = "inputOutput";
-field55.value = "0.5";
-X3DScript46.field[8] = field55;
+let ROUTE53 = browser.currentScene.createNode("ROUTE");
+ROUTE53.fromNode = "Animate";
+ROUTE53.fromField = "d";
+ROUTE53.toNode = "shader";
+ROUTE53.toField = "d";
+Transform7.children[8] = ROUTE53;
 
-Transform7.x3DScript[10] = X3DScript46;
+let ROUTE54 = browser.currentScene.createNode("ROUTE");
+ROUTE54.fromNode = "Animate";
+ROUTE54.fromField = "tdelta";
+ROUTE54.toNode = "shader";
+ROUTE54.toField = "tdelta";
+Transform7.children[9] = ROUTE54;
+
+let ROUTE55 = browser.currentScene.createNode("ROUTE");
+ROUTE55.fromNode = "Animate";
+ROUTE55.fromField = "pdelta";
+ROUTE55.toNode = "shader";
+ROUTE55.toField = "pdelta";
+Transform7.children[10] = ROUTE55;
 
 ProtoBody6.children = new MFNode();
 

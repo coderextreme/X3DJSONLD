@@ -14,8 +14,6 @@ import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
@@ -35,6 +33,7 @@ import { MFFloat } from './x3d.mjs';
 import { MFVec3f } from './x3d.mjs';
 import { OrientationInterpolator } from './x3d.mjs';
 import { MFRotation } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
 var X3D0 =  new X3D({
 
@@ -114,18 +113,12 @@ var X3D0 =  new X3D({
               frontUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"]),
               leftUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"]),
               rightUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]),
-              skyColor : new MFColor([0,0,0]),
-              transparency : new SFFloat(0)}),
+              topUrl : new MFString(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"])}),
 
             new Transform({
               DEF : new SFString("Rose01"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Sphere({})),
                   appearance : new SFNode(
@@ -254,6 +247,69 @@ var X3D0 =  new X3D({
               DEF : new SFString("TourOrientation"),
               key : new MFFloat([0,1]),
               keyValue : new MFRotation([0,1,0,0,0,1,0,3.1416])}),
+
+            new Script({
+              DEF : new SFString("RandomTourTime"),
+              field : new MFNode([
+                new field({
+                  type : field.TYPE_SFTIME,
+                  name : new SFString("set_cycle"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                new field({
+                  type : field.TYPE_SFFLOAT,
+                  name : new SFString("lastKey"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                  value : new SFString("0")}),
+
+                new field({
+                  type : field.TYPE_MFROTATION,
+                  name : new SFString("orientations"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                  value : new SFString("0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0")}),
+
+                new field({
+                  type : field.TYPE_MFVEC3F,
+                  name : new SFString("positions"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                  value : new SFString("0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10")}),
+
+                new field({
+                  type : field.TYPE_MFVEC3F,
+                  name : new SFString("position_changed"),
+                  accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                new field({
+                  type : field.TYPE_MFROTATION,
+                  name : new SFString("set_orientation"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                new field({
+                  type : field.TYPE_MFROTATION,
+                  name : new SFString("orientation_changed"),
+                  accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+              .setSourceCode("ecmascript:\n"+
+"               function set_cycle(value) {\n"+
+"	       	   try {\n"+
+"                        var ov = lastKey;\n"+
+"                        do {\n"+
+"                            lastKey = Math.round(Math.random()*(positions.length-1));\n"+
+"                        } while (lastKey === ov);\n"+
+"                        var vc = lastKey;\n"+
+"\n"+
+"                        position_changed = new MFVec3f();\n"+
+"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);\n"+
+"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);\n"+
+"\n"+
+"                        orientation_changed = new MFRotation();\n"+
+"                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
+"                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+
+"		   } catch (e) {\n"+
+"		   	if (typeof console.log === 'function') {\n"+
+"				console.log(e);\n"+
+"			}\n"+
+"		   }\n"+
+"               }")])}),
 
             new ROUTE({
               fromNode : new SFString("TourTime"),

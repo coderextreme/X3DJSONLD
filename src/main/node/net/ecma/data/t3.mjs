@@ -97,22 +97,14 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([-468,0,315]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("High Peak Community Arts"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -126,16 +118,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("People Express"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -149,16 +135,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("QArts/Studios"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -172,16 +152,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("First Movement"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -195,16 +169,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("City Arts"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -218,16 +186,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Indigo Dance Group (Salamanda Tandem)"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -241,16 +203,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Watering Seeds"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -264,16 +220,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Fased In The Arts"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -287,16 +237,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("27a Access Artspace"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -310,16 +254,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Bamboozle Theatre Company"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -333,16 +271,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Mantle Community Arts"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -356,16 +288,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Artlink East"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -379,16 +305,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Creations"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -402,16 +322,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("New Perspectives"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -425,16 +339,10 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');","javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("UKan2"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(

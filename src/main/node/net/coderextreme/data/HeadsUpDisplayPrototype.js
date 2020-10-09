@@ -33,31 +33,28 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("locationOffset").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Modified screen location and distance (for size).").setValue("-2 -2 0"))
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("traceEnabled").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("Enable/disable console output for troubleshooting.").setValue("false")))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Group()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+            .addChild((new autoclass.Group())
               .addChild((new autoclass.ProximitySensor()).setDEF("WhereSensor").setSize(java.newArray("float", [java.newFloat(1000000000), java.newFloat(1000000000), java.newFloat(1000000000)]))
                 .setIS((new autoclass.IS())
                   .addConnect((new autoclass.connect()).setNodeField("center").setProtoField("locationOffset"))))
-              .addChild((new autoclass.Transform()).setDEF("FixedLocation").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
-                .addChild((new autoclass.Transform()).setDEF("MovableLocation").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
-                  .addChild((new autoclass.Transform()).setDEF("LocationOffset").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+              .addChild((new autoclass.Transform()).setDEF("FixedLocation")
+                .addChild((new autoclass.Transform()).setDEF("MovableLocation")
+                  .addChild((new autoclass.Transform()).setDEF("LocationOffset")
                     .setIS((new autoclass.IS())
                       .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("locationOffset")))
-                    .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(-10)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
-                      .addChild((new autoclass.Group()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+                    .addChild((new autoclass.Transform()).setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(-10)]))
+                      .addChild((new autoclass.Group())
                         .setIS((new autoclass.IS())
                           .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("children"))))
-                      .addChild((new autoclass.Group()).setDEF("PlaneMovementSensorGroup").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
-                        .addChild((new autoclass.Group()).setDEF("DragGeometry").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+                      .addChild((new autoclass.Group()).setDEF("PlaneMovementSensorGroup")
+                        .addChild((new autoclass.Group()).setDEF("DragGeometry")
                           .setIS((new autoclass.IS())
                             .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("dragChildren"))))
                         .addChild((new autoclass.PlaneSensor()).setDEF("PlaneMovementSensor").setDescription("click and drag to move interface")
                           .setIS((new autoclass.IS())
                             .addConnect((new autoclass.connect()).setNodeField("offset").setProtoField("locationOffset"))))
                         .addChild((new autoclass.VisibilitySensor()).setDEF("MovementVisibilitySensor"))
-                        .addChild((new autoclass.ROUTE()).setFromField("isActive").setFromNode("PlaneMovementSensor").setToField("setPlaneSensorIsActive").setToNode("VisibilityControlScript"))
-                        .addChild((new autoclass.ROUTE()).setFromField("translation_changed").setFromNode("PlaneMovementSensor").setToField("setPlaneSensorTranslation").setToNode("VisibilityControlScript"))
-                        .addChild((new autoclass.ROUTE()).setFromField("isActive").setFromNode("MovementVisibilitySensor").setToField("setIsVisible").setToNode("VisibilityControlScript"))
-                        .addX3DScript((new autoclass.X3DScript()).setDEF("VisibilityControlScript")
+                        .addChild((new autoclass.Script()).setDEF("VisibilityControlScript")
                           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("traceEnabled").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY))
                           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFBOOL).setName("isVisible").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("true"))
                           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("planeSensorTranslation").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
@@ -67,7 +64,45 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("translationChanged").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
                           .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFVEC3F).setName("translationOffsetChanged").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
                           .setIS((new autoclass.IS())
-                            .addConnect((new autoclass.connect()).setNodeField("traceEnabled").setProtoField("traceEnabled")))))))
+                            .addConnect((new autoclass.connect()).setNodeField("traceEnabled").setProtoField("traceEnabled")))
+                          .setSourceCode("ecmascript:\n"+
+"\n"+
+"function tracePrint (text)\n"+
+"{\n"+
+"	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);\n"+
+"}\n"+
+"function setIsVisible (value, timeStamp)\n"+
+"{\n"+
+"	isVisible = value;\n"+
+"	tracePrint('isVisible=' + value);\n"+
+"}\n"+
+"function setPlaneSensorIsActive (value, timeStamp)\n"+
+"{\n"+
+"	tracePrint('PlaneSensor isActive=' + value);\n"+
+"\n"+
+"	if (value == false)\n"+
+"	{\n"+
+"		tracePrint('planeSensorTranslation=' + planeSensorTranslation);\n"+
+"		if (isVisible)\n"+
+"		{\n"+
+"			translationChanged = planeSensorTranslation;\n"+
+"		}\n"+
+"		else\n"+
+"		{\n"+
+"			// fell off screen, reset to center\n"+
+"			translationChanged = new SFVec3f(0, 0, 0);\n"+
+"			translationOffsetChanged  = new SFVec3f(0, 0, 0);\n"+
+"		}\n"+
+"	}\n"+
+"}\n"+
+"function setPlaneSensorTranslation (value, timeStamp)\n"+
+"{\n"+
+"	planeSensorTranslation = value;\n"+
+"	tracePrint('planeSensorTranslation=' + value);\n"+
+"}"))
+                        .addChild((new autoclass.ROUTE()).setFromField("isActive").setFromNode("PlaneMovementSensor").setToField("setPlaneSensorIsActive").setToNode("VisibilityControlScript"))
+                        .addChild((new autoclass.ROUTE()).setFromField("translation_changed").setFromNode("PlaneMovementSensor").setToField("setPlaneSensorTranslation").setToNode("VisibilityControlScript"))
+                        .addChild((new autoclass.ROUTE()).setFromField("isActive").setFromNode("MovementVisibilitySensor").setToField("setIsVisible").setToNode("VisibilityControlScript")))))
                   .addChild((new autoclass.ROUTE()).setFromField("translation_changed").setFromNode("PlaneMovementSensor").setToField("set_translation").setToNode("MovableLocation"))
                   .addChild((new autoclass.ROUTE()).setFromField("translationChanged").setFromNode("VisibilityControlScript").setToField("set_translation").setToNode("MovableLocation"))
                   .addChild((new autoclass.ROUTE()).setFromField("translationOffsetChanged").setFromNode("VisibilityControlScript").setToField("set_offset").setToNode("PlaneMovementSensor"))))
@@ -75,8 +110,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
               .addChild((new autoclass.ROUTE()).setFromField("orientation_changed").setFromNode("WhereSensor").setToField("set_rotation").setToNode("FixedLocation")))))
         .addComments((new autoclass.CommentsBlock("====================")))
         .addChild((new autoclass.Background()).setGroundColor(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.1), java.newFloat(0.3)])).setSkyColor(java.newArray("float", [java.newFloat(0.5), java.newFloat(0.5), java.newFloat(0.1)])))
-        .addChild((new autoclass.Anchor()).setDescription("HeadsUpDisplayExample").setParameter(java.newArray("java.lang.String", ["target=_blank"])).setUrl(java.newArray("java.lang.String", ["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
-          .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+        .addChild((new autoclass.Anchor()).setDescription("HeadsUpDisplayExample").setParameter(java.newArray("java.lang.String", ["target=_blank"])).setUrl(java.newArray("java.lang.String", ["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"]))
+          .addChild((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(1)])).setEmissiveColor(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(1)]))))
             .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"]))

@@ -49,9 +49,9 @@ var ProtoInstance0 = null;
         .addComments((new autoclass.CommentsBlock("Example use")))
         .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("ViewFrustum"))
         .addComments((new autoclass.CommentsBlock("Visualization assists")))
-        .addChild((new autoclass.Inline()).setDEF("GridXZ").setUrl(java.newArray("java.lang.String", ["GridXZ_20x20Fixed.x3d"])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)])))
-        .addChild((new autoclass.Transform()).setScale(java.newArray("float", [java.newFloat(5), java.newFloat(5), java.newFloat(5)])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
-          .addChild((new autoclass.Inline()).setDEF("CoordinateAxes").setUrl(java.newArray("java.lang.String", ["CoordinateAxes.x3d"])).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)])))))      ;
+        .addChild((new autoclass.Inline()).setDEF("GridXZ").setUrl(java.newArray("java.lang.String", ["GridXZ_20x20Fixed.x3d"])))
+        .addChild((new autoclass.Transform()).setScale(java.newArray("float", [java.newFloat(5), java.newFloat(5), java.newFloat(5)]))
+          .addChild((new autoclass.Inline()).setDEF("CoordinateAxes").setUrl(java.newArray("java.lang.String", ["CoordinateAxes.x3d"])))))      ;
 ProtoInstance0
           .addFieldValue((new autoclass.fieldValue()).setName("ViewpointNode")
             .addComments((new autoclass.CommentsBlock("prefer empty description to prevent entry in player's ViewpointList")))

@@ -9,18 +9,16 @@ import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { PixelTexture } from './x3d.mjs';
 import { SFImage } from './x3d.mjs';
 import { Box } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
 import { Cone } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Cylinder } from './x3d.mjs';
 var X3D0 =  new X3D({
 
@@ -107,17 +105,11 @@ var X3D0 =  new X3D({
               type : ["EXAMINE","WALK","FLY","ANY"]}),
 
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Transform({
                   translation : new SFVec3f([6.14221,0.0694613,-0.000999451]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -127,18 +119,12 @@ var X3D0 =  new X3D({
                               DEF : new SFString("RgbOpacityCheckerboard"),
                               image : new SFImage([2,2,4,4278190335,4294901760,4294901760,4278190335])}))})),
                       geometry : new SFNode(
-                        new Box({
-                          size : new SFVec3f([2,2,2]),
-                          solid : new SFBool(true)}))})])}),
+                        new Box({}))})])}),
 
                 new Transform({
                   translation : new SFVec3f([-4.85443,0.0694381,-0.00149918]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -151,12 +137,8 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([-1.47341,0.036672,-0.00175095]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -165,21 +147,12 @@ var X3D0 =  new X3D({
                             new PixelTexture({
                               USE : new SFString("RgbOpacityCheckerboard")}))})),
                       geometry : new SFNode(
-                        new Cone({
-                          bottomRadius : new SFFloat(1),
-                          height : new SFFloat(2),
-                          side : new SFBool(true),
-                          bottom : new SFBool(true),
-                          solid : new SFBool(true)}))})])}),
+                        new Cone({}))})])}),
 
                 new Transform({
                   translation : new SFVec3f([2.31094,0.0694206,-0.00187683]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(

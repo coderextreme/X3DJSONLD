@@ -27,7 +27,6 @@ import { SFColor } from './x3d.mjs';
 import { SFFloat } from './x3d.mjs';
 import { ImageTexture } from './x3d.mjs';
 import { Box } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { IndexedLineSet } from './x3d.mjs';
 import { MFInt32 } from './x3d.mjs';
 import { Coordinate } from './x3d.mjs';
@@ -36,6 +35,7 @@ import { PositionInterpolator } from './x3d.mjs';
 import { MFFloat } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
+import { SFBool } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
 import { Text } from './x3d.mjs';
 import { MetadataSet } from './x3d.mjs';
@@ -45,10 +45,10 @@ import { OrientationInterpolator } from './x3d.mjs';
 import { MFRotation } from './x3d.mjs';
 import { Group } from './x3d.mjs';
 import { Background } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
-import { ColorInterpolator } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { field } from './x3d.mjs';
+import { ColorInterpolator } from './x3d.mjs';
+import { MFColor } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
 import { ProtoInterface } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
@@ -215,19 +215,13 @@ var X3D0 =  new X3D({
             new Transform({
               DEF : new SFString("LogoGeometryTransform"),
               translation : new SFVec3f([0,1.5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Anchor({
                   description : new SFString("select for X3D Java SAI Library (X3DJSAIL) description"),
                   url : new MFString(["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("BoxShape"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -242,14 +236,10 @@ var X3D0 =  new X3D({
                       geometry : new SFNode(
                         new Box({
                           DEF : new SFString("test-NMTOKEN_regex.0123456789"),
-                          cssClass : new SFString("untextured"),
-                          size : new SFVec3f([2,2,2]),
-                          solid : new SFBool(true)}))})])})])}),
+                          cssClass : new SFString("untextured")}))})])})])}),
 
             new Shape({
               DEF : new SFString("LineShape"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               appearance : new SFNode(
                 new Appearance({
                   material : new SFNode(
@@ -288,12 +278,8 @@ var X3D0 =  new X3D({
             new Transform({
               DEF : new SFString("TextTransform"),
               translation : new SFVec3f([0,-1.5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -320,15 +306,10 @@ var X3D0 =  new X3D({
                           justify : new MFString(["MIDDLE","MIDDLE"])}))])}))}),
 
                 new Collision({
-                  enabled : new SFBool(true),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   { "#comment" : new CommentsBlock("test containerField='proxy'") },
                   proxy : new SFNode(
                     new Shape({
                       DEF : new SFString("ProxyShape"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       { "#comment" : new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'") },
                       { "#comment" : new CommentsBlock("alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'") },
                       { "#comment" : new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})") },
@@ -365,13 +346,29 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("BackgroundGroup"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Background({
-                  DEF : new SFString("GradualBackground"),
-                  skyColor : new MFColor([0,0,0]),
-                  transparency : new SFFloat(0)}),
+                  DEF : new SFString("GradualBackground")}),
+
+                new Script({
+                  DEF : new SFString("colorTypeConversionScript"),
+                  field : new MFNode([
+                    new field({
+                      type : field.TYPE_SFCOLOR,
+                      name : new SFString("colorInput"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_MFCOLOR,
+                      name : new SFString("colorsOutput"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+                  .setSourceCode("ecmascript:\n"+
+"\n"+
+"function colorInput (eventValue) // Example source code\n"+
+"{\n"+
+"   colorsOutput = new MFColor(eventValue); // assigning value sends output event\n"+
+"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');\n"+
+"}")])}),
 
                 new ColorInterpolator({
                   DEF : new SFString("ColorAnimator"),
@@ -400,20 +397,7 @@ var X3D0 =  new X3D({
                   fromField : new SFString("fraction_changed"),
                   fromNode : new SFString("ColorClock"),
                   toField : new SFString("set_fraction"),
-                  toNode : new SFString("ColorAnimator")}),
-              X3DScript : new SFNode(
-                new X3DScript({
-                  DEF : new SFString("colorTypeConversionScript"),
-                  field : new MFNode([
-                    new field({
-                      type : field.TYPE_SFCOLOR,
-                      name : new SFString("colorInput"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_MFCOLOR,
-                      name : new SFString("colorsOutput"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)})])}))])}),
+                  toNode : new SFString("ColorAnimator")})])}),
 
             new ProtoDeclare({
               name : new SFString("ArtDeco01Material"),
@@ -473,8 +457,6 @@ var X3D0 =  new X3D({
 
             new Shape({
               DEF : new SFString("TestShape1"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               appearance : new SFNode(
                 new Appearance({
                   DEF : new SFString("TestAppearance1"),
@@ -493,8 +475,6 @@ var X3D0 =  new X3D({
 
             new Shape({
               DEF : new SFString("TestShape2"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               appearance : new SFNode(
                 new Appearance({
                   DEF : new SFString("TestAppearance2"),
@@ -511,15 +491,10 @@ var X3D0 =  new X3D({
               geometry : new SFNode(
                 new Cone({
                   bottomRadius : new SFFloat(0.001),
-                  height : new SFFloat(0.001),
-                  side : new SFBool(true),
-                  bottom : new SFBool(true),
-                  solid : new SFBool(true)}))}),
+                  height : new SFFloat(0.001)}))}),
 
             new Shape({
               DEF : new SFString("TestShape3"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               appearance : new SFNode(
                 new Appearance({
                   DEF : new SFString("TestAppearance3"),
@@ -534,9 +509,7 @@ var X3D0 =  new X3D({
 
             new Inline({
               DEF : new SFString("inlineSceneDef"),
-              url : new MFString(["someOtherScene.x3d"]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1])}),
+              url : new MFString(["someOtherScene.x3d"])}),
 
             new IMPORT({
               aS : new SFString("WorldInfoDEF2"),
@@ -627,8 +600,8 @@ var X3D0 =  new X3D({
                               nodeField : new SFString("ambientIntensity"),
                               protoField : new SFString("ambientIntensity")})])}))}),
                   { "#comment" : new CommentsBlock("Only first node (the node type) is renderable, others are along for the ride") },
-                  X3DScript : new SFNode(
-                    new X3DScript({
+
+                    new Script({
                       DEF : new SFString("MaterialModulatorScript"),
                       field : new MFNode([
                         new field({
@@ -659,17 +632,36 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("diffuseColor"),
-                              protoField : new SFString("diffuseColor")})])}))])}))])}))}),
+                              protoField : new SFString("diffuseColor")})])})),
+                      .setSourceCode("ecmascript:\n"+
+"function initialize ()\n"+
+"{\n"+
+"    newColor = diffuseColor; // start with correct color\n"+
+"}\n"+
+"function set_enabled (newValue)\n"+
+"{\n"+
+"	enabled = newValue;\n"+
+"}\n"+
+"function clockTrigger (timeValue)\n"+
+"{\n"+
+"    if (!enabled) return;\n"+
+"    red   = newColor.r;\n"+
+"    green = newColor.g;\n"+
+"    blue  = newColor.b;\n"+
+"\n"+
+"    // note different modulation rates for each color component, % is modulus operator\n"+
+"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);\n"+
+"	if (enabled)\n"+
+"	{\n"+
+"		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');\n"+
+"	}\n"+
+"}")])})])}))}),
           { "#comment" : new CommentsBlock("Test success: declarative statement createDeclarativeShapeTests()") },
 
             new Group({
               DEF : new SFString("DeclarativeGroupExample"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   metadata : new MFNode([
                     new MetadataString({
                       name : new SFString("findThisNameValue"),
@@ -687,9 +679,7 @@ var X3D0 =  new X3D({
                     new Cone({
                       bottom : new SFBool(false),
                       bottomRadius : new SFFloat(0.05),
-                      height : new SFFloat(0.1),
-                      side : new SFBool(true),
-                      solid : new SFBool(true)}))])}),
+                      height : new SFFloat(0.1)}))])}),
               { "#comment" : new CommentsBlock("Test success: declarativeGroup.addChild() singleton pipeline method") }])}),
           { "#comment" : new CommentsBlock("Test success: declarative statement addChild()") },
           { "#comment" : new CommentsBlock("Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>") },
@@ -700,8 +690,6 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("TestFieldObjectsGroup"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               { "#comment" : new CommentsBlock("testFieldObjects() results") },
               { "#comment" : new CommentsBlock("SFBool default=true, true=true, false=false, negate()=true") },
               { "#comment" : new CommentsBlock("MFBool default=, initial=true false true, negate()=false true false") },
@@ -717,12 +705,6 @@ var X3D0 =  new X3D({
                 new AudioClip({
                   description : new SFString("chimes"),
                   url : new MFString(["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]),
-                  loop : new SFBool(false),
-                  pitch : new SFFloat(1),
-                  startTime : new SFTime(0),
-                  stopTime : new SFTime(0),
-                  pauseTime : new SFTime(0),
-                  resumeTime : new SFTime(0),
                   { "#comment" : new CommentsBlock("Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d") }}))}),
 
             new Sound({
@@ -743,8 +725,6 @@ var X3D0 =  new X3D({
 
             new Shape({
               DEF : new SFString("ExtrusionShape"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               { "#comment" : new CommentsBlock("ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'") },
               { "#comment" : new CommentsBlock("ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'") },
               appearance : new SFNode(

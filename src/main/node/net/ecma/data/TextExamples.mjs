@@ -68,12 +68,8 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new Transform({
               translation : new SFVec3f([0,2,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["Compare special character escaping"]),
@@ -91,12 +87,8 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([-3,0,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["I don't think so","","he said \"Hi\""]),
@@ -109,12 +101,8 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([3,0,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["I don't think so","","he said \"Hi\""]),

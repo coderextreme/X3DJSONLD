@@ -11,13 +11,13 @@ import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
+import { SFFloat } from './x3d.mjs';
 import { PlaneSensor } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
 import { Cylinder } from './x3d.mjs';
@@ -25,7 +25,7 @@ import { ProtoDeclare } from './x3d.mjs';
 import { ProtoInterface } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { IS } from './x3d.mjs';
 import { connect } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
@@ -64,17 +64,12 @@ var X3D0 =  new X3D({
               description : new SFString("Only Viewpoint")}),
 
             new Background({
-              skyColor : new MFColor([0.4,0.4,0.4]),
-              transparency : new SFFloat(0)}),
+              skyColor : new MFColor([0.4,0.4,0.4])}),
 
             new Transform({
               DEF : new SFString("G1"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -97,12 +92,8 @@ var X3D0 =  new X3D({
             new Transform({
               DEF : new SFString("G2"),
               translation : new SFVec3f([1,-1,0.01]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -125,17 +116,11 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("transC1"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("rotscaleC1"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -182,8 +167,8 @@ var X3D0 =  new X3D({
                       accessType : new SFString(field.ACCESSTYPE_INPUTONLY)})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
-                  X3DScript : new SFNode(
-                    new X3DScript({
+                  children : new MFNode([
+                    new Script({
                       DEF : new SFString("S1"),
                       field : new MFNode([
                         new field({
@@ -240,7 +225,48 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("set_endpoint"),
-                              protoField : new SFString("set_endpoint")})])}))])}))}))}),
+                              protoField : new SFString("set_endpoint")})])})),
+                      .setSourceCode("ecmascript:\n"+
+"        function recompute(startpoint,endpoint){\n"+
+"	    if (typeof endpoint === 'undefined') {\n"+
+"		return;\n"+
+"	    }\n"+
+"            var dif = endpoint.subtract(startpoint);\n"+
+"            var dist = dif.length()*0.5;\n"+
+"            var dif2 = dif.multiply(0.5);\n"+
+"            var norm = dif.normalize();\n"+
+"            var transl = startpoint.add(dif2);\n"+
+"	    if (typeof Quaternion !== 'undefined') {\n"+
+"		    return {\n"+
+"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
+"			    translation : transl,\n"+
+"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
+"		    };\n"+
+"	    } else {\n"+
+"		    return {\n"+
+"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
+"			    translation : transl,\n"+
+"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
+"		    };\n"+
+"	    }\n"+
+"	}\n"+
+"	function recompute_and_route(startpoint, endpoint) {\n"+
+"	      var trafo = recompute(startpoint, endpoint);\n"+
+"	      if (trafo) {\n"+
+"		      transnode.translation = trafo.translation;\n"+
+"		      rotscalenode.rotation = trafo.rotation;\n"+
+"		      rotscalenode.scale = trafo.scale;\n"+
+"	      }\n"+
+"	}\n"+
+"        function initialize(){\n"+
+"            recompute_and_route(startnode.translation,endnode.translation);\n"+
+"        }\n"+
+"        function set_startpoint(val,t){\n"+
+"            recompute_and_route(val,endnode.translation);\n"+
+"        }\n"+
+"        function set_endpoint(val,t){\n"+
+"            recompute_and_route(startnode.translation,val);\n"+
+"        }")])})])}))}),
 
             new ProtoInstance({
               name : new SFString("x3dconnector"),

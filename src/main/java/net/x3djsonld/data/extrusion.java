@@ -4,6 +4,7 @@ import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Time.*;
 
@@ -84,7 +85,16 @@ public class extrusion
         .setAppearance(new Appearance()
           .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0))))
       .addChild(new TimeSensor("TourTime").setLoop(true))
-      .setX3DScript(new X3DScript("MoveCylinder")
+      .addChild(new Script("MoveCylinder").setSourceCode("\n" + 
+"\n" + 
+"ecmascript:" + "\n" + 
+"\n" + 
+"                function set_cycle(value) {" + "\n" + 
+"                        Browser.print(value);" + "\n" + 
+"                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);" + "\n" + 
+"                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);" + "\n" + 
+"		        spine = new MFVec3f([endA, endB]);" + "\n" + 
+"                }" + "\n")
         .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("spine").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3f(new MFVec3f(new double[] {-50.0,-50.0,0.0,50.0,50.0,0.0})))))
       .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))

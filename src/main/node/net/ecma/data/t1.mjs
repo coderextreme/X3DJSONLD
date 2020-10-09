@@ -32,7 +32,6 @@ import { MFVec3f } from './x3d.mjs';
 import { IS } from './x3d.mjs';
 import { connect } from './x3d.mjs';
 import { Box } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
 import { fieldValue } from './x3d.mjs';
@@ -101,12 +100,8 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -140,12 +135,8 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -154,8 +145,7 @@ var X3D0 =  new X3D({
                                   diffuseColor : new SFColor([1,1,0])}))})),
                           geometry : new SFNode(
                             new Box({
-                              size : new SFVec3f([0.699999988079071,0.699999988079071,0.699999988079071]),
-                              solid : new SFBool(true)}))}),
+                              size : new SFVec3f([0.699999988079071,0.699999988079071,0.699999988079071])}))}),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -177,12 +167,8 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -218,12 +204,8 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -351,19 +333,13 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([-468,0,315]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["t.wrl"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])}),
+                  url : new MFString(["t.wrl"])}),
 
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/566.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Derby Women's Centre"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -375,8 +351,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("High Peak Community Arts"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("r"),
@@ -388,8 +362,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/576.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Charlesworth Primary School"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -401,8 +373,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/579.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Hope Valley College"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -414,8 +384,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("People Express"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("i"),
@@ -427,8 +395,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("QArts/Studios"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("i"),
@@ -440,8 +406,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/591.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Stroke Unit, Derbyshire Royal Infirmary"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -453,8 +417,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/592.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Park View Primary, Derby"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -466,8 +428,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("First Movement"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("n"),
@@ -479,8 +439,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/594.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("St. Benedict R.C. School, Visual Impairment Unit"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -492,8 +450,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/595.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Beckett Primary, Derby"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -505,8 +461,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/597.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Brackensdale Junior School, Communty Unit"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -518,8 +472,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/598.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Moorhead Primary, Derby"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -531,8 +483,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/600.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Derby Deaf Club"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -544,8 +494,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/601.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Nightingale Junior, Derby"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -557,8 +505,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/603.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("St Mary's Primary, Derby"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -570,8 +516,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/604.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Griffe Field Primary, Derby"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -583,8 +527,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/605.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Leicester Road Day Centre, Melton Mowbray"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -596,8 +538,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/606.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Ivy House Special School, Derby"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -609,8 +549,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/607.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Oakham Day Centre, Rutland"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -622,8 +560,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/608.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Parkwood School, Alfreton"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -635,8 +571,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/609.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Ash Green, Specialist Learning Disability Resource"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -648,8 +582,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/610.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Ashgate Croft School, Chesterfield"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -661,8 +593,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/611.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Highfields School, Matlock"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -674,8 +604,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("City Arts"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("i"),
@@ -687,8 +615,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Indigo Dance Group (Salamanda Tandem)"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("r"),
@@ -700,8 +626,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Watering Seeds"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("r"),
@@ -713,8 +637,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/625.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Red oaks"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -726,8 +648,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/626.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("West Notts College"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -739,8 +659,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/628.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Willow Wood Day Centre"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -752,8 +670,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Fased In The Arts"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("r"),
@@ -765,8 +681,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("27a Access Artspace"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("n"),
@@ -778,8 +692,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/635.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Roman Way Day Centre, Market Harborough"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -791,8 +703,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/637.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Mosaic, Leicester Disability Services"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -804,8 +714,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Bamboozle Theatre Company"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("r"),
@@ -817,8 +725,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/640.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Ellesmere College, Leicester"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -830,8 +736,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/642.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Ashmount School, Loughborough"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -843,8 +747,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Mantle Community Arts"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("r"),
@@ -856,8 +758,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/650.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Forrest Way School"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -869,8 +769,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/652.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Ibstock Community College"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -882,8 +780,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Artlink East"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("r"),
@@ -895,8 +791,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/660.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("United Hospitals and NHS Trust Lincolnshire"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -908,8 +802,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/662.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Ancaster Day Centre"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -921,8 +813,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Creations"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("r"),
@@ -934,8 +824,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/667.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Nene Day Centre, Northamtpon"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -947,8 +835,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/668.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Delapre Middle School, Northampton"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -960,8 +846,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/669.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("The Links, Brackley"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -973,8 +857,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("New Perspectives"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("n"),
@@ -986,8 +868,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("UKan2"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("r"),
@@ -999,8 +879,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/672.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Silverstone County Infants School"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -1012,8 +890,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/677.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Riverside Resource Centre, Towcester"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("institute"),
@@ -1025,8 +901,6 @@ var X3D0 =  new X3D({
                 new Anchor({
                   url : new MFString(["javascript:window.open('./data/678.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"]),
                   description : new SFString("Daventry Tertiary College"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProtoInstance({
                       name : new SFString("school"),
@@ -1036,8 +910,6 @@ var X3D0 =  new X3D({
                           value : new SFString("456.700012207031 0.100000001490116 -261.799987792969")})])})])}),
 
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -1052,8 +924,6 @@ var X3D0 =  new X3D({
                           point : new MFVec3f([430,0.0199999995529652,-335,435.799987792969,0.100000001490116,-335.299987792969,430,0.0199999995529652,-335,434.600006103516,0.100000001490116,-338.600006103516,430,0.0199999995529652,-335,432.700012207031,0.100000001490116,-336.600006103516,430,0.0199999995529652,-335,434.700012207031,0.100000001490116,-336.899993896484,429.899993896484,0.0199999995529652,-360.299987792969,474.700012207031,0.100000001490116,-318.799987792969,429.899993896484,0.0199999995529652,-360.299987792969,485.600006103516,0.100000001490116,-309,429.899993896484,0.0199999995529652,-360.299987792969,434.799987792969,0.100000001490116,-371.5,454,0.0199999995529652,-361.299987792969,457.399993896484,0.100000001490116,-359.600006103516,454,0.0199999995529652,-361.299987792969,454.200012207031,0.100000001490116,-358.600006103516,454,0.0199999995529652,-361.299987792969,450.600006103516,0.100000001490116,-358.600006103516,458.899993896484,0.0199999995529652,-304.299987792969,473.5,0.100000001490116,-287.5,458.899993896484,0.0199999995529652,-304.299987792969,458,0.100000001490116,-304.5,491.600006103516,0.0199999995529652,-335.700012207031,491.399993896484,0.100000001490116,-336.799987792969,491.600006103516,0.0199999995529652,-335.700012207031,496.899993896484,0.100000001490116,-368.899993896484,467,0.0199999995529652,-243.899993896484,477.100006103516,0.100000001490116,-260,467,0.0199999995529652,-243.899993896484,459,0.100000001490116,-236.399993896484,458.700012207031,0.0199999995529652,-262.700012207031,469.5,0.100000001490116,-249.800003051758,458.700012207031,0.0199999995529652,-262.700012207031,456.700012207031,0.100000001490116,-261.799987792969])}))}))}),
 
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -1068,8 +938,6 @@ var X3D0 =  new X3D({
                           point : new MFVec3f([400,0.0199999995529652,-385,400.600006103516,0.100000001490116,-392.899993896484,400,0.0199999995529652,-385,416.700012207031,0.100000001490116,-383.399993896484,430,0.0199999995529652,-335,438.299987792969,0.100000001490116,-338.600006103516,430,0.0199999995529652,-335,434.799987792969,0.100000001490116,-336,430,0.0199999995529652,-335,437.600006103516,0.100000001490116,-332.600006103516,430,0.0199999995529652,-335,436.299987792969,0.100000001490116,-333.399993896484,430,0.0199999995529652,-335,435.200012207031,0.100000001490116,-336.799987792969,430,0.0199999995529652,-335,432.5,0.100000001490116,-332.5,429.899993896484,0.0199999995529652,-360.299987792969,436.100006103516,0.100000001490116,-334.899993896484,429.899993896484,0.0199999995529652,-360.299987792969,440.5,0.100000001490116,-355.5,429.899993896484,0.0199999995529652,-360.299987792969,436.299987792969,0.100000001490116,-371.700012207031,429.899993896484,0.0199999995529652,-360.299987792969,431.200012207031,0.100000001490116,-361.200012207031,457.100006103516,0.0199999995529652,-300.799987792969,456.799987792969,0.100000001490116,-302.600006103516,457.100006103516,0.0199999995529652,-300.799987792969,453.299987792969,0.100000001490116,-318.600006103516,442.399993896484,0.0199999995529652,-314.5,444.600006103516,0.100000001490116,-313.700012207031,442.399993896484,0.0199999995529652,-314.5,440.600006103516,0.100000001490116,-310.399993896484,467,0.0199999995529652,-243.899993896484,474.700012207031,0.100000001490116,-259.100006103516,457.399993896484,0.0199999995529652,-262.700012207031,466.899993896484,0.100000001490116,-243.800003051758])}))}))}),
 
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(

@@ -11,7 +11,6 @@ import { ProtoDeclare } from './x3d.mjs';
 import { ProtoInterface } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
@@ -58,16 +57,12 @@ var X3D0 =  new X3D({
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Sphere({}))})])})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([

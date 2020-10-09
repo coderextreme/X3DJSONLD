@@ -51,8 +51,8 @@ public class sphere {
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
         .addMeta(new meta().setName("description").setContent("a sphere")))
       .setScene(new Scene()
-        .addChild(new Group().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-          .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+        .addChild(new Group()
+          .addChild(new Shape()
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f})))
             .setGeometry(new Sphere()))))      ;

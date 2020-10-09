@@ -20,7 +20,6 @@ import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { Box } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { SFFloat } from './x3d.mjs';
 import { TouchSensor } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
@@ -29,7 +28,7 @@ import { ROUTE } from './x3d.mjs';
 import { IntegerSequencer } from './x3d.mjs';
 import { MFFloat } from './x3d.mjs';
 import { MFInt32 } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { field } from './x3d.mjs';
 var X3D0 =  new X3D({
 
@@ -126,18 +125,12 @@ var X3D0 =  new X3D({
           { "#comment" : new CommentsBlock("Script initialization ought to first bind view5 below.") },
 
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("Text1"),
                   translation : new SFVec3f([-6,0,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Text({
                           string : new MFString(["View","# 1"]),
@@ -154,12 +147,8 @@ var X3D0 =  new X3D({
                 new Transform({
                   DEF : new SFString("Text2"),
                   translation : new SFVec3f([-2,0,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Text({
                           string : new MFString(["View","# 2"]),
@@ -175,12 +164,8 @@ var X3D0 =  new X3D({
                 new Transform({
                   DEF : new SFString("Text3"),
                   translation : new SFVec3f([2,0,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Text({
                           string : new MFString(["View","# 3"]),
@@ -196,12 +181,8 @@ var X3D0 =  new X3D({
                 new Transform({
                   DEF : new SFString("Text4"),
                   translation : new SFVec3f([6,0,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Text({
                           string : new MFString(["View","# 4"]),
@@ -217,8 +198,6 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([0,-3,8]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               { "#comment" : new CommentsBlock("notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.") },
               children : new MFNode([
                 new Viewpoint({
@@ -227,8 +206,6 @@ var X3D0 =  new X3D({
                   position : new SFVec3f([0,0,7])}),
 
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Text({
                       string : new MFString(["Click here to animate"]),
@@ -242,12 +219,9 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([0.8,0.4,0])}))}))}),
 
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f([7,1,0.02]),
-                      solid : new SFBool(true)})),
+                      size : new SFVec3f([7,1,0.02])})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -278,6 +252,153 @@ var X3D0 =  new X3D({
                   fromNode : new SFString("Clock"),
                   toField : new SFString("set_fraction"),
                   toNode : new SFString("TimingSequencer")}),
+
+                new Script({
+                  DEF : new SFString("BindingSequencerEngine"),
+                  field : new MFNode([
+                    new field({
+                      type : field.TYPE_SFINT32,
+                      name : new SFString("set_timeEvent"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFBOOL,
+                      name : new SFString("bindView1"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFBOOL,
+                      name : new SFString("bindView2"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFBOOL,
+                      name : new SFString("bindView3"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFBOOL,
+                      name : new SFString("bindView4"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFBOOL,
+                      name : new SFString("bindView5"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFBOOL,
+                      name : new SFString("view1Bound"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFBOOL,
+                      name : new SFString("view2Bound"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFBOOL,
+                      name : new SFString("view3Bound"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFBOOL,
+                      name : new SFString("view4Bound"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFINT32,
+                      name : new SFString("priorInputvalue"),
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                      value : new SFString("-1")}),
+                  .setSourceCode("ecmascript:\n"+
+"\n"+
+"function initialize ()\n"+
+"{\n"+
+"    bindView5 = true;\n"+
+"    Browser.print ('Timing script initialized and ready for activation');\n"+
+"}\n"+
+"function set_timeEvent (inputValue)\n"+
+"{\n"+
+"    if (inputValue == priorInputvalue)\n"+
+"    {\n"+
+"        return; // ignore repeated inputs\n"+
+"    }\n"+
+"    // new value provided\n"+
+"    priorInputvalue = inputValue;\n"+
+"    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\n"+
+"\n"+
+"    // mimics user execution of Figure 4.1 steps t_0 through t_8\n"+
+"    if (inputValue == 0)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t0');\n"+
+"        bindView1 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 1)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t1');\n"+
+"        bindView2 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 2)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t2');\n"+
+"        bindView3 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 3)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t3');\n"+
+"        bindView3 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 4)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t4');\n"+
+"        bindView1 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 5)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t5');\n"+
+"        bindView2 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 6)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t6');\n"+
+"        bindView1 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 7)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t7');\n"+
+"        bindView4 = true;\n"+
+"\n"+
+"    }\n"+
+"    else if (inputValue == 8)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t8');\n"+
+"        Browser.print (', no action, all done');\n"+
+"        Browser.print ('\\n\\n');\n"+
+"    }\n"+
+"}\n"+
+"\n"+
+"function view1Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view1Bound ' + (inputValue));\n"+
+"    if (priorInputvalue == -1) Browser.print ('\\n');\n"+
+"}\n"+
+"function view2Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view2Bound ' + (inputValue));\n"+
+"}\n"+
+"function view3Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view3Bound ' + (inputValue));\n"+
+"}\n"+
+"function view4Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view4Bound ' + (inputValue));\n"+
+"}\n"+
+"function view5Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view5Bound ' + (inputValue));\n"+
+"}")])}),
               { "#comment" : new CommentsBlock("drive Script with TimeSensor clock") },
 
                 new ROUTE({
@@ -340,64 +461,5 @@ var X3D0 =  new X3D({
                   fromField : new SFString("isBound"),
                   fromNode : new SFString("View4"),
                   toField : new SFString("view4Bound"),
-                  toNode : new SFString("BindingSequencerEngine")}),
-              X3DScript : new SFNode(
-                new X3DScript({
-                  DEF : new SFString("BindingSequencerEngine"),
-                  field : new MFNode([
-                    new field({
-                      type : field.TYPE_SFINT32,
-                      name : new SFString("set_timeEvent"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFBOOL,
-                      name : new SFString("bindView1"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFBOOL,
-                      name : new SFString("bindView2"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFBOOL,
-                      name : new SFString("bindView3"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFBOOL,
-                      name : new SFString("bindView4"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFBOOL,
-                      name : new SFString("bindView5"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFBOOL,
-                      name : new SFString("view1Bound"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFBOOL,
-                      name : new SFString("view2Bound"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFBOOL,
-                      name : new SFString("view3Bound"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFBOOL,
-                      name : new SFString("view4Bound"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFINT32,
-                      name : new SFString("priorInputvalue"),
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("-1")})])}))])})])}))});
+                  toNode : new SFString("BindingSequencerEngine")})])})])}))});
 console.log(X3D0.toXMLNode());

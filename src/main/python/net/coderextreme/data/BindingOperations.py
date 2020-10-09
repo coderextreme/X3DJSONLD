@@ -111,16 +111,10 @@ Viewpoint21.setPosition([6,0,5])
 Scene17.addChildren(Viewpoint21)
 #Script initialization ought to first bind view5 below.
 Group22 = x3d.Group()
-Group22.setBboxCenter([0,0,0])
-Group22.setBboxSize([-1,-1,-1])
 Transform23 = x3d.Transform()
 Transform23.setDEF("Text1")
 Transform23.setTranslation([-6,0,0])
-Transform23.setBboxCenter([0,0,0])
-Transform23.setBboxSize([-1,-1,-1])
 Shape24 = x3d.Shape()
-Shape24.setBboxCenter([0,0,0])
-Shape24.setBboxSize([-1,-1,-1])
 Text25 = x3d.Text()
 Text25.setString(["View","# 1"])
 FontStyle26 = x3d.FontStyle()
@@ -144,11 +138,7 @@ Group22.addChildren(Transform23)
 Transform29 = x3d.Transform()
 Transform29.setDEF("Text2")
 Transform29.setTranslation([-2,0,0])
-Transform29.setBboxCenter([0,0,0])
-Transform29.setBboxSize([-1,-1,-1])
 Shape30 = x3d.Shape()
-Shape30.setBboxCenter([0,0,0])
-Shape30.setBboxSize([-1,-1,-1])
 Text31 = x3d.Text()
 Text31.setString(["View","# 2"])
 FontStyle32 = x3d.FontStyle()
@@ -171,11 +161,7 @@ Group22.addChildren(Transform29)
 Transform35 = x3d.Transform()
 Transform35.setDEF("Text3")
 Transform35.setTranslation([2,0,0])
-Transform35.setBboxCenter([0,0,0])
-Transform35.setBboxSize([-1,-1,-1])
 Shape36 = x3d.Shape()
-Shape36.setBboxCenter([0,0,0])
-Shape36.setBboxSize([-1,-1,-1])
 Text37 = x3d.Text()
 Text37.setString(["View","# 3"])
 FontStyle38 = x3d.FontStyle()
@@ -198,11 +184,7 @@ Group22.addChildren(Transform35)
 Transform41 = x3d.Transform()
 Transform41.setDEF("Text4")
 Transform41.setTranslation([6,0,0])
-Transform41.setBboxCenter([0,0,0])
-Transform41.setBboxSize([-1,-1,-1])
 Shape42 = x3d.Shape()
-Shape42.setBboxCenter([0,0,0])
-Shape42.setBboxSize([-1,-1,-1])
 Text43 = x3d.Text()
 Text43.setString(["View","# 4"])
 FontStyle44 = x3d.FontStyle()
@@ -227,8 +209,6 @@ Scene17.addChildren(Group22)
 #It does not need to be studied in this chapter.
 Transform47 = x3d.Transform()
 Transform47.setTranslation([0,-3,8])
-Transform47.setBboxCenter([0,0,0])
-Transform47.setBboxSize([-1,-1,-1])
 #notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.
 Viewpoint48 = x3d.Viewpoint()
 Viewpoint48.setDEF("ClickToAnimateView")
@@ -237,8 +217,6 @@ Viewpoint48.setPosition([0,0,7])
 
 Transform47.addChildren(Viewpoint48)
 Shape49 = x3d.Shape()
-Shape49.setBboxCenter([0,0,0])
-Shape49.setBboxSize([-1,-1,-1])
 Text50 = x3d.Text()
 Text50.setString(["Click here to animate"])
 FontStyle51 = x3d.FontStyle()
@@ -257,11 +235,8 @@ Shape49.setAppearance(Appearance52)
 
 Transform47.addChildren(Shape49)
 Shape54 = x3d.Shape()
-Shape54.setBboxCenter([0,0,0])
-Shape54.setBboxSize([-1,-1,-1])
 Box55 = x3d.Box()
 Box55.setSize([7,1,0.02])
-Box55.setSolid(True)
 
 Shape54.setGeometry(Box55)
 Appearance56 = x3d.Appearance()
@@ -303,150 +278,239 @@ ROUTE62.setToField("set_fraction")
 ROUTE62.setToNode("TimingSequencer")
 
 Transform47.addChildren(ROUTE62)
-#drive Script with TimeSensor clock
-ROUTE63 = x3d.ROUTE()
-ROUTE63.setFromField("value_changed")
-ROUTE63.setFromNode("TimingSequencer")
-ROUTE63.setToField("set_timeEvent")
-ROUTE63.setToNode("BindingSequencerEngine")
+Script63 = x3d.Script()
+Script63.setDEF("BindingSequencerEngine")
+field64 = x3d.field()
+field64.setName("set_timeEvent")
+field64.setAccessType("inputOnly")
+field64.setType("SFInt32")
 
-Transform47.addChildren(ROUTE63)
-#Script will bind and unbind Viewpoint nodes
-ROUTE64 = x3d.ROUTE()
-ROUTE64.setFromField("bindView1")
-ROUTE64.setFromNode("BindingSequencerEngine")
-ROUTE64.setToField("set_bind")
-ROUTE64.setToNode("View1")
+Script63.addField(field64)
+field65 = x3d.field()
+field65.setName("bindView1")
+field65.setAccessType("outputOnly")
+field65.setType("SFBool")
 
-Transform47.addChildren(ROUTE64)
-ROUTE65 = x3d.ROUTE()
-ROUTE65.setFromField("bindView2")
-ROUTE65.setFromNode("BindingSequencerEngine")
-ROUTE65.setToField("set_bind")
-ROUTE65.setToNode("View2")
+Script63.addField(field65)
+field66 = x3d.field()
+field66.setName("bindView2")
+field66.setAccessType("outputOnly")
+field66.setType("SFBool")
 
-Transform47.addChildren(ROUTE65)
-ROUTE66 = x3d.ROUTE()
-ROUTE66.setFromField("bindView3")
-ROUTE66.setFromNode("BindingSequencerEngine")
-ROUTE66.setToField("set_bind")
-ROUTE66.setToNode("View3")
+Script63.addField(field66)
+field67 = x3d.field()
+field67.setName("bindView3")
+field67.setAccessType("outputOnly")
+field67.setType("SFBool")
 
-Transform47.addChildren(ROUTE66)
-ROUTE67 = x3d.ROUTE()
-ROUTE67.setFromField("bindView4")
-ROUTE67.setFromNode("BindingSequencerEngine")
-ROUTE67.setToField("set_bind")
-ROUTE67.setToNode("View4")
+Script63.addField(field67)
+field68 = x3d.field()
+field68.setName("bindView4")
+field68.setAccessType("outputOnly")
+field68.setType("SFBool")
 
-Transform47.addChildren(ROUTE67)
-ROUTE68 = x3d.ROUTE()
-ROUTE68.setFromField("bindView5")
-ROUTE68.setFromNode("BindingSequencerEngine")
-ROUTE68.setToField("set_bind")
-ROUTE68.setToNode("ClickToAnimateView")
+Script63.addField(field68)
+field69 = x3d.field()
+field69.setName("bindView5")
+field69.setAccessType("outputOnly")
+field69.setType("SFBool")
 
-Transform47.addChildren(ROUTE68)
-#Viewpoint nodes report bind and unbind events
-ROUTE69 = x3d.ROUTE()
-ROUTE69.setFromField("isBound")
-ROUTE69.setFromNode("View1")
-ROUTE69.setToField("view1Bound")
-ROUTE69.setToNode("BindingSequencerEngine")
+Script63.addField(field69)
+field70 = x3d.field()
+field70.setName("view1Bound")
+field70.setAccessType("inputOnly")
+field70.setType("SFBool")
 
-Transform47.addChildren(ROUTE69)
-ROUTE70 = x3d.ROUTE()
-ROUTE70.setFromField("isBound")
-ROUTE70.setFromNode("View2")
-ROUTE70.setToField("view2Bound")
-ROUTE70.setToNode("BindingSequencerEngine")
+Script63.addField(field70)
+field71 = x3d.field()
+field71.setName("view2Bound")
+field71.setAccessType("inputOnly")
+field71.setType("SFBool")
 
-Transform47.addChildren(ROUTE70)
-ROUTE71 = x3d.ROUTE()
-ROUTE71.setFromField("isBound")
-ROUTE71.setFromNode("View3")
-ROUTE71.setToField("view3Bound")
-ROUTE71.setToNode("BindingSequencerEngine")
+Script63.addField(field71)
+field72 = x3d.field()
+field72.setName("view3Bound")
+field72.setAccessType("inputOnly")
+field72.setType("SFBool")
 
-Transform47.addChildren(ROUTE71)
-ROUTE72 = x3d.ROUTE()
-ROUTE72.setFromField("isBound")
-ROUTE72.setFromNode("View4")
-ROUTE72.setToField("view4Bound")
-ROUTE72.setToNode("BindingSequencerEngine")
+Script63.addField(field72)
+field73 = x3d.field()
+field73.setName("view4Bound")
+field73.setAccessType("inputOnly")
+field73.setType("SFBool")
 
-Transform47.addChildren(ROUTE72)
-X3DScript73 = x3d.X3DScript()
-X3DScript73.setDEF("BindingSequencerEngine")
+Script63.addField(field73)
 field74 = x3d.field()
-field74.setName("set_timeEvent")
-field74.setAccessType("inputOnly")
+field74.setName("priorInputvalue")
+field74.setAccessType("initializeOnly")
 field74.setType("SFInt32")
+field74.setValue("-1")
 
-X3DScript73.addField(field74)
-field75 = x3d.field()
-field75.setName("bindView1")
-field75.setAccessType("outputOnly")
-field75.setType("SFBool")
+Script63.addField(field74)
 
-X3DScript73.addField(field75)
-field76 = x3d.field()
-field76.setName("bindView2")
-field76.setAccessType("outputOnly")
-field76.setType("SFBool")
+Script63.setSourceCode('''ecmascript:\n"+
+"\n"+
+"function initialize ()\n"+
+"{\n"+
+"    bindView5 = true;\n"+
+"    Browser.print ('Timing script initialized and ready for activation');\n"+
+"}\n"+
+"function set_timeEvent (inputValue)\n"+
+"{\n"+
+"    if (inputValue == priorInputvalue)\n"+
+"    {\n"+
+"        return; // ignore repeated inputs\n"+
+"    }\n"+
+"    // new value provided\n"+
+"    priorInputvalue = inputValue;\n"+
+"    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\n"+
+"\n"+
+"    // mimics user execution of Figure 4.1 steps t_0 through t_8\n"+
+"    if (inputValue == 0)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t0');\n"+
+"        bindView1 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 1)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t1');\n"+
+"        bindView2 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 2)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t2');\n"+
+"        bindView3 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 3)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t3');\n"+
+"        bindView3 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 4)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t4');\n"+
+"        bindView1 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 5)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t5');\n"+
+"        bindView2 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 6)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t6');\n"+
+"        bindView1 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 7)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t7');\n"+
+"        bindView4 = true;\n"+
+"\n"+
+"    }\n"+
+"    else if (inputValue == 8)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t8');\n"+
+"        Browser.print (', no action, all done');\n"+
+"        Browser.print ('\\n\\n');\n"+
+"    }\n"+
+"}\n"+
+"\n"+
+"function view1Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view1Bound ' + (inputValue));\n"+
+"    if (priorInputvalue == -1) Browser.print ('\\n');\n"+
+"}\n"+
+"function view2Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view2Bound ' + (inputValue));\n"+
+"}\n"+
+"function view3Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view3Bound ' + (inputValue));\n"+
+"}\n"+
+"function view4Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view4Bound ' + (inputValue));\n"+
+"}\n"+
+"function view5Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view5Bound ' + (inputValue));\n"+
+"}''')
 
-X3DScript73.addField(field76)
-field77 = x3d.field()
-field77.setName("bindView3")
-field77.setAccessType("outputOnly")
-field77.setType("SFBool")
+Transform47.addChildren(Script63)
+#drive Script with TimeSensor clock
+ROUTE75 = x3d.ROUTE()
+ROUTE75.setFromField("value_changed")
+ROUTE75.setFromNode("TimingSequencer")
+ROUTE75.setToField("set_timeEvent")
+ROUTE75.setToNode("BindingSequencerEngine")
 
-X3DScript73.addField(field77)
-field78 = x3d.field()
-field78.setName("bindView4")
-field78.setAccessType("outputOnly")
-field78.setType("SFBool")
+Transform47.addChildren(ROUTE75)
+#Script will bind and unbind Viewpoint nodes
+ROUTE76 = x3d.ROUTE()
+ROUTE76.setFromField("bindView1")
+ROUTE76.setFromNode("BindingSequencerEngine")
+ROUTE76.setToField("set_bind")
+ROUTE76.setToNode("View1")
 
-X3DScript73.addField(field78)
-field79 = x3d.field()
-field79.setName("bindView5")
-field79.setAccessType("outputOnly")
-field79.setType("SFBool")
+Transform47.addChildren(ROUTE76)
+ROUTE77 = x3d.ROUTE()
+ROUTE77.setFromField("bindView2")
+ROUTE77.setFromNode("BindingSequencerEngine")
+ROUTE77.setToField("set_bind")
+ROUTE77.setToNode("View2")
 
-X3DScript73.addField(field79)
-field80 = x3d.field()
-field80.setName("view1Bound")
-field80.setAccessType("inputOnly")
-field80.setType("SFBool")
+Transform47.addChildren(ROUTE77)
+ROUTE78 = x3d.ROUTE()
+ROUTE78.setFromField("bindView3")
+ROUTE78.setFromNode("BindingSequencerEngine")
+ROUTE78.setToField("set_bind")
+ROUTE78.setToNode("View3")
 
-X3DScript73.addField(field80)
-field81 = x3d.field()
-field81.setName("view2Bound")
-field81.setAccessType("inputOnly")
-field81.setType("SFBool")
+Transform47.addChildren(ROUTE78)
+ROUTE79 = x3d.ROUTE()
+ROUTE79.setFromField("bindView4")
+ROUTE79.setFromNode("BindingSequencerEngine")
+ROUTE79.setToField("set_bind")
+ROUTE79.setToNode("View4")
 
-X3DScript73.addField(field81)
-field82 = x3d.field()
-field82.setName("view3Bound")
-field82.setAccessType("inputOnly")
-field82.setType("SFBool")
+Transform47.addChildren(ROUTE79)
+ROUTE80 = x3d.ROUTE()
+ROUTE80.setFromField("bindView5")
+ROUTE80.setFromNode("BindingSequencerEngine")
+ROUTE80.setToField("set_bind")
+ROUTE80.setToNode("ClickToAnimateView")
 
-X3DScript73.addField(field82)
-field83 = x3d.field()
-field83.setName("view4Bound")
-field83.setAccessType("inputOnly")
-field83.setType("SFBool")
+Transform47.addChildren(ROUTE80)
+#Viewpoint nodes report bind and unbind events
+ROUTE81 = x3d.ROUTE()
+ROUTE81.setFromField("isBound")
+ROUTE81.setFromNode("View1")
+ROUTE81.setToField("view1Bound")
+ROUTE81.setToNode("BindingSequencerEngine")
 
-X3DScript73.addField(field83)
-field84 = x3d.field()
-field84.setName("priorInputvalue")
-field84.setAccessType("initializeOnly")
-field84.setType("SFInt32")
-field84.setValue("-1")
+Transform47.addChildren(ROUTE81)
+ROUTE82 = x3d.ROUTE()
+ROUTE82.setFromField("isBound")
+ROUTE82.setFromNode("View2")
+ROUTE82.setToField("view2Bound")
+ROUTE82.setToNode("BindingSequencerEngine")
 
-X3DScript73.addField(field84)
+Transform47.addChildren(ROUTE82)
+ROUTE83 = x3d.ROUTE()
+ROUTE83.setFromField("isBound")
+ROUTE83.setFromNode("View3")
+ROUTE83.setToField("view3Bound")
+ROUTE83.setToNode("BindingSequencerEngine")
 
-Transform47.addX3DScript(X3DScript73)
+Transform47.addChildren(ROUTE83)
+ROUTE84 = x3d.ROUTE()
+ROUTE84.setFromField("isBound")
+ROUTE84.setFromNode("View4")
+ROUTE84.setToField("view4Bound")
+ROUTE84.setToNode("BindingSequencerEngine")
+
+Transform47.addChildren(ROUTE84)
 
 Scene17.addChildren(Transform47)
 

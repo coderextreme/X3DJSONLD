@@ -55,12 +55,8 @@ ProtoInterface11.addField(field12)
 ProtoDeclare10.setProtoInterface(ProtoInterface11)
 ProtoBody13 = x3d.ProtoBody()
 Group14 = x3d.Group()
-Group14.setBboxCenter([0,0,0])
-Group14.setBboxSize([-1,-1,-1])
 Transform15 = x3d.Transform()
 Transform15.setDEF("transform")
-Transform15.setBboxCenter([0,0,0])
-Transform15.setBboxSize([-1,-1,-1])
 IS16 = x3d.IS()
 connect17 = x3d.connect()
 connect17.setNodeField("translation")
@@ -70,8 +66,6 @@ IS16.addConnect(connect17)
 
 Transform15.setIS(IS16)
 Shape18 = x3d.Shape()
-Shape18.setBboxCenter([0,0,0])
-Shape18.setBboxSize([-1,-1,-1])
 Sphere19 = x3d.Sphere()
 
 Shape18.setGeometry(Sphere19)
@@ -86,11 +80,7 @@ Shape18.setAppearance(Appearance20)
 Transform15.addChildren(Shape18)
 Transform22 = x3d.Transform()
 Transform22.setTranslation([1,0,0])
-Transform22.setBboxCenter([0,0,0])
-Transform22.setBboxSize([-1,-1,-1])
 Shape23 = x3d.Shape()
-Shape23.setBboxCenter([0,0,0])
-Shape23.setBboxSize([-1,-1,-1])
 Text24 = x3d.Text()
 Text24.setString(["Node"])
 FontStyle25 = x3d.FontStyle()
@@ -119,70 +109,78 @@ PositionInterpolator28.setKey([0,1])
 PositionInterpolator28.setKeyValue([0,0,0,0,5,0])
 
 Group14.addChildren(PositionInterpolator28)
-TimeSensor29 = x3d.TimeSensor()
-TimeSensor29.setDEF("nodeClock")
-TimeSensor29.setCycleInterval(3)
-TimeSensor29.setLoop(True)
+Script29 = x3d.Script()
+Script29.setDEF("MoveBall")
+field30 = x3d.field()
+field30.setName("translation")
+field30.setAccessType("inputOutput")
+field30.setType("SFVec3f")
+field30.setValue("50 50 0")
 
-Group14.addChildren(TimeSensor29)
-ROUTE30 = x3d.ROUTE()
-ROUTE30.setFromNode("nodeClock")
-ROUTE30.setFromField("cycleTime")
-ROUTE30.setToNode("MoveBall")
-ROUTE30.setToField("set_cycle")
+Script29.addField(field30)
+field31 = x3d.field()
+field31.setName("old")
+field31.setAccessType("inputOutput")
+field31.setType("SFVec3f")
+field31.setValue("0 0 0")
 
-Group14.addChildren(ROUTE30)
-ROUTE31 = x3d.ROUTE()
-ROUTE31.setFromNode("nodeClock")
-ROUTE31.setFromField("fraction_changed")
-ROUTE31.setToNode("NodePosition")
-ROUTE31.setToField("set_fraction")
+Script29.addField(field31)
+field32 = x3d.field()
+field32.setName("set_cycle")
+field32.setAccessType("inputOnly")
+field32.setType("SFTime")
 
-Group14.addChildren(ROUTE31)
-ROUTE32 = x3d.ROUTE()
-ROUTE32.setFromNode("MoveBall")
-ROUTE32.setFromField("keyValue")
-ROUTE32.setToNode("NodePosition")
-ROUTE32.setToField("keyValue")
+Script29.addField(field32)
+field33 = x3d.field()
+field33.setName("keyValue")
+field33.setAccessType("outputOnly")
+field33.setType("MFVec3f")
 
-Group14.addChildren(ROUTE32)
-ROUTE33 = x3d.ROUTE()
-ROUTE33.setFromNode("NodePosition")
-ROUTE33.setFromField("value_changed")
-ROUTE33.setToNode("transform")
-ROUTE33.setToField("set_translation")
+Script29.addField(field33)
 
-Group14.addChildren(ROUTE33)
-X3DScript34 = x3d.X3DScript()
-X3DScript34.setDEF("MoveBall")
-field35 = x3d.field()
-field35.setName("translation")
-field35.setAccessType("inputOutput")
-field35.setType("SFVec3f")
-field35.setValue("50 50 0")
+Script29.setSourceCode('''ecmascript:\n"+
+"					function set_cycle(value) {\n"+
+"                                                old = translation;\n"+
+"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
+"                                                keyValue = new MFVec3f([old, translation]);\n"+
+"						// Browser.println(translation);\n"+
+"					}''')
 
-X3DScript34.addField(field35)
-field36 = x3d.field()
-field36.setName("old")
-field36.setAccessType("inputOutput")
-field36.setType("SFVec3f")
-field36.setValue("0 0 0")
+Group14.addChildren(Script29)
+TimeSensor34 = x3d.TimeSensor()
+TimeSensor34.setDEF("nodeClock")
+TimeSensor34.setCycleInterval(3)
+TimeSensor34.setLoop(True)
 
-X3DScript34.addField(field36)
-field37 = x3d.field()
-field37.setName("set_cycle")
-field37.setAccessType("inputOnly")
-field37.setType("SFTime")
+Group14.addChildren(TimeSensor34)
+ROUTE35 = x3d.ROUTE()
+ROUTE35.setFromNode("nodeClock")
+ROUTE35.setFromField("cycleTime")
+ROUTE35.setToNode("MoveBall")
+ROUTE35.setToField("set_cycle")
 
-X3DScript34.addField(field37)
-field38 = x3d.field()
-field38.setName("keyValue")
-field38.setAccessType("outputOnly")
-field38.setType("MFVec3f")
+Group14.addChildren(ROUTE35)
+ROUTE36 = x3d.ROUTE()
+ROUTE36.setFromNode("nodeClock")
+ROUTE36.setFromField("fraction_changed")
+ROUTE36.setToNode("NodePosition")
+ROUTE36.setToField("set_fraction")
 
-X3DScript34.addField(field38)
+Group14.addChildren(ROUTE36)
+ROUTE37 = x3d.ROUTE()
+ROUTE37.setFromNode("MoveBall")
+ROUTE37.setFromField("keyValue")
+ROUTE37.setToNode("NodePosition")
+ROUTE37.setToField("keyValue")
 
-Group14.addX3DScript(X3DScript34)
+Group14.addChildren(ROUTE37)
+ROUTE38 = x3d.ROUTE()
+ROUTE38.setFromNode("NodePosition")
+ROUTE38.setFromField("value_changed")
+ROUTE38.setToNode("transform")
+ROUTE38.setToField("set_translation")
+
+Group14.addChildren(ROUTE38)
 
 ProtoBody13.addChildren(Group14)
 
@@ -208,11 +206,7 @@ ProtoInterface40.addField(field42)
 ProtoDeclare39.setProtoInterface(ProtoInterface40)
 ProtoBody43 = x3d.ProtoBody()
 Group44 = x3d.Group()
-Group44.setBboxCenter([0,0,0])
-Group44.setBboxSize([-1,-1,-1])
 Shape45 = x3d.Shape()
-Shape45.setBboxCenter([0,0,0])
-Shape45.setBboxSize([-1,-1,-1])
 Extrusion46 = x3d.Extrusion()
 Extrusion46.setDEF("extrusion")
 Extrusion46.setCreaseAngle(0.785)
@@ -229,49 +223,71 @@ Appearance47.setMaterial(Material48)
 Shape45.setAppearance(Appearance47)
 
 Group44.addChildren(Shape45)
-ROUTE49 = x3d.ROUTE()
-ROUTE49.setFromNode("MoveCylinder")
-ROUTE49.setFromField("spine")
-ROUTE49.setToNode("extrusion")
-ROUTE49.setToField("set_spine")
+Script49 = x3d.Script()
+Script49.setDEF("MoveCylinder")
+field50 = x3d.field()
+field50.setName("spine")
+field50.setAccessType("inputOutput")
+field50.setType("MFVec3f")
+field50.setValue("0 -50 0 0 50 0")
 
-Group44.addChildren(ROUTE49)
-X3DScript50 = x3d.X3DScript()
-X3DScript50.setDEF("MoveCylinder")
+Script49.addField(field50)
 field51 = x3d.field()
-field51.setName("spine")
-field51.setAccessType("inputOutput")
-field51.setType("MFVec3f")
-field51.setValue("0 -50 0 0 50 0")
+field51.setName("set_endA")
+field51.setAccessType("inputOnly")
+field51.setType("SFVec3f")
 
-X3DScript50.addField(field51)
+Script49.addField(field51)
 field52 = x3d.field()
-field52.setName("set_endA")
+field52.setName("set_endB")
 field52.setAccessType("inputOnly")
 field52.setType("SFVec3f")
 
-X3DScript50.addField(field52)
-field53 = x3d.field()
-field53.setName("set_endB")
-field53.setAccessType("inputOnly")
-field53.setType("SFVec3f")
+Script49.addField(field52)
+IS53 = x3d.IS()
+connect54 = x3d.connect()
+connect54.setNodeField("set_endA")
+connect54.setProtoField("set_positionA")
 
-X3DScript50.addField(field53)
-IS54 = x3d.IS()
+IS53.addConnect(connect54)
 connect55 = x3d.connect()
-connect55.setNodeField("set_endA")
-connect55.setProtoField("set_positionA")
+connect55.setNodeField("set_endB")
+connect55.setProtoField("set_positionB")
 
-IS54.addConnect(connect55)
-connect56 = x3d.connect()
-connect56.setNodeField("set_endB")
-connect56.setProtoField("set_positionB")
+IS53.addConnect(connect55)
 
-IS54.addConnect(connect56)
+Script49.setIS(IS53)
 
-X3DScript50.setIS(IS54)
+Script49.setSourceCode('''ecmascript:\n"+
+"\n"+
+"                function set_endA(value) {\n"+
+"		    if (typeof spine === 'undefined') {\n"+
+"		        spine = new MFVec3f([value, value]);\n"+
+"		    } else {\n"+
+"		        spine = new MFVec3f([value, spine[1]]);\n"+
+"		    }\n"+
+"                }\n"+
+"\n"+
+"                function set_endB(value) {\n"+
+"		    if (typeof spine === 'undefined') {\n"+
+"		        spine = new MFVec3f([value, value]);\n"+
+"		    } else {\n"+
+"		        spine = new MFVec3f([spine[0], value]);\n"+
+"		    }\n"+
+"                }\n"+
+"\n"+
+"                function set_spine(value) {\n"+
+"                    spine = value;\n"+
+"                }''')
 
-Group44.addX3DScript(X3DScript50)
+Group44.addChildren(Script49)
+ROUTE56 = x3d.ROUTE()
+ROUTE56.setFromNode("MoveCylinder")
+ROUTE56.setFromField("spine")
+ROUTE56.setToNode("extrusion")
+ROUTE56.setToField("set_spine")
+
+Group44.addChildren(ROUTE56)
 
 ProtoBody43.addChildren(Group44)
 
@@ -281,8 +297,6 @@ Scene9.addChildren(ProtoDeclare39)
 Transform57 = x3d.Transform()
 Transform57.setDEF("HoldsContent")
 Transform57.setScale([0.1,0.1,0.1])
-Transform57.setBboxCenter([0,0,0])
-Transform57.setBboxSize([-1,-1,-1])
 PlaneSensor58 = x3d.PlaneSensor()
 PlaneSensor58.setDEF("clickGenerator")
 PlaneSensor58.setMinPosition([-50,-50])
@@ -377,55 +391,99 @@ ProtoInstance73.addFieldValue(fieldValue75)
 Transform57.addChildren(ProtoInstance73)
 
 Scene9.addChildren(Transform57)
-ROUTE76 = x3d.ROUTE()
-ROUTE76.setFromNode("clickGenerator")
-ROUTE76.setFromField("isActive")
-ROUTE76.setToNode("clickHandler")
-ROUTE76.setToField("add_node")
+Script76 = x3d.Script()
+Script76.setDEF("clickHandler")
+field77 = x3d.field()
+field77.setName("counter")
+field77.setAccessType("inputOutput")
+field77.setValue("0")
+field77.setType("SFInt32")
 
-Scene9.addChildren(ROUTE76)
-ROUTE77 = x3d.ROUTE()
-ROUTE77.setFromNode("nodeA")
-ROUTE77.setFromField("position")
-ROUTE77.setToNode("linkA")
-ROUTE77.setToField("set_positionA")
+Script76.addField(field77)
+field78 = x3d.field()
+field78.setName("node_changed")
+field78.setAccessType("outputOnly")
+field78.setType("SFNode")
 
-Scene9.addChildren(ROUTE77)
-ROUTE78 = x3d.ROUTE()
-ROUTE78.setFromNode("nodeB")
-ROUTE78.setFromField("position")
-ROUTE78.setToNode("linkA")
-ROUTE78.setToField("set_positionB")
+Script76.addField(field78)
+field79 = x3d.field()
+field79.setName("add_node")
+field79.setAccessType("inputOnly")
+field79.setValue("false")
+field79.setType("SFBool")
 
-Scene9.addChildren(ROUTE78)
-ROUTE79 = x3d.ROUTE()
-ROUTE79.setFromNode("nodeA")
-ROUTE79.setFromField("position")
-ROUTE79.setToNode("linkB")
-ROUTE79.setToField("set_positionA")
+Script76.addField(field79)
+#<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
 
-Scene9.addChildren(ROUTE79)
+Script76.setSourceCode('''ecmascript:\n"+
+"	function add_node(value) {\n"+
+"                // Browser.print('hey ', counter);\n"+
+"                counter = counter++;\n"+
+"		Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),\n"+
+"			{ \"ProtoInstance\":\n"+
+"				{ \"@name\":\"node\",\n"+
+"				  \"@DEF\":\"node'+counter+'\",\n"+
+"				  \"fieldValue\": [\n"+
+"					{\n"+
+"						 \"@name\":\"position\",\n"+
+"						 \"@value\":[0.0,0.0,0.0]\n"+
+"					}\n"+
+"				  ]\n"+
+"				}\n"+
+"			});\n"+
+"\n"+
+"        }''')
+
+Scene9.addChildren(Script76)
 ROUTE80 = x3d.ROUTE()
-ROUTE80.setFromNode("nodeC")
-ROUTE80.setFromField("position")
-ROUTE80.setToNode("linkB")
-ROUTE80.setToField("set_positionB")
+ROUTE80.setFromNode("clickGenerator")
+ROUTE80.setFromField("isActive")
+ROUTE80.setToNode("clickHandler")
+ROUTE80.setToField("add_node")
 
 Scene9.addChildren(ROUTE80)
 ROUTE81 = x3d.ROUTE()
 ROUTE81.setFromNode("nodeA")
 ROUTE81.setFromField("position")
-ROUTE81.setToNode("linkC")
+ROUTE81.setToNode("linkA")
 ROUTE81.setToField("set_positionA")
 
 Scene9.addChildren(ROUTE81)
 ROUTE82 = x3d.ROUTE()
-ROUTE82.setFromNode("nodeD")
+ROUTE82.setFromNode("nodeB")
 ROUTE82.setFromField("position")
-ROUTE82.setToNode("linkC")
+ROUTE82.setToNode("linkA")
 ROUTE82.setToField("set_positionB")
 
 Scene9.addChildren(ROUTE82)
+ROUTE83 = x3d.ROUTE()
+ROUTE83.setFromNode("nodeA")
+ROUTE83.setFromField("position")
+ROUTE83.setToNode("linkB")
+ROUTE83.setToField("set_positionA")
+
+Scene9.addChildren(ROUTE83)
+ROUTE84 = x3d.ROUTE()
+ROUTE84.setFromNode("nodeC")
+ROUTE84.setFromField("position")
+ROUTE84.setToNode("linkB")
+ROUTE84.setToField("set_positionB")
+
+Scene9.addChildren(ROUTE84)
+ROUTE85 = x3d.ROUTE()
+ROUTE85.setFromNode("nodeA")
+ROUTE85.setFromField("position")
+ROUTE85.setToNode("linkC")
+ROUTE85.setToField("set_positionA")
+
+Scene9.addChildren(ROUTE85)
+ROUTE86 = x3d.ROUTE()
+ROUTE86.setFromNode("nodeD")
+ROUTE86.setFromField("position")
+ROUTE86.setToNode("linkC")
+ROUTE86.setToField("set_positionB")
+
+Scene9.addChildren(ROUTE86)
 
 X3D0.setScene(Scene9)
 X3D0.toFileX3D("../data/force_RoundTrip.x3d")

@@ -17,16 +17,10 @@ Background3.frontUrl = new MFString(new java.lang.String["../resources/images/al
 Background3.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
 Background3.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
 Background3.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
-Background3.skyColor = new MFColor(new float[0,0,0]);
-Background3.transparency = 0;
 browser.currentScene.children[1] = Background3;
 
 let Transform4 = browser.currentScene.createNode("Transform");
-Transform4.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape5 = browser.currentScene.createNode("Shape");
-Shape5.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance6 = browser.currentScene.createNode("Appearance");
 let Material7 = browser.currentScene.createNode("Material");
 Material7.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
@@ -184,200 +178,218 @@ Transform4.children = new MFNode();
 
 Transform4.children[0] = Shape5;
 
-let TimeSensor32 = browser.currentScene.createNode("TimeSensor");
-TimeSensor32.DEF = "Clock";
-TimeSensor32.cycleInterval = 45;
-TimeSensor32.loop = True;
-Transform4.children[1] = TimeSensor32;
+let Script32 = browser.currentScene.createNode("Script");
+Script32.DEF = "UrlSelector";
+Script32.directOutput = True;
+let field33 = browser.currentScene.createNode("field");
+field33.name = "frontUrls";
+field33.type = "MFString";
+field33.accessType = "initializeOnly";
+field33.value = "\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"";
+Script32.field = new MFNode();
 
-let ROUTE33 = browser.currentScene.createNode("ROUTE");
-ROUTE33.fromNode = "Clock";
-ROUTE33.fromField = "fraction_changed";
-ROUTE33.toNode = "UrlSelector";
-ROUTE33.toField = "set_fraction";
-Transform4.children[2] = ROUTE33;
+Script32.field[0] = field33;
 
-let ROUTE34 = browser.currentScene.createNode("ROUTE");
-ROUTE34.fromNode = "UrlSelector";
-ROUTE34.fromField = "front_changed";
-ROUTE34.toNode = "cube";
-ROUTE34.toField = "frontUrl";
-Transform4.children[3] = ROUTE34;
+let field34 = browser.currentScene.createNode("field");
+field34.name = "backUrls";
+field34.type = "MFString";
+field34.accessType = "initializeOnly";
+field34.value = "\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"";
+Script32.field[1] = field34;
 
-let ROUTE35 = browser.currentScene.createNode("ROUTE");
-ROUTE35.fromNode = "UrlSelector";
-ROUTE35.fromField = "back_changed";
-ROUTE35.toNode = "cube";
-ROUTE35.toField = "backUrl";
-Transform4.children[4] = ROUTE35;
+let field35 = browser.currentScene.createNode("field");
+field35.name = "leftUrls";
+field35.type = "MFString";
+field35.accessType = "initializeOnly";
+field35.value = "\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"";
+Script32.field[2] = field35;
 
-let ROUTE36 = browser.currentScene.createNode("ROUTE");
-ROUTE36.fromNode = "UrlSelector";
-ROUTE36.fromField = "left_changed";
-ROUTE36.toNode = "cube";
-ROUTE36.toField = "leftUrl";
-Transform4.children[5] = ROUTE36;
+let field36 = browser.currentScene.createNode("field");
+field36.name = "rightUrls";
+field36.type = "MFString";
+field36.accessType = "initializeOnly";
+field36.value = "\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"";
+Script32.field[3] = field36;
 
-let ROUTE37 = browser.currentScene.createNode("ROUTE");
-ROUTE37.fromNode = "UrlSelector";
-ROUTE37.fromField = "right_changed";
-ROUTE37.toNode = "cube";
-ROUTE37.toField = "rightUrl";
-Transform4.children[6] = ROUTE37;
+let field37 = browser.currentScene.createNode("field");
+field37.name = "topUrls";
+field37.type = "MFString";
+field37.accessType = "initializeOnly";
+field37.value = "\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"";
+Script32.field[4] = field37;
 
-let ROUTE38 = browser.currentScene.createNode("ROUTE");
-ROUTE38.fromNode = "UrlSelector";
-ROUTE38.fromField = "top_changed";
-ROUTE38.toNode = "cube";
-ROUTE38.toField = "topUrl";
-Transform4.children[7] = ROUTE38;
+let field38 = browser.currentScene.createNode("field");
+field38.name = "bottomUrls";
+field38.type = "MFString";
+field38.accessType = "initializeOnly";
+field38.value = "\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"";
+Script32.field[5] = field38;
 
-let ROUTE39 = browser.currentScene.createNode("ROUTE");
-ROUTE39.fromNode = "UrlSelector";
-ROUTE39.fromField = "bottom_changed";
-ROUTE39.toNode = "cube";
-ROUTE39.toField = "bottomUrl";
-Transform4.children[8] = ROUTE39;
+let field39 = browser.currentScene.createNode("field");
+field39.name = "front_changed";
+field39.type = "MFString";
+field39.accessType = "outputOnly";
+Script32.field[6] = field39;
 
-let ROUTE40 = browser.currentScene.createNode("ROUTE");
-ROUTE40.fromNode = "UrlSelector";
-ROUTE40.fromField = "front_changed";
-ROUTE40.toNode = "frontShader";
-ROUTE40.toField = "url";
-Transform4.children[9] = ROUTE40;
+let field40 = browser.currentScene.createNode("field");
+field40.name = "back_changed";
+field40.type = "MFString";
+field40.accessType = "outputOnly";
+Script32.field[7] = field40;
 
-let ROUTE41 = browser.currentScene.createNode("ROUTE");
-ROUTE41.fromNode = "UrlSelector";
-ROUTE41.fromField = "back_changed";
-ROUTE41.toNode = "backShader";
-ROUTE41.toField = "url";
-Transform4.children[10] = ROUTE41;
+let field41 = browser.currentScene.createNode("field");
+field41.name = "left_changed";
+field41.type = "MFString";
+field41.accessType = "outputOnly";
+Script32.field[8] = field41;
 
-let ROUTE42 = browser.currentScene.createNode("ROUTE");
-ROUTE42.fromNode = "UrlSelector";
-ROUTE42.fromField = "left_changed";
-ROUTE42.toNode = "leftShader";
-ROUTE42.toField = "url";
-Transform4.children[11] = ROUTE42;
+let field42 = browser.currentScene.createNode("field");
+field42.name = "right_changed";
+field42.type = "MFString";
+field42.accessType = "outputOnly";
+Script32.field[9] = field42;
 
-let ROUTE43 = browser.currentScene.createNode("ROUTE");
-ROUTE43.fromNode = "UrlSelector";
-ROUTE43.fromField = "right_changed";
-ROUTE43.toNode = "rightShader";
-ROUTE43.toField = "url";
-Transform4.children[12] = ROUTE43;
+let field43 = browser.currentScene.createNode("field");
+field43.name = "top_changed";
+field43.type = "MFString";
+field43.accessType = "outputOnly";
+Script32.field[10] = field43;
 
-let ROUTE44 = browser.currentScene.createNode("ROUTE");
-ROUTE44.fromNode = "UrlSelector";
-ROUTE44.fromField = "top_changed";
-ROUTE44.toNode = "topShader";
-ROUTE44.toField = "url";
-Transform4.children[13] = ROUTE44;
+let field44 = browser.currentScene.createNode("field");
+field44.name = "bottom_changed";
+field44.type = "MFString";
+field44.accessType = "outputOnly";
+Script32.field[11] = field44;
 
-let ROUTE45 = browser.currentScene.createNode("ROUTE");
-ROUTE45.fromNode = "UrlSelector";
-ROUTE45.fromField = "bottom_changed";
-ROUTE45.toNode = "bottomShader";
-ROUTE45.toField = "url";
-Transform4.children[14] = ROUTE45;
+let field45 = browser.currentScene.createNode("field");
+field45.name = "set_fraction";
+field45.type = "SFFloat";
+field45.accessType = "inputOnly";
+Script32.field[12] = field45;
 
-let X3DScript46 = browser.currentScene.createNode("X3DScript");
-X3DScript46.DEF = "UrlSelector";
-X3DScript46.directOutput = True;
-let field47 = browser.currentScene.createNode("field");
-field47.name = "frontUrls";
-field47.type = "MFString";
-field47.accessType = "initializeOnly";
-field47.value = "\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"";
-X3DScript46.field = new MFNode();
+let field46 = browser.currentScene.createNode("field");
+field46.name = "old";
+field46.type = "SFInt32";
+field46.accessType = "inputOutput";
+field46.value = "-1";
+Script32.field[13] = field46;
 
-X3DScript46.field[0] = field47;
 
-let field48 = browser.currentScene.createNode("field");
-field48.name = "backUrls";
-field48.type = "MFString";
-field48.accessType = "initializeOnly";
-field48.value = "\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"";
-X3DScript46.field[1] = field48;
+Script32.setSourceCode(`ecmascript:\n"+
+"        function set_fraction( f, tm ) {\n"+
+"	    var side = Math.floor(f*frontUrls.length);\n"+
+"	    if (side > frontUrls.length-1) {\n"+
+"	    	side = 0;\n"+
+"	    }\n"+
+"	    if (side != old) {\n"+
+"	    	    // Browser.print(f+\" \"+side);\n"+
+"	    	    old = side;\n"+
+"		    front_changed[0] = frontUrls[side];\n"+
+"		    back_changed[0] = backUrls[side];\n"+
+"		    left_changed[0] = leftUrls[side];\n"+
+"		    right_changed[0] = rightUrls[side];\n"+
+"		    top_changed[0] = topUrls[side];\n"+
+"		    bottom_changed[0] = bottomUrls[side];\n"+
+"            }\n"+
+"        }`)
+Transform4.children[1] = Script32;
 
-let field49 = browser.currentScene.createNode("field");
-field49.name = "leftUrls";
-field49.type = "MFString";
-field49.accessType = "initializeOnly";
-field49.value = "\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"";
-X3DScript46.field[2] = field49;
+let TimeSensor47 = browser.currentScene.createNode("TimeSensor");
+TimeSensor47.DEF = "Clock";
+TimeSensor47.cycleInterval = 45;
+TimeSensor47.loop = True;
+Transform4.children[2] = TimeSensor47;
 
-let field50 = browser.currentScene.createNode("field");
-field50.name = "rightUrls";
-field50.type = "MFString";
-field50.accessType = "initializeOnly";
-field50.value = "\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"";
-X3DScript46.field[3] = field50;
+let ROUTE48 = browser.currentScene.createNode("ROUTE");
+ROUTE48.fromNode = "Clock";
+ROUTE48.fromField = "fraction_changed";
+ROUTE48.toNode = "UrlSelector";
+ROUTE48.toField = "set_fraction";
+Transform4.children[3] = ROUTE48;
 
-let field51 = browser.currentScene.createNode("field");
-field51.name = "topUrls";
-field51.type = "MFString";
-field51.accessType = "initializeOnly";
-field51.value = "\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"";
-X3DScript46.field[4] = field51;
+let ROUTE49 = browser.currentScene.createNode("ROUTE");
+ROUTE49.fromNode = "UrlSelector";
+ROUTE49.fromField = "front_changed";
+ROUTE49.toNode = "cube";
+ROUTE49.toField = "frontUrl";
+Transform4.children[4] = ROUTE49;
 
-let field52 = browser.currentScene.createNode("field");
-field52.name = "bottomUrls";
-field52.type = "MFString";
-field52.accessType = "initializeOnly";
-field52.value = "\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"";
-X3DScript46.field[5] = field52;
+let ROUTE50 = browser.currentScene.createNode("ROUTE");
+ROUTE50.fromNode = "UrlSelector";
+ROUTE50.fromField = "back_changed";
+ROUTE50.toNode = "cube";
+ROUTE50.toField = "backUrl";
+Transform4.children[5] = ROUTE50;
 
-let field53 = browser.currentScene.createNode("field");
-field53.name = "front_changed";
-field53.type = "MFString";
-field53.accessType = "outputOnly";
-X3DScript46.field[6] = field53;
+let ROUTE51 = browser.currentScene.createNode("ROUTE");
+ROUTE51.fromNode = "UrlSelector";
+ROUTE51.fromField = "left_changed";
+ROUTE51.toNode = "cube";
+ROUTE51.toField = "leftUrl";
+Transform4.children[6] = ROUTE51;
 
-let field54 = browser.currentScene.createNode("field");
-field54.name = "back_changed";
-field54.type = "MFString";
-field54.accessType = "outputOnly";
-X3DScript46.field[7] = field54;
+let ROUTE52 = browser.currentScene.createNode("ROUTE");
+ROUTE52.fromNode = "UrlSelector";
+ROUTE52.fromField = "right_changed";
+ROUTE52.toNode = "cube";
+ROUTE52.toField = "rightUrl";
+Transform4.children[7] = ROUTE52;
 
-let field55 = browser.currentScene.createNode("field");
-field55.name = "left_changed";
-field55.type = "MFString";
-field55.accessType = "outputOnly";
-X3DScript46.field[8] = field55;
+let ROUTE53 = browser.currentScene.createNode("ROUTE");
+ROUTE53.fromNode = "UrlSelector";
+ROUTE53.fromField = "top_changed";
+ROUTE53.toNode = "cube";
+ROUTE53.toField = "topUrl";
+Transform4.children[8] = ROUTE53;
 
-let field56 = browser.currentScene.createNode("field");
-field56.name = "right_changed";
-field56.type = "MFString";
-field56.accessType = "outputOnly";
-X3DScript46.field[9] = field56;
+let ROUTE54 = browser.currentScene.createNode("ROUTE");
+ROUTE54.fromNode = "UrlSelector";
+ROUTE54.fromField = "bottom_changed";
+ROUTE54.toNode = "cube";
+ROUTE54.toField = "bottomUrl";
+Transform4.children[9] = ROUTE54;
 
-let field57 = browser.currentScene.createNode("field");
-field57.name = "top_changed";
-field57.type = "MFString";
-field57.accessType = "outputOnly";
-X3DScript46.field[10] = field57;
+let ROUTE55 = browser.currentScene.createNode("ROUTE");
+ROUTE55.fromNode = "UrlSelector";
+ROUTE55.fromField = "front_changed";
+ROUTE55.toNode = "frontShader";
+ROUTE55.toField = "url";
+Transform4.children[10] = ROUTE55;
 
-let field58 = browser.currentScene.createNode("field");
-field58.name = "bottom_changed";
-field58.type = "MFString";
-field58.accessType = "outputOnly";
-X3DScript46.field[11] = field58;
+let ROUTE56 = browser.currentScene.createNode("ROUTE");
+ROUTE56.fromNode = "UrlSelector";
+ROUTE56.fromField = "back_changed";
+ROUTE56.toNode = "backShader";
+ROUTE56.toField = "url";
+Transform4.children[11] = ROUTE56;
 
-let field59 = browser.currentScene.createNode("field");
-field59.name = "set_fraction";
-field59.type = "SFFloat";
-field59.accessType = "inputOnly";
-X3DScript46.field[12] = field59;
+let ROUTE57 = browser.currentScene.createNode("ROUTE");
+ROUTE57.fromNode = "UrlSelector";
+ROUTE57.fromField = "left_changed";
+ROUTE57.toNode = "leftShader";
+ROUTE57.toField = "url";
+Transform4.children[12] = ROUTE57;
 
-let field60 = browser.currentScene.createNode("field");
-field60.name = "old";
-field60.type = "SFInt32";
-field60.accessType = "inputOutput";
-field60.value = "-1";
-X3DScript46.field[13] = field60;
+let ROUTE58 = browser.currentScene.createNode("ROUTE");
+ROUTE58.fromNode = "UrlSelector";
+ROUTE58.fromField = "right_changed";
+ROUTE58.toNode = "rightShader";
+ROUTE58.toField = "url";
+Transform4.children[13] = ROUTE58;
 
-Transform4.x3DScript[15] = X3DScript46;
+let ROUTE59 = browser.currentScene.createNode("ROUTE");
+ROUTE59.fromNode = "UrlSelector";
+ROUTE59.fromField = "top_changed";
+ROUTE59.toNode = "topShader";
+ROUTE59.toField = "url";
+Transform4.children[14] = ROUTE59;
+
+let ROUTE60 = browser.currentScene.createNode("ROUTE");
+ROUTE60.fromNode = "UrlSelector";
+ROUTE60.fromField = "bottom_changed";
+ROUTE60.toNode = "bottomShader";
+ROUTE60.toField = "url";
+Transform4.children[15] = ROUTE60;
 
 browser.currentScene.children[2] = Transform4;
 

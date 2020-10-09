@@ -45,7 +45,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             geometry=Sphere(radius=0.25),
             appearance=Appearance(
               material=Material(diffuseColor=(1,0,0),transparency=0.2))),
-          X3DScript(DEF='bounce1',
+          Script(DEF='bounce1',
             field=[
             field(name='scale',accessType='inputOutput',type='SFVec3f',value=(1,1,1)),
             field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),

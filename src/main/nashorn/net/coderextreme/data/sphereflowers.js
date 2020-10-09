@@ -20,14 +20,14 @@ var ProtoInstance6 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphereflowers.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Background().setBackUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"], Java.type("java.lang.String[]"))).setSkyColor(Java.to([0,0,0], Java.type("float[]"))).setTransparency(0))
-        .addChild(new Group().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+        .addChild(new Background().setBackUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"], Java.type("java.lang.String[]"))))
+        .addChild(new Group()
           .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(Java.to(["../data/flowerproto.json#FlowerProto"], Java.type("java.lang.String[]")))
             .addField(new field().setType(field.TYPE_MFSTRING).setName("vertex").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
             .addField(new field().setType(field.TYPE_MFSTRING).setName("fragment").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
           .addChild(new ProtoDeclare().setName("flower")
             .setProtoBody(new ProtoBody()
-              .addChild(new Group().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+              .addChild(new Group()
                 .addChild(ProtoInstance0 = new ProtoInstance().setName("FlowerProto")))))
           .addChild(ProtoInstance1 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("flower"))
@@ -37,7 +37,7 @@ var ProtoInstance6 = null;
           .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))
           .addChild(new TimeSensor().setDEF("SongTime").setLoop(true))
           .addChild(new Sound().setMaxBack(100).setMaxFront(100).setMinBack(20).setMinFront(20)
-            .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(Java.to(["../resources/chandubabamusic1.wav"], Java.type("java.lang.String[]"))).setLoop(false).setPitch(1).setStartTime(0).setStopTime(0).setPauseTime(0).setResumeTime(0)))
+            .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(Java.to(["../resources/chandubabamusic1.wav"], Java.type("java.lang.String[]")))))
           .addChild(new ROUTE().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))))      ;
 ProtoInstance0
                   .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/x_ite_flowers_chromatic.vs\""));

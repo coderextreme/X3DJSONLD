@@ -16,7 +16,6 @@ import { SFColor } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 import { Anchor } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Text } from './x3d.mjs';
@@ -538,12 +537,8 @@ var X3D0 =  new X3D({
               description : new SFString("ArtDecoPrototypeExample"),
               parameter : new MFString(["target=_blank"]),
               url : new MFString(["../data/ArtDecoExamples.json","../data/ArtDecoExamples.x3d","ArtDecoExamples.json","ArtDecoExamples.x3d"]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(

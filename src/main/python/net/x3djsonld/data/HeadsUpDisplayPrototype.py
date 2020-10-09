@@ -81,7 +81,7 @@ newModel=X3D(profile='Immersive',version='3.0',
                         connect=[
                         connect(nodeField='offset',protoField='locationOffset')])),
                     VisibilitySensor(DEF='MovementVisibilitySensor'),
-                    X3DScript(DEF='VisibilityControlScript',
+                    Script(DEF='VisibilityControlScript',
                       field=[
                       field(accessType='initializeOnly',name='traceEnabled',type='SFBool'),
                       field(accessType='initializeOnly',name='isVisible',type='SFBool',value=True),

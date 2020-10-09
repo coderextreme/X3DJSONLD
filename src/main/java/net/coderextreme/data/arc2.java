@@ -52,49 +52,111 @@ public class arc2 {
         .addMeta(new meta().setName("description").setContent("a generic proto to connect two objects")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setPosition(new float[] {0f,0f,5f}).setDescription("Only Viewpoint"))
-        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())).setTransparency(0f))
-        .addChild(new Transform().setDEF("G1").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-          .addChild(new Transform().setDEF("DECLpoint_INSTANCE_node").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-            .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+        .addChild(new Background().setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor0().getArray())))
+        .addChild(new Transform().setDEF("G1")
+          .addChild(new Transform().setDEF("DECLpoint_INSTANCE_node")
+            .addChild(new Shape()
               .setGeometry(new Sphere().setRadius(0.1f))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
             .addChild(new PositionInterpolator().setDEF("DECLpoint_INSTANCE_PI1").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat1().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f2().getArray())))
+            .addChild(new Script().setDEF("DECLpoint_INSTANCE_MB1")
+              .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+              .addField(new field().setType("SFVec3f").setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+              .addField(new field().setType("SFTime").setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field().setType("MFVec3f").setName("keyValue").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
+              .setSourceCode("ecmascript:\n"+
+"               function set_location(value) {\n"+
+"                    old = translation;\n"+
+"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
+"                    keyValue = new MFVec3f(old, translation);\n"+
+"               }"))
             .addChild(new TimeSensor().setDEF("DECLpoint_INSTANCE_CL1").setCycleInterval(3d).setLoop(true))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE_MB1").setToField("set_location"))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE_CL1").setFromField("fraction_changed").setToNode("DECLpoint_INSTANCE_PI1").setToField("set_fraction"))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE_MB1").setFromField("keyValue").setToNode("DECLpoint_INSTANCE_PI1").setToField("keyValue"))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE_PI1").setFromField("value_changed").setToNode("DECLpoint_INSTANCE_node").setToField("set_translation"))
-            .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE_MB1").setFromField("translation_changed").setToNode("DECLpoint_INSTANCE_node").setToField("set_translation"))
-            .addX3DScript(new X3DScript().setDEF("DECLpoint_INSTANCE_MB1")
-              .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-              .addField(new field().setType("SFVec3f").setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-              .addField(new field().setType("SFTime").setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFVec3f").setName("keyValue").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0")))))
-        .addChild(new Transform().setDEF("G2").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-          .addChild(new Transform().setDEF("DECLpoint_INSTANCE1000_node").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-            .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE_MB1").setFromField("translation_changed").setToNode("DECLpoint_INSTANCE_node").setToField("set_translation"))))
+        .addChild(new Transform().setDEF("G2")
+          .addChild(new Transform().setDEF("DECLpoint_INSTANCE1000_node")
+            .addChild(new Shape()
               .setGeometry(new Sphere().setRadius(0.1f))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
             .addChild(new PositionInterpolator().setDEF("DECLpoint_INSTANCE1000_PI1").setKey(new org.web3d.x3d.jsail.fields.MFFloat(new MFFloat3().getArray())).setKeyValue(new org.web3d.x3d.jsail.fields.MFVec3f(new MFVec3f4().getArray())))
+            .addChild(new Script().setDEF("DECLpoint_INSTANCE1000_MB1")
+              .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+              .addField(new field().setType("SFVec3f").setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+              .addField(new field().setType("SFTime").setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field().setType("MFVec3f").setName("keyValue").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0"))
+              .setSourceCode("ecmascript:\n"+
+"               function set_location(value) {\n"+
+"                    old = translation;\n"+
+"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
+"                    keyValue = new MFVec3f(old, translation);\n"+
+"               }"))
             .addChild(new TimeSensor().setDEF("DECLpoint_INSTANCE1000_CL1").setCycleInterval(3d).setLoop(true))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("cycleTime").setToNode("DECLpoint_INSTANCE1000_MB1").setToField("set_location"))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE1000_CL1").setFromField("fraction_changed").setToNode("DECLpoint_INSTANCE1000_PI1").setToField("set_fraction"))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE1000_MB1").setFromField("keyValue").setToNode("DECLpoint_INSTANCE1000_PI1").setToField("keyValue"))
             .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE1000_PI1").setFromField("value_changed").setToNode("DECLpoint_INSTANCE1000_node").setToField("set_translation"))
-            .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE1000_MB1").setFromField("translation_changed").setToNode("DECLpoint_INSTANCE1000_node").setToField("set_translation"))
-            .addX3DScript(new X3DScript().setDEF("DECLpoint_INSTANCE1000_MB1")
-              .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-              .addField(new field().setType("SFVec3f").setName("old").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-              .addField(new field().setType("SFTime").setName("set_location").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFVec3f").setName("keyValue").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0 0 5 0")))))
-        .addChild(new Transform().setDEF("transC1").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-          .addChild(new Transform().setDEF("rotscaleC1").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-            .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new ROUTE().setFromNode("DECLpoint_INSTANCE1000_MB1").setFromField("translation_changed").setToNode("DECLpoint_INSTANCE1000_node").setToField("set_translation"))))
+        .addChild(new Transform().setDEF("transC1")
+          .addChild(new Transform().setDEF("rotscaleC1")
+            .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f}).setTransparency(0.5f)))
               .setGeometry(new Cylinder().setRadius(0.05f)))))
+        .addChild(new Script().setDEF("DECLx3dconnector_connector1_S1")
+          .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+            .addChild(new Transform().setUSE("G1")))
+          .addField(new field().setType("SFNode").setName("endnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+            .addChild(new Transform().setUSE("G2")))
+          .addField(new field().setType("SFNode").setName("transC1").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+            .addChild(new Transform().setUSE("transC1")))
+          .addField(new field().setType("SFNode").setName("rotscaleC1").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+            .addChild(new Transform().setUSE("rotscaleC1")))
+          .addField(new field().setType("SFVec3f").setName("set_startpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFVec3f").setName("set_endpoint").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .setSourceCode("ecmascript:\n"+
+"        function recompute(startpoint,endpoint){\n"+
+"	    if (typeof endpoint === 'undefined') {\n"+
+"		return;\n"+
+"	    }\n"+
+"            var dif = endpoint.subtract(startpoint);\n"+
+"            var dist = dif.length()*0.5;\n"+
+"            var dif2 = dif.multiply(0.5);\n"+
+"            var norm = dif.normalize();\n"+
+"            var transl = startpoint.add(dif2);\n"+
+"	    if (typeof Quaternion !== 'undefined') {\n"+
+"		    return {\n"+
+"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
+"			    translation : transl,\n"+
+"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
+"		    };\n"+
+"	    } else {\n"+
+"		    return {\n"+
+"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
+"			    translation : transl,\n"+
+"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
+"		    };\n"+
+"	    }\n"+
+"	}\n"+
+"	function recompute_and_route(startpoint, endpoint) {\n"+
+"	      var trafo = recompute(startpoint, endpoint);\n"+
+"	      transC1.translation = trafo.translation;\n"+
+"	      rotscaleC1.rotation = trafo.rotation;\n"+
+"	      rotscaleC1.scale = trafo.scale;\n"+
+"	}\n"+
+"        function initialize(){\n"+
+"            recompute_and_route(startnode.translation,endnode.translation);\n"+
+"        }\n"+
+"        function set_startpoint(val,t){\n"+
+"            recompute_and_route(val,endnode.translation);\n"+
+"        }\n"+
+"        function set_endpoint(val,t){\n"+
+"            recompute_and_route(startnode.translation,val);\n"+
+"        }"))
         .addChild(new ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_startpoint"))
         .addChild(new ROUTE().setFromNode("G2").setFromField("translation_changed").setToNode("DECLx3dconnector_connector1_S1").setToField("set_endpoint")))      ;
     return X3D0;

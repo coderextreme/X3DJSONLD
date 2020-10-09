@@ -35,8 +35,8 @@ import { IndexedFaceSet } from './x3d.mjs';
 import { MFInt32 } from './x3d.mjs';
 import { Coordinate } from './x3d.mjs';
 import { MFVec3f } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
 import { fieldValue } from './x3d.mjs';
 var X3D0 =  new X3D({
@@ -95,8 +95,6 @@ var X3D0 =  new X3D({
               position : new SFVec3f([0,0,50])}),
 
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new DirectionalLight({
                   direction : new SFVec3f([1,1,1])}),
@@ -133,8 +131,6 @@ var X3D0 =  new X3D({
                     new ProtoBody({
                       children : new MFNode([
                         new Group({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new TimeSensor({
                               DEF : new SFString("Clock"),
@@ -148,8 +144,6 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               DEF : new SFString("OrbitTransform"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               IS : new SFNode(
                                 new IS({
                                   connect : new MFNode([
@@ -158,8 +152,6 @@ var X3D0 =  new X3D({
                                       protoField : new SFString("translation")})])})),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
@@ -190,37 +182,7 @@ var X3D0 =  new X3D({
                                           DEF : new SFString("OrbitCoordinates"),
                                           point : new MFVec3f([0,0,1,0,1,0,1,0,0])}))}))})])}),
 
-                            new ROUTE({
-                              fromNode : new SFString("OrbitScript"),
-                              fromField : new SFString("coordIndexes"),
-                              toNode : new SFString("Orbit"),
-                              toField : new SFString("coordIndex")}),
-
-                            new ROUTE({
-                              fromNode : new SFString("OrbitScript"),
-                              fromField : new SFString("coordinates"),
-                              toNode : new SFString("OrbitCoordinates"),
-                              toField : new SFString("point")}),
-
-                            new ROUTE({
-                              fromNode : new SFString("Clock"),
-                              fromField : new SFString("fraction_changed"),
-                              toNode : new SFString("OrbitScript"),
-                              toField : new SFString("set_fraction")}),
-
-                            new ROUTE({
-                              fromNode : new SFString("OrbitPath"),
-                              fromField : new SFString("value_changed"),
-                              toNode : new SFString("OrbitTransform"),
-                              toField : new SFString("rotation")}),
-
-                            new ROUTE({
-                              fromNode : new SFString("Clock"),
-                              fromField : new SFString("fraction_changed"),
-                              toNode : new SFString("OrbitPath"),
-                              toField : new SFString("set_fraction")}),
-                          X3DScript : new SFNode(
-                            new X3DScript({
+                            new Script({
                               DEF : new SFString("OrbitScript"),
                               field : new MFNode([
                                 new field({
@@ -266,7 +228,111 @@ var X3D0 =  new X3D({
                                   type : field.TYPE_SFINT32,
                                   name : new SFString("resolution"),
                                   accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                  value : new SFString("50")})])}))])})])}))}),
+                                  value : new SFString("50")}),
+                              .setSourceCode("ecmascript:\n"+
+"\n"+
+"			var e = 5;\n"+
+"			var f = 5;\n"+
+"			var g = 5;\n"+
+"			var h = 5;\n"+
+"			var resolution = 100;\n"+
+"\n"+
+"			function initialize() {\n"+
+"			     generateCoordinates();\n"+
+"			     var localci = [];\n"+
+"			     for (var i = 0; i < resolution-1; i++) {\n"+
+"				for (var j = 0; j < resolution-1; j++) {\n"+
+"				     localci.push(i*resolution+j);\n"+
+"				     localci.push(i*resolution+j+1);\n"+
+"				     localci.push((i+1)*resolution+j+1);\n"+
+"				     localci.push((i+1)*resolution+j);\n"+
+"				     localci.push(-1);\n"+
+"				}\n"+
+"			    }\n"+
+"			    coordIndexes = new MFInt32(localci);\n"+
+"			}\n"+
+"\n"+
+"			function generateCoordinates() {\n"+
+"			     var theta = 0.0;\n"+
+"			     var phi = 0.0;\n"+
+"			     var delta = (2 * 3.141592653) / (resolution-1);\n"+
+"			     var localc = [];\n"+
+"			     for (var i = 0; i < resolution; i++) {\n"+
+"				for (var j = 0; j < resolution; j++) {\n"+
+"					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
+"					localc.push(new SFVec3f(\n"+
+"						rho * Math.cos(phi) * Math.cos(theta),\n"+
+"						rho * Math.cos(phi) * Math.sin(theta),\n"+
+"						rho * Math.sin(phi)\n"+
+"					));\n"+
+"					theta += delta;\n"+
+"				}\n"+
+"				phi += delta;\n"+
+"			     }\n"+
+"			     \n"+
+"			     coordinates = new MFVec3f(localc);\n"+
+"			}\n"+
+"\n"+
+"			function set_fraction(fraction, eventTime) {\n"+
+"				var choice = Math.floor(Math.random() * 4);\n"+
+"				switch (choice) {\n"+
+"				case 0:\n"+
+"					e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				case 1:\n"+
+"					f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				case 2:\n"+
+"					g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				case 3:\n"+
+"					h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				}\n"+
+"				if (e < 1) {\n"+
+"					f = 10;\n"+
+"				}\n"+
+"				if (f < 1) {\n"+
+"					f = 10;\n"+
+"				}\n"+
+"				if (g < 1) {\n"+
+"					g = 4;\n"+
+"				}\n"+
+"				if (h < 1) {\n"+
+"					h = 4;\n"+
+"				}\n"+
+"				generateCoordinates();\n"+
+"			}")])}),
+
+                            new ROUTE({
+                              fromNode : new SFString("OrbitScript"),
+                              fromField : new SFString("coordIndexes"),
+                              toNode : new SFString("Orbit"),
+                              toField : new SFString("coordIndex")}),
+
+                            new ROUTE({
+                              fromNode : new SFString("OrbitScript"),
+                              fromField : new SFString("coordinates"),
+                              toNode : new SFString("OrbitCoordinates"),
+                              toField : new SFString("point")}),
+
+                            new ROUTE({
+                              fromNode : new SFString("Clock"),
+                              fromField : new SFString("fraction_changed"),
+                              toNode : new SFString("OrbitScript"),
+                              toField : new SFString("set_fraction")}),
+
+                            new ROUTE({
+                              fromNode : new SFString("OrbitPath"),
+                              fromField : new SFString("value_changed"),
+                              toNode : new SFString("OrbitTransform"),
+                              toField : new SFString("rotation")}),
+
+                            new ROUTE({
+                              fromNode : new SFString("Clock"),
+                              fromField : new SFString("fraction_changed"),
+                              toNode : new SFString("OrbitPath"),
+                              toField : new SFString("set_fraction")})])})])}))}),
 
                 new ProtoInstance({
                   name : new SFString("orbit"),

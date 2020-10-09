@@ -6,6 +6,7 @@ import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Networking.*;
 import org.web3d.x3d.jsail.Rendering.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc annotations follow, see below for source.
@@ -138,8 +139,8 @@ public class ArchPrototype
                   .addConnect(new connect().setNodeField("emissiveColor").setProtoField("emissiveColor"))
                   .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
-        .addComments(" This embedded X3DScript provides the X3D author with additional visibility and control over prototype inputs and outputs ")
-        .addChild(new X3DScript("ArchPrototypeScript").setUrl(new String[] {"../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"})
+        .addComments(" This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs ")
+        .addChild(new Script("ArchPrototypeScript").setUrl(new String[] {"../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"})
           .addComments(" INPUT PARAMETERS ")
           .addComments(" General parameters ")
           .addComments(" Parameters to create to create shapes related to arch: put true to apply ")

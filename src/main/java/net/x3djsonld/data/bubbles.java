@@ -8,6 +8,7 @@ import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Interpolation.*;
 import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shaders.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Texturing.*;
@@ -122,7 +123,29 @@ public class bubbles
     .addChild(new TimeSensor("TourTime").setCycleInterval(5).setLoop(true))
     .addChild(new PositionInterpolator("TourPosition").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,10.0,0.0,0.0,-10.0})))
     .addChild(new OrientationInterpolator("TourOrientation").setKey(new double[] {0.0,1.0}).setKeyValue(new MFRotation(new double[] {0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.1416})))
-    .addChild(new X3DScript("RandomTourTime")
+    .addChild(new Script("RandomTourTime").setSourceCode("\n" + 
+"	    ecmascript:" + "\n" + 
+"               function set_cycle(value) {" + "\n" + 
+"	       	   try {" + "\n" + 
+"                        var ov = lastKey;" + "\n" + 
+"                        do {" + "\n" + 
+"                            lastKey = Math.round(Math.random()*(positions.length-1));" + "\n" + 
+"                        } while (lastKey === ov);" + "\n" + 
+"                        var vc = lastKey;" + "\n" + 
+"\n" + 
+"                        position_changed = new MFVec3f();" + "\n" + 
+"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);" + "\n" + 
+"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);" + "\n" + 
+"                        " + "\n" + 
+"                        orientation_changed = new MFRotation();" + "\n" + 
+"                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);" + "\n" + 
+"                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);" + "\n" + 
+"		   } catch (e) {" + "\n" + 
+"		   	if (typeof console.log === 'function') {" + "\n" + 
+"				console.log(e);" + "\n" + 
+"			}" + "\n" + 
+"		   }" + "\n" + 
+"               }")
       .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("lastKey").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
       .addField(new field().setName("orientations").setType(field.TYPE_MFROTATION).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFRotation(new MFRotation(new double[] {0.0,1.0,0.0,0.0,0.0,1.0,0.0,-1.57,0.0,1.0,0.0,3.14,0.0,1.0,0.0,1.57,0.0,1.0,0.0,0.0,1.0,0.0,0.0,-1.57,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.57,0.0,1.0,0.0,0.0}))))

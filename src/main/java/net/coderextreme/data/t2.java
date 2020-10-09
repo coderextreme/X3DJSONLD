@@ -61,8 +61,8 @@ ProtoInstance ProtoInstance1 = null;
             .addField(new field().setType("SFVec3f").setName("posi").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
             .addField(new field().setType("SFColor").setName("col").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0")))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-              .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Transform()
+              .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setTransparency(0.400000005960464f)
                     .setIS(new IS()
@@ -77,7 +77,7 @@ ProtoInstance ProtoInstance1 = null;
             .addChild(ProtoInstance0 = new ProtoInstance().setName("org")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("posi").setProtoField("pos"))))))
-        .addChild(new Anchor().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setDescription("High Peak Community Arts").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+        .addChild(new Anchor().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setDescription("High Peak Community Arts")
           .addChild(ProtoInstance1 = new ProtoInstance().setName("r"))))      ;
 ProtoInstance0
               .addFieldValue(new fieldValue().setName("col").setValue("0 0.300000011920929 1"));

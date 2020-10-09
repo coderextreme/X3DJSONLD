@@ -25,17 +25,11 @@ Background5.frontUrl = new MFString(new java.lang.String["../resources/images/al
 Background5.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"]);
 Background5.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"]);
 Background5.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"]);
-Background5.skyColor = new MFColor(new float[0,0,0]);
-Background5.transparency = 0;
 browser.currentScene.children[3] = Background5;
 
 let Transform6 = browser.currentScene.createNode("Transform");
 Transform6.DEF = "Rose01";
-Transform6.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape7 = browser.currentScene.createNode("Shape");
-Shape7.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape7.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere8 = browser.currentScene.createNode("Sphere");
 Shape7.geometry = Sphere8;
 
@@ -205,52 +199,126 @@ OrientationInterpolator36.key = new MFFloat(new float[0,1]);
 OrientationInterpolator36.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,3.1416]);
 browser.currentScene.children[7] = OrientationInterpolator36;
 
-let ROUTE37 = browser.currentScene.createNode("ROUTE");
-ROUTE37.fromNode = "TourTime";
-ROUTE37.fromField = "cycleTime_changed";
-ROUTE37.toNode = "RandomTourTime";
-ROUTE37.toField = "set_cycle";
-browser.currentScene.children[8] = ROUTE37;
+let Script37 = browser.currentScene.createNode("Script");
+Script37.DEF = "RandomTourTime";
+let field38 = browser.currentScene.createNode("field");
+field38.name = "set_cycle";
+field38.accessType = "inputOnly";
+field38.type = "SFTime";
+Script37.field = new MFNode();
 
-let ROUTE38 = browser.currentScene.createNode("ROUTE");
-ROUTE38.fromNode = "RandomTourTime";
-ROUTE38.fromField = "orientation_changed";
-ROUTE38.toNode = "TourOrientation";
-ROUTE38.toField = "set_keyValue";
-browser.currentScene.children[9] = ROUTE38;
+Script37.field[0] = field38;
 
-let ROUTE39 = browser.currentScene.createNode("ROUTE");
-ROUTE39.fromNode = "RandomTourTime";
-ROUTE39.fromField = "position_changed";
-ROUTE39.toNode = "TourPosition";
-ROUTE39.toField = "set_keyValue";
-browser.currentScene.children[10] = ROUTE39;
+let field39 = browser.currentScene.createNode("field");
+field39.name = "lastKey";
+field39.accessType = "inputOutput";
+field39.type = "SFFloat";
+field39.value = "0";
+Script37.field[1] = field39;
 
-let ROUTE40 = browser.currentScene.createNode("ROUTE");
-ROUTE40.fromNode = "TourTime";
-ROUTE40.fromField = "fraction_changed";
-ROUTE40.toNode = "TourOrientation";
-ROUTE40.toField = "set_fraction";
-browser.currentScene.children[11] = ROUTE40;
+let field40 = browser.currentScene.createNode("field");
+field40.name = "orientations";
+field40.accessType = "inputOutput";
+field40.type = "MFRotation";
+field40.value = "0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0";
+Script37.field[2] = field40;
 
-let ROUTE41 = browser.currentScene.createNode("ROUTE");
-ROUTE41.fromNode = "TourOrientation";
-ROUTE41.fromField = "value_changed";
-ROUTE41.toNode = "Tour";
-ROUTE41.toField = "set_orientation";
-browser.currentScene.children[12] = ROUTE41;
+let field41 = browser.currentScene.createNode("field");
+field41.name = "positions";
+field41.accessType = "inputOutput";
+field41.type = "MFVec3f";
+field41.value = "0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10";
+Script37.field[3] = field41;
 
-let ROUTE42 = browser.currentScene.createNode("ROUTE");
-ROUTE42.fromNode = "TourTime";
-ROUTE42.fromField = "fraction_changed";
-ROUTE42.toNode = "TourPosition";
-ROUTE42.toField = "set_fraction";
-browser.currentScene.children[13] = ROUTE42;
+let field42 = browser.currentScene.createNode("field");
+field42.name = "position_changed";
+field42.accessType = "outputOnly";
+field42.type = "MFVec3f";
+Script37.field[4] = field42;
 
-let ROUTE43 = browser.currentScene.createNode("ROUTE");
-ROUTE43.fromNode = "TourPosition";
-ROUTE43.fromField = "value_changed";
-ROUTE43.toNode = "Tour";
-ROUTE43.toField = "set_position";
-browser.currentScene.children[14] = ROUTE43;
+let field43 = browser.currentScene.createNode("field");
+field43.name = "set_orientation";
+field43.accessType = "inputOnly";
+field43.type = "MFRotation";
+Script37.field[5] = field43;
+
+let field44 = browser.currentScene.createNode("field");
+field44.name = "orientation_changed";
+field44.accessType = "outputOnly";
+field44.type = "MFRotation";
+Script37.field[6] = field44;
+
+
+Script37.setSourceCode(`ecmascript:\n"+
+"               function set_cycle(value) {\n"+
+"	       	   try {\n"+
+"                        var ov = lastKey;\n"+
+"                        do {\n"+
+"                            lastKey = Math.round(Math.random()*(positions.length-1));\n"+
+"                        } while (lastKey === ov);\n"+
+"                        var vc = lastKey;\n"+
+"\n"+
+"                        position_changed = new MFVec3f();\n"+
+"                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);\n"+
+"                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);\n"+
+"\n"+
+"                        orientation_changed = new MFRotation();\n"+
+"                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);\n"+
+"                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);\n"+
+"		   } catch (e) {\n"+
+"		   	if (typeof console.log === 'function') {\n"+
+"				console.log(e);\n"+
+"			}\n"+
+"		   }\n"+
+"               }`)
+browser.currentScene.children[8] = Script37;
+
+let ROUTE45 = browser.currentScene.createNode("ROUTE");
+ROUTE45.fromNode = "TourTime";
+ROUTE45.fromField = "cycleTime_changed";
+ROUTE45.toNode = "RandomTourTime";
+ROUTE45.toField = "set_cycle";
+browser.currentScene.children[9] = ROUTE45;
+
+let ROUTE46 = browser.currentScene.createNode("ROUTE");
+ROUTE46.fromNode = "RandomTourTime";
+ROUTE46.fromField = "orientation_changed";
+ROUTE46.toNode = "TourOrientation";
+ROUTE46.toField = "set_keyValue";
+browser.currentScene.children[10] = ROUTE46;
+
+let ROUTE47 = browser.currentScene.createNode("ROUTE");
+ROUTE47.fromNode = "RandomTourTime";
+ROUTE47.fromField = "position_changed";
+ROUTE47.toNode = "TourPosition";
+ROUTE47.toField = "set_keyValue";
+browser.currentScene.children[11] = ROUTE47;
+
+let ROUTE48 = browser.currentScene.createNode("ROUTE");
+ROUTE48.fromNode = "TourTime";
+ROUTE48.fromField = "fraction_changed";
+ROUTE48.toNode = "TourOrientation";
+ROUTE48.toField = "set_fraction";
+browser.currentScene.children[12] = ROUTE48;
+
+let ROUTE49 = browser.currentScene.createNode("ROUTE");
+ROUTE49.fromNode = "TourOrientation";
+ROUTE49.fromField = "value_changed";
+ROUTE49.toNode = "Tour";
+ROUTE49.toField = "set_orientation";
+browser.currentScene.children[13] = ROUTE49;
+
+let ROUTE50 = browser.currentScene.createNode("ROUTE");
+ROUTE50.fromNode = "TourTime";
+ROUTE50.fromField = "fraction_changed";
+ROUTE50.toNode = "TourPosition";
+ROUTE50.toField = "set_fraction";
+browser.currentScene.children[14] = ROUTE50;
+
+let ROUTE51 = browser.currentScene.createNode("ROUTE");
+ROUTE51.fromNode = "TourPosition";
+ROUTE51.fromField = "value_changed";
+ROUTE51.toNode = "Tour";
+ROUTE51.toField = "set_position";
+browser.currentScene.children[15] = ROUTE51;
 

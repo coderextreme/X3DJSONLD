@@ -63,20 +63,20 @@ ProtoInstance ProtoInstance2 = null;
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
-        .addChild(new Background().setBackUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())).setBottomUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setFrontUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setLeftUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())).setRightUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())).setTopUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray())).setSkyColor(new org.web3d.x3d.jsail.fields.MFColor(new MFColor6().getArray())).setTransparency(0f))
+        .addChild(new Background().setBackUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString0().getArray())).setBottomUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setFrontUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setLeftUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString3().getArray())).setRightUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString4().getArray())).setTopUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString5().getArray())))
         .addChild(new ProtoDeclare().setName("flower")
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setDEF("animate_transform").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-              .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Transform().setDEF("animate_transform")
+              .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,0.7f,0.7f}).setSpecularColor(new float[] {0.5f,0.5f,0.5f}))
                   .setTexture(new ComposedCubeMapTexture().setDEF("texture")
-                    .setBack(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray())))
-                    .setBottom(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString8().getArray())))
-                    .setFront(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString9().getArray())))
-                    .setLeft(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString10().getArray())))
-                    .setRight(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString11().getArray())))
-                    .setTop(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString12().getArray()))))
+                    .setBack(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString6().getArray())))
+                    .setBottom(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString7().getArray())))
+                    .setFront(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString8().getArray())))
+                    .setLeft(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString9().getArray())))
+                    .setRight(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString10().getArray())))
+                    .setTop(new ImageTexture().setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString11().getArray()))))
                   .addShaders(new ComposedShader().setDEF("x3dom").setLanguage("GLSL")
                     .addField(new field().setType("SFInt32").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                     .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
@@ -90,8 +90,8 @@ ProtoInstance ProtoInstance2 = null;
                     .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                     .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                     .addComments(new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"))
-                    .addParts(new ShaderPart().setType("VERTEX").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString13().getArray())))
-                    .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString14().getArray()))))
+                    .addParts(new ShaderPart().setType("VERTEX").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString12().getArray())))
+                    .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString13().getArray()))))
                   .addShaders(new ComposedShader().setDEF("x_ite").setLanguage("GLSL")
                     .addField(new field().setType("SFNode").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
                       .addChild(new ComposedCubeMapTexture().setUSE("texture")))
@@ -105,10 +105,10 @@ ProtoInstance ProtoInstance2 = null;
                     .addField(new field().setType("SFFloat").setName("d").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("20"))
                     .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0"))
                     .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0"))
-                    .addParts(new ShaderPart().setType("VERTEX").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString15().getArray())))
-                    .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString16().getArray())))))
+                    .addParts(new ShaderPart().setType("VERTEX").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString14().getArray())))
+                    .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString15().getArray())))))
                 .setGeometry(new Sphere())))
-            .addX3DScript(new X3DScript().setDEF("Animate")
+            .addChild(new Script().setDEF("Animate")
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
               .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -117,7 +117,74 @@ ProtoInstance ProtoInstance2 = null;
               .addField(new field().setType("SFFloat").setName("c").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
               .addField(new field().setType("SFFloat").setName("d").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
               .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-              .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5")))
+              .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+              .setSourceCode("ecmascript:\n"+
+"\n"+
+"			function initialize() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"			    for (var j = 0; j <= 2; j++) {\n"+
+"				    if (Math.abs(translation.x) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.y) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.z) > 10) {\n"+
+"					initialize();\n"+
+"				    } else {\n"+
+"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
+"				    }\n"+
+"			    }\n"+
+"			    animate_flowers();\n"+
+"			}\n"+
+"\n"+
+"			function animate_flowers(fraction, eventTime) {\n"+
+"				var choice = Math.floor(Math.random() * 4);\n"+
+"				switch (choice) {\n"+
+"				case 0:\n"+
+"					a += Math.random() * 0.2 - 0.1;\n"+
+"					break;\n"+
+"				case 1:\n"+
+"					b += Math.random() * 0.2 - 0.1;\n"+
+"					break;\n"+
+"				case 2:\n"+
+"					c += Math.random() * 2 - 1;\n"+
+"					break;\n"+
+"				case 3:\n"+
+"					d += Math.random() * 2 - 1;\n"+
+"					break;\n"+
+"				}\n"+
+"				tdelta += 0.5;\n"+
+"				pdelta += 0.5;\n"+
+"				if (a > 1) {\n"+
+"					a =  0.5;\n"+
+"				}\n"+
+"				if (b > 1) {\n"+
+"					b =  0.5;\n"+
+"				}\n"+
+"				if (c < 1) {\n"+
+"					c =  4;\n"+
+"				}\n"+
+"				if (d < 1) {\n"+
+"					d =  4;\n"+
+"				}\n"+
+"				if (c > 10) {\n"+
+"					c = 4;\n"+
+"				}\n"+
+"				if (d > 10) {\n"+
+"					d = 4;\n"+
+"				}\n"+
+"			}"))
             .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5d).setLoop(true))
             .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
             .addChild(new ROUTE().setFromNode("Animate").setFromField("translation_changed").setToNode("animate_transform").setToField("set_translation"))
@@ -168,57 +235,52 @@ protected class MFString5 {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
-protected class MFColor6 {
-  protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,0f});
-  }
-}
-protected class MFString7 {
+protected class MFString6 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"});
   }
 }
-protected class MFString8 {
+protected class MFString7 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"});
   }
 }
-protected class MFString9 {
+protected class MFString8 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"});
   }
 }
-protected class MFString10 {
+protected class MFString9 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"});
   }
 }
-protected class MFString11 {
+protected class MFString10 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"});
   }
 }
-protected class MFString12 {
+protected class MFString11 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"});
   }
 }
-protected class MFString13 {
+protected class MFString12 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"});
   }
 }
-protected class MFString14 {
+protected class MFString13 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"});
   }
 }
-protected class MFString15 {
+protected class MFString14 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"});
   }
 }
-protected class MFString16 {
+protected class MFString15 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"});
   }

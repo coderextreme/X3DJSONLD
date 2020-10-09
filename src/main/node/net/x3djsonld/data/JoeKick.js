@@ -205,7 +205,7 @@ NeedClassName.prototype = {
     .addChild((new autoclass.Viewpoint("Scene_BackView")).setDescription("Scene_Back View").setOrientation(0.0,1.0,0.0,3.14).setPosition(0.0,1.5,-3.0).setCenterOfRotation(0.0,1.5,0.0))
     .addChild((new autoclass.Viewpoint("Scene_TopView")).setDescription("Scene_Top View").setCenterOfRotation(0.0,1.5,0.0).setPosition(0.0,3.5,0.0).setOrientation(1.0,0.0,0.0,-1.5708))
     .addChild((new autoclass.Group("Joe_Humanoid"))
-      .addChild((new autoclass.HAnimHumanoid("Joe_Human")).setName("Human").setJointBindingPositions(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0]))).setJointBindingRotations(new autoclass.MFRotation(java.newArray("float", [0.0,0.0,1.0,0.0]))).setJointBindingScales(new autoclass.MFVec3f(java.newArray("float", [1.0,1.0,1.0]))).setVersion("2.0").setLoa(3)
+      .addChild((new autoclass.HAnimHumanoid("Joe_Human")).setName("Human").setVersion("2.0").setLoa(3)
         .addChild((new autoclass.MetadataSet()).setName("warnings").setReference("HAnim")
           .addValue((new autoclass.MetadataString()).setName("SymmetricalLeftRight").setValue(new autoclass.MFString("\"ignore\"")).setReference("correction options: ignore, warn, average, left, right, largest, smallest")))
         .addSkeleton((new autoclass.HAnimJoint("Joe_humanoid_root")).setName("humanoid_root").setCenter(0.0,0.875,0.0)

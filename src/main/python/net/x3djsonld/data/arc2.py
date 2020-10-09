@@ -43,7 +43,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           appearance=Appearance(
             material=Material(diffuseColor=(1,0,0)))),
         PositionInterpolator(DEF='DECLpoint_INSTANCE_PI1',key=[0,1],keyValue=[(0,0,0),(0,5,0)]),
-        X3DScript(DEF='DECLpoint_INSTANCE_MB1',
+        Script(DEF='DECLpoint_INSTANCE_MB1',
           field=[
           field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
           field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
@@ -64,7 +64,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           appearance=Appearance(
             material=Material(diffuseColor=(1,0,0)))),
         PositionInterpolator(DEF='DECLpoint_INSTANCE1000_PI1',key=[0,1],keyValue=[(0,0,0),(0,5,0)]),
-        X3DScript(DEF='DECLpoint_INSTANCE1000_MB1',
+        Script(DEF='DECLpoint_INSTANCE1000_MB1',
           field=[
           field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
           field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
@@ -84,7 +84,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           appearance=Appearance(
             material=Material(diffuseColor=(0.2,0.7,0.7),transparency=0.5)),
           geometry=Cylinder(radius=0.05))])]),
-    X3DScript(DEF='DECLx3dconnector_connector1_S1',
+    Script(DEF='DECLx3dconnector_connector1_S1',
       field=[
       field(name='startnode',accessType='initializeOnly',type='SFNode',
         children=[

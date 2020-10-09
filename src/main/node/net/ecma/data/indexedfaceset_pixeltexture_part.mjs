@@ -147,8 +147,6 @@ var X3D0 =  new X3D({
               type : ["EXAMINE","WALK","FLY","ANY"]}),
 
             new Shape({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               appearance : new SFNode(
                 new Appearance({
                   material : new SFNode(

@@ -56,21 +56,66 @@ ProtoInstance ProtoInstance0 = null;
         .addChild(new Viewpoint().setPosition(new float[] {0f,0f,4f}).setOrientation(new float[] {1f,0f,0f,0f}).setDescription("Bubble in action"))
         .addChild(new ProtoDeclare().setName("Bubble")
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setDEF("transform").setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-              .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Transform().setDEF("transform")
+              .addChild(new Shape()
                 .setGeometry(new Sphere().setRadius(0.25f))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}).setTransparency(0.2f))))
-              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10d).setLoop(true))
-              .addChild(new ROUTE().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-              .addChild(new ROUTE().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
-              .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction"))
-              .addX3DScript(new X3DScript().setDEF("bounce")
+              .addChild(new Script().setDEF("bounce")
                 .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
                 .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
                 .addField(new field().setType("SFVec3f").setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))))))
+                .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .setSourceCode("ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"	translation = new SFVec3f(\n"+
+"		translation.x + velocity.x,\n"+
+"		translation.y + velocity.y,\n"+
+"		translation.z + velocity.z);\n"+
+"	scale = new SFVec3f(\n"+
+"		scale.x + scalvel.x,\n"+
+"		scale.y + scalvel.y,\n"+
+"		scale.z + scalvel.z);\n"+
+"        // if you get to far away or too big, explode\n"+
+"        if ( Math.abs(translation.x) > 256) {\n"+
+"		translation.x = 0;\n"+
+"		initialize();\n"+
+"	}\n"+
+"        if ( Math.abs(translation.y) > 256) {\n"+
+"		translation.y = 0;\n"+
+"		initialize();\n"+
+"	}\n"+
+"        if ( Math.abs(translation.z) > 256) {\n"+
+"		translation.z = 0;\n"+
+"		initialize();\n"+
+"	}\n"+
+"	if (Math.abs(scale.x) > 20) {\n"+
+"		scale.x = scale.x/2;\n"+
+"		translation.x = 0;\n"+
+"		initialize();\n"+
+"	}\n"+
+"	if (Math.abs(scale.y) > 20) {\n"+
+"		scale.y = scale.y/2;\n"+
+"		translation.y = 0;\n"+
+"		initialize();\n"+
+"	}\n"+
+"	if (Math.abs(scale.z) > 20) {\n"+
+"		scale.z = scale.z/2;\n"+
+"		translation.z = 0;\n"+
+"		initialize();\n"+
+"	}\n"+
+"}"))
+              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10d).setLoop(true))
+              .addChild(new ROUTE().setFromNode("bounce").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
+              .addChild(new ROUTE().setFromNode("bounce").setFromField("scale_changed").setToNode("transform").setToField("set_scale"))
+              .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("Bubble").setDEF("bubbleA")))      ;
     return X3D0;
     }

@@ -72,7 +72,7 @@ let ProtoDeclare9 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <field name="skinCoord" accessType="inputOutput" appinfo="Hint: H-anim version 2.0" type="SFNode"><!--NULL node--></field>
 <field name="skinNormal" accessType="inputOutput" appinfo="Hint: H-anim version 2.0" type="SFNode"><!--NULL node--></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="HumanoidTransform" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="translation"></connect>
+<ProtoBody><Transform DEF="HumanoidTransform"><IS><connect nodeField="translation" protoField="translation"></connect>
 <connect nodeField="rotation" protoField="rotation"></connect>
 <connect nodeField="scale" protoField="scale"></connect>
 <connect nodeField="scaleOrientation" protoField="scaleOrientation"></connect>
@@ -80,13 +80,13 @@ let ProtoDeclare9 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <connect nodeField="bboxCenter" protoField="bboxCenter"></connect>
 <connect nodeField="bboxSize" protoField="bboxSize"></connect>
 </IS>
-<Group DEF="HumanoidGroup1" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="humanoidBody"></connect>
+<Group DEF="HumanoidGroup1"><IS><connect nodeField="children" protoField="humanoidBody"></connect>
 </IS>
 </Group>
-<Group DEF="HumanoidGroup2" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="skeleton"></connect>
+<Group DEF="HumanoidGroup2"><IS><connect nodeField="children" protoField="skeleton"></connect>
 </IS>
 </Group>
-<Group DEF="HumanoidGroup3" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="viewpoints"></connect>
+<Group DEF="HumanoidGroup3"><IS><connect nodeField="children" protoField="viewpoints"></connect>
 </IS>
 </Group>
 </Transform>
@@ -240,8 +240,6 @@ ProtoDeclare9.protoInterface = ProtoInterface10;
 let ProtoBody30 = browser.currentScene.createNode("ProtoBody");
 let Transform31 = browser.currentScene.createNode("Transform");
 Transform31.DEF = "HumanoidTransform";
-Transform31.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform31.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS32 = browser.currentScene.createNode("IS");
 let connect33 = browser.currentScene.createNode("connect");
 connect33.nodeField = "translation";
@@ -284,8 +282,6 @@ Transform31.iS = IS32;
 
 let Group40 = browser.currentScene.createNode("Group");
 Group40.DEF = "HumanoidGroup1";
-Group40.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group40.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS41 = browser.currentScene.createNode("IS");
 let connect42 = browser.currentScene.createNode("connect");
 connect42.nodeField = "children";
@@ -302,8 +298,6 @@ Transform31.children[0] = Group40;
 
 let Group43 = browser.currentScene.createNode("Group");
 Group43.DEF = "HumanoidGroup2";
-Group43.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group43.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS44 = browser.currentScene.createNode("IS");
 let connect45 = browser.currentScene.createNode("connect");
 connect45.nodeField = "children";
@@ -318,8 +312,6 @@ Transform31.children[1] = Group43;
 
 let Group46 = browser.currentScene.createNode("Group");
 Group46.DEF = "HumanoidGroup3";
-Group46.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group46.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS47 = browser.currentScene.createNode("IS");
 let connect48 = browser.currentScene.createNode("connect");
 connect48.nodeField = "children";
@@ -360,7 +352,7 @@ let ProtoDeclare49 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <field name="addChildren" accessType="inputOnly" type="MFNode"></field>
 <field name="removeChildren" accessType="inputOnly" type="MFNode"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="JointTransform" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="translation"></connect>
+<ProtoBody><Transform DEF="JointTransform"><IS><connect nodeField="translation" protoField="translation"></connect>
 <connect nodeField="rotation" protoField="rotation"></connect>
 <connect nodeField="scale" protoField="scale"></connect>
 <connect nodeField="scaleOrientation" protoField="scaleOrientation"></connect>
@@ -496,8 +488,6 @@ ProtoDeclare49.protoInterface = ProtoInterface50;
 let ProtoBody68 = browser.currentScene.createNode("ProtoBody");
 let Transform69 = browser.currentScene.createNode("Transform");
 Transform69.DEF = "JointTransform";
-Transform69.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform69.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS70 = browser.currentScene.createNode("IS");
 let connect71 = browser.currentScene.createNode("connect");
 connect71.nodeField = "translation";
@@ -575,7 +565,7 @@ let ProtoDeclare81 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <field name="coord" accessType="inputOutput" appinfo="contains Coordinate nodes" type="SFNode"><!--NULL node--></field>
 <field name="displacers" accessType="inputOutput" appinfo="contains Displacer nodes" type="MFNode"></field>
 </ProtoInterface>
-<ProtoBody><Group DEF="SegmentGroup" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="bboxCenter" protoField="bboxCenter"></connect>
+<ProtoBody><Group DEF="SegmentGroup"><IS><connect nodeField="bboxCenter" protoField="bboxCenter"></connect>
 <connect nodeField="bboxSize" protoField="bboxSize"></connect>
 <connect nodeField="children" protoField="children"></connect>
 <connect nodeField="addChildren" protoField="addChildren"></connect>
@@ -669,8 +659,6 @@ ProtoDeclare81.protoInterface = ProtoInterface82;
 let ProtoBody94 = browser.currentScene.createNode("ProtoBody");
 let Group95 = browser.currentScene.createNode("Group");
 Group95.DEF = "SegmentGroup";
-Group95.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group95.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS96 = browser.currentScene.createNode("IS");
 let connect97 = browser.currentScene.createNode("connect");
 connect97.nodeField = "bboxCenter";
@@ -723,7 +711,7 @@ let ProtoDeclare102 = browser.createX3DFromString(`<?xml version="1.0" encoding=
 <field name="addChildren" accessType="inputOnly" type="MFNode"></field>
 <field name="removeChildren" accessType="inputOnly" type="MFNode"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="SiteTransform" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="translation"></connect>
+<ProtoBody><Transform DEF="SiteTransform"><IS><connect nodeField="translation" protoField="translation"></connect>
 <connect nodeField="rotation" protoField="rotation"></connect>
 <connect nodeField="scale" protoField="scale"></connect>
 <connect nodeField="scaleOrientation" protoField="scaleOrientation"></connect>
@@ -821,8 +809,6 @@ ProtoDeclare102.protoInterface = ProtoInterface103;
 let ProtoBody115 = browser.currentScene.createNode("ProtoBody");
 let Transform116 = browser.currentScene.createNode("Transform");
 Transform116.DEF = "SiteTransform";
-Transform116.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform116.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS117 = browser.currentScene.createNode("IS");
 let connect118 = browser.currentScene.createNode("connect");
 connect118.nodeField = "translation";
@@ -956,8 +942,6 @@ ProtoInstance141.fieldValue[0] = fieldValue142;
 let fieldValue143 = browser.currentScene.createNode("fieldValue");
 fieldValue143.name = "children";
 let Shape144 = browser.currentScene.createNode("Shape");
-Shape144.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape144.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance145 = browser.currentScene.createNode("Appearance");
 let Material146 = browser.currentScene.createNode("Material");
 Material146.DEF = "Pants_Color";
@@ -1016,8 +1000,6 @@ ProtoInstance153.fieldValue[0] = fieldValue154;
 let fieldValue155 = browser.currentScene.createNode("fieldValue");
 fieldValue155.name = "children";
 let Shape156 = browser.currentScene.createNode("Shape");
-Shape156.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape156.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance157 = browser.currentScene.createNode("Appearance");
 let Material158 = browser.currentScene.createNode("Material");
 Material158.USE = "Pants_Color";
@@ -1074,8 +1056,6 @@ ProtoInstance165.fieldValue[0] = fieldValue166;
 let fieldValue167 = browser.currentScene.createNode("fieldValue");
 fieldValue167.name = "children";
 let Shape168 = browser.currentScene.createNode("Shape");
-Shape168.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape168.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance169 = browser.currentScene.createNode("Appearance");
 let Material170 = browser.currentScene.createNode("Material");
 Material170.USE = "Pants_Color";
@@ -1132,8 +1112,6 @@ ProtoInstance177.fieldValue[0] = fieldValue178;
 let fieldValue179 = browser.currentScene.createNode("fieldValue");
 fieldValue179.name = "children";
 let Shape180 = browser.currentScene.createNode("Shape");
-Shape180.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape180.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance181 = browser.currentScene.createNode("Appearance");
 let Material182 = browser.currentScene.createNode("Material");
 Material182.DEF = "Shoe_Color";
@@ -1203,8 +1181,6 @@ ProtoInstance189.fieldValue[0] = fieldValue190;
 let fieldValue191 = browser.currentScene.createNode("fieldValue");
 fieldValue191.name = "children";
 let Shape192 = browser.currentScene.createNode("Shape");
-Shape192.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape192.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance193 = browser.currentScene.createNode("Appearance");
 let Material194 = browser.currentScene.createNode("Material");
 Material194.USE = "Pants_Color";
@@ -1261,8 +1237,6 @@ ProtoInstance201.fieldValue[0] = fieldValue202;
 let fieldValue203 = browser.currentScene.createNode("fieldValue");
 fieldValue203.name = "children";
 let Shape204 = browser.currentScene.createNode("Shape");
-Shape204.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape204.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance205 = browser.currentScene.createNode("Appearance");
 let Material206 = browser.currentScene.createNode("Material");
 Material206.USE = "Pants_Color";
@@ -1319,8 +1293,6 @@ ProtoInstance213.fieldValue[0] = fieldValue214;
 let fieldValue215 = browser.currentScene.createNode("fieldValue");
 fieldValue215.name = "children";
 let Shape216 = browser.currentScene.createNode("Shape");
-Shape216.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape216.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance217 = browser.currentScene.createNode("Appearance");
 let Material218 = browser.currentScene.createNode("Material");
 Material218.USE = "Shoe_Color";
@@ -1395,8 +1367,6 @@ ProtoInstance225.fieldValue[0] = fieldValue226;
 let fieldValue227 = browser.currentScene.createNode("fieldValue");
 fieldValue227.name = "children";
 let Shape228 = browser.currentScene.createNode("Shape");
-Shape228.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape228.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance229 = browser.currentScene.createNode("Appearance");
 let Material230 = browser.currentScene.createNode("Material");
 Material230.DEF = "Shirt_Color";
@@ -1468,11 +1438,7 @@ Transform242.DEF = "l_upperarm_adjust";
 Transform242.center = new SFVec3f(new float[0.182,1.22,-0.047]);
 Transform242.rotation = new SFRotation(new float[1,0,0,0.119]);
 Transform242.translation = new SFVec3f(new float[0,0.0004203,-0.01665]);
-Transform242.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform242.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape243 = browser.currentScene.createNode("Shape");
-Shape243.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape243.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance244 = browser.currentScene.createNode("Appearance");
 let Material245 = browser.currentScene.createNode("Material");
 Material245.DEF = "Skin_Color";
@@ -1539,11 +1505,7 @@ Transform255.DEF = "l_forearm_adjust";
 Transform255.center = new SFVec3f(new float[0.198,0.961,-0.0405]);
 Transform255.rotation = new SFRotation(new float[-1,0,0,0.1]);
 Transform255.translation = new SFVec3f(new float[0,0.003724,-0.0236]);
-Transform255.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform255.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape256 = browser.currentScene.createNode("Shape");
-Shape256.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape256.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance257 = browser.currentScene.createNode("Appearance");
 let Material258 = browser.currentScene.createNode("Material");
 Material258.USE = "Skin_Color";
@@ -1608,11 +1570,7 @@ Transform268.DEF = "l_hand_adjust";
 Transform268.center = new SFVec3f(new float[0.213,0.811,-0.0338]);
 Transform268.rotation = new SFRotation(new float[-0.06361,-0.9967,0.04988,1.333]);
 Transform268.translation = new SFVec3f(new float[0,0.005142,-0.008662]);
-Transform268.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform268.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape269 = browser.currentScene.createNode("Shape");
-Shape269.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape269.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance270 = browser.currentScene.createNode("Appearance");
 let Material271 = browser.currentScene.createNode("Material");
 Material271.USE = "Skin_Color";
@@ -1689,11 +1647,7 @@ Transform281.DEF = "r_upperarm_adjust";
 Transform281.center = new SFVec3f(new float[-0.182,1.22,-0.047]);
 Transform281.rotation = new SFRotation(new float[1,0,0,0.0836]);
 Transform281.translation = new SFVec3f(new float[0,0.000589,-0.01169]);
-Transform281.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform281.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape282 = browser.currentScene.createNode("Shape");
-Shape282.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape282.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance283 = browser.currentScene.createNode("Appearance");
 let Material284 = browser.currentScene.createNode("Material");
 Material284.USE = "Skin_Color";
@@ -1758,11 +1712,7 @@ Transform294.DEF = "r_forearm_adjust";
 Transform294.center = new SFVec3f(new float[-0.198,0.961,-0.0397]);
 Transform294.rotation = new SFRotation(new float[-1,0,0,0.1254]);
 Transform294.translation = new SFVec3f(new float[0,0.003466,-0.01065]);
-Transform294.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform294.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape295 = browser.currentScene.createNode("Shape");
-Shape295.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape295.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance296 = browser.currentScene.createNode("Appearance");
 let Material297 = browser.currentScene.createNode("Material");
 Material297.USE = "Skin_Color";
@@ -1826,11 +1776,7 @@ let Transform307 = browser.currentScene.createNode("Transform");
 Transform307.DEF = "r_hand_adjust";
 Transform307.center = new SFVec3f(new float[-0.217,0.811,-0.0338]);
 Transform307.rotation = new SFRotation(new float[-0.09024,0.994,-0.0624,1.216]);
-Transform307.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform307.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape308 = browser.currentScene.createNode("Shape");
-Shape308.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape308.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance309 = browser.currentScene.createNode("Appearance");
 let Material310 = browser.currentScene.createNode("Material");
 Material310.USE = "Skin_Color";
@@ -1903,8 +1849,6 @@ ProtoInstance317.fieldValue[0] = fieldValue318;
 let fieldValue319 = browser.currentScene.createNode("fieldValue");
 fieldValue319.name = "children";
 let Shape320 = browser.currentScene.createNode("Shape");
-Shape320.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape320.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance321 = browser.currentScene.createNode("Appearance");
 let Material322 = browser.currentScene.createNode("Material");
 Material322.USE = "Skin_Color";
@@ -1962,8 +1906,6 @@ ProtoInstance329.fieldValue[0] = fieldValue330;
 let fieldValue331 = browser.currentScene.createNode("fieldValue");
 fieldValue331.name = "children";
 let Shape332 = browser.currentScene.createNode("Shape");
-Shape332.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape332.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance333 = browser.currentScene.createNode("Appearance");
 let Material334 = browser.currentScene.createNode("Material");
 Material334.USE = "Skin_Color";
@@ -2016,8 +1958,6 @@ fieldValue132.children = new MFNode();
 fieldValue132.children[0] = ProtoInstance133;
 
 let Group338 = browser.currentScene.createNode("Group");
-Group338.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group338.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 fieldValue132.children[1] = Group338;
 
 ProtoInstance128.fieldValue[3] = fieldValue132;
@@ -2214,11 +2154,7 @@ browser.currentScene.children[7] = NavigationInfo380;
 
 let Group381 = browser.currentScene.createNode("Group");
 Group381.DEF = "Interface";
-Group381.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group381.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform382 = browser.currentScene.createNode("Transform");
-Transform382.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform382.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let ProximitySensor383 = browser.currentScene.createNode("ProximitySensor");
 ProximitySensor383.DEF = "HudProx";
 ProximitySensor383.center = new SFVec3f(new float[0,20,0]);
@@ -2234,21 +2170,13 @@ Group381.children[0] = Transform382;
 let Collision384 = browser.currentScene.createNode("Collision");
 Collision384.DEF = "HUD";
 Collision384.enabled = False;
-Collision384.bboxCenter = new SFVec3f(new float[0,0,0]);
-Collision384.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform385 = browser.currentScene.createNode("Transform");
 Transform385.DEF = "HudXform";
-Transform385.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform385.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform386 = browser.currentScene.createNode("Transform");
 Transform386.scale = new SFVec3f(new float[0.012,0.012,0.012]);
 Transform386.translation = new SFVec3f(new float[0.01107,-0.025,-0.08]);
-Transform386.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform386.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform387 = browser.currentScene.createNode("Transform");
 Transform387.DEF = "Stand_Text";
-Transform387.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform387.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let TouchSensor388 = browser.currentScene.createNode("TouchSensor");
 TouchSensor388.DEF = "Stand_Touch";
 TouchSensor388.description = "click for behavior";
@@ -2258,8 +2186,6 @@ Transform387.children[0] = TouchSensor388;
 
 let Shape389 = browser.currentScene.createNode("Shape");
 Shape389.DEF = "Stand";
-Shape389.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape389.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IndexedFaceSet390 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet390.coordIndex = new MFInt32(new int[1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1]);
 let Coordinate391 = browser.currentScene.createNode("Coordinate");
@@ -2283,12 +2209,8 @@ Transform387.children[1] = Shape389;
 let Transform394 = browser.currentScene.createNode("Transform");
 Transform394.scale = new SFVec3f(new float[84.89,77.52,77.52]);
 Transform394.translation = new SFVec3f(new float[0.04092,1.843,3.826]);
-Transform394.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform394.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape395 = browser.currentScene.createNode("Shape");
 Shape395.DEF = "Stand_Back";
-Shape395.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape395.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IndexedFaceSet396 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet396.coordIndex = new MFInt32(new int[0,2,3,-1,2,0,1,-1]);
 let Coordinate397 = browser.currentScene.createNode("Coordinate");
@@ -2319,8 +2241,6 @@ Transform386.children[0] = Transform387;
 
 let Transform400 = browser.currentScene.createNode("Transform");
 Transform400.DEF = "Walk_Text";
-Transform400.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform400.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let TouchSensor401 = browser.currentScene.createNode("TouchSensor");
 TouchSensor401.DEF = "Walk_Touch";
 TouchSensor401.description = "click for behavior";
@@ -2330,8 +2250,6 @@ Transform400.children[0] = TouchSensor401;
 
 let Shape402 = browser.currentScene.createNode("Shape");
 Shape402.DEF = "WALK";
-Shape402.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape402.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IndexedFaceSet403 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet403.coordIndex = new MFInt32(new int[0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1]);
 let Coordinate404 = browser.currentScene.createNode("Coordinate");
@@ -2352,12 +2270,8 @@ Transform400.children[1] = Shape402;
 let Transform407 = browser.currentScene.createNode("Transform");
 Transform407.scale = new SFVec3f(new float[81.3,81.3,81.31]);
 Transform407.translation = new SFVec3f(new float[-0.0414,1.941,4.015]);
-Transform407.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform407.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape408 = browser.currentScene.createNode("Shape");
 Shape408.DEF = "Walk_Back";
-Shape408.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape408.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IndexedFaceSet409 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet409.coordIndex = new MFInt32(new int[1,3,0,-1,3,1,2,-1]);
 let Coordinate410 = browser.currentScene.createNode("Coordinate");
@@ -2383,8 +2297,6 @@ Transform386.children[1] = Transform400;
 
 let Transform413 = browser.currentScene.createNode("Transform");
 Transform413.DEF = "Run_Text";
-Transform413.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform413.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let TouchSensor414 = browser.currentScene.createNode("TouchSensor");
 TouchSensor414.DEF = "Run_Touch";
 TouchSensor414.description = "click for behavior";
@@ -2394,8 +2306,6 @@ Transform413.children[0] = TouchSensor414;
 
 let Shape415 = browser.currentScene.createNode("Shape");
 Shape415.DEF = "Run";
-Shape415.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape415.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IndexedFaceSet416 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet416.coordIndex = new MFInt32(new int[24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1]);
 let Coordinate417 = browser.currentScene.createNode("Coordinate");
@@ -2416,12 +2326,8 @@ Transform413.children[1] = Shape415;
 let Transform420 = browser.currentScene.createNode("Transform");
 Transform420.scale = new SFVec3f(new float[82.47,82.47,82.48]);
 Transform420.translation = new SFVec3f(new float[-0.01579,1.968,4.074]);
-Transform420.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform420.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape421 = browser.currentScene.createNode("Shape");
 Shape421.DEF = "Run_Back";
-Shape421.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape421.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IndexedFaceSet422 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet422.coordIndex = new MFInt32(new int[0,2,3,-1,2,0,1,-1]);
 let Coordinate423 = browser.currentScene.createNode("Coordinate");
@@ -2447,8 +2353,6 @@ Transform386.children[2] = Transform413;
 
 let Transform426 = browser.currentScene.createNode("Transform");
 Transform426.DEF = "Jump_Text";
-Transform426.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform426.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let TouchSensor427 = browser.currentScene.createNode("TouchSensor");
 TouchSensor427.DEF = "Jump_Touch";
 TouchSensor427.description = "click for behavior";
@@ -2458,8 +2362,6 @@ Transform426.children[0] = TouchSensor427;
 
 let Shape428 = browser.currentScene.createNode("Shape");
 Shape428.DEF = "Jump";
-Shape428.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape428.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IndexedFaceSet429 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet429.coordIndex = new MFInt32(new int[1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1]);
 let Coordinate430 = browser.currentScene.createNode("Coordinate");
@@ -2480,12 +2382,8 @@ Transform426.children[1] = Shape428;
 let Transform433 = browser.currentScene.createNode("Transform");
 Transform433.scale = new SFVec3f(new float[83.79,83.79,83.79]);
 Transform433.translation = new SFVec3f(new float[-0.008979,1.99,4.14]);
-Transform433.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform433.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape434 = browser.currentScene.createNode("Shape");
 Shape434.DEF = "Jump_Back";
-Shape434.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape434.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IndexedFaceSet435 = browser.currentScene.createNode("IndexedFaceSet");
 IndexedFaceSet435.coordIndex = new MFInt32(new int[0,2,3,-1,2,0,1,-1]);
 let Coordinate436 = browser.currentScene.createNode("Coordinate");
@@ -2521,14 +2419,8 @@ let Transform439 = browser.currentScene.createNode("Transform");
 Transform439.DEF = "Floor";
 Transform439.scale = new SFVec3f(new float[1,0.0125,1]);
 Transform439.translation = new SFVec3f(new float[0,-0.0125,0]);
-Transform439.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform439.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape440 = browser.currentScene.createNode("Shape");
-Shape440.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape440.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Box441 = browser.currentScene.createNode("Box");
-Box441.size = new SFVec3f(new float[2,2,2]);
-Box441.solid = True;
 Shape440.geometry = Box441;
 
 let Appearance442 = browser.currentScene.createNode("Appearance");
@@ -2547,12 +2439,8 @@ browser.currentScene.children[8] = Group381;
 
 let Group444 = browser.currentScene.createNode("Group");
 Group444.DEF = "Animations";
-Group444.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group444.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Group445 = browser.currentScene.createNode("Group");
 Group445.DEF = "Stand_Animation";
-Group445.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group445.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let OrientationInterpolator446 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator446.DEF = "r_ankleRotInterp_Stand";
 OrientationInterpolator446.key = new MFFloat(new float[0,1]);
@@ -2674,8 +2562,6 @@ Group444.children[0] = Group445;
 
 let Group465 = browser.currentScene.createNode("Group");
 Group465.DEF = "Walk_Animation";
-Group465.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group465.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let OrientationInterpolator466 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator466.DEF = "r_ankleRotInterp_BasicWalk";
 OrientationInterpolator466.key = new MFFloat(new float[0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1]);
@@ -2797,8 +2683,6 @@ Group444.children[1] = Group465;
 
 let Group485 = browser.currentScene.createNode("Group");
 Group485.DEF = "Run_Animation";
-Group485.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group485.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let OrientationInterpolator486 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator486.DEF = "r_ankleRotInterp_Run";
 OrientationInterpolator486.key = new MFFloat(new float[0,0.4909,0.7091,0.8,0.8182,1]);
@@ -2919,8 +2803,6 @@ Group444.children[2] = Group485;
 
 let Group505 = browser.currentScene.createNode("Group");
 Group505.DEF = "Jump_Animation";
-Group505.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group505.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let OrientationInterpolator506 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator506.DEF = "r_ankleRotInterp_Jump";
 OrientationInterpolator506.key = new MFFloat(new float[0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1]);

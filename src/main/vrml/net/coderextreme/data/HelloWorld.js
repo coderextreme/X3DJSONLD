@@ -10,8 +10,6 @@ browser.currentScene.children = new MFNode();
 browser.currentScene.children[0] = WorldInfo2;
 
 let Group3 = browser.currentScene.createNode("Group");
-Group3.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group3.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Viewpoint4 = browser.currentScene.createNode("Viewpoint");
 Viewpoint4.DEF = "ViewUpClose";
 Viewpoint4.centerOfRotation = new SFVec3f(new float[0,-1,0]);
@@ -23,11 +21,7 @@ Group3.children[0] = Viewpoint4;
 
 let Transform5 = browser.currentScene.createNode("Transform");
 Transform5.rotation = new SFRotation(new float[0,1,0,3]);
-Transform5.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape6 = browser.currentScene.createNode("Shape");
-Shape6.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere7 = browser.currentScene.createNode("Sphere");
 Shape6.geometry = Sphere7;
 
@@ -52,11 +46,7 @@ Group3.children[1] = Transform5;
 
 let Transform11 = browser.currentScene.createNode("Transform");
 Transform11.translation = new SFVec3f(new float[0,-2,0]);
-Transform11.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform11.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape12 = browser.currentScene.createNode("Shape");
-Shape12.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape12.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text13 = browser.currentScene.createNode("Text");
 Text13.DEF = "TextMessage";
 Text13.string = new MFString(new java.lang.String["Hello","world!"]);

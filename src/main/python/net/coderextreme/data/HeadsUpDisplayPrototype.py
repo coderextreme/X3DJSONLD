@@ -91,8 +91,6 @@ ProtoInterface13.addField(field17)
 ProtoDeclare12.setProtoInterface(ProtoInterface13)
 ProtoBody18 = x3d.ProtoBody()
 Group19 = x3d.Group()
-Group19.setBboxCenter([0,0,0])
-Group19.setBboxSize([-1,-1,-1])
 ProximitySensor20 = x3d.ProximitySensor()
 ProximitySensor20.setDEF("WhereSensor")
 ProximitySensor20.setSize([1000000000,1000000000,1000000000])
@@ -108,16 +106,10 @@ ProximitySensor20.setIS(IS21)
 Group19.addChildren(ProximitySensor20)
 Transform23 = x3d.Transform()
 Transform23.setDEF("FixedLocation")
-Transform23.setBboxCenter([0,0,0])
-Transform23.setBboxSize([-1,-1,-1])
 Transform24 = x3d.Transform()
 Transform24.setDEF("MovableLocation")
-Transform24.setBboxCenter([0,0,0])
-Transform24.setBboxSize([-1,-1,-1])
 Transform25 = x3d.Transform()
 Transform25.setDEF("LocationOffset")
-Transform25.setBboxCenter([0,0,0])
-Transform25.setBboxSize([-1,-1,-1])
 IS26 = x3d.IS()
 connect27 = x3d.connect()
 connect27.setNodeField("translation")
@@ -128,11 +120,7 @@ IS26.addConnect(connect27)
 Transform25.setIS(IS26)
 Transform28 = x3d.Transform()
 Transform28.setTranslation([0,0,-10])
-Transform28.setBboxCenter([0,0,0])
-Transform28.setBboxSize([-1,-1,-1])
 Group29 = x3d.Group()
-Group29.setBboxCenter([0,0,0])
-Group29.setBboxSize([-1,-1,-1])
 IS30 = x3d.IS()
 connect31 = x3d.connect()
 connect31.setNodeField("children")
@@ -145,12 +133,8 @@ Group29.setIS(IS30)
 Transform28.addChildren(Group29)
 Group32 = x3d.Group()
 Group32.setDEF("PlaneMovementSensorGroup")
-Group32.setBboxCenter([0,0,0])
-Group32.setBboxSize([-1,-1,-1])
 Group33 = x3d.Group()
 Group33.setDEF("DragGeometry")
-Group33.setBboxCenter([0,0,0])
-Group33.setBboxSize([-1,-1,-1])
 IS34 = x3d.IS()
 connect35 = x3d.connect()
 connect35.setNodeField("children")
@@ -178,89 +162,125 @@ VisibilitySensor39 = x3d.VisibilitySensor()
 VisibilitySensor39.setDEF("MovementVisibilitySensor")
 
 Group32.addChildren(VisibilitySensor39)
-ROUTE40 = x3d.ROUTE()
-ROUTE40.setFromField("isActive")
-ROUTE40.setFromNode("PlaneMovementSensor")
-ROUTE40.setToField("setPlaneSensorIsActive")
-ROUTE40.setToNode("VisibilityControlScript")
+Script40 = x3d.Script()
+Script40.setDEF("VisibilityControlScript")
+field41 = x3d.field()
+field41.setName("traceEnabled")
+field41.setAccessType("initializeOnly")
+field41.setType("SFBool")
 
-Group32.addChildren(ROUTE40)
-ROUTE41 = x3d.ROUTE()
-ROUTE41.setFromField("translation_changed")
-ROUTE41.setFromNode("PlaneMovementSensor")
-ROUTE41.setToField("setPlaneSensorTranslation")
-ROUTE41.setToNode("VisibilityControlScript")
+Script40.addField(field41)
+field42 = x3d.field()
+field42.setName("isVisible")
+field42.setAccessType("initializeOnly")
+field42.setType("SFBool")
+field42.setValue("true")
 
-Group32.addChildren(ROUTE41)
-ROUTE42 = x3d.ROUTE()
-ROUTE42.setFromField("isActive")
-ROUTE42.setFromNode("MovementVisibilitySensor")
-ROUTE42.setToField("setIsVisible")
-ROUTE42.setToNode("VisibilityControlScript")
+Script40.addField(field42)
+field43 = x3d.field()
+field43.setName("planeSensorTranslation")
+field43.setAccessType("initializeOnly")
+field43.setType("SFVec3f")
+field43.setValue("0 0 0")
 
-Group32.addChildren(ROUTE42)
-X3DScript43 = x3d.X3DScript()
-X3DScript43.setDEF("VisibilityControlScript")
+Script40.addField(field43)
 field44 = x3d.field()
-field44.setName("traceEnabled")
-field44.setAccessType("initializeOnly")
+field44.setName("setIsVisible")
+field44.setAccessType("inputOnly")
 field44.setType("SFBool")
 
-X3DScript43.addField(field44)
+Script40.addField(field44)
 field45 = x3d.field()
-field45.setName("isVisible")
-field45.setAccessType("initializeOnly")
+field45.setName("setPlaneSensorIsActive")
+field45.setAccessType("inputOnly")
 field45.setType("SFBool")
-field45.setValue("true")
 
-X3DScript43.addField(field45)
+Script40.addField(field45)
 field46 = x3d.field()
-field46.setName("planeSensorTranslation")
-field46.setAccessType("initializeOnly")
+field46.setName("setPlaneSensorTranslation")
+field46.setAccessType("inputOnly")
 field46.setType("SFVec3f")
-field46.setValue("0 0 0")
 
-X3DScript43.addField(field46)
+Script40.addField(field46)
 field47 = x3d.field()
-field47.setName("setIsVisible")
-field47.setAccessType("inputOnly")
-field47.setType("SFBool")
+field47.setName("translationChanged")
+field47.setAccessType("outputOnly")
+field47.setType("SFVec3f")
 
-X3DScript43.addField(field47)
+Script40.addField(field47)
 field48 = x3d.field()
-field48.setName("setPlaneSensorIsActive")
-field48.setAccessType("inputOnly")
-field48.setType("SFBool")
+field48.setName("translationOffsetChanged")
+field48.setAccessType("outputOnly")
+field48.setType("SFVec3f")
 
-X3DScript43.addField(field48)
-field49 = x3d.field()
-field49.setName("setPlaneSensorTranslation")
-field49.setAccessType("inputOnly")
-field49.setType("SFVec3f")
+Script40.addField(field48)
+IS49 = x3d.IS()
+connect50 = x3d.connect()
+connect50.setNodeField("traceEnabled")
+connect50.setProtoField("traceEnabled")
 
-X3DScript43.addField(field49)
-field50 = x3d.field()
-field50.setName("translationChanged")
-field50.setAccessType("outputOnly")
-field50.setType("SFVec3f")
+IS49.addConnect(connect50)
 
-X3DScript43.addField(field50)
-field51 = x3d.field()
-field51.setName("translationOffsetChanged")
-field51.setAccessType("outputOnly")
-field51.setType("SFVec3f")
+Script40.setIS(IS49)
 
-X3DScript43.addField(field51)
-IS52 = x3d.IS()
-connect53 = x3d.connect()
-connect53.setNodeField("traceEnabled")
-connect53.setProtoField("traceEnabled")
+Script40.setSourceCode('''ecmascript:\n"+
+"\n"+
+"function tracePrint (text)\n"+
+"{\n"+
+"	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);\n"+
+"}\n"+
+"function setIsVisible (value, timeStamp)\n"+
+"{\n"+
+"	isVisible = value;\n"+
+"	tracePrint('isVisible=' + value);\n"+
+"}\n"+
+"function setPlaneSensorIsActive (value, timeStamp)\n"+
+"{\n"+
+"	tracePrint('PlaneSensor isActive=' + value);\n"+
+"\n"+
+"	if (value == false)\n"+
+"	{\n"+
+"		tracePrint('planeSensorTranslation=' + planeSensorTranslation);\n"+
+"		if (isVisible)\n"+
+"		{\n"+
+"			translationChanged = planeSensorTranslation;\n"+
+"		}\n"+
+"		else\n"+
+"		{\n"+
+"			// fell off screen, reset to center\n"+
+"			translationChanged = new SFVec3f(0, 0, 0);\n"+
+"			translationOffsetChanged  = new SFVec3f(0, 0, 0);\n"+
+"		}\n"+
+"	}\n"+
+"}\n"+
+"function setPlaneSensorTranslation (value, timeStamp)\n"+
+"{\n"+
+"	planeSensorTranslation = value;\n"+
+"	tracePrint('planeSensorTranslation=' + value);\n"+
+"}''')
 
-IS52.addConnect(connect53)
+Group32.addChildren(Script40)
+ROUTE51 = x3d.ROUTE()
+ROUTE51.setFromField("isActive")
+ROUTE51.setFromNode("PlaneMovementSensor")
+ROUTE51.setToField("setPlaneSensorIsActive")
+ROUTE51.setToNode("VisibilityControlScript")
 
-X3DScript43.setIS(IS52)
+Group32.addChildren(ROUTE51)
+ROUTE52 = x3d.ROUTE()
+ROUTE52.setFromField("translation_changed")
+ROUTE52.setFromNode("PlaneMovementSensor")
+ROUTE52.setToField("setPlaneSensorTranslation")
+ROUTE52.setToNode("VisibilityControlScript")
 
-Group32.addX3DScript(X3DScript43)
+Group32.addChildren(ROUTE52)
+ROUTE53 = x3d.ROUTE()
+ROUTE53.setFromField("isActive")
+ROUTE53.setFromNode("MovementVisibilitySensor")
+ROUTE53.setToField("setIsVisible")
+ROUTE53.setToNode("VisibilityControlScript")
+
+Group32.addChildren(ROUTE53)
 
 Transform28.addChildren(Group32)
 
@@ -322,11 +342,7 @@ Anchor60 = x3d.Anchor()
 Anchor60.setDescription("HeadsUpDisplayExample")
 Anchor60.setParameter(["target=_blank"])
 Anchor60.setUrl(["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"])
-Anchor60.setBboxCenter([0,0,0])
-Anchor60.setBboxSize([-1,-1,-1])
 Shape61 = x3d.Shape()
-Shape61.setBboxCenter([0,0,0])
-Shape61.setBboxSize([-1,-1,-1])
 Appearance62 = x3d.Appearance()
 Material63 = x3d.Material()
 Material63.setDiffuseColor([0,1,1])

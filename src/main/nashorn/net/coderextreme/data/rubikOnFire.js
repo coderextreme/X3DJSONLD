@@ -30,10 +30,10 @@ var ProtoInstance9 = null;
             .addField(new field().setType(field.TYPE_SFNODE).setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("xtranslation")))
-              .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+              .addChild(new Shape()
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("geometry").setProtoField("myShape")))
                 .setAppearance(new Appearance()
@@ -44,7 +44,7 @@ var ProtoInstance9 = null;
             .addField(new field().setType(field.TYPE_SFNODE).setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("ytranslation")))
               .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")
@@ -62,7 +62,7 @@ var ProtoInstance9 = null;
             .addField(new field().setType(field.TYPE_SFNODE).setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("ztranslation")))
               .addChild(ProtoInstance3 = new ProtoInstance().setName("three")
@@ -80,7 +80,7 @@ var ProtoInstance9 = null;
             .addField(new field().setType(field.TYPE_SFNODE).setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("ttranslation")))
               .addChild(ProtoInstance6 = new ProtoInstance().setName("nine")
@@ -115,5 +115,5 @@ ProtoInstance9
           .addFieldValue(new fieldValue().setName("ttranslation").setValue("0 0 0"));
 ProtoInstance9
           .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Box().setSize(Java.to([1,1,1], Java.type("float[]"))).setSolid(true)));
+            .addChild(new Box().setSize(Java.to([1,1,1], Java.type("float[]")))));
     X3D0.toFileX3D("../data/rubikOnFire.new.x3d");

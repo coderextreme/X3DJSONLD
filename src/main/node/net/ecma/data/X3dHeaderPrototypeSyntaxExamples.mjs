@@ -28,7 +28,6 @@ import { Transform } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Box } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { Collision } from './x3d.mjs';
@@ -39,6 +38,7 @@ import { FontStyle } from './x3d.mjs';
 import { SFFloat } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
+import { SFBool } from './x3d.mjs';
 import { OrientationInterpolator } from './x3d.mjs';
 import { MFFloat } from './x3d.mjs';
 import { MFRotation } from './x3d.mjs';
@@ -198,19 +198,14 @@ var X3D0 =  new X3D({
                         new Group({
                           DEF : new SFString("DefaultNodeValue"),
                           bboxSize : new SFVec3f([2,2,2]),
-                          bboxCenter : new SFVec3f([0,0,0]),
                           { "#comment" : new CommentsBlock("Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\"") }})])})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,2,0]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Group({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -228,16 +223,10 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("ExampleChildElement"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
-                    new Box({
-                      size : new SFVec3f([2,2,2]),
-                      solid : new SFBool(true)})),
+                    new Box({})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -248,20 +237,13 @@ var X3D0 =  new X3D({
               DEF : new SFString("TransformExampleUSE"),
               rotation : new SFRotation([0,1,0,0.78]),
               translation : new SFVec3f([0,2.5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Group({
                   USE : new SFString("ExampleChildElement")})])}),
 
             new Collision({
-              enabled : new SFBool(true),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               proxy : new SFNode(
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   { "#comment" : new CommentsBlock("note that Collision proxy Shape is not rendered") },
                   geometry : new SFNode(
                     new Sphere({})),
@@ -275,12 +257,8 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([0,-2.5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       shaders : new SFNode(
@@ -329,9 +307,7 @@ var X3D0 =  new X3D({
 
             new Inline({
               DEF : new SFString("someInline"),
-              url : new MFString(["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1])}),
+              url : new MFString(["someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"])}),
 
             new IMPORT({
               aS : new SFString("someInlineRoot"),

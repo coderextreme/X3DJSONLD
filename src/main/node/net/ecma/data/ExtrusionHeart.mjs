@@ -68,12 +68,8 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([0,-0.5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Extrusion({
                       creaseAngle : new SFFloat(3.14159),

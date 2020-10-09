@@ -14,7 +14,6 @@ import { ProtoInterface } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
@@ -28,11 +27,11 @@ import { ShaderPart } from './x3d.mjs';
 import { IS } from './x3d.mjs';
 import { connect } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -107,12 +106,8 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("transform"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -232,60 +227,7 @@ var X3D0 =  new X3D({
                           geometry : new SFNode(
                             new Sphere({}))}),
 
-                        new TimeSensor({
-                          DEF : new SFString("TourTime"),
-                          cycleInterval : new SFTime(5),
-                          loop : new SFBool(true)}),
-
-                        new ROUTE({
-                          fromNode : new SFString("TourTime"),
-                          fromField : new SFString("fraction_changed"),
-                          toNode : new SFString("Animate"),
-                          toField : new SFString("set_fraction")}),
-
-                        new ROUTE({
-                          fromNode : new SFString("Animate"),
-                          fromField : new SFString("translation_changed"),
-                          toNode : new SFString("transform"),
-                          toField : new SFString("set_translation")}),
-
-                        new ROUTE({
-                          fromNode : new SFString("Animate"),
-                          fromField : new SFString("a"),
-                          toNode : new SFString("shader"),
-                          toField : new SFString("a")}),
-
-                        new ROUTE({
-                          fromNode : new SFString("Animate"),
-                          fromField : new SFString("b"),
-                          toNode : new SFString("shader"),
-                          toField : new SFString("b")}),
-
-                        new ROUTE({
-                          fromNode : new SFString("Animate"),
-                          fromField : new SFString("c"),
-                          toNode : new SFString("shader"),
-                          toField : new SFString("c")}),
-
-                        new ROUTE({
-                          fromNode : new SFString("Animate"),
-                          fromField : new SFString("d"),
-                          toNode : new SFString("shader"),
-                          toField : new SFString("d")}),
-
-                        new ROUTE({
-                          fromNode : new SFString("Animate"),
-                          fromField : new SFString("tdelta"),
-                          toNode : new SFString("shader"),
-                          toField : new SFString("tdelta")}),
-
-                        new ROUTE({
-                          fromNode : new SFString("Animate"),
-                          fromField : new SFString("pdelta"),
-                          toNode : new SFString("shader"),
-                          toField : new SFString("pdelta")}),
-                      X3DScript : new SFNode(
-                        new X3DScript({
+                        new Script({
                           DEF : new SFString("Animate"),
                           field : new MFNode([
                             new field({
@@ -339,5 +281,124 @@ var X3D0 =  new X3D({
                               type : field.TYPE_SFFLOAT,
                               name : new SFString("pdelta"),
                               accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                              value : new SFString("0.5")})])}))])})])}))})])}))});
+                              value : new SFString("0.5")}),
+                          .setSourceCode("ecmascript:\n"+
+"			function initialize() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"			    for (var j = 0; j <= 2; j++) {\n"+
+"				    if (Math.abs(translation.x) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.y) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.z) > 10) {\n"+
+"					initialize();\n"+
+"				    } else {\n"+
+"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
+"				    }\n"+
+"			    }\n"+
+"			    animate_flowers();\n"+
+"			}\n"+
+"\n"+
+"			function animate_flowers(fraction, eventTime) {\n"+
+"				var choice = Math.floor(Math.random() * 4);\n"+
+"				switch (choice) {\n"+
+"				case 0:\n"+
+"					a += Math.random() * 0.2 - 0.1;\n"+
+"					break;\n"+
+"				case 1:\n"+
+"					b += Math.random() * 0.2 - 0.1;\n"+
+"					break;\n"+
+"				case 2:\n"+
+"					c += Math.random() * 2 - 1;\n"+
+"					break;\n"+
+"				case 3:\n"+
+"					d += Math.random() * 2 - 1;\n"+
+"					break;\n"+
+"				}\n"+
+"				tdelta += 0.5;\n"+
+"				pdelta += 0.5;\n"+
+"				if (a > 1) {\n"+
+"					a =  0.5;\n"+
+"				}\n"+
+"				if (b > 1) {\n"+
+"					b =  0.5;\n"+
+"				}\n"+
+"				if (c < 1) {\n"+
+"					c =  4;\n"+
+"				}\n"+
+"				if (d < 1) {\n"+
+"					d =  4;\n"+
+"				}\n"+
+"				if (c > 10) {\n"+
+"					c = 4;\n"+
+"				}\n"+
+"				if (d > 10) {\n"+
+"					d = 4;\n"+
+"				}\n"+
+"			}")])}),
+
+                        new TimeSensor({
+                          DEF : new SFString("TourTime"),
+                          cycleInterval : new SFTime(5),
+                          loop : new SFBool(true)}),
+
+                        new ROUTE({
+                          fromNode : new SFString("TourTime"),
+                          fromField : new SFString("fraction_changed"),
+                          toNode : new SFString("Animate"),
+                          toField : new SFString("set_fraction")}),
+
+                        new ROUTE({
+                          fromNode : new SFString("Animate"),
+                          fromField : new SFString("translation_changed"),
+                          toNode : new SFString("transform"),
+                          toField : new SFString("set_translation")}),
+
+                        new ROUTE({
+                          fromNode : new SFString("Animate"),
+                          fromField : new SFString("a"),
+                          toNode : new SFString("shader"),
+                          toField : new SFString("a")}),
+
+                        new ROUTE({
+                          fromNode : new SFString("Animate"),
+                          fromField : new SFString("b"),
+                          toNode : new SFString("shader"),
+                          toField : new SFString("b")}),
+
+                        new ROUTE({
+                          fromNode : new SFString("Animate"),
+                          fromField : new SFString("c"),
+                          toNode : new SFString("shader"),
+                          toField : new SFString("c")}),
+
+                        new ROUTE({
+                          fromNode : new SFString("Animate"),
+                          fromField : new SFString("d"),
+                          toNode : new SFString("shader"),
+                          toField : new SFString("d")}),
+
+                        new ROUTE({
+                          fromNode : new SFString("Animate"),
+                          fromField : new SFString("tdelta"),
+                          toNode : new SFString("shader"),
+                          toField : new SFString("tdelta")}),
+
+                        new ROUTE({
+                          fromNode : new SFString("Animate"),
+                          fromField : new SFString("pdelta"),
+                          toNode : new SFString("shader"),
+                          toField : new SFString("pdelta")})])})])}))})])}))});
 console.log(X3D0.toXMLNode());

@@ -13,7 +13,6 @@ import { CommentsBlock } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { IndexedFaceSet } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
@@ -22,7 +21,7 @@ import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { IS } from './x3d.mjs';
 import { connect } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
@@ -195,13 +194,9 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("ArchTransform"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
                           DEF : new SFString("Arch"),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           { "#comment" : new CommentsBlock("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly") },
                           geometry : new SFNode(
                             new IndexedFaceSet({
@@ -227,9 +222,9 @@ var X3D0 =  new X3D({
                                           nodeField : new SFString("diffuseColor"),
                                           protoField : new SFString("diffuseColor")})])}))}))}))})])}),
                   { "#comment" : new CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph") },
-                  { "#comment" : new CommentsBlock("This embedded X3DScript provides the X3D author with additional visibility and control over prototype inputs and outputs") },
-                  X3DScript : new SFNode(
-                    new X3DScript({
+                  { "#comment" : new CommentsBlock("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs") },
+
+                    new Script({
                       DEF : new SFString("ArchPrototypeScript"),
                       url : new MFString(["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]),
                       { "#comment" : new CommentsBlock("INPUT PARAMETERS") },
@@ -375,7 +370,7 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("lintel"),
-                              protoField : new SFString("lintel")})])}))])})),
+                              protoField : new SFString("lintel")})])}))])}),
 
                     new ROUTE({
                       fromField : new SFString("computedScale"),
@@ -434,7 +429,5 @@ var X3D0 =  new X3D({
 
             new Inline({
               DEF : new SFString("CoordinateAxes"),
-              url : new MFString(["../data/CoordinateAxes.x3d"]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1])})])}))});
+              url : new MFString(["../data/CoordinateAxes.x3d"])})])}))});
 console.log(X3D0.toXMLNode());

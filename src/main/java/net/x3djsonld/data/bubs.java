@@ -6,6 +6,7 @@ import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Time.*;
 
@@ -86,7 +87,46 @@ public class bubs
             .setGeometry(new Sphere().setRadius(0.25))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0).setTransparency(0.2))))
-          .setX3DScript(new X3DScript("bounce1")
+          .addChild(new Script("bounce1").setSourceCode("\n" + 
+"ecmascript:" + "\n" + 
+"function initialize() {" + "\n" + 
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);" + "\n" + 
+"\n" + 
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);" + "\n" + 
+"}" + "\n" + 
+"\n" + 
+"function set_fraction(value) {" + "\n" + 
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);" + "\n" + 
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);" + "\n" + 
+"    // if you get to far away or too big, explode" + "\n" + 
+"    if ( Math.abs(translation.x) > 256) {" + "\n" + 
+"	translation.x = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"    if ( Math.abs(translation.y) > 256) {" + "\n" + 
+"	translation.y = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"    if ( Math.abs(translation.z) > 256) {" + "\n" + 
+"	translation.z = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"    if (Math.abs(scale.x) > 20) {" + "\n" + 
+"	scale.x = scale.x/20;" + "\n" + 
+"	translation.x = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"    if (Math.abs(scale.y) > 20) {" + "\n" + 
+"	scale.y = scale.y/20;" + "\n" + 
+"	translation.y = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"    if (Math.abs(scale.z) > 20) {" + "\n" + 
+"	scale.z = scale.z/20;" + "\n" + 
+"	translation.z = 0;" + "\n" + 
+"	initialize();" + "\n" + 
+"    }" + "\n" + 
+"}" + "\n")
             .addField(new field().setName("scale").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(1.0,1.0,1.0)))
             .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
             .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))

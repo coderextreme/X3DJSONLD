@@ -8,7 +8,6 @@ import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { IndexedFaceSet } from './x3d.mjs';
 import { MFInt32 } from './x3d.mjs';
@@ -48,12 +47,8 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new IndexedFaceSet({
                       DEF : new SFString("IndexedFaceSet"),

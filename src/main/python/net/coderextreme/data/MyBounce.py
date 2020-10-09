@@ -36,11 +36,7 @@ NavigationInfo8 = x3d.NavigationInfo()
 Scene7.addChildren(NavigationInfo8)
 Transform9 = x3d.Transform()
 Transform9.setDEF("transform")
-Transform9.setBboxCenter([0,0,0])
-Transform9.setBboxSize([-1,-1,-1])
 Shape10 = x3d.Shape()
-Shape10.setBboxCenter([0,0,0])
-Shape10.setBboxSize([-1,-1,-1])
 Appearance11 = x3d.Appearance()
 Material12 = x3d.Material()
 Material12.setDiffuseColor([0.7,0.7,0.7])
@@ -56,26 +52,96 @@ Shape10.setGeometry(Sphere13)
 Transform9.addChildren(Shape10)
 
 Scene7.addChildren(Transform9)
-TimeSensor14 = x3d.TimeSensor()
-TimeSensor14.setDEF("TourTime")
-TimeSensor14.setCycleInterval(0.15)
-TimeSensor14.setLoop(True)
+Script14 = x3d.Script()
+Script14.setDEF("Bounce2")
+field15 = x3d.field()
+field15.setName("set_translation")
+field15.setAccessType("inputOnly")
+field15.setType("SFVec3f")
+field15.setValue("0 0 0")
 
-Scene7.addChildren(TimeSensor14)
-ROUTE15 = x3d.ROUTE()
-ROUTE15.setFromNode("TourTime")
-ROUTE15.setFromField("cycleTime")
-ROUTE15.setToNode("Bounce2")
-ROUTE15.setToField("set_fraction")
+Script14.addField(field15)
+field16 = x3d.field()
+field16.setName("translation_changed")
+field16.setAccessType("outputOnly")
+field16.setType("SFVec3f")
+field16.setValue("0 0 0")
 
-Scene7.addChildren(ROUTE15)
-ROUTE16 = x3d.ROUTE()
-ROUTE16.setFromNode("Bounce2")
-ROUTE16.setFromField("translation_changed")
-ROUTE16.setToNode("transform")
-ROUTE16.setToField("set_translation")
+Script14.addField(field16)
+field17 = x3d.field()
+field17.setName("translation")
+field17.setAccessType("inputOutput")
+field17.setType("SFVec3f")
+field17.setValue("0 0 0")
 
-Scene7.addChildren(ROUTE16)
+Script14.addField(field17)
+field18 = x3d.field()
+field18.setName("velocity")
+field18.setAccessType("inputOutput")
+field18.setType("SFVec3f")
+field18.setValue("0 0 0")
+
+Script14.addField(field18)
+field19 = x3d.field()
+field19.setName("set_fraction")
+field19.setAccessType("inputOnly")
+field19.setType("SFTime")
+
+Script14.addField(field19)
+
+Script14.setSourceCode('''ecmascript:\n"+
+"			function newBubble() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"				if (Math.abs(translation.x) > 10) {\n"+
+"					newBubble();\n"+
+"				} else if (Math.abs(translation.y) > 10) {\n"+
+"					newBubble();\n"+
+"				} else if (Math.abs(translation.z) > 10) {\n"+
+"					newBubble();\n"+
+"				} else {\n"+
+"					velocity = new SFVec3f(\n"+
+"						velocity.x + Math.random() * 0.2 - 0.1,\n"+
+"						velocity.y + Math.random() * 0.2 - 0.1,\n"+
+"						velocity.z + Math.random() * 0.2 - 0.1\n"+
+"					);\n"+
+"				}\n"+
+"			}\n"+
+"\n"+
+"			function initialize() {\n"+
+"			     newBubble();\n"+
+"			}''')
+
+Scene7.addChildren(Script14)
+TimeSensor20 = x3d.TimeSensor()
+TimeSensor20.setDEF("TourTime")
+TimeSensor20.setCycleInterval(0.15)
+TimeSensor20.setLoop(True)
+
+Scene7.addChildren(TimeSensor20)
+ROUTE21 = x3d.ROUTE()
+ROUTE21.setFromNode("TourTime")
+ROUTE21.setFromField("cycleTime")
+ROUTE21.setToNode("Bounce2")
+ROUTE21.setToField("set_fraction")
+
+Scene7.addChildren(ROUTE21)
+ROUTE22 = x3d.ROUTE()
+ROUTE22.setFromNode("Bounce2")
+ROUTE22.setFromField("translation_changed")
+ROUTE22.setToNode("transform")
+ROUTE22.setToField("set_translation")
+
+Scene7.addChildren(ROUTE22)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/MyBounce_RoundTrip.x3d")

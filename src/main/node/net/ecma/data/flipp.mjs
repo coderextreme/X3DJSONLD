@@ -12,8 +12,8 @@ import { SFVec3f } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFFloat } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
+import { SFFloat } from './x3d.mjs';
 import { Fog } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
@@ -87,8 +87,7 @@ var X3D0 =  new X3D({
               groundAngle : new MFFloat([0.9,1.5,1.57]),
               groundColor : new MFColor([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95]),
               skyAngle : new MFFloat([0.9,1.5,1.57]),
-              skyColor : new MFColor([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95]),
-              transparency : new SFFloat(0)}),
+              skyColor : new MFColor([0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95])}),
 
             new NavigationInfo({
               DEF : new SFString("user01"),
@@ -99,12 +98,8 @@ var X3D0 =  new X3D({
             new Transform({
               DEF : new SFString("trans"),
               rotation : new SFRotation([1,0,0,0.78]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(

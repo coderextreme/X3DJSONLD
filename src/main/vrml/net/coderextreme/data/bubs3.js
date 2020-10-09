@@ -21,17 +21,11 @@ Background4.frontUrl = new MFString(new java.lang.String["../resources/images/FR
 Background4.leftUrl = new MFString(new java.lang.String["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]);
 Background4.rightUrl = new MFString(new java.lang.String["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]);
 Background4.topUrl = new MFString(new java.lang.String["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]);
-Background4.skyColor = new MFColor(new float[0,0,0]);
-Background4.transparency = 0;
 browser.currentScene.children[2] = Background4;
 
 let Transform5 = browser.currentScene.createNode("Transform");
 Transform5.DEF = "DECLBubble_bubbleA";
-Transform5.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape6 = browser.currentScene.createNode("Shape");
-Shape6.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere7 = browser.currentScene.createNode("Sphere");
 Sphere7.radius = 0.25;
 Shape6.geometry = Sphere7;
@@ -48,82 +42,118 @@ Transform5.children = new MFNode();
 
 Transform5.children[0] = Shape6;
 
-let TimeSensor10 = browser.currentScene.createNode("TimeSensor");
-TimeSensor10.DEF = "DECLBubble_bubbleA_bubbleClock";
-TimeSensor10.cycleInterval = 10;
-TimeSensor10.loop = True;
-Transform5.children[1] = TimeSensor10;
+let Script10 = browser.currentScene.createNode("Script");
+Script10.DEF = "DECLBubble_bubbleA_bounce";
+let field11 = browser.currentScene.createNode("field");
+field11.name = "scale";
+field11.accessType = "inputOutput";
+field11.type = "SFVec3f";
+field11.value = "1 1 1";
+Script10.field = new MFNode();
 
-let ROUTE11 = browser.currentScene.createNode("ROUTE");
-ROUTE11.fromNode = "DECLBubble_bubbleA_bounce";
-ROUTE11.fromField = "translation_changed";
-ROUTE11.toNode = "DECLBubble_transform";
-ROUTE11.toField = "set_translation";
-Transform5.children[2] = ROUTE11;
+Script10.field[0] = field11;
 
-let ROUTE12 = browser.currentScene.createNode("ROUTE");
-ROUTE12.fromNode = "DECLBubble_bubbleA_bounce";
-ROUTE12.fromField = "scale_changed";
-ROUTE12.toNode = "DECLBubble_transform";
-ROUTE12.toField = "set_scale";
-Transform5.children[3] = ROUTE12;
+let field12 = browser.currentScene.createNode("field");
+field12.name = "translation";
+field12.accessType = "inputOutput";
+field12.type = "SFVec3f";
+field12.value = "0 0 0";
+Script10.field[1] = field12;
 
-let ROUTE13 = browser.currentScene.createNode("ROUTE");
-ROUTE13.fromNode = "DECLBubble_bubbleA_bubbleClock";
-ROUTE13.fromField = "fraction_changed";
-ROUTE13.toNode = "DECLBubble_bubbleA_bounce";
-ROUTE13.toField = "set_fraction";
-Transform5.children[4] = ROUTE13;
+let field13 = browser.currentScene.createNode("field");
+field13.name = "velocity";
+field13.accessType = "inputOutput";
+field13.type = "SFVec3f";
+field13.value = "0 0 0";
+Script10.field[2] = field13;
 
-let X3DScript14 = browser.currentScene.createNode("X3DScript");
-X3DScript14.DEF = "DECLBubble_bubbleA_bounce";
+let field14 = browser.currentScene.createNode("field");
+field14.name = "scalvel";
+field14.accessType = "inputOutput";
+field14.type = "SFVec3f";
+field14.value = "0 0 0";
+Script10.field[3] = field14;
+
 let field15 = browser.currentScene.createNode("field");
-field15.name = "scale";
-field15.accessType = "inputOutput";
-field15.type = "SFVec3f";
-field15.value = "1 1 1";
-X3DScript14.field = new MFNode();
+field15.name = "set_fraction";
+field15.accessType = "inputOnly";
+field15.type = "SFFloat";
+Script10.field[4] = field15;
 
-X3DScript14.field[0] = field15;
 
-let field16 = browser.currentScene.createNode("field");
-field16.name = "translation";
-field16.accessType = "inputOutput";
-field16.type = "SFVec3f";
-field16.value = "0 0 0";
-X3DScript14.field[1] = field16;
+Script10.setSourceCode(`ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"    // if you get to far away or too big, explode\n"+
+"    if ( Math.abs(translation.x) > 256) {\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.y) > 256) {\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.z) > 256) {\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.x) > 20) {\n"+
+"	scale.x = scale.x/20;\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.y) > 20) {\n"+
+"	scale.y = scale.y/20;\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.z) > 20) {\n"+
+"	scale.z = scale.z/20;\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"}`)
+Transform5.children[1] = Script10;
 
-let field17 = browser.currentScene.createNode("field");
-field17.name = "velocity";
-field17.accessType = "inputOutput";
-field17.type = "SFVec3f";
-field17.value = "0 0 0";
-X3DScript14.field[2] = field17;
+let TimeSensor16 = browser.currentScene.createNode("TimeSensor");
+TimeSensor16.DEF = "DECLBubble_bubbleA_bubbleClock";
+TimeSensor16.cycleInterval = 10;
+TimeSensor16.loop = True;
+Transform5.children[2] = TimeSensor16;
 
-let field18 = browser.currentScene.createNode("field");
-field18.name = "scalvel";
-field18.accessType = "inputOutput";
-field18.type = "SFVec3f";
-field18.value = "0 0 0";
-X3DScript14.field[3] = field18;
+let ROUTE17 = browser.currentScene.createNode("ROUTE");
+ROUTE17.fromNode = "DECLBubble_bubbleA_bounce";
+ROUTE17.fromField = "translation_changed";
+ROUTE17.toNode = "DECLBubble_transform";
+ROUTE17.toField = "set_translation";
+Transform5.children[3] = ROUTE17;
 
-let field19 = browser.currentScene.createNode("field");
-field19.name = "set_fraction";
-field19.accessType = "inputOnly";
-field19.type = "SFFloat";
-X3DScript14.field[4] = field19;
+let ROUTE18 = browser.currentScene.createNode("ROUTE");
+ROUTE18.fromNode = "DECLBubble_bubbleA_bounce";
+ROUTE18.fromField = "scale_changed";
+ROUTE18.toNode = "DECLBubble_transform";
+ROUTE18.toField = "set_scale";
+Transform5.children[4] = ROUTE18;
 
-Transform5.x3DScript[5] = X3DScript14;
+let ROUTE19 = browser.currentScene.createNode("ROUTE");
+ROUTE19.fromNode = "DECLBubble_bubbleA_bubbleClock";
+ROUTE19.fromField = "fraction_changed";
+ROUTE19.toNode = "DECLBubble_bubbleA_bounce";
+ROUTE19.toField = "set_fraction";
+Transform5.children[5] = ROUTE19;
 
 browser.currentScene.children[3] = Transform5;
 
 let Transform20 = browser.currentScene.createNode("Transform");
 Transform20.DEF = "DECLBubble_bubbleB";
-Transform20.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform20.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape21 = browser.currentScene.createNode("Shape");
-Shape21.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape21.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere22 = browser.currentScene.createNode("Sphere");
 Sphere22.radius = 0.25;
 Shape21.geometry = Sphere22;
@@ -140,82 +170,118 @@ Transform20.children = new MFNode();
 
 Transform20.children[0] = Shape21;
 
-let TimeSensor25 = browser.currentScene.createNode("TimeSensor");
-TimeSensor25.DEF = "DECLBubble_bubbleB_bubbleClock";
-TimeSensor25.cycleInterval = 10;
-TimeSensor25.loop = True;
-Transform20.children[1] = TimeSensor25;
+let Script25 = browser.currentScene.createNode("Script");
+Script25.DEF = "DECLBubble_bubbleB_bounce";
+let field26 = browser.currentScene.createNode("field");
+field26.name = "scale";
+field26.accessType = "inputOutput";
+field26.type = "SFVec3f";
+field26.value = "1 1 1";
+Script25.field = new MFNode();
 
-let ROUTE26 = browser.currentScene.createNode("ROUTE");
-ROUTE26.fromNode = "DECLBubble_bubbleB_bounce";
-ROUTE26.fromField = "translation_changed";
-ROUTE26.toNode = "DECLBubble_transform";
-ROUTE26.toField = "set_translation";
-Transform20.children[2] = ROUTE26;
+Script25.field[0] = field26;
 
-let ROUTE27 = browser.currentScene.createNode("ROUTE");
-ROUTE27.fromNode = "DECLBubble_bubbleB_bounce";
-ROUTE27.fromField = "scale_changed";
-ROUTE27.toNode = "DECLBubble_transform";
-ROUTE27.toField = "set_scale";
-Transform20.children[3] = ROUTE27;
+let field27 = browser.currentScene.createNode("field");
+field27.name = "translation";
+field27.accessType = "inputOutput";
+field27.type = "SFVec3f";
+field27.value = "0 0 0";
+Script25.field[1] = field27;
 
-let ROUTE28 = browser.currentScene.createNode("ROUTE");
-ROUTE28.fromNode = "DECLBubble_bubbleB_bubbleClock";
-ROUTE28.fromField = "fraction_changed";
-ROUTE28.toNode = "DECLBubble_bubbleB_bounce";
-ROUTE28.toField = "set_fraction";
-Transform20.children[4] = ROUTE28;
+let field28 = browser.currentScene.createNode("field");
+field28.name = "velocity";
+field28.accessType = "inputOutput";
+field28.type = "SFVec3f";
+field28.value = "0 0 0";
+Script25.field[2] = field28;
 
-let X3DScript29 = browser.currentScene.createNode("X3DScript");
-X3DScript29.DEF = "DECLBubble_bubbleB_bounce";
+let field29 = browser.currentScene.createNode("field");
+field29.name = "scalvel";
+field29.accessType = "inputOutput";
+field29.type = "SFVec3f";
+field29.value = "0 0 0";
+Script25.field[3] = field29;
+
 let field30 = browser.currentScene.createNode("field");
-field30.name = "scale";
-field30.accessType = "inputOutput";
-field30.type = "SFVec3f";
-field30.value = "1 1 1";
-X3DScript29.field = new MFNode();
+field30.name = "set_fraction";
+field30.accessType = "inputOnly";
+field30.type = "SFFloat";
+Script25.field[4] = field30;
 
-X3DScript29.field[0] = field30;
 
-let field31 = browser.currentScene.createNode("field");
-field31.name = "translation";
-field31.accessType = "inputOutput";
-field31.type = "SFVec3f";
-field31.value = "0 0 0";
-X3DScript29.field[1] = field31;
+Script25.setSourceCode(`ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"    // if you get to far away or too big, explode\n"+
+"    if ( Math.abs(translation.x) > 256) {\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.y) > 256) {\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.z) > 256) {\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.x) > 20) {\n"+
+"	scale.x = scale.x/20;\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.y) > 20) {\n"+
+"	scale.y = scale.y/20;\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.z) > 20) {\n"+
+"	scale.z = scale.z/20;\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"}`)
+Transform20.children[1] = Script25;
 
-let field32 = browser.currentScene.createNode("field");
-field32.name = "velocity";
-field32.accessType = "inputOutput";
-field32.type = "SFVec3f";
-field32.value = "0 0 0";
-X3DScript29.field[2] = field32;
+let TimeSensor31 = browser.currentScene.createNode("TimeSensor");
+TimeSensor31.DEF = "DECLBubble_bubbleB_bubbleClock";
+TimeSensor31.cycleInterval = 10;
+TimeSensor31.loop = True;
+Transform20.children[2] = TimeSensor31;
 
-let field33 = browser.currentScene.createNode("field");
-field33.name = "scalvel";
-field33.accessType = "inputOutput";
-field33.type = "SFVec3f";
-field33.value = "0 0 0";
-X3DScript29.field[3] = field33;
+let ROUTE32 = browser.currentScene.createNode("ROUTE");
+ROUTE32.fromNode = "DECLBubble_bubbleB_bounce";
+ROUTE32.fromField = "translation_changed";
+ROUTE32.toNode = "DECLBubble_transform";
+ROUTE32.toField = "set_translation";
+Transform20.children[3] = ROUTE32;
 
-let field34 = browser.currentScene.createNode("field");
-field34.name = "set_fraction";
-field34.accessType = "inputOnly";
-field34.type = "SFFloat";
-X3DScript29.field[4] = field34;
+let ROUTE33 = browser.currentScene.createNode("ROUTE");
+ROUTE33.fromNode = "DECLBubble_bubbleB_bounce";
+ROUTE33.fromField = "scale_changed";
+ROUTE33.toNode = "DECLBubble_transform";
+ROUTE33.toField = "set_scale";
+Transform20.children[4] = ROUTE33;
 
-Transform20.x3DScript[5] = X3DScript29;
+let ROUTE34 = browser.currentScene.createNode("ROUTE");
+ROUTE34.fromNode = "DECLBubble_bubbleB_bubbleClock";
+ROUTE34.fromField = "fraction_changed";
+ROUTE34.toNode = "DECLBubble_bubbleB_bounce";
+ROUTE34.toField = "set_fraction";
+Transform20.children[5] = ROUTE34;
 
 browser.currentScene.children[4] = Transform20;
 
 let Transform35 = browser.currentScene.createNode("Transform");
 Transform35.DEF = "DECLBubble_bubbleC";
-Transform35.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform35.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape36 = browser.currentScene.createNode("Shape");
-Shape36.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape36.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere37 = browser.currentScene.createNode("Sphere");
 Sphere37.radius = 0.25;
 Shape36.geometry = Sphere37;
@@ -232,82 +298,118 @@ Transform35.children = new MFNode();
 
 Transform35.children[0] = Shape36;
 
-let TimeSensor40 = browser.currentScene.createNode("TimeSensor");
-TimeSensor40.DEF = "DECLBubble_bubbleC_bubbleClock";
-TimeSensor40.cycleInterval = 10;
-TimeSensor40.loop = True;
-Transform35.children[1] = TimeSensor40;
+let Script40 = browser.currentScene.createNode("Script");
+Script40.DEF = "DECLBubble_bubbleC_bounce";
+let field41 = browser.currentScene.createNode("field");
+field41.name = "scale";
+field41.accessType = "inputOutput";
+field41.type = "SFVec3f";
+field41.value = "1 1 1";
+Script40.field = new MFNode();
 
-let ROUTE41 = browser.currentScene.createNode("ROUTE");
-ROUTE41.fromNode = "DECLBubble_bubbleC_bounce";
-ROUTE41.fromField = "translation_changed";
-ROUTE41.toNode = "DECLBubble_transform";
-ROUTE41.toField = "set_translation";
-Transform35.children[2] = ROUTE41;
+Script40.field[0] = field41;
 
-let ROUTE42 = browser.currentScene.createNode("ROUTE");
-ROUTE42.fromNode = "DECLBubble_bubbleC_bounce";
-ROUTE42.fromField = "scale_changed";
-ROUTE42.toNode = "DECLBubble_transform";
-ROUTE42.toField = "set_scale";
-Transform35.children[3] = ROUTE42;
+let field42 = browser.currentScene.createNode("field");
+field42.name = "translation";
+field42.accessType = "inputOutput";
+field42.type = "SFVec3f";
+field42.value = "0 0 0";
+Script40.field[1] = field42;
 
-let ROUTE43 = browser.currentScene.createNode("ROUTE");
-ROUTE43.fromNode = "DECLBubble_bubbleC_bubbleClock";
-ROUTE43.fromField = "fraction_changed";
-ROUTE43.toNode = "DECLBubble_bubbleC_bounce";
-ROUTE43.toField = "set_fraction";
-Transform35.children[4] = ROUTE43;
+let field43 = browser.currentScene.createNode("field");
+field43.name = "velocity";
+field43.accessType = "inputOutput";
+field43.type = "SFVec3f";
+field43.value = "0 0 0";
+Script40.field[2] = field43;
 
-let X3DScript44 = browser.currentScene.createNode("X3DScript");
-X3DScript44.DEF = "DECLBubble_bubbleC_bounce";
+let field44 = browser.currentScene.createNode("field");
+field44.name = "scalvel";
+field44.accessType = "inputOutput";
+field44.type = "SFVec3f";
+field44.value = "0 0 0";
+Script40.field[3] = field44;
+
 let field45 = browser.currentScene.createNode("field");
-field45.name = "scale";
-field45.accessType = "inputOutput";
-field45.type = "SFVec3f";
-field45.value = "1 1 1";
-X3DScript44.field = new MFNode();
+field45.name = "set_fraction";
+field45.accessType = "inputOnly";
+field45.type = "SFFloat";
+Script40.field[4] = field45;
 
-X3DScript44.field[0] = field45;
 
-let field46 = browser.currentScene.createNode("field");
-field46.name = "translation";
-field46.accessType = "inputOutput";
-field46.type = "SFVec3f";
-field46.value = "0 0 0";
-X3DScript44.field[1] = field46;
+Script40.setSourceCode(`ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"    // if you get to far away or too big, explode\n"+
+"    if ( Math.abs(translation.x) > 256) {\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.y) > 256) {\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.z) > 256) {\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.x) > 20) {\n"+
+"	scale.x = scale.x/20;\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.y) > 20) {\n"+
+"	scale.y = scale.y/20;\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.z) > 20) {\n"+
+"	scale.z = scale.z/20;\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"}`)
+Transform35.children[1] = Script40;
 
-let field47 = browser.currentScene.createNode("field");
-field47.name = "velocity";
-field47.accessType = "inputOutput";
-field47.type = "SFVec3f";
-field47.value = "0 0 0";
-X3DScript44.field[2] = field47;
+let TimeSensor46 = browser.currentScene.createNode("TimeSensor");
+TimeSensor46.DEF = "DECLBubble_bubbleC_bubbleClock";
+TimeSensor46.cycleInterval = 10;
+TimeSensor46.loop = True;
+Transform35.children[2] = TimeSensor46;
 
-let field48 = browser.currentScene.createNode("field");
-field48.name = "scalvel";
-field48.accessType = "inputOutput";
-field48.type = "SFVec3f";
-field48.value = "0 0 0";
-X3DScript44.field[3] = field48;
+let ROUTE47 = browser.currentScene.createNode("ROUTE");
+ROUTE47.fromNode = "DECLBubble_bubbleC_bounce";
+ROUTE47.fromField = "translation_changed";
+ROUTE47.toNode = "DECLBubble_transform";
+ROUTE47.toField = "set_translation";
+Transform35.children[3] = ROUTE47;
 
-let field49 = browser.currentScene.createNode("field");
-field49.name = "set_fraction";
-field49.accessType = "inputOnly";
-field49.type = "SFFloat";
-X3DScript44.field[4] = field49;
+let ROUTE48 = browser.currentScene.createNode("ROUTE");
+ROUTE48.fromNode = "DECLBubble_bubbleC_bounce";
+ROUTE48.fromField = "scale_changed";
+ROUTE48.toNode = "DECLBubble_transform";
+ROUTE48.toField = "set_scale";
+Transform35.children[4] = ROUTE48;
 
-Transform35.x3DScript[5] = X3DScript44;
+let ROUTE49 = browser.currentScene.createNode("ROUTE");
+ROUTE49.fromNode = "DECLBubble_bubbleC_bubbleClock";
+ROUTE49.fromField = "fraction_changed";
+ROUTE49.toNode = "DECLBubble_bubbleC_bounce";
+ROUTE49.toField = "set_fraction";
+Transform35.children[5] = ROUTE49;
 
 browser.currentScene.children[5] = Transform35;
 
 let Transform50 = browser.currentScene.createNode("Transform");
 Transform50.DEF = "DECLBubble_bubbleD";
-Transform50.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform50.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape51 = browser.currentScene.createNode("Shape");
-Shape51.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape51.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere52 = browser.currentScene.createNode("Sphere");
 Sphere52.radius = 0.25;
 Shape51.geometry = Sphere52;
@@ -324,72 +426,112 @@ Transform50.children = new MFNode();
 
 Transform50.children[0] = Shape51;
 
-let TimeSensor55 = browser.currentScene.createNode("TimeSensor");
-TimeSensor55.DEF = "DECLBubble_bubbleD_bubbleClock";
-TimeSensor55.cycleInterval = 10;
-TimeSensor55.loop = True;
-Transform50.children[1] = TimeSensor55;
+let Script55 = browser.currentScene.createNode("Script");
+Script55.DEF = "DECLBubble_bubbleD_bounce";
+let field56 = browser.currentScene.createNode("field");
+field56.name = "scale";
+field56.accessType = "inputOutput";
+field56.type = "SFVec3f";
+field56.value = "1 1 1";
+Script55.field = new MFNode();
 
-let ROUTE56 = browser.currentScene.createNode("ROUTE");
-ROUTE56.fromNode = "DECLBubble_bubbleD_bounce";
-ROUTE56.fromField = "translation_changed";
-ROUTE56.toNode = "DECLBubble_transform";
-ROUTE56.toField = "set_translation";
-Transform50.children[2] = ROUTE56;
+Script55.field[0] = field56;
 
-let ROUTE57 = browser.currentScene.createNode("ROUTE");
-ROUTE57.fromNode = "DECLBubble_bubbleD_bounce";
-ROUTE57.fromField = "scale_changed";
-ROUTE57.toNode = "DECLBubble_transform";
-ROUTE57.toField = "set_scale";
-Transform50.children[3] = ROUTE57;
+let field57 = browser.currentScene.createNode("field");
+field57.name = "translation";
+field57.accessType = "inputOutput";
+field57.type = "SFVec3f";
+field57.value = "0 0 0";
+Script55.field[1] = field57;
 
-let ROUTE58 = browser.currentScene.createNode("ROUTE");
-ROUTE58.fromNode = "DECLBubble_bubbleD_bubbleClock";
-ROUTE58.fromField = "fraction_changed";
-ROUTE58.toNode = "DECLBubble_bubbleD_bounce";
-ROUTE58.toField = "set_fraction";
-Transform50.children[4] = ROUTE58;
+let field58 = browser.currentScene.createNode("field");
+field58.name = "velocity";
+field58.accessType = "inputOutput";
+field58.type = "SFVec3f";
+field58.value = "0 0 0";
+Script55.field[2] = field58;
 
-let X3DScript59 = browser.currentScene.createNode("X3DScript");
-X3DScript59.DEF = "DECLBubble_bubbleD_bounce";
+let field59 = browser.currentScene.createNode("field");
+field59.name = "scalvel";
+field59.accessType = "inputOutput";
+field59.type = "SFVec3f";
+field59.value = "0 0 0";
+Script55.field[3] = field59;
+
 let field60 = browser.currentScene.createNode("field");
-field60.name = "scale";
-field60.accessType = "inputOutput";
-field60.type = "SFVec3f";
-field60.value = "1 1 1";
-X3DScript59.field = new MFNode();
+field60.name = "set_fraction";
+field60.accessType = "inputOnly";
+field60.type = "SFFloat";
+Script55.field[4] = field60;
 
-X3DScript59.field[0] = field60;
 
-let field61 = browser.currentScene.createNode("field");
-field61.name = "translation";
-field61.accessType = "inputOutput";
-field61.type = "SFVec3f";
-field61.value = "0 0 0";
-X3DScript59.field[1] = field61;
+Script55.setSourceCode(`ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"    // if you get to far away or too big, explode\n"+
+"    if ( Math.abs(translation.x) > 256) {\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.y) > 256) {\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.z) > 256) {\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.x) > 20) {\n"+
+"	scale.x = scale.x/20;\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.y) > 20) {\n"+
+"	scale.y = scale.y/20;\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.z) > 20) {\n"+
+"	scale.z = scale.z/20;\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"}`)
+Transform50.children[1] = Script55;
 
-let field62 = browser.currentScene.createNode("field");
-field62.name = "velocity";
-field62.accessType = "inputOutput";
-field62.type = "SFVec3f";
-field62.value = "0 0 0";
-X3DScript59.field[2] = field62;
+let TimeSensor61 = browser.currentScene.createNode("TimeSensor");
+TimeSensor61.DEF = "DECLBubble_bubbleD_bubbleClock";
+TimeSensor61.cycleInterval = 10;
+TimeSensor61.loop = True;
+Transform50.children[2] = TimeSensor61;
 
-let field63 = browser.currentScene.createNode("field");
-field63.name = "scalvel";
-field63.accessType = "inputOutput";
-field63.type = "SFVec3f";
-field63.value = "0 0 0";
-X3DScript59.field[3] = field63;
+let ROUTE62 = browser.currentScene.createNode("ROUTE");
+ROUTE62.fromNode = "DECLBubble_bubbleD_bounce";
+ROUTE62.fromField = "translation_changed";
+ROUTE62.toNode = "DECLBubble_transform";
+ROUTE62.toField = "set_translation";
+Transform50.children[3] = ROUTE62;
 
-let field64 = browser.currentScene.createNode("field");
-field64.name = "set_fraction";
-field64.accessType = "inputOnly";
-field64.type = "SFFloat";
-X3DScript59.field[4] = field64;
+let ROUTE63 = browser.currentScene.createNode("ROUTE");
+ROUTE63.fromNode = "DECLBubble_bubbleD_bounce";
+ROUTE63.fromField = "scale_changed";
+ROUTE63.toNode = "DECLBubble_transform";
+ROUTE63.toField = "set_scale";
+Transform50.children[4] = ROUTE63;
 
-Transform50.x3DScript[5] = X3DScript59;
+let ROUTE64 = browser.currentScene.createNode("ROUTE");
+ROUTE64.fromNode = "DECLBubble_bubbleD_bubbleClock";
+ROUTE64.fromField = "fraction_changed";
+ROUTE64.toNode = "DECLBubble_bubbleD_bounce";
+ROUTE64.toField = "set_fraction";
+Transform50.children[5] = ROUTE64;
 
 browser.currentScene.children[6] = Transform50;
 

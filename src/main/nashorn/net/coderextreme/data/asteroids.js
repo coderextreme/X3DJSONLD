@@ -16,10 +16,10 @@ var ProtoInstance0 = null;
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_MFNODE).setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+              .addChild(new Shape()
                 .setGeometry(new Sphere()))))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")))      ;

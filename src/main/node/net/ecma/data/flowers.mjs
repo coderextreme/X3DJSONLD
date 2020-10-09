@@ -13,12 +13,9 @@ import { NavigationInfo } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
@@ -29,7 +26,7 @@ import { ComposedShader } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ShaderPart } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
@@ -101,9 +98,7 @@ var X3D0 =  new X3D({
               frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]),
               leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]),
               rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]),
-              skyColor : new MFColor([0,0,0]),
-              transparency : new SFFloat(0)}),
+              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}),
 
             new ProtoDeclare({
               name : new SFString("flower"),
@@ -112,12 +107,8 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("animate_transform"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -306,8 +297,8 @@ var X3D0 =  new X3D({
                                       url : new MFString(["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"])}))])}))})),
                           geometry : new SFNode(
                             new Sphere({}))})])}),
-                  X3DScript : new SFNode(
-                    new X3DScript({
+
+                    new Script({
                       DEF : new SFString("Animate"),
                       field : new MFNode([
                         new field({
@@ -361,7 +352,74 @@ var X3D0 =  new X3D({
                           type : field.TYPE_SFFLOAT,
                           name : new SFString("pdelta"),
                           accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                          value : new SFString("0.5")})])})),
+                          value : new SFString("0.5")}),
+                      .setSourceCode("ecmascript:\n"+
+"\n"+
+"			function initialize() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"			    for (var j = 0; j <= 2; j++) {\n"+
+"				    if (Math.abs(translation.x) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.y) > 10) {\n"+
+"					initialize();\n"+
+"				    } else if (Math.abs(translation.z) > 10) {\n"+
+"					initialize();\n"+
+"				    } else {\n"+
+"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
+"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
+"				    }\n"+
+"			    }\n"+
+"			    animate_flowers();\n"+
+"			}\n"+
+"\n"+
+"			function animate_flowers(fraction, eventTime) {\n"+
+"				var choice = Math.floor(Math.random() * 4);\n"+
+"				switch (choice) {\n"+
+"				case 0:\n"+
+"					a += Math.random() * 0.2 - 0.1;\n"+
+"					break;\n"+
+"				case 1:\n"+
+"					b += Math.random() * 0.2 - 0.1;\n"+
+"					break;\n"+
+"				case 2:\n"+
+"					c += Math.random() * 2 - 1;\n"+
+"					break;\n"+
+"				case 3:\n"+
+"					d += Math.random() * 2 - 1;\n"+
+"					break;\n"+
+"				}\n"+
+"				tdelta += 0.5;\n"+
+"				pdelta += 0.5;\n"+
+"				if (a > 1) {\n"+
+"					a =  0.5;\n"+
+"				}\n"+
+"				if (b > 1) {\n"+
+"					b =  0.5;\n"+
+"				}\n"+
+"				if (c < 1) {\n"+
+"					c =  4;\n"+
+"				}\n"+
+"				if (d < 1) {\n"+
+"					d =  4;\n"+
+"				}\n"+
+"				if (c > 10) {\n"+
+"					c = 4;\n"+
+"				}\n"+
+"				if (d > 10) {\n"+
+"					d = 4;\n"+
+"				}\n"+
+"			}")])}),
 
                     new TimeSensor({
                       DEF : new SFString("TourTime"),

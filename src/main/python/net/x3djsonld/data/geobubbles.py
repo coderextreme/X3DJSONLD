@@ -45,7 +45,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           material=Material(diffuseColor=(0.7,0.7,0.7),specularColor=(0.5,0.5,0.5))))]),
     TimeSensor(DEF='TourTime',cycleInterval=5,loop=True),
     GeoPositionInterpolator(DEF='TourPosition',key=[0,1],keyValue=[(0.0015708,0,4),(0,0.0015708,4)]),
-    X3DScript(DEF='RandomTourTime',
+    Script(DEF='RandomTourTime',
       field=[
       field(name='set_cycle',accessType='inputOnly',type='SFTime'),
       field(name='val',accessType='inputOutput',type='SFFloat',value=0),

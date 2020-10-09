@@ -55,10 +55,10 @@ ProtoInstance ProtoInstance0 = null;
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("MFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+              .addChild(new Shape()
                 .setGeometry(new Sphere()))))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")))      ;

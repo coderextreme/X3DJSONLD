@@ -10,9 +10,9 @@ import { Scene } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
@@ -27,7 +27,7 @@ import { StringSensor } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
 import { TouchSensor } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
@@ -81,18 +81,12 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Group({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       { "#comment" : new CommentsBlock("left") },
                       children : new MFNode([
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -109,12 +103,8 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -129,12 +119,8 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               translation : new SFVec3f([2,0,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
@@ -157,12 +143,8 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -177,12 +159,8 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               translation : new SFVec3f([-0.5,2,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
@@ -204,12 +182,8 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -225,12 +199,8 @@ var X3D0 =  new X3D({
                       { "#comment" : new CommentsBlock("center") },
 
                         new Transform({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -242,12 +212,8 @@ var X3D0 =  new X3D({
                             new Transform({
                               scale : new SFVec3f([0.5,0.5,0.5]),
                               translation : new SFVec3f([-0.5,0,1]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   appearance : new SFNode(
                                     new Appearance({
                                       material : new SFNode(
@@ -264,8 +230,8 @@ var X3D0 =  new X3D({
                             new TouchSensor({
                               description : new SFString("touch to activate"),
                               DEF : new SFString("CenterTouch")})])})])}),
-                  X3DScript : new SFNode(
-                    new X3DScript({
+
+                    new Script({
                       DEF : new SFString("RightSingleToMultiString"),
                       field : new MFNode([
                         new field({
@@ -276,9 +242,18 @@ var X3D0 =  new X3D({
                         new field({
                           type : field.TYPE_MFSTRING,
                           name : new SFString("rightlines"),
-                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)})])})),
-                  X3DScript : new SFNode(
-                    new X3DScript({
+                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+                      .setSourceCode("ecmascript:\n"+
+"\n"+
+"function initialize() {\n"+
+"	rightlines = new MFString(\"\");\n"+
+"}\n"+
+"\n"+
+"function set_rightstring(rightstr) {\n"+
+"	rightlines = new MFString(rightstr);\n"+
+"}")])}),
+
+                    new Script({
                       DEF : new SFString("UpSingleToMultiString"),
                       field : new MFNode([
                         new field({
@@ -289,9 +264,18 @@ var X3D0 =  new X3D({
                         new field({
                           type : field.TYPE_MFSTRING,
                           name : new SFString("uplines"),
-                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)})])})),
-                  X3DScript : new SFNode(
-                    new X3DScript({
+                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+                      .setSourceCode("ecmascript:\n"+
+"\n"+
+"function initialize() {\n"+
+"	uplines = new MFString(\"\");\n"+
+"}\n"+
+"\n"+
+"function set_upstring(upstr) {\n"+
+"	uplines = new MFString(upstr);\n"+
+"}")])}),
+
+                    new Script({
                       DEF : new SFString("CenterSingleToMultiString"),
                       field : new MFNode([
                         new field({
@@ -302,7 +286,16 @@ var X3D0 =  new X3D({
                         new field({
                           type : field.TYPE_MFSTRING,
                           name : new SFString("centerlines"),
-                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)})])})),
+                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+                      .setSourceCode("ecmascript:\n"+
+"\n"+
+"function initialize() {\n"+
+"	centerlines = new MFString(\"\");\n"+
+"}\n"+
+"\n"+
+"function set_centerstring(centerstr) {\n"+
+"	centerlines = new MFString(centerstr);\n"+
+"}")])}),
 
                     new ROUTE({
                       fromField : new SFString("enteredText"),
@@ -367,23 +360,17 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([0,-2.5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new ProtoInstance({
                   name : new SFString("Process")})])}),
 
             new Transform({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new ProtoInstance({
                   name : new SFString("Process")})])}),
 
             new Transform({
               translation : new SFVec3f([0,2.5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new ProtoInstance({
                   name : new SFString("Process")})])})])}))});

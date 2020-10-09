@@ -97,7 +97,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       ROUTE(fromField='touchTime',fromNode='TextTouchSensor',toField='set_startTime',toNode='Clock'),
       IntegerSequencer(DEF='TimingSequencer',key=[0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1.0],keyValue=[0,1,2,3,4,5,6,7,8,10]),
       ROUTE(fromField='fraction_changed',fromNode='Clock',toField='set_fraction',toNode='TimingSequencer'),
-      X3DScript(DEF='BindingSequencerEngine',
+      Script(DEF='BindingSequencerEngine',
         field=[
         field(accessType='inputOnly',name='set_timeEvent',type='SFInt32'),
         field(accessType='outputOnly',name='bindView1',type='SFBool'),

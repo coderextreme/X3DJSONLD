@@ -12,8 +12,6 @@ import { Scene } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
@@ -30,7 +28,7 @@ import { ComposedShader } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ShaderPart } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
@@ -97,9 +95,7 @@ var X3D0 =  new X3D({
               frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]),
               leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]),
               rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]),
-              skyColor : new MFColor([0,0,0]),
-              transparency : new SFFloat(0)}),
+              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}),
 
             new Viewpoint({
               position : new SFVec3f([0,0,20]),
@@ -112,13 +108,9 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("transform"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
                           DEF : new SFString("myShape"),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           appearance : new SFNode(
                             new Appearance({
                               material : new SFNode(
@@ -236,8 +228,8 @@ var X3D0 =  new X3D({
                                       url : new MFString(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])}))])}))})),
                           geometry : new SFNode(
                             new Sphere({}))})])}),
-                  X3DScript : new SFNode(
-                    new X3DScript({
+
+                    new Script({
                       DEF : new SFString("Bounce"),
                       field : new MFNode([
                         new field({
@@ -255,7 +247,32 @@ var X3D0 =  new X3D({
                         new field({
                           type : field.TYPE_SFTIME,
                           name : new SFString("set_fraction"),
-                          accessType : new SFString(field.ACCESSTYPE_INPUTONLY)})])})),
+                          accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                      .setSourceCode("ecmascript:\n"+
+"			function initialize() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"			    if (Math.abs(translation.x) > 10) {\n"+
+"				initialize();\n"+
+"			    } else if (Math.abs(translation.y) > 10) {\n"+
+"				initialize();\n"+
+"			    } else if (Math.abs(translation.z) > 10) {\n"+
+"				initialize();\n"+
+"			    } else {\n"+
+"				velocity.x += Math.random() * 0.2 - 0.1;\n"+
+"				velocity.y += Math.random() * 0.2 - 0.1;\n"+
+"				velocity.z += Math.random() * 0.2 - 0.1;\n"+
+"			    }\n"+
+"			}")])}),
 
                     new TimeSensor({
                       DEF : new SFString("TourTime"),

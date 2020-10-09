@@ -6,7 +6,7 @@ let ProtoDeclare2 = browser.createX3DFromString(`<?xml version="1.0" encoding="u
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="myPrototype" ><ProtoInterface><field name="myInputRange" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="TR" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.5 0.5 0.9"></Material>
+<ProtoBody><Transform DEF="TR"><Shape><Appearance><Material diffuseColor="0.5 0.5 0.9"></Material>
 <ComposedShader language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f"></field>
 <IS><connect nodeField="decis" protoField="myInputRange"></connect>
 </IS>
@@ -39,11 +39,7 @@ ProtoDeclare2.protoInterface = ProtoInterface3;
 let ProtoBody5 = browser.currentScene.createNode("ProtoBody");
 let Transform6 = browser.currentScene.createNode("Transform");
 Transform6.DEF = "TR";
-Transform6.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape7 = browser.currentScene.createNode("Shape");
-Shape7.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape7.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance8 = browser.currentScene.createNode("Appearance");
 let Material9 = browser.currentScene.createNode("Material");
 Material9.diffuseColor = new SFColor(new float[0.5,0.5,0.9]);

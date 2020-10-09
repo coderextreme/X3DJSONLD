@@ -6,6 +6,7 @@ import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Networking.*;
 import org.web3d.x3d.jsail.Rendering.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Text.*;
 
@@ -149,9 +150,7 @@ public class ViewFrustumPrototype
               .addChild(new Shape()
                 .setGeometry(new Sphere().setRadius(0.08))
                 .setAppearance(new Appearance().setUSE("FrustumAppearance"))))))
-        .addChild(new X3DScript("GeometryComputationScript").setDirectOutput("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, X3DScript directOutput: $isNumeric=false, $attributeType=, value='true']
-).setUrl(new String[] {"ViewFrustumPrototypeScript.js"})
+        .addChild(new Script("GeometryComputationScript").setDirectOutput(true).setUrl(new String[] {"ViewFrustumPrototypeScript.js"})
           .addField(new field().setName("visible").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether or not frustum geometry is rendered"))
           .addField(new field().setName("visibilitySwitchSelection").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("Adjust Switch selection to make geometry visible or not"))
           .addField(new field().setName("ViewpointNode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)

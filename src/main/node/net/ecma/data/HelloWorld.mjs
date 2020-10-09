@@ -10,8 +10,8 @@ import { CommentsBlock } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { WorldInfo } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
@@ -130,8 +130,6 @@ var X3D0 =  new X3D({
               title : new SFString("Hello world!")}),
 
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Viewpoint({
                   DEF : new SFString("ViewUpClose"),
@@ -141,12 +139,8 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   rotation : new SFRotation([0,1,0,3]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Sphere({})),
                       appearance : new SFNode(
@@ -162,12 +156,8 @@ var X3D0 =  new X3D({
 
                 new Transform({
                   translation : new SFVec3f([0,-2,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Text({
                           DEF : new SFString("TextMessage"),

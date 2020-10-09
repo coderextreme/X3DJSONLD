@@ -50,7 +50,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             appearance=Appearance(
               material=Material(diffuseColor=(1,0,0)))),
           PositionInterpolator(DEF='PI1',key=[0,1],keyValue=[(0,0,0),(0,5,0)]),
-          X3DScript(DEF='MB1',
+          Script(DEF='MB1',
             field=[
             field(name='translation',accessType='inputOutput',type='SFVec3f',value=(50,50,0)),
             field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
@@ -87,7 +87,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(accessType='inputOnly',name='set_endpoint',type='SFVec3f')]),
       ProtoBody=ProtoBody(
         children=[
-        X3DScript(DEF='S1',
+        Script(DEF='S1',
           field=[
           field(accessType='initializeOnly',name='startnode',type='SFNode'),
           field(accessType='initializeOnly',name='endnode',type='SFNode'),

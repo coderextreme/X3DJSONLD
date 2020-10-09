@@ -21,16 +21,10 @@ Background4.frontUrl = new MFString(new java.lang.String["resources/images/bFR.p
 Background4.leftUrl = new MFString(new java.lang.String["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]);
 Background4.rightUrl = new MFString(new java.lang.String["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]);
 Background4.topUrl = new MFString(new java.lang.String["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]);
-Background4.skyColor = new MFColor(new float[0,0,0]);
-Background4.transparency = 0;
 browser.currentScene.children[2] = Background4;
 
 let Transform5 = browser.currentScene.createNode("Transform");
-Transform5.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape6 = browser.currentScene.createNode("Shape");
-Shape6.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere7 = browser.currentScene.createNode("Sphere");
 Shape6.geometry = Sphere7;
 

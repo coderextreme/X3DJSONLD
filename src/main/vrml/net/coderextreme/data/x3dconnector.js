@@ -11,16 +11,11 @@ browser.currentScene.children[0] = Viewpoint2;
 
 let Background3 = browser.currentScene.createNode("Background");
 Background3.skyColor = new MFColor(new float[0.4,0.4,0.4]);
-Background3.transparency = 0;
 browser.currentScene.children[1] = Background3;
 
 let Transform4 = browser.currentScene.createNode("Transform");
 Transform4.DEF = "G1";
-Transform4.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape5 = browser.currentScene.createNode("Shape");
-Shape5.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance6 = browser.currentScene.createNode("Appearance");
 let Material7 = browser.currentScene.createNode("Material");
 Material7.diffuseColor = new SFColor(new float[0.7,0.2,0.2]);
@@ -53,11 +48,7 @@ browser.currentScene.children[2] = Transform4;
 let Transform11 = browser.currentScene.createNode("Transform");
 Transform11.DEF = "G2";
 Transform11.translation = new SFVec3f(new float[1,-1,0.01]);
-Transform11.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform11.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape12 = browser.currentScene.createNode("Shape");
-Shape12.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape12.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance13 = browser.currentScene.createNode("Appearance");
 let Material14 = browser.currentScene.createNode("Material");
 Material14.diffuseColor = new SFColor(new float[0.2,0.7,0.2]);
@@ -90,15 +81,9 @@ browser.currentScene.children[3] = Transform11;
 
 let Transform18 = browser.currentScene.createNode("Transform");
 Transform18.DEF = "transC1";
-Transform18.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform18.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform19 = browser.currentScene.createNode("Transform");
 Transform19.DEF = "rotscaleC1";
-Transform19.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform19.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape20 = browser.currentScene.createNode("Shape");
-Shape20.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape20.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance21 = browser.currentScene.createNode("Appearance");
 let Material22 = browser.currentScene.createNode("Material");
 Material22.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);
@@ -130,7 +115,7 @@ let ProtoDeclare24 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><X3DScript DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
+<ProtoBody><Script DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="endnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="transnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
@@ -143,7 +128,47 @@ let ProtoDeclare24 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
 <connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
 </IS>
-</X3DScript>
+<![CDATA[ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      if (trafo) {
+		      transnode.translation = trafo.translation;
+		      rotscalenode.rotation = trafo.rotation;
+		      rotscalenode.scale = trafo.scale;
+	      }
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }]]></Script>
 </ProtoBody>
 </ProtoDeclare>`);
 ProtoDeclare24.name = "x3dconnector";
@@ -189,45 +214,45 @@ ProtoInterface25.field[5] = field31;
 ProtoDeclare24.protoInterface = ProtoInterface25;
 
 let ProtoBody32 = browser.currentScene.createNode("ProtoBody");
-let X3DScript33 = browser.currentScene.createNode("X3DScript");
-X3DScript33.DEF = "S1";
+let Script33 = browser.currentScene.createNode("Script");
+Script33.DEF = "S1";
 let field34 = browser.currentScene.createNode("field");
 field34.name = "startnode";
 field34.accessType = "initializeOnly";
 field34.type = "SFNode";
-X3DScript33.field = new MFNode();
+Script33.field = new MFNode();
 
-X3DScript33.field[0] = field34;
+Script33.field[0] = field34;
 
 let field35 = browser.currentScene.createNode("field");
 field35.name = "endnode";
 field35.accessType = "initializeOnly";
 field35.type = "SFNode";
-X3DScript33.field[1] = field35;
+Script33.field[1] = field35;
 
 let field36 = browser.currentScene.createNode("field");
 field36.name = "transnode";
 field36.accessType = "initializeOnly";
 field36.type = "SFNode";
-X3DScript33.field[2] = field36;
+Script33.field[2] = field36;
 
 let field37 = browser.currentScene.createNode("field");
 field37.name = "rotscalenode";
 field37.accessType = "initializeOnly";
 field37.type = "SFNode";
-X3DScript33.field[3] = field37;
+Script33.field[3] = field37;
 
 let field38 = browser.currentScene.createNode("field");
 field38.name = "set_startpoint";
 field38.accessType = "inputOnly";
 field38.type = "SFVec3f";
-X3DScript33.field[4] = field38;
+Script33.field[4] = field38;
 
 let field39 = browser.currentScene.createNode("field");
 field39.name = "set_endpoint";
 field39.accessType = "inputOnly";
 field39.type = "SFVec3f";
-X3DScript33.field[5] = field39;
+Script33.field[5] = field39;
 
 let IS40 = browser.currentScene.createNode("IS");
 let connect41 = browser.currentScene.createNode("connect");
@@ -262,9 +287,53 @@ connect46.nodeField = "set_endpoint";
 connect46.protoField = "set_endpoint";
 IS40.connect[5] = connect46;
 
-X3DScript33.iS = IS40;
+Script33.iS = IS40;
 
-ProtoBody32.x3DScript = X3DScript33;
+
+Script33.setSourceCode(`ecmascript:\n"+
+"        function recompute(startpoint,endpoint){\n"+
+"	    if (typeof endpoint === 'undefined') {\n"+
+"		return;\n"+
+"	    }\n"+
+"            var dif = endpoint.subtract(startpoint);\n"+
+"            var dist = dif.length()*0.5;\n"+
+"            var dif2 = dif.multiply(0.5);\n"+
+"            var norm = dif.normalize();\n"+
+"            var transl = startpoint.add(dif2);\n"+
+"	    if (typeof Quaternion !== 'undefined') {\n"+
+"		    return {\n"+
+"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
+"			    translation : transl,\n"+
+"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
+"		    };\n"+
+"	    } else {\n"+
+"		    return {\n"+
+"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
+"			    translation : transl,\n"+
+"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
+"		    };\n"+
+"	    }\n"+
+"	}\n"+
+"	function recompute_and_route(startpoint, endpoint) {\n"+
+"	      var trafo = recompute(startpoint, endpoint);\n"+
+"	      if (trafo) {\n"+
+"		      transnode.translation = trafo.translation;\n"+
+"		      rotscalenode.rotation = trafo.rotation;\n"+
+"		      rotscalenode.scale = trafo.scale;\n"+
+"	      }\n"+
+"	}\n"+
+"        function initialize(){\n"+
+"            recompute_and_route(startnode.translation,endnode.translation);\n"+
+"        }\n"+
+"        function set_startpoint(val,t){\n"+
+"            recompute_and_route(val,endnode.translation);\n"+
+"        }\n"+
+"        function set_endpoint(val,t){\n"+
+"            recompute_and_route(startnode.translation,val);\n"+
+"        }`)
+ProtoBody32.children = new MFNode();
+
+ProtoBody32.children[0] = Script33;
 
 ProtoDeclare24.protoBody = ProtoBody32;
 

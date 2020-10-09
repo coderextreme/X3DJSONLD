@@ -9,7 +9,6 @@ import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
@@ -74,16 +73,13 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Background({
-              skyColor : new MFColor([1,1,1]),
-              transparency : new SFFloat(0)}),
+              skyColor : new MFColor([1,1,1])}),
 
             new Viewpoint({
               description : new SFString("Default View"),
               position : new SFVec3f([0,0,15])}),
 
             new Shape({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               { "#comment" : new CommentsBlock("Empty string \"\" means to skip a line") },
               { "#comment" : new CommentsBlock("The ampersand escape characters are based on XML rules") },
               { "#comment" : new CommentsBlock("apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute") },

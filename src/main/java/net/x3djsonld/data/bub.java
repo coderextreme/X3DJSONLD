@@ -7,6 +7,7 @@ import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shaders.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Texturing.*;
@@ -150,7 +151,32 @@ public class bub
                 .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"}))
                 .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"}))))
             .setGeometry(new Sphere())))
-        .addChild(new X3DScript("Bounce")
+        .addChild(new Script("Bounce").setSourceCode("\n" + 
+"ecmascript:" + "\n" + 
+"			function initialize() {" + "\n" + 
+"			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
+"			    velocity = new SFVec3f(" + "\n" + 
+"			    	Math.random() - 0.5," + "\n" + 
+"				Math.random() - 0.5," + "\n" + 
+"				Math.random() - 0.5);" + "\n" + 
+"			}" + "\n" + 
+"			function set_fraction() {" + "\n" + 
+"			    translation = new SFVec3f(" + "\n" + 
+"			    	translation.x + velocity.x," + "\n" + 
+"				translation.y + velocity.y," + "\n" + 
+"				translation.z + velocity.z);" + "\n" + 
+"			    if (Math.abs(translation.x) > 10) {" + "\n" + 
+"				initialize();" + "\n" + 
+"			    } else if (Math.abs(translation.y) > 10) {" + "\n" + 
+"				initialize();" + "\n" + 
+"			    } else if (Math.abs(translation.z) > 10) {" + "\n" + 
+"				initialize();" + "\n" + 
+"			    } else {" + "\n" + 
+"				velocity.x += Math.random() * 0.2 - 0.1;" + "\n" + 
+"				velocity.y += Math.random() * 0.2 - 0.1;" + "\n" + 
+"				velocity.z += Math.random() * 0.2 - 0.1;" + "\n" + 
+"			    }" + "\n" + 
+"			}" + "\n")
           .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("set_fraction").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY)))

@@ -7,7 +7,7 @@ import { head } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -36,7 +36,24 @@ var X3D0 =  new X3D({
               content : new SFString("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")})])})),
       Scene : new SFNode(
         new Scene({
-          X3DScript : new SFNode(
-            new X3DScript({
-              DEF : new SFString("Clouds")}))}))});
+          children : new MFNode([
+            new Script({
+              DEF : new SFString("Browser"),
+              .setSourceCode("ecmascript:\n"+
+"                function initialize() {\n"+
+"		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
+"                }")}),
+
+            new Script({
+              DEF : new SFString("Clouds"),
+              .setSourceCode("ecmascript:\n"+
+"\n"+
+"\n"+
+"function cumulustranslation() // These values designate the boundary location of the cloud\n"+
+"{\n"+
+"var xxx = ' '+' '+\n"+
+"'	Transform		\\n'+\n"+
+"'    ' + '               	\\n';\n"+
+"\n"+
+"}")})])}))});
 console.log(X3D0.toXMLNode());

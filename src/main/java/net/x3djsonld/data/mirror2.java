@@ -7,6 +7,7 @@ import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shaders.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Texturing.*;
@@ -116,9 +117,25 @@ public class mirror2
             .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}))
             .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"}))))
         .setGeometry(new Sphere().setRadius(30)))
-      .setX3DScript(new X3DScript("UrlSelector").setDirectOutput("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, X3DScript directOutput: $isNumeric=false, $attributeType=, value='true']
-)
+      .addChild(new Script("UrlSelector").setDirectOutput(true).setSourceCode(" " + "\n" + 
+"\n" + 
+"ecmascript:" + "\n" + 
+"        function set_fraction( f, tm ) {" + "\n" + 
+"	    var side = Math.floor(f*frontUrls.length);" + "\n" + 
+"	    if (side > frontUrls.length-1) {" + "\n" + 
+"	    	side = 0;" + "\n" + 
+"	    }" + "\n" + 
+"	    if (side != old) {" + "\n" + 
+"	    	    // Browser.print(f+\" \"+side);" + "\n" + 
+"	    	    old = side;" + "\n" + 
+"		    front_changed[0] = frontUrls[side];" + "\n" + 
+"		    back_changed[0] = backUrls[side];" + "\n" + 
+"		    left_changed[0] = leftUrls[side];" + "\n" + 
+"		    right_changed[0] = rightUrls[side];" + "\n" + 
+"		    top_changed[0] = topUrls[side];" + "\n" + 
+"		    bottom_changed[0] = bottomUrls[side];" + "\n" + 
+"            }" + "\n" + 
+"        }" + "\n")
         .addField(new field().setName("frontUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png"}))
         .addField(new field().setName("backUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","../resources/images/all_probes/building_cross/building_back.png","../resources/images/all_probes/campus_cross/campus_back.png","../resources/images/all_probes/galileo_cross/galileo_back.png","../resources/images/all_probes/grace_cross/grace_back.png","../resources/images/all_probes/kitchen_cross/kitchen_back.png","../resources/images/all_probes/rnl_cross/rnl_back.png","../resources/images/all_probes/stpeters_cross/stpeters_back.png","../resources/images/all_probes/uffizi_cross/uffizi_back.png"}))
         .addField(new field().setName("leftUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","../resources/images/all_probes/building_cross/building_left.png","../resources/images/all_probes/campus_cross/campus_left.png","../resources/images/all_probes/galileo_cross/galileo_left.png","../resources/images/all_probes/grace_cross/grace_left.png","../resources/images/all_probes/kitchen_cross/kitchen_left.png","../resources/images/all_probes/rnl_cross/rnl_left.png","../resources/images/all_probes/stpeters_cross/stpeters_left.png","../resources/images/all_probes/uffizi_cross/uffizi_left.png"}))

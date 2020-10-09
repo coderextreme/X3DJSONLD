@@ -17,8 +17,6 @@ browser.currentScene.children[1] = NavigationInfo3;
 
 let Background4 = browser.currentScene.createNode("Background");
 Background4.DEF = "blue_Background";
-Background4.skyColor = new MFColor(new float[0,0,0]);
-Background4.transparency = 0;
 browser.currentScene.children[2] = Background4;
 
 let SpotLight5 = browser.currentScene.createNode("SpotLight");
@@ -81,17 +79,11 @@ browser.currentScene.children[9] = Viewpoint11;
 
 let Group12 = browser.currentScene.createNode("Group");
 Group12.DEF = "Joe_Humanoid";
-Group12.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group12.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Group12.bboxDisplay = False;
-Group12.visible = True;
 let HAnimHumanoid13 = browser.currentScene.createNode("HAnimHumanoid");
 HAnimHumanoid13.name = "Human";
 HAnimHumanoid13.DEF = "Joe_Human";
 HAnimHumanoid13.loa = 3;
 HAnimHumanoid13.version = "2.0";
-HAnimHumanoid13.bboxDisplay = False;
-HAnimHumanoid13.visible = True;
 let MetadataSet14 = browser.currentScene.createNode("MetadataSet");
 MetadataSet14.name = "warnings";
 MetadataSet14.reference = "HAnim";
@@ -109,29 +101,15 @@ let HAnimJoint16 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint16.name = "humanoid_root";
 HAnimJoint16.DEF = "Joe_humanoid_root";
 HAnimJoint16.center = new SFVec3f(new float[0,0.875,0]);
-HAnimJoint16.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint16.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint16.bboxDisplay = False;
-HAnimJoint16.visible = True;
 let HAnimSegment17 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment17.name = "sacrum";
 HAnimSegment17.DEF = "Joe_sacrum";
-HAnimSegment17.bboxDisplay = False;
-HAnimSegment17.visible = True;
 let HAnimSite18 = browser.currentScene.createNode("HAnimSite");
 HAnimSite18.name = "RootFront_view";
 HAnimSite18.DEF = "Joe_RootFront_view";
-HAnimSite18.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimSite18.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimSite18.bboxDisplay = False;
-HAnimSite18.visible = True;
 let Transform19 = browser.currentScene.createNode("Transform");
 Transform19.DEF = "hanimcordsys";
 Transform19.scale = new SFVec3f(new float[0.175,0.175,0.175]);
-Transform19.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform19.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Transform19.bboxDisplay = False;
-Transform19.visible = True;
 let Viewpoint20 = browser.currentScene.createNode("Viewpoint");
 Viewpoint20.DEF = "ViewBodyRootAxes";
 Viewpoint20.description = "Joe_HAnim Root HAnimSite Coordinate Axes View";
@@ -141,10 +119,6 @@ Transform19.children[0] = Viewpoint20;
 
 let Shape21 = browser.currentScene.createNode("Shape");
 Shape21.DEF = "AxisLinesShape";
-Shape21.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape21.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Shape21.bboxDisplay = False;
-Shape21.visible = True;
 //RGB lines showing XYZ axes
 let IndexedLineSet22 = browser.currentScene.createNode("IndexedLineSet");
 IndexedLineSet22.colorIndex = new MFInt32(new int[0,1,2]);
@@ -180,70 +154,42 @@ HAnimJoint25.DEF = "Joe_sacroiliac";
 HAnimJoint25.center = new SFVec3f(new float[0,0.92,0]);
 HAnimJoint25.skinCoordIndex = new MFInt32(new int[17,19,20,21,22,23,26,27,73,82,89,91,93]);
 HAnimJoint25.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,0.35,0.35,1]);
-HAnimJoint25.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint25.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint25.bboxDisplay = False;
-HAnimJoint25.visible = True;
 let HAnimJoint26 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint26.name = "l_hip";
 HAnimJoint26.DEF = "Joe_l_hip";
 HAnimJoint26.center = new SFVec3f(new float[0.1,0.92,0]);
 HAnimJoint26.skinCoordIndex = new MFInt32(new int[89,90,94,95,96,97]);
 HAnimJoint26.skinCoordWeight = new MFFloat(new float[0.65,1,1,1,1,1]);
-HAnimJoint26.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint26.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint26.bboxDisplay = False;
-HAnimJoint26.visible = True;
 let HAnimJoint27 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint27.name = "l_knee";
 HAnimJoint27.DEF = "Joe_l_knee";
 HAnimJoint27.center = new SFVec3f(new float[0.115,0.466,0]);
 HAnimJoint27.skinCoordIndex = new MFInt32(new int[334,335,336,337,338,339,340,341]);
 HAnimJoint27.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint27.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint27.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint27.bboxDisplay = False;
-HAnimJoint27.visible = True;
 let HAnimJoint28 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint28.name = "l_ankle";
-HAnimJoint28.DEF = "Joe_l_ankle";
+HAnimJoint28.name = "l_talocrural";
+HAnimJoint28.DEF = "Joe_l_talocrural";
 HAnimJoint28.center = new SFVec3f(new float[0.115,0.069,0]);
 HAnimJoint28.skinCoordIndex = new MFInt32(new int[342,343,344,345]);
 HAnimJoint28.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint28.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint28.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint28.bboxDisplay = False;
-HAnimJoint28.visible = True;
 let HAnimJoint29 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint29.name = "l_subtalar";
-HAnimJoint29.DEF = "Joe_l_subtalar";
+HAnimJoint29.name = "l_tarsometatarsal_2";
+HAnimJoint29.DEF = "Joe_l_tarsometatarsal_2";
 HAnimJoint29.center = new SFVec3f(new float[0.115,0.031,0.03]);
 HAnimJoint29.skinCoordIndex = new MFInt32(new int[346,347,348,71]);
 HAnimJoint29.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint29.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint29.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint29.bboxDisplay = False;
-HAnimJoint29.visible = True;
 let HAnimJoint30 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint30.name = "l_midtarsal";
-HAnimJoint30.DEF = "Joe_l_midtarsal";
+HAnimJoint30.name = "l_metatarsophalangeal_2";
+HAnimJoint30.DEF = "Joe_l_metatarsophalangeal_2";
 HAnimJoint30.center = new SFVec3f(new float[0.115,0.037,0.09]);
 HAnimJoint30.skinCoordIndex = new MFInt32(new int[349,350,351,352]);
 HAnimJoint30.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint30.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint30.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint30.bboxDisplay = False;
-HAnimJoint30.visible = True;
 let HAnimJoint31 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint31.name = "l_metatarsal";
-HAnimJoint31.DEF = "Joe_l_metatarsal";
+HAnimJoint31.name = "l_tarsal_distal_interphalangeal_2";
+HAnimJoint31.DEF = "Joe_l_tarsal_distal_interphalangeal_2";
 HAnimJoint31.center = new SFVec3f(new float[0.115,0.02,0.122]);
 HAnimJoint31.skinCoordIndex = new MFInt32(new int[353,354,355,356,357,358,359,360,361]);
 HAnimJoint31.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint31.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint31.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint31.bboxDisplay = False;
-HAnimJoint31.visible = True;
 HAnimJoint30.children = new MFNode();
 
 HAnimJoint30.children[0] = HAnimJoint31;
@@ -274,60 +220,36 @@ HAnimJoint32.DEF = "Joe_r_hip";
 HAnimJoint32.center = new SFVec3f(new float[-0.1,0.92,0]);
 HAnimJoint32.skinCoordIndex = new MFInt32(new int[91,92,98,99,100,101,362,363]);
 HAnimJoint32.skinCoordWeight = new MFFloat(new float[0.65,1,0.8,1,1,1,0.4,0.8]);
-HAnimJoint32.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint32.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint32.bboxDisplay = False;
-HAnimJoint32.visible = True;
 let HAnimJoint33 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint33.name = "r_knee";
 HAnimJoint33.DEF = "Joe_r_knee";
 HAnimJoint33.center = new SFVec3f(new float[-0.05,0.466,0]);
 HAnimJoint33.skinCoordIndex = new MFInt32(new int[362,363,364,365,366,367,368,369,98]);
 HAnimJoint33.skinCoordWeight = new MFFloat(new float[0.6,0.2,1,1,1,1,1,1,0.2]);
-HAnimJoint33.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint33.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint33.bboxDisplay = False;
-HAnimJoint33.visible = True;
 let HAnimJoint34 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint34.name = "r_ankle";
-HAnimJoint34.DEF = "Joe_r_ankle";
+HAnimJoint34.name = "r_talocrural";
+HAnimJoint34.DEF = "Joe_r_talocrural";
 HAnimJoint34.center = new SFVec3f(new float[-0.115,0.069,0]);
 HAnimJoint34.skinCoordIndex = new MFInt32(new int[370,371,372,373]);
 HAnimJoint34.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint34.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint34.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint34.bboxDisplay = False;
-HAnimJoint34.visible = True;
 let HAnimJoint35 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint35.name = "r_subtalar";
-HAnimJoint35.DEF = "Joe_r_subtalar";
+HAnimJoint35.name = "r_tarsometatarsal_2";
+HAnimJoint35.DEF = "Joe_r_tarsometatarsal_2";
 HAnimJoint35.center = new SFVec3f(new float[-0.1,0.015,-0.01]);
 HAnimJoint35.skinCoordIndex = new MFInt32(new int[374,375,376]);
 HAnimJoint35.skinCoordWeight = new MFFloat(new float[1,1,1]);
-HAnimJoint35.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint35.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint35.bboxDisplay = False;
-HAnimJoint35.visible = True;
 let HAnimJoint36 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint36.name = "r_midtarsal";
-HAnimJoint36.DEF = "Joe_r_midtarsal";
+HAnimJoint36.name = "r_metatarsophalangeal_2";
+HAnimJoint36.DEF = "Joe_r_metatarsophalangeal_2";
 HAnimJoint36.center = new SFVec3f(new float[-0.115,0.037,0.09]);
 HAnimJoint36.skinCoordIndex = new MFInt32(new int[377,378,379,380]);
 HAnimJoint36.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint36.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint36.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint36.bboxDisplay = False;
-HAnimJoint36.visible = True;
 let HAnimJoint37 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint37.name = "r_metatarsal";
-HAnimJoint37.DEF = "Joe_r_metatarsal";
+HAnimJoint37.name = "r_tarsal_distal_interphalangeal_2";
+HAnimJoint37.DEF = "Joe_r_tarsal_distal_interphalangeal_2";
 HAnimJoint37.center = new SFVec3f(new float[-0.1,0.01,0.14]);
 HAnimJoint37.skinCoordIndex = new MFInt32(new int[381,382,383,384,385,386,387,388,389]);
 HAnimJoint37.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint37.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint37.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint37.bboxDisplay = False;
-HAnimJoint37.visible = True;
 HAnimJoint36.children = new MFNode();
 
 HAnimJoint36.children[0] = HAnimJoint37;
@@ -358,216 +280,116 @@ HAnimJoint38.DEF = "Joe_vl5";
 HAnimJoint38.center = new SFVec3f(new float[0,1.045,-0.095]);
 HAnimJoint38.skinCoordIndex = new MFInt32(new int[28,76]);
 HAnimJoint38.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint38.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint38.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint38.bboxDisplay = False;
-HAnimJoint38.visible = True;
 let HAnimJoint39 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint39.name = "vl4";
 HAnimJoint39.DEF = "Joe_vl4";
 HAnimJoint39.center = new SFVec3f(new float[0,1.068,-0.085]);
-HAnimJoint39.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint39.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint39.bboxDisplay = False;
-HAnimJoint39.visible = True;
 let HAnimJoint40 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint40.name = "vl3";
 HAnimJoint40.DEF = "Joe_vl3";
 HAnimJoint40.center = new SFVec3f(new float[0,1.092,-0.0725]);
-HAnimJoint40.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint40.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint40.bboxDisplay = False;
-HAnimJoint40.visible = True;
 let HAnimJoint41 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint41.name = "vl2";
 HAnimJoint41.DEF = "Joe_vl2";
 HAnimJoint41.center = new SFVec3f(new float[0,1.12,-0.065]);
 HAnimJoint41.skinCoordIndex = new MFInt32(new int[16,18,25,83,84,85,86,87,88]);
 HAnimJoint41.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,0.7,1,0.8]);
-HAnimJoint41.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint41.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint41.bboxDisplay = False;
-HAnimJoint41.visible = True;
 let HAnimJoint42 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint42.name = "vl1";
 HAnimJoint42.DEF = "Joe_vl1";
 HAnimJoint42.center = new SFVec3f(new float[0,1.1459,-0.0625]);
-HAnimJoint42.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint42.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint42.bboxDisplay = False;
-HAnimJoint42.visible = True;
 let HAnimJoint43 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint43.name = "vt12";
 HAnimJoint43.DEF = "Joe_vt12";
 HAnimJoint43.center = new SFVec3f(new float[0,1.179,-0.068]);
-HAnimJoint43.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint43.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint43.bboxDisplay = False;
-HAnimJoint43.visible = True;
 let HAnimJoint44 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint44.name = "vt11";
 HAnimJoint44.DEF = "Joe_vt11";
 HAnimJoint44.center = new SFVec3f(new float[0,1.2679,-0.081]);
-HAnimJoint44.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint44.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint44.bboxDisplay = False;
-HAnimJoint44.visible = True;
 let HAnimJoint45 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint45.name = "vt10";
 HAnimJoint45.DEF = "Joe_vt10";
 HAnimJoint45.center = new SFVec3f(new float[0,1.242,-0.09]);
 HAnimJoint45.skinCoordIndex = new MFInt32(new int[15]);
 HAnimJoint45.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint45.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint45.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint45.bboxDisplay = False;
-HAnimJoint45.visible = True;
 let HAnimJoint46 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint46.name = "vt9";
 HAnimJoint46.DEF = "Joe_vt9";
 HAnimJoint46.center = new SFVec3f(new float[0,1.268,-0.1]);
 HAnimJoint46.skinCoordIndex = new MFInt32(new int[13,14]);
 HAnimJoint46.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint46.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint46.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint46.bboxDisplay = False;
-HAnimJoint46.visible = True;
 let HAnimJoint47 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint47.name = "vt8";
 HAnimJoint47.DEF = "Joe_vt8";
 HAnimJoint47.center = new SFVec3f(new float[0,1.294,-0.11]);
-HAnimJoint47.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint47.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint47.bboxDisplay = False;
-HAnimJoint47.visible = True;
 let HAnimJoint48 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint48.name = "vt7";
 HAnimJoint48.DEF = "Joe_vt7";
 HAnimJoint48.center = new SFVec3f(new float[0,1.323,-0.1155]);
-HAnimJoint48.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint48.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint48.bboxDisplay = False;
-HAnimJoint48.visible = True;
 let HAnimJoint49 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint49.name = "vt6";
 HAnimJoint49.DEF = "Joe_vt6";
 HAnimJoint49.center = new SFVec3f(new float[0,1.352,-0.12]);
-HAnimJoint49.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint49.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint49.bboxDisplay = False;
-HAnimJoint49.visible = True;
 let HAnimJoint50 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint50.name = "vt5";
 HAnimJoint50.DEF = "Joe_vt5";
 HAnimJoint50.center = new SFVec3f(new float[0,1.381,-0.1235]);
-HAnimJoint50.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint50.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint50.bboxDisplay = False;
-HAnimJoint50.visible = True;
 let HAnimJoint51 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint51.name = "vt4";
 HAnimJoint51.DEF = "Joe_vt4";
 HAnimJoint51.center = new SFVec3f(new float[0,1.41,-0.1235]);
 HAnimJoint51.skinCoordIndex = new MFInt32(new int[81]);
 HAnimJoint51.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint51.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint51.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint51.bboxDisplay = False;
-HAnimJoint51.visible = True;
 let HAnimJoint52 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint52.name = "vt3";
 HAnimJoint52.DEF = "Joe_vt3";
 HAnimJoint52.center = new SFVec3f(new float[0,1.438,-0.12]);
-HAnimJoint52.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint52.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint52.bboxDisplay = False;
-HAnimJoint52.visible = True;
 let HAnimJoint53 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint53.name = "vt2";
 HAnimJoint53.DEF = "Joe_vt2";
 HAnimJoint53.center = new SFVec3f(new float[0,1.468,-0.105]);
-HAnimJoint53.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint53.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint53.bboxDisplay = False;
-HAnimJoint53.visible = True;
 let HAnimJoint54 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint54.name = "vt1";
 HAnimJoint54.DEF = "Joe_vt1";
 HAnimJoint54.center = new SFVec3f(new float[0,1.497,-0.09]);
 HAnimJoint54.skinCoordIndex = new MFInt32(new int[11,24]);
 HAnimJoint54.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint54.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint54.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint54.bboxDisplay = False;
-HAnimJoint54.visible = True;
 let HAnimJoint55 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint55.name = "vc7";
 HAnimJoint55.DEF = "Joe_vc7";
 HAnimJoint55.center = new SFVec3f(new float[0,1.525,-0.072]);
 HAnimJoint55.skinCoordIndex = new MFInt32(new int[74,75]);
 HAnimJoint55.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint55.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint55.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint55.bboxDisplay = False;
-HAnimJoint55.visible = True;
 let HAnimJoint56 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint56.name = "vc6";
 HAnimJoint56.DEF = "Joe_vc6";
 HAnimJoint56.center = new SFVec3f(new float[0,1.54,-0.05]);
-HAnimJoint56.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint56.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint56.bboxDisplay = False;
-HAnimJoint56.visible = True;
 let HAnimJoint57 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint57.name = "vc5";
 HAnimJoint57.DEF = "Joe_vc5";
 HAnimJoint57.center = new SFVec3f(new float[0,1.552,-0.035]);
-HAnimJoint57.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint57.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint57.bboxDisplay = False;
-HAnimJoint57.visible = True;
 let HAnimJoint58 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint58.name = "vc4";
 HAnimJoint58.DEF = "Joe_vc4";
 HAnimJoint58.center = new SFVec3f(new float[0,1.5675,-0.0256]);
-HAnimJoint58.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint58.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint58.bboxDisplay = False;
-HAnimJoint58.visible = True;
 let HAnimJoint59 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint59.name = "vc3";
 HAnimJoint59.DEF = "Joe_vc3";
 HAnimJoint59.center = new SFVec3f(new float[0,1.58225,-0.0185]);
-HAnimJoint59.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint59.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint59.bboxDisplay = False;
-HAnimJoint59.visible = True;
 let HAnimJoint60 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint60.name = "vc2";
 HAnimJoint60.DEF = "Joe_vc2";
 HAnimJoint60.center = new SFVec3f(new float[0,1.595,-0.0175]);
-HAnimJoint60.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint60.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint60.bboxDisplay = False;
-HAnimJoint60.visible = True;
 let HAnimJoint61 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint61.name = "vc1";
 HAnimJoint61.DEF = "Joe_vc1";
 HAnimJoint61.center = new SFVec3f(new float[0,1.61,-0.015]);
-HAnimJoint61.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint61.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint61.bboxDisplay = False;
-HAnimJoint61.visible = True;
 let HAnimJoint62 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint62.name = "skullbase";
 HAnimJoint62.DEF = "Joe_skullbase";
 HAnimJoint62.center = new SFVec3f(new float[0,1.63,-0.01]);
 HAnimJoint62.skinCoordIndex = new MFInt32(new int[0,1,2,3,4,5,6,7,8,9]);
 HAnimJoint62.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1]);
-HAnimJoint62.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint62.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint62.bboxDisplay = False;
-HAnimJoint62.visible = True;
 let HAnimDisplacer63 = browser.currentScene.createNode("HAnimDisplacer");
 HAnimDisplacer63.name = "skull_tip_raiser_action";
 HAnimDisplacer63.DEF = "Joe_skull_tip_raiser_action";
@@ -581,70 +403,42 @@ let HAnimJoint64 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint64.name = "l_eyelid_joint";
 HAnimJoint64.DEF = "Joe_l_eyelid_joint";
 HAnimJoint64.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint64.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint64.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint64.bboxDisplay = False;
-HAnimJoint64.visible = True;
 HAnimJoint62.children[1] = HAnimJoint64;
 
 let HAnimJoint65 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint65.name = "l_eyeball_joint";
 HAnimJoint65.DEF = "Joe_l_eyeball_joint";
 HAnimJoint65.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint65.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint65.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint65.bboxDisplay = False;
-HAnimJoint65.visible = True;
 HAnimJoint62.children[2] = HAnimJoint65;
 
 let HAnimJoint66 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint66.name = "l_eyebrow_joint";
 HAnimJoint66.DEF = "Joe_l_eyebrow_joint";
 HAnimJoint66.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint66.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint66.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint66.bboxDisplay = False;
-HAnimJoint66.visible = True;
 HAnimJoint62.children[3] = HAnimJoint66;
 
 let HAnimJoint67 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint67.name = "r_eyelid_joint";
 HAnimJoint67.DEF = "Joe_r_eyelid_joint";
 HAnimJoint67.center = new SFVec3f(new float[-0.034,1.659,0.06]);
-HAnimJoint67.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint67.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint67.bboxDisplay = False;
-HAnimJoint67.visible = True;
 HAnimJoint62.children[4] = HAnimJoint67;
 
 let HAnimJoint68 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint68.name = "r_eyeball_joint";
 HAnimJoint68.DEF = "Joe_r_eyeball_joint";
 HAnimJoint68.center = new SFVec3f(new float[-0.034,1.659,0.06]);
-HAnimJoint68.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint68.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint68.bboxDisplay = False;
-HAnimJoint68.visible = True;
 HAnimJoint62.children[5] = HAnimJoint68;
 
 let HAnimJoint69 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint69.name = "r_eyebrow_joint";
 HAnimJoint69.DEF = "Joe_r_eyebrow_joint";
 HAnimJoint69.center = new SFVec3f(new float[-0.034,1.659,0.06]);
-HAnimJoint69.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint69.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint69.bboxDisplay = False;
-HAnimJoint69.visible = True;
 HAnimJoint62.children[6] = HAnimJoint69;
 
 let HAnimJoint70 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint70.name = "temporomandibular";
 HAnimJoint70.DEF = "Joe_temporomandibular";
 HAnimJoint70.center = new SFVec3f(new float[0.034,1.659,0.06]);
-HAnimJoint70.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint70.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint70.bboxDisplay = False;
-HAnimJoint70.visible = True;
 HAnimJoint62.children[7] = HAnimJoint70;
 
 HAnimJoint61.children = new MFNode();
@@ -681,80 +475,48 @@ HAnimJoint71.DEF = "Joe_l_sternoclavicular";
 HAnimJoint71.center = new SFVec3f(new float[0.082,1.4488,-0.0353]);
 HAnimJoint71.skinCoordIndex = new MFInt32(new int[12]);
 HAnimJoint71.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint71.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint71.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint71.bboxDisplay = False;
-HAnimJoint71.visible = True;
 let HAnimJoint72 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint72.name = "l_acromioclavicular";
 HAnimJoint72.DEF = "Joe_l_acromioclavicular";
 HAnimJoint72.center = new SFVec3f(new float[0.0962,1.4269,-0.0424]);
 HAnimJoint72.skinCoordIndex = new MFInt32(new int[79]);
 HAnimJoint72.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint72.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint72.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint72.bboxDisplay = False;
-HAnimJoint72.visible = True;
 let HAnimJoint73 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint73.name = "l_shoulder";
 HAnimJoint73.DEF = "Joe_l_shoulder";
 HAnimJoint73.center = new SFVec3f(new float[0.2,1.44,-0.04]);
 HAnimJoint73.skinCoordIndex = new MFInt32(new int[41,42,44,80,102,103,104,105]);
 HAnimJoint73.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint73.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint73.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint73.bboxDisplay = False;
-HAnimJoint73.visible = True;
 let HAnimJoint74 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint74.name = "l_elbow";
 HAnimJoint74.DEF = "Joe_l_elbow";
 HAnimJoint74.center = new SFVec3f(new float[0.2,1.1388,-0.04]);
 HAnimJoint74.skinCoordIndex = new MFInt32(new int[45,46,47,109,110,111,112,113,115,116,117,118]);
 HAnimJoint74.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
-HAnimJoint74.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint74.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint74.bboxDisplay = False;
-HAnimJoint74.visible = True;
 let HAnimJoint75 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint75.name = "l_wrist";
-HAnimJoint75.DEF = "Joe_l_wrist";
+HAnimJoint75.name = "l_radiocarpal";
+HAnimJoint75.DEF = "Joe_l_radiocarpal";
 HAnimJoint75.center = new SFVec3f(new float[0.2,0.87,-0.04]);
 HAnimJoint75.skinCoordIndex = new MFInt32(new int[119,120,121,122,123,124,125,126]);
 HAnimJoint75.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint75.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint75.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint75.bboxDisplay = False;
-HAnimJoint75.visible = True;
 let HAnimJoint76 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint76.name = "l_thumb1";
 HAnimJoint76.DEF = "Joe_l_thumb1";
 HAnimJoint76.center = new SFVec3f(new float[0.1924,0.8472,-0.0534]);
 HAnimJoint76.skinCoordIndex = new MFInt32(new int[127,128]);
 HAnimJoint76.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint76.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint76.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint76.bboxDisplay = False;
-HAnimJoint76.visible = True;
 let HAnimJoint77 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint77.name = "l_thumb2";
 HAnimJoint77.DEF = "Joe_l_thumb2";
 HAnimJoint77.center = new SFVec3f(new float[0.1951,0.8226,0.0246]);
 HAnimJoint77.skinCoordIndex = new MFInt32(new int[138,139,140,141,142,143]);
 HAnimJoint77.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1]);
-HAnimJoint77.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint77.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint77.bboxDisplay = False;
-HAnimJoint77.visible = True;
 let HAnimJoint78 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint78.name = "l_thumb3";
 HAnimJoint78.DEF = "Joe_l_thumb3";
 HAnimJoint78.center = new SFVec3f(new float[0.1955,0.8159,0.0464]);
 HAnimJoint78.skinCoordIndex = new MFInt32(new int[144,145,146,147,148,149,150,151,152]);
 HAnimJoint78.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint78.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint78.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint78.bboxDisplay = False;
-HAnimJoint78.visible = True;
 HAnimJoint77.children = new MFNode();
 
 HAnimJoint77.children[0] = HAnimJoint78;
@@ -773,40 +535,24 @@ HAnimJoint79.DEF = "Joe_l_index0";
 HAnimJoint79.center = new SFVec3f(new float[0.1983,0.8024,-0.028]);
 HAnimJoint79.skinCoordIndex = new MFInt32(new int[129,130]);
 HAnimJoint79.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint79.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint79.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint79.bboxDisplay = False;
-HAnimJoint79.visible = True;
 let HAnimJoint80 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint80.name = "l_index1";
 HAnimJoint80.DEF = "Joe_l_index1";
 HAnimJoint80.center = new SFVec3f(new float[0.1983,0.7815,-0.028]);
 HAnimJoint80.skinCoordIndex = new MFInt32(new int[138,139,140,153,154,155,163]);
 HAnimJoint80.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1,0.5]);
-HAnimJoint80.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint80.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint80.bboxDisplay = False;
-HAnimJoint80.visible = True;
 let HAnimJoint81 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint81.name = "l_index2";
 HAnimJoint81.DEF = "Joe_l_index2";
 HAnimJoint81.center = new SFVec3f(new float[0.2017,0.7363,-0.0248]);
 HAnimJoint81.skinCoordIndex = new MFInt32(new int[166,167,168,169]);
 HAnimJoint81.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint81.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint81.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint81.bboxDisplay = False;
-HAnimJoint81.visible = True;
 let HAnimJoint82 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint82.name = "l_index3";
 HAnimJoint82.DEF = "Joe_l_index3";
 HAnimJoint82.center = new SFVec3f(new float[0.2028,0.7139,-0.0236]);
 HAnimJoint82.skinCoordIndex = new MFInt32(new int[170,171,172,173,174,175,176,177,178]);
 HAnimJoint82.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint82.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint82.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint82.bboxDisplay = False;
-HAnimJoint82.visible = True;
 HAnimJoint81.children = new MFNode();
 
 HAnimJoint81.children[0] = HAnimJoint82;
@@ -827,40 +573,24 @@ HAnimJoint83.DEF = "Joe_l_middle0";
 HAnimJoint83.center = new SFVec3f(new float[0.1987,0.8029,-0.053]);
 HAnimJoint83.skinCoordIndex = new MFInt32(new int[131,132]);
 HAnimJoint83.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint83.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint83.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint83.bboxDisplay = False;
-HAnimJoint83.visible = True;
 let HAnimJoint84 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint84.name = "l_middle1";
 HAnimJoint84.DEF = "Joe_l_middle1";
 HAnimJoint84.center = new SFVec3f(new float[0.1987,0.7818,-0.053]);
 HAnimJoint84.skinCoordIndex = new MFInt32(new int[156,157,163,164]);
 HAnimJoint84.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint84.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint84.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint84.bboxDisplay = False;
-HAnimJoint84.visible = True;
 let HAnimJoint85 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint85.name = "l_middle2";
 HAnimJoint85.DEF = "Joe_l_middle2";
 HAnimJoint85.center = new SFVec3f(new float[0.2013,0.7273,-0.0503]);
 HAnimJoint85.skinCoordIndex = new MFInt32(new int[179,180,181,182]);
 HAnimJoint85.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint85.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint85.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint85.bboxDisplay = False;
-HAnimJoint85.visible = True;
 let HAnimJoint86 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint86.name = "l_middle3";
 HAnimJoint86.DEF = "Joe_l_middle3";
 HAnimJoint86.center = new SFVec3f(new float[0.2026,0.7011,-0.0494]);
 HAnimJoint86.skinCoordIndex = new MFInt32(new int[183,184,185,186,187,188,189,190,191]);
 HAnimJoint86.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint86.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint86.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint86.bboxDisplay = False;
-HAnimJoint86.visible = True;
 HAnimJoint85.children = new MFNode();
 
 HAnimJoint85.children[0] = HAnimJoint86;
@@ -881,40 +611,24 @@ HAnimJoint87.DEF = "Joe_l_ring0";
 HAnimJoint87.center = new SFVec3f(new float[0.1956,0.8019,-0.0794]);
 HAnimJoint87.skinCoordIndex = new MFInt32(new int[133,134]);
 HAnimJoint87.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint87.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint87.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint87.bboxDisplay = False;
-HAnimJoint87.visible = True;
 let HAnimJoint88 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint88.name = "l_ring1";
 HAnimJoint88.DEF = "Joe_l_ring1";
 HAnimJoint88.center = new SFVec3f(new float[0.1956,0.7815,-0.0794]);
 HAnimJoint88.skinCoordIndex = new MFInt32(new int[158,159,164,165]);
 HAnimJoint88.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint88.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint88.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint88.bboxDisplay = False;
-HAnimJoint88.visible = True;
 let HAnimJoint89 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint89.name = "l_ring2";
 HAnimJoint89.DEF = "Joe_l_ring2";
 HAnimJoint89.center = new SFVec3f(new float[0.1973,0.7287,-0.0777]);
 HAnimJoint89.skinCoordIndex = new MFInt32(new int[192,193,194,195]);
 HAnimJoint89.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint89.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint89.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint89.bboxDisplay = False;
-HAnimJoint89.visible = True;
 let HAnimJoint90 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint90.name = "l_ring3";
 HAnimJoint90.DEF = "Joe_l_ring3";
 HAnimJoint90.center = new SFVec3f(new float[0.1983,0.7045,-0.0767]);
 HAnimJoint90.skinCoordIndex = new MFInt32(new int[196,197,198,199,200,201,202,203,204]);
 HAnimJoint90.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint90.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint90.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint90.bboxDisplay = False;
-HAnimJoint90.visible = True;
 HAnimJoint89.children = new MFNode();
 
 HAnimJoint89.children[0] = HAnimJoint90;
@@ -935,40 +649,24 @@ HAnimJoint91.DEF = "Joe_l_pinky0";
 HAnimJoint91.center = new SFVec3f(new float[0.1925,0.8066,-0.1036]);
 HAnimJoint91.skinCoordIndex = new MFInt32(new int[135,136,137,165]);
 HAnimJoint91.skinCoordWeight = new MFFloat(new float[1,1,1,0.5]);
-HAnimJoint91.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint91.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint91.bboxDisplay = False;
-HAnimJoint91.visible = True;
 let HAnimJoint92 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint92.name = "l_pinky1";
 HAnimJoint92.DEF = "Joe_l_pinky1";
 HAnimJoint92.center = new SFVec3f(new float[0.1925,0.7866,-0.1036]);
 HAnimJoint92.skinCoordIndex = new MFInt32(new int[160,161,162]);
 HAnimJoint92.skinCoordWeight = new MFFloat(new float[1,1,1]);
-HAnimJoint92.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint92.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint92.bboxDisplay = False;
-HAnimJoint92.visible = True;
 let HAnimJoint93 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint93.name = "l_pinky2";
 HAnimJoint93.DEF = "Joe_l_pinky2";
 HAnimJoint93.center = new SFVec3f(new float[0.1938,0.7452,-0.1024]);
 HAnimJoint93.skinCoordIndex = new MFInt32(new int[205,206,207,208]);
 HAnimJoint93.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint93.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint93.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint93.bboxDisplay = False;
-HAnimJoint93.visible = True;
 let HAnimJoint94 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint94.name = "l_pinky3";
 HAnimJoint94.DEF = "Joe_l_pinky3";
 HAnimJoint94.center = new SFVec3f(new float[0.1948,0.7277,-0.1017]);
 HAnimJoint94.skinCoordIndex = new MFInt32(new int[209,210,211,212,213,214,215,216,217]);
 HAnimJoint94.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint94.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint94.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint94.bboxDisplay = False;
-HAnimJoint94.visible = True;
 HAnimJoint93.children = new MFNode();
 
 HAnimJoint93.children[0] = HAnimJoint94;
@@ -1007,80 +705,48 @@ HAnimJoint95.DEF = "Joe_r_sternoclavicular";
 HAnimJoint95.center = new SFVec3f(new float[-0.03,1.46,0]);
 HAnimJoint95.skinCoordIndex = new MFInt32(new int[10]);
 HAnimJoint95.skinCoordWeight = new MFFloat(new float[1]);
-HAnimJoint95.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint95.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint95.bboxDisplay = False;
-HAnimJoint95.visible = True;
 let HAnimJoint96 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint96.name = "r_acromioclavicular";
 HAnimJoint96.DEF = "Joe_r_acromioclavicular";
 HAnimJoint96.center = new SFVec3f(new float[-0.09,1.41,-0.11]);
 HAnimJoint96.skinCoordIndex = new MFInt32(new int[77,29]);
 HAnimJoint96.skinCoordWeight = new MFFloat(new float[1,0.9]);
-HAnimJoint96.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint96.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint96.bboxDisplay = False;
-HAnimJoint96.visible = True;
 let HAnimJoint97 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint97.name = "r_shoulder";
 HAnimJoint97.DEF = "Joe_r_shoulder";
 HAnimJoint97.center = new SFVec3f(new float[-0.2,1.44,-0.04]);
 HAnimJoint97.skinCoordIndex = new MFInt32(new int[29,30,32,78,218,219,220,221,86,88]);
 HAnimJoint97.skinCoordWeight = new MFFloat(new float[0.1,1,1,1,1,1,1,1,0.3,0.2]);
-HAnimJoint97.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint97.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint97.bboxDisplay = False;
-HAnimJoint97.visible = True;
 let HAnimJoint98 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint98.name = "r_elbow";
 HAnimJoint98.DEF = "Joe_r_elbow";
 HAnimJoint98.center = new SFVec3f(new float[-0.2,1.1388,-0.04]);
 HAnimJoint98.skinCoordIndex = new MFInt32(new int[33,34,35,225,226,227,228,229,231,232,233,234]);
 HAnimJoint98.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1]);
-HAnimJoint98.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint98.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint98.bboxDisplay = False;
-HAnimJoint98.visible = True;
 let HAnimJoint99 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint99.name = "r_wrist";
-HAnimJoint99.DEF = "Joe_r_wrist";
+HAnimJoint99.name = "r_radiocarpal";
+HAnimJoint99.DEF = "Joe_r_radiocarpal";
 HAnimJoint99.center = new SFVec3f(new float[-0.2,0.89,-0.04]);
 HAnimJoint99.skinCoordIndex = new MFInt32(new int[235,236,237,238,239,240,241,242]);
 HAnimJoint99.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
-HAnimJoint99.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint99.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint99.bboxDisplay = False;
-HAnimJoint99.visible = True;
 let HAnimJoint100 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint100.name = "r_thumb1";
 HAnimJoint100.DEF = "Joe_r_thumb1";
 HAnimJoint100.center = new SFVec3f(new float[-0.2,0.85,0]);
 HAnimJoint100.skinCoordIndex = new MFInt32(new int[243,244]);
 HAnimJoint100.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint100.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint100.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint100.bboxDisplay = False;
-HAnimJoint100.visible = True;
 let HAnimJoint101 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint101.name = "r_thumb2";
 HAnimJoint101.DEF = "Joe_r_thumb2";
 HAnimJoint101.center = new SFVec3f(new float[-0.2,0.82,0.03]);
 HAnimJoint101.skinCoordIndex = new MFInt32(new int[254,255,256,257,258,259]);
 HAnimJoint101.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1]);
-HAnimJoint101.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint101.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint101.bboxDisplay = False;
-HAnimJoint101.visible = True;
 let HAnimJoint102 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint102.name = "r_thumb3";
 HAnimJoint102.DEF = "Joe_r_thumb3";
 HAnimJoint102.center = new SFVec3f(new float[-0.2,0.8,0.05]);
 HAnimJoint102.skinCoordIndex = new MFInt32(new int[260,261,262,263,264,265,266,267,268]);
 HAnimJoint102.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint102.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint102.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint102.bboxDisplay = False;
-HAnimJoint102.visible = True;
 HAnimJoint101.children = new MFNode();
 
 HAnimJoint101.children[0] = HAnimJoint102;
@@ -1099,40 +765,24 @@ HAnimJoint103.DEF = "Joe_r_index0";
 HAnimJoint103.center = new SFVec3f(new float[-0.2,0.84,-0.015]);
 HAnimJoint103.skinCoordIndex = new MFInt32(new int[245,246]);
 HAnimJoint103.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint103.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint103.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint103.bboxDisplay = False;
-HAnimJoint103.visible = True;
 let HAnimJoint104 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint104.name = "r_index1";
 HAnimJoint104.DEF = "Joe_r_index1";
 HAnimJoint104.center = new SFVec3f(new float[-0.2,0.793,-0.015]);
 HAnimJoint104.skinCoordIndex = new MFInt32(new int[254,255,256,269,270,271,279]);
 HAnimJoint104.skinCoordWeight = new MFFloat(new float[0.5,0.5,0.5,1,1,1,0.5]);
-HAnimJoint104.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint104.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint104.bboxDisplay = False;
-HAnimJoint104.visible = True;
 let HAnimJoint105 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint105.name = "r_index2";
 HAnimJoint105.DEF = "Joe_r_index2";
 HAnimJoint105.center = new SFVec3f(new float[-0.2,0.745,-0.015]);
 HAnimJoint105.skinCoordIndex = new MFInt32(new int[282,283,284,285]);
 HAnimJoint105.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint105.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint105.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint105.bboxDisplay = False;
-HAnimJoint105.visible = True;
 let HAnimJoint106 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint106.name = "r_index3";
 HAnimJoint106.DEF = "Joe_r_index3";
 HAnimJoint106.center = new SFVec3f(new float[-0.2,0.72,-0.015]);
 HAnimJoint106.skinCoordIndex = new MFInt32(new int[286,287,288,289,290,291,292,293,294]);
 HAnimJoint106.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint106.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint106.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint106.bboxDisplay = False;
-HAnimJoint106.visible = True;
 HAnimJoint105.children = new MFNode();
 
 HAnimJoint105.children[0] = HAnimJoint106;
@@ -1153,40 +803,24 @@ HAnimJoint107.DEF = "Joe_r_middle0";
 HAnimJoint107.center = new SFVec3f(new float[-0.2,0.835,-0.04]);
 HAnimJoint107.skinCoordIndex = new MFInt32(new int[247,248]);
 HAnimJoint107.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint107.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint107.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint107.bboxDisplay = False;
-HAnimJoint107.visible = True;
 let HAnimJoint108 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint108.name = "r_middle1";
 HAnimJoint108.DEF = "Joe_r_middle1";
 HAnimJoint108.center = new SFVec3f(new float[-0.2,0.788,-0.04]);
 HAnimJoint108.skinCoordIndex = new MFInt32(new int[272,273,279,280]);
 HAnimJoint108.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint108.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint108.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint108.bboxDisplay = False;
-HAnimJoint108.visible = True;
 let HAnimJoint109 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint109.name = "r_middle2";
 HAnimJoint109.DEF = "Joe_r_middle2";
 HAnimJoint109.center = new SFVec3f(new float[-0.2,0.74,-0.04]);
 HAnimJoint109.skinCoordIndex = new MFInt32(new int[295,296,297,298]);
 HAnimJoint109.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint109.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint109.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint109.bboxDisplay = False;
-HAnimJoint109.visible = True;
 let HAnimJoint110 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint110.name = "r_middle3";
 HAnimJoint110.DEF = "Joe_r_middle3";
 HAnimJoint110.center = new SFVec3f(new float[-0.2,0.7142,-0.04]);
 HAnimJoint110.skinCoordIndex = new MFInt32(new int[299,300,301,302,303,304,305,306,307]);
 HAnimJoint110.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint110.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint110.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint110.bboxDisplay = False;
-HAnimJoint110.visible = True;
 HAnimJoint109.children = new MFNode();
 
 HAnimJoint109.children[0] = HAnimJoint110;
@@ -1207,40 +841,24 @@ HAnimJoint111.DEF = "Joe_r_ring0";
 HAnimJoint111.center = new SFVec3f(new float[-0.2,0.835,-0.065]);
 HAnimJoint111.skinCoordIndex = new MFInt32(new int[249,250]);
 HAnimJoint111.skinCoordWeight = new MFFloat(new float[1,1]);
-HAnimJoint111.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint111.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint111.bboxDisplay = False;
-HAnimJoint111.visible = True;
 let HAnimJoint112 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint112.name = "r_ring1";
 HAnimJoint112.DEF = "Joe_r_ring1";
 HAnimJoint112.center = new SFVec3f(new float[-0.2,0.793,-0.065]);
 HAnimJoint112.skinCoordIndex = new MFInt32(new int[274,275,280,281]);
 HAnimJoint112.skinCoordWeight = new MFFloat(new float[1,1,0.5,0.5]);
-HAnimJoint112.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint112.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint112.bboxDisplay = False;
-HAnimJoint112.visible = True;
 let HAnimJoint113 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint113.name = "r_ring2";
 HAnimJoint113.DEF = "Joe_r_ring2";
 HAnimJoint113.center = new SFVec3f(new float[-0.2,0.74,-0.065]);
 HAnimJoint113.skinCoordIndex = new MFInt32(new int[308,309,310,311]);
 HAnimJoint113.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint113.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint113.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint113.bboxDisplay = False;
-HAnimJoint113.visible = True;
 let HAnimJoint114 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint114.name = "r_ring3";
 HAnimJoint114.DEF = "Joe_r_ring3";
 HAnimJoint114.center = new SFVec3f(new float[-0.2,0.7177,-0.065]);
 HAnimJoint114.skinCoordIndex = new MFInt32(new int[312,313,314,315,316,317,318,319,320]);
 HAnimJoint114.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint114.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint114.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint114.bboxDisplay = False;
-HAnimJoint114.visible = True;
 HAnimJoint113.children = new MFNode();
 
 HAnimJoint113.children[0] = HAnimJoint114;
@@ -1261,40 +879,24 @@ HAnimJoint115.DEF = "Joe_r_pinky0";
 HAnimJoint115.center = new SFVec3f(new float[-0.2,0.84,-0.085]);
 HAnimJoint115.skinCoordIndex = new MFInt32(new int[251,252,253,281]);
 HAnimJoint115.skinCoordWeight = new MFFloat(new float[1,1,1,0.5]);
-HAnimJoint115.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint115.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint115.bboxDisplay = False;
-HAnimJoint115.visible = True;
 let HAnimJoint116 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint116.name = "r_pinky1";
 HAnimJoint116.DEF = "Joe_r_pinky1";
 HAnimJoint116.center = new SFVec3f(new float[-0.2,0.79,-0.085]);
 HAnimJoint116.skinCoordIndex = new MFInt32(new int[276,277,278]);
 HAnimJoint116.skinCoordWeight = new MFFloat(new float[1,1,1]);
-HAnimJoint116.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint116.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint116.bboxDisplay = False;
-HAnimJoint116.visible = True;
 let HAnimJoint117 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint117.name = "r_pinky2";
 HAnimJoint117.DEF = "Joe_r_pinky2";
 HAnimJoint117.center = new SFVec3f(new float[-0.2,0.755,-0.085]);
 HAnimJoint117.skinCoordIndex = new MFInt32(new int[321,322,323,324]);
 HAnimJoint117.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
-HAnimJoint117.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint117.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint117.bboxDisplay = False;
-HAnimJoint117.visible = True;
 let HAnimJoint118 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint118.name = "r_pinky3";
 HAnimJoint118.DEF = "Joe_r_pinky3";
 HAnimJoint118.center = new SFVec3f(new float[-0.2,0.735,-0.09]);
 HAnimJoint118.skinCoordIndex = new MFInt32(new int[325,326,327,328,329,330,331,332,333]);
 HAnimJoint118.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
-HAnimJoint118.bboxCenter = new SFVec3f(new float[0,0,0]);
-HAnimJoint118.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-HAnimJoint118.bboxDisplay = False;
-HAnimJoint118.visible = True;
 HAnimJoint117.children = new MFNode();
 
 HAnimJoint117.children[0] = HAnimJoint118;
@@ -1403,10 +1005,6 @@ HAnimHumanoid13.joints[0] = HAnimJoint16;
 
 let Shape119 = browser.currentScene.createNode("Shape");
 Shape119.DEF = "Joe_Shape";
-Shape119.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape119.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Shape119.bboxDisplay = False;
-Shape119.visible = True;
 let Appearance120 = browser.currentScene.createNode("Appearance");
 Appearance120.DEF = "Joe_skin_Appearance";
 let Material121 = browser.currentScene.createNode("Material");
@@ -1417,9 +1015,7 @@ Appearance120.material = Material121;
 
 let ImageTexture122 = browser.currentScene.createNode("ImageTexture");
 ImageTexture122.DEF = "JoeSkinImageTexture";
-ImageTexture122.url = new MFString(new java.lang.String["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/JoeBodyTexture29.png"]);
-ImageTexture122.load = "true";
-ImageTexture122.refresh = "0";
+ImageTexture122.url = new MFString(new java.lang.String["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"]);
 Appearance120.texture = ImageTexture122;
 
 let TextureTransform123 = browser.currentScene.createNode("TextureTransform");
@@ -1458,71 +1054,71 @@ HAnimJoint129.USE = "Joe_sacroiliac";
 HAnimHumanoid13.joints[3] = HAnimJoint129;
 
 let HAnimJoint130 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint130.USE = "Joe_l_hip";
+HAnimJoint130.USE = "Joe_skullbase";
 HAnimHumanoid13.joints[4] = HAnimJoint130;
 
 let HAnimJoint131 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint131.USE = "Joe_l_knee";
+HAnimJoint131.USE = "Joe_temporomandibular";
 HAnimHumanoid13.joints[5] = HAnimJoint131;
 
 let HAnimJoint132 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint132.USE = "Joe_l_ankle";
+HAnimJoint132.USE = "Joe_vc1";
 HAnimHumanoid13.joints[6] = HAnimJoint132;
 
 let HAnimJoint133 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint133.USE = "Joe_l_subtalar";
+HAnimJoint133.USE = "Joe_vc2";
 HAnimHumanoid13.joints[7] = HAnimJoint133;
 
 let HAnimJoint134 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint134.USE = "Joe_l_midtarsal";
+HAnimJoint134.USE = "Joe_vc3";
 HAnimHumanoid13.joints[8] = HAnimJoint134;
 
 let HAnimJoint135 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint135.USE = "Joe_l_metatarsal";
+HAnimJoint135.USE = "Joe_vc4";
 HAnimHumanoid13.joints[9] = HAnimJoint135;
 
 let HAnimJoint136 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint136.USE = "Joe_r_hip";
+HAnimJoint136.USE = "Joe_vc5";
 HAnimHumanoid13.joints[10] = HAnimJoint136;
 
 let HAnimJoint137 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint137.USE = "Joe_r_knee";
+HAnimJoint137.USE = "Joe_vc6";
 HAnimHumanoid13.joints[11] = HAnimJoint137;
 
 let HAnimJoint138 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint138.USE = "Joe_r_ankle";
+HAnimJoint138.USE = "Joe_vc7";
 HAnimHumanoid13.joints[12] = HAnimJoint138;
 
 let HAnimJoint139 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint139.USE = "Joe_r_subtalar";
+HAnimJoint139.USE = "Joe_vl1";
 HAnimHumanoid13.joints[13] = HAnimJoint139;
 
 let HAnimJoint140 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint140.USE = "Joe_r_midtarsal";
+HAnimJoint140.USE = "Joe_vl2";
 HAnimHumanoid13.joints[14] = HAnimJoint140;
 
 let HAnimJoint141 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint141.USE = "Joe_r_metatarsal";
+HAnimJoint141.USE = "Joe_vl3";
 HAnimHumanoid13.joints[15] = HAnimJoint141;
 
 let HAnimJoint142 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint142.USE = "Joe_vl5";
+HAnimJoint142.USE = "Joe_vl4";
 HAnimHumanoid13.joints[16] = HAnimJoint142;
 
 let HAnimJoint143 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint143.USE = "Joe_vl4";
+HAnimJoint143.USE = "Joe_vl5";
 HAnimHumanoid13.joints[17] = HAnimJoint143;
 
 let HAnimJoint144 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint144.USE = "Joe_vl3";
+HAnimJoint144.USE = "Joe_vt1";
 HAnimHumanoid13.joints[18] = HAnimJoint144;
 
 let HAnimJoint145 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint145.USE = "Joe_vl2";
+HAnimJoint145.USE = "Joe_vt10";
 HAnimHumanoid13.joints[19] = HAnimJoint145;
 
 let HAnimJoint146 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint146.USE = "Joe_vl1";
+HAnimJoint146.USE = "Joe_vt11";
 HAnimHumanoid13.joints[20] = HAnimJoint146;
 
 let HAnimJoint147 = browser.currentScene.createNode("HAnimJoint");
@@ -1530,299 +1126,299 @@ HAnimJoint147.USE = "Joe_vt12";
 HAnimHumanoid13.joints[21] = HAnimJoint147;
 
 let HAnimJoint148 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint148.USE = "Joe_vt11";
+HAnimJoint148.USE = "Joe_vt2";
 HAnimHumanoid13.joints[22] = HAnimJoint148;
 
 let HAnimJoint149 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint149.USE = "Joe_vt10";
+HAnimJoint149.USE = "Joe_vt3";
 HAnimHumanoid13.joints[23] = HAnimJoint149;
 
 let HAnimJoint150 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint150.USE = "Joe_vt9";
+HAnimJoint150.USE = "Joe_vt4";
 HAnimHumanoid13.joints[24] = HAnimJoint150;
 
 let HAnimJoint151 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint151.USE = "Joe_vt8";
+HAnimJoint151.USE = "Joe_vt5";
 HAnimHumanoid13.joints[25] = HAnimJoint151;
 
 let HAnimJoint152 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint152.USE = "Joe_vt7";
+HAnimJoint152.USE = "Joe_vt6";
 HAnimHumanoid13.joints[26] = HAnimJoint152;
 
 let HAnimJoint153 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint153.USE = "Joe_vt6";
+HAnimJoint153.USE = "Joe_vt7";
 HAnimHumanoid13.joints[27] = HAnimJoint153;
 
 let HAnimJoint154 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint154.USE = "Joe_vt5";
+HAnimJoint154.USE = "Joe_vt8";
 HAnimHumanoid13.joints[28] = HAnimJoint154;
 
 let HAnimJoint155 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint155.USE = "Joe_vt4";
+HAnimJoint155.USE = "Joe_vt9";
 HAnimHumanoid13.joints[29] = HAnimJoint155;
 
 let HAnimJoint156 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint156.USE = "Joe_vt3";
+HAnimJoint156.USE = "Joe_l_acromioclavicular";
 HAnimHumanoid13.joints[30] = HAnimJoint156;
 
 let HAnimJoint157 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint157.USE = "Joe_vt2";
+HAnimJoint157.USE = "Joe_r_acromioclavicular";
 HAnimHumanoid13.joints[31] = HAnimJoint157;
 
 let HAnimJoint158 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint158.USE = "Joe_vt1";
+HAnimJoint158.USE = "Joe_l_elbow";
 HAnimHumanoid13.joints[32] = HAnimJoint158;
 
 let HAnimJoint159 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint159.USE = "Joe_vc7";
+HAnimJoint159.USE = "Joe_r_elbow";
 HAnimHumanoid13.joints[33] = HAnimJoint159;
 
 let HAnimJoint160 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint160.USE = "Joe_vc6";
+HAnimJoint160.USE = "Joe_l_eyeball_joint";
 HAnimHumanoid13.joints[34] = HAnimJoint160;
 
 let HAnimJoint161 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint161.USE = "Joe_vc5";
+HAnimJoint161.USE = "Joe_r_eyeball_joint";
 HAnimHumanoid13.joints[35] = HAnimJoint161;
 
 let HAnimJoint162 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint162.USE = "Joe_vc4";
+HAnimJoint162.USE = "Joe_l_eyebrow_joint";
 HAnimHumanoid13.joints[36] = HAnimJoint162;
 
 let HAnimJoint163 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint163.USE = "Joe_vc3";
+HAnimJoint163.USE = "Joe_r_eyebrow_joint";
 HAnimHumanoid13.joints[37] = HAnimJoint163;
 
 let HAnimJoint164 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint164.USE = "Joe_vc2";
+HAnimJoint164.USE = "Joe_l_eyelid_joint";
 HAnimHumanoid13.joints[38] = HAnimJoint164;
 
 let HAnimJoint165 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint165.USE = "Joe_vc1";
+HAnimJoint165.USE = "Joe_r_eyelid_joint";
 HAnimHumanoid13.joints[39] = HAnimJoint165;
 
 let HAnimJoint166 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint166.USE = "Joe_skullbase";
+HAnimJoint166.USE = "Joe_l_hip";
 HAnimHumanoid13.joints[40] = HAnimJoint166;
 
 let HAnimJoint167 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint167.USE = "Joe_l_eyelid_joint";
+HAnimJoint167.USE = "Joe_r_hip";
 HAnimHumanoid13.joints[41] = HAnimJoint167;
 
 let HAnimJoint168 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint168.USE = "Joe_l_eyeball_joint";
+HAnimJoint168.USE = "Joe_l_index0";
 HAnimHumanoid13.joints[42] = HAnimJoint168;
 
 let HAnimJoint169 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint169.USE = "Joe_l_eyebrow_joint";
+HAnimJoint169.USE = "Joe_r_index0";
 HAnimHumanoid13.joints[43] = HAnimJoint169;
 
 let HAnimJoint170 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint170.USE = "Joe_r_eyelid_joint";
+HAnimJoint170.USE = "Joe_l_index1";
 HAnimHumanoid13.joints[44] = HAnimJoint170;
 
 let HAnimJoint171 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint171.USE = "Joe_r_eyeball_joint";
+HAnimJoint171.USE = "Joe_r_index1";
 HAnimHumanoid13.joints[45] = HAnimJoint171;
 
 let HAnimJoint172 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint172.USE = "Joe_r_eyebrow_joint";
+HAnimJoint172.USE = "Joe_l_index2";
 HAnimHumanoid13.joints[46] = HAnimJoint172;
 
 let HAnimJoint173 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint173.USE = "Joe_temporomandibular";
+HAnimJoint173.USE = "Joe_r_index2";
 HAnimHumanoid13.joints[47] = HAnimJoint173;
 
 let HAnimJoint174 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint174.USE = "Joe_l_sternoclavicular";
+HAnimJoint174.USE = "Joe_l_index3";
 HAnimHumanoid13.joints[48] = HAnimJoint174;
 
 let HAnimJoint175 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint175.USE = "Joe_l_acromioclavicular";
+HAnimJoint175.USE = "Joe_r_index3";
 HAnimHumanoid13.joints[49] = HAnimJoint175;
 
 let HAnimJoint176 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint176.USE = "Joe_l_shoulder";
+HAnimJoint176.USE = "Joe_l_knee";
 HAnimHumanoid13.joints[50] = HAnimJoint176;
 
 let HAnimJoint177 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint177.USE = "Joe_l_elbow";
+HAnimJoint177.USE = "Joe_r_knee";
 HAnimHumanoid13.joints[51] = HAnimJoint177;
 
 let HAnimJoint178 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint178.USE = "Joe_l_wrist";
+HAnimJoint178.USE = "Joe_l_metatarsophalangeal_2";
 HAnimHumanoid13.joints[52] = HAnimJoint178;
 
 let HAnimJoint179 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint179.USE = "Joe_l_thumb1";
+HAnimJoint179.USE = "Joe_r_metatarsophalangeal_2";
 HAnimHumanoid13.joints[53] = HAnimJoint179;
 
 let HAnimJoint180 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint180.USE = "Joe_l_thumb2";
+HAnimJoint180.USE = "Joe_l_middle0";
 HAnimHumanoid13.joints[54] = HAnimJoint180;
 
 let HAnimJoint181 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint181.USE = "Joe_l_thumb3";
+HAnimJoint181.USE = "Joe_r_middle0";
 HAnimHumanoid13.joints[55] = HAnimJoint181;
 
 let HAnimJoint182 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint182.USE = "Joe_l_index0";
+HAnimJoint182.USE = "Joe_l_middle1";
 HAnimHumanoid13.joints[56] = HAnimJoint182;
 
 let HAnimJoint183 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint183.USE = "Joe_l_index1";
+HAnimJoint183.USE = "Joe_r_middle1";
 HAnimHumanoid13.joints[57] = HAnimJoint183;
 
 let HAnimJoint184 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint184.USE = "Joe_l_index2";
+HAnimJoint184.USE = "Joe_l_middle2";
 HAnimHumanoid13.joints[58] = HAnimJoint184;
 
 let HAnimJoint185 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint185.USE = "Joe_l_index3";
+HAnimJoint185.USE = "Joe_r_middle2";
 HAnimHumanoid13.joints[59] = HAnimJoint185;
 
 let HAnimJoint186 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint186.USE = "Joe_l_middle0";
+HAnimJoint186.USE = "Joe_l_middle3";
 HAnimHumanoid13.joints[60] = HAnimJoint186;
 
 let HAnimJoint187 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint187.USE = "Joe_l_middle1";
+HAnimJoint187.USE = "Joe_r_middle3";
 HAnimHumanoid13.joints[61] = HAnimJoint187;
 
 let HAnimJoint188 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint188.USE = "Joe_l_middle2";
+HAnimJoint188.USE = "Joe_l_pinky0";
 HAnimHumanoid13.joints[62] = HAnimJoint188;
 
 let HAnimJoint189 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint189.USE = "Joe_l_middle3";
+HAnimJoint189.USE = "Joe_r_pinky0";
 HAnimHumanoid13.joints[63] = HAnimJoint189;
 
 let HAnimJoint190 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint190.USE = "Joe_l_ring0";
+HAnimJoint190.USE = "Joe_l_pinky1";
 HAnimHumanoid13.joints[64] = HAnimJoint190;
 
 let HAnimJoint191 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint191.USE = "Joe_l_ring1";
+HAnimJoint191.USE = "Joe_r_pinky1";
 HAnimHumanoid13.joints[65] = HAnimJoint191;
 
 let HAnimJoint192 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint192.USE = "Joe_l_ring2";
+HAnimJoint192.USE = "Joe_l_pinky2";
 HAnimHumanoid13.joints[66] = HAnimJoint192;
 
 let HAnimJoint193 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint193.USE = "Joe_l_ring3";
+HAnimJoint193.USE = "Joe_r_pinky2";
 HAnimHumanoid13.joints[67] = HAnimJoint193;
 
 let HAnimJoint194 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint194.USE = "Joe_l_pinky0";
+HAnimJoint194.USE = "Joe_l_pinky3";
 HAnimHumanoid13.joints[68] = HAnimJoint194;
 
 let HAnimJoint195 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint195.USE = "Joe_l_pinky1";
+HAnimJoint195.USE = "Joe_r_pinky3";
 HAnimHumanoid13.joints[69] = HAnimJoint195;
 
 let HAnimJoint196 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint196.USE = "Joe_l_pinky2";
+HAnimJoint196.USE = "Joe_l_radiocarpal";
 HAnimHumanoid13.joints[70] = HAnimJoint196;
 
 let HAnimJoint197 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint197.USE = "Joe_l_pinky3";
+HAnimJoint197.USE = "Joe_r_radiocarpal";
 HAnimHumanoid13.joints[71] = HAnimJoint197;
 
 let HAnimJoint198 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint198.USE = "Joe_r_sternoclavicular";
+HAnimJoint198.USE = "Joe_l_ring0";
 HAnimHumanoid13.joints[72] = HAnimJoint198;
 
 let HAnimJoint199 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint199.USE = "Joe_r_acromioclavicular";
+HAnimJoint199.USE = "Joe_r_ring0";
 HAnimHumanoid13.joints[73] = HAnimJoint199;
 
 let HAnimJoint200 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint200.USE = "Joe_r_shoulder";
+HAnimJoint200.USE = "Joe_l_ring1";
 HAnimHumanoid13.joints[74] = HAnimJoint200;
 
 let HAnimJoint201 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint201.USE = "Joe_r_elbow";
+HAnimJoint201.USE = "Joe_r_ring1";
 HAnimHumanoid13.joints[75] = HAnimJoint201;
 
 let HAnimJoint202 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint202.USE = "Joe_r_wrist";
+HAnimJoint202.USE = "Joe_l_ring2";
 HAnimHumanoid13.joints[76] = HAnimJoint202;
 
 let HAnimJoint203 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint203.USE = "Joe_r_thumb1";
+HAnimJoint203.USE = "Joe_r_ring2";
 HAnimHumanoid13.joints[77] = HAnimJoint203;
 
 let HAnimJoint204 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint204.USE = "Joe_r_thumb2";
+HAnimJoint204.USE = "Joe_l_ring3";
 HAnimHumanoid13.joints[78] = HAnimJoint204;
 
 let HAnimJoint205 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint205.USE = "Joe_r_thumb3";
+HAnimJoint205.USE = "Joe_r_ring3";
 HAnimHumanoid13.joints[79] = HAnimJoint205;
 
 let HAnimJoint206 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint206.USE = "Joe_r_index0";
+HAnimJoint206.USE = "Joe_l_shoulder";
 HAnimHumanoid13.joints[80] = HAnimJoint206;
 
 let HAnimJoint207 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint207.USE = "Joe_r_index1";
+HAnimJoint207.USE = "Joe_r_shoulder";
 HAnimHumanoid13.joints[81] = HAnimJoint207;
 
 let HAnimJoint208 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint208.USE = "Joe_r_index2";
+HAnimJoint208.USE = "Joe_l_sternoclavicular";
 HAnimHumanoid13.joints[82] = HAnimJoint208;
 
 let HAnimJoint209 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint209.USE = "Joe_r_index3";
+HAnimJoint209.USE = "Joe_r_sternoclavicular";
 HAnimHumanoid13.joints[83] = HAnimJoint209;
 
 let HAnimJoint210 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint210.USE = "Joe_r_middle0";
+HAnimJoint210.USE = "Joe_l_talocrural";
 HAnimHumanoid13.joints[84] = HAnimJoint210;
 
 let HAnimJoint211 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint211.USE = "Joe_r_middle1";
+HAnimJoint211.USE = "Joe_r_talocrural";
 HAnimHumanoid13.joints[85] = HAnimJoint211;
 
 let HAnimJoint212 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint212.USE = "Joe_r_middle2";
+HAnimJoint212.USE = "Joe_l_tarsal_distal_interphalangeal_2";
 HAnimHumanoid13.joints[86] = HAnimJoint212;
 
 let HAnimJoint213 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint213.USE = "Joe_r_middle3";
+HAnimJoint213.USE = "Joe_r_tarsal_distal_interphalangeal_2";
 HAnimHumanoid13.joints[87] = HAnimJoint213;
 
 let HAnimJoint214 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint214.USE = "Joe_r_ring0";
+HAnimJoint214.USE = "Joe_l_tarsometatarsal_2";
 HAnimHumanoid13.joints[88] = HAnimJoint214;
 
 let HAnimJoint215 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint215.USE = "Joe_r_ring1";
+HAnimJoint215.USE = "Joe_r_tarsometatarsal_2";
 HAnimHumanoid13.joints[89] = HAnimJoint215;
 
 let HAnimJoint216 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint216.USE = "Joe_r_ring2";
+HAnimJoint216.USE = "Joe_l_thumb1";
 HAnimHumanoid13.joints[90] = HAnimJoint216;
 
 let HAnimJoint217 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint217.USE = "Joe_r_ring3";
+HAnimJoint217.USE = "Joe_r_thumb1";
 HAnimHumanoid13.joints[91] = HAnimJoint217;
 
 let HAnimJoint218 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint218.USE = "Joe_r_pinky0";
+HAnimJoint218.USE = "Joe_l_thumb2";
 HAnimHumanoid13.joints[92] = HAnimJoint218;
 
 let HAnimJoint219 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint219.USE = "Joe_r_pinky1";
+HAnimJoint219.USE = "Joe_r_thumb2";
 HAnimHumanoid13.joints[93] = HAnimJoint219;
 
 let HAnimJoint220 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint220.USE = "Joe_r_pinky2";
+HAnimJoint220.USE = "Joe_l_thumb3";
 HAnimHumanoid13.joints[94] = HAnimJoint220;
 
 let HAnimJoint221 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint221.USE = "Joe_r_pinky3";
+HAnimJoint221.USE = "Joe_r_thumb3";
 HAnimHumanoid13.joints[95] = HAnimJoint221;
 
 let HAnimSegment222 = browser.currentScene.createNode("HAnimSegment");
@@ -1840,10 +1436,6 @@ Group12.children[0] = HAnimHumanoid13;
 browser.currentScene.children[10] = Group12;
 
 let Group224 = browser.currentScene.createNode("Group");
-Group224.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group224.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Group224.bboxDisplay = False;
-Group224.visible = True;
 let TimeSensor225 = browser.currentScene.createNode("TimeSensor");
 TimeSensor225.DEF = "KickTimer";
 TimeSensor225.cycleInterval = 3.73;
@@ -1854,571 +1446,571 @@ Group224.children[0] = TimeSensor225;
 
 //Interpolators
 let OrientationInterpolator226 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator226.DEF = "HumanoidRootRotInterp";
+OrientationInterpolator226.DEF = "HumanoidRoot_RotationInterpolator";
 OrientationInterpolator226.key = new MFFloat(new float[0,0.1,0.4,0.6,1]);
 OrientationInterpolator226.keyValue = new MFRotation(new float[1,0,0,0.5,1,0,0,0.5,-1,0,0,0.1,-1,0,0,0.5,-1,0,0,0.5]);
 Group224.children[1] = OrientationInterpolator226;
 
 let PositionInterpolator227 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator227.DEF = "HumanoidRootTransInterp";
+PositionInterpolator227.DEF = "HumanoidRoot_TranslationInterpolator";
 PositionInterpolator227.key = new MFFloat(new float[0,0.2,0.6,1]);
 PositionInterpolator227.keyValue = new MFVec3f(new float[1,0.3,-1,0.4,-0.04,-0.4,-0.18,0.1,0,-0.2,0.15,0.15]);
 Group224.children[2] = PositionInterpolator227;
 
 let OrientationInterpolator228 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator228.DEF = "sacroiliacRotInterp";
+OrientationInterpolator228.DEF = "sacroiliac_RotationInterpolator";
 OrientationInterpolator228.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator228.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[3] = OrientationInterpolator228;
 
 let OrientationInterpolator229 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator229.DEF = "l_hipRotInterp";
+OrientationInterpolator229.DEF = "l_hip_RotationInterpolator";
 OrientationInterpolator229.key = new MFFloat(new float[0,0.1,0.3,0.45,1]);
 OrientationInterpolator229.keyValue = new MFRotation(new float[-1,0,0,1.5,-1,0,0,1,0,0,1,0,1,0,0,0.5,1,0,0,1]);
 Group224.children[4] = OrientationInterpolator229;
 
 let OrientationInterpolator230 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator230.DEF = "l_kneeRotInterp";
+OrientationInterpolator230.DEF = "l_knee_RotationInterpolator";
 OrientationInterpolator230.key = new MFFloat(new float[0,0.2,0.35,0.5,1]);
 OrientationInterpolator230.keyValue = new MFRotation(new float[1,0,0,1,0,0,1,0,0,0,1,0.2,1,0,1,0.5,1,0,0,1.4]);
 Group224.children[5] = OrientationInterpolator230;
 
 let OrientationInterpolator231 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator231.DEF = "l_ankleRotInterp";
+OrientationInterpolator231.DEF = "l_ankle_RotationInterpolator";
 OrientationInterpolator231.key = new MFFloat(new float[0,0.25,1]);
 OrientationInterpolator231.keyValue = new MFRotation(new float[-1,0,0,1,0,0,1,0,1,0,0,1]);
 Group224.children[6] = OrientationInterpolator231;
 
 let OrientationInterpolator232 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator232.DEF = "l_subtalarRotInterp";
+OrientationInterpolator232.DEF = "l_subtalar_RotationInterpolator";
 OrientationInterpolator232.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator232.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[7] = OrientationInterpolator232;
 
 let OrientationInterpolator233 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator233.DEF = "l_midtarsalRotInterp";
+OrientationInterpolator233.DEF = "l_midtarsal_RotationInterpolator";
 OrientationInterpolator233.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator233.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[8] = OrientationInterpolator233;
 
 let OrientationInterpolator234 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator234.DEF = "l_metatarsalRotInterp";
+OrientationInterpolator234.DEF = "l_metatarsal_RotationInterpolator";
 OrientationInterpolator234.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator234.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[9] = OrientationInterpolator234;
 
 let OrientationInterpolator235 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator235.DEF = "r_hipRotInterp";
+OrientationInterpolator235.DEF = "r_hip_RotationInterpolator";
 OrientationInterpolator235.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
 OrientationInterpolator235.keyValue = new MFRotation(new float[1,0,0,1,1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,1]);
 Group224.children[10] = OrientationInterpolator235;
 
 let OrientationInterpolator236 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator236.DEF = "r_kneeRotInterp";
+OrientationInterpolator236.DEF = "r_knee_RotationInterpolator";
 OrientationInterpolator236.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
 OrientationInterpolator236.keyValue = new MFRotation(new float[1,0,0,0.1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,1.5]);
 Group224.children[11] = OrientationInterpolator236;
 
 let OrientationInterpolator237 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator237.DEF = "r_ankleRotInterp";
+OrientationInterpolator237.DEF = "r_ankle_RotationInterpolator";
 OrientationInterpolator237.key = new MFFloat(new float[0,0.25,0.5,0.75,1]);
 OrientationInterpolator237.keyValue = new MFRotation(new float[-1,0,0,1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,0.5]);
 Group224.children[12] = OrientationInterpolator237;
 
 let OrientationInterpolator238 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator238.DEF = "r_subtalarRotInterp";
+OrientationInterpolator238.DEF = "r_subtalar_RotationInterpolator";
 OrientationInterpolator238.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator238.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[13] = OrientationInterpolator238;
 
 let OrientationInterpolator239 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator239.DEF = "r_midtarsalRotInterp";
+OrientationInterpolator239.DEF = "r_midtarsal_RotationInterpolator";
 OrientationInterpolator239.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator239.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[14] = OrientationInterpolator239;
 
 let OrientationInterpolator240 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator240.DEF = "r_metatarsalRotInterp";
+OrientationInterpolator240.DEF = "r_metatarsal_RotationInterpolator";
 OrientationInterpolator240.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator240.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[15] = OrientationInterpolator240;
 
 let OrientationInterpolator241 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator241.DEF = "vl5RotInterp";
+OrientationInterpolator241.DEF = "vl5_RotationInterpolator";
 OrientationInterpolator241.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator241.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[16] = OrientationInterpolator241;
 
 let OrientationInterpolator242 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator242.DEF = "vl4RotInterp";
+OrientationInterpolator242.DEF = "vl4_RotationInterpolator";
 OrientationInterpolator242.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator242.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[17] = OrientationInterpolator242;
 
 let OrientationInterpolator243 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator243.DEF = "vl3RotInterp";
+OrientationInterpolator243.DEF = "vl3_RotationInterpolator";
 OrientationInterpolator243.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator243.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[18] = OrientationInterpolator243;
 
 let OrientationInterpolator244 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator244.DEF = "vl2RotInterp";
+OrientationInterpolator244.DEF = "vl2_RotationInterpolator";
 OrientationInterpolator244.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator244.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[19] = OrientationInterpolator244;
 
 let OrientationInterpolator245 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator245.DEF = "vl1RotInterp";
+OrientationInterpolator245.DEF = "vl1_RotationInterpolator";
 OrientationInterpolator245.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator245.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[20] = OrientationInterpolator245;
 
 let OrientationInterpolator246 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator246.DEF = "vt12RotInterp";
+OrientationInterpolator246.DEF = "vt12_RotationInterpolator";
 OrientationInterpolator246.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator246.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[21] = OrientationInterpolator246;
 
 let OrientationInterpolator247 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator247.DEF = "vt11RotInterp";
+OrientationInterpolator247.DEF = "vt11_RotationInterpolator";
 OrientationInterpolator247.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator247.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[22] = OrientationInterpolator247;
 
 let OrientationInterpolator248 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator248.DEF = "vt10RotInterp";
+OrientationInterpolator248.DEF = "vt10_RotationInterpolator";
 OrientationInterpolator248.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator248.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[23] = OrientationInterpolator248;
 
 let OrientationInterpolator249 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator249.DEF = "vt9RotInterp";
+OrientationInterpolator249.DEF = "vt9_RotationInterpolator";
 OrientationInterpolator249.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator249.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[24] = OrientationInterpolator249;
 
 let OrientationInterpolator250 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator250.DEF = "vt8RotInterp";
+OrientationInterpolator250.DEF = "vt8_RotationInterpolator";
 OrientationInterpolator250.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator250.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[25] = OrientationInterpolator250;
 
 let OrientationInterpolator251 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator251.DEF = "vt7RotInterp";
+OrientationInterpolator251.DEF = "vt7_RotationInterpolator";
 OrientationInterpolator251.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator251.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[26] = OrientationInterpolator251;
 
 let OrientationInterpolator252 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator252.DEF = "vt6RotInterp";
+OrientationInterpolator252.DEF = "vt6_RotationInterpolator";
 OrientationInterpolator252.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator252.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[27] = OrientationInterpolator252;
 
 let OrientationInterpolator253 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator253.DEF = "vt5RotInterp";
+OrientationInterpolator253.DEF = "vt5_RotationInterpolator";
 OrientationInterpolator253.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator253.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[28] = OrientationInterpolator253;
 
 let OrientationInterpolator254 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator254.DEF = "vt4RotInterp";
+OrientationInterpolator254.DEF = "vt4_RotationInterpolator";
 OrientationInterpolator254.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator254.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[29] = OrientationInterpolator254;
 
 let OrientationInterpolator255 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator255.DEF = "vt3RotInterp";
+OrientationInterpolator255.DEF = "vt3_RotationInterpolator";
 OrientationInterpolator255.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator255.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[30] = OrientationInterpolator255;
 
 let OrientationInterpolator256 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator256.DEF = "vt2RotInterp";
+OrientationInterpolator256.DEF = "vt2_RotationInterpolator";
 OrientationInterpolator256.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator256.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[31] = OrientationInterpolator256;
 
 let OrientationInterpolator257 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator257.DEF = "vt1RotInterp";
+OrientationInterpolator257.DEF = "vt1_RotationInterpolator";
 OrientationInterpolator257.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator257.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[32] = OrientationInterpolator257;
 
 let OrientationInterpolator258 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator258.DEF = "vc7RotInterp";
+OrientationInterpolator258.DEF = "vc7_RotationInterpolator";
 OrientationInterpolator258.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator258.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[33] = OrientationInterpolator258;
 
 let OrientationInterpolator259 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator259.DEF = "vc6RotInterp";
+OrientationInterpolator259.DEF = "vc6_RotationInterpolator";
 OrientationInterpolator259.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator259.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[34] = OrientationInterpolator259;
 
 let OrientationInterpolator260 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator260.DEF = "vc5RotInterp";
+OrientationInterpolator260.DEF = "vc5_RotationInterpolator";
 OrientationInterpolator260.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator260.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[35] = OrientationInterpolator260;
 
 let OrientationInterpolator261 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator261.DEF = "vc4RotInterp";
+OrientationInterpolator261.DEF = "vc4_RotationInterpolator";
 OrientationInterpolator261.key = new MFFloat(new float[0,0.3,0.4,1]);
 OrientationInterpolator261.keyValue = new MFRotation(new float[1,0,1,0.25,-1,0,-1,0.35,1,0,0,0.75,1,0,1,0.5]);
 Group224.children[36] = OrientationInterpolator261;
 
 let OrientationInterpolator262 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator262.DEF = "vc3RotInterp";
+OrientationInterpolator262.DEF = "vc3_RotationInterpolator";
 OrientationInterpolator262.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator262.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[37] = OrientationInterpolator262;
 
 let OrientationInterpolator263 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator263.DEF = "vc2RotInterp";
+OrientationInterpolator263.DEF = "vc2_RotationInterpolator";
 OrientationInterpolator263.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator263.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[38] = OrientationInterpolator263;
 
 let OrientationInterpolator264 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator264.DEF = "vc1RotInterp";
+OrientationInterpolator264.DEF = "vc1_RotationInterpolator";
 OrientationInterpolator264.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator264.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[39] = OrientationInterpolator264;
 
 let OrientationInterpolator265 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator265.DEF = "skullbaseRotInterp";
+OrientationInterpolator265.DEF = "skullbase_RotationInterpolator";
 OrientationInterpolator265.key = new MFFloat(new float[0,0.2,0.75,1]);
 OrientationInterpolator265.keyValue = new MFRotation(new float[0,-1,0,0.5,0,0,1,0,0,0,1,0,0,1,0,0.35]);
 Group224.children[40] = OrientationInterpolator265;
 
 let OrientationInterpolator266 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator266.DEF = "l_eyelid_jointRotInterp";
+OrientationInterpolator266.DEF = "l_eyelid_joint_RotationInterpolator";
 OrientationInterpolator266.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator266.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[41] = OrientationInterpolator266;
 
 let OrientationInterpolator267 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator267.DEF = "l_eyeball_jointRotInterp";
+OrientationInterpolator267.DEF = "l_eyeball_joint_RotationInterpolator";
 OrientationInterpolator267.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator267.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[42] = OrientationInterpolator267;
 
 let OrientationInterpolator268 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator268.DEF = "l_eyebrow_jointRotInterp";
+OrientationInterpolator268.DEF = "l_eyebrow_joint_RotationInterpolator";
 OrientationInterpolator268.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator268.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[43] = OrientationInterpolator268;
 
 let OrientationInterpolator269 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator269.DEF = "r_eyelid_jointRotInterp";
+OrientationInterpolator269.DEF = "r_eyelid_joint_RotationInterpolator";
 OrientationInterpolator269.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator269.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[44] = OrientationInterpolator269;
 
 let OrientationInterpolator270 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator270.DEF = "r_eyeball_jointRotInterp";
+OrientationInterpolator270.DEF = "r_eyeball_joint_RotationInterpolator";
 OrientationInterpolator270.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator270.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[45] = OrientationInterpolator270;
 
 let OrientationInterpolator271 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator271.DEF = "r_eyebrow_jointRotInterp";
+OrientationInterpolator271.DEF = "r_eyebrow_joint_RotationInterpolator";
 OrientationInterpolator271.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator271.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[46] = OrientationInterpolator271;
 
 let OrientationInterpolator272 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator272.DEF = "temporomandibularRotInterp";
+OrientationInterpolator272.DEF = "temporomandibular_RotationInterpolator";
 OrientationInterpolator272.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator272.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[47] = OrientationInterpolator272;
 
 let OrientationInterpolator273 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator273.DEF = "l_sternoclavicularRotInterp";
+OrientationInterpolator273.DEF = "l_sternoclavicular_RotationInterpolator";
 OrientationInterpolator273.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator273.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[48] = OrientationInterpolator273;
 
 let OrientationInterpolator274 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator274.DEF = "l_acromioclavicularRotInterp";
+OrientationInterpolator274.DEF = "l_acromioclavicular_RotationInterpolator";
 OrientationInterpolator274.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator274.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[49] = OrientationInterpolator274;
 
 let OrientationInterpolator275 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator275.DEF = "l_shoulderRotInterp";
+OrientationInterpolator275.DEF = "l_shoulder_RotationInterpolator";
 OrientationInterpolator275.key = new MFFloat(new float[0,0.4,1]);
 OrientationInterpolator275.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,1.5,-1,0,1,1.75]);
 Group224.children[50] = OrientationInterpolator275;
 
 let OrientationInterpolator276 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator276.DEF = "l_elbowRotInterp";
+OrientationInterpolator276.DEF = "l_elbow_RotationInterpolator";
 OrientationInterpolator276.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator276.keyValue = new MFRotation(new float[-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5]);
 Group224.children[51] = OrientationInterpolator276;
 
 let OrientationInterpolator277 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator277.DEF = "l_wristRotInterp";
+OrientationInterpolator277.DEF = "l_wrist_RotationInterpolator";
 OrientationInterpolator277.key = new MFFloat(new float[0,0.4,0.8,1]);
 OrientationInterpolator277.keyValue = new MFRotation(new float[0,0,1,0,0,1,0,1.3,0,-0.5,1,1.3,0,0,1,0]);
 Group224.children[52] = OrientationInterpolator277;
 
 let OrientationInterpolator278 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator278.DEF = "l_thumb1RotInterp";
+OrientationInterpolator278.DEF = "l_thumb1_RotationInterpolator";
 OrientationInterpolator278.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator278.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[53] = OrientationInterpolator278;
 
 let OrientationInterpolator279 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator279.DEF = "l_thumb2RotInterp";
+OrientationInterpolator279.DEF = "l_thumb2_RotationInterpolator";
 OrientationInterpolator279.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator279.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[54] = OrientationInterpolator279;
 
 let OrientationInterpolator280 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator280.DEF = "l_thumb3RotInterp";
+OrientationInterpolator280.DEF = "l_thumb3_RotationInterpolator";
 OrientationInterpolator280.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator280.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[55] = OrientationInterpolator280;
 
 let OrientationInterpolator281 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator281.DEF = "l_index0RotInterp";
+OrientationInterpolator281.DEF = "l_index0_RotationInterpolator";
 OrientationInterpolator281.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator281.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[56] = OrientationInterpolator281;
 
 let OrientationInterpolator282 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator282.DEF = "l_index1RotInterp";
+OrientationInterpolator282.DEF = "l_index1_RotationInterpolator";
 OrientationInterpolator282.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator282.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[57] = OrientationInterpolator282;
 
 let OrientationInterpolator283 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator283.DEF = "l_index2RotInterp";
+OrientationInterpolator283.DEF = "l_index2_RotationInterpolator";
 OrientationInterpolator283.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator283.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[58] = OrientationInterpolator283;
 
 let OrientationInterpolator284 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator284.DEF = "l_index3RotInterp";
+OrientationInterpolator284.DEF = "l_index3_RotationInterpolator";
 OrientationInterpolator284.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator284.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[59] = OrientationInterpolator284;
 
 let OrientationInterpolator285 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator285.DEF = "l_middle0RotInterp";
+OrientationInterpolator285.DEF = "l_middle0_RotationInterpolator";
 OrientationInterpolator285.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator285.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[60] = OrientationInterpolator285;
 
 let OrientationInterpolator286 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator286.DEF = "l_middle1RotInterp";
+OrientationInterpolator286.DEF = "l_middle1_RotationInterpolator";
 OrientationInterpolator286.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator286.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[61] = OrientationInterpolator286;
 
 let OrientationInterpolator287 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator287.DEF = "l_middle2RotInterp";
+OrientationInterpolator287.DEF = "l_middle2_RotationInterpolator";
 OrientationInterpolator287.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator287.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[62] = OrientationInterpolator287;
 
 let OrientationInterpolator288 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator288.DEF = "l_middle3RotInterp";
+OrientationInterpolator288.DEF = "l_middle3_RotationInterpolator";
 OrientationInterpolator288.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator288.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[63] = OrientationInterpolator288;
 
 let OrientationInterpolator289 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator289.DEF = "l_ring0RotInterp";
+OrientationInterpolator289.DEF = "l_ring0_RotationInterpolator";
 OrientationInterpolator289.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator289.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[64] = OrientationInterpolator289;
 
 let OrientationInterpolator290 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator290.DEF = "l_ring1RotInterp";
+OrientationInterpolator290.DEF = "l_ring1_RotationInterpolator";
 OrientationInterpolator290.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator290.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[65] = OrientationInterpolator290;
 
 let OrientationInterpolator291 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator291.DEF = "l_ring2RotInterp";
+OrientationInterpolator291.DEF = "l_ring2_RotationInterpolator";
 OrientationInterpolator291.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator291.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[66] = OrientationInterpolator291;
 
 let OrientationInterpolator292 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator292.DEF = "l_ring3RotInterp";
+OrientationInterpolator292.DEF = "l_ring3_RotationInterpolator";
 OrientationInterpolator292.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator292.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[67] = OrientationInterpolator292;
 
 let OrientationInterpolator293 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator293.DEF = "l_pinky0RotInterp";
+OrientationInterpolator293.DEF = "l_pinky0_RotationInterpolator";
 OrientationInterpolator293.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator293.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[68] = OrientationInterpolator293;
 
 let OrientationInterpolator294 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator294.DEF = "l_pinky1RotInterp";
+OrientationInterpolator294.DEF = "l_pinky1_RotationInterpolator";
 OrientationInterpolator294.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator294.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[69] = OrientationInterpolator294;
 
 let OrientationInterpolator295 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator295.DEF = "l_pinky2RotInterp";
+OrientationInterpolator295.DEF = "l_pinky2_RotationInterpolator";
 OrientationInterpolator295.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator295.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[70] = OrientationInterpolator295;
 
 let OrientationInterpolator296 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator296.DEF = "l_pinky3RotInterp";
+OrientationInterpolator296.DEF = "l_pinky3_RotationInterpolator";
 OrientationInterpolator296.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator296.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[71] = OrientationInterpolator296;
 
 let OrientationInterpolator297 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator297.DEF = "r_sternoclavicularRotInterp";
+OrientationInterpolator297.DEF = "r_sternoclavicular_RotationInterpolator";
 OrientationInterpolator297.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator297.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[72] = OrientationInterpolator297;
 
 let OrientationInterpolator298 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator298.DEF = "r_acromioclavicularRotInterp";
+OrientationInterpolator298.DEF = "r_acromioclavicular_RotationInterpolator";
 OrientationInterpolator298.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator298.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[73] = OrientationInterpolator298;
 
 let OrientationInterpolator299 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator299.DEF = "r_shoulderRotInterp";
+OrientationInterpolator299.DEF = "r_shoulder_RotationInterpolator";
 OrientationInterpolator299.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator299.keyValue = new MFRotation(new float[0,0,-1,2.5,0,0,-1,1.5,0,0,-1,1.75]);
 Group224.children[74] = OrientationInterpolator299;
 
 let OrientationInterpolator300 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator300.DEF = "r_elbowRotInterp";
+OrientationInterpolator300.DEF = "r_elbow_RotationInterpolator";
 OrientationInterpolator300.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator300.keyValue = new MFRotation(new float[-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5]);
 Group224.children[75] = OrientationInterpolator300;
 
 let OrientationInterpolator301 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator301.DEF = "r_wristRotInterp";
+OrientationInterpolator301.DEF = "r_wrist_RotationInterpolator";
 OrientationInterpolator301.key = new MFFloat(new float[0,0.5,0.7,1]);
 OrientationInterpolator301.keyValue = new MFRotation(new float[0,1,0,0.3,0,0,1,0,0,0,-1,1,0,-1,0,0.3]);
 Group224.children[76] = OrientationInterpolator301;
 
 let OrientationInterpolator302 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator302.DEF = "r_thumb1RotInterp";
+OrientationInterpolator302.DEF = "r_thumb1_RotationInterpolator";
 OrientationInterpolator302.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator302.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[77] = OrientationInterpolator302;
 
 let OrientationInterpolator303 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator303.DEF = "r_thumb2RotInterp";
+OrientationInterpolator303.DEF = "r_thumb2_RotationInterpolator";
 OrientationInterpolator303.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator303.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[78] = OrientationInterpolator303;
 
 let OrientationInterpolator304 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator304.DEF = "r_thumb3RotInterp";
+OrientationInterpolator304.DEF = "r_thumb3_RotationInterpolator";
 OrientationInterpolator304.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator304.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group224.children[79] = OrientationInterpolator304;
 
 let OrientationInterpolator305 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator305.DEF = "r_index0RotInterp";
+OrientationInterpolator305.DEF = "r_index0_RotationInterpolator";
 OrientationInterpolator305.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator305.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
 Group224.children[80] = OrientationInterpolator305;
 
 let OrientationInterpolator306 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator306.DEF = "r_index1RotInterp";
+OrientationInterpolator306.DEF = "r_index1_RotationInterpolator";
 OrientationInterpolator306.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator306.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[81] = OrientationInterpolator306;
 
 let OrientationInterpolator307 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator307.DEF = "r_index2RotInterp";
+OrientationInterpolator307.DEF = "r_index2_RotationInterpolator";
 OrientationInterpolator307.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator307.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[82] = OrientationInterpolator307;
 
 let OrientationInterpolator308 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator308.DEF = "r_index3RotInterp";
+OrientationInterpolator308.DEF = "r_index3_RotationInterpolator";
 OrientationInterpolator308.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator308.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[83] = OrientationInterpolator308;
 
 let OrientationInterpolator309 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator309.DEF = "r_middle0RotInterp";
+OrientationInterpolator309.DEF = "r_middle0_RotationInterpolator";
 OrientationInterpolator309.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator309.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
 Group224.children[84] = OrientationInterpolator309;
 
 let OrientationInterpolator310 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator310.DEF = "r_middle1RotInterp";
+OrientationInterpolator310.DEF = "r_middle1_RotationInterpolator";
 OrientationInterpolator310.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator310.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[85] = OrientationInterpolator310;
 
 let OrientationInterpolator311 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator311.DEF = "r_middle2RotInterp";
+OrientationInterpolator311.DEF = "r_middle2_RotationInterpolator";
 OrientationInterpolator311.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator311.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[86] = OrientationInterpolator311;
 
 let OrientationInterpolator312 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator312.DEF = "r_middle3RotInterp";
+OrientationInterpolator312.DEF = "r_middle3_RotationInterpolator";
 OrientationInterpolator312.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator312.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[87] = OrientationInterpolator312;
 
 let OrientationInterpolator313 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator313.DEF = "r_ring0RotInterp";
+OrientationInterpolator313.DEF = "r_ring0_RotationInterpolator";
 OrientationInterpolator313.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator313.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
 Group224.children[88] = OrientationInterpolator313;
 
 let OrientationInterpolator314 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator314.DEF = "r_ring1RotInterp";
+OrientationInterpolator314.DEF = "r_ring1_RotationInterpolator";
 OrientationInterpolator314.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator314.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[89] = OrientationInterpolator314;
 
 let OrientationInterpolator315 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator315.DEF = "r_ring2RotInterp";
+OrientationInterpolator315.DEF = "r_ring2_RotationInterpolator";
 OrientationInterpolator315.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator315.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[90] = OrientationInterpolator315;
 
 let OrientationInterpolator316 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator316.DEF = "r_ring3RotInterp";
+OrientationInterpolator316.DEF = "r_ring3_RotationInterpolator";
 OrientationInterpolator316.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator316.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[91] = OrientationInterpolator316;
 
 let OrientationInterpolator317 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator317.DEF = "r_pinky0RotInterp";
+OrientationInterpolator317.DEF = "r_pinky0_RotationInterpolator";
 OrientationInterpolator317.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator317.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0]);
 Group224.children[92] = OrientationInterpolator317;
 
 let OrientationInterpolator318 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator318.DEF = "r_pinky1RotInterp";
+OrientationInterpolator318.DEF = "r_pinky1_RotationInterpolator";
 OrientationInterpolator318.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator318.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[93] = OrientationInterpolator318;
 
 let OrientationInterpolator319 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator319.DEF = "r_pinky2RotInterp";
+OrientationInterpolator319.DEF = "r_pinky2_RotationInterpolator";
 OrientationInterpolator319.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator319.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[94] = OrientationInterpolator319;
 
 let OrientationInterpolator320 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator320.DEF = "r_pinky3RotInterp";
+OrientationInterpolator320.DEF = "r_pinky3_RotationInterpolator";
 OrientationInterpolator320.key = new MFFloat(new float[0,0.5,0.75,1]);
 OrientationInterpolator320.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0]);
 Group224.children[95] = OrientationInterpolator320;
@@ -2430,1339 +2022,1335 @@ let ROUTE321 = browser.currentScene.createNode("ROUTE");
 ROUTE321.fromField = "fraction_changed";
 ROUTE321.fromNode = "KickTimer";
 ROUTE321.toField = "set_fraction";
-ROUTE321.toNode = "HumanoidRootRotInterp";
+ROUTE321.toNode = "HumanoidRoot_RotationInterpolator";
 browser.currentScene.children[12] = ROUTE321;
 
 let ROUTE322 = browser.currentScene.createNode("ROUTE");
 ROUTE322.fromField = "fraction_changed";
 ROUTE322.fromNode = "KickTimer";
 ROUTE322.toField = "set_fraction";
-ROUTE322.toNode = "HumanoidRootTransInterp";
+ROUTE322.toNode = "HumanoidRoot_TranslationInterpolator";
 browser.currentScene.children[13] = ROUTE322;
 
 let ROUTE323 = browser.currentScene.createNode("ROUTE");
 ROUTE323.fromField = "fraction_changed";
 ROUTE323.fromNode = "KickTimer";
 ROUTE323.toField = "set_fraction";
-ROUTE323.toNode = "sacroiliacRotInterp";
+ROUTE323.toNode = "sacroiliac_RotationInterpolator";
 browser.currentScene.children[14] = ROUTE323;
 
 let ROUTE324 = browser.currentScene.createNode("ROUTE");
 ROUTE324.fromField = "fraction_changed";
 ROUTE324.fromNode = "KickTimer";
 ROUTE324.toField = "set_fraction";
-ROUTE324.toNode = "l_hipRotInterp";
+ROUTE324.toNode = "l_hip_RotationInterpolator";
 browser.currentScene.children[15] = ROUTE324;
 
 let ROUTE325 = browser.currentScene.createNode("ROUTE");
 ROUTE325.fromField = "fraction_changed";
 ROUTE325.fromNode = "KickTimer";
 ROUTE325.toField = "set_fraction";
-ROUTE325.toNode = "l_kneeRotInterp";
+ROUTE325.toNode = "l_knee_RotationInterpolator";
 browser.currentScene.children[16] = ROUTE325;
 
 let ROUTE326 = browser.currentScene.createNode("ROUTE");
 ROUTE326.fromField = "fraction_changed";
 ROUTE326.fromNode = "KickTimer";
 ROUTE326.toField = "set_fraction";
-ROUTE326.toNode = "l_ankleRotInterp";
+ROUTE326.toNode = "l_ankle_RotationInterpolator";
 browser.currentScene.children[17] = ROUTE326;
 
 let ROUTE327 = browser.currentScene.createNode("ROUTE");
 ROUTE327.fromField = "fraction_changed";
 ROUTE327.fromNode = "KickTimer";
 ROUTE327.toField = "set_fraction";
-ROUTE327.toNode = "l_subtalarRotInterp";
+ROUTE327.toNode = "l_subtalar_RotationInterpolator";
 browser.currentScene.children[18] = ROUTE327;
 
 let ROUTE328 = browser.currentScene.createNode("ROUTE");
 ROUTE328.fromField = "fraction_changed";
 ROUTE328.fromNode = "KickTimer";
 ROUTE328.toField = "set_fraction";
-ROUTE328.toNode = "l_midtarsalRotInterp";
+ROUTE328.toNode = "l_midtarsal_RotationInterpolator";
 browser.currentScene.children[19] = ROUTE328;
 
 let ROUTE329 = browser.currentScene.createNode("ROUTE");
 ROUTE329.fromField = "fraction_changed";
 ROUTE329.fromNode = "KickTimer";
 ROUTE329.toField = "set_fraction";
-ROUTE329.toNode = "l_metatarsalRotInterp";
+ROUTE329.toNode = "l_metatarsal_RotationInterpolator";
 browser.currentScene.children[20] = ROUTE329;
 
 let ROUTE330 = browser.currentScene.createNode("ROUTE");
 ROUTE330.fromField = "fraction_changed";
 ROUTE330.fromNode = "KickTimer";
 ROUTE330.toField = "set_fraction";
-ROUTE330.toNode = "r_hipRotInterp";
+ROUTE330.toNode = "r_hip_RotationInterpolator";
 browser.currentScene.children[21] = ROUTE330;
 
 let ROUTE331 = browser.currentScene.createNode("ROUTE");
 ROUTE331.fromField = "fraction_changed";
 ROUTE331.fromNode = "KickTimer";
 ROUTE331.toField = "set_fraction";
-ROUTE331.toNode = "r_kneeRotInterp";
+ROUTE331.toNode = "r_knee_RotationInterpolator";
 browser.currentScene.children[22] = ROUTE331;
 
 let ROUTE332 = browser.currentScene.createNode("ROUTE");
 ROUTE332.fromField = "fraction_changed";
 ROUTE332.fromNode = "KickTimer";
 ROUTE332.toField = "set_fraction";
-ROUTE332.toNode = "r_ankleRotInterp";
+ROUTE332.toNode = "r_ankle_RotationInterpolator";
 browser.currentScene.children[23] = ROUTE332;
 
 let ROUTE333 = browser.currentScene.createNode("ROUTE");
 ROUTE333.fromField = "fraction_changed";
 ROUTE333.fromNode = "KickTimer";
 ROUTE333.toField = "set_fraction";
-ROUTE333.toNode = "r_subtalarRotInterp";
+ROUTE333.toNode = "r_subtalar_RotationInterpolator";
 browser.currentScene.children[24] = ROUTE333;
 
 let ROUTE334 = browser.currentScene.createNode("ROUTE");
 ROUTE334.fromField = "fraction_changed";
 ROUTE334.fromNode = "KickTimer";
 ROUTE334.toField = "set_fraction";
-ROUTE334.toNode = "r_midtarsalRotInterp";
+ROUTE334.toNode = "r_midtarsal_RotationInterpolator";
 browser.currentScene.children[25] = ROUTE334;
 
 let ROUTE335 = browser.currentScene.createNode("ROUTE");
 ROUTE335.fromField = "fraction_changed";
 ROUTE335.fromNode = "KickTimer";
 ROUTE335.toField = "set_fraction";
-ROUTE335.toNode = "r_metatarsalRotInterp";
+ROUTE335.toNode = "r_metatarsal_RotationInterpolator";
 browser.currentScene.children[26] = ROUTE335;
 
 let ROUTE336 = browser.currentScene.createNode("ROUTE");
 ROUTE336.fromField = "fraction_changed";
 ROUTE336.fromNode = "KickTimer";
 ROUTE336.toField = "set_fraction";
-ROUTE336.toNode = "vl5RotInterp";
+ROUTE336.toNode = "vl5_RotationInterpolator";
 browser.currentScene.children[27] = ROUTE336;
 
 let ROUTE337 = browser.currentScene.createNode("ROUTE");
 ROUTE337.fromField = "fraction_changed";
 ROUTE337.fromNode = "KickTimer";
 ROUTE337.toField = "set_fraction";
-ROUTE337.toNode = "vl4RotInterp";
+ROUTE337.toNode = "vl4_RotationInterpolator";
 browser.currentScene.children[28] = ROUTE337;
 
 let ROUTE338 = browser.currentScene.createNode("ROUTE");
 ROUTE338.fromField = "fraction_changed";
 ROUTE338.fromNode = "KickTimer";
 ROUTE338.toField = "set_fraction";
-ROUTE338.toNode = "vl3RotInterp";
+ROUTE338.toNode = "vl3_RotationInterpolator";
 browser.currentScene.children[29] = ROUTE338;
 
 let ROUTE339 = browser.currentScene.createNode("ROUTE");
 ROUTE339.fromField = "fraction_changed";
 ROUTE339.fromNode = "KickTimer";
 ROUTE339.toField = "set_fraction";
-ROUTE339.toNode = "vl2RotInterp";
+ROUTE339.toNode = "vl2_RotationInterpolator";
 browser.currentScene.children[30] = ROUTE339;
 
 let ROUTE340 = browser.currentScene.createNode("ROUTE");
 ROUTE340.fromField = "fraction_changed";
 ROUTE340.fromNode = "KickTimer";
 ROUTE340.toField = "set_fraction";
-ROUTE340.toNode = "vl1RotInterp";
+ROUTE340.toNode = "vl1_RotationInterpolator";
 browser.currentScene.children[31] = ROUTE340;
 
 let ROUTE341 = browser.currentScene.createNode("ROUTE");
 ROUTE341.fromField = "fraction_changed";
 ROUTE341.fromNode = "KickTimer";
 ROUTE341.toField = "set_fraction";
-ROUTE341.toNode = "vt12RotInterp";
+ROUTE341.toNode = "vt12_RotationInterpolator";
 browser.currentScene.children[32] = ROUTE341;
 
 let ROUTE342 = browser.currentScene.createNode("ROUTE");
 ROUTE342.fromField = "fraction_changed";
 ROUTE342.fromNode = "KickTimer";
 ROUTE342.toField = "set_fraction";
-ROUTE342.toNode = "vt11RotInterp";
+ROUTE342.toNode = "vt11_RotationInterpolator";
 browser.currentScene.children[33] = ROUTE342;
 
 let ROUTE343 = browser.currentScene.createNode("ROUTE");
 ROUTE343.fromField = "fraction_changed";
 ROUTE343.fromNode = "KickTimer";
 ROUTE343.toField = "set_fraction";
-ROUTE343.toNode = "vt10RotInterp";
+ROUTE343.toNode = "vt10_RotationInterpolator";
 browser.currentScene.children[34] = ROUTE343;
 
 let ROUTE344 = browser.currentScene.createNode("ROUTE");
 ROUTE344.fromField = "fraction_changed";
 ROUTE344.fromNode = "KickTimer";
 ROUTE344.toField = "set_fraction";
-ROUTE344.toNode = "vt9RotInterp";
+ROUTE344.toNode = "vt9_RotationInterpolator";
 browser.currentScene.children[35] = ROUTE344;
 
 let ROUTE345 = browser.currentScene.createNode("ROUTE");
 ROUTE345.fromField = "fraction_changed";
 ROUTE345.fromNode = "KickTimer";
 ROUTE345.toField = "set_fraction";
-ROUTE345.toNode = "vt8RotInterp";
+ROUTE345.toNode = "vt8_RotationInterpolator";
 browser.currentScene.children[36] = ROUTE345;
 
 let ROUTE346 = browser.currentScene.createNode("ROUTE");
 ROUTE346.fromField = "fraction_changed";
 ROUTE346.fromNode = "KickTimer";
 ROUTE346.toField = "set_fraction";
-ROUTE346.toNode = "vt7RotInterp";
+ROUTE346.toNode = "vt7_RotationInterpolator";
 browser.currentScene.children[37] = ROUTE346;
 
 let ROUTE347 = browser.currentScene.createNode("ROUTE");
 ROUTE347.fromField = "fraction_changed";
 ROUTE347.fromNode = "KickTimer";
 ROUTE347.toField = "set_fraction";
-ROUTE347.toNode = "vt6RotInterp";
+ROUTE347.toNode = "vt6_RotationInterpolator";
 browser.currentScene.children[38] = ROUTE347;
 
 let ROUTE348 = browser.currentScene.createNode("ROUTE");
 ROUTE348.fromField = "fraction_changed";
 ROUTE348.fromNode = "KickTimer";
 ROUTE348.toField = "set_fraction";
-ROUTE348.toNode = "vt5RotInterp";
+ROUTE348.toNode = "vt5_RotationInterpolator";
 browser.currentScene.children[39] = ROUTE348;
 
 let ROUTE349 = browser.currentScene.createNode("ROUTE");
 ROUTE349.fromField = "fraction_changed";
 ROUTE349.fromNode = "KickTimer";
 ROUTE349.toField = "set_fraction";
-ROUTE349.toNode = "vt4RotInterp";
+ROUTE349.toNode = "vt4_RotationInterpolator";
 browser.currentScene.children[40] = ROUTE349;
 
 let ROUTE350 = browser.currentScene.createNode("ROUTE");
 ROUTE350.fromField = "fraction_changed";
 ROUTE350.fromNode = "KickTimer";
 ROUTE350.toField = "set_fraction";
-ROUTE350.toNode = "vt3RotInterp";
+ROUTE350.toNode = "vt3_RotationInterpolator";
 browser.currentScene.children[41] = ROUTE350;
 
 let ROUTE351 = browser.currentScene.createNode("ROUTE");
 ROUTE351.fromField = "fraction_changed";
 ROUTE351.fromNode = "KickTimer";
 ROUTE351.toField = "set_fraction";
-ROUTE351.toNode = "vt2RotInterp";
+ROUTE351.toNode = "vt2_RotationInterpolator";
 browser.currentScene.children[42] = ROUTE351;
 
 let ROUTE352 = browser.currentScene.createNode("ROUTE");
 ROUTE352.fromField = "fraction_changed";
 ROUTE352.fromNode = "KickTimer";
 ROUTE352.toField = "set_fraction";
-ROUTE352.toNode = "vt1RotInterp";
+ROUTE352.toNode = "vt1_RotationInterpolator";
 browser.currentScene.children[43] = ROUTE352;
 
 let ROUTE353 = browser.currentScene.createNode("ROUTE");
 ROUTE353.fromField = "fraction_changed";
 ROUTE353.fromNode = "KickTimer";
 ROUTE353.toField = "set_fraction";
-ROUTE353.toNode = "vc7RotInterp";
+ROUTE353.toNode = "vc7_RotationInterpolator";
 browser.currentScene.children[44] = ROUTE353;
 
 let ROUTE354 = browser.currentScene.createNode("ROUTE");
 ROUTE354.fromField = "fraction_changed";
 ROUTE354.fromNode = "KickTimer";
 ROUTE354.toField = "set_fraction";
-ROUTE354.toNode = "vc6RotInterp";
+ROUTE354.toNode = "vc6_RotationInterpolator";
 browser.currentScene.children[45] = ROUTE354;
 
 let ROUTE355 = browser.currentScene.createNode("ROUTE");
 ROUTE355.fromField = "fraction_changed";
 ROUTE355.fromNode = "KickTimer";
 ROUTE355.toField = "set_fraction";
-ROUTE355.toNode = "vc5RotInterp";
+ROUTE355.toNode = "vc5_RotationInterpolator";
 browser.currentScene.children[46] = ROUTE355;
 
 let ROUTE356 = browser.currentScene.createNode("ROUTE");
 ROUTE356.fromField = "fraction_changed";
 ROUTE356.fromNode = "KickTimer";
 ROUTE356.toField = "set_fraction";
-ROUTE356.toNode = "vc4RotInterp";
+ROUTE356.toNode = "vc4_RotationInterpolator";
 browser.currentScene.children[47] = ROUTE356;
 
 let ROUTE357 = browser.currentScene.createNode("ROUTE");
 ROUTE357.fromField = "fraction_changed";
 ROUTE357.fromNode = "KickTimer";
 ROUTE357.toField = "set_fraction";
-ROUTE357.toNode = "vc3RotInterp";
+ROUTE357.toNode = "vc3_RotationInterpolator";
 browser.currentScene.children[48] = ROUTE357;
 
 let ROUTE358 = browser.currentScene.createNode("ROUTE");
 ROUTE358.fromField = "fraction_changed";
 ROUTE358.fromNode = "KickTimer";
 ROUTE358.toField = "set_fraction";
-ROUTE358.toNode = "vc2RotInterp";
+ROUTE358.toNode = "vc2_RotationInterpolator";
 browser.currentScene.children[49] = ROUTE358;
 
 let ROUTE359 = browser.currentScene.createNode("ROUTE");
 ROUTE359.fromField = "fraction_changed";
 ROUTE359.fromNode = "KickTimer";
 ROUTE359.toField = "set_fraction";
-ROUTE359.toNode = "vc1RotInterp";
+ROUTE359.toNode = "vc1_RotationInterpolator";
 browser.currentScene.children[50] = ROUTE359;
 
 let ROUTE360 = browser.currentScene.createNode("ROUTE");
 ROUTE360.fromField = "fraction_changed";
 ROUTE360.fromNode = "KickTimer";
 ROUTE360.toField = "set_fraction";
-ROUTE360.toNode = "skullbaseRotInterp";
+ROUTE360.toNode = "skullbase_RotationInterpolator";
 browser.currentScene.children[51] = ROUTE360;
 
 let ROUTE361 = browser.currentScene.createNode("ROUTE");
 ROUTE361.fromField = "fraction_changed";
 ROUTE361.fromNode = "KickTimer";
 ROUTE361.toField = "set_fraction";
-ROUTE361.toNode = "l_eyelid_jointRotInterp";
+ROUTE361.toNode = "l_eyelid_joint_RotationInterpolator";
 browser.currentScene.children[52] = ROUTE361;
 
 let ROUTE362 = browser.currentScene.createNode("ROUTE");
 ROUTE362.fromField = "fraction_changed";
 ROUTE362.fromNode = "KickTimer";
 ROUTE362.toField = "set_fraction";
-ROUTE362.toNode = "l_eyeball_jointRotInterp";
+ROUTE362.toNode = "l_eyeball_joint_RotationInterpolator";
 browser.currentScene.children[53] = ROUTE362;
 
 let ROUTE363 = browser.currentScene.createNode("ROUTE");
 ROUTE363.fromField = "fraction_changed";
 ROUTE363.fromNode = "KickTimer";
 ROUTE363.toField = "set_fraction";
-ROUTE363.toNode = "l_eyebrow_jointRotInterp";
+ROUTE363.toNode = "l_eyebrow_joint_RotationInterpolator";
 browser.currentScene.children[54] = ROUTE363;
 
 let ROUTE364 = browser.currentScene.createNode("ROUTE");
 ROUTE364.fromField = "fraction_changed";
 ROUTE364.fromNode = "KickTimer";
 ROUTE364.toField = "set_fraction";
-ROUTE364.toNode = "r_eyelid_jointRotInterp";
+ROUTE364.toNode = "r_eyelid_joint_RotationInterpolator";
 browser.currentScene.children[55] = ROUTE364;
 
 let ROUTE365 = browser.currentScene.createNode("ROUTE");
 ROUTE365.fromField = "fraction_changed";
 ROUTE365.fromNode = "KickTimer";
 ROUTE365.toField = "set_fraction";
-ROUTE365.toNode = "r_eyeball_jointRotInterp";
+ROUTE365.toNode = "r_eyeball_joint_RotationInterpolator";
 browser.currentScene.children[56] = ROUTE365;
 
 let ROUTE366 = browser.currentScene.createNode("ROUTE");
 ROUTE366.fromField = "fraction_changed";
 ROUTE366.fromNode = "KickTimer";
 ROUTE366.toField = "set_fraction";
-ROUTE366.toNode = "r_eyebrow_jointRotInterp";
+ROUTE366.toNode = "r_eyebrow_joint_RotationInterpolator";
 browser.currentScene.children[57] = ROUTE366;
 
 let ROUTE367 = browser.currentScene.createNode("ROUTE");
 ROUTE367.fromField = "fraction_changed";
 ROUTE367.fromNode = "KickTimer";
 ROUTE367.toField = "set_fraction";
-ROUTE367.toNode = "temporomandibularRotInterp";
+ROUTE367.toNode = "temporomandibular_RotationInterpolator";
 browser.currentScene.children[58] = ROUTE367;
 
 let ROUTE368 = browser.currentScene.createNode("ROUTE");
 ROUTE368.fromField = "fraction_changed";
 ROUTE368.fromNode = "KickTimer";
 ROUTE368.toField = "set_fraction";
-ROUTE368.toNode = "l_sternoclavicularRotInterp";
+ROUTE368.toNode = "l_sternoclavicular_RotationInterpolator";
 browser.currentScene.children[59] = ROUTE368;
 
 let ROUTE369 = browser.currentScene.createNode("ROUTE");
 ROUTE369.fromField = "fraction_changed";
 ROUTE369.fromNode = "KickTimer";
 ROUTE369.toField = "set_fraction";
-ROUTE369.toNode = "l_acromioclavicularRotInterp";
+ROUTE369.toNode = "l_acromioclavicular_RotationInterpolator";
 browser.currentScene.children[60] = ROUTE369;
 
 let ROUTE370 = browser.currentScene.createNode("ROUTE");
 ROUTE370.fromField = "fraction_changed";
 ROUTE370.fromNode = "KickTimer";
 ROUTE370.toField = "set_fraction";
-ROUTE370.toNode = "l_shoulderRotInterp";
+ROUTE370.toNode = "l_shoulder_RotationInterpolator";
 browser.currentScene.children[61] = ROUTE370;
 
 let ROUTE371 = browser.currentScene.createNode("ROUTE");
 ROUTE371.fromField = "fraction_changed";
 ROUTE371.fromNode = "KickTimer";
 ROUTE371.toField = "set_fraction";
-ROUTE371.toNode = "l_elbowRotInterp";
+ROUTE371.toNode = "l_elbow_RotationInterpolator";
 browser.currentScene.children[62] = ROUTE371;
 
 let ROUTE372 = browser.currentScene.createNode("ROUTE");
 ROUTE372.fromField = "fraction_changed";
 ROUTE372.fromNode = "KickTimer";
 ROUTE372.toField = "set_fraction";
-ROUTE372.toNode = "l_wristRotInterp";
+ROUTE372.toNode = "l_wrist_RotationInterpolator";
 browser.currentScene.children[63] = ROUTE372;
 
 let ROUTE373 = browser.currentScene.createNode("ROUTE");
 ROUTE373.fromField = "fraction_changed";
 ROUTE373.fromNode = "KickTimer";
 ROUTE373.toField = "set_fraction";
-ROUTE373.toNode = "l_thumb1RotInterp";
+ROUTE373.toNode = "l_thumb1_RotationInterpolator";
 browser.currentScene.children[64] = ROUTE373;
 
 let ROUTE374 = browser.currentScene.createNode("ROUTE");
 ROUTE374.fromField = "fraction_changed";
 ROUTE374.fromNode = "KickTimer";
 ROUTE374.toField = "set_fraction";
-ROUTE374.toNode = "l_thumb2RotInterp";
+ROUTE374.toNode = "l_thumb2_RotationInterpolator";
 browser.currentScene.children[65] = ROUTE374;
 
 let ROUTE375 = browser.currentScene.createNode("ROUTE");
 ROUTE375.fromField = "fraction_changed";
 ROUTE375.fromNode = "KickTimer";
 ROUTE375.toField = "set_fraction";
-ROUTE375.toNode = "l_thumb3RotInterp";
+ROUTE375.toNode = "l_thumb3_RotationInterpolator";
 browser.currentScene.children[66] = ROUTE375;
 
 let ROUTE376 = browser.currentScene.createNode("ROUTE");
 ROUTE376.fromField = "fraction_changed";
 ROUTE376.fromNode = "KickTimer";
 ROUTE376.toField = "set_fraction";
-ROUTE376.toNode = "l_index0RotInterp";
+ROUTE376.toNode = "l_index0_RotationInterpolator";
 browser.currentScene.children[67] = ROUTE376;
 
 let ROUTE377 = browser.currentScene.createNode("ROUTE");
 ROUTE377.fromField = "fraction_changed";
 ROUTE377.fromNode = "KickTimer";
 ROUTE377.toField = "set_fraction";
-ROUTE377.toNode = "l_index1RotInterp";
+ROUTE377.toNode = "l_index1_RotationInterpolator";
 browser.currentScene.children[68] = ROUTE377;
 
 let ROUTE378 = browser.currentScene.createNode("ROUTE");
 ROUTE378.fromField = "fraction_changed";
 ROUTE378.fromNode = "KickTimer";
 ROUTE378.toField = "set_fraction";
-ROUTE378.toNode = "l_index2RotInterp";
+ROUTE378.toNode = "l_index2_RotationInterpolator";
 browser.currentScene.children[69] = ROUTE378;
 
 let ROUTE379 = browser.currentScene.createNode("ROUTE");
 ROUTE379.fromField = "fraction_changed";
 ROUTE379.fromNode = "KickTimer";
 ROUTE379.toField = "set_fraction";
-ROUTE379.toNode = "l_index3RotInterp";
+ROUTE379.toNode = "l_index3_RotationInterpolator";
 browser.currentScene.children[70] = ROUTE379;
 
 let ROUTE380 = browser.currentScene.createNode("ROUTE");
 ROUTE380.fromField = "fraction_changed";
 ROUTE380.fromNode = "KickTimer";
 ROUTE380.toField = "set_fraction";
-ROUTE380.toNode = "l_middle0RotInterp";
+ROUTE380.toNode = "l_middle0_RotationInterpolator";
 browser.currentScene.children[71] = ROUTE380;
 
 let ROUTE381 = browser.currentScene.createNode("ROUTE");
 ROUTE381.fromField = "fraction_changed";
 ROUTE381.fromNode = "KickTimer";
 ROUTE381.toField = "set_fraction";
-ROUTE381.toNode = "l_middle1RotInterp";
+ROUTE381.toNode = "l_middle1_RotationInterpolator";
 browser.currentScene.children[72] = ROUTE381;
 
 let ROUTE382 = browser.currentScene.createNode("ROUTE");
 ROUTE382.fromField = "fraction_changed";
 ROUTE382.fromNode = "KickTimer";
 ROUTE382.toField = "set_fraction";
-ROUTE382.toNode = "l_middle2RotInterp";
+ROUTE382.toNode = "l_middle2_RotationInterpolator";
 browser.currentScene.children[73] = ROUTE382;
 
 let ROUTE383 = browser.currentScene.createNode("ROUTE");
 ROUTE383.fromField = "fraction_changed";
 ROUTE383.fromNode = "KickTimer";
 ROUTE383.toField = "set_fraction";
-ROUTE383.toNode = "l_middle3RotInterp";
+ROUTE383.toNode = "l_middle3_RotationInterpolator";
 browser.currentScene.children[74] = ROUTE383;
 
 let ROUTE384 = browser.currentScene.createNode("ROUTE");
 ROUTE384.fromField = "fraction_changed";
 ROUTE384.fromNode = "KickTimer";
 ROUTE384.toField = "set_fraction";
-ROUTE384.toNode = "l_ring0RotInterp";
+ROUTE384.toNode = "l_ring0_RotationInterpolator";
 browser.currentScene.children[75] = ROUTE384;
 
 let ROUTE385 = browser.currentScene.createNode("ROUTE");
 ROUTE385.fromField = "fraction_changed";
 ROUTE385.fromNode = "KickTimer";
 ROUTE385.toField = "set_fraction";
-ROUTE385.toNode = "l_ring1RotInterp";
+ROUTE385.toNode = "l_ring1_RotationInterpolator";
 browser.currentScene.children[76] = ROUTE385;
 
 let ROUTE386 = browser.currentScene.createNode("ROUTE");
 ROUTE386.fromField = "fraction_changed";
 ROUTE386.fromNode = "KickTimer";
 ROUTE386.toField = "set_fraction";
-ROUTE386.toNode = "l_ring2RotInterp";
+ROUTE386.toNode = "l_ring2_RotationInterpolator";
 browser.currentScene.children[77] = ROUTE386;
 
 let ROUTE387 = browser.currentScene.createNode("ROUTE");
 ROUTE387.fromField = "fraction_changed";
 ROUTE387.fromNode = "KickTimer";
 ROUTE387.toField = "set_fraction";
-ROUTE387.toNode = "l_ring3RotInterp";
+ROUTE387.toNode = "l_ring3_RotationInterpolator";
 browser.currentScene.children[78] = ROUTE387;
 
 let ROUTE388 = browser.currentScene.createNode("ROUTE");
 ROUTE388.fromField = "fraction_changed";
 ROUTE388.fromNode = "KickTimer";
 ROUTE388.toField = "set_fraction";
-ROUTE388.toNode = "l_pinky0RotInterp";
+ROUTE388.toNode = "l_pinky0_RotationInterpolator";
 browser.currentScene.children[79] = ROUTE388;
 
 let ROUTE389 = browser.currentScene.createNode("ROUTE");
 ROUTE389.fromField = "fraction_changed";
 ROUTE389.fromNode = "KickTimer";
 ROUTE389.toField = "set_fraction";
-ROUTE389.toNode = "l_pinky1RotInterp";
+ROUTE389.toNode = "l_pinky1_RotationInterpolator";
 browser.currentScene.children[80] = ROUTE389;
 
 let ROUTE390 = browser.currentScene.createNode("ROUTE");
 ROUTE390.fromField = "fraction_changed";
 ROUTE390.fromNode = "KickTimer";
 ROUTE390.toField = "set_fraction";
-ROUTE390.toNode = "l_pinky2RotInterp";
+ROUTE390.toNode = "l_pinky2_RotationInterpolator";
 browser.currentScene.children[81] = ROUTE390;
 
 let ROUTE391 = browser.currentScene.createNode("ROUTE");
 ROUTE391.fromField = "fraction_changed";
 ROUTE391.fromNode = "KickTimer";
 ROUTE391.toField = "set_fraction";
-ROUTE391.toNode = "l_pinky3RotInterp";
+ROUTE391.toNode = "l_pinky3_RotationInterpolator";
 browser.currentScene.children[82] = ROUTE391;
 
 let ROUTE392 = browser.currentScene.createNode("ROUTE");
 ROUTE392.fromField = "fraction_changed";
 ROUTE392.fromNode = "KickTimer";
 ROUTE392.toField = "set_fraction";
-ROUTE392.toNode = "r_sternoclavicularRotInterp";
+ROUTE392.toNode = "r_sternoclavicular_RotationInterpolator";
 browser.currentScene.children[83] = ROUTE392;
 
 let ROUTE393 = browser.currentScene.createNode("ROUTE");
 ROUTE393.fromField = "fraction_changed";
 ROUTE393.fromNode = "KickTimer";
 ROUTE393.toField = "set_fraction";
-ROUTE393.toNode = "r_acromioclavicularRotInterp";
+ROUTE393.toNode = "r_acromioclavicular_RotationInterpolator";
 browser.currentScene.children[84] = ROUTE393;
 
 let ROUTE394 = browser.currentScene.createNode("ROUTE");
 ROUTE394.fromField = "fraction_changed";
 ROUTE394.fromNode = "KickTimer";
 ROUTE394.toField = "set_fraction";
-ROUTE394.toNode = "r_shoulderRotInterp";
+ROUTE394.toNode = "r_shoulder_RotationInterpolator";
 browser.currentScene.children[85] = ROUTE394;
 
 let ROUTE395 = browser.currentScene.createNode("ROUTE");
 ROUTE395.fromField = "fraction_changed";
 ROUTE395.fromNode = "KickTimer";
 ROUTE395.toField = "set_fraction";
-ROUTE395.toNode = "r_elbowRotInterp";
+ROUTE395.toNode = "r_elbow_RotationInterpolator";
 browser.currentScene.children[86] = ROUTE395;
 
 let ROUTE396 = browser.currentScene.createNode("ROUTE");
 ROUTE396.fromField = "fraction_changed";
 ROUTE396.fromNode = "KickTimer";
 ROUTE396.toField = "set_fraction";
-ROUTE396.toNode = "r_wristRotInterp";
+ROUTE396.toNode = "r_wrist_RotationInterpolator";
 browser.currentScene.children[87] = ROUTE396;
 
 let ROUTE397 = browser.currentScene.createNode("ROUTE");
 ROUTE397.fromField = "fraction_changed";
 ROUTE397.fromNode = "KickTimer";
 ROUTE397.toField = "set_fraction";
-ROUTE397.toNode = "r_thumb1RotInterp";
+ROUTE397.toNode = "r_thumb1_RotationInterpolator";
 browser.currentScene.children[88] = ROUTE397;
 
 let ROUTE398 = browser.currentScene.createNode("ROUTE");
 ROUTE398.fromField = "fraction_changed";
 ROUTE398.fromNode = "KickTimer";
 ROUTE398.toField = "set_fraction";
-ROUTE398.toNode = "r_thumb2RotInterp";
+ROUTE398.toNode = "r_thumb2_RotationInterpolator";
 browser.currentScene.children[89] = ROUTE398;
 
 let ROUTE399 = browser.currentScene.createNode("ROUTE");
 ROUTE399.fromField = "fraction_changed";
 ROUTE399.fromNode = "KickTimer";
 ROUTE399.toField = "set_fraction";
-ROUTE399.toNode = "r_thumb3RotInterp";
+ROUTE399.toNode = "r_thumb3_RotationInterpolator";
 browser.currentScene.children[90] = ROUTE399;
 
 let ROUTE400 = browser.currentScene.createNode("ROUTE");
 ROUTE400.fromField = "fraction_changed";
 ROUTE400.fromNode = "KickTimer";
 ROUTE400.toField = "set_fraction";
-ROUTE400.toNode = "r_index0RotInterp";
+ROUTE400.toNode = "r_index0_RotationInterpolator";
 browser.currentScene.children[91] = ROUTE400;
 
 let ROUTE401 = browser.currentScene.createNode("ROUTE");
 ROUTE401.fromField = "fraction_changed";
 ROUTE401.fromNode = "KickTimer";
 ROUTE401.toField = "set_fraction";
-ROUTE401.toNode = "r_index1RotInterp";
+ROUTE401.toNode = "r_index1_RotationInterpolator";
 browser.currentScene.children[92] = ROUTE401;
 
 let ROUTE402 = browser.currentScene.createNode("ROUTE");
 ROUTE402.fromField = "fraction_changed";
 ROUTE402.fromNode = "KickTimer";
 ROUTE402.toField = "set_fraction";
-ROUTE402.toNode = "r_index2RotInterp";
+ROUTE402.toNode = "r_index2_RotationInterpolator";
 browser.currentScene.children[93] = ROUTE402;
 
 let ROUTE403 = browser.currentScene.createNode("ROUTE");
 ROUTE403.fromField = "fraction_changed";
 ROUTE403.fromNode = "KickTimer";
 ROUTE403.toField = "set_fraction";
-ROUTE403.toNode = "r_index3RotInterp";
+ROUTE403.toNode = "r_index3_RotationInterpolator";
 browser.currentScene.children[94] = ROUTE403;
 
 let ROUTE404 = browser.currentScene.createNode("ROUTE");
 ROUTE404.fromField = "fraction_changed";
 ROUTE404.fromNode = "KickTimer";
 ROUTE404.toField = "set_fraction";
-ROUTE404.toNode = "r_middle0RotInterp";
+ROUTE404.toNode = "r_middle0_RotationInterpolator";
 browser.currentScene.children[95] = ROUTE404;
 
 let ROUTE405 = browser.currentScene.createNode("ROUTE");
 ROUTE405.fromField = "fraction_changed";
 ROUTE405.fromNode = "KickTimer";
 ROUTE405.toField = "set_fraction";
-ROUTE405.toNode = "r_middle1RotInterp";
+ROUTE405.toNode = "r_middle1_RotationInterpolator";
 browser.currentScene.children[96] = ROUTE405;
 
 let ROUTE406 = browser.currentScene.createNode("ROUTE");
 ROUTE406.fromField = "fraction_changed";
 ROUTE406.fromNode = "KickTimer";
 ROUTE406.toField = "set_fraction";
-ROUTE406.toNode = "r_middle2RotInterp";
+ROUTE406.toNode = "r_middle2_RotationInterpolator";
 browser.currentScene.children[97] = ROUTE406;
 
 let ROUTE407 = browser.currentScene.createNode("ROUTE");
 ROUTE407.fromField = "fraction_changed";
 ROUTE407.fromNode = "KickTimer";
 ROUTE407.toField = "set_fraction";
-ROUTE407.toNode = "r_middle3RotInterp";
+ROUTE407.toNode = "r_middle3_RotationInterpolator";
 browser.currentScene.children[98] = ROUTE407;
 
 let ROUTE408 = browser.currentScene.createNode("ROUTE");
 ROUTE408.fromField = "fraction_changed";
 ROUTE408.fromNode = "KickTimer";
 ROUTE408.toField = "set_fraction";
-ROUTE408.toNode = "r_ring0RotInterp";
+ROUTE408.toNode = "r_ring0_RotationInterpolator";
 browser.currentScene.children[99] = ROUTE408;
 
 let ROUTE409 = browser.currentScene.createNode("ROUTE");
 ROUTE409.fromField = "fraction_changed";
 ROUTE409.fromNode = "KickTimer";
 ROUTE409.toField = "set_fraction";
-ROUTE409.toNode = "r_ring1RotInterp";
+ROUTE409.toNode = "r_ring1_RotationInterpolator";
 browser.currentScene.children[100] = ROUTE409;
 
 let ROUTE410 = browser.currentScene.createNode("ROUTE");
 ROUTE410.fromField = "fraction_changed";
 ROUTE410.fromNode = "KickTimer";
 ROUTE410.toField = "set_fraction";
-ROUTE410.toNode = "r_ring2RotInterp";
+ROUTE410.toNode = "r_ring2_RotationInterpolator";
 browser.currentScene.children[101] = ROUTE410;
 
 let ROUTE411 = browser.currentScene.createNode("ROUTE");
 ROUTE411.fromField = "fraction_changed";
 ROUTE411.fromNode = "KickTimer";
 ROUTE411.toField = "set_fraction";
-ROUTE411.toNode = "r_ring3RotInterp";
+ROUTE411.toNode = "r_ring3_RotationInterpolator";
 browser.currentScene.children[102] = ROUTE411;
 
 let ROUTE412 = browser.currentScene.createNode("ROUTE");
 ROUTE412.fromField = "fraction_changed";
 ROUTE412.fromNode = "KickTimer";
 ROUTE412.toField = "set_fraction";
-ROUTE412.toNode = "r_pinky0RotInterp";
+ROUTE412.toNode = "r_pinky0_RotationInterpolator";
 browser.currentScene.children[103] = ROUTE412;
 
 let ROUTE413 = browser.currentScene.createNode("ROUTE");
 ROUTE413.fromField = "fraction_changed";
 ROUTE413.fromNode = "KickTimer";
 ROUTE413.toField = "set_fraction";
-ROUTE413.toNode = "r_pinky1RotInterp";
+ROUTE413.toNode = "r_pinky1_RotationInterpolator";
 browser.currentScene.children[104] = ROUTE413;
 
 let ROUTE414 = browser.currentScene.createNode("ROUTE");
 ROUTE414.fromField = "fraction_changed";
 ROUTE414.fromNode = "KickTimer";
 ROUTE414.toField = "set_fraction";
-ROUTE414.toNode = "r_pinky2RotInterp";
+ROUTE414.toNode = "r_pinky2_RotationInterpolator";
 browser.currentScene.children[105] = ROUTE414;
 
 let ROUTE415 = browser.currentScene.createNode("ROUTE");
 ROUTE415.fromField = "fraction_changed";
 ROUTE415.fromNode = "KickTimer";
 ROUTE415.toField = "set_fraction";
-ROUTE415.toNode = "r_pinky3RotInterp";
+ROUTE415.toNode = "r_pinky3_RotationInterpolator";
 browser.currentScene.children[106] = ROUTE415;
 
 //Routes from Interpolators to Joe_ model Joints
 let ROUTE416 = browser.currentScene.createNode("ROUTE");
 ROUTE416.fromField = "value_changed";
-ROUTE416.fromNode = "HumanoidRootRotInterp";
+ROUTE416.fromNode = "HumanoidRoot_RotationInterpolator";
 ROUTE416.toField = "set_rotation";
 ROUTE416.toNode = "Joe_humanoid_root";
 browser.currentScene.children[107] = ROUTE416;
 
 let ROUTE417 = browser.currentScene.createNode("ROUTE");
 ROUTE417.fromField = "value_changed";
-ROUTE417.fromNode = "HumanoidRootTransInterp";
+ROUTE417.fromNode = "HumanoidRoot_TranslationInterpolator";
 ROUTE417.toField = "set_translation";
 ROUTE417.toNode = "Joe_humanoid_root";
 browser.currentScene.children[108] = ROUTE417;
 
 let ROUTE418 = browser.currentScene.createNode("ROUTE");
 ROUTE418.fromField = "value_changed";
-ROUTE418.fromNode = "sacroiliacRotInterp";
+ROUTE418.fromNode = "sacroiliac_RotationInterpolator";
 ROUTE418.toField = "set_rotation";
 ROUTE418.toNode = "Joe_sacroiliac";
 browser.currentScene.children[109] = ROUTE418;
 
 let ROUTE419 = browser.currentScene.createNode("ROUTE");
 ROUTE419.fromField = "value_changed";
-ROUTE419.fromNode = "l_hipRotInterp";
+ROUTE419.fromNode = "l_hip_RotationInterpolator";
 ROUTE419.toField = "set_rotation";
 ROUTE419.toNode = "Joe_l_hip";
 browser.currentScene.children[110] = ROUTE419;
 
 let ROUTE420 = browser.currentScene.createNode("ROUTE");
 ROUTE420.fromField = "value_changed";
-ROUTE420.fromNode = "l_kneeRotInterp";
+ROUTE420.fromNode = "l_knee_RotationInterpolator";
 ROUTE420.toField = "set_rotation";
 ROUTE420.toNode = "Joe_l_knee";
 browser.currentScene.children[111] = ROUTE420;
 
 let ROUTE421 = browser.currentScene.createNode("ROUTE");
 ROUTE421.fromField = "value_changed";
-ROUTE421.fromNode = "l_ankleRotInterp";
+ROUTE421.fromNode = "l_ankle_RotationInterpolator";
 ROUTE421.toField = "set_rotation";
-ROUTE421.toNode = "Joe_l_ankle";
+ROUTE421.toNode = "Joe_l_talocrural";
 browser.currentScene.children[112] = ROUTE421;
 
 let ROUTE422 = browser.currentScene.createNode("ROUTE");
 ROUTE422.fromField = "value_changed";
-ROUTE422.fromNode = "l_subtalarRotInterp";
+ROUTE422.fromNode = "l_subtalar_RotationInterpolator";
 ROUTE422.toField = "set_rotation";
-ROUTE422.toNode = "Joe_l_subtalar";
+ROUTE422.toNode = "Joe_l_tarsometatarsal_2";
 browser.currentScene.children[113] = ROUTE422;
 
 let ROUTE423 = browser.currentScene.createNode("ROUTE");
 ROUTE423.fromField = "value_changed";
-ROUTE423.fromNode = "l_midtarsalRotInterp";
+ROUTE423.fromNode = "l_midtarsal_RotationInterpolator";
 ROUTE423.toField = "set_rotation";
-ROUTE423.toNode = "Joe_l_midtarsal";
+ROUTE423.toNode = "Joe_l_metatarsophalangeal_2";
 browser.currentScene.children[114] = ROUTE423;
 
 let ROUTE424 = browser.currentScene.createNode("ROUTE");
 ROUTE424.fromField = "value_changed";
-ROUTE424.fromNode = "l_metatarsalRotInterp";
+ROUTE424.fromNode = "l_metatarsal_RotationInterpolator";
 ROUTE424.toField = "set_rotation";
-ROUTE424.toNode = "Joe_l_metatarsal";
+ROUTE424.toNode = "Joe_l_tarsal_distal_interphalangeal_2";
 browser.currentScene.children[115] = ROUTE424;
 
 let ROUTE425 = browser.currentScene.createNode("ROUTE");
 ROUTE425.fromField = "value_changed";
-ROUTE425.fromNode = "r_hipRotInterp";
+ROUTE425.fromNode = "r_hip_RotationInterpolator";
 ROUTE425.toField = "set_rotation";
 ROUTE425.toNode = "Joe_r_hip";
 browser.currentScene.children[116] = ROUTE425;
 
 let ROUTE426 = browser.currentScene.createNode("ROUTE");
 ROUTE426.fromField = "value_changed";
-ROUTE426.fromNode = "r_kneeRotInterp";
+ROUTE426.fromNode = "r_knee_RotationInterpolator";
 ROUTE426.toField = "set_rotation";
 ROUTE426.toNode = "Joe_r_knee";
 browser.currentScene.children[117] = ROUTE426;
 
 let ROUTE427 = browser.currentScene.createNode("ROUTE");
 ROUTE427.fromField = "value_changed";
-ROUTE427.fromNode = "r_ankleRotInterp";
+ROUTE427.fromNode = "r_ankle_RotationInterpolator";
 ROUTE427.toField = "set_rotation";
-ROUTE427.toNode = "Joe_r_ankle";
+ROUTE427.toNode = "Joe_r_talocrural";
 browser.currentScene.children[118] = ROUTE427;
 
 let ROUTE428 = browser.currentScene.createNode("ROUTE");
 ROUTE428.fromField = "value_changed";
-ROUTE428.fromNode = "r_subtalarRotInterp";
+ROUTE428.fromNode = "r_subtalar_RotationInterpolator";
 ROUTE428.toField = "set_rotation";
-ROUTE428.toNode = "Joe_r_subtalar";
+ROUTE428.toNode = "Joe_r_tarsometatarsal_2";
 browser.currentScene.children[119] = ROUTE428;
 
 let ROUTE429 = browser.currentScene.createNode("ROUTE");
 ROUTE429.fromField = "value_changed";
-ROUTE429.fromNode = "r_midtarsalRotInterp";
+ROUTE429.fromNode = "r_midtarsal_RotationInterpolator";
 ROUTE429.toField = "set_rotation";
-ROUTE429.toNode = "Joe_r_midtarsal";
+ROUTE429.toNode = "Joe_r_metatarsophalangeal_2";
 browser.currentScene.children[120] = ROUTE429;
 
 let ROUTE430 = browser.currentScene.createNode("ROUTE");
 ROUTE430.fromField = "value_changed";
-ROUTE430.fromNode = "r_metatarsalRotInterp";
+ROUTE430.fromNode = "r_metatarsal_RotationInterpolator";
 ROUTE430.toField = "set_rotation";
-ROUTE430.toNode = "Joe_r_metatarsal";
+ROUTE430.toNode = "Joe_r_tarsal_distal_interphalangeal_2";
 browser.currentScene.children[121] = ROUTE430;
 
 let ROUTE431 = browser.currentScene.createNode("ROUTE");
 ROUTE431.fromField = "value_changed";
-ROUTE431.fromNode = "vl5RotInterp";
+ROUTE431.fromNode = "vl5_RotationInterpolator";
 ROUTE431.toField = "set_rotation";
 ROUTE431.toNode = "Joe_vl5";
 browser.currentScene.children[122] = ROUTE431;
 
 let ROUTE432 = browser.currentScene.createNode("ROUTE");
 ROUTE432.fromField = "value_changed";
-ROUTE432.fromNode = "vl4RotInterp";
+ROUTE432.fromNode = "vl4_RotationInterpolator";
 ROUTE432.toField = "set_rotation";
 ROUTE432.toNode = "Joe_vl4";
 browser.currentScene.children[123] = ROUTE432;
 
 let ROUTE433 = browser.currentScene.createNode("ROUTE");
 ROUTE433.fromField = "value_changed";
-ROUTE433.fromNode = "vl3RotInterp";
+ROUTE433.fromNode = "vl3_RotationInterpolator";
 ROUTE433.toField = "set_rotation";
 ROUTE433.toNode = "Joe_vl3";
 browser.currentScene.children[124] = ROUTE433;
 
 let ROUTE434 = browser.currentScene.createNode("ROUTE");
 ROUTE434.fromField = "value_changed";
-ROUTE434.fromNode = "vl2RotInterp";
+ROUTE434.fromNode = "vl2_RotationInterpolator";
 ROUTE434.toField = "set_rotation";
 ROUTE434.toNode = "Joe_vl2";
 browser.currentScene.children[125] = ROUTE434;
 
 let ROUTE435 = browser.currentScene.createNode("ROUTE");
 ROUTE435.fromField = "value_changed";
-ROUTE435.fromNode = "vl1RotInterp";
+ROUTE435.fromNode = "vl1_RotationInterpolator";
 ROUTE435.toField = "set_rotation";
 ROUTE435.toNode = "Joe_vl1";
 browser.currentScene.children[126] = ROUTE435;
 
 let ROUTE436 = browser.currentScene.createNode("ROUTE");
 ROUTE436.fromField = "value_changed";
-ROUTE436.fromNode = "vt12RotInterp";
+ROUTE436.fromNode = "vt12_RotationInterpolator";
 ROUTE436.toField = "set_rotation";
 ROUTE436.toNode = "Joe_vt12";
 browser.currentScene.children[127] = ROUTE436;
 
 let ROUTE437 = browser.currentScene.createNode("ROUTE");
 ROUTE437.fromField = "value_changed";
-ROUTE437.fromNode = "vt11RotInterp";
+ROUTE437.fromNode = "vt11_RotationInterpolator";
 ROUTE437.toField = "set_rotation";
 ROUTE437.toNode = "Joe_vt11";
 browser.currentScene.children[128] = ROUTE437;
 
 let ROUTE438 = browser.currentScene.createNode("ROUTE");
 ROUTE438.fromField = "value_changed";
-ROUTE438.fromNode = "vt10RotInterp";
+ROUTE438.fromNode = "vt10_RotationInterpolator";
 ROUTE438.toField = "set_rotation";
 ROUTE438.toNode = "Joe_vt10";
 browser.currentScene.children[129] = ROUTE438;
 
 let ROUTE439 = browser.currentScene.createNode("ROUTE");
 ROUTE439.fromField = "value_changed";
-ROUTE439.fromNode = "vt9RotInterp";
+ROUTE439.fromNode = "vt9_RotationInterpolator";
 ROUTE439.toField = "set_rotation";
 ROUTE439.toNode = "Joe_vt9";
 browser.currentScene.children[130] = ROUTE439;
 
 let ROUTE440 = browser.currentScene.createNode("ROUTE");
 ROUTE440.fromField = "value_changed";
-ROUTE440.fromNode = "vt8RotInterp";
+ROUTE440.fromNode = "vt8_RotationInterpolator";
 ROUTE440.toField = "set_rotation";
 ROUTE440.toNode = "Joe_vt8";
 browser.currentScene.children[131] = ROUTE440;
 
 let ROUTE441 = browser.currentScene.createNode("ROUTE");
 ROUTE441.fromField = "value_changed";
-ROUTE441.fromNode = "vt7RotInterp";
+ROUTE441.fromNode = "vt7_RotationInterpolator";
 ROUTE441.toField = "set_rotation";
 ROUTE441.toNode = "Joe_vt7";
 browser.currentScene.children[132] = ROUTE441;
 
 let ROUTE442 = browser.currentScene.createNode("ROUTE");
 ROUTE442.fromField = "value_changed";
-ROUTE442.fromNode = "vt6RotInterp";
+ROUTE442.fromNode = "vt6_RotationInterpolator";
 ROUTE442.toField = "set_rotation";
 ROUTE442.toNode = "Joe_vt6";
 browser.currentScene.children[133] = ROUTE442;
 
 let ROUTE443 = browser.currentScene.createNode("ROUTE");
 ROUTE443.fromField = "value_changed";
-ROUTE443.fromNode = "vt5RotInterp";
+ROUTE443.fromNode = "vt5_RotationInterpolator";
 ROUTE443.toField = "set_rotation";
 ROUTE443.toNode = "Joe_vt5";
 browser.currentScene.children[134] = ROUTE443;
 
 let ROUTE444 = browser.currentScene.createNode("ROUTE");
 ROUTE444.fromField = "value_changed";
-ROUTE444.fromNode = "vt4RotInterp";
+ROUTE444.fromNode = "vt4_RotationInterpolator";
 ROUTE444.toField = "set_rotation";
 ROUTE444.toNode = "Joe_vt4";
 browser.currentScene.children[135] = ROUTE444;
 
 let ROUTE445 = browser.currentScene.createNode("ROUTE");
 ROUTE445.fromField = "value_changed";
-ROUTE445.fromNode = "vt3RotInterp";
+ROUTE445.fromNode = "vt3_RotationInterpolator";
 ROUTE445.toField = "set_rotation";
 ROUTE445.toNode = "Joe_vt3";
 browser.currentScene.children[136] = ROUTE445;
 
 let ROUTE446 = browser.currentScene.createNode("ROUTE");
 ROUTE446.fromField = "value_changed";
-ROUTE446.fromNode = "vt2RotInterp";
+ROUTE446.fromNode = "vt2_RotationInterpolator";
 ROUTE446.toField = "set_rotation";
 ROUTE446.toNode = "Joe_vt2";
 browser.currentScene.children[137] = ROUTE446;
 
 let ROUTE447 = browser.currentScene.createNode("ROUTE");
 ROUTE447.fromField = "value_changed";
-ROUTE447.fromNode = "vt1RotInterp";
+ROUTE447.fromNode = "vt1_RotationInterpolator";
 ROUTE447.toField = "set_rotation";
 ROUTE447.toNode = "Joe_vt1";
 browser.currentScene.children[138] = ROUTE447;
 
 let ROUTE448 = browser.currentScene.createNode("ROUTE");
 ROUTE448.fromField = "value_changed";
-ROUTE448.fromNode = "vc7RotInterp";
+ROUTE448.fromNode = "vc7_RotationInterpolator";
 ROUTE448.toField = "set_rotation";
 ROUTE448.toNode = "Joe_vc7";
 browser.currentScene.children[139] = ROUTE448;
 
 let ROUTE449 = browser.currentScene.createNode("ROUTE");
 ROUTE449.fromField = "value_changed";
-ROUTE449.fromNode = "vc6RotInterp";
+ROUTE449.fromNode = "vc6_RotationInterpolator";
 ROUTE449.toField = "set_rotation";
 ROUTE449.toNode = "Joe_vc6";
 browser.currentScene.children[140] = ROUTE449;
 
 let ROUTE450 = browser.currentScene.createNode("ROUTE");
 ROUTE450.fromField = "value_changed";
-ROUTE450.fromNode = "vc5RotInterp";
+ROUTE450.fromNode = "vc5_RotationInterpolator";
 ROUTE450.toField = "set_rotation";
 ROUTE450.toNode = "Joe_vc5";
 browser.currentScene.children[141] = ROUTE450;
 
 let ROUTE451 = browser.currentScene.createNode("ROUTE");
 ROUTE451.fromField = "value_changed";
-ROUTE451.fromNode = "vc4RotInterp";
+ROUTE451.fromNode = "vc4_RotationInterpolator";
 ROUTE451.toField = "set_rotation";
 ROUTE451.toNode = "Joe_vc4";
 browser.currentScene.children[142] = ROUTE451;
 
 let ROUTE452 = browser.currentScene.createNode("ROUTE");
 ROUTE452.fromField = "value_changed";
-ROUTE452.fromNode = "vc3RotInterp";
+ROUTE452.fromNode = "vc3_RotationInterpolator";
 ROUTE452.toField = "set_rotation";
 ROUTE452.toNode = "Joe_vc3";
 browser.currentScene.children[143] = ROUTE452;
 
 let ROUTE453 = browser.currentScene.createNode("ROUTE");
 ROUTE453.fromField = "value_changed";
-ROUTE453.fromNode = "vc2RotInterp";
+ROUTE453.fromNode = "vc2_RotationInterpolator";
 ROUTE453.toField = "set_rotation";
 ROUTE453.toNode = "Joe_vc2";
 browser.currentScene.children[144] = ROUTE453;
 
 let ROUTE454 = browser.currentScene.createNode("ROUTE");
 ROUTE454.fromField = "value_changed";
-ROUTE454.fromNode = "vc1RotInterp";
+ROUTE454.fromNode = "vc1_RotationInterpolator";
 ROUTE454.toField = "set_rotation";
 ROUTE454.toNode = "Joe_vc1";
 browser.currentScene.children[145] = ROUTE454;
 
 let ROUTE455 = browser.currentScene.createNode("ROUTE");
 ROUTE455.fromField = "value_changed";
-ROUTE455.fromNode = "skullbaseRotInterp";
+ROUTE455.fromNode = "skullbase_RotationInterpolator";
 ROUTE455.toField = "set_rotation";
 ROUTE455.toNode = "Joe_skullbase";
 browser.currentScene.children[146] = ROUTE455;
 
 let ROUTE456 = browser.currentScene.createNode("ROUTE");
 ROUTE456.fromField = "value_changed";
-ROUTE456.fromNode = "l_eyelid_jointRotInterp";
+ROUTE456.fromNode = "l_eyelid_joint_RotationInterpolator";
 ROUTE456.toField = "set_rotation";
 ROUTE456.toNode = "Joe_l_eyelid_joint";
 browser.currentScene.children[147] = ROUTE456;
 
 let ROUTE457 = browser.currentScene.createNode("ROUTE");
 ROUTE457.fromField = "value_changed";
-ROUTE457.fromNode = "l_eyeball_jointRotInterp";
+ROUTE457.fromNode = "l_eyeball_joint_RotationInterpolator";
 ROUTE457.toField = "set_rotation";
 ROUTE457.toNode = "Joe_l_eyeball_joint";
 browser.currentScene.children[148] = ROUTE457;
 
 let ROUTE458 = browser.currentScene.createNode("ROUTE");
 ROUTE458.fromField = "value_changed";
-ROUTE458.fromNode = "l_eyebrow_jointRotInterp";
+ROUTE458.fromNode = "l_eyebrow_joint_RotationInterpolator";
 ROUTE458.toField = "set_rotation";
 ROUTE458.toNode = "Joe_l_eyebrow_joint";
 browser.currentScene.children[149] = ROUTE458;
 
 let ROUTE459 = browser.currentScene.createNode("ROUTE");
 ROUTE459.fromField = "value_changed";
-ROUTE459.fromNode = "r_eyelid_jointRotInterp";
+ROUTE459.fromNode = "r_eyelid_joint_RotationInterpolator";
 ROUTE459.toField = "set_rotation";
 ROUTE459.toNode = "Joe_r_eyelid_joint";
 browser.currentScene.children[150] = ROUTE459;
 
 let ROUTE460 = browser.currentScene.createNode("ROUTE");
 ROUTE460.fromField = "value_changed";
-ROUTE460.fromNode = "r_eyeball_jointRotInterp";
+ROUTE460.fromNode = "r_eyeball_joint_RotationInterpolator";
 ROUTE460.toField = "set_rotation";
 ROUTE460.toNode = "Joe_r_eyeball_joint";
 browser.currentScene.children[151] = ROUTE460;
 
 let ROUTE461 = browser.currentScene.createNode("ROUTE");
 ROUTE461.fromField = "value_changed";
-ROUTE461.fromNode = "r_eyebrow_jointRotInterp";
+ROUTE461.fromNode = "r_eyebrow_joint_RotationInterpolator";
 ROUTE461.toField = "set_rotation";
 ROUTE461.toNode = "Joe_r_eyebrow_joint";
 browser.currentScene.children[152] = ROUTE461;
 
 let ROUTE462 = browser.currentScene.createNode("ROUTE");
 ROUTE462.fromField = "value_changed";
-ROUTE462.fromNode = "temporomandibularRotInterp";
+ROUTE462.fromNode = "temporomandibular_RotationInterpolator";
 ROUTE462.toField = "set_rotation";
 ROUTE462.toNode = "Joe_temporomandibular";
 browser.currentScene.children[153] = ROUTE462;
 
 let ROUTE463 = browser.currentScene.createNode("ROUTE");
 ROUTE463.fromField = "value_changed";
-ROUTE463.fromNode = "l_sternoclavicularRotInterp";
+ROUTE463.fromNode = "l_sternoclavicular_RotationInterpolator";
 ROUTE463.toField = "set_rotation";
 ROUTE463.toNode = "Joe_l_sternoclavicular";
 browser.currentScene.children[154] = ROUTE463;
 
 let ROUTE464 = browser.currentScene.createNode("ROUTE");
 ROUTE464.fromField = "value_changed";
-ROUTE464.fromNode = "l_acromioclavicularRotInterp";
+ROUTE464.fromNode = "l_acromioclavicular_RotationInterpolator";
 ROUTE464.toField = "set_rotation";
 ROUTE464.toNode = "Joe_l_acromioclavicular";
 browser.currentScene.children[155] = ROUTE464;
 
 let ROUTE465 = browser.currentScene.createNode("ROUTE");
 ROUTE465.fromField = "value_changed";
-ROUTE465.fromNode = "l_shoulderRotInterp";
+ROUTE465.fromNode = "l_shoulder_RotationInterpolator";
 ROUTE465.toField = "set_rotation";
 ROUTE465.toNode = "Joe_l_shoulder";
 browser.currentScene.children[156] = ROUTE465;
 
 let ROUTE466 = browser.currentScene.createNode("ROUTE");
 ROUTE466.fromField = "value_changed";
-ROUTE466.fromNode = "l_elbowRotInterp";
+ROUTE466.fromNode = "l_elbow_RotationInterpolator";
 ROUTE466.toField = "set_rotation";
 ROUTE466.toNode = "Joe_l_elbow";
 browser.currentScene.children[157] = ROUTE466;
 
 let ROUTE467 = browser.currentScene.createNode("ROUTE");
 ROUTE467.fromField = "value_changed";
-ROUTE467.fromNode = "l_wristRotInterp";
+ROUTE467.fromNode = "l_wrist_RotationInterpolator";
 ROUTE467.toField = "set_rotation";
-ROUTE467.toNode = "Joe_l_wrist";
+ROUTE467.toNode = "Joe_l_radiocarpal";
 browser.currentScene.children[158] = ROUTE467;
 
 let ROUTE468 = browser.currentScene.createNode("ROUTE");
 ROUTE468.fromField = "value_changed";
-ROUTE468.fromNode = "l_thumb1RotInterp";
+ROUTE468.fromNode = "l_thumb1_RotationInterpolator";
 ROUTE468.toField = "set_rotation";
 ROUTE468.toNode = "Joe_l_thumb1";
 browser.currentScene.children[159] = ROUTE468;
 
 let ROUTE469 = browser.currentScene.createNode("ROUTE");
 ROUTE469.fromField = "value_changed";
-ROUTE469.fromNode = "l_thumb2RotInterp";
+ROUTE469.fromNode = "l_thumb2_RotationInterpolator";
 ROUTE469.toField = "set_rotation";
 ROUTE469.toNode = "Joe_l_thumb2";
 browser.currentScene.children[160] = ROUTE469;
 
 let ROUTE470 = browser.currentScene.createNode("ROUTE");
 ROUTE470.fromField = "value_changed";
-ROUTE470.fromNode = "l_thumb3RotInterp";
+ROUTE470.fromNode = "l_thumb3_RotationInterpolator";
 ROUTE470.toField = "set_rotation";
 ROUTE470.toNode = "Joe_l_thumb3";
 browser.currentScene.children[161] = ROUTE470;
 
 let ROUTE471 = browser.currentScene.createNode("ROUTE");
 ROUTE471.fromField = "value_changed";
-ROUTE471.fromNode = "l_index0RotInterp";
+ROUTE471.fromNode = "l_index0_RotationInterpolator";
 ROUTE471.toField = "set_rotation";
 ROUTE471.toNode = "Joe_l_index0";
 browser.currentScene.children[162] = ROUTE471;
 
 let ROUTE472 = browser.currentScene.createNode("ROUTE");
 ROUTE472.fromField = "value_changed";
-ROUTE472.fromNode = "l_index1RotInterp";
+ROUTE472.fromNode = "l_index1_RotationInterpolator";
 ROUTE472.toField = "set_rotation";
 ROUTE472.toNode = "Joe_l_index1";
 browser.currentScene.children[163] = ROUTE472;
 
 let ROUTE473 = browser.currentScene.createNode("ROUTE");
 ROUTE473.fromField = "value_changed";
-ROUTE473.fromNode = "l_index2RotInterp";
+ROUTE473.fromNode = "l_index2_RotationInterpolator";
 ROUTE473.toField = "set_rotation";
 ROUTE473.toNode = "Joe_l_index2";
 browser.currentScene.children[164] = ROUTE473;
 
 let ROUTE474 = browser.currentScene.createNode("ROUTE");
 ROUTE474.fromField = "value_changed";
-ROUTE474.fromNode = "l_index3RotInterp";
+ROUTE474.fromNode = "l_index3_RotationInterpolator";
 ROUTE474.toField = "set_rotation";
 ROUTE474.toNode = "Joe_l_index3";
 browser.currentScene.children[165] = ROUTE474;
 
 let ROUTE475 = browser.currentScene.createNode("ROUTE");
 ROUTE475.fromField = "value_changed";
-ROUTE475.fromNode = "l_middle0RotInterp";
+ROUTE475.fromNode = "l_middle0_RotationInterpolator";
 ROUTE475.toField = "set_rotation";
 ROUTE475.toNode = "Joe_l_middle0";
 browser.currentScene.children[166] = ROUTE475;
 
 let ROUTE476 = browser.currentScene.createNode("ROUTE");
 ROUTE476.fromField = "value_changed";
-ROUTE476.fromNode = "l_middle1RotInterp";
+ROUTE476.fromNode = "l_middle1_RotationInterpolator";
 ROUTE476.toField = "set_rotation";
 ROUTE476.toNode = "Joe_l_middle1";
 browser.currentScene.children[167] = ROUTE476;
 
 let ROUTE477 = browser.currentScene.createNode("ROUTE");
 ROUTE477.fromField = "value_changed";
-ROUTE477.fromNode = "l_middle2RotInterp";
+ROUTE477.fromNode = "l_middle2_RotationInterpolator";
 ROUTE477.toField = "set_rotation";
 ROUTE477.toNode = "Joe_l_middle2";
 browser.currentScene.children[168] = ROUTE477;
 
 let ROUTE478 = browser.currentScene.createNode("ROUTE");
 ROUTE478.fromField = "value_changed";
-ROUTE478.fromNode = "l_middle3RotInterp";
+ROUTE478.fromNode = "l_middle3_RotationInterpolator";
 ROUTE478.toField = "set_rotation";
 ROUTE478.toNode = "Joe_l_middle3";
 browser.currentScene.children[169] = ROUTE478;
 
 let ROUTE479 = browser.currentScene.createNode("ROUTE");
 ROUTE479.fromField = "value_changed";
-ROUTE479.fromNode = "l_ring0RotInterp";
+ROUTE479.fromNode = "l_ring0_RotationInterpolator";
 ROUTE479.toField = "set_rotation";
 ROUTE479.toNode = "Joe_l_ring0";
 browser.currentScene.children[170] = ROUTE479;
 
 let ROUTE480 = browser.currentScene.createNode("ROUTE");
 ROUTE480.fromField = "value_changed";
-ROUTE480.fromNode = "l_ring1RotInterp";
+ROUTE480.fromNode = "l_ring1_RotationInterpolator";
 ROUTE480.toField = "set_rotation";
 ROUTE480.toNode = "Joe_l_ring1";
 browser.currentScene.children[171] = ROUTE480;
 
 let ROUTE481 = browser.currentScene.createNode("ROUTE");
 ROUTE481.fromField = "value_changed";
-ROUTE481.fromNode = "l_ring2RotInterp";
+ROUTE481.fromNode = "l_ring2_RotationInterpolator";
 ROUTE481.toField = "set_rotation";
 ROUTE481.toNode = "Joe_l_ring2";
 browser.currentScene.children[172] = ROUTE481;
 
 let ROUTE482 = browser.currentScene.createNode("ROUTE");
 ROUTE482.fromField = "value_changed";
-ROUTE482.fromNode = "l_ring3RotInterp";
+ROUTE482.fromNode = "l_ring3_RotationInterpolator";
 ROUTE482.toField = "set_rotation";
 ROUTE482.toNode = "Joe_l_ring3";
 browser.currentScene.children[173] = ROUTE482;
 
 let ROUTE483 = browser.currentScene.createNode("ROUTE");
 ROUTE483.fromField = "value_changed";
-ROUTE483.fromNode = "l_pinky0RotInterp";
+ROUTE483.fromNode = "l_pinky0_RotationInterpolator";
 ROUTE483.toField = "set_rotation";
 ROUTE483.toNode = "Joe_l_pinky0";
 browser.currentScene.children[174] = ROUTE483;
 
 let ROUTE484 = browser.currentScene.createNode("ROUTE");
 ROUTE484.fromField = "value_changed";
-ROUTE484.fromNode = "l_pinky1RotInterp";
+ROUTE484.fromNode = "l_pinky1_RotationInterpolator";
 ROUTE484.toField = "set_rotation";
 ROUTE484.toNode = "Joe_l_pinky1";
 browser.currentScene.children[175] = ROUTE484;
 
 let ROUTE485 = browser.currentScene.createNode("ROUTE");
 ROUTE485.fromField = "value_changed";
-ROUTE485.fromNode = "l_pinky2RotInterp";
+ROUTE485.fromNode = "l_pinky2_RotationInterpolator";
 ROUTE485.toField = "set_rotation";
 ROUTE485.toNode = "Joe_l_pinky2";
 browser.currentScene.children[176] = ROUTE485;
 
 let ROUTE486 = browser.currentScene.createNode("ROUTE");
 ROUTE486.fromField = "value_changed";
-ROUTE486.fromNode = "l_pinky3RotInterp";
+ROUTE486.fromNode = "l_pinky3_RotationInterpolator";
 ROUTE486.toField = "set_rotation";
 ROUTE486.toNode = "Joe_l_pinky3";
 browser.currentScene.children[177] = ROUTE486;
 
 let ROUTE487 = browser.currentScene.createNode("ROUTE");
 ROUTE487.fromField = "value_changed";
-ROUTE487.fromNode = "r_sternoclavicularRotInterp";
+ROUTE487.fromNode = "r_sternoclavicular_RotationInterpolator";
 ROUTE487.toField = "set_rotation";
 ROUTE487.toNode = "Joe_r_sternoclavicular";
 browser.currentScene.children[178] = ROUTE487;
 
 let ROUTE488 = browser.currentScene.createNode("ROUTE");
 ROUTE488.fromField = "value_changed";
-ROUTE488.fromNode = "r_acromioclavicularRotInterp";
+ROUTE488.fromNode = "r_acromioclavicular_RotationInterpolator";
 ROUTE488.toField = "set_rotation";
 ROUTE488.toNode = "Joe_r_acromioclavicular";
 browser.currentScene.children[179] = ROUTE488;
 
 let ROUTE489 = browser.currentScene.createNode("ROUTE");
 ROUTE489.fromField = "value_changed";
-ROUTE489.fromNode = "r_shoulderRotInterp";
+ROUTE489.fromNode = "r_shoulder_RotationInterpolator";
 ROUTE489.toField = "set_rotation";
 ROUTE489.toNode = "Joe_r_shoulder";
 browser.currentScene.children[180] = ROUTE489;
 
 let ROUTE490 = browser.currentScene.createNode("ROUTE");
 ROUTE490.fromField = "value_changed";
-ROUTE490.fromNode = "r_elbowRotInterp";
+ROUTE490.fromNode = "r_elbow_RotationInterpolator";
 ROUTE490.toField = "set_rotation";
 ROUTE490.toNode = "Joe_r_elbow";
 browser.currentScene.children[181] = ROUTE490;
 
 let ROUTE491 = browser.currentScene.createNode("ROUTE");
 ROUTE491.fromField = "value_changed";
-ROUTE491.fromNode = "r_wristRotInterp";
+ROUTE491.fromNode = "r_wrist_RotationInterpolator";
 ROUTE491.toField = "set_rotation";
-ROUTE491.toNode = "Joe_r_wrist";
+ROUTE491.toNode = "Joe_r_radiocarpal";
 browser.currentScene.children[182] = ROUTE491;
 
 let ROUTE492 = browser.currentScene.createNode("ROUTE");
 ROUTE492.fromField = "value_changed";
-ROUTE492.fromNode = "r_thumb1RotInterp";
+ROUTE492.fromNode = "r_thumb1_RotationInterpolator";
 ROUTE492.toField = "set_rotation";
 ROUTE492.toNode = "Joe_r_thumb1";
 browser.currentScene.children[183] = ROUTE492;
 
 let ROUTE493 = browser.currentScene.createNode("ROUTE");
 ROUTE493.fromField = "value_changed";
-ROUTE493.fromNode = "r_thumb2RotInterp";
+ROUTE493.fromNode = "r_thumb2_RotationInterpolator";
 ROUTE493.toField = "set_rotation";
 ROUTE493.toNode = "Joe_r_thumb2";
 browser.currentScene.children[184] = ROUTE493;
 
 let ROUTE494 = browser.currentScene.createNode("ROUTE");
 ROUTE494.fromField = "value_changed";
-ROUTE494.fromNode = "r_thumb3RotInterp";
+ROUTE494.fromNode = "r_thumb3_RotationInterpolator";
 ROUTE494.toField = "set_rotation";
 ROUTE494.toNode = "Joe_r_thumb3";
 browser.currentScene.children[185] = ROUTE494;
 
 let ROUTE495 = browser.currentScene.createNode("ROUTE");
 ROUTE495.fromField = "value_changed";
-ROUTE495.fromNode = "r_index0RotInterp";
+ROUTE495.fromNode = "r_index0_RotationInterpolator";
 ROUTE495.toField = "set_rotation";
 ROUTE495.toNode = "Joe_r_index0";
 browser.currentScene.children[186] = ROUTE495;
 
 let ROUTE496 = browser.currentScene.createNode("ROUTE");
 ROUTE496.fromField = "value_changed";
-ROUTE496.fromNode = "r_index1RotInterp";
+ROUTE496.fromNode = "r_index1_RotationInterpolator";
 ROUTE496.toField = "set_rotation";
 ROUTE496.toNode = "Joe_r_index1";
 browser.currentScene.children[187] = ROUTE496;
 
 let ROUTE497 = browser.currentScene.createNode("ROUTE");
 ROUTE497.fromField = "value_changed";
-ROUTE497.fromNode = "r_index2RotInterp";
+ROUTE497.fromNode = "r_index2_RotationInterpolator";
 ROUTE497.toField = "set_rotation";
 ROUTE497.toNode = "Joe_r_index2";
 browser.currentScene.children[188] = ROUTE497;
 
 let ROUTE498 = browser.currentScene.createNode("ROUTE");
 ROUTE498.fromField = "value_changed";
-ROUTE498.fromNode = "r_index3RotInterp";
+ROUTE498.fromNode = "r_index3_RotationInterpolator";
 ROUTE498.toField = "set_rotation";
 ROUTE498.toNode = "Joe_r_index3";
 browser.currentScene.children[189] = ROUTE498;
 
 let ROUTE499 = browser.currentScene.createNode("ROUTE");
 ROUTE499.fromField = "value_changed";
-ROUTE499.fromNode = "r_middle0RotInterp";
+ROUTE499.fromNode = "r_middle0_RotationInterpolator";
 ROUTE499.toField = "set_rotation";
 ROUTE499.toNode = "Joe_r_middle0";
 browser.currentScene.children[190] = ROUTE499;
 
 let ROUTE500 = browser.currentScene.createNode("ROUTE");
 ROUTE500.fromField = "value_changed";
-ROUTE500.fromNode = "r_middle1RotInterp";
+ROUTE500.fromNode = "r_middle1_RotationInterpolator";
 ROUTE500.toField = "set_rotation";
 ROUTE500.toNode = "Joe_r_middle1";
 browser.currentScene.children[191] = ROUTE500;
 
 let ROUTE501 = browser.currentScene.createNode("ROUTE");
 ROUTE501.fromField = "value_changed";
-ROUTE501.fromNode = "r_middle2RotInterp";
+ROUTE501.fromNode = "r_middle2_RotationInterpolator";
 ROUTE501.toField = "set_rotation";
 ROUTE501.toNode = "Joe_r_middle2";
 browser.currentScene.children[192] = ROUTE501;
 
 let ROUTE502 = browser.currentScene.createNode("ROUTE");
 ROUTE502.fromField = "value_changed";
-ROUTE502.fromNode = "r_middle3RotInterp";
+ROUTE502.fromNode = "r_middle3_RotationInterpolator";
 ROUTE502.toField = "set_rotation";
 ROUTE502.toNode = "Joe_r_middle3";
 browser.currentScene.children[193] = ROUTE502;
 
 let ROUTE503 = browser.currentScene.createNode("ROUTE");
 ROUTE503.fromField = "value_changed";
-ROUTE503.fromNode = "r_ring0RotInterp";
+ROUTE503.fromNode = "r_ring0_RotationInterpolator";
 ROUTE503.toField = "set_rotation";
 ROUTE503.toNode = "Joe_r_ring0";
 browser.currentScene.children[194] = ROUTE503;
 
 let ROUTE504 = browser.currentScene.createNode("ROUTE");
 ROUTE504.fromField = "value_changed";
-ROUTE504.fromNode = "r_ring1RotInterp";
+ROUTE504.fromNode = "r_ring1_RotationInterpolator";
 ROUTE504.toField = "set_rotation";
 ROUTE504.toNode = "Joe_r_ring1";
 browser.currentScene.children[195] = ROUTE504;
 
 let ROUTE505 = browser.currentScene.createNode("ROUTE");
 ROUTE505.fromField = "value_changed";
-ROUTE505.fromNode = "r_ring2RotInterp";
+ROUTE505.fromNode = "r_ring2_RotationInterpolator";
 ROUTE505.toField = "set_rotation";
 ROUTE505.toNode = "Joe_r_ring2";
 browser.currentScene.children[196] = ROUTE505;
 
 let ROUTE506 = browser.currentScene.createNode("ROUTE");
 ROUTE506.fromField = "value_changed";
-ROUTE506.fromNode = "r_ring3RotInterp";
+ROUTE506.fromNode = "r_ring3_RotationInterpolator";
 ROUTE506.toField = "set_rotation";
 ROUTE506.toNode = "Joe_r_ring3";
 browser.currentScene.children[197] = ROUTE506;
 
 let ROUTE507 = browser.currentScene.createNode("ROUTE");
 ROUTE507.fromField = "value_changed";
-ROUTE507.fromNode = "r_pinky0RotInterp";
+ROUTE507.fromNode = "r_pinky0_RotationInterpolator";
 ROUTE507.toField = "set_rotation";
 ROUTE507.toNode = "Joe_r_pinky0";
 browser.currentScene.children[198] = ROUTE507;
 
 let ROUTE508 = browser.currentScene.createNode("ROUTE");
 ROUTE508.fromField = "value_changed";
-ROUTE508.fromNode = "r_pinky1RotInterp";
+ROUTE508.fromNode = "r_pinky1_RotationInterpolator";
 ROUTE508.toField = "set_rotation";
 ROUTE508.toNode = "Joe_r_pinky1";
 browser.currentScene.children[199] = ROUTE508;
 
 let ROUTE509 = browser.currentScene.createNode("ROUTE");
 ROUTE509.fromField = "value_changed";
-ROUTE509.fromNode = "r_pinky2RotInterp";
+ROUTE509.fromNode = "r_pinky2_RotationInterpolator";
 ROUTE509.toField = "set_rotation";
 ROUTE509.toNode = "Joe_r_pinky2";
 browser.currentScene.children[200] = ROUTE509;
 
 let ROUTE510 = browser.currentScene.createNode("ROUTE");
 ROUTE510.fromField = "value_changed";
-ROUTE510.fromNode = "r_pinky3RotInterp";
+ROUTE510.fromNode = "r_pinky3_RotationInterpolator";
 ROUTE510.toField = "set_rotation";
 ROUTE510.toNode = "Joe_r_pinky3";
 browser.currentScene.children[201] = ROUTE510;
 
 let Group511 = browser.currentScene.createNode("Group");
 Group511.DEF = "DisplacersAnimationGroup";
-Group511.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group511.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Group511.bboxDisplay = False;
-Group511.visible = True;
 let ScalarInterpolator512 = browser.currentScene.createNode("ScalarInterpolator");
 ScalarInterpolator512.DEF = "skull_tipInterpolator";
 ScalarInterpolator512.key = new MFFloat(new float[0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]);
@@ -3789,10 +3377,6 @@ browser.currentScene.children[202] = Group511;
 
 let Group515 = browser.currentScene.createNode("Group");
 Group515.DEF = "SkinTextureTransformAnimationGroup";
-Group515.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group515.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Group515.bboxDisplay = False;
-Group515.visible = True;
 let ScalarInterpolator516 = browser.currentScene.createNode("ScalarInterpolator");
 ScalarInterpolator516.DEF = "SkinInterpolator";
 ScalarInterpolator516.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.7,0.8,1]);
@@ -3818,25 +3402,13 @@ Group515.children[2] = ROUTE518;
 browser.currentScene.children[203] = Group515;
 
 let Group519 = browser.currentScene.createNode("Group");
-Group519.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group519.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Group519.bboxDisplay = False;
-Group519.visible = True;
 let Transform520 = browser.currentScene.createNode("Transform");
 Transform520.DEF = "SBall";
 Transform520.rotation = new SFRotation(new float[0.7,0,0.7,0.1]);
 Transform520.scale = new SFVec3f(new float[0.23,0.23,0.23]);
 Transform520.translation = new SFVec3f(new float[-0.916,0.37,-0.92]);
-Transform520.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform520.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Transform520.bboxDisplay = False;
-Transform520.visible = True;
 let Shape521 = browser.currentScene.createNode("Shape");
 Shape521.DEF = "ball_Shape";
-Shape521.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape521.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Shape521.bboxDisplay = False;
-Shape521.visible = True;
 let Appearance522 = browser.currentScene.createNode("Appearance");
 Appearance522.DEF = "ball_Appearance";
 let Material523 = browser.currentScene.createNode("Material");
@@ -3876,13 +3448,13 @@ Group519.children[0] = Transform520;
 
 //Ball Animation interpolators
 let PositionInterpolator528 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator528.DEF = "ballTransInterp";
+PositionInterpolator528.DEF = "ball_TranslationInterpolator";
 PositionInterpolator528.key = new MFFloat(new float[0,0.4,0.409,1]);
 PositionInterpolator528.keyValue = new MFVec3f(new float[-1,0.4,-1,0,0.07,0,0.05,0.06,0.05,2,4,10]);
 Group519.children[1] = PositionInterpolator528;
 
 let OrientationInterpolator529 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator529.DEF = "ballRotInterp";
+OrientationInterpolator529.DEF = "ball_RotationInterpolator";
 OrientationInterpolator529.key = new MFFloat(new float[0,0.4,0.41,0.71,1]);
 OrientationInterpolator529.keyValue = new MFRotation(new float[1,0,1,0.25,-1,0,-1,1.35,-1,1,-1,3.35,-1,0.2,-1,3,-1,0.2,-1,3]);
 Group519.children[2] = OrientationInterpolator529;
@@ -3892,12 +3464,12 @@ let ROUTE530 = browser.currentScene.createNode("ROUTE");
 ROUTE530.fromField = "fraction_changed";
 ROUTE530.fromNode = "KickTimer";
 ROUTE530.toField = "set_fraction";
-ROUTE530.toNode = "ballTransInterp";
+ROUTE530.toNode = "ball_TranslationInterpolator";
 Group519.children[3] = ROUTE530;
 
 let ROUTE531 = browser.currentScene.createNode("ROUTE");
 ROUTE531.fromField = "value_changed";
-ROUTE531.fromNode = "ballTransInterp";
+ROUTE531.fromNode = "ball_TranslationInterpolator";
 ROUTE531.toField = "set_translation";
 ROUTE531.toNode = "SBall";
 Group519.children[4] = ROUTE531;
@@ -3906,12 +3478,12 @@ let ROUTE532 = browser.currentScene.createNode("ROUTE");
 ROUTE532.fromField = "fraction_changed";
 ROUTE532.fromNode = "KickTimer";
 ROUTE532.toField = "set_fraction";
-ROUTE532.toNode = "ballRotInterp";
+ROUTE532.toNode = "ball_RotationInterpolator";
 Group519.children[5] = ROUTE532;
 
 let ROUTE533 = browser.currentScene.createNode("ROUTE");
 ROUTE533.fromField = "value_changed";
-ROUTE533.fromNode = "ballRotInterp";
+ROUTE533.fromNode = "ball_RotationInterpolator";
 ROUTE533.toField = "set_rotation";
 ROUTE533.toNode = "SBall";
 Group519.children[6] = ROUTE533;
@@ -3919,16 +3491,8 @@ Group519.children[6] = ROUTE533;
 browser.currentScene.children[204] = Group519;
 
 let Group534 = browser.currentScene.createNode("Group");
-Group534.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group534.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Group534.bboxDisplay = False;
-Group534.visible = True;
 let Transform535 = browser.currentScene.createNode("Transform");
 Transform535.scale = new SFVec3f(new float[0.2,0.2,0.2]);
-Transform535.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform535.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Transform535.bboxDisplay = False;
-Transform535.visible = True;
 let Shape536 = browser.currentScene.createNode("Shape");
 Shape536.USE = "AxisLinesShape";
 Transform535.children = new MFNode();
@@ -3942,16 +3506,8 @@ Group534.children[0] = Transform535;
 let Transform537 = browser.currentScene.createNode("Transform");
 Transform537.DEF = "Circle0";
 Transform537.scale = new SFVec3f(new float[1.175,1,1.175]);
-Transform537.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform537.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Transform537.bboxDisplay = False;
-Transform537.visible = True;
 let Shape538 = browser.currentScene.createNode("Shape");
 Shape538.DEF = "circle_Shape";
-Shape538.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape538.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Shape538.bboxDisplay = False;
-Shape538.visible = True;
 let Appearance539 = browser.currentScene.createNode("Appearance");
 Appearance539.DEF = "circle0_Appearance";
 let Material540 = browser.currentScene.createNode("Material");
@@ -3982,16 +3538,8 @@ Group534.children[1] = Transform537;
 let Transform543 = browser.currentScene.createNode("Transform");
 Transform543.DEF = "Circle1";
 Transform543.scale = new SFVec3f(new float[0.5,1,0.5]);
-Transform543.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform543.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Transform543.bboxDisplay = False;
-Transform543.visible = True;
 let Shape544 = browser.currentScene.createNode("Shape");
 Shape544.DEF = "circle1_Shape";
-Shape544.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape544.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Shape544.bboxDisplay = False;
-Shape544.visible = True;
 let Appearance545 = browser.currentScene.createNode("Appearance");
 Appearance545.DEF = "circle1_Appearance";
 let Material546 = browser.currentScene.createNode("Material");
@@ -4015,16 +3563,8 @@ Group534.children[2] = Transform543;
 let Transform548 = browser.currentScene.createNode("Transform");
 Transform548.DEF = "Circle2";
 Transform548.scale = new SFVec3f(new float[0.25,1,0.25]);
-Transform548.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform548.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Transform548.bboxDisplay = False;
-Transform548.visible = True;
 let Shape549 = browser.currentScene.createNode("Shape");
 Shape549.DEF = "circle2_Shape";
-Shape549.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape549.bboxSize = new SFVec3f(new float[-1,-1,-1]);
-Shape549.bboxDisplay = False;
-Shape549.visible = True;
 let Appearance550 = browser.currentScene.createNode("Appearance");
 Appearance550.DEF = "circle2_Appearance";
 let Material551 = browser.currentScene.createNode("Material");

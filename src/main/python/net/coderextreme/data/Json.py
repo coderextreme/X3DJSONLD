@@ -225,17 +225,11 @@ Scene35.addLayerSet(LayerSet44)
 Transform45 = x3d.Transform()
 Transform45.setDEF("LogoGeometryTransform")
 Transform45.setTranslation([0,1.5,0])
-Transform45.setBboxCenter([0,0,0])
-Transform45.setBboxSize([-1,-1,-1])
 Anchor46 = x3d.Anchor()
 Anchor46.setDescription("select for X3D Java SAI Library (X3DJSAIL) description")
 Anchor46.setUrl(["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"])
-Anchor46.setBboxCenter([0,0,0])
-Anchor46.setBboxSize([-1,-1,-1])
 Shape47 = x3d.Shape()
 Shape47.setDEF("BoxShape")
-Shape47.setBboxCenter([0,0,0])
-Shape47.setBboxSize([-1,-1,-1])
 Appearance48 = x3d.Appearance()
 Material49 = x3d.Material()
 Material49.setDEF("GreenMaterial")
@@ -253,8 +247,6 @@ Shape47.setAppearance(Appearance48)
 Box51 = x3d.Box()
 Box51.setDEF("test-NMTOKEN_regex.0123456789")
 Box51.setCssClass("untextured")
-Box51.setSize([2,2,2])
-Box51.setSolid(True)
 
 Shape47.setGeometry(Box51)
 
@@ -265,8 +257,6 @@ Transform45.addChildren(Anchor46)
 Scene35.addChildren(Transform45)
 Shape52 = x3d.Shape()
 Shape52.setDEF("LineShape")
-Shape52.setBboxCenter([0,0,0])
-Shape52.setBboxSize([-1,-1,-1])
 Appearance53 = x3d.Appearance()
 Material54 = x3d.Material()
 Material54.setEmissiveColor([0.6,0.19607843,0.8])
@@ -314,11 +304,7 @@ Scene35.addChildren(ROUTE60)
 Transform61 = x3d.Transform()
 Transform61.setDEF("TextTransform")
 Transform61.setTranslation([0,-1.5,0])
-Transform61.setBboxCenter([0,0,0])
-Transform61.setBboxSize([-1,-1,-1])
 Shape62 = x3d.Shape()
-Shape62.setBboxCenter([0,0,0])
-Shape62.setBboxSize([-1,-1,-1])
 Appearance63 = x3d.Appearance()
 Material64 = x3d.Material()
 Material64.setUSE("GreenMaterial")
@@ -353,14 +339,9 @@ Shape62.setGeometry(Text65)
 
 Transform61.addChildren(Shape62)
 Collision70 = x3d.Collision()
-Collision70.setEnabled(True)
-Collision70.setBboxCenter([0,0,0])
-Collision70.setBboxSize([-1,-1,-1])
 #test containerField='proxy'
 Shape71 = x3d.Shape()
 Shape71.setDEF("ProxyShape")
-Shape71.setBboxCenter([0,0,0])
-Shape71.setBboxSize([-1,-1,-1])
 #alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
 #alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'
 #alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
@@ -407,64 +388,68 @@ ROUTE76.setToNode("TextTransform")
 Scene35.addChildren(ROUTE76)
 Group77 = x3d.Group()
 Group77.setDEF("BackgroundGroup")
-Group77.setBboxCenter([0,0,0])
-Group77.setBboxSize([-1,-1,-1])
 Background78 = x3d.Background()
 Background78.setDEF("GradualBackground")
-Background78.setSkyColor([0,0,0])
-Background78.setTransparency(0)
 
 Group77.addChildren(Background78)
-ColorInterpolator79 = x3d.ColorInterpolator()
-ColorInterpolator79.setDEF("ColorAnimator")
-ColorInterpolator79.setKey([0,0.5,1])
-ColorInterpolator79.setKeyValue([0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1])
+Script79 = x3d.Script()
+Script79.setDEF("colorTypeConversionScript")
+field80 = x3d.field()
+field80.setName("colorInput")
+field80.setAccessType("inputOnly")
+field80.setType("SFColor")
+
+Script79.addField(field80)
+field81 = x3d.field()
+field81.setName("colorsOutput")
+field81.setAccessType("outputOnly")
+field81.setType("MFColor")
+
+Script79.addField(field81)
+
+Script79.setSourceCode('''ecmascript:\n"+
+"\n"+
+"function colorInput (eventValue) // Example source code\n"+
+"{\n"+
+"   colorsOutput = new MFColor(eventValue); // assigning value sends output event\n"+
+"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');\n"+
+"}''')
+
+Group77.addChildren(Script79)
+ColorInterpolator82 = x3d.ColorInterpolator()
+ColorInterpolator82.setDEF("ColorAnimator")
+ColorInterpolator82.setKey([0,0.5,1])
+ColorInterpolator82.setKeyValue([0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1])
 #AZURE to INDIGO and back again
 
-Group77.addChildren(ColorInterpolator79)
-TimeSensor80 = x3d.TimeSensor()
-TimeSensor80.setDEF("ColorClock")
-TimeSensor80.setCycleInterval(60)
-TimeSensor80.setLoop(True)
+Group77.addChildren(ColorInterpolator82)
+TimeSensor83 = x3d.TimeSensor()
+TimeSensor83.setDEF("ColorClock")
+TimeSensor83.setCycleInterval(60)
+TimeSensor83.setLoop(True)
 
-Group77.addChildren(TimeSensor80)
-ROUTE81 = x3d.ROUTE()
-ROUTE81.setFromField("colorsOutput")
-ROUTE81.setFromNode("colorTypeConversionScript")
-ROUTE81.setToField("skyColor")
-ROUTE81.setToNode("GradualBackground")
+Group77.addChildren(TimeSensor83)
+ROUTE84 = x3d.ROUTE()
+ROUTE84.setFromField("colorsOutput")
+ROUTE84.setFromNode("colorTypeConversionScript")
+ROUTE84.setToField("skyColor")
+ROUTE84.setToNode("GradualBackground")
 
-Group77.addChildren(ROUTE81)
-ROUTE82 = x3d.ROUTE()
-ROUTE82.setFromField("value_changed")
-ROUTE82.setFromNode("ColorAnimator")
-ROUTE82.setToField("colorInput")
-ROUTE82.setToNode("colorTypeConversionScript")
+Group77.addChildren(ROUTE84)
+ROUTE85 = x3d.ROUTE()
+ROUTE85.setFromField("value_changed")
+ROUTE85.setFromNode("ColorAnimator")
+ROUTE85.setToField("colorInput")
+ROUTE85.setToNode("colorTypeConversionScript")
 
-Group77.addChildren(ROUTE82)
-ROUTE83 = x3d.ROUTE()
-ROUTE83.setFromField("fraction_changed")
-ROUTE83.setFromNode("ColorClock")
-ROUTE83.setToField("set_fraction")
-ROUTE83.setToNode("ColorAnimator")
+Group77.addChildren(ROUTE85)
+ROUTE86 = x3d.ROUTE()
+ROUTE86.setFromField("fraction_changed")
+ROUTE86.setFromNode("ColorClock")
+ROUTE86.setToField("set_fraction")
+ROUTE86.setToNode("ColorAnimator")
 
-Group77.addChildren(ROUTE83)
-X3DScript84 = x3d.X3DScript()
-X3DScript84.setDEF("colorTypeConversionScript")
-field85 = x3d.field()
-field85.setName("colorInput")
-field85.setAccessType("inputOnly")
-field85.setType("SFColor")
-
-X3DScript84.addField(field85)
-field86 = x3d.field()
-field86.setName("colorsOutput")
-field86.setAccessType("outputOnly")
-field86.setType("MFColor")
-
-X3DScript84.addField(field86)
-
-Group77.addX3DScript(X3DScript84)
+Group77.addChildren(ROUTE86)
 
 Scene35.addChildren(Group77)
 ProtoDeclare87 = x3d.ProtoDeclare()
@@ -537,8 +522,6 @@ Scene35.addChildren(ExternProtoDeclare97)
 #Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place
 Shape99 = x3d.Shape()
 Shape99.setDEF("TestShape1")
-Shape99.setBboxCenter([0,0,0])
-Shape99.setBboxSize([-1,-1,-1])
 Appearance100 = x3d.Appearance()
 Appearance100.setDEF("TestAppearance1")
 #ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java
@@ -562,8 +545,6 @@ Shape99.setGeometry(Sphere103)
 Scene35.addChildren(Shape99)
 Shape104 = x3d.Shape()
 Shape104.setDEF("TestShape2")
-Shape104.setBboxCenter([0,0,0])
-Shape104.setBboxSize([-1,-1,-1])
 Appearance105 = x3d.Appearance()
 Appearance105.setDEF("TestAppearance2")
 #ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java
@@ -583,17 +564,12 @@ Shape104.setAppearance(Appearance105)
 Cone108 = x3d.Cone()
 Cone108.setBottomRadius(0.001)
 Cone108.setHeight(0.001)
-Cone108.setSide(True)
-Cone108.setBottom(True)
-Cone108.setSolid(True)
 
 Shape104.setGeometry(Cone108)
 
 Scene35.addChildren(Shape104)
 Shape109 = x3d.Shape()
 Shape109.setDEF("TestShape3")
-Shape109.setBboxCenter([0,0,0])
-Shape109.setBboxSize([-1,-1,-1])
 Appearance110 = x3d.Appearance()
 Appearance110.setDEF("TestAppearance3")
 #ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE.
@@ -613,8 +589,6 @@ Scene35.addChildren(Shape109)
 Inline113 = x3d.Inline()
 Inline113.setDEF("inlineSceneDef")
 Inline113.setUrl(["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"])
-Inline113.setBboxCenter([0,0,0])
-Inline113.setBboxSize([-1,-1,-1])
 
 Scene35.addChildren(Inline113)
 IMPORT114 = x3d.IMPORT()
@@ -723,32 +697,32 @@ Material126.setIS(IS127)
 
 ProtoBody125.addChildren(Material126)
 #Only first node (the node type) is renderable, others are along for the ride
-X3DScript134 = x3d.X3DScript()
-X3DScript134.setDEF("MaterialModulatorScript")
+Script134 = x3d.Script()
+Script134.setDEF("MaterialModulatorScript")
 field135 = x3d.field()
 field135.setName("enabled")
 field135.setAccessType("inputOutput")
 field135.setType("SFBool")
 
-X3DScript134.addField(field135)
+Script134.addField(field135)
 field136 = x3d.field()
 field136.setName("diffuseColor")
 field136.setAccessType("inputOutput")
 field136.setType("SFColor")
 
-X3DScript134.addField(field136)
+Script134.addField(field136)
 field137 = x3d.field()
 field137.setName("newColor")
 field137.setAccessType("outputOnly")
 field137.setType("SFColor")
 
-X3DScript134.addField(field137)
+Script134.addField(field137)
 field138 = x3d.field()
 field138.setName("clockTrigger")
 field138.setAccessType("inputOnly")
 field138.setType("SFTime")
 
-X3DScript134.addField(field138)
+Script134.addField(field138)
 IS139 = x3d.IS()
 connect140 = x3d.connect()
 connect140.setNodeField("enabled")
@@ -761,9 +735,33 @@ connect141.setProtoField("diffuseColor")
 
 IS139.addConnect(connect141)
 
-X3DScript134.setIS(IS139)
+Script134.setIS(IS139)
 
-ProtoBody125.addX3DScript(X3DScript134)
+Script134.setSourceCode('''ecmascript:\n"+
+"function initialize ()\n"+
+"{\n"+
+"    newColor = diffuseColor; // start with correct color\n"+
+"}\n"+
+"function set_enabled (newValue)\n"+
+"{\n"+
+"	enabled = newValue;\n"+
+"}\n"+
+"function clockTrigger (timeValue)\n"+
+"{\n"+
+"    if (!enabled) return;\n"+
+"    red   = newColor.r;\n"+
+"    green = newColor.g;\n"+
+"    blue  = newColor.b;\n"+
+"\n"+
+"    // note different modulation rates for each color component, % is modulus operator\n"+
+"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);\n"+
+"	if (enabled)\n"+
+"	{\n"+
+"		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');\n"+
+"	}\n"+
+"}''')
+
+ProtoBody125.addChildren(Script134)
 
 ProtoDeclare116.setProtoBody(ProtoBody125)
 
@@ -771,11 +769,7 @@ Scene35.addChildren(ProtoDeclare116)
 #Test success: declarative statement createDeclarativeShapeTests()
 Group142 = x3d.Group()
 Group142.setDEF("DeclarativeGroupExample")
-Group142.setBboxCenter([0,0,0])
-Group142.setBboxSize([-1,-1,-1])
 Shape143 = x3d.Shape()
-Shape143.setBboxCenter([0,0,0])
-Shape143.setBboxSize([-1,-1,-1])
 MetadataString144 = x3d.MetadataString()
 MetadataString144.setName("findThisNameValue")
 MetadataString144.setDEF("FindableMetadataStringTest")
@@ -796,8 +790,6 @@ Cone147 = x3d.Cone()
 Cone147.setBottom(False)
 Cone147.setBottomRadius(0.05)
 Cone147.setHeight(0.1)
-Cone147.setSide(True)
-Cone147.setSolid(True)
 
 Shape143.setGeometry(Cone147)
 
@@ -813,8 +805,6 @@ Scene35.addChildren(Group142)
 #Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found
 Group148 = x3d.Group()
 Group148.setDEF("TestFieldObjectsGroup")
-Group148.setBboxCenter([0,0,0])
-Group148.setBboxSize([-1,-1,-1])
 #testFieldObjects() results
 #SFBool default=true, true=true, false=false, negate()=true
 #MFBool default=, initial=true false true, negate()=false true false
@@ -831,12 +821,6 @@ Sound149.setLocation([0,1.6,0])
 AudioClip150 = x3d.AudioClip()
 AudioClip150.setDescription("chimes")
 AudioClip150.setUrl(["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"])
-AudioClip150.setLoop(False)
-AudioClip150.setPitch(1)
-AudioClip150.setStartTime(0)
-AudioClip150.setStopTime(0)
-AudioClip150.setPauseTime(0)
-AudioClip150.setResumeTime(0)
 #Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
 
 Sound149.setSource(AudioClip150)
@@ -862,8 +846,6 @@ Scene35.addChildren(Sound151)
 #Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true
 Shape153 = x3d.Shape()
 Shape153.setDEF("ExtrusionShape")
-Shape153.setBboxCenter([0,0,0])
-Shape153.setBboxSize([-1,-1,-1])
 #ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'
 #ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'
 Appearance154 = x3d.Appearance()
@@ -881,8 +863,6 @@ Shape153.setGeometry(Extrusion156)
 
 Scene35.addChildren(Shape153)
 Group157 = x3d.Group()
-Group157.setBboxCenter([0,0,0])
-Group157.setBboxSize([-1,-1,-1])
 #Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes
 ProtoDeclare158 = x3d.ProtoDeclare()
 ProtoDeclare158.setName("NewWorldInfo")
@@ -905,15 +885,11 @@ ProtoDeclare158.setProtoBody(ProtoBody161)
 Group157.addChildren(ProtoDeclare158)
 Group163 = x3d.Group()
 Group163.setDEF("Node2")
-Group163.setBboxCenter([0,0,0])
-Group163.setBboxSize([-1,-1,-1])
 #intentionally empty
 
 Group157.addChildren(Group163)
 Transform164 = x3d.Transform()
 Transform164.setDEF("Node4")
-Transform164.setBboxCenter([0,0,0])
-Transform164.setBboxSize([-1,-1,-1])
 #intentionally empty
 
 Group157.addChildren(Transform164)
@@ -931,8 +907,6 @@ ProtoDeclare165.setProtoBody(ProtoBody166)
 
 Scene35.addChildren(ProtoDeclare165)
 Shape168 = x3d.Shape()
-Shape168.setBboxCenter([0,0,0])
-Shape168.setBboxSize([-1,-1,-1])
 Appearance169 = x3d.Appearance()
 #Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes
 #Test satisfactorily creates MFNode shaders array as an ordered list with mixed content
@@ -965,8 +939,6 @@ Shape168.setAppearance(Appearance169)
 Scene35.addChildren(Shape168)
 Transform175 = x3d.Transform()
 Transform175.setDEF("SpecialtyNodes")
-Transform175.setBboxCenter([0,0,0])
-Transform175.setBboxSize([-1,-1,-1])
 CADLayer176 = x3d.CADLayer()
 CADAssembly177 = x3d.CADAssembly()
 CADPart178 = x3d.CADPart()
@@ -980,23 +952,15 @@ CADLayer176.addChildren(CADAssembly177)
 
 Transform175.addChildren(CADLayer176)
 EspduTransform180 = x3d.EspduTransform()
-EspduTransform180.setBboxCenter([0,0,0])
-EspduTransform180.setBboxSize([-1,-1,-1])
 
 Transform175.addChildren(EspduTransform180)
 ReceiverPdu181 = x3d.ReceiverPdu()
-ReceiverPdu181.setBboxCenter([0,0,0])
-ReceiverPdu181.setBboxSize([-1,-1,-1])
 
 Transform175.addChildren(ReceiverPdu181)
 SignalPdu182 = x3d.SignalPdu()
-SignalPdu182.setBboxCenter([0,0,0])
-SignalPdu182.setBboxSize([-1,-1,-1])
 
 Transform175.addChildren(SignalPdu182)
 TransmitterPdu183 = x3d.TransmitterPdu()
-TransmitterPdu183.setBboxCenter([0,0,0])
-TransmitterPdu183.setBboxSize([-1,-1,-1])
 
 Transform175.addChildren(TransmitterPdu183)
 DISEntityManager184 = x3d.DISEntityManager()

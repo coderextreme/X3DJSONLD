@@ -43,8 +43,6 @@ NavigationInfo8.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY",
 browser.currentScene.children[6] = NavigationInfo8;
 
 let Shape9 = browser.currentScene.createNode("Shape");
-Shape9.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape9.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance10 = browser.currentScene.createNode("Appearance");
 let Material11 = browser.currentScene.createNode("Material");
 Appearance10.material = Material11;
