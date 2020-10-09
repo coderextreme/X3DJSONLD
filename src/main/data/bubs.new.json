@@ -77,7 +77,7 @@
                   "-children":[
                     { "Transform":
                       {
-                        "@DEF":"transform",
+                        "@DEF":"body_trans",
                         "-children":[
                           { "Shape":
                             {
@@ -194,7 +194,7 @@
                               "@fromField":"translation_changed",
                               "@fromNode":"bounce1",
                               "@toField":"set_translation",
-                              "@toNode":"transform"
+                              "@toNode":"body_trans"
                             }
                           },
                           { "ROUTE":
@@ -202,7 +202,7 @@
                               "@fromField":"scale_changed",
                               "@fromNode":"bounce1",
                               "@toField":"set_scale",
-                              "@toNode":"transform"
+                              "@toNode":"body_trans"
                             }
                           },
                           { "ROUTE":
