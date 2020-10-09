@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"4.0",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
           {
@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 September 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -137,11 +137,7 @@
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@diffuseColor":[0,0,1],
-                                                        "@normalScale":1,
-                                                        "@metallic":1,
-                                                        "@occlusionStrength":1,
-                                                        "@roughness":1
+                                                        "@diffuseColor":[0,0,1]
                                                       }
                                                     }
                                                 }
@@ -159,11 +155,6 @@
                                             "-material":
                                               { "Material":
                                                 {
-                                                  "@emissiveColor":[1,1,1],
-                                                  "@normalScale":1,
-                                                  "@metallic":1,
-                                                  "@occlusionStrength":1,
-                                                  "@roughness":1
                                                 }
                                               }
                                           }
@@ -191,11 +182,6 @@
                                             "-material":
                                               { "Material":
                                                 {
-                                                  "@emissiveColor":[1,1,1],
-                                                  "@normalScale":1,
-                                                  "@metallic":1,
-                                                  "@occlusionStrength":1,
-                                                  "@roughness":1
                                                 }
                                               }
                                           }
@@ -223,11 +209,6 @@
                                             "-material":
                                               { "Material":
                                                 {
-                                                  "@emissiveColor":[1,1,1],
-                                                  "@normalScale":1,
-                                                  "@metallic":1,
-                                                  "@occlusionStrength":1,
-                                                  "@roughness":1
                                                 }
                                               }
                                           }
@@ -284,11 +265,7 @@
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@diffuseColor":[1,0,0],
-                                                              "@normalScale":1,
-                                                              "@metallic":1,
-                                                              "@occlusionStrength":1,
-                                                              "@roughness":1
+                                                              "@diffuseColor":[1,0,0]
                                                             }
                                                           }
                                                       }
@@ -306,11 +283,6 @@
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@emissiveColor":[1,1,1],
-                                                        "@normalScale":1,
-                                                        "@metallic":1,
-                                                        "@occlusionStrength":1,
-                                                        "@roughness":1
                                                       }
                                                     }
                                                 }
@@ -338,11 +310,6 @@
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@emissiveColor":[1,1,1],
-                                                        "@normalScale":1,
-                                                        "@metallic":1,
-                                                        "@occlusionStrength":1,
-                                                        "@roughness":1
                                                       }
                                                     }
                                                 }
@@ -399,11 +366,6 @@
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@emissiveColor":[1,1,1],
-                                                              "@normalScale":1,
-                                                              "@metallic":1,
-                                                              "@occlusionStrength":1,
-                                                              "@roughness":1
                                                             }
                                                           }
                                                       }
@@ -457,11 +419,6 @@
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@emissiveColor":[1,1,1],
-                                                                    "@normalScale":1,
-                                                                    "@metallic":1,
-                                                                    "@occlusionStrength":1,
-                                                                    "@roughness":1
                                                                   }
                                                                 }
                                                             }
@@ -515,11 +472,6 @@
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@emissiveColor":[1,1,1],
-                                                                          "@normalScale":1,
-                                                                          "@metallic":1,
-                                                                          "@occlusionStrength":1,
-                                                                          "@roughness":1
                                                                         }
                                                                       }
                                                                   }
@@ -585,11 +537,6 @@
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@emissiveColor":[1,1,1],
-                                                              "@normalScale":1,
-                                                              "@metallic":1,
-                                                              "@occlusionStrength":1,
-                                                              "@roughness":1
                                                             }
                                                           }
                                                       }
@@ -643,11 +590,6 @@
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@emissiveColor":[1,1,1],
-                                                                    "@normalScale":1,
-                                                                    "@metallic":1,
-                                                                    "@occlusionStrength":1,
-                                                                    "@roughness":1
                                                                   }
                                                                 }
                                                             }
@@ -701,11 +643,6 @@
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@emissiveColor":[1,1,1],
-                                                                          "@normalScale":1,
-                                                                          "@metallic":1,
-                                                                          "@occlusionStrength":1,
-                                                                          "@roughness":1
                                                                         }
                                                                       }
                                                                   }
@@ -759,11 +696,6 @@
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@emissiveColor":[1,1,1],
-                                                                                "@normalScale":1,
-                                                                                "@metallic":1,
-                                                                                "@occlusionStrength":1,
-                                                                                "@roughness":1
                                                                               }
                                                                             }
                                                                         }
@@ -835,11 +767,6 @@
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@emissiveColor":[1,1,1],
-                                                        "@normalScale":1,
-                                                        "@metallic":1,
-                                                        "@occlusionStrength":1,
-                                                        "@roughness":1
                                                       }
                                                     }
                                                 }
@@ -896,11 +823,6 @@
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@emissiveColor":[1,1,1],
-                                                              "@normalScale":1,
-                                                              "@metallic":1,
-                                                              "@occlusionStrength":1,
-                                                              "@roughness":1
                                                             }
                                                           }
                                                       }
@@ -954,11 +876,6 @@
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@emissiveColor":[1,1,1],
-                                                                    "@normalScale":1,
-                                                                    "@metallic":1,
-                                                                    "@occlusionStrength":1,
-                                                                    "@roughness":1
                                                                   }
                                                                 }
                                                             }
@@ -1012,11 +929,6 @@
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@emissiveColor":[1,1,1],
-                                                                          "@normalScale":1,
-                                                                          "@metallic":1,
-                                                                          "@occlusionStrength":1,
-                                                                          "@roughness":1
                                                                         }
                                                                       }
                                                                   }
@@ -1070,11 +982,6 @@
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@emissiveColor":[1,1,1],
-                                                                                "@normalScale":1,
-                                                                                "@metallic":1,
-                                                                                "@occlusionStrength":1,
-                                                                                "@roughness":1
                                                                               }
                                                                             }
                                                                         }
@@ -1146,11 +1053,6 @@
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@emissiveColor":[1,1,1],
-                                                        "@normalScale":1,
-                                                        "@metallic":1,
-                                                        "@occlusionStrength":1,
-                                                        "@roughness":1
                                                       }
                                                     }
                                                 }
@@ -1178,11 +1080,6 @@
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@emissiveColor":[1,1,1],
-                                                        "@normalScale":1,
-                                                        "@metallic":1,
-                                                        "@occlusionStrength":1,
-                                                        "@roughness":1
                                                       }
                                                     }
                                                 }
@@ -1239,11 +1136,6 @@
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@emissiveColor":[1,1,1],
-                                                              "@normalScale":1,
-                                                              "@metallic":1,
-                                                              "@occlusionStrength":1,
-                                                              "@roughness":1
                                                             }
                                                           }
                                                       }
@@ -1297,11 +1189,6 @@
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@emissiveColor":[1,1,1],
-                                                                    "@normalScale":1,
-                                                                    "@metallic":1,
-                                                                    "@occlusionStrength":1,
-                                                                    "@roughness":1
                                                                   }
                                                                 }
                                                             }
@@ -1355,11 +1242,6 @@
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@emissiveColor":[1,1,1],
-                                                                          "@normalScale":1,
-                                                                          "@metallic":1,
-                                                                          "@occlusionStrength":1,
-                                                                          "@roughness":1
                                                                         }
                                                                       }
                                                                   }
@@ -1413,11 +1295,6 @@
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@emissiveColor":[1,1,1],
-                                                                                "@normalScale":1,
-                                                                                "@metallic":1,
-                                                                                "@occlusionStrength":1,
-                                                                                "@roughness":1
                                                                               }
                                                                             }
                                                                         }
@@ -1486,11 +1363,6 @@
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@emissiveColor":[1,1,1],
-                                                              "@normalScale":1,
-                                                              "@metallic":1,
-                                                              "@occlusionStrength":1,
-                                                              "@roughness":1
                                                             }
                                                           }
                                                       }
@@ -1544,11 +1416,6 @@
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@emissiveColor":[1,1,1],
-                                                                    "@normalScale":1,
-                                                                    "@metallic":1,
-                                                                    "@occlusionStrength":1,
-                                                                    "@roughness":1
                                                                   }
                                                                 }
                                                             }
@@ -1602,11 +1469,6 @@
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@emissiveColor":[1,1,1],
-                                                                          "@normalScale":1,
-                                                                          "@metallic":1,
-                                                                          "@occlusionStrength":1,
-                                                                          "@roughness":1
                                                                         }
                                                                       }
                                                                   }
@@ -1660,11 +1522,6 @@
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@emissiveColor":[1,1,1],
-                                                                                "@normalScale":1,
-                                                                                "@metallic":1,
-                                                                                "@occlusionStrength":1,
-                                                                                "@roughness":1
                                                                               }
                                                                             }
                                                                         }

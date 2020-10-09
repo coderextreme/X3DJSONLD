@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"3.0",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -44,7 +44,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 September 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -193,33 +193,7 @@
                                                             "@DEF":"MovementVisibilitySensor"
                                                           }
                                                         },
-                                                        { "ROUTE":
-                                                          {
-                                                            "@fromField":"isActive",
-                                                            "@fromNode":"PlaneMovementSensor",
-                                                            "@toField":"setPlaneSensorIsActive",
-                                                            "@toNode":"VisibilityControlScript"
-                                                          }
-                                                        },
-                                                        { "ROUTE":
-                                                          {
-                                                            "@fromField":"translation_changed",
-                                                            "@fromNode":"PlaneMovementSensor",
-                                                            "@toField":"setPlaneSensorTranslation",
-                                                            "@toNode":"VisibilityControlScript"
-                                                          }
-                                                        },
-                                                        { "ROUTE":
-                                                          {
-                                                            "@fromField":"isActive",
-                                                            "@fromNode":"MovementVisibilitySensor",
-                                                            "@toField":"setIsVisible",
-                                                            "@toNode":"VisibilityControlScript"
-                                                          }
-                                                        }
-                                                      ],
-                                                      "-IllegalChildNodeFieldNameNotFound":[
-                                                        { "X3DScript":
+                                                        { "Script":
                                                           {
                                                             "@DEF":"VisibilityControlScript",
                                                             "field": [
@@ -273,7 +247,72 @@
                                                                     "@protoField":"traceEnabled"
                                                                   }
                                                                 ]
-                                                            }
+                                                            },
+                                                            "#sourceText":[
+"",
+"",
+"ecmascript:",
+"",
+"function tracePrint (text)",
+"{",
+"\tif (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);",
+"}",
+"function setIsVisible (value, timeStamp)",
+"{",
+"\tisVisible = value;",
+"\ttracePrint('isVisible=' + value);",
+"}",
+"function setPlaneSensorIsActive (value, timeStamp)",
+"{",
+"\ttracePrint('PlaneSensor isActive=' + value);",
+"",
+"\tif (value == false)",
+"\t{",
+"\t\ttracePrint('planeSensorTranslation=' + planeSensorTranslation);",
+"\t\tif (isVisible)",
+"\t\t{",
+"\t\t\ttranslationChanged = planeSensorTranslation;",
+"\t\t}",
+"\t\telse",
+"\t\t{",
+"\t\t\t// fell off screen, reset to center",
+"\t\t\ttranslationChanged = new SFVec3f(0, 0, 0);",
+"\t\t\ttranslationOffsetChanged  = new SFVec3f(0, 0, 0);",
+"\t\t}",
+"\t}",
+"}",
+"function setPlaneSensorTranslation (value, timeStamp)",
+"{",
+"\tplaneSensorTranslation = value;",
+"\ttracePrint('planeSensorTranslation=' + value);",
+"}",
+"",
+""
+]
+                                                          }
+                                                        },
+                                                        { "ROUTE":
+                                                          {
+                                                            "@fromField":"isActive",
+                                                            "@fromNode":"PlaneMovementSensor",
+                                                            "@toField":"setPlaneSensorIsActive",
+                                                            "@toNode":"VisibilityControlScript"
+                                                          }
+                                                        },
+                                                        { "ROUTE":
+                                                          {
+                                                            "@fromField":"translation_changed",
+                                                            "@fromNode":"PlaneMovementSensor",
+                                                            "@toField":"setPlaneSensorTranslation",
+                                                            "@toNode":"VisibilityControlScript"
+                                                          }
+                                                        },
+                                                        { "ROUTE":
+                                                          {
+                                                            "@fromField":"isActive",
+                                                            "@fromNode":"MovementVisibilitySensor",
+                                                            "@toField":"setIsVisible",
+                                                            "@toNode":"VisibilityControlScript"
                                                           }
                                                         }
                                                       ]

@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
           {
@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 September 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -147,6 +147,48 @@
                               "@keyValue":[0,0,0,0,5,0]
                             }
                           },
+                          { "Script":
+                            {
+                              "@DEF":"MoveBall",
+                              "field": [
+                                {
+                                  "@name":"translation",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[50,50,0]
+                                },
+                                {
+                                  "@name":"old",
+                                  "@accessType":"inputOutput",
+                                  "@type":"SFVec3f",
+                                  "@value":[0,0,0]
+                                },
+                                {
+                                  "@name":"set_cycle",
+                                  "@accessType":"inputOnly",
+                                  "@type":"SFTime"
+                                },
+                                {
+                                  "@name":"keyValue",
+                                  "@accessType":"outputOnly",
+                                  "@type":"MFVec3f"
+                                }
+                              ],
+                              "#sourceText":[
+"",
+"",
+"ecmascript:",
+"\t\t\t\t\tfunction set_cycle(value) {",
+"                                                old = translation;",
+"\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+"                                                keyValue = new MFVec3f([old, translation]);",
+"\t\t\t\t\t\t// Browser.println(translation);",
+"\t\t\t\t\t}",
+"",
+""
+]
+                            }
+                          },
                           { "TimeSensor":
                             {
                               "@DEF":"nodeClock",
@@ -184,37 +226,6 @@
                               "@fromField":"value_changed",
                               "@toNode":"transform",
                               "@toField":"set_translation"
-                            }
-                          }
-                        ],
-                        "-IllegalChildNodeFieldNameNotFound":[
-                          { "X3DScript":
-                            {
-                              "@DEF":"MoveBall",
-                              "field": [
-                                {
-                                  "@name":"translation",
-                                  "@accessType":"inputOutput",
-                                  "@type":"SFVec3f",
-                                  "@value":[50,50,0]
-                                },
-                                {
-                                  "@name":"old",
-                                  "@accessType":"inputOutput",
-                                  "@type":"SFVec3f",
-                                  "@value":[0,0,0]
-                                },
-                                {
-                                  "@name":"set_cycle",
-                                  "@accessType":"inputOnly",
-                                  "@type":"SFTime"
-                                },
-                                {
-                                  "@name":"keyValue",
-                                  "@accessType":"outputOnly",
-                                  "@type":"MFVec3f"
-                                }
-                              ]
                             }
                           }
                         ]
@@ -270,17 +281,7 @@
                                 }
                             }
                           },
-                          { "ROUTE":
-                            {
-                              "@fromNode":"MoveCylinder",
-                              "@fromField":"spine",
-                              "@toNode":"extrusion",
-                              "@toField":"set_spine"
-                            }
-                          }
-                        ],
-                        "-IllegalChildNodeFieldNameNotFound":[
-                          { "X3DScript":
+                          { "Script":
                             {
                               "@DEF":"MoveCylinder",
                               "field": [
@@ -312,7 +313,42 @@
                                       "@protoField":"set_positionB"
                                     }
                                   ]
-                              }
+                              },
+                              "#sourceText":[
+"",
+"",
+"ecmascript:",
+"",
+"                function set_endA(value) {",
+"\t\t    if (typeof spine === 'undefined') {",
+"\t\t        spine = new MFVec3f([value, value]);",
+"\t\t    } else {",
+"\t\t        spine = new MFVec3f([value, spine[1]]);",
+"\t\t    }",
+"                }",
+"",
+"                function set_endB(value) {",
+"\t\t    if (typeof spine === 'undefined') {",
+"\t\t        spine = new MFVec3f([value, value]);",
+"\t\t    } else {",
+"\t\t        spine = new MFVec3f([spine[0], value]);",
+"\t\t    }",
+"                }",
+"",
+"                function set_spine(value) {",
+"                    spine = value;",
+"                }",
+"",
+""
+]
+                            }
+                          },
+                          { "ROUTE":
+                            {
+                              "@fromNode":"MoveCylinder",
+                              "@fromField":"spine",
+                              "@toNode":"extrusion",
+                              "@toField":"set_spine"
                             }
                           }
                         ]
@@ -432,6 +468,59 @@
                   }
                 }
               ]
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"clickHandler",
+              "field": [
+                {
+                  "@name":"counter",
+                  "@accessType":"inputOutput",
+                  "@value":0,
+                  "@type":"SFInt32"
+                },
+                {
+                  "@name":"node_changed",
+                  "@accessType":"outputOnly",
+                  "@type":"SFNode"
+                },
+                {
+                  "@name":"add_node",
+                  "@accessType":"inputOnly",
+                  "@value":false,
+                  "@type":"SFBool"
+                }
+              ],
+              "-children":[
+                {
+                  "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
+                }
+              ],
+              "#sourceText":[
+"",
+"\t",
+"ecmascript:",
+"\tfunction add_node(value) {",
+"                // Browser.print('hey ', counter);",
+"                counter = counter++;",
+"\t\tBrowser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),",
+"\t\t\t{ \"ProtoInstance\":",
+"\t\t\t\t{ \"@name\":\"node\",",
+"\t\t\t\t  \"@DEF\":\"node'+counter+'\",",
+"\t\t\t\t  \"fieldValue\": [",
+"\t\t\t\t\t{",
+"\t\t\t\t\t\t \"@name\":\"position\",",
+"\t\t\t\t\t\t \"@value\":[0.0,0.0,0.0]",
+"\t\t\t\t\t}",
+"\t\t\t\t  ]",
+"\t\t\t\t}",
+"\t\t\t});",
+"",
+"        }",
+"\t",
+""
+]
             }
           },
           { "ROUTE":

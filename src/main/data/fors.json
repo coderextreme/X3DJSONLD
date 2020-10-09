@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 September 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -138,7 +138,7 @@
                         "@keyValue":[0,0,0,0,5,0]
                       }
                     },
-                    { "X3DScript":
+                    { "Script":
                       {
                         "@DEF":"MoveBall",
                         "field": [
@@ -164,7 +164,20 @@
                             "@accessType":"outputOnly",
                             "@type":"MFVec3f"
                           }
-                        ]
+                        ],
+                        "#sourceText":[
+"",
+"",
+"ecmascript:",
+"\t\t\t\t\tfunction set_cycle(value) {",
+"                                                old = translation;",
+"\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+"                                                keyValue = new MFVec3f([old, translation]);",
+"\t\t\t\t\t\t// Browser.println(translation);",
+"\t\t\t\t\t}",
+"",
+""
+]
                       }
                     },
                     { "TimeSensor":
@@ -253,7 +266,7 @@
                           }
                       }
                     },
-                    { "X3DScript":
+                    { "Script":
                       {
                         "@DEF":"MoveCylinder",
                         "field": [
@@ -285,7 +298,34 @@
                                 "@protoField":"set_positionB"
                               }
                             ]
-                        }
+                        },
+                        "#sourceText":[
+"",
+"",
+"ecmascript:",
+"",
+"                function set_endA(value) {",
+"\t\t    if (typeof spine === 'undefined') {",
+"\t\t        spine = new MFVec3f([value, value]);",
+"\t\t    } else {",
+"\t\t        spine = new MFVec3f([value, spine[1]]);",
+"\t\t    }",
+"                }",
+"",
+"                function set_endB(value) {",
+"\t\t    if (typeof spine === 'undefined') {",
+"\t\t        spine = new MFVec3f([value, value]);",
+"\t\t    } else {",
+"\t\t        spine = new MFVec3f([spine[0], value]);",
+"\t\t    }",
+"                }",
+"",
+"                function set_spine(value) {",
+"                    spine = value;",
+"                }",
+"",
+""
+]
                       }
                     },
                     { "ROUTE":

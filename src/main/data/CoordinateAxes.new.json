@@ -2,8 +2,8 @@
     "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -12,23 +12,51 @@
           },
           {
             "@name":"creator",
-            "@content":"Unknown, see X3D Resources Archives"
+            "@content":"Don Brutzman, Byounghyun Yoo"
           },
           {
-            "@name":"generator",
-            "@content":"manual"
+            "@name":"created",
+            "@content":"14 July 2000"
           },
           {
-            "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d"
+            "@name":"modified",
+            "@content":"20 October 2019"
           },
           {
             "@name":"description",
-            "@content":"a box"
+            "@content":"X Y Z axis arrows and labels in X3D coordinate system. See CoordinateAxesExample for use as an Inline coordinate-system reference frame."
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d"
+          },
+          {
+            "@name":"reference",
+            "@content":"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d"
+          },
+          {
+            "@name":"identifier",
+            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          },
+          {
+            "@name":"license",
+            "@content":"../license.html"
           },
           {
             "@name":"translated",
-            "@content":"26 August 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -42,12 +70,14 @@
     },
     "Scene": {
         "-children":[
+          { "WorldInfo":
+            {
+              "@title":"CoordinateAxes.x3d"
+            }
+          },
           { "Collision":
             {
               "@DEF":"DoNotCollideWithVisualizationWidget",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
-              "@enabled":true,
               "-children":[
                 {
                   "#comment":"Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph."
@@ -63,8 +93,6 @@
                 },
                 { "Group":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"Vertical Y arrow and label"
@@ -72,13 +100,9 @@
                       { "Group":
                         {
                           "@DEF":"ArrowGreen",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -104,14 +128,10 @@
                             },
                             { "Transform":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@translation":[0,1,0],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -122,11 +142,8 @@
                                         { "Cone":
                                           {
                                             "@DEF":"ArrowCone",
-                                            "@bottom":true,
                                             "@bottomRadius":0.05,
-                                            "@height":0.1,
-                                            "@side":true,
-                                            "@solid":true
+                                            "@height":0.1
                                           }
                                         }
                                     }
@@ -139,20 +156,13 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,1.08,0],
                           "-children":[
                             { "Billboard":
                               {
-                                "@axisOfRotation":[0,1,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -194,8 +204,6 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@rotation":[0,0,1,-1.57079],
                     "-children":[
                       {
@@ -203,19 +211,13 @@
                       },
                       { "Group":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Group":
                               {
                                 "@DEF":"ArrowRed",
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -239,14 +241,10 @@
                                   },
                                   { "Transform":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "@translation":[0,1,0],
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -269,8 +267,6 @@
                             },
                             { "Transform":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@rotation":[0,0,1,1.57079],
                                 "@translation":[0.072,1.1,0],
                                 "-children":[
@@ -279,14 +275,9 @@
                                   },
                                   { "Billboard":
                                     {
-                                      "@axisOfRotation":[0,1,0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -321,8 +312,6 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@rotation":[1,0,0,1.57079],
                     "-children":[
                       {
@@ -330,19 +319,13 @@
                       },
                       { "Group":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Group":
                               {
                                 "@DEF":"ArrowBlue",
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -366,14 +349,10 @@
                                   },
                                   { "Transform":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "@translation":[0,1,0],
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -396,8 +375,6 @@
                             },
                             { "Transform":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@rotation":[1,0,0,-1.57079],
                                 "@translation":[0,1.1,0.072],
                                 "-children":[
@@ -406,14 +383,9 @@
                                   },
                                   { "Billboard":
                                     {
-                                      "@axisOfRotation":[0,1,0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {

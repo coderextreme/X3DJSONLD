@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"4.0",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
           {
@@ -66,7 +66,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 September 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -1222,11 +1222,7 @@
                                     {
                                       "@DEF":"Joe_skin_Material",
                                       "@diffuseColor":[0.3,0.3,0.6],
-                                      "@emissiveColor":[0.3,0.3,0.6],
-                                      "@normalScale":1,
-                                      "@metallic":1,
-                                      "@occlusionStrength":1,
-                                      "@roughness":1
+                                      "@emissiveColor":[0.3,0.3,0.6]
                                     }
                                   },
                                 "-texture":
@@ -4054,11 +4050,7 @@
                                     {
                                       "@DEF":"ball_Material",
                                       "@diffuseColor":[0.3,0.3,1],
-                                      "@emissiveColor":[0.3,0.3,0.33],
-                                      "@normalScale":1,
-                                      "@metallic":1,
-                                      "@occlusionStrength":1,
-                                      "@roughness":1
+                                      "@emissiveColor":[0.3,0.3,0.33]
                                     }
                                   },
                                 "-texture":
@@ -4182,11 +4174,7 @@
                                       "@DEF":"circle0_Material",
                                       "@ambientIntensity":0.9,
                                       "@diffuseColor":[0.9,0,0.7],
-                                      "@emissiveColor":[0.425,0.486,1],
-                                      "@normalScale":1,
-                                      "@metallic":1,
-                                      "@occlusionStrength":1,
-                                      "@roughness":1
+                                      "@emissiveColor":[0.425,0.486,1]
                                     }
                                   }
                               }
@@ -4227,11 +4215,7 @@
                                     {
                                       "@DEF":"circle1_Material",
                                       "@diffuseColor":[0.9,0,0.7],
-                                      "@emissiveColor":[0.424956,0.483976,1],
-                                      "@normalScale":1,
-                                      "@metallic":1,
-                                      "@occlusionStrength":1,
-                                      "@roughness":1
+                                      "@emissiveColor":[0.424956,0.483976,1]
                                     }
                                   }
                               }
@@ -4264,11 +4248,7 @@
                                     {
                                       "@DEF":"circle2_Material",
                                       "@diffuseColor":[0.9,0,0.7],
-                                      "@emissiveColor":[0.424956,0.483976,1],
-                                      "@normalScale":1,
-                                      "@metallic":1,
-                                      "@occlusionStrength":1,
-                                      "@roughness":1
+                                      "@emissiveColor":[0.424956,0.483976,1]
                                     }
                                   }
                               }

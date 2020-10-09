@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "-children":[
           {
@@ -136,7 +136,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 September 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -459,6 +459,41 @@
                     "@DEF":"GradualBackground"
                   }
                 },
+                { "Script":
+                  {
+                    "@DEF":"colorTypeConversionScript",
+                    "field": [
+                      {
+                        "@name":"colorInput",
+                        "@accessType":"inputOnly",
+                        "@type":"SFColor"
+                      },
+                      {
+                        "@name":"colorsOutput",
+                        "@accessType":"outputOnly",
+                        "@type":"MFColor"
+                      }
+                    ],
+                    "#sourceText":[
+"",
+"",
+"",
+"",
+"ecmascript:",
+"",
+"function colorInput (eventValue) // Example source code",
+"{",
+"   colorsOutput = new MFColor(eventValue); // assigning value sends output event",
+"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');",
+"}",
+"",
+"",
+"",
+"",
+""
+]
+                  }
+                },
                 { "ColorInterpolator":
                   {
                     "@DEF":"ColorAnimator",
@@ -500,25 +535,6 @@
                     "@fromNode":"ColorClock",
                     "@toField":"set_fraction",
                     "@toNode":"ColorAnimator"
-                  }
-                }
-              ],
-              "-IllegalChildNodeFieldNameNotFound":[
-                { "X3DScript":
-                  {
-                    "@DEF":"colorTypeConversionScript",
-                    "field": [
-                      {
-                        "@name":"colorInput",
-                        "@accessType":"inputOnly",
-                        "@type":"SFColor"
-                      },
-                      {
-                        "@name":"colorsOutput",
-                        "@accessType":"outputOnly",
-                        "@type":"MFColor"
-                      }
-                    ]
                   }
                 }
               ]
@@ -825,7 +841,7 @@
                     {
                       "#comment":"Only first node (the node type) is renderable, others are along for the ride"
                     },
-                    { "X3DScript":
+                    { "Script":
                       {
                         "@DEF":"MaterialModulatorScript",
                         "field": [
@@ -861,7 +877,41 @@
                                 "@protoField":"diffuseColor"
                               }
                             ]
-                        }
+                        },
+                        "#sourceText":[
+"",
+"",
+"",
+"",
+"ecmascript:",
+"function initialize ()",
+"{",
+"    newColor = diffuseColor; // start with correct color",
+"}",
+"function set_enabled (newValue)",
+"{",
+"\tenabled = newValue;",
+"}",
+"function clockTrigger (timeValue)",
+"{",
+"    if (!enabled) return;",
+"    red   = newColor.r;",
+"    green = newColor.g;",
+"    blue  = newColor.b;",
+"",
+"    // note different modulation rates for each color component, % is modulus operator",
+"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);",
+"\tif (enabled)",
+"\t{",
+"\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');",
+"\t}",
+"}",
+"",
+"",
+"",
+"",
+""
+]
                       }
                     }
                   ]
