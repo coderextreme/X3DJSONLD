@@ -14,7 +14,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"BoxMan.x3d"
+            "@content":"BoxManC.x3d"
           },
           {
             "@name":"description",
@@ -90,11 +90,11 @@
           },
           {
             "@name":"subject",
-            "@content":"BoxMan H-Anim 2.0"
+            "@content":"BoxManC H-Anim 2.0"
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"
+            "@content":"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d"
           },
           {
             "@name":"generator",
@@ -123,7 +123,7 @@
           { "WorldInfo":
             {
               "@info":["(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"],
-              "@title":"BoxMan - A Seamless VRML Human"
+              "@title":"BoxManC - A Seamless VRML Human"
             }
           },
           { "Background":
