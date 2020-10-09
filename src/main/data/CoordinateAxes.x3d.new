@@ -14,16 +14,16 @@
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="CoordinateAxes.x3d"></WorldInfo>
-<Collision DEF="DoNotCollideWithVisualizationWidget" enabled="true" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.--><!--This NavigationInfo allows examine mode and will be overridden by any parent scene.--><!--Each arrow goes from +1m to -1m to allow linear scaling to fit a scene--><!--Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user--><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--Vertical Y arrow and label--><Group DEF="ArrowGreen" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Cylinder containerField="geometry" DEF="ArrowCylinder" radius="0.025" top="false"></Cylinder>
+<Collision DEF="DoNotCollideWithVisualizationWidget"><!--Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.--><!--This NavigationInfo allows examine mode and will be overridden by any parent scene.--><!--Each arrow goes from +1m to -1m to allow linear scaling to fit a scene--><!--Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user--><Group><!--Vertical Y arrow and label--><Group DEF="ArrowGreen"><Shape><Cylinder containerField="geometry" DEF="ArrowCylinder" radius="0.025" top="false"></Cylinder>
 <Appearance DEF="Green"><Material diffuseColor="0.1 0.6 0.1" emissiveColor="0.05 0.2 0.05"></Material>
 </Appearance>
 </Shape>
-<Transform translation="0 1 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Cone containerField="geometry" DEF="ArrowCone" bottomRadius="0.05" height="0.1" side="true" bottom="true" solid="true"></Cone>
+<Transform translation="0 1 0"><Shape><Cone containerField="geometry" DEF="ArrowCone" bottomRadius="0.05" height="0.1"></Cone>
 <Appearance USE="Green"></Appearance>
 </Shape>
 </Transform>
 </Group>
-<Transform translation="0 1.08 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Billboard axisOfRotation="0 1 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance DEF="LABEL_APPEARANCE"><Material diffuseColor="1 1 0.3" emissiveColor="0.33 0.33 0.1"></Material>
+<Transform translation="0 1.08 0"><Billboard><Shape><Appearance DEF="LABEL_APPEARANCE"><Material diffuseColor="1 1 0.3" emissiveColor="0.33 0.33 0.1"></Material>
 </Appearance>
 <Text containerField="geometry" string="&quot;Y&quot;"><FontStyle DEF="LABEL_FONT" family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.2"></FontStyle>
 </Text>
@@ -31,16 +31,16 @@
 </Billboard>
 </Transform>
 </Group>
-<Transform rotation="0 0 1 -1.57079" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--Horizontal X arrow and label--><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Group DEF="ArrowRed" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Cylinder containerField="geometry" USE="ArrowCylinder"></Cylinder>
+<Transform rotation="0 0 1 -1.57079"><!--Horizontal X arrow and label--><Group><Group DEF="ArrowRed"><Shape><Cylinder containerField="geometry" USE="ArrowCylinder"></Cylinder>
 <Appearance DEF="Red"><Material diffuseColor="0.7 0.1 0.1" emissiveColor="0.33 0 0"></Material>
 </Appearance>
 </Shape>
-<Transform translation="0 1 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Cone containerField="geometry" USE="ArrowCone"></Cone>
+<Transform translation="0 1 0"><Shape><Cone containerField="geometry" USE="ArrowCone"></Cone>
 <Appearance USE="Red"></Appearance>
 </Shape>
 </Transform>
 </Group>
-<Transform rotation="0 0 1 1.57079" translation="0.072 1.1 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--note label rotated back to original coordinate frame--><Billboard axisOfRotation="0 1 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance USE="LABEL_APPEARANCE"></Appearance>
+<Transform rotation="0 0 1 1.57079" translation="0.072 1.1 0"><!--note label rotated back to original coordinate frame--><Billboard><Shape><Appearance USE="LABEL_APPEARANCE"></Appearance>
 <Text containerField="geometry" string="&quot;X&quot;"><FontStyle USE="LABEL_FONT"></FontStyle>
 </Text>
 </Shape>
@@ -48,16 +48,16 @@
 </Transform>
 </Group>
 </Transform>
-<Transform rotation="1 0 0 1.57079" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--Perpendicular Z arrow and label, note right-hand rule--><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Group DEF="ArrowBlue" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Cylinder containerField="geometry" USE="ArrowCylinder"></Cylinder>
+<Transform rotation="1 0 0 1.57079"><!--Perpendicular Z arrow and label, note right-hand rule--><Group><Group DEF="ArrowBlue"><Shape><Cylinder containerField="geometry" USE="ArrowCylinder"></Cylinder>
 <Appearance DEF="Blue"><Material diffuseColor="0.3 0.3 1" emissiveColor="0.1 0.1 0.33"></Material>
 </Appearance>
 </Shape>
-<Transform translation="0 1 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Cone containerField="geometry" USE="ArrowCone"></Cone>
+<Transform translation="0 1 0"><Shape><Cone containerField="geometry" USE="ArrowCone"></Cone>
 <Appearance USE="Blue"></Appearance>
 </Shape>
 </Transform>
 </Group>
-<Transform rotation="1 0 0 -1.57079" translation="0 1.1 0.072" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--note label rotated back to original coordinate frame--><Billboard axisOfRotation="0 1 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance USE="LABEL_APPEARANCE"></Appearance>
+<Transform rotation="1 0 0 -1.57079" translation="0 1.1 0.072"><!--note label rotated back to original coordinate frame--><Billboard><Shape><Appearance USE="LABEL_APPEARANCE"></Appearance>
 <Text containerField="geometry" string="&quot;Z&quot;"><FontStyle USE="LABEL_FONT"></FontStyle>
 </Text>
 </Shape>

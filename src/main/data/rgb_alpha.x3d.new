@@ -20,25 +20,25 @@
 <meta name="license" content="../../license.html"></meta>
 </head>
 <Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;WALK&quot; &quot;FLY&quot; &quot;ANY&quot;"></NavigationInfo>
-<Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Transform translation="6.14221 0.0694613 -0.000999451" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material></Material>
+<Group><Transform translation="6.14221 0.0694613 -0.000999451"><Shape><Appearance><Material></Material>
 <PixelTexture containerField="texture" DEF="RgbOpacityCheckerboard" image="2 2 4 4278190335 4294901760 4294901760 4278190335"></PixelTexture>
 </Appearance>
-<Box containerField="geometry" size="2 2 2" solid="true"></Box>
+<Box containerField="geometry"></Box>
 </Shape>
 </Transform>
-<Transform translation="-4.85443 0.0694381 -0.00149918" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material></Material>
+<Transform translation="-4.85443 0.0694381 -0.00149918"><Shape><Appearance><Material></Material>
 <PixelTexture containerField="texture" USE="RgbOpacityCheckerboard"></PixelTexture>
 </Appearance>
 <Sphere containerField="geometry"></Sphere>
 </Shape>
 </Transform>
-<Transform translation="-1.47341 0.036672 -0.00175095" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material></Material>
+<Transform translation="-1.47341 0.036672 -0.00175095"><Shape><Appearance><Material></Material>
 <PixelTexture containerField="texture" USE="RgbOpacityCheckerboard"></PixelTexture>
 </Appearance>
-<Cone containerField="geometry" bottomRadius="1" height="2" side="true" bottom="true" solid="true"></Cone>
+<Cone containerField="geometry"></Cone>
 </Shape>
 </Transform>
-<Transform translation="2.31094 0.0694206 -0.00187683" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material></Material>
+<Transform translation="2.31094 0.0694206 -0.00187683"><Shape><Appearance><Material></Material>
 <PixelTexture containerField="texture" USE="RgbOpacityCheckerboard"></PixelTexture>
 </Appearance>
 <Cylinder containerField="geometry"></Cylinder>

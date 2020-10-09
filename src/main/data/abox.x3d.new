@@ -6,26 +6,26 @@
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/abox.x3d"></meta>
 <meta name="description" content="a box"></meta>
 </head>
-<Scene><ProtoDeclare name="anyShape"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Sphere containerField="geometry"></Sphere>
+<Scene><ProtoDeclare name="anyShape"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere containerField="geometry"></Sphere>
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="myShape"></connect>
+<ProtoBody><Transform><IS><connect nodeField="children" protoField="myShape"></connect>
 </IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="one"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Cylinder containerField="geometry"></Cylinder>
+<ProtoDeclare name="one"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder containerField="geometry"></Cylinder>
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><ProtoInstance name="anyShape"><IS><connect nodeField="myShape" protoField="myShape"></connect>
+<ProtoBody><Transform><ProtoInstance name="anyShape"><IS><connect nodeField="myShape" protoField="myShape"></connect>
 </IS>
 </ProtoInstance>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoInstance name="one"><fieldValue name="myShape"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Box containerField="geometry" size="140 140 140" solid="true"></Box>
+<ProtoInstance name="one"><fieldValue name="myShape"><Shape><Box containerField="geometry" size="140 140 140"></Box>
 </Shape>
 </fieldValue>
 </ProtoInstance>
