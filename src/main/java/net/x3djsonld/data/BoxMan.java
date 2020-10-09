@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -11,7 +9,6 @@ import org.web3d.x3d.jsail.HAnim.*;
 import org.web3d.x3d.jsail.Navigation.*;
 import org.web3d.x3d.jsail.Rendering.*;
 import org.web3d.x3d.jsail.RigidBodyPhysics.*;
-import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc annotations follow, see below for source.
@@ -212,123 +209,123 @@ public class BoxMan
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setInfo(new String[] {"(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"}).setTitle("BoxMan - A Seamless VRML Human"))
-    .addChild(new Background().setGroundColor(new MFColor(new float[] {0.6f,0.6f,0.6f})).setSkyColor(new MFColor(new float[] {0.75f,0.75f,0.75f})))
+    .addChild(new Background().setGroundColor(new MFColor(new double[] {0.6,0.6,0.6})).setSkyColor(new MFColor(new double[] {0.75,0.75,0.75})))
     .addComments(" When converting to VRML97 (which didn't include H-Anim), H-Anim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet ")
     .addChild(new HAnimHumanoid("boxman_Humanoid").setName("Humanoid").setInfo(new String[] {"authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=1.0"}).setVersion("1.0")
-      .addSkeleton(new HAnimJoint("boxman_humanoid_root").setName("humanoid_root").setCenter(0.0f,0.9723f,-0.0728f).setSkinCoordIndex(new int[] {0,1,2,3,4,5,6,7,8,9,10,11}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+      .addSkeleton(new HAnimJoint("boxman_humanoid_root").setName("humanoid_root").setCenter(0.0,0.9723,-0.0728).setSkinCoordIndex(new int[] {0,1,2,3,4,5,6,7,8,9,10,11}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
         .addChild(new HAnimSegment("boxman_sacrum").setName("sacrum")
-          .addChild(new Transform().setTranslation(0.0f,0.9723f,-0.0728f)
+          .addChild(new Transform().setTranslation(0.0,0.9723,-0.0728)
             .addChild(new Shape("SphereYellow")
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(1.0f,1.0f,0.0f)))
-              .setGeometry(new Sphere().setRadius(0.02f)))))
-        .addChild(new HAnimJoint("boxman_l_hip").setName("l_hip").setCenter(0.0956f,0.9364f,0.0f).setSkinCoordIndex(new int[] {12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f})
+                .setMaterial(new Material().setDiffuseColor(1.0,1.0,0.0)))
+              .setGeometry(new Sphere().setRadius(0.02)))))
+        .addChild(new HAnimJoint("boxman_l_hip").setName("l_hip").setCenter(0.0956,0.9364,0.0).setSkinCoordIndex(new int[] {12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5})
           .addChild(new HAnimSegment("boxman_l_thigh").setName("l_thigh")
-            .addChild(new Transform().setTranslation(0.0956f,0.9364f,0.0f)
+            .addChild(new Transform().setTranslation(0.0956,0.9364,0.0)
               .addChild(new Shape().setUSE("SphereYellow"))))
-          .addChild(new HAnimJoint("boxman_l_knee").setName("l_knee").setCenter(0.0956f,0.5095f,-0.0036f).setSkinCoordIndex(new int[] {36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63}).setSkinCoordWeight(new float[] {0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+          .addChild(new HAnimJoint("boxman_l_knee").setName("l_knee").setCenter(0.0956,0.5095,-0.0036).setSkinCoordIndex(new int[] {36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63}).setSkinCoordWeight(new double[] {0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
             .addChild(new HAnimSegment("boxman_l_calf").setName("l_calf")
-              .addChild(new Transform().setTranslation(0.0956f,0.5095f,-0.0036f)
+              .addChild(new Transform().setTranslation(0.0956,0.5095,-0.0036)
                 .addChild(new Shape().setUSE("SphereYellow"))))
-            .addChild(new HAnimJoint("boxman_l_ankle").setName("l_ankle").setCenter(0.0946f,0.0762f,-0.0261f).setSkinCoordIndex(new int[] {64,65,66,67,68,69,70,71}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+            .addChild(new HAnimJoint("boxman_l_ankle").setName("l_ankle").setCenter(0.0946,0.0762,-0.0261).setSkinCoordIndex(new int[] {64,65,66,67,68,69,70,71}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
               .addChild(new HAnimSegment("boxman_l_hindfoot").setName("l_hindfoot")
-                .addChild(new Transform().setTranslation(0.0946f,0.0762f,-0.0261f)
+                .addChild(new Transform().setTranslation(0.0946,0.0762,-0.0261)
                   .addChild(new Shape().setUSE("SphereYellow"))))
-              .addChild(new HAnimJoint("boxman_l_midtarsal").setName("l_midtarsal").setCenter(0.1079f,0.0317f,0.0670f).setSkinCoordIndex(new int[] {72,73,74,75,76,77,78,79}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+              .addChild(new HAnimJoint("boxman_l_midtarsal").setName("l_midtarsal").setCenter(0.1079,0.0317,0.0670).setSkinCoordIndex(new int[] {72,73,74,75,76,77,78,79}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
                 .addChild(new HAnimSegment("boxman_l_middistal").setName("l_middistal")
-                  .addChild(new Transform().setTranslation(0.1079f,0.0317f,0.0670f)
+                  .addChild(new Transform().setTranslation(0.1079,0.0317,0.0670)
                     .addChild(new Shape().setUSE("SphereYellow")))
-                  .addChild(new HAnimSite("boxman_l_middistal_tip").setName("l_middistal_tip").setTranslation(.095f,0.0005f,0.1924f)
+                  .addChild(new HAnimSite("boxman_l_middistal_tip").setName("l_middistal_tip").setTranslation(.095,0.0005,0.1924)
                     .addChild(new Shape("SphereRed")
                       .setAppearance(new Appearance()
-                        .setMaterial(new Material().setDiffuseColor(1.0f,0.0f,0.0f)))
-                      .setGeometry(new Sphere().setRadius(0.02f)))))))))
-        .addChild(new HAnimJoint("boxman_r_hip").setName("r_hip").setCenter(-0.0956f,0.9364f,0.0f).setSkinCoordIndex(new int[] {80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f})
+                        .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0)))
+                      .setGeometry(new Sphere().setRadius(0.02)))))))))
+        .addChild(new HAnimJoint("boxman_r_hip").setName("r_hip").setCenter(-0.0956,0.9364,0.0).setSkinCoordIndex(new int[] {80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5})
           .addChild(new HAnimSegment("boxman_r_thigh").setName("r_thigh")
-            .addChild(new Transform().setTranslation(-0.0956f,0.9364f,0.0f)
+            .addChild(new Transform().setTranslation(-0.0956,0.9364,0.0)
               .addChild(new Shape().setUSE("SphereYellow"))))
-          .addChild(new HAnimJoint("boxman_r_knee").setName("r_knee").setCenter(-0.0956f,0.5095f,-0.0036f).setSkinCoordIndex(new int[] {104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131}).setSkinCoordWeight(new float[] {0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+          .addChild(new HAnimJoint("boxman_r_knee").setName("r_knee").setCenter(-0.0956,0.5095,-0.0036).setSkinCoordIndex(new int[] {104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131}).setSkinCoordWeight(new double[] {0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
             .addChild(new HAnimSegment("boxman_r_calf").setName("r_calf")
-              .addChild(new Transform().setTranslation(-0.0956f,0.5095f,-0.0036f)
+              .addChild(new Transform().setTranslation(-0.0956,0.5095,-0.0036)
                 .addChild(new Shape().setUSE("SphereYellow"))))
-            .addChild(new HAnimJoint("boxman_r_ankle").setName("r_ankle").setCenter(-0.0946f,0.0762f,-0.0261f).setSkinCoordIndex(new int[] {132,133,134,135,136,137,138,139}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+            .addChild(new HAnimJoint("boxman_r_ankle").setName("r_ankle").setCenter(-0.0946,0.0762,-0.0261).setSkinCoordIndex(new int[] {132,133,134,135,136,137,138,139}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
               .addChild(new HAnimSegment("boxman_r_hindfoot").setName("r_hindfoot")
-                .addChild(new Transform().setTranslation(-0.0946f,0.0762f,-0.0261f)
+                .addChild(new Transform().setTranslation(-0.0946,0.0762,-0.0261)
                   .addChild(new Shape().setUSE("SphereYellow"))))
-              .addChild(new HAnimJoint("boxman_r_midtarsal").setName("r_midtarsal").setCenter(-0.1079f,0.0317f,0.0670f).setSkinCoordIndex(new int[] {140,141,142,143,144,145,146,147}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+              .addChild(new HAnimJoint("boxman_r_midtarsal").setName("r_midtarsal").setCenter(-0.1079,0.0317,0.0670).setSkinCoordIndex(new int[] {140,141,142,143,144,145,146,147}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
                 .addChild(new HAnimSegment("boxman_r_middistal").setName("r_middistal")
-                  .addChild(new Transform().setTranslation(-0.1079f,0.0317f,0.0670f)
+                  .addChild(new Transform().setTranslation(-0.1079,0.0317,0.0670)
                     .addChild(new Shape().setUSE("SphereYellow")))
-                  .addChild(new HAnimSite("boxman_r_middistal_tip").setName("r_middistal_tip").setTranslation(-0.095f,0.0005f,0.1924f)
+                  .addChild(new HAnimSite("boxman_r_middistal_tip").setName("r_middistal_tip").setTranslation(-0.095,0.0005,0.1924)
                     .addChild(new Shape().setUSE("SphereRed"))))))))
-        .addChild(new HAnimJoint("boxman_vl5").setName("vl5").setCenter(0.0f,1.0817f,-0.0728f).setSkinCoordIndex(new int[] {148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+        .addChild(new HAnimJoint("boxman_vl5").setName("vl5").setCenter(0.0,1.0817,-0.0728).setSkinCoordIndex(new int[] {148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
           .addChild(new HAnimSegment("boxman_l5").setName("l5")
-            .addChild(new Transform().setTranslation(0.0f,1.0817f,-0.0728f)
+            .addChild(new Transform().setTranslation(0.0,1.0817,-0.0728)
               .addChild(new Shape().setUSE("SphereYellow"))))
-          .addChild(new HAnimJoint("boxman_skullbase").setName("skullbase").setCenter(0.0f,1.6440f,0.036f).setSkinCoordIndex(new int[] {168,169,170,171,172,173,174,175}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+          .addChild(new HAnimJoint("boxman_skullbase").setName("skullbase").setCenter(0.0,1.6440,0.036).setSkinCoordIndex(new int[] {168,169,170,171,172,173,174,175}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
             .addChild(new HAnimSegment("boxman_skull").setName("skull")
-              .addChild(new Transform().setTranslation(0.0f,1.6440f,0.036f)
+              .addChild(new Transform().setTranslation(0.0,1.6440,0.036)
                 .addChild(new Shape().setUSE("SphereYellow")))
-              .addChild(new HAnimSite("boxman_skull_tip").setName("skull_tip").setTranslation(-0.0029f,1.7771f,0.0274f)
+              .addChild(new HAnimSite("boxman_skull_tip").setName("skull_tip").setTranslation(-0.0029,1.7771,0.0274)
                 .addChild(new Shape().setUSE("SphereYellow")))))
-          .addChild(new HAnimJoint("boxman_l_shoulder").setName("l_shoulder").setCenter(0.1968f,1.4642f,-0.0265f).setSkinCoordIndex(new int[] {176,177,178,179,180,181,182,183}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+          .addChild(new HAnimJoint("boxman_l_shoulder").setName("l_shoulder").setCenter(0.1968,1.4642,-0.0265).setSkinCoordIndex(new int[] {176,177,178,179,180,181,182,183}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
             .addChild(new HAnimSegment("boxman_l_upperarm").setName("l_upperarm")
-              .addChild(new Transform().setTranslation(0.1968f,1.4642f,-0.0265f)
+              .addChild(new Transform().setTranslation(0.1968,1.4642,-0.0265)
                 .addChild(new Shape().setUSE("SphereYellow"))))
-            .addChild(new HAnimJoint("boxman_l_elbow").setName("l_elbow").setCenter(0.1982f,1.1622f,-0.0557f).setSkinCoordIndex(new int[] {184,185,186,187,188,189,190,191}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+            .addChild(new HAnimJoint("boxman_l_elbow").setName("l_elbow").setCenter(0.1982,1.1622,-0.0557).setSkinCoordIndex(new int[] {184,185,186,187,188,189,190,191}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
               .addChild(new HAnimSegment("boxman_l_forearm").setName("l_forearm")
-                .addChild(new Transform().setTranslation(0.1982f,1.1622f,-0.0557f)
+                .addChild(new Transform().setTranslation(0.1982,1.1622,-0.0557)
                   .addChild(new Shape().setUSE("SphereYellow"))))
-              .addChild(new HAnimJoint("boxman_l_wrist").setName("l_wrist").setCenter(0.1972f,0.8929f,-0.0690f).setSkinCoordIndex(new int[] {192,193,194,195,196,197,198,199}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+              .addChild(new HAnimJoint("boxman_l_wrist").setName("l_wrist").setCenter(0.1972,0.8929,-0.0690).setSkinCoordIndex(new int[] {192,193,194,195,196,197,198,199}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
                 .addChild(new HAnimSegment("boxman_l_hand").setName("l_hand")
-                  .addChild(new Transform().setTranslation(0.1972f,0.8929f,-0.0690f)
+                  .addChild(new Transform().setTranslation(0.1972,0.8929,-0.0690)
                     .addChild(new Shape().setUSE("SphereYellow")))
-                  .addChild(new HAnimSite("boxman_l_hand_tip").setName("l_hand_tip").setTranslation(0.1912f,0.6976f,-0.0710f)
+                  .addChild(new HAnimSite("boxman_l_hand_tip").setName("l_hand_tip").setTranslation(0.1912,0.6976,-0.0710)
                     .addChild(new Shape().setUSE("SphereRed")))))))
-          .addChild(new HAnimJoint("boxman_r_shoulder").setName("r_shoulder").setCenter(-0.1968f,1.4642f,-0.0265f).setSkinCoordIndex(new int[] {200,201,202,203,204,205,206,207}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+          .addChild(new HAnimJoint("boxman_r_shoulder").setName("r_shoulder").setCenter(-0.1968,1.4642,-0.0265).setSkinCoordIndex(new int[] {200,201,202,203,204,205,206,207}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
             .addChild(new HAnimSegment("boxman_r_upperarm").setName("r_upperarm")
-              .addChild(new Transform().setTranslation(-0.1968f,1.4642f,-0.0265f)
+              .addChild(new Transform().setTranslation(-0.1968,1.4642,-0.0265)
                 .addChild(new Shape().setUSE("SphereYellow"))))
-            .addChild(new HAnimJoint("boxman_r_elbow").setName("r_elbow").setCenter(-0.1982f,1.1622f,-0.0557f).setSkinCoordIndex(new int[] {208,209,210,211,212,213,214,215}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+            .addChild(new HAnimJoint("boxman_r_elbow").setName("r_elbow").setCenter(-0.1982,1.1622,-0.0557).setSkinCoordIndex(new int[] {208,209,210,211,212,213,214,215}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
               .addChild(new HAnimSegment("boxman_r_forearm").setName("r_forearm")
-                .addChild(new Transform().setTranslation(-0.1982f,1.1622f,-0.0557f)
+                .addChild(new Transform().setTranslation(-0.1982,1.1622,-0.0557)
                   .addChild(new Shape().setUSE("SphereYellow"))))
-              .addChild(new HAnimJoint("boxman_r_wrist").setName("r_wrist").setCenter(-0.1972f,0.8929f,-0.0690f).setSkinCoordIndex(new int[] {216,217,218,219,220,221,222,223}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+              .addChild(new HAnimJoint("boxman_r_wrist").setName("r_wrist").setCenter(-0.1972,0.8929,-0.0690).setSkinCoordIndex(new int[] {216,217,218,219,220,221,222,223}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
                 .addChild(new HAnimSegment("boxman_r_hand").setName("r_hand")
-                  .addChild(new Transform().setTranslation(-0.1972f,0.8929f,-0.0690f)
+                  .addChild(new Transform().setTranslation(-0.1972,0.8929,-0.0690)
                     .addChild(new Shape().setUSE("SphereYellow")))
-                  .addChild(new HAnimSite("boxman_r_hand_tip").setName("r_hand_tip").setTranslation(-0.1912f,0.6976f,-0.0710f)
+                  .addChild(new HAnimSite("boxman_r_hand_tip").setName("r_hand_tip").setTranslation(-0.1912,0.6976,-0.0710)
                     .addChild(new Shape().setUSE("SphereRed")))))))))
       .addComments(" # sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8) ")
       .setSkinCoord(new Coordinate("SKINCOORD").setPoint(getSKINCOORD_4_120_point()))
       .addSkin(new Group()
         .addChild(new Shape("TrouserSkin")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(0.0f,0.0f,1.0f).setTransparency(0.5f)))
+            .setMaterial(new Material().setDiffuseColor(0.0,0.0,1.0).setTransparency(0.5)))
           .addComments(" # 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40) ")
           .setGeometry(new IndexedFaceSet().setCoordIndex(getIndexedFaceSet_6_123_coordIndex())
             .setCoord(new Coordinate().setUSE("SKINCOORD"))))
         .addChild(new Shape("ShoeSkin")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(0.0f,0.0f,0.0f).setTransparency(0.5f)))
+            .setMaterial(new Material().setDiffuseColor(0.0,0.0,0.0).setTransparency(0.5)))
           .addComments(" # 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10) ")
           .setGeometry(new IndexedFaceSet().setCoordIndex(new int[] {60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1})
             .setCoord(new Coordinate().setUSE("SKINCOORD"))))
         .addChild(new Shape("ShirtSkin")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(1.0f,1.0f,0.0f).setTransparency(0.5f)))
+            .setMaterial(new Material().setDiffuseColor(1.0,1.0,0.0).setTransparency(0.5)))
           .addComments(" # 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8) ")
           .setGeometry(new IndexedFaceSet().setCoordIndex(getIndexedFaceSet_6_133_coordIndex())
             .setCoord(new Coordinate().setUSE("SKINCOORD"))))
         .addChild(new Shape("HeadHandsFleshToneSkin")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(1.0f,0.75f,0.75f).setTransparency(0.5f)))
+            .setMaterial(new Material().setDiffuseColor(1.0,0.75,0.75).setTransparency(0.5)))
           .addComments(" # 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10) ")
           .setGeometry(new IndexedFaceSet().setCoordIndex(new int[] {172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1})
             .setCoord(new Coordinate().setUSE("SKINCOORD"))))
         .addChild(new Shape("SkinLines")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(0.0f,0.0f,0.0f)))
+            .setMaterial(new Material().setDiffuseColor(0.0,0.0,0.0)))
           .addComments(" Combined set of prior IFS coordIndex values ")
           .setGeometry(new IndexedLineSet().setCoordIndex(getIndexedLineSet_6_143_coordIndex())
             .setCoord(new Coordinate().setUSE("SKINCOORD")))))
@@ -375,11 +372,11 @@ public class BoxMan
       .addSites(new HAnimSite().setUSE("boxman_l_hand_tip"))
       .addSites(new HAnimSite().setUSE("boxman_r_hand_tip"))
       .addViewpoints(new HAnimSite("boxman_BoxMan_view").setName("BoxMan_view")
-        .addChild(new Viewpoint("Inclined_View").setDescription("Inclined View").setOrientation(0.0f,1.0f,0.0f,0.78f).setPosition(2.0f,0.9f,2.0f))
-        .addChild(new Viewpoint("Front_View").setDescription("Front View").setPosition(0.0f,1.0f,3.0f))
-        .addChild(new Viewpoint("Right_View").setDescription("Right-side View").setOrientation(0.0f,1.0f,0.0f,-1.57f).setPosition(-3.0f,1.0f,0.0f))
-        .addChild(new Viewpoint("Left_View").setDescription("Left-side View").setOrientation(0.0f,1.0f,0.0f,1.57f).setPosition(3.0f,1.0f,0.0f))
-        .addChild(new Viewpoint("Top_View").setDescription("Top View").setOrientation(1.0f,0.0f,0.0f,-1.57f).setPosition(0.0f,3.0f,0.0f))))
+        .addChild(new Viewpoint("Inclined_View").setDescription("Inclined View").setOrientation(0.0,1.0,0.0,0.78).setPosition(2.0,0.9,2.0))
+        .addChild(new Viewpoint("Front_View").setDescription("Front View").setPosition(0.0,1.0,3.0))
+        .addChild(new Viewpoint("Right_View").setDescription("Right-side View").setOrientation(0.0,1.0,0.0,-1.57).setPosition(-3.0,1.0,0.0))
+        .addChild(new Viewpoint("Left_View").setDescription("Left-side View").setOrientation(0.0,1.0,0.0,1.57).setPosition(3.0,1.0,0.0))
+        .addChild(new Viewpoint("Top_View").setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.57).setPosition(0.0,3.0,0.0))))
     .addChild(new ExternProtoDeclare("LOA1_WalkAnimation").setName("LOA1_WalkAnimation").setUrl(new String[] {"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation","LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation","http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation"})
       .addField(new field().setName("cycleInterval").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
       .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
@@ -406,7 +403,7 @@ public class BoxMan
       .addField(new field().setName("r_elbow_rotation_changed").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
       .addField(new field().setName("r_wrist_rotation_changed").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
       .addField(new field().setName("isActive").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
-    .addChild(new ProtoInstance("LOA1_WalkAnimation", "ANIMATOR"))
+    .addChild(new ProtoInstance("LOA1_WalkAnimation", "ANIMATOR").setContainerField("children"))
     .addComments(" Animation ROUTEs ")
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("HumanoidRoot_translation_changed").setToNode("boxman_humanoid_root").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("HumanoidRoot_rotation_changed").setToNode("boxman_humanoid_root").setToField("set_rotation"))
@@ -426,35 +423,37 @@ public class BoxMan
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("r_shoulder_rotation_changed").setToNode("boxman_r_shoulder").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("r_elbow_rotation_changed").setToNode("boxman_r_elbow").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("r_wrist_rotation_changed").setToNode("boxman_r_wrist").setToField("set_rotation"))
-    .addChild(new Script("ENGINE").setDirectOutput(true).setUrl(new String[] {"BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"})
+    .addChild(new X3DScript("ENGINE").setDirectOutput("true"
+// [*** X3dToJava.xslt error: encountered incorrect type, X3DScript directOutput: $isNumeric=false, $attributeType=, value='true']
+).setUrl(new String[] {"BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"})
       .addField(new field().setName("update").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("humanoid").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
         .addChild(new HAnimHumanoid().setUSE("boxman_Humanoid").setVersion("2.0")))
       .addField(new field().setName("coordList").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
       .addField(new field().setName("joint").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
         .addComments(" initialization node (if any) goes here "))
-      .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.0f,0.0f,0.0f)))
-      .addField(new field().setName("rotation").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFRotation(1.0f,0.0f,0.0f,0.0f)))
-      .addField(new field().setName("scale").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(1.0f,1.0f,1.0f))))
+      .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.0,0.0,0.0)))
+      .addField(new field().setName("rotation").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFRotation(1.0,0.0,0.0,0.0)))
+      .addField(new field().setName("scale").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(1.0,1.0,1.0))))
     .addComments(" Trigger calculation after each animation change ")
     .addComments(" <ROUTE fromField='rotation_changed' fromNode='boxman_r_wrist' toField='update' toNode='ENGINE'/> "));
     }
 	// end of initialize() method
 
-		/** Define subarrays using type float[] */
-		private float[] getSKINCOORD_4_120_point_1()
+		/** Define subarrays using type double[] */
+		private double[] getSKINCOORD_4_120_point_1()
 		{
-			float[] value = {-0.05f,1.0f,0.05f,0.05f,1.0f,0.05f,0.03f,0.97f,-0.1f,-0.03f,0.97f,-0.1f,0.03f,0.94f,-0.075f,-0.03f,0.94f,-0.075f,0.0f,0.92f,0.0f,0.0f,0.94f,0.03f,-0.12f,1.06f,0.05f,0.12f,1.06f,0.05f,0.12f,1.06f,-0.1f,-0.12f,1.06f,-0.1f,0.0456f,0.9364f,0.05f,0.1456f,0.9364f,0.05f,0.1456f,0.9364f,-0.05f,0.0456f,0.9364f,-0.05f,0.0456f,0.9f,0.05f,0.1456f,0.9f,0.05f,0.1456f,0.9f,-0.05f,0.0456f,0.9f,-0.05f,0.0456f,0.8f,0.05f,0.1456f,0.8f,0.05f,0.1456f,0.8f,-0.05f,0.0456f,0.8f,-0.05f,0.0456f,0.7f,0.05f,0.1456f,0.7f,0.05f,0.1456f,0.7f,-0.05f,0.0456f,0.7f,-0.05f,0.0456f,0.6f,0.05f,0.1456f,0.6f,0.05f,0.1456f,0.6f,-0.05f,0.0456f,0.6f,-0.05f,0.0456f,0.55f,0.05f,0.1456f,0.55f,0.05f,0.1456f,0.55f,-0.05f,0.0456f,0.55f,-0.05f,0.0456f,0.52f,0.05f,0.1456f,0.52f,0.05f,0.1456f,0.52f,-0.05f,0.0456f,0.52f,-0.05f,0.0456f,0.5f,0.05f,0.1456f,0.5f,0.05f,0.1456f,0.5f,-0.05f,0.0456f,0.5f,-0.05f,0.0454f,0.43f,0.045f,0.1454f,0.43f,0.045f,0.1454f,0.43f,-0.055f,0.0454f,0.43f,-0.055f,0.0452f,0.36f,0.04f,0.1452f,0.36f,0.04f,0.1452f,0.36f,-0.06f,0.0452f,0.36f,-0.06f,0.045f,0.29f,0.035f,0.145f,0.29f,0.035f,0.145f,0.29f,-0.065f,0.045f,0.29f,-0.065f,0.0448f,0.21f,0.03f,0.1448f,0.21f,0.03f,0.1448f,0.21f,-0.07f,0.0448f,0.21f,-0.07f,0.0446f,0.1262f,0.025f,0.1446f,0.1262f,0.025f,0.1446f,0.1262f,-0.075f,0.0446f,0.1262f,-0.075f,0.0446f,0.0762f,0.025f,0.1446f,0.0762f,0.025f,0.1446f,0.0f,-0.075f,0.0446f,0.0f,-0.075f,0.0446f,0.0562f,0.057f,0.1446f,0.0562f,0.057f,0.1446f,0.0f,0.057f,0.0446f,0.0f,0.057f,0.0446f,0.0562f,0.087f,0.1446f,0.0562f,0.087f,0.1446f,0.0f,0.087f,0.0446f,0.0f,0.087f,0.0446f,0.0562f,0.1924f,0.1446f,0.0562f,0.1924f,0.1446f,0.0f,0.1924f,0.0446f,0.0f,0.1924f,-0.0456f,0.9364f,0.05f,-0.1456f,0.9364f,0.05f,-0.1456f,0.9364f,-0.05f,-0.0456f,0.9364f,-0.05f,-0.0456f,0.9f,0.05f,-0.1456f,0.9f,0.05f,-0.1456f,0.9f,-0.05f,-0.0456f,0.9f,-0.05f,-0.0456f,0.8f,0.05f,-0.1456f,0.8f,0.05f,-0.1456f,0.8f,-0.05f,-0.0456f,0.8f,-0.05f,-0.0456f,0.7f,0.05f,-0.1456f,0.7f,0.05f,-0.1456f,0.7f,-0.05f,-0.0456f,0.7f,-0.05f,-0.0456f,0.6f,0.05f,-0.1456f,0.6f,0.05f,-0.1456f,0.6f,-0.05f,-0.0456f,0.6f,-0.05f};
+			double[] value = {-0.05,1.0,0.05,0.05,1.0,0.05,0.03,0.97,-0.1,-0.03,0.97,-0.1,0.03,0.94,-0.075,-0.03,0.94,-0.075,0.0,0.92,0.0,0.0,0.94,0.03,-0.12,1.06,0.05,0.12,1.06,0.05,0.12,1.06,-0.1,-0.12,1.06,-0.1,0.0456,0.9364,0.05,0.1456,0.9364,0.05,0.1456,0.9364,-0.05,0.0456,0.9364,-0.05,0.0456,0.9,0.05,0.1456,0.9,0.05,0.1456,0.9,-0.05,0.0456,0.9,-0.05,0.0456,0.8,0.05,0.1456,0.8,0.05,0.1456,0.8,-0.05,0.0456,0.8,-0.05,0.0456,0.7,0.05,0.1456,0.7,0.05,0.1456,0.7,-0.05,0.0456,0.7,-0.05,0.0456,0.6,0.05,0.1456,0.6,0.05,0.1456,0.6,-0.05,0.0456,0.6,-0.05,0.0456,0.55,0.05,0.1456,0.55,0.05,0.1456,0.55,-0.05,0.0456,0.55,-0.05,0.0456,0.52,0.05,0.1456,0.52,0.05,0.1456,0.52,-0.05,0.0456,0.52,-0.05,0.0456,0.5,0.05,0.1456,0.5,0.05,0.1456,0.5,-0.05,0.0456,0.5,-0.05,0.0454,0.43,0.045,0.1454,0.43,0.045,0.1454,0.43,-0.055,0.0454,0.43,-0.055,0.0452,0.36,0.04,0.1452,0.36,0.04,0.1452,0.36,-0.06,0.0452,0.36,-0.06,0.045,0.29,0.035,0.145,0.29,0.035,0.145,0.29,-0.065,0.045,0.29,-0.065,0.0448,0.21,0.03,0.1448,0.21,0.03,0.1448,0.21,-0.07,0.0448,0.21,-0.07,0.0446,0.1262,0.025,0.1446,0.1262,0.025,0.1446,0.1262,-0.075,0.0446,0.1262,-0.075,0.0446,0.0762,0.025,0.1446,0.0762,0.025,0.1446,0.0,-0.075,0.0446,0.0,-0.075,0.0446,0.0562,0.057,0.1446,0.0562,0.057,0.1446,0.0,0.057,0.0446,0.0,0.057,0.0446,0.0562,0.087,0.1446,0.0562,0.087,0.1446,0.0,0.087,0.0446,0.0,0.087,0.0446,0.0562,0.1924,0.1446,0.0562,0.1924,0.1446,0.0,0.1924,0.0446,0.0,0.1924,-0.0456,0.9364,0.05,-0.1456,0.9364,0.05,-0.1456,0.9364,-0.05,-0.0456,0.9364,-0.05,-0.0456,0.9,0.05,-0.1456,0.9,0.05,-0.1456,0.9,-0.05,-0.0456,0.9,-0.05,-0.0456,0.8,0.05,-0.1456,0.8,0.05,-0.1456,0.8,-0.05,-0.0456,0.8,-0.05,-0.0456,0.7,0.05,-0.1456,0.7,0.05,-0.1456,0.7,-0.05,-0.0456,0.7,-0.05,-0.0456,0.6,0.05,-0.1456,0.6,0.05,-0.1456,0.6,-0.05,-0.0456,0.6,-0.05};
 			return value;
 		}
-		private float[] getSKINCOORD_4_120_point_2()
+		private double[] getSKINCOORD_4_120_point_2()
 		{
-			float[] value = {-0.0456f,0.55f,0.05f,-0.1456f,0.55f,0.05f,-0.1456f,0.55f,-0.05f,-0.0456f,0.55f,-0.05f,-0.0456f,0.52f,0.05f,-0.1456f,0.52f,0.05f,-0.1456f,0.52f,-0.05f,-0.0456f,0.52f,-0.05f,-0.0456f,0.5f,0.05f,-0.1456f,0.5f,0.05f,-0.1456f,0.5f,-0.05f,-0.0456f,0.5f,-0.05f,-0.0454f,0.43f,0.045f,-0.1454f,0.43f,0.045f,-0.1454f,0.43f,-0.055f,-0.0454f,0.43f,-0.055f,-0.0452f,0.36f,0.04f,-0.1452f,0.36f,0.04f,-0.1452f,0.36f,-0.06f,-0.0452f,0.36f,-0.06f,-0.045f,0.29f,0.035f,-0.145f,0.29f,0.035f,-0.145f,0.29f,-0.065f,-0.045f,0.29f,-0.065f,-0.0448f,0.21f,0.03f,-0.1448f,0.21f,0.03f,-0.1448f,0.21f,-0.07f,-0.0448f,0.21f,-0.07f,-0.0446f,0.1262f,0.025f,-0.1446f,0.1262f,0.025f,-0.1446f,0.1262f,-0.075f,-0.0446f,0.1262f,-0.075f,-0.0446f,0.0762f,0.025f,-0.1446f,0.0762f,0.025f,-0.1446f,0.0f,-0.075f,-0.0446f,0.0f,-0.075f,-0.0446f,0.0562f,0.057f,-0.1446f,0.0562f,0.057f,-0.1446f,0.0f,0.057f,-0.0446f,0.0f,0.057f,-0.0446f,0.0562f,0.087f,-0.1446f,0.0562f,0.087f,-0.1446f,0.0f,0.087f,-0.0446f,0.0f,0.087f,-0.0446f,0.0562f,0.1924f,-0.1446f,0.0562f,0.1924f,-0.1446f,0.0f,0.1924f,-0.0446f,0.0f,0.1924f,-0.12f,1.10f,0.05f,0.12f,1.10f,0.05f,0.12f,1.10f,-0.1f,-0.12f,1.10f,-0.1f,-0.14f,1.42f,0.045f,0.14f,1.42f,0.045f,0.14f,1.42f,-0.09f,-0.14f,1.42f,-0.09f,-0.24f,1.52f,0.035f,0.24f,1.52f,0.035f,0.24f,1.52f,-0.09f,-0.24f,1.52f,-0.09f,-0.05f,1.56f,0.030f,0.05f,1.56f,0.030f,0.05f,1.56f,-0.06f,-0.05f,1.56f,-0.06f,-0.05f,1.60f,0.060f,0.05f,1.60f,0.060f,0.05f,1.62f,-0.03f,-0.05f,1.62f,-0.03f,-0.07f,1.777f,0.13f,0.07f,1.777f,0.13f,0.07f,1.777f,-0.03f,-0.07f,1.777f,-0.03f,-0.07f,1.60f,0.13f,0.07f,1.60f,0.13f,0.07f,1.66f,-0.03f,-0.07f,1.66f,-0.03f,0.16f,1.42f,0.015f,0.24f,1.5f,0.015f,0.24f,1.5f,-0.075f,0.16f,1.42f,-0.075f,0.17f,1.18f,-0.025f,0.23f,1.18f,-0.025f,0.23f,1.18f,-0.085f,0.17f,1.18f,-0.085f,0.17f,1.14f,-0.025f,0.23f,1.14f,-0.025f,0.23f,1.14f,-0.085f,0.17f,1.14f,-0.085f,0.18f,0.91f,-0.05f,0.22f,0.91f,-0.05f,0.22f,0.91f,-0.09f,0.18f,0.91f,-0.09f,0.18f,0.87f,-0.02f,0.22f,0.87f,-0.02f,0.22f,0.87f,-0.1f,0.18f,0.87f,-0.1f,0.18f,0.6976f,-0.02f,0.22f,0.6976f,-0.02f,0.22f,0.6976f,-0.1f,0.18f,0.6976f,-0.1f};
+			double[] value = {-0.0456,0.55,0.05,-0.1456,0.55,0.05,-0.1456,0.55,-0.05,-0.0456,0.55,-0.05,-0.0456,0.52,0.05,-0.1456,0.52,0.05,-0.1456,0.52,-0.05,-0.0456,0.52,-0.05,-0.0456,0.5,0.05,-0.1456,0.5,0.05,-0.1456,0.5,-0.05,-0.0456,0.5,-0.05,-0.0454,0.43,0.045,-0.1454,0.43,0.045,-0.1454,0.43,-0.055,-0.0454,0.43,-0.055,-0.0452,0.36,0.04,-0.1452,0.36,0.04,-0.1452,0.36,-0.06,-0.0452,0.36,-0.06,-0.045,0.29,0.035,-0.145,0.29,0.035,-0.145,0.29,-0.065,-0.045,0.29,-0.065,-0.0448,0.21,0.03,-0.1448,0.21,0.03,-0.1448,0.21,-0.07,-0.0448,0.21,-0.07,-0.0446,0.1262,0.025,-0.1446,0.1262,0.025,-0.1446,0.1262,-0.075,-0.0446,0.1262,-0.075,-0.0446,0.0762,0.025,-0.1446,0.0762,0.025,-0.1446,0.0,-0.075,-0.0446,0.0,-0.075,-0.0446,0.0562,0.057,-0.1446,0.0562,0.057,-0.1446,0.0,0.057,-0.0446,0.0,0.057,-0.0446,0.0562,0.087,-0.1446,0.0562,0.087,-0.1446,0.0,0.087,-0.0446,0.0,0.087,-0.0446,0.0562,0.1924,-0.1446,0.0562,0.1924,-0.1446,0.0,0.1924,-0.0446,0.0,0.1924,-0.12,1.10,0.05,0.12,1.10,0.05,0.12,1.10,-0.1,-0.12,1.10,-0.1,-0.14,1.42,0.045,0.14,1.42,0.045,0.14,1.42,-0.09,-0.14,1.42,-0.09,-0.24,1.52,0.035,0.24,1.52,0.035,0.24,1.52,-0.09,-0.24,1.52,-0.09,-0.05,1.56,0.030,0.05,1.56,0.030,0.05,1.56,-0.06,-0.05,1.56,-0.06,-0.05,1.60,0.060,0.05,1.60,0.060,0.05,1.62,-0.03,-0.05,1.62,-0.03,-0.07,1.777,0.13,0.07,1.777,0.13,0.07,1.777,-0.03,-0.07,1.777,-0.03,-0.07,1.60,0.13,0.07,1.60,0.13,0.07,1.66,-0.03,-0.07,1.66,-0.03,0.16,1.42,0.015,0.24,1.5,0.015,0.24,1.5,-0.075,0.16,1.42,-0.075,0.17,1.18,-0.025,0.23,1.18,-0.025,0.23,1.18,-0.085,0.17,1.18,-0.085,0.17,1.14,-0.025,0.23,1.14,-0.025,0.23,1.14,-0.085,0.17,1.14,-0.085,0.18,0.91,-0.05,0.22,0.91,-0.05,0.22,0.91,-0.09,0.18,0.91,-0.09,0.18,0.87,-0.02,0.22,0.87,-0.02,0.22,0.87,-0.1,0.18,0.87,-0.1,0.18,0.6976,-0.02,0.22,0.6976,-0.02,0.22,0.6976,-0.1,0.18,0.6976,-0.1};
 			return value;
 		}
-		private float[] getSKINCOORD_4_120_point_3()
+		private double[] getSKINCOORD_4_120_point_3()
 		{
-			float[] value = {-0.16f,1.42f,0.015f,-0.24f,1.5f,0.015f,-0.24f,1.5f,-0.075f,-0.16f,1.42f,-0.075f,-0.17f,1.18f,-0.025f,-0.23f,1.18f,-0.025f,-0.23f,1.18f,-0.085f,-0.17f,1.18f,-0.085f,-0.17f,1.14f,-0.025f,-0.23f,1.14f,-0.025f,-0.23f,1.14f,-0.085f,-0.17f,1.14f,-0.085f,-0.18f,0.91f,-0.05f,-0.22f,0.91f,-0.05f,-0.22f,0.91f,-0.09f,-0.18f,0.91f,-0.09f,-0.18f,0.87f,-0.02f,-0.22f,0.87f,-0.02f,-0.22f,0.87f,-0.1f,-0.18f,0.87f,-0.1f,-0.18f,0.6976f,-0.02f,-0.22f,0.6976f,-0.02f,-0.22f,0.6976f,-0.1f,-0.18f,0.6976f,-0.1f};
+			double[] value = {-0.16,1.42,0.015,-0.24,1.5,0.015,-0.24,1.5,-0.075,-0.16,1.42,-0.075,-0.17,1.18,-0.025,-0.23,1.18,-0.025,-0.23,1.18,-0.085,-0.17,1.18,-0.085,-0.17,1.14,-0.025,-0.23,1.14,-0.025,-0.23,1.14,-0.085,-0.17,1.14,-0.085,-0.18,0.91,-0.05,-0.22,0.91,-0.05,-0.22,0.91,-0.09,-0.18,0.91,-0.09,-0.18,0.87,-0.02,-0.22,0.87,-0.02,-0.22,0.87,-0.1,-0.18,0.87,-0.1,-0.18,0.6976,-0.02,-0.22,0.6976,-0.02,-0.22,0.6976,-0.1,-0.18,0.6976,-0.1};
 			return value;
 		}
 
@@ -546,7 +545,8 @@ public class BoxMan
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -557,7 +557,8 @@ public class BoxMan
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -606,7 +607,9 @@ public class BoxMan
 		{
 			System.out.print("Java program \"BoxMan\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

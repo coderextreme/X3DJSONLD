@@ -1,13 +1,10 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Interpolation.*;
-import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Time.*;
 
@@ -89,7 +86,7 @@ public class fors2
   .setScene(new Scene()
     .addChild(new ProtoDeclare("node").setName("node")
       .setProtoInterface(new ProtoInterface()
-        .addField(new field().setName("position").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f))))
+        .addField(new field().setName("position").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0))))
       .setProtoBody(new ProtoBody()
         .addChild(new Transform("transform")
           .setIS(new IS()
@@ -102,18 +99,11 @@ public class fors2
             .setAppearance(new Appearance()
               .addComments("comment before Material")
               .addComments("comment after Material")
-              .setMaterial(new Material().setDiffuseColor(1.0f,0.0f,0.0f)))))
-        .addChild(new PositionInterpolator("NodePosition").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3f(new float[] {0.0f,0.0f,0.0f,0.0f,5.0f,0.0f})))
-        .addChild(new Script("MoveBall").setSourceCode("\n" + 
-" ecmascript:" + "\n" + 
-"					function set_cycle(value) {" + "\n" + 
-"                                                old = translation;" + "\n" + 
-"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);" + "\n" + 
-"                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
-"						// Browser.println(translation);" + "\n" + 
-"					}" + "\n")
-          .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(50.0f,50.0f,0.0f)))
-          .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f)))
+              .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0)))))
+        .addChild(new PositionInterpolator("NodePosition").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,5.0,0.0})))
+        .addChild(new X3DScript("MoveBall")
+          .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(50.0,50.0,0.0)))
+          .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setName("keyValue").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
         .addChild(new TimeSensor("nodeClock").setCycleInterval(3).setLoop(true))
@@ -127,47 +117,25 @@ public class fors2
         .addField(new field().setName("positionB").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY)))
       .setProtoBody(new ProtoBody()
         .addChild(new Shape()
-          .setGeometry(new Extrusion("extrusion").setCreaseAngle(0.785f).setCrossSection(new MFVec2f(new float[] {1.0f,0.0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0.0f,-1.0f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1.0f,0.0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0.0f,1.0f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1.0f,0.0f})).setSpine(new MFVec3f(new float[] {0.0f,-50.0f,0.0f,0.0f,0.0f,0.0f,0.0f,50.0f,0.0f})))
+          .setGeometry(new Extrusion("extrusion").setCreaseAngle(0.785).setCrossSection(new MFVec2f(new double[] {1.0,0.0,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.0,-1.0,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.0,0.0,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.0,1.0,0.38,0.92,0.71,0.71,0.92,0.38,1.0,0.0})).setSpine(new MFVec3f(new double[] {0.0,-50.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0})))
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(0.0f,1.0f,0.0f))))
-        .addChild(new Script("MoveCylinder").setSourceCode("\n" + 
-" ecmascript:" + "\n" + 
-"\n" + 
-"                function set_endA(value) {" + "\n" + 
-"		    if (typeof spine === \"undefined\") {" + "\n" + 
-"		        spine = new MFVec3f([value, value]);" + "\n" + 
-"		    } else {" + "\n" + 
-"		        spine = new MFVec3f([value, spine[1]]);" + "\n" + 
-"		    }" + "\n" + 
-"                }" + "\n" + 
-"                " + "\n" + 
-"                function set_endB(value) {" + "\n" + 
-"		    if (typeof spine === \"undefined\") {" + "\n" + 
-"		        spine = new MFVec3f([value, value]);" + "\n" + 
-"		    } else {" + "\n" + 
-"		        spine = new MFVec3f([spine[0], value]);" + "\n" + 
-"		    }" + "\n" + 
-"                }" + "\n" + 
-"                " + "\n" + 
-"                function set_spine(value) {" + "\n" + 
-"		    Browser.print('\\n'+'\"');" + "\n" + 
-"                    spine = value;" + "\n" + 
-"                }" + "\n")
-          .addField(new field().setName("spine").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3f(new MFVec3f(new float[] {0.0f,-50.0f,0.0f,0.0f,0.0f,0.0f,0.0f,50.0f,0.0f}))))
+            .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0))))
+        .addChild(new X3DScript("MoveCylinder")
+          .addField(new field().setName("spine").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3f(new MFVec3f(new double[] {0.0,-50.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0}))))
           .addField(new field().setName("set_endA").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setName("set_endB").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .setIS(new IS()
             .addConnect(new connect().setNodeField("set_endA").setProtoField("positionA"))
             .addConnect(new connect().setNodeField("set_endB").setProtoField("positionB"))))
         .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
-    .addChild(new Transform().setScale(0.1f,0.1f,0.1f)
-      .addChild(new ProtoInstance("node", "nodeA")
-        .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(-50.0f,-50.0f,-50.0f))))
-      .addChild(new ProtoInstance("node", "nodeB")
-        .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(50.0f,50.0f,50.0f))))
-      .addChild(new ProtoInstance("cylinder", "linkA")
-        .addFieldValue(new fieldValue().setName("positionA").setValue(new SFVec3f(0.0f,0.0f,0.0f)))
-        .addFieldValue(new fieldValue().setName("positionB").setValue(new SFVec3f(50.0f,50.0f,50.0f)))))
+    .addChild(new Transform().setScale(0.1,0.1,0.1)
+      .addChild(new ProtoInstance("node", "nodeA").setContainerField("children")
+        .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(-50.0,-50.0,-50.0))))
+      .addChild(new ProtoInstance("node", "nodeB").setContainerField("children")
+        .addFieldValue(new fieldValue().setName("position").setValue(new SFVec3f(50.0,50.0,50.0))))
+      .addChild(new ProtoInstance("cylinder", "linkA").setContainerField("children")
+        .addFieldValue(new fieldValue().setName("positionA").setValue(new SFVec3f(0.0,0.0,0.0)))
+        .addFieldValue(new fieldValue().setName("positionB").setValue(new SFVec3f(50.0,50.0,50.0)))))
     .addChild(new ROUTE().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
     .addChild(new ROUTE().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("positionB")));
     }
@@ -176,7 +144,8 @@ public class fors2
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -187,7 +156,8 @@ public class fors2
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -236,7 +206,9 @@ public class fors2
 		{
 			System.out.print("Java program \"fors2\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

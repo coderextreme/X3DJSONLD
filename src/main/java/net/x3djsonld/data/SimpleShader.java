@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
@@ -153,12 +151,12 @@ public class SimpleShader
   .setScene(new Scene()
     .addChild(new ProtoDeclare("myPrototype").setName("myPrototype")
       .setProtoInterface(new ProtoInterface()
-        .addField(new field().setName("myInputRange").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.95f,0.44f,0.22f))))
+        .addField(new field().setName("myInputRange").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.95,0.44,0.22))))
       .setProtoBody(new ProtoBody()
         .addChild(new Transform("TR")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(0.5f,0.5f,0.9f))
+              .setMaterial(new Material().setDiffuseColor(0.5,0.5,0.9))
               .addShaders(new ComposedShader().setLanguage("GLSL")
                 .addField(new field().setName("decis").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
                 .setIS(new IS()
@@ -166,10 +164,10 @@ public class SimpleShader
                 .addParts(new ShaderPart())
                 .addParts(new ShaderPart().setType("FRAGMENT")))
               .addShaders(new ComposedShader("Cobweb").setLanguage("GLSL")
-                .addField(new field().setName("decis").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.95f,0.77f,0.44f)))
+                .addField(new field().setName("decis").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.95,0.77,0.44)))
                 .addParts(new ShaderPart())
                 .addParts(new ShaderPart("_1").setType("FRAGMENT"))))
-            .setGeometry(new Sphere().setRadius(1.75f))))))
+            .setGeometry(new Sphere().setRadius(1.75))))))
     .addChild(new WorldInfo().setTitle("SimpleShader")
       .setMetadata(new MetadataSet("Titania").setName("Titania").setReference("http://titania.create3000.de")
         .setMetadata(new MetadataSet("Selection").setName("Selection").setReference("http://titania.create3000.de")
@@ -181,14 +179,15 @@ public class SimpleShader
           .setMetadata(new MetadataDouble("position").setName("position").setReference("http://titania.create3000.de").setValue(new double[] {6.24067728185014,0.00250837343276661,2.92117542307615}))
           .setMetadata(new MetadataDouble("orientation").setName("orientation").setReference("http://titania.create3000.de").setValue(new double[] {-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191}))
           .setMetadata(new MetadataDouble("centerOfRotation").setName("centerOfRotation").setReference("http://titania.create3000.de").setValue(new double[] {-0.808320198626341,-0.358072370409949,0.22817191560906})))))
-    .addChild(new ProtoInstance("myPrototype")));
+    .addChild(new ProtoInstance("myPrototype").setContainerField("children")));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -199,7 +198,8 @@ public class SimpleShader
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -248,7 +248,9 @@ public class SimpleShader
 		{
 			System.out.print("Java program \"SimpleShader\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

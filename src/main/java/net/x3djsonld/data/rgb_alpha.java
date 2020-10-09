@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
@@ -143,25 +141,25 @@ public class rgb_alpha
   .setScene(new Scene()
     .addChild(new NavigationInfo().setType(new String[] {"EXAMINE","WALK","FLY","ANY"}))
     .addChild(new Group()
-      .addChild(new Transform().setTranslation(6.14221f,0.0694613f,-0.000999451f)
+      .addChild(new Transform().setTranslation(6.14221,0.0694613,-0.000999451)
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
             .setTexture(new PixelTexture("RgbOpacityCheckerboard").setImage(new int[] {2,2,4,0xFF0000FF,0xFFFF0000,0xFFFF0000,0xFF0000FF})))
           .setGeometry(new Box())))
-      .addChild(new Transform().setTranslation(-4.85443f,0.0694381f,-0.00149918f)
+      .addChild(new Transform().setTranslation(-4.85443,0.0694381,-0.00149918)
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
             .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
           .setGeometry(new Sphere())))
-      .addChild(new Transform().setTranslation(-1.47341f,0.036672f,-0.00175095f)
+      .addChild(new Transform().setTranslation(-1.47341,0.036672,-0.00175095)
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
             .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
           .setGeometry(new Cone())))
-      .addChild(new Transform().setTranslation(2.31094f,0.0694206f,-0.00187683f)
+      .addChild(new Transform().setTranslation(2.31094,0.0694206,-0.00187683)
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
@@ -173,7 +171,8 @@ public class rgb_alpha
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -184,7 +183,8 @@ public class rgb_alpha
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -233,7 +233,9 @@ public class rgb_alpha
 		{
 			System.out.print("Java program \"rgb_alpha\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

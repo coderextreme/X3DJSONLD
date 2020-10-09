@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
@@ -10,7 +8,6 @@ import org.web3d.x3d.jsail.Interpolation.*;
 import org.web3d.x3d.jsail.Lighting.*;
 import org.web3d.x3d.jsail.Navigation.*;
 import org.web3d.x3d.jsail.Rendering.*;
-import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Time.*;
 
@@ -102,19 +99,19 @@ public class flowers2
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("http://www.web3d.org/x3d/content/examples/license.html")))
   .setScene(new Scene()
     .addChild(new NavigationInfo())
-    .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(0.0f,0.0f,50.0f))
+    .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(0.0,0.0,50.0))
     .addChild(new Group()
-      .addChild(new DirectionalLight().setDirection(1.0f,1.0f,1.0f))
+      .addChild(new DirectionalLight().setDirection(1.0,1.0,1.0))
       .addChild(new ProtoDeclare("orbit").setName("orbit")
         .setProtoInterface(new ProtoInterface()
-          .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(-8.0f,0.0f,0.0f)))
-          .addField(new field().setName("diffuseColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(1.0f,0.5f,0.0f)))
-          .addField(new field().setName("specularColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(1.0f,0.5f,0.0f)))
-          .addField(new field().setName("transparency").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.75f)))
+          .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(-8.0,0.0,0.0)))
+          .addField(new field().setName("diffuseColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(1.0,0.5,0.0)))
+          .addField(new field().setName("specularColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(1.0,0.5,0.0)))
+          .addField(new field().setName("transparency").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.75)))
         .setProtoBody(new ProtoBody()
           .addChild(new Group()
             .addChild(new TimeSensor("Clock").setCycleInterval(16).setLoop(true))
-            .addChild(new OrientationInterpolator("OrbitPath").setKey(new float[] {0.0f,0.50f,1.0f}).setKeyValue(new MFRotation(new float[] {1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,3.14f,1.0f,0.0f,0.0f,6.28f})))
+            .addChild(new OrientationInterpolator("OrbitPath").setKey(new double[] {0.0,0.50,1.0}).setKeyValue(new MFRotation(new double[] {1.0,0.0,0.0,0.0,1.0,0.0,0.0,3.14,1.0,0.0,0.0,6.28})))
             .addChild(new Transform("OrbitTransform")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
@@ -130,113 +127,39 @@ public class flowers2
 "				    <Coordinate DEF=\"OrbitCoordinates\"/>",
 "				  </IndexedFaceSet>"})
                 .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
-                  .setCoord(new Coordinate("OrbitCoordinates").setPoint(new MFVec3f(new float[] {0.0f,0.0f,1.0f,0.0f,1.0f,0.0f,1.0f,0.0f,0.0f}))))))
-            .addChild(new Script("OrbitScript").setSourceCode("\n" + 
-"			" + "\n" + 
-"			ecmascript:" + "\n" + 
-"\n" + 
-"			var e = 5;" + "\n" + 
-"			var f = 5;" + "\n" + 
-"			var g = 5;" + "\n" + 
-"			var h = 5;" + "\n" + 
-"			var resolution = 100;" + "\n" + 
-"\n" + 
-"			function initialize() {" + "\n" + 
-"			     generateCoordinates();" + "\n" + 
-"			     var localci = [];" + "\n" + 
-"			     for (var i = 0; i < resolution-1; i++) {" + "\n" + 
-"				for (var j = 0; j < resolution-1; j++) {" + "\n" + 
-"				     localci.push(i*resolution+j);" + "\n" + 
-"				     localci.push(i*resolution+j+1);" + "\n" + 
-"				     localci.push((i+1)*resolution+j+1);" + "\n" + 
-"				     localci.push((i+1)*resolution+j);" + "\n" + 
-"				     localci.push(-1);" + "\n" + 
-"				}" + "\n" + 
-"			    }" + "\n" + 
-"			    coordIndexes = new MFInt32(localci);" + "\n" + 
-"			}" + "\n" + 
-"\n" + 
-"			function generateCoordinates() {" + "\n" + 
-"			     var theta = 0.0;" + "\n" + 
-"			     var phi = 0.0;" + "\n" + 
-"			     var delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
-"			     var localc = [];" + "\n" + 
-"			     for (var i = 0; i < resolution; i++) {" + "\n" + 
-"				for (var j = 0; j < resolution; j++) {" + "\n" + 
-"					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
-"					localc.push(new SFVec3f(" + "\n" + 
-"						rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
-"						rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
-"						rho * Math.sin(phi)" + "\n" + 
-"					));" + "\n" + 
-"					theta += delta;" + "\n" + 
-"				}" + "\n" + 
-"				phi += delta;" + "\n" + 
-"			     }" + "\n" + 
-"			     " + "\n" + 
-"			     coordinates = new MFVec3f(localc);" + "\n" + 
-"			}" + "\n" + 
-"\n" + 
-"			function set_fraction(fraction, eventTime) {" + "\n" + 
-"				var choice = Math.floor(Math.random() * 4);" + "\n" + 
-"				switch (choice) {" + "\n" + 
-"				case 0:" + "\n" + 
-"					e += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"					break;" + "\n" + 
-"				case 1:" + "\n" + 
-"					f += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"					break;" + "\n" + 
-"				case 2:" + "\n" + 
-"					g += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"					break;" + "\n" + 
-"				case 3:" + "\n" + 
-"					h += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"					break;" + "\n" + 
-"				}" + "\n" + 
-"				if (e < 1) {" + "\n" + 
-"					f = 10;" + "\n" + 
-"				}" + "\n" + 
-"				if (f < 1) {" + "\n" + 
-"					f = 10;" + "\n" + 
-"				}" + "\n" + 
-"				if (g < 1) {" + "\n" + 
-"					g = 4;" + "\n" + 
-"				}" + "\n" + 
-"				if (h < 1) {" + "\n" + 
-"					h = 4;" + "\n" + 
-"				}" + "\n" + 
-"				generateCoordinates();" + "\n" + 
-"			}" + "\n")
+                  .setCoord(new Coordinate("OrbitCoordinates").setPoint(new MFVec3f(new double[] {0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0}))))))
+            .setX3DScript(new X3DScript("OrbitScript")
               .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
               .addField(new field().setName("coordinates").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
               .addField(new field().setName("coordIndexes").setType(field.TYPE_MFINT32).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-              .addField(new field().setName("e").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
-              .addField(new field().setName("f").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
-              .addField(new field().setName("g").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
-              .addField(new field().setName("h").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5f))
+              .addField(new field().setName("e").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
+              .addField(new field().setName("f").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
+              .addField(new field().setName("g").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
+              .addField(new field().setName("h").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
               .addField(new field().setName("resolution").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(50)))
             .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
             .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
             .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
             .addChild(new ROUTE().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
             .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
-      .addChild(new ProtoInstance("orbit")
-        .addFieldValue(new fieldValue().setName("translation").setValue(new SFVec3f(-8.0f,0.0f,0.0f)))
-        .addFieldValue(new fieldValue().setName("diffuseColor").setValue(new SFColor(1.0f,0.5f,0.0f)))
-        .addFieldValue(new fieldValue().setName("specularColor").setValue(new SFColor(1.0f,0.5f,0.0f)))
-        .addFieldValue(new fieldValue().setName("transparency").setValue(0.75f)))
-      .addChild(new ProtoInstance("orbit")
-        .addFieldValue(new fieldValue().setName("translation").setValue(new SFVec3f(8.0f,0.0f,0.0f)))
-        .addFieldValue(new fieldValue().setName("diffuseColor").setValue(new SFColor(0.0f,0.5f,1.0f)))
-        .addFieldValue(new fieldValue().setName("specularColor").setValue(new SFColor(0.0f,0.5f,1.0f)))
-        .addFieldValue(new fieldValue().setName("transparency").setValue(0.5f)))));
+      .addChild(new ProtoInstance("orbit").setContainerField("children")
+        .addFieldValue(new fieldValue().setName("translation").setValue(new SFVec3f(-8.0,0.0,0.0)))
+        .addFieldValue(new fieldValue().setName("diffuseColor").setValue(new SFColor(1.0,0.5,0.0)))
+        .addFieldValue(new fieldValue().setName("specularColor").setValue(new SFColor(1.0,0.5,0.0)))
+        .addFieldValue(new fieldValue().setName("transparency").setValue(0.75)))
+      .addChild(new ProtoInstance("orbit").setContainerField("children")
+        .addFieldValue(new fieldValue().setName("translation").setValue(new SFVec3f(8.0,0.0,0.0)))
+        .addFieldValue(new fieldValue().setName("diffuseColor").setValue(new SFColor(0.0,0.5,1.0)))
+        .addFieldValue(new fieldValue().setName("specularColor").setValue(new SFColor(0.0,0.5,1.0)))
+        .addFieldValue(new fieldValue().setName("transparency").setValue(0.5)))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -247,7 +170,8 @@ public class flowers2
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -296,7 +220,9 @@ public class flowers2
 		{
 			System.out.print("Java program \"flowers2\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

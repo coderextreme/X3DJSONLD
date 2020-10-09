@@ -277,7 +277,7 @@ POSSIBILITY OF SUCH DAMAGE.
               <!-- final DOCTYPE: -->
               <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D </xsl:text>
               <xsl:value-of select="$x3dVersion"/>
-              <xsl:text disable-output-escaping="yes">//EN&quot; &quot;http://www.web3d.org/specifications/x3d-</xsl:text>
+              <xsl:text disable-output-escaping="yes">//EN&quot; &quot;https://www.web3d.org/specifications/x3d-</xsl:text>
               <xsl:value-of select="$x3dVersion"/>
               <xsl:text disable-output-escaping="yes">.dtd&quot;&gt;</xsl:text>
               <xsl:text>&#10;</xsl:text>
@@ -291,10 +291,10 @@ POSSIBILITY OF SUCH DAMAGE.
               <!-- final DOCTYPE: -->
               <xsl:text disable-output-escaping="yes">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</xsl:text>
               <xsl:text>&#10;</xsl:text>
-              <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.3//EN&quot; &quot;http://www.web3d.org/specifications/x3d-3.3.dtd&quot;&gt;</xsl:text>
+              <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.3//EN&quot; &quot;https://www.web3d.org/specifications/x3d-3.3.dtd&quot;&gt;</xsl:text>
               <xsl:text>&#10;</xsl:text>
               <!-- transitional DOCTYPE:
-&lt;!DOCTYPE X3D PUBLIC &quot;http://www.web3d.org/specifications/x3d-3.0.dtd&quot; &quot;file:///www.web3d.org/specifications/x3d-3.0.dtd&quot;&gt;
+&lt;!DOCTYPE X3D PUBLIC &quot;https://www.web3d.org/specifications/x3d-3.0.dtd&quot; &quot;file:///www.web3d.org/specifications/x3d-3.0.dtd&quot;&gt;
 -->
           </xsl:otherwise>
 		</xsl:choose>
@@ -2489,7 +2489,17 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='backShininess' and .='0.2') or
                       (local-name()='separateBackColor' and .='false') or
                       (local-name()='backSpecularColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='backTransparency' and (.='0' or .='0.0'))))" />
+                      (local-name()='backTransparency' and (.='0' or .='0.0')))) and
+                      not(ends-with(local-name(..),'Material')	and
+                      ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      (local-name()='emissiveColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='occlusionStrength' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='roughness' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='transparency' and (string(.)='0' or string(.)='0.0'))))" />
         <xsl:variable name="notDefaultFieldValue4"
                       select="not( local-name(..)='MovieTexture' and
                       ((local-name()='loop' and .='false') or
@@ -2637,6 +2647,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       select="not( local-name(..)='MultiTexture' and
                       ((local-name()='alpha' and (.='1' or .='1.0')) or
                       (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')))) and
+                      not( contains(local-name(..),'Texture') and
+                      ((local-name() = 'mapping') and (string-length(.) = 0))) and
                       not( local-name(..)='TextureCoordinateGenerator' and
                       ((local-name()='mode' and .='SPHERE'))) and
                       not((local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D') and
@@ -3296,7 +3308,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:value-of select="$x3dVersion"/>
                 </xsl:when>
                 <xsl:when test="(local-name(..)='X3D') and (local-name()='noNamespaceSchemaLocation')">
-                    <xsl:text>http://www.web3d.org/specifications/x3d-</xsl:text>
+                    <xsl:text>https://www.web3d.org/specifications/x3d-</xsl:text>
                     <xsl:value-of select="$x3dVersion"/>
                     <xsl:text>.xsd</xsl:text>
                 </xsl:when>

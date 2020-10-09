@@ -1,13 +1,10 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.CubeMapTexturing.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
-import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shaders.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Texturing.*;
@@ -93,7 +90,7 @@ public class flowerproto
         .addChild(new Transform("transform")
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(.7f,.7f,.7f).setSpecularColor(.5f,.5f,.5f))
+              .setMaterial(new Material().setDiffuseColor(.7,.7,.7).setSpecularColor(.5,.5,.5))
               .setTexture(new ComposedCubeMapTexture("texture")
                 .setBack(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"}))
                 .setBottom(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"}))
@@ -107,16 +104,16 @@ public class flowerproto
 "		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
 "			  <ComposedCubeMapTexture USE=\"texture\"/>",
 "		  </field>"})
-                .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.98f,1.0f,1.033f)))
-                .addField(new field().setName("bias").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
-                .addField(new field().setName("scale").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
-                .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(2f))
-                .addField(new field().setName("a").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(10f))
-                .addField(new field().setName("b").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(1f))
-                .addField(new field().setName("c").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(20f))
-                .addField(new field().setName("d").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(20f))
-                .addField(new field().setName("tdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0f))
-                .addField(new field().setName("pdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0f))
+                .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.98,1.0,1.033)))
+                .addField(new field().setName("bias").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
+                .addField(new field().setName("scale").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
+                .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(2))
+                .addField(new field().setName("a").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(10))
+                .addField(new field().setName("b").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(1))
+                .addField(new field().setName("c").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(20))
+                .addField(new field().setName("d").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(20))
+                .addField(new field().setName("tdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
+                .addField(new field().setName("pdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
                 .addParts(new ShaderPart()
                   .setIS(new IS()
                     .addConnect(new connect().setNodeField("url").setProtoField("vertex"))))
@@ -124,84 +121,16 @@ public class flowerproto
                   .setIS(new IS()
                     .addConnect(new connect().setNodeField("url").setProtoField("fragment"))))))
             .setGeometry(new Sphere()))
-          .addChild(new Script("Animate").setSourceCode("\n" + 
-"\n" + 
-"  " + "\n" + 
-"ecmascript:" + "\n" + 
-"			function initialize() {" + "\n" + 
-"			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
-"			    velocity = new SFVec3f(" + "\n" + 
-"			    	Math.random() - 0.5," + "\n" + 
-"				Math.random() - 0.5," + "\n" + 
-"				Math.random() - 0.5);" + "\n" + 
-"			}" + "\n" + 
-"			function set_fraction() {" + "\n" + 
-"			    translation = new SFVec3f(" + "\n" + 
-"			    	translation.x + velocity.x," + "\n" + 
-"				translation.y + velocity.y," + "\n" + 
-"				translation.z + velocity.z);" + "\n" + 
-"			    for (var j = 0; j <= 2; j++) {" + "\n" + 
-"				    if (Math.abs(translation.x) > 10) {" + "\n" + 
-"					initialize();" + "\n" + 
-"				    } else if (Math.abs(translation.y) > 10) {" + "\n" + 
-"					initialize();" + "\n" + 
-"				    } else if (Math.abs(translation.z) > 10) {" + "\n" + 
-"					initialize();" + "\n" + 
-"				    } else {" + "\n" + 
-"					velocity.x += Math.random() * 0.2 - 0.1;" + "\n" + 
-"					velocity.y += Math.random() * 0.2 - 0.1;" + "\n" + 
-"					velocity.z += Math.random() * 0.2 - 0.1;" + "\n" + 
-"				    }" + "\n" + 
-"			    }" + "\n" + 
-"			    animate_flowers();" + "\n" + 
-"			}" + "\n" + 
-"\n" + 
-"			function animate_flowers(fraction, eventTime) {" + "\n" + 
-"				var choice = Math.floor(Math.random() * 4);" + "\n" + 
-"				switch (choice) {" + "\n" + 
-"				case 0:" + "\n" + 
-"					a += Math.random() * 0.2 - 0.1;" + "\n" + 
-"					break;" + "\n" + 
-"				case 1:" + "\n" + 
-"					b += Math.random() * 0.2 - 0.1;" + "\n" + 
-"					break;" + "\n" + 
-"				case 2:" + "\n" + 
-"					c += Math.random() * 2 - 1;" + "\n" + 
-"					break;" + "\n" + 
-"				case 3:" + "\n" + 
-"					d += Math.random() * 2 - 1;" + "\n" + 
-"					break;" + "\n" + 
-"				}" + "\n" + 
-"				tdelta += 0.5;" + "\n" + 
-"				pdelta += 0.5;" + "\n" + 
-"				if (a > 1) {" + "\n" + 
-"					a =  0.5;" + "\n" + 
-"				}" + "\n" + 
-"				if (b > 1) {" + "\n" + 
-"					b =  0.5;" + "\n" + 
-"				}" + "\n" + 
-"				if (c < 1) {" + "\n" + 
-"					c =  4;" + "\n" + 
-"				}" + "\n" + 
-"				if (d < 1) {" + "\n" + 
-"					d =  4;" + "\n" + 
-"				}" + "\n" + 
-"				if (c > 10) {" + "\n" + 
-"					c = 4;" + "\n" + 
-"				}" + "\n" + 
-"				if (d > 10) {" + "\n" + 
-"					d = 4;" + "\n" + 
-"				}" + "\n" + 
-"			}" + "\n")
-            .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f)))
-            .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0f,0.0f,0.0f)))
+          .setX3DScript(new X3DScript("Animate")
+            .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
+            .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
             .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setName("a").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
-            .addField(new field().setName("b").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
-            .addField(new field().setName("c").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(3f))
-            .addField(new field().setName("d").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(3f))
-            .addField(new field().setName("tdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f))
-            .addField(new field().setName("pdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5f)))
+            .addField(new field().setName("a").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
+            .addField(new field().setName("b").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
+            .addField(new field().setName("c").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(3))
+            .addField(new field().setName("d").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(3))
+            .addField(new field().setName("tdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
+            .addField(new field().setName("pdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5)))
           .addChild(new TimeSensor("TourTime").setCycleInterval(5).setLoop(true))
           .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
           .addChild(new ROUTE().setFromNode("Animate").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
@@ -217,7 +146,8 @@ public class flowerproto
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -228,7 +158,8 @@ public class flowerproto
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -277,7 +208,9 @@ public class flowerproto
 		{
 			System.out.print("Java program \"flowerproto\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

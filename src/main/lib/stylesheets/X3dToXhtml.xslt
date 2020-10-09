@@ -174,27 +174,27 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <!-- final DOCTYPE: -->
                         <code title="XML declaration">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code>
                         <br />
-                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.0//EN&quot; &quot;<a href="http://www.web3d.org/specifications/x3d-3.0.dtd">http://www.web3d.org/specifications/x3d-3.0.dtd</a>&quot;&gt;</code>
+                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.0//EN&quot; &quot;<a href="https://www.web3d.org/specifications/x3d-3.0.dtd">https://www.web3d.org/specifications/x3d-3.0.dtd</a>&quot;&gt;</code>
                         <xsl:text>&#10;</xsl:text>
                         <!-- transitional DOCTYPE:
-&lt;!DOCTYPE X3D PUBLIC &quot;http://www.web3d.org/specifications/x3d-3.0.dtd&quot; &quot;file:///www.web3d.org/specifications/x3d-3.0.dtd&quot;&gt;
+&lt;!DOCTYPE X3D PUBLIC &quot;https://www.web3d.org/specifications/x3d-3.0.dtd&quot; &quot;file:///www.web3d.org/specifications/x3d-3.0.dtd&quot;&gt;
 -->
                     </xsl:when>
                     <xsl:when test="//X3D/@version='3.1'">
                         <!-- final DOCTYPE: -->
                         <code title="XML declaration">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code>
                         <br />
-                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.1//EN&quot; &quot;<a href="http://www.web3d.org/specifications/x3d-3.1.dtd">http://www.web3d.org/specifications/x3d-3.1.dtd</a>&quot;&gt;</code>
+                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.1//EN&quot; &quot;<a href="https://www.web3d.org/specifications/x3d-3.1.dtd">https://www.web3d.org/specifications/x3d-3.1.dtd</a>&quot;&gt;</code>
                         <xsl:text>&#10;</xsl:text>
                         <!-- transitional DOCTYPE:
-&lt;!DOCTYPE X3D PUBLIC &quot;http://www.web3d.org/specifications/x3d-3.1.dtd&quot; &quot;file:///www.web3d.org/specifications/x3d-3.1.dtd&quot;&gt;
+&lt;!DOCTYPE X3D PUBLIC &quot;https://www.web3d.org/specifications/x3d-3.1.dtd&quot; &quot;file:///www.web3d.org/specifications/x3d-3.1.dtd&quot;&gt;
 -->
                     </xsl:when>
                     <xsl:when test="//X3D/@version='3.2'">
                         <!-- final DOCTYPE: -->
                         <code title="XML declaration">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code>
                         <br />
-                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.2//EN&quot; &quot;<a href="http://www.web3d.org/specifications/x3d-3.2.dtd">http://www.web3d.org/specifications/x3d-3.2.dtd</a>&quot;&gt;</code>
+                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.2//EN&quot; &quot;<a href="https://www.web3d.org/specifications/x3d-3.2.dtd">https://www.web3d.org/specifications/x3d-3.2.dtd</a>&quot;&gt;</code>
                         <xsl:text>&#10;</xsl:text>
                         <!-- no transitional DOCTYPE for v3.2 -->
                     </xsl:when>
@@ -202,7 +202,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <!-- final DOCTYPE: -->
                         <code title="XML declaration">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code>
                         <br />
-                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.3//EN&quot; &quot;<a href="http://www.web3d.org/specifications/x3d-3.3.dtd">http://www.web3d.org/specifications/x3d-3.3.dtd</a>&quot;&gt;</code>
+                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.3//EN&quot; &quot;<a href="https://www.web3d.org/specifications/x3d-3.3.dtd">https://www.web3d.org/specifications/x3d-3.3.dtd</a>&quot;&gt;</code>
                         <xsl:text>&#10;</xsl:text>
                         <!-- no transitional DOCTYPE for v3.3 -->
                     </xsl:when>
@@ -210,7 +210,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <!-- final DOCTYPE: -->
                         <code title="XML declaration">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code>
                         <br />
-                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 4.0//EN&quot; &quot;<a href="http://www.web3d.org/specifications/x3d-3.3.dtd">http://www.web3d.org/specifications/x3d-4.0.dtd</a>&quot;&gt;</code>
+                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 4.0//EN&quot; &quot;<a href="https://www.web3d.org/specifications/x3d-3.3.dtd">https://www.web3d.org/specifications/x3d-4.0.dtd</a>&quot;&gt;</code>
                         <xsl:text>&#10;</xsl:text>
                         <!-- no transitional DOCTYPE for v4.0 -->
                     </xsl:when>
@@ -220,10 +220,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <!-- final DOCTYPE: -->
                         <code title="XML declaration">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code>
                         <br />
-                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.3//EN&quot; &quot;<a href="http://www.web3d.org/specifications/x3d-3.3.dtd">http://www.web3d.org/specifications/x3d-3.3.dtd</a>&quot;&gt;</code>
+                        <code title="Document Type Declaration (DTD) for X3D validation">&lt;!DOCTYPE X3D PUBLIC &quot;ISO//Web3D//DTD X3D 3.3//EN&quot; &quot;<a href="https://www.web3d.org/specifications/x3d-3.3.dtd">https://www.web3d.org/specifications/x3d-3.3.dtd</a>&quot;&gt;</code>
                         <xsl:text>&#10;</xsl:text>
                         <!-- transitional DOCTYPE:
-&lt;!DOCTYPE X3D PUBLIC &quot;http://www.web3d.org/specifications/x3d-3.0.dtd&quot; &quot;file:///www.web3d.org/specifications/x3d-3.0.dtd&quot;&gt;
+&lt;!DOCTYPE X3D PUBLIC &quot;https://www.web3d.org/specifications/x3d-3.0.dtd&quot; &quot;file:///www.web3d.org/specifications/x3d-3.0.dtd&quot;&gt;
 -->
                     </xsl:otherwise>
                 </xsl:choose>
@@ -2244,7 +2244,17 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='backShininess' and .='0.2') or
                       (local-name()='separateBackColor' and .='false') or
                       (local-name()='backSpecularColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='backTransparency' and (.='0' or .='0.0'))))" />
+                      (local-name()='backTransparency' and (.='0' or .='0.0')))) and
+                      not(ends-with(local-name(..),'Material')	and
+                      ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      (local-name()='emissiveColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='occlusionStrength' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='roughness' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='transparency' and (string(.)='0' or string(.)='0.0'))))" />
         <xsl:variable name="notDefaultFieldValue4"
                       select="not( local-name(..)='MovieTexture' and
                       ((local-name()='loop' and .='false') or
@@ -2392,6 +2402,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       select="not( local-name(..)='MultiTexture' and
                       ((local-name()='alpha' and (.='1' or .='1.0')) or
                       (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')))) and
+                      not( contains(local-name(..),'Texture') and
+                      ((local-name() = 'mapping') and (string-length(.) = 0))) and
                       not( local-name(..)='TextureCoordinateGenerator' and
                       ((local-name()='mode' and .='SPHERE'))) and
                       not((local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D') and

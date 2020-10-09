@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
@@ -157,27 +155,28 @@ public class indexedfaceset_pixeltexture_whole
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../../license.html")))
   .setScene(new Scene()
     .addChild(new Viewpoint().setDescription("Front View"))
-    .addChild(new Viewpoint().setDescription("Rear View").setOrientation(0.0f,1.0f,0.0f,3.14f).setPosition(0.0f,0.0f,-10.0f))
-    .addChild(new Viewpoint().setDescription("Top View").setOrientation(1.0f,0.0f,0.0f,-1.57f).setPosition(0.0f,10.0f,0.0f))
-    .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(1.0f,0.0f,0.0f,1.57f).setPosition(0.0f,-10.0f,0.0f))
-    .addChild(new Viewpoint().setDescription("Right View").setOrientation(0.0f,1.0f,0.0f,1.57f).setPosition(10.0f,0.0f,0.0f))
-    .addChild(new Viewpoint().setDescription("Left View").setOrientation(0.0f,1.0f,0.0f,-1.57f).setPosition(-10.0f,0.0f,0.0f))
+    .addChild(new Viewpoint().setDescription("Rear View").setOrientation(0.0,1.0,0.0,3.14).setPosition(0.0,0.0,-10.0))
+    .addChild(new Viewpoint().setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.57).setPosition(0.0,10.0,0.0))
+    .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(1.0,0.0,0.0,1.57).setPosition(0.0,-10.0,0.0))
+    .addChild(new Viewpoint().setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(10.0,0.0,0.0))
+    .addChild(new Viewpoint().setDescription("Left View").setOrientation(0.0,1.0,0.0,-1.57).setPosition(-10.0,0.0,0.0))
     .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
     .addChild(new Shape()
       .setAppearance(new Appearance()
         .setMaterial(new Material())
         .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF})))
-      .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCreaseAngle(0.5f).setCoordIndex(new int[] {0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}).setTexCoordIndex(new int[] {0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1})
-        .setColor(new Color().setColor(new MFColor(new float[] {0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f,0.0f,1.0f,0.0f})))
-        .setCoord(new Coordinate().setPoint(new MFVec3f(new float[] {-2.0f,1.0f,1.0f,-2.0f,-1.0f,1.0f,2.0f,1.0f,1.0f,2.0f,-1.0f,1.0f,2.0f,1.0f,-1.0f,2.0f,-1.0f,-1.0f,-2.0f,1.0f,-1.0f,-2.0f,-1.0f,-1.0f})))
-        .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new float[] {0.0f,1.0f,0.0f,0.0f,1.0f,1.0f,1.0f,0.0f}))))));
+      .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCreaseAngle(0.5).setCoordIndex(new int[] {0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}).setTexCoordIndex(new int[] {0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1})
+        .setColor(new Color().setColor(new MFColor(new double[] {0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0})))
+        .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0})))
+        .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0,1.0,0.0,0.0,1.0,1.0,1.0,0.0}))))));
     }
 	// end of initialize() method
 
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -188,7 +187,8 @@ public class indexedfaceset_pixeltexture_whole
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -237,7 +237,9 @@ public class indexedfaceset_pixeltexture_whole
 		{
 			System.out.print("Java program \"indexedfaceset_pixeltexture_whole\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

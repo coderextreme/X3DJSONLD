@@ -84,6 +84,7 @@ __all__ = [</xsl:text>
     </xsl:text>
             <xsl:for-each select="//AbstractObjectTypes/AbstractObjectType">
                 <xsl:text>'</xsl:text>
+                <xsl:text>_</xsl:text><!-- _ prefix discourages programmer use of abstract types -->
                 <xsl:value-of select="@name"/>
                 <xsl:text>'</xsl:text>
                 <xsl:text>, </xsl:text>
@@ -95,6 +96,7 @@ __all__ = [</xsl:text>
     </xsl:text>
             <xsl:for-each select="//AbstractNodeTypes/AbstractNodeType">
                 <xsl:text>'</xsl:text>
+                <xsl:text>_</xsl:text><!-- _ prefix discourages programmer use of abstract types -->
                 <xsl:value-of select="@name"/>
                 <xsl:text>'</xsl:text>
                 <xsl:text>, </xsl:text>
@@ -2150,18 +2152,18 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <!-- special constant declarations -->
                 <xsl:text disable-output-escaping="yes"><![CDATA[
     XML_HEADER = '<?xml version="1.0" encoding="UTF-8"?>'
-    XML_DOCTYPE_X3D_3_0 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">'
-    XML_DOCTYPE_X3D_3_1 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "http://www.web3d.org/specifications/x3d-3.1.dtd">'
-    XML_DOCTYPE_X3D_3_2 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">'
-    XML_DOCTYPE_X3D_3_3 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">'
-    XML_DOCTYPE_X3D_4_0 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">'
-    XML_DOCTYPE_X3D_4_1 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "http://www.web3d.org/specifications/x3d-4.1.dtd">'
-    X3D_XML_SCHEMA_ATTRIBUTES_3_0 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_3_1 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.1.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_3_2 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.2.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_3_3 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_4_0 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_4_1 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.1.xsd'"
+    XML_DOCTYPE_X3D_3_0 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">'
+    XML_DOCTYPE_X3D_3_1 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "https://www.web3d.org/specifications/x3d-3.1.dtd">'
+    XML_DOCTYPE_X3D_3_2 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "https://www.web3d.org/specifications/x3d-3.2.dtd">'
+    XML_DOCTYPE_X3D_3_3 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">'
+    XML_DOCTYPE_X3D_4_0 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
+    XML_DOCTYPE_X3D_4_1 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">'
+    X3D_XML_SCHEMA_ATTRIBUTES_3_0 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_3_1 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_3_2 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_3_3 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_4_0 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_4_1 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'"
     VRML97_HEADER = '#VRML V2.0 utf8'
     CLASSIC_VRML_HEADER_PREFIX = '#VRML V' # followed by X3D version number
     CLASSIC_VRML_HEADER_SUFFIX = ' utf8'

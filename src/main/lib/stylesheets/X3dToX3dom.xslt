@@ -63,7 +63,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="x3dWidth"                 >800px</xsl:param>
     <!-- X3DOM parameters -->
     <xsl:param name="showStatistics"           >false</xsl:param>
-    <xsl:param name="showDebugLog"             >true</xsl:param>
+    <xsl:param name="showDebugLog"             >false</xsl:param>
     <xsl:param name="urlX3DOM"                 >https://x3dom.org/download/dev</xsl:param> <!-- no trailing / -->
     <!-- X_ITE parameters -->
     <xsl:param name="cache"                    >true</xsl:param>
@@ -237,7 +237,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <meta name="generator" content="https://www.web3d.org/x3d/stylesheets/X3dToX3dom.xslt" />
 
               <!--               Getting started with X3DOM: https://doc.x3dom.org/gettingStarted -->
-              <!--                     alternate stylesheet: https://doc.x3dom.org/x3dom/example/x3dom.css -->
+              <!--                     alternate stylesheet: https://www.x3dom.org/x3dom/example/x3dom.css -->
                 <xsl:text>&#10;</xsl:text>
                 
                 <!-- jQuery availability: https://developers.google.com/speed/libraries https://stackoverflow.com/questions/12608242/latest-jquery-version-on-googles-cdn -->
@@ -360,13 +360,13 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 > Hi Don,
 > for your converter stylesheet I really think that linking to the latest dev version is best.
 > Only if someone wants to provide an x3dom-based Web app, he/she should use a local copy.
-> So, here is the link to all x3dom dev builds: https://doc.x3dom.org/download/dev/
+> So, here is the link to all x3dom dev builds: https://www.x3dom.org/download/dev/
 > For the extended Profile (i.e., CAD, Geometry2D etc.) you should use the "x3dom-full.js",
 > otherwise you can use standard x3dom.js
 -->
-                    <xsl:comment> Numbered X3DOM release versions: https://doc.x3dom.org/download </xsl:comment>
+                    <xsl:comment> Numbered X3DOM release versions: https://www.x3dom.org/download </xsl:comment>
                     <xsl:text>&#10;</xsl:text>
-                    <xsl:comment> Developer X3DOM release version: https://doc.x3dom.org/download/dev </xsl:comment>
+                    <xsl:comment> Developer X3DOM release version: https://www.x3dom.org/download/dev </xsl:comment>
                     <xsl:text>&#10;</xsl:text>
                     <link rel="stylesheet" type="text/css" href="{$urlX3DOM}/x3dom.css" />
                     <xsl:text>&#10;</xsl:text>
@@ -630,16 +630,27 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                             <xsl:text>, </xsl:text>
                             <xsl:text>&#10;</xsl:text>
                             <xsl:variable name="checkedShowDebugLog">
-                                <xsl:if test="$showDebugLog">
+                                <xsl:if test="($showDebugLog = 'true')">
+                                    <!-- note not attribute=value form! -->
+                                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox -->
                                     <xsl:text>checked</xsl:text>
                                 </xsl:if>
                             </xsl:variable>
-                            <input id="checkBoxShowDebugLogs" type="checkbox" value="Display debugger logs" checked="{$checkedShowDebugLog}" onclick="toggleShowDebugLogs();"/>
+                            <!-- <input id="checkBoxShowDebugLogs" type="checkbox" value="Display debugger logs" onclick="toggleShowDebugLogs();"/>omitted 'check' and so off -->
+                            <xsl:element name="input">
+                                <xsl:attribute name="id"     ><xsl:text>checkBoxShowDebugLogs</xsl:text></xsl:attribute>
+                                <xsl:attribute name="type"   ><xsl:text>checkbox</xsl:text></xsl:attribute>
+                                <xsl:attribute name="value"  ><xsl:text>Display debugger logs</xsl:text></xsl:attribute>
+                                <xsl:attribute name="onclick"><xsl:text>toggleShowDebugLogs();</xsl:text></xsl:attribute>
+                                <xsl:if test="($showDebugLog = 'true')">
+                                    <xsl:attribute name="checked"><xsl:value-of select="$checkedShowDebugLog"/></xsl:attribute>
+                                </xsl:if>
+                            </xsl:element>
                             <span title="Show meta information and debug logs">
                                 <xsl:text>info &amp; logs</xsl:text>
                             </span>
 							<xsl:text>, </xsl:text>
-							<a href="https://doc.x3dom.org" onclick="target='_blank';">X3DOM Player</a>
+							<a href="https://www.x3dom.org" onclick="target='_blank';">X3DOM Player</a>
                             <xsl:text>)</xsl:text>
                         </td>
                     </tr>
@@ -981,7 +992,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
 									</xsl:element>
 									<br />
                                     <xsl:text>: for example use, see </xsl:text>
-                                    <a href="https://x3dom.org/x3dom/example/x3dom_text.html" onclick="target='x3dom';">X3DOM Text Example</a>
+                                    <a href="https://x3dom.org/x3dom/example/x3dom_text.html" onclick="target='x3dom';">X3DOM Text and FontStyle Example</a>
                                 </xsl:if>
                                 <xsl:text> </xsl:text>
                             </td>
@@ -991,8 +1002,8 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <xsl:text disable-output-escaping="yes"> &amp;nbsp;&amp;nbsp;&amp;nbsp; </xsl:text>
                                 <!-- anchor target attribute replaced as shown below -->
                                 <xsl:text>References: </xsl:text>
-                                <a href="https://doc.x3dom.org/check"                                   onclick="target='_blank';">X3DOM browser check</a>,
-                                <a href="https://doc.x3dom.org"                                         onclick="target='_blank';">X3DOM home</a>,
+                                <a href="https://www.x3dom.org/check"                                   onclick="target='_blank';">X3DOM browser check</a>,
+                                <a href="https://www.x3dom.org"                                         onclick="target='_blank';">X3DOM home</a>,
                                 <a href="https://doc.x3dom.org"                                         onclick="target='_blank';">X3DOM documentation</a>,
                                 <a href="https://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,
                                 and
@@ -1171,7 +1182,17 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       (local-name()='backShininess' and .='0.2') or
                       (local-name()='separateBackColor' and .='false') or
                       (local-name()='backSpecularColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='backTransparency' and (.='0' or .='0.0'))))" />
+                      (local-name()='backTransparency' and (.='0' or .='0.0')))) and
+                      not(ends-with(local-name(..),'Material')	and
+                      ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      (local-name()='emissiveColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='occlusionStrength' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='roughness' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='transparency' and (string(.)='0' or string(.)='0.0'))))" />
         <xsl:variable name="notDefaultFieldValue4"
                       select="not( local-name(..)='MovieTexture' and
                       ((local-name()='loop' and .='false') or
@@ -1319,6 +1340,8 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       select="not( local-name(..)='MultiTexture' and
                       ((local-name()='alpha' and (.='1' or .='1.0')) or
                       (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')))) and
+                      not( contains(local-name(..),'Texture') and
+                      ((local-name() = 'mapping') and (string-length(.) = 0))) and
                       not( local-name(..)='TextureCoordinateGenerator' and
                       ((local-name()='mode' and .='SPHERE'))) and
                       not((local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D') and

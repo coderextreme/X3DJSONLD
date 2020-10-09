@@ -454,7 +454,7 @@ Invocation:
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
       <xsl:attribute name="content">
-        <xsl:text>http://www.web3d.org/specifications/x3d-</xsl:text>
+        <xsl:text>https://www.web3d.org/specifications/x3d-</xsl:text>
         <xsl:value-of select="$schemaVersionNumber"/>
         <xsl:text>.xsd</xsl:text>
       </xsl:attribute>
@@ -1733,7 +1733,7 @@ Invocation:
     <xsl:element name="meta">
       <xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
       <xsl:attribute name="content">
-        <xsl:text>http://www.web3d.org/specifications/x3d-</xsl:text>
+        <xsl:text>https://www.web3d.org/specifications/x3d-</xsl:text>
         <xsl:value-of select="$schemaVersionNumber"/>
         <xsl:text>.xsd</xsl:text>
       </xsl:attribute>

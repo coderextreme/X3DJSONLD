@@ -53,7 +53,7 @@ b.error {color: #CC0000}]]>
 			<body>
 <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE X3D PUBLIC &quot;http://www.web3d.org/specifications/x3d-3.0.dtd&quot; &quot;/www.web3d.org/TaskGroups/x3d/content/x3d-3.0.dtd&quot;&gt;
+&lt;!DOCTYPE X3D PUBLIC &quot;https://www.web3d.org/specifications/x3d-3.0.dtd&quot; &quot;/www.web3d.org/TaskGroups/x3d/content/x3d-3.0.dtd&quot;&gt;
 </pre>
 				<xsl:apply-templates select="* | comment()" />
 

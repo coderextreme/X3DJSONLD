@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -173,132 +171,132 @@ public class BoxMan
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setInfo(new String[] {"(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"}).setTitle("BoxMan - A Seamless VRML Human"))
-    .addChild(new Background().setGroundColor(new MFColor(new float[] {0.6f,0.6f,0.6f})).setSkyColor(new MFColor(new float[] {0.75f,0.75f,0.75f})))
+    .addChild(new Background().setGroundColor(new MFColor(new double[] {0.6,0.6,0.6})).setSkyColor(new MFColor(new double[] {0.75,0.75,0.75})))
     .addComments(" H-Anim node prototypes are provided automatically by the X3dToVrml97.xsl translation stylesheet when converting to VRML97 (which didn't include H-Anim) ")
     .addChild(new HAnimHumanoid("HUMANOID").setName("Humanoid").setInfo(new String[] {"authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"}).setVersion("2.0")
-      .addSkeleton(new HAnimJoint("hanim_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0f,0.9723f,-0.0728f).setSkinCoordIndex(new int[] {0,1,2,3,4,5,6,7,8,9,10,11}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+      .addSkeleton(new HAnimJoint("hanim_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0,0.9723,-0.0728).setSkinCoordIndex(new int[] {0,1,2,3,4,5,6,7,8,9,10,11}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
         .addChild(new HAnimSegment("hanim_sacrum").setName("sacrum")
-          .addChild(new Transform().setTranslation(0.0f,0.9723f,-0.0728f)
+          .addChild(new Transform().setTranslation(0.0,0.9723,-0.0728)
             .addChild(new Shape("SphereYellow")
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(1.0f,1.0f,0.0f)))
-              .setGeometry(new Sphere().setRadius(0.02f)))))
-        .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(0.0956f,0.9364f,0.0f).setSkinCoordIndex(new int[] {12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f})
+                .setMaterial(new Material().setDiffuseColor(1.0,1.0,0.0)))
+              .setGeometry(new Sphere().setRadius(0.02)))))
+        .addChild(new HAnimJoint("hanim_l_hip").setName("l_hip").setCenter(0.0956,0.9364,0.0).setSkinCoordIndex(new int[] {12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5})
           .addChild(new HAnimSegment("hanim_l_thigh").setName("l_thigh")
             .addComments(" TODO reconcile z-coordinate mismatch using source anthropometry ")
-            .addChild(new Transform().setTranslation(0.0956f,0.9346f,0.0f)
+            .addChild(new Transform().setTranslation(0.0956,0.9346,0.0)
               .addChild(new Shape().setUSE("SphereYellow"))))
-          .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(0.0956f,0.5095f,-0.0036f).setSkinCoordIndex(new int[] {36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63}).setSkinCoordWeight(new float[] {0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+          .addChild(new HAnimJoint("hanim_l_knee").setName("l_knee").setCenter(0.0956,0.5095,-0.0036).setSkinCoordIndex(new int[] {36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63}).setSkinCoordWeight(new double[] {0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
             .addChild(new HAnimSegment("hanim_l_calf").setName("l_calf")
-              .addChild(new Transform().setTranslation(0.0956f,0.5095f,-0.0036f)
+              .addChild(new Transform().setTranslation(0.0956,0.5095,-0.0036)
                 .addChild(new Shape().setUSE("SphereYellow"))))
-            .addChild(new HAnimJoint("hanim_l_ankle").setName("l_ankle").setCenter(0.0946f,0.0762f,-0.0261f).setSkinCoordIndex(new int[] {64,65,66,67,68,69,70,71}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+            .addChild(new HAnimJoint("hanim_l_ankle").setName("l_ankle").setCenter(0.0946,0.0762,-0.0261).setSkinCoordIndex(new int[] {64,65,66,67,68,69,70,71}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
               .addChild(new HAnimSegment("hanim_l_hindfoot").setName("l_hindfoot")
-                .addChild(new Transform().setTranslation(0.0946f,0.0762f,-0.0261f)
+                .addChild(new Transform().setTranslation(0.0946,0.0762,-0.0261)
                   .addChild(new Shape().setUSE("SphereYellow"))))
-              .addChild(new HAnimJoint("hanim_l_midtarsal").setName("l_midtarsal").setCenter(0.1079f,0.0317f,0.0670f).setSkinCoordIndex(new int[] {72,73,74,75,76,77,78,79}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+              .addChild(new HAnimJoint("hanim_l_midtarsal").setName("l_midtarsal").setCenter(0.1079,0.0317,0.0670).setSkinCoordIndex(new int[] {72,73,74,75,76,77,78,79}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
                 .addChild(new HAnimSegment("hanim_l_middistal").setName("l_middistal")
-                  .addChild(new Transform().setTranslation(0.1079f,0.0317f,0.0670f)
+                  .addChild(new Transform().setTranslation(0.1079,0.0317,0.0670)
                     .addChild(new Shape().setUSE("SphereYellow")))
-                  .addChild(new HAnimSite("hanim_l_middle_distal_tip").setName("l_middle_distal_tip").setTranslation(.095f,.0005f,.1924f))
-                  .addChild(new Transform().setTranslation(0.095f,5.0E-4f,0.1924f)
+                  .addChild(new HAnimSite("hanim_l_middle_distal_tip").setName("l_middle_distal_tip").setTranslation(.095,.0005,.1924))
+                  .addChild(new Transform().setTranslation(0.095,5.0E-4,0.1924)
                     .addChild(new Shape("SphereRed")
                       .setAppearance(new Appearance()
-                        .setMaterial(new Material().setDiffuseColor(1.0f,0.0f,0.0f)))
-                      .setGeometry(new Sphere().setRadius(0.02f)))))))))
-        .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-0.0956f,0.9364f,0.0f).setSkinCoordIndex(new int[] {80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f})
+                        .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0)))
+                      .setGeometry(new Sphere().setRadius(0.02)))))))))
+        .addChild(new HAnimJoint("hanim_r_hip").setName("r_hip").setCenter(-0.0956,0.9364,0.0).setSkinCoordIndex(new int[] {80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5})
           .addChild(new HAnimSegment("hanim_r_thigh").setName("r_thigh")
             .addComments(" TODO reconcile z-coordinate mismatch using source anthropometry ")
-            .addChild(new Transform().setTranslation(-0.0956f,0.9346f,0.0f)
+            .addChild(new Transform().setTranslation(-0.0956,0.9346,0.0)
               .addChild(new Shape().setUSE("SphereYellow"))))
-          .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-0.0956f,0.5095f,-0.0036f).setSkinCoordIndex(new int[] {104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131}).setSkinCoordWeight(new float[] {0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+          .addChild(new HAnimJoint("hanim_r_knee").setName("r_knee").setCenter(-0.0956,0.5095,-0.0036).setSkinCoordIndex(new int[] {104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131}).setSkinCoordWeight(new double[] {0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
             .addChild(new HAnimSegment("hanim_r_calf").setName("r_calf")
-              .addChild(new Transform().setTranslation(-0.0956f,0.5095f,-0.0036f)
+              .addChild(new Transform().setTranslation(-0.0956,0.5095,-0.0036)
                 .addChild(new Shape().setUSE("SphereYellow"))))
-            .addChild(new HAnimJoint("hanim_r_ankle").setName("r_ankle").setCenter(-0.0946f,0.0762f,-0.0261f).setSkinCoordIndex(new int[] {132,133,134,135,136,137,138,139}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+            .addChild(new HAnimJoint("hanim_r_ankle").setName("r_ankle").setCenter(-0.0946,0.0762,-0.0261).setSkinCoordIndex(new int[] {132,133,134,135,136,137,138,139}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
               .addChild(new HAnimSegment("hanim_r_hindfoot").setName("r_hindfoot")
-                .addChild(new Transform().setTranslation(-0.0946f,0.0762f,-0.0261f)
+                .addChild(new Transform().setTranslation(-0.0946,0.0762,-0.0261)
                   .addChild(new Shape().setUSE("SphereYellow"))))
-              .addChild(new HAnimJoint("hanim_r_midtarsal").setName("r_midtarsal").setCenter(-0.1079f,0.0317f,0.0670f).setSkinCoordIndex(new int[] {140,141,142,143,144,145,146,147}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+              .addChild(new HAnimJoint("hanim_r_midtarsal").setName("r_midtarsal").setCenter(-0.1079,0.0317,0.0670).setSkinCoordIndex(new int[] {140,141,142,143,144,145,146,147}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
                 .addChild(new HAnimSegment("hanim_r_middistal").setName("r_middistal")
-                  .addChild(new Transform().setTranslation(-0.1079f,0.0317f,0.0670f)
+                  .addChild(new Transform().setTranslation(-0.1079,0.0317,0.0670)
                     .addChild(new Shape().setUSE("SphereYellow")))
-                  .addChild(new HAnimSite("hanim_r_middle_distal_tip").setName("r_middle_distal_tip").setTranslation(-.095f,.0005f,.1924f))
-                  .addChild(new Transform().setTranslation(-0.0950f,0.0005f,0.1924f)
+                  .addChild(new HAnimSite("hanim_r_middle_distal_tip").setName("r_middle_distal_tip").setTranslation(-.095,.0005,.1924))
+                  .addChild(new Transform().setTranslation(-0.0950,0.0005,0.1924)
                     .addChild(new Shape().setUSE("SphereRed"))))))))
-        .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0f,1.0817f,-0.0728f).setSkinCoordIndex(new int[] {148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+        .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0,1.0817,-0.0728).setSkinCoordIndex(new int[] {148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
           .addChild(new HAnimSegment("hanim_l5").setName("l5")
-            .addChild(new Transform().setTranslation(0.0f,1.0817f,-0.0728f)
+            .addChild(new Transform().setTranslation(0.0,1.0817,-0.0728)
               .addChild(new Shape().setUSE("SphereYellow"))))
-          .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0f,1.6440f,0.036f).setSkinCoordIndex(new int[] {168,169,170,171,172,173,174,175}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
-            .addDisplacers(new HAnimDisplacer("hanim_skullbase_displacer").setCoordIndex(new int[] {168}).setDisplacements(new MFVec3f(new float[] {0.0f,.031993f,0.0f})).setWeight(1.0f))
+          .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0,1.6440,0.036).setSkinCoordIndex(new int[] {168,169,170,171,172,173,174,175}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
+            .addDisplacers(new HAnimDisplacer("hanim_skullbase_displacer").setCoordIndex(new int[] {168}).setDisplacements(new MFVec3f(new double[] {0.0,.031993,0.0})).setWeight(1.0))
             .addChild(new HAnimSegment("hanim_skull").setName("skull")
               .addComments(" TODO reconcile z-coordinate mismatch using source anthropometry ")
-              .addChild(new Transform().setTranslation(0.0f,1.6440f,0.0036f)
+              .addChild(new Transform().setTranslation(0.0,1.6440,0.0036)
                 .addChild(new Shape().setUSE("SphereYellow")))
-              .addChild(new HAnimSite("hanim_skull_tip").setName("skull_tip").setTranslation(-0.0029f,1.7771f,0.0274f))
-              .addChild(new Transform().setTranslation(-0.0029f,1.7771f,0.0274f)
+              .addChild(new HAnimSite("hanim_skull_tip").setName("skull_tip").setTranslation(-0.0029,1.7771,0.0274))
+              .addChild(new Transform().setTranslation(-0.0029,1.7771,0.0274)
                 .addChild(new Shape().setUSE("SphereYellow")))))
-          .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(0.1968f,1.4642f,-0.0265f).setSkinCoordIndex(new int[] {176,177,178,179,180,181,182,183}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+          .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_shoulder").setCenter(0.1968,1.4642,-0.0265).setSkinCoordIndex(new int[] {176,177,178,179,180,181,182,183}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
             .addChild(new HAnimSegment("hanim_l_upperarm").setName("l_upperarm")
-              .addChild(new Transform().setTranslation(0.1968f,1.4642f,-0.0265f)
+              .addChild(new Transform().setTranslation(0.1968,1.4642,-0.0265)
                 .addChild(new Shape().setUSE("SphereYellow"))))
-            .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(0.1982f,1.1622f,-0.0557f).setSkinCoordIndex(new int[] {184,185,186,187,188,189,190,191}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+            .addChild(new HAnimJoint("hanim_l_elbow").setName("l_elbow").setCenter(0.1982,1.1622,-0.0557).setSkinCoordIndex(new int[] {184,185,186,187,188,189,190,191}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
               .addChild(new HAnimSegment("hanim_l_forearm").setName("l_forearm")
-                .addChild(new Transform().setTranslation(0.1982f,1.1622f,-0.0557f)
+                .addChild(new Transform().setTranslation(0.1982,1.1622,-0.0557)
                   .addChild(new Shape().setUSE("SphereYellow"))))
-              .addChild(new HAnimJoint("hanim_l_wrist").setName("l_wrist").setCenter(0.1972f,0.8929f,-0.0690f).setSkinCoordIndex(new int[] {192,193,194,195,196,197,198,199}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+              .addChild(new HAnimJoint("hanim_l_wrist").setName("l_wrist").setCenter(0.1972,0.8929,-0.0690).setSkinCoordIndex(new int[] {192,193,194,195,196,197,198,199}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
                 .addChild(new HAnimSegment("hanim_l_hand").setName("l_hand")
-                  .addChild(new Transform().setTranslation(0.1972f,0.8929f,-0.0690f)
+                  .addChild(new Transform().setTranslation(0.1972,0.8929,-0.0690)
                     .addChild(new Shape().setUSE("SphereYellow")))
-                  .addChild(new HAnimSite("hanim_l_hand_tip").setName("l_hand_tip").setTranslation(0.1912f,0.6976f,-0.0710f))
-                  .addChild(new Transform().setTranslation(0.1912f,0.6976f,-0.0710f)
+                  .addChild(new HAnimSite("hanim_l_hand_tip").setName("l_hand_tip").setTranslation(0.1912,0.6976,-0.0710))
+                  .addChild(new Transform().setTranslation(0.1912,0.6976,-0.0710)
                     .addChild(new Shape().setUSE("SphereRed")))))))
-          .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.1968f,1.4642f,-0.0265f).setSkinCoordIndex(new int[] {200,201,202,203,204,205,206,207}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+          .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_shoulder").setCenter(-0.1968,1.4642,-0.0265).setSkinCoordIndex(new int[] {200,201,202,203,204,205,206,207}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
             .addChild(new HAnimSegment("hanim_r_upperarm").setName("r_upperarm")
-              .addChild(new Transform().setTranslation(-0.1968f,1.4642f,-0.0265f)
+              .addChild(new Transform().setTranslation(-0.1968,1.4642,-0.0265)
                 .addChild(new Shape().setUSE("SphereYellow"))))
-            .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1982f,1.1622f,-0.0557f).setSkinCoordIndex(new int[] {208,209,210,211,212,213,214,215}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+            .addChild(new HAnimJoint("hanim_r_elbow").setName("r_elbow").setCenter(-0.1982,1.1622,-0.0557).setSkinCoordIndex(new int[] {208,209,210,211,212,213,214,215}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
               .addChild(new HAnimSegment("hanim_r_forearm").setName("r_forearm")
-                .addChild(new Transform().setTranslation(-0.1982f,1.1622f,-0.0557f)
+                .addChild(new Transform().setTranslation(-0.1982,1.1622,-0.0557)
                   .addChild(new Shape().setUSE("SphereYellow"))))
-              .addChild(new HAnimJoint("hanim_r_wrist").setName("r_wrist").setCenter(-0.1972f,0.8929f,-0.0690f).setSkinCoordIndex(new int[] {216,217,218,219,220,221,222,223}).setSkinCoordWeight(new float[] {1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f})
+              .addChild(new HAnimJoint("hanim_r_wrist").setName("r_wrist").setCenter(-0.1972,0.8929,-0.0690).setSkinCoordIndex(new int[] {216,217,218,219,220,221,222,223}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0})
                 .addChild(new HAnimSegment("hanim_r_hand").setName("r_hand")
-                  .addChild(new Transform().setTranslation(-0.1972f,0.8929f,-0.0690f)
+                  .addChild(new Transform().setTranslation(-0.1972,0.8929,-0.0690)
                     .addChild(new Shape().setUSE("SphereYellow")))
-                  .addChild(new HAnimSite("hanim_r_hand_tip").setName("r_hand_tip").setTranslation(-0.1912f,0.6976f,-0.0710f))
-                  .addChild(new Transform().setTranslation(-0.1912f,0.6976f,-0.0710f)
+                  .addChild(new HAnimSite("hanim_r_hand_tip").setName("r_hand_tip").setTranslation(-0.1912,0.6976,-0.0710))
+                  .addChild(new Transform().setTranslation(-0.1912,0.6976,-0.0710)
                     .addChild(new Shape().setUSE("SphereRed")))))))))
       .addComments(" # sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8) ")
       .setSkinCoord(new Coordinate("SKINCOORD").setPoint(getSKINCOORD_4_118_point()))
       .addSkin(new Group()
         .addChild(new Shape("TrouserSkin")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(0.0f,0.0f,1.0f).setTransparency(0.5f)))
+            .setMaterial(new Material().setDiffuseColor(0.0,0.0,1.0).setTransparency(0.5)))
           .addComments(" # 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40) ")
           .setGeometry(new IndexedFaceSet().setCoordIndex(getIndexedFaceSet_6_121_coordIndex())
             .setCoord(new Coordinate().setUSE("SKINCOORD"))))
         .addChild(new Shape("ShoeSkin")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(0.0f,0.0f,0.0f).setTransparency(0.5f)))
+            .setMaterial(new Material().setDiffuseColor(0.0,0.0,0.0).setTransparency(0.5)))
           .addComments(" # 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10) ")
           .setGeometry(new IndexedFaceSet().setCoordIndex(new int[] {60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1})
             .setCoord(new Coordinate().setUSE("SKINCOORD"))))
         .addChild(new Shape("ShirtSkin")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(1.0f,1.0f,0.0f).setTransparency(0.5f)))
+            .setMaterial(new Material().setDiffuseColor(1.0,1.0,0.0).setTransparency(0.5)))
           .addComments(" # 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8) ")
           .setGeometry(new IndexedFaceSet().setCoordIndex(getIndexedFaceSet_6_131_coordIndex())
             .setCoord(new Coordinate().setUSE("SKINCOORD"))))
         .addChild(new Shape("HeadHandsFleshToneSkin")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(1.0f,0.75f,0.75f).setTransparency(0.5f)))
+            .setMaterial(new Material().setDiffuseColor(1.0,0.75,0.75).setTransparency(0.5)))
           .addComments(" # 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10) ")
           .setGeometry(new IndexedFaceSet().setCoordIndex(new int[] {172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1})
             .setCoord(new Coordinate().setUSE("SKINCOORD"))))
         .addChild(new Shape("SkinLines")
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(0.0f,0.0f,0.0f)))
+            .setMaterial(new Material().setDiffuseColor(0.0,0.0,0.0)))
           .addComments(" Combined set of prior IFS coordIndex values ")
           .setGeometry(new IndexedLineSet().setCoordIndex(getIndexedLineSet_6_141_coordIndex())
             .setCoord(new Coordinate().setUSE("SKINCOORD")))))
@@ -345,11 +343,11 @@ public class BoxMan
       .addSegments(new HAnimSegment().setUSE("hanim_r_forearm"))
       .addSegments(new HAnimSegment().setUSE("hanim_r_hand"))
       .addComments(" top-level viewpoint references ")
-      .addViewpoints(new Viewpoint("Inclined_View").setDescription("Inclined View").setOrientation(0.0f,1.0f,0.0f,.78f).setPosition(2.0f,1.0f,2.0f))
-      .addViewpoints(new Viewpoint("Best_View").setDescription("Best View").setOrientation(0.0f,1.0f,0.0f,-1.57f).setPosition(-2.0f,.25f,0.0f))
-      .addViewpoints(new Viewpoint("Front_View").setDescription("Front View").setPosition(0.0f,1.0f,3.0f))
-      .addViewpoints(new Viewpoint("Side_View").setDescription("Side View").setOrientation(0.0f,1.0f,0.0f,1.57f).setPosition(3.0f,1.0f,0.0f))
-      .addViewpoints(new Viewpoint("Top_View").setDescription("Top View").setOrientation(1.0f,0.0f,0.0f,-1.57f).setPosition(0.0f,3.0f,0.0f)))
+      .addViewpoints(new Viewpoint("Inclined_View").setDescription("Inclined View").setOrientation(0.0,1.0,0.0,.78).setPosition(2.0,1.0,2.0))
+      .addViewpoints(new Viewpoint("Best_View").setDescription("Best View").setOrientation(0.0,1.0,0.0,-1.57).setPosition(-2.0,.25,0.0))
+      .addViewpoints(new Viewpoint("Front_View").setDescription("Front View").setPosition(0.0,1.0,3.0))
+      .addViewpoints(new Viewpoint("Side_View").setDescription("Side View").setOrientation(0.0,1.0,0.0,1.57).setPosition(3.0,1.0,0.0))
+      .addViewpoints(new Viewpoint("Top_View").setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.57).setPosition(0.0,3.0,0.0)))
     .addComments(new String[] {"ExternProtoDeclare name='LOA1_WalkAnimation' url='\"LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.wrl#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.wrl#LOA1WalkAnimation\" \"LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/LOA1_WalkAnimation.x3d#LOA1_WalkAnimation\" \"http://h-anim.org/Models/H-Anim2001/boxman/protos/LOA1WalkAnimation.x3d#LOA1WalkAnimation\"'>",
 "      <field accessType='inputOutput' name='cycleInterval' type='SFTime'/>",
 "      <field accessType='inputOutput' name='enabled' type='SFBool'/>",
@@ -396,97 +394,97 @@ public class BoxMan
 "<connect nodeField='isActive' protoField='isActive'/>",
 "</IS"}))
       .addComments(" ROUTE information for HUMANOIDROOT_POSITION_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new PositionInterpolator("HUMANOIDROOT_POSITION_ANIMATOR").setKey(new float[] {0.0f,0.04167f,0.125f,0.1667f,0.2083f,0.25f,0.2917f,0.375f,0.4583f,0.5f,0.5417f,0.5833f,0.625f,0.7083f,0.75f,0.7917f,0.875f,0.9167f,1.0f}).setKeyValue(new MFVec3f(new float[] {0.0f,-0.00928f,0.0f,0.0f,-0.003858f,0.0f,0.0f,-0.008847f,0.0f,0.0f,-0.01486f,0.0f,0.0f,-0.02641f,0.0f,0.0f,-0.03934f,0.0f,0.0f,-0.0502f,0.0f,0.0f,-0.07469f,0.0f,0.0f,-0.02732f,0.0f,0.0f,-0.01608f,0.0f,0.0f,-0.01129f,0.0f,0.0f,-0.005819f,0.0f,0.0f,-0.002004f,0.0f,0.0f,-0.002579f,0.0f,0.0f,-0.0143f,0.0f,0.0f,-0.03799f,0.0f,0.0f,-0.05648f,0.0f,0.0f,-0.045f,0.0f,0.0f,-0.00928f,0.0f}))
+      .addChild(new PositionInterpolator("HUMANOIDROOT_POSITION_ANIMATOR").setKey(new double[] {0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,-0.00928,0.0,0.0,-0.003858,0.0,0.0,-0.008847,0.0,0.0,-0.01486,0.0,0.0,-0.02641,0.0,0.0,-0.03934,0.0,0.0,-0.0502,0.0,0.0,-0.07469,0.0,0.0,-0.02732,0.0,0.0,-0.01608,0.0,0.0,-0.01129,0.0,0.0,-0.005819,0.0,0.0,-0.002004,0.0,0.0,-0.002579,0.0,0.0,-0.0143,0.0,0.0,-0.03799,0.0,0.0,-0.05648,0.0,0.0,-0.045,0.0,0.0,-0.00928,0.0}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='HumanoidRoot_translation_changed'/>",
 "</IS"}))
       .addComments(" ROUTE information for HUMANOIDROOT_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("HUMANOIDROOT_ANIMATOR").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFRotation(new float[] {0.0f,1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f}))
+      .addChild(new OrientationInterpolator("HUMANOIDROOT_ANIMATOR").setKey(new double[] {0.0,1.0}).setKeyValue(new MFRotation(new double[] {0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='HumanoidRoot_rotation_changed'/>",
 "</IS"}))
       .addComments(" ROUTE information for SACROILIAC_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("SACROILIAC_ANIMATOR").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {0.0f,0.0f,-1.0f,0.1056f,0.0f,0.0f,1.0f,0.09018f,0.0f,0.0f,-1.0f,0.1056f}))
+      .addChild(new OrientationInterpolator("SACROILIAC_ANIMATOR").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,-1.0,0.1056,0.0,0.0,1.0,0.09018,0.0,0.0,-1.0,0.1056}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='lower_body_rotation_changed'/>",
 "</IS"}))
       .addComments(" ROUTE information for L_HIP_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("L_HIP_ANIMATOR").setKey(new float[] {0.0f,0.25f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {-0.873f,0.06094f,0.484f,0.2865f,0.9963f,-0.01057f,0.08481f,0.2488f,0.9965f,0.01591f,-0.08222f,0.3836f,-0.7018f,-0.03223f,-0.7117f,0.1289f,-1.0f,0.0f,0.0f,0.5518f,-0.9964f,0.02231f,0.0817f,0.5351f,-0.9809f,0.04912f,0.1881f,0.5204f,-0.873f,0.06094f,0.484f,0.2865f}))
+      .addChild(new OrientationInterpolator("L_HIP_ANIMATOR").setKey(new double[] {0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='l_hip_rotation_changed'/>",
 "</IS"}))
       .addComments(" ROUTE information for L_KNEE_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("L_KNEE_ANIMATOR").setKey(new float[] {0.0f,0.2083f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {1.0f,0.0f,0.0f,0.3226f,1.0f,0.0f,0.0f,0.1556f,1.0f,0.0f,0.0f,0.08678f,1.0f,0.0f,0.0f,0.8751f,1.0f,0.0f,0.0f,1.131f,1.0f,0.0f,0.0f,0.09961f,1.0f,0.0f,0.0f,0.3942f,1.0f,0.0f,0.0f,0.3226f}))
+      .addChild(new OrientationInterpolator("L_KNEE_ANIMATOR").setKey(new double[] {0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='l_knee_rotation_changed'/>",
 "</IS"}))
       .addComments(" ROUTE information for L_ANKLE_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("L_ANKLE_ANIMATOR").setKey(new float[] {0.0f,0.125f,0.2083f,0.375f,0.6667f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {-1.0f,0.0f,0.0f,0.06714f,-1.0f,0.0f,0.0f,0.2152f,-1.0f,0.0f,0.0f,0.3184f,-1.0f,0.0f,0.0f,0.4717f,-1.0f,0.0f,0.0f,0.2912f,1.0f,0.0f,0.0f,0.1222f,-1.0f,0.0f,0.0f,0.06714f}))
+      .addChild(new OrientationInterpolator("L_ANKLE_ANIMATOR").setKey(new double[] {0.0,0.125,0.2083,0.375,0.6667,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {-1.0,0.0,0.0,0.06714,-1.0,0.0,0.0,0.2152,-1.0,0.0,0.0,0.3184,-1.0,0.0,0.0,0.4717,-1.0,0.0,0.0,0.2912,1.0,0.0,0.0,0.1222,-1.0,0.0,0.0,0.06714}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='l_ankle_rotation_changed'/>",
 "</IS"}))
       .addComments(" ROUTE information for L_MIDTARSAL_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("L_MIDTARSAL_ANIMATOR").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,-0.2f,1.0f,0.0f,0.0f,0.0f}))
+      .addChild(new OrientationInterpolator("L_MIDTARSAL_ANIMATOR").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {1.0,0.0,0.0,0.0,1.0,0.0,0.0,-0.2,1.0,0.0,0.0,0.0}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='l_midtarsal_rotation_changed'/>",
 "</IS"}))
       .addComments(" ROUTE information for R_HIP_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("R_HIP_ANIMATOR").setKey(new float[] {0.0f,0.125f,0.2083f,0.2917f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {-0.5831f,0.03511f,0.8116f,0.1481f,-0.995f,0.02296f,0.09674f,0.4683f,-1.0f,0.00192f,0.007964f,0.4732f,-0.998f,-0.0158f,-0.06102f,0.5079f,-0.9911f,-0.03541f,-0.1286f,0.5419f,-0.9131f,-0.06243f,-0.403f,0.3361f,-0.4306f,-0.07962f,-0.899f,0.07038f,1.0f,0.0f,0.0f,0.2571f,0.9891f,-0.02805f,0.1444f,0.3879f,-0.5831f,0.03511f,0.8116f,0.1481f}))
+      .addChild(new OrientationInterpolator("R_HIP_ANIMATOR").setKey(new double[] {0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='r_hip_rotation_changed'/>",
 "</IS"}))
       .addComments(" ROUTE information for R_KNEE_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("R_KNEE_ANIMATOR").setKey(new float[] {0.0f,0.125f,0.2083f,0.2917f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {1f,0f,0f,0.8573f,1f,0f,0f,0.8926f,1f,0f,0f,0.5351f,1f,0f,0f,0.1756f,1f,0f,0f,0.1194f,1f,0f,0f,0.3153f,1f,-1.176e-08f,-4.971e-09f,0.09354f,1.0f,0.0f,0.0f,0.08558f,1.0f,0.0f,0.0f,0.2475f,1.0f,0.0f,0.0f,0.8573f}))
+      .addChild(new OrientationInterpolator("R_KNEE_ANIMATOR").setKey(new double[] {0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,-1.176e-08,-4.971e-09,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='r_knee_rotation_changed'/>",
 "<IS"}))
       .addComments(" ROUTE information for R_ANKLE_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("R_ANKLE_ANIMATOR").setKey(new float[] {0.0f,0.125f,0.2083f,0.375f,0.4583f,0.5f,0.6667f,0.75f,0.7917f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.3533f,-1f,0f,0f,0.1072f,1f,0f,0f,0.2612f,1f,-1.641e-07f,1.827e-08f,0.1268f,-1.0f,0.0f,0.0f,0.01793f,-1.0f,0.0f,0.0f,0.05824f,-1.0f,0.0f,0.0f,0.2398f,-1.0f,0.0f,0.0f,0.35f,-1.0f,0.0f,0.0f,0.3322f,0.0f,0.0f,1.0f,0.0f}))
+      .addChild(new OrientationInterpolator("R_ANKLE_ANIMATOR").setKey(new double[] {0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,-1.641e-07,1.827e-08,0.1268,-1.0,0.0,0.0,0.01793,-1.0,0.0,0.0,0.05824,-1.0,0.0,0.0,0.2398,-1.0,0.0,0.0,0.35,-1.0,0.0,0.0,0.3322,0.0,0.0,1.0,0.0}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='r_ankle_rotation_changed'/>",
 "<IS"}))
       .addComments(" ROUTE information for R_MIDTARSAL_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("R_MIDTARSAL_ANIMATOR").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {1.0f,0.0f,0.0f,-0.2f,1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,0.0f,-0.2f}))
+      .addChild(new OrientationInterpolator("R_MIDTARSAL_ANIMATOR").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {1.0,0.0,0.0,-0.2,1.0,0.0,0.0,0.0,1.0,0.0,0.0,-0.2}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='r_midtarsal_rotation_changed'/>",
 "<IS"}))
       .addComments(" ROUTE information for VL5_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("VL5_ANIMATOR").setKey(new float[] {0.0f,0.2083f,0.375f,0.75f,0.8333f,1.0f}).setKeyValue(new MFRotation(new float[] {0.0f,1.0f,0.0f,0.0826f,-0.01972f,-0.5974f,0.8017f,0.08231f,0.009296f,-0.9648f,0.2627f,0.1734f,-0.01238f,0.9549f,-0.2968f,0.08732f,-0.008125f,0.9691f,-0.2463f,0.158f,0.0f,1.0f,0.0f,0.0826f}))
+      .addChild(new OrientationInterpolator("VL5_ANIMATOR").setKey(new double[] {0.0,0.2083,0.375,0.75,0.8333,1.0}).setKeyValue(new MFRotation(new double[] {0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='vl5_rotation_changed'/>",
 "<IS"}))
       .addComments(" ROUTE information for SKULLBASE_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("SKULLBASE_ANIMATOR").setKey(new float[] {0.0f,0.375f,0.4167f,0.5f,0.5833f,0.6667f,0.75f,0.8333f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {0.0f,-1.0f,0.0f,0.08642f,0.0f,1.0f,0.0f,0.1825f,0.0f,1.0f,0.0f,0.1505f,0.0f,1.0f,0.0f,0.1053f,0.0f,1.0f,0.0f,0.04391f,0.0f,-1.0f,0.0f,0.03119f,0.0f,-1.0f,0.0f,0.07936f,0.0f,-1.0f,0.0f,0.1616f,0.0f,-1.0f,0.0f,0.155f,0.0f,-1.0f,0.0f,0.08642f}))
+      .addChild(new OrientationInterpolator("SKULLBASE_ANIMATOR").setKey(new double[] {0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='skullbase_rotation_changed'/>",
 "<IS"}))
       .addComments(" ROUTE information for L_SHOULDER_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("L_SHOULDER_ANIMATOR").setKey(new float[] {0.0f,0.375f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {1f,0f,0f,0.1189f,-1f,-5.928e-07f,1.525e-07f,0.1861f,1f,-2.038e-07f,-1.257e-07f,0.3357f,1.0f,0.0f,0.0f,0.1189f}))
+      .addChild(new OrientationInterpolator("L_SHOULDER_ANIMATOR").setKey(new double[] {0.0,0.375,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {1,0,0,0.1189,-1,-5.928e-07,1.525e-07,0.1861,1,-2.038e-07,-1.257e-07,0.3357,1.0,0.0,0.0,0.1189}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='l_shoulder_rotation_changed'/>",
 "<IS"}))
       .addComments(" ROUTE information for L_ELBOW_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("L_ELBOW_ANIMATOR").setKey(new float[] {0.0f,0.375f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {-1f,-1.58298e-07f,8.15967e-08f,0.0659878f,-1f,-3.28826e-08f,-2.31665e-08f,0.488383f,-1f,3.06462e-06f,-3.11947e-06f,0.0177536f,-1f,-1.58298e-07f,8.15967e-08f,0.0659878f}))
+      .addChild(new OrientationInterpolator("L_ELBOW_ANIMATOR").setKey(new double[] {0.0,0.375,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {-1,-1.58298e-07,8.15967e-08,0.0659878,-1,-3.28826e-08,-2.31665e-08,0.488383,-1,3.06462e-06,-3.11947e-06,0.0177536,-1,-1.58298e-07,8.15967e-08,0.0659878}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='l_elbow_rotation_changed'/>",
 "<IS"}))
       .addComments(" ROUTE information for L_WRIST_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("L_WRIST_ANIMATOR").setKey(new float[] {0.0f,0.375f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {1.51276e-06f,-1f,1.7724e-06f,0.461076f,-0.330195f,-0.927451f,0.175516f,0.538852f,0.0327774f,-0.999314f,-0.0172185f,0.492033f,1.51276e-06f,-1f,1.7724e-06f,0.461076f}))
+      .addChild(new OrientationInterpolator("L_WRIST_ANIMATOR").setKey(new double[] {0.0,0.375,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {1.51276e-06,-1,1.7724e-06,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,1.51276e-06,-1,1.7724e-06,0.461076}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='l_wrist_rotation_changed'/>",
 "<IS"}))
       .addComments(" ROUTE information for R_SHOULDER_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("R_SHOULDER_ANIMATOR").setKey(new float[] {0.0f,0.375f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {-1f,-7.689e-07f,-1.48e-07f,0.09346f,1f,5.004e-08f,2.254e-08f,0.3197f,-1f,-1.104e-07f,5.267e-10f,0.1564f,-1f,-7.689e-07f,-1.48e-07f,0.09346f}))
+      .addChild(new OrientationInterpolator("R_SHOULDER_ANIMATOR").setKey(new double[] {0.0,0.375,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {-1,-7.689e-07,-1.48e-07,0.09346,1,5.004e-08,2.254e-08,0.3197,-1,-1.104e-07,5.267e-10,0.1564,-1,-7.689e-07,-1.48e-07,0.09346}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='r_shoulder_rotation_changed'/>",
 "<IS"}))
       .addComments(" ROUTE information for R_ELBOW_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("R_ELBOW_ANIMATOR").setKey(new float[] {0.0f,0.375f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {-1f,-4.45619e-08f,2.70318e-08f,0.411508f,-1f,8.16742e-07f,-1.09556e-07f,0.0925011f,-1f,-2.47628e-08f,-7.02862e-09f,0.572568f,-1f,-4.45619e-08f,2.70318e-08f,0.411508f}))
+      .addChild(new OrientationInterpolator("R_ELBOW_ANIMATOR").setKey(new double[] {0.0,0.375,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {-1,-4.45619e-08,2.70318e-08,0.411508,-1,8.16742e-07,-1.09556e-07,0.0925011,-1,-2.47628e-08,-7.02862e-09,0.572568,-1,-4.45619e-08,2.70318e-08,0.411508}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='r_elbow_rotation_changed'/>",
 "<IS"}))
       .addComments(" ROUTE information for R_WRIST_ANIMATOR node:  [from TIMER.fraction_changed to set_fraction ] ")
-      .addChild(new OrientationInterpolator("R_WRIST_ANIMATOR").setKey(new float[] {0.0f,0.375f,0.9167f,1.0f}).setKeyValue(new MFRotation(new float[] {-0.8129f,0.4759f,-0.3357f,0.1346f,0.1533f,-0.9878f,0.02582f,0.3902f,-0.5701f,0.7604f,-0.311f,0.366f,-0.8129f,0.4759f,-0.3357f,0.1346f}))
+      .addChild(new OrientationInterpolator("R_WRIST_ANIMATOR").setKey(new double[] {0.0,0.375,0.9167,1.0}).setKeyValue(new MFRotation(new double[] {-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346}))
         .addComments(new String[] {"IS>",
 "<connect nodeField='value_changed' protoField='r_wrist_rotation_changed'/>",
 "<IS"})))
@@ -532,20 +530,20 @@ public class BoxMan
     }
 	// end of initialize() method
 
-		/** Define subarrays using type float[] */
-		private float[] getSKINCOORD_4_118_point_1()
+		/** Define subarrays using type double[] */
+		private double[] getSKINCOORD_4_118_point_1()
 		{
-			float[] value = {-.05f,1.0f,.05f,.05f,1.0f,.05f,.03f,.97f,-.1f,-.03f,.97f,-.1f,.03f,.94f,-.075f,-.03f,.94f,-.075f,0.0f,.92f,0.0f,0.0f,.94f,.03f,-0.12f,1.06f,.05f,0.12f,1.06f,.05f,0.12f,1.06f,-.1f,-0.12f,1.06f,-.1f,.0456f,.9364f,.05f,.1456f,.9364f,.05f,.1456f,.9364f,-.05f,.0456f,.9364f,-.05f,.0456f,.9f,.05f,.1456f,.9f,.05f,.1456f,.9f,-.05f,.0456f,.9f,-.05f,.0456f,.8f,.05f,.1456f,.8f,.05f,.1456f,.8f,-.05f,.0456f,.8f,-.05f,.0456f,.7f,.05f,.1456f,.7f,.05f,.1456f,.7f,-.05f,.0456f,.7f,-.05f,.0456f,.6f,.05f,.1456f,.6f,.05f,.1456f,.6f,-.05f,.0456f,.6f,-.05f,.0456f,.55f,.05f,.1456f,.55f,.05f,.1456f,.55f,-.05f,.0456f,.55f,-.05f,.0456f,.52f,.05f,.1456f,.52f,.05f,.1456f,.52f,-.05f,.0456f,.52f,-.05f,.0456f,.5f,.05f,.1456f,.5f,.05f,.1456f,.5f,-.05f,.0456f,.5f,-.05f,.0454f,.43f,.045f,.1454f,.43f,.045f,.1454f,.43f,-.055f,.0454f,.43f,-.055f,.0452f,.36f,.04f,.1452f,.36f,.04f,.1452f,.36f,-.06f,.0452f,.36f,-.06f,.045f,.29f,.035f,.145f,.29f,.035f,.145f,.29f,-.065f,.045f,.29f,-.065f,.0448f,.21f,.03f,.1448f,.21f,.03f,.1448f,.21f,-.07f,.0448f,.21f,-.07f,.0446f,.1262f,.025f,.1446f,.1262f,.025f,.1446f,.1262f,-.075f,.0446f,.1262f,-.075f,.0446f,.0762f,.025f,.1446f,.0762f,.025f,.1446f,0.0f,-.075f,.0446f,0.0f,-.075f,.0446f,.0562f,.057f,.1446f,.0562f,.057f,.1446f,0.0f,.057f,.0446f,0.0f,.057f,.0446f,.0562f,.087f,.1446f,.0562f,.087f,.1446f,0.0f,.087f,.0446f,0.0f,.087f,.0446f,.0562f,.1924f,.1446f,.0562f,.1924f,.1446f,0.0f,.1924f,.0446f,0.0f,.1924f,-.0456f,.9364f,.05f,-.1456f,.9364f,.05f,-.1456f,.9364f,-.05f,-.0456f,.9364f,-.05f,-.0456f,.9f,.05f,-.1456f,.9f,.05f,-.1456f,.9f,-.05f,-.0456f,.9f,-.05f,-.0456f,.8f,.05f,-.1456f,.8f,.05f,-.1456f,.8f,-.05f,-.0456f,.8f,-.05f,-.0456f,.7f,.05f,-.1456f,.7f,.05f,-.1456f,.7f,-.05f,-.0456f,.7f,-.05f,-.0456f,.6f,.05f,-.1456f,.6f,.05f,-.1456f,.6f,-.05f,-.0456f,.6f,-.05f};
+			double[] value = {-.05,1.0,.05,.05,1.0,.05,.03,.97,-.1,-.03,.97,-.1,.03,.94,-.075,-.03,.94,-.075,0.0,.92,0.0,0.0,.94,.03,-0.12,1.06,.05,0.12,1.06,.05,0.12,1.06,-.1,-0.12,1.06,-.1,.0456,.9364,.05,.1456,.9364,.05,.1456,.9364,-.05,.0456,.9364,-.05,.0456,.9,.05,.1456,.9,.05,.1456,.9,-.05,.0456,.9,-.05,.0456,.8,.05,.1456,.8,.05,.1456,.8,-.05,.0456,.8,-.05,.0456,.7,.05,.1456,.7,.05,.1456,.7,-.05,.0456,.7,-.05,.0456,.6,.05,.1456,.6,.05,.1456,.6,-.05,.0456,.6,-.05,.0456,.55,.05,.1456,.55,.05,.1456,.55,-.05,.0456,.55,-.05,.0456,.52,.05,.1456,.52,.05,.1456,.52,-.05,.0456,.52,-.05,.0456,.5,.05,.1456,.5,.05,.1456,.5,-.05,.0456,.5,-.05,.0454,.43,.045,.1454,.43,.045,.1454,.43,-.055,.0454,.43,-.055,.0452,.36,.04,.1452,.36,.04,.1452,.36,-.06,.0452,.36,-.06,.045,.29,.035,.145,.29,.035,.145,.29,-.065,.045,.29,-.065,.0448,.21,.03,.1448,.21,.03,.1448,.21,-.07,.0448,.21,-.07,.0446,.1262,.025,.1446,.1262,.025,.1446,.1262,-.075,.0446,.1262,-.075,.0446,.0762,.025,.1446,.0762,.025,.1446,0.0,-.075,.0446,0.0,-.075,.0446,.0562,.057,.1446,.0562,.057,.1446,0.0,.057,.0446,0.0,.057,.0446,.0562,.087,.1446,.0562,.087,.1446,0.0,.087,.0446,0.0,.087,.0446,.0562,.1924,.1446,.0562,.1924,.1446,0.0,.1924,.0446,0.0,.1924,-.0456,.9364,.05,-.1456,.9364,.05,-.1456,.9364,-.05,-.0456,.9364,-.05,-.0456,.9,.05,-.1456,.9,.05,-.1456,.9,-.05,-.0456,.9,-.05,-.0456,.8,.05,-.1456,.8,.05,-.1456,.8,-.05,-.0456,.8,-.05,-.0456,.7,.05,-.1456,.7,.05,-.1456,.7,-.05,-.0456,.7,-.05,-.0456,.6,.05,-.1456,.6,.05,-.1456,.6,-.05,-.0456,.6,-.05};
 			return value;
 		}
-		private float[] getSKINCOORD_4_118_point_2()
+		private double[] getSKINCOORD_4_118_point_2()
 		{
-			float[] value = {-.0456f,.55f,.05f,-.1456f,.55f,.05f,-.1456f,.55f,-.05f,-.0456f,.55f,-.05f,-.0456f,.52f,.05f,-.1456f,.52f,.05f,-.1456f,.52f,-.05f,-.0456f,.52f,-.05f,-.0456f,.5f,.05f,-.1456f,.5f,.05f,-.1456f,.5f,-.05f,-.0456f,.5f,-.05f,-.0454f,.43f,.045f,-.1454f,.43f,.045f,-.1454f,.43f,-.055f,-.0454f,.43f,-.055f,-.0452f,.36f,.04f,-.1452f,.36f,.04f,-.1452f,.36f,-.06f,-.0452f,.36f,-.06f,-.045f,.29f,.035f,-.145f,.29f,.035f,-.145f,.29f,-.065f,-.045f,.29f,-.065f,-.0448f,.21f,.03f,-.1448f,.21f,.03f,-.1448f,.21f,-.07f,-.0448f,.21f,-.07f,-.0446f,.1262f,.025f,-.1446f,.1262f,.025f,-.1446f,.1262f,-.075f,-.0446f,.1262f,-.075f,-.0446f,.0762f,.025f,-.1446f,.0762f,.025f,-.1446f,0.0f,-.075f,-.0446f,0.0f,-.075f,-.0446f,.0562f,.057f,-.1446f,.0562f,.057f,-.1446f,0.0f,.057f,-.0446f,0.0f,.057f,-.0446f,.0562f,.087f,-.1446f,.0562f,.087f,-.1446f,0.0f,.087f,-.0446f,0.0f,.087f,-.0446f,.0562f,.1924f,-.1446f,.0562f,.1924f,-.1446f,0.0f,.1924f,-.0446f,0.0f,.1924f,-0.12f,1.10f,.05f,0.12f,1.10f,.05f,0.12f,1.10f,-.1f,-0.12f,1.10f,-.1f,-.14f,1.42f,0.045f,.14f,1.42f,0.045f,.14f,1.42f,-0.09f,-.14f,1.42f,-0.09f,-.24f,1.52f,0.035f,.24f,1.52f,0.035f,.24f,1.52f,-0.09f,-.24f,1.52f,-0.09f,-.05f,1.56f,0.030f,.05f,1.56f,0.030f,.05f,1.56f,-0.06f,-.05f,1.56f,-0.06f,-.05f,1.60f,0.060f,.05f,1.60f,0.060f,.05f,1.62f,-0.03f,-.05f,1.62f,-0.03f,-0.07f,1.777f,0.13f,0.07f,1.777f,0.13f,0.07f,1.777f,-0.03f,-0.07f,1.777f,-0.03f,-0.07f,1.60f,0.13f,0.07f,1.60f,0.13f,0.07f,1.66f,-0.03f,-0.07f,1.66f,-0.03f,.16f,1.42f,0.015f,.24f,1.5f,0.015f,.24f,1.5f,-0.075f,.16f,1.42f,-0.075f,.17f,1.18f,-0.025f,.23f,1.18f,-0.025f,.23f,1.18f,-0.085f,.17f,1.18f,-0.085f,.17f,1.14f,-0.025f,.23f,1.14f,-0.025f,.23f,1.14f,-0.085f,.17f,1.14f,-0.085f,.18f,.91f,-0.05f,.22f,.91f,-0.05f,.22f,.91f,-0.09f,.18f,.91f,-0.09f,.18f,.87f,-0.02f,.22f,.87f,-0.02f,.22f,.87f,-0.1f,.18f,.87f,-0.1f,.18f,.6976f,-0.02f,.22f,.6976f,-0.02f,.22f,.6976f,-0.1f,.18f,.6976f,-0.1f};
+			double[] value = {-.0456,.55,.05,-.1456,.55,.05,-.1456,.55,-.05,-.0456,.55,-.05,-.0456,.52,.05,-.1456,.52,.05,-.1456,.52,-.05,-.0456,.52,-.05,-.0456,.5,.05,-.1456,.5,.05,-.1456,.5,-.05,-.0456,.5,-.05,-.0454,.43,.045,-.1454,.43,.045,-.1454,.43,-.055,-.0454,.43,-.055,-.0452,.36,.04,-.1452,.36,.04,-.1452,.36,-.06,-.0452,.36,-.06,-.045,.29,.035,-.145,.29,.035,-.145,.29,-.065,-.045,.29,-.065,-.0448,.21,.03,-.1448,.21,.03,-.1448,.21,-.07,-.0448,.21,-.07,-.0446,.1262,.025,-.1446,.1262,.025,-.1446,.1262,-.075,-.0446,.1262,-.075,-.0446,.0762,.025,-.1446,.0762,.025,-.1446,0.0,-.075,-.0446,0.0,-.075,-.0446,.0562,.057,-.1446,.0562,.057,-.1446,0.0,.057,-.0446,0.0,.057,-.0446,.0562,.087,-.1446,.0562,.087,-.1446,0.0,.087,-.0446,0.0,.087,-.0446,.0562,.1924,-.1446,.0562,.1924,-.1446,0.0,.1924,-.0446,0.0,.1924,-0.12,1.10,.05,0.12,1.10,.05,0.12,1.10,-.1,-0.12,1.10,-.1,-.14,1.42,0.045,.14,1.42,0.045,.14,1.42,-0.09,-.14,1.42,-0.09,-.24,1.52,0.035,.24,1.52,0.035,.24,1.52,-0.09,-.24,1.52,-0.09,-.05,1.56,0.030,.05,1.56,0.030,.05,1.56,-0.06,-.05,1.56,-0.06,-.05,1.60,0.060,.05,1.60,0.060,.05,1.62,-0.03,-.05,1.62,-0.03,-0.07,1.777,0.13,0.07,1.777,0.13,0.07,1.777,-0.03,-0.07,1.777,-0.03,-0.07,1.60,0.13,0.07,1.60,0.13,0.07,1.66,-0.03,-0.07,1.66,-0.03,.16,1.42,0.015,.24,1.5,0.015,.24,1.5,-0.075,.16,1.42,-0.075,.17,1.18,-0.025,.23,1.18,-0.025,.23,1.18,-0.085,.17,1.18,-0.085,.17,1.14,-0.025,.23,1.14,-0.025,.23,1.14,-0.085,.17,1.14,-0.085,.18,.91,-0.05,.22,.91,-0.05,.22,.91,-0.09,.18,.91,-0.09,.18,.87,-0.02,.22,.87,-0.02,.22,.87,-0.1,.18,.87,-0.1,.18,.6976,-0.02,.22,.6976,-0.02,.22,.6976,-0.1,.18,.6976,-0.1};
 			return value;
 		}
-		private float[] getSKINCOORD_4_118_point_3()
+		private double[] getSKINCOORD_4_118_point_3()
 		{
-			float[] value = {-.16f,1.42f,0.015f,-.24f,1.5f,0.015f,-.24f,1.5f,-0.075f,-.16f,1.42f,-0.075f,-.17f,1.18f,-0.025f,-.23f,1.18f,-0.025f,-.23f,1.18f,-0.085f,-.17f,1.18f,-0.085f,-.17f,1.14f,-0.025f,-.23f,1.14f,-0.025f,-.23f,1.14f,-0.085f,-.17f,1.14f,-0.085f,-.18f,.91f,-0.05f,-.22f,.91f,-0.05f,-.22f,.91f,-0.09f,-.18f,.91f,-0.09f,-.18f,.87f,-0.02f,-.22f,.87f,-0.02f,-.22f,.87f,-0.1f,-.18f,.87f,-0.1f,-.18f,.6976f,-0.02f,-.22f,.6976f,-0.02f,-.22f,.6976f,-0.1f,-.18f,.6976f,-0.1f};
+			double[] value = {-.16,1.42,0.015,-.24,1.5,0.015,-.24,1.5,-0.075,-.16,1.42,-0.075,-.17,1.18,-0.025,-.23,1.18,-0.025,-.23,1.18,-0.085,-.17,1.18,-0.085,-.17,1.14,-0.025,-.23,1.14,-0.025,-.23,1.14,-0.085,-.17,1.14,-0.085,-.18,.91,-0.05,-.22,.91,-0.05,-.22,.91,-0.09,-.18,.91,-0.09,-.18,.87,-0.02,-.22,.87,-0.02,-.22,.87,-0.1,-.18,.87,-0.1,-.18,.6976,-0.02,-.22,.6976,-0.02,-.22,.6976,-0.1,-.18,.6976,-0.1};
 			return value;
 		}
 
@@ -637,7 +635,8 @@ public class BoxMan
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -648,7 +647,8 @@ public class BoxMan
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -697,7 +697,9 @@ public class BoxMan
 		{
 			System.out.print("Java program \"BoxMan\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

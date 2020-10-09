@@ -355,7 +355,9 @@ POSSIBILITY OF SUCH DAMAGE.
 			System.out.print("Java program \"]]></xsl:text><xsl:value-of select="$newClassName"/>
 			<xsl:text disable-output-escaping="yes"><![CDATA[\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }
@@ -967,7 +969,12 @@ POSSIBILITY OF SUCH DAMAGE.
 				</xsl:message>
 			</xsl:if>
 		</xsl:if>
-		
+        <xsl:if test="(local-name() = 'ProtoInstance')">
+            <!-- TODO confirm containerField correctly handled -->
+            <xsl:text>.setContainerField("</xsl:text>
+            <xsl:value-of select="@containerField"/>
+            <xsl:text>")</xsl:text>            
+        </xsl:if>
 		<!-- handle attribute(s) if any -->
 		<xsl:call-template name="process-attributes-in-order">
 			<xsl:with-param name="indent"><xsl:value-of select="$indent"/></xsl:with-param>
@@ -1714,7 +1721,17 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='backShininess' and string(.)='0.2') or
                       (local-name()='separateBackColor' and string(.)='false') or
                       (local-name()='backSpecularColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                      (local-name()='backTransparency' and (string(.)='0' or string(.)='0.0'))))" />
+                      (local-name()='backTransparency' and (string(.)='0' or string(.)='0.0')))) and
+                      not(ends-with(local-name(..),'Material')	and
+                      ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      (local-name()='emissiveColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
+                      (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='occlusionStrength' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='roughness' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
+                      (local-name()='transparency' and (string(.)='0' or string(.)='0.0'))))" />
         <xsl:variable name="notDefaultFieldValue4"
                       select="not( local-name(..)='MovieTexture' and
                       ((local-name()='loop' and string(.)='false') or
@@ -1862,6 +1879,10 @@ POSSIBILITY OF SUCH DAMAGE.
                       select="not( local-name(..)='MultiTexture' and
                       ((local-name()='alpha' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='color' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')))) and
+                      not( contains(local-name(..),'Texture') and
+                      ((local-name() = 'mapping') and (string-length(.) = 0))) and
+                      not( contains(local-name(..),'Texture') and
+                      ((local-name() = 'mapping') and (string-length(.) = 0))) and
                       not( local-name(..)='TextureCoordinateGenerator' and
                       ((local-name()='mode' and string(.)='SPHERE'))) and
                       not((local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D') and

@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
@@ -119,35 +117,35 @@ public class X3dHeaderPrototypeSyntaxExamples
     .addChild(new ProtoDeclare("NewWorldInfoNode").setName("NewWorldInfoNode")
       .setProtoBody(new ProtoBody()
         .addChild(new WorldInfo("ExamplePrototypeBody"))))
-    .addChild(new ProtoInstance("NewWorldInfoNode"))
+    .addChild(new ProtoInstance("NewWorldInfoNode").setContainerField("children"))
     .addChild(new ProtoDeclare("EmissiveMaterial").setName("EmissiveMaterial")
       .setProtoInterface(new ProtoInterface()
-        .addField(new field().setName("onlyColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(1.0f,0.0f,0.0f))))
+        .addField(new field().setName("onlyColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(1.0,0.0,0.0))))
       .setProtoBody(new ProtoBody()
         .addComments(" Override default diffuseColor value 0.8 0.8 0.8 ")
-        .addChild(new Material().setDiffuseColor(0.0f,0.0f,0.0f)
+        .addChild(new Material().setDiffuseColor(0.0,0.0,0.0)
           .addComments(" Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. ")
           .setIS(new IS()
             .addConnect(new connect().setNodeField("emissiveColor").setProtoField("onlyColor"))))))
     .addChild(new ProtoDeclare("ShiftGroupUp2m").setName("ShiftGroupUp2m")
       .setProtoInterface(new ProtoInterface()
         .addField(new field().setName("children").setType(field.TYPE_MFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-          .addChild(new Group("DefaultNodeValue").setBboxSize(2.0f,2.0f,2.0f)
+          .addChild(new Group("DefaultNodeValue").setBboxSize(2.0,2.0,2.0)
             .addComments(" Authors need to override this node when creating the ProtoInstance fieldValue name=\"children\" "))))
       .setProtoBody(new ProtoBody()
-        .addChild(new Transform().setTranslation(0.0f,2.0f,0.0f)
+        .addChild(new Transform().setTranslation(0.0,2.0,0.0)
           .addChild(new Group()
             .setIS(new IS()
               .addConnect(new connect().setNodeField("children").setProtoField("children")))))))
-    .addChild(new ProtoInstance("ShiftGroupUp2m"))
+    .addChild(new ProtoInstance("ShiftGroupUp2m").setContainerField("children"))
     .addComments(" ==================== ")
     .addChild(new Viewpoint("ExampleSingleElement").setDescription("Hello syntax"))
     .addChild(new Group("ExampleChildElement")
       .addChild(new Shape()
         .setGeometry(new Box())
         .setAppearance(new Appearance()
-          .setMaterial(new Material().setDiffuseColor(0.6f,0.4f,0.2f)))))
-    .addChild(new Transform("TransformExampleUSE").setRotation(0.0f,1.0f,0.0f,0.78f).setTranslation(0.0f,2.5f,0.0f)
+          .setMaterial(new Material().setDiffuseColor(0.6,0.4,0.2)))))
+    .addChild(new Transform("TransformExampleUSE").setRotation(0.0,1.0,0.0,0.78).setTranslation(0.0,2.5,0.0)
       .addChild(new Group().setUSE("ExampleChildElement")))
     .addChild(new Collision()
       .setProxy(new Shape()
@@ -156,22 +154,22 @@ public class X3dHeaderPrototypeSyntaxExamples
         .setAppearance(new Appearance()
           .setMaterial(new Material())))
       .addChild(new Group().setUSE("ExampleChildElement")))
-    .addChild(new Transform().setTranslation(0.0f,-2.5f,0.0f)
+    .addChild(new Transform().setTranslation(0.0,-2.5,0.0)
       .addChild(new Shape()
         .setAppearance(new Appearance()
-          .setMaterial(new ProtoInstance("EmissiveMaterial")
-            .addFieldValue(new fieldValue().setName("onlyColor").setValue(new SFColor(0.2f,0.6f,0.6f)))))
+          .setMaterial(new ProtoInstance("EmissiveMaterial").setContainerField("material")
+            .addFieldValue(new fieldValue().setName("onlyColor").setValue(new SFColor(0.2,0.6,0.6)))))
         .setGeometry(new Text().setString(new String[] {"X3D Header Prototype syntax examples","(view console for EXTERNPROTO output)"})
-          .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(0.6f)))))
-    .addChild(new ProtoInstance("ViewPositionOrientation")
+          .setFontStyle(new FontStyle().setJustify(FontStyle.JUSTIFY_MIDDLE_MIDDLE).setSize(0.6)))))
+    .addChild(new ProtoInstance("ViewPositionOrientation").setContainerField("children")
       .addFieldValue(new fieldValue().setName("enabled").setValue(true)))
     .addChild(new TimeSensor("Clock").setCycleInterval(4).setLoop(true))
-    .addChild(new OrientationInterpolator("Spinner").setKey(new float[] {0.0f,0.5f,1.0f}).setKeyValue(new MFRotation(new float[] {0.0f,1.0f,0.0f,0.0f,0.0f,1.0f,0.0f,3.14159f,0.0f,1.0f,0.0f,6.28318f})))
+    .addChild(new OrientationInterpolator("Spinner").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFRotation(new double[] {0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.14159,0.0,1.0,0.0,6.28318})))
     .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("Spinner").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("Spinner").setFromField("value_changed").setToNode("TransformExampleUSE").setToField("rotation"))
     .addChild(new Inline("someInline").setUrl(new String[] {"someUrl.x3d","http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"}))
     .addChild(new IMPORT().setImportedDEF("someName").setInlineDEF("someInline").setAS("someInlineRoot"))
-    .addChild(new PositionInterpolator("StayInPlace").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3f(new float[] {0.0f,0.0f,0.0f,0.0f,0.0f,0.0f})))
+    .addChild(new PositionInterpolator("StayInPlace").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0,0.0})))
     .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("StayInPlace").setToField("set_fraction"))
     .addChild(new ROUTE().setFromNode("StayInPlace").setFromField("value_changed").setToNode("someInlineRoot").setToField("set_translation")));
     }
@@ -180,7 +178,8 @@ public class X3dHeaderPrototypeSyntaxExamples
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -191,7 +190,8 @@ public class X3dHeaderPrototypeSyntaxExamples
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -240,7 +240,9 @@ public class X3dHeaderPrototypeSyntaxExamples
 		{
 			System.out.print("Java program \"X3dHeaderPrototypeSyntaxExamples\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

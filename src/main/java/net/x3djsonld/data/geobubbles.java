@@ -1,7 +1,5 @@
 package net.x3djsonld.data;
 
-import java.util.*;
-import org.web3d.x3d.jsail.*;
 import org.web3d.x3d.jsail.Core.*;
 import org.web3d.x3d.jsail.EnvironmentalEffects.*;
 import org.web3d.x3d.jsail.fields.*;
@@ -10,7 +8,6 @@ import org.web3d.x3d.jsail.Geospatial.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Interpolation.*;
 import org.web3d.x3d.jsail.Navigation.*;
-import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Time.*;
 
@@ -83,36 +80,20 @@ public class geobubbles
   .setScene(new Scene()
     .addComments("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/")
     .addComments("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/")
-    .addChild(new GeoViewpoint("Tour").setDescription("Tour Views").setOrientation(1.0f,0.0f,0.0f,0.0f).setPosition(0.0f,0.0f,4.0f))
+    .addChild(new GeoViewpoint("Tour").setDescription("Tour Views").setOrientation(1.0,0.0,0.0,0.0).setPosition(0.0,0.0,4.0))
     .addChild(new Background().setBackUrl(new String[] {"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"}).setBottomUrl(new String[] {"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"}).setFrontUrl(new String[] {"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"}).setLeftUrl(new String[] {"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"}).setRightUrl(new String[] {"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"}).setTopUrl(new String[] {"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"}))
     .addChild(new Transform()
       .addChild(new Shape()
         .setGeometry(new Sphere())
         .setAppearance(new Appearance()
-          .setMaterial(new Material().setDiffuseColor(0.7f,0.7f,0.7f).setSpecularColor(0.5f,0.5f,0.5f)))))
+          .setMaterial(new Material().setDiffuseColor(0.7,0.7,0.7).setSpecularColor(0.5,0.5,0.5)))))
     .addChild(new TimeSensor("TourTime").setCycleInterval(5).setLoop(true))
-    .addChild(new GeoPositionInterpolator("TourPosition").setKey(new float[] {0.0f,1.0f}).setKeyValue(new MFVec3d(new float[] {0.0015708f,0.0f,4.0f,0.0f,0.0015708f,4.0f})))
-    .addChild(new Script("RandomTourTime").setSourceCode("ecmascript:" + "\n" + 
-"\n" + 
-"               function set_cycle(value) {" + "\n" + 
-"                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo" + "\n" + 
-"                        var ov = val;" + "\n" + 
-"			// Browser.print('old '+ov);" + "\n" + 
-"                        do {" + "\n" + 
-"                                val = Math.floor(Math.random()*2);" + "\n" + 
-"                                var vc = val;" + "\n" + 
-"                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);" + "\n" + 
-"                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);" + "\n" + 
-"			// Browser.println(positions[ov]);" + "\n" + 
-"			// Browser.println(positions[vc]);" + "\n" + 
-"                        position = new MFVec3d();" + "\n" + 
-"                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);" + "\n" + 
-"                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);" + "\n" + 
-"               }")
+    .addChild(new GeoPositionInterpolator("TourPosition").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3d(new double[] {0.0015708,0.0,4.0,0.0,0.0015708,4.0})))
+    .addChild(new X3DScript("RandomTourTime")
       .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
-      .addField(new field().setName("val").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0f))
-      .addField(new field().setName("positions").setType(field.TYPE_MFVEC3D).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3d(new MFVec3d(new float[] {0.0015708f,0.0f,4.0f,0.0f,0.0015708f,4.0f}))))
-      .addField(new field().setName("position").setType(field.TYPE_MFVEC3D).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3d(new MFVec3d(new float[] {0.0015708f,0.0f,4.0f,0.0f,0.0015708f,4.0f})))))
+      .addField(new field().setName("val").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
+      .addField(new field().setName("positions").setType(field.TYPE_MFVEC3D).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3d(new MFVec3d(new double[] {0.0015708,0.0,4.0,0.0,0.0015708,4.0}))))
+      .addField(new field().setName("position").setType(field.TYPE_MFVEC3D).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3d(new MFVec3d(new double[] {0.0015708,0.0,4.0,0.0,0.0015708,4.0})))))
     .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
     .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
     .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
@@ -123,7 +104,8 @@ public class geobubbles
 	/** The initialized model object, created within initialize() method. */
 	private X3D x3dModel;
 
-	/** Provide a 
+	/** 
+	 * Provide a 
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
@@ -134,7 +116,8 @@ public class geobubbles
 		return x3dModel;
 	}
 	   
-    /** Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
@@ -183,7 +166,9 @@ public class geobubbles
 		{
 			System.out.print("Java program \"geobubbles\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
-			System.out.println(validationResults);
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
 		}
     }
 }

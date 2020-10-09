@@ -22,7 +22,7 @@
     
     <xsl:template match="/"> <!-- process root of input document -->
         
-	 <xsl:text disable-output-escaping="yes"><![CDATA[@prefix : <http://www.web3d.org/specifications/X3dOntology4.0#> .
+	 <xsl:text disable-output-escaping="yes"><![CDATA[@prefix : <https://www.web3d.org/specifications/X3dOntology4.0#> .
 @prefix dc:     <http://purl.org/dc/terms/> .
 @prefix owl:    <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -40,7 +40,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vidont: <http://vidont.org/> .
 
-@prefix x3d: <http://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3d: <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
 -->
         <!-- process elements as things etc. -->
         
@@ -49,15 +49,15 @@
 
 # X3D Ontology
 
-<http://www.web3d.org/specifications/X3dOntology4.0> a owl:Ontology ;
+<https://www.web3d.org/specifications/X3dOntology4.0> a owl:Ontology ;
   dc:title       "X3D Ontology"@en ;
   dc:description "The X3D Ontology for Semantic Web provides terms of reference for semantic query of X3D models." ;
   dc:reference   "https://www.web3d.org/x3d/content/semantics/semantics.html" .
   # TODO include further provenance information
             
 # Maintained at
-#	http://www.web3d.org/specifications/X3dOntology4.0.ttl
-#	http://www.web3d.org/x3d/content/semantics/ontologies/X3dOntology4.0.ttl
+#	https://www.web3d.org/specifications/X3dOntology4.0.ttl
+#	https://www.web3d.org/x3d/content/semantics/ontologies/X3dOntology4.0.ttl
 #
 # Support
 #   https://www.web3d.org/x3d/content/semantics/semantics.html
