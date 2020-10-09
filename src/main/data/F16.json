@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -85,21 +85,15 @@
           { "Transform":
             {
               "@DEF":"F16Transform",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@DEF":"MainFrameTransform",
                     "@scale":[3,3,3],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
                           "@DEF":"Nose",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -139,8 +133,6 @@
                       { "Shape":
                         {
                           "@DEF":"Canopy",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -179,8 +171,6 @@
                       { "Shape":
                         {
                           "@DEF":"MainBodyAndWingEdges",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -218,8 +208,6 @@
                       { "Shape":
                         {
                           "@DEF":"ExhaustExitFlatPanel",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -257,8 +245,6 @@
                       { "Shape":
                         {
                           "@DEF":"ExhaustEntranceFrontBottomPart",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -296,8 +282,6 @@
                       { "Shape":
                         {
                           "@DEF":"ThirdPartFromNoseUnderCanopy",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -335,8 +319,6 @@
                       { "Shape":
                         {
                           "@DEF":"RearExhaustExitPartLastPartOfMainBody",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -375,8 +357,6 @@
                       { "Shape":
                         {
                           "@DEF":"WingsAndTail",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -415,8 +395,6 @@
                       { "Shape":
                         {
                           "@DEF":"SecondPartAfterNose",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -460,14 +438,10 @@
                     "@rotation":[1,0,0,-0.1],
                     "@scale":[0.045,0.045,0.045],
                     "@translation":[0,1,-10],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["Cockpit.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d","Cockpit.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl"],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1]
+                          "@url":["Cockpit.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d","Cockpit.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl"]
                         }
                       }
                     ]
@@ -479,14 +453,10 @@
                     "@rotation":[-1,0,0,-0.1],
                     "@scale":[0.9,0.9,0.9],
                     "@translation":[0,0,-8.3],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1]
+                          "@url":["Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"]
                         }
                       }
                     ]
@@ -498,17 +468,13 @@
                     "@center":[0,2.5,0],
                     "@rotation":[-1,0,0,1.92],
                     "@translation":[0.7,-5.2,-6.5],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)"
                       },
                       { "Inline":
                         {
-                          "@url":["FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1]
+                          "@url":["FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"]
                         }
                       }
                     ]
@@ -520,17 +486,13 @@
                     "@center":[0,2.5,0],
                     "@rotation":[1,0,1,1.92],
                     "@translation":[-2.95,-5,7],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"
                       },
                       { "Inline":
                         {
-                          "@url":["RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1]
+                          "@url":["RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"]
                         }
                       }
                     ]
@@ -542,17 +504,13 @@
                     "@center":[0,2.5,0],
                     "@rotation":[-1,0,-1,1.92],
                     "@translation":[2.95,-5,7],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)"
                       },
                       { "Inline":
                         {
-                          "@url":["RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1]
+                          "@url":["RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"]
                         }
                       }
                     ]
@@ -561,8 +519,6 @@
                 { "Transform":
                   {
                     "@DEF":"CockpitButtonsTransform",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Transform":
                         {
@@ -570,13 +526,9 @@
                           "@rotation":[1,0,0,1.57],
                           "@scale":[0.008,0.008,0.008],
                           "@translation":[-0.95,1.05,-10],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-geometry":
                                   { "Cylinder":
                                     {
@@ -613,13 +565,9 @@
                           "@rotation":[1,0,0,1.57],
                           "@scale":[0.008,0.008,0.008],
                           "@translation":[-0.83,1.05,-10],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-geometry":
                                   { "Cylinder":
                                     {
@@ -655,13 +603,9 @@
                           "@DEF":"GearUpTextTransform",
                           "@scale":[0.06,0.06,0.06],
                           "@translation":[-0.65,1.55,-10],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-geometry":
                                   { "Text":
                                     {
@@ -689,13 +633,9 @@
                           "@DEF":"GearDownTextTransform",
                           "@scale":[0.06,0.06,0.06],
                           "@translation":[-0.65,1.35,-10],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-geometry":
                                   { "Text":
                                     {
@@ -725,13 +665,9 @@
                           "@rotation":[1,0,0,1.57],
                           "@scale":[0.008,0.008,0.008],
                           "@translation":[0.52,1.6,-10],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-geometry":
                                   { "Cylinder":
                                     {
@@ -767,13 +703,9 @@
                           "@DEF":"FireTextTransform",
                           "@scale":[0.06,0.06,0.06],
                           "@translation":[0.36,1.5,-10],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-geometry":
                                   { "Text":
                                     {
@@ -847,13 +779,9 @@
                     "@DEF":"NoseAntennaTransform",
                     "@rotation":[1,0,0,1.57],
                     "@translation":[0,-0.275,-21],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Cylinder":
                               {
@@ -1122,15 +1050,11 @@
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.4,1.4,1.4],
               "@translation":[15.65,0,4.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
                     "@DEF":"Amraam",
-                    "@url":["../../Weapons/Missiles/Amraam.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d","../../Weapons/Missiles/Amraam.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@url":["../../Weapons/Missiles/Amraam.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d","../../Weapons/Missiles/Amraam.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"]
                   }
                 }
               ]
@@ -1142,8 +1066,6 @@
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.4,1.4,1.4],
               "@translation":[-15.65,0,4.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
@@ -1159,15 +1081,11 @@
               "@rotation":[0,1,0,1.57],
               "@scale":[6,3,3],
               "@translation":[9,-1.125,8],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
                     "@DEF":"SidewinderHolder",
-                    "@url":["SidewinderHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d","SidewinderHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl"],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@url":["SidewinderHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d","SidewinderHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl"]
                   }
                 }
               ]
@@ -1179,8 +1097,6 @@
               "@rotation":[0,1,0,1.57],
               "@scale":[6,3,3],
               "@translation":[-8.45,-1.125,8],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
@@ -1196,14 +1112,10 @@
               "@rotation":[0,-1,0,1.57],
               "@scale":[0.3,0.25,0.3],
               "@translation":[-0.01,8,19.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
-                    "@url":["TurkishFlagLeft.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d","TurkishFlagLeft.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl"],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@url":["TurkishFlagLeft.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d","TurkishFlagLeft.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl"]
                   }
                 }
               ]
@@ -1215,14 +1127,10 @@
               "@rotation":[0,1,0,1.57],
               "@scale":[0.3,0.25,0.3],
               "@translation":[0.01,8,20.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
-                    "@url":["TurkishFlagRight.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d","TurkishFlagRight.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl"],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@url":["TurkishFlagRight.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d","TurkishFlagRight.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl"]
                   }
                 }
               ]
@@ -1232,15 +1140,11 @@
             {
               "@DEF":"AmraamHolderTransformLeft",
               "@translation":[-12,-0.176,10.7],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
                     "@DEF":"AmraamHolder",
-                    "@url":["AmraamHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d","AmraamHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl"],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@url":["AmraamHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d","AmraamHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl"]
                   }
                 }
               ]
@@ -1250,8 +1154,6 @@
             {
               "@DEF":"AmraamHolderTransformRight",
               "@translation":[12,-0.176,10.7],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
@@ -1267,8 +1169,6 @@
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.4,1.4,1.4],
               "@translation":[12,-1.6,4.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
@@ -1284,8 +1184,6 @@
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.4,1.4,1.4],
               "@translation":[-12,-1.6,4.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
@@ -1301,15 +1199,11 @@
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.6,1.6,1.6],
               "@translation":[-8.7,-2,3.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
                     "@DEF":"Sidewinder",
-                    "@url":["../../Weapons/Missiles/Sidewinder.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d","../../Weapons/Missiles/Sidewinder.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl"],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@url":["../../Weapons/Missiles/Sidewinder.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d","../../Weapons/Missiles/Sidewinder.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl"]
                   }
                 }
               ]
@@ -1321,8 +1215,6 @@
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.6,1.6,1.6],
               "@translation":[8.7,-2,3.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
@@ -1338,15 +1230,11 @@
               "@rotation":[0,1,0,1.57],
               "@scale":[1.5,1.5,1.5],
               "@translation":[-4.8,-1.125,6],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
                     "@DEF":"FuelTankHolder",
-                    "@url":["FuelTankHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d","FuelTankHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl"],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@url":["FuelTankHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d","FuelTankHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl"]
                   }
                 }
               ]
@@ -1358,8 +1246,6 @@
               "@rotation":[0,1,0,1.57],
               "@scale":[1.5,1.5,1.5],
               "@translation":[5.3,-1.125,6],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
@@ -1375,15 +1261,11 @@
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.5,1.5,1.5],
               "@translation":[5,-2.85,5.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
                     "@DEF":"FuelTank",
-                    "@url":["FuelTank.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d","FuelTank.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl"],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@url":["FuelTank.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d","FuelTank.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl"]
                   }
                 }
               ]
@@ -1395,8 +1277,6 @@
               "@rotation":[-1,0,0,1.57],
               "@scale":[1.5,1.5,1.5],
               "@translation":[-5,-2.85,5.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
@@ -1409,18 +1289,13 @@
           { "Transform":
             {
               "@DEF":"InlineCoverOfPlaneTansform",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-geometry":
                       { "Box":
                         {
-                          "@size":[4.15,0.1,20],
-                          "@solid":true
+                          "@size":[4.15,0.1,20]
                         }
                       },
                     "-appearance":
@@ -1443,14 +1318,10 @@
             {
               "@DEF":"TargetHelicopterTransform",
               "@translation":[16,-50,-500],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Inline":
                   {
-                    "@url":["Target.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d","Target.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl"],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@url":["Target.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d","Target.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl"]
                   }
                 }
               ]

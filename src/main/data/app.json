@@ -20,7 +20,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -36,15 +36,9 @@
         "-children":[
           { "Group":
             {
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
-              "@visible":true,
               "-children":[
                 { "Shape":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
-                    "@visible":true,
                     "-appearance":
                       { "Appearance":
                         {
@@ -59,8 +53,6 @@
                     "-geometry":
                       { "Box":
                         {
-                          "@size":[2,2,2],
-                          "@solid":true
                         }
                       }
                   }
@@ -70,12 +62,9 @@
           },
           { "Transform":
             {
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "@rotation":[7,8,9,3.14],
               "@scale":[4,5,6],
-              "@translation":[1,2,3],
-              "@visible":true
+              "@translation":[1,2,3]
             }
           }
         ]

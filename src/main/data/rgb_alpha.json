@@ -80,7 +80,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -101,19 +101,13 @@
           },
           { "Group":
             {
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@translation":[6.14221,0.0694613,-0.000999451],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -134,8 +128,6 @@
                           "-geometry":
                             { "Box":
                               {
-                                "@size":[2,2,2],
-                                "@solid":true
                               }
                             }
                         }
@@ -146,13 +138,9 @@
                 { "Transform":
                   {
                     "@translation":[-4.85443,0.0694381,-0.00149918],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -182,13 +170,9 @@
                 { "Transform":
                   {
                     "@translation":[-1.47341,0.036672,-0.00175095],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -208,11 +192,6 @@
                           "-geometry":
                             { "Cone":
                               {
-                                "@bottomRadius":1,
-                                "@height":2,
-                                "@side":true,
-                                "@bottom":true,
-                                "@solid":true
                               }
                             }
                         }
@@ -223,13 +202,9 @@
                 { "Transform":
                   {
                     "@translation":[2.31094,0.0694206,-0.00187683],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {

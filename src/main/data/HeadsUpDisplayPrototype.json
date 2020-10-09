@@ -44,7 +44,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -106,8 +106,6 @@
                   "-children":[
                     { "Group":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           { "ProximitySensor":
                             {
@@ -126,20 +124,14 @@
                           { "Transform":
                             {
                               "@DEF":"FixedLocation",
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-children":[
                                 { "Transform":
                                   {
                                     "@DEF":"MovableLocation",
-                                    "@bboxCenter":[0,0,0],
-                                    "@bboxSize":[-1,-1,-1],
                                     "-children":[
                                       { "Transform":
                                         {
                                           "@DEF":"LocationOffset",
-                                          "@bboxCenter":[0,0,0],
-                                          "@bboxSize":[-1,-1,-1],
                                           "IS": {
                                               "connect": [
                                                 {
@@ -152,13 +144,9 @@
                                             { "Transform":
                                               {
                                                 "@translation":[0,0,-10],
-                                                "@bboxCenter":[0,0,0],
-                                                "@bboxSize":[-1,-1,-1],
                                                 "-children":[
                                                   { "Group":
                                                     {
-                                                      "@bboxCenter":[0,0,0],
-                                                      "@bboxSize":[-1,-1,-1],
                                                       "IS": {
                                                           "connect": [
                                                             {
@@ -172,14 +160,10 @@
                                                   { "Group":
                                                     {
                                                       "@DEF":"PlaneMovementSensorGroup",
-                                                      "@bboxCenter":[0,0,0],
-                                                      "@bboxSize":[-1,-1,-1],
                                                       "-children":[
                                                         { "Group":
                                                           {
                                                             "@DEF":"DragGeometry",
-                                                            "@bboxCenter":[0,0,0],
-                                                            "@bboxSize":[-1,-1,-1],
                                                             "IS": {
                                                                 "connect": [
                                                                   {
@@ -368,13 +352,9 @@
               "@description":"HeadsUpDisplayExample",
               "@parameter":["target=_blank"],
               "@url":["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {

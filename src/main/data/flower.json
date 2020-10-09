@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -68,13 +68,9 @@
               "@translation":[0,-1,1],
               "@rotation":[0,1,0,3.1415926],
               "@scale":[1.5,1.5,1.5],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Shape":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {

@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -116,56 +116,42 @@
               "@info":["humanoidVersion=2.0"],
               "@scale":[0.0225,0.0225,0.0225],
               "@version":"2.0",
-              "@bboxDisplay":false,
-              "@visible":true,
               "-skeleton":[
                 { "HAnimJoint":
                   {
                     "@name":"HumanoidRoot",
                     "@DEF":"hanim_HumanoidRoot",
                     "@center":[0,30.53,-0.7076],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
-                    "@bboxDisplay":false,
-                    "@visible":true,
                     "-children":[
                       { "HAnimSegment":
                         {
                           "@name":"sacrum",
                           "@DEF":"hanim_sacrum",
-                          "@bboxDisplay":false,
-                          "@visible":true,
                           "-children":[
                             { "Transform":
                               {
                                 "@translation":[0,30.53,-0.7076],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
-                                "@bboxDisplay":false,
-                                "@visible":true,
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-appearance":
                                         { "Appearance":
                                           {
                                             "-material":
                                               { "Material":
                                                 {
-                                                  "@diffuseColor":[0.588,0.588,0.588]
+                                                  "@diffuseColor":[0.588,0.588,0.588],
+                                                  "@normalScale":1,
+                                                  "@metallic":1,
+                                                  "@occlusionStrength":1,
+                                                  "@roughness":1
                                                 }
                                               },
                                             "-texture":
                                               { "ImageTexture":
                                                 {
                                                   "@DEF":"AnnexC01JinTextureAtlas",
-                                                  "@url":["Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/HAnimSpecification/Jin.png"],
-                                                  "@load":true,
-                                                  "@refresh":0
+                                                  "@url":["Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/HAnimSpecification/Jin.png"]
                                                 }
                                               }
                                           }
@@ -203,39 +189,29 @@
                           "@name":"sacroiliac",
                           "@DEF":"hanim_sacroiliac",
                           "@center":[0,35.8,-0.7076],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
-                          "@bboxDisplay":false,
-                          "@visible":true,
                           "-children":[
                             { "HAnimSegment":
                               {
                                 "@name":"pelvis",
                                 "@DEF":"hanim_pelvis",
-                                "@bboxDisplay":false,
-                                "@visible":true,
                                 "-children":[
                                   { "Transform":
                                     {
                                       "@translation":[0,35.8,-0.7076],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-appearance":
                                               { "Appearance":
                                                 {
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@diffuseColor":[0.588,0.588,0.588]
+                                                        "@diffuseColor":[0.588,0.588,0.588],
+                                                        "@normalScale":1,
+                                                        "@metallic":1,
+                                                        "@occlusionStrength":1,
+                                                        "@roughness":1
                                                       }
                                                     },
                                                   "-texture":
@@ -279,39 +255,29 @@
                                 "@name":"l_hip",
                                 "@DEF":"hanim_l_hip",
                                 "@center":[4.207,32.02,-0.8155],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
-                                "@bboxDisplay":false,
-                                "@visible":true,
                                 "-children":[
                                   { "HAnimSegment":
                                     {
                                       "@name":"l_thigh",
                                       "@DEF":"hanim_l_thigh",
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "Transform":
                                           {
                                             "@translation":[4.207,32.02,-0.8155],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Shape":
                                                 {
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@diffuseColor":[0.588,0.588,0.588]
+                                                              "@diffuseColor":[0.588,0.588,0.588],
+                                                              "@normalScale":1,
+                                                              "@metallic":1,
+                                                              "@occlusionStrength":1,
+                                                              "@roughness":1
                                                             }
                                                           },
                                                         "-texture":
@@ -355,39 +321,29 @@
                                       "@name":"l_knee",
                                       "@DEF":"hanim_l_knee",
                                       "@center":[4.116,17.26,-0.8639],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"l_calf",
                                             "@DEF":"hanim_l_calf",
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[4.116,17.26,-0.8639],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Shape":
                                                       {
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@diffuseColor":[0.588,0.588,0.588]
+                                                                    "@diffuseColor":[0.588,0.588,0.588],
+                                                                    "@normalScale":1,
+                                                                    "@metallic":1,
+                                                                    "@occlusionStrength":1,
+                                                                    "@roughness":1
                                                                   }
                                                                 },
                                                               "-texture":
@@ -431,39 +387,29 @@
                                             "@name":"l_talocrural",
                                             "@DEF":"hanim_l_talocrural",
                                             "@center":[3.854,3.939,-0.7038],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"l_hindfoot",
                                                   "@DEF":"hanim_l_hindfoot",
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[3.854,3.939,-0.7038],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Shape":
                                                             {
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@diffuseColor":[0.588,0.588,0.588]
+                                                                          "@diffuseColor":[0.588,0.588,0.588],
+                                                                          "@normalScale":1,
+                                                                          "@metallic":1,
+                                                                          "@occlusionStrength":1,
+                                                                          "@roughness":1
                                                                         }
                                                                       },
                                                                     "-texture":
@@ -507,39 +453,29 @@
                                                   "@name":"l_metatarsophalangeal",
                                                   "@DEF":"hanim_l_metatarsophalangeal",
                                                   "@center":[3.854,3.64,0.7402],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"l_middistal",
                                                         "@DEF":"hanim_l_middistal",
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[3.854,3.64,0.7402],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@diffuseColor":[0.588,0.588,0.588]
+                                                                                "@diffuseColor":[0.588,0.588,0.588],
+                                                                                "@normalScale":1,
+                                                                                "@metallic":1,
+                                                                                "@occlusionStrength":1,
+                                                                                "@roughness":1
                                                                               }
                                                                             },
                                                                           "-texture":
@@ -595,39 +531,29 @@
                                 "@name":"r_hip",
                                 "@DEF":"hanim_r_hip",
                                 "@center":[-4.207,32.02,-0.8155],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
-                                "@bboxDisplay":false,
-                                "@visible":true,
                                 "-children":[
                                   { "HAnimSegment":
                                     {
                                       "@name":"r_thigh",
                                       "@DEF":"hanim_r_thigh",
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "Transform":
                                           {
                                             "@translation":[-4.207,32.02,-0.8155],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Shape":
                                                 {
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@diffuseColor":[0.588,0.588,0.588]
+                                                              "@diffuseColor":[0.588,0.588,0.588],
+                                                              "@normalScale":1,
+                                                              "@metallic":1,
+                                                              "@occlusionStrength":1,
+                                                              "@roughness":1
                                                             }
                                                           },
                                                         "-texture":
@@ -671,39 +597,29 @@
                                       "@name":"r_knee",
                                       "@DEF":"hanim_r_knee",
                                       "@center":[-4.116,17.26,-0.8639],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_calf",
                                             "@DEF":"hanim_r_calf",
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[-4.116,17.26,-0.8639],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Shape":
                                                       {
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@diffuseColor":[0.588,0.588,0.588]
+                                                                    "@diffuseColor":[0.588,0.588,0.588],
+                                                                    "@normalScale":1,
+                                                                    "@metallic":1,
+                                                                    "@occlusionStrength":1,
+                                                                    "@roughness":1
                                                                   }
                                                                 },
                                                               "-texture":
@@ -747,39 +663,29 @@
                                             "@name":"r_talocrural",
                                             "@DEF":"hanim_r_talocrural",
                                             "@center":[-3.854,3.939,-0.7038],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_hindfoot",
                                                   "@DEF":"hanim_r_hindfoot",
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[-3.854,3.939,-0.7038],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Shape":
                                                             {
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@diffuseColor":[0.588,0.588,0.588]
+                                                                          "@diffuseColor":[0.588,0.588,0.588],
+                                                                          "@normalScale":1,
+                                                                          "@metallic":1,
+                                                                          "@occlusionStrength":1,
+                                                                          "@roughness":1
                                                                         }
                                                                       },
                                                                     "-texture":
@@ -823,39 +729,29 @@
                                                   "@name":"r_metatarsophalangeal",
                                                   "@DEF":"hanim_r_metatarsophalangeal",
                                                   "@center":[-3.854,3.64,0.7402],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_middistal",
                                                         "@DEF":"hanim_r_middistal",
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[-3.854,3.64,0.7402],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@diffuseColor":[0.588,0.588,0.588]
+                                                                                "@diffuseColor":[0.588,0.588,0.588],
+                                                                                "@normalScale":1,
+                                                                                "@metallic":1,
+                                                                                "@occlusionStrength":1,
+                                                                                "@roughness":1
                                                                               }
                                                                             },
                                                                           "-texture":
@@ -911,39 +807,29 @@
                                 "@name":"vl5",
                                 "@DEF":"hanim_vl5",
                                 "@center":[0,40.23,-0.8527],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
-                                "@bboxDisplay":false,
-                                "@visible":true,
                                 "-children":[
                                   { "HAnimSegment":
                                     {
                                       "@name":"l5",
                                       "@DEF":"hanim_l5",
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "Transform":
                                           {
                                             "@translation":[0,40.23,-0.8527],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Shape":
                                                 {
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@diffuseColor":[0.588,0.588,0.588]
+                                                              "@diffuseColor":[0.588,0.588,0.588],
+                                                              "@normalScale":1,
+                                                              "@metallic":1,
+                                                              "@occlusionStrength":1,
+                                                              "@roughness":1
                                                             }
                                                           },
                                                         "-texture":
@@ -987,39 +873,29 @@
                                       "@name":"skullbase",
                                       "@DEF":"hanim_skullbase",
                                       "@center":[0,57.43,-0.6863],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"skull",
                                             "@DEF":"hanim_skull",
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[0,57.43,-0.6863],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Shape":
                                                       {
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@diffuseColor":[0.588,0.588,0.588]
+                                                                    "@diffuseColor":[0.588,0.588,0.588],
+                                                                    "@normalScale":1,
+                                                                    "@metallic":1,
+                                                                    "@occlusionStrength":1,
+                                                                    "@roughness":1
                                                                   }
                                                                 },
                                                               "-texture":
@@ -1066,39 +942,29 @@
                                       "@name":"l_shoulder",
                                       "@DEF":"hanim_l_shoulder",
                                       "@center":[5.975,52,-0.1452],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"l_upperarm",
                                             "@DEF":"hanim_l_upperarm",
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[5.975,52,-0.1452],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Shape":
                                                       {
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@diffuseColor":[0.588,0.588,0.588]
+                                                                    "@diffuseColor":[0.588,0.588,0.588],
+                                                                    "@normalScale":1,
+                                                                    "@metallic":1,
+                                                                    "@occlusionStrength":1,
+                                                                    "@roughness":1
                                                                   }
                                                                 },
                                                               "-texture":
@@ -1142,39 +1008,29 @@
                                             "@name":"l_elbow",
                                             "@DEF":"hanim_l_elbow",
                                             "@center":[8.093,40.38,-0.2502],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"l_forearm",
                                                   "@DEF":"hanim_l_forearm",
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[8.093,40.38,-0.2502],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Shape":
                                                             {
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@diffuseColor":[0.588,0.588,0.588]
+                                                                          "@diffuseColor":[0.588,0.588,0.588],
+                                                                          "@normalScale":1,
+                                                                          "@metallic":1,
+                                                                          "@occlusionStrength":1,
+                                                                          "@roughness":1
                                                                         }
                                                                       },
                                                                     "-texture":
@@ -1218,39 +1074,29 @@
                                                   "@name":"l_radiocarpal",
                                                   "@DEF":"hanim_l_radiocarpal",
                                                   "@center":[7.808,31.46,-0.05849],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"l_hand",
                                                         "@DEF":"hanim_l_hand",
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[7.808,31.46,-0.05849],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@diffuseColor":[0.588,0.588,0.588]
+                                                                                "@diffuseColor":[0.588,0.588,0.588],
+                                                                                "@normalScale":1,
+                                                                                "@metallic":1,
+                                                                                "@occlusionStrength":1,
+                                                                                "@roughness":1
                                                                               }
                                                                             },
                                                                           "-texture":
@@ -1303,39 +1149,29 @@
                                       "@name":"r_shoulder",
                                       "@DEF":"hanim_r_shoulder",
                                       "@center":[-5.975,52,-0.1452],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_upperarm",
                                             "@DEF":"hanim_r_upperarm",
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[-5.975,52,-0.1452],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Shape":
                                                       {
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@diffuseColor":[0.588,0.588,0.588]
+                                                                    "@diffuseColor":[0.588,0.588,0.588],
+                                                                    "@normalScale":1,
+                                                                    "@metallic":1,
+                                                                    "@occlusionStrength":1,
+                                                                    "@roughness":1
                                                                   }
                                                                 },
                                                               "-texture":
@@ -1379,39 +1215,29 @@
                                             "@name":"r_elbow",
                                             "@DEF":"hanim_r_elbow",
                                             "@center":[-8.093,40.38,-0.2502],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_forearm",
                                                   "@DEF":"hanim_r_forearm",
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[-8.093,40.38,-0.2502],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Shape":
                                                             {
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@diffuseColor":[0.588,0.588,0.588]
+                                                                          "@diffuseColor":[0.588,0.588,0.588],
+                                                                          "@normalScale":1,
+                                                                          "@metallic":1,
+                                                                          "@occlusionStrength":1,
+                                                                          "@roughness":1
                                                                         }
                                                                       },
                                                                     "-texture":
@@ -1455,39 +1281,29 @@
                                                   "@name":"r_radiocarpal",
                                                   "@DEF":"hanim_r_radiocarpal",
                                                   "@center":[-7.808,31.46,-0.05849],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_hand",
                                                         "@DEF":"hanim_r_hand",
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[-7.808,31.46,-0.05849],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@diffuseColor":[0.588,0.588,0.588]
+                                                                                "@diffuseColor":[0.588,0.588,0.588],
+                                                                                "@normalScale":1,
+                                                                                "@metallic":1,
+                                                                                "@occlusionStrength":1,
+                                                                                "@roughness":1
                                                                               }
                                                                             },
                                                                           "-texture":
@@ -1739,10 +1555,6 @@
           { "Group":
             {
               "@DEF":"KeyframeAnimation",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
-              "@bboxDisplay":false,
-              "@visible":true,
               "-children":[
                 { "TimeSensor":
                   {

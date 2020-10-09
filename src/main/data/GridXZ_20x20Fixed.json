@@ -48,7 +48,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -72,19 +72,13 @@
           { "Transform":
             {
               "@DEF":"GridLocation",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Group":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
                           "@DEF":"LinesAlignedAlongZ",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "IndexedLineSet":
                               {
@@ -112,8 +106,6 @@
                         {
                           "@DEF":"LinesAlignedAlongX",
                           "@rotation":[0,1,0,1.57079],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
@@ -126,19 +118,12 @@
                       { "Transform":
                         {
                           "@translation":[0,-0.5,0],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Billboard":
                               {
-                                "@axisOfRotation":[0,1,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-geometry":
                                         { "Text":
                                           {
@@ -176,19 +161,12 @@
                       { "Transform":
                         {
                           "@translation":[10,-0.5,10],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Billboard":
                               {
-                                "@axisOfRotation":[0,1,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-geometry":
                                         { "Text":
                                           {
@@ -218,19 +196,12 @@
                       { "Transform":
                         {
                           "@translation":[10,-0.5,-10],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Billboard":
                               {
-                                "@axisOfRotation":[0,1,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-geometry":
                                         { "Text":
                                           {
@@ -260,19 +231,12 @@
                       { "Transform":
                         {
                           "@translation":[-10,-0.5,10],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Billboard":
                               {
-                                "@axisOfRotation":[0,1,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-geometry":
                                         { "Text":
                                           {
@@ -302,19 +266,12 @@
                       { "Transform":
                         {
                           "@translation":[-10,-0.5,-10],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Billboard":
                               {
-                                "@axisOfRotation":[0,1,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-geometry":
                                         { "Text":
                                           {
