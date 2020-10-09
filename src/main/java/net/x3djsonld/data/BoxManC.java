@@ -16,7 +16,7 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> A Seamless VRML Human, demonstrating the H-Anim 2001 Specification. Animation scripting via EcmaScript. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/BoxMan.java">BoxMan.java</a> source, <a href="../../../HumanoidAnimation/BoxManIndex.html" target="_top">BoxMan catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/BoxManC.java">BoxManC.java</a> source, <a href="../../../HumanoidAnimation/BoxManCIndex.html" target="_top">BoxManC catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -26,7 +26,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxMan.x3d">BoxMan.x3d</a> </td>
+			<td> <a href="../../../HumanoidAnimation/BoxManC.x3d">BoxManC.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -102,11 +102,11 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
-			<td> BoxMan H-Anim 2.0 </td>
+			<td> BoxManC H-Anim 2.0 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -132,10 +132,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author James Smith - james@vapourtech.com
  */
 
-public class BoxMan
+public class BoxManC
 {
 	/** Default constructor to create this object. */
-	public BoxMan ()
+	public BoxManC ()
 	{
 	  initialize();
 	}
@@ -146,7 +146,7 @@ public class BoxMan
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
   .setHead(new head()
     .addComponent(new component().setName("H-Anim").setLevel(1))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("BoxMan.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("BoxManC.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("A Seamless VRML Human, demonstrating the H-Anim 2001 Specification. Animation scripting via EcmaScript."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("James Smith - james@vapourtech.com"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Don Brutzman and Matt Beitler"))
@@ -165,12 +165,12 @@ public class BoxMan
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.web3d.org/x3d/content/X3dToVrml97.xslt"))
     .addMeta(new meta().setName(meta.NAME_RIGHTS     ).setContent("(C) 2000 James Smith - james@vapourtech.com"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.vapourtech.com"))
-    .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("BoxMan H-Anim 2.0"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"))
+    .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("BoxManC H-Anim 2.0"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
-    .addChild(new WorldInfo().setInfo(new String[] {"(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"}).setTitle("BoxMan - A Seamless VRML Human"))
+    .addChild(new WorldInfo().setInfo(new String[] {"(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"}).setTitle("BoxManC - A Seamless VRML Human"))
     .addChild(new Background().setGroundColor(new MFColor(new double[] {0.6,0.6,0.6})).setSkyColor(new MFColor(new double[] {0.75,0.75,0.75})))
     .addComments(" H-Anim node prototypes are provided automatically by the X3dToVrml97.xsl translation stylesheet when converting to VRML97 (which didn't include H-Anim) ")
     .addChild(new HAnimHumanoid("HUMANOID").setName("Humanoid").setInfo(new String[] {"authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"}).setVersion("2.0")
@@ -640,7 +640,7 @@ public class BoxMan
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return BoxMan model
+	 * @return BoxManC model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -658,7 +658,7 @@ public class BoxMan
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new BoxMan().getX3dModel();
+        X3D thisExampleX3dModel = new BoxManC().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -689,13 +689,13 @@ public class BoxMan
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"BoxMan\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"BoxManC\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"BoxMan\" self-validation test results: ");
+			System.out.print("Java program \"BoxManC\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
             if (validationResults.startsWith("\n"))
                 System.out.println();

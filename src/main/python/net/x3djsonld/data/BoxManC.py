@@ -26,7 +26,7 @@ newModel=X3D(profile='Immersive',version='3.0',
   head=head(
     children=[
     component(level=1,name='H-Anim'),
-    meta(content='BoxMan.x3d',name='title'),
+    meta(content='BoxManC.x3d',name='title'),
     meta(content='A Seamless VRML Human, demonstrating the H-Anim 2001 Specification. Animation scripting via EcmaScript.',name='description'),
     meta(content='James Smith - james@vapourtech.com',name='creator'),
     meta(content='Don Brutzman and Matt Beitler',name='translator'),
@@ -45,13 +45,13 @@ newModel=X3D(profile='Immersive',version='3.0',
     meta(content='http://www.web3d.org/x3d/content/X3dToVrml97.xslt',name='reference'),
     meta(content='(C) 2000 James Smith - james@vapourtech.com',name='rights'),
     meta(content='http://www.vapourtech.com',name='reference'),
-    meta(content='BoxMan H-Anim 2.0',name='subject'),
-    meta(content='http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d',name='identifier'),
+    meta(content='BoxManC H-Anim 2.0',name='subject'),
+    meta(content='http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d',name='identifier'),
     meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
-    WorldInfo(info=["(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"],title='BoxMan - A Seamless VRML Human'),
+    WorldInfo(info=["(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"],title='BoxManC - A Seamless VRML Human'),
     Background(groundColor=[(0.6,0.6,0.6)],skyColor=[(0.75,0.75,0.75)]),
     #  H-Anim node prototypes are provided automatically by the X3dToVrml97.xsl translation stylesheet when converting to VRML97 (which didn't include H-Anim) 
     HAnimHumanoid(DEF='HUMANOID',info=["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=2.0"],name='Humanoid',version='2.0',
@@ -504,4 +504,4 @@ print('check  newModel.XML() serialization...')
 newModelXML = newModel.XML() # test export method XML() for exceptions
 # print(newModelXML) # debug
 
-print ("python x3d.py load successful for BoxMan.py")
+print ("python x3d.py load successful for BoxManC.py")
