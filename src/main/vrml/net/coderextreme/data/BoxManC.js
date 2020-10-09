@@ -4,7 +4,7 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.0";
 let WorldInfo2 = browser.currentScene.createNode("WorldInfo");
 WorldInfo2.info = new MFString(new java.lang.String["(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"]);
-WorldInfo2.title = "BoxMan - A Seamless VRML Human";
+WorldInfo2.title = "BoxManC - A Seamless VRML Human";
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = WorldInfo2;
