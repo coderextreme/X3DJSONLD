@@ -2,8 +2,8 @@
     "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
           {
@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 August 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -69,14 +69,10 @@
                   "-children":[
                     { "Group":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           { "Transform":
                             {
                               "@DEF":"transform",
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "IS": {
                                   "connect": [
                                     {
@@ -88,8 +84,6 @@
                               "-children":[
                                 { "Shape":
                                   {
-                                    "@bboxCenter":[0,0,0],
-                                    "@bboxSize":[-1,-1,-1],
                                     "-appearance":
                                       { "Appearance":
                                         {
@@ -110,14 +104,10 @@
                                 },
                                 { "Transform":
                                   {
-                                    "@bboxCenter":[0,0,0],
-                                    "@bboxSize":[-1,-1,-1],
                                     "@translation":[1,0,0],
                                     "-children":[
                                       { "Shape":
                                         {
-                                          "@bboxCenter":[0,0,0],
-                                          "@bboxSize":[-1,-1,-1],
                                           "-appearance":
                                             { "Appearance":
                                               {
@@ -266,13 +256,9 @@
                   "-children":[
                     { "Group":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           { "Shape":
                             {
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-appearance":
                                 { "Appearance":
                                   {
@@ -375,8 +361,6 @@
           { "Transform":
             {
               "@DEF":"HoldsContent",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "@scale":[0.1,0.1,0.1],
               "-children":[
                 { "PlaneSensor":

@@ -2,8 +2,8 @@
     "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 August 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -249,8 +249,6 @@
                     { "Transform":
                       {
                         "@DEF":"HumanoidTransform",
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -287,8 +285,6 @@
                           { "Group":
                             {
                               "@DEF":"HumanoidGroup1",
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "IS": {
                                   "connect": [
                                     {
@@ -302,8 +298,6 @@
                           { "Group":
                             {
                               "@DEF":"HumanoidGroup2",
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "IS": {
                                   "connect": [
                                     {
@@ -317,8 +311,6 @@
                           { "Group":
                             {
                               "@DEF":"HumanoidGroup3",
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "IS": {
                                   "connect": [
                                     {
@@ -444,8 +436,6 @@
                     { "Transform":
                       {
                         "@DEF":"JointTransform",
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -577,8 +567,6 @@
                     { "Group":
                       {
                         "@DEF":"SegmentGroup",
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -685,8 +673,6 @@
                     { "Transform":
                       {
                         "@DEF":"SiteTransform",
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -806,8 +792,6 @@
                                                 "-children":[
                                                   { "Shape":
                                                     {
-                                                      "@bboxCenter":[0,0,0],
-                                                      "@bboxSize":[-1,-1,-1],
                                                       "-appearance":
                                                         { "Appearance":
                                                           {
@@ -871,8 +855,6 @@
                                                           "-children":[
                                                             { "Shape":
                                                               {
-                                                                "@bboxCenter":[0,0,0],
-                                                                "@bboxSize":[-1,-1,-1],
                                                                 "-appearance":
                                                                   { "Appearance":
                                                                     {
@@ -934,8 +916,6 @@
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
@@ -997,8 +977,6 @@
                                                                               "-children":[
                                                                                 { "Shape":
                                                                                   {
-                                                                                    "@bboxCenter":[0,0,0],
-                                                                                    "@bboxSize":[-1,-1,-1],
                                                                                     "-appearance":
                                                                                       { "Appearance":
                                                                                         {
@@ -1076,8 +1054,6 @@
                                                           "-children":[
                                                             { "Shape":
                                                               {
-                                                                "@bboxCenter":[0,0,0],
-                                                                "@bboxSize":[-1,-1,-1],
                                                                 "-appearance":
                                                                   { "Appearance":
                                                                     {
@@ -1139,8 +1115,6 @@
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
@@ -1202,8 +1176,6 @@
                                                                               "-children":[
                                                                                 { "Shape":
                                                                                   {
-                                                                                    "@bboxCenter":[0,0,0],
-                                                                                    "@bboxSize":[-1,-1,-1],
                                                                                     "-appearance":
                                                                                       { "Appearance":
                                                                                         {
@@ -1285,8 +1257,6 @@
                                                 "-children":[
                                                   { "Shape":
                                                     {
-                                                      "@bboxCenter":[0,0,0],
-                                                      "@bboxSize":[-1,-1,-1],
                                                       "-appearance":
                                                         { "Appearance":
                                                           {
@@ -1364,16 +1334,12 @@
                                                             { "Transform":
                                                               {
                                                                 "@DEF":"l_upperarm_adjust",
-                                                                "@bboxCenter":[0,0,0],
-                                                                "@bboxSize":[-1,-1,-1],
                                                                 "@center":[0.182,1.22,-0.047],
                                                                 "@rotation":[1,0,0,0.119],
                                                                 "@translation":[0,4.203E-4,-0.01665],
                                                                 "-children":[
                                                                   { "Shape":
                                                                     {
-                                                                      "@bboxCenter":[0,0,0],
-                                                                      "@bboxSize":[-1,-1,-1],
                                                                       "-appearance":
                                                                         { "Appearance":
                                                                           {
@@ -1441,16 +1407,12 @@
                                                                       { "Transform":
                                                                         {
                                                                           "@DEF":"l_forearm_adjust",
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
                                                                           "@center":[0.198,0.961,-0.0405],
                                                                           "@rotation":[-1,0,0,0.1],
                                                                           "@translation":[0,0.003724,-0.0236],
                                                                           "-children":[
                                                                             { "Shape":
                                                                               {
-                                                                                "@bboxCenter":[0,0,0],
-                                                                                "@bboxSize":[-1,-1,-1],
                                                                                 "-appearance":
                                                                                   { "Appearance":
                                                                                     {
@@ -1516,16 +1478,12 @@
                                                                                 { "Transform":
                                                                                   {
                                                                                     "@DEF":"l_hand_adjust",
-                                                                                    "@bboxCenter":[0,0,0],
-                                                                                    "@bboxSize":[-1,-1,-1],
                                                                                     "@center":[0.213,0.811,-0.0338],
                                                                                     "@rotation":[-0.06361,-0.9967,0.04988,1.333],
                                                                                     "@translation":[0,0.005142,-0.008662],
                                                                                     "-children":[
                                                                                       { "Shape":
                                                                                         {
-                                                                                          "@bboxCenter":[0,0,0],
-                                                                                          "@bboxSize":[-1,-1,-1],
                                                                                           "-appearance":
                                                                                             { "Appearance":
                                                                                               {
@@ -1606,16 +1564,12 @@
                                                             { "Transform":
                                                               {
                                                                 "@DEF":"r_upperarm_adjust",
-                                                                "@bboxCenter":[0,0,0],
-                                                                "@bboxSize":[-1,-1,-1],
                                                                 "@center":[-0.182,1.22,-0.047],
                                                                 "@rotation":[1,0,0,0.0836],
                                                                 "@translation":[0,5.89E-4,-0.01169],
                                                                 "-children":[
                                                                   { "Shape":
                                                                     {
-                                                                      "@bboxCenter":[0,0,0],
-                                                                      "@bboxSize":[-1,-1,-1],
                                                                       "-appearance":
                                                                         { "Appearance":
                                                                           {
@@ -1681,16 +1635,12 @@
                                                                       { "Transform":
                                                                         {
                                                                           "@DEF":"r_forearm_adjust",
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
                                                                           "@center":[-0.198,0.961,-0.0397],
                                                                           "@rotation":[-1,0,0,0.1254],
                                                                           "@translation":[0,0.003466,-0.01065],
                                                                           "-children":[
                                                                             { "Shape":
                                                                               {
-                                                                                "@bboxCenter":[0,0,0],
-                                                                                "@bboxSize":[-1,-1,-1],
                                                                                 "-appearance":
                                                                                   { "Appearance":
                                                                                     {
@@ -1756,15 +1706,11 @@
                                                                                 { "Transform":
                                                                                   {
                                                                                     "@DEF":"r_hand_adjust",
-                                                                                    "@bboxCenter":[0,0,0],
-                                                                                    "@bboxSize":[-1,-1,-1],
                                                                                     "@center":[-0.217,0.811,-0.0338],
                                                                                     "@rotation":[-0.09024,0.994,-0.0624,1.216],
                                                                                     "-children":[
                                                                                       { "Shape":
                                                                                         {
-                                                                                          "@bboxCenter":[0,0,0],
-                                                                                          "@bboxSize":[-1,-1,-1],
                                                                                           "-appearance":
                                                                                             { "Appearance":
                                                                                               {
@@ -1844,8 +1790,6 @@
                                                           "-children":[
                                                             { "Shape":
                                                               {
-                                                                "@bboxCenter":[0,0,0],
-                                                                "@bboxSize":[-1,-1,-1],
                                                                 "-appearance":
                                                                   { "Appearance":
                                                                     {
@@ -1908,8 +1852,6 @@
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
@@ -1972,8 +1914,6 @@
                     },
                     { "Group":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1]
                       }
                     }
                   ]
@@ -2208,13 +2148,9 @@
           { "Group":
             {
               "@DEF":"Interface",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "ProximitySensor":
                         {
@@ -2229,28 +2165,20 @@
                 { "Collision":
                   {
                     "@DEF":"HUD",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@enabled":false,
                     "-children":[
                       { "Transform":
                         {
                           "@DEF":"HudXform",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Transform":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@scale":[0.012,0.012,0.012],
                                 "@translation":[0.01107,-0.025,-0.08],
                                 "-children":[
                                   { "Transform":
                                     {
                                       "@DEF":"Stand_Text",
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "TouchSensor":
                                           {
@@ -2261,8 +2189,6 @@
                                         { "Shape":
                                           {
                                             "@DEF":"Stand",
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -2293,16 +2219,12 @@
                                         },
                                         { "Transform":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "@scale":[84.89,77.52,77.52],
                                             "@translation":[0.04092,1.843,3.826],
                                             "-children":[
                                               { "Shape":
                                                 {
                                                   "@DEF":"Stand_Back",
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -2340,8 +2262,6 @@
                                   { "Transform":
                                     {
                                       "@DEF":"Walk_Text",
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "TouchSensor":
                                           {
@@ -2352,8 +2272,6 @@
                                         { "Shape":
                                           {
                                             "@DEF":"WALK",
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -2381,16 +2299,12 @@
                                         },
                                         { "Transform":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "@scale":[81.3,81.3,81.31],
                                             "@translation":[-0.0414,1.941,4.015],
                                             "-children":[
                                               { "Shape":
                                                 {
                                                   "@DEF":"Walk_Back",
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -2425,8 +2339,6 @@
                                   { "Transform":
                                     {
                                       "@DEF":"Run_Text",
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "TouchSensor":
                                           {
@@ -2437,8 +2349,6 @@
                                         { "Shape":
                                           {
                                             "@DEF":"Run",
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -2466,16 +2376,12 @@
                                         },
                                         { "Transform":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "@scale":[82.47,82.47,82.48],
                                             "@translation":[-0.01579,1.968,4.074],
                                             "-children":[
                                               { "Shape":
                                                 {
                                                   "@DEF":"Run_Back",
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -2510,8 +2416,6 @@
                                   { "Transform":
                                     {
                                       "@DEF":"Jump_Text",
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "TouchSensor":
                                           {
@@ -2522,8 +2426,6 @@
                                         { "Shape":
                                           {
                                             "@DEF":"Jump",
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -2551,16 +2453,12 @@
                                         },
                                         { "Transform":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "@scale":[83.79,83.79,83.79],
                                             "@translation":[-0.008979,1.99,4.14],
                                             "-children":[
                                               { "Shape":
                                                 {
                                                   "@DEF":"Jump_Back",
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
@@ -2604,15 +2502,11 @@
                 { "Transform":
                   {
                     "@DEF":"Floor",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@scale":[1,0.0125,1],
                     "@translation":[0,-0.0125,0],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -2626,8 +2520,6 @@
                           "-geometry":
                             { "Box":
                               {
-                                "@size":[2,2,2],
-                                "@solid":true
                               }
                             }
                         }
@@ -2641,14 +2533,10 @@
           { "Group":
             {
               "@DEF":"Animations",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Group":
                   {
                     "@DEF":"Stand_Animation",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "OrientationInterpolator":
                         {
@@ -2788,8 +2676,6 @@
                 { "Group":
                   {
                     "@DEF":"Walk_Animation",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "OrientationInterpolator":
                         {
@@ -2931,8 +2817,6 @@
                 { "Group":
                   {
                     "@DEF":"Run_Animation",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "OrientationInterpolator":
                         {
@@ -3073,8 +2957,6 @@
                 { "Group":
                   {
                     "@DEF":"Jump_Animation",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "OrientationInterpolator":
                         {

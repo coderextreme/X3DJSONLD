@@ -2,8 +2,8 @@
     "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 August 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -54,8 +54,6 @@
                       "-children":[
                         { "Shape":
                           {
-                            "@bboxCenter":[0,0,0],
-                            "@bboxSize":[-1,-1,-1],
                             "-geometry":
                               { "Sphere":
                                 {
@@ -71,8 +69,6 @@
                   "-children":[
                     { "Transform":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {

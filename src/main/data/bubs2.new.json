@@ -2,8 +2,8 @@
     "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.3",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 August 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -69,9 +69,7 @@
               "@frontUrl":["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"],
               "@leftUrl":["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"],
               "@rightUrl":["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"],
-              "@skyColor":[0,0,0],
-              "@topUrl":["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"],
-              "@transparency":0
+              "@topUrl":["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]
             }
           },
           { "ProtoDeclare":
@@ -82,13 +80,9 @@
                     { "Transform":
                       {
                         "@DEF":"transform",
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           { "Shape":
                             {
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-appearance":
                                 { "Appearance":
                                   {

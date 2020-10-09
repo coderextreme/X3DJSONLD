@@ -2442,7 +2442,7 @@ var fieldTypes = {"X3DNode" : {
 	"normalScale" : "SFFloat",
 	"normalTexture" : "SFNode",
 	"normalTextureMapping" : "SFString",
-	"occlusionStrength" : "SFColor",
+	"occlusionStrength" : "SFFloat",
 	"occlusionTexture" : "SFNode",
 	"occlusionTextureMapping" : "SFString",
 	"shininess" : "SFFloat",
@@ -3462,7 +3462,7 @@ var fieldTypes = {"X3DNode" : {
 	"USE" : "SFString",
 	"class" : "SFString",
 },
-"X3DScript" : {
+"Script" : {
 	"description" : "SFString",
 	"directOutput" : "SFBool",
 	"field" : "MFNode",

@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
           {
@@ -138,7 +138,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 September 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -1540,6 +1540,65 @@
               "@fromNode":"ANIMATOR",
               "@toField":"set_rotation",
               "@toNode":"boxman_r_wrist"
+            }
+          },
+          { "Script":
+            {
+              "@DEF":"ENGINE",
+              "@directOutput":true,
+              "@url":["BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"],
+              "field": [
+                {
+                  "@name":"update",
+                  "@accessType":"inputOnly",
+                  "@type":"SFRotation"
+                },
+                {
+                  "@name":"humanoid",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    { "HAnimHumanoid":
+                      {
+                        "@USE":"boxman_Humanoid"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@name":"coordList",
+                  "@accessType":"initializeOnly",
+                  "@type":"MFVec3f"
+                },
+                {
+                  "@name":"joint",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFNode",
+                  "-children":[
+                    {
+                      "#comment":"initialization node (if any) goes here"
+                    }
+                  ]
+                },
+                {
+                  "@name":"translation",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f",
+                  "@value":[0,0,0]
+                },
+                {
+                  "@name":"rotation",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFRotation",
+                  "@value":[1,0,0,0]
+                },
+                {
+                  "@name":"scale",
+                  "@accessType":"initializeOnly",
+                  "@type":"SFVec3f",
+                  "@value":[1,1,1]
+                }
+              ]
             }
           },
           {

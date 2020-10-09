@@ -2,8 +2,8 @@
     "encoding":"UTF-8",
     "@profile":"Interchange",
     "@version":"3.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "component": [
           {
@@ -22,7 +22,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 August 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -89,8 +89,6 @@
                   "-children":[
                     { "Transform":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -102,8 +100,6 @@
                         "-children":[
                           { "Shape":
                             {
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-appearance":
                                 { "Appearance":
                                   {
@@ -154,8 +150,6 @@
                   "-children":[
                     { "Transform":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -167,8 +161,6 @@
                         "-children":[
                           { "Shape":
                             {
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-appearance":
                                 { "Appearance":
                                   {
@@ -184,8 +176,7 @@
                               "-geometry":
                                 { "Box":
                                   {
-                                    "@size":[0.7,0.7,0.7],
-                                    "@solid":true
+                                    "@size":[0.7,0.7,0.7]
                                   }
                                 }
                             }
@@ -214,8 +205,6 @@
                   "-children":[
                     { "Transform":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -227,8 +216,6 @@
                         "-children":[
                           { "Shape":
                             {
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-appearance":
                                 { "Appearance":
                                   {
@@ -278,8 +265,6 @@
                   "-children":[
                     { "Transform":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -291,8 +276,6 @@
                         "-children":[
                           { "Shape":
                             {
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-appearance":
                                 { "Appearance":
                                   {
@@ -481,21 +464,15 @@
           },
           { "Transform":
             {
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "@translation":[-468,0,315],
               "-children":[
                 { "Inline":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@url":["t.wrl"]
                   }
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Derby Women's Centre",
                     "@url":["javascript:window.open('./data/566.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -515,8 +492,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"High Peak Community Arts",
                     "@url":["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -536,8 +511,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Charlesworth Primary School",
                     "@url":["javascript:window.open('./data/576.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -557,8 +530,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Hope Valley College",
                     "@url":["javascript:window.open('./data/579.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -578,8 +549,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"People Express",
                     "@url":["javascript:window.open('./data/583.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -599,8 +568,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"QArts/Studios",
                     "@url":["javascript:window.open('./data/589.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -620,8 +587,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Stroke Unit, Derbyshire Royal Infirmary",
                     "@url":["javascript:window.open('./data/591.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -641,8 +606,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Park View Primary, Derby",
                     "@url":["javascript:window.open('./data/592.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -662,8 +625,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"First Movement",
                     "@url":["javascript:window.open('./data/593.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -683,8 +644,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"St. Benedict R.C. School, Visual Impairment Unit",
                     "@url":["javascript:window.open('./data/594.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -704,8 +663,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Beckett Primary, Derby",
                     "@url":["javascript:window.open('./data/595.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -725,8 +682,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Brackensdale Junior School, Communty Unit",
                     "@url":["javascript:window.open('./data/597.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -746,8 +701,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Moorhead Primary, Derby",
                     "@url":["javascript:window.open('./data/598.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -767,8 +720,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Derby Deaf Club",
                     "@url":["javascript:window.open('./data/600.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -788,8 +739,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Nightingale Junior, Derby",
                     "@url":["javascript:window.open('./data/601.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -809,8 +758,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"St Mary's Primary, Derby",
                     "@url":["javascript:window.open('./data/603.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -830,8 +777,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Griffe Field Primary, Derby",
                     "@url":["javascript:window.open('./data/604.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -851,8 +796,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Leicester Road Day Centre, Melton Mowbray",
                     "@url":["javascript:window.open('./data/605.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -872,8 +815,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Ivy House Special School, Derby",
                     "@url":["javascript:window.open('./data/606.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -893,8 +834,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Oakham Day Centre, Rutland",
                     "@url":["javascript:window.open('./data/607.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -914,8 +853,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Parkwood School, Alfreton",
                     "@url":["javascript:window.open('./data/608.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -935,8 +872,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Ash Green, Specialist Learning Disability Resource",
                     "@url":["javascript:window.open('./data/609.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -956,8 +891,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Ashgate Croft School, Chesterfield",
                     "@url":["javascript:window.open('./data/610.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -977,8 +910,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Highfields School, Matlock",
                     "@url":["javascript:window.open('./data/611.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -998,8 +929,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"City Arts",
                     "@url":["javascript:window.open('./data/612.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1019,8 +948,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Indigo Dance Group (Salamanda Tandem)",
                     "@url":["javascript:window.open('./data/615.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1040,8 +967,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Watering Seeds",
                     "@url":["javascript:window.open('./data/623.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1061,8 +986,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Red oaks",
                     "@url":["javascript:window.open('./data/625.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1082,8 +1005,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"West Notts College",
                     "@url":["javascript:window.open('./data/626.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1103,8 +1024,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Willow Wood Day Centre",
                     "@url":["javascript:window.open('./data/628.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1124,8 +1043,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Fased In The Arts",
                     "@url":["javascript:window.open('./data/630.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1145,8 +1062,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"27a Access Artspace",
                     "@url":["javascript:window.open('./data/633.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1166,8 +1081,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Roman Way Day Centre, Market Harborough",
                     "@url":["javascript:window.open('./data/635.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1187,8 +1100,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Mosaic, Leicester Disability Services",
                     "@url":["javascript:window.open('./data/637.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1208,8 +1119,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Bamboozle Theatre Company",
                     "@url":["javascript:window.open('./data/638.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1229,8 +1138,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Ellesmere College, Leicester",
                     "@url":["javascript:window.open('./data/640.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1250,8 +1157,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Ashmount School, Loughborough",
                     "@url":["javascript:window.open('./data/642.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1271,8 +1176,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Mantle Community Arts",
                     "@url":["javascript:window.open('./data/648.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1292,8 +1195,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Forrest Way School",
                     "@url":["javascript:window.open('./data/650.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1313,8 +1214,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Ibstock Community College",
                     "@url":["javascript:window.open('./data/652.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1334,8 +1233,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Artlink East",
                     "@url":["javascript:window.open('./data/658.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1355,8 +1252,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"United Hospitals and NHS Trust Lincolnshire",
                     "@url":["javascript:window.open('./data/660.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1376,8 +1271,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Ancaster Day Centre",
                     "@url":["javascript:window.open('./data/662.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1397,8 +1290,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Creations",
                     "@url":["javascript:window.open('./data/665.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1418,8 +1309,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Nene Day Centre, Northamtpon",
                     "@url":["javascript:window.open('./data/667.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1439,8 +1328,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Delapre Middle School, Northampton",
                     "@url":["javascript:window.open('./data/668.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1460,8 +1347,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"The Links, Brackley",
                     "@url":["javascript:window.open('./data/669.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1481,8 +1366,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"New Perspectives",
                     "@url":["javascript:window.open('./data/670.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1502,8 +1385,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"UKan2",
                     "@url":["javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1523,8 +1404,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Silverstone County Infants School",
                     "@url":["javascript:window.open('./data/672.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1544,8 +1423,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Riverside Resource Centre, Towcester",
                     "@url":["javascript:window.open('./data/677.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1565,8 +1442,6 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Daventry Tertiary College",
                     "@url":["javascript:window.open('./data/678.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"],
                     "-children":[
@@ -1586,8 +1461,6 @@
                 },
                 { "Shape":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -1616,8 +1489,6 @@
                 },
                 { "Shape":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {
@@ -1646,8 +1517,6 @@
                 },
                 { "Shape":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-appearance":
                       { "Appearance":
                         {

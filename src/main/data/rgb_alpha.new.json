@@ -2,8 +2,8 @@
     "encoding":"UTF-8",
     "@profile":"Interchange",
     "@version":"3.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -80,7 +80,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 August 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -101,19 +101,13 @@
           },
           { "Group":
             {
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[6.14221,0.0694613,-9.99451E-4],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -134,8 +128,6 @@
                           "-geometry":
                             { "Box":
                               {
-                                "@size":[2,2,2],
-                                "@solid":true
                               }
                             }
                         }
@@ -145,14 +137,10 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-4.85443,0.0694381,-0.00149918],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -181,14 +169,10 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-1.47341,0.036672,-0.00175095],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -208,11 +192,6 @@
                           "-geometry":
                             { "Cone":
                               {
-                                "@bottom":true,
-                                "@bottomRadius":1,
-                                "@height":2,
-                                "@side":true,
-                                "@solid":true
                               }
                             }
                         }
@@ -222,14 +201,10 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[2.31094,0.0694206,-0.00187683],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {

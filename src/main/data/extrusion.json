@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 September 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -79,25 +79,7 @@
                     "@loop":true
                   }
                 },
-                { "ROUTE":
-                  {
-                    "@fromNode":"TourTime",
-                    "@fromField":"cycleTime",
-                    "@toNode":"MoveCylinder",
-                    "@toField":"set_cycle"
-                  }
-                },
-                { "ROUTE":
-                  {
-                    "@fromNode":"MoveCylinder",
-                    "@fromField":"spine_changed",
-                    "@toNode":"extrusion",
-                    "@toField":"spine"
-                  }
-                }
-              ],
-              "-IllegalChildNodeFieldNameNotFound":[
-                { "X3DScript":
+                { "Script":
                   {
                     "@DEF":"MoveCylinder",
                     "field": [
@@ -112,7 +94,37 @@
                         "@type":"MFVec3f",
                         "@value":[-50,-50,0,50,50,0]
                       }
-                    ]
+                    ],
+                    "#sourceText":[
+"",
+"",
+"ecmascript:",
+"",
+"                function set_cycle(value) {",
+"                        Browser.print(value);",
+"                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);",
+"                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);",
+"\t\t        spine = new MFVec3f([endA, endB]);",
+"                }",
+"",
+""
+]
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"TourTime",
+                    "@fromField":"cycleTime",
+                    "@toNode":"MoveCylinder",
+                    "@toField":"set_cycle"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromNode":"MoveCylinder",
+                    "@fromField":"spine_changed",
+                    "@toNode":"extrusion",
+                    "@toField":"spine"
                   }
                 }
               ]

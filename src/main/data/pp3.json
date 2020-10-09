@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"29 September 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -360,7 +360,7 @@
                         ]
                       }
                     },
-                    { "X3DScript":
+                    { "Script":
                       {
                         "@DEF":"RightSingleToMultiString",
                         "field": [
@@ -374,10 +374,23 @@
                             "@accessType":"outputOnly",
                             "@type":"MFString"
                           }
-                        ]
+                        ],
+                        "#sourceText":[
+"",
+"ecmascript:",
+"",
+"function initialize() {",
+"\trightlines = new MFString(\"\");",
+"}",
+"",
+"function set_rightstring(rightstr) {",
+"\trightlines = new MFString(rightstr);",
+"}",
+""
+]
                       }
                     },
-                    { "X3DScript":
+                    { "Script":
                       {
                         "@DEF":"UpSingleToMultiString",
                         "field": [
@@ -391,10 +404,23 @@
                             "@accessType":"outputOnly",
                             "@type":"MFString"
                           }
-                        ]
+                        ],
+                        "#sourceText":[
+"",
+"ecmascript:",
+"",
+"function initialize() {",
+"\tuplines = new MFString(\"\");",
+"}",
+"",
+"function set_upstring(upstr) {",
+"\tuplines = new MFString(upstr);",
+"}",
+""
+]
                       }
                     },
-                    { "X3DScript":
+                    { "Script":
                       {
                         "@DEF":"CenterSingleToMultiString",
                         "field": [
@@ -408,7 +434,20 @@
                             "@accessType":"outputOnly",
                             "@type":"MFString"
                           }
-                        ]
+                        ],
+                        "#sourceText":[
+"",
+"ecmascript:",
+"",
+"function initialize() {",
+"\tcenterlines = new MFString(\"\");",
+"}",
+"",
+"function set_centerstring(centerstr) {",
+"\tcenterlines = new MFString(centerstr);",
+"}",
+""
+]
                       }
                     },
                     { "ROUTE":

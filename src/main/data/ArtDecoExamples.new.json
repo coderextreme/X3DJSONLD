@@ -2,8 +2,8 @@
     "encoding":"UTF-8",
     "@profile":"Immersive",
     "@version":"3.0",
-    "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.0.xsd",
-    "JSON schema":"http://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.0.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 August 2020"
+            "@content":"09 October 2020"
           },
           {
             "@name":"generator",
@@ -353,8 +353,6 @@
           },
           { "Group":
             {
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "NavigationInfo":
                   {
@@ -395,8 +393,6 @@
                 { "Transform":
                   {
                     "@DEF":"Close_travel",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "PositionInterpolator":
                         {
@@ -435,21 +431,15 @@
                 },
                 { "Anchor":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@description":"Back to front view",
                     "@url":["#Front"],
                     "-children":[
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0,-0.5],
                           "-children":[
                             { "Inline":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@url":["../data/gridBack.json"]
                               }
                             }
@@ -468,21 +458,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-3.75,3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco00 view",
                           "@url":["#View00"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -508,22 +492,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco00",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -572,21 +550,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-2.25,3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco01 view",
                           "@url":["#View01"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -611,22 +583,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco01",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -670,21 +636,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-0.75,3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco02 view",
                           "@url":["#View02"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -709,22 +669,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco02",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -768,21 +722,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[0.75,3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco03 view",
                           "@url":["#View03"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -807,22 +755,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco03",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -866,21 +808,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[2.25,3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco04 view",
                           "@url":["#View04"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -905,22 +841,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco04",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -964,21 +894,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[3.75,3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco05 view",
                           "@url":["#View05"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1003,22 +927,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco05",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -1062,21 +980,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-3.75,2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco06 view",
                           "@url":["#View06"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1101,22 +1013,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco06",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -1160,21 +1066,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-2.25,2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco07 view",
                           "@url":["#View07"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1199,22 +1099,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco07",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -1258,21 +1152,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-0.75,2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco08 view",
                           "@url":["#View08"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1297,22 +1185,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco08",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -1356,21 +1238,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[0.75,2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco09 view",
                           "@url":["#View09"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1395,22 +1271,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco09",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -1454,21 +1324,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[2.25,2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco10 view",
                           "@url":["#View10"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1493,22 +1357,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco10",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -1552,21 +1410,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[3.75,2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco11 view",
                           "@url":["#View11"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1591,22 +1443,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco11",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -1650,21 +1496,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-3.75,0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco12 view",
                           "@url":["#View12"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1689,22 +1529,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco12",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -1748,21 +1582,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-2.25,0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco13 view",
                           "@url":["#View13"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1787,22 +1615,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco13",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -1846,21 +1668,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-0.75,0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco14 view",
                           "@url":["#View14"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1885,22 +1701,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco14",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -1944,21 +1754,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[0.75,0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco15 view",
                           "@url":["#View15"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -1983,22 +1787,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco15",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -2042,21 +1840,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[2.25,0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco16 view",
                           "@url":["#View16"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -2081,22 +1873,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco16",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -2140,21 +1926,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[3.75,0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco17 view",
                           "@url":["#View17"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -2179,22 +1959,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco17",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -2238,21 +2012,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-3.75,-0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco18 view",
                           "@url":["#View18"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -2277,22 +2045,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco18",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -2336,21 +2098,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-2.25,-0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco19 view",
                           "@url":["#View19"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -2375,22 +2131,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco19",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -2434,21 +2184,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-0.75,-0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco20 view",
                           "@url":["#View20"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -2473,22 +2217,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco20",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -2532,21 +2270,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[0.75,-0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco21 view",
                           "@url":["#View21"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -2571,22 +2303,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco21",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -2630,21 +2356,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[2.25,-0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco22 view",
                           "@url":["#View22"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -2669,22 +2389,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco22",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -2728,21 +2442,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[3.75,-0.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco23 view",
                           "@url":["#View23"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -2767,22 +2475,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco23",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -2826,21 +2528,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-3.75,-2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco24 view",
                           "@url":["#View24"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -2865,22 +2561,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco24",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -2924,21 +2614,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-2.25,-2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco25 view",
                           "@url":["#View25"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -2963,22 +2647,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco25",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -3022,21 +2700,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-0.75,-2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco26 view",
                           "@url":["#View26"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -3061,22 +2733,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco26",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -3120,21 +2786,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[0.75,-2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco27 view",
                           "@url":["#View27"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -3159,22 +2819,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco27",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -3218,21 +2872,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[2.25,-2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco28 view",
                           "@url":["#View28"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -3257,22 +2905,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco28",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -3316,21 +2958,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[3.75,-2.25,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco29 view",
                           "@url":["#View29"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -3355,22 +2991,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco29",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -3414,21 +3044,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-3.75,-3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco30 view",
                           "@url":["#View30"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -3453,22 +3077,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco30",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -3512,21 +3130,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-2.25,-3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco31 view",
                           "@url":["#View31"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -3551,22 +3163,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco31",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -3610,21 +3216,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[-0.75,-3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco32 view",
                           "@url":["#View32"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -3649,22 +3249,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco32",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -3708,21 +3302,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[0.75,-3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco33 view",
                           "@url":["#View33"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -3747,22 +3335,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco33",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -3806,21 +3388,15 @@
                 },
                 { "Transform":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "@translation":[2.25,-3.75,0],
                     "-children":[
                       { "Anchor":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@description":"ArtDeco34 view",
                           "@url":["#View34"],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-appearance":
                                   { "Appearance":
                                     {
@@ -3845,22 +3421,16 @@
                       },
                       { "Transform":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "@translation":[0,0.3,0.5],
                           "-children":[
                             { "Anchor":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "@description":"ArtDeco34",
                                 "@parameter":["target=_source"],
                                 "@url":["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {

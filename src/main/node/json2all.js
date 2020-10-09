@@ -17,7 +17,7 @@ convertJSON([
 	{ 
 	serializer : "./ECMAScriptSerializer.js",
 	folder : "../node/net/ecma/",
-	extension : ".js",
+	extension : ".mjs",
 	codeOutput : "../"
 	},
 	/*
