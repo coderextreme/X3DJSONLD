@@ -43,7 +43,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           material=Material(diffuseColor=(0,0.5,1),specularColor=(0,0.5,1))),
         geometry=IndexedFaceSet(convex=False,DEF='Orbit',
           coord=Coordinate(DEF='OrbitCoordinates')))]),
-    Script(DEF='OrbitScript',
+    X3DScript(DEF='OrbitScript',
       field=[
       field(accessType='inputOnly',name='set_fraction',type='SFFloat'),
       field(accessType='outputOnly',name='coordinates',type='MFVec3f'),

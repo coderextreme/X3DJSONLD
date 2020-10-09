@@ -25,13 +25,21 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
-    meta(name='title',content='CoordinateAxes.x3d'),
-    meta(name='creator',content='Unknown, see X3D Resources Archives'),
-    meta(name='generator',content='manual'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/CoordinateAxes.x3d'),
-    meta(name='description',content='a box')]),
+    meta(content='CoordinateAxes.x3d',name='title'),
+    meta(content='Don Brutzman, Byounghyun Yoo',name='creator'),
+    meta(content='14 July 2000',name='created'),
+    meta(content='20 October 2019',name='modified'),
+    meta(content='X Y Z axis arrows and labels in X3D coordinate system. See CoordinateAxesExample for use as an Inline coordinate-system reference frame.',name='description'),
+    meta(content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d',name='reference'),
+    meta(content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d',name='reference'),
+    meta(content='https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d',name='reference'),
+    meta(content='https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d',name='reference'),
+    meta(content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d',name='identifier'),
+    meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
+    WorldInfo(title='CoordinateAxes.x3d'),
     Collision(DEF='DoNotCollideWithVisualizationWidget',
       #  Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. 
       #  This NavigationInfo allows examine mode and will be overridden by any parent scene. 

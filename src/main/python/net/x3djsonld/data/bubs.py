@@ -39,13 +39,13 @@ newModel=X3D(profile='Immersive',version='3.3',
     ProtoDeclare(name='Bubble',
       ProtoBody=ProtoBody(
         children=[
-        Transform(DEF='transform',
+        Transform(DEF='body_trans',
           children=[
           Shape(
             geometry=Sphere(radius=0.25),
             appearance=Appearance(
               material=Material(diffuseColor=(1,0,0),transparency=0.2))),
-          Script(DEF='bounce1',
+          X3DScript(DEF='bounce1',
             field=[
             field(name='scale',accessType='inputOutput',type='SFVec3f',value=(1,1,1)),
             field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
@@ -53,8 +53,8 @@ newModel=X3D(profile='Immersive',version='3.3',
             field(name='scalvel',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
             field(name='set_fraction',accessType='inputOnly',type='SFFloat')]),
           TimeSensor(DEF='bubbleClock',cycleInterval=10,loop=True),
-          ROUTE(fromNode='bounce1',fromField='translation_changed',toNode='transform',toField='set_translation'),
-          ROUTE(fromNode='bounce1',fromField='scale_changed',toNode='transform',toField='set_scale'),
+          ROUTE(fromNode='bounce1',fromField='translation_changed',toNode='body_trans',toField='set_translation'),
+          ROUTE(fromNode='bounce1',fromField='scale_changed',toNode='body_trans',toField='set_scale'),
           ROUTE(fromNode='bubbleClock',fromField='fraction_changed',toNode='bounce1',toField='set_fraction')])])),
     ProtoInstance(name='Bubble',DEF='bubbleA'),
     ProtoInstance(name='Bubble',DEF='bubbleB'),

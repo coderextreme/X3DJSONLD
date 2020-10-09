@@ -111,7 +111,7 @@ newModel=X3D(profile='Immersive',version='3.2',
             connect(nodeField='set_fraction',protoField='set_fraction')])),
         ROUTE(fromField='value_changed',fromNode='CameraPositionInterpolator',toField='position',toNode='CameraViewpoint'),
         ROUTE(fromField='value_changed',fromNode='CameraOrientationInterpolator',toField='orientation',toNode='CameraViewpoint'),
-        Script(DEF='CameraScript',directOutput=True,mustEvaluate=True,
+        X3DScript(DEF='CameraScript',directOutput=true,mustEvaluate=true,
           #  binding is controlled externally, all camera operations proceed the same regardless of whether bound or not 
           field=[
           field(accessType='inputOutput',appinfo='Text description to be displayed for this Camera',name='description',type='SFString'),
@@ -203,7 +203,7 @@ newModel=X3D(profile='Immersive',version='3.2',
         field(accessType='initializeOnly',appinfo='enable console output to trace script computations and prototype progress',name='traceEnabled',type='SFBool',value=False)]),
       ProtoBody=ProtoBody(
         children=[
-        Script(DEF='CameraShotScript',directOutput=True,mustEvaluate=True,
+        X3DScript(DEF='CameraShotScript',directOutput=true,mustEvaluate=true,
           field=[
           field(accessType='inputOutput',appinfo='Text description to be displayed for this CameraShot',name='description',type='SFString'),
           field(accessType='inputOutput',appinfo='Whether this CameraShot can be activated',name='enabled',type='SFBool'),
@@ -259,7 +259,7 @@ newModel=X3D(profile='Immersive',version='3.2',
         #  Subsequent nodes do not render, but still must be a valid X3D subgraph 
         #  Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events 
         children=[
-        Script(DEF='CameraMovementScript',directOutput=True,mustEvaluate=True,
+        X3DScript(DEF='CameraMovementScript',directOutput=true,mustEvaluate=true,
           field=[
           field(accessType='inputOutput',appinfo='Text description to be displayed for this CameraMovement',name='description',type='SFString'),
           field(accessType='inputOutput',appinfo='Whether this CameraMovement can be activated',name='enabled',type='SFBool'),
@@ -309,7 +309,7 @@ newModel=X3D(profile='Immersive',version='3.2',
         #  First node determines node type of this prototype 
         #  Subsequent nodes do not render, but still must be a valid X3D subgraph 
         children=[
-        Script(DEF='OfflineRenderScript',mustEvaluate=True,
+        X3DScript(DEF='OfflineRenderScript',mustEvaluate=true,
           field=[
           field(accessType='inputOutput',appinfo='Text description to be displayed for this OfflineRender',name='description',type='SFString'),
           field(accessType='inputOutput',appinfo='Whether this OfflineRender can be activated',name='enabled',type='SFBool'),

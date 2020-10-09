@@ -101,7 +101,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(accessType='inputOnly',name='set_endpoint',type='SFVec3f')]),
       ProtoBody=ProtoBody(
         children=[
-        Script(DEF='S1',
+        X3DScript(DEF='S1',
           field=[
           field(accessType='initializeOnly',name='startnode',type='SFNode'),
           field(accessType='initializeOnly',name='endnode',type='SFNode'),
