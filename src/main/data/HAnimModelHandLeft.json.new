@@ -77,7 +77,7 @@
         },
         {
           "@name": "translated",
-          "@content": "11 June 2020"
+          "@content": "9 October 2020"
         },
         {
           "@name": "generator",
@@ -100,22 +100,6 @@
           "HAnimHumanoid": {
             "@name": "Humanoid_Left_hand",
             "@DEF": "Humanoid_Left_hand",
-            "@jointBindingPositions": [
-              0,
-              0,
-              0
-            ],
-            "@jointBindingRotations": [
-              0,
-              0,
-              1,
-              0
-            ],
-            "@jointBindingScales": [
-              1,
-              1,
-              1
-            ],
             "@version": "2.0",
             "-joints": [
               {
@@ -168,13 +152,7 @@
                                     "-appearance": {
                                       "Appearance": {
                                         "-material": {
-                                          "Material": {
-                                            "@emissiveColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
+                                          "Material": {}
                                         }
                                       }
                                     },
@@ -206,13 +184,7 @@
                                     "-appearance": {
                                       "Appearance": {
                                         "-material": {
-                                          "Material": {
-                                            "@emissiveColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
+                                          "Material": {}
                                         }
                                       }
                                     },
@@ -244,13 +216,7 @@
                                     "-appearance": {
                                       "Appearance": {
                                         "-material": {
-                                          "Material": {
-                                            "@emissiveColor": [
-                                              1,
-                                              1,
-                                              1
-                                            ]
-                                          }
+                                          "Material": {}
                                         }
                                       }
                                     },
@@ -338,13 +304,7 @@
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
-                                                "Material": {
-                                                  "@emissiveColor": [
-                                                    1,
-                                                    1,
-                                                    1
-                                                  ]
-                                                }
+                                                "Material": {}
                                               }
                                             }
                                           },
@@ -376,13 +336,7 @@
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
-                                                "Material": {
-                                                  "@emissiveColor": [
-                                                    1,
-                                                    1,
-                                                    1
-                                                  ]
-                                                }
+                                                "Material": {}
                                               }
                                             }
                                           },
@@ -451,13 +405,7 @@
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
-                                                      "Material": {
-                                                        "@emissiveColor": [
-                                                          1,
-                                                          1,
-                                                          1
-                                                        ]
-                                                      }
+                                                      "Material": {}
                                                     }
                                                   }
                                                 },
@@ -523,13 +471,7 @@
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
-                                                            "Material": {
-                                                              "@emissiveColor": [
-                                                                1,
-                                                                1,
-                                                                1
-                                                              ]
-                                                            }
+                                                            "Material": {}
                                                           }
                                                         }
                                                       },
@@ -595,13 +537,7 @@
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
-                                                                  "Material": {
-                                                                    "@emissiveColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
+                                                                  "Material": {}
                                                                 }
                                                               }
                                                             },
@@ -679,13 +615,7 @@
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
-                                                      "Material": {
-                                                        "@emissiveColor": [
-                                                          1,
-                                                          1,
-                                                          1
-                                                        ]
-                                                      }
+                                                      "Material": {}
                                                     }
                                                   }
                                                 },
@@ -751,13 +681,7 @@
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
-                                                            "Material": {
-                                                              "@emissiveColor": [
-                                                                1,
-                                                                1,
-                                                                1
-                                                              ]
-                                                            }
+                                                            "Material": {}
                                                           }
                                                         }
                                                       },
@@ -823,13 +747,7 @@
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
-                                                                  "Material": {
-                                                                    "@emissiveColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
+                                                                  "Material": {}
                                                                 }
                                                               }
                                                             },
@@ -895,13 +813,7 @@
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
-                                                                        "Material": {
-                                                                          "@emissiveColor": [
-                                                                            1,
-                                                                            1,
-                                                                            1
-                                                                          ]
-                                                                        }
+                                                                        "Material": {}
                                                                       }
                                                                     }
                                                                   },
@@ -985,13 +897,7 @@
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
-                                                "Material": {
-                                                  "@emissiveColor": [
-                                                    1,
-                                                    1,
-                                                    1
-                                                  ]
-                                                }
+                                                "Material": {}
                                               }
                                             }
                                           },
@@ -1060,13 +966,7 @@
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
-                                                      "Material": {
-                                                        "@emissiveColor": [
-                                                          1,
-                                                          1,
-                                                          1
-                                                        ]
-                                                      }
+                                                      "Material": {}
                                                     }
                                                   }
                                                 },
@@ -1132,13 +1032,7 @@
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
-                                                            "Material": {
-                                                              "@emissiveColor": [
-                                                                1,
-                                                                1,
-                                                                1
-                                                              ]
-                                                            }
+                                                            "Material": {}
                                                           }
                                                         }
                                                       },
@@ -1204,13 +1098,7 @@
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
-                                                                  "Material": {
-                                                                    "@emissiveColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
+                                                                  "Material": {}
                                                                 }
                                                               }
                                                             },
@@ -1276,13 +1164,7 @@
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
-                                                                        "Material": {
-                                                                          "@emissiveColor": [
-                                                                            1,
-                                                                            1,
-                                                                            1
-                                                                          ]
-                                                                        }
+                                                                        "Material": {}
                                                                       }
                                                                     }
                                                                   },
@@ -1366,13 +1248,7 @@
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
-                                                "Material": {
-                                                  "@emissiveColor": [
-                                                    1,
-                                                    1,
-                                                    1
-                                                  ]
-                                                }
+                                                "Material": {}
                                               }
                                             }
                                           },
@@ -1404,13 +1280,7 @@
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
-                                                "Material": {
-                                                  "@emissiveColor": [
-                                                    1,
-                                                    1,
-                                                    1
-                                                  ]
-                                                }
+                                                "Material": {}
                                               }
                                             }
                                           },
@@ -1479,13 +1349,7 @@
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
-                                                      "Material": {
-                                                        "@emissiveColor": [
-                                                          1,
-                                                          1,
-                                                          1
-                                                        ]
-                                                      }
+                                                      "Material": {}
                                                     }
                                                   }
                                                 },
@@ -1551,13 +1415,7 @@
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
-                                                            "Material": {
-                                                              "@emissiveColor": [
-                                                                1,
-                                                                1,
-                                                                1
-                                                              ]
-                                                            }
+                                                            "Material": {}
                                                           }
                                                         }
                                                       },
@@ -1623,13 +1481,7 @@
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
-                                                                  "Material": {
-                                                                    "@emissiveColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
+                                                                  "Material": {}
                                                                 }
                                                               }
                                                             },
@@ -1695,13 +1547,7 @@
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
-                                                                        "Material": {
-                                                                          "@emissiveColor": [
-                                                                            1,
-                                                                            1,
-                                                                            1
-                                                                          ]
-                                                                        }
+                                                                        "Material": {}
                                                                       }
                                                                     }
                                                                   },
@@ -1782,13 +1628,7 @@
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
-                                                      "Material": {
-                                                        "@emissiveColor": [
-                                                          1,
-                                                          1,
-                                                          1
-                                                        ]
-                                                      }
+                                                      "Material": {}
                                                     }
                                                   }
                                                 },
@@ -1854,13 +1694,7 @@
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
-                                                            "Material": {
-                                                              "@emissiveColor": [
-                                                                1,
-                                                                1,
-                                                                1
-                                                              ]
-                                                            }
+                                                            "Material": {}
                                                           }
                                                         }
                                                       },
@@ -1926,13 +1760,7 @@
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
-                                                                  "Material": {
-                                                                    "@emissiveColor": [
-                                                                      1,
-                                                                      1,
-                                                                      1
-                                                                    ]
-                                                                  }
+                                                                  "Material": {}
                                                                 }
                                                               }
                                                             },
@@ -1998,13 +1826,7 @@
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
-                                                                        "Material": {
-                                                                          "@emissiveColor": [
-                                                                            1,
-                                                                            1,
-                                                                            1
-                                                                          ]
-                                                                        }
+                                                                        "Material": {}
                                                                       }
                                                                     }
                                                                   },

@@ -3,11 +3,11 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> asteroids. </p>
- <p> Related links: asteroids.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.asteroids&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -46,7 +46,7 @@ load('X3Dautoclass.js');
 	* @author John Carlson
  */
 
-function asteroids
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -55,34 +55,34 @@ function asteroids
     this.initialize();
     return this;
   }
-asteroids.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new head()
-    .addMeta(new meta().setName("title").setContent("asteroids.x3d"))
-    .addMeta(new meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new meta().setName("generator").setContent("manual"))
-    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/asteroids.x3d"))
-    .addMeta(new meta().setName("description").setContent("asteroids")))
-  .setScene(new Scene()
-    .addChild(new ProtoDeclare().setName("anyShape")
-      .setProtoInterface(new ProtoInterface()
-        .addField(new field().setAccessType("inputOutput").setName("myShape").setType("MFNode")
-          .addChild(new Shape()
-            .setGeometry(new Sphere()))))
-      .setProtoBody(new ProtoBody()
-        .addChild(new Transform()
-          .setIS(new IS()
-            .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
-    .addChild(new ProtoInstance().setName("anyShape")));
+  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  .setHead(new headObject()
+    .addMeta(new metaObject().setName("title").setContent("asteroids.x3d"))
+    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
+    .addMeta(new metaObject().setName("generator").setContent("manual"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/asteroids.x3d"))
+    .addMeta(new metaObject().setName("description").setContent("asteroids")))
+  .setScene(new SceneObject()
+    .addChild(new ProtoDeclareObject().setName("anyShape")
+      .setProtoInterface(new ProtoInterfaceObject()
+        .addField(new fieldObject().setAccessType("inputOutput").setName("myShape").setType("MFNode")
+          .addChild(new ShapeObject()
+            .setGeometry(new SphereObject()))))
+      .setProtoBody(new ProtoBodyObject()
+        .addChild(new TransformObject()
+          .setIS(new ISObject()
+            .addConnect(new connectObject().setNodeField("children").setProtoField("myShape"))))))
+    .addChild(new ProtoInstanceObject().setName("anyShape")));
   },
   // end of initialize() method
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return asteroids model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -110,11 +110,11 @@ asteroids.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
@@ -144,8 +144,8 @@ asteroids.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new asteroids();
-		print ("asteroids execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new asteroids().main();
+new NeedClassName().main();

@@ -35,7 +35,7 @@
         },
         {
           "@name": "translated",
-          "@content": "11 June 2020"
+          "@content": "9 October 2020"
         },
         {
           "@name": "generator",
@@ -107,7 +107,7 @@
               "-children": [
                 {
                   "Transform": {
-                    "@DEF": "transform",
+                    "@DEF": "body_trans",
                     "-children": [
                       {
                         "Shape": {
@@ -248,7 +248,7 @@
                         "ROUTE": {
                           "@fromNode": "bounce",
                           "@fromField": "translation_changed",
-                          "@toNode": "transform",
+                          "@toNode": "body_trans",
                           "@toField": "set_translation"
                         }
                       },
@@ -256,7 +256,7 @@
                         "ROUTE": {
                           "@fromNode": "bounce",
                           "@fromField": "scale_changed",
-                          "@toNode": "transform",
+                          "@toNode": "body_trans",
                           "@toField": "set_scale"
                         }
                       },

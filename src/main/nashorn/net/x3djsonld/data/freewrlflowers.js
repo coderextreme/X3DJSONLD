@@ -3,11 +3,11 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> 5 or more prismatic flowers. </p>
- <p> Related links: freewrlflowers.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.freewrlflowers&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -46,7 +46,7 @@ load('X3Dautoclass.js');
 	* @author John Carlson
  */
 
-function freewrlflowers
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -55,42 +55,42 @@ function freewrlflowers
     this.initialize();
     return this;
   }
-freewrlflowers.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new head()
-    .addMeta(new meta().setName("title").setContent("freewrlflowers.x3d"))
-    .addMeta(new meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new meta().setName("description").setContent("5 or more prismatic flowers"))
-    .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/freewrlflowers.x3d")))
-  .setScene(new Scene()
-    .addChild(new NavigationInfo())
-    .addChild(new Background().setBackUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
-    .addChild(new Group()
-      .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(new MFString("\"../data/flowerproto.x3d#FlowerProto\""))
-        .addField(new field().setAccessType("inputOutput").setName("vertex").setType("MFString"))
-        .addField(new field().setAccessType("inputOutput").setName("fragment").setType("MFString")))
-      .addChild(new ProtoDeclare().setName("flower")
-        .setProtoBody(new ProtoBody()
-          .addChild(new Group()
-            .addChild(new ProtoInstance().setName("FlowerProto")
-              .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/freewrl_flowers_chromatic.vs\""))
-              .addFieldValue(new fieldValue().setName("fragment").setValue("\"../shaders/freewrl.fs\""))))))
-      .addChild(new ProtoInstance().setName("flower"))
-      .addChild(new ProtoInstance().setName("flower"))
-      .addChild(new ProtoInstance().setName("flower"))
-      .addChild(new ProtoInstance().setName("flower"))
-      .addChild(new ProtoInstance().setName("flower"))
-      .addChild(new ProtoInstance().setName("flower"))));
+  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  .setHead(new headObject()
+    .addMeta(new metaObject().setName("title").setContent("freewrlflowers.x3d"))
+    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
+    .addMeta(new metaObject().setName("description").setContent("5 or more prismatic flowers"))
+    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/freewrlflowers.x3d")))
+  .setScene(new SceneObject()
+    .addChild(new NavigationInfoObject())
+    .addChild(new BackgroundObject().setBackUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
+    .addChild(new GroupObject()
+      .addChild(new ExternProtoDeclareObject().setName("FlowerProto").setUrl(new MFStringObject("\"../data/flowerproto.x3d#FlowerProto\""))
+        .addField(new fieldObject().setAccessType("inputOutput").setName("vertex").setType("MFString"))
+        .addField(new fieldObject().setAccessType("inputOutput").setName("fragment").setType("MFString")))
+      .addChild(new ProtoDeclareObject().setName("flower")
+        .setProtoBody(new ProtoBodyObject()
+          .addChild(new GroupObject()
+            .addChild(new ProtoInstanceObject().setName("FlowerProto")
+              .addFieldValue(new fieldValueObject().setName("vertex").setValue("\"../shaders/freewrl_flowers_chromatic.vs\""))
+              .addFieldValue(new fieldValueObject().setName("fragment").setValue("\"../shaders/freewrl.fs\""))))))
+      .addChild(new ProtoInstanceObject().setName("flower"))
+      .addChild(new ProtoInstanceObject().setName("flower"))
+      .addChild(new ProtoInstanceObject().setName("flower"))
+      .addChild(new ProtoInstanceObject().setName("flower"))
+      .addChild(new ProtoInstanceObject().setName("flower"))
+      .addChild(new ProtoInstanceObject().setName("flower"))));
   },
   // end of initialize() method
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return freewrlflowers model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -118,11 +118,11 @@ freewrlflowers.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
@@ -152,8 +152,8 @@ freewrlflowers.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new freewrlflowers();
-		print ("freewrlflowers execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new freewrlflowers().main();
+new NeedClassName().main();
