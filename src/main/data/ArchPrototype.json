@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -197,14 +197,10 @@
                     { "Transform":
                       {
                         "@DEF":"ArchTransform",
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           { "Shape":
                             {
                               "@DEF":"Arch",
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-children":[
                                 {
                                   "#comment":"note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"
@@ -496,9 +492,7 @@
           { "Inline":
             {
               "@DEF":"CoordinateAxes",
-              "@url":["../data/CoordinateAxes.x3d"],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1]
+              "@url":["../data/CoordinateAxes.x3d"]
             }
           }
         ]

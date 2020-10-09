@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -78,9 +78,6 @@
           { "Collision":
             {
               "@DEF":"DoNotCollideWithVisualizationWidget",
-              "@enabled":true,
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 {
                   "#comment":"Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph."
@@ -96,8 +93,6 @@
                 },
                 { "Group":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"Vertical Y arrow and label"
@@ -105,13 +100,9 @@
                       { "Group":
                         {
                           "@DEF":"ArrowGreen",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Shape":
                               {
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-geometry":
                                   { "Cylinder":
                                     {
@@ -138,22 +129,15 @@
                             { "Transform":
                               {
                                 "@translation":[0,1,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-geometry":
                                         { "Cone":
                                           {
                                             "@DEF":"ArrowCone",
                                             "@bottomRadius":0.05,
-                                            "@height":0.1,
-                                            "@side":true,
-                                            "@bottom":true,
-                                            "@solid":true
+                                            "@height":0.1
                                           }
                                         },
                                       "-appearance":
@@ -173,19 +157,12 @@
                       { "Transform":
                         {
                           "@translation":[0,1.08,0],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Billboard":
                               {
-                                "@axisOfRotation":[0,1,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -228,27 +205,19 @@
                 { "Transform":
                   {
                     "@rotation":[0,0,1,-1.57079],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"Horizontal X arrow and label"
                       },
                       { "Group":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Group":
                               {
                                 "@DEF":"ArrowRed",
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-geometry":
                                         { "Cylinder":
                                           {
@@ -273,13 +242,9 @@
                                   { "Transform":
                                     {
                                       "@translation":[0,1,0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-geometry":
                                               { "Cone":
                                                 {
@@ -304,22 +269,15 @@
                               {
                                 "@rotation":[0,0,1,1.57079],
                                 "@translation":[0.072,1.1,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   {
                                     "#comment":"note label rotated back to original coordinate frame"
                                   },
                                   { "Billboard":
                                     {
-                                      "@axisOfRotation":[0,1,0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {
@@ -355,27 +313,19 @@
                 { "Transform":
                   {
                     "@rotation":[1,0,0,1.57079],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       {
                         "#comment":"Perpendicular Z arrow and label, note right-hand rule"
                       },
                       { "Group":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "Group":
                               {
                                 "@DEF":"ArrowBlue",
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-geometry":
                                         { "Cylinder":
                                           {
@@ -400,13 +350,9 @@
                                   { "Transform":
                                     {
                                       "@translation":[0,1,0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-geometry":
                                               { "Cone":
                                                 {
@@ -431,22 +377,15 @@
                               {
                                 "@rotation":[1,0,0,-1.57079],
                                 "@translation":[0,1.1,0.072],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   {
                                     "#comment":"note label rotated back to original coordinate frame"
                                   },
                                   { "Billboard":
                                     {
-                                      "@axisOfRotation":[0,1,0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-appearance":
                                               { "Appearance":
                                                 {

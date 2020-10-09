@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -50,8 +50,7 @@
           },
           { "Background":
             {
-              "@skyColor":[0.4,0.4,0.4],
-              "@transparency":0
+              "@skyColor":[0.4,0.4,0.4]
             }
           },
           { "ProtoDeclare":
@@ -72,8 +71,6 @@
                     { "Transform":
                       {
                         "@DEF":"node",
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -85,8 +82,6 @@
                         "-children":[
                           { "Shape":
                             {
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-geometry":
                                 { "Sphere":
                                   {
@@ -222,25 +217,17 @@
                   "-children":[
                     { "Group":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "-children":[
                           { "Transform":
                             {
                               "@DEF":"trans",
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-children":[
                                 { "Transform":
                                   {
                                     "@DEF":"rotscale",
-                                    "@bboxCenter":[0,0,0],
-                                    "@bboxSize":[-1,-1,-1],
                                     "-children":[
                                       { "Shape":
                                         {
-                                          "@bboxCenter":[0,0,0],
-                                          "@bboxSize":[-1,-1,-1],
                                           "-appearance":
                                             { "Appearance":
                                               {

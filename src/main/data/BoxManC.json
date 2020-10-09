@@ -106,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -149,8 +149,6 @@
                     "@center":[0.0,0.9723,-0.0728],
                     "@skinCoordIndex":[0,1,2,3,4,5,6,7,8,9,10,11],
                     "@skinCoordWeight":[1,1,1,1,1,1,1,1,1,1,1,1],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "HAnimSegment":
                         {
@@ -160,14 +158,10 @@
                             { "Transform":
                               {
                                 "@translation":[0.0,0.9723,-0.0728],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "Shape":
                                     {
                                       "@DEF":"SphereYellow",
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-appearance":
                                         { "Appearance":
                                           {
@@ -200,8 +194,6 @@
                           "@center":[0.0956,0.9364,0.0],
                           "@skinCoordIndex":[12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43],
                           "@skinCoordWeight":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -214,8 +206,6 @@
                                   { "Transform":
                                     {
                                       "@translation":[0.0956,0.9346,0.0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
@@ -235,8 +225,6 @@
                                 "@center":[0.0956,0.5095,-0.0036],
                                 "@skinCoordIndex":[36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63],
                                 "@skinCoordWeight":[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -246,8 +234,6 @@
                                         { "Transform":
                                           {
                                             "@translation":[0.0956,0.5095,-0.0036],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -267,8 +253,6 @@
                                       "@center":[0.0946,0.0762,-0.0261],
                                       "@skinCoordIndex":[64,65,66,67,68,69,70,71],
                                       "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -278,8 +262,6 @@
                                               { "Transform":
                                                 {
                                                   "@translation":[0.0946,0.0762,-0.0261],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -299,8 +281,6 @@
                                             "@center":[0.1079,0.0317,0.0670],
                                             "@skinCoordIndex":[72,73,74,75,76,77,78,79],
                                             "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -310,8 +290,6 @@
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.1079,0.0317,0.0670],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -325,22 +303,16 @@
                                                       {
                                                         "@name":"l_middle_distal_tip",
                                                         "@DEF":"hanim_l_middle_distal_tip",
-                                                        "@translation":[0.095,0.0005,0.1924],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1]
+                                                        "@translation":[0.095,0.0005,0.1924]
                                                       }
                                                     },
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.095,5.0E-4,0.1924],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
                                                         "-children":[
                                                           { "Shape":
                                                             {
                                                               "@DEF":"SphereRed",
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
@@ -385,8 +357,6 @@
                           "@center":[-0.0956,0.9364,0.0],
                           "@skinCoordIndex":[80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111],
                           "@skinCoordWeight":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -399,8 +369,6 @@
                                   { "Transform":
                                     {
                                       "@translation":[-0.0956,0.9346,0.0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
@@ -420,8 +388,6 @@
                                 "@center":[-0.0956,0.5095,-0.0036],
                                 "@skinCoordIndex":[104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131],
                                 "@skinCoordWeight":[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -431,8 +397,6 @@
                                         { "Transform":
                                           {
                                             "@translation":[-0.0956,0.5095,-0.0036],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -452,8 +416,6 @@
                                       "@center":[-0.0946,0.0762,-0.0261],
                                       "@skinCoordIndex":[132,133,134,135,136,137,138,139],
                                       "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -463,8 +425,6 @@
                                               { "Transform":
                                                 {
                                                   "@translation":[-0.0946,0.0762,-0.0261],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -484,8 +444,6 @@
                                             "@center":[-0.1079,0.0317,0.0670],
                                             "@skinCoordIndex":[140,141,142,143,144,145,146,147],
                                             "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -495,8 +453,6 @@
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.1079,0.0317,0.0670],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -510,16 +466,12 @@
                                                       {
                                                         "@name":"r_middle_distal_tip",
                                                         "@DEF":"hanim_r_middle_distal_tip",
-                                                        "@translation":[-0.095,0.0005,0.1924],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1]
+                                                        "@translation":[-0.095,0.0005,0.1924]
                                                       }
                                                     },
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.0950,0.0005,0.1924],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -551,8 +503,6 @@
                           "@center":[0.0,1.0817,-0.0728],
                           "@skinCoordIndex":[148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167],
                           "@skinCoordWeight":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -562,8 +512,6 @@
                                   { "Transform":
                                     {
                                       "@translation":[0.0,1.0817,-0.0728],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "Shape":
                                           {
@@ -583,8 +531,6 @@
                                 "@center":[0.0,1.6440,0.036],
                                 "@skinCoordIndex":[168,169,170,171,172,173,174,175],
                                 "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-displacers":[
                                   { "HAnimDisplacer":
                                     {
@@ -607,8 +553,6 @@
                                         { "Transform":
                                           {
                                             "@translation":[0.0,1.6440,0.0036],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -622,16 +566,12 @@
                                           {
                                             "@name":"skull_tip",
                                             "@DEF":"hanim_skull_tip",
-                                            "@translation":[-0.0029,1.7771,0.0274],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1]
+                                            "@translation":[-0.0029,1.7771,0.0274]
                                           }
                                         },
                                         { "Transform":
                                           {
                                             "@translation":[-0.0029,1.7771,0.0274],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -654,8 +594,6 @@
                                 "@center":[0.1968,1.4642,-0.0265],
                                 "@skinCoordIndex":[176,177,178,179,180,181,182,183],
                                 "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -665,8 +603,6 @@
                                         { "Transform":
                                           {
                                             "@translation":[0.1968,1.4642,-0.0265],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -686,8 +622,6 @@
                                       "@center":[0.1982,1.1622,-0.0557],
                                       "@skinCoordIndex":[184,185,186,187,188,189,190,191],
                                       "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -697,8 +631,6 @@
                                               { "Transform":
                                                 {
                                                   "@translation":[0.1982,1.1622,-0.0557],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -718,8 +650,6 @@
                                             "@center":[0.1972,0.8929,-0.0690],
                                             "@skinCoordIndex":[192,193,194,195,196,197,198,199],
                                             "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -729,8 +659,6 @@
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.1972,0.8929,-0.0690],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -744,16 +672,12 @@
                                                       {
                                                         "@name":"l_hand_tip",
                                                         "@DEF":"hanim_l_hand_tip",
-                                                        "@translation":[0.1912,0.6976,-0.0710],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1]
+                                                        "@translation":[0.1912,0.6976,-0.0710]
                                                       }
                                                     },
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.1912,0.6976,-0.0710],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -782,8 +706,6 @@
                                 "@center":[-0.1968,1.4642,-0.0265],
                                 "@skinCoordIndex":[200,201,202,203,204,205,206,207],
                                 "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -793,8 +715,6 @@
                                         { "Transform":
                                           {
                                             "@translation":[-0.1968,1.4642,-0.0265],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -814,8 +734,6 @@
                                       "@center":[-0.1982,1.1622,-0.0557],
                                       "@skinCoordIndex":[208,209,210,211,212,213,214,215],
                                       "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -825,8 +743,6 @@
                                               { "Transform":
                                                 {
                                                   "@translation":[-0.1982,1.1622,-0.0557],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -846,8 +762,6 @@
                                             "@center":[-0.1972,0.8929,-0.0690],
                                             "@skinCoordIndex":[216,217,218,219,220,221,222,223],
                                             "@skinCoordWeight":[1,1,1,1,1,1,1,1],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -857,8 +771,6 @@
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.1972,0.8929,-0.0690],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -872,16 +784,12 @@
                                                       {
                                                         "@name":"r_hand_tip",
                                                         "@DEF":"hanim_r_hand_tip",
-                                                        "@translation":[-0.1912,0.6976,-0.0710],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1]
+                                                        "@translation":[-0.1912,0.6976,-0.0710]
                                                       }
                                                     },
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.1912,0.6976,-0.0710],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -937,14 +845,10 @@
               "-skin":[
                 { "Group":
                   {
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
                           "@DEF":"TrouserSkin",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -979,8 +883,6 @@
                       { "Shape":
                         {
                           "@DEF":"ShoeSkin",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -1015,8 +917,6 @@
                       { "Shape":
                         {
                           "@DEF":"ShirtSkin",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -1051,8 +951,6 @@
                       { "Shape":
                         {
                           "@DEF":"HeadHandsFleshToneSkin",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -1087,8 +985,6 @@
                       { "Shape":
                         {
                           "@DEF":"SkinLines",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {
@@ -1372,8 +1268,6 @@
           },
           { "Group":
             {
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 {
                   "#comment":"ROUTE information for TIMER node: [from fraction_changed to HUMANOIDROOT_POSITION_ANIMATOR.set_fraction ] [from fraction_changed to HUMANOIDROOT_ANIMATOR.set_fraction ] [from fraction_changed to SACROILIAC_ANIMATOR.set_fraction ] [from fraction_changed to L_HIP_ANIMATOR.set_fraction ] [from fraction_changed to L_KNEE_ANIMATOR.set_fraction ] [from fraction_changed to L_ANKLE_ANIMATOR.set_fraction ] [from fraction_changed to L_MIDTARSAL_ANIMATOR.set_fraction ] [from fraction_changed to R_HIP_ANIMATOR.set_fraction ] [from fraction_changed to R_KNEE_ANIMATOR.set_fraction ] [from fraction_changed to R_ANKLE_ANIMATOR.set_fraction ] [from fraction_changed to R_MIDTARSAL_ANIMATOR.set_fraction ] [from fraction_changed to VL5_ANIMATOR.set_fraction ] [from fraction_changed to SKULLBASE_ANIMATOR.set_fraction ] [from fraction_changed to L_SHOULDER_ANIMATOR.set_fraction ] [from fraction_changed to L_ELBOW_ANIMATOR.set_fraction ] [from fraction_changed to L_WRIST_ANIMATOR.set_fraction ] [from fraction_changed to R_SHOULDER_ANIMATOR.set_fraction ] [from fraction_changed to R_ELBOW_ANIMATOR.set_fraction ] [from fraction_changed to R_WRIST_ANIMATOR.set_fraction ]"

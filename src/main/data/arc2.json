@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -50,26 +50,19 @@
           },
           { "Background":
             {
-              "@skyColor":[0.4,0.4,0.4],
-              "@transparency":0
+              "@skyColor":[0.4,0.4,0.4]
             }
           },
           { "Transform":
             {
               "@DEF":"G1",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@DEF":"DECLpoint_INSTANCE_node",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Sphere":
                               {
@@ -184,19 +177,13 @@
           { "Transform":
             {
               "@DEF":"G2",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@DEF":"DECLpoint_INSTANCE1000_node",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Sphere":
                               {
@@ -311,19 +298,13 @@
           { "Transform":
             {
               "@DEF":"transC1",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@DEF":"rotscaleC1",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-appearance":
                             { "Appearance":
                               {

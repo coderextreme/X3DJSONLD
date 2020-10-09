@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -68,8 +68,6 @@
                     { "Transform":
                       {
                         "@DEF":"transform",
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "IS": {
                             "connect": [
                               {
@@ -81,8 +79,6 @@
                         "-children":[
                           { "Shape":
                             {
-                              "@bboxCenter":[0,0,0],
-                              "@bboxSize":[-1,-1,-1],
                               "-children":[
                                 {
                                   "#comment":"comment before Sphere"
@@ -223,8 +219,6 @@
                   "-children":[
                     { "Shape":
                       {
-                        "@bboxCenter":[0,0,0],
-                        "@bboxSize":[-1,-1,-1],
                         "-geometry":
                           { "Extrusion":
                             {
@@ -297,8 +291,6 @@
           { "Transform":
             {
               "@scale":[0.1,0.1,0.1],
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "ProtoInstance":
                   {

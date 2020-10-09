@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -102,48 +102,28 @@
               "@name":"Humanoid_Right_Foot",
               "@DEF":"Humanoid_Right_Foot",
               "@version":"2.0",
-              "@bboxDisplay":false,
-              "@visible":true,
               "-skeleton":[
                 { "HAnimJoint":
                   {
                     "@name":"humanoid_root",
                     "@DEF":"hanim_HumanoidRoot",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
-                    "@bboxDisplay":false,
-                    "@visible":true,
                     "-children":[
                       { "HAnimJoint":
                         {
                           "@name":"r_talocrural_joint",
                           "@DEF":"r_talocrural_joint",
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
-                          "@bboxDisplay":false,
-                          "@visible":true,
                           "-children":[
                             { "HAnimSegment":
                               {
                                 "@name":"r_talus",
                                 "@DEF":"r_talus",
-                                "@bboxDisplay":false,
-                                "@visible":true,
                                 "-children":[
                                   { "Transform":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "Shape":
                                           {
                                             "@DEF":"HAnimJointShape",
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-geometry":
                                               { "Sphere":
                                                 {
@@ -157,7 +137,11 @@
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@diffuseColor":[0,0,1]
+                                                        "@diffuseColor":[0,0,1],
+                                                        "@normalScale":1,
+                                                        "@metallic":1,
+                                                        "@occlusionStrength":1,
+                                                        "@roughness":1
                                                       }
                                                     }
                                                 }
@@ -169,17 +153,17 @@
                                   },
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-appearance":
                                         { "Appearance":
                                           {
                                             "-material":
                                               { "Material":
                                                 {
-                                                  "@emissiveColor":[1,1,1]
+                                                  "@emissiveColor":[1,1,1],
+                                                  "@normalScale":1,
+                                                  "@metallic":1,
+                                                  "@occlusionStrength":1,
+                                                  "@roughness":1
                                                 }
                                               }
                                           }
@@ -201,17 +185,17 @@
                                   },
                                   { "Shape":
                                     {
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-appearance":
                                         { "Appearance":
                                           {
                                             "-material":
                                               { "Material":
                                                 {
-                                                  "@emissiveColor":[1,1,1]
+                                                  "@emissiveColor":[1,1,1],
+                                                  "@normalScale":1,
+                                                  "@metallic":1,
+                                                  "@occlusionStrength":1,
+                                                  "@roughness":1
                                                 }
                                               }
                                           }
@@ -242,25 +226,15 @@
                                 "@name":"r_talocalcaneonavicular_joint",
                                 "@DEF":"r_talocalcaneonavicular_joint",
                                 "@center":[0.0,-0.3,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
-                                "@bboxDisplay":false,
-                                "@visible":true,
                                 "-children":[
                                   { "HAnimSegment":
                                     {
                                       "@name":"r_navicular",
                                       "@DEF":"r_navicular",
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "Transform":
                                           {
                                             "@translation":[0.0,-0.3,0],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -272,17 +246,17 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-appearance":
                                               { "Appearance":
                                                 {
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@emissiveColor":[1,1,1]
+                                                        "@emissiveColor":[1,1,1],
+                                                        "@normalScale":1,
+                                                        "@metallic":1,
+                                                        "@occlusionStrength":1,
+                                                        "@roughness":1
                                                       }
                                                     }
                                                 }
@@ -304,17 +278,17 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-appearance":
                                               { "Appearance":
                                                 {
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@emissiveColor":[1,1,1]
+                                                        "@emissiveColor":[1,1,1],
+                                                        "@normalScale":1,
+                                                        "@metallic":1,
+                                                        "@occlusionStrength":1,
+                                                        "@roughness":1
                                                       }
                                                     }
                                                 }
@@ -336,17 +310,17 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-appearance":
                                               { "Appearance":
                                                 {
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@emissiveColor":[1,1,1]
+                                                        "@emissiveColor":[1,1,1],
+                                                        "@normalScale":1,
+                                                        "@metallic":1,
+                                                        "@occlusionStrength":1,
+                                                        "@roughness":1
                                                       }
                                                     }
                                                 }
@@ -377,25 +351,15 @@
                                       "@name":"r_cuneonavicular_joint1",
                                       "@DEF":"r_cuneonavicular_joint1",
                                       "@center":[0.1,-0.45,0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_cuneiform1",
                                             "@DEF":"r_cuneiform1",
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[0.1,-0.45,0],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -407,17 +371,17 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@emissiveColor":[1,1,1]
+                                                              "@emissiveColor":[1,1,1],
+                                                              "@normalScale":1,
+                                                              "@metallic":1,
+                                                              "@occlusionStrength":1,
+                                                              "@roughness":1
                                                             }
                                                           }
                                                       }
@@ -445,25 +409,15 @@
                                             "@name":"r_tarsometatarsal_joint1",
                                             "@DEF":"r_tarsometatarsal_joint1",
                                             "@center":[0.1,-0.6,0],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_metatarsal1",
                                                   "@DEF":"r_metatarsal1",
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[0.1,-0.6,0],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -475,17 +429,17 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@emissiveColor":[1,1,1]
+                                                                    "@emissiveColor":[1,1,1],
+                                                                    "@normalScale":1,
+                                                                    "@metallic":1,
+                                                                    "@occlusionStrength":1,
+                                                                    "@roughness":1
                                                                   }
                                                                 }
                                                             }
@@ -513,25 +467,15 @@
                                                   "@name":"r_metatarsophalangeal_joint1",
                                                   "@DEF":"r_metatarsophalangeal_joint1",
                                                   "@center":[0.1,-0.9,0],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_proximal_phalanges1",
                                                         "@DEF":"r_proximal_phalanges1",
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[0.1,-0.9,0],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -543,17 +487,17 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@emissiveColor":[1,1,1]
+                                                                          "@emissiveColor":[1,1,1],
+                                                                          "@normalScale":1,
+                                                                          "@metallic":1,
+                                                                          "@occlusionStrength":1,
+                                                                          "@roughness":1
                                                                         }
                                                                       }
                                                                   }
@@ -581,25 +525,15 @@
                                                         "@name":"r_f_Interphalangeal_joint",
                                                         "@DEF":"r_f_Interphalangeal_joint",
                                                         "@center":[0.1,-1.05,0],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"r_distal_phalanges1",
                                                               "@DEF":"r_distal_phalanges1",
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[0.1,-1.05,0],
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -611,17 +545,17 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@emissiveColor":[1,1,1]
+                                                                                "@emissiveColor":[1,1,1],
+                                                                                "@normalScale":1,
+                                                                                "@metallic":1,
+                                                                                "@occlusionStrength":1,
+                                                                                "@roughness":1
                                                                               }
                                                                             }
                                                                         }
@@ -664,25 +598,15 @@
                                       "@name":"r_cuneonavicular_joint2",
                                       "@DEF":"r_cuneonavicular_joint2",
                                       "@center":[0.0,-0.45,0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_cuneiform2",
                                             "@DEF":"r_cuneiform2",
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[0.0,-0.45,0],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -694,17 +618,17 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@emissiveColor":[1,1,1]
+                                                              "@emissiveColor":[1,1,1],
+                                                              "@normalScale":1,
+                                                              "@metallic":1,
+                                                              "@occlusionStrength":1,
+                                                              "@roughness":1
                                                             }
                                                           }
                                                       }
@@ -732,25 +656,15 @@
                                             "@name":"r_tarsometatarsal_joint2",
                                             "@DEF":"r_tarsometatarsal_joint2",
                                             "@center":[-0.05,-0.6,0],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_metatarsal2",
                                                   "@DEF":"r_metatarsal2",
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.05,-0.6,0],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -762,17 +676,17 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@emissiveColor":[1,1,1]
+                                                                    "@emissiveColor":[1,1,1],
+                                                                    "@normalScale":1,
+                                                                    "@metallic":1,
+                                                                    "@occlusionStrength":1,
+                                                                    "@roughness":1
                                                                   }
                                                                 }
                                                             }
@@ -800,25 +714,15 @@
                                                   "@name":"r_metatarsophalangeal_joint2",
                                                   "@DEF":"r_metatarsophalangeal_joint2",
                                                   "@center":[-0.05,-0.9,0],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_proximal_phalanges2",
                                                         "@DEF":"r_proximal_phalanges2",
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[-0.05,-0.9,0],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -830,17 +734,17 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@emissiveColor":[1,1,1]
+                                                                          "@emissiveColor":[1,1,1],
+                                                                          "@normalScale":1,
+                                                                          "@metallic":1,
+                                                                          "@occlusionStrength":1,
+                                                                          "@roughness":1
                                                                         }
                                                                       }
                                                                   }
@@ -868,25 +772,15 @@
                                                         "@name":"r_f_proximal_Interphalangeal_joint2",
                                                         "@DEF":"r_f_proximal_Interphalangeal_joint2",
                                                         "@center":[-0.05,-1.05,0],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"r_middle_phalanges2",
                                                               "@DEF":"r_middle_phalanges2",
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[-0.05,-1.05,0],
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -898,17 +792,17 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@emissiveColor":[1,1,1]
+                                                                                "@emissiveColor":[1,1,1],
+                                                                                "@normalScale":1,
+                                                                                "@metallic":1,
+                                                                                "@occlusionStrength":1,
+                                                                                "@roughness":1
                                                                               }
                                                                             }
                                                                         }
@@ -936,25 +830,15 @@
                                                               "@name":"r_f_distal_Interphalangeal_joint2",
                                                               "@DEF":"r_f_distal_Interphalangeal_joint2",
                                                               "@center":[-0.05,-1.12,0],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
                                                                     "@name":"r_distal_phalanges2",
                                                                     "@DEF":"r_distal_phalanges2",
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-children":[
                                                                       { "Transform":
                                                                         {
                                                                           "@translation":[-0.05,-1.12,0],
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
-                                                                          "@bboxDisplay":false,
-                                                                          "@visible":true,
                                                                           "-children":[
                                                                             { "Shape":
                                                                               {
@@ -966,17 +850,17 @@
                                                                       },
                                                                       { "Shape":
                                                                         {
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
-                                                                          "@bboxDisplay":false,
-                                                                          "@visible":true,
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
                                                                                 "-material":
                                                                                   { "Material":
                                                                                     {
-                                                                                      "@emissiveColor":[1,1,1]
+                                                                                      "@emissiveColor":[1,1,1],
+                                                                                      "@normalScale":1,
+                                                                                      "@metallic":1,
+                                                                                      "@occlusionStrength":1,
+                                                                                      "@roughness":1
                                                                                     }
                                                                                   }
                                                                               }
@@ -1022,25 +906,15 @@
                                       "@name":"r_cuneonavicular_joint3",
                                       "@DEF":"r_cuneonavicular_joint3",
                                       "@center":[-0.1,-0.4,0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_cuneiform3",
                                             "@DEF":"r_cuneiform3",
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[-0.1,-0.4,0],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -1052,17 +926,17 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@emissiveColor":[1,1,1]
+                                                              "@emissiveColor":[1,1,1],
+                                                              "@normalScale":1,
+                                                              "@metallic":1,
+                                                              "@occlusionStrength":1,
+                                                              "@roughness":1
                                                             }
                                                           }
                                                       }
@@ -1090,25 +964,15 @@
                                             "@name":"r_tarsometatarsal_joint3",
                                             "@DEF":"r_tarsometatarsal_joint3",
                                             "@center":[-0.15,-0.6,0],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_metatarsal3",
                                                   "@DEF":"r_metatarsal3",
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.15,-0.6,0],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -1120,17 +984,17 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@emissiveColor":[1,1,1]
+                                                                    "@emissiveColor":[1,1,1],
+                                                                    "@normalScale":1,
+                                                                    "@metallic":1,
+                                                                    "@occlusionStrength":1,
+                                                                    "@roughness":1
                                                                   }
                                                                 }
                                                             }
@@ -1158,25 +1022,15 @@
                                                   "@name":"r_metatarsophalangeal_joint3",
                                                   "@DEF":"r_metatarsophalangeal_joint3",
                                                   "@center":[-0.15,-0.9,0],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_proximal_phalanges3",
                                                         "@DEF":"r_proximal_phalanges3",
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[-0.15,-0.9,0],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -1188,17 +1042,17 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@emissiveColor":[1,1,1]
+                                                                          "@emissiveColor":[1,1,1],
+                                                                          "@normalScale":1,
+                                                                          "@metallic":1,
+                                                                          "@occlusionStrength":1,
+                                                                          "@roughness":1
                                                                         }
                                                                       }
                                                                   }
@@ -1226,25 +1080,15 @@
                                                         "@name":"r_f_proximal_Interphalangeal_joint3",
                                                         "@DEF":"r_f_proximal_Interphalangeal_joint3",
                                                         "@center":[-0.15,-1.05,0],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"r_middle_phalanges3",
                                                               "@DEF":"r_middle_phalanges3",
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[-0.15,-1.05,0],
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -1256,17 +1100,17 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@emissiveColor":[1,1,1]
+                                                                                "@emissiveColor":[1,1,1],
+                                                                                "@normalScale":1,
+                                                                                "@metallic":1,
+                                                                                "@occlusionStrength":1,
+                                                                                "@roughness":1
                                                                               }
                                                                             }
                                                                         }
@@ -1294,25 +1138,15 @@
                                                               "@name":"r_f_distal_Interphalangeal_joint3",
                                                               "@DEF":"r_f_distal_Interphalangeal_joint3",
                                                               "@center":[-0.15,-1.13,0],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
                                                                     "@name":"r_distal_phalanges3",
                                                                     "@DEF":"r_distal_phalanges3",
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-children":[
                                                                       { "Transform":
                                                                         {
                                                                           "@translation":[-0.15,-1.13,0],
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
-                                                                          "@bboxDisplay":false,
-                                                                          "@visible":true,
                                                                           "-children":[
                                                                             { "Shape":
                                                                               {
@@ -1324,17 +1158,17 @@
                                                                       },
                                                                       { "Shape":
                                                                         {
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
-                                                                          "@bboxDisplay":false,
-                                                                          "@visible":true,
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
                                                                                 "-material":
                                                                                   { "Material":
                                                                                     {
-                                                                                      "@emissiveColor":[1,1,1]
+                                                                                      "@emissiveColor":[1,1,1],
+                                                                                      "@normalScale":1,
+                                                                                      "@metallic":1,
+                                                                                      "@occlusionStrength":1,
+                                                                                      "@roughness":1
                                                                                     }
                                                                                   }
                                                                               }
@@ -1383,25 +1217,15 @@
                                 "@name":"r_calcaneuscuboid_joint",
                                 "@DEF":"r_calcaneuscuboid_joint",
                                 "@center":[-0.2,0.3,0],
-                                "@bboxCenter":[0,0,0],
-                                "@bboxSize":[-1,-1,-1],
-                                "@bboxDisplay":false,
-                                "@visible":true,
                                 "-children":[
                                   { "HAnimSegment":
                                     {
                                       "@name":"r_calcaneus",
                                       "@DEF":"r_calcaneus",
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "Transform":
                                           {
                                             "@translation":[-0.2,0.3,0],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Shape":
                                                 {
@@ -1413,17 +1237,17 @@
                                         },
                                         { "Shape":
                                           {
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-appearance":
                                               { "Appearance":
                                                 {
                                                   "-material":
                                                     { "Material":
                                                       {
-                                                        "@emissiveColor":[1,1,1]
+                                                        "@emissiveColor":[1,1,1],
+                                                        "@normalScale":1,
+                                                        "@metallic":1,
+                                                        "@occlusionStrength":1,
+                                                        "@roughness":1
                                                       }
                                                     }
                                                 }
@@ -1454,25 +1278,15 @@
                                       "@name":"r_transverse_tarsal_joint",
                                       "@DEF":"r_transverse_tarsal_joint",
                                       "@center":[-0.21,-0.3,0],
-                                      "@bboxCenter":[0,0,0],
-                                      "@bboxSize":[-1,-1,-1],
-                                      "@bboxDisplay":false,
-                                      "@visible":true,
                                       "-children":[
                                         { "HAnimSegment":
                                           {
                                             "@name":"r_cuboid",
                                             "@DEF":"r_cuboid",
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "Transform":
                                                 {
                                                   "@translation":[-0.21,-0.3,0],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Shape":
                                                       {
@@ -1484,17 +1298,17 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@emissiveColor":[1,1,1]
+                                                              "@emissiveColor":[1,1,1],
+                                                              "@normalScale":1,
+                                                              "@metallic":1,
+                                                              "@occlusionStrength":1,
+                                                              "@roughness":1
                                                             }
                                                           }
                                                       }
@@ -1516,17 +1330,17 @@
                                               },
                                               { "Shape":
                                                 {
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-appearance":
                                                     { "Appearance":
                                                       {
                                                         "-material":
                                                           { "Material":
                                                             {
-                                                              "@emissiveColor":[1,1,1]
+                                                              "@emissiveColor":[1,1,1],
+                                                              "@normalScale":1,
+                                                              "@metallic":1,
+                                                              "@occlusionStrength":1,
+                                                              "@roughness":1
                                                             }
                                                           }
                                                       }
@@ -1557,25 +1371,15 @@
                                             "@name":"r_tarsometatarsal_joint4",
                                             "@DEF":"r_tarsometatarsal_joint4",
                                             "@center":[-0.25,-0.58,0],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_metatarsal4",
                                                   "@DEF":"r_metatarsal4",
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.25,-0.58,0],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -1587,17 +1391,17 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@emissiveColor":[1,1,1]
+                                                                    "@emissiveColor":[1,1,1],
+                                                                    "@normalScale":1,
+                                                                    "@metallic":1,
+                                                                    "@occlusionStrength":1,
+                                                                    "@roughness":1
                                                                   }
                                                                 }
                                                             }
@@ -1625,25 +1429,15 @@
                                                   "@name":"r_metatarsophalangeal_joint4",
                                                   "@DEF":"r_metatarsophalangeal_joint4",
                                                   "@center":[-0.25,-0.87,0],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_proximal_phalanges4",
                                                         "@DEF":"r_proximal_phalanges4",
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[-0.25,-0.87,0],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -1655,17 +1449,17 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@emissiveColor":[1,1,1]
+                                                                          "@emissiveColor":[1,1,1],
+                                                                          "@normalScale":1,
+                                                                          "@metallic":1,
+                                                                          "@occlusionStrength":1,
+                                                                          "@roughness":1
                                                                         }
                                                                       }
                                                                   }
@@ -1693,25 +1487,15 @@
                                                         "@name":"r_f_proximal_Interphalangeal_joint4",
                                                         "@DEF":"r_f_proximal_Interphalangeal_joint4",
                                                         "@center":[-0.25,-1.0,0],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"r_middle_phalanges4",
                                                               "@DEF":"r_middle_phalanges4",
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[-0.25,-1.0,0],
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -1723,17 +1507,17 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@emissiveColor":[1,1,1]
+                                                                                "@emissiveColor":[1,1,1],
+                                                                                "@normalScale":1,
+                                                                                "@metallic":1,
+                                                                                "@occlusionStrength":1,
+                                                                                "@roughness":1
                                                                               }
                                                                             }
                                                                         }
@@ -1761,25 +1545,15 @@
                                                               "@name":"r_f_distal_Interphalangeal_joint4",
                                                               "@DEF":"r_f_distal_Interphalangeal_joint4",
                                                               "@center":[-0.25,-1.1,0],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
                                                                     "@name":"r_distal_phalanges4",
                                                                     "@DEF":"r_distal_phalanges4",
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-children":[
                                                                       { "Transform":
                                                                         {
                                                                           "@translation":[-0.25,-1.1,0],
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
-                                                                          "@bboxDisplay":false,
-                                                                          "@visible":true,
                                                                           "-children":[
                                                                             { "Shape":
                                                                               {
@@ -1791,17 +1565,17 @@
                                                                       },
                                                                       { "Shape":
                                                                         {
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
-                                                                          "@bboxDisplay":false,
-                                                                          "@visible":true,
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
                                                                                 "-material":
                                                                                   { "Material":
                                                                                     {
-                                                                                      "@emissiveColor":[1,1,1]
+                                                                                      "@emissiveColor":[1,1,1],
+                                                                                      "@normalScale":1,
+                                                                                      "@metallic":1,
+                                                                                      "@occlusionStrength":1,
+                                                                                      "@roughness":1
                                                                                     }
                                                                                   }
                                                                               }
@@ -1844,25 +1618,15 @@
                                             "@name":"r_tarsometatarsal_joint5",
                                             "@DEF":"r_tarsometatarsal_joint5",
                                             "@center":[-0.33,-0.52,0],
-                                            "@bboxCenter":[0,0,0],
-                                            "@bboxSize":[-1,-1,-1],
-                                            "@bboxDisplay":false,
-                                            "@visible":true,
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
                                                   "@name":"r_metatarsal5",
                                                   "@DEF":"r_metatarsal5",
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "Transform":
                                                       {
                                                         "@translation":[-0.33,-0.52,0],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Shape":
                                                             {
@@ -1874,17 +1638,17 @@
                                                     },
                                                     { "Shape":
                                                       {
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-appearance":
                                                           { "Appearance":
                                                             {
                                                               "-material":
                                                                 { "Material":
                                                                   {
-                                                                    "@emissiveColor":[1,1,1]
+                                                                    "@emissiveColor":[1,1,1],
+                                                                    "@normalScale":1,
+                                                                    "@metallic":1,
+                                                                    "@occlusionStrength":1,
+                                                                    "@roughness":1
                                                                   }
                                                                 }
                                                             }
@@ -1912,25 +1676,15 @@
                                                   "@name":"r_metatarsophalangeal_joint5",
                                                   "@DEF":"r_metatarsophalangeal_joint5",
                                                   "@center":[-0.34,-0.8,0],
-                                                  "@bboxCenter":[0,0,0],
-                                                  "@bboxSize":[-1,-1,-1],
-                                                  "@bboxDisplay":false,
-                                                  "@visible":true,
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
                                                         "@name":"r_proximal_phalanges5",
                                                         "@DEF":"r_proximal_phalanges5",
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "Transform":
                                                             {
                                                               "@translation":[-0.34,-0.8,0],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Shape":
                                                                   {
@@ -1942,17 +1696,17 @@
                                                           },
                                                           { "Shape":
                                                             {
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-appearance":
                                                                 { "Appearance":
                                                                   {
                                                                     "-material":
                                                                       { "Material":
                                                                         {
-                                                                          "@emissiveColor":[1,1,1]
+                                                                          "@emissiveColor":[1,1,1],
+                                                                          "@normalScale":1,
+                                                                          "@metallic":1,
+                                                                          "@occlusionStrength":1,
+                                                                          "@roughness":1
                                                                         }
                                                                       }
                                                                   }
@@ -1980,25 +1734,15 @@
                                                         "@name":"r_f_proximal_Interphalangeal_joint5",
                                                         "@DEF":"r_f_proximal_Interphalangeal_joint5",
                                                         "@center":[-0.34,-0.95,0],
-                                                        "@bboxCenter":[0,0,0],
-                                                        "@bboxSize":[-1,-1,-1],
-                                                        "@bboxDisplay":false,
-                                                        "@visible":true,
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
                                                               "@name":"r_middle_phalanges5",
                                                               "@DEF":"r_middle_phalanges5",
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "Transform":
                                                                   {
                                                                     "@translation":[-0.34,-0.95,0],
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-children":[
                                                                       { "Shape":
                                                                         {
@@ -2010,17 +1754,17 @@
                                                                 },
                                                                 { "Shape":
                                                                   {
-                                                                    "@bboxCenter":[0,0,0],
-                                                                    "@bboxSize":[-1,-1,-1],
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-appearance":
                                                                       { "Appearance":
                                                                         {
                                                                           "-material":
                                                                             { "Material":
                                                                               {
-                                                                                "@emissiveColor":[1,1,1]
+                                                                                "@emissiveColor":[1,1,1],
+                                                                                "@normalScale":1,
+                                                                                "@metallic":1,
+                                                                                "@occlusionStrength":1,
+                                                                                "@roughness":1
                                                                               }
                                                                             }
                                                                         }
@@ -2048,25 +1792,15 @@
                                                               "@name":"r_f_distal_Interphalangeal_joint5",
                                                               "@DEF":"r_f_distal_Interphalangeal_joint5",
                                                               "@center":[-0.34,-1.05,0],
-                                                              "@bboxCenter":[0,0,0],
-                                                              "@bboxSize":[-1,-1,-1],
-                                                              "@bboxDisplay":false,
-                                                              "@visible":true,
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
                                                                     "@name":"r_distal_phalanges5",
                                                                     "@DEF":"r_distal_phalanges5",
-                                                                    "@bboxDisplay":false,
-                                                                    "@visible":true,
                                                                     "-children":[
                                                                       { "Transform":
                                                                         {
                                                                           "@translation":[-0.34,-1.05,0],
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
-                                                                          "@bboxDisplay":false,
-                                                                          "@visible":true,
                                                                           "-children":[
                                                                             { "Shape":
                                                                               {
@@ -2078,17 +1812,17 @@
                                                                       },
                                                                       { "Shape":
                                                                         {
-                                                                          "@bboxCenter":[0,0,0],
-                                                                          "@bboxSize":[-1,-1,-1],
-                                                                          "@bboxDisplay":false,
-                                                                          "@visible":true,
                                                                           "-appearance":
                                                                             { "Appearance":
                                                                               {
                                                                                 "-material":
                                                                                   { "Material":
                                                                                     {
-                                                                                      "@emissiveColor":[1,1,1]
+                                                                                      "@emissiveColor":[1,1,1],
+                                                                                      "@normalScale":1,
+                                                                                      "@metallic":1,
+                                                                                      "@occlusionStrength":1,
+                                                                                      "@roughness":1
                                                                                     }
                                                                                   }
                                                                               }

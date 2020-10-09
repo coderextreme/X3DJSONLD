@@ -44,7 +44,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 September 2020"
+            "@content":"29 September 2020"
           },
           {
             "@name":"generator",
@@ -88,8 +88,7 @@
           { "Background":
             {
               "@groundColor":[0,0,1],
-              "@skyColor":[0,0,1],
-              "@transparency":0
+              "@skyColor":[0,0,1]
             }
           },
           { "DirectionalLight":
@@ -102,21 +101,15 @@
           { "Group":
             {
               "@DEF":"Terrain",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@scale":[50,50,50],
                     "@translation":[25000,0,25000],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1]
+                          "@url":["MontereyBayLargeMesh.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d","MontereyBayLargeMesh.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl"]
                         }
                       }
                     ]
@@ -126,13 +119,9 @@
                   {
                     "@rotation":[1,0,0,1.57],
                     "@translation":[25000,0,25000],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Shape":
                         {
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1],
                           "-geometry":
                             { "Rectangle2D":
                               {
@@ -161,21 +150,15 @@
           { "Group":
             {
               "@DEF":"Placemarks",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
                     "@scale":[50,50,50],
                     "@translation":[45000,30,44000],
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1],
                     "-children":[
                       { "Inline":
                         {
-                          "@url":["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"],
-                          "@bboxCenter":[0,0,0],
-                          "@bboxSize":[-1,-1,-1]
+                          "@url":["Lighthouse.x3d","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d","Lighthouse.wrl","https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl"]
                         }
                       }
                     ]
@@ -187,28 +170,20 @@
           { "Group":
             {
               "@DEF":"Clouds",
-              "@bboxCenter":[0,0,0],
-              "@bboxSize":[-1,-1,-1],
               "-children":[
                 { "Transform":
                   {
-                    "@DEF":"Cumulus",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@DEF":"Cumulus"
                   }
                 },
                 { "Transform":
                   {
-                    "@DEF":"Cirrus",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@DEF":"Cirrus"
                   }
                 },
                 { "Transform":
                   {
-                    "@DEF":"Fog",
-                    "@bboxCenter":[0,0,0],
-                    "@bboxSize":[-1,-1,-1]
+                    "@DEF":"Fog"
                   }
                 },
                 { "DirectionalLight":
