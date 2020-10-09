@@ -313,7 +313,7 @@ VRMLScriptSerializer.prototype = {
 						ch += "browser.currentScene.";
 					}
 				}
-				console.log(element.nodeName, node.nodeName, method, fieldTypes[element.nodeName][node.nodeName]);
+				// console.log(element.nodeName, node.nodeName, method, fieldTypes[element.nodeName][node.nodeName]);
 				if (method.startsWith(".set")) {
 					if (method.startsWith(".setadd")) {
 						method = method.substring(4);
