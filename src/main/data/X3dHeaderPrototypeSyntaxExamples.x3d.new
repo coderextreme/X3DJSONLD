@@ -34,10 +34,10 @@
 </Material>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="ShiftGroupUp2m"><ProtoInterface><field name="children" accessType="inputOutput" type="MFNode"><Group DEF="DefaultNodeValue" bboxSize="2 2 2" bboxCenter="0 0 0"><!--Authors need to override this node when creating the ProtoInstance fieldValue name="children"--></Group>
+<ProtoDeclare name="ShiftGroupUp2m"><ProtoInterface><field name="children" accessType="inputOutput" type="MFNode"><Group DEF="DefaultNodeValue" bboxSize="2 2 2"><!--Authors need to override this node when creating the ProtoInstance fieldValue name="children"--></Group>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform translation="0 2 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Group bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="children" protoField="children"></connect>
+<ProtoBody><Transform translation="0 2 0"><Group><IS><connect nodeField="children" protoField="children"></connect>
 </IS>
 </Group>
 </Transform>
@@ -45,20 +45,20 @@
 </ProtoDeclare>
 <ProtoInstance name="ShiftGroupUp2m"></ProtoInstance>
 <!--====================--><Viewpoint DEF="ExampleSingleElement" description="Hello syntax"></Viewpoint>
-<Group DEF="ExampleChildElement" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Box containerField="geometry" size="2 2 2" solid="true"></Box>
+<Group DEF="ExampleChildElement"><Shape><Box containerField="geometry"></Box>
 <Appearance><Material diffuseColor="0.6 0.4 0.2"></Material>
 </Appearance>
 </Shape>
 </Group>
-<Transform DEF="TransformExampleUSE" rotation="0 1 0 0.78" translation="0 2.5 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Group USE="ExampleChildElement"></Group>
+<Transform DEF="TransformExampleUSE" rotation="0 1 0 0.78" translation="0 2.5 0"><Group USE="ExampleChildElement"></Group>
 </Transform>
-<Collision enabled="true" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape containerField="proxy" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--note that Collision proxy Shape is not rendered--><Sphere containerField="geometry"></Sphere>
+<Collision><Shape containerField="proxy"><!--note that Collision proxy Shape is not rendered--><Sphere containerField="geometry"></Sphere>
 <Appearance><Material></Material>
 </Appearance>
 </Shape>
 <Group USE="ExampleChildElement"></Group>
 </Collision>
-<Transform translation="0 -2.5 0" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><ProtoInstance containerField="material" name="EmissiveMaterial"><fieldValue name="onlyColor" value="0.2 0.6 0.6"></fieldValue>
+<Transform translation="0 -2.5 0"><Shape><Appearance><ProtoInstance containerField="material" name="EmissiveMaterial"><fieldValue name="onlyColor" value="0.2 0.6 0.6"></fieldValue>
 </ProtoInstance>
 </Appearance>
 <Text containerField="geometry" string="&quot;X3D Header Prototype syntax examples&quot; &quot;(view console for EXTERNPROTO output)&quot;"><FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.6"></FontStyle>
@@ -71,7 +71,7 @@
 <OrientationInterpolator DEF="Spinner" key="0 0.5 1" keyValue="0 1 0 0 0 1 0 3.14159 0 1 0 6.28318"></OrientationInterpolator>
 <ROUTE fromField="fraction_changed" fromNode="Clock" toField="set_fraction" toNode="Spinner"></ROUTE>
 <ROUTE fromField="value_changed" fromNode="Spinner" toField="rotation" toNode="TransformExampleUSE"></ROUTE>
-<Inline DEF="someInline" url="&quot;someUrl.x3d&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d&quot;" bboxCenter="0 0 0" bboxSize="-1 -1 -1"></Inline>
+<Inline DEF="someInline" url="&quot;someUrl.x3d&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d&quot;"></Inline>
 <IMPORT AS="someInlineRoot" importedDEF="someName" inlineDEF="someInline"></IMPORT>
 <PositionInterpolator DEF="StayInPlace" key="0 1" keyValue="0 0 0 0 0 0"></PositionInterpolator>
 <ROUTE fromField="fraction_changed" fromNode="Clock" toField="set_fraction" toNode="StayInPlace"></ROUTE>

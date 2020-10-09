@@ -7,22 +7,22 @@
 <meta name="description" content="a generic proto to connect two objects"></meta>
 </head>
 <Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
-<Background skyColor="0.4 0.4 0.4" transparency="0"></Background>
-<Transform DEF="G1" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.7 0.2 0.2"></Material>
+<Background skyColor="0.4 0.4 0.4"></Background>
+<Transform DEF="G1"><Shape><Appearance><Material diffuseColor="0.7 0.2 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" DEF="PS1"></PlaneSensor>
 <ROUTE fromNode="PS1" fromField="translation_changed" toNode="G1" toField="set_translation"></ROUTE>
 </Transform>
-<Transform DEF="G2" translation="1 -1 0.01" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.2 0.7 0.2"></Material>
+<Transform DEF="G2" translation="1 -1 0.01"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.2"></Material>
 </Appearance>
 <Sphere containerField="geometry" radius="0.1"></Sphere>
 </Shape>
 <PlaneSensor description="Grab to move" offset="1 -1 0.01" DEF="PS2"></PlaneSensor>
 <ROUTE fromNode="PS2" fromField="translation_changed" toNode="G2" toField="set_translation"></ROUTE>
 </Transform>
-<Transform DEF="transC1" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Transform DEF="rotscaleC1" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+<Transform DEF="transC1"><Transform DEF="rotscaleC1"><Shape><Appearance><Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
 </Appearance>
 <Cylinder containerField="geometry" radius="0.05"></Cylinder>
 </Shape>
@@ -35,7 +35,7 @@
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><X3DScript DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
+<ProtoBody><Script DEF="S1"><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="endnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="transnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="rotscalenode" accessType="initializeOnly" type="SFNode"></field>
@@ -48,7 +48,47 @@
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
 <connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
 </IS>
-</X3DScript>
+<![CDATA[ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      if (trafo) {
+		      transnode.translation = trafo.translation;
+		      rotscalenode.rotation = trafo.rotation;
+		      rotscalenode.scale = trafo.scale;
+	      }
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }]]></Script>
 </ProtoBody>
 </ProtoDeclare>
 <ProtoInstance name="x3dconnector" DEF="connector1"><fieldValue name="startnode"><Transform USE="G1"></Transform>

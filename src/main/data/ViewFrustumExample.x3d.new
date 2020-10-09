@@ -41,8 +41,8 @@
 <fieldValue name="transparency" value="0.75"></fieldValue>
 <fieldValue name="trace" value="true"></fieldValue>
 </ProtoInstance>
-<!--Visualization assists--><Inline DEF="GridXZ" url="&quot;GridXZ_20x20Fixed.x3d&quot;" bboxCenter="0 0 0" bboxSize="-1 -1 -1"></Inline>
-<Transform scale="5 5 5" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Inline DEF="CoordinateAxes" url="&quot;CoordinateAxes.x3d&quot;" bboxCenter="0 0 0" bboxSize="-1 -1 -1"></Inline>
+<!--Visualization assists--><Inline DEF="GridXZ" url="&quot;GridXZ_20x20Fixed.x3d&quot;"></Inline>
+<Transform scale="5 5 5"><Inline DEF="CoordinateAxes" url="&quot;CoordinateAxes.x3d&quot;"></Inline>
 </Transform>
 </Scene>
 </X3D>

@@ -12,7 +12,7 @@
 <ProtoDeclare name="org"><ProtoInterface><field name="posi" accessType="initializeOnly" type="SFVec3f" value="0 0 0"></field>
 <field name="col" accessType="initializeOnly" type="SFColor" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Appearance><Material transparency="0.400000005960464"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
+<ProtoBody><Transform><Shape><Appearance><Material transparency="0.400000005960464"><IS><connect nodeField="emissiveColor" protoField="col"></connect>
 </IS>
 </Material>
 </Appearance>
@@ -32,7 +32,7 @@
 </ProtoInstance>
 </ProtoBody>
 </ProtoDeclare>
-<Anchor url="&quot;javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="High Peak Community Arts" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><ProtoInstance name="r"><fieldValue name="pos" value="400 0.100000001490116 -385"></fieldValue>
+<Anchor url="&quot;javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');&quot;" description="High Peak Community Arts"><ProtoInstance name="r"><fieldValue name="pos" value="400 0.100000001490116 -385"></fieldValue>
 </ProtoInstance>
 </Anchor>
 </Scene>

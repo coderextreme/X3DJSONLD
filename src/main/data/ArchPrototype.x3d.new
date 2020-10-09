@@ -27,7 +27,7 @@
 <field name="archHalfFilled" accessType="initializeOnly" appinfo="archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width." type="SFBool" value="false"></field>
 <field name="lintel" accessType="initializeOnly" appinfo="lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true." type="SFBool" value="false"></field>
 </ProtoInterface>
-<ProtoBody><!--First node determines node type of this prototype--><!--IndexedFaceset creates arch--><Transform DEF="ArchTransform" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Shape DEF="Arch" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><!--note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly--><IndexedFaceSet containerField="geometry" DEF="ArchIndex" convex="false" solid="false"><Coordinate containerField="coord" DEF="ArchChord"></Coordinate>
+<ProtoBody><!--First node determines node type of this prototype--><!--IndexedFaceset creates arch--><Transform DEF="ArchTransform"><Shape DEF="Arch"><!--note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly--><IndexedFaceSet containerField="geometry" DEF="ArchIndex" convex="false" solid="false"><Coordinate containerField="coord" DEF="ArchChord"></Coordinate>
 </IndexedFaceSet>
 <Appearance><Material DEF="MaterialNode"><IS><connect nodeField="emissiveColor" protoField="emissiveColor"></connect>
 <connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
@@ -36,7 +36,7 @@
 </Appearance>
 </Shape>
 </Transform>
-<!--Subsequent nodes do not render, but still must be a valid X3D subgraph--><!--This embedded X3DScript provides the X3D author with additional visibility and control over prototype inputs and outputs--><X3DScript DEF="ArchPrototypeScript" url="&quot;../node/ArchPrototypeScript.js&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js&quot;"><!--INPUT PARAMETERS--><!--General parameters--><!--Parameters to create to create shapes related to arch: put true to apply--><!--OUTPUT PARAMETERS--><field name="clearSpanWidth" accessType="initializeOnly" appinfo="user or default input for clearSpanWidth parameter" type="SFFloat"></field>
+<!--Subsequent nodes do not render, but still must be a valid X3D subgraph--><!--This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs--><Script DEF="ArchPrototypeScript" url="&quot;../node/ArchPrototypeScript.js&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js&quot;"><!--INPUT PARAMETERS--><!--General parameters--><!--Parameters to create to create shapes related to arch: put true to apply--><!--OUTPUT PARAMETERS--><field name="clearSpanWidth" accessType="initializeOnly" appinfo="user or default input for clearSpanWidth parameter" type="SFFloat"></field>
 <field name="riseHeight" accessType="initializeOnly" appinfo="user or default input for riseHeight parameter" type="SFFloat"></field>
 <field name="depth" accessType="initializeOnly" appinfo="user or default input for depth parameter" type="SFFloat"></field>
 <field name="topAbutmentHeight" accessType="initializeOnly" appinfo="user or default input for topAbutmentHeight parameter" type="SFFloat"></field>
@@ -64,7 +64,7 @@
 <connect nodeField="archHalfFilled" protoField="archHalfFilled"></connect>
 <connect nodeField="lintel" protoField="lintel"></connect>
 </IS>
-</X3DScript>
+</Script>
 <ROUTE fromField="computedScale" fromNode="ArchPrototypeScript" toField="scale" toNode="ArchTransform"></ROUTE>
 <ROUTE fromField="pointOut" fromNode="ArchPrototypeScript" toField="point" toNode="ArchChord"></ROUTE>
 <ROUTE fromField="indexOut" fromNode="ArchPrototypeScript" toField="set_coordIndex" toNode="ArchIndex"></ROUTE>
@@ -79,6 +79,6 @@
 <fieldValue name="pierWidth" value="1"></fieldValue>
 <fieldValue name="pierHeight" value="2"></fieldValue>
 </ProtoInstance>
-<!--Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)--><Inline DEF="CoordinateAxes" url="&quot;../data/CoordinateAxes.x3d&quot;" bboxCenter="0 0 0" bboxSize="-1 -1 -1"></Inline>
+<!--Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)--><Inline DEF="CoordinateAxes" url="&quot;../data/CoordinateAxes.x3d&quot;"></Inline>
 </Scene>
 </X3D>
