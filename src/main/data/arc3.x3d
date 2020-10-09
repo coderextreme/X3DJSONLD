@@ -13,7 +13,7 @@
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G1_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<X3DScript DEF="DECLpoint_G1_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<Script DEF="DECLpoint_G1_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_location" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
@@ -24,7 +24,7 @@
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
 		}
-]]></X3DScript>
+]]></Script>
 <TimeSensor DEF="DECLpoint_G1_CL1" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="DECLpoint_G1_CL1" fromField="cycleTime" toNode="DECLpoint_G1_MB1" toField="set_location"></ROUTE>
 <ROUTE fromNode="DECLpoint_G1_CL1" fromField="fraction_changed" toNode="DECLpoint_G1_PI1" toField="set_fraction"></ROUTE>
@@ -36,7 +36,7 @@
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_G2_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<X3DScript DEF="DECLpoint_G2_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<Script DEF="DECLpoint_G2_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_location" accessType="inputOnly" type="SFTime"></field>
 <field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
@@ -47,7 +47,7 @@
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
 		}
-]]></X3DScript>
+]]></Script>
 <TimeSensor DEF="DECLpoint_G2_CL1" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="DECLpoint_G2_CL1" fromField="cycleTime" toNode="DECLpoint_G2_MB1" toField="set_location"></ROUTE>
 <ROUTE fromNode="DECLpoint_G2_CL1" fromField="fraction_changed" toNode="DECLpoint_G2_PI1" toField="set_fraction"></ROUTE>
@@ -60,7 +60,7 @@
 </Shape>
 </Transform>
 </Transform>
-<X3DScript DEF="DECLx3dconnector_connector1_S1"><field name="startnode" accessType="initializeOnly" type="SFNode"><Group USE="DECLpoint_G1_node"></Group>
+<Script DEF="DECLx3dconnector_connector1_S1"><field name="startnode" accessType="initializeOnly" type="SFNode"><Group USE="DECLpoint_G1_node"></Group>
 </field>
 <field name="endnode" accessType="initializeOnly" type="SFNode"><Group USE="DECLpoint_G2_node"></Group>
 </field>
@@ -116,7 +116,7 @@
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
         }
-]]></X3DScript>
+]]></Script>
 </Group>
 <ROUTE fromNode="DECLpoint_G1_node" fromField="translation" toNode="DECLx3dconnector_connector1_S1" toField="set_startpoint"></ROUTE>
 <ROUTE fromNode="DECLpoint_G2_node" fromField="translation" toNode="DECLx3dconnector_connector1_S1" toField="set_endpoint"></ROUTE>

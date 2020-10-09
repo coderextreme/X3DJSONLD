@@ -109,7 +109,7 @@
     <ROUTE fromField='value_changed' fromNode='SpinInterpolator' toField='rotation' toNode='TextTransform'/>
     <Group DEF='BackgroundGroup'>
       <Background DEF='GradualBackground'/>
-      <X3DScript DEF='colorTypeConversionScript'>
+      <Script DEF='colorTypeConversionScript'>
         <field name='colorInput' accessType='inputOnly' type='SFColor'/>
         <field name='colorsOutput' accessType='outputOnly' type='MFColor'/>
 <![CDATA[
@@ -121,7 +121,7 @@ function colorInput (eventValue) // Example source code
 // Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');
 }
 ]]>
-      </X3DScript>
+      </Script>
       <ColorInterpolator DEF='ColorAnimator' key='0 0.5 1' keyValue='0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1'>
         <!-- AZURE to INDIGO and back again -->
       </ColorInterpolator>
@@ -205,7 +205,7 @@ function colorInput (eventValue) // Example source code
           </IS>
         </Material>
         <!-- Only first node (the node type) is renderable, others are along for the ride -->
-        <X3DScript DEF='MaterialModulatorScript'>
+        <Script DEF='MaterialModulatorScript'>
           <field name='enabled' accessType='inputOutput' type='SFBool'/>
           <field name='diffuseColor' accessType='inputOutput' type='SFColor'/>
           <field name='newColor' accessType='outputOnly' type='SFColor'/>
@@ -239,7 +239,7 @@ function clockTrigger (timeValue)
 	}
 }
 ]]>
-        </X3DScript>
+        </Script>
       </ProtoBody>
     </ProtoDeclare>
     <!-- Test success: declarative statement createDeclarativeShapeTests() -->

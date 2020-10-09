@@ -55,7 +55,7 @@
                       </IS>
                     </PlaneSensor>
                     <VisibilitySensor DEF='MovementVisibilitySensor'/>
-                    <X3DScript DEF='VisibilityControlScript'>
+                    <Script DEF='VisibilityControlScript'>
                       <field accessType='initializeOnly' name='traceEnabled' type='SFBool'/>
                       <field accessType='initializeOnly' name='isVisible' type='SFBool' value='true'/>
                       <field accessType='initializeOnly' name='planeSensorTranslation' type='SFVec3f' value='0 0 0'/>
@@ -104,7 +104,7 @@ function setPlaneSensorTranslation (value, timeStamp)
 	tracePrint('planeSensorTranslation=' + value);
 }
 ]]>
-                    </X3DScript>
+                    </Script>
                     <ROUTE fromField='isActive' fromNode='PlaneMovementSensor' toField='setPlaneSensorIsActive' toNode='VisibilityControlScript'/>
                     <ROUTE fromField='translation_changed' fromNode='PlaneMovementSensor' toField='setPlaneSensorTranslation' toNode='VisibilityControlScript'/>
                     <ROUTE fromField='isActive' fromNode='MovementVisibilitySensor' toField='setIsVisible' toNode='VisibilityControlScript'/>

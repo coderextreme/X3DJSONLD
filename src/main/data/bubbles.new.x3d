@@ -58,6 +58,39 @@
     <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
     <PositionInterpolator DEF='TourPosition' key='0 1' keyValue='0 0 10 0 0 -10'/>
     <OrientationInterpolator DEF='TourOrientation' key='0 1' keyValue='0 1 0 0 0 1 0 3.1416'/>
+    <Script DEF='RandomTourTime'>
+      <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
+      <field name='lastKey' accessType='inputOutput' type='SFFloat' value='0.0'/>
+      <field name='orientations' accessType='inputOutput' type='MFRotation' value='0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0'/>
+      <field name='positions' accessType='inputOutput' type='MFVec3f' value='0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10'/>
+      <field name='position_changed' accessType='outputOnly' type='MFVec3f'/>
+      <field name='set_orientation' accessType='inputOnly' type='MFRotation'/>
+      <field name='orientation_changed' accessType='outputOnly' type='MFRotation'/>
+<![CDATA[
+ecmascript:
+               function set_cycle(value) {
+	       	   try {
+                        var ov = lastKey;
+                        do {
+                            lastKey = Math.round(Math.random()*(positions.length-1));
+                        } while (lastKey === ov);
+                        var vc = lastKey;
+
+                        position_changed = new MFVec3f();
+                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);
+                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);
+
+                        orientation_changed = new MFRotation();
+                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);
+                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);
+		   } catch (e) {
+		   	if (typeof console.log === 'function') {
+				console.log(e);
+			}
+		   }
+               }
+]]>
+    </Script>
     <ROUTE fromField='cycleTime_changed' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>
     <ROUTE fromField='orientation_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourOrientation'/>
     <ROUTE fromField='position_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourPosition'/>

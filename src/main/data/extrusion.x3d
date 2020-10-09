@@ -19,7 +19,7 @@
                     </Appearance>
                 </Shape>
                 <TimeSensor DEF='TourTime' loop='true'/>
-                <X3DScript DEF='MoveCylinder'>
+                <Script DEF='MoveCylinder'>
                     <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
                     <field name='spine' accessType='inputOutput' type='MFVec3f' value='-50 -50 0 50 50 0'/>
 <![CDATA[
@@ -32,7 +32,7 @@ ecmascript:
 		        spine = new MFVec3f([endA, endB]);
                 }
 ]]>
-                </X3DScript>               
+                </Script>               
                 <ROUTE fromNode='TourTime' fromField='cycleTime' toNode='MoveCylinder' toField='set_cycle'/>
                 <ROUTE fromNode='MoveCylinder' fromField='spine_changed' toNode='extrusion' toField='spine'/>
         </Group>

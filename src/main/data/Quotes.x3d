@@ -130,7 +130,7 @@
             toField="rotation" toNode="TextTransform"/>
         <Group DEF="BackgroundGroup">
             <Background DEF="GradualBackground"/>
-            <X3DScript DEF="colorTypeConversionScript">
+            <Script DEF="colorTypeConversionScript">
                 <field accessType="inputOnly" name="colorInput" type="SFColor"/>
                 <field accessType="outputOnly" name="colorsOutput" type="MFColor"/><![CDATA[
 
@@ -147,7 +147,7 @@ function colorInput (eventValue) // Example source code
 
 
 
-]]></X3DScript>
+]]></Script>
             <ColorInterpolator DEF="ColorAnimator" key="0 0.5 1" keyValue="0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1">
                 <!-- AZURE to INDIGO and back again -->
             </ColorInterpolator>
@@ -255,7 +255,7 @@ function colorInput (eventValue) // Example source code
                     </IS>
                 </Material>
                 <!-- Only first node (the node type) is renderable, others are along for the ride -->
-                <X3DScript DEF="MaterialModulatorScript">
+                <Script DEF="MaterialModulatorScript">
                     <field accessType="inputOutput" name="enabled" type="SFBool"/>
                     <field accessType="inputOutput" name="diffuseColor" type="SFColor"/>
                     <field accessType="outputOnly" name="newColor" type="SFColor"/>
@@ -294,7 +294,7 @@ function clockTrigger (timeValue)
 
 
 
-]]></X3DScript>
+]]></Script>
             </ProtoBody>
         </ProtoDeclare>
         <!-- Test success: declarative statement createDeclarativeShapeTests() -->

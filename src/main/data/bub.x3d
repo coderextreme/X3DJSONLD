@@ -100,7 +100,7 @@
                         <Sphere/>
                     </Shape>
                 </Transform>
-                <X3DScript DEF="Bounce">
+                <Script DEF="Bounce">
                     <field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                     <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                     <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
@@ -130,7 +130,7 @@
 			    }
 			}
                ]]>
-                </X3DScript>
+                </Script>
                 <TimeSensor DEF='TourTime' cycleInterval='0.150' loop='true'></TimeSensor>
                 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
                 <ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>

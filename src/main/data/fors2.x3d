@@ -28,7 +28,7 @@
                     </Shape>
                 </Transform>
                 <PositionInterpolator DEF="NodePosition" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-                <X3DScript DEF="MoveBall">
+                <Script DEF="MoveBall">
                     <field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"></field>
                     <field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
                     <field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
@@ -40,7 +40,7 @@
                                                 keyValue = new MFVec3f([old, translation]);
 						// Browser.println(translation);
 					}
- ]]></X3DScript>
+ ]]></Script>
                 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
                 <ROUTE fromNode="nodeClock" fromField="cycleTime" toNode="MoveBall" toField="set_cycle"></ROUTE>
                 <ROUTE fromNode="nodeClock" fromField="fraction_changed" toNode="NodePosition" toField="set_fraction"></ROUTE>
@@ -60,7 +60,7 @@
                         <Material containerField="material" diffuseColor="0 1 0"></Material>
                     </Appearance>
                 </Shape>
-                <X3DScript DEF="MoveCylinder">
+                <Script DEF="MoveCylinder">
                     <field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 0 0 0 50 0"></field>
                     <field name="set_endA" accessType="inputOnly" type="SFVec3f"></field>
                     <field name="set_endB" accessType="inputOnly" type="SFVec3f"></field>
@@ -90,7 +90,7 @@
 		    Browser.print('\n'+'"');
                     spine = value;
                 }
- ]]></X3DScript>
+ ]]></Script>
                 <ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
             </ProtoBody>
         </ProtoDeclare>
