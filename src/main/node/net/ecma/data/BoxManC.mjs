@@ -56,7 +56,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("BoxMan.x3d")}),
+              content : new SFString("BoxManC.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -132,11 +132,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("subject"),
-              content : new SFString("BoxMan H-Anim 2.0")}),
+              content : new SFString("BoxManC H-Anim 2.0")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d")}),
+              content : new SFString("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -150,7 +150,7 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new WorldInfo({
               info : new MFString(["(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"]),
-              title : new SFString("BoxMan - A Seamless VRML Human")}),
+              title : new SFString("BoxManC - A Seamless VRML Human")}),
 
             new Background({
               groundColor : new MFColor([0.6,0.6,0.6]),
