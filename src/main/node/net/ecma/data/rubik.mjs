@@ -74,8 +74,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -84,8 +82,6 @@ var X3D0 =  new X3D({
                               protoField : new SFString("xtranslation")})])})),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Sphere({})),
                           appearance : new SFNode(
@@ -108,8 +104,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -152,8 +146,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -196,8 +188,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([

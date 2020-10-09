@@ -14,7 +14,6 @@ import { field } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { IS } from './x3d.mjs';
 import { connect } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
@@ -24,11 +23,11 @@ import { MFRotation } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
 import { fieldValue } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Box } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
@@ -124,8 +123,6 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("SpinGroupTransform"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -194,12 +191,9 @@ var X3D0 =  new X3D({
                   name : new SFString("children"),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([25,2,2]),
-                          solid : new SFBool(true)})),
+                          size : new SFVec3f([25,2,2])})),
                       appearance : new SFNode(
                         new Appearance({
                           DEF : new SFString("Green"),
@@ -208,12 +202,9 @@ var X3D0 =  new X3D({
                               diffuseColor : new SFColor([0,1,0.3])}))}))}),
 
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([2,25,2]),
-                          solid : new SFBool(true)})),
+                          size : new SFVec3f([2,25,2])})),
                       appearance : new SFNode(
                         new Appearance({
                           USE : new SFString("Green")}))}),
@@ -242,12 +233,9 @@ var X3D0 =  new X3D({
                               description : new SFString("Activate second SpinGroup by clicking blue bar")}),
 
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               geometry : new SFNode(
                                 new Box({
-                                  size : new SFVec3f([2,2.05,25]),
-                                  solid : new SFBool(true)})),
+                                  size : new SFVec3f([2,2.05,25])})),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(

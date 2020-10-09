@@ -9,6 +9,7 @@ import org.web3d.x3d.jsail.HAnim.*;
 import org.web3d.x3d.jsail.Navigation.*;
 import org.web3d.x3d.jsail.Rendering.*;
 import org.web3d.x3d.jsail.RigidBodyPhysics.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc annotations follow, see below for source.
@@ -423,9 +424,7 @@ public class BoxMan
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("r_shoulder_rotation_changed").setToNode("boxman_r_shoulder").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("r_elbow_rotation_changed").setToNode("boxman_r_elbow").setToField("set_rotation"))
     .addChild(new ROUTE().setFromNode("ANIMATOR").setFromField("r_wrist_rotation_changed").setToNode("boxman_r_wrist").setToField("set_rotation"))
-    .addChild(new X3DScript("ENGINE").setDirectOutput("true"
-// [*** X3dToJava.xslt error: encountered incorrect type, X3DScript directOutput: $isNumeric=false, $attributeType=, value='true']
-).setUrl(new String[] {"BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"})
+    .addChild(new Script("ENGINE").setDirectOutput(true).setUrl(new String[] {"BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"})
       .addField(new field().setName("update").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("humanoid").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
         .addChild(new HAnimHumanoid().setUSE("boxman_Humanoid").setVersion("2.0")))

@@ -8,7 +8,6 @@ import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Extrusion } from './x3d.mjs';
 import { MFVec3f } from './x3d.mjs';
@@ -19,9 +18,9 @@ import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
-import { ROUTE } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { field } from './x3d.mjs';
+import { ROUTE } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -56,12 +55,8 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Extrusion({
                       DEF : new SFString("extrusion"),
@@ -78,19 +73,7 @@ var X3D0 =  new X3D({
                   DEF : new SFString("TourTime"),
                   loop : new SFBool(true)}),
 
-                new ROUTE({
-                  fromNode : new SFString("TourTime"),
-                  fromField : new SFString("cycleTime"),
-                  toNode : new SFString("MoveCylinder"),
-                  toField : new SFString("set_cycle")}),
-
-                new ROUTE({
-                  fromNode : new SFString("MoveCylinder"),
-                  fromField : new SFString("spine_changed"),
-                  toNode : new SFString("extrusion"),
-                  toField : new SFString("spine")}),
-              X3DScript : new SFNode(
-                new X3DScript({
+                new Script({
                   DEF : new SFString("MoveCylinder"),
                   field : new MFNode([
                     new field({
@@ -102,5 +85,25 @@ var X3D0 =  new X3D({
                       type : field.TYPE_MFVEC3F,
                       name : new SFString("spine"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("-50 -50 0 50 50 0")})])}))])})])}))});
+                      value : new SFString("-50 -50 0 50 50 0")}),
+                  .setSourceCode("ecmascript:\n"+
+"\n"+
+"                function set_cycle(value) {\n"+
+"                        Browser.print(value);\n"+
+"                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\n"+
+"                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
+"		        spine = new MFVec3f([endA, endB]);\n"+
+"                }")])}),
+
+                new ROUTE({
+                  fromNode : new SFString("TourTime"),
+                  fromField : new SFString("cycleTime"),
+                  toNode : new SFString("MoveCylinder"),
+                  toField : new SFString("set_cycle")}),
+
+                new ROUTE({
+                  fromNode : new SFString("MoveCylinder"),
+                  fromField : new SFString("spine_changed"),
+                  toNode : new SFString("extrusion"),
+                  toField : new SFString("spine")})])})])}))});
 console.log(X3D0.toXMLNode());

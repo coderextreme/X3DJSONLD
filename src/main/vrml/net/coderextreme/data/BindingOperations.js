@@ -34,16 +34,10 @@ browser.currentScene.children[3] = Viewpoint5;
 
 //Script initialization ought to first bind view5 below.
 let Group6 = browser.currentScene.createNode("Group");
-Group6.bboxCenter = new SFVec3f(new float[0,0,0]);
-Group6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform7 = browser.currentScene.createNode("Transform");
 Transform7.DEF = "Text1";
 Transform7.translation = new SFVec3f(new float[-6,0,0]);
-Transform7.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform7.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape8 = browser.currentScene.createNode("Shape");
-Shape8.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape8.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text9 = browser.currentScene.createNode("Text");
 Text9.string = new MFString(new java.lang.String["View","# 1"]);
 let FontStyle10 = browser.currentScene.createNode("FontStyle");
@@ -71,11 +65,7 @@ Group6.children[0] = Transform7;
 let Transform13 = browser.currentScene.createNode("Transform");
 Transform13.DEF = "Text2";
 Transform13.translation = new SFVec3f(new float[-2,0,0]);
-Transform13.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform13.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape14 = browser.currentScene.createNode("Shape");
-Shape14.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape14.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text15 = browser.currentScene.createNode("Text");
 Text15.string = new MFString(new java.lang.String["View","# 2"]);
 let FontStyle16 = browser.currentScene.createNode("FontStyle");
@@ -100,11 +90,7 @@ Group6.children[1] = Transform13;
 let Transform19 = browser.currentScene.createNode("Transform");
 Transform19.DEF = "Text3";
 Transform19.translation = new SFVec3f(new float[2,0,0]);
-Transform19.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform19.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape20 = browser.currentScene.createNode("Shape");
-Shape20.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape20.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text21 = browser.currentScene.createNode("Text");
 Text21.string = new MFString(new java.lang.String["View","# 3"]);
 let FontStyle22 = browser.currentScene.createNode("FontStyle");
@@ -129,11 +115,7 @@ Group6.children[2] = Transform19;
 let Transform25 = browser.currentScene.createNode("Transform");
 Transform25.DEF = "Text4";
 Transform25.translation = new SFVec3f(new float[6,0,0]);
-Transform25.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform25.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape26 = browser.currentScene.createNode("Shape");
-Shape26.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape26.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text27 = browser.currentScene.createNode("Text");
 Text27.string = new MFString(new java.lang.String["View","# 4"]);
 let FontStyle28 = browser.currentScene.createNode("FontStyle");
@@ -160,8 +142,6 @@ browser.currentScene.children[4] = Group6;
 //It does not need to be studied in this chapter.
 let Transform31 = browser.currentScene.createNode("Transform");
 Transform31.translation = new SFVec3f(new float[0,-3,8]);
-Transform31.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform31.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 //notice this next Viewpoint has been transformed with the text, so its position is relative. it is called view5 in the Script.
 let Viewpoint32 = browser.currentScene.createNode("Viewpoint");
 Viewpoint32.DEF = "ClickToAnimateView";
@@ -172,8 +152,6 @@ Transform31.children = new MFNode();
 Transform31.children[0] = Viewpoint32;
 
 let Shape33 = browser.currentScene.createNode("Shape");
-Shape33.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape33.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text34 = browser.currentScene.createNode("Text");
 Text34.string = new MFString(new java.lang.String["Click here to animate"]);
 let FontStyle35 = browser.currentScene.createNode("FontStyle");
@@ -192,11 +170,8 @@ Shape33.appearance = Appearance36;
 Transform31.children[1] = Shape33;
 
 let Shape38 = browser.currentScene.createNode("Shape");
-Shape38.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape38.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Box39 = browser.currentScene.createNode("Box");
 Box39.size = new SFVec3f(new float[7,1,0.02]);
-Box39.solid = True;
 Shape38.geometry = Box39;
 
 let Appearance40 = browser.currentScene.createNode("Appearance");
@@ -238,151 +213,240 @@ ROUTE46.toField = "set_fraction";
 ROUTE46.toNode = "TimingSequencer";
 Transform31.children[7] = ROUTE46;
 
+let Script47 = browser.currentScene.createNode("Script");
+Script47.DEF = "BindingSequencerEngine";
+let field48 = browser.currentScene.createNode("field");
+field48.name = "set_timeEvent";
+field48.accessType = "inputOnly";
+field48.type = "SFInt32";
+Script47.field = new MFNode();
+
+Script47.field[0] = field48;
+
+let field49 = browser.currentScene.createNode("field");
+field49.name = "bindView1";
+field49.accessType = "outputOnly";
+field49.type = "SFBool";
+Script47.field[1] = field49;
+
+let field50 = browser.currentScene.createNode("field");
+field50.name = "bindView2";
+field50.accessType = "outputOnly";
+field50.type = "SFBool";
+Script47.field[2] = field50;
+
+let field51 = browser.currentScene.createNode("field");
+field51.name = "bindView3";
+field51.accessType = "outputOnly";
+field51.type = "SFBool";
+Script47.field[3] = field51;
+
+let field52 = browser.currentScene.createNode("field");
+field52.name = "bindView4";
+field52.accessType = "outputOnly";
+field52.type = "SFBool";
+Script47.field[4] = field52;
+
+let field53 = browser.currentScene.createNode("field");
+field53.name = "bindView5";
+field53.accessType = "outputOnly";
+field53.type = "SFBool";
+Script47.field[5] = field53;
+
+let field54 = browser.currentScene.createNode("field");
+field54.name = "view1Bound";
+field54.accessType = "inputOnly";
+field54.type = "SFBool";
+Script47.field[6] = field54;
+
+let field55 = browser.currentScene.createNode("field");
+field55.name = "view2Bound";
+field55.accessType = "inputOnly";
+field55.type = "SFBool";
+Script47.field[7] = field55;
+
+let field56 = browser.currentScene.createNode("field");
+field56.name = "view3Bound";
+field56.accessType = "inputOnly";
+field56.type = "SFBool";
+Script47.field[8] = field56;
+
+let field57 = browser.currentScene.createNode("field");
+field57.name = "view4Bound";
+field57.accessType = "inputOnly";
+field57.type = "SFBool";
+Script47.field[9] = field57;
+
+let field58 = browser.currentScene.createNode("field");
+field58.name = "priorInputvalue";
+field58.accessType = "initializeOnly";
+field58.type = "SFInt32";
+field58.value = "-1";
+Script47.field[10] = field58;
+
+
+Script47.setSourceCode(`ecmascript:\n"+
+"\n"+
+"function initialize ()\n"+
+"{\n"+
+"    bindView5 = true;\n"+
+"    Browser.print ('Timing script initialized and ready for activation');\n"+
+"}\n"+
+"function set_timeEvent (inputValue)\n"+
+"{\n"+
+"    if (inputValue == priorInputvalue)\n"+
+"    {\n"+
+"        return; // ignore repeated inputs\n"+
+"    }\n"+
+"    // new value provided\n"+
+"    priorInputvalue = inputValue;\n"+
+"    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\n"+
+"\n"+
+"    // mimics user execution of Figure 4.1 steps t_0 through t_8\n"+
+"    if (inputValue == 0)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t0');\n"+
+"        bindView1 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 1)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t1');\n"+
+"        bindView2 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 2)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t2');\n"+
+"        bindView3 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 3)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t3');\n"+
+"        bindView3 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 4)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t4');\n"+
+"        bindView1 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 5)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t5');\n"+
+"        bindView2 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 6)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t6');\n"+
+"        bindView1 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 7)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t7');\n"+
+"        bindView4 = true;\n"+
+"\n"+
+"    }\n"+
+"    else if (inputValue == 8)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t8');\n"+
+"        Browser.print (', no action, all done');\n"+
+"        Browser.print ('\\n\\n');\n"+
+"    }\n"+
+"}\n"+
+"\n"+
+"function view1Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view1Bound ' + (inputValue));\n"+
+"    if (priorInputvalue == -1) Browser.print ('\\n');\n"+
+"}\n"+
+"function view2Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view2Bound ' + (inputValue));\n"+
+"}\n"+
+"function view3Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view3Bound ' + (inputValue));\n"+
+"}\n"+
+"function view4Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view4Bound ' + (inputValue));\n"+
+"}\n"+
+"function view5Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view5Bound ' + (inputValue));\n"+
+"}`)
+Transform31.children[8] = Script47;
+
 //drive Script with TimeSensor clock
-let ROUTE47 = browser.currentScene.createNode("ROUTE");
-ROUTE47.fromField = "value_changed";
-ROUTE47.fromNode = "TimingSequencer";
-ROUTE47.toField = "set_timeEvent";
-ROUTE47.toNode = "BindingSequencerEngine";
-Transform31.children[8] = ROUTE47;
+let ROUTE59 = browser.currentScene.createNode("ROUTE");
+ROUTE59.fromField = "value_changed";
+ROUTE59.fromNode = "TimingSequencer";
+ROUTE59.toField = "set_timeEvent";
+ROUTE59.toNode = "BindingSequencerEngine";
+Transform31.children[9] = ROUTE59;
 
 //Script will bind and unbind Viewpoint nodes
-let ROUTE48 = browser.currentScene.createNode("ROUTE");
-ROUTE48.fromField = "bindView1";
-ROUTE48.fromNode = "BindingSequencerEngine";
-ROUTE48.toField = "set_bind";
-ROUTE48.toNode = "View1";
-Transform31.children[9] = ROUTE48;
+let ROUTE60 = browser.currentScene.createNode("ROUTE");
+ROUTE60.fromField = "bindView1";
+ROUTE60.fromNode = "BindingSequencerEngine";
+ROUTE60.toField = "set_bind";
+ROUTE60.toNode = "View1";
+Transform31.children[10] = ROUTE60;
 
-let ROUTE49 = browser.currentScene.createNode("ROUTE");
-ROUTE49.fromField = "bindView2";
-ROUTE49.fromNode = "BindingSequencerEngine";
-ROUTE49.toField = "set_bind";
-ROUTE49.toNode = "View2";
-Transform31.children[10] = ROUTE49;
+let ROUTE61 = browser.currentScene.createNode("ROUTE");
+ROUTE61.fromField = "bindView2";
+ROUTE61.fromNode = "BindingSequencerEngine";
+ROUTE61.toField = "set_bind";
+ROUTE61.toNode = "View2";
+Transform31.children[11] = ROUTE61;
 
-let ROUTE50 = browser.currentScene.createNode("ROUTE");
-ROUTE50.fromField = "bindView3";
-ROUTE50.fromNode = "BindingSequencerEngine";
-ROUTE50.toField = "set_bind";
-ROUTE50.toNode = "View3";
-Transform31.children[11] = ROUTE50;
+let ROUTE62 = browser.currentScene.createNode("ROUTE");
+ROUTE62.fromField = "bindView3";
+ROUTE62.fromNode = "BindingSequencerEngine";
+ROUTE62.toField = "set_bind";
+ROUTE62.toNode = "View3";
+Transform31.children[12] = ROUTE62;
 
-let ROUTE51 = browser.currentScene.createNode("ROUTE");
-ROUTE51.fromField = "bindView4";
-ROUTE51.fromNode = "BindingSequencerEngine";
-ROUTE51.toField = "set_bind";
-ROUTE51.toNode = "View4";
-Transform31.children[12] = ROUTE51;
+let ROUTE63 = browser.currentScene.createNode("ROUTE");
+ROUTE63.fromField = "bindView4";
+ROUTE63.fromNode = "BindingSequencerEngine";
+ROUTE63.toField = "set_bind";
+ROUTE63.toNode = "View4";
+Transform31.children[13] = ROUTE63;
 
-let ROUTE52 = browser.currentScene.createNode("ROUTE");
-ROUTE52.fromField = "bindView5";
-ROUTE52.fromNode = "BindingSequencerEngine";
-ROUTE52.toField = "set_bind";
-ROUTE52.toNode = "ClickToAnimateView";
-Transform31.children[13] = ROUTE52;
+let ROUTE64 = browser.currentScene.createNode("ROUTE");
+ROUTE64.fromField = "bindView5";
+ROUTE64.fromNode = "BindingSequencerEngine";
+ROUTE64.toField = "set_bind";
+ROUTE64.toNode = "ClickToAnimateView";
+Transform31.children[14] = ROUTE64;
 
 //Viewpoint nodes report bind and unbind events
-let ROUTE53 = browser.currentScene.createNode("ROUTE");
-ROUTE53.fromField = "isBound";
-ROUTE53.fromNode = "View1";
-ROUTE53.toField = "view1Bound";
-ROUTE53.toNode = "BindingSequencerEngine";
-Transform31.children[14] = ROUTE53;
+let ROUTE65 = browser.currentScene.createNode("ROUTE");
+ROUTE65.fromField = "isBound";
+ROUTE65.fromNode = "View1";
+ROUTE65.toField = "view1Bound";
+ROUTE65.toNode = "BindingSequencerEngine";
+Transform31.children[15] = ROUTE65;
 
-let ROUTE54 = browser.currentScene.createNode("ROUTE");
-ROUTE54.fromField = "isBound";
-ROUTE54.fromNode = "View2";
-ROUTE54.toField = "view2Bound";
-ROUTE54.toNode = "BindingSequencerEngine";
-Transform31.children[15] = ROUTE54;
+let ROUTE66 = browser.currentScene.createNode("ROUTE");
+ROUTE66.fromField = "isBound";
+ROUTE66.fromNode = "View2";
+ROUTE66.toField = "view2Bound";
+ROUTE66.toNode = "BindingSequencerEngine";
+Transform31.children[16] = ROUTE66;
 
-let ROUTE55 = browser.currentScene.createNode("ROUTE");
-ROUTE55.fromField = "isBound";
-ROUTE55.fromNode = "View3";
-ROUTE55.toField = "view3Bound";
-ROUTE55.toNode = "BindingSequencerEngine";
-Transform31.children[16] = ROUTE55;
+let ROUTE67 = browser.currentScene.createNode("ROUTE");
+ROUTE67.fromField = "isBound";
+ROUTE67.fromNode = "View3";
+ROUTE67.toField = "view3Bound";
+ROUTE67.toNode = "BindingSequencerEngine";
+Transform31.children[17] = ROUTE67;
 
-let ROUTE56 = browser.currentScene.createNode("ROUTE");
-ROUTE56.fromField = "isBound";
-ROUTE56.fromNode = "View4";
-ROUTE56.toField = "view4Bound";
-ROUTE56.toNode = "BindingSequencerEngine";
-Transform31.children[17] = ROUTE56;
-
-let X3DScript57 = browser.currentScene.createNode("X3DScript");
-X3DScript57.DEF = "BindingSequencerEngine";
-let field58 = browser.currentScene.createNode("field");
-field58.name = "set_timeEvent";
-field58.accessType = "inputOnly";
-field58.type = "SFInt32";
-X3DScript57.field = new MFNode();
-
-X3DScript57.field[0] = field58;
-
-let field59 = browser.currentScene.createNode("field");
-field59.name = "bindView1";
-field59.accessType = "outputOnly";
-field59.type = "SFBool";
-X3DScript57.field[1] = field59;
-
-let field60 = browser.currentScene.createNode("field");
-field60.name = "bindView2";
-field60.accessType = "outputOnly";
-field60.type = "SFBool";
-X3DScript57.field[2] = field60;
-
-let field61 = browser.currentScene.createNode("field");
-field61.name = "bindView3";
-field61.accessType = "outputOnly";
-field61.type = "SFBool";
-X3DScript57.field[3] = field61;
-
-let field62 = browser.currentScene.createNode("field");
-field62.name = "bindView4";
-field62.accessType = "outputOnly";
-field62.type = "SFBool";
-X3DScript57.field[4] = field62;
-
-let field63 = browser.currentScene.createNode("field");
-field63.name = "bindView5";
-field63.accessType = "outputOnly";
-field63.type = "SFBool";
-X3DScript57.field[5] = field63;
-
-let field64 = browser.currentScene.createNode("field");
-field64.name = "view1Bound";
-field64.accessType = "inputOnly";
-field64.type = "SFBool";
-X3DScript57.field[6] = field64;
-
-let field65 = browser.currentScene.createNode("field");
-field65.name = "view2Bound";
-field65.accessType = "inputOnly";
-field65.type = "SFBool";
-X3DScript57.field[7] = field65;
-
-let field66 = browser.currentScene.createNode("field");
-field66.name = "view3Bound";
-field66.accessType = "inputOnly";
-field66.type = "SFBool";
-X3DScript57.field[8] = field66;
-
-let field67 = browser.currentScene.createNode("field");
-field67.name = "view4Bound";
-field67.accessType = "inputOnly";
-field67.type = "SFBool";
-X3DScript57.field[9] = field67;
-
-let field68 = browser.currentScene.createNode("field");
-field68.name = "priorInputvalue";
-field68.accessType = "initializeOnly";
-field68.type = "SFInt32";
-field68.value = "-1";
-X3DScript57.field[10] = field68;
-
-Transform31.x3DScript[18] = X3DScript57;
+let ROUTE68 = browser.currentScene.createNode("ROUTE");
+ROUTE68.fromField = "isBound";
+ROUTE68.fromNode = "View4";
+ROUTE68.toField = "view4Bound";
+ROUTE68.toNode = "BindingSequencerEngine";
+Transform31.children[18] = ROUTE68;
 
 browser.currentScene.children[5] = Transform31;
 

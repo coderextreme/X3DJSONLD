@@ -9,7 +9,6 @@ import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
@@ -19,7 +18,6 @@ import { SFVec2f } from './x3d.mjs';
 import { PixelTexture } from './x3d.mjs';
 import { SFImage } from './x3d.mjs';
 import { Box } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 var X3D0 =  new X3D({
@@ -80,18 +78,13 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Background({
-              skyColor : new MFColor([0,0,1]),
-              transparency : new SFFloat(0)}),
+              skyColor : new MFColor([0,0,1])}),
 
             new Transform({
               DEF : new SFString("Checkerboard"),
               translation : new SFVec3f([0,0,-10]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       textureTransform : new SFNode(
@@ -102,8 +95,7 @@ var X3D0 =  new X3D({
                           image : new SFImage([2,2,3,15119869,16767927,16767927,15119869])}))})),
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f([1000,1000,0.01]),
-                      solid : new SFBool(true)}))})])}),
+                      size : new SFVec3f([1000,1000,0.01])}))})])}),
 
             new Viewpoint({
               description : new SFString("View All"),
@@ -117,21 +109,15 @@ var X3D0 =  new X3D({
               DEF : new SFString("EmptyImage"),
               rotation : new SFRotation([1,1,0,1]),
               translation : new SFVec3f([0,5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       texture : new SFNode(
                         new PixelTexture({}))})),
                   geometry : new SFNode(
                     new Box({
-                      DEF : new SFString("StandardBox"),
-                      size : new SFVec3f([2,2,2]),
-                      solid : new SFBool(true)}))})])}),
+                      DEF : new SFString("StandardBox")}))})])}),
 
             new Viewpoint({
               description : new SFString("Black and white PixelTexture"),
@@ -141,12 +127,8 @@ var X3D0 =  new X3D({
               DEF : new SFString("BW"),
               rotation : new SFRotation([1,1,0,1]),
               translation : new SFVec3f([-5,0,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       texture : new SFNode(
@@ -164,12 +146,8 @@ var X3D0 =  new X3D({
               DEF : new SFString("AlphaBW"),
               rotation : new SFRotation([1,1,0,1]),
               translation : new SFVec3f([5,0,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       texture : new SFNode(
@@ -187,12 +165,8 @@ var X3D0 =  new X3D({
               DEF : new SFString("RGB"),
               rotation : new SFRotation([1,1,0,1]),
               translation : new SFVec3f([-5,-5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       texture : new SFNode(
@@ -210,12 +184,8 @@ var X3D0 =  new X3D({
               DEF : new SFString("AlphaRGB"),
               rotation : new SFRotation([1,1,0,1]),
               translation : new SFVec3f([5,-5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       texture : new SFNode(

@@ -8,8 +8,6 @@ import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
@@ -17,6 +15,7 @@ import { SFColor } from './x3d.mjs';
 import { Box } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -39,29 +38,18 @@ var X3D0 =  new X3D({
         new Scene({
           children : new MFNode([
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              visible : new SFBool(true),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  visible : new SFBool(true),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([1,0,0])}))})),
                   geometry : new SFNode(
-                    new Box({
-                      size : new SFVec3f([2,2,2]),
-                      solid : new SFBool(true)}))})])}),
+                    new Box({}))})])}),
 
             new Transform({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               rotation : new SFRotation([7,8,9,3.14]),
               scale : new SFVec3f([4,5,6]),
-              translation : new SFVec3f([1,2,3]),
-              visible : new SFBool(true)})])}))});
+              translation : new SFVec3f([1,2,3])})])}))});
 console.log(X3D0.toXMLNode());

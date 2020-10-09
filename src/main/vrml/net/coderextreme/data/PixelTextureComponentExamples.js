@@ -4,7 +4,6 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let Background2 = browser.currentScene.createNode("Background");
 Background2.skyColor = new MFColor(new float[0.1,0.1,0.4]);
-Background2.transparency = 0;
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Background2;
@@ -16,11 +15,7 @@ browser.currentScene.children[1] = Viewpoint3;
 
 let Transform4 = browser.currentScene.createNode("Transform");
 Transform4.translation = new SFVec3f(new float[-6,0,0]);
-Transform4.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape5 = browser.currentScene.createNode("Shape");
-Shape5.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance6 = browser.currentScene.createNode("Appearance");
 let PixelTexture7 = browser.currentScene.createNode("PixelTexture");
 PixelTexture7.DEF = "ZeroComponents";
@@ -29,8 +24,6 @@ Appearance6.texture = PixelTexture7;
 Shape5.appearance = Appearance6;
 
 let Box8 = browser.currentScene.createNode("Box");
-Box8.size = new SFVec3f(new float[2,2,2]);
-Box8.solid = True;
 Shape5.geometry = Box8;
 
 Transform4.children = new MFNode();
@@ -39,11 +32,7 @@ Transform4.children[0] = Shape5;
 
 let Transform9 = browser.currentScene.createNode("Transform");
 Transform9.translation = new SFVec3f(new float[0,-2,0]);
-Transform9.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform9.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape10 = browser.currentScene.createNode("Shape");
-Shape10.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape10.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text11 = browser.currentScene.createNode("Text");
 Text11.string = new MFString(new java.lang.String["0"]);
 let FontStyle12 = browser.currentScene.createNode("FontStyle");
@@ -71,11 +60,7 @@ browser.currentScene.children[2] = Transform4;
 
 let Transform15 = browser.currentScene.createNode("Transform");
 Transform15.translation = new SFVec3f(new float[-3,0,0]);
-Transform15.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform15.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape16 = browser.currentScene.createNode("Shape");
-Shape16.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape16.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance17 = browser.currentScene.createNode("Appearance");
 let PixelTexture18 = browser.currentScene.createNode("PixelTexture");
 PixelTexture18.DEF = "OneComponent";
@@ -85,8 +70,6 @@ Appearance17.texture = PixelTexture18;
 Shape16.appearance = Appearance17;
 
 let Box19 = browser.currentScene.createNode("Box");
-Box19.size = new SFVec3f(new float[2,2,2]);
-Box19.solid = True;
 Shape16.geometry = Box19;
 
 Transform15.children = new MFNode();
@@ -95,11 +78,7 @@ Transform15.children[0] = Shape16;
 
 let Transform20 = browser.currentScene.createNode("Transform");
 Transform20.translation = new SFVec3f(new float[0,-2,0]);
-Transform20.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform20.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape21 = browser.currentScene.createNode("Shape");
-Shape21.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape21.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text22 = browser.currentScene.createNode("Text");
 Text22.string = new MFString(new java.lang.String["1"]);
 let FontStyle23 = browser.currentScene.createNode("FontStyle");
@@ -121,11 +100,7 @@ Transform15.children[1] = Transform20;
 browser.currentScene.children[3] = Transform15;
 
 let Transform25 = browser.currentScene.createNode("Transform");
-Transform25.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform25.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape26 = browser.currentScene.createNode("Shape");
-Shape26.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape26.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance27 = browser.currentScene.createNode("Appearance");
 let PixelTexture28 = browser.currentScene.createNode("PixelTexture");
 PixelTexture28.DEF = "TwoComponents";
@@ -135,8 +110,6 @@ Appearance27.texture = PixelTexture28;
 Shape26.appearance = Appearance27;
 
 let Box29 = browser.currentScene.createNode("Box");
-Box29.size = new SFVec3f(new float[2,2,2]);
-Box29.solid = True;
 Shape26.geometry = Box29;
 
 Transform25.children = new MFNode();
@@ -145,11 +118,7 @@ Transform25.children[0] = Shape26;
 
 let Transform30 = browser.currentScene.createNode("Transform");
 Transform30.translation = new SFVec3f(new float[0,-2,0]);
-Transform30.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform30.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape31 = browser.currentScene.createNode("Shape");
-Shape31.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape31.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text32 = browser.currentScene.createNode("Text");
 Text32.string = new MFString(new java.lang.String["2"]);
 let FontStyle33 = browser.currentScene.createNode("FontStyle");
@@ -172,11 +141,7 @@ browser.currentScene.children[4] = Transform25;
 
 let Transform35 = browser.currentScene.createNode("Transform");
 Transform35.translation = new SFVec3f(new float[3,0,0]);
-Transform35.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform35.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape36 = browser.currentScene.createNode("Shape");
-Shape36.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape36.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance37 = browser.currentScene.createNode("Appearance");
 //note 0x000000 = 0
 let PixelTexture38 = browser.currentScene.createNode("PixelTexture");
@@ -187,8 +152,6 @@ Appearance37.texture = PixelTexture38;
 Shape36.appearance = Appearance37;
 
 let Box39 = browser.currentScene.createNode("Box");
-Box39.size = new SFVec3f(new float[2,2,2]);
-Box39.solid = True;
 Shape36.geometry = Box39;
 
 Transform35.children = new MFNode();
@@ -197,11 +160,7 @@ Transform35.children[0] = Shape36;
 
 let Transform40 = browser.currentScene.createNode("Transform");
 Transform40.translation = new SFVec3f(new float[0,-2,0]);
-Transform40.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform40.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape41 = browser.currentScene.createNode("Shape");
-Shape41.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape41.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text42 = browser.currentScene.createNode("Text");
 Text42.string = new MFString(new java.lang.String["3"]);
 let FontStyle43 = browser.currentScene.createNode("FontStyle");
@@ -224,11 +183,7 @@ browser.currentScene.children[5] = Transform35;
 
 let Transform45 = browser.currentScene.createNode("Transform");
 Transform45.translation = new SFVec3f(new float[6,0,0]);
-Transform45.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform45.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape46 = browser.currentScene.createNode("Shape");
-Shape46.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape46.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance47 = browser.currentScene.createNode("Appearance");
 //Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127
 let PixelTexture48 = browser.currentScene.createNode("PixelTexture");
@@ -239,8 +194,6 @@ Appearance47.texture = PixelTexture48;
 Shape46.appearance = Appearance47;
 
 let Box49 = browser.currentScene.createNode("Box");
-Box49.size = new SFVec3f(new float[2,2,2]);
-Box49.solid = True;
 Shape46.geometry = Box49;
 
 Transform45.children = new MFNode();
@@ -249,11 +202,7 @@ Transform45.children[0] = Shape46;
 
 let Transform50 = browser.currentScene.createNode("Transform");
 Transform50.translation = new SFVec3f(new float[0,-2,0]);
-Transform50.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform50.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape51 = browser.currentScene.createNode("Shape");
-Shape51.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape51.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Text52 = browser.currentScene.createNode("Text");
 Text52.string = new MFString(new java.lang.String["4"]);
 let FontStyle53 = browser.currentScene.createNode("FontStyle");
@@ -277,11 +226,7 @@ browser.currentScene.children[6] = Transform45;
 //Background from PixelTextureBW.x3d
 let Transform55 = browser.currentScene.createNode("Transform");
 Transform55.translation = new SFVec3f(new float[0,6,-2]);
-Transform55.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform55.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape56 = browser.currentScene.createNode("Shape");
-Shape56.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape56.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance57 = browser.currentScene.createNode("Appearance");
 let PixelTexture58 = browser.currentScene.createNode("PixelTexture");
 PixelTexture58.image = new SFImage(new int[8,8,1,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204,204,0,204,0,204,0,204,0,0,204,0,204,0,204,0,204]);
@@ -291,7 +236,6 @@ Shape56.appearance = Appearance57;
 
 let Box59 = browser.currentScene.createNode("Box");
 Box59.size = new SFVec3f(new float[16,16,0.1]);
-Box59.solid = True;
 Shape56.geometry = Box59;
 
 Transform55.children = new MFNode();

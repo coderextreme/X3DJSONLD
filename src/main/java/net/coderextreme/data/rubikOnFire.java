@@ -69,10 +69,10 @@ ProtoInstance ProtoInstance9 = null;
             .addField(new field().setType("SFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("xtranslation")))
-              .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+              .addChild(new Shape()
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("geometry").setProtoField("myShape")))
                 .setAppearance(new Appearance()
@@ -83,7 +83,7 @@ ProtoInstance ProtoInstance9 = null;
             .addField(new field().setType("SFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("ytranslation")))
               .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")
@@ -101,7 +101,7 @@ ProtoInstance ProtoInstance9 = null;
             .addField(new field().setType("SFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("ztranslation")))
               .addChild(ProtoInstance3 = new ProtoInstance().setName("three")
@@ -119,7 +119,7 @@ ProtoInstance ProtoInstance9 = null;
             .addField(new field().setType("SFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Sphere())))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("ttranslation")))
               .addChild(ProtoInstance6 = new ProtoInstance().setName("nine")
@@ -154,7 +154,7 @@ ProtoInstance9
           .addFieldValue(new fieldValue().setName("ttranslation").setValue("0 0 0"));
 ProtoInstance9
           .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Box().setSize(new float[] {1f,1f,1f}).setSolid(true)));
+            .addChild(new Box().setSize(new float[] {1f,1f,1f})));
     return X3D0;
     }
 }

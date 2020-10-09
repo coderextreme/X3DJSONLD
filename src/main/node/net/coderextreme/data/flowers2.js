@@ -29,7 +29,7 @@ var ProtoInstance1 = null;
       .setScene((new autoclass.Scene())
         .addChild((new autoclass.NavigationInfo()))
         .addChild((new autoclass.Viewpoint()).setDescription("Two mathematical orbitals").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(50)])))
-        .addChild((new autoclass.Group()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+        .addChild((new autoclass.Group())
           .addChild((new autoclass.DirectionalLight()).setDirection(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])))
           .addChild((new autoclass.ProtoDeclare()).setName("orbit")
             .setProtoInterface((new autoclass.ProtoInterface())
@@ -38,13 +38,13 @@ var ProtoInstance1 = null;
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFCOLOR).setName("specularColor").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
               .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("transparency").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0.75")))
             .setProtoBody((new autoclass.ProtoBody())
-              .addChild((new autoclass.Group()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+              .addChild((new autoclass.Group())
                 .addChild((new autoclass.TimeSensor()).setDEF("Clock").setCycleInterval(16).setLoop(true))
                 .addChild((new autoclass.OrientationInterpolator()).setDEF("OrbitPath").setKey(java.newArray("float", [java.newFloat(0), java.newFloat(0.5), java.newFloat(1)])).setKeyValue(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(3.14), java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(6.28)])))
-                .addChild((new autoclass.Transform()).setDEF("OrbitTransform").setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+                .addChild((new autoclass.Transform()).setDEF("OrbitTransform")
                   .setIS((new autoclass.IS())
                     .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("translation")))
-                  .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+                  .addChild((new autoclass.Shape())
                     .setAppearance((new autoclass.Appearance())
                       .setMaterial((new autoclass.Material())
                         .setIS((new autoclass.IS())
@@ -54,12 +54,7 @@ var ProtoInstance1 = null;
                     .addComments((new autoclass.CommentsBlock("<IndexedFaceSet DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>")))
                     .setGeometry((new autoclass.IndexedFaceSet()).setCcw(false).setConvex(false).setCoordIndex(java.newArray("int", [0,1,2,-1])).setDEF("Orbit")
                       .setCoord((new autoclass.Coordinate()).setDEF("OrbitCoordinates").setPoint(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(0)]))))))
-                .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
-                .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-                .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
-                .addChild((new autoclass.ROUTE()).setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
-                .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction"))
-                .addX3DScript((new autoclass.X3DScript()).setDEF("OrbitScript")
+                .addChild((new autoclass.Script()).setDEF("OrbitScript")
                   .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
                   .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFVEC3F).setName("coordinates").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
                   .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFINT32).setName("coordIndexes").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
@@ -67,7 +62,86 @@ var ProtoInstance1 = null;
                   .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("f").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
                   .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("g").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
                   .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFFLOAT).setName("h").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFINT32).setName("resolution").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("50"))))))
+                  .addField((new autoclass.field()).setType(autoclass.field.TYPE_SFINT32).setName("resolution").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
+                  .setSourceCode("ecmascript:\n"+
+"\n"+
+"			var e = 5;\n"+
+"			var f = 5;\n"+
+"			var g = 5;\n"+
+"			var h = 5;\n"+
+"			var resolution = 100;\n"+
+"\n"+
+"			function initialize() {\n"+
+"			     generateCoordinates();\n"+
+"			     var localci = [];\n"+
+"			     for (var i = 0; i < resolution-1; i++) {\n"+
+"				for (var j = 0; j < resolution-1; j++) {\n"+
+"				     localci.push(i*resolution+j);\n"+
+"				     localci.push(i*resolution+j+1);\n"+
+"				     localci.push((i+1)*resolution+j+1);\n"+
+"				     localci.push((i+1)*resolution+j);\n"+
+"				     localci.push(-1);\n"+
+"				}\n"+
+"			    }\n"+
+"			    coordIndexes = new MFInt32(localci);\n"+
+"			}\n"+
+"\n"+
+"			function generateCoordinates() {\n"+
+"			     var theta = 0.0;\n"+
+"			     var phi = 0.0;\n"+
+"			     var delta = (2 * 3.141592653) / (resolution-1);\n"+
+"			     var localc = [];\n"+
+"			     for (var i = 0; i < resolution; i++) {\n"+
+"				for (var j = 0; j < resolution; j++) {\n"+
+"					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
+"					localc.push(new SFVec3f(\n"+
+"						rho * Math.cos(phi) * Math.cos(theta),\n"+
+"						rho * Math.cos(phi) * Math.sin(theta),\n"+
+"						rho * Math.sin(phi)\n"+
+"					));\n"+
+"					theta += delta;\n"+
+"				}\n"+
+"				phi += delta;\n"+
+"			     }\n"+
+"			     \n"+
+"			     coordinates = new MFVec3f(localc);\n"+
+"			}\n"+
+"\n"+
+"			function set_fraction(fraction, eventTime) {\n"+
+"				var choice = Math.floor(Math.random() * 4);\n"+
+"				switch (choice) {\n"+
+"				case 0:\n"+
+"					e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				case 1:\n"+
+"					f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				case 2:\n"+
+"					g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				case 3:\n"+
+"					h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
+"					break;\n"+
+"				}\n"+
+"				if (e < 1) {\n"+
+"					f = 10;\n"+
+"				}\n"+
+"				if (f < 1) {\n"+
+"					f = 10;\n"+
+"				}\n"+
+"				if (g < 1) {\n"+
+"					g = 4;\n"+
+"				}\n"+
+"				if (h < 1) {\n"+
+"					h = 4;\n"+
+"				}\n"+
+"				generateCoordinates();\n"+
+"			}"))
+                .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("coordIndex"))
+                .addChild((new autoclass.ROUTE()).setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
+                .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
+                .addChild((new autoclass.ROUTE()).setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
+                .addChild((new autoclass.ROUTE()).setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
           .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("orbit"))
           .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("orbit"))))      ;
 ProtoInstance0

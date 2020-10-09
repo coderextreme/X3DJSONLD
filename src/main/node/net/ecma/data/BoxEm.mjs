@@ -26,7 +26,6 @@ import { Cylinder } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
 import { fieldValue } from './x3d.mjs';
 import { Box } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -80,8 +79,6 @@ var X3D0 =  new X3D({
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Sphere({})),
                           appearance : new SFNode(
@@ -93,8 +90,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -123,8 +118,6 @@ var X3D0 =  new X3D({
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Cylinder({})),
                           appearance : new SFNode(
@@ -136,8 +129,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -197,12 +188,9 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("box"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Box({
-                          size : new SFVec3f([1,1,1]),
-                          solid : new SFBool(true)})),
+                          size : new SFVec3f([1,1,1])})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -211,8 +199,6 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([0,2,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
                   USE : new SFString("box")})])})])}))});

@@ -10,10 +10,7 @@ import { Scene } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { ExternProtoDeclare } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
@@ -23,8 +20,8 @@ import { fieldValue } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
 import { Sound } from './x3d.mjs';
+import { SFFloat } from './x3d.mjs';
 import { AudioClip } from './x3d.mjs';
-import { SFTime } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
 var X3D0 =  new X3D({
 
@@ -63,13 +60,9 @@ var X3D0 =  new X3D({
               frontUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"]),
               leftUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]),
               rightUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]),
-              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]),
-              skyColor : new MFColor([0,0,0]),
-              transparency : new SFFloat(0)}),
+              topUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])}),
 
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new ExternProtoDeclare({
                   name : new SFString("FlowerProto"),
@@ -91,8 +84,6 @@ var X3D0 =  new X3D({
                     new ProtoBody({
                       children : new MFNode([
                         new Group({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new ProtoInstance({
                               name : new SFString("FlowerProto"),
@@ -136,13 +127,7 @@ var X3D0 =  new X3D({
                     new AudioClip({
                       DEF : new SFString("AudioClip"),
                       description : new SFString("Chandubabamusic #1"),
-                      url : new MFString(["../resources/chandubabamusic1.wav"]),
-                      loop : new SFBool(false),
-                      pitch : new SFFloat(1),
-                      startTime : new SFTime(0),
-                      stopTime : new SFTime(0),
-                      pauseTime : new SFTime(0),
-                      resumeTime : new SFTime(0)}))}),
+                      url : new MFString(["../resources/chandubabamusic1.wav"])}))}),
 
                 new ROUTE({
                   fromField : new SFString("cycleTime"),

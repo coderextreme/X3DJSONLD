@@ -14,7 +14,6 @@ import { ProtoInterface } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { IS } from './x3d.mjs';
 import { connect } from './x3d.mjs';
@@ -23,6 +22,7 @@ import { Sphere } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { Text } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { FontStyle } from './x3d.mjs';
@@ -30,17 +30,18 @@ import { SFFloat } from './x3d.mjs';
 import { PositionInterpolator } from './x3d.mjs';
 import { MFFloat } from './x3d.mjs';
 import { MFVec3f } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
 import { Extrusion } from './x3d.mjs';
 import { MFVec2f } from './x3d.mjs';
 import { PlaneSensor } from './x3d.mjs';
 import { SFVec2f } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
 import { fieldValue } from './x3d.mjs';
+import { CommentsBlock } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -92,13 +93,9 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Group({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Transform({
                           DEF : new SFString("transform"),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -107,8 +104,6 @@ var X3D0 =  new X3D({
                                   protoField : new SFString("position")})])})),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               geometry : new SFNode(
                                 new Sphere({})),
                               appearance : new SFNode(
@@ -119,12 +114,8 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               translation : new SFVec3f([1,0,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   geometry : new SFNode(
                                     new Text({
                                       string : new MFString(["Node"]),
@@ -142,6 +133,38 @@ var X3D0 =  new X3D({
                           DEF : new SFString("NodePosition"),
                           key : new MFFloat([0,1]),
                           keyValue : new MFVec3f([0,0,0,0,5,0])}),
+
+                        new Script({
+                          DEF : new SFString("MoveBall"),
+                          field : new MFNode([
+                            new field({
+                              type : field.TYPE_SFVEC3F,
+                              name : new SFString("translation"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              value : new SFString("50 50 0")}),
+
+                            new field({
+                              type : field.TYPE_SFVEC3F,
+                              name : new SFString("old"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              value : new SFString("0 0 0")}),
+
+                            new field({
+                              type : field.TYPE_SFTIME,
+                              name : new SFString("set_cycle"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                            new field({
+                              type : field.TYPE_MFVEC3F,
+                              name : new SFString("keyValue"),
+                              accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+                          .setSourceCode("ecmascript:\n"+
+"					function set_cycle(value) {\n"+
+"                                                old = translation;\n"+
+"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
+"                                                keyValue = new MFVec3f([old, translation]);\n"+
+"						// Browser.println(translation);\n"+
+"					}")])}),
 
                         new TimeSensor({
                           DEF : new SFString("nodeClock"),
@@ -170,32 +193,7 @@ var X3D0 =  new X3D({
                           fromNode : new SFString("NodePosition"),
                           fromField : new SFString("value_changed"),
                           toNode : new SFString("transform"),
-                          toField : new SFString("set_translation")}),
-                      X3DScript : new SFNode(
-                        new X3DScript({
-                          DEF : new SFString("MoveBall"),
-                          field : new MFNode([
-                            new field({
-                              type : field.TYPE_SFVEC3F,
-                              name : new SFString("translation"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                              value : new SFString("50 50 0")}),
-
-                            new field({
-                              type : field.TYPE_SFVEC3F,
-                              name : new SFString("old"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                              value : new SFString("0 0 0")}),
-
-                            new field({
-                              type : field.TYPE_SFTIME,
-                              name : new SFString("set_cycle"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-
-                            new field({
-                              type : field.TYPE_MFVEC3F,
-                              name : new SFString("keyValue"),
-                              accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)})])}))])})])}))}),
+                          toField : new SFString("set_translation")})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("cylinder"),
@@ -215,12 +213,8 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Group({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Extrusion({
                               DEF : new SFString("extrusion"),
@@ -233,13 +227,7 @@ var X3D0 =  new X3D({
                                 new Material({
                                   diffuseColor : new SFColor([0,1,0])}))}))}),
 
-                        new ROUTE({
-                          fromNode : new SFString("MoveCylinder"),
-                          fromField : new SFString("spine"),
-                          toNode : new SFString("extrusion"),
-                          toField : new SFString("set_spine")}),
-                      X3DScript : new SFNode(
-                        new X3DScript({
+                        new Script({
                           DEF : new SFString("MoveCylinder"),
                           field : new MFNode([
                             new field({
@@ -266,13 +254,38 @@ var X3D0 =  new X3D({
 
                                 new connect({
                                   nodeField : new SFString("set_endB"),
-                                  protoField : new SFString("set_positionB")})])}))])}))])})])}))}),
+                                  protoField : new SFString("set_positionB")})])})),
+                          .setSourceCode("ecmascript:\n"+
+"\n"+
+"                function set_endA(value) {\n"+
+"		    if (typeof spine === 'undefined') {\n"+
+"		        spine = new MFVec3f([value, value]);\n"+
+"		    } else {\n"+
+"		        spine = new MFVec3f([value, spine[1]]);\n"+
+"		    }\n"+
+"                }\n"+
+"\n"+
+"                function set_endB(value) {\n"+
+"		    if (typeof spine === 'undefined') {\n"+
+"		        spine = new MFVec3f([value, value]);\n"+
+"		    } else {\n"+
+"		        spine = new MFVec3f([spine[0], value]);\n"+
+"		    }\n"+
+"                }\n"+
+"\n"+
+"                function set_spine(value) {\n"+
+"                    spine = value;\n"+
+"                }")])}),
+
+                        new ROUTE({
+                          fromNode : new SFString("MoveCylinder"),
+                          fromField : new SFString("spine"),
+                          toNode : new SFString("extrusion"),
+                          toField : new SFString("set_spine")})])})])}))}),
 
             new Transform({
               DEF : new SFString("HoldsContent"),
               scale : new SFVec3f([0.1,0.1,0.1]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new PlaneSensor({
                   DEF : new SFString("clickGenerator"),
@@ -347,6 +360,45 @@ var X3D0 =  new X3D({
                     new fieldValue({
                       name : new SFString("set_positionB"),
                       value : new SFString("50 50 -50")})])})])}),
+
+            new Script({
+              DEF : new SFString("clickHandler"),
+              field : new MFNode([
+                new field({
+                  type : field.TYPE_SFINT32,
+                  name : new SFString("counter"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                  value : new SFString("0")}),
+
+                new field({
+                  type : field.TYPE_SFNODE,
+                  name : new SFString("node_changed"),
+                  accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                new field({
+                  type : field.TYPE_SFBOOL,
+                  name : new SFString("add_node"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                  value : new SFString("false")}),
+              { "#comment" : new CommentsBlock("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>") },
+              .setSourceCode("ecmascript:\n"+
+"	function add_node(value) {\n"+
+"                // Browser.print('hey ', counter);\n"+
+"                counter = counter++;\n"+
+"		Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),\n"+
+"			{ \"ProtoInstance\":\n"+
+"				{ \"@name\":\"node\",\n"+
+"				  \"@DEF\":\"node'+counter+'\",\n"+
+"				  \"fieldValue\": [\n"+
+"					{\n"+
+"						 \"@name\":\"position\",\n"+
+"						 \"@value\":[0.0,0.0,0.0]\n"+
+"					}\n"+
+"				  ]\n"+
+"				}\n"+
+"			});\n"+
+"\n"+
+"        }")])}),
 
             new ROUTE({
               fromNode : new SFString("clickGenerator"),

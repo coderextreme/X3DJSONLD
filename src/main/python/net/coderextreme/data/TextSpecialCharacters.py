@@ -63,7 +63,6 @@ X3D0.setHead(head1)
 Scene13 = x3d.Scene()
 Background14 = x3d.Background()
 Background14.setSkyColor([1,1,1])
-Background14.setTransparency(0)
 
 Scene13.addChildren(Background14)
 Viewpoint15 = x3d.Viewpoint()
@@ -72,8 +71,6 @@ Viewpoint15.setPosition([0,0,15])
 
 Scene13.addChildren(Viewpoint15)
 Shape16 = x3d.Shape()
-Shape16.setBboxCenter([0,0,0])
-Shape16.setBboxSize([-1,-1,-1])
 #Empty string \"\" means to skip a line
 #The ampersand escape characters are based on XML rules
 #apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute

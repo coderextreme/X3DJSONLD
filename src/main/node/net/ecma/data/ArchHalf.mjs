@@ -8,7 +8,6 @@ import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 import { IndexedFaceSet } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
@@ -69,8 +68,6 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new Shape({
               DEF : new SFString("Arch"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               { "#comment" : new CommentsBlock("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly") },
               geometry : new SFNode(
                 new IndexedFaceSet({

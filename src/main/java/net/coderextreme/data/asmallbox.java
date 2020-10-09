@@ -56,27 +56,27 @@ ProtoInstance ProtoInstance1 = null;
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("MFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+              .addChild(new Shape()
                 .setGeometry(new Sphere()))))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
         .addChild(new ProtoDeclare().setName("one")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("MFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+              .addChild(new Shape()
                 .setGeometry(new Cylinder()))))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
+            .addChild(new Transform()
               .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(ProtoInstance1 = new ProtoInstance().setName("one")))      ;
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Shape().setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-              .setGeometry(new Box().setSize(new float[] {2f,2f,2f}).setSolid(true))));
+            .addChild(new Shape()
+              .setGeometry(new Box())));
     return X3D0;
     }
 }

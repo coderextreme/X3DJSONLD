@@ -42,8 +42,8 @@ var ProtoInstance0 = null;
           .setProtoBody(new ProtoBody()
             .addComments(new CommentsBlock("First node determines node type of this prototype"))
             .addComments(new CommentsBlock("IndexedFaceset creates arch"))
-            .addChild(new Transform().setDEF("ArchTransform").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
-              .addChild(new Shape().setDEF("Arch").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Transform().setDEF("ArchTransform")
+              .addChild(new Shape().setDEF("Arch")
                 .addComments(new CommentsBlock("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"))
                 .setGeometry(new IndexedFaceSet().setDEF("ArchIndex").setConvex(false).setSolid(false)
                   .setCoord(new Coordinate().setDEF("ArchChord")))
@@ -53,8 +53,8 @@ var ProtoInstance0 = null;
                       .addConnect(new connect().setNodeField("emissiveColor").setProtoField("emissiveColor"))
                       .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor")))))))
             .addComments(new CommentsBlock("Subsequent nodes do not render, but still must be a valid X3D subgraph"))
-            .addComments(new CommentsBlock("This embedded X3DScript provides the X3D author with additional visibility and control over prototype inputs and outputs"))
-            .addX3DScript(new X3DScript().setDEF("ArchPrototypeScript").setUrl(Java.to(["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"], Java.type("java.lang.String[]")))
+            .addComments(new CommentsBlock("This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"))
+            .addChild(new Script().setDEF("ArchPrototypeScript").setUrl(Java.to(["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"], Java.type("java.lang.String[]")))
               .addComments(new CommentsBlock("INPUT PARAMETERS"))
               .addComments(new CommentsBlock("General parameters"))
               .addComments(new CommentsBlock("Parameters to create to create shapes related to arch: put true to apply"))
@@ -92,7 +92,7 @@ var ProtoInstance0 = null;
             .addChild(new ROUTE().setFromField("indexOut").setFromNode("ArchPrototypeScript").setToField("set_coordIndex").setToNode("ArchIndex"))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("ArchPrototype").setDEF("ArchInstance"))
         .addComments(new CommentsBlock("Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"))
-        .addChild(new Inline().setDEF("CoordinateAxes").setUrl(Java.to(["../data/CoordinateAxes.x3d"], Java.type("java.lang.String[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))))      ;
+        .addChild(new Inline().setDEF("CoordinateAxes").setUrl(Java.to(["../data/CoordinateAxes.x3d"], Java.type("java.lang.String[]")))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("diffuseColor").setValue("0.5 0.3 0.6"));
 ProtoInstance0

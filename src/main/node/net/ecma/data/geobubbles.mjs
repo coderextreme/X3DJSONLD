@@ -15,10 +15,7 @@ import { SFVec3d } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
@@ -30,6 +27,8 @@ import { SFBool } from './x3d.mjs';
 import { GeoPositionInterpolator } from './x3d.mjs';
 import { MFFloat } from './x3d.mjs';
 import { MFVec3d } from './x3d.mjs';
+import { Script } from './x3d.mjs';
+import { field } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
 var X3D0 =  new X3D({
 
@@ -78,17 +77,11 @@ var X3D0 =  new X3D({
               frontUrl : new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"]),
               leftUrl : new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]),
               rightUrl : new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]),
-              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]),
-              skyColor : new MFColor([0,0,0]),
-              transparency : new SFFloat(0)}),
+              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])}),
 
             new Transform({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Sphere({})),
                   appearance : new SFNode(
@@ -107,6 +100,49 @@ var X3D0 =  new X3D({
               DEF : new SFString("TourPosition"),
               key : new MFFloat([0,1]),
               keyValue : new MFVec3d([0.0015708,0,4,0,0.0015708,4])}),
+
+            new Script({
+              DEF : new SFString("RandomTourTime"),
+              field : new MFNode([
+                new field({
+                  type : field.TYPE_SFTIME,
+                  name : new SFString("set_cycle"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                new field({
+                  type : field.TYPE_SFFLOAT,
+                  name : new SFString("val"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                  value : new SFString("0")}),
+
+                new field({
+                  type : field.TYPE_MFVEC3D,
+                  name : new SFString("positions"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                  value : new SFString("0.0015708 0 4 0 0.0015708 4")}),
+
+                new field({
+                  type : field.TYPE_MFVEC3D,
+                  name : new SFString("position"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                  value : new SFString("0.0015708 0 4 0 0.0015708 4")}),
+              .setSourceCode("ecmascript:\n"+
+"\n"+
+"               function set_cycle(value) {\n"+
+"                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo\n"+
+"                        var ov = val;\n"+
+"			// Browser.print('old '+ov);\n"+
+"                        do {\n"+
+"                                val = Math.floor(Math.random()*2);\n"+
+"                                var vc = val;\n"+
+"                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);\n"+
+"                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);\n"+
+"			// Browser.println(positions[ov]);\n"+
+"			// Browser.println(positions[vc]);\n"+
+"                        position = new MFVec3d();\n"+
+"                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);\n"+
+"                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\n"+
+"               }")])}),
 
             new ROUTE({
               fromNode : new SFString("TourTime"),

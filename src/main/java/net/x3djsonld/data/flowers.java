@@ -7,6 +7,7 @@ import org.web3d.x3d.jsail.fields.*;
 import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shaders.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Texturing.*;
@@ -135,7 +136,75 @@ public class flowers
                 .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"}))
                 .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"}))))
             .setGeometry(new Sphere())))
-        .addChild(new X3DScript("Animate")
+        .addChild(new Script("Animate").setSourceCode("\n" + 
+"\n" + 
+"ecmascript:" + "\n" + 
+"\n" + 
+"			function initialize() {" + "\n" + 
+"			    translation = new SFVec3f(0, 0, 0);" + "\n" + 
+"			    velocity = new SFVec3f(" + "\n" + 
+"			    	Math.random() - 0.5," + "\n" + 
+"				Math.random() - 0.5," + "\n" + 
+"				Math.random() - 0.5);" + "\n" + 
+"			}" + "\n" + 
+"			function set_fraction() {" + "\n" + 
+"			    translation = new SFVec3f(" + "\n" + 
+"			    	translation.x + velocity.x," + "\n" + 
+"				translation.y + velocity.y," + "\n" + 
+"				translation.z + velocity.z);" + "\n" + 
+"			    for (var j = 0; j <= 2; j++) {" + "\n" + 
+"				    if (Math.abs(translation.x) > 10) {" + "\n" + 
+"					initialize();" + "\n" + 
+"				    } else if (Math.abs(translation.y) > 10) {" + "\n" + 
+"					initialize();" + "\n" + 
+"				    } else if (Math.abs(translation.z) > 10) {" + "\n" + 
+"					initialize();" + "\n" + 
+"				    } else {" + "\n" + 
+"					velocity.x += Math.random() * 0.2 - 0.1;" + "\n" + 
+"					velocity.y += Math.random() * 0.2 - 0.1;" + "\n" + 
+"					velocity.z += Math.random() * 0.2 - 0.1;" + "\n" + 
+"				    }" + "\n" + 
+"			    }" + "\n" + 
+"			    animate_flowers();" + "\n" + 
+"			}" + "\n" + 
+"\n" + 
+"			function animate_flowers(fraction, eventTime) {" + "\n" + 
+"				var choice = Math.floor(Math.random() * 4);" + "\n" + 
+"				switch (choice) {" + "\n" + 
+"				case 0:" + "\n" + 
+"					a += Math.random() * 0.2 - 0.1;" + "\n" + 
+"					break;" + "\n" + 
+"				case 1:" + "\n" + 
+"					b += Math.random() * 0.2 - 0.1;" + "\n" + 
+"					break;" + "\n" + 
+"				case 2:" + "\n" + 
+"					c += Math.random() * 2 - 1;" + "\n" + 
+"					break;" + "\n" + 
+"				case 3:" + "\n" + 
+"					d += Math.random() * 2 - 1;" + "\n" + 
+"					break;" + "\n" + 
+"				}" + "\n" + 
+"				tdelta += 0.5;" + "\n" + 
+"				pdelta += 0.5;" + "\n" + 
+"				if (a > 1) {" + "\n" + 
+"					a =  0.5;" + "\n" + 
+"				}" + "\n" + 
+"				if (b > 1) {" + "\n" + 
+"					b =  0.5;" + "\n" + 
+"				}" + "\n" + 
+"				if (c < 1) {" + "\n" + 
+"					c =  4;" + "\n" + 
+"				}" + "\n" + 
+"				if (d < 1) {" + "\n" + 
+"					d =  4;" + "\n" + 
+"				}" + "\n" + 
+"				if (c > 10) {" + "\n" + 
+"					c = 4;" + "\n" + 
+"				}" + "\n" + 
+"				if (d > 10) {" + "\n" + 
+"					d = 4;" + "\n" + 
+"				}" + "\n" + 
+"			}" + "\n")
           .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))

@@ -36,7 +36,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.Viewpoint()).setDescription("Right View").setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1.57)])).setPosition(java.newArray("float", [java.newFloat(10), java.newFloat(0), java.newFloat(0)])))
         .addChild((new autoclass.Viewpoint()).setDescription("Left View").setOrientation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(-1.57)])).setPosition(java.newArray("float", [java.newFloat(-10), java.newFloat(0), java.newFloat(0)])))
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE","WALK","FLY","ANY"])))
-        .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+        .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()))
             .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,2,4,4278190335,16711935,4294967295,4294902015])).setRepeatS(false).setRepeatT(false)))

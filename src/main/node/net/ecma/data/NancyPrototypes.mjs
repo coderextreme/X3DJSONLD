@@ -15,7 +15,6 @@ import { WorldInfo } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { IS } from './x3d.mjs';
 import { connect } from './x3d.mjs';
 import { Group } from './x3d.mjs';
@@ -33,6 +32,7 @@ import { MFVec3f } from './x3d.mjs';
 import { ImageTexture } from './x3d.mjs';
 import { TextureCoordinate } from './x3d.mjs';
 import { MFVec2f } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { Color } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
@@ -263,8 +263,6 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("HumanoidTransform"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -298,8 +296,6 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Group({
                           DEF : new SFString("HumanoidGroup1"),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -309,8 +305,6 @@ var X3D0 =  new X3D({
 
                         new Group({
                           DEF : new SFString("HumanoidGroup2"),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -320,8 +314,6 @@ var X3D0 =  new X3D({
 
                         new Group({
                           DEF : new SFString("HumanoidGroup3"),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -434,8 +426,6 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("JointTransform"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -553,8 +543,6 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Group({
                       DEF : new SFString("SegmentGroup"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -651,8 +639,6 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("SiteTransform"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -758,8 +744,6 @@ var X3D0 =  new X3D({
                                           name : new SFString("children"),
                                           children : new MFNode([
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
@@ -802,8 +786,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("children"),
                                                   children : new MFNode([
                                                     new Shape({
-                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                                       appearance : new SFNode(
                                                         new Appearance({
                                                           material : new SFNode(
@@ -844,8 +826,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("children"),
                                                           children : new MFNode([
                                                             new Shape({
-                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                              bboxSize : new SFVec3f([-1,-1,-1]),
                                                               appearance : new SFNode(
                                                                 new Appearance({
                                                                   material : new SFNode(
@@ -886,8 +866,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("children"),
                                                                   children : new MFNode([
                                                                     new Shape({
-                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                                                       appearance : new SFNode(
                                                                         new Appearance({
                                                                           material : new SFNode(
@@ -929,8 +907,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("children"),
                                                   children : new MFNode([
                                                     new Shape({
-                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                                       appearance : new SFNode(
                                                         new Appearance({
                                                           material : new SFNode(
@@ -971,8 +947,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("children"),
                                                           children : new MFNode([
                                                             new Shape({
-                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                              bboxSize : new SFVec3f([-1,-1,-1]),
                                                               appearance : new SFNode(
                                                                 new Appearance({
                                                                   material : new SFNode(
@@ -1013,8 +987,6 @@ var X3D0 =  new X3D({
                                                                   name : new SFString("children"),
                                                                   children : new MFNode([
                                                                     new Shape({
-                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                                                       appearance : new SFNode(
                                                                         new Appearance({
                                                                           material : new SFNode(
@@ -1055,8 +1027,6 @@ var X3D0 =  new X3D({
                                           name : new SFString("children"),
                                           children : new MFNode([
                                             new Shape({
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
@@ -1110,12 +1080,8 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0.182,1.22,-0.047]),
                                                       rotation : new SFRotation([1,0,0,0.119]),
                                                       translation : new SFVec3f([0,0.0004203,-0.01665]),
-                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                                       children : new MFNode([
                                                         new Shape({
-                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                                           appearance : new SFNode(
                                                             new Appearance({
                                                               material : new SFNode(
@@ -1162,12 +1128,8 @@ var X3D0 =  new X3D({
                                                               center : new SFVec3f([0.198,0.961,-0.0405]),
                                                               rotation : new SFRotation([-1,0,0,0.1]),
                                                               translation : new SFVec3f([0,0.003724,-0.0236]),
-                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                              bboxSize : new SFVec3f([-1,-1,-1]),
                                                               children : new MFNode([
                                                                 new Shape({
-                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                                                   appearance : new SFNode(
                                                                     new Appearance({
                                                                       material : new SFNode(
@@ -1212,12 +1174,8 @@ var X3D0 =  new X3D({
                                                                       center : new SFVec3f([0.213,0.811,-0.0338]),
                                                                       rotation : new SFRotation([-0.06361,-0.9967,0.04988,1.333]),
                                                                       translation : new SFVec3f([0,0.005142,-0.008662]),
-                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                                                       children : new MFNode([
                                                                         new Shape({
-                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                                                           appearance : new SFNode(
                                                                             new Appearance({
                                                                               material : new SFNode(
@@ -1262,12 +1220,8 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([-0.182,1.22,-0.047]),
                                                       rotation : new SFRotation([1,0,0,0.0836]),
                                                       translation : new SFVec3f([0,0.000589,-0.01169]),
-                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                                       children : new MFNode([
                                                         new Shape({
-                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                                           appearance : new SFNode(
                                                             new Appearance({
                                                               material : new SFNode(
@@ -1312,12 +1266,8 @@ var X3D0 =  new X3D({
                                                               center : new SFVec3f([-0.198,0.961,-0.0397]),
                                                               rotation : new SFRotation([-1,0,0,0.1254]),
                                                               translation : new SFVec3f([0,0.003466,-0.01065]),
-                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                              bboxSize : new SFVec3f([-1,-1,-1]),
                                                               children : new MFNode([
                                                                 new Shape({
-                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                                                   appearance : new SFNode(
                                                                     new Appearance({
                                                                       material : new SFNode(
@@ -1361,12 +1311,8 @@ var X3D0 =  new X3D({
                                                                       DEF : new SFString("r_hand_adjust"),
                                                                       center : new SFVec3f([-0.217,0.811,-0.0338]),
                                                                       rotation : new SFRotation([-0.09024,0.994,-0.0624,1.216]),
-                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                                                       children : new MFNode([
                                                                         new Shape({
-                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                                                           appearance : new SFNode(
                                                                             new Appearance({
                                                                               material : new SFNode(
@@ -1407,8 +1353,6 @@ var X3D0 =  new X3D({
                                                   name : new SFString("children"),
                                                   children : new MFNode([
                                                     new Shape({
-                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                                       appearance : new SFNode(
                                                         new Appearance({
                                                           material : new SFNode(
@@ -1450,8 +1394,6 @@ var X3D0 =  new X3D({
                                                           name : new SFString("children"),
                                                           children : new MFNode([
                                                             new Shape({
-                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                              bboxSize : new SFVec3f([-1,-1,-1]),
                                                               appearance : new SFNode(
                                                                 new Appearance({
                                                                   material : new SFNode(
@@ -1471,9 +1413,7 @@ var X3D0 =  new X3D({
                                                                     new Color({
                                                                       color : new MFColor([0.749,0.601,0.462,0.1735,0.2602,0.749,0.6364,0.133,0.1526,0.4545,0.2759,0.1902])}))}))})])})])})])})])})])})])})])})])})])})])}),
 
-                    new Group({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                    new Group({})])}),
 
                 new fieldValue({
                   name : new SFString("joints"),
@@ -1617,12 +1557,8 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("Interface"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Transform({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new ProximitySensor({
                       DEF : new SFString("HudProx"),
@@ -1632,24 +1568,16 @@ var X3D0 =  new X3D({
                 new Collision({
                   DEF : new SFString("HUD"),
                   enabled : new SFBool(false),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   proxy : new SFNode(
                     new Transform({
                       DEF : new SFString("HudXform"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Transform({
                           scale : new SFVec3f([0.012,0.012,0.012]),
                           translation : new SFVec3f([0.01107,-0.025,-0.08]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Transform({
                               DEF : new SFString("Stand_Text"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new TouchSensor({
                                   DEF : new SFString("Stand_Touch"),
@@ -1657,8 +1585,6 @@ var X3D0 =  new X3D({
 
                                 new Shape({
                                   DEF : new SFString("Stand"),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   geometry : new SFNode(
                                     new IndexedFaceSet({
                                       coordIndex : new MFInt32([1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1]),
@@ -1677,13 +1603,9 @@ var X3D0 =  new X3D({
                                 new Transform({
                                   scale : new SFVec3f([84.89,77.52,77.52]),
                                   translation : new SFVec3f([0.04092,1.843,3.826]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new Shape({
                                       DEF : new SFString("Stand_Back"),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                       geometry : new SFNode(
                                         new IndexedFaceSet({
                                           coordIndex : new MFInt32([0,2,3,-1,2,0,1,-1]),
@@ -1701,8 +1623,6 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               DEF : new SFString("Walk_Text"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new TouchSensor({
                                   DEF : new SFString("Walk_Touch"),
@@ -1710,8 +1630,6 @@ var X3D0 =  new X3D({
 
                                 new Shape({
                                   DEF : new SFString("WALK"),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   geometry : new SFNode(
                                     new IndexedFaceSet({
                                       coordIndex : new MFInt32([0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1]),
@@ -1727,13 +1645,9 @@ var X3D0 =  new X3D({
                                 new Transform({
                                   scale : new SFVec3f([81.3,81.3,81.31]),
                                   translation : new SFVec3f([-0.0414,1.941,4.015]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new Shape({
                                       DEF : new SFString("Walk_Back"),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                       geometry : new SFNode(
                                         new IndexedFaceSet({
                                           coordIndex : new MFInt32([1,3,0,-1,3,1,2,-1]),
@@ -1748,8 +1662,6 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               DEF : new SFString("Run_Text"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new TouchSensor({
                                   DEF : new SFString("Run_Touch"),
@@ -1757,8 +1669,6 @@ var X3D0 =  new X3D({
 
                                 new Shape({
                                   DEF : new SFString("Run"),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   geometry : new SFNode(
                                     new IndexedFaceSet({
                                       coordIndex : new MFInt32([24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1]),
@@ -1774,13 +1684,9 @@ var X3D0 =  new X3D({
                                 new Transform({
                                   scale : new SFVec3f([82.47,82.47,82.48]),
                                   translation : new SFVec3f([-0.01579,1.968,4.074]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new Shape({
                                       DEF : new SFString("Run_Back"),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                       geometry : new SFNode(
                                         new IndexedFaceSet({
                                           coordIndex : new MFInt32([0,2,3,-1,2,0,1,-1]),
@@ -1795,8 +1701,6 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               DEF : new SFString("Jump_Text"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new TouchSensor({
                                   DEF : new SFString("Jump_Touch"),
@@ -1804,8 +1708,6 @@ var X3D0 =  new X3D({
 
                                 new Shape({
                                   DEF : new SFString("Jump"),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   geometry : new SFNode(
                                     new IndexedFaceSet({
                                       coordIndex : new MFInt32([1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1]),
@@ -1821,13 +1723,9 @@ var X3D0 =  new X3D({
                                 new Transform({
                                   scale : new SFVec3f([83.79,83.79,83.79]),
                                   translation : new SFVec3f([-0.008979,1.99,4.14]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new Shape({
                                       DEF : new SFString("Jump_Back"),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                       geometry : new SFNode(
                                         new IndexedFaceSet({
                                           coordIndex : new MFInt32([0,2,3,-1,2,0,1,-1]),
@@ -1844,16 +1742,10 @@ var X3D0 =  new X3D({
                   DEF : new SFString("Floor"),
                   scale : new SFVec3f([1,0.0125,1]),
                   translation : new SFVec3f([0,-0.0125,0]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
-                        new Box({
-                          size : new SFVec3f([2,2,2]),
-                          solid : new SFBool(true)})),
+                        new Box({})),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -1861,13 +1753,9 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("Animations"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Group({
                   DEF : new SFString("Stand_Animation"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new OrientationInterpolator({
                       DEF : new SFString("r_ankleRotInterp_Stand"),
@@ -1965,8 +1853,6 @@ var X3D0 =  new X3D({
 
                 new Group({
                   DEF : new SFString("Walk_Animation"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new OrientationInterpolator({
                       DEF : new SFString("r_ankleRotInterp_BasicWalk"),
@@ -2066,8 +1952,6 @@ var X3D0 =  new X3D({
 
                 new Group({
                   DEF : new SFString("Run_Animation"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new OrientationInterpolator({
                       DEF : new SFString("r_ankleRotInterp_Run"),
@@ -2166,8 +2050,6 @@ var X3D0 =  new X3D({
 
                 new Group({
                   DEF : new SFString("Jump_Animation"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new OrientationInterpolator({
                       DEF : new SFString("r_ankleRotInterp_Jump"),

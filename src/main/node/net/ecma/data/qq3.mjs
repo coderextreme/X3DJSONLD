@@ -10,9 +10,9 @@ import { Scene } from './x3d.mjs';
 import { ProtoDeclare } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
@@ -71,19 +71,13 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Group({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       { "#comment" : new CommentsBlock("left") },
                       children : new MFNode([
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
                               DEF : new SFString("ShapeLeftDown"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -98,13 +92,9 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
                               DEF : new SFString("ShapeUpRight"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -119,8 +109,6 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
                               USE : new SFString("ShapeUpRight")})])}),
@@ -128,8 +116,6 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           scale : new SFVec3f([0.5,0.5,0.5]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
                               USE : new SFString("ShapeLeftDown")})])})])})])}))}),
@@ -141,23 +127,17 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([0,-2.5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new ProtoInstance({
                   name : new SFString("Process")})])}),
 
             new Transform({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new ProtoInstance({
                   name : new SFString("Process")})])}),
 
             new Transform({
               translation : new SFVec3f([0,2.5,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new ProtoInstance({
                   name : new SFString("Process")})])})])}))});

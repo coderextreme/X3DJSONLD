@@ -25,25 +25,25 @@ var ProtoInstance1 = null;
         .addChild((new autoclass.ProtoDeclare()).setName("anyShape")
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+              .addChild((new autoclass.Shape())
                 .setGeometry((new autoclass.Sphere())))))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+            .addChild((new autoclass.Transform())
               .setIS((new autoclass.IS())
                 .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("myShape"))))))
         .addChild((new autoclass.ProtoDeclare()).setName("one")
           .setProtoInterface((new autoclass.ProtoInterface())
             .addField((new autoclass.field()).setType(autoclass.field.TYPE_MFNODE).setName("myShape").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+              .addChild((new autoclass.Shape())
                 .setGeometry((new autoclass.Cylinder())))))
           .setProtoBody((new autoclass.ProtoBody())
-            .addChild((new autoclass.Transform()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
+            .addChild((new autoclass.Transform())
               .addChild(ProtoInstance0 = (new autoclass.ProtoInstance()).setName("anyShape")
                 .setIS((new autoclass.IS())
                   .addConnect((new autoclass.connect()).setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(ProtoInstance1 = (new autoclass.ProtoInstance()).setName("one")))      ;
 ProtoInstance1
           .addFieldValue((new autoclass.fieldValue()).setName("myShape")
-            .addChild((new autoclass.Shape()).setBboxCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setBboxSize(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1)]))
-              .setGeometry((new autoclass.Box()).setSize(java.newArray("float", [java.newFloat(2), java.newFloat(2), java.newFloat(2)])).setSolid(true))));
+            .addChild((new autoclass.Shape())
+              .setGeometry((new autoclass.Box()))));
     X3D0.toFileX3D("../data/asmallbox.new.x3d");

@@ -13,20 +13,19 @@ import { SFVec3f } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
+import { SFFloat } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
+import { Script } from './x3d.mjs';
+import { field } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
-import { field } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -70,18 +69,12 @@ var X3D0 =  new X3D({
               frontUrl : new MFString(["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"]),
               leftUrl : new MFString(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"]),
               rightUrl : new MFString(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"]),
-              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]),
-              skyColor : new MFColor([0,0,0]),
-              transparency : new SFFloat(0)}),
+              topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])}),
 
             new Transform({
               DEF : new SFString("DECLBubble_bubbleA"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.25)})),
@@ -92,30 +85,7 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([1,0,0]),
                           transparency : new SFFloat(0.2)}))}))}),
 
-                new TimeSensor({
-                  DEF : new SFString("DECLBubble_bubbleA_bubbleClock"),
-                  cycleInterval : new SFTime(10),
-                  loop : new SFBool(true)}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleA_bounce"),
-                  fromField : new SFString("translation_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
-                  toField : new SFString("set_translation")}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleA_bounce"),
-                  fromField : new SFString("scale_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
-                  toField : new SFString("set_scale")}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleA_bubbleClock"),
-                  fromField : new SFString("fraction_changed"),
-                  toNode : new SFString("DECLBubble_bubbleA_bounce"),
-                  toField : new SFString("set_fraction")}),
-              X3DScript : new SFNode(
-                new X3DScript({
+                new Script({
                   DEF : new SFString("DECLBubble_bubbleA_bounce"),
                   field : new MFNode([
                     new field({
@@ -145,16 +115,74 @@ var X3D0 =  new X3D({
                     new field({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)})])}))])}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                  .setSourceCode("ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"    // if you get to far away or too big, explode\n"+
+"    if ( Math.abs(translation.x) > 256) {\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.y) > 256) {\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.z) > 256) {\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.x) > 20) {\n"+
+"	scale.x = scale.x/20;\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.y) > 20) {\n"+
+"	scale.y = scale.y/20;\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.z) > 20) {\n"+
+"	scale.z = scale.z/20;\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"}")])}),
+
+                new TimeSensor({
+                  DEF : new SFString("DECLBubble_bubbleA_bubbleClock"),
+                  cycleInterval : new SFTime(10),
+                  loop : new SFBool(true)}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleA_bounce"),
+                  fromField : new SFString("translation_changed"),
+                  toNode : new SFString("DECLBubble_transform"),
+                  toField : new SFString("set_translation")}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleA_bounce"),
+                  fromField : new SFString("scale_changed"),
+                  toNode : new SFString("DECLBubble_transform"),
+                  toField : new SFString("set_scale")}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleA_bubbleClock"),
+                  fromField : new SFString("fraction_changed"),
+                  toNode : new SFString("DECLBubble_bubbleA_bounce"),
+                  toField : new SFString("set_fraction")})])}),
 
             new Transform({
               DEF : new SFString("DECLBubble_bubbleB"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.25)})),
@@ -165,30 +193,7 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([1,0,0]),
                           transparency : new SFFloat(0.2)}))}))}),
 
-                new TimeSensor({
-                  DEF : new SFString("DECLBubble_bubbleB_bubbleClock"),
-                  cycleInterval : new SFTime(10),
-                  loop : new SFBool(true)}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleB_bounce"),
-                  fromField : new SFString("translation_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
-                  toField : new SFString("set_translation")}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleB_bounce"),
-                  fromField : new SFString("scale_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
-                  toField : new SFString("set_scale")}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleB_bubbleClock"),
-                  fromField : new SFString("fraction_changed"),
-                  toNode : new SFString("DECLBubble_bubbleB_bounce"),
-                  toField : new SFString("set_fraction")}),
-              X3DScript : new SFNode(
-                new X3DScript({
+                new Script({
                   DEF : new SFString("DECLBubble_bubbleB_bounce"),
                   field : new MFNode([
                     new field({
@@ -218,16 +223,74 @@ var X3D0 =  new X3D({
                     new field({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)})])}))])}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                  .setSourceCode("ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"    // if you get to far away or too big, explode\n"+
+"    if ( Math.abs(translation.x) > 256) {\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.y) > 256) {\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.z) > 256) {\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.x) > 20) {\n"+
+"	scale.x = scale.x/20;\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.y) > 20) {\n"+
+"	scale.y = scale.y/20;\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.z) > 20) {\n"+
+"	scale.z = scale.z/20;\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"}")])}),
+
+                new TimeSensor({
+                  DEF : new SFString("DECLBubble_bubbleB_bubbleClock"),
+                  cycleInterval : new SFTime(10),
+                  loop : new SFBool(true)}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleB_bounce"),
+                  fromField : new SFString("translation_changed"),
+                  toNode : new SFString("DECLBubble_transform"),
+                  toField : new SFString("set_translation")}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleB_bounce"),
+                  fromField : new SFString("scale_changed"),
+                  toNode : new SFString("DECLBubble_transform"),
+                  toField : new SFString("set_scale")}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleB_bubbleClock"),
+                  fromField : new SFString("fraction_changed"),
+                  toNode : new SFString("DECLBubble_bubbleB_bounce"),
+                  toField : new SFString("set_fraction")})])}),
 
             new Transform({
               DEF : new SFString("DECLBubble_bubbleC"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.25)})),
@@ -238,30 +301,7 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([1,0,0]),
                           transparency : new SFFloat(0.2)}))}))}),
 
-                new TimeSensor({
-                  DEF : new SFString("DECLBubble_bubbleC_bubbleClock"),
-                  cycleInterval : new SFTime(10),
-                  loop : new SFBool(true)}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleC_bounce"),
-                  fromField : new SFString("translation_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
-                  toField : new SFString("set_translation")}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleC_bounce"),
-                  fromField : new SFString("scale_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
-                  toField : new SFString("set_scale")}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleC_bubbleClock"),
-                  fromField : new SFString("fraction_changed"),
-                  toNode : new SFString("DECLBubble_bubbleC_bounce"),
-                  toField : new SFString("set_fraction")}),
-              X3DScript : new SFNode(
-                new X3DScript({
+                new Script({
                   DEF : new SFString("DECLBubble_bubbleC_bounce"),
                   field : new MFNode([
                     new field({
@@ -291,16 +331,74 @@ var X3D0 =  new X3D({
                     new field({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)})])}))])}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                  .setSourceCode("ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"    // if you get to far away or too big, explode\n"+
+"    if ( Math.abs(translation.x) > 256) {\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.y) > 256) {\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.z) > 256) {\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.x) > 20) {\n"+
+"	scale.x = scale.x/20;\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.y) > 20) {\n"+
+"	scale.y = scale.y/20;\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.z) > 20) {\n"+
+"	scale.z = scale.z/20;\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"}")])}),
+
+                new TimeSensor({
+                  DEF : new SFString("DECLBubble_bubbleC_bubbleClock"),
+                  cycleInterval : new SFTime(10),
+                  loop : new SFBool(true)}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleC_bounce"),
+                  fromField : new SFString("translation_changed"),
+                  toNode : new SFString("DECLBubble_transform"),
+                  toField : new SFString("set_translation")}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleC_bounce"),
+                  fromField : new SFString("scale_changed"),
+                  toNode : new SFString("DECLBubble_transform"),
+                  toField : new SFString("set_scale")}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleC_bubbleClock"),
+                  fromField : new SFString("fraction_changed"),
+                  toNode : new SFString("DECLBubble_bubbleC_bounce"),
+                  toField : new SFString("set_fraction")})])}),
 
             new Transform({
               DEF : new SFString("DECLBubble_bubbleD"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Sphere({
                       radius : new SFFloat(0.25)})),
@@ -311,30 +409,7 @@ var X3D0 =  new X3D({
                           diffuseColor : new SFColor([1,0,0]),
                           transparency : new SFFloat(0.2)}))}))}),
 
-                new TimeSensor({
-                  DEF : new SFString("DECLBubble_bubbleD_bubbleClock"),
-                  cycleInterval : new SFTime(10),
-                  loop : new SFBool(true)}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleD_bounce"),
-                  fromField : new SFString("translation_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
-                  toField : new SFString("set_translation")}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleD_bounce"),
-                  fromField : new SFString("scale_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
-                  toField : new SFString("set_scale")}),
-
-                new ROUTE({
-                  fromNode : new SFString("DECLBubble_bubbleD_bubbleClock"),
-                  fromField : new SFString("fraction_changed"),
-                  toNode : new SFString("DECLBubble_bubbleD_bounce"),
-                  toField : new SFString("set_fraction")}),
-              X3DScript : new SFNode(
-                new X3DScript({
+                new Script({
                   DEF : new SFString("DECLBubble_bubbleD_bounce"),
                   field : new MFNode([
                     new field({
@@ -364,5 +439,67 @@ var X3D0 =  new X3D({
                     new field({
                       type : field.TYPE_SFFLOAT,
                       name : new SFString("set_fraction"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)})])}))])})])}))});
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                  .setSourceCode("ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"    // if you get to far away or too big, explode\n"+
+"    if ( Math.abs(translation.x) > 256) {\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.y) > 256) {\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.z) > 256) {\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.x) > 20) {\n"+
+"	scale.x = scale.x/20;\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.y) > 20) {\n"+
+"	scale.y = scale.y/20;\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.z) > 20) {\n"+
+"	scale.z = scale.z/20;\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"}")])}),
+
+                new TimeSensor({
+                  DEF : new SFString("DECLBubble_bubbleD_bubbleClock"),
+                  cycleInterval : new SFTime(10),
+                  loop : new SFBool(true)}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleD_bounce"),
+                  fromField : new SFString("translation_changed"),
+                  toNode : new SFString("DECLBubble_transform"),
+                  toField : new SFString("set_translation")}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleD_bounce"),
+                  fromField : new SFString("scale_changed"),
+                  toNode : new SFString("DECLBubble_transform"),
+                  toField : new SFString("set_scale")}),
+
+                new ROUTE({
+                  fromNode : new SFString("DECLBubble_bubbleD_bubbleClock"),
+                  fromField : new SFString("fraction_changed"),
+                  toNode : new SFString("DECLBubble_bubbleD_bounce"),
+                  toField : new SFString("set_fraction")})])})])}))});
 console.log(X3D0.toXMLNode());

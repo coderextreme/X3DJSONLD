@@ -206,18 +206,12 @@ var X3D0 =  new X3D({
 
             new Inline({
               DEF : new SFString("GridXZ"),
-              url : new MFString(["GridXZ_20x20Fixed.x3d"]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1])}),
+              url : new MFString(["GridXZ_20x20Fixed.x3d"])}),
 
             new Transform({
               scale : new SFVec3f([5,5,5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("CoordinateAxes"),
-                  url : new MFString(["CoordinateAxes.x3d"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])})])})])}))});
+                  url : new MFString(["CoordinateAxes.x3d"])})])})])}))});
 console.log(X3D0.toXMLNode());

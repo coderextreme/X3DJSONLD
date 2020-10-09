@@ -58,8 +58,6 @@ X3D0.setHead(head1)
 Scene12 = x3d.Scene()
 Shape13 = x3d.Shape()
 Shape13.setDEF("Arch")
-Shape13.setBboxCenter([0,0,0])
-Shape13.setBboxSize([-1,-1,-1])
 #note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly
 IndexedFaceSet14 = x3d.IndexedFaceSet()
 IndexedFaceSet14.setDEF("ArchIndex")

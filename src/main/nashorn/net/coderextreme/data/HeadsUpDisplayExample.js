@@ -27,17 +27,17 @@ var ProtoInstance0 = null;
           .addField(new field().setType(field.TYPE_MFNODE).setName("children").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("X3D content positioned at HUD offset"))
           .addField(new field().setType(field.TYPE_SFVEC3F).setName("position_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("HUD position update (in world coordinates) relative to original location"))
           .addField(new field().setType(field.TYPE_SFROTATION).setName("orientation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setAppinfo("HUD orientation update relative to original location")))
-        .addChild(new Background().setDEF("SandyShallowBottom").setGroundAngle(Java.to([0.05,1.52,1.56,1.5707], Java.type("float[]"))).setGroundColor(Java.to([0.2,0.2,0,0.3,0.3,0,0.5,0.5,0.3,0.1,0.3,0.4,0,0.2,0.4], Java.type("float[]"))).setSkyAngle(Java.to([0.04,0.05,0.1,1.309,1.57], Java.type("float[]"))).setSkyColor(Java.to([0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9], Java.type("float[]"))).setTransparency(0))
+        .addChild(new Background().setDEF("SandyShallowBottom").setGroundAngle(Java.to([0.05,1.52,1.56,1.5707], Java.type("float[]"))).setGroundColor(Java.to([0.2,0.2,0,0.3,0.3,0,0.5,0.5,0.3,0.1,0.3,0.4,0,0.2,0.4], Java.type("float[]"))).setSkyAngle(Java.to([0.04,0.05,0.1,1.309,1.57], Java.type("float[]"))).setSkyColor(Java.to([0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9], Java.type("float[]"))))
         .addChild(new Viewpoint().setDescription("Heads-up display (HUD)"))
         .addComments(new CommentsBlock("ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence"))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("HeadsUpDisplay").setDEF("HeadsUpDisplayInstance")
           .addComments(new CommentsBlock("example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view")))
-        .addChild(new Inline().setUrl(Java.to(["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"], Java.type("java.lang.String[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))))      ;
+        .addChild(new Inline().setUrl(Java.to(["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"], Java.type("java.lang.String[]")))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("screenOffset").setValue("-0.75 1 -5"));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("children")
-            .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Shape()
               .setGeometry(new Text().setString(Java.to(["HUD text stays fixed","while user navigates"], Java.type("java.lang.String[]")))
                 .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.3)))
               .setAppearance(new Appearance()

@@ -80,9 +80,9 @@ ProtoInstance ProtoInstance0 = null;
         .addComments(new CommentsBlock("Example use"))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("ViewFrustum"))
         .addComments(new CommentsBlock("Visualization assists"))
-        .addChild(new Inline().setDEF("GridXZ").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}))
-        .addChild(new Transform().setScale(new float[] {5f,5f,5f}).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f})
-          .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())).setBboxCenter(new float[] {0f,0f,0f}).setBboxSize(new float[] {-1f,-1f,-1f}))))      ;
+        .addChild(new Inline().setDEF("GridXZ").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString1().getArray())))
+        .addChild(new Transform().setScale(new float[] {5f,5f,5f})
+          .addChild(new Inline().setDEF("CoordinateAxes").setUrl(new org.web3d.x3d.jsail.fields.MFString(new MFString2().getArray())))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("ViewpointNode")
             .addComments(new CommentsBlock("prefer empty description to prevent entry in player's ViewpointList"))

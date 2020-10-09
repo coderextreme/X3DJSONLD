@@ -14,14 +14,13 @@ import { field } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFFloat } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
 import { fieldValue } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Text } from './x3d.mjs';
 import { FontStyle } from './x3d.mjs';
+import { SFFloat } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
@@ -122,8 +121,7 @@ var X3D0 =  new X3D({
               groundAngle : new MFFloat([0.05,1.52,1.56,1.5707]),
               groundColor : new MFColor([0.2,0.2,0,0.3,0.3,0,0.5,0.5,0.3,0.1,0.3,0.4,0,0.2,0.4]),
               skyAngle : new MFFloat([0.04,0.05,0.1,1.309,1.57]),
-              skyColor : new MFColor([0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9]),
-              transparency : new SFFloat(0)}),
+              skyColor : new MFColor([0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9])}),
 
             new Viewpoint({
               description : new SFString("Heads-up display (HUD)")}),
@@ -142,8 +140,6 @@ var X3D0 =  new X3D({
                   name : new SFString("children"),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Text({
                           string : new MFString(["HUD text stays fixed","while user navigates"]),
@@ -158,7 +154,5 @@ var X3D0 =  new X3D({
                               diffuseColor : new SFColor([0.894118,0.819608,1])}))}))})])})])}),
 
             new Inline({
-              url : new MFString(["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1])})])}))});
+              url : new MFString(["../HelloWorld.x3d","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.x3d","../HelloWorld.wrl","http://X3dGraphics.com/examples/X3dForWebAuthors/HelloWorld.wrl"])})])}))});
 console.log(X3D0.toXMLNode());

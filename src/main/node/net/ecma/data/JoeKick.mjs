@@ -15,7 +15,6 @@ import { NavigationInfo } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
 import { SFFloat } from './x3d.mjs';
 import { Background } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
 import { SpotLight } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
@@ -37,12 +36,12 @@ import { MFInt32 } from './x3d.mjs';
 import { Coordinate } from './x3d.mjs';
 import { MFVec3f } from './x3d.mjs';
 import { Color } from './x3d.mjs';
+import { MFColor } from './x3d.mjs';
 import { MFFloat } from './x3d.mjs';
 import { HAnimDisplacer } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { ImageTexture } from './x3d.mjs';
-import { undefined } from './x3d.mjs';
 import { TextureTransform } from './x3d.mjs';
 import { IndexedFaceSet } from './x3d.mjs';
 import { TextureCoordinate } from './x3d.mjs';
@@ -87,7 +86,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("22 May 2020")}),
+              content : new SFString("5 July 2020")}),
 
             new meta({
               name : new SFString("TODO"),
@@ -99,11 +98,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("../CharactersLegacy/JoeSkinTexcoordDisplacerKick.x3d")}),
+              content : new SFString("../Characters/JoeSkinTexcoordDisplacerKick.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/JoeKick.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -129,9 +128,7 @@ var X3D0 =  new X3D({
               speed : new SFFloat(2.5)}),
 
             new Background({
-              DEF : new SFString("blue_Background"),
-              skyColor : new MFColor([0,0,0]),
-              transparency : new SFFloat(0)}),
+              DEF : new SFString("blue_Background")}),
 
             new SpotLight({
               DEF : new SFString("light1"),
@@ -186,18 +183,12 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("Joe_Humanoid"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               children : new MFNode([
                 new HAnimHumanoid({
                   name : new SFString("Human"),
                   DEF : new SFString("Joe_Human"),
                   loa : new SFInt32(3),
                   version : new SFString("2.0"),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true),
                   metadata : new MFNode([
                     new MetadataSet({
                       name : new SFString("warnings"),
@@ -212,32 +203,18 @@ var X3D0 =  new X3D({
                       name : new SFString("humanoid_root"),
                       DEF : new SFString("Joe_humanoid_root"),
                       center : new SFVec3f([0,0.875,0]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
-                      bboxDisplay : new SFBool(false),
-                      visible : new SFBool(true),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum"),
                           DEF : new SFString("Joe_sacrum"),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new HAnimSite({
                               name : new SFString("RootFront_view"),
                               DEF : new SFString("Joe_RootFront_view"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new Transform({
                                   DEF : new SFString("hanimcordsys"),
                                   scale : new SFVec3f([0.175,0.175,0.175]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new Viewpoint({
                                       DEF : new SFString("ViewBodyRootAxes"),
@@ -245,10 +222,6 @@ var X3D0 =  new X3D({
 
                                     new Shape({
                                       DEF : new SFString("AxisLinesShape"),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       { "#comment" : new CommentsBlock("RGB lines showing XYZ axes") },
                                       geometry : new SFNode(
                                         new IndexedLineSet({
@@ -268,10 +241,6 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0,0.92,0]),
                           skinCoordIndex : new MFInt32([17,19,20,21,22,23,26,27,73,82,89,91,93]),
                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,0.35,0.35,1]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new HAnimJoint({
                               name : new SFString("l_hip"),
@@ -279,10 +248,6 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([0.1,0.92,0]),
                               skinCoordIndex : new MFInt32([89,90,94,95,96,97]),
                               skinCoordWeight : new MFFloat([0.65,1,1,1,1,1]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimJoint({
                                   name : new SFString("l_knee"),
@@ -290,54 +255,34 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([0.115,0.466,0]),
                                   skinCoordIndex : new MFInt32([334,335,336,337,338,339,340,341]),
                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimJoint({
-                                      name : new SFString("l_ankle"),
-                                      DEF : new SFString("Joe_l_ankle"),
+                                      name : new SFString("l_talocrural"),
+                                      DEF : new SFString("Joe_l_talocrural"),
                                       center : new SFVec3f([0.115,0.069,0]),
                                       skinCoordIndex : new MFInt32([342,343,344,345]),
                                       skinCoordWeight : new MFFloat([1,1,1,1]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimJoint({
-                                          name : new SFString("l_subtalar"),
-                                          DEF : new SFString("Joe_l_subtalar"),
+                                          name : new SFString("l_tarsometatarsal_2"),
+                                          DEF : new SFString("Joe_l_tarsometatarsal_2"),
                                           center : new SFVec3f([0.115,0.031,0.03]),
                                           skinCoordIndex : new MFInt32([346,347,348,71]),
                                           skinCoordWeight : new MFFloat([1,1,1,1]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new HAnimJoint({
-                                              name : new SFString("l_midtarsal"),
-                                              DEF : new SFString("Joe_l_midtarsal"),
+                                              name : new SFString("l_metatarsophalangeal_2"),
+                                              DEF : new SFString("Joe_l_metatarsophalangeal_2"),
                                               center : new SFVec3f([0.115,0.037,0.09]),
                                               skinCoordIndex : new MFInt32([349,350,351,352]),
                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new HAnimJoint({
-                                                  name : new SFString("l_metatarsal"),
-                                                  DEF : new SFString("Joe_l_metatarsal"),
+                                                  name : new SFString("l_tarsal_distal_interphalangeal_2"),
+                                                  DEF : new SFString("Joe_l_tarsal_distal_interphalangeal_2"),
                                                   center : new SFVec3f([0.115,0.02,0.122]),
                                                   skinCoordIndex : new MFInt32([353,354,355,356,357,358,359,360,361]),
-                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true)})])})])})])})])})])}),
+                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])})])})])}),
 
                             new HAnimJoint({
                               name : new SFString("r_hip"),
@@ -345,10 +290,6 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([-0.1,0.92,0]),
                               skinCoordIndex : new MFInt32([91,92,98,99,100,101,362,363]),
                               skinCoordWeight : new MFFloat([0.65,1,0.8,1,1,1,0.4,0.8]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimJoint({
                                   name : new SFString("r_knee"),
@@ -356,54 +297,34 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([-0.05,0.466,0]),
                                   skinCoordIndex : new MFInt32([362,363,364,365,366,367,368,369,98]),
                                   skinCoordWeight : new MFFloat([0.6,0.2,1,1,1,1,1,1,0.2]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimJoint({
-                                      name : new SFString("r_ankle"),
-                                      DEF : new SFString("Joe_r_ankle"),
+                                      name : new SFString("r_talocrural"),
+                                      DEF : new SFString("Joe_r_talocrural"),
                                       center : new SFVec3f([-0.115,0.069,0]),
                                       skinCoordIndex : new MFInt32([370,371,372,373]),
                                       skinCoordWeight : new MFFloat([1,1,1,1]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimJoint({
-                                          name : new SFString("r_subtalar"),
-                                          DEF : new SFString("Joe_r_subtalar"),
+                                          name : new SFString("r_tarsometatarsal_2"),
+                                          DEF : new SFString("Joe_r_tarsometatarsal_2"),
                                           center : new SFVec3f([-0.1,0.015,-0.01]),
                                           skinCoordIndex : new MFInt32([374,375,376]),
                                           skinCoordWeight : new MFFloat([1,1,1]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new HAnimJoint({
-                                              name : new SFString("r_midtarsal"),
-                                              DEF : new SFString("Joe_r_midtarsal"),
+                                              name : new SFString("r_metatarsophalangeal_2"),
+                                              DEF : new SFString("Joe_r_metatarsophalangeal_2"),
                                               center : new SFVec3f([-0.115,0.037,0.09]),
                                               skinCoordIndex : new MFInt32([377,378,379,380]),
                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new HAnimJoint({
-                                                  name : new SFString("r_metatarsal"),
-                                                  DEF : new SFString("Joe_r_metatarsal"),
+                                                  name : new SFString("r_tarsal_distal_interphalangeal_2"),
+                                                  DEF : new SFString("Joe_r_tarsal_distal_interphalangeal_2"),
                                                   center : new SFVec3f([-0.1,0.01,0.14]),
                                                   skinCoordIndex : new MFInt32([381,382,383,384,385,386,387,388,389]),
-                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true)})])})])})])})])})])})])}),
+                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])})])})])})])}),
 
                         new HAnimJoint({
                           name : new SFString("vl5"),
@@ -411,28 +332,16 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0,1.045,-0.095]),
                           skinCoordIndex : new MFInt32([28,76]),
                           skinCoordWeight : new MFFloat([1,1]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
-                          bboxDisplay : new SFBool(false),
-                          visible : new SFBool(true),
                           children : new MFNode([
                             new HAnimJoint({
                               name : new SFString("vl4"),
                               DEF : new SFString("Joe_vl4"),
                               center : new SFVec3f([0,1.068,-0.085]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
-                              bboxDisplay : new SFBool(false),
-                              visible : new SFBool(true),
                               children : new MFNode([
                                 new HAnimJoint({
                                   name : new SFString("vl3"),
                                   DEF : new SFString("Joe_vl3"),
                                   center : new SFVec3f([0,1.092,-0.0725]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                  bboxDisplay : new SFBool(false),
-                                  visible : new SFBool(true),
                                   children : new MFNode([
                                     new HAnimJoint({
                                       name : new SFString("vl2"),
@@ -440,37 +349,21 @@ var X3D0 =  new X3D({
                                       center : new SFVec3f([0,1.12,-0.065]),
                                       skinCoordIndex : new MFInt32([16,18,25,83,84,85,86,87,88]),
                                       skinCoordWeight : new MFFloat([1,1,1,1,1,1,0.7,1,0.8]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                      bboxDisplay : new SFBool(false),
-                                      visible : new SFBool(true),
                                       children : new MFNode([
                                         new HAnimJoint({
                                           name : new SFString("vl1"),
                                           DEF : new SFString("Joe_vl1"),
                                           center : new SFVec3f([0,1.1459,-0.0625]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                          bboxDisplay : new SFBool(false),
-                                          visible : new SFBool(true),
                                           children : new MFNode([
                                             new HAnimJoint({
                                               name : new SFString("vt12"),
                                               DEF : new SFString("Joe_vt12"),
                                               center : new SFVec3f([0,1.179,-0.068]),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                              bboxDisplay : new SFBool(false),
-                                              visible : new SFBool(true),
                                               children : new MFNode([
                                                 new HAnimJoint({
                                                   name : new SFString("vt11"),
                                                   DEF : new SFString("Joe_vt11"),
                                                   center : new SFVec3f([0,1.2679,-0.081]),
-                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                  bboxDisplay : new SFBool(false),
-                                                  visible : new SFBool(true),
                                                   children : new MFNode([
                                                     new HAnimJoint({
                                                       name : new SFString("vt10"),
@@ -478,10 +371,6 @@ var X3D0 =  new X3D({
                                                       center : new SFVec3f([0,1.242,-0.09]),
                                                       skinCoordIndex : new MFInt32([15]),
                                                       skinCoordWeight : new MFFloat([1]),
-                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                      bboxDisplay : new SFBool(false),
-                                                      visible : new SFBool(true),
                                                       children : new MFNode([
                                                         new HAnimJoint({
                                                           name : new SFString("vt9"),
@@ -489,46 +378,26 @@ var X3D0 =  new X3D({
                                                           center : new SFVec3f([0,1.268,-0.1]),
                                                           skinCoordIndex : new MFInt32([13,14]),
                                                           skinCoordWeight : new MFFloat([1,1]),
-                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                          bboxDisplay : new SFBool(false),
-                                                          visible : new SFBool(true),
                                                           children : new MFNode([
                                                             new HAnimJoint({
                                                               name : new SFString("vt8"),
                                                               DEF : new SFString("Joe_vt8"),
                                                               center : new SFVec3f([0,1.294,-0.11]),
-                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                              bboxDisplay : new SFBool(false),
-                                                              visible : new SFBool(true),
                                                               children : new MFNode([
                                                                 new HAnimJoint({
                                                                   name : new SFString("vt7"),
                                                                   DEF : new SFString("Joe_vt7"),
                                                                   center : new SFVec3f([0,1.323,-0.1155]),
-                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                  bboxDisplay : new SFBool(false),
-                                                                  visible : new SFBool(true),
                                                                   children : new MFNode([
                                                                     new HAnimJoint({
                                                                       name : new SFString("vt6"),
                                                                       DEF : new SFString("Joe_vt6"),
                                                                       center : new SFVec3f([0,1.352,-0.12]),
-                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                      bboxDisplay : new SFBool(false),
-                                                                      visible : new SFBool(true),
                                                                       children : new MFNode([
                                                                         new HAnimJoint({
                                                                           name : new SFString("vt5"),
                                                                           DEF : new SFString("Joe_vt5"),
                                                                           center : new SFVec3f([0,1.381,-0.1235]),
-                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                          bboxDisplay : new SFBool(false),
-                                                                          visible : new SFBool(true),
                                                                           children : new MFNode([
                                                                             new HAnimJoint({
                                                                               name : new SFString("vt4"),
@@ -536,28 +405,16 @@ var X3D0 =  new X3D({
                                                                               center : new SFVec3f([0,1.41,-0.1235]),
                                                                               skinCoordIndex : new MFInt32([81]),
                                                                               skinCoordWeight : new MFFloat([1]),
-                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                              bboxDisplay : new SFBool(false),
-                                                                              visible : new SFBool(true),
                                                                               children : new MFNode([
                                                                                 new HAnimJoint({
                                                                                   name : new SFString("vt3"),
                                                                                   DEF : new SFString("Joe_vt3"),
                                                                                   center : new SFVec3f([0,1.438,-0.12]),
-                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                  bboxDisplay : new SFBool(false),
-                                                                                  visible : new SFBool(true),
                                                                                   children : new MFNode([
                                                                                     new HAnimJoint({
                                                                                       name : new SFString("vt2"),
                                                                                       DEF : new SFString("Joe_vt2"),
                                                                                       center : new SFVec3f([0,1.468,-0.105]),
-                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                      bboxDisplay : new SFBool(false),
-                                                                                      visible : new SFBool(true),
                                                                                       children : new MFNode([
                                                                                         new HAnimJoint({
                                                                                           name : new SFString("vt1"),
@@ -565,10 +422,6 @@ var X3D0 =  new X3D({
                                                                                           center : new SFVec3f([0,1.497,-0.09]),
                                                                                           skinCoordIndex : new MFInt32([11,24]),
                                                                                           skinCoordWeight : new MFFloat([1,1]),
-                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                          bboxDisplay : new SFBool(false),
-                                                                                          visible : new SFBool(true),
                                                                                           children : new MFNode([
                                                                                             new HAnimJoint({
                                                                                               name : new SFString("vc7"),
@@ -576,64 +429,36 @@ var X3D0 =  new X3D({
                                                                                               center : new SFVec3f([0,1.525,-0.072]),
                                                                                               skinCoordIndex : new MFInt32([74,75]),
                                                                                               skinCoordWeight : new MFFloat([1,1]),
-                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                              bboxDisplay : new SFBool(false),
-                                                                                              visible : new SFBool(true),
                                                                                               children : new MFNode([
                                                                                                 new HAnimJoint({
                                                                                                   name : new SFString("vc6"),
                                                                                                   DEF : new SFString("Joe_vc6"),
                                                                                                   center : new SFVec3f([0,1.54,-0.05]),
-                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                  visible : new SFBool(true),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimJoint({
                                                                                                       name : new SFString("vc5"),
                                                                                                       DEF : new SFString("Joe_vc5"),
                                                                                                       center : new SFVec3f([0,1.552,-0.035]),
-                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                      visible : new SFBool(true),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimJoint({
                                                                                                           name : new SFString("vc4"),
                                                                                                           DEF : new SFString("Joe_vc4"),
                                                                                                           center : new SFVec3f([0,1.5675,-0.0256]),
-                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                          visible : new SFBool(true),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("vc3"),
                                                                                                               DEF : new SFString("Joe_vc3"),
                                                                                                               center : new SFVec3f([0,1.58225,-0.0185]),
-                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                              visible : new SFBool(true),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("vc2"),
                                                                                                                   DEF : new SFString("Joe_vc2"),
                                                                                                                   center : new SFVec3f([0,1.595,-0.0175]),
-                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                  visible : new SFBool(true),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("vc1"),
                                                                                                                       DEF : new SFString("Joe_vc1"),
                                                                                                                       center : new SFVec3f([0,1.61,-0.015]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("skullbase"),
@@ -641,10 +466,6 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0,1.63,-0.01]),
                                                                                                                           skinCoordIndex : new MFInt32([0,1,2,3,4,5,6,7,8,9]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           displacers : new SFNode(
                                                                                                                             new HAnimDisplacer({
                                                                                                                               name : new SFString("skull_tip_raiser_action"),
@@ -655,65 +476,37 @@ var X3D0 =  new X3D({
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_eyelid_joint"),
                                                                                                                               DEF : new SFString("Joe_l_eyelid_joint"),
-                                                                                                                              center : new SFVec3f([0.034,1.659,0.06]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true)}),
+                                                                                                                              center : new SFVec3f([0.034,1.659,0.06])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_eyeball_joint"),
                                                                                                                               DEF : new SFString("Joe_l_eyeball_joint"),
-                                                                                                                              center : new SFVec3f([0.034,1.659,0.06]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true)}),
+                                                                                                                              center : new SFVec3f([0.034,1.659,0.06])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_eyebrow_joint"),
                                                                                                                               DEF : new SFString("Joe_l_eyebrow_joint"),
-                                                                                                                              center : new SFVec3f([0.034,1.659,0.06]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true)}),
+                                                                                                                              center : new SFVec3f([0.034,1.659,0.06])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_eyelid_joint"),
                                                                                                                               DEF : new SFString("Joe_r_eyelid_joint"),
-                                                                                                                              center : new SFVec3f([-0.034,1.659,0.06]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true)}),
+                                                                                                                              center : new SFVec3f([-0.034,1.659,0.06])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_eyeball_joint"),
                                                                                                                               DEF : new SFString("Joe_r_eyeball_joint"),
-                                                                                                                              center : new SFVec3f([-0.034,1.659,0.06]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true)}),
+                                                                                                                              center : new SFVec3f([-0.034,1.659,0.06])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_eyebrow_joint"),
                                                                                                                               DEF : new SFString("Joe_r_eyebrow_joint"),
-                                                                                                                              center : new SFVec3f([-0.034,1.659,0.06]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true)}),
+                                                                                                                              center : new SFVec3f([-0.034,1.659,0.06])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("temporomandibular"),
                                                                                                                               DEF : new SFString("Joe_temporomandibular"),
-                                                                                                                              center : new SFVec3f([0.034,1.659,0.06]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true)})])})])})])})])})])})])})])}),
+                                                                                                                              center : new SFVec3f([0.034,1.659,0.06])})])})])})])})])})])})])})])}),
 
                                                                                                 new HAnimJoint({
                                                                                                   name : new SFString("l_sternoclavicular"),
@@ -721,10 +514,6 @@ var X3D0 =  new X3D({
                                                                                                   center : new SFVec3f([0.082,1.4488,-0.0353]),
                                                                                                   skinCoordIndex : new MFInt32([12]),
                                                                                                   skinCoordWeight : new MFFloat([1]),
-                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                  visible : new SFBool(true),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimJoint({
                                                                                                       name : new SFString("l_acromioclavicular"),
@@ -732,10 +521,6 @@ var X3D0 =  new X3D({
                                                                                                       center : new SFVec3f([0.0962,1.4269,-0.0424]),
                                                                                                       skinCoordIndex : new MFInt32([79]),
                                                                                                       skinCoordWeight : new MFFloat([1]),
-                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                      visible : new SFBool(true),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimJoint({
                                                                                                           name : new SFString("l_shoulder"),
@@ -743,10 +528,6 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([0.2,1.44,-0.04]),
                                                                                                           skinCoordIndex : new MFInt32([41,42,44,80,102,103,104,105]),
                                                                                                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                          visible : new SFBool(true),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("l_elbow"),
@@ -754,21 +535,13 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([0.2,1.1388,-0.04]),
                                                                                                               skinCoordIndex : new MFInt32([45,46,47,109,110,111,112,113,115,116,117,118]),
                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]),
-                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                              visible : new SFBool(true),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimJoint({
-                                                                                                                  name : new SFString("l_wrist"),
-                                                                                                                  DEF : new SFString("Joe_l_wrist"),
+                                                                                                                  name : new SFString("l_radiocarpal"),
+                                                                                                                  DEF : new SFString("Joe_l_radiocarpal"),
                                                                                                                   center : new SFVec3f([0.2,0.87,-0.04]),
                                                                                                                   skinCoordIndex : new MFInt32([119,120,121,122,123,124,125,126]),
                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                  visible : new SFBool(true),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("l_thumb1"),
@@ -776,10 +549,6 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1924,0.8472,-0.0534]),
                                                                                                                       skinCoordIndex : new MFInt32([127,128]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("l_thumb2"),
@@ -787,21 +556,13 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1951,0.8226,0.0246]),
                                                                                                                           skinCoordIndex : new MFInt32([138,139,140,141,142,143]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_thumb3"),
                                                                                                                               DEF : new SFString("Joe_l_thumb3"),
                                                                                                                               center : new SFVec3f([0.1955,0.8159,0.0464]),
                                                                                                                               skinCoordIndex : new MFInt32([144,145,146,147,148,149,150,151,152]),
-                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true)})])})])}),
+                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("l_index0"),
@@ -809,10 +570,6 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1983,0.8024,-0.028]),
                                                                                                                       skinCoordIndex : new MFInt32([129,130]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("l_index1"),
@@ -820,10 +577,6 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1983,0.7815,-0.028]),
                                                                                                                           skinCoordIndex : new MFInt32([138,139,140,153,154,155,163]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1,0.5]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_index2"),
@@ -831,21 +584,13 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([0.2017,0.7363,-0.0248]),
                                                                                                                               skinCoordIndex : new MFInt32([166,167,168,169]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
                                                                                                                                   name : new SFString("l_index3"),
                                                                                                                                   DEF : new SFString("Joe_l_index3"),
                                                                                                                                   center : new SFVec3f([0.2028,0.7139,-0.0236]),
                                                                                                                                   skinCoordIndex : new MFInt32([170,171,172,173,174,175,176,177,178]),
-                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                                  visible : new SFBool(true)})])})])})])}),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("l_middle0"),
@@ -853,10 +598,6 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1987,0.8029,-0.053]),
                                                                                                                       skinCoordIndex : new MFInt32([131,132]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("l_middle1"),
@@ -864,10 +605,6 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1987,0.7818,-0.053]),
                                                                                                                           skinCoordIndex : new MFInt32([156,157,163,164]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_middle2"),
@@ -875,21 +612,13 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([0.2013,0.7273,-0.0503]),
                                                                                                                               skinCoordIndex : new MFInt32([179,180,181,182]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
                                                                                                                                   name : new SFString("l_middle3"),
                                                                                                                                   DEF : new SFString("Joe_l_middle3"),
                                                                                                                                   center : new SFVec3f([0.2026,0.7011,-0.0494]),
                                                                                                                                   skinCoordIndex : new MFInt32([183,184,185,186,187,188,189,190,191]),
-                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                                  visible : new SFBool(true)})])})])})])}),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("l_ring0"),
@@ -897,10 +626,6 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1956,0.8019,-0.0794]),
                                                                                                                       skinCoordIndex : new MFInt32([133,134]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("l_ring1"),
@@ -908,10 +633,6 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1956,0.7815,-0.0794]),
                                                                                                                           skinCoordIndex : new MFInt32([158,159,164,165]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_ring2"),
@@ -919,21 +640,13 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([0.1973,0.7287,-0.0777]),
                                                                                                                               skinCoordIndex : new MFInt32([192,193,194,195]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
                                                                                                                                   name : new SFString("l_ring3"),
                                                                                                                                   DEF : new SFString("Joe_l_ring3"),
                                                                                                                                   center : new SFVec3f([0.1983,0.7045,-0.0767]),
                                                                                                                                   skinCoordIndex : new MFInt32([196,197,198,199,200,201,202,203,204]),
-                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                                  visible : new SFBool(true)})])})])})])}),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("l_pinky0"),
@@ -941,10 +654,6 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([0.1925,0.8066,-0.1036]),
                                                                                                                       skinCoordIndex : new MFInt32([135,136,137,165]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1,1,0.5]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("l_pinky1"),
@@ -952,10 +661,6 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([0.1925,0.7866,-0.1036]),
                                                                                                                           skinCoordIndex : new MFInt32([160,161,162]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_pinky2"),
@@ -963,21 +668,13 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([0.1938,0.7452,-0.1024]),
                                                                                                                               skinCoordIndex : new MFInt32([205,206,207,208]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
                                                                                                                                   name : new SFString("l_pinky3"),
                                                                                                                                   DEF : new SFString("Joe_l_pinky3"),
                                                                                                                                   center : new SFVec3f([0.1948,0.7277,-0.1017]),
                                                                                                                                   skinCoordIndex : new MFInt32([209,210,211,212,213,214,215,216,217]),
-                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                                  visible : new SFBool(true)})])})])})])})])})])})])})])})])}),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])})])})])})])})])})])}),
 
                                                                                                 new HAnimJoint({
                                                                                                   name : new SFString("r_sternoclavicular"),
@@ -985,10 +682,6 @@ var X3D0 =  new X3D({
                                                                                                   center : new SFVec3f([-0.03,1.46,0]),
                                                                                                   skinCoordIndex : new MFInt32([10]),
                                                                                                   skinCoordWeight : new MFFloat([1]),
-                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                  visible : new SFBool(true),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimJoint({
                                                                                                       name : new SFString("r_acromioclavicular"),
@@ -996,10 +689,6 @@ var X3D0 =  new X3D({
                                                                                                       center : new SFVec3f([-0.09,1.41,-0.11]),
                                                                                                       skinCoordIndex : new MFInt32([77,29]),
                                                                                                       skinCoordWeight : new MFFloat([1,0.9]),
-                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                      visible : new SFBool(true),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimJoint({
                                                                                                           name : new SFString("r_shoulder"),
@@ -1007,10 +696,6 @@ var X3D0 =  new X3D({
                                                                                                           center : new SFVec3f([-0.2,1.44,-0.04]),
                                                                                                           skinCoordIndex : new MFInt32([29,30,32,78,218,219,220,221,86,88]),
                                                                                                           skinCoordWeight : new MFFloat([0.1,1,1,1,1,1,1,1,0.3,0.2]),
-                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                          visible : new SFBool(true),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("r_elbow"),
@@ -1018,21 +703,13 @@ var X3D0 =  new X3D({
                                                                                                               center : new SFVec3f([-0.2,1.1388,-0.04]),
                                                                                                               skinCoordIndex : new MFInt32([33,34,35,225,226,227,228,229,231,232,233,234]),
                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1]),
-                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                              visible : new SFBool(true),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimJoint({
-                                                                                                                  name : new SFString("r_wrist"),
-                                                                                                                  DEF : new SFString("Joe_r_wrist"),
+                                                                                                                  name : new SFString("r_radiocarpal"),
+                                                                                                                  DEF : new SFString("Joe_r_radiocarpal"),
                                                                                                                   center : new SFVec3f([-0.2,0.89,-0.04]),
                                                                                                                   skinCoordIndex : new MFInt32([235,236,237,238,239,240,241,242]),
                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                  visible : new SFBool(true),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("r_thumb1"),
@@ -1040,10 +717,6 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.2,0.85,0]),
                                                                                                                       skinCoordIndex : new MFInt32([243,244]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("r_thumb2"),
@@ -1051,21 +724,13 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.2,0.82,0.03]),
                                                                                                                           skinCoordIndex : new MFInt32([254,255,256,257,258,259]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_thumb3"),
                                                                                                                               DEF : new SFString("Joe_r_thumb3"),
                                                                                                                               center : new SFVec3f([-0.2,0.8,0.05]),
                                                                                                                               skinCoordIndex : new MFInt32([260,261,262,263,264,265,266,267,268]),
-                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true)})])})])}),
+                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("r_index0"),
@@ -1073,10 +738,6 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.2,0.84,-0.015]),
                                                                                                                       skinCoordIndex : new MFInt32([245,246]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("r_index1"),
@@ -1084,10 +745,6 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.2,0.793,-0.015]),
                                                                                                                           skinCoordIndex : new MFInt32([254,255,256,269,270,271,279]),
                                                                                                                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1,0.5]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_index2"),
@@ -1095,21 +752,13 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([-0.2,0.745,-0.015]),
                                                                                                                               skinCoordIndex : new MFInt32([282,283,284,285]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
                                                                                                                                   name : new SFString("r_index3"),
                                                                                                                                   DEF : new SFString("Joe_r_index3"),
                                                                                                                                   center : new SFVec3f([-0.2,0.72,-0.015]),
                                                                                                                                   skinCoordIndex : new MFInt32([286,287,288,289,290,291,292,293,294]),
-                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                                  visible : new SFBool(true)})])})])})])}),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("r_middle0"),
@@ -1117,10 +766,6 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.2,0.835,-0.04]),
                                                                                                                       skinCoordIndex : new MFInt32([247,248]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("r_middle1"),
@@ -1128,10 +773,6 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.2,0.788,-0.04]),
                                                                                                                           skinCoordIndex : new MFInt32([272,273,279,280]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_middle2"),
@@ -1139,21 +780,13 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([-0.2,0.74,-0.04]),
                                                                                                                               skinCoordIndex : new MFInt32([295,296,297,298]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
                                                                                                                                   name : new SFString("r_middle3"),
                                                                                                                                   DEF : new SFString("Joe_r_middle3"),
                                                                                                                                   center : new SFVec3f([-0.2,0.7142,-0.04]),
                                                                                                                                   skinCoordIndex : new MFInt32([299,300,301,302,303,304,305,306,307]),
-                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                                  visible : new SFBool(true)})])})])})])}),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("r_ring0"),
@@ -1161,10 +794,6 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.2,0.835,-0.065]),
                                                                                                                       skinCoordIndex : new MFInt32([249,250]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("r_ring1"),
@@ -1172,10 +801,6 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.2,0.793,-0.065]),
                                                                                                                           skinCoordIndex : new MFInt32([274,275,280,281]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_ring2"),
@@ -1183,21 +808,13 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([-0.2,0.74,-0.065]),
                                                                                                                               skinCoordIndex : new MFInt32([308,309,310,311]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
                                                                                                                                   name : new SFString("r_ring3"),
                                                                                                                                   DEF : new SFString("Joe_r_ring3"),
                                                                                                                                   center : new SFVec3f([-0.2,0.7177,-0.065]),
                                                                                                                                   skinCoordIndex : new MFInt32([312,313,314,315,316,317,318,319,320]),
-                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                                  visible : new SFBool(true)})])})])})])}),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
                                                                                                                       name : new SFString("r_pinky0"),
@@ -1205,10 +822,6 @@ var X3D0 =  new X3D({
                                                                                                                       center : new SFVec3f([-0.2,0.84,-0.085]),
                                                                                                                       skinCoordIndex : new MFInt32([251,252,253,281]),
                                                                                                                       skinCoordWeight : new MFFloat([1,1,1,0.5]),
-                                                                                                                      bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                      bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                      bboxDisplay : new SFBool(false),
-                                                                                                                      visible : new SFBool(true),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
                                                                                                                           name : new SFString("r_pinky1"),
@@ -1216,10 +829,6 @@ var X3D0 =  new X3D({
                                                                                                                           center : new SFVec3f([-0.2,0.79,-0.085]),
                                                                                                                           skinCoordIndex : new MFInt32([276,277,278]),
                                                                                                                           skinCoordWeight : new MFFloat([1,1,1]),
-                                                                                                                          bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                          bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                          bboxDisplay : new SFBool(false),
-                                                                                                                          visible : new SFBool(true),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("r_pinky2"),
@@ -1227,28 +836,16 @@ var X3D0 =  new X3D({
                                                                                                                               center : new SFVec3f([-0.2,0.755,-0.085]),
                                                                                                                               skinCoordIndex : new MFInt32([321,322,323,324]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                                                                                                              bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                              bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                              bboxDisplay : new SFBool(false),
-                                                                                                                              visible : new SFBool(true),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
                                                                                                                                   name : new SFString("r_pinky3"),
                                                                                                                                   DEF : new SFString("Joe_r_pinky3"),
                                                                                                                                   center : new SFVec3f([-0.2,0.735,-0.09]),
                                                                                                                                   skinCoordIndex : new MFInt32([325,326,327,328,329,330,331,332,333]),
-                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                                  bboxCenter : new SFVec3f([0,0,0]),
-                                                                                                                                  bboxSize : new SFVec3f([-1,-1,-1]),
-                                                                                                                                  bboxDisplay : new SFBool(false),
-                                                                                                                                  visible : new SFBool(true)})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})),
                   skin : new SFNode(
                     new Shape({
                       DEF : new SFString("Joe_Shape"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
-                      bboxDisplay : new SFBool(false),
-                      visible : new SFBool(true),
                       appearance : new SFNode(
                         new Appearance({
                           DEF : new SFString("Joe_skin_Appearance"),
@@ -1260,9 +857,7 @@ var X3D0 =  new X3D({
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("JoeSkinImageTexture"),
-                              url : new MFString(["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/JoeBodyTexture29.png"]),
-                              load : new undefined("true"),
-                              refresh : new undefined("0")})),
+                              url : new MFString(["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"])})),
                           textureTransform : new SFNode(
                             new TextureTransform({
                               DEF : new SFString("KickTextureTransform")}))})),
@@ -1289,280 +884,280 @@ var X3D0 =  new X3D({
                       USE : new SFString("Joe_sacroiliac")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_hip")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_knee")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_ankle")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_subtalar")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_midtarsal")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_metatarsal")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_hip")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_knee")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_ankle")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_subtalar")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_midtarsal")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_metatarsal")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vl5")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vl4")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vl3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vl2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vl1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt12")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt11")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt10")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt9")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt8")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt7")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt6")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt5")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt4")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc7")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc6")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc5")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc4")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
                       USE : new SFString("Joe_skullbase")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_eyelid_joint")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_eyeball_joint")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_eyebrow_joint")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_eyelid_joint")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_eyeball_joint")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_eyebrow_joint")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_temporomandibular")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_sternoclavicular")})),
+                      USE : new SFString("Joe_vc1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc6")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc7")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vl1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vl2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vl3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vl4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vl5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt10")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt11")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt12")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt6")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt7")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt8")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt9")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_l_acromioclavicular")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_shoulder")})),
+                      USE : new SFString("Joe_r_acromioclavicular")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_l_elbow")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_wrist")})),
+                      USE : new SFString("Joe_r_elbow")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_thumb1")})),
+                      USE : new SFString("Joe_l_eyeball_joint")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_thumb2")})),
+                      USE : new SFString("Joe_r_eyeball_joint")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_thumb3")})),
+                      USE : new SFString("Joe_l_eyebrow_joint")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_eyebrow_joint")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_eyelid_joint")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_eyelid_joint")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_hip")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_hip")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_l_index0")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_index1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_index2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_index3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_middle0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_middle1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_middle2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_middle3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_ring0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_ring1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_ring2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_ring3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_pinky0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_pinky1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_pinky2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_pinky3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_sternoclavicular")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_acromioclavicular")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_shoulder")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_elbow")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_wrist")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_thumb1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_thumb2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_thumb3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
                       USE : new SFString("Joe_r_index0")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_index1")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_index1")})),
                   joints : new SFNode(
                     new HAnimJoint({
+                      USE : new SFString("Joe_l_index2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
                       USE : new SFString("Joe_r_index2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_index3")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_index3")})),
                   joints : new SFNode(
                     new HAnimJoint({
+                      USE : new SFString("Joe_l_knee")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_knee")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_metatarsophalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_metatarsophalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_middle0")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
                       USE : new SFString("Joe_r_middle0")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_middle1")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_middle1")})),
                   joints : new SFNode(
                     new HAnimJoint({
+                      USE : new SFString("Joe_l_middle2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
                       USE : new SFString("Joe_r_middle2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_middle3")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_middle3")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_r_ring0")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_ring1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_ring2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_ring3")})),
+                      USE : new SFString("Joe_l_pinky0")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_pinky0")})),
                   joints : new SFNode(
                     new HAnimJoint({
+                      USE : new SFString("Joe_l_pinky1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
                       USE : new SFString("Joe_r_pinky1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_pinky2")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_pinky2")})),
                   joints : new SFNode(
                     new HAnimJoint({
+                      USE : new SFString("Joe_l_pinky3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
                       USE : new SFString("Joe_r_pinky3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_radiocarpal")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_radiocarpal")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_ring0")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_ring0")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_ring1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_ring1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_ring2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_ring2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_ring3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_ring3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_shoulder")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_shoulder")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_sternoclavicular")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_sternoclavicular")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_talocrural")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_talocrural")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_tarsal_distal_interphalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_tarsal_distal_interphalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_tarsometatarsal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_tarsometatarsal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_thumb1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_thumb1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_thumb2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_thumb2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_thumb3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_thumb3")})),
                   segments : new SFNode(
                     new HAnimSegment({
                       USE : new SFString("Joe_sacrum")})),
@@ -1571,10 +1166,6 @@ var X3D0 =  new X3D({
                       USE : new SFString("Joe_RootFront_view")}))])})])}),
 
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               children : new MFNode([
                 new TimeSensor({
                   DEF : new SFString("KickTimer"),
@@ -1583,477 +1174,477 @@ var X3D0 =  new X3D({
               { "#comment" : new CommentsBlock("Interpolators") },
 
                 new OrientationInterpolator({
-                  DEF : new SFString("HumanoidRootRotInterp"),
+                  DEF : new SFString("HumanoidRoot_RotationInterpolator"),
                   key : new MFFloat([0,0.1,0.4,0.6,1]),
                   keyValue : new MFRotation([1,0,0,0.5,1,0,0,0.5,-1,0,0,0.1,-1,0,0,0.5,-1,0,0,0.5])}),
 
                 new PositionInterpolator({
-                  DEF : new SFString("HumanoidRootTransInterp"),
+                  DEF : new SFString("HumanoidRoot_TranslationInterpolator"),
                   key : new MFFloat([0,0.2,0.6,1]),
                   keyValue : new MFVec3f([1,0.3,-1,0.4,-0.04,-0.4,-0.18,0.1,0,-0.2,0.15,0.15])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("sacroiliacRotInterp"),
+                  DEF : new SFString("sacroiliac_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_hipRotInterp"),
+                  DEF : new SFString("l_hip_RotationInterpolator"),
                   key : new MFFloat([0,0.1,0.3,0.45,1]),
                   keyValue : new MFRotation([-1,0,0,1.5,-1,0,0,1,0,0,1,0,1,0,0,0.5,1,0,0,1])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_kneeRotInterp"),
+                  DEF : new SFString("l_knee_RotationInterpolator"),
                   key : new MFFloat([0,0.2,0.35,0.5,1]),
                   keyValue : new MFRotation([1,0,0,1,0,0,1,0,0,0,1,0.2,1,0,1,0.5,1,0,0,1.4])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_ankleRotInterp"),
+                  DEF : new SFString("l_ankle_RotationInterpolator"),
                   key : new MFFloat([0,0.25,1]),
                   keyValue : new MFRotation([-1,0,0,1,0,0,1,0,1,0,0,1])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_subtalarRotInterp"),
+                  DEF : new SFString("l_subtalar_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_midtarsalRotInterp"),
+                  DEF : new SFString("l_midtarsal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_metatarsalRotInterp"),
+                  DEF : new SFString("l_metatarsal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_hipRotInterp"),
+                  DEF : new SFString("r_hip_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([1,0,0,1,1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,1])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_kneeRotInterp"),
+                  DEF : new SFString("r_knee_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([1,0,0,0.1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,1.5])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_ankleRotInterp"),
+                  DEF : new SFString("r_ankle_RotationInterpolator"),
                   key : new MFFloat([0,0.25,0.5,0.75,1]),
                   keyValue : new MFRotation([-1,0,0,1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,0.5])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_subtalarRotInterp"),
+                  DEF : new SFString("r_subtalar_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_midtarsalRotInterp"),
+                  DEF : new SFString("r_midtarsal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_metatarsalRotInterp"),
+                  DEF : new SFString("r_metatarsal_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vl5RotInterp"),
+                  DEF : new SFString("vl5_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vl4RotInterp"),
+                  DEF : new SFString("vl4_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vl3RotInterp"),
+                  DEF : new SFString("vl3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vl2RotInterp"),
+                  DEF : new SFString("vl2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vl1RotInterp"),
+                  DEF : new SFString("vl1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt12RotInterp"),
+                  DEF : new SFString("vt12_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt11RotInterp"),
+                  DEF : new SFString("vt11_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt10RotInterp"),
+                  DEF : new SFString("vt10_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt9RotInterp"),
+                  DEF : new SFString("vt9_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt8RotInterp"),
+                  DEF : new SFString("vt8_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt7RotInterp"),
+                  DEF : new SFString("vt7_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt6RotInterp"),
+                  DEF : new SFString("vt6_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt5RotInterp"),
+                  DEF : new SFString("vt5_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt4RotInterp"),
+                  DEF : new SFString("vt4_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt3RotInterp"),
+                  DEF : new SFString("vt3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt2RotInterp"),
+                  DEF : new SFString("vt2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vt1RotInterp"),
+                  DEF : new SFString("vt1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vc7RotInterp"),
+                  DEF : new SFString("vc7_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vc6RotInterp"),
+                  DEF : new SFString("vc6_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vc5RotInterp"),
+                  DEF : new SFString("vc5_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vc4RotInterp"),
+                  DEF : new SFString("vc4_RotationInterpolator"),
                   key : new MFFloat([0,0.3,0.4,1]),
                   keyValue : new MFRotation([1,0,1,0.25,-1,0,-1,0.35,1,0,0,0.75,1,0,1,0.5])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vc3RotInterp"),
+                  DEF : new SFString("vc3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vc2RotInterp"),
+                  DEF : new SFString("vc2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("vc1RotInterp"),
+                  DEF : new SFString("vc1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("skullbaseRotInterp"),
+                  DEF : new SFString("skullbase_RotationInterpolator"),
                   key : new MFFloat([0,0.2,0.75,1]),
                   keyValue : new MFRotation([0,-1,0,0.5,0,0,1,0,0,0,1,0,0,1,0,0.35])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_eyelid_jointRotInterp"),
+                  DEF : new SFString("l_eyelid_joint_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_eyeball_jointRotInterp"),
+                  DEF : new SFString("l_eyeball_joint_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_eyebrow_jointRotInterp"),
+                  DEF : new SFString("l_eyebrow_joint_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_eyelid_jointRotInterp"),
+                  DEF : new SFString("r_eyelid_joint_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_eyeball_jointRotInterp"),
+                  DEF : new SFString("r_eyeball_joint_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_eyebrow_jointRotInterp"),
+                  DEF : new SFString("r_eyebrow_joint_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("temporomandibularRotInterp"),
+                  DEF : new SFString("temporomandibular_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_sternoclavicularRotInterp"),
+                  DEF : new SFString("l_sternoclavicular_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_acromioclavicularRotInterp"),
+                  DEF : new SFString("l_acromioclavicular_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_shoulderRotInterp"),
+                  DEF : new SFString("l_shoulder_RotationInterpolator"),
                   key : new MFFloat([0,0.4,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,1.5,-1,0,1,1.75])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_elbowRotInterp"),
+                  DEF : new SFString("l_elbow_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_wristRotInterp"),
+                  DEF : new SFString("l_wrist_RotationInterpolator"),
                   key : new MFFloat([0,0.4,0.8,1]),
                   keyValue : new MFRotation([0,0,1,0,0,1,0,1.3,0,-0.5,1,1.3,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_thumb1RotInterp"),
+                  DEF : new SFString("l_thumb1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_thumb2RotInterp"),
+                  DEF : new SFString("l_thumb2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_thumb3RotInterp"),
+                  DEF : new SFString("l_thumb3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_index0RotInterp"),
+                  DEF : new SFString("l_index0_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_index1RotInterp"),
+                  DEF : new SFString("l_index1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_index2RotInterp"),
+                  DEF : new SFString("l_index2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_index3RotInterp"),
+                  DEF : new SFString("l_index3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_middle0RotInterp"),
+                  DEF : new SFString("l_middle0_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_middle1RotInterp"),
+                  DEF : new SFString("l_middle1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_middle2RotInterp"),
+                  DEF : new SFString("l_middle2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_middle3RotInterp"),
+                  DEF : new SFString("l_middle3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_ring0RotInterp"),
+                  DEF : new SFString("l_ring0_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_ring1RotInterp"),
+                  DEF : new SFString("l_ring1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_ring2RotInterp"),
+                  DEF : new SFString("l_ring2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_ring3RotInterp"),
+                  DEF : new SFString("l_ring3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_pinky0RotInterp"),
+                  DEF : new SFString("l_pinky0_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_pinky1RotInterp"),
+                  DEF : new SFString("l_pinky1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_pinky2RotInterp"),
+                  DEF : new SFString("l_pinky2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("l_pinky3RotInterp"),
+                  DEF : new SFString("l_pinky3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_sternoclavicularRotInterp"),
+                  DEF : new SFString("r_sternoclavicular_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_acromioclavicularRotInterp"),
+                  DEF : new SFString("r_acromioclavicular_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_shoulderRotInterp"),
+                  DEF : new SFString("r_shoulder_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,-1,2.5,0,0,-1,1.5,0,0,-1,1.75])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_elbowRotInterp"),
+                  DEF : new SFString("r_elbow_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_wristRotInterp"),
+                  DEF : new SFString("r_wrist_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.7,1]),
                   keyValue : new MFRotation([0,1,0,0.3,0,0,1,0,0,0,-1,1,0,-1,0,0.3])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_thumb1RotInterp"),
+                  DEF : new SFString("r_thumb1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_thumb2RotInterp"),
+                  DEF : new SFString("r_thumb2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_thumb3RotInterp"),
+                  DEF : new SFString("r_thumb3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_index0RotInterp"),
+                  DEF : new SFString("r_index0_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_index1RotInterp"),
+                  DEF : new SFString("r_index1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_index2RotInterp"),
+                  DEF : new SFString("r_index2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_index3RotInterp"),
+                  DEF : new SFString("r_index3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_middle0RotInterp"),
+                  DEF : new SFString("r_middle0_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_middle1RotInterp"),
+                  DEF : new SFString("r_middle1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_middle2RotInterp"),
+                  DEF : new SFString("r_middle2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_middle3RotInterp"),
+                  DEF : new SFString("r_middle3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_ring0RotInterp"),
+                  DEF : new SFString("r_ring0_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_ring1RotInterp"),
+                  DEF : new SFString("r_ring1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_ring2RotInterp"),
+                  DEF : new SFString("r_ring2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_ring3RotInterp"),
+                  DEF : new SFString("r_ring3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_pinky0RotInterp"),
+                  DEF : new SFString("r_pinky0_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_pinky1RotInterp"),
+                  DEF : new SFString("r_pinky1_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_pinky2RotInterp"),
+                  DEF : new SFString("r_pinky2_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("r_pinky3RotInterp"),
+                  DEF : new SFString("r_pinky3_RotationInterpolator"),
                   key : new MFFloat([0,0.5,0.75,1]),
                   keyValue : new MFRotation([0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0])})])}),
           { "#comment" : new CommentsBlock("TimeSensor to Interpolators") },
@@ -2062,1149 +1653,1145 @@ var X3D0 =  new X3D({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("HumanoidRootRotInterp")}),
+              toNode : new SFString("HumanoidRoot_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("HumanoidRootTransInterp")}),
+              toNode : new SFString("HumanoidRoot_TranslationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("sacroiliacRotInterp")}),
+              toNode : new SFString("sacroiliac_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_hipRotInterp")}),
+              toNode : new SFString("l_hip_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_kneeRotInterp")}),
+              toNode : new SFString("l_knee_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_ankleRotInterp")}),
+              toNode : new SFString("l_ankle_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_subtalarRotInterp")}),
+              toNode : new SFString("l_subtalar_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_midtarsalRotInterp")}),
+              toNode : new SFString("l_midtarsal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_metatarsalRotInterp")}),
+              toNode : new SFString("l_metatarsal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_hipRotInterp")}),
+              toNode : new SFString("r_hip_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_kneeRotInterp")}),
+              toNode : new SFString("r_knee_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_ankleRotInterp")}),
+              toNode : new SFString("r_ankle_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_subtalarRotInterp")}),
+              toNode : new SFString("r_subtalar_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_midtarsalRotInterp")}),
+              toNode : new SFString("r_midtarsal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_metatarsalRotInterp")}),
+              toNode : new SFString("r_metatarsal_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vl5RotInterp")}),
+              toNode : new SFString("vl5_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vl4RotInterp")}),
+              toNode : new SFString("vl4_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vl3RotInterp")}),
+              toNode : new SFString("vl3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vl2RotInterp")}),
+              toNode : new SFString("vl2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vl1RotInterp")}),
+              toNode : new SFString("vl1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt12RotInterp")}),
+              toNode : new SFString("vt12_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt11RotInterp")}),
+              toNode : new SFString("vt11_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt10RotInterp")}),
+              toNode : new SFString("vt10_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt9RotInterp")}),
+              toNode : new SFString("vt9_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt8RotInterp")}),
+              toNode : new SFString("vt8_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt7RotInterp")}),
+              toNode : new SFString("vt7_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt6RotInterp")}),
+              toNode : new SFString("vt6_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt5RotInterp")}),
+              toNode : new SFString("vt5_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt4RotInterp")}),
+              toNode : new SFString("vt4_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt3RotInterp")}),
+              toNode : new SFString("vt3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt2RotInterp")}),
+              toNode : new SFString("vt2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vt1RotInterp")}),
+              toNode : new SFString("vt1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vc7RotInterp")}),
+              toNode : new SFString("vc7_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vc6RotInterp")}),
+              toNode : new SFString("vc6_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vc5RotInterp")}),
+              toNode : new SFString("vc5_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vc4RotInterp")}),
+              toNode : new SFString("vc4_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vc3RotInterp")}),
+              toNode : new SFString("vc3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vc2RotInterp")}),
+              toNode : new SFString("vc2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("vc1RotInterp")}),
+              toNode : new SFString("vc1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("skullbaseRotInterp")}),
+              toNode : new SFString("skullbase_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_eyelid_jointRotInterp")}),
+              toNode : new SFString("l_eyelid_joint_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_eyeball_jointRotInterp")}),
+              toNode : new SFString("l_eyeball_joint_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_eyebrow_jointRotInterp")}),
+              toNode : new SFString("l_eyebrow_joint_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_eyelid_jointRotInterp")}),
+              toNode : new SFString("r_eyelid_joint_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_eyeball_jointRotInterp")}),
+              toNode : new SFString("r_eyeball_joint_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_eyebrow_jointRotInterp")}),
+              toNode : new SFString("r_eyebrow_joint_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("temporomandibularRotInterp")}),
+              toNode : new SFString("temporomandibular_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_sternoclavicularRotInterp")}),
+              toNode : new SFString("l_sternoclavicular_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_acromioclavicularRotInterp")}),
+              toNode : new SFString("l_acromioclavicular_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_shoulderRotInterp")}),
+              toNode : new SFString("l_shoulder_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_elbowRotInterp")}),
+              toNode : new SFString("l_elbow_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_wristRotInterp")}),
+              toNode : new SFString("l_wrist_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_thumb1RotInterp")}),
+              toNode : new SFString("l_thumb1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_thumb2RotInterp")}),
+              toNode : new SFString("l_thumb2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_thumb3RotInterp")}),
+              toNode : new SFString("l_thumb3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_index0RotInterp")}),
+              toNode : new SFString("l_index0_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_index1RotInterp")}),
+              toNode : new SFString("l_index1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_index2RotInterp")}),
+              toNode : new SFString("l_index2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_index3RotInterp")}),
+              toNode : new SFString("l_index3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_middle0RotInterp")}),
+              toNode : new SFString("l_middle0_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_middle1RotInterp")}),
+              toNode : new SFString("l_middle1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_middle2RotInterp")}),
+              toNode : new SFString("l_middle2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_middle3RotInterp")}),
+              toNode : new SFString("l_middle3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_ring0RotInterp")}),
+              toNode : new SFString("l_ring0_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_ring1RotInterp")}),
+              toNode : new SFString("l_ring1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_ring2RotInterp")}),
+              toNode : new SFString("l_ring2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_ring3RotInterp")}),
+              toNode : new SFString("l_ring3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_pinky0RotInterp")}),
+              toNode : new SFString("l_pinky0_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_pinky1RotInterp")}),
+              toNode : new SFString("l_pinky1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_pinky2RotInterp")}),
+              toNode : new SFString("l_pinky2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("l_pinky3RotInterp")}),
+              toNode : new SFString("l_pinky3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_sternoclavicularRotInterp")}),
+              toNode : new SFString("r_sternoclavicular_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_acromioclavicularRotInterp")}),
+              toNode : new SFString("r_acromioclavicular_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_shoulderRotInterp")}),
+              toNode : new SFString("r_shoulder_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_elbowRotInterp")}),
+              toNode : new SFString("r_elbow_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_wristRotInterp")}),
+              toNode : new SFString("r_wrist_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_thumb1RotInterp")}),
+              toNode : new SFString("r_thumb1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_thumb2RotInterp")}),
+              toNode : new SFString("r_thumb2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_thumb3RotInterp")}),
+              toNode : new SFString("r_thumb3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_index0RotInterp")}),
+              toNode : new SFString("r_index0_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_index1RotInterp")}),
+              toNode : new SFString("r_index1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_index2RotInterp")}),
+              toNode : new SFString("r_index2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_index3RotInterp")}),
+              toNode : new SFString("r_index3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_middle0RotInterp")}),
+              toNode : new SFString("r_middle0_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_middle1RotInterp")}),
+              toNode : new SFString("r_middle1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_middle2RotInterp")}),
+              toNode : new SFString("r_middle2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_middle3RotInterp")}),
+              toNode : new SFString("r_middle3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_ring0RotInterp")}),
+              toNode : new SFString("r_ring0_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_ring1RotInterp")}),
+              toNode : new SFString("r_ring1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_ring2RotInterp")}),
+              toNode : new SFString("r_ring2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_ring3RotInterp")}),
+              toNode : new SFString("r_ring3_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_pinky0RotInterp")}),
+              toNode : new SFString("r_pinky0_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_pinky1RotInterp")}),
+              toNode : new SFString("r_pinky1_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_pinky2RotInterp")}),
+              toNode : new SFString("r_pinky2_RotationInterpolator")}),
 
             new ROUTE({
               fromField : new SFString("fraction_changed"),
               fromNode : new SFString("KickTimer"),
               toField : new SFString("set_fraction"),
-              toNode : new SFString("r_pinky3RotInterp")}),
+              toNode : new SFString("r_pinky3_RotationInterpolator")}),
           { "#comment" : new CommentsBlock("Routes from Interpolators to Joe_ model Joints") },
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("HumanoidRootRotInterp"),
+              fromNode : new SFString("HumanoidRoot_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("HumanoidRootTransInterp"),
+              fromNode : new SFString("HumanoidRoot_TranslationInterpolator"),
               toField : new SFString("set_translation"),
               toNode : new SFString("Joe_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("sacroiliacRotInterp"),
+              fromNode : new SFString("sacroiliac_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_sacroiliac")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_hipRotInterp"),
+              fromNode : new SFString("l_hip_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_hip")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_kneeRotInterp"),
+              fromNode : new SFString("l_knee_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_knee")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_ankleRotInterp"),
+              fromNode : new SFString("l_ankle_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_ankle")}),
+              toNode : new SFString("Joe_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_subtalarRotInterp"),
+              fromNode : new SFString("l_subtalar_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_subtalar")}),
+              toNode : new SFString("Joe_l_tarsometatarsal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_midtarsalRotInterp"),
+              fromNode : new SFString("l_midtarsal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_midtarsal")}),
+              toNode : new SFString("Joe_l_metatarsophalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_metatarsalRotInterp"),
+              fromNode : new SFString("l_metatarsal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_metatarsal")}),
+              toNode : new SFString("Joe_l_tarsal_distal_interphalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_hipRotInterp"),
+              fromNode : new SFString("r_hip_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_hip")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_kneeRotInterp"),
+              fromNode : new SFString("r_knee_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_knee")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_ankleRotInterp"),
+              fromNode : new SFString("r_ankle_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_ankle")}),
+              toNode : new SFString("Joe_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_subtalarRotInterp"),
+              fromNode : new SFString("r_subtalar_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_subtalar")}),
+              toNode : new SFString("Joe_r_tarsometatarsal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_midtarsalRotInterp"),
+              fromNode : new SFString("r_midtarsal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_midtarsal")}),
+              toNode : new SFString("Joe_r_metatarsophalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_metatarsalRotInterp"),
+              fromNode : new SFString("r_metatarsal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_metatarsal")}),
+              toNode : new SFString("Joe_r_tarsal_distal_interphalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vl5RotInterp"),
+              fromNode : new SFString("vl5_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vl5")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vl4RotInterp"),
+              fromNode : new SFString("vl4_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vl4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vl3RotInterp"),
+              fromNode : new SFString("vl3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vl3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vl2RotInterp"),
+              fromNode : new SFString("vl2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vl2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vl1RotInterp"),
+              fromNode : new SFString("vl1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vl1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt12RotInterp"),
+              fromNode : new SFString("vt12_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt12")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt11RotInterp"),
+              fromNode : new SFString("vt11_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt11")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt10RotInterp"),
+              fromNode : new SFString("vt10_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt10")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt9RotInterp"),
+              fromNode : new SFString("vt9_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt9")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt8RotInterp"),
+              fromNode : new SFString("vt8_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt8")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt7RotInterp"),
+              fromNode : new SFString("vt7_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt7")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt6RotInterp"),
+              fromNode : new SFString("vt6_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt6")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt5RotInterp"),
+              fromNode : new SFString("vt5_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt5")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt4RotInterp"),
+              fromNode : new SFString("vt4_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt3RotInterp"),
+              fromNode : new SFString("vt3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt2RotInterp"),
+              fromNode : new SFString("vt2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vt1RotInterp"),
+              fromNode : new SFString("vt1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vt1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vc7RotInterp"),
+              fromNode : new SFString("vc7_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vc7")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vc6RotInterp"),
+              fromNode : new SFString("vc6_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vc6")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vc5RotInterp"),
+              fromNode : new SFString("vc5_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vc5")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vc4RotInterp"),
+              fromNode : new SFString("vc4_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vc4")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vc3RotInterp"),
+              fromNode : new SFString("vc3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vc3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vc2RotInterp"),
+              fromNode : new SFString("vc2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vc2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("vc1RotInterp"),
+              fromNode : new SFString("vc1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_vc1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("skullbaseRotInterp"),
+              fromNode : new SFString("skullbase_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_skullbase")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_eyelid_jointRotInterp"),
+              fromNode : new SFString("l_eyelid_joint_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_eyelid_joint")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_eyeball_jointRotInterp"),
+              fromNode : new SFString("l_eyeball_joint_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_eyeball_joint")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_eyebrow_jointRotInterp"),
+              fromNode : new SFString("l_eyebrow_joint_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_eyebrow_joint")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_eyelid_jointRotInterp"),
+              fromNode : new SFString("r_eyelid_joint_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_eyelid_joint")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_eyeball_jointRotInterp"),
+              fromNode : new SFString("r_eyeball_joint_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_eyeball_joint")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_eyebrow_jointRotInterp"),
+              fromNode : new SFString("r_eyebrow_joint_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_eyebrow_joint")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("temporomandibularRotInterp"),
+              fromNode : new SFString("temporomandibular_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_temporomandibular")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_sternoclavicularRotInterp"),
+              fromNode : new SFString("l_sternoclavicular_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_sternoclavicular")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_acromioclavicularRotInterp"),
+              fromNode : new SFString("l_acromioclavicular_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_acromioclavicular")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_shoulderRotInterp"),
+              fromNode : new SFString("l_shoulder_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_shoulder")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_elbowRotInterp"),
+              fromNode : new SFString("l_elbow_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_elbow")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_wristRotInterp"),
+              fromNode : new SFString("l_wrist_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_wrist")}),
+              toNode : new SFString("Joe_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_thumb1RotInterp"),
+              fromNode : new SFString("l_thumb1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_thumb1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_thumb2RotInterp"),
+              fromNode : new SFString("l_thumb2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_thumb2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_thumb3RotInterp"),
+              fromNode : new SFString("l_thumb3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_thumb3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_index0RotInterp"),
+              fromNode : new SFString("l_index0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_index0")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_index1RotInterp"),
+              fromNode : new SFString("l_index1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_index1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_index2RotInterp"),
+              fromNode : new SFString("l_index2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_index2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_index3RotInterp"),
+              fromNode : new SFString("l_index3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_index3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_middle0RotInterp"),
+              fromNode : new SFString("l_middle0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_middle0")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_middle1RotInterp"),
+              fromNode : new SFString("l_middle1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_middle1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_middle2RotInterp"),
+              fromNode : new SFString("l_middle2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_middle2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_middle3RotInterp"),
+              fromNode : new SFString("l_middle3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_middle3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_ring0RotInterp"),
+              fromNode : new SFString("l_ring0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_ring0")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_ring1RotInterp"),
+              fromNode : new SFString("l_ring1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_ring1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_ring2RotInterp"),
+              fromNode : new SFString("l_ring2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_ring2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_ring3RotInterp"),
+              fromNode : new SFString("l_ring3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_ring3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_pinky0RotInterp"),
+              fromNode : new SFString("l_pinky0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_pinky0")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_pinky1RotInterp"),
+              fromNode : new SFString("l_pinky1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_pinky1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_pinky2RotInterp"),
+              fromNode : new SFString("l_pinky2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_pinky2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("l_pinky3RotInterp"),
+              fromNode : new SFString("l_pinky3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_l_pinky3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_sternoclavicularRotInterp"),
+              fromNode : new SFString("r_sternoclavicular_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_sternoclavicular")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_acromioclavicularRotInterp"),
+              fromNode : new SFString("r_acromioclavicular_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_acromioclavicular")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_shoulderRotInterp"),
+              fromNode : new SFString("r_shoulder_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_shoulder")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_elbowRotInterp"),
+              fromNode : new SFString("r_elbow_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_elbow")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_wristRotInterp"),
+              fromNode : new SFString("r_wrist_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_wrist")}),
+              toNode : new SFString("Joe_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_thumb1RotInterp"),
+              fromNode : new SFString("r_thumb1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_thumb1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_thumb2RotInterp"),
+              fromNode : new SFString("r_thumb2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_thumb2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_thumb3RotInterp"),
+              fromNode : new SFString("r_thumb3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_thumb3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_index0RotInterp"),
+              fromNode : new SFString("r_index0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_index0")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_index1RotInterp"),
+              fromNode : new SFString("r_index1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_index1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_index2RotInterp"),
+              fromNode : new SFString("r_index2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_index2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_index3RotInterp"),
+              fromNode : new SFString("r_index3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_index3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_middle0RotInterp"),
+              fromNode : new SFString("r_middle0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_middle0")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_middle1RotInterp"),
+              fromNode : new SFString("r_middle1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_middle1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_middle2RotInterp"),
+              fromNode : new SFString("r_middle2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_middle2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_middle3RotInterp"),
+              fromNode : new SFString("r_middle3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_middle3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_ring0RotInterp"),
+              fromNode : new SFString("r_ring0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_ring0")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_ring1RotInterp"),
+              fromNode : new SFString("r_ring1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_ring1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_ring2RotInterp"),
+              fromNode : new SFString("r_ring2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_ring2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_ring3RotInterp"),
+              fromNode : new SFString("r_ring3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_ring3")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_pinky0RotInterp"),
+              fromNode : new SFString("r_pinky0_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_pinky0")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_pinky1RotInterp"),
+              fromNode : new SFString("r_pinky1_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_pinky1")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_pinky2RotInterp"),
+              fromNode : new SFString("r_pinky2_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_pinky2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
-              fromNode : new SFString("r_pinky3RotInterp"),
+              fromNode : new SFString("r_pinky3_RotationInterpolator"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("Joe_r_pinky3")}),
 
             new Group({
               DEF : new SFString("DisplacersAnimationGroup"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               children : new MFNode([
                 new ScalarInterpolator({
                   DEF : new SFString("skull_tipInterpolator"),
@@ -3225,10 +2812,6 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("SkinTextureTransformAnimationGroup"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               children : new MFNode([
                 new ScalarInterpolator({
                   DEF : new SFString("SkinInterpolator"),
@@ -3248,27 +2831,15 @@ var X3D0 =  new X3D({
                   toNode : new SFString("KickTextureTransform")})])}),
 
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("SBall"),
                   rotation : new SFRotation([0.7,0,0.7,0.1]),
                   scale : new SFVec3f([0.23,0.23,0.23]),
                   translation : new SFVec3f([-0.916,0.37,-0.92]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("ball_Shape"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
-                      bboxDisplay : new SFBool(false),
-                      visible : new SFBool(true),
                       appearance : new SFNode(
                         new Appearance({
                           DEF : new SFString("ball_Appearance"),
@@ -3295,12 +2866,12 @@ var X3D0 =  new X3D({
               { "#comment" : new CommentsBlock("Ball Animation interpolators") },
 
                 new PositionInterpolator({
-                  DEF : new SFString("ballTransInterp"),
+                  DEF : new SFString("ball_TranslationInterpolator"),
                   key : new MFFloat([0,0.4,0.409,1]),
                   keyValue : new MFVec3f([-1,0.4,-1,0,0.07,0,0.05,0.06,0.05,2,4,10])}),
 
                 new OrientationInterpolator({
-                  DEF : new SFString("ballRotInterp"),
+                  DEF : new SFString("ball_RotationInterpolator"),
                   key : new MFFloat([0,0.4,0.41,0.71,1]),
                   keyValue : new MFRotation([1,0,1,0.25,-1,0,-1,1.35,-1,1,-1,3.35,-1,0.2,-1,3,-1,0.2,-1,3])}),
               { "#comment" : new CommentsBlock("Ball Animation Routes") },
@@ -3309,11 +2880,11 @@ var X3D0 =  new X3D({
                   fromField : new SFString("fraction_changed"),
                   fromNode : new SFString("KickTimer"),
                   toField : new SFString("set_fraction"),
-                  toNode : new SFString("ballTransInterp")}),
+                  toNode : new SFString("ball_TranslationInterpolator")}),
 
                 new ROUTE({
                   fromField : new SFString("value_changed"),
-                  fromNode : new SFString("ballTransInterp"),
+                  fromNode : new SFString("ball_TranslationInterpolator"),
                   toField : new SFString("set_translation"),
                   toNode : new SFString("SBall")}),
 
@@ -3321,26 +2892,18 @@ var X3D0 =  new X3D({
                   fromField : new SFString("fraction_changed"),
                   fromNode : new SFString("KickTimer"),
                   toField : new SFString("set_fraction"),
-                  toNode : new SFString("ballRotInterp")}),
+                  toNode : new SFString("ball_RotationInterpolator")}),
 
                 new ROUTE({
                   fromField : new SFString("value_changed"),
-                  fromNode : new SFString("ballRotInterp"),
+                  fromNode : new SFString("ball_RotationInterpolator"),
                   toField : new SFString("set_rotation"),
                   toNode : new SFString("SBall")})])}),
 
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               children : new MFNode([
                 new Transform({
                   scale : new SFVec3f([0.2,0.2,0.2]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true),
                   children : new MFNode([
                     new Shape({
                       USE : new SFString("AxisLinesShape")})])}),
@@ -3348,17 +2911,9 @@ var X3D0 =  new X3D({
                 new Transform({
                   DEF : new SFString("Circle0"),
                   scale : new SFVec3f([1.175,1,1.175]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("circle_Shape"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
-                      bboxDisplay : new SFBool(false),
-                      visible : new SFBool(true),
                       appearance : new SFNode(
                         new Appearance({
                           DEF : new SFString("circle0_Appearance"),
@@ -3380,17 +2935,9 @@ var X3D0 =  new X3D({
                 new Transform({
                   DEF : new SFString("Circle1"),
                   scale : new SFVec3f([0.5,1,0.5]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("circle1_Shape"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
-                      bboxDisplay : new SFBool(false),
-                      visible : new SFBool(true),
                       appearance : new SFNode(
                         new Appearance({
                           DEF : new SFString("circle1_Appearance"),
@@ -3406,17 +2953,9 @@ var X3D0 =  new X3D({
                 new Transform({
                   DEF : new SFString("Circle2"),
                   scale : new SFVec3f([0.25,1,0.25]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("circle2_Shape"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
-                      bboxDisplay : new SFBool(false),
-                      visible : new SFBool(true),
                       appearance : new SFNode(
                         new Appearance({
                           DEF : new SFString("circle2_Appearance"),

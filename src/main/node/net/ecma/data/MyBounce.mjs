@@ -11,12 +11,13 @@ import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
+import { Script } from './x3d.mjs';
+import { field } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
@@ -54,12 +55,8 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("transform"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -68,6 +65,69 @@ var X3D0 =  new X3D({
                           specularColor : new SFColor([0.5,0.5,0.5])}))})),
                   geometry : new SFNode(
                     new Sphere({}))})])}),
+
+            new Script({
+              DEF : new SFString("Bounce2"),
+              field : new MFNode([
+                new field({
+                  type : field.TYPE_SFVEC3F,
+                  name : new SFString("set_translation"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                  value : new SFString("0 0 0")}),
+
+                new field({
+                  type : field.TYPE_SFVEC3F,
+                  name : new SFString("translation_changed"),
+                  accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
+                  value : new SFString("0 0 0")}),
+
+                new field({
+                  type : field.TYPE_SFVEC3F,
+                  name : new SFString("translation"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                  value : new SFString("0 0 0")}),
+
+                new field({
+                  type : field.TYPE_SFVEC3F,
+                  name : new SFString("velocity"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                  value : new SFString("0 0 0")}),
+
+                new field({
+                  type : field.TYPE_SFTIME,
+                  name : new SFString("set_fraction"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+              .setSourceCode("ecmascript:\n"+
+"			function newBubble() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"				if (Math.abs(translation.x) > 10) {\n"+
+"					newBubble();\n"+
+"				} else if (Math.abs(translation.y) > 10) {\n"+
+"					newBubble();\n"+
+"				} else if (Math.abs(translation.z) > 10) {\n"+
+"					newBubble();\n"+
+"				} else {\n"+
+"					velocity = new SFVec3f(\n"+
+"						velocity.x + Math.random() * 0.2 - 0.1,\n"+
+"						velocity.y + Math.random() * 0.2 - 0.1,\n"+
+"						velocity.z + Math.random() * 0.2 - 0.1\n"+
+"					);\n"+
+"				}\n"+
+"			}\n"+
+"\n"+
+"			function initialize() {\n"+
+"			     newBubble();\n"+
+"			}")])}),
 
             new TimeSensor({
               DEF : new SFString("TourTime"),

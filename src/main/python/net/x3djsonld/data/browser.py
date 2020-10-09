@@ -32,8 +32,8 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(name='description',content='a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote "')]),
   Scene=Scene(
     children=[
-    X3DScript(DEF='Browser'),
-    X3DScript(DEF='Clouds')])
+    Script(DEF='Browser'),
+    Script(DEF='Clouds')])
 ) # X3D model complete
 
 ###############################################

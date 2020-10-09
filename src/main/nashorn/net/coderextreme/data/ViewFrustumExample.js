@@ -41,9 +41,9 @@ var ProtoInstance0 = null;
         .addComments(new CommentsBlock("Example use"))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("ViewFrustum"))
         .addComments(new CommentsBlock("Visualization assists"))
-        .addChild(new Inline().setDEF("GridXZ").setUrl(Java.to(["GridXZ_20x20Fixed.x3d"], Java.type("java.lang.String[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]"))))
-        .addChild(new Transform().setScale(Java.to([5,5,5], Java.type("float[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
-          .addChild(new Inline().setDEF("CoordinateAxes").setUrl(Java.to(["CoordinateAxes.x3d"], Java.type("java.lang.String[]"))).setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]"))))))      ;
+        .addChild(new Inline().setDEF("GridXZ").setUrl(Java.to(["GridXZ_20x20Fixed.x3d"], Java.type("java.lang.String[]"))))
+        .addChild(new Transform().setScale(Java.to([5,5,5], Java.type("float[]")))
+          .addChild(new Inline().setDEF("CoordinateAxes").setUrl(Java.to(["CoordinateAxes.x3d"], Java.type("java.lang.String[]"))))))      ;
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("ViewpointNode")
             .addComments(new CommentsBlock("prefer empty description to prevent entry in player's ViewpointList"))

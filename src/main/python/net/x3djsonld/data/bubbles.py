@@ -78,7 +78,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     TimeSensor(DEF='TourTime',cycleInterval=5,loop=True),
     PositionInterpolator(DEF='TourPosition',key=[0,1],keyValue=[(0,0,10),(0,0,-10)]),
     OrientationInterpolator(DEF='TourOrientation',key=[0,1],keyValue=[(0,1,0,0),(0,1,0,3.1416)]),
-    X3DScript(DEF='RandomTourTime',
+    Script(DEF='RandomTourTime',
       field=[
       field(name='set_cycle',accessType='inputOnly',type='SFTime'),
       field(name='lastKey',accessType='inputOutput',type='SFFloat',value=0),

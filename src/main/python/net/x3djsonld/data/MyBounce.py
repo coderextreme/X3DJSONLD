@@ -39,7 +39,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         appearance=Appearance(
           material=Material(diffuseColor=(.7,.7,.7),specularColor=(.5,.5,.5))),
         geometry=Sphere(),)]),
-    X3DScript(DEF='Bounce2',
+    Script(DEF='Bounce2',
       field=[
       field(name='set_translation',accessType='inputOnly',type='SFVec3f',value=(0,0,0)),
       field(name='translation_changed',accessType='outputOnly',type='SFVec3f',value=(0,0,0)),

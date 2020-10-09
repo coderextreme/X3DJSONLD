@@ -339,7 +339,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     ROUTE(fromField='r_shoulder_rotation_changed',fromNode='ANIMATOR',toField='set_rotation',toNode='boxman_r_shoulder'),
     ROUTE(fromField='r_elbow_rotation_changed',fromNode='ANIMATOR',toField='set_rotation',toNode='boxman_r_elbow'),
     ROUTE(fromField='r_wrist_rotation_changed',fromNode='ANIMATOR',toField='set_rotation',toNode='boxman_r_wrist'),
-    X3DScript(DEF='ENGINE',directOutput=true,url=["BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"],
+    Script(DEF='ENGINE',directOutput=True,url=["BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"],
       field=[
       field(accessType='inputOnly',name='update',type='SFRotation'),
       field(accessType='initializeOnly',name='humanoid',type='SFNode',

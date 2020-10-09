@@ -71,8 +71,6 @@ Background15.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeter
 Background15.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
 Background15.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
 Background15.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
-Background15.setSkyColor([0,0,0])
-Background15.setTransparency(0)
 
 Scene13.addChildren(Background15)
 Viewpoint16 = x3d.Viewpoint()
@@ -85,12 +83,8 @@ ProtoDeclare17.setName("Bubble")
 ProtoBody18 = x3d.ProtoBody()
 Transform19 = x3d.Transform()
 Transform19.setDEF("transform")
-Transform19.setBboxCenter([0,0,0])
-Transform19.setBboxSize([-1,-1,-1])
 Shape20 = x3d.Shape()
 Shape20.setDEF("myShape")
-Shape20.setBboxCenter([0,0,0])
-Shape20.setBboxSize([-1,-1,-1])
 Appearance21 = x3d.Appearance()
 Material22 = x3d.Material()
 Material22.setDiffuseColor([0.7,0.7,0.7])
@@ -239,30 +233,56 @@ Shape20.setGeometry(Sphere47)
 Transform19.addChildren(Shape20)
 
 ProtoBody18.addChildren(Transform19)
-X3DScript48 = x3d.X3DScript()
-X3DScript48.setDEF("Bounce")
+Script48 = x3d.Script()
+Script48.setDEF("Bounce")
 field49 = x3d.field()
 field49.setName("translation")
 field49.setAccessType("inputOutput")
 field49.setType("SFVec3f")
 field49.setValue("0 0 0")
 
-X3DScript48.addField(field49)
+Script48.addField(field49)
 field50 = x3d.field()
 field50.setName("velocity")
 field50.setAccessType("inputOutput")
 field50.setType("SFVec3f")
 field50.setValue("0 0 0")
 
-X3DScript48.addField(field50)
+Script48.addField(field50)
 field51 = x3d.field()
 field51.setName("set_fraction")
 field51.setAccessType("inputOnly")
 field51.setType("SFTime")
 
-X3DScript48.addField(field51)
+Script48.addField(field51)
 
-ProtoBody18.addX3DScript(X3DScript48)
+Script48.setSourceCode('''ecmascript:\n"+
+"			function initialize() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"			    if (Math.abs(translation.x) > 10) {\n"+
+"				initialize();\n"+
+"			    } else if (Math.abs(translation.y) > 10) {\n"+
+"				initialize();\n"+
+"			    } else if (Math.abs(translation.z) > 10) {\n"+
+"				initialize();\n"+
+"			    } else {\n"+
+"				velocity.x += Math.random() * 0.2 - 0.1;\n"+
+"				velocity.y += Math.random() * 0.2 - 0.1;\n"+
+"				velocity.z += Math.random() * 0.2 - 0.1;\n"+
+"			    }\n"+
+"			}''')
+
+ProtoBody18.addChildren(Script48)
 TimeSensor52 = x3d.TimeSensor()
 TimeSensor52.setDEF("TourTime")
 TimeSensor52.setCycleInterval(0.15)

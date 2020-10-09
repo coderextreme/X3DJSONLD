@@ -11,20 +11,13 @@ browser.currentScene.children[0] = Viewpoint2;
 
 let Background3 = browser.currentScene.createNode("Background");
 Background3.skyColor = new MFColor(new float[0.4,0.4,0.4]);
-Background3.transparency = 0;
 browser.currentScene.children[1] = Background3;
 
 let Transform4 = browser.currentScene.createNode("Transform");
 Transform4.DEF = "trans1";
-Transform4.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform5 = browser.currentScene.createNode("Transform");
 Transform5.DEF = "rotscale1";
-Transform5.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform5.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape6 = browser.currentScene.createNode("Shape");
-Shape6.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape6.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance7 = browser.currentScene.createNode("Appearance");
 let Material8 = browser.currentScene.createNode("Material");
 Material8.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);
@@ -48,15 +41,9 @@ browser.currentScene.children[2] = Transform4;
 
 let Transform10 = browser.currentScene.createNode("Transform");
 Transform10.DEF = "trans2";
-Transform10.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform10.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform11 = browser.currentScene.createNode("Transform");
 Transform11.DEF = "rotscale2";
-Transform11.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform11.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape12 = browser.currentScene.createNode("Shape");
-Shape12.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape12.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance13 = browser.currentScene.createNode("Appearance");
 let Material14 = browser.currentScene.createNode("Material");
 Material14.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);
@@ -80,15 +67,9 @@ browser.currentScene.children[3] = Transform10;
 
 let Transform16 = browser.currentScene.createNode("Transform");
 Transform16.DEF = "trans3";
-Transform16.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform16.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Transform17 = browser.currentScene.createNode("Transform");
 Transform17.DEF = "rotscale3";
-Transform17.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform17.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Shape18 = browser.currentScene.createNode("Shape");
-Shape18.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape18.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Appearance19 = browser.currentScene.createNode("Appearance");
 let Material20 = browser.currentScene.createNode("Material");
 Material20.diffuseColor = new SFColor(new float[0.2,0.7,0.7]);
@@ -114,23 +95,29 @@ let ProtoDeclare22 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "http://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="point" ><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
-<ProtoBody><Transform DEF="node" bboxCenter="0 0 0" bboxSize="-1 -1 -1"><IS><connect nodeField="translation" protoField="translation"></connect>
+<ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<Shape bboxCenter="0 0 0" bboxSize="-1 -1 -1"><Sphere containerField="geometry" radius="0.1"></Sphere>
+<Shape><Sphere containerField="geometry" radius="0.1"></Sphere>
 <Appearance><Material diffuseColor="1 0 0"></Material>
 </Appearance>
 </Shape>
 <PositionInterpolator DEF="PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
+<Script DEF="MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"></field>
+<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_location" accessType="inputOnly" type="SFTime"></field>
+<field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
+<![CDATA[ecmascript:
+		function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(translation);
+		}]]></Script>
 <TimeSensor DEF="CL1" cycleInterval="3" loop="true"></TimeSensor>
 <ROUTE fromNode="CL1" fromField="cycleTime" toNode="MB1" toField="set_location"></ROUTE>
 <ROUTE fromNode="CL1" fromField="fraction_changed" toNode="PI1" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="MB1" fromField="keyValue" toNode="PI1" toField="keyValue"></ROUTE>
 <ROUTE fromNode="PI1" fromField="value_changed" toNode="node" toField="set_translation"></ROUTE>
-<X3DScript DEF="MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"></field>
-<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_location" accessType="inputOnly" type="SFTime"></field>
-<field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
-</X3DScript>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>`);
@@ -150,8 +137,6 @@ ProtoDeclare22.protoInterface = ProtoInterface23;
 let ProtoBody25 = browser.currentScene.createNode("ProtoBody");
 let Transform26 = browser.currentScene.createNode("Transform");
 Transform26.DEF = "node";
-Transform26.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform26.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let IS27 = browser.currentScene.createNode("IS");
 let connect28 = browser.currentScene.createNode("connect");
 connect28.nodeField = "translation";
@@ -163,8 +148,6 @@ IS27.connect[0] = connect28;
 Transform26.iS = IS27;
 
 let Shape29 = browser.currentScene.createNode("Shape");
-Shape29.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape29.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Sphere30 = browser.currentScene.createNode("Sphere");
 Sphere30.radius = 0.1;
 Shape29.geometry = Sphere30;
@@ -186,71 +169,79 @@ PositionInterpolator33.key = new MFFloat(new float[0,1]);
 PositionInterpolator33.keyValue = new MFVec3f(new float[0,0,0,0,5,0]);
 Transform26.children[1] = PositionInterpolator33;
 
-let TimeSensor34 = browser.currentScene.createNode("TimeSensor");
-TimeSensor34.DEF = "CL1";
-TimeSensor34.cycleInterval = 3;
-TimeSensor34.loop = True;
-Transform26.children[2] = TimeSensor34;
+let Script34 = browser.currentScene.createNode("Script");
+Script34.DEF = "MB1";
+let field35 = browser.currentScene.createNode("field");
+field35.name = "translation";
+field35.accessType = "inputOutput";
+field35.type = "SFVec3f";
+field35.value = "50 50 0";
+Script34.field = new MFNode();
 
-let ROUTE35 = browser.currentScene.createNode("ROUTE");
-ROUTE35.fromNode = "CL1";
-ROUTE35.fromField = "cycleTime";
-ROUTE35.toNode = "MB1";
-ROUTE35.toField = "set_location";
-Transform26.children[3] = ROUTE35;
+Script34.field[0] = field35;
 
-let ROUTE36 = browser.currentScene.createNode("ROUTE");
-ROUTE36.fromNode = "CL1";
-ROUTE36.fromField = "fraction_changed";
-ROUTE36.toNode = "PI1";
-ROUTE36.toField = "set_fraction";
-Transform26.children[4] = ROUTE36;
+let field36 = browser.currentScene.createNode("field");
+field36.name = "old";
+field36.accessType = "inputOutput";
+field36.type = "SFVec3f";
+field36.value = "0 0 0";
+Script34.field[1] = field36;
 
-let ROUTE37 = browser.currentScene.createNode("ROUTE");
-ROUTE37.fromNode = "MB1";
-ROUTE37.fromField = "keyValue";
-ROUTE37.toNode = "PI1";
-ROUTE37.toField = "keyValue";
-Transform26.children[5] = ROUTE37;
+let field37 = browser.currentScene.createNode("field");
+field37.name = "set_location";
+field37.accessType = "inputOnly";
+field37.type = "SFTime";
+Script34.field[2] = field37;
 
-let ROUTE38 = browser.currentScene.createNode("ROUTE");
-ROUTE38.fromNode = "PI1";
-ROUTE38.fromField = "value_changed";
-ROUTE38.toNode = "node";
-ROUTE38.toField = "set_translation";
-Transform26.children[6] = ROUTE38;
+let field38 = browser.currentScene.createNode("field");
+field38.name = "keyValue";
+field38.accessType = "outputOnly";
+field38.type = "MFVec3f";
+Script34.field[3] = field38;
 
-let X3DScript39 = browser.currentScene.createNode("X3DScript");
-X3DScript39.DEF = "MB1";
-let field40 = browser.currentScene.createNode("field");
-field40.name = "translation";
-field40.accessType = "inputOutput";
-field40.type = "SFVec3f";
-field40.value = "50 50 0";
-X3DScript39.field = new MFNode();
 
-X3DScript39.field[0] = field40;
+Script34.setSourceCode(`ecmascript:\n"+
+"		function set_location(value) {\n"+
+"                    old = translation;\n"+
+"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
+"                    keyValue = new MFVec3f([old, translation]);\n"+
+"		    // Browser.println(translation);\n"+
+"		}`)
+Transform26.children[2] = Script34;
 
-let field41 = browser.currentScene.createNode("field");
-field41.name = "old";
-field41.accessType = "inputOutput";
-field41.type = "SFVec3f";
-field41.value = "0 0 0";
-X3DScript39.field[1] = field41;
+let TimeSensor39 = browser.currentScene.createNode("TimeSensor");
+TimeSensor39.DEF = "CL1";
+TimeSensor39.cycleInterval = 3;
+TimeSensor39.loop = True;
+Transform26.children[3] = TimeSensor39;
 
-let field42 = browser.currentScene.createNode("field");
-field42.name = "set_location";
-field42.accessType = "inputOnly";
-field42.type = "SFTime";
-X3DScript39.field[2] = field42;
+let ROUTE40 = browser.currentScene.createNode("ROUTE");
+ROUTE40.fromNode = "CL1";
+ROUTE40.fromField = "cycleTime";
+ROUTE40.toNode = "MB1";
+ROUTE40.toField = "set_location";
+Transform26.children[4] = ROUTE40;
 
-let field43 = browser.currentScene.createNode("field");
-field43.name = "keyValue";
-field43.accessType = "outputOnly";
-field43.type = "MFVec3f";
-X3DScript39.field[3] = field43;
+let ROUTE41 = browser.currentScene.createNode("ROUTE");
+ROUTE41.fromNode = "CL1";
+ROUTE41.fromField = "fraction_changed";
+ROUTE41.toNode = "PI1";
+ROUTE41.toField = "set_fraction";
+Transform26.children[5] = ROUTE41;
 
-Transform26.x3DScript[7] = X3DScript39;
+let ROUTE42 = browser.currentScene.createNode("ROUTE");
+ROUTE42.fromNode = "MB1";
+ROUTE42.fromField = "keyValue";
+ROUTE42.toNode = "PI1";
+ROUTE42.toField = "keyValue";
+Transform26.children[6] = ROUTE42;
+
+let ROUTE43 = browser.currentScene.createNode("ROUTE");
+ROUTE43.fromNode = "PI1";
+ROUTE43.fromField = "value_changed";
+ROUTE43.toNode = "node";
+ROUTE43.toField = "set_translation";
+Transform26.children[7] = ROUTE43;
 
 ProtoBody25.children = new MFNode();
 
@@ -270,7 +261,7 @@ let ProtoDeclare44 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
 <field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 </ProtoInterface>
-<ProtoBody><X3DScript DEF="S1"><field name="startnode" accessType="inputOutput" type="SFNode"></field>
+<ProtoBody><Script DEF="S1"><field name="startnode" accessType="inputOutput" type="SFNode"></field>
 <field name="endnode" accessType="inputOutput" type="SFNode"></field>
 <field name="transnode" accessType="inputOutput" type="SFNode"></field>
 <field name="rotscalenode" accessType="inputOutput" type="SFNode"></field>
@@ -283,7 +274,49 @@ let ProtoDeclare44 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <connect nodeField="set_startpoint" protoField="set_startpoint"></connect>
 <connect nodeField="set_endpoint" protoField="set_endpoint"></connect>
 </IS>
-</X3DScript>
+<![CDATA[ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+		var trafo = recompute(startpoint, endpoint);
+		if (typeof trafo !== 'undefined') {
+			transnode.translation = trafo.translation;
+			rotscalenode.rotation = trafo.rotation;
+			rotscalenode.scale = trafo.scale;
+		} else {
+			Browser.print("recompute returned undefined");
+		}
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val || startnode.translation,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val || endnode.translation);
+        }]]></Script>
 </ProtoBody>
 </ProtoDeclare>`);
 ProtoDeclare44.name = "x3dconnector";
@@ -329,45 +362,45 @@ ProtoInterface45.field[5] = field51;
 ProtoDeclare44.protoInterface = ProtoInterface45;
 
 let ProtoBody52 = browser.currentScene.createNode("ProtoBody");
-let X3DScript53 = browser.currentScene.createNode("X3DScript");
-X3DScript53.DEF = "S1";
+let Script53 = browser.currentScene.createNode("Script");
+Script53.DEF = "S1";
 let field54 = browser.currentScene.createNode("field");
 field54.name = "startnode";
 field54.accessType = "inputOutput";
 field54.type = "SFNode";
-X3DScript53.field = new MFNode();
+Script53.field = new MFNode();
 
-X3DScript53.field[0] = field54;
+Script53.field[0] = field54;
 
 let field55 = browser.currentScene.createNode("field");
 field55.name = "endnode";
 field55.accessType = "inputOutput";
 field55.type = "SFNode";
-X3DScript53.field[1] = field55;
+Script53.field[1] = field55;
 
 let field56 = browser.currentScene.createNode("field");
 field56.name = "transnode";
 field56.accessType = "inputOutput";
 field56.type = "SFNode";
-X3DScript53.field[2] = field56;
+Script53.field[2] = field56;
 
 let field57 = browser.currentScene.createNode("field");
 field57.name = "rotscalenode";
 field57.accessType = "inputOutput";
 field57.type = "SFNode";
-X3DScript53.field[3] = field57;
+Script53.field[3] = field57;
 
 let field58 = browser.currentScene.createNode("field");
 field58.name = "set_startpoint";
 field58.accessType = "inputOnly";
 field58.type = "SFVec3f";
-X3DScript53.field[4] = field58;
+Script53.field[4] = field58;
 
 let field59 = browser.currentScene.createNode("field");
 field59.name = "set_endpoint";
 field59.accessType = "inputOnly";
 field59.type = "SFVec3f";
-X3DScript53.field[5] = field59;
+Script53.field[5] = field59;
 
 let IS60 = browser.currentScene.createNode("IS");
 let connect61 = browser.currentScene.createNode("connect");
@@ -402,9 +435,55 @@ connect66.nodeField = "set_endpoint";
 connect66.protoField = "set_endpoint";
 IS60.connect[5] = connect66;
 
-X3DScript53.iS = IS60;
+Script53.iS = IS60;
 
-ProtoBody52.x3DScript = X3DScript53;
+
+Script53.setSourceCode(`ecmascript:\n"+
+"        function recompute(startpoint,endpoint){\n"+
+"	    if (typeof endpoint === 'undefined') {\n"+
+"		return;\n"+
+"	    }\n"+
+"            var dif = endpoint.subtract(startpoint);\n"+
+"            var dist = dif.length()*0.5;\n"+
+"            var dif2 = dif.multiply(0.5);\n"+
+"            var norm = dif.normalize();\n"+
+"            var transl = startpoint.add(dif2);\n"+
+"	    if (typeof Quaternion !== 'undefined') {\n"+
+"		    return {\n"+
+"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
+"			    translation : transl,\n"+
+"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n"+
+"		    };\n"+
+"	    } else {\n"+
+"		    return {\n"+
+"			    scale : new SFVec3f(1.0,dist,1.0),\n"+
+"			    translation : transl,\n"+
+"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n"+
+"		    };\n"+
+"	    }\n"+
+"	}\n"+
+"	function recompute_and_route(startpoint, endpoint) {\n"+
+"		var trafo = recompute(startpoint, endpoint);\n"+
+"		if (typeof trafo !== 'undefined') {\n"+
+"			transnode.translation = trafo.translation;\n"+
+"			rotscalenode.rotation = trafo.rotation;\n"+
+"			rotscalenode.scale = trafo.scale;\n"+
+"		} else {\n"+
+"			Browser.print(\"recompute returned undefined\");\n"+
+"		}\n"+
+"	}\n"+
+"        function initialize(){\n"+
+"            recompute_and_route(startnode.translation,endnode.translation);\n"+
+"        }\n"+
+"        function set_startpoint(val,t){\n"+
+"            recompute_and_route(val || startnode.translation,endnode.translation);\n"+
+"        }\n"+
+"        function set_endpoint(val,t){\n"+
+"            recompute_and_route(startnode.translation,val || endnode.translation);\n"+
+"        }`)
+ProtoBody52.children = new MFNode();
+
+ProtoBody52.children[0] = Script53;
 
 ProtoDeclare44.protoBody = ProtoBody52;
 

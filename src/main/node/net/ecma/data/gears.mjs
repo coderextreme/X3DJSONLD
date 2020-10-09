@@ -9,8 +9,8 @@ import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
 import { Group } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { IndexedFaceSet } from './x3d.mjs';
 import { MFInt32 } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
@@ -72,8 +72,6 @@ var X3D0 =  new X3D({
               type : ["EXAMINE","FLY","WALK","ANY"]}),
 
             new Group({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
                   bboxCenter : new SFVec3f([-4.868185499999999,25.359741,0]),

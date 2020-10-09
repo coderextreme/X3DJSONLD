@@ -12,8 +12,8 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/sphere.x3d"))
         .addMeta(new meta().setName("description").setContent("a sphere")))
       .setScene(new Scene()
-        .addChild(new Group().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
-          .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+        .addChild(new Group()
+          .addChild(new Shape()
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(Java.to([1,1,1], Java.type("float[]")))))
             .setGeometry(new Sphere()))))      ;

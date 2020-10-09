@@ -7,6 +7,7 @@ import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.KeyDeviceSensor.*;
 import org.web3d.x3d.jsail.Navigation.*;
 import org.web3d.x3d.jsail.PointingDeviceSensor.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Text.*;
 
@@ -147,13 +148,40 @@ public class pp3
                 .setGeometry(new Text("CenterString"))))
             .addChild(new StringSensor("CenterSensor").setEnabled(false))
             .addChild(new TouchSensor("CenterTouch").setDescription("touch to activate"))))
-        .addChild(new X3DScript("RightSingleToMultiString")
+        .addChild(new Script("RightSingleToMultiString").setSourceCode("\n" + 
+"ecmascript:" + "\n" + 
+"\n" + 
+"function initialize() {" + "\n" + 
+"	rightlines = new MFString(\"\");" + "\n" + 
+"}" + "\n" + 
+"\n" + 
+"function set_rightstring(rightstr) {" + "\n" + 
+"	rightlines = new MFString(rightstr);" + "\n" + 
+"}" + "\n")
           .addField(new field().setName("set_rightstring").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setName("rightlines").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
-        .addChild(new X3DScript("UpSingleToMultiString")
+        .addChild(new Script("UpSingleToMultiString").setSourceCode("\n" + 
+"ecmascript:" + "\n" + 
+"\n" + 
+"function initialize() {" + "\n" + 
+"	uplines = new MFString(\"\");" + "\n" + 
+"}" + "\n" + 
+"\n" + 
+"function set_upstring(upstr) {" + "\n" + 
+"	uplines = new MFString(upstr);" + "\n" + 
+"}" + "\n")
           .addField(new field().setName("set_upstring").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setName("uplines").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
-        .addChild(new X3DScript("CenterSingleToMultiString")
+        .addChild(new Script("CenterSingleToMultiString").setSourceCode("\n" + 
+"ecmascript:" + "\n" + 
+"\n" + 
+"function initialize() {" + "\n" + 
+"	centerlines = new MFString(\"\");" + "\n" + 
+"}" + "\n" + 
+"\n" + 
+"function set_centerstring(centerstr) {" + "\n" + 
+"	centerlines = new MFString(centerstr);" + "\n" + 
+"}" + "\n")
           .addField(new field().setName("set_centerstring").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setName("centerlines").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
         .addChild(new ROUTE().setFromNode("CenterSensor").setFromField("enteredText").setToNode("CenterSingleToMultiString").setToField("set_centerstring"))

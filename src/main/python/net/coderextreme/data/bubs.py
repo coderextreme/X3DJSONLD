@@ -53,8 +53,6 @@ Background11.setFrontUrl(["../resources/images/FR.png","https://coderextreme.net
 Background11.setLeftUrl(["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"])
 Background11.setRightUrl(["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"])
 Background11.setTopUrl(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"])
-Background11.setSkyColor([0,0,0])
-Background11.setTransparency(0)
 
 Scene8.addChildren(Background11)
 ProtoDeclare12 = x3d.ProtoDeclare()
@@ -62,11 +60,7 @@ ProtoDeclare12.setName("Bubble")
 ProtoBody13 = x3d.ProtoBody()
 Transform14 = x3d.Transform()
 Transform14.setDEF("body_trans")
-Transform14.setBboxCenter([0,0,0])
-Transform14.setBboxSize([-1,-1,-1])
 Shape15 = x3d.Shape()
-Shape15.setBboxCenter([0,0,0])
-Shape15.setBboxSize([-1,-1,-1])
 Sphere16 = x3d.Sphere()
 Sphere16.setRadius(0.25)
 
@@ -81,71 +75,111 @@ Appearance17.setMaterial(Material18)
 Shape15.setAppearance(Appearance17)
 
 Transform14.addChildren(Shape15)
-TimeSensor19 = x3d.TimeSensor()
-TimeSensor19.setDEF("bubbleClock")
-TimeSensor19.setCycleInterval(10)
-TimeSensor19.setLoop(True)
+Script19 = x3d.Script()
+Script19.setDEF("bounce1")
+field20 = x3d.field()
+field20.setName("scale")
+field20.setAccessType("inputOutput")
+field20.setType("SFVec3f")
+field20.setValue("1 1 1")
 
-Transform14.addChildren(TimeSensor19)
-ROUTE20 = x3d.ROUTE()
-ROUTE20.setFromNode("bounce1")
-ROUTE20.setFromField("translation_changed")
-ROUTE20.setToNode("body_trans")
-ROUTE20.setToField("set_translation")
+Script19.addField(field20)
+field21 = x3d.field()
+field21.setName("translation")
+field21.setAccessType("inputOutput")
+field21.setType("SFVec3f")
+field21.setValue("0 0 0")
 
-Transform14.addChildren(ROUTE20)
-ROUTE21 = x3d.ROUTE()
-ROUTE21.setFromNode("bounce1")
-ROUTE21.setFromField("scale_changed")
-ROUTE21.setToNode("body_trans")
-ROUTE21.setToField("set_scale")
+Script19.addField(field21)
+field22 = x3d.field()
+field22.setName("velocity")
+field22.setAccessType("inputOutput")
+field22.setType("SFVec3f")
+field22.setValue("0 0 0")
 
-Transform14.addChildren(ROUTE21)
-ROUTE22 = x3d.ROUTE()
-ROUTE22.setFromNode("bubbleClock")
-ROUTE22.setFromField("fraction_changed")
-ROUTE22.setToNode("bounce1")
-ROUTE22.setToField("set_fraction")
+Script19.addField(field22)
+field23 = x3d.field()
+field23.setName("scalvel")
+field23.setAccessType("inputOutput")
+field23.setType("SFVec3f")
+field23.setValue("0 0 0")
 
-Transform14.addChildren(ROUTE22)
-X3DScript23 = x3d.X3DScript()
-X3DScript23.setDEF("bounce1")
+Script19.addField(field23)
 field24 = x3d.field()
-field24.setName("scale")
-field24.setAccessType("inputOutput")
-field24.setType("SFVec3f")
-field24.setValue("1 1 1")
+field24.setName("set_fraction")
+field24.setAccessType("inputOnly")
+field24.setType("SFFloat")
 
-X3DScript23.addField(field24)
-field25 = x3d.field()
-field25.setName("translation")
-field25.setAccessType("inputOutput")
-field25.setType("SFVec3f")
-field25.setValue("0 0 0")
+Script19.addField(field24)
 
-X3DScript23.addField(field25)
-field26 = x3d.field()
-field26.setName("velocity")
-field26.setAccessType("inputOutput")
-field26.setType("SFVec3f")
-field26.setValue("0 0 0")
+Script19.setSourceCode('''ecmascript:\n"+
+"function initialize() {\n"+
+"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
+"\n"+
+"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
+"}\n"+
+"\n"+
+"function set_fraction(value) {\n"+
+"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);\n"+
+"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);\n"+
+"    // if you get to far away or too big, explode\n"+
+"    if ( Math.abs(translation.x) > 256) {\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.y) > 256) {\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if ( Math.abs(translation.z) > 256) {\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.x) > 20) {\n"+
+"	scale.x = scale.x/20;\n"+
+"	translation.x = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.y) > 20) {\n"+
+"	scale.y = scale.y/20;\n"+
+"	translation.y = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"    if (Math.abs(scale.z) > 20) {\n"+
+"	scale.z = scale.z/20;\n"+
+"	translation.z = 0;\n"+
+"	initialize();\n"+
+"    }\n"+
+"}''')
 
-X3DScript23.addField(field26)
-field27 = x3d.field()
-field27.setName("scalvel")
-field27.setAccessType("inputOutput")
-field27.setType("SFVec3f")
-field27.setValue("0 0 0")
+Transform14.addChildren(Script19)
+TimeSensor25 = x3d.TimeSensor()
+TimeSensor25.setDEF("bubbleClock")
+TimeSensor25.setCycleInterval(10)
+TimeSensor25.setLoop(True)
 
-X3DScript23.addField(field27)
-field28 = x3d.field()
-field28.setName("set_fraction")
-field28.setAccessType("inputOnly")
-field28.setType("SFFloat")
+Transform14.addChildren(TimeSensor25)
+ROUTE26 = x3d.ROUTE()
+ROUTE26.setFromNode("bounce1")
+ROUTE26.setFromField("translation_changed")
+ROUTE26.setToNode("body_trans")
+ROUTE26.setToField("set_translation")
 
-X3DScript23.addField(field28)
+Transform14.addChildren(ROUTE26)
+ROUTE27 = x3d.ROUTE()
+ROUTE27.setFromNode("bounce1")
+ROUTE27.setFromField("scale_changed")
+ROUTE27.setToNode("body_trans")
+ROUTE27.setToField("set_scale")
 
-Transform14.addX3DScript(X3DScript23)
+Transform14.addChildren(ROUTE27)
+ROUTE28 = x3d.ROUTE()
+ROUTE28.setFromNode("bubbleClock")
+ROUTE28.setFromField("fraction_changed")
+ROUTE28.setToNode("bounce1")
+ROUTE28.setToField("set_fraction")
+
+Transform14.addChildren(ROUTE28)
 
 ProtoBody13.addChildren(Transform14)
 

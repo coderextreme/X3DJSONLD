@@ -25,7 +25,6 @@ import { SFColor } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
 import { fieldValue } from './x3d.mjs';
 import { Box } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -83,8 +82,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -93,8 +90,6 @@ var X3D0 =  new X3D({
                               protoField : new SFString("xtranslation")})])})),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           IS : new SFNode(
                             new IS({
                               connect : new MFNode([
@@ -128,8 +123,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -197,8 +190,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -266,8 +257,6 @@ var X3D0 =  new X3D({
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       IS : new SFNode(
                         new IS({
                           connect : new MFNode([
@@ -325,6 +314,5 @@ var X3D0 =  new X3D({
                   name : new SFString("myShape"),
                   children : new MFNode([
                     new Box({
-                      size : new SFVec3f([1,1,1]),
-                      solid : new SFBool(true)})])})])})])}))});
+                      size : new SFVec3f([1,1,1])})])})])})])}))});
 console.log(X3D0.toXMLNode());

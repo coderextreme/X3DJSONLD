@@ -4,7 +4,6 @@ X3D0.profile = "Immersive";
 X3D0.version = "3.3";
 let Background2 = browser.currentScene.createNode("Background");
 Background2.skyColor = new MFColor(new float[1,1,1]);
-Background2.transparency = 0;
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Background2;
@@ -15,8 +14,6 @@ Viewpoint3.position = new SFVec3f(new float[0,0,15]);
 browser.currentScene.children[1] = Viewpoint3;
 
 let Shape4 = browser.currentScene.createNode("Shape");
-Shape4.bboxCenter = new SFVec3f(new float[0,0,0]);
-Shape4.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 //Empty string \"\" means to skip a line
 //The ampersand escape characters are based on XML rules
 //apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute

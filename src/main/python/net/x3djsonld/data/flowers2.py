@@ -75,7 +75,7 @@ newModel=X3D(profile='Immersive',version='3.0',
 				  
                 geometry=IndexedFaceSet(ccw=False,convex=False,coordIndex=[0,1,2,-1],DEF='Orbit',
                   coord=Coordinate(DEF='OrbitCoordinates',point=[(0,0,1),(0,1,0),(1,0,0)])))]),
-            X3DScript(DEF='OrbitScript',
+            Script(DEF='OrbitScript',
               field=[
               field(accessType='inputOnly',name='set_fraction',type='SFFloat'),
               field(accessType='outputOnly',name='coordinates',type='MFVec3f'),

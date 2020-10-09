@@ -83,17 +83,11 @@ var X3D0 =  new X3D({
 
             new Transform({
               DEF : new SFString("GridLocation"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Group({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("LinesAlignedAlongZ"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new IndexedLineSet({
                           colorIndex : new MFInt32([1,0,0,0,0,2,0,0,0,0,1,0,0,0,0,2,0,0,0,0,1]),
@@ -110,25 +104,16 @@ var X3D0 =  new X3D({
                     new Transform({
                       DEF : new SFString("LinesAlignedAlongX"),
                       rotation : new SFRotation([0,1,0,1.57079]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
                           USE : new SFString("LinesAlignedAlongZ")})])}),
 
                     new Transform({
                       translation : new SFVec3f([0,-0.5,0]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Billboard({
-                          axisOfRotation : new SFVec3f([0,1,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               geometry : new SFNode(
                                 new Text({
                                   DEF : new SFString("CenterTextNode"),
@@ -146,17 +131,10 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([10,-0.5,10]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Billboard({
-                          axisOfRotation : new SFVec3f([0,1,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               geometry : new SFNode(
                                 new Text({
                                   string : new MFString(["10 0 10"]),
@@ -169,17 +147,10 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([10,-0.5,-10]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Billboard({
-                          axisOfRotation : new SFVec3f([0,1,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               geometry : new SFNode(
                                 new Text({
                                   string : new MFString(["10 0 -10"]),
@@ -192,17 +163,10 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([-10,-0.5,10]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Billboard({
-                          axisOfRotation : new SFVec3f([0,1,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               geometry : new SFNode(
                                 new Text({
                                   string : new MFString(["-10 0 10"]),
@@ -215,17 +179,10 @@ var X3D0 =  new X3D({
 
                     new Transform({
                       translation : new SFVec3f([-10,-0.5,-10]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Billboard({
-                          axisOfRotation : new SFVec3f([0,1,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               geometry : new SFNode(
                                 new Text({
                                   string : new MFString(["-10 0 -10"]),

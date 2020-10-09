@@ -109,19 +109,13 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new Transform({
               DEF : new SFString("F16Transform"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Transform({
                   DEF : new SFString("MainFrameTransform"),
                   scale : new SFVec3f([3,3,3]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("Nose"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -144,8 +138,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("Canopy"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -167,8 +159,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("MainBodyAndWingEdges"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -189,8 +179,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("ExhaustExitFlatPanel"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -211,8 +199,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("ExhaustEntranceFrontBottomPart"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -233,8 +219,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("ThirdPartFromNoseUnderCanopy"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -255,8 +239,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("RearExhaustExitPartLastPartOfMainBody"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -278,8 +260,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("WingsAndTail"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -301,8 +281,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("SecondPartAfterNose"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -326,85 +304,59 @@ var X3D0 =  new X3D({
                   rotation : new SFRotation([1,0,0,-0.1]),
                   scale : new SFVec3f([0.045,0.045,0.045]),
                   translation : new SFVec3f([0,1,-10]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Inline({
-                      url : new MFString(["Cockpit.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d","Cockpit.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                      url : new MFString(["Cockpit.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.x3d","Cockpit.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Cockpit.wrl"])})])}),
 
                 new Transform({
                   DEF : new SFString("SeatTransform"),
                   rotation : new SFRotation([-1,0,0,-0.1]),
                   scale : new SFVec3f([0.9,0.9,0.9]),
                   translation : new SFVec3f([0,0,-8.3]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Inline({
-                      url : new MFString(["Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                      url : new MFString(["Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"])})])}),
 
                 new Transform({
                   DEF : new SFString("FrontWheelTransform"),
                   center : new SFVec3f([0,2.5,0]),
                   rotation : new SFRotation([-1,0,0,1.92]),
                   translation : new SFVec3f([0.7,-5.2,-6.5]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   { "#comment" : new CommentsBlock("Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)") },
                   children : new MFNode([
                     new Inline({
-                      url : new MFString(["FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                      url : new MFString(["FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"])})])}),
 
                 new Transform({
                   DEF : new SFString("RearLeftWheelTransform"),
                   center : new SFVec3f([0,2.5,0]),
                   rotation : new SFRotation([1,0,1,1.92]),
                   translation : new SFVec3f([-2.95,-5,7]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   { "#comment" : new CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)") },
                   children : new MFNode([
                     new Inline({
-                      url : new MFString(["RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                      url : new MFString(["RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"])})])}),
 
                 new Transform({
                   DEF : new SFString("RearRightWheelTransform"),
                   center : new SFVec3f([0,2.5,0]),
                   rotation : new SFRotation([-1,0,-1,1.92]),
                   translation : new SFVec3f([2.95,-5,7]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   { "#comment" : new CommentsBlock("Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)") },
                   children : new MFNode([
                     new Inline({
-                      url : new MFString(["RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                      url : new MFString(["RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"])})])}),
 
                 new Transform({
                   DEF : new SFString("CockpitButtonsTransform"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("UpButtonTransform"),
                       rotation : new SFRotation([1,0,0,1.57]),
                       scale : new SFVec3f([0.008,0.008,0.008]),
                       translation : new SFVec3f([-0.95,1.05,-10]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Cylinder({
                               height : new SFFloat(1),
@@ -425,12 +377,8 @@ var X3D0 =  new X3D({
                       rotation : new SFRotation([1,0,0,1.57]),
                       scale : new SFVec3f([0.008,0.008,0.008]),
                       translation : new SFVec3f([-0.83,1.05,-10]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Cylinder({
                               height : new SFFloat(1),
@@ -450,12 +398,8 @@ var X3D0 =  new X3D({
                       DEF : new SFString("GearUpTextTransform"),
                       scale : new SFVec3f([0.06,0.06,0.06]),
                       translation : new SFVec3f([-0.65,1.55,-10]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Text({
                               string : new MFString(["RED Button","Gear Up"])})),
@@ -469,12 +413,8 @@ var X3D0 =  new X3D({
                       DEF : new SFString("GearDownTextTransform"),
                       scale : new SFVec3f([0.06,0.06,0.06]),
                       translation : new SFVec3f([-0.65,1.35,-10]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Text({
                               length : new MFFloat([5.5]),
@@ -490,12 +430,8 @@ var X3D0 =  new X3D({
                       rotation : new SFRotation([1,0,0,1.57]),
                       scale : new SFVec3f([0.008,0.008,0.008]),
                       translation : new SFVec3f([0.52,1.6,-10]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Cylinder({
                               height : new SFFloat(1),
@@ -515,12 +451,8 @@ var X3D0 =  new X3D({
                       DEF : new SFString("FireTextTransform"),
                       scale : new SFVec3f([0.06,0.06,0.06]),
                       translation : new SFVec3f([0.36,1.5,-10]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Text({
                               string : new MFString(["Target Locked"," FIRE!..","(Green Button)"])})),
@@ -565,12 +497,8 @@ var X3D0 =  new X3D({
                   DEF : new SFString("NoseAntennaTransform"),
                   rotation : new SFRotation([1,0,0,1.57]),
                   translation : new SFVec3f([0,-0.275,-21]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       geometry : new SFNode(
                         new Cylinder({
                           radius : new SFFloat(0.05)})),
@@ -756,22 +684,16 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([-1,0,0,1.57]),
               scale : new SFVec3f([1.4,1.4,1.4]),
               translation : new SFVec3f([15.65,0,4.5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("Amraam"),
-                  url : new MFString(["../../Weapons/Missiles/Amraam.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d","../../Weapons/Missiles/Amraam.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                  url : new MFString(["../../Weapons/Missiles/Amraam.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d","../../Weapons/Missiles/Amraam.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"])})])}),
 
             new Transform({
               DEF : new SFString("LeftmostAmraamTransform"),
               rotation : new SFRotation([-1,0,0,1.57]),
               scale : new SFVec3f([1.4,1.4,1.4]),
               translation : new SFVec3f([-15.65,0,4.5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   USE : new SFString("Amraam")})])}),
@@ -781,22 +703,16 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([0,1,0,1.57]),
               scale : new SFVec3f([6,3,3]),
               translation : new SFVec3f([9,-1.125,8]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("SidewinderHolder"),
-                  url : new MFString(["SidewinderHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d","SidewinderHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                  url : new MFString(["SidewinderHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.x3d","SidewinderHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/SidewinderHolder.wrl"])})])}),
 
             new Transform({
               DEF : new SFString("SidewinderHolderTransformLeft"),
               rotation : new SFRotation([0,1,0,1.57]),
               scale : new SFVec3f([6,3,3]),
               translation : new SFVec3f([-8.45,-1.125,8]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   USE : new SFString("SidewinderHolder")})])}),
@@ -806,44 +722,30 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([0,-1,0,1.57]),
               scale : new SFVec3f([0.3,0.25,0.3]),
               translation : new SFVec3f([-0.01,8,19.5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["TurkishFlagLeft.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d","TurkishFlagLeft.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                  url : new MFString(["TurkishFlagLeft.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.x3d","TurkishFlagLeft.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagLeft.wrl"])})])}),
 
             new Transform({
               DEF : new SFString("TurkishFlagTransformRight"),
               rotation : new SFRotation([0,1,0,1.57]),
               scale : new SFVec3f([0.3,0.25,0.3]),
               translation : new SFVec3f([0.01,8,20.5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["TurkishFlagRight.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d","TurkishFlagRight.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                  url : new MFString(["TurkishFlagRight.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.x3d","TurkishFlagRight.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/TurkishFlagRight.wrl"])})])}),
 
             new Transform({
               DEF : new SFString("AmraamHolderTransformLeft"),
               translation : new SFVec3f([-12,-0.176,10.7]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("AmraamHolder"),
-                  url : new MFString(["AmraamHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d","AmraamHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                  url : new MFString(["AmraamHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.x3d","AmraamHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/AmraamHolder.wrl"])})])}),
 
             new Transform({
               DEF : new SFString("AmraamHolderTransformRight"),
               translation : new SFVec3f([12,-0.176,10.7]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   USE : new SFString("AmraamHolder")})])}),
@@ -853,8 +755,6 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([-1,0,0,1.57]),
               scale : new SFVec3f([1.4,1.4,1.4]),
               translation : new SFVec3f([12,-1.6,4.5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   USE : new SFString("Amraam")})])}),
@@ -864,8 +764,6 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([-1,0,0,1.57]),
               scale : new SFVec3f([1.4,1.4,1.4]),
               translation : new SFVec3f([-12,-1.6,4.5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   USE : new SFString("Amraam")})])}),
@@ -875,22 +773,16 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([-1,0,0,1.57]),
               scale : new SFVec3f([1.6,1.6,1.6]),
               translation : new SFVec3f([-8.7,-2,3.5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("Sidewinder"),
-                  url : new MFString(["../../Weapons/Missiles/Sidewinder.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d","../../Weapons/Missiles/Sidewinder.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                  url : new MFString(["../../Weapons/Missiles/Sidewinder.x3d","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.x3d","../../Weapons/Missiles/Sidewinder.wrl","https://savage.nps.edu/Savage/Weapons/Missiles/Sidewinder.wrl"])})])}),
 
             new Transform({
               DEF : new SFString("SidewinderTransformRight"),
               rotation : new SFRotation([-1,0,0,1.57]),
               scale : new SFVec3f([1.6,1.6,1.6]),
               translation : new SFVec3f([8.7,-2,3.5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   USE : new SFString("Sidewinder")})])}),
@@ -900,22 +792,16 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([0,1,0,1.57]),
               scale : new SFVec3f([1.5,1.5,1.5]),
               translation : new SFVec3f([-4.8,-1.125,6]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("FuelTankHolder"),
-                  url : new MFString(["FuelTankHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d","FuelTankHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                  url : new MFString(["FuelTankHolder.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.x3d","FuelTankHolder.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTankHolder.wrl"])})])}),
 
             new Transform({
               DEF : new SFString("FuelTankHolderTransformRight"),
               rotation : new SFRotation([0,1,0,1.57]),
               scale : new SFVec3f([1.5,1.5,1.5]),
               translation : new SFVec3f([5.3,-1.125,6]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   USE : new SFString("FuelTankHolder")})])}),
@@ -925,38 +811,27 @@ var X3D0 =  new X3D({
               rotation : new SFRotation([-1,0,0,1.57]),
               scale : new SFVec3f([1.5,1.5,1.5]),
               translation : new SFVec3f([5,-2.85,5.5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("FuelTank"),
-                  url : new MFString(["FuelTank.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d","FuelTank.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                  url : new MFString(["FuelTank.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.x3d","FuelTank.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FuelTank.wrl"])})])}),
 
             new Transform({
               DEF : new SFString("FuelTankTransformLeft"),
               rotation : new SFRotation([-1,0,0,1.57]),
               scale : new SFVec3f([1.5,1.5,1.5]),
               translation : new SFVec3f([-5,-2.85,5.5]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
                   USE : new SFString("FuelTank")})])}),
 
             new Transform({
               DEF : new SFString("InlineCoverOfPlaneTansform"),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   geometry : new SFNode(
                     new Box({
-                      size : new SFVec3f([4.15,0.1,20]),
-                      solid : new SFBool(true)})),
+                      size : new SFVec3f([4.15,0.1,20])})),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -966,13 +841,9 @@ var X3D0 =  new X3D({
             new Transform({
               DEF : new SFString("TargetHelicopterTransform"),
               translation : new SFVec3f([16,-50,-500]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["Target.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d","Target.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl"]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1])})])}),
+                  url : new MFString(["Target.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.x3d","Target.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Target.wrl"])})])}),
 
             new TimeSensor({
               DEF : new SFString("FireClock"),

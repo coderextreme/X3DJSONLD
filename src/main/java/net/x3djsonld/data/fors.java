@@ -6,6 +6,7 @@ import org.web3d.x3d.jsail.Geometry3D.*;
 import org.web3d.x3d.jsail.Grouping.*;
 import org.web3d.x3d.jsail.Interpolation.*;
 import org.web3d.x3d.jsail.PointingDeviceSensor.*;
+import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Text.*;
 import org.web3d.x3d.jsail.Time.*;
@@ -99,7 +100,15 @@ public class fors
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(0.0,0.0,1.0))))))
         .addChild(new PositionInterpolator("NodePosition").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,5.0,0.0})))
-        .addChild(new X3DScript("MoveBall")
+        .addChild(new Script("MoveBall").setSourceCode("\n" + 
+"\n" + 
+"ecmascript:" + "\n" + 
+"					function set_cycle(value) {" + "\n" + 
+"                                                old = translation;" + "\n" + 
+"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);" + "\n" + 
+"                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
+"						// Browser.println(translation);" + "\n" + 
+"					}" + "\n")
           .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(50.0,50.0,0.0)))
           .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -118,7 +127,29 @@ public class fors
           .setGeometry(new Extrusion("extrusion").setCreaseAngle(0.785).setCrossSection(new MFVec2f(new double[] {1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00})).setSpine(new MFVec3f(new double[] {0.0,-50.0,0.0,0.0,50.0,0.0})))
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0))))
-        .addChild(new X3DScript("MoveCylinder")
+        .addChild(new Script("MoveCylinder").setSourceCode("\n" + 
+"\n" + 
+"ecmascript:" + "\n" + 
+"\n" + 
+"                function set_endA(value) {" + "\n" + 
+"		    if (typeof spine === 'undefined') {" + "\n" + 
+"		        spine = new MFVec3f([value, value]);" + "\n" + 
+"		    } else {" + "\n" + 
+"		        spine = new MFVec3f([value, spine[1]]);" + "\n" + 
+"		    }" + "\n" + 
+"                }" + "\n" + 
+"                " + "\n" + 
+"                function set_endB(value) {" + "\n" + 
+"		    if (typeof spine === 'undefined') {" + "\n" + 
+"		        spine = new MFVec3f([value, value]);" + "\n" + 
+"		    } else {" + "\n" + 
+"		        spine = new MFVec3f([spine[0], value]);" + "\n" + 
+"		    }" + "\n" + 
+"                }" + "\n" + 
+"                " + "\n" + 
+"                function set_spine(value) {" + "\n" + 
+"                    spine = value;" + "\n" + 
+"                }" + "\n")
           .addField(new field().setName("spine").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3f(new MFVec3f(new double[] {0.0,-50.0,0.0,0.0,50.0,0.0}))))
           .addField(new field().setName("set_endA").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setName("set_endB").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))

@@ -15,7 +15,6 @@ import { CommentsBlock } from './x3d.mjs';
 import { ProtoBody } from './x3d.mjs';
 import { Switch } from './x3d.mjs';
 import { SFInt32 } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
@@ -30,7 +29,7 @@ import { connect } from './x3d.mjs';
 import { Extrusion } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
 import { SFFloat } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
+import { Script } from './x3d.mjs';
 import { SFBool } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
@@ -169,23 +168,15 @@ var X3D0 =  new X3D({
                     new Switch({
                       DEF : new SFString("VisibilitySwitch"),
                       whichChoice : new SFInt32(-1),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Transform({
                           DEF : new SFString("PositionTransform"),
                           rotation : new SFRotation([0,1,0,3.14159]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Transform({
                               DEF : new SFString("OrientationTransform"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   geometry : new SFNode(
                                     new IndexedLineSet({
                                       DEF : new SFString("FrustumLines"),
@@ -206,8 +197,6 @@ var X3D0 =  new X3D({
                                                   protoField : new SFString("lineColor")})])}))}))}))}),
 
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   geometry : new SFNode(
                                     new Extrusion({
                                       DEF : new SFString("FrustumExtrusion")})),
@@ -228,16 +217,14 @@ var X3D0 =  new X3D({
                                                   protoField : new SFString("transparency")})])}))}))}))}),
 
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   geometry : new SFNode(
                                     new Sphere({
                                       radius : new SFFloat(0.08)})),
                                   appearance : new SFNode(
                                     new Appearance({
                                       USE : new SFString("FrustumAppearance")}))})])})])})])}),
-                  X3DScript : new SFNode(
-                    new X3DScript({
+
+                    new Script({
                       DEF : new SFString("GeometryComputationScript"),
                       directOutput : new SFBool(true),
                       url : new MFString(["ViewFrustumPrototypeScript.js"]),
@@ -343,7 +330,7 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("trace"),
-                              protoField : new SFString("trace")})])}))])})),
+                              protoField : new SFString("trace")})])}))])}),
 
                     new ROUTE({
                       fromField : new SFString("visibilitySwitchSelection"),
@@ -385,12 +372,8 @@ var X3D0 =  new X3D({
             new Anchor({
               description : new SFString("ViewFrustum Example"),
               url : new MFString(["ViewFrustumExample.x3d"]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(

@@ -10,9 +10,7 @@ import { Scene } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { Text } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
@@ -94,12 +92,9 @@ var X3D0 =  new X3D({
               description : new SFString("Hello MFString syntax")}),
 
             new Background({
-              skyColor : new MFColor([0.6,1,0.8]),
-              transparency : new SFFloat(0)}),
+              skyColor : new MFColor([0.6,1,0.8])}),
 
             new Shape({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               geometry : new SFNode(
                 new Text({
                   string : new MFString(["One, Two, Three","","He said, \"Immel did it!\""]),

@@ -20,5 +20,20 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
       .setScene((new autoclass.Scene())
-        .setX3DScript((new autoclass.X3DScript()).setDEF("Clouds")))      ;
+        .addChild((new autoclass.Script()).setDEF("Browser")
+          .setSourceCode("ecmascript:\n"+
+"                function initialize() {\n"+
+"		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
+"                }"))
+        .addChild((new autoclass.Script()).setDEF("Clouds")
+          .setSourceCode("ecmascript:\n"+
+"\n"+
+"\n"+
+"function cumulustranslation() // These values designate the boundary location of the cloud\n"+
+"{\n"+
+"var xxx = ' '+' '+\n"+
+"'	Transform		\\n'+\n"+
+"'    ' + '               	\\n';\n"+
+"\n"+
+"}")))      ;
     X3D0.toFileX3D("../data/browser.new.x3d");

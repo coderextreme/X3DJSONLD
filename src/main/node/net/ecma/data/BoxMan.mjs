@@ -13,7 +13,6 @@ import { WorldInfo } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 import { HAnimHumanoid } from './x3d.mjs';
 import { HAnimJoint } from './x3d.mjs';
@@ -27,6 +26,7 @@ import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
+import { SFFloat } from './x3d.mjs';
 import { HAnimSite } from './x3d.mjs';
 import { Coordinate } from './x3d.mjs';
 import { MFVec3f } from './x3d.mjs';
@@ -39,6 +39,8 @@ import { ExternProtoDeclare } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ProtoInstance } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
+import { Script } from './x3d.mjs';
+import { SFBool } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -182,8 +184,7 @@ var X3D0 =  new X3D({
 
             new Background({
               groundColor : new MFColor([0.6,0.6,0.6]),
-              skyColor : new MFColor([0.75,0.75,0.75]),
-              transparency : new SFFloat(0)}),
+              skyColor : new MFColor([0.75,0.75,0.75])}),
           { "#comment" : new CommentsBlock("When converting to VRML97 (which didn't include H-Anim), H-Anim node prototypes are provided automatically by the X3dToVrml97.xslt translation stylesheet") },
 
             new HAnimHumanoid({
@@ -198,8 +199,6 @@ var X3D0 =  new X3D({
                   center : new SFVec3f([0,0.9723,-0.0728]),
                   skinCoordIndex : new MFInt32([0,1,2,3,4,5,6,7,8,9,10,11]),
                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new HAnimSegment({
                       name : new SFString("sacrum"),
@@ -207,13 +206,9 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Transform({
                           translation : new SFVec3f([0,0.9723,-0.0728]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
                               DEF : new SFString("SphereYellow"),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -229,8 +224,6 @@ var X3D0 =  new X3D({
                       center : new SFVec3f([0.0956,0.9364,0]),
                       skinCoordIndex : new MFInt32([12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]),
                       skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("l_thigh"),
@@ -238,8 +231,6 @@ var X3D0 =  new X3D({
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([0.0956,0.9364,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
                                   USE : new SFString("SphereYellow")})])})])}),
@@ -250,8 +241,6 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0.0956,0.5095,-0.0036]),
                           skinCoordIndex : new MFInt32([36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63]),
                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("l_calf"),
@@ -259,8 +248,6 @@ var X3D0 =  new X3D({
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0.0956,0.5095,-0.0036]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new Shape({
                                       USE : new SFString("SphereYellow")})])})])}),
@@ -271,8 +258,6 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([0.0946,0.0762,-0.0261]),
                               skinCoordIndex : new MFInt32([64,65,66,67,68,69,70,71]),
                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("l_hindfoot"),
@@ -280,8 +265,6 @@ var X3D0 =  new X3D({
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0.0946,0.0762,-0.0261]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                       children : new MFNode([
                                         new Shape({
                                           USE : new SFString("SphereYellow")})])})])}),
@@ -292,8 +275,6 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([0.1079,0.0317,0.067]),
                                   skinCoordIndex : new MFInt32([72,73,74,75,76,77,78,79]),
                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("l_middistal"),
@@ -301,8 +282,6 @@ var X3D0 =  new X3D({
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([0.1079,0.0317,0.067]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("SphereYellow")})])}),
@@ -311,13 +290,9 @@ var X3D0 =  new X3D({
                                           name : new SFString("l_middistal_tip"),
                                           DEF : new SFString("boxman_l_middistal_tip"),
                                           translation : new SFVec3f([0.095,0.0005,0.1924]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                           children : new MFNode([
                                             new Shape({
                                               DEF : new SFString("SphereRed"),
-                                              bboxCenter : new SFVec3f([0,0,0]),
-                                              bboxSize : new SFVec3f([-1,-1,-1]),
                                               appearance : new SFNode(
                                                 new Appearance({
                                                   material : new SFNode(
@@ -333,8 +308,6 @@ var X3D0 =  new X3D({
                       center : new SFVec3f([-0.0956,0.9364,0]),
                       skinCoordIndex : new MFInt32([80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111]),
                       skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("r_thigh"),
@@ -342,8 +315,6 @@ var X3D0 =  new X3D({
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([-0.0956,0.9364,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
                                   USE : new SFString("SphereYellow")})])})])}),
@@ -354,8 +325,6 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([-0.0956,0.5095,-0.0036]),
                           skinCoordIndex : new MFInt32([104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131]),
                           skinCoordWeight : new MFFloat([0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("r_calf"),
@@ -363,8 +332,6 @@ var X3D0 =  new X3D({
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([-0.0956,0.5095,-0.0036]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new Shape({
                                       USE : new SFString("SphereYellow")})])})])}),
@@ -375,8 +342,6 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([-0.0946,0.0762,-0.0261]),
                               skinCoordIndex : new MFInt32([132,133,134,135,136,137,138,139]),
                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("r_hindfoot"),
@@ -384,8 +349,6 @@ var X3D0 =  new X3D({
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([-0.0946,0.0762,-0.0261]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                       children : new MFNode([
                                         new Shape({
                                           USE : new SFString("SphereYellow")})])})])}),
@@ -396,8 +359,6 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([-0.1079,0.0317,0.067]),
                                   skinCoordIndex : new MFInt32([140,141,142,143,144,145,146,147]),
                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("r_middistal"),
@@ -405,8 +366,6 @@ var X3D0 =  new X3D({
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-0.1079,0.0317,0.067]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("SphereYellow")})])}),
@@ -415,8 +374,6 @@ var X3D0 =  new X3D({
                                           name : new SFString("r_middistal_tip"),
                                           DEF : new SFString("boxman_r_middistal_tip"),
                                           translation : new SFVec3f([-0.095,0.0005,0.1924]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("SphereRed")})])})])})])})])})])})])}),
@@ -427,8 +384,6 @@ var X3D0 =  new X3D({
                       center : new SFVec3f([0,1.0817,-0.0728]),
                       skinCoordIndex : new MFInt32([148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167]),
                       skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("l5"),
@@ -436,8 +391,6 @@ var X3D0 =  new X3D({
                           children : new MFNode([
                             new Transform({
                               translation : new SFVec3f([0,1.0817,-0.0728]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
                                   USE : new SFString("SphereYellow")})])})])}),
@@ -448,8 +401,6 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0,1.644,0.036]),
                           skinCoordIndex : new MFInt32([168,169,170,171,172,173,174,175]),
                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("skull"),
@@ -457,8 +408,6 @@ var X3D0 =  new X3D({
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0,1.644,0.036]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new Shape({
                                       USE : new SFString("SphereYellow")})])}),
@@ -467,8 +416,6 @@ var X3D0 =  new X3D({
                                   name : new SFString("skull_tip"),
                                   DEF : new SFString("boxman_skull_tip"),
                                   translation : new SFVec3f([-0.0029,1.7771,0.0274]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new Shape({
                                       USE : new SFString("SphereYellow")})])})])})])}),
@@ -479,8 +426,6 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([0.1968,1.4642,-0.0265]),
                           skinCoordIndex : new MFInt32([176,177,178,179,180,181,182,183]),
                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("l_upperarm"),
@@ -488,8 +433,6 @@ var X3D0 =  new X3D({
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([0.1968,1.4642,-0.0265]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new Shape({
                                       USE : new SFString("SphereYellow")})])})])}),
@@ -500,8 +443,6 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([0.1982,1.1622,-0.0557]),
                               skinCoordIndex : new MFInt32([184,185,186,187,188,189,190,191]),
                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("l_forearm"),
@@ -509,8 +450,6 @@ var X3D0 =  new X3D({
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([0.1982,1.1622,-0.0557]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                       children : new MFNode([
                                         new Shape({
                                           USE : new SFString("SphereYellow")})])})])}),
@@ -521,8 +460,6 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([0.1972,0.8929,-0.069]),
                                   skinCoordIndex : new MFInt32([192,193,194,195,196,197,198,199]),
                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("l_hand"),
@@ -530,8 +467,6 @@ var X3D0 =  new X3D({
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([0.1972,0.8929,-0.069]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("SphereYellow")})])}),
@@ -540,8 +475,6 @@ var X3D0 =  new X3D({
                                           name : new SFString("l_hand_tip"),
                                           DEF : new SFString("boxman_l_hand_tip"),
                                           translation : new SFVec3f([0.1912,0.6976,-0.071]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("SphereRed")})])})])})])})])})])}),
@@ -552,8 +485,6 @@ var X3D0 =  new X3D({
                           center : new SFVec3f([-0.1968,1.4642,-0.0265]),
                           skinCoordIndex : new MFInt32([200,201,202,203,204,205,206,207]),
                           skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new HAnimSegment({
                               name : new SFString("r_upperarm"),
@@ -561,8 +492,6 @@ var X3D0 =  new X3D({
                               children : new MFNode([
                                 new Transform({
                                   translation : new SFVec3f([-0.1968,1.4642,-0.0265]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new Shape({
                                       USE : new SFString("SphereYellow")})])})])}),
@@ -573,8 +502,6 @@ var X3D0 =  new X3D({
                               center : new SFVec3f([-0.1982,1.1622,-0.0557]),
                               skinCoordIndex : new MFInt32([208,209,210,211,212,213,214,215]),
                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new HAnimSegment({
                                   name : new SFString("r_forearm"),
@@ -582,8 +509,6 @@ var X3D0 =  new X3D({
                                   children : new MFNode([
                                     new Transform({
                                       translation : new SFVec3f([-0.1982,1.1622,-0.0557]),
-                                      bboxCenter : new SFVec3f([0,0,0]),
-                                      bboxSize : new SFVec3f([-1,-1,-1]),
                                       children : new MFNode([
                                         new Shape({
                                           USE : new SFString("SphereYellow")})])})])}),
@@ -594,8 +519,6 @@ var X3D0 =  new X3D({
                                   center : new SFVec3f([-0.1972,0.8929,-0.069]),
                                   skinCoordIndex : new MFInt32([216,217,218,219,220,221,222,223]),
                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   children : new MFNode([
                                     new HAnimSegment({
                                       name : new SFString("r_hand"),
@@ -603,8 +526,6 @@ var X3D0 =  new X3D({
                                       children : new MFNode([
                                         new Transform({
                                           translation : new SFVec3f([-0.1972,0.8929,-0.069]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("SphereYellow")})])}),
@@ -613,8 +534,6 @@ var X3D0 =  new X3D({
                                           name : new SFString("r_hand_tip"),
                                           DEF : new SFString("boxman_r_hand_tip"),
                                           translation : new SFVec3f([-0.1912,0.6976,-0.071]),
-                                          bboxCenter : new SFVec3f([0,0,0]),
-                                          bboxSize : new SFVec3f([-1,-1,-1]),
                                           children : new MFNode([
                                             new Shape({
                                               USE : new SFString("SphereRed")})])})])})])})])})])})])})])})),
@@ -628,13 +547,9 @@ var X3D0 =  new X3D({
                   point : new MFVec3f([-0.05,1,0.05,0.05,1,0.05,0.03,0.97,-0.1,-0.03,0.97,-0.1,0.03,0.94,-0.075,-0.03,0.94,-0.075,0,0.92,0,0,0.94,0.03,-0.12,1.06,0.05,0.12,1.06,0.05,0.12,1.06,-0.1,-0.12,1.06,-0.1,0.0456,0.9364,0.05,0.1456,0.9364,0.05,0.1456,0.9364,-0.05,0.0456,0.9364,-0.05,0.0456,0.9,0.05,0.1456,0.9,0.05,0.1456,0.9,-0.05,0.0456,0.9,-0.05,0.0456,0.8,0.05,0.1456,0.8,0.05,0.1456,0.8,-0.05,0.0456,0.8,-0.05,0.0456,0.7,0.05,0.1456,0.7,0.05,0.1456,0.7,-0.05,0.0456,0.7,-0.05,0.0456,0.6,0.05,0.1456,0.6,0.05,0.1456,0.6,-0.05,0.0456,0.6,-0.05,0.0456,0.55,0.05,0.1456,0.55,0.05,0.1456,0.55,-0.05,0.0456,0.55,-0.05,0.0456,0.52,0.05,0.1456,0.52,0.05,0.1456,0.52,-0.05,0.0456,0.52,-0.05,0.0456,0.5,0.05,0.1456,0.5,0.05,0.1456,0.5,-0.05,0.0456,0.5,-0.05,0.0454,0.43,0.045,0.1454,0.43,0.045,0.1454,0.43,-0.055,0.0454,0.43,-0.055,0.0452,0.36,0.04,0.1452,0.36,0.04,0.1452,0.36,-0.06,0.0452,0.36,-0.06,0.045,0.29,0.035,0.145,0.29,0.035,0.145,0.29,-0.065,0.045,0.29,-0.065,0.0448,0.21,0.03,0.1448,0.21,0.03,0.1448,0.21,-0.07,0.0448,0.21,-0.07,0.0446,0.1262,0.025,0.1446,0.1262,0.025,0.1446,0.1262,-0.075,0.0446,0.1262,-0.075,0.0446,0.0762,0.025,0.1446,0.0762,0.025,0.1446,0,-0.075,0.0446,0,-0.075,0.0446,0.0562,0.057,0.1446,0.0562,0.057,0.1446,0,0.057,0.0446,0,0.057,0.0446,0.0562,0.087,0.1446,0.0562,0.087,0.1446,0,0.087,0.0446,0,0.087,0.0446,0.0562,0.1924,0.1446,0.0562,0.1924,0.1446,0,0.1924,0.0446,0,0.1924,-0.0456,0.9364,0.05,-0.1456,0.9364,0.05,-0.1456,0.9364,-0.05,-0.0456,0.9364,-0.05,-0.0456,0.9,0.05,-0.1456,0.9,0.05,-0.1456,0.9,-0.05,-0.0456,0.9,-0.05,-0.0456,0.8,0.05,-0.1456,0.8,0.05,-0.1456,0.8,-0.05,-0.0456,0.8,-0.05,-0.0456,0.7,0.05,-0.1456,0.7,0.05,-0.1456,0.7,-0.05,-0.0456,0.7,-0.05,-0.0456,0.6,0.05,-0.1456,0.6,0.05,-0.1456,0.6,-0.05,-0.0456,0.6,-0.05,-0.0456,0.55,0.05,-0.1456,0.55,0.05,-0.1456,0.55,-0.05,-0.0456,0.55,-0.05,-0.0456,0.52,0.05,-0.1456,0.52,0.05,-0.1456,0.52,-0.05,-0.0456,0.52,-0.05,-0.0456,0.5,0.05,-0.1456,0.5,0.05,-0.1456,0.5,-0.05,-0.0456,0.5,-0.05,-0.0454,0.43,0.045,-0.1454,0.43,0.045,-0.1454,0.43,-0.055,-0.0454,0.43,-0.055,-0.0452,0.36,0.04,-0.1452,0.36,0.04,-0.1452,0.36,-0.06,-0.0452,0.36,-0.06,-0.045,0.29,0.035,-0.145,0.29,0.035,-0.145,0.29,-0.065,-0.045,0.29,-0.065,-0.0448,0.21,0.03,-0.1448,0.21,0.03,-0.1448,0.21,-0.07,-0.0448,0.21,-0.07,-0.0446,0.1262,0.025,-0.1446,0.1262,0.025,-0.1446,0.1262,-0.075,-0.0446,0.1262,-0.075,-0.0446,0.0762,0.025,-0.1446,0.0762,0.025,-0.1446,0,-0.075,-0.0446,0,-0.075,-0.0446,0.0562,0.057,-0.1446,0.0562,0.057,-0.1446,0,0.057,-0.0446,0,0.057,-0.0446,0.0562,0.087,-0.1446,0.0562,0.087,-0.1446,0,0.087,-0.0446,0,0.087,-0.0446,0.0562,0.1924,-0.1446,0.0562,0.1924,-0.1446,0,0.1924,-0.0446,0,0.1924,-0.12,1.1,0.05,0.12,1.1,0.05,0.12,1.1,-0.1,-0.12,1.1,-0.1,-0.14,1.42,0.045,0.14,1.42,0.045,0.14,1.42,-0.09,-0.14,1.42,-0.09,-0.24,1.52,0.035,0.24,1.52,0.035,0.24,1.52,-0.09,-0.24,1.52,-0.09,-0.05,1.56,0.03,0.05,1.56,0.03,0.05,1.56,-0.06,-0.05,1.56,-0.06,-0.05,1.6,0.06,0.05,1.6,0.06,0.05,1.62,-0.03,-0.05,1.62,-0.03,-0.07,1.777,0.13,0.07,1.777,0.13,0.07,1.777,-0.03,-0.07,1.777,-0.03,-0.07,1.6,0.13,0.07,1.6,0.13,0.07,1.66,-0.03,-0.07,1.66,-0.03,0.16,1.42,0.015,0.24,1.5,0.015,0.24,1.5,-0.075,0.16,1.42,-0.075,0.17,1.18,-0.025,0.23,1.18,-0.025,0.23,1.18,-0.085,0.17,1.18,-0.085,0.17,1.14,-0.025,0.23,1.14,-0.025,0.23,1.14,-0.085,0.17,1.14,-0.085,0.18,0.91,-0.05,0.22,0.91,-0.05,0.22,0.91,-0.09,0.18,0.91,-0.09,0.18,0.87,-0.02,0.22,0.87,-0.02,0.22,0.87,-0.1,0.18,0.87,-0.1,0.18,0.6976,-0.02,0.22,0.6976,-0.02,0.22,0.6976,-0.1,0.18,0.6976,-0.1,-0.16,1.42,0.015,-0.24,1.5,0.015,-0.24,1.5,-0.075,-0.16,1.42,-0.075,-0.17,1.18,-0.025,-0.23,1.18,-0.025,-0.23,1.18,-0.085,-0.17,1.18,-0.085,-0.17,1.14,-0.025,-0.23,1.14,-0.025,-0.23,1.14,-0.085,-0.17,1.14,-0.085,-0.18,0.91,-0.05,-0.22,0.91,-0.05,-0.22,0.91,-0.09,-0.18,0.91,-0.09,-0.18,0.87,-0.02,-0.22,0.87,-0.02,-0.22,0.87,-0.1,-0.18,0.87,-0.1,-0.18,0.6976,-0.02,-0.22,0.6976,-0.02,-0.22,0.6976,-0.1,-0.18,0.6976,-0.1])})),
               skin : new SFNode(
                 new Group({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("TrouserSkin"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -651,8 +566,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("ShoeSkin"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -669,8 +582,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("ShirtSkin"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -687,8 +598,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("HeadHandsFleshToneSkin"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -705,8 +614,6 @@ var X3D0 =  new X3D({
 
                     new Shape({
                       DEF : new SFString("SkinLines"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       appearance : new SFNode(
                         new Appearance({
                           material : new SFNode(
@@ -840,8 +747,6 @@ var X3D0 =  new X3D({
                 new HAnimSite({
                   name : new SFString("BoxMan_view"),
                   DEF : new SFString("boxman_BoxMan_view"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   children : new MFNode([
                     new Viewpoint({
                       DEF : new SFString("Inclined_View"),
@@ -1113,6 +1018,53 @@ var X3D0 =  new X3D({
               fromNode : new SFString("ANIMATOR"),
               toField : new SFString("set_rotation"),
               toNode : new SFString("boxman_r_wrist")}),
+
+            new Script({
+              DEF : new SFString("ENGINE"),
+              directOutput : new SFBool(true),
+              url : new MFString(["BoxMan.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxMan.js"]),
+              field : new MFNode([
+                new field({
+                  type : field.TYPE_SFROTATION,
+                  name : new SFString("update"),
+                  accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                new field({
+                  type : field.TYPE_SFNODE,
+                  name : new SFString("humanoid"),
+                  accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                  children : new MFNode([
+                    new HAnimHumanoid({
+                      USE : new SFString("boxman_Humanoid")})])}),
+
+                new field({
+                  type : field.TYPE_MFVEC3F,
+                  name : new SFString("coordList"),
+                  accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY)}),
+
+                new field({
+                  type : field.TYPE_SFNODE,
+                  name : new SFString("joint"),
+                  accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                  { "#comment" : new CommentsBlock("initialization node (if any) goes here") }}),
+
+                new field({
+                  type : field.TYPE_SFVEC3F,
+                  name : new SFString("translation"),
+                  accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                  value : new SFString("0 0 0")}),
+
+                new field({
+                  type : field.TYPE_SFROTATION,
+                  name : new SFString("rotation"),
+                  accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                  value : new SFString("1 0 0 0")}),
+
+                new field({
+                  type : field.TYPE_SFVEC3F,
+                  name : new SFString("scale"),
+                  accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                  value : new SFString("1 1 1")})])}),
           { "#comment" : new CommentsBlock("Trigger calculation after each animation change") },
           { "#comment" : new CommentsBlock("<ROUTE fromField='rotation_changed' fromNode='boxman_r_wrist' toField='update' toNode='ENGINE'/>") }])}))});
 console.log(X3D0.toXMLNode());

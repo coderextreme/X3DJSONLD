@@ -78,16 +78,10 @@ Background16.setFrontUrl(["resources/images/bFR.png","https://coderextreme.net/X
 Background16.setLeftUrl(["resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"])
 Background16.setRightUrl(["resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"])
 Background16.setTopUrl(["resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])
-Background16.setSkyColor([0,0,0])
-Background16.setTransparency(0)
 
 Scene13.addChildren(Background16)
 Transform17 = x3d.Transform()
-Transform17.setBboxCenter([0,0,0])
-Transform17.setBboxSize([-1,-1,-1])
 Shape18 = x3d.Shape()
-Shape18.setBboxCenter([0,0,0])
-Shape18.setBboxSize([-1,-1,-1])
 Sphere19 = x3d.Sphere()
 
 Shape18.setGeometry(Sphere19)

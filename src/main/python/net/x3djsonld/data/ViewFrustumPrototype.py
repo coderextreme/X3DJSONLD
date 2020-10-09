@@ -83,7 +83,7 @@ newModel=X3D(profile='Immersive',version='3.3',
               Shape(
                 geometry=Sphere(radius=0.08),
                 appearance=Appearance(USE='FrustumAppearance'))])])]),
-        X3DScript(DEF='GeometryComputationScript',directOutput=true,url=["ViewFrustumPrototypeScript.js"],
+        Script(DEF='GeometryComputationScript',directOutput=True,url=["ViewFrustumPrototypeScript.js"],
           field=[
           field(accessType='inputOutput',appinfo='Whether or not frustum geometry is rendered',name='visible',type='SFBool'),
           field(accessType='outputOnly',appinfo='Adjust Switch selection to make geometry visible or not',name='visibilitySwitchSelection',type='SFInt32'),

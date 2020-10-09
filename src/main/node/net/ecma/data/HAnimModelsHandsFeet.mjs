@@ -13,10 +13,8 @@ import { WorldInfo } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { Inline } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
-import { undefined } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 var X3D0 =  new X3D({
 
@@ -111,89 +109,44 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([-1,1,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"]),
-                  refresh : new undefined("0"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true)}),
+                  url : new MFString(["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandLeft.wrl"])}),
               { "#comment" : new CommentsBlock("Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model") },
 
                 new Transform({
                   DEF : new SFString("GridXY_20x20Fixed_AdjustScale"),
                   scale : new SFVec3f([0.1,0.1,0.1]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true),
                   children : new MFNode([
                     new Inline({
                       DEF : new SFString("GridXY_20x20Fixed"),
-                      url : new MFString(["GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"]),
-                      refresh : new undefined("0"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
-                      bboxDisplay : new SFBool(false),
-                      visible : new SFBool(true)})])})])}),
+                      url : new MFString(["GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"])})])})])}),
 
             new Transform({
               translation : new SFVec3f([1,1,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"]),
-                  refresh : new undefined("0"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true)}),
+                  url : new MFString(["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelHandRight.wrl"])}),
 
                 new Transform({
                   USE : new SFString("GridXY_20x20Fixed_AdjustScale")})])}),
 
             new Transform({
               translation : new SFVec3f([-1,-1,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               { "#comment" : new CommentsBlock("rotation='0 0 1 3.141593'") },
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"]),
-                  refresh : new undefined("0"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true)}),
+                  url : new MFString(["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootLeft.wrl"])}),
 
                 new Transform({
                   USE : new SFString("GridXY_20x20Fixed_AdjustScale")})])}),
 
             new Transform({
               translation : new SFVec3f([1,-1,0]),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
-              bboxDisplay : new SFBool(false),
-              visible : new SFBool(true),
               { "#comment" : new CommentsBlock("rotation='0 0 1 3.141593'") },
               children : new MFNode([
                 new Inline({
-                  url : new MFString(["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"]),
-                  refresh : new undefined("0"),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
-                  bboxDisplay : new SFBool(false),
-                  visible : new SFBool(true)}),
+                  url : new MFString(["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/HAnimModelFootRight.wrl"])}),
 
                 new Transform({
                   USE : new SFString("GridXY_20x20Fixed_AdjustScale")})])})])}))});

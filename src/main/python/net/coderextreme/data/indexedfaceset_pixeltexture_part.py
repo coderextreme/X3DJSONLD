@@ -145,8 +145,6 @@ NavigationInfo29.setType(["EXAMINE","WALK","FLY","ANY"])
 
 Scene22.addChildren(NavigationInfo29)
 Shape30 = x3d.Shape()
-Shape30.setBboxCenter([0,0,0])
-Shape30.setBboxSize([-1,-1,-1])
 Appearance31 = x3d.Appearance()
 Material32 = x3d.Material()
 

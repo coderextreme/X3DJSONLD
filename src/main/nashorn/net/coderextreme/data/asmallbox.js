@@ -17,25 +17,25 @@ var ProtoInstance1 = null;
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_MFNODE).setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+              .addChild(new Shape()
                 .setGeometry(new Sphere()))))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Transform()
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
         .addChild(new ProtoDeclare().setName("one")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType(field.TYPE_MFNODE).setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
-              .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+              .addChild(new Shape()
                 .setGeometry(new Cylinder()))))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Transform()
               .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(ProtoInstance1 = new ProtoInstance().setName("one")))      ;
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
-              .setGeometry(new Box().setSize(Java.to([2,2,2], Java.type("float[]"))).setSolid(true))));
+            .addChild(new Shape()
+              .setGeometry(new Box())));
     X3D0.toFileX3D("../data/asmallbox.new.x3d");

@@ -50,16 +50,10 @@ ProtoDeclare11 = x3d.ProtoDeclare()
 ProtoDeclare11.setName("Process")
 ProtoBody12 = x3d.ProtoBody()
 Group13 = x3d.Group()
-Group13.setBboxCenter([0,0,0])
-Group13.setBboxSize([-1,-1,-1])
 #left
 Transform14 = x3d.Transform()
 Transform14.setScale([0.5,0.5,0.5])
-Transform14.setBboxCenter([0,0,0])
-Transform14.setBboxSize([-1,-1,-1])
 Shape15 = x3d.Shape()
-Shape15.setBboxCenter([0,0,0])
-Shape15.setBboxSize([-1,-1,-1])
 Appearance16 = x3d.Appearance()
 Material17 = x3d.Material()
 Material17.setDiffuseColor([0.7,1,0])
@@ -82,11 +76,7 @@ Group13.addChildren(Transform14)
 #right
 Transform19 = x3d.Transform()
 Transform19.setScale([0.5,0.5,0.5])
-Transform19.setBboxCenter([0,0,0])
-Transform19.setBboxSize([-1,-1,-1])
 Shape20 = x3d.Shape()
-Shape20.setBboxCenter([0,0,0])
-Shape20.setBboxSize([-1,-1,-1])
 Appearance21 = x3d.Appearance()
 Material22 = x3d.Material()
 Material22.setDiffuseColor([0,0.7,1])
@@ -105,11 +95,7 @@ Shape20.setGeometry(Extrusion23)
 Transform19.addChildren(Shape20)
 Transform24 = x3d.Transform()
 Transform24.setTranslation([2,0,0])
-Transform24.setBboxCenter([0,0,0])
-Transform24.setBboxSize([-1,-1,-1])
 Shape25 = x3d.Shape()
-Shape25.setBboxCenter([0,0,0])
-Shape25.setBboxSize([-1,-1,-1])
 Appearance26 = x3d.Appearance()
 Material27 = x3d.Material()
 Material27.setDEF("MaterialLightBlue")
@@ -142,11 +128,7 @@ Group13.addChildren(Transform19)
 #up
 Transform31 = x3d.Transform()
 Transform31.setScale([0.5,0.5,0.5])
-Transform31.setBboxCenter([0,0,0])
-Transform31.setBboxSize([-1,-1,-1])
 Shape32 = x3d.Shape()
-Shape32.setBboxCenter([0,0,0])
-Shape32.setBboxSize([-1,-1,-1])
 Appearance33 = x3d.Appearance()
 Material34 = x3d.Material()
 Material34.setDiffuseColor([0,0.7,1])
@@ -165,11 +147,7 @@ Shape32.setGeometry(Extrusion35)
 Transform31.addChildren(Shape32)
 Transform36 = x3d.Transform()
 Transform36.setTranslation([-0.5,2,0])
-Transform36.setBboxCenter([0,0,0])
-Transform36.setBboxSize([-1,-1,-1])
 Shape37 = x3d.Shape()
-Shape37.setBboxCenter([0,0,0])
-Shape37.setBboxSize([-1,-1,-1])
 Appearance38 = x3d.Appearance()
 Material39 = x3d.Material()
 Material39.setUSE("MaterialLightBlue")
@@ -201,11 +179,7 @@ Group13.addChildren(Transform31)
 #down
 Transform43 = x3d.Transform()
 Transform43.setScale([0.5,0.5,0.5])
-Transform43.setBboxCenter([0,0,0])
-Transform43.setBboxSize([-1,-1,-1])
 Shape44 = x3d.Shape()
-Shape44.setBboxCenter([0,0,0])
-Shape44.setBboxSize([-1,-1,-1])
 Appearance45 = x3d.Appearance()
 Material46 = x3d.Material()
 Material46.setDiffuseColor([0.7,1,0])
@@ -227,11 +201,7 @@ Transform43.addChildren(Shape44)
 Group13.addChildren(Transform43)
 #center
 Transform48 = x3d.Transform()
-Transform48.setBboxCenter([0,0,0])
-Transform48.setBboxSize([-1,-1,-1])
 Shape49 = x3d.Shape()
-Shape49.setBboxCenter([0,0,0])
-Shape49.setBboxSize([-1,-1,-1])
 Appearance50 = x3d.Appearance()
 Material51 = x3d.Material()
 Material51.setDiffuseColor([1,0,0.7])
@@ -247,11 +217,7 @@ Transform48.addChildren(Shape49)
 Transform53 = x3d.Transform()
 Transform53.setScale([0.5,0.5,0.5])
 Transform53.setTranslation([-0.5,0,1])
-Transform53.setBboxCenter([0,0,0])
-Transform53.setBboxSize([-1,-1,-1])
 Shape54 = x3d.Shape()
-Shape54.setBboxCenter([0,0,0])
-Shape54.setBboxSize([-1,-1,-1])
 Appearance55 = x3d.Appearance()
 Material56 = x3d.Material()
 Material56.setUSE("MaterialLightBlue")
@@ -281,54 +247,84 @@ Transform48.addChildren(TouchSensor59)
 Group13.addChildren(Transform48)
 
 ProtoBody12.addChildren(Group13)
-X3DScript60 = x3d.X3DScript()
-X3DScript60.setDEF("RightSingleToMultiString")
+Script60 = x3d.Script()
+Script60.setDEF("RightSingleToMultiString")
 field61 = x3d.field()
 field61.setName("set_rightstring")
 field61.setAccessType("inputOnly")
 field61.setType("SFString")
 
-X3DScript60.addField(field61)
+Script60.addField(field61)
 field62 = x3d.field()
 field62.setName("rightlines")
 field62.setAccessType("outputOnly")
 field62.setType("MFString")
 
-X3DScript60.addField(field62)
+Script60.addField(field62)
 
-ProtoBody12.addX3DScript(X3DScript60)
-X3DScript63 = x3d.X3DScript()
-X3DScript63.setDEF("UpSingleToMultiString")
+Script60.setSourceCode('''ecmascript:\n"+
+"\n"+
+"function initialize() {\n"+
+"	rightlines = new MFString(\"\");\n"+
+"}\n"+
+"\n"+
+"function set_rightstring(rightstr) {\n"+
+"	rightlines = new MFString(rightstr);\n"+
+"}''')
+
+ProtoBody12.addChildren(Script60)
+Script63 = x3d.Script()
+Script63.setDEF("UpSingleToMultiString")
 field64 = x3d.field()
 field64.setName("set_upstring")
 field64.setAccessType("inputOnly")
 field64.setType("SFString")
 
-X3DScript63.addField(field64)
+Script63.addField(field64)
 field65 = x3d.field()
 field65.setName("uplines")
 field65.setAccessType("outputOnly")
 field65.setType("MFString")
 
-X3DScript63.addField(field65)
+Script63.addField(field65)
 
-ProtoBody12.addX3DScript(X3DScript63)
-X3DScript66 = x3d.X3DScript()
-X3DScript66.setDEF("CenterSingleToMultiString")
+Script63.setSourceCode('''ecmascript:\n"+
+"\n"+
+"function initialize() {\n"+
+"	uplines = new MFString(\"\");\n"+
+"}\n"+
+"\n"+
+"function set_upstring(upstr) {\n"+
+"	uplines = new MFString(upstr);\n"+
+"}''')
+
+ProtoBody12.addChildren(Script63)
+Script66 = x3d.Script()
+Script66.setDEF("CenterSingleToMultiString")
 field67 = x3d.field()
 field67.setName("set_centerstring")
 field67.setAccessType("inputOnly")
 field67.setType("SFString")
 
-X3DScript66.addField(field67)
+Script66.addField(field67)
 field68 = x3d.field()
 field68.setName("centerlines")
 field68.setAccessType("outputOnly")
 field68.setType("MFString")
 
-X3DScript66.addField(field68)
+Script66.addField(field68)
 
-ProtoBody12.addX3DScript(X3DScript66)
+Script66.setSourceCode('''ecmascript:\n"+
+"\n"+
+"function initialize() {\n"+
+"	centerlines = new MFString(\"\");\n"+
+"}\n"+
+"\n"+
+"function set_centerstring(centerstr) {\n"+
+"	centerlines = new MFString(centerstr);\n"+
+"}''')
+
+ProtoBody12.addChildren(Script66)
 ROUTE69 = x3d.ROUTE()
 ROUTE69.setFromField("enteredText")
 ROUTE69.setFromNode("CenterSensor")
@@ -407,8 +403,6 @@ Viewpoint79.setPosition([0,5,12])
 Scene10.addChildren(Viewpoint79)
 Transform80 = x3d.Transform()
 Transform80.setTranslation([0,-2.5,0])
-Transform80.setBboxCenter([0,0,0])
-Transform80.setBboxSize([-1,-1,-1])
 ProtoInstance81 = x3d.ProtoInstance()
 ProtoInstance81.setName("Process")
 
@@ -416,8 +410,6 @@ Transform80.addChildren(ProtoInstance81)
 
 Scene10.addChildren(Transform80)
 Transform82 = x3d.Transform()
-Transform82.setBboxCenter([0,0,0])
-Transform82.setBboxSize([-1,-1,-1])
 ProtoInstance83 = x3d.ProtoInstance()
 ProtoInstance83.setName("Process")
 
@@ -426,8 +418,6 @@ Transform82.addChildren(ProtoInstance83)
 Scene10.addChildren(Transform82)
 Transform84 = x3d.Transform()
 Transform84.setTranslation([0,2.5,0])
-Transform84.setBboxCenter([0,0,0])
-Transform84.setBboxSize([-1,-1,-1])
 ProtoInstance85 = x3d.ProtoInstance()
 ProtoInstance85.setName("Process")
 

@@ -9,17 +9,17 @@ import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { WorldInfo } from './x3d.mjs';
 import { Collision } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
 import { CommentsBlock } from './x3d.mjs';
 import { Group } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
 import { Cylinder } from './x3d.mjs';
 import { SFFloat } from './x3d.mjs';
+import { SFBool } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
 import { Cone } from './x3d.mjs';
 import { Billboard } from './x3d.mjs';
 import { Text } from './x3d.mjs';
@@ -88,27 +88,18 @@ var X3D0 =  new X3D({
 
             new Collision({
               DEF : new SFString("DoNotCollideWithVisualizationWidget"),
-              enabled : new SFBool(true),
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               { "#comment" : new CommentsBlock("Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.") },
               { "#comment" : new CommentsBlock("This NavigationInfo allows examine mode and will be overridden by any parent scene.") },
               { "#comment" : new CommentsBlock("Each arrow goes from +1m to -1m to allow linear scaling to fit a scene") },
               { "#comment" : new CommentsBlock("Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user") },
               proxy : new SFNode(
                 new Group({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   { "#comment" : new CommentsBlock("Vertical Y arrow and label") },
                   children : new MFNode([
                     new Group({
                       DEF : new SFString("ArrowGreen"),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Shape({
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           geometry : new SFNode(
                             new Cylinder({
                               DEF : new SFString("ArrowCylinder"),
@@ -124,37 +115,23 @@ var X3D0 =  new X3D({
 
                         new Transform({
                           translation : new SFVec3f([0,1,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               geometry : new SFNode(
                                 new Cone({
                                   DEF : new SFString("ArrowCone"),
                                   bottomRadius : new SFFloat(0.05),
-                                  height : new SFFloat(0.1),
-                                  side : new SFBool(true),
-                                  bottom : new SFBool(true),
-                                  solid : new SFBool(true)})),
+                                  height : new SFFloat(0.1)})),
                               appearance : new SFNode(
                                 new Appearance({
                                   USE : new SFString("Green")}))})])})])}),
 
                     new Transform({
                       translation : new SFVec3f([0,1.08,0]),
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Billboard({
-                          axisOfRotation : new SFVec3f([0,1,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               appearance : new SFNode(
                                 new Appearance({
                                   DEF : new SFString("LABEL_APPEARANCE"),
@@ -174,22 +151,14 @@ var X3D0 =  new X3D({
               proxy : new SFNode(
                 new Transform({
                   rotation : new SFRotation([0,0,1,-1.57079]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   { "#comment" : new CommentsBlock("Horizontal X arrow and label") },
                   children : new MFNode([
                     new Group({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Group({
                           DEF : new SFString("ArrowRed"),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               geometry : new SFNode(
                                 new Cylinder({
                                   USE : new SFString("ArrowCylinder")})),
@@ -203,12 +172,8 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               translation : new SFVec3f([0,1,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   geometry : new SFNode(
                                     new Cone({
                                       USE : new SFString("ArrowCone")})),
@@ -219,18 +184,11 @@ var X3D0 =  new X3D({
                         new Transform({
                           rotation : new SFRotation([0,0,1,1.57079]),
                           translation : new SFVec3f([0.072,1.1,0]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           { "#comment" : new CommentsBlock("note label rotated back to original coordinate frame") },
                           children : new MFNode([
                             new Billboard({
-                              axisOfRotation : new SFVec3f([0,1,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   appearance : new SFNode(
                                     new Appearance({
                                       USE : new SFString("LABEL_APPEARANCE")})),
@@ -243,22 +201,14 @@ var X3D0 =  new X3D({
               proxy : new SFNode(
                 new Transform({
                   rotation : new SFRotation([1,0,0,1.57079]),
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   { "#comment" : new CommentsBlock("Perpendicular Z arrow and label, note right-hand rule") },
                   children : new MFNode([
                     new Group({
-                      bboxCenter : new SFVec3f([0,0,0]),
-                      bboxSize : new SFVec3f([-1,-1,-1]),
                       children : new MFNode([
                         new Group({
                           DEF : new SFString("ArrowBlue"),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           children : new MFNode([
                             new Shape({
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               geometry : new SFNode(
                                 new Cylinder({
                                   USE : new SFString("ArrowCylinder")})),
@@ -272,12 +222,8 @@ var X3D0 =  new X3D({
 
                             new Transform({
                               translation : new SFVec3f([0,1,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   geometry : new SFNode(
                                     new Cone({
                                       USE : new SFString("ArrowCone")})),
@@ -288,18 +234,11 @@ var X3D0 =  new X3D({
                         new Transform({
                           rotation : new SFRotation([1,0,0,-1.57079]),
                           translation : new SFVec3f([0,1.1,0.072]),
-                          bboxCenter : new SFVec3f([0,0,0]),
-                          bboxSize : new SFVec3f([-1,-1,-1]),
                           { "#comment" : new CommentsBlock("note label rotated back to original coordinate frame") },
                           children : new MFNode([
                             new Billboard({
-                              axisOfRotation : new SFVec3f([0,1,0]),
-                              bboxCenter : new SFVec3f([0,0,0]),
-                              bboxSize : new SFVec3f([-1,-1,-1]),
                               children : new MFNode([
                                 new Shape({
-                                  bboxCenter : new SFVec3f([0,0,0]),
-                                  bboxSize : new SFVec3f([-1,-1,-1]),
                                   appearance : new SFNode(
                                     new Appearance({
                                       USE : new SFString("LABEL_APPEARANCE")})),

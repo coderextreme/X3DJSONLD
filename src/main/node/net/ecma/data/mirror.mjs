@@ -12,8 +12,6 @@ import { Scene } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { TextureBackground } from './x3d.mjs';
-import { MFColor } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { ImageTexture } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
@@ -27,11 +25,12 @@ import { CommentsBlock } from './x3d.mjs';
 import { field } from './x3d.mjs';
 import { ShaderPart } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
+import { SFFloat } from './x3d.mjs';
+import { Script } from './x3d.mjs';
+import { SFBool } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
-import { SFBool } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
-import { X3DScript } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -94,8 +93,6 @@ var X3D0 =  new X3D({
               description : new SFString("Switch background and images texture")}),
 
             new TextureBackground({
-              skyColor : new MFColor([0,0,0]),
-              transparency : new SFFloat(0),
               topTexture : new SFNode(
                 new ImageTexture({
                   DEF : new SFString("leftBack"),
@@ -122,12 +119,8 @@ var X3D0 =  new X3D({
                   url : new MFString(["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"])}))}),
 
             new Transform({
-              bboxCenter : new SFVec3f([0,0,0]),
-              bboxSize : new SFVec3f([-1,-1,-1]),
               children : new MFNode([
                 new Shape({
-                  bboxCenter : new SFVec3f([0,0,0]),
-                  bboxSize : new SFVec3f([-1,-1,-1]),
                   appearance : new SFNode(
                     new Appearance({
                       material : new SFNode(
@@ -250,6 +243,104 @@ var X3D0 =  new X3D({
                     new Sphere({
                       radius : new SFFloat(30)}))}),
 
+                new Script({
+                  DEF : new SFString("UrlSelector"),
+                  directOutput : new SFBool(true),
+                  field : new MFNode([
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("frontUrls"),
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"")}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("backUrls"),
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"")}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("leftUrls"),
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"")}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("rightUrls"),
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"")}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("topUrls"),
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"")}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("bottomUrls"),
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"")}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("front_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("back_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("left_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("right_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("top_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_MFSTRING,
+                      name : new SFString("bottom_changed"),
+                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFFLOAT,
+                      name : new SFString("set_fraction"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+
+                    new field({
+                      type : field.TYPE_SFINT32,
+                      name : new SFString("old"),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      value : new SFString("-1")}),
+                  .setSourceCode("ecmascript:\n"+
+"        function set_fraction( f, tm ) {\n"+
+"	    var side = Math.floor(f*frontUrls.length);\n"+
+"	    if (side > frontUrls.length-1) {\n"+
+"	    	side = 0;\n"+
+"	    }\n"+
+"	    if (side != old) {\n"+
+"	    	    Browser.print(f+\" \"+side);\n"+
+"	    	    old = side;\n"+
+"		    front_changed[0] = frontUrls[side];\n"+
+"		    back_changed[0] = backUrls[side];\n"+
+"		    left_changed[0] = leftUrls[side];\n"+
+"		    right_changed[0] = rightUrls[side];\n"+
+"		    top_changed[0] = topUrls[side];\n"+
+"		    bottom_changed[0] = bottomUrls[side];\n"+
+"            }\n"+
+"        }")])}),
+
                 new TimeSensor({
                   DEF : new SFString("Clock"),
                   cycleInterval : new SFTime(45),
@@ -331,86 +422,5 @@ var X3D0 =  new X3D({
                   fromNode : new SFString("UrlSelector"),
                   fromField : new SFString("bottom_changed"),
                   toNode : new SFString("bottomShader"),
-                  toField : new SFString("url")}),
-              X3DScript : new SFNode(
-                new X3DScript({
-                  DEF : new SFString("UrlSelector"),
-                  directOutput : new SFBool(true),
-                  field : new MFNode([
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("frontUrls"),
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\"")}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("backUrls"),
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\"")}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("leftUrls"),
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_left.png\" \"../resources/images/all_probes/building_cross/building_left.png\" \"../resources/images/all_probes/campus_cross/campus_left.png\" \"../resources/images/all_probes/galileo_cross/galileo_left.png\" \"../resources/images/all_probes/grace_cross/grace_left.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_left.png\" \"../resources/images/all_probes/rnl_cross/rnl_left.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_left.png\"")}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("rightUrls"),
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_right.png\" \"../resources/images/all_probes/building_cross/building_right.png\" \"../resources/images/all_probes/campus_cross/campus_right.png\" \"../resources/images/all_probes/galileo_cross/galileo_right.png\" \"../resources/images/all_probes/grace_cross/grace_right.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_right.png\" \"../resources/images/all_probes/rnl_cross/rnl_right.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_right.png\"")}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("topUrls"),
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_top.png\" \"../resources/images/all_probes/building_cross/building_top.png\" \"../resources/images/all_probes/campus_cross/campus_top.png\" \"../resources/images/all_probes/galileo_cross/galileo_top.png\" \"../resources/images/all_probes/grace_cross/grace_top.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_top.png\" \"../resources/images/all_probes/rnl_cross/rnl_top.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_top.png\"")}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("bottomUrls"),
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("\"../resources/images/all_probes/beach_cross/beach_bottom.png\" \"../resources/images/all_probes/building_cross/building_bottom.png\" \"../resources/images/all_probes/campus_cross/campus_bottom.png\" \"../resources/images/all_probes/galileo_cross/galileo_bottom.png\" \"../resources/images/all_probes/grace_cross/grace_bottom.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_bottom.png\" \"../resources/images/all_probes/rnl_cross/rnl_bottom.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"")}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("front_changed"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("back_changed"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("left_changed"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("right_changed"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("top_changed"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_MFSTRING,
-                      name : new SFString("bottom_changed"),
-                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFFLOAT,
-                      name : new SFString("set_fraction"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
-
-                    new field({
-                      type : field.TYPE_SFINT32,
-                      name : new SFString("old"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("-1")})])}))])})])}))});
+                  toField : new SFString("url")})])})])}))});
 console.log(X3D0.toXMLNode());

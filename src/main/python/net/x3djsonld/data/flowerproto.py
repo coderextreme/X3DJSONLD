@@ -84,7 +84,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                     connect=[
                     connect(nodeField='url',protoField='fragment')])))),
             geometry=Sphere(),),
-          X3DScript(DEF='Animate',
+          Script(DEF='Animate',
             field=[
             field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
             field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),

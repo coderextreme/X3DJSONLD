@@ -89,7 +89,14 @@ NeedClassName.prototype = {
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0))))
           .addChild((new autoclass.PositionInterpolator("PI1")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,5.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
-          .setX3DScript((new autoclass.X3DScript("MB1"))
+          .addChild((new autoclass.Script("MB1")).setSourceCode("\n" + 
+"\n" + 
+"ecmascript:" + "\n" + 
+"               function set_location(value) {" + "\n" + 
+"                    old = translation;" + "\n" + 
+"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
+"                    keyValue = new MFVec3f([old, translation]);" + "\n" + 
+"               }" + "\n")
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
             .addField((new autoclass.field()).setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
             .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_location").setType("SFTime"))
@@ -119,7 +126,48 @@ NeedClassName.prototype = {
         .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_startpoint").setType("SFVec3f"))
         .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_endpoint").setType("SFVec3f")))
       .setProtoBody((new autoclass.ProtoBody())
-        .addChild((new autoclass.X3DScript("S1"))
+        .addChild((new autoclass.Script("S1")).setSourceCode("\n" + 
+"            ecmascript:" + "\n" + 
+"        function recompute(startpoint,endpoint){" + "\n" + 
+"	    if (typeof endpoint === 'undefined') {" + "\n" + 
+"		return;" + "\n" + 
+"	    }" + "\n" + 
+"            var dif = endpoint.subtract(startpoint);" + "\n" + 
+"            var dist = dif.length()*0.5;" + "\n" + 
+"            var dif2 = dif.multiply(0.5);" + "\n" + 
+"            var norm = dif.normalize();" + "\n" + 
+"            var transl = startpoint.add(dif2);" + "\n" + 
+"	    if (typeof Quaternion !== 'undefined') {" + "\n" + 
+"		    return {" + "\n" + 
+"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
+"			    translation : transl," + "\n" + 
+"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
+"		    };" + "\n" + 
+"	    } else {" + "\n" + 
+"		    return {" + "\n" + 
+"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
+"			    translation : transl," + "\n" + 
+"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
+"		    };" + "\n" + 
+"	    }" + "\n" + 
+"	}" + "\n" + 
+"	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
+"	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
+"	      if (trafo) {" + "\n" + 
+"		      transnode.translation = trafo.translation;" + "\n" + 
+"		      rotscalenode.rotation = trafo.rotation;" + "\n" + 
+"		      rotscalenode.scale = trafo.scale;" + "\n" + 
+"	      }" + "\n" + 
+"	}" + "\n" + 
+"        function initialize(){" + "\n" + 
+"            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
+"        }" + "\n" + 
+"        function set_startpoint(val,t){" + "\n" + 
+"            recompute_and_route(val,endnode.translation);" + "\n" + 
+"        }" + "\n" + 
+"        function set_endpoint(val,t){" + "\n" + 
+"            recompute_and_route(startnode.translation,val);" + "\n" + 
+"        }" + "\n")
           .addField((new autoclass.field()).setAccessType("initializeOnly").setName("startnode").setType("SFNode"))
           .addField((new autoclass.field()).setAccessType("initializeOnly").setName("endnode").setType("SFNode"))
           .addField((new autoclass.field()).setAccessType("initializeOnly").setName("transnode").setType("SFNode"))

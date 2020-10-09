@@ -29,7 +29,7 @@ var ProtoInstance1 = null;
             .addField(new field().setType(field.TYPE_SFTIME).setName("startTime").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
             .addField(new field().setType(field.TYPE_SFTIME).setName("stopTime").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0")))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setDEF("SpinGroupTransform").setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
+            .addChild(new Transform().setDEF("SpinGroupTransform")
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("children").setProtoField("children"))))
             .addComments(new CommentsBlock("following nodes will not be rendered, only the first node of a ProtoBody is drawn"))
@@ -53,12 +53,12 @@ ProtoInstance0
           .addFieldValue(new fieldValue().setName("loop").setValue("true"));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("children")
-            .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
-              .setGeometry(new Box().setSize(Java.to([25,2,2], Java.type("float[]"))).setSolid(true))
+            .addChild(new Shape()
+              .setGeometry(new Box().setSize(Java.to([25,2,2], Java.type("float[]"))))
               .setAppearance(new Appearance().setDEF("Green")
                 .setMaterial(new Material().setDiffuseColor(Java.to([0,1,0.3], Java.type("float[]"))))))
-            .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
-              .setGeometry(new Box().setSize(Java.to([2,25,2], Java.type("float[]"))).setSolid(true))
+            .addChild(new Shape()
+              .setGeometry(new Box().setSize(Java.to([2,25,2], Java.type("float[]"))))
               .setAppearance(new Appearance().setUSE("Green")))
             .addChild(ProtoInstance1 = new ProtoInstance().setName("SpinGroup").setDEF("SecondSpinGroup")
               .addComments(new CommentsBlock("stopTime > startTime ensures that initial state is stopped"))));
@@ -71,8 +71,8 @@ ProtoInstance1
 ProtoInstance1
               .addFieldValue(new fieldValue().setName("children")
                 .addChild(new TouchSensor().setDEF("ActivateSecondSpinGroup").setDescription("Activate second SpinGroup by clicking blue bar"))
-                .addChild(new Shape().setBboxCenter(Java.to([0,0,0], Java.type("float[]"))).setBboxSize(Java.to([-1,-1,-1], Java.type("float[]")))
-                  .setGeometry(new Box().setSize(Java.to([2,2.05,25], Java.type("float[]"))).setSolid(true))
+                .addChild(new Shape()
+                  .setGeometry(new Box().setSize(Java.to([2,2.05,25], Java.type("float[]"))))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(Java.to([0,0.3,1], Java.type("float[]")))))));
     X3D0.toFileX3D("../data/Figure31_9SpinGroupPrototype.new.x3d");

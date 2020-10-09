@@ -154,19 +154,13 @@ browser.currentScene.children[7] = ProtoInstance17;
 let Inline27 = browser.currentScene.createNode("Inline");
 Inline27.DEF = "GridXZ";
 Inline27.url = new MFString(new java.lang.String["GridXZ_20x20Fixed.x3d"]);
-Inline27.bboxCenter = new SFVec3f(new float[0,0,0]);
-Inline27.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 browser.currentScene.children[8] = Inline27;
 
 let Transform28 = browser.currentScene.createNode("Transform");
 Transform28.scale = new SFVec3f(new float[5,5,5]);
-Transform28.bboxCenter = new SFVec3f(new float[0,0,0]);
-Transform28.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 let Inline29 = browser.currentScene.createNode("Inline");
 Inline29.DEF = "CoordinateAxes";
 Inline29.url = new MFString(new java.lang.String["CoordinateAxes.x3d"]);
-Inline29.bboxCenter = new SFVec3f(new float[0,0,0]);
-Inline29.bboxSize = new SFVec3f(new float[-1,-1,-1]);
 Transform28.children = new MFNode();
 
 Transform28.children[0] = Inline29;

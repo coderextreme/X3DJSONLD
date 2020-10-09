@@ -31,10 +31,30 @@ head1.addMeta(meta6)
 
 X3D0.setHead(head1)
 Scene7 = x3d.Scene()
-X3DScript8 = x3d.X3DScript()
-X3DScript8.setDEF("Clouds")
+Script8 = x3d.Script()
+Script8.setDEF("Browser")
 
-Scene7.setX3DScript(X3DScript8)
+Script8.setSourceCode('''ecmascript:\n"+
+"                function initialize() {\n"+
+"		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
+"                }''')
+
+Scene7.addChildren(Script8)
+Script9 = x3d.Script()
+Script9.setDEF("Clouds")
+
+Script9.setSourceCode('''ecmascript:\n"+
+"\n"+
+"\n"+
+"function cumulustranslation() // These values designate the boundary location of the cloud\n"+
+"{\n"+
+"var xxx = ' '+' '+\n"+
+"'	Transform		\\n'+\n"+
+"'    ' + '               	\\n';\n"+
+"\n"+
+"}''')
+
+Scene7.addChildren(Script9)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/browser_RoundTrip.x3d")
