@@ -56,7 +56,7 @@
 				</IndexedFaceSet>
 				</Shape>
 			      </Transform>
-			      <X3DScript DEF="OrbitScript">
+			      <Script DEF="OrbitScript">
 				<field accessType="inputOnly" name="set_fraction" type="SFFloat"/>
 				<field accessType="outputOnly" name="coordinates" type="MFVec3f"/>
 				<field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
@@ -140,7 +140,7 @@
 				}
 				generateCoordinates();
 			}
-			      ]]></X3DScript>
+			      ]]></Script>
 
 			    <ROUTE fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="coordIndex"/>
 			    <ROUTE fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="point"/>

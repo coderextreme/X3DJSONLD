@@ -38,7 +38,7 @@
                     </Transform>               
                 </Transform>
                 <PositionInterpolator DEF='NodePosition' key='0 1' keyValue='0 0 0 0 5 0'/>
-                <X3DScript DEF='MoveBall'>
+                <Script DEF='MoveBall'>
                     <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
                     <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
                     <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
@@ -52,7 +52,7 @@ ecmascript:
 						// Browser.println(translation);
 					}
 ]]>
-                </X3DScript>
+                </Script>
                 <TimeSensor DEF='nodeClock' cycleInterval='3' loop='true'></TimeSensor>
                 <ROUTE fromNode='nodeClock' fromField='cycleTime' toNode='MoveBall' toField='set_cycle'/>
                 <ROUTE fromNode='nodeClock' fromField='fraction_changed' toNode='NodePosition' toField='set_fraction'/>
@@ -72,7 +72,7 @@ ecmascript:
                         <Material diffuseColor='0 1 0'/>
                     </Appearance>
                 </Shape>
-                <X3DScript DEF='MoveCylinder'>
+                <Script DEF='MoveCylinder'>
                     <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 50 0'/>
                     <field name='set_endA' accessType='inputOnly' type='SFVec3f'/>
                     <field name='set_endB' accessType='inputOnly' type='SFVec3f'/>
@@ -103,7 +103,7 @@ ecmascript:
                     spine = value;
                 }
 ]]>
-                </X3DScript>
+                </Script>
                 
                 <ROUTE fromNode='MoveCylinder' fromField='spine' toNode='extrusion' toField='set_spine'/>
                 

@@ -105,7 +105,7 @@
 <TouchSensor description='touch to activate' DEF='CenterTouch'/>
 </Transform>
 </Group>
-<X3DScript DEF='RightSingleToMultiString'>
+<Script DEF='RightSingleToMultiString'>
 <field name='set_rightstring' accessType='inputOnly' type='SFString'/>
 <field name='rightlines' accessType='outputOnly' type='MFString'/>
 <![CDATA[ecmascript:
@@ -117,8 +117,8 @@ function initialize() {
 function set_rightstring(rightstr) {
 	rightlines = new MFString(rightstr);
 }]]>
-</X3DScript>
-<X3DScript DEF='UpSingleToMultiString'>
+</Script>
+<Script DEF='UpSingleToMultiString'>
 <field name='set_upstring' accessType='inputOnly' type='SFString'/>
 <field name='uplines' accessType='outputOnly' type='MFString'/>
 <![CDATA[ecmascript:
@@ -130,8 +130,8 @@ function initialize() {
 function set_upstring(upstr) {
 	uplines = new MFString(upstr);
 }]]>
-</X3DScript>
-<X3DScript DEF='CenterSingleToMultiString'>
+</Script>
+<Script DEF='CenterSingleToMultiString'>
 <field name='set_centerstring' accessType='inputOnly' type='SFString'/>
 <field name='centerlines' accessType='outputOnly' type='MFString'/>
 <![CDATA[ecmascript:
@@ -143,7 +143,7 @@ function initialize() {
 function set_centerstring(centerstr) {
 	centerlines = new MFString(centerstr);
 }]]>
-</X3DScript>
+</Script>
 <ROUTE fromField='enteredText' fromNode='CenterSensor' toField='set_centerstring' toNode='CenterSingleToMultiString'/>
 <ROUTE fromField='centerlines' fromNode='CenterSingleToMultiString' toField='set_string' toNode='CenterString'/>
 <ROUTE fromField='isOver' fromNode='CenterTouch' toField='set_enabled' toNode='CenterSensor'/>

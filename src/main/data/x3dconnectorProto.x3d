@@ -79,7 +79,7 @@
         <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
     </ProtoInterface>
     <ProtoBody>
-        <X3DScript DEF='S1'>
+        <Script DEF='S1'>
             <field accessType='initializeOnly' name='startnode' type='SFNode'/>
             <field accessType='initializeOnly' name='endnode' type='SFNode'/>
             <field accessType='initializeOnly' name='transnode' type='SFNode'/>
@@ -136,7 +136,7 @@
             recompute_and_route(startnode.translation,val);
         }
             ]]>
-        </X3DScript>
+        </Script>
     </ProtoBody>
     </ProtoDeclare>
     <ProtoInstance name='x3dconnector' DEF='connector1'>

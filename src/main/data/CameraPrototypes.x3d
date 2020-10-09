@@ -92,7 +92,7 @@
         </OrientationInterpolator>
         <ROUTE fromField='value_changed' fromNode='CameraPositionInterpolator' toField='position' toNode='CameraViewpoint'/>
         <ROUTE fromField='value_changed' fromNode='CameraOrientationInterpolator' toField='orientation' toNode='CameraViewpoint'/>
-        <X3DScript DEF='CameraScript' directOutput='true' mustEvaluate='true'>
+        <Script DEF='CameraScript' directOutput='true' mustEvaluate='true'>
           <!-- binding is controlled externally, all camera operations proceed the same regardless of whether bound or not -->
           <field accessType='inputOutput' appinfo='Text description to be displayed for this Camera' name='description' type='SFString'/>
           <field accessType='inputOutput' appinfo='Camera position in local transformation frame' name='position' type='SFVec3f'/>
@@ -500,7 +500,7 @@ function alwaysPrint (outputValue)
          Browser.print ('[Camera] ' + outputString + '\n');
 }
 ]]>
-        </X3DScript>
+        </Script>
         <ROUTE fromField='position' fromNode='CameraScript' toField='position' toNode='CameraViewpoint'/>
         <ROUTE fromField='orientation' fromNode='CameraScript' toField='orientation' toNode='CameraViewpoint'/>
         <ROUTE fromField='isActive' fromNode='CameraScript' toField='set_bind' toNode='CameraViewpoint'/>
@@ -527,7 +527,7 @@ function alwaysPrint (outputValue)
         <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool' value='false'/>
       </ProtoInterface>
       <ProtoBody>
-        <X3DScript DEF='CameraShotScript' directOutput='true' mustEvaluate='true'>
+        <Script DEF='CameraShotScript' directOutput='true' mustEvaluate='true'>
           <field accessType='inputOutput' appinfo='Text description to be displayed for this CameraShot' name='description' type='SFString'/>
           <field accessType='inputOutput' appinfo='Whether this CameraShot can be activated' name='enabled' type='SFBool'/>
           <field accessType='inputOutput' appinfo='Set of CameraMovement nodes' name='moves' type='MFNode'>
@@ -654,7 +654,7 @@ function alwaysPrint (outputValue)
          Browser.print ('[CameraShot] ' + outputString + '\n');
 }
 ]]>
-        </X3DScript>
+        </Script>
         <!-- Add any ROUTEs here, going from Script to other nodes within ProtoBody -->
       </ProtoBody>
     </ProtoDeclare>
@@ -678,7 +678,7 @@ function alwaysPrint (outputValue)
         <!-- First node determines node type of this prototype -->
         <!-- Subsequent nodes do not render, but still must be a valid X3D subgraph -->
         <!-- Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events -->
-        <X3DScript DEF='CameraMovementScript' directOutput='true' mustEvaluate='true'>
+        <Script DEF='CameraMovementScript' directOutput='true' mustEvaluate='true'>
           <field accessType='inputOutput' appinfo='Text description to be displayed for this CameraMovement' name='description' type='SFString'/>
           <field accessType='inputOutput' appinfo='Whether this CameraMovement can be activated' name='enabled' type='SFBool'/>
           <field accessType='inputOutput' appinfo='Duration in seconds for this move' name='duration' type='SFFloat'/>
@@ -797,7 +797,7 @@ function alwaysPrint (outputValue)
          Browser.print ('[CameraMovement] ' + outputString + '\n');
 }
 ]]>
-        </X3DScript>
+        </Script>
         <!-- Add any ROUTEs here, going from Script to other nodes within ProtoBody -->
       </ProtoBody>
     </ProtoDeclare>
@@ -820,7 +820,7 @@ function alwaysPrint (outputValue)
       <ProtoBody>
         <!-- First node determines node type of this prototype -->
         <!-- Subsequent nodes do not render, but still must be a valid X3D subgraph -->
-        <X3DScript DEF='OfflineRenderScript' mustEvaluate='true'>
+        <Script DEF='OfflineRenderScript' mustEvaluate='true'>
           <field accessType='inputOutput' appinfo='Text description to be displayed for this OfflineRender' name='description' type='SFString'/>
           <field accessType='inputOutput' appinfo='Whether this OfflineRender can be activated' name='enabled' type='SFBool'/>
           <field accessType='inputOutput' appinfo='Frames per second recorded for this rendering' name='frameRate' type='SFFloat'/>
@@ -901,7 +901,7 @@ function alwaysPrint (outputValue)
          Browser.print ('[OfflineRender] ' + outputString + '\n');
 }
 ]]>
-        </X3DScript>
+        </Script>
         <!-- Add any ROUTEs here, going from Script to other nodes within ProtoBody -->
       </ProtoBody>
     </ProtoDeclare>

@@ -28,7 +28,7 @@
                         </Appearance>
                </Shape>  
                <PositionInterpolator DEF='PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
-               <X3DScript DEF='MB1'>
+               <Script DEF='MB1'>
                     <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
                     <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
                     <field name='set_location' accessType='inputOnly' type='SFTime'/>
@@ -42,7 +42,7 @@ ecmascript:
 		    // Browser.println(keyValue);
 		}
 ]]>
-                </X3DScript>
+                </Script>
                 <TimeSensor DEF='CL1' cycleInterval='3' loop='true'></TimeSensor>
                 <ROUTE fromNode='CL1' fromField='cycleTime' toNode='MB1' toField='set_location'/>
                 <ROUTE fromNode='CL1' fromField='fraction_changed' toNode='PI1' toField='set_fraction'/>
@@ -69,7 +69,7 @@ ecmascript:
 		</Shape>
         </Transform>
         </Transform>
-        <X3DScript DEF='S1'>
+        <Script DEF='S1'>
             <field accessType='initializeOnly' name='startnode' type='SFNode'/>
             <field accessType='initializeOnly' name='endnode' type='SFNode'/>
             <field accessType='inputOutput' name='position' type='SFNode'>
@@ -133,7 +133,7 @@ ecmascript:
             recompute_and_route(startnode.translation,val);
         }
             ]]>
-        </X3DScript>
+        </Script>
       </Group>
     </ProtoBody>
     </ProtoDeclare>
