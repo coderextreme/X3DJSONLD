@@ -3,11 +3,11 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> A flower proto with configurable shaders. </p>
- <p> Related links: flowerproto.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: NeedClassName.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.flowerproto&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.NeedClassName&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -46,7 +46,7 @@ load('X3Dautoclass.js');
 	* @author John Carlson
  */
 
-function flowerproto
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -55,64 +55,64 @@ function flowerproto
     this.initialize();
     return this;
   }
-flowerproto.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.3")
-  .setHead(new head()
-    .addComponent(new component().setName("Shaders").setLevel(1))
-    .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
-    .addComponent(new component().setName("Texturing").setLevel(1))
-    .addComponent(new component().setName("Rendering").setLevel(1))
-    .addComponent(new component().setName("Shape").setLevel(4))
-    .addComponent(new component().setName("Grouping").setLevel(3))
-    .addMeta(new meta().setName("title").setContent("flowerproto.x3d"))
-    .addMeta(new meta().setName("creator").setContent("John Carlson"))
-    .addMeta(new meta().setName("description").setContent("A flower proto with configurable shaders"))
-    .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowerproto.x3d")))
-  .setScene(new Scene()
-    .addChild(new ProtoDeclare().setName("FlowerProto")
-      .setProtoInterface(new ProtoInterface()
-        .addField(new field().setAccessType("inputOutput").setName("vertex").setType("MFString").setValue("\"../shaders/gl_flowers_chromatic.vs\""))
-        .addField(new field().setAccessType("inputOutput").setName("fragment").setType("MFString").setValue("\"../shaders/pc_flowers.fs\"")))
-      .setProtoBody(new ProtoBody()
-        .addChild(new Transform("transform")
-          .addChild(new Shape()
-            .setAppearance(new Appearance()
-              .setMaterial(new Material().setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7))
-              .setTexture(new ComposedCubeMapTexture("texture")
-                .setBack(new ImageTexture().setUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
-                .setBottom(new ImageTexture().setUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
-                .setFront(new ImageTexture().setUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
-                .setLeft(new ImageTexture().setUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
-                .setRight(new ImageTexture().setUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
-                .setTop(new ImageTexture().setUrl(new MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
-              .addShaders(new ComposedShader("shader").setLanguage("GLSL")
-                .addField(new field().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
+  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.3")
+  .setHead(new headObject()
+    .addComponent(new componentObject().setName("Shaders").setLevel(1))
+    .addComponent(new componentObject().setName("CubeMapTexturing").setLevel(1))
+    .addComponent(new componentObject().setName("Texturing").setLevel(1))
+    .addComponent(new componentObject().setName("Rendering").setLevel(1))
+    .addComponent(new componentObject().setName("Shape").setLevel(4))
+    .addComponent(new componentObject().setName("Grouping").setLevel(3))
+    .addMeta(new metaObject().setName("title").setContent("flowerproto.x3d"))
+    .addMeta(new metaObject().setName("creator").setContent("John Carlson"))
+    .addMeta(new metaObject().setName("description").setContent("A flower proto with configurable shaders"))
+    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/flowerproto.x3d")))
+  .setScene(new SceneObject()
+    .addChild(new ProtoDeclareObject().setName("FlowerProto")
+      .setProtoInterface(new ProtoInterfaceObject()
+        .addField(new fieldObject().setAccessType("inputOutput").setName("vertex").setType("MFString").setValue("\"../shaders/gl_flowers_chromatic.vs\""))
+        .addField(new fieldObject().setAccessType("inputOutput").setName("fragment").setType("MFString").setValue("\"../shaders/pc_flowers.fs\"")))
+      .setProtoBody(new ProtoBodyObject()
+        .addChild(new TransformObject("transform")
+          .addChild(new ShapeObject()
+            .setAppearance(new AppearanceObject()
+              .setMaterial(new MaterialObject().setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7))
+              .setTexture(new ComposedCubeMapTextureObject("texture")
+                .setBack(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")))
+                .setBottom(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")))
+                .setFront(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")))
+                .setLeft(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")))
+                .setRight(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")))
+                .setTop(new ImageTextureObject().setUrl(new MFStringObject("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\""))))
+              .addShaders(new ComposedShaderObject("shader").setLanguage("GLSL")
+                .addField(new fieldObject().setAccessType("inputOutput").setName("cube").setType("SFInt32").setValue("0"))
                 .addComments(Java.to([" ",
 "		       <field name='cube' type='SFNode' accessType=\"inputOutput\">",
 "			  <ComposedCubeMapTexture USE=\"texture\"/>",
 "		  </field>"], Java.type("java.lang.String[]")))
-                .addField(new field().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
-                .addField(new field().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
-                .addField(new field().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
-                .addField(new field().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
-                .addField(new field().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("10"))
-                .addField(new field().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("1"))
-                .addField(new field().setAccessType("inputOutput").setName("c").setType("SFFloat").setValue("20"))
-                .addField(new field().setAccessType("inputOutput").setName("d").setType("SFFloat").setValue("20"))
-                .addField(new field().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0"))
-                .addField(new field().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0"))
-                .addParts(new ShaderPart()
-                  .setIS(new IS()
-                    .addConnect(new connect().setNodeField("url").setProtoField("vertex"))))
-                .addParts(new ShaderPart().setType("FRAGMENT")
-                  .setIS(new IS()
-                    .addConnect(new connect().setNodeField("url").setProtoField("fragment"))))))
-            .setGeometry(new Sphere()))
-          .addChild(new Script("Animate").setSourceCode("\n" + 
+                .addField(new fieldObject().setAccessType("initializeOnly").setName("chromaticDispertion").setType("SFVec3f").setValue("0.98 1.0 1.033"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("bias").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("scale").setType("SFFloat").setValue("0.5"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("power").setType("SFFloat").setValue("2"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("10"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("1"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("c").setType("SFFloat").setValue("20"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("d").setType("SFFloat").setValue("20"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0"))
+                .addField(new fieldObject().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0"))
+                .addParts(new ShaderPartObject()
+                  .setIS(new ISObject()
+                    .addConnect(new connectObject().setNodeField("url").setProtoField("vertex"))))
+                .addParts(new ShaderPartObject().setType("FRAGMENT")
+                  .setIS(new ISObject()
+                    .addConnect(new connectObject().setNodeField("url").setProtoField("fragment"))))))
+            .setGeometry(new SphereObject()))
+          .addChild(new ScriptObject("Animate").setSourceCode("\n" + 
 "\n" + 
 "  " + "\n" + 
 "ecmascript:" + "\n" + 
@@ -181,30 +181,30 @@ flowerproto.prototype = {
 "					d = 4;" + "\n" + 
 "				}" + "\n" + 
 "			}" + "\n")
-            .addField(new field().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-            .addField(new field().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-            .addField(new field().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
-            .addField(new field().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("0.5"))
-            .addField(new field().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("0.5"))
-            .addField(new field().setAccessType("inputOutput").setName("c").setType("SFFloat").setValue("3"))
-            .addField(new field().setAccessType("inputOutput").setName("d").setType("SFFloat").setValue("3"))
-            .addField(new field().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0.5"))
-            .addField(new field().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0.5")))
-          .addChild(new TimeSensor("TourTime").setCycleInterval(5).setLoop(true))
-          .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
-          .addChild(new ROUTE().setFromNode("Animate").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("Animate").setFromField("a").setToNode("shader").setToField("a"))
-          .addChild(new ROUTE().setFromNode("Animate").setFromField("b").setToNode("shader").setToField("b"))
-          .addChild(new ROUTE().setFromNode("Animate").setFromField("c").setToNode("shader").setToField("c"))
-          .addChild(new ROUTE().setFromNode("Animate").setFromField("d").setToNode("shader").setToField("d"))
-          .addChild(new ROUTE().setFromNode("Animate").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
-          .addChild(new ROUTE().setFromNode("Animate").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))));
+            .addField(new fieldObject().setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
+            .addField(new fieldObject().setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("a").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("b").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("c").setType("SFFloat").setValue("3"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("d").setType("SFFloat").setValue("3"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("tdelta").setType("SFFloat").setValue("0.5"))
+            .addField(new fieldObject().setAccessType("inputOutput").setName("pdelta").setType("SFFloat").setValue("0.5")))
+          .addChild(new TimeSensorObject("TourTime").setCycleInterval(5).setLoop(true))
+          .addChild(new ROUTEObject().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("translation_changed").setToNode("transform").setToField("set_translation"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("a").setToNode("shader").setToField("a"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("b").setToNode("shader").setToField("b"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("c").setToNode("shader").setToField("c"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("d").setToNode("shader").setToField("d"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("tdelta").setToNode("shader").setToField("tdelta"))
+          .addChild(new ROUTEObject().setFromNode("Animate").setFromField("pdelta").setToNode("shader").setToField("pdelta"))))));
   },
   // end of initialize() method
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return flowerproto model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -232,11 +232,11 @@ flowerproto.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
@@ -266,8 +266,8 @@ flowerproto.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new flowerproto();
-		print ("flowerproto execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new flowerproto().main();
+new NeedClassName().main();

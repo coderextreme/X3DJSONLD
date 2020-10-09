@@ -3,7 +3,7 @@ load('X3Dautoclass.js');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes. </p>
- <p> Related links: <a href="../../../../Environment/Atmosphere/CloudsProcedural4.java">CloudsProcedural4.java</a> source, <a href="../../../../Environment/Atmosphere/CloudsProcedural4Index.html" target="_top">CloudsProcedural4 catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../../Environment/Atmosphere/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../../Environment/Atmosphere/CloudsProcedural4Index.html" target="_top">CloudsProcedural4 catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -62,7 +62,7 @@ load('X3Dautoclass.js');
 	* @author Capt Darren W. Murphy
  */
 
-function CloudsProcedural4
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -71,44 +71,44 @@ function CloudsProcedural4
     this.initialize();
     return this;
   }
-CloudsProcedural4.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = new X3D().setProfile("Immersive").setVersion("3.2")
-  .setHead(new head()
-    .addMeta(new meta().setName("title").setContent("CloudsProcedural4.x3d"))
-    .addMeta(new meta().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
-    .addMeta(new meta().setName("creator").setContent("Capt Darren W. Murphy"))
-    .addMeta(new meta().setName("created").setContent("1 November 2007"))
-    .addMeta(new meta().setName("modified").setContent("14 January 2014"))
-    .addMeta(new meta().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
-    .addMeta(new meta().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
-    .addMeta(new meta().setName("license").setContent("../../license.html"))
-    .addMeta(new meta().setName("TODO").setContent("fix links")))
-  .setScene(new Scene()
+  this.x3dModel = new X3DObject().setProfile("Immersive").setVersion("3.2")
+  .setHead(new headObject()
+    .addMeta(new metaObject().setName("title").setContent("CloudsProcedural4.x3d"))
+    .addMeta(new metaObject().setName("description").setContent("X3D utilizing ecmascript to develop quasi volumetric 3D clouds from png image textured billboard nodes."))
+    .addMeta(new metaObject().setName("creator").setContent("Capt Darren W. Murphy"))
+    .addMeta(new metaObject().setName("created").setContent("1 November 2007"))
+    .addMeta(new metaObject().setName("modified").setContent("14 January 2014"))
+    .addMeta(new metaObject().setName("identifier").setContent("https://savage.nps.edu/Savage/Environment/Atmosphere/CloudsProcedural4.x3d"))
+    .addMeta(new metaObject().setName("generator").setContent("X3D-Edit, http://www.web3d.org/x3d/content/README.X3D-Edit.html"))
+    .addMeta(new metaObject().setName("license").setContent("../../license.html"))
+    .addMeta(new metaObject().setName("TODO").setContent("fix links")))
+  .setScene(new SceneObject()
     .addComments(" A png image file for the cloud texture must be designated in the ecmascript node. ")
-    .addChild(new Viewpoint().setDescription("Main").setOrientation(0.0,1.0,0.0,1.57).setPosition(50000.0,1000.0,42000.0).setJump(false))
-    .addChild(new Viewpoint().setDescription("Light House Tower").setOrientation(0.0,1.0,0.0,1.3).setPosition(45000.0,1290.0,44000.0).setJump(false))
-    .addChild(new Viewpoint().setDescription("centerWest").setOrientation(0.0,1.0,0.0,2.5).setPosition(48000.0,1000.0,20000.0).setJump(false))
-    .addChild(new Background().setGroundColor(new MFColor(Java.to([0.0,0.0,1.0], Java.type("float[]")))).setSkyColor(new MFColor(Java.to([0.0,0.0,1.0], Java.type("float[]")))))
-    .addChild(new DirectionalLight().setDirection(-1.0,0.0,0.0).setAmbientIntensity(1).setGlobal(true))
-    .addChild(new Group("Terrain")
-      .addChild(new Transform().setTranslation(25000.0,0.0,25000.0).setScale(50.0,50.0,50.0)
-        .addChild(new Inline().setUrl(new MFString("\"MontereyBayLargeMesh.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d\" \"MontereyBayLargeMesh.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl\""))))
-      .addChild(new Transform().setRotation(1.0,0.0,0.0,1.57).setTranslation(25000.0,0.0,25000.0)
-        .addChild(new Shape()
-          .setGeometry(new Rectangle2D().setSize(77000.0,55000.0))
-          .setAppearance(new Appearance()
-            .setTexture(new ImageTexture().setUrl(new MFString("\"ocean.png\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png\"")))))))
-    .addChild(new Group("Placemarks")
-      .addChild(new Transform().setTranslation(45000.0,30.0,44000.0).setScale(50.0,50.0,50.0)
-        .addChild(new Inline().setUrl(new MFString("\"Lighthouse.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d\" \"Lighthouse.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl\"")))))
-    .addChild(new Group("Clouds")
-      .addChild(new Transform("Cumulus"))
-      .addChild(new Transform("Cirrus"))
-      .addChild(new Transform("Fog"))
-      .addChild(new Script("PixelScript").setDirectOutput(true).setSourceCode("\n" + 
+    .addChild(new ViewpointObject().setDescription("Main").setOrientation(0.0,1.0,0.0,1.57).setPosition(50000.0,1000.0,42000.0).setJump(false))
+    .addChild(new ViewpointObject().setDescription("Light House Tower").setOrientation(0.0,1.0,0.0,1.3).setPosition(45000.0,1290.0,44000.0).setJump(false))
+    .addChild(new ViewpointObject().setDescription("centerWest").setOrientation(0.0,1.0,0.0,2.5).setPosition(48000.0,1000.0,20000.0).setJump(false))
+    .addChild(new BackgroundObject().setGroundColor(new MFColorObject(Java.to([0.0,0.0,1.0], Java.type("float[]")))).setSkyColor(new MFColorObject(Java.to([0.0,0.0,1.0], Java.type("float[]")))))
+    .addChild(new DirectionalLightObject().setDirection(-1.0,0.0,0.0).setAmbientIntensity(1).setGlobal(true))
+    .addChild(new GroupObject("Terrain")
+      .addChild(new TransformObject().setTranslation(25000.0,0.0,25000.0).setScale(50.0,50.0,50.0)
+        .addChild(new InlineObject().setUrl(new MFStringObject("\"MontereyBayLargeMesh.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d\" \"MontereyBayLargeMesh.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl\""))))
+      .addChild(new TransformObject().setRotation(1.0,0.0,0.0,1.57).setTranslation(25000.0,0.0,25000.0)
+        .addChild(new ShapeObject()
+          .setGeometry(new Rectangle2DObject().setSize(77000.0,55000.0))
+          .setAppearance(new AppearanceObject()
+            .setTexture(new ImageTextureObject().setUrl(new MFStringObject("\"ocean.png\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png\"")))))))
+    .addChild(new GroupObject("Placemarks")
+      .addChild(new TransformObject().setTranslation(45000.0,30.0,44000.0).setScale(50.0,50.0,50.0)
+        .addChild(new InlineObject().setUrl(new MFStringObject("\"Lighthouse.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d\" \"Lighthouse.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl\"")))))
+    .addChild(new GroupObject("Clouds")
+      .addChild(new TransformObject("Cumulus"))
+      .addChild(new TransformObject("Cirrus"))
+      .addChild(new TransformObject("Fog"))
+      .addChild(new ScriptObject("PixelScript").setDirectOutput(true).setSourceCode("\n" + 
 "        " + "\n" + 
 "ecmascript:" + "\n" + 
 "\n" + 
@@ -491,18 +491,18 @@ CloudsProcedural4.prototype = {
 "\n" + 
 "cirrus();" + "\n" + 
 "}" + "\n")
-        .addField(new field().setAccessType("initializeOnly").setName("Cumulus").setType("SFNode")
-          .addChild(new Transform().setUSE("Cumulus")))
-        .addField(new field().setAccessType("initializeOnly").setName("Cirrus").setType("SFNode")
-          .addChild(new Transform().setUSE("Cirrus")))
-        .addField(new field().setAccessType("initializeOnly").setName("Fog").setType("SFNode")))
-      .addChild(new DirectionalLight().setDirection(-1.0,-1.0,0.0).setAmbientIntensity(1).setColor(1.0,0.0,0.0).setGlobal(true))));
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("Cumulus").setType("SFNode")
+          .addChild(new TransformObject().setUSE("Cumulus")))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("Cirrus").setType("SFNode")
+          .addChild(new TransformObject().setUSE("Cirrus")))
+        .addField(new fieldObject().setAccessType("initializeOnly").setName("Fog").setType("SFNode")))
+      .addChild(new DirectionalLightObject().setDirection(-1.0,-1.0,0.0).setAmbientIntensity(1).setColor(1.0,0.0,0.0).setGlobal(true))));
   },
   // end of initialize() method
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return CloudsProcedural4 model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -530,11 +530,11 @@ CloudsProcedural4.prototype = {
 		var metaList = this.getX3dModel().getHead().getMetaList();
 		for (var m in metaList) {
 			meta = metaList[m];
-			if (meta.getName().equals(meta.NAME_ERROR) ||
-				meta.getName().equals(meta.NAME_WARNING) ||
-				meta.getName().equals(meta.NAME_HINT) ||
-				meta.getName().equals(meta.NAME_INFO) ||
-				meta.getName().equals(meta.NAME_TODO))
+			if (meta.getName().equals(metaObject.NAME_ERROR) ||
+				meta.getName().equals(metaObject.NAME_WARNING) ||
+				meta.getName().equals(metaObject.NAME_HINT) ||
+				meta.getName().equals(metaObject.NAME_INFO) ||
+				meta.getName().equals(metaObject.NAME_TODO))
 			{
 				metaResult += meta.toStringX3D();
 			}
@@ -564,8 +564,8 @@ CloudsProcedural4.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new CloudsProcedural4();
-		print ("CloudsProcedural4 execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		print ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new CloudsProcedural4().main();
+new NeedClassName().main();
