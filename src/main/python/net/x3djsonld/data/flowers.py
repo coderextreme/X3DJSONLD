@@ -95,7 +95,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 parts=ShaderPart(url=["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]),
                 ShaderPart(url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],type='FRAGMENT'))),
             geometry=Sphere(),)]),
-        Script(DEF='Animate',
+        X3DScript(DEF='Animate',
           field=[
           field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
           field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),

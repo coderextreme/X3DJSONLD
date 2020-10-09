@@ -59,7 +59,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 appearance=Appearance(
                   material=Material(diffuseColor=(0,0,1))))])]),
           PositionInterpolator(DEF='NodePosition',key=[0,1],keyValue=[(0,0,0),(0,5,0)]),
-          Script(DEF='MoveBall',
+          X3DScript(DEF='MoveBall',
             field=[
             field(name='translation',accessType='inputOutput',type='SFVec3f',value=(50,50,0)),
             field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
@@ -83,7 +83,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             geometry=Extrusion(DEF='extrusion',creaseAngle=0.785,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)],spine=[(0,-50,0),(0,50,0)]),
             appearance=Appearance(
               material=Material(diffuseColor=(0,1,0)))),
-          Script(DEF='MoveCylinder',
+          X3DScript(DEF='MoveCylinder',
             field=[
             field(name='spine',accessType='inputOutput',type='MFVec3f',value=[(0,-50,0),(0,50,0)]),
             field(name='set_endA',accessType='inputOnly',type='SFVec3f'),
@@ -120,7 +120,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         fieldValue=[
         fieldValue(name='set_positionA',value=(50,50,50)),
         fieldValue(name='set_positionB',value=(50,50,-50))])]),
-    Script(DEF='clickHandler',
+    X3DScript(DEF='clickHandler',
       field=[
       field(accessType='inputOutput',name='counter',value=0,type='SFInt32'),
       field(accessType='outputOnly',name='node_changed',type='SFNode'),

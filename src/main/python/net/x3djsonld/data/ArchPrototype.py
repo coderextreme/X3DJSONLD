@@ -76,8 +76,8 @@ newModel=X3D(profile='Immersive',version='3.3',
                   connect(nodeField='emissiveColor',protoField='emissiveColor'),
                   connect(nodeField='diffuseColor',protoField='diffuseColor')]))))]),
         #  Subsequent nodes do not render, but still must be a valid X3D subgraph 
-        #  This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs 
-        Script(DEF='ArchPrototypeScript',url=["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"],
+        #  This embedded X3DScript provides the X3D author with additional visibility and control over prototype inputs and outputs 
+        X3DScript(DEF='ArchPrototypeScript',url=["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"],
           #  INPUT PARAMETERS 
           #  General parameters 
           #  Parameters to create to create shapes related to arch: put true to apply 

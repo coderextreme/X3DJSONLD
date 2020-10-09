@@ -111,7 +111,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 parts=ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"]),
                 ShaderPart(url=["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],type='FRAGMENT'))),
             geometry=Sphere(),)]),
-        Script(DEF='Bounce',
+        X3DScript(DEF='Bounce',
           field=[
           field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
           field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),

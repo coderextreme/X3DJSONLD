@@ -76,7 +76,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             coord=Coordinate(point=[(1,1,0),(1,-1,0),(-1,-1,0),(-1,1,0)])),
           appearance=Appearance(
             material=Material(ambientIntensity=0.245763,diffuseColor=(0.34773,0.090909,0.005289),shininess=0.07,specularColor=(0.336735,0.051091,0.051091),transparency=0.8)))])]),
-    Script(DEF='TextScript',url=["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"],
+    X3DScript(DEF='TextScript',url=["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"],
       #  initialize() method includes unit test to printAllStrategies() to console 
       #  TODO insert field definitions here (index string_changed previous next random) and then animate! 
       field=[

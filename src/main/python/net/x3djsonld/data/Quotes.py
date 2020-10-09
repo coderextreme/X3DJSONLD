@@ -119,7 +119,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     Group(DEF='BackgroundGroup',
       children=[
       Background(DEF='GradualBackground'),
-      Script(DEF='colorTypeConversionScript',
+      X3DScript(DEF='colorTypeConversionScript',
         field=[
         field(accessType='inputOnly',name='colorInput',type='SFColor'),
         field(accessType='outputOnly',name='colorsOutput',type='MFColor')]),
@@ -197,7 +197,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             connect(nodeField='shininess',protoField='shininess'),
             connect(nodeField='ambientIntensity',protoField='ambientIntensity')])),
         #  Only first node (the node type) is renderable, others are along for the ride 
-        Script(DEF='MaterialModulatorScript',
+        X3DScript(DEF='MaterialModulatorScript',
           field=[
           field(accessType='inputOutput',name='enabled',type='SFBool'),
           field(accessType='inputOutput',name='diffuseColor',type='SFColor'),

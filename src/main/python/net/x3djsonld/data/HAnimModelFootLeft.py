@@ -45,7 +45,7 @@ newModel=X3D(profile='Immersive',version='4.0',
   Scene=Scene(
     children=[
     WorldInfo(title='HAnimModelFootLeft.x3d'),
-    HAnimHumanoid(DEF='Humanoid_Left_Foot',info=["humanoidVersion=2.0"],jointBindingPositions=[(0,0,0)],jointBindingRotations=[(0,0,1,0)],jointBindingScales=[(1,1,1)],name='Humanoid_Left_Foot',version='2.0',
+    HAnimHumanoid(DEF='Humanoid_Left_Foot',info=["humanoidVersion=2.0"],name='Humanoid_Left_Foot',version='2.0',
       skeleton=[
       HAnimJoint(DEF='hanim_HumanoidRoot',name='humanoid_root',
         children=[
@@ -61,12 +61,12 @@ newModel=X3D(profile='Immersive',version='4.0',
                   material=Material(diffuseColor=(0,0,1))))]),
             Shape(
               appearance=Appearance(
-                material=Material(emissiveColor=(1,1,1))),
+                material=Material(),),
               geometry=IndexedLineSet(DEF='TCtoTCN',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(0.0,-0.3,0)]))),
             Shape(
               appearance=Appearance(
-                material=Material(emissiveColor=(1,1,1))),
+                material=Material(),),
               geometry=IndexedLineSet(DEF='TCtoCC',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(0.2,0.3,0)])))]),
           #  TCN 
@@ -79,17 +79,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                 Shape(USE='HAnimJointShape')]),
               Shape(
                 appearance=Appearance(
-                  material=Material(emissiveColor=(1,1,1))),
+                  material=Material(),),
                 geometry=IndexedLineSet(DEF='TCNtoCN1',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.0,-0.3,0),(-0.1,-0.45,0)]))),
               Shape(
                 appearance=Appearance(
-                  material=Material(emissiveColor=(1,1,1))),
+                  material=Material(),),
                 geometry=IndexedLineSet(DEF='TCNtoCN2',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.0,-0.3,0),(0.0,-0.45,0)]))),
               Shape(
                 appearance=Appearance(
-                  material=Material(emissiveColor=(1,1,1))),
+                  material=Material(),),
                 geometry=IndexedLineSet(DEF='TCNtoCN3',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.0,-0.3,0),(0.1,-0.4,0)])))]),
             #  CN1 
@@ -102,7 +102,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(USE='HAnimJointShape')]),
                 Shape(
                   appearance=Appearance(
-                    material=Material(emissiveColor=(1,1,1))),
+                    material=Material(),),
                   geometry=IndexedLineSet(DEF='CN1toTMT1',coordIndex=[0,1],
                     coord=Coordinate(point=[(-0.1,-0.45,0),(-0.1,-0.6,0)])))]),
               HAnimJoint(DEF='l_tarsometatarsal_joint1',center=(-0.1,-0.6,0),name='l_tarsometatarsal_joint1',
@@ -114,7 +114,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(USE='HAnimJointShape')]),
                   Shape(
                     appearance=Appearance(
-                      material=Material(emissiveColor=(1,1,1))),
+                      material=Material(),),
                     geometry=IndexedLineSet(DEF='TMT1toMTP1',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.1,-0.6,0),(-0.1,-0.9,0)])))]),
                 HAnimJoint(DEF='l_metatarsophalangeal_joint1',center=(-0.1,-0.9,0),name='l_metatarsophalangeal_joint1',
@@ -126,7 +126,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(USE='HAnimJointShape')]),
                     Shape(
                       appearance=Appearance(
-                        material=Material(emissiveColor=(1,1,1))),
+                        material=Material(),),
                       geometry=IndexedLineSet(DEF='MTP1toIP1',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.1,-0.9,0),(-0.1,-1.05,0)])))]),
                   HAnimJoint(DEF='l_f_Interphalangeal_joint',center=(-0.1,-1.05,0),name='l_f_Interphalangeal_joint',
@@ -138,7 +138,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         Shape(USE='HAnimJointShape')]),
                       Shape(
                         appearance=Appearance(
-                          material=Material(emissiveColor=(1,1,1))),
+                          material=Material(),),
                         geometry=IndexedLineSet(DEF='tiptoe_l_distal_phalanges1',coordIndex=[0,1],
                           coord=Coordinate(point=[(-0.1,-1.05,0),(-0.1,-1.1,0)])))])])])])]),
             #  CN2 
@@ -151,7 +151,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(USE='HAnimJointShape')]),
                 Shape(
                   appearance=Appearance(
-                    material=Material(emissiveColor=(1,1,1))),
+                    material=Material(),),
                   geometry=IndexedLineSet(DEF='CN2toTMT2',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.0,-0.45,0),(0.05,-0.6,0)])))]),
               HAnimJoint(DEF='l_tarsometatarsal_joint2',center=(0.05,-0.6,0),name='l_tarsometatarsal_joint2',
@@ -163,7 +163,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(USE='HAnimJointShape')]),
                   Shape(
                     appearance=Appearance(
-                      material=Material(emissiveColor=(1,1,1))),
+                      material=Material(),),
                     geometry=IndexedLineSet(DEF='TMT2toMTP2',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.05,-0.6,0),(0.05,-0.9,0)])))]),
                 HAnimJoint(DEF='l_metatarsophalangeal_joint2',center=(0.05,-0.9,0),name='l_metatarsophalangeal_joint2',
@@ -175,7 +175,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(USE='HAnimJointShape')]),
                     Shape(
                       appearance=Appearance(
-                        material=Material(emissiveColor=(1,1,1))),
+                        material=Material(),),
                       geometry=IndexedLineSet(DEF='MTP2toPIP2',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.05,-0.9,0),(0.05,-1.05,0)])))]),
                   HAnimJoint(DEF='l_f_proximal_Interphalangeal_joint2',center=(0.05,-1.05,0),name='l_f_proximal_Interphalangeal_joint2',
@@ -187,7 +187,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         Shape(USE='HAnimJointShape')]),
                       Shape(
                         appearance=Appearance(
-                          material=Material(emissiveColor=(1,1,1))),
+                          material=Material(),),
                         geometry=IndexedLineSet(DEF='PIP2toDIP2',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.05,-1.05,0),(0.05,-1.12,0)])))]),
                     HAnimJoint(DEF='l_f_distal_Interphalangeal_joint2',center=(0.05,-1.12,0),name='l_f_distal_Interphalangeal_joint2',
@@ -199,7 +199,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           Shape(USE='HAnimJointShape')]),
                         Shape(
                           appearance=Appearance(
-                            material=Material(emissiveColor=(1,1,1))),
+                            material=Material(),),
                           geometry=IndexedLineSet(DEF='tiptoe_l_f_distal_Interphalangeal_joint2',coordIndex=[0,1],
                             coord=Coordinate(point=[(0.05,-1.12,0),(0.05,-1.16,0)])))])])])])])]),
             #  CN3 
@@ -212,7 +212,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(USE='HAnimJointShape')]),
                 Shape(
                   appearance=Appearance(
-                    material=Material(emissiveColor=(1,1,1))),
+                    material=Material(),),
                   geometry=IndexedLineSet(DEF='CN3toTMT3',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.1,-0.4,0),(0.15,-0.6,0)])))]),
               HAnimJoint(DEF='l_tarsometatarsal_joint3',center=(0.15,-0.6,0),name='l_tarsometatarsal_joint3',
@@ -224,7 +224,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(USE='HAnimJointShape')]),
                   Shape(
                     appearance=Appearance(
-                      material=Material(emissiveColor=(1,1,1))),
+                      material=Material(),),
                     geometry=IndexedLineSet(DEF='TMT3toMTP3',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.15,-0.6,0),(0.15,-0.9,0)])))]),
                 HAnimJoint(DEF='l_metatarsophalangeal_joint3',center=(0.15,-0.9,0),name='l_metatarsophalangeal_joint3',
@@ -236,7 +236,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(USE='HAnimJointShape')]),
                     Shape(
                       appearance=Appearance(
-                        material=Material(emissiveColor=(1,1,1))),
+                        material=Material(),),
                       geometry=IndexedLineSet(DEF='MTP3toPIP3',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.15,-0.9,0),(0.15,-1.05,0)])))]),
                   HAnimJoint(DEF='l_f_proximal_Interphalangeal_joint3',center=(0.15,-1.05,0),name='l_f_proximal_Interphalangeal_joint3',
@@ -248,7 +248,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         Shape(USE='HAnimJointShape')]),
                       Shape(
                         appearance=Appearance(
-                          material=Material(emissiveColor=(1,1,1))),
+                          material=Material(),),
                         geometry=IndexedLineSet(DEF='PIP3toDIP3',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.15,-1.05,0),(0.15,-1.13,0)])))]),
                     HAnimJoint(DEF='l_f_distal_Interphalangeal_joint3',center=(0.15,-1.13,0),name='l_f_distal_Interphalangeal_joint3',
@@ -260,7 +260,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           Shape(USE='HAnimJointShape')]),
                         Shape(
                           appearance=Appearance(
-                            material=Material(emissiveColor=(1,1,1))),
+                            material=Material(),),
                           geometry=IndexedLineSet(DEF='tiptoe_l_f_distal_Interphalangeal_joint3',coordIndex=[0,1],
                             coord=Coordinate(point=[(0.15,-1.13,0),(0.15,-1.16,0)])))])])])])])])]),
           #  CC 
@@ -273,7 +273,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 Shape(USE='HAnimJointShape')]),
               Shape(
                 appearance=Appearance(
-                  material=Material(emissiveColor=(1,1,1))),
+                  material=Material(),),
                 geometry=IndexedLineSet(DEF='CCtoTT',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.2,0.3,0),(0.21,-0.3,0)])))]),
             #  TT 
@@ -286,12 +286,12 @@ newModel=X3D(profile='Immersive',version='4.0',
                   Shape(USE='HAnimJointShape')]),
                 Shape(
                   appearance=Appearance(
-                    material=Material(emissiveColor=(1,1,1))),
+                    material=Material(),),
                   geometry=IndexedLineSet(DEF='TTtoTMT4',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.21,-0.3,0),(0.25,-0.58,0)]))),
                 Shape(
                   appearance=Appearance(
-                    material=Material(emissiveColor=(1,1,1))),
+                    material=Material(),),
                   geometry=IndexedLineSet(DEF='TTtoTMT5',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.21,-0.3,0),(0.33,-0.52,0)])))]),
               #  TMT4 
@@ -304,7 +304,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(USE='HAnimJointShape')]),
                   Shape(
                     appearance=Appearance(
-                      material=Material(emissiveColor=(1,1,1))),
+                      material=Material(),),
                     geometry=IndexedLineSet(DEF='TMT4toMTP4',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.25,-0.58,0),(0.25,-0.87,0)])))]),
                 HAnimJoint(DEF='l_metatarsophalangeal_joint4',center=(0.25,-0.87,0),name='l_metatarsophalangeal_joint4',
@@ -316,7 +316,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(USE='HAnimJointShape')]),
                     Shape(
                       appearance=Appearance(
-                        material=Material(emissiveColor=(1,1,1))),
+                        material=Material(),),
                       geometry=IndexedLineSet(DEF='MTP4toPIP4',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.25,-0.87,0),(0.25,-1.0,0)])))]),
                   HAnimJoint(DEF='l_f_proximal_Interphalangeal_joint4',center=(0.25,-1.0,0),name='l_f_proximal_Interphalangeal_joint4',
@@ -328,7 +328,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         Shape(USE='HAnimJointShape')]),
                       Shape(
                         appearance=Appearance(
-                          material=Material(emissiveColor=(1,1,1))),
+                          material=Material(),),
                         geometry=IndexedLineSet(DEF='PIP4toDIP4',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.25,-1.0,0),(0.25,-1.1,0)])))]),
                     HAnimJoint(DEF='l_f_distal_Interphalangeal_joint4',center=(0.25,-1.1,0),name='l_f_distal_Interphalangeal_joint4',
@@ -340,7 +340,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           Shape(USE='HAnimJointShape')]),
                         Shape(
                           appearance=Appearance(
-                            material=Material(emissiveColor=(1,1,1))),
+                            material=Material(),),
                           geometry=IndexedLineSet(DEF='tiptoe_l_f_distal_Interphalangeal_joint4',coordIndex=[0,1],
                             coord=Coordinate(point=[(0.25,-1.1,0),(0.25,-1.15,0)])))])])])])]),
               #  TMT5 
@@ -353,7 +353,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     Shape(USE='HAnimJointShape')]),
                   Shape(
                     appearance=Appearance(
-                      material=Material(emissiveColor=(1,1,1))),
+                      material=Material(),),
                     geometry=IndexedLineSet(DEF='TMT5toMTP5',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.33,-0.52,0),(0.34,-0.8,0)])))]),
                 HAnimJoint(DEF='l_metatarsophalangeal_joint5',center=(0.34,-0.8,0),name='l_metatarsophalangeal_joint5',
@@ -365,7 +365,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       Shape(USE='HAnimJointShape')]),
                     Shape(
                       appearance=Appearance(
-                        material=Material(emissiveColor=(1,1,1))),
+                        material=Material(),),
                       geometry=IndexedLineSet(DEF='MTP5toPIP5',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.34,-0.8,0),(0.34,-0.95,0)])))]),
                   HAnimJoint(DEF='l_f_proximal_Interphalangeal_joint5',center=(0.34,-0.95,0),name='l_f_proximal_Interphalangeal_joint5',
@@ -377,7 +377,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         Shape(USE='HAnimJointShape')]),
                       Shape(
                         appearance=Appearance(
-                          material=Material(emissiveColor=(1,1,1))),
+                          material=Material(),),
                         geometry=IndexedLineSet(DEF='PIP5toDIP5',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.34,-0.95,0),(0.34,-1.05,0)])))]),
                     HAnimJoint(DEF='l_f_distal_Interphalangeal_joint5',center=(0.34,-1.05,0),name='l_f_distal_Interphalangeal_joint5',
@@ -389,7 +389,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           Shape(USE='HAnimJointShape')]),
                         Shape(
                           appearance=Appearance(
-                            material=Material(emissiveColor=(1,1,1))),
+                            material=Material(),),
                           geometry=IndexedLineSet(DEF='tiptoe_l_f_distal_Interphalangeal_joint5',coordIndex=[0,1],
                             coord=Coordinate(point=[(0.34,-1.05,0),(0.34,-1.08,0)])))])])])])])])])])]),],
       joints=[

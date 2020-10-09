@@ -103,15 +103,15 @@ newModel=X3D(profile='Immersive',version='3.3',
                 geometry=Text(DEF='CenterString'))]),
             StringSensor(DEF='CenterSensor',enabled=False),
             TouchSensor(description='touch to activate',DEF='CenterTouch')])]),
-        Script(DEF='RightSingleToMultiString',
+        X3DScript(DEF='RightSingleToMultiString',
           field=[
           field(name='set_rightstring',accessType='inputOnly',type='SFString'),
           field(name='rightlines',accessType='outputOnly',type='MFString')]),
-        Script(DEF='UpSingleToMultiString',
+        X3DScript(DEF='UpSingleToMultiString',
           field=[
           field(name='set_upstring',accessType='inputOnly',type='SFString'),
           field(name='uplines',accessType='outputOnly',type='MFString')]),
-        Script(DEF='CenterSingleToMultiString',
+        X3DScript(DEF='CenterSingleToMultiString',
           field=[
           field(name='set_centerstring',accessType='inputOnly',type='SFString'),
           field(name='centerlines',accessType='outputOnly',type='MFString')]),

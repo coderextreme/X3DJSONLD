@@ -63,7 +63,7 @@ newModel=X3D(profile='Immersive',version='3.2',
       Transform(DEF='Cumulus'),
       Transform(DEF='Cirrus'),
       Transform(DEF='Fog'),
-      Script(DEF='PixelScript',directOutput=True,
+      X3DScript(DEF='PixelScript',directOutput=true,
         field=[
         field(accessType='initializeOnly',name='Cumulus',type='SFNode',
           children=[

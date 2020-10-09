@@ -40,7 +40,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         appearance=Appearance(
           material=Material(diffuseColor=(0,1,0)))),
       TimeSensor(DEF='TourTime',loop=True),
-      Script(DEF='MoveCylinder',
+      X3DScript(DEF='MoveCylinder',
         field=[
         field(name='set_cycle',accessType='inputOnly',type='SFTime'),
         field(name='spine',accessType='inputOutput',type='MFVec3f',value=[(-50,-50,0),(50,50,0)])]),
