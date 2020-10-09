@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2020-09-28-07:00 13:15:10.675-07:00 -->
+<!-- Generated 2020-10-04-07:00 10:23:32.396-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -10,7 +10,7 @@
       <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
       <SimpleType name="accessTypeChoices"
                   baseType="xs:NMTOKEN"
-                  appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a X3DScript node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively. Bounded, no additional values are allowed."
+                  appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a Script node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively. Bounded, no additional values are allowed."
                   documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#FieldSemantics">
          <enumeration value="initializeOnly"
                       appinfo="A field with accessType initializeOnly can be initialized, but cannot send or receive events."/>
@@ -86,7 +86,7 @@
                       appinfo="The Environment Sensor nodes emit events indicating activity in the scene environment, usually based on interactions between the viewer and the world."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/envsensor.html"/>
          <enumeration value="EventUtilities"
-                      appinfo="The Event Utility nodes provide the capability to filter, trigger, convert, or sequence numerous event-types for common interactive applications without the use of a X3DScript node."
+                      appinfo="The Event Utility nodes provide the capability to filter, trigger, convert, or sequence numerous event-types for common interactive applications without the use of a Script node."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/utils.html"/>
          <enumeration value="Followers"
                       appinfo="The Follower nodes (Chasers and Dampers) support dynamic creation of smooth parameter transitions at run time."
@@ -149,7 +149,7 @@
                       appinfo="The Rigid Body Physics component describes how to model rigid bodies and their interactions through the application of basic physics principles to effect motion."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html"/>
          <enumeration value="Scripting"
-                      appinfo="The X3DScript component describes how X3DScript nodes are used to effect changes in X3D worlds."
+                      appinfo="The Script component describes how Script nodes are used to effect changes in X3D worlds."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html"/>
          <enumeration value="Shaders"
                       appinfo="The programmable shaders component describes how programmable shaders are specified and how they affect the visual appearance of geometry."
@@ -321,7 +321,7 @@
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DUrlObject"
                   baseType="xs:NMTOKEN"
-                  appinfo="containerFieldChoicesX3DUrlObject lists the allowed containerField enumeration values for Anchor, GeoMetadata, Inline and X3DScript nodes: default &#34;children&#34; if parent node has abstract type X3DGroupingNode, otherwise &#34;watchList&#34; if parent node is LoadSensor."
+                  appinfo="containerFieldChoicesX3DUrlObject lists the allowed containerField enumeration values for Anchor, GeoMetadata, Inline and Script nodes: default &#34;children&#34; if parent node has abstract type X3DGroupingNode, otherwise &#34;watchList&#34; if parent node is LoadSensor."
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="children"
                       appinfo="parent node has abstract type X3DGroupingNode"/>
@@ -3755,7 +3755,7 @@
                       appinfo="Interactive Profile adds interaction nodes (Anchor, KeySensor) to the minimum subset of nodes needed to display lightweight compelling content. Allowed X3D nodes for this profile are: Anchor Appearance Background BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineSet Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineSet Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet PositionInterpolator ProximitySensor ScalarInterpolator Shape Sphere SphereSensor SpotLight StringSensor Switch TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor Transform TriangleFanSet TriangleSet TriangleStripSet Viewpoint VisibilitySensor WorldInfo."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/interactive.html"/>
          <enumeration value="Immersive"
-                      appinfo="Immersive Profile equals all of the nodes in the VRML97 Specification, plus various X3D node additions including KeySensor, StringSensor and Scene. Allowed X3D nodes for this profile are: Anchor Appearance AudioClip Background Billboard BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Collision Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Extrusion Fog FontStyle Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFan IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineProperties LineSet LoadSensor LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MovieTexture MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet Polyline2D Polypoint2D PositionInterpolator ProximitySensor Rectangle2D ScalarInterpolator X3DScript Shape Sound Sphere SphereSensor SpotLight StringSensor Switch Text TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor TriangleFanSet TriangleSet TriangleSet2D TriangleStripSet Transform Viewpoint VisibilitySensor WorldInfo."
+                      appinfo="Immersive Profile equals all of the nodes in the VRML97 Specification, plus various X3D node additions including KeySensor, StringSensor and Scene. Allowed X3D nodes for this profile are: Anchor Appearance AudioClip Background Billboard BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Collision Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Extrusion Fog FontStyle Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFan IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineProperties LineSet LoadSensor LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MovieTexture MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet Polyline2D Polypoint2D PositionInterpolator ProximitySensor Rectangle2D ScalarInterpolator Script Shape Sound Sphere SphereSensor SpotLight StringSensor Switch Text TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor TriangleFanSet TriangleSet TriangleSet2D TriangleStripSet Transform Viewpoint VisibilitySensor WorldInfo."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/immersive.html"/>
          <enumeration value="MedicalInterchange"
                       appinfo="The MedicalInterchange profile adds support for VolumeRendering component to Interchange profile. Allowed X3D nodes for this profile are: Anchor Arc2D ArcClose2D Appearance Background Billboard BlendedVolumeStyle BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger BoundaryEnhancementVolumeStyle Box CartoonVolumeStyle Circle2D ClipPlane Collision Color ColorInterpolator ColorRGBA ComposedVolumeStyle CompositeTexture3D Cone Coordinate CoordinateDouble CoordinateInterpolator Cylinder DirectionalLight Disk2D EdgeEnhancementVolumeStyle FillProperties FontStyle Group ImageTexture ImageTexture3D IndexedFaceSet IndexedLineSet IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger IsoSurfaceVolumeData LineProperties LineSet LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OctTree OpacityMapVolumeStyle OrientationInterpolator OrthoViewpoint PixelTexture PixelTexture3D PointSet Polyline2D Polypoint2D PositionInterpolator ProjectionVolumeStyle Rectangle2D ScalarInterpolator SegmentedVolumeData ShadedVolumeStyle Shape SilhouetteEnhancementVolumeStyle Sphere StaticGroup Switch Text TextureCoordinate TextureCoordinate3D TextureCoordinate4D TextureCoordinateGenerator TextureMatrixTransform TextureProperties TextureTransform TextureTransform3D TimeSensor TimeTrigger ToneMappedVolumeStyle Transform TriangleFanSet TriangleSet TriangleStripSet Viewpoint ViewpointGroup VolumeData WorldInfo."
@@ -19692,11 +19692,12 @@
                    inheritedFrom="X3DOneSidedMaterialNode"
                    baseType="xs:NMTOKEN"/>
             <field name="occlusionStrength"
-                   type="SFColor"
+                   type="SFFloat"
                    accessType="inputOutput"
-                   default="0 0 0"
+                   default="1"
                    minInclusive="0"
-                   maxInclusive="1"/>
+                   maxInclusive="1"
+                   baseType="intensityType"/>
             <field name="occlusionTexture"
                    type="SFNode"
                    accessType="inputOutput"
@@ -24941,9 +24942,9 @@
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
-      <ConcreteNode name="X3DScript">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html#X3DScript"
-                              appinfo="X3DScript contains author-programmed event behaviors for a scene.">
+      <ConcreteNode name="Script">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html#Script"
+                              appinfo="Script contains author-programmed event behaviors for a scene.">
             <componentInfo name="Scripting" level="1"/>
             <Inheritance baseType="X3DScriptNode"/>
             <field name="description"
@@ -29532,7 +29533,7 @@
                             appinfo="The Environment Sensor nodes emit events indicating activity in the scene environment, usually based on interactions between the viewer and the world."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/envsensor.html"/>
                <enumeration value="EventUtilities"
-                            appinfo="The Event Utility nodes provide the capability to filter, trigger, convert, or sequence numerous event-types for common interactive applications without the use of a X3DScript node."
+                            appinfo="The Event Utility nodes provide the capability to filter, trigger, convert, or sequence numerous event-types for common interactive applications without the use of a Script node."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/utils.html"/>
                <enumeration value="Followers"
                             appinfo="The Follower nodes (Chasers and Dampers) support dynamic creation of smooth parameter transitions at run time."
@@ -29595,7 +29596,7 @@
                             appinfo="The Rigid Body Physics component describes how to model rigid bodies and their interactions through the application of basic physics principles to effect motion."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html"/>
                <enumeration value="Scripting"
-                            appinfo="The X3DScript component describes how X3DScript nodes are used to effect changes in X3D worlds."
+                            appinfo="The Script component describes how Script nodes are used to effect changes in X3D worlds."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html"/>
                <enumeration value="Shaders"
                             appinfo="The programmable shaders component describes how programmable shaders are specified and how they affect the visual appearance of geometry."
@@ -30164,7 +30165,7 @@
                             appinfo="Interactive Profile adds interaction nodes (Anchor, KeySensor) to the minimum subset of nodes needed to display lightweight compelling content. Allowed X3D nodes for this profile are: Anchor Appearance Background BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineSet Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineSet Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet PositionInterpolator ProximitySensor ScalarInterpolator Shape Sphere SphereSensor SpotLight StringSensor Switch TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor Transform TriangleFanSet TriangleSet TriangleStripSet Viewpoint VisibilitySensor WorldInfo."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/interactive.html"/>
                <enumeration value="Immersive"
-                            appinfo="Immersive Profile equals all of the nodes in the VRML97 Specification, plus various X3D node additions including KeySensor, StringSensor and Scene. Allowed X3D nodes for this profile are: Anchor Appearance AudioClip Background Billboard BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Collision Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Extrusion Fog FontStyle Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFan IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineProperties LineSet LoadSensor LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MovieTexture MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet Polyline2D Polypoint2D PositionInterpolator ProximitySensor Rectangle2D ScalarInterpolator X3DScript Shape Sound Sphere SphereSensor SpotLight StringSensor Switch Text TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor TriangleFanSet TriangleSet TriangleSet2D TriangleStripSet Transform Viewpoint VisibilitySensor WorldInfo."
+                            appinfo="Immersive Profile equals all of the nodes in the VRML97 Specification, plus various X3D node additions including KeySensor, StringSensor and Scene. Allowed X3D nodes for this profile are: Anchor Appearance AudioClip Background Billboard BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger Box Collision Color ColorInterpolator ColorRGBA Cone Coordinate CoordinateInterpolator Cylinder CylinderSensor DirectionalLight ElevationGrid Extrusion Fog FontStyle Group ImageTexture IndexedFaceSet IndexedLineSet IndexedTriangleFan IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger KeySensor LineProperties LineSet LoadSensor LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MovieTexture MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OrientationInterpolator PixelTexture PlaneSensor PointLight PointSet Polyline2D Polypoint2D PositionInterpolator ProximitySensor Rectangle2D ScalarInterpolator Script Shape Sound Sphere SphereSensor SpotLight StringSensor Switch Text TextureCoordinate TextureCoordinateGenerator TextureTransform TimeSensor TimeTrigger TouchSensor TriangleFanSet TriangleSet TriangleSet2D TriangleStripSet Transform Viewpoint VisibilitySensor WorldInfo."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/immersive.html"/>
                <enumeration value="MedicalInterchange"
                             appinfo="The MedicalInterchange profile adds support for VolumeRendering component to Interchange profile. Allowed X3D nodes for this profile are: Anchor Arc2D ArcClose2D Appearance Background Billboard BlendedVolumeStyle BooleanFilter BooleanSequencer BooleanToggle BooleanTrigger BoundaryEnhancementVolumeStyle Box CartoonVolumeStyle Circle2D ClipPlane Collision Color ColorInterpolator ColorRGBA ComposedVolumeStyle CompositeTexture3D Cone Coordinate CoordinateDouble CoordinateInterpolator Cylinder DirectionalLight Disk2D EdgeEnhancementVolumeStyle FillProperties FontStyle Group ImageTexture ImageTexture3D IndexedFaceSet IndexedLineSet IndexedTriangleFanSet IndexedTriangleSet IndexedTriangleStripSet Inline IntegerSequencer IntegerTrigger IsoSurfaceVolumeData LineProperties LineSet LOD Material MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString MultiTexture MultiTextureCoordinate MultiTextureTransform NavigationInfo Normal NormalInterpolator OctTree OpacityMapVolumeStyle OrientationInterpolator OrthoViewpoint PixelTexture PixelTexture3D PointSet Polyline2D Polypoint2D PositionInterpolator ProjectionVolumeStyle Rectangle2D ScalarInterpolator SegmentedVolumeData ShadedVolumeStyle Shape SilhouetteEnhancementVolumeStyle Sphere StaticGroup Switch Text TextureCoordinate TextureCoordinate3D TextureCoordinate4D TextureCoordinateGenerator TextureMatrixTransform TextureProperties TextureTransform TextureTransform3D TimeSensor TimeTrigger ToneMappedVolumeStyle Transform TriangleFanSet TriangleSet TriangleStripSet Viewpoint ViewpointGroup VolumeData WorldInfo."
