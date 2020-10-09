@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> A Seamless VRML Human, demonstrating the H-Anim 2001 Specification. Animation scripting via EcmaScript. </p>
- <p> Related links: <a href="../../../HumanoidAnimation/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../HumanoidAnimation/BoxManIndex.html" target="_top">BoxMan catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../HumanoidAnimation/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../HumanoidAnimation/BoxManCIndex.html" target="_top">BoxManC catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../HumanoidAnimation/BoxMan.x3d">BoxMan.x3d</a> </td>
+			<td> <a href="../../../HumanoidAnimation/BoxManC.x3d">BoxManC.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -96,11 +96,11 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
-			<td> BoxMan H-Anim 2.0 </td>
+			<td> BoxManC H-Anim 2.0 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d" target="_blank">http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -241,7 +241,7 @@ NeedClassName.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("H-Anim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("BoxMan.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("BoxManC.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("A Seamless VRML Human, demonstrating the H-Anim 2001 Specification. Animation scripting via EcmaScript."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("James Smith - james@vapourtech.com"))
     .addMeta((new autoclass.meta()).setName("translator").setContent("Don Brutzman and Matt Beitler"))
@@ -260,12 +260,12 @@ NeedClassName.prototype = {
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.web3d.org/x3d/content/X3dToVrml97.xslt"))
     .addMeta((new autoclass.meta()).setName("rights").setContent("(C) 2000 James Smith - james@vapourtech.com"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.vapourtech.com"))
-    .addMeta((new autoclass.meta()).setName("subject").setContent("BoxMan H-Anim 2.0"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxMan.x3d"))
+    .addMeta((new autoclass.meta()).setName("subject").setContent("BoxManC H-Anim 2.0"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/BoxManC.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.WorldInfo()).setInfo(this.WorldInfo_3_26_info).setTitle("BoxMan - A Seamless VRML Human"))
+    .addChild((new autoclass.WorldInfo()).setInfo(this.WorldInfo_3_26_info).setTitle("BoxManC - A Seamless VRML Human"))
     .addChild((new autoclass.Background()).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.6,0.6,0.6]))).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.75,0.75,0.75]))))
     .addComments(" H-Anim node prototypes are provided automatically by the X3dToVrml97.xsl translation stylesheet when converting to VRML97 (which didn't include H-Anim) ")
     .addChild((new autoclass.HAnimHumanoid("HUMANOID")).setName("Humanoid").setInfo(this.HUMANOID_3_28_info).setVersion("2.0")
