@@ -1,0 +1,132 @@
+Caveat:  This presentation is primary focused on X3D JSON, an up and coming encoding for X3D.  Note that all current JSON implementations that the author is aware of uses XML/DOM documents as an intermediate representation.  We're currently working on a type-safe library for ECMAScript 6.   We do not have a ES6 renderer planned at this point.
+
+
+Beginner's X3D JSON.   Use JSON files.
+
+The JSON standard:
+
+https://www.json.org/
+
+JSON schema:
+
+https://json-schema.org/
+
+Examples of X3D JSON: (zip download)
+
+https://www.web3d.org/x3d/content/examples/X3dExampleArchivesJsonScenes.zip
+
+There are currently 2 X3D browsers that I am aware of that can read X3D JSON files, X3DOM and X_ITE.  Following are simple examples of incorporatinng X3D JSON files in the browser.  This is by far the simplest interface.  These follow the current capabilities of the browswers.
+================================================================================
+Embedding a JSON file in a HTML/X3DOM page, include JSON file with .json extension.
+
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
+   </head>
+  <body>
+        <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat='false' showLog='false' width='300px' height='150px' backend='webgl'>
+                <Scene>
+                        <Inline url='"src/main/data/ball.json"'></Inline>
+                </Scene>
+        </X3D>
+</body>
+</html>
+================================================================================
+Embedding a JSON file in a HTML/X_ITE page, include JSON file with .json extension.
+
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="https://code.create3000.de/x_ite/latest/dist/x_ite.css"/>
+<script type="text/javascript" src="https://code.create3000.de/x_ite/latest/dist/x_ite.min.js"></script>
+  </head>
+  <body>
+    <X3DCanvas cache='false' url='"src/main/data/ball.json"'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+           <Scene>
+           </Scene>
+    </X3DCanvas>
+  </bodY>
+</html>
+================================================================================
+Loading a JS Object into X_ITE:
+
+function load_X_ITE_JS(jsobj, selector) {
+        X3D(function() {
+                if (typeof X3D.getBrowser !== 'undefined') {
+                        var browser = X3D.getBrowser(selector);
+                        if (typeof browser !== 'undefined' && typeof browser.importJS !== 'undefined') {
+                                var importedScene = browser.importJS(jsobj);
+                                browser.replaceWorld(importedScene);
+                        }
+                }
+        }, function() {
+                alert("Failed to render JSON to X_ITE");
+        });
+}
+================================================================================
+Warning!  So far non-of the suggested method are secure.   The first line of defeense is the schema validator, integrated here:
+
+https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/loadValidate.js
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>X3D JSON Validator</title>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.12.3/ajv.min.js"></script>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/loadValidate.js"></script>
+    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
+    <script type="text/javascript" src="../node/ajv-i18n/localize/en/index.js"></script>
+</head>
+<body>
+        <h1>X3D JSON schema validator</h1><br></br>
+        If you paste nasties into this page, you will get nasties back.  I am not responsible for your misuse of this page.<br></br>
+        <a href="javascript:validator();">Click here to validate JSON in text area against X3D JSON Schema 3.3</a>
+        Language:
+        <select onchange="lang=this.value;loadLocalize(lang);">
+                <option>en</option>
+                <option>de</option>
+        </select><br></br>
+        <textarea id="json" name="json" rows="45" cols="80"></textarea><br></br>
+</body>
+<script type="text/javascript">
+function validator() {
+        try {
+                var data = $("#json").val();
+                if (data.startsWith("http")) {
+                        $.getJSON(data, function(json) {
+                                loadSchema(json, "<unknown>", doValidate, X3DJSONLD, function() {
+                                        alert("Valid or user clicked OK");
+                                }, function(e) {
+                                        alert(e);
+                                });
+                        });
+                } else {
+                        var json = JSON.parse(data);
+                        loadSchema(json, "<unknown>", doValidate, X3DJSONLD, function() {
+                                alert("Valid or user clicked OK");
+                        }, function(e) {
+                                alert(e);
+                        });
+                }
+        } catch (je) {
+                alert(je);
+        }
+}
+</script>
+</html>
+
+This currently validates and produces English and German error reports.  Other languages are currently very possible, if there is interest.  The validator makes use of Ajv and Ajv-i18n.
+================================================================================
+More advanced combinations of various JSON files are possible and implemented here:
+
+https://github.com/coderextreme/X3DJSONLD/tree/master/src/main/html/
+
+
+Do not forget to provide some X3D Script checking for vunerabilities.  There is no checking of Script nodes going into the browsers.
