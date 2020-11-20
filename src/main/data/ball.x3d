@@ -30,6 +30,7 @@
 		topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'
 	  >
 	</Background>
+	<Environment gammaCorrectionDefault="none"></Environment>
 	<Transform>
           <Shape>
             <Sphere/>
