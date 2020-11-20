@@ -24,9 +24,9 @@ import { Viewpoint } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { Group } from './x3d.mjs';
 import { HAnimHumanoid } from './x3d.mjs';
-import { HAnimJoint } from './x3d.mjs';
 import { MetadataSet } from './x3d.mjs';
 import { MetadataString } from './x3d.mjs';
+import { HAnimJoint } from './x3d.mjs';
 import { HAnimSegment } from './x3d.mjs';
 import { HAnimSite } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
@@ -56,7 +56,7 @@ import { ScalarInterpolator } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.3"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
           component : new SFNode(
@@ -66,19 +66,19 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("JoeSkinTexcoordDisplacerKick.x3d")}),
-
-            new meta({
-              name : new SFString("info"),
-              content : new SFString("Joe No Reservations 20200709 spec root and vc7 hier 20161206 ... 20121221 ... 20040109 x3d/hanim")}),
+              content : new SFString("JoeKick.x3d")}),
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations.")}),
+              content : new SFString("This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models.")}),
+
+            new meta({
+              name : new SFString("creator"),
+              content : new SFString("Joe Williams")}),
 
             new meta({
               name : new SFString("created"),
-              content : new SFString("15 January 2004")}),
+              content : new SFString("9 January 2004")}),
 
             new meta({
               name : new SFString("translated"),
@@ -86,52 +86,52 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 September 2020")}),
-
-            new meta({
-              name : new SFString("creator"),
-              content : new SFString("Joe D Williams")}),
-
-            new meta({
-              name : new SFString("translators"),
-              content : new SFString("Roy Walmsley and Don Brutzman")}),
-
-            new meta({
-              name : new SFString("info"),
-              content : new SFString("Transcoding from .vrml to .x3dv by Joe using BS studio circa 2012")}),
-
-            new meta({
-              name : new SFString("info"),
-              content : new SFString("translated from .x3dv to .xml for web3d archive")}),
+              content : new SFString("5 July 2020")}),
 
             new meta({
               name : new SFString("TODO"),
-              content : new SFString("Record information relating a certain skin coordinate to a V1 Annex A Site name and location is now found in comment at end of this scene where each # number name string appears in the order of coordinate points in the skin mesh user code. Best organized to provide author data naming important HAnim humanoid skeletonspace to skinspace relations using structured MetadataSet containing MetadataString nodes")}),
+              content : new SFString("Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes")}),
 
             new meta({
-              name : new SFString("info"),
-              content : new SFString("modified to correct root and vc7 hierarchies")}),
+              name : new SFString("translators"),
+              content : new SFString("Roy Walmsley, Don Brutzman, John Carlson")}),
+
+            new meta({
+              name : new SFString("reference"),
+              content : new SFString("../Characters/JoeSkinTexcoordDisplacerKick.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("BS studio translation from .x3dv by Joe using BS Contact")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d")}),
 
             new meta({
               name : new SFString("generator"),
               content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
 
             new meta({
+              name : new SFString("generator"),
+              content : new SFString("BS studio translation from .x3dv by Joe using BS Contact")}),
+
+            new meta({
               name : new SFString("license"),
-              content : new SFString("../license.html")})])})),
+              content : new SFString("../license.html")}),
+
+            new meta({
+              name : new SFString("translated"),
+              content : new SFString("20 November 2020")}),
+
+            new meta({
+              name : new SFString("generator"),
+              content : new SFString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")}),
+
+            new meta({
+              name : new SFString("reference"),
+              content : new SFString("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
             new WorldInfo({
-              info : new MFString(["X3D Humanoid V1 LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"]),
+              info : new MFString(["X3D Humanoid LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"]),
               title : new SFString("X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe")}),
 
             new NavigationInfo({
@@ -167,29 +167,29 @@ var X3D0 =  new X3D({
               position : new SFVec3f([1.62,1.05,3.06])}),
 
             new Viewpoint({
-              DEF : new SFString("Scene_FrontView"),
+              DEF : new SFString("Scene_IFrontView"),
               centerOfRotation : new SFVec3f([0,0.8,0]),
-              description : new SFString("Scene Front View"),
+              description : new SFString("Scene_Front View"),
               position : new SFVec3f([0,0.8,2.58])}),
 
             new Viewpoint({
-              DEF : new SFString("Scene_SideView"),
+              DEF : new SFString("Scene_ISideView"),
               centerOfRotation : new SFVec3f([0,0.8,0]),
-              description : new SFString("Scene Side View"),
+              description : new SFString("Scene_Side View"),
               orientation : new SFRotation([0,1,0,1.5708]),
-              position : new SFVec3f([2.6,0.5,0])}),
+              position : new SFVec3f([2.6,0.8,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_BackView"),
               centerOfRotation : new SFVec3f([0,1.5,0]),
-              description : new SFString("Scene Back View"),
+              description : new SFString("Scene_Back View"),
               orientation : new SFRotation([0,1,0,3.14]),
-              position : new SFVec3f([0,2.5,-3])}),
+              position : new SFVec3f([0,1.5,-3])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_TopView"),
               centerOfRotation : new SFVec3f([0,1.5,0]),
-              description : new SFString("Scene Top View"),
+              description : new SFString("Scene_Top View"),
               orientation : new SFRotation([1,0,0,-1.5708]),
               position : new SFVec3f([0,3.5,0])}),
 
@@ -199,22 +199,22 @@ var X3D0 =  new X3D({
                 new HAnimHumanoid({
                   name : new SFString("Human"),
                   DEF : new SFString("Joe_Human"),
-                  version : new SFString("1.0"),
+                  loa : new SFInt32(3),
+                  version : new SFString("2.0"),
+                  metadata : new MFNode([
+                    new MetadataSet({
+                      name : new SFString("warnings"),
+                      reference : new SFString("HAnim"),
+                      value : new SFNode(
+                        new MetadataString({
+                          name : new SFString("SymmetricalLeftRight"),
+                          reference : new SFString("correction options: ignore, warn, average, left, right, largest, smallest"),
+                          value : new MFString(["ignore"])}))}),
                   joints : new SFNode(
                     new HAnimJoint({
-                      name : new SFString("HumanoidRoot"),
-                      DEF : new SFString("Joe_HumanoidRoot"),
+                      name : new SFString("humanoid_root"),
+                      DEF : new SFString("Joe_humanoid_root"),
                       center : new SFVec3f([0,0.875,0]),
-                      metadata : new MFNode([
-                        new MetadataSet({
-                          name : new SFString("warnings"),
-                          reference : new SFString("HAnim"),
-                          { "#comment" : new CommentsBlock("TODO experimental") },
-                          value : new SFNode(
-                            new MetadataString({
-                              name : new SFString("SymmetricalLeftRight"),
-                              reference : new SFString("correction options: ignore, warn, average, left, right, largest, smallest"),
-                              value : new MFString(["ignore"])}))}),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("sacrum"),
@@ -269,29 +269,29 @@ var X3D0 =  new X3D({
                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
                                   children : new MFNode([
                                     new HAnimJoint({
-                                      name : new SFString("l_ankle"),
-                                      DEF : new SFString("Joe_l_ankle"),
+                                      name : new SFString("l_talocrural"),
+                                      DEF : new SFString("Joe_l_talocrural"),
                                       center : new SFVec3f([0.115,0.069,0]),
                                       skinCoordIndex : new MFInt32([342,343,344,345]),
                                       skinCoordWeight : new MFFloat([1,1,1,1]),
                                       children : new MFNode([
                                         new HAnimJoint({
-                                          name : new SFString("l_subtalar"),
-                                          DEF : new SFString("Joe_l_subtalar"),
+                                          name : new SFString("l_tarsometatarsal_2"),
+                                          DEF : new SFString("Joe_l_tarsometatarsal_2"),
                                           center : new SFVec3f([0.115,0.031,0.03]),
                                           skinCoordIndex : new MFInt32([346,347,348,71]),
                                           skinCoordWeight : new MFFloat([1,1,1,1]),
                                           children : new MFNode([
                                             new HAnimJoint({
-                                              name : new SFString("l_midtarsal"),
-                                              DEF : new SFString("Joe_l_midtarsal"),
+                                              name : new SFString("l_metatarsophalangeal_2"),
+                                              DEF : new SFString("Joe_l_metatarsophalangeal_2"),
                                               center : new SFVec3f([0.115,0.037,0.09]),
                                               skinCoordIndex : new MFInt32([349,350,351,352]),
                                               skinCoordWeight : new MFFloat([1,1,1,1]),
                                               children : new MFNode([
                                                 new HAnimJoint({
-                                                  name : new SFString("l_metatarsal"),
-                                                  DEF : new SFString("Joe_l_metatarsal"),
+                                                  name : new SFString("l_tarsal_distal_interphalangeal_2"),
+                                                  DEF : new SFString("Joe_l_tarsal_distal_interphalangeal_2"),
                                                   center : new SFVec3f([0.115,0.02,0.122]),
                                                   skinCoordIndex : new MFInt32([353,354,355,356,357,358,359,360,361]),
                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])})])})])}),
@@ -311,29 +311,29 @@ var X3D0 =  new X3D({
                                   skinCoordWeight : new MFFloat([0.6,0.2,1,1,1,1,1,1,0.2]),
                                   children : new MFNode([
                                     new HAnimJoint({
-                                      name : new SFString("r_ankle"),
-                                      DEF : new SFString("Joe_r_ankle"),
+                                      name : new SFString("r_talocrural"),
+                                      DEF : new SFString("Joe_r_talocrural"),
                                       center : new SFVec3f([-0.115,0.069,0]),
                                       skinCoordIndex : new MFInt32([370,371,372,373]),
                                       skinCoordWeight : new MFFloat([1,1,1,1]),
                                       children : new MFNode([
                                         new HAnimJoint({
-                                          name : new SFString("r_subtalar"),
-                                          DEF : new SFString("Joe_r_subtalar"),
+                                          name : new SFString("r_tarsometatarsal_2"),
+                                          DEF : new SFString("Joe_r_tarsometatarsal_2"),
                                           center : new SFVec3f([-0.1,0.015,-0.01]),
                                           skinCoordIndex : new MFInt32([374,375,376]),
                                           skinCoordWeight : new MFFloat([1,1,1]),
                                           children : new MFNode([
                                             new HAnimJoint({
-                                              name : new SFString("r_midtarsal"),
-                                              DEF : new SFString("Joe_r_midtarsal"),
+                                              name : new SFString("r_metatarsophalangeal_2"),
+                                              DEF : new SFString("Joe_r_metatarsophalangeal_2"),
                                               center : new SFVec3f([-0.115,0.037,0.09]),
                                               skinCoordIndex : new MFInt32([377,378,379,380]),
                                               skinCoordWeight : new MFFloat([1,1,1,1]),
                                               children : new MFNode([
                                                 new HAnimJoint({
-                                                  name : new SFString("r_metatarsal"),
-                                                  DEF : new SFString("Joe_r_metatarsal"),
+                                                  name : new SFString("r_tarsal_distal_interphalangeal_2"),
+                                                  DEF : new SFString("Joe_r_tarsal_distal_interphalangeal_2"),
                                                   center : new SFVec3f([-0.1,0.01,0.14]),
                                                   skinCoordIndex : new MFInt32([381,382,383,384,385,386,387,388,389]),
                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])})])})])})])}),
@@ -549,8 +549,8 @@ var X3D0 =  new X3D({
                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimJoint({
-                                                                                                                  name : new SFString("l_wrist"),
-                                                                                                                  DEF : new SFString("Joe_l_wrist"),
+                                                                                                                  name : new SFString("l_radiocarpal"),
+                                                                                                                  DEF : new SFString("Joe_l_radiocarpal"),
                                                                                                                   center : new SFVec3f([0.2,0.87,-0.04]),
                                                                                                                   skinCoordIndex : new MFInt32([119,120,121,122,123,124,125,126]),
                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
@@ -717,8 +717,8 @@ var X3D0 =  new X3D({
                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimJoint({
-                                                                                                                  name : new SFString("r_wrist"),
-                                                                                                                  DEF : new SFString("Joe_r_wrist"),
+                                                                                                                  name : new SFString("r_radiocarpal"),
+                                                                                                                  DEF : new SFString("Joe_r_radiocarpal"),
                                                                                                                   center : new SFVec3f([-0.2,0.89,-0.04]),
                                                                                                                   skinCoordIndex : new MFInt32([235,236,237,238,239,240,241,242]),
                                                                                                                   skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
@@ -869,7 +869,7 @@ var X3D0 =  new X3D({
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("JoeSkinImageTexture"),
-                              url : new MFString(["JoeBodyTexture29.png"])})),
+                              url : new MFString(["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"])})),
                           textureTransform : new SFNode(
                             new TextureTransform({
                               DEF : new SFString("KickTextureTransform")}))})),
@@ -884,85 +884,16 @@ var X3D0 =  new X3D({
                               point : new MFVec3f([0,1.77,0,0,1.665,0.09,-0.033,1.62,0.087,0.033,1.62,0.087,0,1.55,0.097,-0.077,1.64,-0.01,-0.0527,1.58,0.015,0.077,1.64,-0.01,0.0527,1.58,0.015,0,1.625,-0.0925,-0.03,1.46,0.035,0,1.44,0.03,0.03,1.46,0.035,-0.1135,1.318,0.095,0.1135,1.318,0.095,0,1.25,0.113,-0.087,1.19,0.09,-0.0935,1.03,0.075,0.087,1.19,0.09,0.0935,1.03,0.075,-0.1425,1.065,0.0033,-0.15,0.9,-0.01,0.1425,1.065,0.0033,0.15,0.9,-0.01,0,1.53,-0.084,0.0049,1.1908,-0.1113,-0.0773,1.019,-0.12,0.0773,1.019,-0.12,0.005,1.0915,-0.1091,-0.178,1.4825,-0.0625,-0.17,1.38,0.007,-0.1884,0.8676,-0.036,-0.16,1.38,-0.127,-0.2,1.1388,-0.08,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.23,1.133,-0.055,-0.1977,0.8169,-0.0177,-0.1941,0.6772,-0.0423,-0.2117,0.8562,-0.0584,-0.1929,0.789,-0.1064,0.175,1.4825,-0.06,0.17,1.38,0.007,0.1901,0.8645,-0.0415,0.16,1.38,-0.125,0.2,1.1388,-0.08,0.165,1.1388,-0.04,0.244,1.1388,-0.04,0.23,1.133,-0.055,0.2009,0.8139,-0.0237,0.2056,0.6743,-0.0482,0.2142,0.8529,-0.0648,0.1929,0.786,-0.1122,-0.1,0.4913,-0.03,-0.17,0.466,0,-0.05,0.466,0,-0.165,0.01,0.12,-0.15,0.07,0,-0.085,0.086,0.0125,-0.09,0.056,0.0125,-0.115,0.02,0.122,-0.115,0.04,-0.055,-0.11,0.011,0.19,0.0993,0.4881,-0.0309,0.17,0.466,0,0.05,0.4867,0,0.165,0.01,0.12,0.15,0.07,0,0.085,0.086,0.0125,0.09,0.056,0.0125,0.115,0.02,0.122,0.115,0.04,-0.055,0.11,0.011,0.19,0,0.875,0,-0.0646,1.5149,-0.038,0.0646,1.5149,-0.038,0,1.07225,0.09,-0.11,1.427,-0.1375,-0.235,1.42,-0.0625,0.11,1.427,-0.1375,0.235,1.42,-0.0625,0,1.41,-0.145,0,0.925,0.08,-0.087,1.19,-0.09,0.087,1.19,-0.09,0.172,1.32,-0.03,-0.172,1.32,-0.03,0.15,1.23,-0.015,-0.15,1.23,-0.015,0.079,0.92,-0.14,0.1,0.9,0.077,-0.079,0.92,-0.14,-0.1,0.9,0.075,0,0.87,0,0.171,0.65,0,0.02,0.65,0,0.1,0.65,-0.08,0.1,0.65,0.07,-0.171,0.65,0,-0.02,0.65,0,-0.1,0.65,-0.08,-0.1,0.65,0.07,0.25,1.27,-0.04,0.17,1.27,-0.04,0.2,1.27,-0.09,0.2,1.27,0.02,0.244,1.1388,-0.04,0.165,1.1388,-0.04,0.2,1.1388,-0.08,0.2,1.1388,-0.013,0.225,1,-0.01,0.225,1,-0.07,0.185,1,-0.01,0.185,1,-0.07,0.2,1.1388,-0.04,0.225,0.92,-0.04,0.175,0.92,-0.04,0.2,0.92,-0.065,0.2,0.92,-0.015,0.225,0.89,-0.04,0.175,0.89,-0.04,0.2,0.89,-0.065,0.2,0.89,-0.015,0.218,0.86,-0.04,0.184,0.86,-0.04,0.2,0.87,-0.07,0.2,0.87,0,0.21,0.85,0,0.1854,0.85,0,0.212,0.84,-0.015,0.183,0.84,-0.015,0.213,0.835,-0.04,0.19,0.835,-0.04,0.211,0.835,-0.065,0.192,0.835,-0.065,0.208,0.84,-0.085,0.19,0.84,-0.085,0.2,0.84,-0.095,0.215,0.82,0,0.193,0.815,0.005,0.198,0.8,0.012,0.21,0.82,0.03,0.19,0.82,0.03,0.2,0.835,0.039,0.212,0.8,0.05,0.188,0.8,0.05,0.2,0.807,0.057,0.2,0.793,0.035,0.2,0.774,0.076,0.212,0.78,0.07,0.188,0.78,0.07,0.2,0.785,0.075,0.2,0.77,0.062,0.215,0.793,-0.015,0.187,0.793,-0.015,0.2,0.793,-0.005,0.215,0.788,-0.04,0.187,0.788,-0.04,0.215,0.793,-0.065,0.187,0.793,-0.065,0.21,0.79,-0.085,0.19,0.79,-0.085,0.2,0.79,-0.095,0.19,0.77,-0.0275,0.19,0.77,-0.0525,0.19,0.78,-0.0775,0.212,0.745,-0.015,0.188,0.745,-0.02,0.2,0.745,-0.0255,0.2,0.745,-0.0045,0.211,0.72,-0.015,0.189,0.72,-0.015,0.2,0.72,-0.0252,0.2,0.72,-0.0048,0.21,0.695,-0.015,0.19,0.695,-0.015,0.2,0.695,-0.025,0.2,0.695,-0.005,0.2,0.685,-0.015,0.215,0.74,-0.04,0.185,0.74,-0.04,0.2,0.74,-0.055,0.2,0.74,-0.025,0.21,0.7142,-0.04,0.19,0.7142,-0.04,0.2,0.7142,-0.053,0.2,0.7142,-0.027,0.21,0.68,-0.04,0.19,0.68,-0.04,0.2,0.68,-0.05,0.2,0.68,-0.03,0.2,0.67,-0.04,0.212,0.74,-0.065,0.188,0.74,-0.065,0.2,0.74,-0.0756,0.2,0.74,-0.0542,0.21,0.7177,-0.065,0.19,0.7177,-0.065,0.2,0.7177,-0.0751,0.2,0.7177,-0.0549,0.21,0.695,-0.065,0.19,0.695,-0.065,0.2,0.695,-0.075,0.2,0.695,-0.055,0.2,0.685,-0.065,0.211,0.755,-0.085,0.189,0.755,-0.085,0.2,0.755,-0.0952,0.2,0.755,-0.0748,0.21,0.735,-0.085,0.19,0.735,-0.085,0.2,0.735,-0.0951,0.2,0.735,-0.0749,0.21,0.72,-0.085,0.19,0.72,-0.085,0.2,0.72,-0.095,0.2,0.72,-0.075,0.2,0.71,-0.085,-0.23,1.23,-0.04,-0.16,1.23,-0.04,-0.2,1.235,-0.105,-0.2,1.255,0.02,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.2,1.1388,-0.08,-0.2,1.1388,0.013,-0.225,1,-0.01,-0.225,1,-0.07,-0.185,1,-0.01,-0.185,1,-0.07,-0.2,1.1388,-0.04,-0.225,0.92,-0.04,-0.175,0.92,-0.04,-0.2,0.92,-0.065,-0.2,0.92,-0.015,-0.225,0.89,-0.04,-0.175,0.89,-0.04,-0.2,0.89,-0.065,-0.2,0.89,-0.015,-0.218,0.86,-0.04,-0.184,0.86,-0.04,-0.2,0.87,-0.07,-0.2,0.87,0,-0.21,0.85,0,-0.1854,0.85,0,-0.212,0.84,-0.015,-0.183,0.84,-0.015,-0.213,0.835,-0.04,-0.19,0.835,-0.04,-0.211,0.835,-0.065,-0.192,0.835,-0.065,-0.208,0.84,-0.085,-0.19,0.84,-0.085,-0.2,0.84,-0.095,-0.215,0.82,0,-0.193,0.815,0.005,-0.198,0.8,0.012,-0.21,0.82,0.03,-0.19,0.82,0.03,-0.2,0.835,0.039,-0.212,0.8,0.05,-0.188,0.8,0.05,-0.2,0.807,0.057,-0.2,0.793,0.035,-0.2,0.774,0.076,-0.212,0.78,0.07,-0.188,0.78,0.07,-0.2,0.785,0.075,-0.2,0.77,0.062,-0.215,0.793,-0.015,-0.187,0.793,-0.015,-0.2,0.793,-0.005,-0.215,0.788,-0.04,-0.187,0.788,-0.04,-0.215,0.793,-0.065,-0.187,0.793,-0.065,-0.21,0.79,-0.085,-0.19,0.79,-0.085,-0.2,0.79,-0.095,-0.19,0.77,-0.0275,-0.19,0.77,-0.0525,-0.19,0.78,-0.0775,-0.212,0.745,-0.015,-0.188,0.745,-0.02,-0.2,0.745,-0.0255,-0.2,0.745,-0.0045,-0.211,0.72,-0.015,-0.189,0.72,-0.015,-0.2,0.72,-0.0252,-0.2,0.72,-0.0048,-0.21,0.695,-0.015,-0.19,0.695,-0.015,-0.2,0.695,-0.025,-0.2,0.695,-0.005,-0.2,0.685,-0.015,-0.215,0.74,-0.04,-0.185,0.74,-0.04,-0.2,0.74,-0.055,-0.2,0.74,-0.025,-0.21,0.7142,-0.04,-0.19,0.7142,-0.04,-0.2,0.7142,-0.053,-0.2,0.7142,-0.027,-0.21,0.68,-0.04,-0.19,0.68,-0.04,-0.2,0.68,-0.05,-0.2,0.68,-0.03,-0.2,0.67,-0.04,-0.212,0.74,-0.065,-0.188,0.74,-0.065,-0.2,0.74,-0.0756,-0.2,0.74,-0.0542,-0.21,0.7177,-0.065,-0.19,0.7177,-0.065,-0.2,0.7177,-0.0751,-0.2,0.7177,-0.0549,-0.21,0.695,-0.065,-0.19,0.695,-0.065,-0.2,0.695,-0.075,-0.2,0.695,-0.055,-0.2,0.685,-0.065,-0.211,0.755,-0.085,-0.189,0.755,-0.085,-0.2,0.755,-0.0952,-0.2,0.755,-0.0748,-0.21,0.735,-0.085,-0.19,0.735,-0.085,-0.2,0.735,-0.0951,-0.2,0.735,-0.0749,-0.21,0.72,-0.085,-0.19,0.72,-0.085,-0.2,0.72,-0.095,-0.2,0.72,-0.075,-0.2,0.71,-0.085,0.115,0.466,0.06,0.115,0.466,-0.055,0.15,0.466,0,0.05,0.466,0,0.17,0.3,0,0.06,0.3,0,0.1,0.3,-0.05,0.1,0.3,0.05,0.15,0.07,0,0.085,0.086,0.0125,0.115,0.069,-0.045,0.117,0.0975,0.0615,0.1375,0.006,-0.03,0.095,0.006,-0.03,0.115,0.015,-0.045,0.115,0.06,0.1,0.115,0,0.07,0.165,0,0.07,0.095,0,0.07,0.115,0.04,0.13,0.125,0,0.12,0.165,0,0.12,0.087,0,0.122,0.09,0.012,0.188,0.11,0.011,0.19,0.128,0.011,0.185,0.142,0.011,0.178,0.154,0.01,0.168,-0.115,0.466,0.06,-0.115,0.466,-0.055,-0.17,0.466,0,-0.05,0.466,0,-0.17,0.3,0,-0.06,0.3,0,-0.1,0.3,-0.05,-0.1,0.3,0.05,-0.15,0.07,0,-0.085,0.086,0.0125,-0.115,0.069,-0.045,-0.117,0.0975,0.0615,-0.1375,0.006,-0.03,-0.095,0.006,-0.03,-0.095,0.006,-0.03,-0.115,0.06,0.1,-0.115,0,0.07,-0.165,0,0.07,-0.095,0,0.07,-0.115,0.04,0.13,-0.125,0,0.12,-0.165,0,0.12,-0.087,0,0.122,-0.09,0.012,0.188,-0.11,0.011,0.19,-0.128,0.011,0.185,-0.142,0.011,0.178,-0.154,0.01,0.168])})),
                           texCoord : new SFNode(
                             new TextureCoordinate({
-                              point : new MFVec2f([0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5])}))}))})),
+                              point : new MFVec2f([0,0,0.5,0.5,0.5,0,0,0.5])}))}))})),
+                  skinCoord : new SFNode(
+                    new Coordinate({
+                      USE : new SFString("Joe_SkinCoord")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_HumanoidRoot")})),
+                      USE : new SFString("Joe_humanoid_root")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_sacroiliac")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vl5")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vl4")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vl3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vl2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vl1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt12")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt11")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt10")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt9")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt8")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt7")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt6")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt5")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt4")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vt1")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc7")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc6")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc5")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc4")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc2")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_vc1")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_skullbase")})),
@@ -971,16 +902,82 @@ var X3D0 =  new X3D({
                       USE : new SFString("Joe_temporomandibular")})),
                   joints : new SFNode(
                     new HAnimJoint({
+                      USE : new SFString("Joe_vc1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc6")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vc7")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vl1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vl2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vl3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vl4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vl5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt1")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt10")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt11")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt12")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt4")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt5")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt6")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt7")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt8")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_vt9")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
                       USE : new SFString("Joe_l_acromioclavicular")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_acromioclavicular")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_ankle")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_ankle")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_l_elbow")})),
@@ -1043,10 +1040,10 @@ var X3D0 =  new X3D({
                       USE : new SFString("Joe_r_knee")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_metatarsal")})),
+                      USE : new SFString("Joe_l_metatarsophalangeal_2")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_r_metatarsal")})),
+                      USE : new SFString("Joe_r_metatarsophalangeal_2")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_l_middle0")})),
@@ -1073,12 +1070,6 @@ var X3D0 =  new X3D({
                       USE : new SFString("Joe_r_middle3")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_midtarsal")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_midtarsal")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
                       USE : new SFString("Joe_l_pinky0")})),
                   joints : new SFNode(
                     new HAnimJoint({
@@ -1101,6 +1092,12 @@ var X3D0 =  new X3D({
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_pinky3")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_radiocarpal")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_radiocarpal")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_l_ring0")})),
@@ -1139,10 +1136,22 @@ var X3D0 =  new X3D({
                       USE : new SFString("Joe_r_sternoclavicular")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_l_subtalar")})),
+                      USE : new SFString("Joe_l_talocrural")})),
                   joints : new SFNode(
                     new HAnimJoint({
-                      USE : new SFString("Joe_r_subtalar")})),
+                      USE : new SFString("Joe_r_talocrural")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_tarsal_distal_interphalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_tarsal_distal_interphalangeal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_l_tarsometatarsal_2")})),
+                  joints : new SFNode(
+                    new HAnimJoint({
+                      USE : new SFString("Joe_r_tarsometatarsal_2")})),
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_l_thumb1")})),
@@ -1161,21 +1170,12 @@ var X3D0 =  new X3D({
                   joints : new SFNode(
                     new HAnimJoint({
                       USE : new SFString("Joe_r_thumb3")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_l_wrist")})),
-                  joints : new SFNode(
-                    new HAnimJoint({
-                      USE : new SFString("Joe_r_wrist")})),
                   segments : new SFNode(
                     new HAnimSegment({
                       USE : new SFString("Joe_sacrum")})),
                   viewpoints : new SFNode(
                     new HAnimSite({
-                      USE : new SFString("Joe_RootFront_view")})),
-                  skinCoord : new SFNode(
-                    new Coordinate({
-                      USE : new SFString("Joe_SkinCoord")}))})])}),
+                      USE : new SFString("Joe_RootFront_view")}))])})])}),
 
             new Group({
               children : new MFNode([
@@ -2236,13 +2236,13 @@ var X3D0 =  new X3D({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("HumanoidRoot_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_HumanoidRoot")}),
+              toNode : new SFString("Joe_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("HumanoidRoot_TranslationInterpolator"),
               toField : new SFString("set_translation"),
-              toNode : new SFString("Joe_HumanoidRoot")}),
+              toNode : new SFString("Joe_humanoid_root")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -2266,25 +2266,25 @@ var X3D0 =  new X3D({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_ankle_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_ankle")}),
+              toNode : new SFString("Joe_l_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_subtalar_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_subtalar")}),
+              toNode : new SFString("Joe_l_tarsometatarsal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_midtarsal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_midtarsal")}),
+              toNode : new SFString("Joe_l_metatarsophalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_metatarsal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_metatarsal")}),
+              toNode : new SFString("Joe_l_tarsal_distal_interphalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -2302,25 +2302,25 @@ var X3D0 =  new X3D({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_ankle_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_ankle")}),
+              toNode : new SFString("Joe_r_talocrural")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_subtalar_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_subtalar")}),
+              toNode : new SFString("Joe_r_tarsometatarsal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_midtarsal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_midtarsal")}),
+              toNode : new SFString("Joe_r_metatarsophalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_metatarsal_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_metatarsal")}),
+              toNode : new SFString("Joe_r_tarsal_distal_interphalangeal_2")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -2542,7 +2542,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("l_wrist_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_l_wrist")}),
+              toNode : new SFString("Joe_l_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -2686,7 +2686,7 @@ var X3D0 =  new X3D({
               fromField : new SFString("value_changed"),
               fromNode : new SFString("r_wrist_RotationInterpolator"),
               toField : new SFString("set_rotation"),
-              toNode : new SFString("Joe_r_wrist")}),
+              toNode : new SFString("Joe_r_radiocarpal")}),
 
             new ROUTE({
               fromField : new SFString("value_changed"),
@@ -2804,7 +2804,6 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("DisplacersAnimationGroup"),
-              { "#comment" : new CommentsBlock("TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor") },
               children : new MFNode([
                 new ScalarInterpolator({
                   DEF : new SFString("skull_tipInterpolator"),
@@ -2827,7 +2826,7 @@ var X3D0 =  new X3D({
               DEF : new SFString("SkinTextureTransformAnimationGroup"),
               children : new MFNode([
                 new ScalarInterpolator({
-                  DEF : new SFString("SkinTextureTransformInterpolator"),
+                  DEF : new SFString("SkinInterpolator"),
                   key : new MFFloat([0,0.2,0.4,0.5,0.6,0.7,0.8,1]),
                   keyValue : new MFFloat([0,0,0,0,0,1,2,0])}),
 
@@ -2835,11 +2834,11 @@ var X3D0 =  new X3D({
                   fromField : new SFString("fraction_changed"),
                   fromNode : new SFString("KickTimer"),
                   toField : new SFString("set_fraction"),
-                  toNode : new SFString("SkinTextureTransformInterpolator")}),
+                  toNode : new SFString("SkinInterpolator")}),
 
                 new ROUTE({
                   fromField : new SFString("value_changed"),
-                  fromNode : new SFString("SkinTextureTransformInterpolator"),
+                  fromNode : new SFString("SkinInterpolator"),
                   toField : new SFString("rotation"),
                   toNode : new SFString("KickTextureTransform")})])}),
 

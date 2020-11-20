@@ -1,9 +1,9 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 let WorldInfo2 = browser.currentScene.createNode("WorldInfo");
-WorldInfo2.info = new MFString(new java.lang.String["X3D Humanoid V1 LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"]);
+WorldInfo2.info = new MFString(new java.lang.String["X3D Humanoid LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"]);
 WorldInfo2.title = "X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe";
 browser.currentScene.children = new MFNode();
 
@@ -47,32 +47,32 @@ Viewpoint7.position = new SFVec3f(new float[1.62,1.05,3.06]);
 browser.currentScene.children[5] = Viewpoint7;
 
 let Viewpoint8 = browser.currentScene.createNode("Viewpoint");
-Viewpoint8.DEF = "Scene_FrontView";
+Viewpoint8.DEF = "Scene_IFrontView";
 Viewpoint8.centerOfRotation = new SFVec3f(new float[0,0.8,0]);
-Viewpoint8.description = "Scene Front View";
+Viewpoint8.description = "Scene_Front View";
 Viewpoint8.position = new SFVec3f(new float[0,0.8,2.58]);
 browser.currentScene.children[6] = Viewpoint8;
 
 let Viewpoint9 = browser.currentScene.createNode("Viewpoint");
-Viewpoint9.DEF = "Scene_SideView";
+Viewpoint9.DEF = "Scene_ISideView";
 Viewpoint9.centerOfRotation = new SFVec3f(new float[0,0.8,0]);
-Viewpoint9.description = "Scene Side View";
+Viewpoint9.description = "Scene_Side View";
 Viewpoint9.orientation = new SFRotation(new float[0,1,0,1.5708]);
-Viewpoint9.position = new SFVec3f(new float[2.6,0.5,0]);
+Viewpoint9.position = new SFVec3f(new float[2.6,0.8,0]);
 browser.currentScene.children[7] = Viewpoint9;
 
 let Viewpoint10 = browser.currentScene.createNode("Viewpoint");
 Viewpoint10.DEF = "Scene_BackView";
 Viewpoint10.centerOfRotation = new SFVec3f(new float[0,1.5,0]);
-Viewpoint10.description = "Scene Back View";
+Viewpoint10.description = "Scene_Back View";
 Viewpoint10.orientation = new SFRotation(new float[0,1,0,3.14]);
-Viewpoint10.position = new SFVec3f(new float[0,2.5,-3]);
+Viewpoint10.position = new SFVec3f(new float[0,1.5,-3]);
 browser.currentScene.children[8] = Viewpoint10;
 
 let Viewpoint11 = browser.currentScene.createNode("Viewpoint");
 Viewpoint11.DEF = "Scene_TopView";
 Viewpoint11.centerOfRotation = new SFVec3f(new float[0,1.5,0]);
-Viewpoint11.description = "Scene Top View";
+Viewpoint11.description = "Scene_Top View";
 Viewpoint11.orientation = new SFRotation(new float[1,0,0,-1.5708]);
 Viewpoint11.position = new SFVec3f(new float[0,3.5,0]);
 browser.currentScene.children[9] = Viewpoint11;
@@ -82,25 +82,25 @@ Group12.DEF = "Joe_Humanoid";
 let HAnimHumanoid13 = browser.currentScene.createNode("HAnimHumanoid");
 HAnimHumanoid13.name = "Human";
 HAnimHumanoid13.DEF = "Joe_Human";
-HAnimHumanoid13.version = "1.0";
-let HAnimJoint14 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint14.name = "HumanoidRoot";
-HAnimJoint14.DEF = "Joe_HumanoidRoot";
-HAnimJoint14.center = new SFVec3f(new float[0,0.875,0]);
-let MetadataSet15 = browser.currentScene.createNode("MetadataSet");
-MetadataSet15.name = "warnings";
-MetadataSet15.reference = "HAnim";
-//TODO experimental
-let MetadataString16 = browser.currentScene.createNode("MetadataString");
-MetadataString16.name = "SymmetricalLeftRight";
-MetadataString16.reference = "correction options: ignore, warn, average, left, right, largest, smallest";
-MetadataString16.value = new MFString(new java.lang.String["ignore"]);
-MetadataSet15.value = new MFNode();
+HAnimHumanoid13.loa = 3;
+HAnimHumanoid13.version = "2.0";
+let MetadataSet14 = browser.currentScene.createNode("MetadataSet");
+MetadataSet14.name = "warnings";
+MetadataSet14.reference = "HAnim";
+let MetadataString15 = browser.currentScene.createNode("MetadataString");
+MetadataString15.name = "SymmetricalLeftRight";
+MetadataString15.reference = "correction options: ignore, warn, average, left, right, largest, smallest";
+MetadataString15.value = new MFString(new java.lang.String["ignore"]);
+MetadataSet14.value = new MFNode();
 
-MetadataSet15.value[0] = MetadataString16;
+MetadataSet14.value[0] = MetadataString15;
 
-HAnimJoint14.metadata = MetadataSet15;
+HAnimHumanoid13.metadata = MetadataSet14;
 
+let HAnimJoint16 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint16.name = "humanoid_root";
+HAnimJoint16.DEF = "Joe_humanoid_root";
+HAnimJoint16.center = new SFVec3f(new float[0,0.875,0]);
 let HAnimSegment17 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment17.name = "sacrum";
 HAnimSegment17.DEF = "Joe_sacrum";
@@ -144,9 +144,9 @@ HAnimSegment17.children = new MFNode();
 
 HAnimSegment17.children[0] = HAnimSite18;
 
-HAnimJoint14.children = new MFNode();
+HAnimJoint16.children = new MFNode();
 
-HAnimJoint14.children[0] = HAnimSegment17;
+HAnimJoint16.children[0] = HAnimSegment17;
 
 let HAnimJoint25 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint25.name = "sacroiliac";
@@ -167,26 +167,26 @@ HAnimJoint27.center = new SFVec3f(new float[0.115,0.466,0]);
 HAnimJoint27.skinCoordIndex = new MFInt32(new int[334,335,336,337,338,339,340,341]);
 HAnimJoint27.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
 let HAnimJoint28 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint28.name = "l_ankle";
-HAnimJoint28.DEF = "Joe_l_ankle";
+HAnimJoint28.name = "l_talocrural";
+HAnimJoint28.DEF = "Joe_l_talocrural";
 HAnimJoint28.center = new SFVec3f(new float[0.115,0.069,0]);
 HAnimJoint28.skinCoordIndex = new MFInt32(new int[342,343,344,345]);
 HAnimJoint28.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint29 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint29.name = "l_subtalar";
-HAnimJoint29.DEF = "Joe_l_subtalar";
+HAnimJoint29.name = "l_tarsometatarsal_2";
+HAnimJoint29.DEF = "Joe_l_tarsometatarsal_2";
 HAnimJoint29.center = new SFVec3f(new float[0.115,0.031,0.03]);
 HAnimJoint29.skinCoordIndex = new MFInt32(new int[346,347,348,71]);
 HAnimJoint29.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint30 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint30.name = "l_midtarsal";
-HAnimJoint30.DEF = "Joe_l_midtarsal";
+HAnimJoint30.name = "l_metatarsophalangeal_2";
+HAnimJoint30.DEF = "Joe_l_metatarsophalangeal_2";
 HAnimJoint30.center = new SFVec3f(new float[0.115,0.037,0.09]);
 HAnimJoint30.skinCoordIndex = new MFInt32(new int[349,350,351,352]);
 HAnimJoint30.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint31 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint31.name = "l_metatarsal";
-HAnimJoint31.DEF = "Joe_l_metatarsal";
+HAnimJoint31.name = "l_tarsal_distal_interphalangeal_2";
+HAnimJoint31.DEF = "Joe_l_tarsal_distal_interphalangeal_2";
 HAnimJoint31.center = new SFVec3f(new float[0.115,0.02,0.122]);
 HAnimJoint31.skinCoordIndex = new MFInt32(new int[353,354,355,356,357,358,359,360,361]);
 HAnimJoint31.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -227,26 +227,26 @@ HAnimJoint33.center = new SFVec3f(new float[-0.05,0.466,0]);
 HAnimJoint33.skinCoordIndex = new MFInt32(new int[362,363,364,365,366,367,368,369,98]);
 HAnimJoint33.skinCoordWeight = new MFFloat(new float[0.6,0.2,1,1,1,1,1,1,0.2]);
 let HAnimJoint34 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint34.name = "r_ankle";
-HAnimJoint34.DEF = "Joe_r_ankle";
+HAnimJoint34.name = "r_talocrural";
+HAnimJoint34.DEF = "Joe_r_talocrural";
 HAnimJoint34.center = new SFVec3f(new float[-0.115,0.069,0]);
 HAnimJoint34.skinCoordIndex = new MFInt32(new int[370,371,372,373]);
 HAnimJoint34.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint35 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint35.name = "r_subtalar";
-HAnimJoint35.DEF = "Joe_r_subtalar";
+HAnimJoint35.name = "r_tarsometatarsal_2";
+HAnimJoint35.DEF = "Joe_r_tarsometatarsal_2";
 HAnimJoint35.center = new SFVec3f(new float[-0.1,0.015,-0.01]);
 HAnimJoint35.skinCoordIndex = new MFInt32(new int[374,375,376]);
 HAnimJoint35.skinCoordWeight = new MFFloat(new float[1,1,1]);
 let HAnimJoint36 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint36.name = "r_midtarsal";
-HAnimJoint36.DEF = "Joe_r_midtarsal";
+HAnimJoint36.name = "r_metatarsophalangeal_2";
+HAnimJoint36.DEF = "Joe_r_metatarsophalangeal_2";
 HAnimJoint36.center = new SFVec3f(new float[-0.115,0.037,0.09]);
 HAnimJoint36.skinCoordIndex = new MFInt32(new int[377,378,379,380]);
 HAnimJoint36.skinCoordWeight = new MFFloat(new float[1,1,1,1]);
 let HAnimJoint37 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint37.name = "r_metatarsal";
-HAnimJoint37.DEF = "Joe_r_metatarsal";
+HAnimJoint37.name = "r_tarsal_distal_interphalangeal_2";
+HAnimJoint37.DEF = "Joe_r_tarsal_distal_interphalangeal_2";
 HAnimJoint37.center = new SFVec3f(new float[-0.1,0.01,0.14]);
 HAnimJoint37.skinCoordIndex = new MFInt32(new int[381,382,383,384,385,386,387,388,389]);
 HAnimJoint37.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1]);
@@ -272,7 +272,7 @@ HAnimJoint32.children[0] = HAnimJoint33;
 
 HAnimJoint25.children[1] = HAnimJoint32;
 
-HAnimJoint14.children[1] = HAnimJoint25;
+HAnimJoint16.children[1] = HAnimJoint25;
 
 let HAnimJoint38 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint38.name = "vl5";
@@ -494,8 +494,8 @@ HAnimJoint74.center = new SFVec3f(new float[0.2,1.1388,-0.04]);
 HAnimJoint74.skinCoordIndex = new MFInt32(new int[45,46,47,109,110,111,112,113,115,116,117,118]);
 HAnimJoint74.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
 let HAnimJoint75 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint75.name = "l_wrist";
-HAnimJoint75.DEF = "Joe_l_wrist";
+HAnimJoint75.name = "l_radiocarpal";
+HAnimJoint75.DEF = "Joe_l_radiocarpal";
 HAnimJoint75.center = new SFVec3f(new float[0.2,0.87,-0.04]);
 HAnimJoint75.skinCoordIndex = new MFInt32(new int[119,120,121,122,123,124,125,126]);
 HAnimJoint75.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
@@ -724,8 +724,8 @@ HAnimJoint98.center = new SFVec3f(new float[-0.2,1.1388,-0.04]);
 HAnimJoint98.skinCoordIndex = new MFInt32(new int[33,34,35,225,226,227,228,229,231,232,233,234]);
 HAnimJoint98.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1,1,1,1,1]);
 let HAnimJoint99 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint99.name = "r_wrist";
-HAnimJoint99.DEF = "Joe_r_wrist";
+HAnimJoint99.name = "r_radiocarpal";
+HAnimJoint99.DEF = "Joe_r_radiocarpal";
 HAnimJoint99.center = new SFVec3f(new float[-0.2,0.89,-0.04]);
 HAnimJoint99.skinCoordIndex = new MFInt32(new int[235,236,237,238,239,240,241,242]);
 HAnimJoint99.skinCoordWeight = new MFFloat(new float[1,1,1,1,1,1,1,1]);
@@ -997,11 +997,11 @@ HAnimJoint38.children = new MFNode();
 
 HAnimJoint38.children[0] = HAnimJoint39;
 
-HAnimJoint14.children[2] = HAnimJoint38;
+HAnimJoint16.children[2] = HAnimJoint38;
 
 HAnimHumanoid13.joints = new MFNode();
 
-HAnimHumanoid13.joints[0] = HAnimJoint14;
+HAnimHumanoid13.joints[0] = HAnimJoint16;
 
 let Shape119 = browser.currentScene.createNode("Shape");
 Shape119.DEF = "Joe_Shape";
@@ -1015,7 +1015,7 @@ Appearance120.material = Material121;
 
 let ImageTexture122 = browser.currentScene.createNode("ImageTexture");
 ImageTexture122.DEF = "JoeSkinImageTexture";
-ImageTexture122.url = new MFString(new java.lang.String["JoeBodyTexture29.png"]);
+ImageTexture122.url = new MFString(new java.lang.String["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"]);
 Appearance120.texture = ImageTexture122;
 
 let TextureTransform123 = browser.currentScene.createNode("TextureTransform");
@@ -1034,400 +1034,400 @@ Coordinate125.point = new MFVec3f(new float[0,1.77,0,0,1.665,0.09,-0.033,1.62,0.
 IndexedFaceSet124.coord = Coordinate125;
 
 let TextureCoordinate126 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate126.point = new MFVec2f(new float[0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5,0.5,0,0,0.5,0,0,0.5,0.5]);
+TextureCoordinate126.point = new MFVec2f(new float[0,0,0.5,0.5,0.5,0,0,0.5]);
 IndexedFaceSet124.texCoord = TextureCoordinate126;
 
 Shape119.geometry = IndexedFaceSet124;
 
 HAnimHumanoid13.skin[1] = Shape119;
 
-let HAnimJoint127 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint127.USE = "Joe_HumanoidRoot";
-HAnimHumanoid13.joints[2] = HAnimJoint127;
+let Coordinate127 = browser.currentScene.createNode("Coordinate");
+Coordinate127.USE = "Joe_SkinCoord";
+HAnimHumanoid13.skinCoord = Coordinate127;
 
 let HAnimJoint128 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint128.USE = "Joe_sacroiliac";
-HAnimHumanoid13.joints[3] = HAnimJoint128;
+HAnimJoint128.USE = "Joe_humanoid_root";
+HAnimHumanoid13.joints[2] = HAnimJoint128;
 
 let HAnimJoint129 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint129.USE = "Joe_vl5";
-HAnimHumanoid13.joints[4] = HAnimJoint129;
+HAnimJoint129.USE = "Joe_sacroiliac";
+HAnimHumanoid13.joints[3] = HAnimJoint129;
 
 let HAnimJoint130 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint130.USE = "Joe_vl4";
-HAnimHumanoid13.joints[5] = HAnimJoint130;
+HAnimJoint130.USE = "Joe_skullbase";
+HAnimHumanoid13.joints[4] = HAnimJoint130;
 
 let HAnimJoint131 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint131.USE = "Joe_vl3";
-HAnimHumanoid13.joints[6] = HAnimJoint131;
+HAnimJoint131.USE = "Joe_temporomandibular";
+HAnimHumanoid13.joints[5] = HAnimJoint131;
 
 let HAnimJoint132 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint132.USE = "Joe_vl2";
-HAnimHumanoid13.joints[7] = HAnimJoint132;
+HAnimJoint132.USE = "Joe_vc1";
+HAnimHumanoid13.joints[6] = HAnimJoint132;
 
 let HAnimJoint133 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint133.USE = "Joe_vl1";
-HAnimHumanoid13.joints[8] = HAnimJoint133;
+HAnimJoint133.USE = "Joe_vc2";
+HAnimHumanoid13.joints[7] = HAnimJoint133;
 
 let HAnimJoint134 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint134.USE = "Joe_vt12";
-HAnimHumanoid13.joints[9] = HAnimJoint134;
+HAnimJoint134.USE = "Joe_vc3";
+HAnimHumanoid13.joints[8] = HAnimJoint134;
 
 let HAnimJoint135 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint135.USE = "Joe_vt11";
-HAnimHumanoid13.joints[10] = HAnimJoint135;
+HAnimJoint135.USE = "Joe_vc4";
+HAnimHumanoid13.joints[9] = HAnimJoint135;
 
 let HAnimJoint136 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint136.USE = "Joe_vt10";
-HAnimHumanoid13.joints[11] = HAnimJoint136;
+HAnimJoint136.USE = "Joe_vc5";
+HAnimHumanoid13.joints[10] = HAnimJoint136;
 
 let HAnimJoint137 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint137.USE = "Joe_vt9";
-HAnimHumanoid13.joints[12] = HAnimJoint137;
+HAnimJoint137.USE = "Joe_vc6";
+HAnimHumanoid13.joints[11] = HAnimJoint137;
 
 let HAnimJoint138 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint138.USE = "Joe_vt8";
-HAnimHumanoid13.joints[13] = HAnimJoint138;
+HAnimJoint138.USE = "Joe_vc7";
+HAnimHumanoid13.joints[12] = HAnimJoint138;
 
 let HAnimJoint139 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint139.USE = "Joe_vt7";
-HAnimHumanoid13.joints[14] = HAnimJoint139;
+HAnimJoint139.USE = "Joe_vl1";
+HAnimHumanoid13.joints[13] = HAnimJoint139;
 
 let HAnimJoint140 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint140.USE = "Joe_vt6";
-HAnimHumanoid13.joints[15] = HAnimJoint140;
+HAnimJoint140.USE = "Joe_vl2";
+HAnimHumanoid13.joints[14] = HAnimJoint140;
 
 let HAnimJoint141 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint141.USE = "Joe_vt5";
-HAnimHumanoid13.joints[16] = HAnimJoint141;
+HAnimJoint141.USE = "Joe_vl3";
+HAnimHumanoid13.joints[15] = HAnimJoint141;
 
 let HAnimJoint142 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint142.USE = "Joe_vt4";
-HAnimHumanoid13.joints[17] = HAnimJoint142;
+HAnimJoint142.USE = "Joe_vl4";
+HAnimHumanoid13.joints[16] = HAnimJoint142;
 
 let HAnimJoint143 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint143.USE = "Joe_vt3";
-HAnimHumanoid13.joints[18] = HAnimJoint143;
+HAnimJoint143.USE = "Joe_vl5";
+HAnimHumanoid13.joints[17] = HAnimJoint143;
 
 let HAnimJoint144 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint144.USE = "Joe_vt2";
-HAnimHumanoid13.joints[19] = HAnimJoint144;
+HAnimJoint144.USE = "Joe_vt1";
+HAnimHumanoid13.joints[18] = HAnimJoint144;
 
 let HAnimJoint145 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint145.USE = "Joe_vt1";
-HAnimHumanoid13.joints[20] = HAnimJoint145;
+HAnimJoint145.USE = "Joe_vt10";
+HAnimHumanoid13.joints[19] = HAnimJoint145;
 
 let HAnimJoint146 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint146.USE = "Joe_vc7";
-HAnimHumanoid13.joints[21] = HAnimJoint146;
+HAnimJoint146.USE = "Joe_vt11";
+HAnimHumanoid13.joints[20] = HAnimJoint146;
 
 let HAnimJoint147 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint147.USE = "Joe_vc6";
-HAnimHumanoid13.joints[22] = HAnimJoint147;
+HAnimJoint147.USE = "Joe_vt12";
+HAnimHumanoid13.joints[21] = HAnimJoint147;
 
 let HAnimJoint148 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint148.USE = "Joe_vc5";
-HAnimHumanoid13.joints[23] = HAnimJoint148;
+HAnimJoint148.USE = "Joe_vt2";
+HAnimHumanoid13.joints[22] = HAnimJoint148;
 
 let HAnimJoint149 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint149.USE = "Joe_vc4";
-HAnimHumanoid13.joints[24] = HAnimJoint149;
+HAnimJoint149.USE = "Joe_vt3";
+HAnimHumanoid13.joints[23] = HAnimJoint149;
 
 let HAnimJoint150 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint150.USE = "Joe_vc3";
-HAnimHumanoid13.joints[25] = HAnimJoint150;
+HAnimJoint150.USE = "Joe_vt4";
+HAnimHumanoid13.joints[24] = HAnimJoint150;
 
 let HAnimJoint151 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint151.USE = "Joe_vc2";
-HAnimHumanoid13.joints[26] = HAnimJoint151;
+HAnimJoint151.USE = "Joe_vt5";
+HAnimHumanoid13.joints[25] = HAnimJoint151;
 
 let HAnimJoint152 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint152.USE = "Joe_vc1";
-HAnimHumanoid13.joints[27] = HAnimJoint152;
+HAnimJoint152.USE = "Joe_vt6";
+HAnimHumanoid13.joints[26] = HAnimJoint152;
 
 let HAnimJoint153 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint153.USE = "Joe_skullbase";
-HAnimHumanoid13.joints[28] = HAnimJoint153;
+HAnimJoint153.USE = "Joe_vt7";
+HAnimHumanoid13.joints[27] = HAnimJoint153;
 
 let HAnimJoint154 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint154.USE = "Joe_temporomandibular";
-HAnimHumanoid13.joints[29] = HAnimJoint154;
+HAnimJoint154.USE = "Joe_vt8";
+HAnimHumanoid13.joints[28] = HAnimJoint154;
 
 let HAnimJoint155 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint155.USE = "Joe_l_acromioclavicular";
-HAnimHumanoid13.joints[30] = HAnimJoint155;
+HAnimJoint155.USE = "Joe_vt9";
+HAnimHumanoid13.joints[29] = HAnimJoint155;
 
 let HAnimJoint156 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint156.USE = "Joe_r_acromioclavicular";
-HAnimHumanoid13.joints[31] = HAnimJoint156;
+HAnimJoint156.USE = "Joe_l_acromioclavicular";
+HAnimHumanoid13.joints[30] = HAnimJoint156;
 
 let HAnimJoint157 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint157.USE = "Joe_l_ankle";
-HAnimHumanoid13.joints[32] = HAnimJoint157;
+HAnimJoint157.USE = "Joe_r_acromioclavicular";
+HAnimHumanoid13.joints[31] = HAnimJoint157;
 
 let HAnimJoint158 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint158.USE = "Joe_r_ankle";
-HAnimHumanoid13.joints[33] = HAnimJoint158;
+HAnimJoint158.USE = "Joe_l_elbow";
+HAnimHumanoid13.joints[32] = HAnimJoint158;
 
 let HAnimJoint159 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint159.USE = "Joe_l_elbow";
-HAnimHumanoid13.joints[34] = HAnimJoint159;
+HAnimJoint159.USE = "Joe_r_elbow";
+HAnimHumanoid13.joints[33] = HAnimJoint159;
 
 let HAnimJoint160 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint160.USE = "Joe_r_elbow";
-HAnimHumanoid13.joints[35] = HAnimJoint160;
+HAnimJoint160.USE = "Joe_l_eyeball_joint";
+HAnimHumanoid13.joints[34] = HAnimJoint160;
 
 let HAnimJoint161 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint161.USE = "Joe_l_eyeball_joint";
-HAnimHumanoid13.joints[36] = HAnimJoint161;
+HAnimJoint161.USE = "Joe_r_eyeball_joint";
+HAnimHumanoid13.joints[35] = HAnimJoint161;
 
 let HAnimJoint162 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint162.USE = "Joe_r_eyeball_joint";
-HAnimHumanoid13.joints[37] = HAnimJoint162;
+HAnimJoint162.USE = "Joe_l_eyebrow_joint";
+HAnimHumanoid13.joints[36] = HAnimJoint162;
 
 let HAnimJoint163 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint163.USE = "Joe_l_eyebrow_joint";
-HAnimHumanoid13.joints[38] = HAnimJoint163;
+HAnimJoint163.USE = "Joe_r_eyebrow_joint";
+HAnimHumanoid13.joints[37] = HAnimJoint163;
 
 let HAnimJoint164 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint164.USE = "Joe_r_eyebrow_joint";
-HAnimHumanoid13.joints[39] = HAnimJoint164;
+HAnimJoint164.USE = "Joe_l_eyelid_joint";
+HAnimHumanoid13.joints[38] = HAnimJoint164;
 
 let HAnimJoint165 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint165.USE = "Joe_l_eyelid_joint";
-HAnimHumanoid13.joints[40] = HAnimJoint165;
+HAnimJoint165.USE = "Joe_r_eyelid_joint";
+HAnimHumanoid13.joints[39] = HAnimJoint165;
 
 let HAnimJoint166 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint166.USE = "Joe_r_eyelid_joint";
-HAnimHumanoid13.joints[41] = HAnimJoint166;
+HAnimJoint166.USE = "Joe_l_hip";
+HAnimHumanoid13.joints[40] = HAnimJoint166;
 
 let HAnimJoint167 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint167.USE = "Joe_l_hip";
-HAnimHumanoid13.joints[42] = HAnimJoint167;
+HAnimJoint167.USE = "Joe_r_hip";
+HAnimHumanoid13.joints[41] = HAnimJoint167;
 
 let HAnimJoint168 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint168.USE = "Joe_r_hip";
-HAnimHumanoid13.joints[43] = HAnimJoint168;
+HAnimJoint168.USE = "Joe_l_index0";
+HAnimHumanoid13.joints[42] = HAnimJoint168;
 
 let HAnimJoint169 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint169.USE = "Joe_l_index0";
-HAnimHumanoid13.joints[44] = HAnimJoint169;
+HAnimJoint169.USE = "Joe_r_index0";
+HAnimHumanoid13.joints[43] = HAnimJoint169;
 
 let HAnimJoint170 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint170.USE = "Joe_r_index0";
-HAnimHumanoid13.joints[45] = HAnimJoint170;
+HAnimJoint170.USE = "Joe_l_index1";
+HAnimHumanoid13.joints[44] = HAnimJoint170;
 
 let HAnimJoint171 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint171.USE = "Joe_l_index1";
-HAnimHumanoid13.joints[46] = HAnimJoint171;
+HAnimJoint171.USE = "Joe_r_index1";
+HAnimHumanoid13.joints[45] = HAnimJoint171;
 
 let HAnimJoint172 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint172.USE = "Joe_r_index1";
-HAnimHumanoid13.joints[47] = HAnimJoint172;
+HAnimJoint172.USE = "Joe_l_index2";
+HAnimHumanoid13.joints[46] = HAnimJoint172;
 
 let HAnimJoint173 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint173.USE = "Joe_l_index2";
-HAnimHumanoid13.joints[48] = HAnimJoint173;
+HAnimJoint173.USE = "Joe_r_index2";
+HAnimHumanoid13.joints[47] = HAnimJoint173;
 
 let HAnimJoint174 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint174.USE = "Joe_r_index2";
-HAnimHumanoid13.joints[49] = HAnimJoint174;
+HAnimJoint174.USE = "Joe_l_index3";
+HAnimHumanoid13.joints[48] = HAnimJoint174;
 
 let HAnimJoint175 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint175.USE = "Joe_l_index3";
-HAnimHumanoid13.joints[50] = HAnimJoint175;
+HAnimJoint175.USE = "Joe_r_index3";
+HAnimHumanoid13.joints[49] = HAnimJoint175;
 
 let HAnimJoint176 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint176.USE = "Joe_r_index3";
-HAnimHumanoid13.joints[51] = HAnimJoint176;
+HAnimJoint176.USE = "Joe_l_knee";
+HAnimHumanoid13.joints[50] = HAnimJoint176;
 
 let HAnimJoint177 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint177.USE = "Joe_l_knee";
-HAnimHumanoid13.joints[52] = HAnimJoint177;
+HAnimJoint177.USE = "Joe_r_knee";
+HAnimHumanoid13.joints[51] = HAnimJoint177;
 
 let HAnimJoint178 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint178.USE = "Joe_r_knee";
-HAnimHumanoid13.joints[53] = HAnimJoint178;
+HAnimJoint178.USE = "Joe_l_metatarsophalangeal_2";
+HAnimHumanoid13.joints[52] = HAnimJoint178;
 
 let HAnimJoint179 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint179.USE = "Joe_l_metatarsal";
-HAnimHumanoid13.joints[54] = HAnimJoint179;
+HAnimJoint179.USE = "Joe_r_metatarsophalangeal_2";
+HAnimHumanoid13.joints[53] = HAnimJoint179;
 
 let HAnimJoint180 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint180.USE = "Joe_r_metatarsal";
-HAnimHumanoid13.joints[55] = HAnimJoint180;
+HAnimJoint180.USE = "Joe_l_middle0";
+HAnimHumanoid13.joints[54] = HAnimJoint180;
 
 let HAnimJoint181 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint181.USE = "Joe_l_middle0";
-HAnimHumanoid13.joints[56] = HAnimJoint181;
+HAnimJoint181.USE = "Joe_r_middle0";
+HAnimHumanoid13.joints[55] = HAnimJoint181;
 
 let HAnimJoint182 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint182.USE = "Joe_r_middle0";
-HAnimHumanoid13.joints[57] = HAnimJoint182;
+HAnimJoint182.USE = "Joe_l_middle1";
+HAnimHumanoid13.joints[56] = HAnimJoint182;
 
 let HAnimJoint183 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint183.USE = "Joe_l_middle1";
-HAnimHumanoid13.joints[58] = HAnimJoint183;
+HAnimJoint183.USE = "Joe_r_middle1";
+HAnimHumanoid13.joints[57] = HAnimJoint183;
 
 let HAnimJoint184 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint184.USE = "Joe_r_middle1";
-HAnimHumanoid13.joints[59] = HAnimJoint184;
+HAnimJoint184.USE = "Joe_l_middle2";
+HAnimHumanoid13.joints[58] = HAnimJoint184;
 
 let HAnimJoint185 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint185.USE = "Joe_l_middle2";
-HAnimHumanoid13.joints[60] = HAnimJoint185;
+HAnimJoint185.USE = "Joe_r_middle2";
+HAnimHumanoid13.joints[59] = HAnimJoint185;
 
 let HAnimJoint186 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint186.USE = "Joe_r_middle2";
-HAnimHumanoid13.joints[61] = HAnimJoint186;
+HAnimJoint186.USE = "Joe_l_middle3";
+HAnimHumanoid13.joints[60] = HAnimJoint186;
 
 let HAnimJoint187 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint187.USE = "Joe_l_middle3";
-HAnimHumanoid13.joints[62] = HAnimJoint187;
+HAnimJoint187.USE = "Joe_r_middle3";
+HAnimHumanoid13.joints[61] = HAnimJoint187;
 
 let HAnimJoint188 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint188.USE = "Joe_r_middle3";
-HAnimHumanoid13.joints[63] = HAnimJoint188;
+HAnimJoint188.USE = "Joe_l_pinky0";
+HAnimHumanoid13.joints[62] = HAnimJoint188;
 
 let HAnimJoint189 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint189.USE = "Joe_l_midtarsal";
-HAnimHumanoid13.joints[64] = HAnimJoint189;
+HAnimJoint189.USE = "Joe_r_pinky0";
+HAnimHumanoid13.joints[63] = HAnimJoint189;
 
 let HAnimJoint190 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint190.USE = "Joe_r_midtarsal";
-HAnimHumanoid13.joints[65] = HAnimJoint190;
+HAnimJoint190.USE = "Joe_l_pinky1";
+HAnimHumanoid13.joints[64] = HAnimJoint190;
 
 let HAnimJoint191 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint191.USE = "Joe_l_pinky0";
-HAnimHumanoid13.joints[66] = HAnimJoint191;
+HAnimJoint191.USE = "Joe_r_pinky1";
+HAnimHumanoid13.joints[65] = HAnimJoint191;
 
 let HAnimJoint192 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint192.USE = "Joe_r_pinky0";
-HAnimHumanoid13.joints[67] = HAnimJoint192;
+HAnimJoint192.USE = "Joe_l_pinky2";
+HAnimHumanoid13.joints[66] = HAnimJoint192;
 
 let HAnimJoint193 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint193.USE = "Joe_l_pinky1";
-HAnimHumanoid13.joints[68] = HAnimJoint193;
+HAnimJoint193.USE = "Joe_r_pinky2";
+HAnimHumanoid13.joints[67] = HAnimJoint193;
 
 let HAnimJoint194 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint194.USE = "Joe_r_pinky1";
-HAnimHumanoid13.joints[69] = HAnimJoint194;
+HAnimJoint194.USE = "Joe_l_pinky3";
+HAnimHumanoid13.joints[68] = HAnimJoint194;
 
 let HAnimJoint195 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint195.USE = "Joe_l_pinky2";
-HAnimHumanoid13.joints[70] = HAnimJoint195;
+HAnimJoint195.USE = "Joe_r_pinky3";
+HAnimHumanoid13.joints[69] = HAnimJoint195;
 
 let HAnimJoint196 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint196.USE = "Joe_r_pinky2";
-HAnimHumanoid13.joints[71] = HAnimJoint196;
+HAnimJoint196.USE = "Joe_l_radiocarpal";
+HAnimHumanoid13.joints[70] = HAnimJoint196;
 
 let HAnimJoint197 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint197.USE = "Joe_l_pinky3";
-HAnimHumanoid13.joints[72] = HAnimJoint197;
+HAnimJoint197.USE = "Joe_r_radiocarpal";
+HAnimHumanoid13.joints[71] = HAnimJoint197;
 
 let HAnimJoint198 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint198.USE = "Joe_r_pinky3";
-HAnimHumanoid13.joints[73] = HAnimJoint198;
+HAnimJoint198.USE = "Joe_l_ring0";
+HAnimHumanoid13.joints[72] = HAnimJoint198;
 
 let HAnimJoint199 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint199.USE = "Joe_l_ring0";
-HAnimHumanoid13.joints[74] = HAnimJoint199;
+HAnimJoint199.USE = "Joe_r_ring0";
+HAnimHumanoid13.joints[73] = HAnimJoint199;
 
 let HAnimJoint200 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint200.USE = "Joe_r_ring0";
-HAnimHumanoid13.joints[75] = HAnimJoint200;
+HAnimJoint200.USE = "Joe_l_ring1";
+HAnimHumanoid13.joints[74] = HAnimJoint200;
 
 let HAnimJoint201 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint201.USE = "Joe_l_ring1";
-HAnimHumanoid13.joints[76] = HAnimJoint201;
+HAnimJoint201.USE = "Joe_r_ring1";
+HAnimHumanoid13.joints[75] = HAnimJoint201;
 
 let HAnimJoint202 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint202.USE = "Joe_r_ring1";
-HAnimHumanoid13.joints[77] = HAnimJoint202;
+HAnimJoint202.USE = "Joe_l_ring2";
+HAnimHumanoid13.joints[76] = HAnimJoint202;
 
 let HAnimJoint203 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint203.USE = "Joe_l_ring2";
-HAnimHumanoid13.joints[78] = HAnimJoint203;
+HAnimJoint203.USE = "Joe_r_ring2";
+HAnimHumanoid13.joints[77] = HAnimJoint203;
 
 let HAnimJoint204 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint204.USE = "Joe_r_ring2";
-HAnimHumanoid13.joints[79] = HAnimJoint204;
+HAnimJoint204.USE = "Joe_l_ring3";
+HAnimHumanoid13.joints[78] = HAnimJoint204;
 
 let HAnimJoint205 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint205.USE = "Joe_l_ring3";
-HAnimHumanoid13.joints[80] = HAnimJoint205;
+HAnimJoint205.USE = "Joe_r_ring3";
+HAnimHumanoid13.joints[79] = HAnimJoint205;
 
 let HAnimJoint206 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint206.USE = "Joe_r_ring3";
-HAnimHumanoid13.joints[81] = HAnimJoint206;
+HAnimJoint206.USE = "Joe_l_shoulder";
+HAnimHumanoid13.joints[80] = HAnimJoint206;
 
 let HAnimJoint207 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint207.USE = "Joe_l_shoulder";
-HAnimHumanoid13.joints[82] = HAnimJoint207;
+HAnimJoint207.USE = "Joe_r_shoulder";
+HAnimHumanoid13.joints[81] = HAnimJoint207;
 
 let HAnimJoint208 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint208.USE = "Joe_r_shoulder";
-HAnimHumanoid13.joints[83] = HAnimJoint208;
+HAnimJoint208.USE = "Joe_l_sternoclavicular";
+HAnimHumanoid13.joints[82] = HAnimJoint208;
 
 let HAnimJoint209 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint209.USE = "Joe_l_sternoclavicular";
-HAnimHumanoid13.joints[84] = HAnimJoint209;
+HAnimJoint209.USE = "Joe_r_sternoclavicular";
+HAnimHumanoid13.joints[83] = HAnimJoint209;
 
 let HAnimJoint210 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint210.USE = "Joe_r_sternoclavicular";
-HAnimHumanoid13.joints[85] = HAnimJoint210;
+HAnimJoint210.USE = "Joe_l_talocrural";
+HAnimHumanoid13.joints[84] = HAnimJoint210;
 
 let HAnimJoint211 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint211.USE = "Joe_l_subtalar";
-HAnimHumanoid13.joints[86] = HAnimJoint211;
+HAnimJoint211.USE = "Joe_r_talocrural";
+HAnimHumanoid13.joints[85] = HAnimJoint211;
 
 let HAnimJoint212 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint212.USE = "Joe_r_subtalar";
-HAnimHumanoid13.joints[87] = HAnimJoint212;
+HAnimJoint212.USE = "Joe_l_tarsal_distal_interphalangeal_2";
+HAnimHumanoid13.joints[86] = HAnimJoint212;
 
 let HAnimJoint213 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint213.USE = "Joe_l_thumb1";
-HAnimHumanoid13.joints[88] = HAnimJoint213;
+HAnimJoint213.USE = "Joe_r_tarsal_distal_interphalangeal_2";
+HAnimHumanoid13.joints[87] = HAnimJoint213;
 
 let HAnimJoint214 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint214.USE = "Joe_r_thumb1";
-HAnimHumanoid13.joints[89] = HAnimJoint214;
+HAnimJoint214.USE = "Joe_l_tarsometatarsal_2";
+HAnimHumanoid13.joints[88] = HAnimJoint214;
 
 let HAnimJoint215 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint215.USE = "Joe_l_thumb2";
-HAnimHumanoid13.joints[90] = HAnimJoint215;
+HAnimJoint215.USE = "Joe_r_tarsometatarsal_2";
+HAnimHumanoid13.joints[89] = HAnimJoint215;
 
 let HAnimJoint216 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint216.USE = "Joe_r_thumb2";
-HAnimHumanoid13.joints[91] = HAnimJoint216;
+HAnimJoint216.USE = "Joe_l_thumb1";
+HAnimHumanoid13.joints[90] = HAnimJoint216;
 
 let HAnimJoint217 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint217.USE = "Joe_l_thumb3";
-HAnimHumanoid13.joints[92] = HAnimJoint217;
+HAnimJoint217.USE = "Joe_r_thumb1";
+HAnimHumanoid13.joints[91] = HAnimJoint217;
 
 let HAnimJoint218 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint218.USE = "Joe_r_thumb3";
-HAnimHumanoid13.joints[93] = HAnimJoint218;
+HAnimJoint218.USE = "Joe_l_thumb2";
+HAnimHumanoid13.joints[92] = HAnimJoint218;
 
 let HAnimJoint219 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint219.USE = "Joe_l_wrist";
-HAnimHumanoid13.joints[94] = HAnimJoint219;
+HAnimJoint219.USE = "Joe_r_thumb2";
+HAnimHumanoid13.joints[93] = HAnimJoint219;
 
 let HAnimJoint220 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint220.USE = "Joe_r_wrist";
-HAnimHumanoid13.joints[95] = HAnimJoint220;
+HAnimJoint220.USE = "Joe_l_thumb3";
+HAnimHumanoid13.joints[94] = HAnimJoint220;
 
-let HAnimSegment221 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment221.USE = "Joe_sacrum";
-HAnimHumanoid13.segments[96] = HAnimSegment221;
+let HAnimJoint221 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint221.USE = "Joe_r_thumb3";
+HAnimHumanoid13.joints[95] = HAnimJoint221;
 
-let HAnimSite222 = browser.currentScene.createNode("HAnimSite");
-HAnimSite222.USE = "Joe_RootFront_view";
-HAnimHumanoid13.viewpoints[97] = HAnimSite222;
+let HAnimSegment222 = browser.currentScene.createNode("HAnimSegment");
+HAnimSegment222.USE = "Joe_sacrum";
+HAnimHumanoid13.segments[96] = HAnimSegment222;
 
-let Coordinate223 = browser.currentScene.createNode("Coordinate");
-Coordinate223.USE = "Joe_SkinCoord";
-HAnimHumanoid13.skinCoord = Coordinate223;
+let HAnimSite223 = browser.currentScene.createNode("HAnimSite");
+HAnimSite223.USE = "Joe_RootFront_view";
+HAnimHumanoid13.viewpoints[97] = HAnimSite223;
 
 Group12.children = new MFNode();
 
@@ -2688,14 +2688,14 @@ let ROUTE416 = browser.currentScene.createNode("ROUTE");
 ROUTE416.fromField = "value_changed";
 ROUTE416.fromNode = "HumanoidRoot_RotationInterpolator";
 ROUTE416.toField = "set_rotation";
-ROUTE416.toNode = "Joe_HumanoidRoot";
+ROUTE416.toNode = "Joe_humanoid_root";
 browser.currentScene.children[107] = ROUTE416;
 
 let ROUTE417 = browser.currentScene.createNode("ROUTE");
 ROUTE417.fromField = "value_changed";
 ROUTE417.fromNode = "HumanoidRoot_TranslationInterpolator";
 ROUTE417.toField = "set_translation";
-ROUTE417.toNode = "Joe_HumanoidRoot";
+ROUTE417.toNode = "Joe_humanoid_root";
 browser.currentScene.children[108] = ROUTE417;
 
 let ROUTE418 = browser.currentScene.createNode("ROUTE");
@@ -2723,28 +2723,28 @@ let ROUTE421 = browser.currentScene.createNode("ROUTE");
 ROUTE421.fromField = "value_changed";
 ROUTE421.fromNode = "l_ankle_RotationInterpolator";
 ROUTE421.toField = "set_rotation";
-ROUTE421.toNode = "Joe_l_ankle";
+ROUTE421.toNode = "Joe_l_talocrural";
 browser.currentScene.children[112] = ROUTE421;
 
 let ROUTE422 = browser.currentScene.createNode("ROUTE");
 ROUTE422.fromField = "value_changed";
 ROUTE422.fromNode = "l_subtalar_RotationInterpolator";
 ROUTE422.toField = "set_rotation";
-ROUTE422.toNode = "Joe_l_subtalar";
+ROUTE422.toNode = "Joe_l_tarsometatarsal_2";
 browser.currentScene.children[113] = ROUTE422;
 
 let ROUTE423 = browser.currentScene.createNode("ROUTE");
 ROUTE423.fromField = "value_changed";
 ROUTE423.fromNode = "l_midtarsal_RotationInterpolator";
 ROUTE423.toField = "set_rotation";
-ROUTE423.toNode = "Joe_l_midtarsal";
+ROUTE423.toNode = "Joe_l_metatarsophalangeal_2";
 browser.currentScene.children[114] = ROUTE423;
 
 let ROUTE424 = browser.currentScene.createNode("ROUTE");
 ROUTE424.fromField = "value_changed";
 ROUTE424.fromNode = "l_metatarsal_RotationInterpolator";
 ROUTE424.toField = "set_rotation";
-ROUTE424.toNode = "Joe_l_metatarsal";
+ROUTE424.toNode = "Joe_l_tarsal_distal_interphalangeal_2";
 browser.currentScene.children[115] = ROUTE424;
 
 let ROUTE425 = browser.currentScene.createNode("ROUTE");
@@ -2765,28 +2765,28 @@ let ROUTE427 = browser.currentScene.createNode("ROUTE");
 ROUTE427.fromField = "value_changed";
 ROUTE427.fromNode = "r_ankle_RotationInterpolator";
 ROUTE427.toField = "set_rotation";
-ROUTE427.toNode = "Joe_r_ankle";
+ROUTE427.toNode = "Joe_r_talocrural";
 browser.currentScene.children[118] = ROUTE427;
 
 let ROUTE428 = browser.currentScene.createNode("ROUTE");
 ROUTE428.fromField = "value_changed";
 ROUTE428.fromNode = "r_subtalar_RotationInterpolator";
 ROUTE428.toField = "set_rotation";
-ROUTE428.toNode = "Joe_r_subtalar";
+ROUTE428.toNode = "Joe_r_tarsometatarsal_2";
 browser.currentScene.children[119] = ROUTE428;
 
 let ROUTE429 = browser.currentScene.createNode("ROUTE");
 ROUTE429.fromField = "value_changed";
 ROUTE429.fromNode = "r_midtarsal_RotationInterpolator";
 ROUTE429.toField = "set_rotation";
-ROUTE429.toNode = "Joe_r_midtarsal";
+ROUTE429.toNode = "Joe_r_metatarsophalangeal_2";
 browser.currentScene.children[120] = ROUTE429;
 
 let ROUTE430 = browser.currentScene.createNode("ROUTE");
 ROUTE430.fromField = "value_changed";
 ROUTE430.fromNode = "r_metatarsal_RotationInterpolator";
 ROUTE430.toField = "set_rotation";
-ROUTE430.toNode = "Joe_r_metatarsal";
+ROUTE430.toNode = "Joe_r_tarsal_distal_interphalangeal_2";
 browser.currentScene.children[121] = ROUTE430;
 
 let ROUTE431 = browser.currentScene.createNode("ROUTE");
@@ -3045,7 +3045,7 @@ let ROUTE467 = browser.currentScene.createNode("ROUTE");
 ROUTE467.fromField = "value_changed";
 ROUTE467.fromNode = "l_wrist_RotationInterpolator";
 ROUTE467.toField = "set_rotation";
-ROUTE467.toNode = "Joe_l_wrist";
+ROUTE467.toNode = "Joe_l_radiocarpal";
 browser.currentScene.children[158] = ROUTE467;
 
 let ROUTE468 = browser.currentScene.createNode("ROUTE");
@@ -3213,7 +3213,7 @@ let ROUTE491 = browser.currentScene.createNode("ROUTE");
 ROUTE491.fromField = "value_changed";
 ROUTE491.fromNode = "r_wrist_RotationInterpolator";
 ROUTE491.toField = "set_rotation";
-ROUTE491.toNode = "Joe_r_wrist";
+ROUTE491.toNode = "Joe_r_radiocarpal";
 browser.currentScene.children[182] = ROUTE491;
 
 let ROUTE492 = browser.currentScene.createNode("ROUTE");
@@ -3351,7 +3351,6 @@ browser.currentScene.children[201] = ROUTE510;
 
 let Group511 = browser.currentScene.createNode("Group");
 Group511.DEF = "DisplacersAnimationGroup";
-//TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor
 let ScalarInterpolator512 = browser.currentScene.createNode("ScalarInterpolator");
 ScalarInterpolator512.DEF = "skull_tipInterpolator";
 ScalarInterpolator512.key = new MFFloat(new float[0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]);
@@ -3379,7 +3378,7 @@ browser.currentScene.children[202] = Group511;
 let Group515 = browser.currentScene.createNode("Group");
 Group515.DEF = "SkinTextureTransformAnimationGroup";
 let ScalarInterpolator516 = browser.currentScene.createNode("ScalarInterpolator");
-ScalarInterpolator516.DEF = "SkinTextureTransformInterpolator";
+ScalarInterpolator516.DEF = "SkinInterpolator";
 ScalarInterpolator516.key = new MFFloat(new float[0,0.2,0.4,0.5,0.6,0.7,0.8,1]);
 ScalarInterpolator516.keyValue = new MFFloat(new float[0,0,0,0,0,1,2,0]);
 Group515.children = new MFNode();
@@ -3390,12 +3389,12 @@ let ROUTE517 = browser.currentScene.createNode("ROUTE");
 ROUTE517.fromField = "fraction_changed";
 ROUTE517.fromNode = "KickTimer";
 ROUTE517.toField = "set_fraction";
-ROUTE517.toNode = "SkinTextureTransformInterpolator";
+ROUTE517.toNode = "SkinInterpolator";
 Group515.children[1] = ROUTE517;
 
 let ROUTE518 = browser.currentScene.createNode("ROUTE");
 ROUTE518.fromField = "value_changed";
-ROUTE518.fromNode = "SkinTextureTransformInterpolator";
+ROUTE518.fromNode = "SkinInterpolator";
 ROUTE518.toField = "rotation";
 ROUTE518.toNode = "KickTextureTransform";
 Group515.children[2] = ROUTE518;

@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Prototype declarations defining values for X3D/VRML materials, originally converted from SGI's Open Inventor material examples. </p>
- <p> Related links: <a href="../../../UniversalMediaMaterials/ArtDecoPrototypes.java">ArtDecoPrototypes.java</a> source, <a href="../../../UniversalMediaMaterials/ArtDecoPrototypesIndex.html" target="_top">ArtDecoPrototypes catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../../UniversalMediaMaterials/NeedClassName.java">NeedClassName.java</a> source, <a href="../../../UniversalMediaMaterials/ArtDecoPrototypesIndex.html" target="_top">ArtDecoPrototypes catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -78,7 +78,7 @@ var autoclass = require('./X3Dautoclass');
 	* @author David Roussel
  */
 
-function ArtDecoPrototypes
+function NeedClassName
   /** Default constructor to create this object. */
   ()
   {
@@ -87,7 +87,7 @@ function ArtDecoPrototypes
     this.initialize();
     return this;
   }
-ArtDecoPrototypes.prototype = {
+NeedClassName.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
@@ -227,7 +227,7 @@ ArtDecoPrototypes.prototype = {
 
 
   /** Provide a shallow copy of the X3D model.
-   * @return ArtDecoPrototypes model
+   * @return NeedClassName model
    */
   getX3dModel : function()
   {	  
@@ -275,8 +275,8 @@ ArtDecoPrototypes.prototype = {
      */
     main : function (argv)
     {
-		var testObject = new ArtDecoPrototypes();
-		console.log ("ArtDecoPrototypes execution self-validation test results: " + testObject.validateSelf());
+		var testObject = new NeedClassName();
+		console.log ("NeedClassName execution self-validation test results: " + testObject.validateSelf());
 	}
 }
-new ArtDecoPrototypes().main();
+new NeedClassName().main();
