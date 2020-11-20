@@ -255,6 +255,15 @@ function normalize(v) {
 }
 
 function triangle_normal(a, b, c) {
+	if (typeof a === 'undefined') {
+		throw "Bad a";
+	}
+	if (typeof b === 'undefined') {
+		throw "Bad b";
+	}
+	if (typeof c === 'undefined') {
+		throw "Bad c";
+	}
 	var ba = [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
 	var bc = [c[0] - b[0], c[1] - b[1], c[2] - b[2]];
 	baxbc = vector_product(ba, bc);
