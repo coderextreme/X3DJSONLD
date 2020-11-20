@@ -10,7 +10,7 @@ var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations. </p>
+ * <p> This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models. </p>
  <p> Related links: JoeProcessed.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
@@ -20,19 +20,19 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d">JoeSkinTexcoordDisplacerKick.x3d</a> </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
-			<td> Joe No Reservations 20200709 spec root and vc7 hier 20161206 ... 20121221 ... 20040109 x3d/hanim </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d">JoeKick.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations. </td>
+			<td> This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models. </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
+			<td> Joe Williams </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
-			<td> 15 January 2004 </td>
+			<td> 9 January 2004 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> translated </i> </td>
@@ -40,47 +40,47 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 September 2020 </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
-			<td> Joe D Williams </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> translators </i> </td>
-			<td> Roy Walmsley and Don Brutzman </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
-			<td> Transcoding from .vrml to .x3dv by Joe using BS studio circa 2012 </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
-			<td> translated from .x3dv to .xml for web3d archive </td>
+			<td> 5 July 2020 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> TODO </i> </td>
-			<td> Record information relating a certain skin coordinate to a V1 Annex A Site name and location is now found in comment at end of this scene where each # number name string appears in the order of coordinate points in the skin mesh user code. Best organized to provide author data naming important HAnim humanoid skeletonspace to skinspace relations using structured MetadataSet containing MetadataString nodes </td>
+			<td> Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
-			<td> modified to correct root and vc7 hierarchies </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> translators </i> </td>
+			<td> Roy Walmsley, Don Brutzman, John Carlson </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/../Characters/JoeSkinTexcoordDisplacerKick.x3d">../Characters/JoeSkinTexcoordDisplacerKick.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d</a> </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> BS studio translation from .x3dv by Joe using BS Contact </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
 			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
 		</tr>
 		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> BS studio translation from .x3dv by Joe using BS Contact </td>
+		</tr>
+		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/../license.html">../license.html</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/../license.html">../license.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> translated </i> </td>
+			<td> 20 November 2020 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> X3dToJson.xslt, <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">https://www.web3d.org/x3d/stylesheets/X3dToJson.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> X3D JSON encoding: <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target="_blank">https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -95,7 +95,7 @@ var autoclass = require('./X3Dautoclass');
 		stylesheet to create NodeJS source code from an <code>.x3d</code> scene.
 	</p>
 
-	* @author Joe D Williams
+	* @author Joe Williams
  */
 
 function JoeProcessed
@@ -112,8 +112,8 @@ JoeProcessed.prototype = {
   initialize : function ()
   {
 
-	/** Large attribute array: WorldInfo info field, scene-graph level=3, element #19, 17 total values */
-	this.WorldInfo_3_19_info = new autoclass.MFString(new autoclass.MFString("\"X3D Humanoid V1 LOA3 skeleton\" \"skin from hanim sites, surface features, and some added points\" \"390 points\""));
+	/** Large attribute array: WorldInfo info field, scene-graph level=3, element #19, 16 total values */
+	this.WorldInfo_3_19_info = new autoclass.MFString(new autoclass.MFString("\"X3D Humanoid LOA3 skeleton\" \"skin from hanim sites, surface features, and some added points\" \"390 points\""));
 
 	/** Large attribute array: HAnimDisplacer DEF='Joe_skull_tip_raiser_action' displacements field, scene-graph level=31, element #52, 30 total numbers made up of 10 3-tuple values */
 	this.Joe_skull_tip_raiser_action_31_52_displacements = new autoclass.MFVec3f(java.newArray("float", [0.0,0.15,0.0,0.0,0.0,0.15,-0.1,0.0,0.15,0.1,0.0,0.05,0.0,-0.02,0.05,-0.15,0.0,0.0,-0.05,0.0,0.0,0.15,0.0,0.0,0.05,0.0,0.0,0.0,0.0,-0.15]));
@@ -163,48 +163,6 @@ JoeProcessed.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [-0.15,0.07,0.0,-0.085,0.086,0.0125,-0.115,0.069,-0.045,-0.117,0.0975,0.0615,-0.1375,0.006,-0.03,-0.095,0.006,-0.03,-0.095,0.006,-0.03,-0.115,0.06,0.1,-0.115,0.0,0.07,-0.165,0.0,0.07])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [-0.095,0.0,0.07,-0.115,0.04,0.13,-0.125,0.0,0.12,-0.165,0.0,0.12,-0.087,0.0,0.122,-0.09,0.012,0.188,-0.11,0.011,0.19,-0.128,0.011,0.185,-0.142,0.011,0.178,-0.154,0.01,0.168])));
 
-	/** Large attribute array: TextureCoordinate point field, scene-graph level=7, element #139, 780 total numbers made up of 390 2-tuple values */
-	this.TextureCoordinate_7_139_point = new autoclass.MFVec2f() /* splitting up long array to improve readability */
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5])))
-	.append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5,0.0,0.0,0.5,0.5])));
-
 	/** Large attribute array: IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex field, scene-graph level=6, element #539, 480 total numbers */
 	this.ball_IndexedFaceSet_6_539_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]));
 
@@ -230,25 +188,25 @@ JoeProcessed.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [-0.5,0.0,0.866,-0.407,0.0,0.914,-0.309,0.0,0.951,-0.208,0.0,0.978,-0.105,0.0,0.995,0.0,0.0,1.0,0.105,0.0,0.995,0.208,0.0,0.978,0.309,0.0,0.951,0.407,0.0,0.914])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.5,0.0,0.866,0.588,0.0,0.809,0.669,0.0,0.743,0.743,0.0,0.669,0.809,0.0,0.588,0.866,0.0,0.5,0.914,0.0,0.407,0.951,0.0,0.309,0.978,0.0,0.208,0.995,0.0,0.104])))
 	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0])));
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .setHead((new autoclass.head())
     .addComponent((new autoclass.component()).setName("HAnim").setLevel(1))
-    .addMeta((new autoclass.meta()).setName("title").setContent("JoeSkinTexcoordDisplacerKick.x3d"))
-    .addMeta((new autoclass.meta()).setName("info").setContent("Joe No Reservations 20200709 spec root and vc7 hier 20161206 ... 20121221 ... 20040109 x3d/hanim"))
-    .addMeta((new autoclass.meta()).setName("description").setContent("This Joe model is a V1 LOA3 Humanoid with textured skin composed mainly of V1 Site locations."))
-    .addMeta((new autoclass.meta()).setName("created").setContent("15 January 2004"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("JoeKick.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models."))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Joe Williams"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("9 January 2004"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("12 January 2017"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("20 September 2020"))
-    .addMeta((new autoclass.meta()).setName("creator").setContent("Joe D Williams"))
-    .addMeta((new autoclass.meta()).setName("translators").setContent("Roy Walmsley and Don Brutzman"))
-    .addMeta((new autoclass.meta()).setName("info").setContent("Transcoding from .vrml to .x3dv by Joe using BS studio circa 2012"))
-    .addMeta((new autoclass.meta()).setName("info").setContent("translated from .x3dv to .xml for web3d archive"))
-    .addMeta((new autoclass.meta()).setName("TODO").setContent("Record information relating a certain skin coordinate to a V1 Annex A Site name and location is now found in comment at end of this scene where each # number name string appears in the order of coordinate points in the skin mesh user code. Best organized to provide author data naming important HAnim humanoid skeletonspace to skinspace relations using structured MetadataSet containing MetadataString nodes"))
-    .addMeta((new autoclass.meta()).setName("info").setContent("modified to correct root and vc7 hierarchies"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("BS studio translation from .x3dv by Joe using BS Contact"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("5 July 2020"))
+    .addMeta((new autoclass.meta()).setName("TODO").setContent("Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes"))
+    .addMeta((new autoclass.meta()).setName("translators").setContent("Roy Walmsley, Don Brutzman, John Carlson"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("../Characters/JoeSkinTexcoordDisplacerKick.x3d"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("BS studio translation from .x3dv by Joe using BS Contact"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html"))
+    .addMeta((new autoclass.meta()).setName("translated").setContent("20 November 2020"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.WorldInfo()).setInfo(this.WorldInfo_3_19_info).setTitle("X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe"))
     .addChild((new autoclass.NavigationInfo("Start_NavigationInfo")).setSpeed(2.5).setHeadlight(false))
@@ -257,16 +215,15 @@ JoeProcessed.prototype = {
     .addChild((new autoclass.PointLight("light2")).setLocation(0.0,10.0,-7.0).setAmbientIntensity(0.7).setColor(0.8,0.8,1.0))
     .addComments("External from the Humanoid viewpoints")
     .addChild((new autoclass.Viewpoint("Scene_InclinedView")).setDescription("Scene_Inclined View").setOrientation(-0.113,0.993,0.0347,0.671).setCenterOfRotation(0.0,0.85,0.0).setPosition(1.62,1.05,3.06))
-    .addChild((new autoclass.Viewpoint("Scene_FrontView")).setDescription("Scene Front View").setCenterOfRotation(0.0,0.8,0.0).setPosition(0.0,0.8,2.58))
-    .addChild((new autoclass.Viewpoint("Scene_SideView")).setDescription("Scene Side View").setCenterOfRotation(0.0,0.8,0.0).setOrientation(0.0,1.0,0.0,1.5708).setPosition(2.6,0.5,0.0))
-    .addChild((new autoclass.Viewpoint("Scene_BackView")).setDescription("Scene Back View").setOrientation(0.0,1.0,0.0,3.14).setCenterOfRotation(0.0,1.5,0.0).setPosition(0.0,2.5,-3.0))
-    .addChild((new autoclass.Viewpoint("Scene_TopView")).setDescription("Scene Top View").setCenterOfRotation(0.0,1.5,0.0).setPosition(0.0,3.5,0.0).setOrientation(1.0,0.0,0.0,-1.5708))
+    .addChild((new autoclass.Viewpoint("Scene_IFrontView")).setDescription("Scene_Front View").setCenterOfRotation(0.0,0.8,0.0).setPosition(0.0,0.8,2.58))
+    .addChild((new autoclass.Viewpoint("Scene_ISideView")).setDescription("Scene_Side View").setCenterOfRotation(0.0,0.8,0.0).setOrientation(0.0,1.0,0.0,1.5708).setPosition(2.6,0.8,0.0))
+    .addChild((new autoclass.Viewpoint("Scene_BackView")).setDescription("Scene_Back View").setOrientation(0.0,1.0,0.0,3.14).setPosition(0.0,1.5,-3.0).setCenterOfRotation(0.0,1.5,0.0))
+    .addChild((new autoclass.Viewpoint("Scene_TopView")).setDescription("Scene_Top View").setCenterOfRotation(0.0,1.5,0.0).setPosition(0.0,3.5,0.0).setOrientation(1.0,0.0,0.0,-1.5708))
     .addChild((new autoclass.Group("Joe_Humanoid"))
-      .addChild((new autoclass.HAnimHumanoid("Joe_Human")).setName("Human").setVersion("1.0")
-        .addChild((new autoclass.HAnimJoint("Joe_HumanoidRoot")).setName("HumanoidRoot").setCenter(0.0,0.875,0.0)
-          .setMetadata((new autoclass.MetadataSet()).setName("warnings").setReference("HAnim")
-            .addComments("TODO experimental")
-            .setMetadata((new autoclass.MetadataString()).setName("SymmetricalLeftRight").setValue(new autoclass.MFString("\"ignore\"")).setReference("correction options: ignore, warn, average, left, right, largest, smallest")))
+      .addChild((new autoclass.HAnimHumanoid("Joe_Human")).setName("Human").setVersion("2.0").setLoa(3)
+        .addChild((new autoclass.MetadataSet()).setName("warnings").setReference("HAnim")
+          .addValue((new autoclass.MetadataString()).setName("SymmetricalLeftRight").setValue(new autoclass.MFString("\"ignore\"")).setReference("correction options: ignore, warn, average, left, right, largest, smallest")))
+        .addSkeleton((new autoclass.HAnimJoint("Joe_humanoid_root")).setName("humanoid_root").setCenter(0.0,0.875,0.0)
           .addChild((new autoclass.HAnimSegment("Joe_sacrum")).setName("sacrum")
             .addChild((new autoclass.HAnimSite("Joe_RootFront_view")).setName("RootFront_view")
               .addChild((new autoclass.Transform("hanimcordsys")).setScale(0.175,0.175,0.175)
@@ -279,16 +236,16 @@ JoeProcessed.prototype = {
           .addChild((new autoclass.HAnimJoint("Joe_sacroiliac")).setName("sacroiliac").setCenter(0.0,0.92,0.0).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.35,0.35,1.0])).setSkinCoordIndex(java.newArray("int", [17,19,20,21,22,23,26,27,73,82,89,91,93]))
             .addChild((new autoclass.HAnimJoint("Joe_l_hip")).setName("l_hip").setCenter(0.1,0.92,0.0).setSkinCoordWeight(java.newArray("float", [0.65,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [89,90,94,95,96,97]))
               .addChild((new autoclass.HAnimJoint("Joe_l_knee")).setName("l_knee").setCenter(0.115,0.466,0.0).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [334,335,336,337,338,339,340,341]))
-                .addChild((new autoclass.HAnimJoint("Joe_l_ankle")).setName("l_ankle").setCenter(0.115,0.069,0.0).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [342,343,344,345]))
-                  .addChild((new autoclass.HAnimJoint("Joe_l_subtalar")).setName("l_subtalar").setCenter(0.115,0.031,0.03).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [346,347,348,71]))
-                    .addChild((new autoclass.HAnimJoint("Joe_l_midtarsal")).setName("l_midtarsal").setCenter(0.115,0.037,0.09).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [349,350,351,352]))
-                      .addChild((new autoclass.HAnimJoint("Joe_l_metatarsal")).setName("l_metatarsal").setCenter(0.115,0.02,0.122).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [353,354,355,356,357,358,359,360,361]))))))))
+                .addChild((new autoclass.HAnimJoint("Joe_l_talocrural")).setName("l_talocrural").setCenter(0.115,0.069,0.0).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [342,343,344,345]))
+                  .addChild((new autoclass.HAnimJoint("Joe_l_tarsometatarsal_2")).setName("l_tarsometatarsal_2").setCenter(0.115,0.031,0.03).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [346,347,348,71]))
+                    .addChild((new autoclass.HAnimJoint("Joe_l_metatarsophalangeal_2")).setName("l_metatarsophalangeal_2").setCenter(0.115,0.037,0.09).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [349,350,351,352]))
+                      .addChild((new autoclass.HAnimJoint("Joe_l_tarsal_distal_interphalangeal_2")).setName("l_tarsal_distal_interphalangeal_2").setCenter(0.115,0.02,0.122).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [353,354,355,356,357,358,359,360,361]))))))))
             .addChild((new autoclass.HAnimJoint("Joe_r_hip")).setName("r_hip").setCenter(-0.1,0.92,0.0).setSkinCoordWeight(java.newArray("float", [0.65,1.0,0.8,1.0,1.0,1.0,0.4,0.8])).setSkinCoordIndex(java.newArray("int", [91,92,98,99,100,101,362,363]))
               .addChild((new autoclass.HAnimJoint("Joe_r_knee")).setName("r_knee").setCenter(-0.05,0.466,0.0).setSkinCoordWeight(java.newArray("float", [0.6,0.2,1.0,1.0,1.0,1.0,1.0,1.0,0.2])).setSkinCoordIndex(java.newArray("int", [362,363,364,365,366,367,368,369,98]))
-                .addChild((new autoclass.HAnimJoint("Joe_r_ankle")).setName("r_ankle").setCenter(-0.115,0.069,0.0).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [370,371,372,373]))
-                  .addChild((new autoclass.HAnimJoint("Joe_r_subtalar")).setName("r_subtalar").setCenter(-0.1,0.015,-0.01).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [374,375,376]))
-                    .addChild((new autoclass.HAnimJoint("Joe_r_midtarsal")).setName("r_midtarsal").setCenter(-0.115,0.037,0.09).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [377,378,379,380]))
-                      .addChild((new autoclass.HAnimJoint("Joe_r_metatarsal")).setName("r_metatarsal").setCenter(-0.1,0.01,0.14).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [381,382,383,384,385,386,387,388,389])))))))))
+                .addChild((new autoclass.HAnimJoint("Joe_r_talocrural")).setName("r_talocrural").setCenter(-0.115,0.069,0.0).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [370,371,372,373]))
+                  .addChild((new autoclass.HAnimJoint("Joe_r_tarsometatarsal_2")).setName("r_tarsometatarsal_2").setCenter(-0.1,0.015,-0.01).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [374,375,376]))
+                    .addChild((new autoclass.HAnimJoint("Joe_r_metatarsophalangeal_2")).setName("r_metatarsophalangeal_2").setCenter(-0.115,0.037,0.09).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [377,378,379,380]))
+                      .addChild((new autoclass.HAnimJoint("Joe_r_tarsal_distal_interphalangeal_2")).setName("r_tarsal_distal_interphalangeal_2").setCenter(-0.1,0.01,0.14).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [381,382,383,384,385,386,387,388,389])))))))))
           .addChild((new autoclass.HAnimJoint("Joe_vl5")).setName("vl5").setCenter(0.0,1.045,-0.095).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setSkinCoordIndex(java.newArray("int", [28,76]))
             .addChild((new autoclass.HAnimJoint("Joe_vl4")).setName("vl4").setCenter(0.0,1.068,-0.085)
               .addChild((new autoclass.HAnimJoint("Joe_vl3")).setName("vl3").setCenter(0.0,1.092,-0.0725)
@@ -326,7 +283,7 @@ JoeProcessed.prototype = {
                                                 .addChild((new autoclass.HAnimJoint("Joe_l_acromioclavicular")).setName("l_acromioclavicular").setCenter(0.0962,1.4269,-0.0424).setSkinCoordWeight(java.newArray("float", [1.0])).setSkinCoordIndex(java.newArray("int", [79]))
                                                   .addChild((new autoclass.HAnimJoint("Joe_l_shoulder")).setName("l_shoulder").setCenter(0.2,1.44,-0.04).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [41,42,44,80,102,103,104,105]))
                                                     .addChild((new autoclass.HAnimJoint("Joe_l_elbow")).setName("l_elbow").setCenter(0.2,1.1388,-0.04).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [45,46,47,109,110,111,112,113,115,116,117,118]))
-                                                      .addChild((new autoclass.HAnimJoint("Joe_l_wrist")).setName("l_wrist").setCenter(0.2,0.87,-0.04).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [119,120,121,122,123,124,125,126]))
+                                                      .addChild((new autoclass.HAnimJoint("Joe_l_radiocarpal")).setName("l_radiocarpal").setCenter(0.2,0.87,-0.04).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [119,120,121,122,123,124,125,126]))
                                                         .addChild((new autoclass.HAnimJoint("Joe_l_thumb1")).setName("l_thumb1").setCenter(0.1924,0.8472,-0.0534).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setSkinCoordIndex(java.newArray("int", [127,128]))
                                                           .addChild((new autoclass.HAnimJoint("Joe_l_thumb2")).setName("l_thumb2").setCenter(0.1951,0.8226,0.0246).setSkinCoordWeight(java.newArray("float", [0.5,0.5,0.5,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [138,139,140,141,142,143]))
                                                             .addChild((new autoclass.HAnimJoint("Joe_l_thumb3")).setName("l_thumb3").setCenter(0.1955,0.8159,0.0464).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [144,145,146,147,148,149,150,151,152])))))
@@ -350,7 +307,7 @@ JoeProcessed.prototype = {
                                                 .addChild((new autoclass.HAnimJoint("Joe_r_acromioclavicular")).setName("r_acromioclavicular").setCenter(-0.09,1.41,-0.11).setSkinCoordWeight(java.newArray("float", [1.0,0.9])).setSkinCoordIndex(java.newArray("int", [77,29]))
                                                   .addChild((new autoclass.HAnimJoint("Joe_r_shoulder")).setName("r_shoulder").setCenter(-0.2,1.44,-0.04).setSkinCoordWeight(java.newArray("float", [0.1,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.3,0.2])).setSkinCoordIndex(java.newArray("int", [29,30,32,78,218,219,220,221,86,88]))
                                                     .addChild((new autoclass.HAnimJoint("Joe_r_elbow")).setName("r_elbow").setCenter(-0.2,1.1388,-0.04).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [33,34,35,225,226,227,228,229,231,232,233,234]))
-                                                      .addChild((new autoclass.HAnimJoint("Joe_r_wrist")).setName("r_wrist").setCenter(-0.2,0.89,-0.04).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [235,236,237,238,239,240,241,242]))
+                                                      .addChild((new autoclass.HAnimJoint("Joe_r_radiocarpal")).setName("r_radiocarpal").setCenter(-0.2,0.89,-0.04).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [235,236,237,238,239,240,241,242]))
                                                         .addChild((new autoclass.HAnimJoint("Joe_r_thumb1")).setName("r_thumb1").setCenter(-0.2,0.85,0.0).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setSkinCoordIndex(java.newArray("int", [243,244]))
                                                           .addChild((new autoclass.HAnimJoint("Joe_r_thumb2")).setName("r_thumb2").setCenter(-0.2,0.82,0.03).setSkinCoordWeight(java.newArray("float", [0.5,0.5,0.5,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [254,255,256,257,258,259]))
                                                             .addChild((new autoclass.HAnimJoint("Joe_r_thumb3")).setName("r_thumb3").setCenter(-0.2,0.8,0.05).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [260,261,262,263,264,265,266,267,268])))))
@@ -370,111 +327,111 @@ JoeProcessed.prototype = {
                                                           .addChild((new autoclass.HAnimJoint("Joe_r_pinky1")).setName("r_pinky1").setCenter(-0.2,0.79,-0.085).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [276,277,278]))
                                                             .addChild((new autoclass.HAnimJoint("Joe_r_pinky2")).setName("r_pinky2").setCenter(-0.2,0.755,-0.085).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [321,322,323,324]))
                                                               .addChild((new autoclass.HAnimJoint("Joe_r_pinky3")).setName("r_pinky3").setCenter(-0.2,0.735,-0.09).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setSkinCoordIndex(java.newArray("int", [325,326,327,328,329,330,331,332,333]))))))))))))))))))))))))))))))
-        .addChild((new autoclass.Shape("Joe_Shape"))
+        .addSkin((new autoclass.Shape("Joe_Shape"))
           .setAppearance((new autoclass.Appearance("Joe_skin_Appearance"))
             .setMaterial((new autoclass.Material("Joe_skin_Material")).setDiffuseColor(0.3,0.3,0.6).setEmissiveColor(0.3,0.3,0.6))
-            .setTexture((new autoclass.ImageTexture("JoeSkinImageTexture")).setUrl(new autoclass.MFString("\"JoeBodyTexture29.png\"")))
+            .setTexture((new autoclass.ImageTexture("JoeSkinImageTexture")).setUrl(new autoclass.MFString("\"JoeBodyTexture29.png\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png\"")))
             .setTextureTransform((new autoclass.TextureTransform("KickTextureTransform"))))
           .setGeometry((new autoclass.IndexedFaceSet("Joe_skin_IndexedFaceSet")).setDEF("Joe_skin_IndexedFaceSet").setCreaseAngle(3.14).setCoordIndex(this.Joe_skin_IndexedFaceSet_6_138_coordIndex)
             .setCoord((new autoclass.Coordinate("Joe_SkinCoord")).setPoint(this.Joe_SkinCoord_7_138_point))
-            .setTexCoord((new autoclass.TextureCoordinate()).setPoint(this.TextureCoordinate_7_139_point))))
+            .setTexCoord((new autoclass.TextureCoordinate()).setPoint(new autoclass.MFVec2f(java.newArray("float", [0.0,0.0,0.5,0.5,0.5,0.0,0.0,0.5]))))))
         .setSkinCoord((new autoclass.Coordinate()).setUSE("Joe_SkinCoord"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_HumanoidRoot"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_sacroiliac"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vl5"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vl4"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vl3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vl2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vl1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt12"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt11"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt10"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt9"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt8"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt7"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt6"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt5"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt4"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vt1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vc7"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vc6"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vc5"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vc4"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vc3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vc2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_vc1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_skullbase"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_temporomandibular"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_acromioclavicular"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_acromioclavicular"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_ankle"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_ankle"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_elbow"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_elbow"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_eyeball_joint"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_eyeball_joint"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_eyebrow_joint"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_eyebrow_joint"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_eyelid_joint"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_eyelid_joint"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_hip"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_hip"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_index0"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_index0"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_index1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_index1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_index2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_index2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_index3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_index3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_knee"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_knee"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_metatarsal"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_metatarsal"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_middle0"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_middle0"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_middle1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_middle1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_middle2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_middle2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_middle3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_middle3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_midtarsal"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_midtarsal"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_pinky0"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_pinky0"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_pinky1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_pinky1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_pinky2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_pinky2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_pinky3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_pinky3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_ring0"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_ring0"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_ring1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_ring1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_ring2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_ring2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_ring3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_ring3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_shoulder"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_shoulder"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_sternoclavicular"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_sternoclavicular"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_subtalar"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_subtalar"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_thumb1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_thumb1"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_thumb2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_thumb2"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_thumb3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_thumb3"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_l_wrist"))
-        .addChild((new autoclass.HAnimJoint()).setUSE("Joe_r_wrist"))
-        .addChild((new autoclass.HAnimSegment()).setUSE("Joe_sacrum"))
-        .addChild((new autoclass.HAnimSite()).setUSE("Joe_RootFront_view"))))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_humanoid_root"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_sacroiliac"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_skullbase"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_temporomandibular"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vc1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vc2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vc3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vc4"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vc5"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vc6"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vc7"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vl1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vl2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vl3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vl4"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vl5"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt10"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt11"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt12"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt4"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt5"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt6"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt7"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt8"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_vt9"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_acromioclavicular"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_acromioclavicular"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_elbow"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_elbow"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_eyeball_joint"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_eyeball_joint"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_eyebrow_joint"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_eyebrow_joint"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_eyelid_joint"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_eyelid_joint"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_hip"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_hip"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_index0"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_index0"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_index1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_index1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_index2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_index2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_index3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_index3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_knee"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_knee"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_metatarsophalangeal_2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_metatarsophalangeal_2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_middle0"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_middle0"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_middle1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_middle1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_middle2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_middle2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_middle3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_middle3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_pinky0"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_pinky0"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_pinky1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_pinky1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_pinky2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_pinky2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_pinky3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_pinky3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_radiocarpal"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_radiocarpal"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_ring0"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_ring0"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_ring1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_ring1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_ring2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_ring2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_ring3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_ring3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_shoulder"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_shoulder"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_sternoclavicular"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_sternoclavicular"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_talocrural"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_talocrural"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_tarsal_distal_interphalangeal_2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_tarsal_distal_interphalangeal_2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_tarsometatarsal_2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_tarsometatarsal_2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_thumb1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_thumb1"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_thumb2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_thumb2"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_l_thumb3"))
+        .addJoints((new autoclass.HAnimJoint()).setUSE("Joe_r_thumb3"))
+        .addSegments((new autoclass.HAnimSegment()).setUSE("Joe_sacrum"))
+        .addSites((new autoclass.HAnimSite()).setUSE("Joe_RootFront_view"))))
     .addChild((new autoclass.Group())
       .addChild((new autoclass.TimeSensor("KickTimer")).setCycleInterval(3.73).setLoop(true))
       .addComments("Interpolators")
@@ -670,21 +627,21 @@ JoeProcessed.prototype = {
     .addChild((new autoclass.ROUTE()).setFromNode("KickTimer").setFromField("fraction_changed").setToNode("r_pinky2_RotationInterpolator").setToField("set_fraction"))
     .addChild((new autoclass.ROUTE()).setFromNode("KickTimer").setFromField("fraction_changed").setToNode("r_pinky3_RotationInterpolator").setToField("set_fraction"))
     .addComments("Routes from Interpolators to Joe_ model Joints")
-    .addChild((new autoclass.ROUTE()).setFromNode("HumanoidRoot_RotationInterpolator").setFromField("value_changed").setToNode("Joe_HumanoidRoot").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("HumanoidRoot_TranslationInterpolator").setFromField("value_changed").setToNode("Joe_HumanoidRoot").setToField("set_translation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("HumanoidRoot_RotationInterpolator").setFromField("value_changed").setToNode("Joe_humanoid_root").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("HumanoidRoot_TranslationInterpolator").setFromField("value_changed").setToNode("Joe_humanoid_root").setToField("set_translation"))
     .addChild((new autoclass.ROUTE()).setFromNode("sacroiliac_RotationInterpolator").setFromField("value_changed").setToNode("Joe_sacroiliac").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("l_hip_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_hip").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("l_knee_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_knee").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_ankle_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_ankle").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_subtalar_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_subtalar").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_midtarsal_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_midtarsal").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_metatarsal_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_metatarsal").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_ankle_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_talocrural").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_subtalar_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_tarsometatarsal_2").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_midtarsal_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_metatarsophalangeal_2").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_metatarsal_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_tarsal_distal_interphalangeal_2").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("r_hip_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_hip").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("r_knee_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_knee").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_ankle_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_ankle").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_subtalar_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_subtalar").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_midtarsal_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_midtarsal").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_metatarsal_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_metatarsal").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_ankle_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_talocrural").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_subtalar_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_tarsometatarsal_2").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_midtarsal_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_metatarsophalangeal_2").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_metatarsal_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_tarsal_distal_interphalangeal_2").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("vl5_RotationInterpolator").setFromField("value_changed").setToNode("Joe_vl5").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("vl4_RotationInterpolator").setFromField("value_changed").setToNode("Joe_vl4").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("vl3_RotationInterpolator").setFromField("value_changed").setToNode("Joe_vl3").setToField("set_rotation"))
@@ -721,7 +678,7 @@ JoeProcessed.prototype = {
     .addChild((new autoclass.ROUTE()).setFromNode("l_acromioclavicular_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_acromioclavicular").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("l_shoulder_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_shoulder").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("l_elbow_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_elbow").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("l_wrist_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_wrist").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("l_wrist_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_radiocarpal").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("l_thumb1_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_thumb1").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("l_thumb2_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_thumb2").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("l_thumb3_RotationInterpolator").setFromField("value_changed").setToNode("Joe_l_thumb3").setToField("set_rotation"))
@@ -745,7 +702,7 @@ JoeProcessed.prototype = {
     .addChild((new autoclass.ROUTE()).setFromNode("r_acromioclavicular_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_acromioclavicular").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("r_shoulder_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_shoulder").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("r_elbow_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_elbow").setToField("set_rotation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("r_wrist_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_wrist").setToField("set_rotation"))
+    .addChild((new autoclass.ROUTE()).setFromNode("r_wrist_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_radiocarpal").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("r_thumb1_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_thumb1").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("r_thumb2_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_thumb2").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("r_thumb3_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_thumb3").setToField("set_rotation"))
@@ -766,14 +723,13 @@ JoeProcessed.prototype = {
     .addChild((new autoclass.ROUTE()).setFromNode("r_pinky2_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_pinky2").setToField("set_rotation"))
     .addChild((new autoclass.ROUTE()).setFromNode("r_pinky3_RotationInterpolator").setFromField("value_changed").setToNode("Joe_r_pinky3").setToField("set_rotation"))
     .addChild((new autoclass.Group("DisplacersAnimationGroup"))
-      .addComments("TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor")
       .addChild((new autoclass.ScalarInterpolator("skull_tipInterpolator")).setKeyValue(java.newArray("float", [0.0,0.0,0.0,0.0,0.2,0.4,1.0,0.0,1.0,0.4,0.0])).setKey(java.newArray("float", [0.0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1.0])))
       .addChild((new autoclass.ROUTE()).setFromNode("KickTimer").setFromField("fraction_changed").setToNode("skull_tipInterpolator").setToField("set_fraction"))
       .addChild((new autoclass.ROUTE()).setFromNode("skull_tipInterpolator").setFromField("value_changed").setToNode("Joe_skull_tip_raiser_action").setToField("weight")))
     .addChild((new autoclass.Group("SkinTextureTransformAnimationGroup"))
-      .addChild((new autoclass.ScalarInterpolator("SkinTextureTransformInterpolator")).setKeyValue(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,1.0,2.0,0.0])).setKey(java.newArray("float", [0.0,0.2,0.4,0.5,0.6,0.7,0.8,1.0])))
-      .addChild((new autoclass.ROUTE()).setFromNode("KickTimer").setFromField("fraction_changed").setToNode("SkinTextureTransformInterpolator").setToField("set_fraction"))
-      .addChild((new autoclass.ROUTE()).setFromNode("SkinTextureTransformInterpolator").setFromField("value_changed").setToNode("KickTextureTransform").setToField("rotation")))
+      .addChild((new autoclass.ScalarInterpolator("SkinInterpolator")).setKeyValue(java.newArray("float", [0.0,0.0,0.0,0.0,0.0,1.0,2.0,0.0])).setKey(java.newArray("float", [0.0,0.2,0.4,0.5,0.6,0.7,0.8,1.0])))
+      .addChild((new autoclass.ROUTE()).setFromNode("KickTimer").setFromField("fraction_changed").setToNode("SkinInterpolator").setToField("set_fraction"))
+      .addChild((new autoclass.ROUTE()).setFromNode("SkinInterpolator").setFromField("value_changed").setToNode("KickTextureTransform").setToField("rotation")))
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Transform("SBall")).setTranslation(-0.916,0.37,-0.92).setScale(0.23,0.23,0.23).setRotation(0.7,0.0,0.7,0.1)
         .addChild((new autoclass.Shape("ball_Shape"))
