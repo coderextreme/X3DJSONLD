@@ -1015,7 +1015,7 @@ Appearance120.material = Material121;
 
 let ImageTexture122 = browser.currentScene.createNode("ImageTexture");
 ImageTexture122.DEF = "JoeSkinImageTexture";
-ImageTexture122.url = new MFString(new java.lang.String["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"]);
+ImageTexture122.url = new MFString(new java.lang.String["JoeBodyTexture29.png"]);
 Appearance120.texture = ImageTexture122;
 
 let TextureTransform123 = browser.currentScene.createNode("TextureTransform");

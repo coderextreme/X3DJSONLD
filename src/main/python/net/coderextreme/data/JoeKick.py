@@ -927,7 +927,7 @@ Material136.setEmissiveColor([0.3,0.3,0.6])
 Appearance135.setMaterial(Material136)
 ImageTexture137 = x3d.ImageTexture()
 ImageTexture137.setDEF("JoeSkinImageTexture")
-ImageTexture137.setUrl(["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeBodyTexture29.png"])
+ImageTexture137.setUrl(["JoeBodyTexture29.png"])
 
 Appearance135.setTexture(ImageTexture137)
 TextureTransform138 = x3d.TextureTransform()

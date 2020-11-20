@@ -869,7 +869,7 @@ var X3D0 =  new X3D({
                           texture : new SFNode(
                             new ImageTexture({
                               DEF : new SFString("JoeSkinImageTexture"),
-                              url : new MFString(["JoeBodyTexture29.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeBodyTexture29.png"])})),
+                              url : new MFString(["JoeBodyTexture29.png"])})),
                           textureTransform : new SFNode(
                             new TextureTransform({
                               DEF : new SFString("KickTextureTransform")}))})),
