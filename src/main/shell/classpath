@@ -5,7 +5,8 @@ export CLASSPATH=".;${X3DJSONLD}/../pythonSAI/X3DJSAIL.4.0.full.jar;${X3DJSONLD}
 # NASHORN DOES NOT TAKE C:
 export NASHORN_CLASSPATH=".;${NASHORNX3DJSONLD}/../pythonSAI/X3DJSAIL.4.0.full.jar;${NASHORNX3DJSONLD}/saxon9he.jar;${NASHORNX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${NASHORNX3DJSONLD}/src/main/nashorn"
 export PYTHONPATH=/usr/bin:/c/Python27:/c/Python27/Scripts
-export PATH="${PYTHONPATH};${JAVA_HOME}/bin;${JAVA_HOME}/jre/bin/server;${PATH}"
+export PATH="${PYTHONPATH};${JAVA_HOME}/bin;${JAVA_HOME}/jre/bin/server;/c/Users/coderextreme/Downloads/graalvm-ce-java11-windows-amd64-20.3.0/graalvm-ce-java11-20.3.0/bin/;${PATH}"
+
 export PYTHON=python.exe
 export PIP=pip.exe
 export NODE=node.exe
